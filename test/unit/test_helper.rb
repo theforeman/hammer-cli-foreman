@@ -1,14 +1,10 @@
 require 'simplecov'
+require 'pathname'
 
 SimpleCov.use_merging true
-SimpleCov.filters = []
 SimpleCov.start do
   command_name 'MiniTest'
-
-  add_filter "vendor"
-  add_filter "test"
-  add_filter "opt"
-  add_filter "/hammer_cli/"
+  add_filter 'test'
 end
 SimpleCov.root Pathname.new(File.dirname(__FILE__) + "../../../")
 

@@ -2,7 +2,7 @@ source "http://rubygems.org"
 
 gemspec
 
-gem 'hammer-cli', :github => "theforeman/hammer-cli"
+gem 'hammer_cli', :github => "theforeman/hammer-cli"
 
 gem 'pry'
 gem 'pry-debugger'

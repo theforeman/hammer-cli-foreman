@@ -22,7 +22,7 @@ EOF
   s.test_files = Dir.glob('test/tc_*.rb')
   s.require_paths = ["lib"]
 
-  s.add_dependency 'hammer-cli'
+  s.add_dependency 'hammer_cli'
   s.add_dependency 'foreman_api'
   s.add_dependency 'awesome_print'
   s.add_dependency 'terminal-table'
