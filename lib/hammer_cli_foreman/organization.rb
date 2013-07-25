@@ -2,33 +2,14 @@ require 'hammer_cli'
 require 'foreman_api'
 require 'hammer_cli_foreman/formatters'
 require 'hammer_cli_foreman/commands'
+require 'hammer_cli_foreman/resource_supported_test'
 
 module HammerCLIForeman
 
   class Organization < HammerCLI::AbstractCommand
 
-    module SupportTest
-
-      def execute
-        if resource_supported?
-          super
-        else
-          output.print_error "The server does not support organizations."
-          1
-        end
-      end
-
-      def resource_supported?
-        resource.index
-        true
-      rescue RestClient::ResourceNotFound => e
-        false
-      end
-
-    end
-
     class ListCommand < HammerCLIForeman::ListCommand
-      include HammerCLIForeman::Organization::SupportTest
+      include HammerCLIForeman::ResourceSupportedTest
       resource ForemanApi::Resources::Organization, "index"
 
       heading "Organizations"
@@ -44,7 +25,7 @@ module HammerCLIForeman
 
 
     class InfoCommand < HammerCLIForeman::InfoCommand
-      include HammerCLIForeman::Organization::SupportTest
+      include HammerCLIForeman::ResourceSupportedTest
       resource ForemanApi::Resources::Organization, "show"
 
       heading "Organization info"
@@ -59,7 +40,7 @@ module HammerCLIForeman
 
 
     class CreateCommand < HammerCLIForeman::CreateCommand
-      include HammerCLIForeman::Organization::SupportTest
+      include HammerCLIForeman::ResourceSupportedTest
 
       success_message "Organization created"
       failure_message "Could not create the organization"
@@ -70,7 +51,7 @@ module HammerCLIForeman
 
 
     class UpdateCommand < HammerCLIForeman::UpdateCommand
-      include HammerCLIForeman::Organization::SupportTest
+      include HammerCLIForeman::ResourceSupportedTest
 
       success_message "Organization updated"
       failure_message "Could not update the organization"
@@ -81,7 +62,7 @@ module HammerCLIForeman
 
 
     class DeleteCommand < HammerCLIForeman::DeleteCommand
-      include HammerCLIForeman::Organization::SupportTest
+      include HammerCLIForeman::ResourceSupportedTest
 
       success_message "Organization deleted"
       failure_message "Could not delete the organization"

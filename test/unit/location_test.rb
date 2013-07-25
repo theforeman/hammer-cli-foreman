@@ -1,7 +1,7 @@
 require_relative 'test_helper'
 require_relative 'helpers/resource_disabled'
 
-describe HammerCLIForeman::Organization do
+describe HammerCLIForeman::Location do
 
   extend CommandTestHelper
   extend ResourceDisabled
@@ -15,7 +15,7 @@ describe HammerCLIForeman::Organization do
 
   context "ListCommand" do
 
-    let(:cmd) { HammerCLIForeman::Organization::ListCommand.new("") }
+    let(:cmd) { HammerCLIForeman::Location::ListCommand.new("") }
 
     context "parameters" do
       it_should_accept "no arguments"
@@ -36,7 +36,7 @@ describe HammerCLIForeman::Organization do
 
   context "InfoCommand" do
 
-    let(:cmd) { HammerCLIForeman::Organization::InfoCommand.new("") }
+    let(:cmd) { HammerCLIForeman::Location::InfoCommand.new("") }
 
     context "parameters" do
       it_should_accept "id", ["--id=1"]
@@ -60,7 +60,7 @@ describe HammerCLIForeman::Organization do
 
   context "CreateCommand" do
 
-    let(:cmd) { HammerCLIForeman::Organization::CreateCommand.new("") }
+    let(:cmd) { HammerCLIForeman::Location::CreateCommand.new("") }
 
     context "parameters" do
       it_should_accept "name", ["--name=org"]
@@ -74,7 +74,7 @@ describe HammerCLIForeman::Organization do
 
   context "DeleteCommand" do
 
-    let(:cmd) { HammerCLIForeman::Organization::DeleteCommand.new("") }
+    let(:cmd) { HammerCLIForeman::Location::DeleteCommand.new("") }
 
     context "parameters" do
       it_should_accept "name", ["--name=org"]
@@ -89,7 +89,7 @@ describe HammerCLIForeman::Organization do
 
   context "UpdateCommand" do
 
-    let(:cmd) { HammerCLIForeman::Organization::UpdateCommand.new("") }
+    let(:cmd) { HammerCLIForeman::Location::UpdateCommand.new("") }
 
     context "parameters" do
       it_should_accept "name", ["--name=org", "--new-name=org2"]

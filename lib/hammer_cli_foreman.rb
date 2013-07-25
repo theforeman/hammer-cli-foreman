@@ -12,6 +12,7 @@ module HammerCLIForeman
   require 'hammer_cli_foreman/compute_resource'
   require 'hammer_cli_foreman/domain'
   require 'hammer_cli_foreman/environment'
+  require 'hammer_cli_foreman/location'
   require 'hammer_cli_foreman/organization'
   require 'hammer_cli_foreman/subnet'
   require 'hammer_cli_foreman/user'
