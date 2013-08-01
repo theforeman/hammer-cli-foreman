@@ -101,14 +101,14 @@ module HammerCLIForeman
       apipie_options
     end
 
-    subcommand "list", "List architectures.", HammerCLIForeman::ComputeResource::ListCommand
-    subcommand "info", "Detailed info about an architecture.", HammerCLIForeman::ComputeResource::InfoCommand
-    subcommand "create", "Create new architecture.", HammerCLIForeman::ComputeResource::CreateCommand
-    subcommand "update", "Update an architecture.", HammerCLIForeman::ComputeResource::UpdateCommand
-    subcommand "delete", "Delete an architecture.", HammerCLIForeman::ComputeResource::DeleteCommand
+    subcommand "list", "List compute resources.", HammerCLIForeman::ComputeResource::ListCommand
+    subcommand "info", "Detailed info about a compute resource.", HammerCLIForeman::ComputeResource::InfoCommand
+    subcommand "create", "Create new compute resource.", HammerCLIForeman::ComputeResource::CreateCommand
+    subcommand "update", "Update a compute resource.", HammerCLIForeman::ComputeResource::UpdateCommand
+    subcommand "delete", "Delete a compute resource.", HammerCLIForeman::ComputeResource::DeleteCommand
   end
 
 end
 
-HammerCLI::MainCommand.subcommand 'compute_resource', "Manipulate Foreman's architectures.", HammerCLIForeman::ComputeResource
+HammerCLI::MainCommand.subcommand 'compute_resource', "Manipulate Foreman's compute resources.", HammerCLIForeman::ComputeResource
 
