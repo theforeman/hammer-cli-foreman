@@ -23,7 +23,7 @@ EOF
   s.require_paths = ["lib"]
 
   s.add_dependency 'hammer_cli'
-  s.add_dependency 'foreman_api'
+  s.add_dependency 'foreman_api', '>= 0.1.5'
   s.add_dependency 'awesome_print'
   s.add_dependency 'terminal-table'
 
