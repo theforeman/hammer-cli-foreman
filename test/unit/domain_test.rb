@@ -1,5 +1,5 @@
-require_relative 'test_helper'
-require_relative 'apipie_resource_mock'
+require File.join(File.dirname(__FILE__), 'test_helper')
+require File.join(File.dirname(__FILE__), 'apipie_resource_mock')
 
 
 describe HammerCLIForeman::Domain do
@@ -35,7 +35,7 @@ describe HammerCLIForeman::Domain do
     let(:cmd) { HammerCLIForeman::Domain::InfoCommand.new("") }
 
     before :each do
-      cmd.class.stubs(:get_parameters).returns([])
+      HammerCLIForeman::Parameter.stubs(:get_parameters).returns([])
     end
 
     context "parameters" do

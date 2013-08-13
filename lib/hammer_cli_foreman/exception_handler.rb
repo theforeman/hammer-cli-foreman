@@ -23,6 +23,7 @@ module HammerCLIForeman
 
     def handle_argument_error e
       print_error e.message
+      log_full_error e
       return 83
     end
 

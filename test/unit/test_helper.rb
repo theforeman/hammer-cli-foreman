@@ -16,7 +16,7 @@ require "mocha/setup"
 
 require 'hammer_cli_foreman'
 
-require_relative 'test_output_adapter'
-require_relative 'apipie_resource_mock'
-require_relative 'helpers/command'
-require_relative 'helpers/resource_disabled'
+require File.join(File.dirname(__FILE__), 'test_output_adapter')
+require File.join(File.dirname(__FILE__), 'apipie_resource_mock')
+require File.join(File.dirname(__FILE__), 'helpers/command')
+require File.join(File.dirname(__FILE__), 'helpers/resource_disabled')

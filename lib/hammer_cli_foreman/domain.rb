@@ -25,13 +25,12 @@ module HammerCLIForeman
 
 
     class InfoCommand < HammerCLIForeman::InfoCommand
-      extend HammerCLIForeman::Parameter::Helpers
 
       resource ForemanApi::Resources::Domain, "show"
 
       def retrieve_data
         domain = super
-        domain["parameters"] = InfoCommand::get_parameters(domain)
+        domain["parameters"] = HammerCLIForeman::Parameter.get_parameters resource_config, domain
         domain
       end
 

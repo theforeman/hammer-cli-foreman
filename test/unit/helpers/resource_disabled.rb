@@ -1,4 +1,4 @@
-require_relative '../apipie_resource_mock'
+require File.join(File.dirname(__FILE__), '../apipie_resource_mock')
 
 module ResourceDisabled
 
