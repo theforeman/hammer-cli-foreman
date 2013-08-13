@@ -1,4 +1,4 @@
-require_relative '../test_output_adapter'
+require File.join(File.dirname(__FILE__), '../test_output_adapter')
 
 module CommandTestHelper
 

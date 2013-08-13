@@ -1,5 +1,5 @@
-require_relative 'test_helper'
-require_relative 'apipie_resource_mock'
+require File.join(File.dirname(__FILE__), 'test_helper')
+require File.join(File.dirname(__FILE__), 'apipie_resource_mock')
 
 
 describe HammerCLIForeman::Architecture do

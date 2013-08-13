@@ -5,7 +5,7 @@ gemspec
 gem 'hammer_cli', :github => "theforeman/hammer-cli"
 
 gem 'pry'
-gem 'pry-debugger'
+gem 'pry-debugger', :platforms => [:ruby_19]
 
 group :test do
   gem 'rake'

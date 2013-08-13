@@ -9,7 +9,7 @@ module HammerCLIForeman
     end
 
 
-    def self.parameters params
+    def self.parameters params=[]
       params.collect do |p|
         p["parameter"]["name"] +" => "+ p["parameter"]["value"]
       end.join("\n")

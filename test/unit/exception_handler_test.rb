@@ -1,4 +1,4 @@
-require_relative 'test_helper'
+require File.join(File.dirname(__FILE__), 'test_helper')
 require 'hammer_cli_foreman/exception_handler'
 
 describe HammerCLIForeman::ExceptionHandler do

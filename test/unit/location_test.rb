@@ -1,5 +1,5 @@
-require_relative 'test_helper'
-require_relative 'helpers/resource_disabled'
+require File.join(File.dirname(__FILE__), 'test_helper')
+require File.join(File.dirname(__FILE__), 'helpers/resource_disabled')
 
 describe HammerCLIForeman::Location do
 
