@@ -93,7 +93,7 @@ describe HammerCLIForeman::Domain do
   end
 
 
-  context "SetCommand" do
+  context "SetParameterCommand" do
 
     before :each do
       cmd.class.resource.stubs(:index).returns([[],""])
@@ -112,7 +112,7 @@ describe HammerCLIForeman::Domain do
   end
 
 
-  context "DeleteCommand" do
+  context "DeleteParameterCommand" do
 
     let(:cmd) { HammerCLIForeman::Domain::DeleteParameterCommand.new("") }
 
