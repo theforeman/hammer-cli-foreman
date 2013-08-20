@@ -16,8 +16,8 @@ module HammerCLIForeman
           field :id, "Id"
           field :name, "Name"
           field :provider, "Provider"
-          field :created_at, "Created at", &HammerCLIForeman::Formatters.method(:date_formatter)
-          field :updated_at, "Updated at", &HammerCLIForeman::Formatters.method(:date_formatter)
+          field :created_at, "Created at", HammerCLI::Output::Fields::Date
+          field :updated_at, "Updated at", HammerCLI::Output::Fields::Date
         end
       end
 
@@ -29,20 +29,20 @@ module HammerCLIForeman
 
       PROVIDER_SPECIFIC_FIELDS = {
         'ovirt' => [
-          HammerCLI::Output::Definition::Field.new('uuid', 'UUID', :path => "compute_resource")
+          HammerCLI::Output::DataField.new(:label => 'UUID', :path => ["compute_resource", "uuid"])
         ],
         'ec2' => [
-          HammerCLI::Output::Definition::Field.new('region', 'Region', :path => "compute_resource")
+          HammerCLI::Output::DataField.new(:label => 'Region', :path => ["compute_resource", "region"])
         ],
         'vmware' => [
-          HammerCLI::Output::Definition::Field.new('uuid', 'UUID', :path => "compute_resource"),
-          HammerCLI::Output::Definition::Field.new('server', 'Server', :path => "compute_resource")
+          HammerCLI::Output::DataField.new(:label => 'UUID', :path => ["compute_resource", "uuid"]),
+          HammerCLI::Output::DataField.new(:label => 'Server', :path => ["compute_resource", "server"])
         ],
         'openstack' => [
-          HammerCLI::Output::Definition::Field.new('tenant', 'Tenant', :path => "compute_resource")
+          HammerCLI::Output::DataField.new(:label => 'Tenant', :path => ["compute_resource", "tenant"])
         ],
         'rackspace' => [
-          HammerCLI::Output::Definition::Field.new('region', 'Region', :path => "compute_resource")
+          HammerCLI::Output::DataField.new(:label => 'Region', :path => ["compute_resource", "region"])
         ],
         'libvirt' => [
         ]

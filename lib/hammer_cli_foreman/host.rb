@@ -49,22 +49,22 @@ module HammerCLIForeman
           field :managed, "Managed"
           field :enabled, "Enabled"
           field :build, "Build"
-    
+
           field :use_image, "Use image"
           field :disk, "Disk"
           field :image_file, "Image file"
-    
+
           field :sp_name, "SP Name"
           field :sp_ip, "SP IP"
           field :sp_mac, "SP MAC"
           field :sp_subnet, "SP Subnet"
           field :sp_subnet_id, "SP Subnet Id"
 
-          field :created_at, "Created at"
-          field :updated_at, "Updated at"
-          field :installed_at, "Installed at"
-          field :last_report, "Last report"
-          
+          field :created_at, "Created at", HammerCLI::Output::Fields::Date
+          field :updated_at, "Updated at", HammerCLI::Output::Fields::Date
+          field :installed_at, "Installed at", HammerCLI::Output::Fields::Date
+          field :last_report, "Last report", HammerCLI::Output::Fields::Date
+
           field :puppet_ca_proxy_id, "Puppet CA Proxy Id"
           field :medium_id, "Medium Id"
           field :model_id, "Model Id"
@@ -80,7 +80,9 @@ module HammerCLIForeman
 
           field :comment, "Comment"
         end
-        field :parameters, "Parameters", &HammerCLIForeman::Formatters.method(:parameters)
+        collection :parameters, "Parameters" do
+          field :parameter, nil, HammerCLI::Output::Fields::KeyValue
+        end
       end
     end
 

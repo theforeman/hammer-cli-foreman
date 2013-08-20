@@ -25,23 +25,19 @@ module HammerCLIForeman
 
     class InfoCommand < HammerCLIForeman::InfoCommand
 
-      def self.server_formatter server
-        server["name"] +" ("+ server["url"] +")" if server
-      end
-
       resource ForemanApi::Resources::Subnet, "show"
 
       heading "Subnet info"
       output ListCommand.output_definition do
         from "subnet" do
           field :priority, "Priority"
-          field :dns, "DNS", &method(:server_formatter)
+          field :dns, "DNS", HammerCLI::Output::Fields::Server
           field :dns_primary, "Primary DNS"
           field :dns_secondary, "Secondary DNS"
-          field :domain_ids, "Domain ids"
-          field :tftp, "TFTP", &method(:server_formatter)
+          field :domain_ids, "Domain ids", HammerCLI::Output::Fields::List
+          field :tftp, "TFTP", HammerCLI::Output::Fields::Server
           field :tftp_id, "TFTP id"
-          field :dhcp, "DHCP", &method(:server_formatter)
+          field :dhcp, "DHCP", HammerCLI::Output::Fields::Server
           field :dhcp_id, "DHCP id"
           field :vlanid, "vlan id"
           field :gateway, "Gateway"
