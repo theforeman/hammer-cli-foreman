@@ -31,8 +31,8 @@ module HammerCLIForeman
       heading "Location info"
       output ListCommand.output_definition do
         from "location" do
-          field :created_at, "Created at", &HammerCLIForeman::Formatters.method(:date_formatter)
-          field :updated_at, "Updated at", &HammerCLIForeman::Formatters.method(:date_formatter)
+          field :created_at, "Created at", HammerCLI::Output::Fields::Date
+          field :updated_at, "Updated at", HammerCLI::Output::Fields::Date
         end
       end
 

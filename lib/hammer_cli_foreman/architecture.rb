@@ -14,8 +14,8 @@ module HammerCLIForeman
         from "architecture" do
           field :id, "Id"
           field :name, "Name"
-          field :created_at, "Created at", &HammerCLIForeman::Formatters.method(:date_formatter)
-          field :updated_at, "Updated at", &HammerCLIForeman::Formatters.method(:date_formatter)
+          field :created_at, "Created at", HammerCLI::Output::Fields::Date
+          field :updated_at, "Updated at", HammerCLI::Output::Fields::Date
         end
       end
 
