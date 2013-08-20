@@ -5,6 +5,7 @@ module HammerCLIForeman
 
     def mappings
       {
+        RestClient::Forbidden => :handle_forbidden,
         RestClient::UnprocessableEntity => :handle_unprocessable_entity,
         ArgumentError => :handle_argument_error
       }.merge super
@@ -25,6 +26,12 @@ module HammerCLIForeman
       print_error e.message
       log_full_error e
       return 83
+    end
+
+    def handle_forbidden e
+      print_error "Forbidden - server refused to process the request"
+      log_full_error e
+      32
     end
 
   end

@@ -23,5 +23,10 @@ describe HammerCLIForeman::ExceptionHandler do
     handler.handle_exception(ex, :heading => heading)
   end
 
+  it "should handle forbidden error" do
+    ex = RestClient::Forbidden.new
+    output.expects(:print_error).with('Forbidden - server refused to process the request')
+    handler.handle_exception(ex)
+  end
 end
 
