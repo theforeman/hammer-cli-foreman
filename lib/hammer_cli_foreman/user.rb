@@ -14,9 +14,9 @@ module HammerCLIForeman
         from "user" do
           field :id, "Id"
           field :login, "Login"
-          abstract_field :name, "Name" do |u|
-            u[:firstname].to_s + " " + u[:lastname].to_s
-          end
+        end
+        field :user, "Name", HammerCLI::Output::Fields::Joint, :attributes => [:firstname, :lastname]
+        from "user" do
           field :mail, "Email"
         end
       end
@@ -32,9 +32,9 @@ module HammerCLIForeman
       heading "User info"
       output ListCommand.output_definition do
         from "user" do
-          field :last_login_on, "Last login", &HammerCLIForeman::Formatters.method(:date_formatter)
-          field :created_at, "Created at", &HammerCLIForeman::Formatters.method(:date_formatter)
-          field :updated_at, "Updated at", &HammerCLIForeman::Formatters.method(:date_formatter)
+          field :last_login_on, "Last login", HammerCLI::Output::Fields::Date
+          field :created_at, "Created at", HammerCLI::Output::Fields::Date
+          field :updated_at, "Updated at", HammerCLI::Output::Fields::Date
         end
       end
 
