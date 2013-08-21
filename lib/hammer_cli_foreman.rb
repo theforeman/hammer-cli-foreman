@@ -13,6 +13,7 @@ module HammerCLIForeman
   require 'hammer_cli_foreman/domain'
   require 'hammer_cli_foreman/environment'
   require 'hammer_cli_foreman/host'
+  require 'hammer_cli_foreman/hostgroup'
   require 'hammer_cli_foreman/location'
   require 'hammer_cli_foreman/media'
   require 'hammer_cli_foreman/organization'
