@@ -61,8 +61,6 @@ describe HammerCLIForeman::OperatingSystem do
       it_should_print_column "Partition tables"
       it_should_print_column "Config templates"
       it_should_print_column "Parameters"
-      it_should_print_column "Created at"
-      it_should_print_column "Updated at"
     end
 
   end

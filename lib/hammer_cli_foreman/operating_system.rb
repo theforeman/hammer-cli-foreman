@@ -33,21 +33,16 @@ module HammerCLIForeman
       heading "Operating system info"
       output ListCommand.output_definition do
         from "operatingsystem" do
-
           field :media_names, "Installation media", HammerCLI::Output::Fields::List
           field :architecture_names, "Architectures", HammerCLI::Output::Fields::List
           field :ptable_names, "Partition tables", HammerCLI::Output::Fields::List
           field :config_template_names, "Config templates", HammerCLI::Output::Fields::List
-
-          field :created_at, "Created at", HammerCLI::Output::Fields::Date
-          field :updated_at, "Updated at", HammerCLI::Output::Fields::Date
         end
         collection :parameters, "Parameters" do
           field :parameter, nil, HammerCLI::Output::Fields::KeyValue
         end
       end
 
-      #FIXME: add timestamps to the api
       #FIXME: remove custom retrieve_data after the api has support for listing names
       def retrieve_data
         os = super
@@ -64,9 +59,24 @@ module HammerCLIForeman
 
     class CreateCommand < HammerCLIForeman::CreateCommand
 
+      #FIXME: replace with apipie_options when they are added to the api docs
+      option "--architecture-ids", "ARCH_IDS", "set associated architectures", &HammerCLI::OptionFormatters.method(:list)
+      option "--config-template-ids", "CONFIG_TPL_IDS", "set associated templates", &HammerCLI::OptionFormatters.method(:list)
+      option "--medium-ids", "MEDIUM_IDS", "set associated installation media", &HammerCLI::OptionFormatters.method(:list)
+      option "--ptable-ids", "PTABLE_IDS", "set associated partition tables", &HammerCLI::OptionFormatters.method(:list)
+
       success_message "Operating system created"
       failure_message "Could not create the operating system"
       resource ForemanApi::Resources::OperatingSystem, "create"
+
+      def request_params
+        params = method_options
+        params["operatingsystem"]["architecture_ids"] = architecture_ids if architecture_ids
+        params["operatingsystem"]["config_template_ids"] = config_template_ids if config_template_ids
+        params["operatingsystem"]["medium_ids"] = medium_ids if medium_ids
+        params["operatingsystem"]["ptable_ids"] = ptable_ids if ptable_ids
+        params
+      end
 
       apipie_options
     end
@@ -74,11 +84,26 @@ module HammerCLIForeman
 
     class UpdateCommand < HammerCLIForeman::UpdateCommand
 
+      #FIXME: replace with apipie_options when they are added to the api docs
+      option "--architecture-ids", "ARCH_IDS", "set associated architectures", &HammerCLI::OptionFormatters.method(:list)
+      option "--config-template-ids", "CONFIG_TPL_IDS", "set associated templates", &HammerCLI::OptionFormatters.method(:list)
+      option "--medium-ids", "MEDIUM_IDS", "set associated installation media", &HammerCLI::OptionFormatters.method(:list)
+      option "--ptable-ids", "PTABLE_IDS", "set associated partition tables", &HammerCLI::OptionFormatters.method(:list)
+
       identifiers :id, :label
 
       success_message "Operating system updated"
       failure_message "Could not update the operating system"
       resource ForemanApi::Resources::OperatingSystem, "update"
+
+      def request_params
+        params = method_options
+        params["operatingsystem"]["architecture_ids"] = architecture_ids if architecture_ids
+        params["operatingsystem"]["config_template_ids"] = config_template_ids if config_template_ids
+        params["operatingsystem"]["medium_ids"] = medium_ids if medium_ids
+        params["operatingsystem"]["ptable_ids"] = ptable_ids if ptable_ids
+        params
+      end
 
       apipie_options
     end
@@ -97,7 +122,7 @@ module HammerCLIForeman
 
     class SetParameterCommand < HammerCLIForeman::Parameter::SetCommand
 
-      #FIXME: add option --os-name when api supports it
+      #FIXME: add option --os-label when api supports it
       option "--os-id", "OS_ID", "id of the operating system the parameter is being set for"
 
       success_message_for :update, "Operating system parameter updated"
@@ -119,7 +144,7 @@ module HammerCLIForeman
 
     class DeleteParameterCommand < HammerCLIForeman::Parameter::DeleteCommand
 
-      #FIXME: add option --os-name when api supports it
+      #FIXME: add option --os-label when api supports it
       option "--os-id", "OS_ID", "id of the operating system the parameter is being deleted for"
       success_message "operating system parameter deleted"
 
