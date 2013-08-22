@@ -28,6 +28,8 @@ module HammerCLIForeman
     class InfoCommand < HammerCLIForeman::InfoCommand
       resource ForemanApi::Resources::OperatingSystem, "show"
 
+      identifiers :id, :label
+
       heading "Operating system info"
       output ListCommand.output_definition do
         from "operatingsystem" do
@@ -45,8 +47,7 @@ module HammerCLIForeman
         end
       end
 
-      #FIXME: add timestamps to api
-      #FIXME: either add support for finding by name or disable --name option
+      #FIXME: add timestamps to the api
       #FIXME: remove custom retrieve_data after the api has support for listing names
       def retrieve_data
         os = super
@@ -73,6 +74,8 @@ module HammerCLIForeman
 
     class UpdateCommand < HammerCLIForeman::UpdateCommand
 
+      identifiers :id, :label
+
       success_message "Operating system updated"
       failure_message "Could not update the operating system"
       resource ForemanApi::Resources::OperatingSystem, "update"
@@ -82,6 +85,8 @@ module HammerCLIForeman
 
 
     class DeleteCommand < HammerCLIForeman::DeleteCommand
+
+      identifiers :id, :label
 
       success_message "Operating system deleted"
       failure_message "Could not delete the operating system"
