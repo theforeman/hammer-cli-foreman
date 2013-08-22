@@ -14,8 +14,6 @@ module HammerCLIForeman
         from "architecture" do
           field :id, "Id"
           field :name, "Name"
-          field :created_at, "Created at", HammerCLI::Output::Fields::Date
-          field :updated_at, "Updated at", HammerCLI::Output::Fields::Date
         end
       end
 
@@ -30,6 +28,8 @@ module HammerCLIForeman
       output ListCommand.output_definition do
         from "architecture" do
           field :operatingsystem_ids, "OS ids"
+          field :created_at, "Created at", HammerCLI::Output::Fields::Date
+          field :updated_at, "Updated at", HammerCLI::Output::Fields::Date
         end
       end
 

@@ -16,8 +16,6 @@ module HammerCLIForeman
           field :id, "Id"
           field :name, "Name"
           field :provider, "Provider"
-          field :created_at, "Created at", HammerCLI::Output::Fields::Date
-          field :updated_at, "Updated at", HammerCLI::Output::Fields::Date
         end
       end
 
@@ -56,6 +54,8 @@ module HammerCLIForeman
           field :url, "Url"
           field :description, "Description"
           field :user, "User"
+          field :created_at, "Created at", HammerCLI::Output::Fields::Date
+          field :updated_at, "Updated at", HammerCLI::Output::Fields::Date
         end
       end
 

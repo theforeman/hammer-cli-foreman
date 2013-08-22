@@ -24,7 +24,7 @@ describe HammerCLIForeman::Domain do
       let(:expected_record_count) { cmd.resource.index[0].length }
 
       it_should_print_n_records
-      it_should_print_columns ["Id", "Name", "Created at", "Updated at"]
+      it_should_print_columns ["Id", "Name"]
     end
 
   end
