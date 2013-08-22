@@ -9,19 +9,14 @@ module HammerCLIForeman
 
   class InfoCommand < HammerCLI::Apipie::ReadCommand
 
-    option "--id", "ID", "resource id"
-    option "--name", "NAME", "resource name"
-
-    def validate_options
-      validator.any(:name, :id).required
-    end
+    identifiers :id, :name
 
     def request_params
-      {'id' => (id || name)}
+      {'id' => get_identifier[0]}
     end
 
     def self.apipie_options options={}
-      super(options.merge(:without => ["name", "id"]))
+      super(options.merge(:without => declared_identifiers))
     end
   end
 
@@ -33,22 +28,22 @@ module HammerCLIForeman
 
   class UpdateCommand < HammerCLI::Apipie::WriteCommand
 
-    option "--id", "ID", "resource id"
-    option "--name", "NAME", "resource name", :attribute_name => :current_name
-    option "--new-name", "NEW_NAME", "new name for the resource", :attribute_name => :name
+    identifiers :id, :name
 
-    def validate_options
-      validator.any(:current_name, :id).required
+    def setup_identifier_options
+      super
+      self.class.option "--new-name", "NEW_NAME", "new name for the resource" if self.class.identifier? :name
     end
 
     def request_params
       params = method_options
-      params['id'] = id || current_name
+      params['name'] = new_name if self.class.identifier? :name
+      params['id'] = get_identifier[0]
       params
     end
 
     def self.apipie_options options={}
-      super({:without => ['name', 'id']}.merge(options))
+      super({:without => declared_identifiers}.merge(options))
     end
 
   end
@@ -56,19 +51,14 @@ module HammerCLIForeman
 
   class DeleteCommand < HammerCLI::Apipie::WriteCommand
 
-    option "--id", "ID", "resource id"
-    option "--name", "NAME", "resource name"
-
-    def validate_options
-      validator.any(:name, :id).required
-    end
+    identifiers :id, :name
 
     def request_params
-      {'id' => (id || name)}
+      {'id' => get_identifier[0]}
     end
 
     def self.apipie_options options={}
-      super(options.merge(:without => ["name", "id"]))
+      super({:without => declared_identifiers}.merge(options))
     end
 
   end

@@ -28,22 +28,16 @@ module HammerCLIForeman
     end
 
 
-    class InfoCommand < HammerCLI::Apipie::ReadCommand
-
-      option "--id", "ID", "resource id", :required => true
+    class InfoCommand < HammerCLIForeman::InfoCommand
       resource ForemanApi::Resources::Hostgroup, "show"
 
-      apipie_options :without => ['id']
+      identifiers :id
 
       heading "Hostgroup info"
       output ListCommand.output_definition do
         collection :parameters, "Parameters" do
           field :parameter, nil, HammerCLI::Output::Fields::KeyValue
         end
-      end
-
-      def request_params
-        { 'id' => id }
       end
 
       def retrieve_data
@@ -65,39 +59,27 @@ module HammerCLIForeman
     end
 
 
-    class UpdateCommand < HammerCLI::Apipie::WriteCommand
+    class UpdateCommand < HammerCLIForeman::UpdateCommand
 
-      option "--id", "ID", "resource id", :required => true
+      identifiers :id
+
       success_message "Hostgroup updated"
       failure_message "Could not update the hostgroup"
-
       resource ForemanApi::Resources::Hostgroup, "update"
 
-      apipie_options :without => ['id']
-
-      def request_params
-        params = method_options
-        params['id'] = id
-        params
-      end
-
+      apipie_options
     end
 
 
-    class DeleteCommand < HammerCLI::Apipie::WriteCommand
+    class DeleteCommand < HammerCLIForeman::DeleteCommand
 
-      option "--id", "ID", "resource id", :required => true
+      identifiers :id
 
       success_message "Hostgroup deleted"
       failure_message "Could not delete the hostgroup"
       resource ForemanApi::Resources::Hostgroup, "destroy"
 
-      apipie_options :without => ['id']
-
-      def request_params
-        {'id' => id }
-      end
-
+      apipie_options
     end
 
 
