@@ -28,8 +28,9 @@ class ApipieResourceMock
     # <output in json, multiline>
     parse_re = /.*(\n\d+\n)(.*)/m
     json_string = method["examples"][0][parse_re, 2]
+    response = JSON.parse(json_string) rescue json_string
 
-    [JSON.parse(json_string), nil]
+    [response, nil]
   end
 
 end
