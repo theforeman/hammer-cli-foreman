@@ -1,6 +1,5 @@
 require 'hammer_cli'
 require 'foreman_api'
-require 'hammer_cli_foreman/formatters'
 require 'hammer_cli_foreman/commands'
 require 'hammer_cli_foreman/resource_supported_test'
 
