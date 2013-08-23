@@ -9,6 +9,7 @@ module HammerCLIForeman
   end
 
   require 'hammer_cli_foreman/architecture'
+  require 'hammer_cli_foreman/common_parameter'
   require 'hammer_cli_foreman/compute_resource'
   require 'hammer_cli_foreman/domain'
   require 'hammer_cli_foreman/environment'
