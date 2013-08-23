@@ -1,7 +1,6 @@
 require 'hammer_cli'
 require 'hammer_cli/option_formatters'
 require 'foreman_api'
-require 'hammer_cli_foreman/formatters'
 require 'hammer_cli_foreman/commands'
 
 module HammerCLIForeman
