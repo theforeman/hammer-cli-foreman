@@ -1,0 +1,7 @@
+# Ruby
+Gemfile.lock
+pkg
+
+# CI
+test/reports/*.xml
+coverage
