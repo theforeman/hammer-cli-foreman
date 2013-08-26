@@ -109,8 +109,8 @@ describe HammerCLIForeman::Host do
     context "parameters" do
       it_should_accept "name, environment_id, architecture_id, domain_id, puppet_proxy_id, operatingsystem_id and more",
           ["--name=host", "--environment-id=1", "--architecture-id=1", "--domain-id=1", "--puppet-proxy-id=1", "--operatingsystem-id=1",
-            "--ip=1.2.3.4", "--mac=11:22:33:44:55:66", "--medium-id=1", "--ptable-id=1", "--subnet-id=1",
-            "--sp-subnet-id=1", "--model-id-id=1", "--hostgroup-id=1", "--owner-id=1", '--puppet-ca-proxy-id=1',
+            "--ip=1.2.3.4", "--mac=11:22:33:44:55:66", "--medium-id=1", "--ptable-id=1", "--subnet-id=1", 
+            "--sp-subnet-id=1", "--model-id=1", "--hostgroup-id=1", "--owner-id=1", '--puppet-ca-proxy-id=1',
             "--image-id=1"]
       it_should_fail_with "name or id missing",
           ["--environment-id=1", "--architecture-id=1", "--domain-id=1", "--puppet-proxy-id=1", "--operatingsystem-id=1"]
@@ -135,8 +135,8 @@ describe HammerCLIForeman::Host do
       it_should_accept "name", ["--name=host", "--new-name=host2"]
       it_should_accept "id and more", ["--id=1", "--new-name=host2", "--environment-id=1", "--architecture-id=1",
             "--domain-id=1", "--puppet-proxy-id=1", "--operatingsystem-id=1",
-            "--ip=1.2.3.4", "--mac=11:22:33:44:55:66", "--medium-id=1", "--ptable-id=1", "--subnet-id=1",
-            "--sp-subnet-id=1", "--model-id-id=1", "--hostgroup-id=1", "--owner-id=1", '--puppet-ca-proxy-id=1',
+            "--ip=1.2.3.4", "--mac=11:22:33:44:55:66", "--medium-id=1", "--ptable-id=1", "--subnet-id=1", 
+            "--sp-subnet-id=1", "--model-id=1", "--hostgroup-id=1", "--owner-id=1", '--puppet-ca-proxy-id=1',
             "--image-id=1"]
       it_should_fail_with "no params", []
       it_should_fail_with "name or id missing", ["--new-name=host2"]
