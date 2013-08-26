@@ -1,9 +1,10 @@
 class ApipieResourceMock
 
-  def initialize resource
+  def initialize(resource)
+    @return_values = {}
     @resource = resource
     @resource.doc["methods"].each do |method|
-      self.stubs(method["name"]).returns(stub_return_value(method))
+      stub_method(method)
     end
   end
 
@@ -11,13 +12,27 @@ class ApipieResourceMock
     @resource.doc
   end
 
-  def new attrs
+  def new(attrs)
     return self
+  end
+
+  def expects_with(method_name, params)
+    self.expects(method_name).with(params).returns(return_value_for(method_name))
   end
 
   private
 
-  def stub_return_value method
+  def return_value_for(method_name)
+    @return_values[method_name.to_s]
+  end
+
+  def stub_method(method)
+    value = get_return_value(method)
+    self.stubs(method["name"]).returns(value)
+    @return_values[method["name"].to_s] = value
+  end
+
+  def get_return_value(method)
     return [nil, nil] if method["examples"].empty?
 
     #parse actual json from the example string
@@ -38,7 +53,7 @@ end
 
 class ApipieDisabledResourceMock
 
-  def initialize resource
+  def initialize(resource)
     @resource = resource
     @resource.doc["methods"].each do |method|
       self.stubs(method["name"]).raises(RestClient::ResourceNotFound)
@@ -49,7 +64,7 @@ class ApipieDisabledResourceMock
     @resource.doc
   end
 
-  def new attrs
+  def new(attrs)
     return self
   end
 

@@ -45,10 +45,11 @@ describe HammerCLIForeman::Domain do
     end
 
     context "output" do
-      let(:with_params) { ["--id=1"] }
-      it_should_print_n_records 1
-      it_should_print_columns ["Id", "Name", "Created at", "Updated at"]
-      it_should_print_columns ["DNS Id", "Full Name"]
+      with_params ["--id=1"] do
+        it_should_print_n_records 1
+        it_should_print_columns ["Id", "Name", "Created at", "Updated at"]
+        it_should_print_columns ["DNS Id", "Full Name"]
+      end
     end
 
   end
