@@ -41,13 +41,14 @@ describe HammerCLIForeman::Subnet do
     end
 
     context "output" do
-      let(:with_params) { ["--id=1"] }
-      it_should_print_n_records 1
-      it_should_print_columns ["Id", "Name", "Network", "Mask"]
-      it_should_print_columns ["Priority"]
-      it_should_print_columns ["DNS", "Primary DNS", "Secondary DNS"]
-      it_should_print_columns ["Domain ids", "TFTP", "TFTP id", "DHCP", "DHCP id"]
-      it_should_print_columns ["vlan id", "Gateway", "From", "To"]
+      with_params ["--id=1"] do
+        it_should_print_n_records 1
+        it_should_print_columns ["Id", "Name", "Network", "Mask"]
+        it_should_print_columns ["Priority"]
+        it_should_print_columns ["DNS", "Primary DNS", "Secondary DNS"]
+        it_should_print_columns ["Domain ids", "TFTP", "TFTP id", "DHCP", "DHCP id"]
+        it_should_print_columns ["vlan id", "Gateway", "From", "To"]
+      end
     end
 
   end

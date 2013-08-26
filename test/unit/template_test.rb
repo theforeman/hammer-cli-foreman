@@ -52,9 +52,10 @@ describe HammerCLIForeman::Template do
     end
 
     context "output" do
-      let(:with_params) { ["--id=1"] }
-      it_should_print_n_records 1
-      it_should_print_columns ["Id", "Name", "Type", "OS ids"]
+      with_params ["--id=1"] do
+        it_should_print_n_records 1
+        it_should_print_columns ["Id", "Name", "Type", "OS ids"]
+      end
     end
 
   end

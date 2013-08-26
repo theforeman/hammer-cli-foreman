@@ -43,15 +43,16 @@ describe HammerCLIForeman::Medium do
     end
 
     context "output" do
-      let(:with_params) { ["--id=1"] }
-      it_should_print_n_records 1
-      it_should_print_column "Name"
-      it_should_print_column "Id"
-      it_should_print_column "Path"
-      it_should_print_column "OS Family"
-      it_should_print_column "OS IDs"
-      it_should_print_column "Created at"
-      it_should_print_column "Updated at"
+      with_params ["--id=1"] do
+        it_should_print_n_records 1
+        it_should_print_column "Name"
+        it_should_print_column "Id"
+        it_should_print_column "Path"
+        it_should_print_column "OS Family"
+        it_should_print_column "OS IDs"
+        it_should_print_column "Created at"
+        it_should_print_column "Updated at"
+      end
     end
 
   end
@@ -65,6 +66,10 @@ describe HammerCLIForeman::Medium do
       it_should_accept "name, path, os ids", ["--name=media", "--path=http://some.path/abc/$major/Fedora/$arch/", "--operatingsystem-ids=1,2"]
       it_should_fail_with "name missing", ["--path=http://some.path/abc/$major/Fedora/$arch/"]
       it_should_fail_with "path missing", ["--name=media"]
+    end
+
+    with_params ["--name=medium_x", "--path=http://some.path/", "--operatingsystem-ids=1,2"] do
+      it_should_call_action :create, {'medium' => {'name' => 'medium_x', 'path' => 'http://some.path/', 'operatingsystem_ids' => ['1', '2']}}
     end
   end
 
@@ -92,6 +97,10 @@ describe HammerCLIForeman::Medium do
       it_should_accept "os ids", ["--id=1", "--operatingsystem-ids=1,2"]
       it_should_fail_with "no params", []
       it_should_fail_with "name or id missing", ["--new-name=medium_x", "--path=http://some.path/"]
+    end
+
+    with_params ["--id=1", "--new-name=medium_x", "--path=http://some.path/", "--operatingsystem-ids=1,2"] do
+      it_should_call_action :update, {'id' => '1', 'medium' => {'name' => 'medium_x', 'path' => 'http://some.path/', 'operatingsystem_ids' => ['1', '2']}}
     end
 
   end

@@ -42,12 +42,13 @@ describe HammerCLIForeman::Environment do
     end
 
     context "output" do
-      let(:with_params) { ["--id=1"] }
-      it_should_print_n_records 1
-      it_should_print_column "Name"
-      it_should_print_column "Id"
-      it_should_print_column "Created at"
-      it_should_print_column "Updated at"
+      with_params ["--id=1"] do
+        it_should_print_n_records 1
+        it_should_print_column "Name"
+        it_should_print_column "Id"
+        it_should_print_column "Created at"
+        it_should_print_column "Updated at"
+      end
     end
 
   end
