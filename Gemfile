@@ -1,4 +1,4 @@
-source "http://rubygems.org"
+source "https://rubygems.org"
 
 gemspec
 
@@ -14,4 +14,5 @@ group :test do
   gem 'minitest-spec-context'
   gem 'simplecov'
   gem 'mocha'
+  gem 'ci_reporter'
 end
