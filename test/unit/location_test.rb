@@ -45,16 +45,18 @@ describe HammerCLIForeman::Location do
     end
 
     context "output" do
-      let(:with_params) { ["--id=1"] }
-      it_should_print_n_records 1
-      it_should_print_column "Name"
-      it_should_print_column "Id"
-      it_should_print_column "Created at"
-      it_should_print_column "Updated at"
+      with_params ["--id=1"] do
+        it_should_print_n_records 1
+        it_should_print_column "Name"
+        it_should_print_column "Id"
+        it_should_print_column "Created at"
+        it_should_print_column "Updated at"
+      end
     end
 
-    let(:with_params) { ["--id=1"] }
-    it_should_fail_when_disabled
+    with_params ["--id=1"] do
+      it_should_fail_when_disabled
+    end
   end
 
 
@@ -67,8 +69,9 @@ describe HammerCLIForeman::Location do
       it_should_fail_with "name missing", []
     end
 
-    let(:with_params) { ["--name=org"] }
-    it_should_fail_when_disabled
+    with_params ["--name=loc"] do
+      it_should_fail_when_disabled
+    end
   end
 
 
@@ -82,8 +85,9 @@ describe HammerCLIForeman::Location do
       it_should_fail_with "name or id missing", []
     end
 
-    let(:with_params) { ["--id=1"] }
-    it_should_fail_when_disabled
+    with_params ["--id=1"] do
+      it_should_fail_when_disabled
+    end
   end
 
 
@@ -98,7 +102,8 @@ describe HammerCLIForeman::Location do
       it_should_fail_with "name or id missing", ["--new-name=org2"]
     end
 
-    let(:with_params) { ["--id=1"] }
-    it_should_fail_when_disabled
+    with_params ["--id=1"] do
+      it_should_fail_when_disabled
+    end
   end
 end

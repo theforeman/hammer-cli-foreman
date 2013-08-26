@@ -33,11 +33,26 @@ describe HammerCLIForeman::CommonParameter do
   context "SetCommand" do
 
     let(:cmd) { HammerCLIForeman::CommonParameter::SetCommand.new("") }
+      before :each do
+        cmd.stubs(:parameter_exist?).returns(false)
+      end
 
     context "parameters" do
       it_should_accept "name and value", ["--name=param", "--value=val"]
       it_should_fail_with "name missing", ["--value=val"]
       it_should_fail_with "value missing", ["--name=param"]
+    end
+
+    with_params ["--name=param", "--value=val"] do
+      it_should_call_action :create, {'common_parameter' => {'name' => 'param', 'value' => 'val'}, 'id' => 'param'}
+    end
+
+    with_params ["--name=param", "--value=val"] do
+      before :each do
+        cmd.stubs(:parameter_exist?).returns(true)
+      end
+
+      it_should_call_action :update, {'common_parameter' => {'name' => 'param', 'value' => 'val'}, 'id' => 'param'}
     end
 
   end

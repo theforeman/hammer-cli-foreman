@@ -55,7 +55,7 @@ module HammerCLIForeman
       failure_message "Could not create the partition table"
       resource ForemanApi::Resources::Ptable, "create"
 
-      apipie_options :without => [:layout] + declared_identifiers
+      apipie_options :without => [:layout] + declared_identifiers.keys
     end
 
 
@@ -67,7 +67,7 @@ module HammerCLIForeman
       failure_message "Could not update the partition table"
       resource ForemanApi::Resources::Ptable, "update"
 
-      apipie_options :without => [:layout] + declared_identifiers
+      apipie_options :without => [:layout] + declared_identifiers.keys
     end
 
 

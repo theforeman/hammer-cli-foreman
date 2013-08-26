@@ -42,9 +42,10 @@ describe HammerCLIForeman::ComputeResource do
     end
 
     context "output" do
-      let(:with_params) { ["--id=1"] }
-      it_should_print_n_records 1
-      it_should_print_columns ["Name", "Id", "Provider", "Url"]
+      with_params ["--id=1"] do
+        it_should_print_n_records 1
+        it_should_print_columns ["Name", "Id", "Provider", "Url"]
+      end
     end
 
   end

@@ -2,6 +2,21 @@ require File.join(File.dirname(__FILE__), '../test_output_adapter')
 
 module CommandTestHelper
 
+  def with_params params, &block
+    context "with params "+params.to_s do
+      let(:with_params) { params }
+      self.instance_eval &block
+    end
+  end
+
+  def it_should_call_action action, params
+    it "should call action "+action.to_s do
+      arguments ||= respond_to?(:with_params) ? with_params : []
+      cmd.resource.expects_with(action, params)
+      cmd.run(arguments)
+    end
+  end
+
   def it_should_fail_with message, arguments=[]
     it "should fail with " + message.to_s do
       cmd.output.adapter = HammerCLI::Output::Adapter::Silent.new

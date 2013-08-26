@@ -50,17 +50,18 @@ describe HammerCLIForeman::OperatingSystem do
     end
 
     context "output" do
-      let(:with_params) { ["--id=1"] }
-      it_should_print_n_records 1
-      it_should_print_column "Name"
-      it_should_print_column "Id"
-      it_should_print_column "Release name"
-      it_should_print_column "Family"
-      it_should_print_column "Installation media"
-      it_should_print_column "Architectures"
-      it_should_print_column "Partition tables"
-      it_should_print_column "Config templates"
-      it_should_print_column "Parameters"
+      with_params ["--id=1"] do
+        it_should_print_n_records 1
+        it_should_print_column "Name"
+        it_should_print_column "Id"
+        it_should_print_column "Release name"
+        it_should_print_column "Family"
+        it_should_print_column "Installation media"
+        it_should_print_column "Architectures"
+        it_should_print_column "Partition tables"
+        it_should_print_column "Config templates"
+        it_should_print_column "Parameters"
+      end
     end
 
   end
@@ -73,6 +74,10 @@ describe HammerCLIForeman::OperatingSystem do
     context "parameters" do
       it_should_accept "name, major, minor, family, release name", ["--name=media", "--major=1", "--minor=2", "--family=Red Hat", "--release-name=awesome"]
       it_should_fail_with "name missing", ["--major=1", "--minor=2", "--family=Red Hat", "--release-name=awesome"]
+    end
+
+    with_params ["--name=os", "--major=1", "--minor=2", "--family=Red Hat", "--release-name=awesome"] do
+      it_should_call_action :create, {'operatingsystem' => {'name' => 'os', 'major' => '1', 'minor' => '2', 'release_name' => 'awesome', 'family'=>"Red Hat"}}
     end
   end
 
@@ -97,9 +102,13 @@ describe HammerCLIForeman::OperatingSystem do
     context "parameters" do
       it_should_accept "label", ["--label=os"]
       it_should_accept "id", ["--id=1"]
-      it_should_accept "name, major, minor, family, release name", ["--id=83", "--name=media", "--major=1", "--minor=2", "--family=Red Hat", "--release-name=awesome"]
+      it_should_accept "name, major, minor, family, release name", ["--id=83", "--name=os", "--major=1", "--minor=2", "--family=Red Hat", "--release-name=awesome"]
       it_should_fail_with "no params", []
-      it_should_fail_with "label or id missing", ["--name=media", "--major=1", "--minor=2", "--family=Red Hat", "--release-name=awesome"]
+      it_should_fail_with "label or id missing", ["--name=os", "--major=1", "--minor=2", "--family=Red Hat", "--release-name=awesome"]
+    end
+
+    with_params ["--id=83", "--name=os", "--major=1", "--minor=2", "--family=Red Hat", "--release-name=awesome"] do
+      it_should_call_action :update, {'id' => '83', 'operatingsystem' => {'name' => 'os', 'major' => '1', 'minor' => '2', 'release_name' => 'awesome', 'family'=>"Red Hat"}}
     end
 
   end
