@@ -85,6 +85,7 @@ module HammerCLIForeman
       end
     end
 
+
     class StatusCommand < HammerCLIForeman::InfoCommand
 
       resource ForemanApi::Resources::Host, "status"
@@ -93,6 +94,7 @@ module HammerCLIForeman
         output.print_message records["status"]
       end
     end
+
 
     class PuppetRunCommand < HammerCLIForeman::InfoCommand
 
@@ -103,6 +105,7 @@ module HammerCLIForeman
       end
     end
 
+
     class CreateCommand < HammerCLIForeman::CreateCommand
 
       success_message "Host created"
@@ -110,6 +113,17 @@ module HammerCLIForeman
       resource ForemanApi::Resources::Host, "create"
 
       apipie_options :without => ['host_parameters_attributes']
+
+      #FIXME with following setup it is possible to create hosts with the default network setup
+      # needs create redesign
+      def request_params
+        params = super
+        params['host']['compute_attributes']["nics_attributes"] = {
+          "new_nics"=>{"type"=>"bridge", "_delete"=>"", "bridge"=>""}, 
+          "0"=>{"type"=>"network", "_delete"=>"", "network"=>"default", "bridge"=>""}
+        }
+        params
+      end
     end
 
 
