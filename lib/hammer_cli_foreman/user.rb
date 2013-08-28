@@ -5,17 +5,23 @@ require 'hammer_cli_foreman/commands'
 module HammerCLIForeman
 
   class User < HammerCLI::AbstractCommand
-    class ListCommand < HammerCLI::Apipie::ReadCommand
+    class ListCommand < HammerCLIForeman::ListCommand
       resource ForemanApi::Resources::User, "index"
+
+      def retrieve_data
+        data = super
+        data.map do |d|
+          d["user"]["full_name"] = [d["user"]["firstname"], d["user"]["lastname"]].join(' ')
+          d
+        end
+      end
 
       heading "User list"
       output do
         from "user" do
           field :id, "Id"
           field :login, "Login"
-        end
-        field :user, "Name", HammerCLI::Output::Fields::Joint, :attributes => [:firstname, :lastname]
-        from "user" do
+          field :full_name, "Name"
           field :mail, "Email"
         end
       end
@@ -27,6 +33,12 @@ module HammerCLIForeman
     class InfoCommand < HammerCLI::Apipie::ReadCommand
 
       resource ForemanApi::Resources::User, "show"
+
+      def retrieve_data
+        data = super
+        data["user"]["full_name"] = [data["user"]["firstname"], data["user"]["lastname"]].join(' ')
+        data
+      end
 
       heading "User info"
       output ListCommand.output_definition do

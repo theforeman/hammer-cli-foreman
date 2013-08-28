@@ -4,6 +4,13 @@ module HammerCLIForeman
 
   class ListCommand < HammerCLI::Apipie::ReadCommand
 
+    def output
+      @output ||= HammerCLI::Output::Output.new( 
+            :definition => output_definition, 
+            :adapter => HammerCLI::Output::Adapter::Table.new)
+
+    end
+
   end
 
 
