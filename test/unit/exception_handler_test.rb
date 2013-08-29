@@ -28,5 +28,11 @@ describe HammerCLIForeman::ExceptionHandler do
     output.expects(:print_error).with('Forbidden - server refused to process the request')
     handler.handle_exception(ex)
   end
+
+  it "should handle unknown exception" do
+    output.expects(:print_error).with(heading, "Error: message")
+    MyException = Class.new(Exception)
+    handler.handle_exception(MyException.new('message'), :heading => heading)
+  end
 end
 
