@@ -1,6 +1,5 @@
 require 'hammer_cli'
-require 'hammer_cli_foreman/exception_handler'
-
+require 'hammer_cli/exit_codes'
 
 module HammerCLIForeman
 
@@ -8,6 +7,7 @@ module HammerCLIForeman
     HammerCLIForeman::ExceptionHandler
   end
 
+  require 'hammer_cli_foreman/exception_handler'
   require 'hammer_cli_foreman/architecture'
   require 'hammer_cli_foreman/common_parameter'
   require 'hammer_cli_foreman/compute_resource'

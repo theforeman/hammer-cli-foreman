@@ -18,20 +18,20 @@ module HammerCLIForeman
       response = response[response.keys[0]]
 
       print_error response["full_messages"]
-      return 83
+      HammerCLI::EX_DATAERR
     end
 
 
     def handle_argument_error e
       print_error e.message
       log_full_error e
-      return 83
+      HammerCLI::EX_USAGE
     end
 
     def handle_forbidden e
       print_error "Forbidden - server refused to process the request"
       log_full_error e
-      32
+      HammerCLI::EX_NOPERM
     end
 
   end
