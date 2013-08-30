@@ -4,11 +4,11 @@ module HammerCLIForeman
   class ExceptionHandler < HammerCLI::ExceptionHandler
 
     def mappings
-      {
-        RestClient::Forbidden => :handle_forbidden,
-        RestClient::UnprocessableEntity => :handle_unprocessable_entity,
-        ArgumentError => :handle_argument_error
-      }.merge super
+      super + [
+        [RestClient::Forbidden, :handle_forbidden],
+        [RestClient::UnprocessableEntity, :handle_unprocessable_entity],
+        [ArgumentError, :handle_argument_error]
+      ]
     end
 
     protected
