@@ -77,6 +77,24 @@ describe HammerCLIForeman::Host do
 
   end
 
+  context "FactsCommand" do
+
+    let(:cmd) { HammerCLIForeman::Host::FactsCommand.new("") }
+
+    context "parameters" do
+      it_should_accept "name", ["--name=host"]
+      it_should_fail_with "no arguments"
+    end
+
+    context "output" do
+      with_params ["--name=my5name.mydomain.net"] do
+        it_should_print_n_records 2
+        it_should_print_column "Fact"
+        it_should_print_column "Value"
+      end
+    end
+  end
+
   context "PuppetRunCommand" do
 
     let(:cmd) { HammerCLIForeman::Host::PuppetRunCommand.new("") }
