@@ -106,6 +106,40 @@ module HammerCLIForeman
     end
 
 
+    class FactsCommand < HammerCLIForeman::ListCommand
+
+      resource ForemanApi::Resources::FactValue, "index"
+      identifiers :name
+
+      apipie_options
+
+      output do
+        from "fact" do
+          field :fact, "Fact"
+          field :value, "Value"
+        end
+      end
+
+      def request_params
+        params = method_options
+        params['host_id'] = get_identifier[0]
+        params
+      end
+
+      def self.apipie_options options={}
+        super(options.merge(:without => declared_identifiers.keys))
+      end
+
+      def retrieve_data
+        data = super
+        host = data.keys[0]
+        new_data = data[host].keys.map { |f| { :fact => { :fact => f, :value => data[host][f] } } }
+        new_data
+      end
+
+    end
+
+
     class CreateCommand < HammerCLIForeman::CreateCommand
 
       success_message "Host created"
@@ -192,6 +226,7 @@ module HammerCLIForeman
     subcommand "info", "Detailed info about host.", HammerCLIForeman::Host::InfoCommand
     subcommand "status", "Print host status.", HammerCLIForeman::Host::StatusCommand
     subcommand "puppetrun", "Force puppet run on the agent.", HammerCLIForeman::Host::PuppetRunCommand
+    subcommand "facts", "List facts provided by the host.", HammerCLIForeman::Host::FactsCommand
     subcommand "create", "Create a new host.", HammerCLIForeman::Host::CreateCommand
     subcommand "update", "Update a host.", HammerCLIForeman::Host::UpdateCommand
     subcommand "delete", "Delete a host.", HammerCLIForeman::Host::DeleteCommand
