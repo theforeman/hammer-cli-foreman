@@ -26,7 +26,7 @@ module HammerCLIForeman
       heading "Architecture info"
       output ListCommand.output_definition do
         from "architecture" do
-          field :operatingsystem_ids, "OS ids"
+          field :operatingsystem_ids, "OS ids", HammerCLI::Output::Fields::List
           field :created_at, "Created at", HammerCLI::Output::Fields::Date
           field :updated_at, "Updated at", HammerCLI::Output::Fields::Date
         end
@@ -65,11 +65,39 @@ module HammerCLIForeman
       apipie_options
     end
 
+
+    class AddOSCommand < HammerCLIForeman::AddAssociatedCommand
+
+      resource ForemanApi::Resources::Architecture
+      associated_resource ForemanApi::Resources::OperatingSystem
+
+      associated_identifiers :id
+
+      success_message "OS added to the architecture"
+      failure_message "Could not associate the OS"
+
+    end
+
+
+    class RemoveOSCommand < HammerCLIForeman::RemoveAssociatedCommand
+
+      resource ForemanApi::Resources::Architecture
+      associated_resource ForemanApi::Resources::OperatingSystem
+
+      associated_identifiers :id
+
+      success_message "OS removed from the architecture"
+      failure_message "Could not remove the OS"
+
+    end
+
     subcommand "list", "List architectures.", HammerCLIForeman::Architecture::ListCommand
     subcommand "info", "Detailed info about an architecture.", HammerCLIForeman::Architecture::InfoCommand
     subcommand "create", "Create new architecture.", HammerCLIForeman::Architecture::CreateCommand
     subcommand "update", "Update an architecture.", HammerCLIForeman::Architecture::UpdateCommand
     subcommand "delete", "Delete an architecture.", HammerCLIForeman::Architecture::DeleteCommand
+    subcommand "add_os", "Add operating system.", HammerCLIForeman::Architecture::AddOSCommand
+    subcommand "remove_os", "Remove an operating system.", HammerCLIForeman::Architecture::RemoveOSCommand
   end
 
 end
