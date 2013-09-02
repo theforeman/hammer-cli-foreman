@@ -122,6 +122,8 @@ module HammerCLIForeman
 
     class SetParameterCommand < HammerCLIForeman::Parameter::SetCommand
 
+      desc "Create or update parameter for an operating system."
+
       #FIXME: add option --os-label when api supports it
       option "--os-id", "OS_ID", "id of the operating system the parameter is being set for"
 
@@ -144,6 +146,8 @@ module HammerCLIForeman
 
     class DeleteParameterCommand < HammerCLIForeman::Parameter::DeleteCommand
 
+      desc "Delete parameter for an operating system."
+
       #FIXME: add option --os-label when api supports it
       option "--os-id", "OS_ID", "id of the operating system the parameter is being deleted for"
       success_message "operating system parameter deleted"
@@ -160,13 +164,8 @@ module HammerCLIForeman
       end
     end
 
-    subcommand "list", "List operating systems.", HammerCLIForeman::OperatingSystem::ListCommand
-    subcommand "info", "Detailed info about an operating system.", HammerCLIForeman::OperatingSystem::InfoCommand
-    subcommand "create", "Create new operating system.", HammerCLIForeman::OperatingSystem::CreateCommand
-    subcommand "update", "Update an operating system.", HammerCLIForeman::OperatingSystem::UpdateCommand
-    subcommand "delete", "Delete an operating system.", HammerCLIForeman::OperatingSystem::DeleteCommand
-    subcommand "set_parameter", "Create or update parameter for an operating system.", HammerCLIForeman::OperatingSystem::SetParameterCommand
-    subcommand "delete_parameter", "Delete parameter for an operating system.", HammerCLIForeman::OperatingSystem::DeleteParameterCommand
+
+    autoload_subcommands
   end
 
 end

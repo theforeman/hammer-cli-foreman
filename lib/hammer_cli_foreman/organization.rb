@@ -70,11 +70,7 @@ module HammerCLIForeman
       apipie_options
     end
 
-    subcommand "list", "List organizations.", HammerCLIForeman::Organization::ListCommand
-    subcommand "info", "Detailed info about an organization.", HammerCLIForeman::Organization::InfoCommand
-    subcommand "create", "Create new organization.", HammerCLIForeman::Organization::CreateCommand
-    subcommand "update", "Update an organization.", HammerCLIForeman::Organization::UpdateCommand
-    subcommand "delete", "Delete an organization.", HammerCLIForeman::Organization::DeleteCommand
+    autoload_subcommands
   end
 
 end

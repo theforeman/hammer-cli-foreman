@@ -24,6 +24,10 @@ module HammerCLIForeman
       option "--name", "NAME", "parameter name", :required => true
       option "--value", "VALUE", "parameter value", :required => true
 
+      def self.command_name(name=nil)
+        super(name) || "set_parameter"
+      end
+
       def execute
         if parameter_exist?
           update_parameter
@@ -75,6 +79,10 @@ module HammerCLIForeman
       resource ForemanApi::Resources::Parameter
 
       option "--name", "NAME", "parameter name", :required => true
+
+      def self.command_name(name=nil)
+        super(name) || "delete_parameter"
+      end
 
       def execute
         params = {

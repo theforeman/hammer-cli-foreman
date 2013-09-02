@@ -62,6 +62,9 @@ module HammerCLIForeman
 
     class ListKindsCommand < HammerCLIForeman::ListCommand
 
+      command_name "kinds"
+      desc "List available config template kinds."
+
       heading "Template kind list"
       output do
         from "template_kind" do
@@ -79,6 +82,9 @@ module HammerCLIForeman
 
 
     class DumpCommand < HammerCLIForeman::InfoCommand
+
+      command_name "dump"
+      desc "View config template content."
 
       identifiers :id
 
@@ -148,14 +154,7 @@ module HammerCLIForeman
       resource ForemanApi::Resources::ConfigTemplate, "destroy"
     end
 
-    subcommand "list", "List config templates.", HammerCLIForeman::Template::ListCommand
-    subcommand "info", "Detailed info about a config template.", HammerCLIForeman::Template::InfoCommand
-    subcommand "dump", "View config template content.", HammerCLIForeman::Template::DumpCommand
-    subcommand "create", "Create a new config template.", HammerCLIForeman::Template::CreateCommand
-    subcommand "update", "Update a config template.", HammerCLIForeman::Template::UpdateCommand
-    subcommand "delete", "Delete a config template.", HammerCLIForeman::Template::DeleteCommand
-    subcommand "kinds", "List available config template kinds.", HammerCLIForeman::Template::ListKindsCommand
-
+    autoload_subcommands
   end
 
 end

@@ -4,6 +4,10 @@ module HammerCLIForeman
 
   class ListCommand < HammerCLI::Apipie::ReadCommand
 
+    def self.command_name(name=nil)
+      super(name) || "list"
+    end
+
     def output
       @output ||= HammerCLI::Output::Output.new(
             :definition => output_definition,
@@ -15,6 +19,10 @@ module HammerCLIForeman
 
 
   class InfoCommand < HammerCLI::Apipie::ReadCommand
+
+    def self.command_name(name=nil)
+      super(name) || "info"
+    end
 
     identifiers :id, :name
 
@@ -30,10 +38,18 @@ module HammerCLIForeman
 
   class CreateCommand < HammerCLI::Apipie::WriteCommand
 
+    def self.command_name(name=nil)
+      super(name) || "create"
+    end
+
   end
 
 
   class UpdateCommand < HammerCLI::Apipie::WriteCommand
+
+    def self.command_name(name=nil)
+      super(name) || "update"
+    end
 
     identifiers :id, :name => :current_name
 
@@ -56,6 +72,10 @@ module HammerCLIForeman
 
 
   class DeleteCommand < HammerCLI::Apipie::WriteCommand
+
+    def self.command_name(name=nil)
+      super(name) || "delete"
+    end
 
     identifiers :id, :name
 
@@ -98,7 +118,11 @@ module HammerCLIForeman
     end
 
     def associated_resource_name
-      self.class.associated_resource.name.split("::")[-1].downcase
+      self.class.associated_resource_name
+    end
+
+    def self.associated_resource_name
+      associated_resource.name.split("::")[-1].downcase
     end
 
     def self.associated_resource resource=nil
@@ -147,6 +171,10 @@ module HammerCLIForeman
 
   class AddAssociatedCommand < AssociatedCommand
 
+    def self.command_name(name=nil)
+      super(name) || "add_"+associated_resource_name
+    end
+
     def get_new_ids
       ids = get_current_ids
       required_id = get_required_id
@@ -158,6 +186,10 @@ module HammerCLIForeman
   end
 
   class RemoveAssociatedCommand < AssociatedCommand
+
+    def self.command_name(name=nil)
+      super(name) || "remove_"+associated_resource_name
+    end
 
     def get_new_ids
       ids = get_current_ids

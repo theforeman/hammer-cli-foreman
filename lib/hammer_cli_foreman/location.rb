@@ -70,11 +70,7 @@ module HammerCLIForeman
       apipie_options
     end
 
-    subcommand "list", "List locations.", HammerCLIForeman::Location::ListCommand
-    subcommand "info", "Detailed info about an location.", HammerCLIForeman::Location::InfoCommand
-    subcommand "create", "Create new location.", HammerCLIForeman::Location::CreateCommand
-    subcommand "update", "Update an location.", HammerCLIForeman::Location::UpdateCommand
-    subcommand "delete", "Delete an location.", HammerCLIForeman::Location::DeleteCommand
+    autoload_subcommands
   end
 
 end

@@ -63,11 +63,7 @@ module HammerCLIForeman
       apipie_options
     end
 
-    subcommand "list", "List environments.", HammerCLIForeman::Environment::ListCommand
-    subcommand "info", "Detailed info about an environment.", HammerCLIForeman::Environment::InfoCommand
-    subcommand "create", "Create new environment.", HammerCLIForeman::Environment::CreateCommand
-    subcommand "update", "Update an environment.", HammerCLIForeman::Environment::UpdateCommand
-    subcommand "delete", "Delete an environment.", HammerCLIForeman::Environment::DeleteCommand
+    autoload_subcommands
   end
 
 end

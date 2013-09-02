@@ -29,7 +29,7 @@ module HammerCLIForeman
       output ListCommand.output_definition do
         from "medium" do
           field :os_family, "OS Family"
-          field :operatingsystem_ids, "OS IDs"
+          field :operatingsystem_ids, "OS IDs", HammerCLI::Output::Fields::List
           field :created_at, "Created at", HammerCLI::Output::Fields::Date
           field :updated_at, "Updated at", HammerCLI::Output::Fields::Date
         end
@@ -85,11 +85,7 @@ module HammerCLIForeman
       apipie_options
     end
 
-    subcommand "list", "List installation media.", HammerCLIForeman::Medium::ListCommand
-    subcommand "info", "Detailed info about an installation medium.", HammerCLIForeman::Medium::InfoCommand
-    subcommand "create", "Create new installation medium.", HammerCLIForeman::Medium::CreateCommand
-    subcommand "update", "Update an installation medium.", HammerCLIForeman::Medium::UpdateCommand
-    subcommand "delete", "Delete an installation medium.", HammerCLIForeman::Medium::DeleteCommand
+    autoload_subcommands
   end
 
 end

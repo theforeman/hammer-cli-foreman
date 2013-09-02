@@ -38,6 +38,9 @@ module HammerCLIForeman
 
     class DumpCommand < HammerCLIForeman::InfoCommand
 
+      command_name "dump"
+      desc "View partition table content."
+
       resource ForemanApi::Resources::Ptable, "show"
 
       def print_data(partition_table)
@@ -78,13 +81,7 @@ module HammerCLIForeman
       resource ForemanApi::Resources::Ptable, "destroy"
     end
 
-    subcommand "list", "List partition tables.", HammerCLIForeman::PartitionTable::ListCommand
-    subcommand "info", "Detailed info about a partition table.", HammerCLIForeman::PartitionTable::InfoCommand
-    subcommand "dump", "View partition table content.", HammerCLIForeman::PartitionTable::DumpCommand
-    subcommand "create", "Create a new partition table.", HammerCLIForeman::PartitionTable::CreateCommand
-    subcommand "update", "Update a partition table.", HammerCLIForeman::PartitionTable::UpdateCommand
-    subcommand "delete", "Delete a partition table.", HammerCLIForeman::PartitionTable::DeleteCommand
-
+    autoload_subcommands
   end
 
 end

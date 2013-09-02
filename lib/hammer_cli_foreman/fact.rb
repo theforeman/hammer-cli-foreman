@@ -23,7 +23,7 @@ module HammerCLIForeman
       def retrieve_data
         data = super
         new_data = data.keys.map do |host|
-          data[host].keys.map do |f| 
+          data[host].keys.map do |f|
             { :fact => { :host => host, :fact => f, :value => data[host][f] } }
           end
         end
@@ -31,7 +31,7 @@ module HammerCLIForeman
       end
     end
 
-    subcommand "list", "List facts.", HammerCLIForeman::Fact::ListCommand
+    autoload_subcommands
   end
 
 end

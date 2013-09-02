@@ -77,11 +77,7 @@ module HammerCLIForeman
       apipie_options
     end
 
-    subcommand "list", "List subnets.", HammerCLIForeman::Subnet::ListCommand
-    subcommand "info", "Detailed info about an subnet.", HammerCLIForeman::Subnet::InfoCommand
-    subcommand "create", "Create new subnet.", HammerCLIForeman::Subnet::CreateCommand
-    subcommand "update", "Update an subnet.", HammerCLIForeman::Subnet::UpdateCommand
-    subcommand "delete", "Delete an subnet.", HammerCLIForeman::Subnet::DeleteCommand
+    autoload_subcommands
   end
 
 end

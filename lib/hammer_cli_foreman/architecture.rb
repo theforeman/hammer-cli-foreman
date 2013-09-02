@@ -91,13 +91,7 @@ module HammerCLIForeman
 
     end
 
-    subcommand "list", "List architectures.", HammerCLIForeman::Architecture::ListCommand
-    subcommand "info", "Detailed info about an architecture.", HammerCLIForeman::Architecture::InfoCommand
-    subcommand "create", "Create new architecture.", HammerCLIForeman::Architecture::CreateCommand
-    subcommand "update", "Update an architecture.", HammerCLIForeman::Architecture::UpdateCommand
-    subcommand "delete", "Delete an architecture.", HammerCLIForeman::Architecture::DeleteCommand
-    subcommand "add_os", "Add operating system.", HammerCLIForeman::Architecture::AddOSCommand
-    subcommand "remove_os", "Remove an operating system.", HammerCLIForeman::Architecture::RemoveOSCommand
+    autoload_subcommands
   end
 
 end

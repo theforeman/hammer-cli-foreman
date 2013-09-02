@@ -30,9 +30,10 @@ module HammerCLIForeman
     end
 
 
-    class InfoCommand < HammerCLI::Apipie::ReadCommand
+    class InfoCommand < HammerCLIForeman::InfoCommand
 
       resource ForemanApi::Resources::User, "show"
+      identifiers :id
 
       def retrieve_data
         data = super
@@ -49,12 +50,10 @@ module HammerCLIForeman
         end
       end
 
-      option "--id", "ID", "resource id", :required => true
-
     end
 
 
-    class CreateCommand < HammerCLI::Apipie::WriteCommand
+    class CreateCommand < HammerCLIForeman::CreateCommand
 
       success_message "User created"
       failure_message "Could not create the user"
@@ -64,7 +63,9 @@ module HammerCLIForeman
     end
 
 
-    class UpdateCommand < HammerCLI::Apipie::WriteCommand
+    class UpdateCommand < HammerCLIForeman::UpdateCommand
+
+      identifiers :id
 
       success_message "User updated"
       failure_message "Could not update the user"
@@ -76,6 +77,8 @@ module HammerCLIForeman
 
     class DeleteCommand < HammerCLIForeman::DeleteCommand
 
+      identifiers :id
+
       success_message "User deleted"
       failure_message "Could not delete the user"
       resource ForemanApi::Resources::User, "destroy"
@@ -83,11 +86,7 @@ module HammerCLIForeman
       apipie_options
     end
 
-    subcommand "list", "List users.", HammerCLIForeman::User::ListCommand
-    subcommand "info", "Detailed info about an user.", HammerCLIForeman::User::InfoCommand
-    subcommand "create", "Create new user.", HammerCLIForeman::User::CreateCommand
-    subcommand "update", "Update an user.", HammerCLIForeman::User::UpdateCommand
-    subcommand "delete", "Delete an user.", HammerCLIForeman::User::DeleteCommand
+    autoload_subcommands
   end
 
 end
