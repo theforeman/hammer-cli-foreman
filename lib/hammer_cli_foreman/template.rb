@@ -154,6 +154,33 @@ module HammerCLIForeman
       resource ForemanApi::Resources::ConfigTemplate, "destroy"
     end
 
+
+    class AddOSCommand < HammerCLIForeman::AddAssociatedCommand
+
+      resource ForemanApi::Resources::ConfigTemplate
+      associated_resource ForemanApi::Resources::OperatingSystem
+
+      associated_identifiers :id
+
+      success_message "The operating system has been associated with the config template"
+      failure_message "Could not associate the operating system"
+
+    end
+
+
+    class RemoveOSCommand < HammerCLIForeman::RemoveAssociatedCommand
+
+      resource ForemanApi::Resources::ConfigTemplate
+      associated_resource ForemanApi::Resources::OperatingSystem
+
+      associated_identifiers :id
+
+      success_message "The operating system has been disassociated from the config template"
+      failure_message "Could not disassociate the operating system"
+
+    end
+
+
     autoload_subcommands
   end
 

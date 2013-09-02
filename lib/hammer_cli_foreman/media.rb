@@ -85,6 +85,33 @@ module HammerCLIForeman
       apipie_options
     end
 
+
+    class AddOSCommand < HammerCLIForeman::AddAssociatedCommand
+
+      resource ForemanApi::Resources::Medium
+      associated_resource ForemanApi::Resources::OperatingSystem
+
+      associated_identifiers :id
+
+      success_message "The operating system has been associated with the installation media"
+      failure_message "Could not associate the operating system"
+
+    end
+
+
+    class RemoveOSCommand < HammerCLIForeman::RemoveAssociatedCommand
+
+      resource ForemanApi::Resources::Medium
+      associated_resource ForemanApi::Resources::OperatingSystem
+
+      associated_identifiers :id
+
+      success_message "The operating system has been disassociated from the installation media"
+      failure_message "Could not disassociate the operating system"
+
+    end
+
+
     autoload_subcommands
   end
 

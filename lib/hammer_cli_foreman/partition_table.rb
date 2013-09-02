@@ -81,6 +81,33 @@ module HammerCLIForeman
       resource ForemanApi::Resources::Ptable, "destroy"
     end
 
+
+    class AddOSCommand < HammerCLIForeman::AddAssociatedCommand
+
+      resource ForemanApi::Resources::Ptable
+      associated_resource ForemanApi::Resources::OperatingSystem
+
+      associated_identifiers :id
+
+      success_message "The operating system has been associated with the partition table"
+      failure_message "Could not associate the operating system"
+
+    end
+
+
+    class RemoveOSCommand < HammerCLIForeman::RemoveAssociatedCommand
+
+      resource ForemanApi::Resources::Ptable
+      associated_resource ForemanApi::Resources::OperatingSystem
+
+      associated_identifiers :id
+
+      success_message "The operating system has been disassociated from the partition table"
+      failure_message "Could not disassociate the operating system"
+
+    end
+
+
     autoload_subcommands
   end
 

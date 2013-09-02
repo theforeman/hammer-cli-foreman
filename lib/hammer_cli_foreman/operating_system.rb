@@ -165,6 +165,80 @@ module HammerCLIForeman
     end
 
 
+    class AddArchitectureCommand < HammerCLIForeman::AddAssociatedCommand
+
+      desc "Add an architecture."
+
+      resource ForemanApi::Resources::OperatingSystem
+      associated_resource ForemanApi::Resources::Architecture
+
+      success_message "Architecture associated with the operating system"
+      failure_message "Could not associate the architecture"
+    end
+
+
+    class RemoveArchitectureCommand < HammerCLIForeman::RemoveAssociatedCommand
+
+      desc "Remove an architecture."
+
+      resource ForemanApi::Resources::OperatingSystem
+      associated_resource ForemanApi::Resources::Architecture
+
+      success_message "Architecture disassociated from the operating system"
+      failure_message "Could not disassociate the architecture"
+    end
+
+
+    class AddPartitionTableCommand < HammerCLIForeman::AddAssociatedCommand
+
+      desc "Add a partition table."
+
+      resource ForemanApi::Resources::OperatingSystem
+      associated_resource ForemanApi::Resources::Ptable
+
+      success_message "Partition table associated with the operating system"
+      failure_message "Could not associate the partition table"
+    end
+
+
+    class RemovePartitionTableCommand < HammerCLIForeman::RemoveAssociatedCommand
+
+      desc "Remove a partition table."
+
+      resource ForemanApi::Resources::OperatingSystem
+      associated_resource ForemanApi::Resources::Ptable
+
+      success_message "Partition table disassociated from the operating system"
+      failure_message "Could not disassociate the partition table"
+    end
+
+
+    class AddConfigTemplateCommand < HammerCLIForeman::AddAssociatedCommand
+
+      command_name "add_config_template"
+      desc "Add a config template."
+
+      resource ForemanApi::Resources::OperatingSystem
+      associated_resource ForemanApi::Resources::ConfigTemplate
+
+      success_message "Config template table disassociated from the operating system"
+      failure_message "Could not associate the config template"
+    end
+
+
+    class RemoveConfigTemplateCommand < HammerCLIForeman::RemoveAssociatedCommand
+
+      command_name "remove_config_template"
+      desc "Remove a config template."
+
+      resource ForemanApi::Resources::OperatingSystem
+      associated_resource ForemanApi::Resources::ConfigTemplate
+
+      success_message "Config template table disassociated from the operating system"
+      failure_message "Could not disassociate the configuration template"
+    end
+
+
     autoload_subcommands
   end
 
