@@ -175,6 +175,10 @@ module HammerCLIForeman
       super(name) || "add_"+associated_resource_name
     end
 
+    def self.desc(desc=nil)
+      "Associate a resource"
+    end
+
     def get_new_ids
       ids = get_current_ids
       required_id = get_required_id
@@ -189,6 +193,10 @@ module HammerCLIForeman
 
     def self.command_name(name=nil)
       super(name) || "remove_"+associated_resource_name
+    end
+
+    def self.desc(desc=nil)
+      "Disassociate a resource"
     end
 
     def get_new_ids
