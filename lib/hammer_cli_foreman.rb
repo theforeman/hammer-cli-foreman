@@ -18,6 +18,7 @@ module HammerCLIForeman
   require 'hammer_cli_foreman/hostgroup'
   require 'hammer_cli_foreman/location'
   require 'hammer_cli_foreman/media'
+  require 'hammer_cli_foreman/model'
   require 'hammer_cli_foreman/operating_system'
   require 'hammer_cli_foreman/organization'
   require 'hammer_cli_foreman/partition_table'
