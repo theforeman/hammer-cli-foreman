@@ -67,11 +67,11 @@ describe HammerCLIForeman::Host do
     let(:cmd) { HammerCLIForeman::Host::StatusCommand.new("") }
 
     context "output" do
-      let(:with_params) { ["--id=1"] }
-
-      it "should output status" do
-        cmd.output.adapter = TestAdapter.new
-        proc { cmd.run(with_params) }.must_output "missing\n"
+      with_params ["--id=1"] do
+        it "should output status" do
+          cmd.output.adapter = TestAdapter.new
+          proc { cmd.run(with_params) }.must_output "missing\n"
+        end
       end
     end
 
@@ -100,15 +100,45 @@ describe HammerCLIForeman::Host do
     let(:cmd) { HammerCLIForeman::Host::PuppetRunCommand.new("") }
 
     context "output" do
-      let(:with_params) { ["--id=1"] }
-      it "should inform that puppet was triggered" do
-        cmd.output.adapter = TestAdapter.new
-        proc { cmd.run(with_params) }.must_output "Puppet run triggered\n"
+      with_params ["--id=1"] do
+        it "should inform that puppet was triggered" do
+          cmd.output.adapter = TestAdapter.new
+          proc { cmd.run(with_params) }.must_output "Puppet run triggered\n"
+        end
       end
     end
   end
 
-   context "DeleteCommand" do
+
+  context "ReportsCommand" do
+
+    let(:cmd) { HammerCLIForeman::Host::ReportsCommand.new("") }
+
+    context "parameters" do
+      it_should_accept "id", ["--id=1"]
+      it_should_accept "name", ["--name=my.test.host.org"]
+    end
+
+    context "output" do
+      with_params ["--id=1"] do
+        let(:expected_record_count) { cmd.resource.call(:index)[0].length }
+
+        it_should_print_n_records
+        it_should_print_column "Id"
+        it_should_print_column "Host"
+        it_should_print_column "Last report"
+        it_should_print_column "Applied"
+        it_should_print_column "Restarted"
+        it_should_print_column "Failed"
+        it_should_print_column "Restart Failures"
+        it_should_print_column "Skipped"
+        it_should_print_column "Pending"
+      end
+    end
+
+  end
+
+  context "DeleteCommand" do
 
     let(:cmd) { HammerCLIForeman::Host::DeleteCommand.new("") }
 
