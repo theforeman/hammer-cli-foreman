@@ -8,7 +8,7 @@ describe HammerCLIForeman::Fact do
 
   before :each do
     cmd.output.adapter = HammerCLI::Output::Adapter::Silent.new
-    cmd.class.resource ApipieResourceMock.new(cmd.class.resource)
+    cmd.class.resource ApipieResourceMock.new(cmd.class.resource.resource_class)
   end
 
   context "ListCommand" do

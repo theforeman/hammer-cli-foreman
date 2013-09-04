@@ -1,10 +1,13 @@
 require 'hammer_cli'
 require 'foreman_api'
 require 'hammer_cli_foreman/commands'
+require 'hammer_cli_foreman/associating_commands'
 
 module HammerCLIForeman
 
-  class PartitionTable < HammerCLI::AbstractCommand
+  class PartitionTable < HammerCLI::Apipie::Command
+
+    resource ForemanApi::Resources::Ptable
 
     class ListCommand < HammerCLIForeman::ListCommand
 
@@ -17,7 +20,6 @@ module HammerCLIForeman
         end
       end
 
-      resource ForemanApi::Resources::Ptable, "index"
       apipie_options
     end
 
@@ -32,7 +34,6 @@ module HammerCLIForeman
         end
       end
 
-      resource ForemanApi::Resources::Ptable, "show"
     end
 
 
@@ -41,7 +42,6 @@ module HammerCLIForeman
       command_name "dump"
       desc "View partition table content."
 
-      resource ForemanApi::Resources::Ptable, "show"
 
       def print_data(partition_table)
         puts partition_table["ptable"]["layout"]
@@ -56,7 +56,6 @@ module HammerCLIForeman
 
       success_message "Partition table created"
       failure_message "Could not create the partition table"
-      resource ForemanApi::Resources::Ptable, "create"
 
       apipie_options :without => [:layout] + declared_identifiers.keys
     end
@@ -68,7 +67,6 @@ module HammerCLIForeman
 
       success_message "Partition table updated"
       failure_message "Could not update the partition table"
-      resource ForemanApi::Resources::Ptable, "update"
 
       apipie_options :without => [:layout] + declared_identifiers.keys
     end
@@ -78,34 +76,10 @@ module HammerCLIForeman
 
       success_message "Partition table deleted"
       failure_message "Could not delete the partition table"
-      resource ForemanApi::Resources::Ptable, "destroy"
     end
 
 
-    class AddOSCommand < HammerCLIForeman::AddAssociatedCommand
-
-      resource ForemanApi::Resources::Ptable
-      associated_resource ForemanApi::Resources::OperatingSystem
-
-      associated_identifiers :id
-
-      success_message "The operating system has been associated with the partition table"
-      failure_message "Could not associate the operating system"
-
-    end
-
-
-    class RemoveOSCommand < HammerCLIForeman::RemoveAssociatedCommand
-
-      resource ForemanApi::Resources::Ptable
-      associated_resource ForemanApi::Resources::OperatingSystem
-
-      associated_identifiers :id
-
-      success_message "The operating system has been disassociated from the partition table"
-      failure_message "Could not disassociate the operating system"
-
-    end
+    include HammerCLIForeman::AssociatingCommands::OperatingSystem
 
 
     autoload_subcommands

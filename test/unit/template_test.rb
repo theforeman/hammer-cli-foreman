@@ -16,10 +16,10 @@ describe HammerCLIForeman::Template do
 
   before :each do
     cmd.output.adapter = HammerCLI::Output::Adapter::Silent.new
-    cmd.class.resource ApipieResourceMock.new(cmd.class.resource)
-    cmd.class.resource.stubs(:index).returns([[], nil])
-    cmd.class.resource.stubs(:show).returns([template_hash, nil])
-
+    resource_mock = ApipieResourceMock.new(cmd.class.resource.resource_class)
+    resource_mock.stubs(:index).returns([[], nil])
+    resource_mock.stubs(:show).returns([template_hash, nil])
+    cmd.class.resource resource_mock
     File.stubs(:read).returns("")
   end
 
@@ -33,7 +33,7 @@ describe HammerCLIForeman::Template do
     end
 
     context "output" do
-      let(:expected_record_count) { cmd.resource.index[0].length }
+      let(:expected_record_count) { cmd.resource.call(:index)[0].length }
 
       it_should_print_n_records
       it_should_print_columns ["Id", "Name", "Type"]

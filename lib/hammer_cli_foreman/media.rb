@@ -1,14 +1,15 @@
 require 'hammer_cli'
 require 'foreman_api'
 require 'hammer_cli_foreman/commands'
+require 'hammer_cli_foreman/associating_commands'
 
 module HammerCLIForeman
 
-  class Medium < HammerCLI::AbstractCommand
+  class Medium < HammerCLI::Apipie::Command
+
+    resource ForemanApi::Resources::Medium
 
     class ListCommand < HammerCLIForeman::ListCommand
-      resource ForemanApi::Resources::Medium, "index"
-
       heading "Installation Media"
       output do
         from "medium" do
@@ -23,8 +24,6 @@ module HammerCLIForeman
 
 
     class InfoCommand < HammerCLIForeman::InfoCommand
-      resource ForemanApi::Resources::Medium, "show"
-
       heading "Medium info"
       output ListCommand.output_definition do
         from "medium" do
@@ -42,7 +41,6 @@ module HammerCLIForeman
 
       success_message "Installation medium created"
       failure_message "Could not create the installation medium"
-      resource ForemanApi::Resources::Medium, "create"
 
       apipie_options
 
@@ -61,7 +59,6 @@ module HammerCLIForeman
 
       success_message "Installation medium updated"
       failure_message "Could not update the installation media"
-      resource ForemanApi::Resources::Medium, "update"
 
       apipie_options
 
@@ -80,37 +77,12 @@ module HammerCLIForeman
 
       success_message "Installation medium deleted"
       failure_message "Could not delete the installation media"
-      resource ForemanApi::Resources::Medium, "destroy"
 
       apipie_options
     end
 
 
-    class AddOSCommand < HammerCLIForeman::AddAssociatedCommand
-
-      resource ForemanApi::Resources::Medium
-      associated_resource ForemanApi::Resources::OperatingSystem
-
-      associated_identifiers :id
-
-      success_message "The operating system has been associated with the installation media"
-      failure_message "Could not associate the operating system"
-
-    end
-
-
-    class RemoveOSCommand < HammerCLIForeman::RemoveAssociatedCommand
-
-      resource ForemanApi::Resources::Medium
-      associated_resource ForemanApi::Resources::OperatingSystem
-
-      associated_identifiers :id
-
-      success_message "The operating system has been disassociated from the installation media"
-      failure_message "Could not disassociate the operating system"
-
-    end
-
+    include HammerCLIForeman::AssociatingCommands::OperatingSystem
 
     autoload_subcommands
   end

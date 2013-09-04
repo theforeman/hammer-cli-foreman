@@ -4,6 +4,8 @@ module HammerCLIForeman
 
   class ListCommand < HammerCLI::Apipie::ReadCommand
 
+    action :index
+
     def self.command_name(name=nil)
       super(name) || "list"
     end
@@ -19,6 +21,8 @@ module HammerCLIForeman
 
 
   class InfoCommand < HammerCLI::Apipie::ReadCommand
+
+   action :show
 
     def self.command_name(name=nil)
       super(name) || "info"
@@ -38,6 +42,8 @@ module HammerCLIForeman
 
   class CreateCommand < HammerCLI::Apipie::WriteCommand
 
+    action :create
+
     def self.command_name(name=nil)
       super(name) || "create"
     end
@@ -46,6 +52,8 @@ module HammerCLIForeman
 
 
   class UpdateCommand < HammerCLI::Apipie::WriteCommand
+
+    action :update
 
     def self.command_name(name=nil)
       super(name) || "update"
@@ -73,6 +81,8 @@ module HammerCLIForeman
 
   class DeleteCommand < HammerCLI::Apipie::WriteCommand
 
+    action :destroy
+
     def self.command_name(name=nil)
       super(name) || "delete"
     end
@@ -93,10 +103,10 @@ module HammerCLIForeman
   class AssociatedCommand < HammerCLI::Apipie::WriteCommand
 
     identifiers :name, :id
-    action "update"
+    action :update
 
     def validate_options
-      associated_ids = self.class.declared_associated_identifiers.collect {|id_name| "associated_"+id_name.to_s }
+      associated_ids = self.class.declared_associated_identifiers.collect {|id_name| "associated_#{id_name}" }
       validator.any(*associated_ids).required
       validator.any(*self.class.declared_identifiers.values).required
     end
@@ -107,28 +117,23 @@ module HammerCLIForeman
     end
 
     def setup_associated_identifier_options
-      name = associated_resource_name
-      self.class.option "--"+name.to_s, name.to_s.upcase, " ", :attribute_name => :associated_name if self.class.declared_associated_identifiers.include? :name
-      self.class.option "--"+name.to_s+"-id", name.to_s.upcase+"_ID", " ", :attribute_name => :associated_id if self.class.declared_associated_identifiers.include? :id
+      name = associated_resource.name.to_s
+      option_switch = "--"+name.gsub('_', '-')
+      self.class.option option_switch, name.upcase, " ", :attribute_name => :associated_name if self.class.declared_associated_identifiers.include? :name
+      self.class.option option_switch+"-id", name.upcase+"_ID", " ", :attribute_name => :associated_id if self.class.declared_associated_identifiers.include? :id
     end
+
 
     def associated_resource
-      @associated_resource ||= self.class.associated_resource.new resource_config
-      @associated_resource
+      ResourceInstance.from_definition(self.class.associated_resource, resource_config)
     end
 
-    def associated_resource_name
-      self.class.associated_resource_name
-    end
-
-    def self.associated_resource_name
-      associated_resource.name.split("::")[-1].downcase
-    end
-
-    def self.associated_resource resource=nil
-      @associated_api_resource = resource unless resource.nil?
+    def self.associated_resource resource_class=nil
+      @associated_api_resource = HammerCLI::Apipie::ResourceDefinition.new(resource_class) unless resource_class.nil?
       return @associated_api_resource
     end
+
+
 
     def self.associated_identifiers *keys
       @associated_identifiers = keys
@@ -151,18 +156,18 @@ module HammerCLIForeman
     end
 
     def get_current_ids
-      item = resource.send('show', {'id' => get_identifier[0]})[0]
-      item[resource_name][associated_resource_name+'_ids'] || []
+      item = resource.call('show', {'id' => get_identifier[0]})[0]
+      item[resource.name][associated_resource.name+'_ids'] || []
     end
 
     def get_required_id
-      item = associated_resource.send('show', {'id' => associated_id || associated_name})[0]
-      item[associated_resource_name]['id']
+      item = associated_resource.call('show', {'id' => associated_id || associated_name})[0]
+      item[associated_resource.name]['id']
     end
 
     def request_params
       params = method_options
-      params[resource_name][associated_resource_name+'_ids'] = get_new_ids
+      params[resource.name][associated_resource.name+'_ids'] = get_new_ids
       params['id'] = get_identifier[0]
       params
     end
@@ -172,7 +177,7 @@ module HammerCLIForeman
   class AddAssociatedCommand < AssociatedCommand
 
     def self.command_name(name=nil)
-      super(name) || "add_"+associated_resource_name
+      super(name) || "add_"+associated_resource.name
     end
 
     def self.desc(desc=nil)
@@ -192,7 +197,7 @@ module HammerCLIForeman
   class RemoveAssociatedCommand < AssociatedCommand
 
     def self.command_name(name=nil)
-      super(name) || "remove_"+associated_resource_name
+      super(name) || "remove_"+associated_resource.name
     end
 
     def self.desc(desc=nil)

@@ -1,10 +1,13 @@
 require 'hammer_cli'
 require 'foreman_api'
 require 'hammer_cli_foreman/commands'
+require 'hammer_cli_foreman/associating_commands'
 
 module HammerCLIForeman
 
-  class Template < HammerCLI::AbstractCommand
+  class Template < HammerCLI::Apipie::Command
+
+    resource ForemanApi::Resources::ConfigTemplate
 
     class ListCommand < HammerCLIForeman::ListCommand
 
@@ -28,7 +31,6 @@ module HammerCLIForeman
         end
       end
 
-      resource ForemanApi::Resources::ConfigTemplate, "index"
       apipie_options
     end
 
@@ -56,7 +58,6 @@ module HammerCLIForeman
         template
       end
 
-      resource ForemanApi::Resources::ConfigTemplate, "show"
     end
 
 
@@ -88,8 +89,6 @@ module HammerCLIForeman
 
       identifiers :id
 
-      resource ForemanApi::Resources::ConfigTemplate, "show"
-
       def print_data(template)
         puts template["config_template"]["template"]
       end
@@ -104,7 +103,6 @@ module HammerCLIForeman
 
       success_message "Config template created"
       failure_message "Could not create the config template"
-      resource ForemanApi::Resources::ConfigTemplate, "create"
 
       def snippet
         type == "snippet"
@@ -129,7 +127,6 @@ module HammerCLIForeman
 
       success_message "Config template updated"
       failure_message "Could not update the config template"
-      resource ForemanApi::Resources::ConfigTemplate, "update"
 
       def snippet
         type == "snippet"
@@ -151,34 +148,10 @@ module HammerCLIForeman
 
       success_message "Config template deleted"
       failure_message "Could not delete the config template"
-      resource ForemanApi::Resources::ConfigTemplate, "destroy"
     end
 
 
-    class AddOSCommand < HammerCLIForeman::AddAssociatedCommand
-
-      resource ForemanApi::Resources::ConfigTemplate
-      associated_resource ForemanApi::Resources::OperatingSystem
-
-      associated_identifiers :id
-
-      success_message "The operating system has been associated with the config template"
-      failure_message "Could not associate the operating system"
-
-    end
-
-
-    class RemoveOSCommand < HammerCLIForeman::RemoveAssociatedCommand
-
-      resource ForemanApi::Resources::ConfigTemplate
-      associated_resource ForemanApi::Resources::OperatingSystem
-
-      associated_identifiers :id
-
-      success_message "The operating system has been disassociated from the config template"
-      failure_message "Could not disassociate the operating system"
-
-    end
+    include HammerCLIForeman::AssociatingCommands::OperatingSystem
 
 
     autoload_subcommands

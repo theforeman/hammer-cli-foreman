@@ -1,10 +1,13 @@
 require 'hammer_cli'
 require 'foreman_api'
 require 'hammer_cli_foreman/commands'
+require 'hammer_cli_foreman/associating_commands'
 
 module HammerCLIForeman
 
-  class Architecture < HammerCLI::AbstractCommand
+  class Architecture < HammerCLI::Apipie::Command
+
+    resource ForemanApi::Resources::Architecture
 
     class ListCommand < HammerCLIForeman::ListCommand
 
@@ -16,7 +19,6 @@ module HammerCLIForeman
         end
       end
 
-      resource ForemanApi::Resources::Architecture, "index"
       apipie_options
     end
 
@@ -32,64 +34,31 @@ module HammerCLIForeman
         end
       end
 
-      resource ForemanApi::Resources::Architecture, "show"
-
     end
 
 
     class CreateCommand < HammerCLIForeman::CreateCommand
-
       success_message "Architecture created"
       failure_message "Could not create the architecture"
-      resource ForemanApi::Resources::Architecture, "create"
 
       apipie_options
     end
 
 
     class DeleteCommand < HammerCLIForeman::DeleteCommand
-
       success_message "Architecture deleted"
       failure_message "Could not delete the architecture"
-      resource ForemanApi::Resources::Architecture, "destroy"
-
     end
 
 
     class UpdateCommand < HammerCLIForeman::UpdateCommand
-
       success_message "Architecture updated"
       failure_message "Could not update the architecture"
-      resource ForemanApi::Resources::Architecture, "update"
 
       apipie_options
     end
 
-
-    class AddOSCommand < HammerCLIForeman::AddAssociatedCommand
-
-      resource ForemanApi::Resources::Architecture
-      associated_resource ForemanApi::Resources::OperatingSystem
-
-      associated_identifiers :id
-
-      success_message "OS added to the architecture"
-      failure_message "Could not associate the OS"
-
-    end
-
-
-    class RemoveOSCommand < HammerCLIForeman::RemoveAssociatedCommand
-
-      resource ForemanApi::Resources::Architecture
-      associated_resource ForemanApi::Resources::OperatingSystem
-
-      associated_identifiers :id
-
-      success_message "OS removed from the architecture"
-      failure_message "Could not remove the OS"
-
-    end
+    include HammerCLIForeman::AssociatingCommands::OperatingSystem
 
     autoload_subcommands
   end

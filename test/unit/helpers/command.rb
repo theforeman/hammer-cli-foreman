@@ -12,7 +12,7 @@ module CommandTestHelper
   def it_should_call_action action, params
     it "should call action "+action.to_s do
       arguments ||= respond_to?(:with_params) ? with_params : []
-      cmd.resource.expects_with(action, params)
+      cmd.resource.resource_class.expects_with(action, params)
       cmd.run(arguments)
     end
   end
@@ -47,7 +47,7 @@ module CommandTestHelper
   end
 
   def it_should_print_n_records count=nil, arguments=nil
-    it "should print " + count.to_s + " records" do
+    it "should print correct count of records" do
       arguments ||= respond_to?(:with_params) ? with_params : []
 
       cmd.output.adapter = TestAdapter.new
@@ -55,6 +55,7 @@ module CommandTestHelper
       out, err = capture_io do
         cmd.run(arguments)
       end
+
       out.split(/\n/).length.must_equal count+1 # plus 1 for line with column headers
     end
   end
