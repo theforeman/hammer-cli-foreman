@@ -21,14 +21,17 @@ module HammerCLIForeman
       end
 
       def retrieve_data
-        data = super
-        new_data = data.keys.map do |host|
-          data[host].keys.map do |f|
-            { :fact => { :host => host, :fact => f, :value => data[host][f] } }
+        self.class.unhash_facts(super)
+      end
+
+      def self.unhash_facts(facts_hash)
+        facts_hash.inject([]) do |list, (host, facts)|
+          list + facts.collect do |(fact, value)|
+            { :fact => { :host => host, :fact => fact, :value => value } }
           end
         end
-        new_data.flatten(1)
       end
+
     end
 
     autoload_subcommands

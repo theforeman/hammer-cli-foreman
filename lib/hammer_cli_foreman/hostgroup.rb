@@ -81,6 +81,29 @@ module HammerCLIForeman
     end
 
 
+    class PuppetClassesCommand < HammerCLIForeman::ListCommand
+
+      command_name "puppet_classes"
+      resource ForemanApi::Resources::Puppetclass
+
+      identifiers :id
+
+      output HammerCLIForeman::PuppetClass::ListCommand.output_definition
+
+      def retrieve_data
+        HammerCLIForeman::PuppetClass::ListCommand.unhash_classes(super)
+      end
+
+      def request_params
+        params = method_options
+        params['hostgroup_id'] = get_identifier[0]
+        params
+      end
+
+      apipie_options
+    end
+
+
     class SetParameterCommand < HammerCLIForeman::Parameter::SetCommand
 
       desc "Create or update parameter for a hostgroup."

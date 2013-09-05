@@ -83,6 +83,7 @@ describe HammerCLIForeman::Host do
 
     context "parameters" do
       it_should_accept "name", ["--name=host"]
+      it_should_accept "id", ["--id=1"]
       it_should_fail_with "no arguments"
     end
 
@@ -94,6 +95,27 @@ describe HammerCLIForeman::Host do
       end
     end
   end
+
+
+  context "PuppetClassesCommand" do
+
+    let(:cmd) { HammerCLIForeman::Host::PuppetClassesCommand.new("") }
+
+    context "parameters" do
+      it_should_accept "name", ["--name=host"]
+      it_should_accept "id", ["--id=1"]
+      it_should_fail_with "name or id missing", []
+    end
+
+    context "output" do
+      with_params ["--name=my5name.mydomain.net"] do
+        it_should_print_column "Id"
+        it_should_print_column "Name"
+      end
+    end
+
+  end
+
 
   context "PuppetRunCommand" do
 
