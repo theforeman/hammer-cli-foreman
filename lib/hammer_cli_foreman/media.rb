@@ -1,14 +1,15 @@
 require 'hammer_cli'
 require 'foreman_api'
 require 'hammer_cli_foreman/commands'
+require 'hammer_cli_foreman/associating_commands'
 
 module HammerCLIForeman
 
-  class Medium < HammerCLI::AbstractCommand
+  class Medium < HammerCLI::Apipie::Command
+
+    resource ForemanApi::Resources::Medium
 
     class ListCommand < HammerCLIForeman::ListCommand
-      resource ForemanApi::Resources::Medium, "index"
-
       heading "Installation Media"
       output do
         from "medium" do
@@ -23,13 +24,11 @@ module HammerCLIForeman
 
 
     class InfoCommand < HammerCLIForeman::InfoCommand
-      resource ForemanApi::Resources::Medium, "show"
-
       heading "Medium info"
       output ListCommand.output_definition do
         from "medium" do
           field :os_family, "OS Family"
-          field :operatingsystem_ids, "OS IDs"
+          field :operatingsystem_ids, "OS IDs", HammerCLI::Output::Fields::List
           field :created_at, "Created at", HammerCLI::Output::Fields::Date
           field :updated_at, "Updated at", HammerCLI::Output::Fields::Date
         end
@@ -42,7 +41,6 @@ module HammerCLIForeman
 
       success_message "Installation medium created"
       failure_message "Could not create the installation medium"
-      resource ForemanApi::Resources::Medium, "create"
 
       apipie_options
 
@@ -61,7 +59,6 @@ module HammerCLIForeman
 
       success_message "Installation medium updated"
       failure_message "Could not update the installation media"
-      resource ForemanApi::Resources::Medium, "update"
 
       apipie_options
 
@@ -80,16 +77,14 @@ module HammerCLIForeman
 
       success_message "Installation medium deleted"
       failure_message "Could not delete the installation media"
-      resource ForemanApi::Resources::Medium, "destroy"
 
       apipie_options
     end
 
-    subcommand "list", "List installation media.", HammerCLIForeman::Medium::ListCommand
-    subcommand "info", "Detailed info about an installation medium.", HammerCLIForeman::Medium::InfoCommand
-    subcommand "create", "Create new installation medium.", HammerCLIForeman::Medium::CreateCommand
-    subcommand "update", "Update an installation medium.", HammerCLIForeman::Medium::UpdateCommand
-    subcommand "delete", "Delete an installation medium.", HammerCLIForeman::Medium::DeleteCommand
+
+    include HammerCLIForeman::AssociatingCommands::OperatingSystem
+
+    autoload_subcommands
   end
 
 end

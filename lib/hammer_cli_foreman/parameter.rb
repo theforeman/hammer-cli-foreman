@@ -19,20 +19,27 @@ module HammerCLIForeman
     class SetCommand < HammerCLI::Apipie::Command
 
       include HammerCLI::Messages
-      resource ForemanApi::Resources::Parameter
 
       option "--name", "NAME", "parameter name", :required => true
       option "--value", "VALUE", "parameter value", :required => true
 
+      def self.command_name(name=nil)
+        super(name) || "set_parameter"
+      end
+
+      def self.resource(resource=nil)
+        super(resource) || HammerCLI::Apipie::ResourceDefinition.new(ForemanApi::Resources::Parameter)
+      end
+
       def execute
         if parameter_exist?
           update_parameter
-          output.print_message success_message_for :update if  success_message_for :update
+          output.print_message success_message_for :update if success_message_for :update
         else
           create_parameter
-          output.print_message success_message_for :create if  success_message_for :create
+          output.print_message success_message_for :create if success_message_for :create
         end
-        0
+        HammerCLI::EX_OK
       end
 
       def base_action_params
@@ -40,7 +47,7 @@ module HammerCLIForeman
       end
 
       def parameter_exist?
-        params = resource.index(base_action_params)[0]
+        params = resource.call(:index, base_action_params)[0]
         params.find { |p| p["parameter"]["name"] == name }
       end
 
@@ -52,7 +59,7 @@ module HammerCLIForeman
           }
         }.merge base_action_params
 
-        resource.update(params)
+        resource.call(:update, params)
       end
 
       def create_parameter
@@ -63,7 +70,7 @@ module HammerCLIForeman
           }
         }.merge base_action_params
 
-        resource.create(params)
+        resource.call(:create, params)
       end
 
     end
@@ -72,18 +79,25 @@ module HammerCLIForeman
     class DeleteCommand < HammerCLI::Apipie::Command
 
       include HammerCLI::Messages
-      resource ForemanApi::Resources::Parameter
 
       option "--name", "NAME", "parameter name", :required => true
+
+      def self.command_name(name=nil)
+        super(name) || "delete_parameter"
+      end
+
+      def self.resource(resource=nil)
+        super(resource) || HammerCLI::Apipie::ResourceDefinition.new(ForemanApi::Resources::Parameter)
+      end
 
       def execute
         params = {
           "id" => name
         }.merge base_action_params
 
-        resource.destroy(params)
+        resource.call(:destroy, params)
         output.print_message success_message if success_message
-        0
+        HammerCLI::EX_OK
       end
 
       def base_action_params

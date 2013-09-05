@@ -79,6 +79,8 @@ module HammerCLIForeman
 
     class SetParameterCommand < HammerCLIForeman::Parameter::SetCommand
 
+      desc "Create or update parameter for a domain."
+
       option "--domain-name", "DOMAIN_NAME", "name of the domain the parameter is being set for"
       option "--domain-id", "DOMAIN_ID", "id of the domain the parameter is being set for"
 
@@ -101,6 +103,8 @@ module HammerCLIForeman
 
     class DeleteParameterCommand < HammerCLIForeman::Parameter::DeleteCommand
 
+      desc "Delete parameter for a domain."
+
       option "--domain-name", "DOMAIN_NAME", "name of the domain the parameter is being deleted for"
       option "--domain-id", "DOMAIN_ID", "id of the domain the parameter is being deleted for"
 
@@ -118,13 +122,7 @@ module HammerCLIForeman
       end
     end
 
-    subcommand "list", "List domains.", HammerCLIForeman::Domain::ListCommand
-    subcommand "info", "Detailed info about a domain.", HammerCLIForeman::Domain::InfoCommand
-    subcommand "create", "Create a new domain.", HammerCLIForeman::Domain::CreateCommand
-    subcommand "update", "Update a domain.", HammerCLIForeman::Domain::UpdateCommand
-    subcommand "delete", "Delete a domain.", HammerCLIForeman::Domain::DeleteCommand
-    subcommand "set_parameter", "Create or update parameter for a domain.", HammerCLIForeman::Domain::SetParameterCommand
-    subcommand "delete_parameter", "Delete parameter for a domain.", HammerCLIForeman::Domain::DeleteParameterCommand
+    autoload_subcommands
   end
 
 end

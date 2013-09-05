@@ -13,7 +13,7 @@ module HammerCLIForeman
 
     protected
 
-    def handle_unprocessable_entity e
+    def handle_unprocessable_entity(e)
       response = JSON.parse(e.response)
       response = response[response.keys[0]]
 
@@ -22,13 +22,13 @@ module HammerCLIForeman
     end
 
 
-    def handle_argument_error e
+    def handle_argument_error(e)
       print_error e.message
       log_full_error e
       HammerCLI::EX_USAGE
     end
 
-    def handle_forbidden e
+    def handle_forbidden(e)
       print_error "Forbidden - server refused to process the request"
       log_full_error e
       HammerCLI::EX_NOPERM

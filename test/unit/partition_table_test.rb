@@ -8,7 +8,7 @@ describe HammerCLIForeman::PartitionTable do
 
   before :each do
     cmd.output.adapter = HammerCLI::Output::Adapter::Silent.new
-    cmd.class.resource ApipieResourceMock.new(cmd.class.resource)
+    cmd.class.resource ApipieResourceMock.new(cmd.class.resource.resource_class)
 
     File.stubs(:read).returns("FILE_CONTENT")
   end
@@ -23,7 +23,7 @@ describe HammerCLIForeman::PartitionTable do
     end
 
     context "output" do
-      let(:expected_record_count) { cmd.resource.index[0].length }
+      let(:expected_record_count) { cmd.resource.call(:index)[0].length }
 
       it_should_print_n_records
       it_should_print_columns ["Id", "Name", "OS Family"]

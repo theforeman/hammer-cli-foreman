@@ -7,13 +7,13 @@ module ResourceDisabled
     context "resource disabled" do
 
       it "should return error" do
-        cmd.class.resource ApipieDisabledResourceMock.new(cmd.class.resource)
+        cmd.class.resource ApipieDisabledResourceMock.new(cmd.class.resource.resource_class)
         arguments = respond_to?(:with_params) ? with_params : []
         cmd.run(arguments).must_equal 1
       end
 
       it "should print error message" do
-        cmd.class.resource ApipieDisabledResourceMock.new(cmd.class.resource)
+        cmd.class.resource ApipieDisabledResourceMock.new(cmd.class.resource.resource_class)
         cmd.output.adapter = TestAdapter.new
         arguments = respond_to?(:with_params) ? with_params : []
         lambda { cmd.run(arguments) }.must_output "", /.*not support.*/

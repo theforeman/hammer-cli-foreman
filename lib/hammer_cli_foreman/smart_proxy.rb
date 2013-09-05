@@ -65,7 +65,7 @@ module HammerCLIForeman
 
 
     class DeleteCommand < HammerCLIForeman::DeleteCommand
-      
+
       success_message "Smart proxy deleted"
       failure_message "Could not delete the proxy"
       resource ForemanApi::Resources::SmartProxy, "destroy"
@@ -73,11 +73,7 @@ module HammerCLIForeman
       apipie_options
     end
 
-    subcommand "list", "List smart proxies.", HammerCLIForeman::SmartProxy::ListCommand
-    subcommand "info", "Detailed info about an smart proxy.", HammerCLIForeman::SmartProxy::InfoCommand
-    subcommand "create", "Create new smart proxy.", HammerCLIForeman::SmartProxy::CreateCommand
-    subcommand "update", "Update an smart proxy.", HammerCLIForeman::SmartProxy::UpdateCommand
-    subcommand "delete", "Delete an smart proxy.", HammerCLIForeman::SmartProxy::DeleteCommand
+    autoload_subcommands
   end
 
 end

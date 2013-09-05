@@ -85,6 +85,8 @@ module HammerCLIForeman
 
     class SetParameterCommand < HammerCLIForeman::Parameter::SetCommand
 
+      desc "Create or update parameter for a hostgroup."
+
       option "--hostgroup-id", "HOSTGROUP_ID", "id of the hostgroup the parameter is being set for", :required => true
 
       success_message_for :update, "Hostgroup parameter updated"
@@ -101,6 +103,8 @@ module HammerCLIForeman
 
     class DeleteParameterCommand < HammerCLIForeman::Parameter::DeleteCommand
 
+      desc "Delete parameter for a hostgroup."
+
       option "--hostgroup-id", "HOSTGROUP_ID", "id of the hostgroup the parameter is being deleted for", :required => true
 
       success_message "Hostgroup parameter deleted"
@@ -112,15 +116,7 @@ module HammerCLIForeman
       end
     end
 
-
-    subcommand "list", "List hostgroups.", HammerCLIForeman::Hostgroup::ListCommand
-    subcommand "info", "Detailed info about hostgroup.", HammerCLIForeman::Hostgroup::InfoCommand
-    subcommand "create", "Create a new hostgroup.", HammerCLIForeman::Hostgroup::CreateCommand
-    subcommand "update", "Update a hostgroup.", HammerCLIForeman::Hostgroup::UpdateCommand
-    subcommand "delete", "Delete a hostgroup.", HammerCLIForeman::Hostgroup::DeleteCommand
-    subcommand "set_parameter", "Create or update parameter for a hostgroup.", HammerCLIForeman::Hostgroup::SetParameterCommand
-    subcommand "delete_parameter", "Delete parameter for a hostgroup.", HammerCLIForeman::Hostgroup::DeleteParameterCommand
-
+    autoload_subcommands
   end
 
 end

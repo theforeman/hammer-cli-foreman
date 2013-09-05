@@ -1,15 +1,17 @@
 require 'hammer_cli'
 require 'foreman_api'
 require 'hammer_cli_foreman/commands'
+require 'hammer_cli_foreman/associating_commands'
 require 'hammer_cli_foreman/resource_supported_test'
 
 module HammerCLIForeman
 
-  class Organization < HammerCLI::AbstractCommand
+  class Organization < HammerCLI::Apipie::Command
+
+    resource ForemanApi::Resources::Organization
 
     class ListCommand < HammerCLIForeman::ListCommand
       include HammerCLIForeman::ResourceSupportedTest
-      resource ForemanApi::Resources::Organization, "index"
 
       heading "Organizations"
       output do
@@ -25,7 +27,6 @@ module HammerCLIForeman
 
     class InfoCommand < HammerCLIForeman::InfoCommand
       include HammerCLIForeman::ResourceSupportedTest
-      resource ForemanApi::Resources::Organization, "show"
 
       heading "Organization info"
       output ListCommand.output_definition do
@@ -43,7 +44,6 @@ module HammerCLIForeman
 
       success_message "Organization created"
       failure_message "Could not create the organization"
-      resource ForemanApi::Resources::Organization, "create"
 
       apipie_options
     end
@@ -54,7 +54,6 @@ module HammerCLIForeman
 
       success_message "Organization updated"
       failure_message "Could not update the organization"
-      resource ForemanApi::Resources::Organization, "update"
 
       apipie_options
     end
@@ -65,16 +64,21 @@ module HammerCLIForeman
 
       success_message "Organization deleted"
       failure_message "Could not delete the organization"
-      resource ForemanApi::Resources::Organization, "destroy"
 
       apipie_options
     end
 
-    subcommand "list", "List organizations.", HammerCLIForeman::Organization::ListCommand
-    subcommand "info", "Detailed info about an organization.", HammerCLIForeman::Organization::InfoCommand
-    subcommand "create", "Create new organization.", HammerCLIForeman::Organization::CreateCommand
-    subcommand "update", "Update an organization.", HammerCLIForeman::Organization::UpdateCommand
-    subcommand "delete", "Delete an organization.", HammerCLIForeman::Organization::DeleteCommand
+    include HammerCLIForeman::AssociatingCommands::Hostgroup
+    include HammerCLIForeman::AssociatingCommands::Environment
+    include HammerCLIForeman::AssociatingCommands::Domain
+    include HammerCLIForeman::AssociatingCommands::Medium
+    include HammerCLIForeman::AssociatingCommands::Subnet
+    include HammerCLIForeman::AssociatingCommands::ComputeResource
+    include HammerCLIForeman::AssociatingCommands::SmartProxy
+    include HammerCLIForeman::AssociatingCommands::User
+    include HammerCLIForeman::AssociatingCommands::ConfigTemplate
+
+    autoload_subcommands
   end
 
 end

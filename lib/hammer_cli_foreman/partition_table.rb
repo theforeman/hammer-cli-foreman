@@ -1,10 +1,13 @@
 require 'hammer_cli'
 require 'foreman_api'
 require 'hammer_cli_foreman/commands'
+require 'hammer_cli_foreman/associating_commands'
 
 module HammerCLIForeman
 
-  class PartitionTable < HammerCLI::AbstractCommand
+  class PartitionTable < HammerCLI::Apipie::Command
+
+    resource ForemanApi::Resources::Ptable
 
     class ListCommand < HammerCLIForeman::ListCommand
 
@@ -17,7 +20,6 @@ module HammerCLIForeman
         end
       end
 
-      resource ForemanApi::Resources::Ptable, "index"
       apipie_options
     end
 
@@ -32,13 +34,14 @@ module HammerCLIForeman
         end
       end
 
-      resource ForemanApi::Resources::Ptable, "show"
     end
 
 
     class DumpCommand < HammerCLIForeman::InfoCommand
 
-      resource ForemanApi::Resources::Ptable, "show"
+      command_name "dump"
+      desc "View partition table content."
+
 
       def print_data(partition_table)
         puts partition_table["ptable"]["layout"]
@@ -53,7 +56,6 @@ module HammerCLIForeman
 
       success_message "Partition table created"
       failure_message "Could not create the partition table"
-      resource ForemanApi::Resources::Ptable, "create"
 
       apipie_options :without => [:layout] + declared_identifiers.keys
     end
@@ -65,7 +67,6 @@ module HammerCLIForeman
 
       success_message "Partition table updated"
       failure_message "Could not update the partition table"
-      resource ForemanApi::Resources::Ptable, "update"
 
       apipie_options :without => [:layout] + declared_identifiers.keys
     end
@@ -75,16 +76,13 @@ module HammerCLIForeman
 
       success_message "Partition table deleted"
       failure_message "Could not delete the partition table"
-      resource ForemanApi::Resources::Ptable, "destroy"
     end
 
-    subcommand "list", "List partition tables.", HammerCLIForeman::PartitionTable::ListCommand
-    subcommand "info", "Detailed info about a partition table.", HammerCLIForeman::PartitionTable::InfoCommand
-    subcommand "dump", "View partition table content.", HammerCLIForeman::PartitionTable::DumpCommand
-    subcommand "create", "Create a new partition table.", HammerCLIForeman::PartitionTable::CreateCommand
-    subcommand "update", "Update a partition table.", HammerCLIForeman::PartitionTable::UpdateCommand
-    subcommand "delete", "Delete a partition table.", HammerCLIForeman::PartitionTable::DeleteCommand
 
+    include HammerCLIForeman::AssociatingCommands::OperatingSystem
+
+
+    autoload_subcommands
   end
 
 end

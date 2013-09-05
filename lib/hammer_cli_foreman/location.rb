@@ -1,15 +1,17 @@
 require 'hammer_cli'
 require 'foreman_api'
 require 'hammer_cli_foreman/commands'
+require 'hammer_cli_foreman/associating_commands'
 require 'hammer_cli_foreman/resource_supported_test'
 
 module HammerCLIForeman
 
-  class Location < HammerCLI::AbstractCommand
+  class Location < HammerCLI::Apipie::Command
+
+    resource ForemanApi::Resources::Location
 
     class ListCommand < HammerCLIForeman::ListCommand
       include HammerCLIForeman::ResourceSupportedTest
-      resource ForemanApi::Resources::Location, "index"
 
       heading "Locations"
       output do
@@ -25,7 +27,6 @@ module HammerCLIForeman
 
     class InfoCommand < HammerCLIForeman::InfoCommand
       include HammerCLIForeman::ResourceSupportedTest
-      resource ForemanApi::Resources::Location, "show"
 
       heading "Location info"
       output ListCommand.output_definition do
@@ -43,7 +44,6 @@ module HammerCLIForeman
 
       success_message "Location created"
       failure_message "Could not create the location"
-      resource ForemanApi::Resources::Location, "create"
 
       apipie_options
     end
@@ -54,7 +54,6 @@ module HammerCLIForeman
 
       success_message "Location updated"
       failure_message "Could not update the location"
-      resource ForemanApi::Resources::Location, "update"
 
       apipie_options
     end
@@ -65,16 +64,22 @@ module HammerCLIForeman
 
       success_message "Location deleted"
       failure_message "Could not delete the location"
-      resource ForemanApi::Resources::Location, "destroy"
 
       apipie_options
     end
 
-    subcommand "list", "List locations.", HammerCLIForeman::Location::ListCommand
-    subcommand "info", "Detailed info about an location.", HammerCLIForeman::Location::InfoCommand
-    subcommand "create", "Create new location.", HammerCLIForeman::Location::CreateCommand
-    subcommand "update", "Update an location.", HammerCLIForeman::Location::UpdateCommand
-    subcommand "delete", "Delete an location.", HammerCLIForeman::Location::DeleteCommand
+    include HammerCLIForeman::AssociatingCommands::Hostgroup
+    include HammerCLIForeman::AssociatingCommands::Environment
+    include HammerCLIForeman::AssociatingCommands::Domain
+    include HammerCLIForeman::AssociatingCommands::Medium
+    include HammerCLIForeman::AssociatingCommands::Subnet
+    include HammerCLIForeman::AssociatingCommands::ComputeResource
+    include HammerCLIForeman::AssociatingCommands::SmartProxy
+    include HammerCLIForeman::AssociatingCommands::User
+    include HammerCLIForeman::AssociatingCommands::ConfigTemplate
+    include HammerCLIForeman::AssociatingCommands::Organization
+
+    autoload_subcommands
   end
 
 end
