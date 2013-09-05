@@ -129,7 +129,7 @@ module HammerCLIForeman
         params
       end
 
-      def self.apipie_options options={}
+      def self.apipie_options(options={})
         super(options.merge(:without => declared_identifiers.keys))
       end
 

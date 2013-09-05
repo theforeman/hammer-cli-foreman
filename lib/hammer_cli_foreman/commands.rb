@@ -34,7 +34,7 @@ module HammerCLIForeman
       {'id' => get_identifier[0]}
     end
 
-    def self.apipie_options options={}
+    def self.apipie_options(options={})
       super(options.merge(:without => declared_identifiers.keys))
     end
   end
@@ -72,7 +72,7 @@ module HammerCLIForeman
       params
     end
 
-    def self.apipie_options options={}
+    def self.apipie_options(options={})
       super({:without => declared_identifiers.keys}.merge(options))
     end
 
@@ -93,7 +93,7 @@ module HammerCLIForeman
       {'id' => get_identifier[0]}
     end
 
-    def self.apipie_options options={}
+    def self.apipie_options(options={})
       super({:without => declared_identifiers.keys}.merge(options))
     end
 
@@ -128,14 +128,14 @@ module HammerCLIForeman
       ResourceInstance.from_definition(self.class.associated_resource, resource_config)
     end
 
-    def self.associated_resource resource_class=nil
+    def self.associated_resource(resource_class=nil)
       @associated_api_resource = HammerCLI::Apipie::ResourceDefinition.new(resource_class) unless resource_class.nil?
       return @associated_api_resource
     end
 
 
 
-    def self.associated_identifiers *keys
+    def self.associated_identifiers(*keys)
       @associated_identifiers = keys
     end
 

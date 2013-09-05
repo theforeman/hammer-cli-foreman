@@ -58,7 +58,7 @@ module HammerCLIForeman
         end
       end
 
-      def print_records data
+      def print_records(data)
         provider = data["compute_resource"]["provider"].downcase
         output_definition.fields.concat PROVIDER_SPECIFIC_FIELDS[provider]
         super data
