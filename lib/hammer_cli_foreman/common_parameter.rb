@@ -22,6 +22,9 @@ module HammerCLIForeman
 
     class SetCommand < HammerCLI::Apipie::WriteCommand
 
+      command_name "set"
+      desc "Set a global parameter."
+
       resource ForemanApi::Resources::CommonParameter
 
       option "--name", "NAME", "parameter name", :required => true
@@ -70,10 +73,7 @@ module HammerCLIForeman
       apipie_options :without => :id
     end
 
-    subcommand "list", "List global parameters.", HammerCLIForeman::CommonParameter::ListCommand
-    subcommand "set", "Set a global parameter.", HammerCLIForeman::CommonParameter::SetCommand
-    subcommand "delete", "Delete a global parameter.", HammerCLIForeman::CommonParameter::DeleteCommand
-
+    autoload_subcommands
   end
 end
 

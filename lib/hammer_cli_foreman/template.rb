@@ -1,10 +1,13 @@
 require 'hammer_cli'
 require 'foreman_api'
 require 'hammer_cli_foreman/commands'
+require 'hammer_cli_foreman/associating_commands'
 
 module HammerCLIForeman
 
-  class Template < HammerCLI::AbstractCommand
+  class Template < HammerCLI::Apipie::Command
+
+    resource ForemanApi::Resources::ConfigTemplate
 
     class ListCommand < HammerCLIForeman::ListCommand
 
@@ -28,7 +31,6 @@ module HammerCLIForeman
         end
       end
 
-      resource ForemanApi::Resources::ConfigTemplate, "index"
       apipie_options
     end
 
@@ -56,11 +58,13 @@ module HammerCLIForeman
         template
       end
 
-      resource ForemanApi::Resources::ConfigTemplate, "show"
     end
 
 
     class ListKindsCommand < HammerCLIForeman::ListCommand
+
+      command_name "kinds"
+      desc "List available config template kinds."
 
       heading "Template kind list"
       output do
@@ -80,9 +84,10 @@ module HammerCLIForeman
 
     class DumpCommand < HammerCLIForeman::InfoCommand
 
-      identifiers :id
+      command_name "dump"
+      desc "View config template content."
 
-      resource ForemanApi::Resources::ConfigTemplate, "show"
+      identifiers :id
 
       def print_data(template)
         puts template["config_template"]["template"]
@@ -98,7 +103,6 @@ module HammerCLIForeman
 
       success_message "Config template created"
       failure_message "Could not create the config template"
-      resource ForemanApi::Resources::ConfigTemplate, "create"
 
       def snippet
         type == "snippet"
@@ -123,7 +127,6 @@ module HammerCLIForeman
 
       success_message "Config template updated"
       failure_message "Could not update the config template"
-      resource ForemanApi::Resources::ConfigTemplate, "update"
 
       def snippet
         type == "snippet"
@@ -145,17 +148,13 @@ module HammerCLIForeman
 
       success_message "Config template deleted"
       failure_message "Could not delete the config template"
-      resource ForemanApi::Resources::ConfigTemplate, "destroy"
     end
 
-    subcommand "list", "List config templates.", HammerCLIForeman::Template::ListCommand
-    subcommand "info", "Detailed info about a config template.", HammerCLIForeman::Template::InfoCommand
-    subcommand "dump", "View config template content.", HammerCLIForeman::Template::DumpCommand
-    subcommand "create", "Create a new config template.", HammerCLIForeman::Template::CreateCommand
-    subcommand "update", "Update a config template.", HammerCLIForeman::Template::UpdateCommand
-    subcommand "delete", "Delete a config template.", HammerCLIForeman::Template::DeleteCommand
-    subcommand "kinds", "List available config template kinds.", HammerCLIForeman::Template::ListKindsCommand
 
+    include HammerCLIForeman::AssociatingCommands::OperatingSystem
+
+
+    autoload_subcommands
   end
 
 end

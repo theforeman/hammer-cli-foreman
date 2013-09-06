@@ -8,9 +8,10 @@ describe HammerCLIForeman::Organization do
 
   before :each do
     cmd.output.adapter = HammerCLI::Output::Adapter::Silent.new
-    cmd.class.resource ApipieResourceMock.new(cmd.class.resource)
-    cmd.class.resource.stubs(:index).returns([[], nil])
-    cmd.class.resource.stubs(:show).returns([{}, nil])
+    resource_mock = ApipieResourceMock.new(cmd.class.resource.resource_class)
+    resource_mock.stubs(:index).returns([[], nil])
+    resource_mock.stubs(:show).returns([{}, nil])
+    cmd.class.resource resource_mock
   end
 
   context "ListCommand" do
@@ -23,7 +24,7 @@ describe HammerCLIForeman::Organization do
     end
 
     context "output" do
-      let(:expected_record_count) { cmd.resource.index[0].length }
+      let(:expected_record_count) { cmd.resource.call(:index)[0].length }
 
       it_should_print_n_records
       it_should_print_column "Name"

@@ -88,6 +88,7 @@ module HammerCLIForeman
 
     class StatusCommand < HammerCLIForeman::InfoCommand
 
+      command_name "status"
       resource ForemanApi::Resources::Host, "status"
 
       def print_data(records)
@@ -98,6 +99,7 @@ module HammerCLIForeman
 
     class PuppetRunCommand < HammerCLIForeman::InfoCommand
 
+      command_name "puppetrun"
       resource ForemanApi::Resources::Host, "puppetrun"
 
       def print_data(records)
@@ -108,6 +110,7 @@ module HammerCLIForeman
 
     class FactsCommand < HammerCLIForeman::ListCommand
 
+      command_name "facts"
       resource ForemanApi::Resources::FactValue, "index"
       identifiers :name
 
@@ -126,7 +129,7 @@ module HammerCLIForeman
         params
       end
 
-      def self.apipie_options options={}
+      def self.apipie_options(options={})
         super(options.merge(:without => declared_identifiers.keys))
       end
 
@@ -153,7 +156,7 @@ module HammerCLIForeman
       def request_params
         params = super
         params['host']['compute_attributes']["nics_attributes"] = {
-          "new_nics"=>{"type"=>"bridge", "_delete"=>"", "bridge"=>""}, 
+          "new_nics"=>{"type"=>"bridge", "_delete"=>"", "bridge"=>""},
           "0"=>{"type"=>"network", "_delete"=>"", "network"=>"default", "bridge"=>""}
         }
         params
@@ -183,6 +186,8 @@ module HammerCLIForeman
 
     class SetParameterCommand < HammerCLIForeman::Parameter::SetCommand
 
+      desc "Create or update parameter for a host."
+
       option "--host-name", "HOST_NAME", "name of the host the parameter is being set for"
       option "--host-id", "HOST_ID", "id of the host the parameter is being set for"
 
@@ -205,6 +210,8 @@ module HammerCLIForeman
 
     class DeleteParameterCommand < HammerCLIForeman::Parameter::DeleteCommand
 
+      desc "Delete parameter for a host."
+
       option "--host-name", "HOST_NAME", "name of the host the parameter is being deleted for"
       option "--host-id", "HOST_ID", "id of the host the parameter is being deleted for"
 
@@ -222,16 +229,7 @@ module HammerCLIForeman
       end
     end
 
-    subcommand "list", "List hosts.", HammerCLIForeman::Host::ListCommand
-    subcommand "info", "Detailed info about host.", HammerCLIForeman::Host::InfoCommand
-    subcommand "status", "Print host status.", HammerCLIForeman::Host::StatusCommand
-    subcommand "puppetrun", "Force puppet run on the agent.", HammerCLIForeman::Host::PuppetRunCommand
-    subcommand "facts", "List facts provided by the host.", HammerCLIForeman::Host::FactsCommand
-    subcommand "create", "Create a new host.", HammerCLIForeman::Host::CreateCommand
-    subcommand "update", "Update a host.", HammerCLIForeman::Host::UpdateCommand
-    subcommand "delete", "Delete a host.", HammerCLIForeman::Host::DeleteCommand
-    subcommand "set_parameter", "Create or update parameter for a host.", HammerCLIForeman::Host::SetParameterCommand
-    subcommand "delete_parameter", "Delete parameter for a host.", HammerCLIForeman::Host::DeleteParameterCommand
+    autoload_subcommands
   end
 
 end

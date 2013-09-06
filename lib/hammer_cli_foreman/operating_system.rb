@@ -1,13 +1,15 @@
 require 'hammer_cli'
 require 'foreman_api'
 require 'hammer_cli_foreman/commands'
+require 'hammer_cli_foreman/associating_commands'
 
 module HammerCLIForeman
 
-  class OperatingSystem < HammerCLI::AbstractCommand
+  class OperatingSystem < HammerCLI::Apipie::Command
+
+    resource ForemanApi::Resources::OperatingSystem
 
     class ListCommand < HammerCLIForeman::ListCommand
-      resource ForemanApi::Resources::OperatingSystem, "index"
 
       heading "Operating systems"
       output do
@@ -26,7 +28,6 @@ module HammerCLIForeman
 
 
     class InfoCommand < HammerCLIForeman::InfoCommand
-      resource ForemanApi::Resources::OperatingSystem, "show"
 
       identifiers :id, :label
 
@@ -67,7 +68,6 @@ module HammerCLIForeman
 
       success_message "Operating system created"
       failure_message "Could not create the operating system"
-      resource ForemanApi::Resources::OperatingSystem, "create"
 
       def request_params
         params = method_options
@@ -94,7 +94,6 @@ module HammerCLIForeman
 
       success_message "Operating system updated"
       failure_message "Could not update the operating system"
-      resource ForemanApi::Resources::OperatingSystem, "update"
 
       def request_params
         params = method_options
@@ -115,12 +114,13 @@ module HammerCLIForeman
 
       success_message "Operating system deleted"
       failure_message "Could not delete the operating system"
-      resource ForemanApi::Resources::OperatingSystem, "destroy"
 
       apipie_options
     end
 
     class SetParameterCommand < HammerCLIForeman::Parameter::SetCommand
+
+      desc "Create or update parameter for an operating system."
 
       #FIXME: add option --os-label when api supports it
       option "--os-id", "OS_ID", "id of the operating system the parameter is being set for"
@@ -144,6 +144,8 @@ module HammerCLIForeman
 
     class DeleteParameterCommand < HammerCLIForeman::Parameter::DeleteCommand
 
+      desc "Delete parameter for an operating system."
+
       #FIXME: add option --os-label when api supports it
       option "--os-id", "OS_ID", "id of the operating system the parameter is being deleted for"
       success_message "operating system parameter deleted"
@@ -160,13 +162,13 @@ module HammerCLIForeman
       end
     end
 
-    subcommand "list", "List operating systems.", HammerCLIForeman::OperatingSystem::ListCommand
-    subcommand "info", "Detailed info about an operating system.", HammerCLIForeman::OperatingSystem::InfoCommand
-    subcommand "create", "Create new operating system.", HammerCLIForeman::OperatingSystem::CreateCommand
-    subcommand "update", "Update an operating system.", HammerCLIForeman::OperatingSystem::UpdateCommand
-    subcommand "delete", "Delete an operating system.", HammerCLIForeman::OperatingSystem::DeleteCommand
-    subcommand "set_parameter", "Create or update parameter for an operating system.", HammerCLIForeman::OperatingSystem::SetParameterCommand
-    subcommand "delete_parameter", "Delete parameter for an operating system.", HammerCLIForeman::OperatingSystem::DeleteParameterCommand
+
+    include HammerCLIForeman::AssociatingCommands::Architecture
+    include HammerCLIForeman::AssociatingCommands::ConfigTemplate
+    include HammerCLIForeman::AssociatingCommands::PartitionTable
+
+
+    autoload_subcommands
   end
 
 end

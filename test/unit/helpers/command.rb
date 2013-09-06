@@ -2,36 +2,36 @@ require File.join(File.dirname(__FILE__), '../test_output_adapter')
 
 module CommandTestHelper
 
-  def with_params params, &block
+  def with_params(params, &block)
     context "with params "+params.to_s do
       let(:with_params) { params }
       self.instance_eval &block
     end
   end
 
-  def it_should_call_action action, params
+  def it_should_call_action(action, params)
     it "should call action "+action.to_s do
       arguments ||= respond_to?(:with_params) ? with_params : []
-      cmd.resource.expects_with(action, params)
+      cmd.resource.resource_class.expects_with(action, params)
       cmd.run(arguments)
     end
   end
 
-  def it_should_fail_with message, arguments=[]
+  def it_should_fail_with(message, arguments=[])
     it "should fail with " + message.to_s do
       cmd.output.adapter = HammerCLI::Output::Adapter::Silent.new
       proc { cmd.run(arguments) }.must_raise Clamp::UsageError
     end
   end
 
-  def it_should_accept message, arguments=[]
+  def it_should_accept(message, arguments=[])
     it "should accept " + message.to_s do
       cmd.output.adapter = HammerCLI::Output::Adapter::Silent.new
       cmd.run(arguments).must_equal 0
     end
   end
 
-  def it_should_print_column column_name, arguments=nil
+  def it_should_print_column(column_name, arguments=nil)
     it "should print column " + column_name do
       arguments ||= respond_to?(:with_params) ? with_params : []
 
@@ -40,14 +40,14 @@ module CommandTestHelper
     end
   end
 
-  def it_should_print_columns column_names, arguments=nil
+  def it_should_print_columns(column_names, arguments=nil)
     column_names.each do |name|
       it_should_print_column name, arguments
     end
   end
 
-  def it_should_print_n_records count=nil, arguments=nil
-    it "should print " + count.to_s + " records" do
+  def it_should_print_n_records(count=nil, arguments=nil)
+    it "should print correct count of records" do
       arguments ||= respond_to?(:with_params) ? with_params : []
 
       cmd.output.adapter = TestAdapter.new
@@ -55,6 +55,7 @@ module CommandTestHelper
       out, err = capture_io do
         cmd.run(arguments)
       end
+
       out.split(/\n/).length.must_equal count+1 # plus 1 for line with column headers
     end
   end

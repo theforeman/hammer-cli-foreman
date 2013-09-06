@@ -58,7 +58,7 @@ module HammerCLIForeman
         end
       end
 
-      def print_records data
+      def print_records(data)
         provider = data["compute_resource"]["provider"].downcase
         output_definition.fields.concat PROVIDER_SPECIFIC_FIELDS[provider]
         super data
@@ -100,11 +100,7 @@ module HammerCLIForeman
       apipie_options
     end
 
-    subcommand "list", "List compute resources.", HammerCLIForeman::ComputeResource::ListCommand
-    subcommand "info", "Detailed info about a compute resource.", HammerCLIForeman::ComputeResource::InfoCommand
-    subcommand "create", "Create new compute resource.", HammerCLIForeman::ComputeResource::CreateCommand
-    subcommand "update", "Update a compute resource.", HammerCLIForeman::ComputeResource::UpdateCommand
-    subcommand "delete", "Delete a compute resource.", HammerCLIForeman::ComputeResource::DeleteCommand
+    autoload_subcommands
   end
 
 end
