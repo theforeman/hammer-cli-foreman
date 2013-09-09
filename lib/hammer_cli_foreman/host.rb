@@ -9,7 +9,6 @@ module HammerCLIForeman
     class ListCommand < HammerCLIForeman::ListCommand
       resource ForemanApi::Resources::Host, "index"
 
-      heading "Host list"
       output do
         from "host" do
           field :id, "Id"
@@ -36,7 +35,6 @@ module HammerCLIForeman
         host
       end
 
-      heading "Host info"
       output ListCommand.output_definition do
         from "host" do
           field :uuid, "UUID"

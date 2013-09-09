@@ -8,7 +8,6 @@ module HammerCLIForeman
     class ListCommand < HammerCLIForeman::ListCommand
       resource ForemanApi::Resources::Environment, "index"
 
-      heading "Environments"
       output do
         from "environment" do
           field :id, "Id"
@@ -23,7 +22,6 @@ module HammerCLIForeman
     class InfoCommand < HammerCLIForeman::InfoCommand
       resource ForemanApi::Resources::Environment, "show"
 
-      heading "Environment info"
       output ListCommand.output_definition do
         from "environment" do
           field :created_at, "Created at", HammerCLI::Output::Fields::Date

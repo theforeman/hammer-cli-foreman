@@ -9,7 +9,6 @@ module HammerCLIForeman
     class ListCommand < HammerCLIForeman::ListCommand
       resource ForemanApi::Resources::ComputeResource, "index"
 
-      heading "Compute resource list"
       output do
         from "compute_resource" do
           field :id, "Id"
@@ -47,7 +46,6 @@ module HammerCLIForeman
 
       resource ForemanApi::Resources::ComputeResource, "show"
 
-      heading "Compute resource info"
       output ListCommand.output_definition do
         from "compute_resource" do
           field :url, "Url"

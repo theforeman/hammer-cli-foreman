@@ -9,7 +9,6 @@ module HammerCLIForeman
       resource ForemanApi::Resources::SmartProxy, "index"
 
       #FIXME: search by unknown type returns 500 from the server, propper error handling should resove this
-      heading "Smart Proxy list"
       output do
         from "smart_proxy" do
           field :id, "Id"
@@ -32,7 +31,6 @@ module HammerCLIForeman
         sp
       end
 
-      heading "Smart proxy info"
       output ListCommand.output_definition do
         from "smart_proxy" do
           field :_features,  "Features",   HammerCLI::Output::Fields::List
