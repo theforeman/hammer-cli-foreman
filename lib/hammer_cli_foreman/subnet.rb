@@ -8,7 +8,6 @@ module HammerCLIForeman
     class ListCommand < HammerCLIForeman::ListCommand
       resource ForemanApi::Resources::Subnet, "index"
 
-      heading "Subnet list"
       output do
         from "subnet" do
           field :id, "Id"
@@ -26,7 +25,6 @@ module HammerCLIForeman
 
       resource ForemanApi::Resources::Subnet, "show"
 
-      heading "Subnet info"
       output ListCommand.output_definition do
         from "subnet" do
           field :priority, "Priority"

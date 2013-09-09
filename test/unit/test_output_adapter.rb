@@ -7,7 +7,7 @@ class TestAdapter < HammerCLI::Output::Adapter::Abstract
     @separator = separator
   end
 
-  def print_records(fields, data, heading=nil)
+  def print_records(fields, data)
     puts @separator+fields.collect{|f| f.label.to_s}.join(@separator)+@separator
 
     data.collect do |d|

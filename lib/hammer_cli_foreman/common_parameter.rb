@@ -9,7 +9,6 @@ module HammerCLIForeman
     class ListCommand < HammerCLIForeman::ListCommand
       resource ForemanApi::Resources::CommonParameter, "index"
 
-      heading "Global parameter list"
       output do
         from "common_parameter" do
           field :name, "Name"

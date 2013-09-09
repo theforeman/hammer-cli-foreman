@@ -9,7 +9,6 @@ module HammerCLIForeman
     class ListCommand < HammerCLIForeman::ListCommand
       resource ForemanApi::Resources::Domain, "index"
 
-      heading "Domain list"
       output do
         from "domain" do
           field :id, "Id"
@@ -31,7 +30,6 @@ module HammerCLIForeman
         domain
       end
 
-      heading "Domain info"
       output ListCommand.output_definition do
         from "domain" do
           field :fullname, "Full Name"

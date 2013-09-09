@@ -11,7 +11,6 @@ module HammerCLIForeman
 
     class ListCommand < HammerCLIForeman::ListCommand
 
-      heading "Template list"
       output do
         from "config_template" do
           field :id, "Id"
@@ -41,7 +40,6 @@ module HammerCLIForeman
       #       Api currently does not accept names containing a dot
       identifiers :id
 
-      heading "Template info"
       output ListCommand.output_definition do
         from "config_template" do
           field :operatingsystem_ids, "OS ids", HammerCLI::Output::Fields::List
@@ -66,7 +64,6 @@ module HammerCLIForeman
       command_name "kinds"
       desc "List available config template kinds."
 
-      heading "Template kind list"
       output do
         from "template_kind" do
           field :name, "Name"

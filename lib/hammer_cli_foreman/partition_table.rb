@@ -11,7 +11,6 @@ module HammerCLIForeman
 
     class ListCommand < HammerCLIForeman::ListCommand
 
-      heading "Partition table list"
       output do
         from "ptable" do
           field :id, "Id"
@@ -26,7 +25,6 @@ module HammerCLIForeman
 
     class InfoCommand < HammerCLIForeman::InfoCommand
 
-      heading "Partition table info"
       output ListCommand.output_definition do
         from "ptable" do
           field :created_at, "Created at", HammerCLI::Output::Fields::Date

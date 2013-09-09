@@ -9,7 +9,6 @@ module HammerCLIForeman
     class ListCommand < HammerCLIForeman::ListCommand
       resource ForemanApi::Resources::Hostgroup, "index"
 
-      heading "Hostgroup list"
       output do
         from "hostgroup" do
           field :id, "Id"
@@ -33,7 +32,6 @@ module HammerCLIForeman
 
       identifiers :id
 
-      heading "Hostgroup info"
       output ListCommand.output_definition do
         collection :parameters, "Parameters" do
           field :parameter, nil, HammerCLI::Output::Fields::KeyValue

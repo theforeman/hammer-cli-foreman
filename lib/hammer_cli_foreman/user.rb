@@ -16,7 +16,6 @@ module HammerCLIForeman
         end
       end
 
-      heading "User list"
       output do
         from "user" do
           field :id, "Id"
@@ -41,7 +40,6 @@ module HammerCLIForeman
         data
       end
 
-      heading "User info"
       output ListCommand.output_definition do
         from "user" do
           field :last_login_on, "Last login", HammerCLI::Output::Fields::Date

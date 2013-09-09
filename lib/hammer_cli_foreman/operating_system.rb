@@ -11,7 +11,6 @@ module HammerCLIForeman
 
     class ListCommand < HammerCLIForeman::ListCommand
 
-      heading "Operating systems"
       output do
         from "operatingsystem" do
           field :id, "Id"
@@ -31,7 +30,6 @@ module HammerCLIForeman
 
       identifiers :id, :label
 
-      heading "Operating system info"
       output ListCommand.output_definition do
         from "operatingsystem" do
           field :media_names, "Installation media", HammerCLI::Output::Fields::List
