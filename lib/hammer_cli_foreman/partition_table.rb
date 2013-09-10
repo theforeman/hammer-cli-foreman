@@ -50,7 +50,7 @@ module HammerCLIForeman
 
     class CreateCommand < HammerCLIForeman::CreateCommand
 
-      option "--file", "LAYOUT", "Path to a file that contains the partition layout", :attribute_name => :layout, :required => true, &HammerCLI::OptionFormatters.method(:file)
+      option "--file", "LAYOUT", "Path to a file that contains the partition layout", :attribute_name => :layout, :required => true, &HammerCLI::Options::Formatters.method(:file)
 
       success_message "Partition table created"
       failure_message "Could not create the partition table"
@@ -61,7 +61,7 @@ module HammerCLIForeman
 
     class UpdateCommand < HammerCLIForeman::UpdateCommand
 
-      option "--file", "LAYOUT", "Path to a file that contains the partition layout", :attribute_name => :layout, &HammerCLI::OptionFormatters.method(:file)
+      option "--file", "LAYOUT", "Path to a file that contains the partition layout", :attribute_name => :layout, &HammerCLI::Options::Formatters.method(:file)
 
       success_message "Partition table updated"
       failure_message "Could not update the partition table"

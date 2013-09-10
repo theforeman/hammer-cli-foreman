@@ -95,7 +95,7 @@ module HammerCLIForeman
 
     class CreateCommand < HammerCLIForeman::CreateCommand
 
-      option "--file", "TEMPLATE", "Path to a file that contains the template", :attribute_name => :template, :required => true, &HammerCLI::OptionFormatters.method(:file)
+      option "--file", "TEMPLATE", "Path to a file that contains the template", :attribute_name => :template, :required => true, &HammerCLI::Options::Formatters.method(:file)
       option "--type", "TYPE", "Template type. Eg. snippet, script, provision", :required => true
 
       success_message "Config template created"
@@ -117,7 +117,7 @@ module HammerCLIForeman
 
     class UpdateCommand < HammerCLIForeman::UpdateCommand
 
-      option "--file", "TEMPLATE", "Path to a file that contains the template", :attribute_name => :template, &HammerCLI::OptionFormatters.method(:file)
+      option "--file", "TEMPLATE", "Path to a file that contains the template", :attribute_name => :template, &HammerCLI::Options::Formatters.method(:file)
       option "--type", "TYPE", "Template type. Eg. snippet, script, provision"
 
       identifiers :id

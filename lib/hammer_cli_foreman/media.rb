@@ -43,7 +43,7 @@ module HammerCLIForeman
       apipie_options
 
       #FIXME: remove OS ids option and custom request_params once it's added to foreman's apipie docs
-      option "--operatingsystem-ids", "OSIDS", "os ids", &HammerCLI::OptionFormatters.method(:list)
+      option "--operatingsystem-ids", "OSIDS", "os ids", &HammerCLI::Options::Formatters.method(:list)
 
       def request_params
         params = super
@@ -61,7 +61,7 @@ module HammerCLIForeman
       apipie_options
 
       #FIXME: remove OS ids option and custom request_params once it's added to foreman's apipie docs
-      option "--operatingsystem-ids", "OSIDS", "os ids", &HammerCLI::OptionFormatters.method(:list)
+      option "--operatingsystem-ids", "OSIDS", "os ids", &HammerCLI::Options::Formatters.method(:list)
 
       def request_params
         params = super
