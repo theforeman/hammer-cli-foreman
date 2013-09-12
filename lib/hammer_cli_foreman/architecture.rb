@@ -11,7 +11,6 @@ module HammerCLIForeman
 
     class ListCommand < HammerCLIForeman::ListCommand
 
-      heading "Architecture list"
       output do
         from "architecture" do
           field :id, "Id"
@@ -25,7 +24,6 @@ module HammerCLIForeman
 
     class InfoCommand < HammerCLIForeman::InfoCommand
 
-      heading "Architecture info"
       output ListCommand.output_definition do
         from "architecture" do
           field :operatingsystem_ids, "OS ids", HammerCLI::Output::Fields::List

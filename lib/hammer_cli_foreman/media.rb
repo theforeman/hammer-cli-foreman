@@ -10,7 +10,6 @@ module HammerCLIForeman
     resource ForemanApi::Resources::Medium
 
     class ListCommand < HammerCLIForeman::ListCommand
-      heading "Installation Media"
       output do
         from "medium" do
           field :id, "Id"
@@ -24,7 +23,6 @@ module HammerCLIForeman
 
 
     class InfoCommand < HammerCLIForeman::InfoCommand
-      heading "Medium info"
       output ListCommand.output_definition do
         from "medium" do
           field :os_family, "OS Family"

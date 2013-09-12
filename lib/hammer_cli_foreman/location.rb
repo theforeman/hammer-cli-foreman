@@ -13,7 +13,6 @@ module HammerCLIForeman
     class ListCommand < HammerCLIForeman::ListCommand
       include HammerCLIForeman::ResourceSupportedTest
 
-      heading "Locations"
       output do
         from "location" do
           field :id, "Id"
@@ -28,7 +27,6 @@ module HammerCLIForeman
     class InfoCommand < HammerCLIForeman::InfoCommand
       include HammerCLIForeman::ResourceSupportedTest
 
-      heading "Location info"
       output ListCommand.output_definition do
         from "location" do
           field :created_at, "Created at", HammerCLI::Output::Fields::Date
