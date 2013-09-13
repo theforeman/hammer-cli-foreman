@@ -3,6 +3,7 @@ require 'foreman_api'
 require 'hammer_cli_foreman/commands'
 require 'hammer_cli_foreman/parameter'
 require 'hammer_cli_foreman/report'
+require 'hammer_cli_foreman/puppet_class'
 
 module HammerCLIForeman
 
@@ -32,7 +33,7 @@ module HammerCLIForeman
       def retrieve_data
         host = super
         host["host"]["environment_name"] = host["host"]["environment"]["environment"]["name"] rescue nil
-        host["parameters"] = HammerCLIForeman::Parameter.get_parameters resource_config, host
+        host["parameters"] = HammerCLIForeman::Parameter.get_parameters(resource_config, host)
         host
       end
 
@@ -111,9 +112,9 @@ module HammerCLIForeman
 
       command_name "facts"
       resource ForemanApi::Resources::FactValue, "index"
-      identifiers :name
+      identifiers :id, :name
 
-      apipie_options
+      apipie_options :without => declared_identifiers.keys
 
       output do
         from "fact" do
@@ -128,17 +129,33 @@ module HammerCLIForeman
         params
       end
 
-      def self.apipie_options(options={})
-        super(options.merge(:without => declared_identifiers.keys))
+      def retrieve_data
+        HammerCLIForeman::Fact::ListCommand.unhash_facts(super)
       end
+
+    end
+
+
+    class PuppetClassesCommand < HammerCLIForeman::ListCommand
+
+      command_name "puppet_classes"
+      resource ForemanApi::Resources::Puppetclass
+
+      identifiers :id, :name
+
+      output HammerCLIForeman::PuppetClass::ListCommand.output_definition
 
       def retrieve_data
-        data = super
-        host = data.keys[0]
-        new_data = data[host].keys.map { |f| { :fact => { :fact => f, :value => data[host][f] } } }
-        new_data
+        HammerCLIForeman::PuppetClass::ListCommand.unhash_classes(super)
       end
 
+      def request_params
+        params = method_options
+        params['host_id'] = get_identifier[0]
+        params
+      end
+
+      apipie_options
     end
 
 
