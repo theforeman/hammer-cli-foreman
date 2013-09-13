@@ -110,7 +110,7 @@ module HammerCLIForeman
     end
 
     def initialize(*args)
-      super(*args)
+      super
       setup_associated_identifier_options
     end
 
