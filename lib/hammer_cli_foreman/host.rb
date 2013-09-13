@@ -2,6 +2,7 @@ require 'hammer_cli'
 require 'foreman_api'
 require 'hammer_cli_foreman/commands'
 require 'hammer_cli_foreman/parameter'
+require 'hammer_cli_foreman/report'
 
 module HammerCLIForeman
 
@@ -136,6 +137,23 @@ module HammerCLIForeman
         host = data.keys[0]
         new_data = data[host].keys.map { |f| { :fact => { :fact => f, :value => data[host][f] } } }
         new_data
+      end
+
+    end
+
+
+    class ReportsCommand < HammerCLIForeman::ListCommand
+
+      identifiers :id, :name
+
+      command_name "reports"
+      resource ForemanApi::Resources::Report
+      output HammerCLIForeman::Report::ListCommand.output_definition
+
+      apipie_options :without => :search
+
+      def search
+        'host.id = %s' % get_identifier[0].to_s
       end
 
     end

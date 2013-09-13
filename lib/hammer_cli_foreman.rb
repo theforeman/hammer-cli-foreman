@@ -21,6 +21,7 @@ module HammerCLIForeman
   require 'hammer_cli_foreman/operating_system'
   require 'hammer_cli_foreman/organization'
   require 'hammer_cli_foreman/partition_table'
+  require 'hammer_cli_foreman/report'
   require 'hammer_cli_foreman/smart_proxy'
   require 'hammer_cli_foreman/subnet'
   require 'hammer_cli_foreman/template'
