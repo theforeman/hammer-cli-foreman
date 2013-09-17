@@ -4,7 +4,7 @@ require 'hammer_cli_foreman/exception_handler'
 describe HammerCLIForeman::ExceptionHandler do
 
   let(:output)  { HammerCLI::Output::Output }
-  let(:handler) { HammerCLIForeman::ExceptionHandler.new }
+  let(:handler) { HammerCLIForeman::ExceptionHandler.new(:adapter => :silent) }
   let(:heading) { "Something went wrong" }
 
   it "should print resource errors on unprocessable entity exception" do
@@ -13,24 +13,24 @@ describe HammerCLIForeman::ExceptionHandler do
    RESPONSE
 
     ex = RestClient::UnprocessableEntity.new(response)
-    output.expects(:print_error).with(heading, "Network address can't be blank\nNetwork address is invalid\nName can't be blank", {}, {:adapter => :base})
+    output.expects(:print_error).with(heading, "Network address can't be blank\nNetwork address is invalid\nName can't be blank", {}, {:adapter => :silent})
     handler.handle_exception(ex, :heading => heading)
   end
 
   it "should handle argument error" do
     ex = ArgumentError.new
-    output.expects(:print_error).with(heading, ex.message, {}, {:adapter => :base})
+    output.expects(:print_error).with(heading, ex.message, {}, {:adapter => :silent})
     handler.handle_exception(ex, :heading => heading)
   end
 
   it "should handle forbidden error" do
     ex = RestClient::Forbidden.new
-    output.expects(:print_error).with('Forbidden - server refused to process the request', nil, {}, {:adapter => :base})
+    output.expects(:print_error).with('Forbidden - server refused to process the request', nil, {}, {:adapter => :silent})
     handler.handle_exception(ex)
   end
 
   it "should handle unknown exception" do
-    output.expects(:print_error).with(heading, "Error: message", {}, {:adapter => :base})
+    output.expects(:print_error).with(heading, "Error: message", {}, {:adapter => :silent})
     MyException = Class.new(Exception)
     handler.handle_exception(MyException.new('message'), :heading => heading)
   end

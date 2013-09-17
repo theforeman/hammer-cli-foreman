@@ -1,13 +1,14 @@
 require 'hammer_cli'
 require 'foreman_api'
 require 'hammer_cli_foreman/commands'
+require 'hammer_cli_foreman/image'
 
 module HammerCLIForeman
 
-  class ComputeResource < HammerCLI::AbstractCommand
+  class ComputeResource < HammerCLI::Apipie::Command
+    resource ForemanApi::Resources::ComputeResource
 
     class ListCommand < HammerCLIForeman::ListCommand
-      resource ForemanApi::Resources::ComputeResource, "index"
 
       output do
         from "compute_resource" do
@@ -44,8 +45,6 @@ module HammerCLIForeman
         ]
       }
 
-      resource ForemanApi::Resources::ComputeResource, "show"
-
       output ListCommand.output_definition do
         from "compute_resource" do
           field :url, "Url"
@@ -69,7 +68,6 @@ module HammerCLIForeman
 
       success_message "Compute resource created"
       failure_message "Could not create the compute resource"
-      resource ForemanApi::Resources::ComputeResource, "create"
 
       apipie_options
 
@@ -83,7 +81,6 @@ module HammerCLIForeman
 
       success_message "Compute resource updated"
       failure_message "Could not update the compute resource"
-      resource ForemanApi::Resources::ComputeResource, "update"
 
       apipie_options
     end
@@ -93,15 +90,17 @@ module HammerCLIForeman
 
       success_message "Compute resource deleted"
       failure_message "Could not delete the compute resource"
-      resource ForemanApi::Resources::ComputeResource, "destroy"
 
       apipie_options
     end
 
+
     autoload_subcommands
+    subcommand 'image', HammerCLIForeman::Image.desc, HammerCLIForeman::Image
   end
 
 end
 
 HammerCLI::MainCommand.subcommand 'compute_resource', "Manipulate Foreman's compute resources.", HammerCLIForeman::ComputeResource
+
 
