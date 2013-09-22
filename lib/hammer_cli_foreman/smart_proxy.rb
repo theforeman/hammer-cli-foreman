@@ -33,9 +33,9 @@ module HammerCLIForeman
 
       output ListCommand.output_definition do
         from "smart_proxy" do
-          field :_features,  "Features",   HammerCLI::Output::Fields::List
-          field :created_at, "Created at", HammerCLI::Output::Fields::Date
-          field :updated_at, "Updated at", HammerCLI::Output::Fields::Date
+          field :_features,  "Features",   Fields::List
+          field :created_at, "Created at", Fields::Date
+          field :updated_at, "Updated at", Fields::Date
         end
       end
 

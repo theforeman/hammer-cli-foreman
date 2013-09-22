@@ -25,20 +25,20 @@ module HammerCLIForeman
 
       PROVIDER_SPECIFIC_FIELDS = {
         'ovirt' => [
-          HammerCLI::Output::DataField.new(:label => 'UUID', :path => ["compute_resource", "uuid"])
+          Fields::DataField.new(:label => 'UUID', :path => ["compute_resource", "uuid"])
         ],
         'ec2' => [
-          HammerCLI::Output::DataField.new(:label => 'Region', :path => ["compute_resource", "region"])
+          Fields::DataField.new(:label => 'Region', :path => ["compute_resource", "region"])
         ],
         'vmware' => [
-          HammerCLI::Output::DataField.new(:label => 'UUID', :path => ["compute_resource", "uuid"]),
-          HammerCLI::Output::DataField.new(:label => 'Server', :path => ["compute_resource", "server"])
+          Fields::DataField.new(:label => 'UUID', :path => ["compute_resource", "uuid"]),
+          Fields::DataField.new(:label => 'Server', :path => ["compute_resource", "server"])
         ],
         'openstack' => [
-          HammerCLI::Output::DataField.new(:label => 'Tenant', :path => ["compute_resource", "tenant"])
+          Fields::DataField.new(:label => 'Tenant', :path => ["compute_resource", "tenant"])
         ],
         'rackspace' => [
-          HammerCLI::Output::DataField.new(:label => 'Region', :path => ["compute_resource", "region"])
+          Fields::DataField.new(:label => 'Region', :path => ["compute_resource", "region"])
         ],
         'libvirt' => [
         ]
@@ -51,8 +51,8 @@ module HammerCLIForeman
           field :url, "Url"
           field :description, "Description"
           field :user, "User"
-          field :created_at, "Created at", HammerCLI::Output::Fields::Date
-          field :updated_at, "Updated at", HammerCLI::Output::Fields::Date
+          field :created_at, "Created at", Fields::Date
+          field :updated_at, "Updated at", Fields::Date
         end
       end
 

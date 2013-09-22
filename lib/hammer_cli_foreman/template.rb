@@ -42,7 +42,7 @@ module HammerCLIForeman
 
       output ListCommand.output_definition do
         from "config_template" do
-          field :operatingsystem_ids, "OS ids", HammerCLI::Output::Fields::List
+          field :operatingsystem_ids, "OS ids", Fields::List
         end
       end
 
