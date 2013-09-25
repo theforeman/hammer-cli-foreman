@@ -14,7 +14,7 @@ module HammerCLIForeman
         from "report" do
           field :id, "Id"
           field :host_name, "Host"
-          field :reported_at, "Last report", HammerCLI::Output::Fields::Date
+          field :reported_at, "Last report", Fields::Date
           from "status" do
             field :applied, "Applied"
             field :restarted, "Restarted"
@@ -38,7 +38,7 @@ module HammerCLIForeman
         from "report" do
           field :id, "Id"
           field :host_name, "Host"
-          field :reported_at, "Reported at", HammerCLI::Output::Fields::Date
+          field :reported_at, "Reported at", Fields::Date
           label "Report status" do
             from "status" do
               field :applied, "Applied"
@@ -65,7 +65,7 @@ module HammerCLIForeman
               end
             end
           end
-          field :logs, "Logs", HammerCLI::Output::Fields::Collection do
+          field :logs, "Logs", Fields::Collection do
             from :log do
               from :source do
                 field :source, "Resource"

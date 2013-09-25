@@ -11,9 +11,12 @@ module HammerCLIForeman
     end
 
     def output
+ 
       @output ||= HammerCLI::Output::Output.new(
+            :context => context,
             :definition => output_definition,
-            :adapter => HammerCLI::Output::Adapter::Table.new)
+            :adapter => HammerCLI::Output::Adapter::Table.new(
+              context, HammerCLIForeman::Output::Formatters::DEFAULT_FORMATTERS))
 
     end
 
@@ -37,6 +40,15 @@ module HammerCLIForeman
     def self.apipie_options(options={})
       super(options.merge(:without => declared_identifiers.keys))
     end
+
+    def output
+      @output ||= HammerCLI::Output::Output.new(
+            :context => context,
+            :definition => output_definition,
+            :adapter => HammerCLI::Output::Adapter::Base.new(
+              context, HammerCLIForeman::Output::Formatters::DEFAULT_FORMATTERS))
+    end
+
   end
 
 

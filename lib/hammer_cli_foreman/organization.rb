@@ -29,8 +29,8 @@ module HammerCLIForeman
 
       output ListCommand.output_definition do
         from "organization" do
-          field :created_at, "Created at", HammerCLI::Output::Fields::Date
-          field :updated_at, "Updated at", HammerCLI::Output::Fields::Date
+          field :created_at, "Created at", Fields::Date
+          field :updated_at, "Updated at", Fields::Date
         end
       end
 

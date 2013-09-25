@@ -26,9 +26,9 @@ module HammerCLIForeman
       output ListCommand.output_definition do
         from "medium" do
           field :os_family, "OS Family"
-          field :operatingsystem_ids, "OS IDs", HammerCLI::Output::Fields::List
-          field :created_at, "Created at", HammerCLI::Output::Fields::Date
-          field :updated_at, "Updated at", HammerCLI::Output::Fields::Date
+          field :operatingsystem_ids, "OS IDs", Fields::List
+          field :created_at, "Created at", Fields::Date
+          field :updated_at, "Updated at", Fields::Date
         end
       end
 

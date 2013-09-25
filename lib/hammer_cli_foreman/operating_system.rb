@@ -15,7 +15,7 @@ module HammerCLIForeman
         from "operatingsystem" do
           field :id, "Id"
         end
-        field :operatingsystem, "Name", HammerCLI::Output::Fields::OSName
+        field :operatingsystem, "Name", Fields::OSName
         from "operatingsystem" do
           field :release_name, "Release name"
           field :family, "Family"
@@ -32,13 +32,13 @@ module HammerCLIForeman
 
       output ListCommand.output_definition do
         from "operatingsystem" do
-          field :media_names, "Installation media", HammerCLI::Output::Fields::List
-          field :architecture_names, "Architectures", HammerCLI::Output::Fields::List
-          field :ptable_names, "Partition tables", HammerCLI::Output::Fields::List
-          field :config_template_names, "Config templates", HammerCLI::Output::Fields::List
+          field :media_names, "Installation media", Fields::List
+          field :architecture_names, "Architectures", Fields::List
+          field :ptable_names, "Partition tables", Fields::List
+          field :config_template_names, "Config templates", Fields::List
         end
         collection :parameters, "Parameters" do
-          field :parameter, nil, HammerCLI::Output::Fields::KeyValue
+          field :parameter, nil, Fields::KeyValue
         end
       end
 
