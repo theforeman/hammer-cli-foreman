@@ -18,7 +18,7 @@ module HammerCLIForeman
           field :subnet_id, "Subnet Id"
           field :domain_id, "Domain Id"
           field :environment_id, "Environment Id"
-          field :puppetclass_ids, "Puppetclass Ids", HammerCLI::Output::Fields::List
+          field :puppetclass_ids, "Puppetclass Ids", Fields::List
           field :ancestry, "Ancestry"
         end
       end
@@ -34,7 +34,7 @@ module HammerCLIForeman
 
       output ListCommand.output_definition do
         collection :parameters, "Parameters" do
-          field :parameter, nil, HammerCLI::Output::Fields::KeyValue
+          field :parameter, nil, Fields::KeyValue
         end
       end
 

@@ -34,11 +34,11 @@ module HammerCLIForeman
         from "domain" do
           field :fullname, "Full Name"
           field :dns_id, "DNS Id"
-          field :created_at, "Created at", HammerCLI::Output::Fields::Date
-          field :updated_at, "Updated at", HammerCLI::Output::Fields::Date
+          field :created_at, "Created at", Fields::Date
+          field :updated_at, "Updated at", Fields::Date
         end
         collection :parameters, "Parameters" do
-          field :parameter, nil, HammerCLI::Output::Fields::KeyValue
+          field :parameter, nil, Fields::KeyValue
         end
       end
 

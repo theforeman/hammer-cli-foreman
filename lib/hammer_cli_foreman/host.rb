@@ -59,10 +59,10 @@ module HammerCLIForeman
           field :sp_subnet, "SP Subnet"
           field :sp_subnet_id, "SP Subnet Id"
 
-          field :created_at, "Created at", HammerCLI::Output::Fields::Date
-          field :updated_at, "Updated at", HammerCLI::Output::Fields::Date
-          field :installed_at, "Installed at", HammerCLI::Output::Fields::Date
-          field :last_report, "Last report", HammerCLI::Output::Fields::Date
+          field :created_at, "Created at", Fields::Date
+          field :updated_at, "Updated at", Fields::Date
+          field :installed_at, "Installed at", Fields::Date
+          field :last_report, "Last report", Fields::Date
 
           field :puppet_ca_proxy_id, "Puppet CA Proxy Id"
           field :medium_id, "Medium Id"
@@ -80,7 +80,7 @@ module HammerCLIForeman
           field :comment, "Comment"
         end
         collection :parameters, "Parameters" do
-          field :parameter, nil, HammerCLI::Output::Fields::KeyValue
+          field :parameter, nil, Fields::KeyValue
         end
       end
     end

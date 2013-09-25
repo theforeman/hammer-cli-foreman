@@ -28,13 +28,13 @@ module HammerCLIForeman
       output ListCommand.output_definition do
         from "subnet" do
           field :priority, "Priority"
-          field :dns, "DNS", HammerCLI::Output::Fields::Server
+          field :dns, "DNS", Fields::Server
           field :dns_primary, "Primary DNS"
           field :dns_secondary, "Secondary DNS"
-          field :domain_ids, "Domain ids", HammerCLI::Output::Fields::List
-          field :tftp, "TFTP", HammerCLI::Output::Fields::Server
+          field :domain_ids, "Domain ids", Fields::List
+          field :tftp, "TFTP", Fields::Server
           field :tftp_id, "TFTP id"
-          field :dhcp, "DHCP", HammerCLI::Output::Fields::Server
+          field :dhcp, "DHCP", Fields::Server
           field :dhcp_id, "DHCP id"
           field :vlanid, "vlan id"
           field :gateway, "Gateway"

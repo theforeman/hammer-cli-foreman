@@ -26,9 +26,9 @@ module HammerCLIForeman
 
       output ListCommand.output_definition do
         from "architecture" do
-          field :operatingsystem_ids, "OS ids", HammerCLI::Output::Fields::List
-          field :created_at, "Created at", HammerCLI::Output::Fields::Date
-          field :updated_at, "Updated at", HammerCLI::Output::Fields::Date
+          field :operatingsystem_ids, "OS ids", Fields::List
+          field :created_at, "Created at", Fields::Date
+          field :updated_at, "Updated at", Fields::Date
         end
       end
 
