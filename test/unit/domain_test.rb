@@ -7,13 +7,12 @@ describe HammerCLIForeman::Domain do
   extend CommandTestHelper
 
   before :each do
-    cmd.output.adapter = HammerCLI::Output::Adapter::Silent.new
     cmd.class.resource ApipieResourceMock.new(cmd.class.resource.resource_class)
   end
 
   context "ListCommand" do
 
-    let(:cmd) { HammerCLIForeman::Domain::ListCommand.new("") }
+    let(:cmd) { HammerCLIForeman::Domain::ListCommand.new("", ctx) }
 
     context "parameters" do
       it_should_accept "no arguments"
@@ -32,7 +31,7 @@ describe HammerCLIForeman::Domain do
 
   context "InfoCommand" do
 
-    let(:cmd) { HammerCLIForeman::Domain::InfoCommand.new("") }
+    let(:cmd) { HammerCLIForeman::Domain::InfoCommand.new("", ctx) }
 
     before :each do
       HammerCLIForeman::Parameter.stubs(:get_parameters).returns([])
@@ -57,7 +56,7 @@ describe HammerCLIForeman::Domain do
 
   context "CreateCommand" do
 
-    let(:cmd) { HammerCLIForeman::Domain::CreateCommand.new("") }
+    let(:cmd) { HammerCLIForeman::Domain::CreateCommand.new("", ctx) }
 
     context "parameters" do
       it_should_accept "name, fullname", ["--name=domain", "--fullname=full_domain_name"]
@@ -69,7 +68,7 @@ describe HammerCLIForeman::Domain do
 
   context "DeleteCommand" do
 
-    let(:cmd) { HammerCLIForeman::Domain::DeleteCommand.new("") }
+    let(:cmd) { HammerCLIForeman::Domain::DeleteCommand.new("", ctx) }
 
     context "parameters" do
       it_should_accept "name", ["--name=domain"]
@@ -82,7 +81,7 @@ describe HammerCLIForeman::Domain do
 
   context "UpdateCommand" do
 
-    let(:cmd) { HammerCLIForeman::Domain::UpdateCommand.new("") }
+    let(:cmd) { HammerCLIForeman::Domain::UpdateCommand.new("", ctx) }
 
     context "parameters" do
       it_should_accept "name", ["--name=domain", "--new-name=domain2", "--fullname=full_domain_name"]
@@ -102,7 +101,7 @@ describe HammerCLIForeman::Domain do
       cmd.class.resource resource_mock
     end
 
-    let(:cmd) { HammerCLIForeman::Domain::SetParameterCommand.new("") }
+    let(:cmd) { HammerCLIForeman::Domain::SetParameterCommand.new("", ctx) }
 
     context "parameters" do
       it_should_accept "name, value and domain name", ["--name=name", "--value=val", "--domain-name=name"]
@@ -117,7 +116,7 @@ describe HammerCLIForeman::Domain do
 
   context "DeleteParameterCommand" do
 
-    let(:cmd) { HammerCLIForeman::Domain::DeleteParameterCommand.new("") }
+    let(:cmd) { HammerCLIForeman::Domain::DeleteParameterCommand.new("", ctx) }
 
     context "parameters" do
       it_should_accept "name and domain name", ["--name=domain", "--domain-name=name"]

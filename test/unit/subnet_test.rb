@@ -7,13 +7,12 @@ describe HammerCLIForeman::Subnet do
   extend CommandTestHelper
 
   before :each do
-    cmd.output.adapter = HammerCLI::Output::Adapter::Silent.new
     cmd.class.resource ApipieResourceMock.new(cmd.class.resource.resource_class)
   end
 
   context "ListCommand" do
 
-    let(:cmd) { HammerCLIForeman::Subnet::ListCommand.new("") }
+    let(:cmd) { HammerCLIForeman::Subnet::ListCommand.new("", ctx) }
 
     context "parameters" do
       it_should_accept "no arguments"
@@ -32,7 +31,7 @@ describe HammerCLIForeman::Subnet do
 
   context "InfoCommand" do
 
-    let(:cmd) { HammerCLIForeman::Subnet::InfoCommand.new("") }
+    let(:cmd) { HammerCLIForeman::Subnet::InfoCommand.new("", ctx) }
 
     context "parameters" do
       it_should_accept "id", ["--id=1"]
@@ -56,7 +55,7 @@ describe HammerCLIForeman::Subnet do
 
   context "CreateCommand" do
 
-    let(:cmd) { HammerCLIForeman::Subnet::CreateCommand.new("") }
+    let(:cmd) { HammerCLIForeman::Subnet::CreateCommand.new("", ctx) }
 
     context "parameters" do
       it_should_accept "name", ["--name=arch", "--network=192.168.83.0", "--mask=255.255.255.0"]
@@ -70,7 +69,7 @@ describe HammerCLIForeman::Subnet do
 
   context "DeleteCommand" do
 
-    let(:cmd) { HammerCLIForeman::Subnet::DeleteCommand.new("") }
+    let(:cmd) { HammerCLIForeman::Subnet::DeleteCommand.new("", ctx) }
 
     context "parameters" do
       it_should_accept "name", ["--name=arch"]
@@ -83,7 +82,7 @@ describe HammerCLIForeman::Subnet do
 
   context "UpdateCommand" do
 
-    let(:cmd) { HammerCLIForeman::Subnet::UpdateCommand.new("") }
+    let(:cmd) { HammerCLIForeman::Subnet::UpdateCommand.new("", ctx) }
 
     context "parameters" do
       it_should_accept "name", ["--name=arch", "--new-name=arch2"]

@@ -6,7 +6,8 @@ module HammerCLIForeman
       if resource_supported?
         super
       else
-        output.print_error "The server does not support such operation."
+        error = "The server does not support such operation."
+        HammerCLI::Output::Output.print_error error, nil, context, :adapter => adapter
         1
       end
     end

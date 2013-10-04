@@ -92,7 +92,7 @@ module HammerCLIForeman
       resource ForemanApi::Resources::Host, "status"
 
       def print_data(records)
-        output.print_message records["status"]
+        print_message records["status"]
       end
     end
 
@@ -103,7 +103,7 @@ module HammerCLIForeman
       resource ForemanApi::Resources::Host, "puppetrun"
 
       def print_data(records)
-        output.print_message 'Puppet run triggered'
+        print_message 'Puppet run triggered'
       end
     end
 

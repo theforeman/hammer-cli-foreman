@@ -7,7 +7,6 @@ describe HammerCLIForeman::User do
   extend CommandTestHelper
 
   before :each do
-    cmd.output.adapter = HammerCLI::Output::Adapter::Silent.new
     cmd.class.resource ApipieResourceMock.new(cmd.class.resource.resource_class)
   end
 
@@ -15,7 +14,7 @@ describe HammerCLIForeman::User do
 
   context "ListCommand" do
 
-    let(:cmd) { cmd_module::ListCommand.new("") }
+    let(:cmd) { cmd_module::ListCommand.new("", ctx ) }
 
     context "parameters" do
       it_should_accept "no arguments"
@@ -34,7 +33,7 @@ describe HammerCLIForeman::User do
 
   context "InfoCommand" do
 
-    let(:cmd) { cmd_module::InfoCommand.new("") }
+    let(:cmd) { cmd_module::InfoCommand.new("", ctx) }
 
     context "parameters" do
       it_should_accept "id", ["--id=1"]
@@ -54,7 +53,7 @@ describe HammerCLIForeman::User do
 
   context "CreateCommand" do
 
-    let(:cmd) { cmd_module::CreateCommand.new("") }
+    let(:cmd) { cmd_module::CreateCommand.new("", ctx) }
 
     context "parameters" do
       it_should_accept "all required", ["--login=login", "--mail=mail", "--password=paswd", "--auth-source-id=1"]
@@ -70,7 +69,7 @@ describe HammerCLIForeman::User do
 
   context "DeleteCommand" do
 
-    let(:cmd) { cmd_module::DeleteCommand.new("") }
+    let(:cmd) { cmd_module::DeleteCommand.new("", ctx) }
 
     context "parameters" do
       it_should_accept "id", ["--id=1"]
@@ -82,7 +81,7 @@ describe HammerCLIForeman::User do
 
   context "UpdateCommand" do
 
-    let(:cmd) { cmd_module::UpdateCommand.new("") }
+    let(:cmd) { cmd_module::UpdateCommand.new("", ctx) }
 
     context "parameters" do
       it_should_accept "id", ["--id=1"]

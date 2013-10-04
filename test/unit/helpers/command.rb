@@ -1,5 +1,6 @@
 require File.join(File.dirname(__FILE__), '../test_output_adapter')
 
+
 module CommandTestHelper
 
   def with_params(params, &block)
@@ -19,14 +20,12 @@ module CommandTestHelper
 
   def it_should_fail_with(message, arguments=[])
     it "should fail with " + message.to_s do
-      cmd.output.adapter = HammerCLI::Output::Adapter::Silent.new
       proc { cmd.run(arguments) }.must_raise Clamp::UsageError
     end
   end
 
   def it_should_accept(message, arguments=[])
     it "should accept " + message.to_s do
-      cmd.output.adapter = HammerCLI::Output::Adapter::Silent.new
       cmd.run(arguments).must_equal 0
     end
   end
@@ -35,7 +34,7 @@ module CommandTestHelper
     it "should print column " + column_name do
       arguments ||= respond_to?(:with_params) ? with_params : []
 
-      cmd.output.adapter = TestAdapter.new
+      cmd.stubs(:context).returns({ :adapter => :test })
       proc { cmd.run(arguments) }.must_output /.*##{column_name}#.*/
     end
   end
@@ -50,7 +49,7 @@ module CommandTestHelper
     it "should print correct count of records" do
       arguments ||= respond_to?(:with_params) ? with_params : []
 
-      cmd.output.adapter = TestAdapter.new
+      cmd.stubs(:context).returns({ :adapter => :test })
       count ||= expected_record_count rescue 0
       out, err = capture_io do
         cmd.run(arguments)
