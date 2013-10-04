@@ -34,10 +34,10 @@ module HammerCLIForeman
       def execute
         if parameter_exist?
           update_parameter
-          output.print_message success_message_for :update if success_message_for :update
+          print_message success_message_for :update if success_message_for :update
         else
           create_parameter
-          output.print_message success_message_for :create if success_message_for :create
+          print_message success_message_for :create if success_message_for :create
         end
         HammerCLI::EX_OK
       end
@@ -96,7 +96,7 @@ module HammerCLIForeman
         }.merge base_action_params
 
         resource.call(:destroy, params)
-        output.print_message success_message if success_message
+        print_message success_message if success_message
         HammerCLI::EX_OK
       end
 

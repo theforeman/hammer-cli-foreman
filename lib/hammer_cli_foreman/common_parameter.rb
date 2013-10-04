@@ -44,7 +44,7 @@ module HammerCLIForeman
         else
           msg = "Global parameter updated"
         end
-        output.print_message msg
+        print_message msg
       end
 
       def parameter_exist?

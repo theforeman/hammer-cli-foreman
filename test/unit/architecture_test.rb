@@ -7,13 +7,12 @@ describe HammerCLIForeman::Architecture do
   extend CommandTestHelper
 
   before :each do
-    cmd.output.adapter = HammerCLI::Output::Adapter::Silent.new
     cmd.class.resource ApipieResourceMock.new(cmd.class.resource.resource_class)
   end
 
   context "ListCommand" do
 
-    let(:cmd) { HammerCLIForeman::Architecture::ListCommand.new("") }
+    let(:cmd) { HammerCLIForeman::Architecture::ListCommand.new("", ctx) }
 
     context "parameters" do
       it_should_accept "no arguments"
@@ -33,7 +32,7 @@ describe HammerCLIForeman::Architecture do
 
   context "InfoCommand" do
 
-    let(:cmd) { HammerCLIForeman::Architecture::InfoCommand.new("") }
+    let(:cmd) { HammerCLIForeman::Architecture::InfoCommand.new("", ctx) }
 
     context "parameters" do
       it_should_accept "id", ["--id=1"]
@@ -54,7 +53,7 @@ describe HammerCLIForeman::Architecture do
 
   context "CreateCommand" do
 
-    let(:cmd) { HammerCLIForeman::Architecture::CreateCommand.new("") }
+    let(:cmd) { HammerCLIForeman::Architecture::CreateCommand.new("", ctx) }
 
     context "parameters" do
       it_should_accept "name", ["--name=arch"]
@@ -66,7 +65,7 @@ describe HammerCLIForeman::Architecture do
 
   context "DeleteCommand" do
 
-    let(:cmd) { HammerCLIForeman::Architecture::DeleteCommand.new("") }
+    let(:cmd) { HammerCLIForeman::Architecture::DeleteCommand.new("", ctx) }
 
     context "parameters" do
       it_should_accept "name", ["--name=arch"]
@@ -79,7 +78,7 @@ describe HammerCLIForeman::Architecture do
 
   context "UpdateCommand" do
 
-    let(:cmd) { HammerCLIForeman::Architecture::UpdateCommand.new("") }
+    let(:cmd) { HammerCLIForeman::Architecture::UpdateCommand.new("", ctx) }
 
     context "parameters" do
       it_should_accept "name", ["--name=arch", "--new-name=arch2"]

@@ -15,7 +15,6 @@ describe HammerCLIForeman::Template do
   }
 
   before :each do
-    cmd.output.adapter = HammerCLI::Output::Adapter::Silent.new
     resource_mock = ApipieResourceMock.new(cmd.class.resource.resource_class)
     resource_mock.stubs(:index).returns([[], nil])
     resource_mock.stubs(:show).returns([template_hash, nil])
@@ -25,7 +24,7 @@ describe HammerCLIForeman::Template do
 
   context "ListCommand" do
 
-    let(:cmd) { HammerCLIForeman::Template::ListCommand.new("") }
+    let(:cmd) { HammerCLIForeman::Template::ListCommand.new("", ctx) }
 
     context "parameters" do
       it_should_accept "no arguments"
@@ -44,7 +43,7 @@ describe HammerCLIForeman::Template do
 
   context "InfoCommand" do
 
-    let(:cmd) { HammerCLIForeman::Template::InfoCommand.new("") }
+    let(:cmd) { HammerCLIForeman::Template::InfoCommand.new("", ctx) }
 
     context "parameters" do
       it_should_accept "id", ["--id=1"]
@@ -63,7 +62,7 @@ describe HammerCLIForeman::Template do
 
   context "ListKindsCommand" do
 
-    let(:cmd) { HammerCLIForeman::Template::ListKindsCommand.new("") }
+    let(:cmd) { HammerCLIForeman::Template::ListKindsCommand.new("", ctx) }
 
     context "parameters" do
       it_should_accept "no arguments"
@@ -74,7 +73,7 @@ describe HammerCLIForeman::Template do
 
   context "DumpCommand" do
 
-    let(:cmd) { HammerCLIForeman::Template::DumpCommand.new("") }
+    let(:cmd) { HammerCLIForeman::Template::DumpCommand.new("", ctx) }
 
     context "parameters" do
       it_should_accept "id", ["--id=1"]
@@ -86,7 +85,7 @@ describe HammerCLIForeman::Template do
 
   context "CreateCommand" do
 
-    let(:cmd) { HammerCLIForeman::Template::CreateCommand.new("") }
+    let(:cmd) { HammerCLIForeman::Template::CreateCommand.new("", ctx) }
 
     before :each do
       cmd.stubs(:template_kind_id).returns(1)
@@ -104,7 +103,7 @@ describe HammerCLIForeman::Template do
 
   context "UpdateCommand" do
 
-    let(:cmd) { HammerCLIForeman::Template::UpdateCommand.new("") }
+    let(:cmd) { HammerCLIForeman::Template::UpdateCommand.new("", ctx) }
 
     before :each do
       cmd.stubs(:template_kind_id).returns(1)
@@ -120,7 +119,7 @@ describe HammerCLIForeman::Template do
 
   context "DeleteCommand" do
 
-    let(:cmd) { HammerCLIForeman::Template::DeleteCommand.new("") }
+    let(:cmd) { HammerCLIForeman::Template::DeleteCommand.new("", ctx) }
 
     context "parameters" do
       it_should_accept "id", ["--id=1"]

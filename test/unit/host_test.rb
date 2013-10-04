@@ -7,13 +7,12 @@ describe HammerCLIForeman::Host do
   extend CommandTestHelper
 
   before :each do
-    cmd.output.adapter = HammerCLI::Output::Adapter::Silent.new
     cmd.class.resource ApipieResourceMock.new(cmd.class.resource.resource_class)
   end
 
   context "ListCommand" do
 
-    let(:cmd) { HammerCLIForeman::Host::ListCommand.new("") }
+    let(:cmd) { HammerCLIForeman::Host::ListCommand.new("", ctx) }
 
     context "parameters" do
       it_should_accept "no arguments"
@@ -31,7 +30,7 @@ describe HammerCLIForeman::Host do
 
   context "InfoCommand" do
 
-    let(:cmd) { HammerCLIForeman::Host::InfoCommand.new("") }
+    let(:cmd) { HammerCLIForeman::Host::InfoCommand.new("", ctx) }
 
     before :each do
       HammerCLIForeman::Parameter.stubs(:get_parameters).returns([])
@@ -64,12 +63,12 @@ describe HammerCLIForeman::Host do
 
   context "StatusCommand" do
 
-    let(:cmd) { HammerCLIForeman::Host::StatusCommand.new("") }
+    let(:cmd) { HammerCLIForeman::Host::StatusCommand.new("", ctx) }
 
     context "output" do
       with_params ["--id=1"] do
         it "should output status" do
-          cmd.output.adapter = TestAdapter.new
+          cmd.stubs(:context).returns({ :adapter => :test })
           proc { cmd.run(with_params) }.must_output "missing\n"
         end
       end
@@ -79,7 +78,7 @@ describe HammerCLIForeman::Host do
 
   context "FactsCommand" do
 
-    let(:cmd) { HammerCLIForeman::Host::FactsCommand.new("") }
+    let(:cmd) { HammerCLIForeman::Host::FactsCommand.new("", ctx) }
 
     context "parameters" do
       it_should_accept "name", ["--name=host"]
@@ -99,7 +98,7 @@ describe HammerCLIForeman::Host do
 
   context "PuppetClassesCommand" do
 
-    let(:cmd) { HammerCLIForeman::Host::PuppetClassesCommand.new("") }
+    let(:cmd) { HammerCLIForeman::Host::PuppetClassesCommand.new("", ctx) }
 
     context "parameters" do
       it_should_accept "name", ["--name=host"]
@@ -119,12 +118,13 @@ describe HammerCLIForeman::Host do
 
   context "PuppetRunCommand" do
 
-    let(:cmd) { HammerCLIForeman::Host::PuppetRunCommand.new("") }
+    let(:cmd) { HammerCLIForeman::Host::PuppetRunCommand.new("", ctx) }
 
     context "output" do
       with_params ["--id=1"] do
         it "should inform that puppet was triggered" do
-          cmd.output.adapter = TestAdapter.new
+          
+          cmd.stubs(:context).returns({ :adapter => :test })
           proc { cmd.run(with_params) }.must_output "Puppet run triggered\n"
         end
       end
@@ -134,7 +134,7 @@ describe HammerCLIForeman::Host do
 
   context "ReportsCommand" do
 
-    let(:cmd) { HammerCLIForeman::Host::ReportsCommand.new("") }
+    let(:cmd) { HammerCLIForeman::Host::ReportsCommand.new("", ctx) }
 
     context "parameters" do
       it_should_accept "id", ["--id=1"]
@@ -162,7 +162,7 @@ describe HammerCLIForeman::Host do
 
   context "DeleteCommand" do
 
-    let(:cmd) { HammerCLIForeman::Host::DeleteCommand.new("") }
+    let(:cmd) { HammerCLIForeman::Host::DeleteCommand.new("", ctx) }
 
     context "parameters" do
       it_should_accept "name", ["--name=host"]
@@ -174,7 +174,7 @@ describe HammerCLIForeman::Host do
 
   context "CreateCommand" do
 
-    let(:cmd) { HammerCLIForeman::Host::CreateCommand.new("") }
+    let(:cmd) { HammerCLIForeman::Host::CreateCommand.new("", ctx) }
 
     context "parameters" do
       it_should_accept "name, environment_id, architecture_id, domain_id, puppet_proxy_id, operatingsystem_id and more",
@@ -199,7 +199,7 @@ describe HammerCLIForeman::Host do
 
   context "UpdateCommand" do
 
-    let(:cmd) { HammerCLIForeman::Host::UpdateCommand.new("") }
+    let(:cmd) { HammerCLIForeman::Host::UpdateCommand.new("", ctx) }
 
     context "parameters" do
       it_should_accept "name", ["--name=host", "--new-name=host2"]
@@ -223,7 +223,7 @@ describe HammerCLIForeman::Host do
       cmd.class.resource resource_mock
     end
 
-    let(:cmd) { HammerCLIForeman::Host::SetParameterCommand.new("") }
+    let(:cmd) { HammerCLIForeman::Host::SetParameterCommand.new("", ctx) }
 
     context "parameters" do
       it_should_accept "name, value and host name", ["--name=name", "--value=val", "--host-name=name"]
@@ -238,7 +238,7 @@ describe HammerCLIForeman::Host do
 
   context "DeleteParameterCommand" do
 
-    let(:cmd) { HammerCLIForeman::Host::DeleteParameterCommand.new("") }
+    let(:cmd) { HammerCLIForeman::Host::DeleteParameterCommand.new("", ctx) }
 
     context "parameters" do
       it_should_accept "name and host name", ["--name=name", "--host-name=name"]

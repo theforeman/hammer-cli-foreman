@@ -4,10 +4,11 @@ require File.join(File.dirname(__FILE__), 'apipie_resource_mock')
 
 describe HammerCLIForeman::OperatingSystem do
 
+  let(:ctx) { { :adapter => :silent } }
+
   extend CommandTestHelper
 
   before :each do
-    cmd.output.adapter = HammerCLI::Output::Adapter::Silent.new
     resource_mock = ApipieResourceMock.new(cmd.class.resource.resource_class)
     resource_mock.stubs(:index).returns([[], nil])
     resource_mock.stubs(:show).returns([{"operatingsystem" => {}}, nil])
@@ -16,7 +17,7 @@ describe HammerCLIForeman::OperatingSystem do
 
   context "ListCommand" do
 
-    let(:cmd) { HammerCLIForeman::OperatingSystem::ListCommand.new("") }
+    let(:cmd) { HammerCLIForeman::OperatingSystem::ListCommand.new("", ctx) }
 
     context "parameters" do
       it_should_accept "no arguments"
@@ -38,7 +39,7 @@ describe HammerCLIForeman::OperatingSystem do
 
   context "InfoCommand" do
 
-    let(:cmd) { HammerCLIForeman::OperatingSystem::InfoCommand.new("") }
+    let(:cmd) { HammerCLIForeman::OperatingSystem::InfoCommand.new("", ctx) }
 
     before :each do
       HammerCLIForeman::Parameter.stubs(:get_parameters).returns([])
@@ -70,7 +71,7 @@ describe HammerCLIForeman::OperatingSystem do
 
   context "CreateCommand" do
 
-    let(:cmd) { HammerCLIForeman::OperatingSystem::CreateCommand.new("") }
+    let(:cmd) { HammerCLIForeman::OperatingSystem::CreateCommand.new("", ctx) }
 
     context "parameters" do
       it_should_accept "name, major, minor, family, release name", ["--name=media", "--major=1", "--minor=2", "--family=Red Hat", "--release-name=awesome"]
@@ -85,7 +86,7 @@ describe HammerCLIForeman::OperatingSystem do
 
   context "DeleteCommand" do
 
-    let(:cmd) { HammerCLIForeman::OperatingSystem::DeleteCommand.new("") }
+    let(:cmd) { HammerCLIForeman::OperatingSystem::DeleteCommand.new("", ctx) }
 
     context "parameters" do
       it_should_accept "label", ["--label=os"]
@@ -98,7 +99,7 @@ describe HammerCLIForeman::OperatingSystem do
 
   context "UpdateCommand" do
 
-    let(:cmd) { HammerCLIForeman::OperatingSystem::UpdateCommand.new("") }
+    let(:cmd) { HammerCLIForeman::OperatingSystem::UpdateCommand.new("", ctx) }
 
     context "parameters" do
       it_should_accept "label", ["--label=os"]
@@ -123,7 +124,7 @@ describe HammerCLIForeman::OperatingSystem do
       cmd.class.resource resource_mock
     end
 
-    let(:cmd) { HammerCLIForeman::OperatingSystem::SetParameterCommand.new("") }
+    let(:cmd) { HammerCLIForeman::OperatingSystem::SetParameterCommand.new("", ctx) }
 
     context "parameters" do
       it_should_accept "name, value and os id", ["--name=name", "--value=val", "--os-id=id"]
@@ -137,7 +138,7 @@ describe HammerCLIForeman::OperatingSystem do
 
   context "DeleteParameterCommand" do
 
-    let(:cmd) { HammerCLIForeman::OperatingSystem::DeleteParameterCommand.new("") }
+    let(:cmd) { HammerCLIForeman::OperatingSystem::DeleteParameterCommand.new("", ctx) }
 
     context "parameters" do
       it_should_accept "name and os id", ["--name=domain", "--os-id=id"]

@@ -7,13 +7,12 @@ describe HammerCLIForeman::Environment do
   extend CommandTestHelper
 
   before :each do
-    cmd.output.adapter = HammerCLI::Output::Adapter::Silent.new
     cmd.class.resource ApipieResourceMock.new(cmd.class.resource.resource_class)
   end
 
   context "ListCommand" do
 
-    let(:cmd) { HammerCLIForeman::Environment::ListCommand.new("") }
+    let(:cmd) { HammerCLIForeman::Environment::ListCommand.new("", ctx) }
 
     context "parameters" do
       it_should_accept "no arguments"
@@ -33,7 +32,7 @@ describe HammerCLIForeman::Environment do
 
   context "InfoCommand" do
 
-    let(:cmd) { HammerCLIForeman::Environment::InfoCommand.new("") }
+    let(:cmd) { HammerCLIForeman::Environment::InfoCommand.new("", ctx) }
 
     context "parameters" do
       it_should_accept "id", ["--id=1"]
@@ -56,7 +55,7 @@ describe HammerCLIForeman::Environment do
 
   context "CreateCommand" do
 
-    let(:cmd) { HammerCLIForeman::Environment::CreateCommand.new("") }
+    let(:cmd) { HammerCLIForeman::Environment::CreateCommand.new("", ctx) }
 
     context "parameters" do
       it_should_accept "name", ["--name=env"]
@@ -68,7 +67,7 @@ describe HammerCLIForeman::Environment do
 
   context "DeleteCommand" do
 
-    let(:cmd) { HammerCLIForeman::Environment::DeleteCommand.new("") }
+    let(:cmd) { HammerCLIForeman::Environment::DeleteCommand.new("", ctx) }
 
     context "parameters" do
       it_should_accept "name", ["--name=env"]
@@ -81,7 +80,7 @@ describe HammerCLIForeman::Environment do
 
   context "UpdateCommand" do
 
-    let(:cmd) { HammerCLIForeman::Environment::UpdateCommand.new("") }
+    let(:cmd) { HammerCLIForeman::Environment::UpdateCommand.new("", ctx) }
 
     context "parameters" do
       it_should_accept "name", ["--name=env", "--new-name=env2"]

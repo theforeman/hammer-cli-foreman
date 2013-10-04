@@ -7,13 +7,12 @@ describe HammerCLIForeman::Hostgroup do
   extend CommandTestHelper
 
   before :each do
-    cmd.output.adapter = HammerCLI::Output::Adapter::Silent.new
     cmd.class.resource ApipieResourceMock.new(cmd.class.resource.resource_class)
   end
 
   context "ListCommand" do
 
-    let(:cmd) { HammerCLIForeman::Hostgroup::ListCommand.new("") }
+    let(:cmd) { HammerCLIForeman::Hostgroup::ListCommand.new("", ctx) }
 
     context "parameters" do
       it_should_accept "no arguments"
@@ -32,7 +31,7 @@ describe HammerCLIForeman::Hostgroup do
 
   context "InfoCommand" do
 
-    let(:cmd) { HammerCLIForeman::Hostgroup::InfoCommand.new("") }
+    let(:cmd) { HammerCLIForeman::Hostgroup::InfoCommand.new("", ctx) }
 
     before :each do
       HammerCLIForeman::Parameter.stubs(:get_parameters).returns([])
@@ -56,7 +55,7 @@ describe HammerCLIForeman::Hostgroup do
 
   context "DeleteCommand" do
 
-    let(:cmd) { HammerCLIForeman::Hostgroup::DeleteCommand.new("") }
+    let(:cmd) { HammerCLIForeman::Hostgroup::DeleteCommand.new("", ctx) }
 
     context "parameters" do
       it_should_accept "id", ["--id=1"]
@@ -67,7 +66,7 @@ describe HammerCLIForeman::Hostgroup do
 
   context "CreateCommand" do
 
-    let(:cmd) { HammerCLIForeman::Hostgroup::CreateCommand.new("") }
+    let(:cmd) { HammerCLIForeman::Hostgroup::CreateCommand.new("", ctx) }
 
     context "parameters" do
       it_should_accept "name, parent_id, environment_id, architecture_id, domain_id, puppet_proxy_id, operatingsystem_id and more",
@@ -80,7 +79,7 @@ describe HammerCLIForeman::Hostgroup do
 
   context "UpdateCommand" do
 
-    let(:cmd) { HammerCLIForeman::Hostgroup::UpdateCommand.new("") }
+    let(:cmd) { HammerCLIForeman::Hostgroup::UpdateCommand.new("", ctx) }
 
     context "parameters" do
       it_should_accept "name, parent_id, environment_id, architecture_id, domain_id, puppet_proxy_id, operatingsystem_id and more",
@@ -101,7 +100,7 @@ describe HammerCLIForeman::Hostgroup do
       cmd.class.resource resource_mock
     end
 
-    let(:cmd) { HammerCLIForeman::Hostgroup::SetParameterCommand.new("") }
+    let(:cmd) { HammerCLIForeman::Hostgroup::SetParameterCommand.new("", ctx) }
 
     context "parameters" do
       it_should_accept "name, value and hostgroup id", ["--name=name", "--value=val", "--hostgroup-id=id"]
@@ -115,7 +114,7 @@ describe HammerCLIForeman::Hostgroup do
 
   context "DeleteParameterCommand" do
 
-    let(:cmd) { HammerCLIForeman::Hostgroup::DeleteParameterCommand.new("") }
+    let(:cmd) { HammerCLIForeman::Hostgroup::DeleteParameterCommand.new("", ctx) }
 
     context "parameters" do
       it_should_accept "name and hostgroup id", ["--name=name", "--hostgroup-id=id"]

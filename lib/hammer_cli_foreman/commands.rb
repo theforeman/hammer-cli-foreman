@@ -6,18 +6,12 @@ module HammerCLIForeman
 
     action :index
 
-    def self.command_name(name=nil)
-      super(name) || "list"
+    def adapter
+      :table
     end
 
-    def output
- 
-      @output ||= HammerCLI::Output::Output.new(
-            :context => context,
-            :definition => output_definition,
-            :adapter => HammerCLI::Output::Adapter::Table.new(
-              context, HammerCLIForeman::Output::Formatters::DEFAULT_FORMATTERS))
-
+    def self.command_name(name=nil)
+      super(name) || "list"
     end
 
   end
@@ -39,14 +33,6 @@ module HammerCLIForeman
 
     def self.apipie_options(options={})
       super(options.merge(:without => declared_identifiers.keys))
-    end
-
-    def output
-      @output ||= HammerCLI::Output::Output.new(
-            :context => context,
-            :definition => output_definition,
-            :adapter => HammerCLI::Output::Adapter::Base.new(
-              context, HammerCLIForeman::Output::Formatters::DEFAULT_FORMATTERS))
     end
 
   end

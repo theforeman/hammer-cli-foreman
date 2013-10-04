@@ -7,13 +7,12 @@ describe HammerCLIForeman::SmartProxy do
   extend CommandTestHelper
 
   before :each do
-    cmd.output.adapter = HammerCLI::Output::Adapter::Silent.new
     cmd.class.resource ApipieResourceMock.new(cmd.class.resource.resource_class)
   end
 
   context "ListCommand" do
 
-    let(:cmd) { HammerCLIForeman::SmartProxy::ListCommand.new("") }
+    let(:cmd) { HammerCLIForeman::SmartProxy::ListCommand.new("", ctx) }
 
     context "parameters" do
       it_should_accept "no arguments"
@@ -32,7 +31,7 @@ describe HammerCLIForeman::SmartProxy do
 
   context "InfoCommand" do
 
-    let(:cmd) { HammerCLIForeman::SmartProxy::InfoCommand.new("") }
+    let(:cmd) { HammerCLIForeman::SmartProxy::InfoCommand.new("", ctx) }
 
     context "parameters" do
       it_should_accept "id", ["--id=1"]
@@ -52,7 +51,7 @@ describe HammerCLIForeman::SmartProxy do
 
   context "CreateCommand" do
 
-    let(:cmd) { HammerCLIForeman::SmartProxy::CreateCommand.new("") }
+    let(:cmd) { HammerCLIForeman::SmartProxy::CreateCommand.new("", ctx) }
 
     context "parameters" do
       it_should_accept "name and url", ["--name=proxy", "--url=localhost"]
@@ -65,7 +64,7 @@ describe HammerCLIForeman::SmartProxy do
 
   context "DeleteCommand" do
 
-    let(:cmd) { HammerCLIForeman::SmartProxy::DeleteCommand.new("") }
+    let(:cmd) { HammerCLIForeman::SmartProxy::DeleteCommand.new("", ctx) }
 
     context "parameters" do
       it_should_accept "id", ["--id=1"]
@@ -78,7 +77,7 @@ describe HammerCLIForeman::SmartProxy do
 
   context "UpdateCommand" do
 
-    let(:cmd) { HammerCLIForeman::SmartProxy::UpdateCommand.new("") }
+    let(:cmd) { HammerCLIForeman::SmartProxy::UpdateCommand.new("", ctx) }
 
     context "parameters" do
       it_should_accept "id", ["--id=1", "--new-name=proxy2", "--url=localhost"]

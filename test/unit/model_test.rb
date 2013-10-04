@@ -7,13 +7,12 @@ describe HammerCLIForeman::Model do
   extend CommandTestHelper
 
   before :each do
-    cmd.output.adapter = HammerCLI::Output::Adapter::Silent.new
     cmd.class.resource ApipieResourceMock.new(cmd.class.resource.resource_class)
   end
 
   context "ListCommand" do
 
-    let(:cmd) { HammerCLIForeman::Model::ListCommand.new("") }
+    let(:cmd) { HammerCLIForeman::Model::ListCommand.new("", ctx) }
 
     context "parameters" do
       it_should_accept "no arguments"
@@ -35,7 +34,7 @@ describe HammerCLIForeman::Model do
 
   context "InfoCommand" do
 
-    let(:cmd) { HammerCLIForeman::Model::InfoCommand.new("") }
+    let(:cmd) { HammerCLIForeman::Model::InfoCommand.new("", ctx) }
 
     context "parameters" do
       it_should_accept "id", ["--id=1"]
@@ -61,7 +60,7 @@ describe HammerCLIForeman::Model do
 
   context "CreateCommand" do
 
-    let(:cmd) { HammerCLIForeman::Model::CreateCommand.new("") }
+    let(:cmd) { HammerCLIForeman::Model::CreateCommand.new("", ctx) }
 
     context "parameters" do
       it_should_accept "name", ["--name=model", "--info=description", "--vendor-class=class", "--hardware-model=model"]
@@ -73,7 +72,7 @@ describe HammerCLIForeman::Model do
 
   context "DeleteCommand" do
 
-    let(:cmd) { HammerCLIForeman::Model::DeleteCommand.new("") }
+    let(:cmd) { HammerCLIForeman::Model::DeleteCommand.new("", ctx) }
 
     context "parameters" do
       it_should_accept "name", ["--name=model"]
@@ -86,7 +85,7 @@ describe HammerCLIForeman::Model do
 
   context "UpdateCommand" do
 
-    let(:cmd) { HammerCLIForeman::Model::UpdateCommand.new("") }
+    let(:cmd) { HammerCLIForeman::Model::UpdateCommand.new("", ctx) }
 
     context "parameters" do
       it_should_accept "name", ["--name=model", "--new-name=model2", "--info=description", "--vendor-class=class", "--hardware-model=model"]
