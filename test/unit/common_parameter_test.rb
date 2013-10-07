@@ -7,13 +7,12 @@ describe HammerCLIForeman::CommonParameter do
   extend CommandTestHelper
 
   before :each do
-    cmd.output.adapter = HammerCLI::Output::Adapter::Silent.new
     cmd.class.resource ApipieResourceMock.new(cmd.class.resource.resource_class)
   end
 
   context "ListCommand" do
 
-    let(:cmd) { HammerCLIForeman::CommonParameter::ListCommand.new("") }
+    let(:cmd) { HammerCLIForeman::CommonParameter::ListCommand.new("", ctx) }
 
     context "parameters" do
       it_should_accept "no arguments"
@@ -32,7 +31,7 @@ describe HammerCLIForeman::CommonParameter do
 
   context "SetCommand" do
 
-    let(:cmd) { HammerCLIForeman::CommonParameter::SetCommand.new("") }
+    let(:cmd) { HammerCLIForeman::CommonParameter::SetCommand.new("", ctx) }
       before :each do
         cmd.stubs(:parameter_exist?).returns(false)
       end
@@ -60,7 +59,7 @@ describe HammerCLIForeman::CommonParameter do
 
   context "DeleteCommand" do
 
-    let(:cmd) { HammerCLIForeman::CommonParameter::DeleteCommand.new("") }
+    let(:cmd) { HammerCLIForeman::CommonParameter::DeleteCommand.new("", ctx) }
 
     context "parameters" do
       it_should_accept "name", ["--name=arch"]

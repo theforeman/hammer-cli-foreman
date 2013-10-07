@@ -14,7 +14,8 @@ module ResourceDisabled
 
       it "should print error message" do
         cmd.class.resource ApipieDisabledResourceMock.new(cmd.class.resource.resource_class)
-        cmd.output.adapter = TestAdapter.new
+        cmd.stubs(:context).returns({ :adapter => :test })
+
         arguments = respond_to?(:with_params) ? with_params : []
         lambda { cmd.run(arguments) }.must_output "", /.*not support.*/
       end

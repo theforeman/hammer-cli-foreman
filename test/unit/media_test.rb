@@ -7,13 +7,12 @@ describe HammerCLIForeman::Medium do
   extend CommandTestHelper
 
   before :each do
-    cmd.output.adapter = HammerCLI::Output::Adapter::Silent.new
     cmd.class.resource ApipieResourceMock.new(cmd.class.resource.resource_class)
   end
 
   context "ListCommand" do
 
-    let(:cmd) { HammerCLIForeman::Medium::ListCommand.new("") }
+    let(:cmd) { HammerCLIForeman::Medium::ListCommand.new("", ctx) }
 
     context "parameters" do
       it_should_accept "no arguments"
@@ -34,7 +33,7 @@ describe HammerCLIForeman::Medium do
 
   context "InfoCommand" do
 
-    let(:cmd) { HammerCLIForeman::Medium::InfoCommand.new("") }
+    let(:cmd) { HammerCLIForeman::Medium::InfoCommand.new("", ctx) }
 
     context "parameters" do
       it_should_accept "id", ["--id=1"]
@@ -60,7 +59,7 @@ describe HammerCLIForeman::Medium do
 
   context "CreateCommand" do
 
-    let(:cmd) { HammerCLIForeman::Medium::CreateCommand.new("") }
+    let(:cmd) { HammerCLIForeman::Medium::CreateCommand.new("", ctx) }
 
     context "parameters" do
       it_should_accept "name, path, os ids", ["--name=media", "--path=http://some.path/abc/$major/Fedora/$arch/", "--operatingsystem-ids=1,2"]
@@ -76,7 +75,7 @@ describe HammerCLIForeman::Medium do
 
   context "DeleteCommand" do
 
-    let(:cmd) { HammerCLIForeman::Medium::DeleteCommand.new("") }
+    let(:cmd) { HammerCLIForeman::Medium::DeleteCommand.new("", ctx) }
 
     context "parameters" do
       it_should_accept "name", ["--name=media"]
@@ -89,7 +88,7 @@ describe HammerCLIForeman::Medium do
 
   context "UpdateCommand" do
 
-    let(:cmd) { HammerCLIForeman::Medium::UpdateCommand.new("") }
+    let(:cmd) { HammerCLIForeman::Medium::UpdateCommand.new("", ctx) }
 
     context "parameters" do
       it_should_accept "name", ["--name=medium"]

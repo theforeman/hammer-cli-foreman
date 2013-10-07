@@ -7,7 +7,6 @@ describe HammerCLIForeman::Location do
   extend ResourceDisabled
 
   before :each do
-    cmd.output.adapter = HammerCLI::Output::Adapter::Silent.new
     resource_mock = ApipieResourceMock.new(cmd.class.resource.resource_class)
     resource_mock.stubs(:index).returns([[], nil])
     resource_mock.stubs(:show).returns([{}, nil])
@@ -16,7 +15,7 @@ describe HammerCLIForeman::Location do
 
   context "ListCommand" do
 
-    let(:cmd) { HammerCLIForeman::Location::ListCommand.new("") }
+    let(:cmd) { HammerCLIForeman::Location::ListCommand.new("", ctx) }
 
     context "parameters" do
       it_should_accept "no arguments"
@@ -37,7 +36,7 @@ describe HammerCLIForeman::Location do
 
   context "InfoCommand" do
 
-    let(:cmd) { HammerCLIForeman::Location::InfoCommand.new("") }
+    let(:cmd) { HammerCLIForeman::Location::InfoCommand.new("", ctx) }
 
     context "parameters" do
       it_should_accept "id", ["--id=1"]
@@ -63,7 +62,7 @@ describe HammerCLIForeman::Location do
 
   context "CreateCommand" do
 
-    let(:cmd) { HammerCLIForeman::Location::CreateCommand.new("") }
+    let(:cmd) { HammerCLIForeman::Location::CreateCommand.new("", ctx) }
 
     context "parameters" do
       it_should_accept "name", ["--name=org"]
@@ -78,7 +77,7 @@ describe HammerCLIForeman::Location do
 
   context "DeleteCommand" do
 
-    let(:cmd) { HammerCLIForeman::Location::DeleteCommand.new("") }
+    let(:cmd) { HammerCLIForeman::Location::DeleteCommand.new("", ctx) }
 
     context "parameters" do
       it_should_accept "name", ["--name=org"]
@@ -94,7 +93,7 @@ describe HammerCLIForeman::Location do
 
   context "UpdateCommand" do
 
-    let(:cmd) { HammerCLIForeman::Location::UpdateCommand.new("") }
+    let(:cmd) { HammerCLIForeman::Location::UpdateCommand.new("", ctx) }
 
     context "parameters" do
       it_should_accept "name", ["--name=org", "--new-name=org2"]

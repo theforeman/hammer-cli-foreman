@@ -7,13 +7,12 @@ describe HammerCLIForeman::PuppetClass do
   extend CommandTestHelper
 
   before :each do
-    cmd.output.adapter = HammerCLI::Output::Adapter::Silent.new
     cmd.class.resource ApipieResourceMock.new(cmd.class.resource.resource_class)
   end
 
   context "ListCommand" do
 
-    let(:cmd) { HammerCLIForeman::PuppetClass::ListCommand.new("") }
+    let(:cmd) { HammerCLIForeman::PuppetClass::ListCommand.new("", ctx) }
 
     context "parameters" do
       it_should_accept "no arguments"
@@ -34,7 +33,7 @@ describe HammerCLIForeman::PuppetClass do
 
   context "InfoCommand" do
 
-    let(:cmd) { HammerCLIForeman::PuppetClass::InfoCommand.new("") }
+    let(:cmd) { HammerCLIForeman::PuppetClass::InfoCommand.new("", ctx) }
 
     context "parameters" do
       it_should_accept "id", ["--id=1"]

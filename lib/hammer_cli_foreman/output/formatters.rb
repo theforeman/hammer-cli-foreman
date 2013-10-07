@@ -2,22 +2,31 @@ module HammerCLIForeman::Output
   module Formatters
 
     class OSNameFormatter < HammerCLI::Output::Formatters::FieldFormatter
+
+      def tags
+        [:flat]
+      end
+
       def format(os)
         name = "%s %s" % [os[:name], os[:major]]
-        name += ".%s" % os[:minor] unless os[:minor].nil?
+        name += ".%s" % os[:minor] unless (!os.has_key?(:minor) || os[:minor].empty?)
         name
       end
     end
 
     class ServerFormatter < HammerCLI::Output::Formatters::FieldFormatter
+      
+      def tags
+        [:flat]
+      end
+
       def format(server)
         "%s (%s)" % [server[:name], server[:url]]
       end
     end
 
-    DEFAULT_FORMATTERS = HammerCLI::Output::Formatters::DEFAULT_FORMATTERS
-    DEFAULT_FORMATTERS.register_formatter(:OSName, OSNameFormatter.new)
-    DEFAULT_FORMATTERS.register_formatter(:Server, ServerFormatter.new)
+    HammerCLI::Output::Output.register_formatter(OSNameFormatter.new, :OSName)
+    HammerCLI::Output::Output.register_formatter(ServerFormatter.new, :Server)
 
   end
 end

@@ -8,13 +8,12 @@ describe HammerCLIForeman::ComputeResource do
   extend CommandTestHelper
 
   before :each do
-    cmd.output.adapter = HammerCLI::Output::Adapter::Silent.new
     cmd.class.resource ApipieResourceMock.new(cmd.class.resource.resource_class)
   end
 
   context "ListCommand" do
 
-    let(:cmd) { HammerCLIForeman::ComputeResource::ListCommand.new("") }
+    let(:cmd) { HammerCLIForeman::ComputeResource::ListCommand.new("", ctx) }
 
     context "parameters" do
       it_should_accept "no arguments"
@@ -33,7 +32,7 @@ describe HammerCLIForeman::ComputeResource do
 
   context "InfoCommand" do
 
-    let(:cmd) { HammerCLIForeman::ComputeResource::InfoCommand.new("") }
+    let(:cmd) { HammerCLIForeman::ComputeResource::InfoCommand.new("", ctx) }
 
     context "parameters" do
       it_should_accept "id", ["--id=1"]
@@ -53,7 +52,7 @@ describe HammerCLIForeman::ComputeResource do
 
   context "CreateCommand" do
 
-    let(:cmd) { HammerCLIForeman::ComputeResource::CreateCommand.new("") }
+    let(:cmd) { HammerCLIForeman::ComputeResource::CreateCommand.new("", ctx) }
 
     context "parameters" do
       it_should_accept "name, url, provider", ["--name=arch", "--url=http://some.org", "--provider=Libvirt"]
@@ -67,7 +66,7 @@ describe HammerCLIForeman::ComputeResource do
 
   context "DeleteCommand" do
 
-    let(:cmd) { HammerCLIForeman::ComputeResource::DeleteCommand.new("") }
+    let(:cmd) { HammerCLIForeman::ComputeResource::DeleteCommand.new("", ctx) }
 
     context "parameters" do
       it_should_accept "name", ["--name=arch"]
@@ -80,7 +79,7 @@ describe HammerCLIForeman::ComputeResource do
 
   context "UpdateCommand" do
 
-    let(:cmd) { HammerCLIForeman::ComputeResource::UpdateCommand.new("") }
+    let(:cmd) { HammerCLIForeman::ComputeResource::UpdateCommand.new("", ctx) }
 
     context "parameters" do
       it_should_accept "name", ["--name=arch", "--new-name=arch2"]

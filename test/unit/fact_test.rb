@@ -7,13 +7,12 @@ describe HammerCLIForeman::Fact do
   extend CommandTestHelper
 
   before :each do
-    cmd.output.adapter = HammerCLI::Output::Adapter::Silent.new
     cmd.class.resource ApipieResourceMock.new(cmd.class.resource.resource_class)
   end
 
   context "ListCommand" do
 
-    let(:cmd) { HammerCLIForeman::Fact::ListCommand.new("") }
+    let(:cmd) { HammerCLIForeman::Fact::ListCommand.new("", ctx) }
 
     context "parameters" do
       it_should_accept "no arguments"

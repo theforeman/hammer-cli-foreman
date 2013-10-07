@@ -3,11 +3,12 @@ require File.join(File.dirname(__FILE__), 'apipie_resource_mock')
 
 
 describe HammerCLIForeman::PartitionTable do
+  
+  let(:ctx) { { :adapter => :silent } }
 
   extend CommandTestHelper
 
   before :each do
-    cmd.output.adapter = HammerCLI::Output::Adapter::Silent.new
     cmd.class.resource ApipieResourceMock.new(cmd.class.resource.resource_class)
 
     File.stubs(:read).returns("FILE_CONTENT")
@@ -15,7 +16,7 @@ describe HammerCLIForeman::PartitionTable do
 
   context "ListCommand" do
 
-    let(:cmd) { HammerCLIForeman::PartitionTable::ListCommand.new("") }
+    let(:cmd) { HammerCLIForeman::PartitionTable::ListCommand.new("", ctx) }
 
     context "parameters" do
       it_should_accept "no arguments"
@@ -34,7 +35,7 @@ describe HammerCLIForeman::PartitionTable do
 
   context "InfoCommand" do
 
-    let(:cmd) { HammerCLIForeman::PartitionTable::InfoCommand.new("") }
+    let(:cmd) { HammerCLIForeman::PartitionTable::InfoCommand.new("", ctx) }
 
     context "parameters" do
       it_should_accept "id", ["--id=1"]
@@ -62,7 +63,7 @@ describe HammerCLIForeman::PartitionTable do
 
   context "DumpCommand" do
 
-    let(:cmd) { HammerCLIForeman::PartitionTable::DumpCommand.new("") }
+    let(:cmd) { HammerCLIForeman::PartitionTable::DumpCommand.new("", ctx) }
 
     context "parameters" do
       it_should_accept "id", ["--id=1"]
@@ -83,7 +84,7 @@ describe HammerCLIForeman::PartitionTable do
 
   context "CreateCommand" do
 
-    let(:cmd) { HammerCLIForeman::PartitionTable::CreateCommand.new("") }
+    let(:cmd) { HammerCLIForeman::PartitionTable::CreateCommand.new("", ctx) }
 
     before :each do
       cmd.stubs(:template_kind_id).returns(1)
@@ -104,7 +105,7 @@ describe HammerCLIForeman::PartitionTable do
 
   context "UpdateCommand" do
 
-    let(:cmd) { HammerCLIForeman::PartitionTable::UpdateCommand.new("") }
+    let(:cmd) { HammerCLIForeman::PartitionTable::UpdateCommand.new("", ctx) }
 
     context "parameters" do
       it_should_accept "id, new-name, file, type, audit comment, os ids", ["--id=83", "--new-name=ptable","--file=~/table.sh", "--os-family=RedHat"]
@@ -121,7 +122,7 @@ describe HammerCLIForeman::PartitionTable do
 
   context "DeleteCommand" do
 
-    let(:cmd) { HammerCLIForeman::PartitionTable::DeleteCommand.new("") }
+    let(:cmd) { HammerCLIForeman::PartitionTable::DeleteCommand.new("", ctx) }
 
     context "parameters" do
       it_should_accept "id", ["--id=1"]
