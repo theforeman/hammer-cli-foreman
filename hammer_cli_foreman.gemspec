@@ -24,7 +24,5 @@ EOF
 
   s.add_dependency 'hammer_cli', '>= 0.0.6'
   s.add_dependency 'foreman_api', '>= 0.1.6'
-  s.add_dependency 'awesome_print'
-  s.add_dependency 'terminal-table'
 
 end
