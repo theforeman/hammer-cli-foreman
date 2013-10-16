@@ -25,7 +25,7 @@ module HammerCLIForeman
           if tpl["config_template"]["snippet"]
             tpl["config_template"]["type"] = "snippet"
           else
-            tpl["config_template"]["type"] = tpl["config_template"]["template_kind"]["name"]
+            tpl["config_template"]["type"] = tpl["config_template"]["template_kind"]["name"] if tpl["config_template"]["template_kind"]
           end
         end
       end
