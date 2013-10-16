@@ -36,6 +36,16 @@ describe HammerCLIForeman::Template do
 
       it_should_print_n_records
       it_should_print_columns ["Id", "Name", "Type"]
+
+      it "should print template without kind set" do
+        template_wo_kind = { 
+          "config_template" => { 
+            :id => 1, :name => "PXE" 
+          } 
+        }
+        mock_resource_method(:index, [[template_wo_kind], nil])
+        cmd.run([]).must_equal 0
+      end
     end
 
   end
