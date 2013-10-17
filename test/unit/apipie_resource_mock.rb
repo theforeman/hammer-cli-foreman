@@ -69,3 +69,9 @@ class ApipieDisabledResourceMock
   end
 
 end
+
+def mock_resource_method(method, response)
+  resource_mock = ApipieResourceMock.new(cmd.class.resource.resource_class)
+  resource_mock.stubs(method).returns(response)
+  cmd.class.resource resource_mock
+end
