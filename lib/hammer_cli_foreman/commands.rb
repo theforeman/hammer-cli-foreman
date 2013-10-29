@@ -32,7 +32,7 @@ module HammerCLIForeman
     end
 
     def self.apipie_options(options={})
-      super(options.merge(:without => declared_identifiers.keys))
+      super({:without => declared_identifiers.keys}.merge(options))
     end
 
   end
@@ -110,8 +110,8 @@ module HammerCLIForeman
     end
 
     def initialize(*args)
-      setup_associated_identifier_options
       super(*args)
+      setup_associated_identifier_options
     end
 
     def setup_associated_identifier_options
@@ -123,7 +123,7 @@ module HammerCLIForeman
 
 
     def associated_resource
-      ResourceInstance.from_definition(self.class.associated_resource, resource_config)
+      HammerCLI::Apipie::ResourceInstance.from_definition(self.class.associated_resource, resource_config)
     end
 
     def self.associated_resource(resource_class=nil)
