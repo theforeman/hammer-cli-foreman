@@ -3,6 +3,7 @@ source "https://rubygems.org"
 gemspec
 
 gem 'hammer_cli', :github => "theforeman/hammer-cli"
+gem 'mime-types', '< 2.0.0', :platforms => [:ruby_18]
 
 gem 'pry'
 gem 'pry-debugger', :platforms => [:ruby_19]
