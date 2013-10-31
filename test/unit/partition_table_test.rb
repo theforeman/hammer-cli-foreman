@@ -3,7 +3,7 @@ require File.join(File.dirname(__FILE__), 'apipie_resource_mock')
 
 
 describe HammerCLIForeman::PartitionTable do
-  
+
   let(:ctx) { { :adapter => :silent } }
 
   extend CommandTestHelper
@@ -11,7 +11,7 @@ describe HammerCLIForeman::PartitionTable do
   before :each do
     cmd.class.resource ApipieResourceMock.new(cmd.class.resource.resource_class)
 
-    File.stubs(:read).returns("FILE_CONTENT")
+    ::File.stubs(:read).returns("FILE_CONTENT")
   end
 
   context "ListCommand" do

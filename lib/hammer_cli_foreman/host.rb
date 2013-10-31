@@ -29,18 +29,21 @@ module HammerCLIForeman
       base.option "--compute-resource-id", "COMPUTE_RESOURCE", " "
       base.option "--partition-table-id", "PARTITION_TABLE", " "
 
-      base.option "--build", "BUILD", " ", :default => 'true', &HammerCLI::Options::Formatters.method(:bool)
-      base.option "--managed", "MANAGED", " ", :default => 'true', &HammerCLI::Options::Formatters.method(:bool)
-      base.option "--enabled", "ENABLED", " ",  :default => 'true', &HammerCLI::Options::Formatters.method(:bool)
+      base.option "--build", "BUILD", " ", :default => 'true',
+        :format => HammerCLI::Options::Normalizers::Bool.new
+      base.option "--managed", "MANAGED", " ", :default => 'true',
+        :format => HammerCLI::Options::Normalizers::Bool.new
+      base.option "--enabled", "ENABLED", " ",  :default => 'true',
+        :format => HammerCLI::Options::Normalizers::Bool.new
 
-      base.option "--parameters", "PARAMS", "Host parameters. List of key=value pairs.",
-        &HammerCLI::Options::Formatters.method(:key_value_list)
-      base.option "--compute-attributes", "COMPUTE_ATTRS", "Compute resource attributes. List of key=value pairs.",
-        &HammerCLI::Options::Formatters.method(:key_value_list)
+      base.option "--parameters", "PARAMS", "Host parameters.",
+        :format => HammerCLI::Options::Normalizers::KeyValueList.new
+      base.option "--compute-attributes", "COMPUTE_ATTRS", "Compute resource attributes.",
+        :format => HammerCLI::Options::Normalizers::KeyValueList.new
       base.option "--volume", "VOLUME", "Volume parameters", :multivalued => true,
-        &HammerCLI::Options::Formatters.method(:key_value_list)
-      base.option "--interface", "INTERFACE", "Interface parameters. List of key=value pairs.", :multivalued => true,
-        &HammerCLI::Options::Formatters.method(:key_value_list)
+        :format => HammerCLI::Options::Normalizers::KeyValueList.new
+      base.option "--interface", "INTERFACE", "Interface parameters.", :multivalued => true,
+        :format => HammerCLI::Options::Normalizers::KeyValueList.new
 
     end
 
