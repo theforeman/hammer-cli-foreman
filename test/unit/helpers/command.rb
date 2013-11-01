@@ -26,7 +26,7 @@ module CommandTestHelper
 
   def it_should_accept(message, arguments=[])
     it "should accept " + message.to_s do
-      cmd.run(arguments).must_equal 0
+      cmd.run(arguments).must_equal HammerCLI::EX_OK
     end
   end
 

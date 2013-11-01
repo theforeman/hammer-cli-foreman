@@ -89,4 +89,6 @@ describe HammerCLIForeman::ComputeResource do
     end
 
   end
+
+
 end
