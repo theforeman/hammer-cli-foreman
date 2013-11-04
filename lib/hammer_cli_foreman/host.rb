@@ -7,8 +7,89 @@ require 'hammer_cli_foreman/puppet_class'
 
 module HammerCLIForeman
 
+  module CommonHostUpdateOptions
+
+    def self.included(base)
+      base.apipie_options :without => [:host_parameters_attributes, :environment_id, :architecture_id, :domain_id,
+            :puppet_proxy_id, :operatingsystem_id,
+            # - temporarily disabled params until we add support for boolean options to apipie -
+            :build, :managed, :enabled, :start,
+            # - temporarily disabled params that will be removed from the api ------------------
+            :provision_method, :capabilities, :flavour_ref, :image_ref, :start,
+            :network, :cpus, :memory, :provider, :type, :tenant_id, :image_id,
+            # ----------------------------------------------------------------------------------
+            :compute_resource_id, :ptable_id] + base.declared_identifiers.keys
+
+      base.option "--environment-id", "ENVIRONMENT_ID", " "
+      base.option "--architecture-id", "ARCHITECTURE_ID", " "
+      base.option "--domain-id", "DOMAIN_ID", " "
+      base.option "--puppet-proxy-id", "PUPPET_PROXY_ID", " "
+      base.option "--operatingsystem-id", "OPERATINGSYSTEM_ID", " "
+      base.option "--partition-table-id", "PARTITION_TABLE_ID", " "
+      base.option "--compute-resource-id", "COMPUTE_RESOURCE", " "
+      base.option "--partition-table-id", "PARTITION_TABLE", " "
+
+      base.option "--build", "BUILD", " ", :default => 'true',
+        :format => HammerCLI::Options::Normalizers::Bool.new
+      base.option "--managed", "MANAGED", " ", :default => 'true',
+        :format => HammerCLI::Options::Normalizers::Bool.new
+      base.option "--enabled", "ENABLED", " ",  :default => 'true',
+        :format => HammerCLI::Options::Normalizers::Bool.new
+
+      base.option "--parameters", "PARAMS", "Host parameters.",
+        :format => HammerCLI::Options::Normalizers::KeyValueList.new
+      base.option "--compute-attributes", "COMPUTE_ATTRS", "Compute resource attributes.",
+        :format => HammerCLI::Options::Normalizers::KeyValueList.new
+      base.option "--volume", "VOLUME", "Volume parameters", :multivalued => true,
+        :format => HammerCLI::Options::Normalizers::KeyValueList.new
+      base.option "--interface", "INTERFACE", "Interface parameters.", :multivalued => true,
+        :format => HammerCLI::Options::Normalizers::KeyValueList.new
+
+    end
+
+    def request_params
+      params = super
+
+      params['host']['build'] = build
+      params['host']['managed'] = managed
+      params['host']['enabled'] = enabled
+
+      params['host']['ptable_id'] = partition_table_id
+      params['host']['compute_resource_id'] = compute_resource_id
+      params['host']['host_parameters_attributes'] = parameter_attributes
+      params['host']['compute_attributes'] = compute_attributes || {}
+      params['host']['compute_attributes']['volumes_attributes'] = nested_attributes(volume_list)
+      params['host']['compute_attributes']['interfaces_attributes'] = nested_attributes(interface_list)
+      params['host']['compute_attributes']['nics_attributes'] = nested_attributes(interface_list)
+
+      params
+    end
+
+    private
+
+    def parameter_attributes
+      return {} unless parameters
+      parameters.collect do |key, value|
+        {"name"=>key, "value"=>value, "nested"=>""}
+      end
+    end
+
+    def nested_attributes(attrs)
+      return {} unless attrs
+
+      nested_hash = {}
+      attrs.each_with_index do |attr, i|
+        nested_hash[i.to_s] = attr
+      end
+      nested_hash
+    end
+
+  end
+
+
   class Host < HammerCLI::AbstractCommand
     class ListCommand < HammerCLIForeman::ListCommand
+      # FIXME: list compute resource (model)
       resource ForemanApi::Resources::Host, "index"
 
       output do
@@ -175,24 +256,20 @@ module HammerCLIForeman
 
     end
 
-
     class CreateCommand < HammerCLIForeman::CreateCommand
 
       success_message "Host created"
       failure_message "Could not create the host"
       resource ForemanApi::Resources::Host, "create"
 
-      apipie_options :without => ['host_parameters_attributes']
+      include HammerCLIForeman::CommonHostUpdateOptions
 
-      #FIXME with following setup it is possible to create hosts with the default network setup
-      # needs create redesign
-      def request_params
-        params = super
-        params['host']['compute_attributes']["nics_attributes"] = {
-          "new_nics"=>{"type"=>"bridge", "_delete"=>"", "bridge"=>""},
-          "0"=>{"type"=>"network", "_delete"=>"", "network"=>"default", "bridge"=>""}
-        }
-        params
+      validate_options do
+        unless option(:hostgroup_id).exist?
+          all(:environment_id, :architecture_id, :domain_id,
+            :puppet_proxy_id, :operatingsystem_id,
+            :partition_table_id).required
+        end
       end
     end
 
@@ -203,7 +280,7 @@ module HammerCLIForeman
       failure_message "Could not update the host"
       resource ForemanApi::Resources::Host, "update"
 
-      apipie_options :without => ['host_parameters_attributes', 'name', 'id']
+      include HammerCLIForeman::CommonHostUpdateOptions
     end
 
 

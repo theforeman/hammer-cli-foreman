@@ -59,10 +59,14 @@ module HammerCLIForeman
     class CreateCommand < HammerCLIForeman::CreateCommand
 
       #FIXME: replace with apipie_options when they are added to the api docs
-      option "--architecture-ids", "ARCH_IDS", "set associated architectures", &HammerCLI::OptionFormatters.method(:list)
-      option "--config-template-ids", "CONFIG_TPL_IDS", "set associated templates", &HammerCLI::OptionFormatters.method(:list)
-      option "--medium-ids", "MEDIUM_IDS", "set associated installation media", &HammerCLI::OptionFormatters.method(:list)
-      option "--ptable-ids", "PTABLE_IDS", "set associated partition tables", &HammerCLI::OptionFormatters.method(:list)
+      option "--architecture-ids", "ARCH_IDS", "set associated architectures",
+        :format => HammerCLI::Options::Normalizers::List.new
+      option "--config-template-ids", "CONFIG_TPL_IDS", "set associated templates",
+        :format => HammerCLI::Options::Normalizers::List.new
+      option "--medium-ids", "MEDIUM_IDS", "set associated installation media",
+        :format => HammerCLI::Options::Normalizers::List.new
+      option "--ptable-ids", "PTABLE_IDS", "set associated partition tables",
+        :format => HammerCLI::Options::Normalizers::List.new
 
       success_message "Operating system created"
       failure_message "Could not create the operating system"
@@ -83,10 +87,14 @@ module HammerCLIForeman
     class UpdateCommand < HammerCLIForeman::UpdateCommand
 
       #FIXME: replace with apipie_options when they are added to the api docs
-      option "--architecture-ids", "ARCH_IDS", "set associated architectures", &HammerCLI::OptionFormatters.method(:list)
-      option "--config-template-ids", "CONFIG_TPL_IDS", "set associated templates", &HammerCLI::OptionFormatters.method(:list)
-      option "--medium-ids", "MEDIUM_IDS", "set associated installation media", &HammerCLI::OptionFormatters.method(:list)
-      option "--ptable-ids", "PTABLE_IDS", "set associated partition tables", &HammerCLI::OptionFormatters.method(:list)
+      option "--architecture-ids", "ARCH_IDS", "set associated architectures",
+        :format => HammerCLI::Options::Normalizers::List.new
+      option "--config-template-ids", "CONFIG_TPL_IDS", "set associated templates",
+        :format => HammerCLI::Options::Normalizers::List.new
+      option "--medium-ids", "MEDIUM_IDS", "set associated installation media",
+        :format => HammerCLI::Options::Normalizers::List.new
+      option "--ptable-ids", "PTABLE_IDS", "set associated partition tables",
+        :format => HammerCLI::Options::Normalizers::List.new
 
       identifiers :id, :label
 
