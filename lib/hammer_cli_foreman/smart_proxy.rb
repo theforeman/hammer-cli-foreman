@@ -4,9 +4,12 @@ require 'hammer_cli_foreman/commands'
 
 module HammerCLIForeman
 
-  class SmartProxy < HammerCLI::AbstractCommand
+  class SmartProxy < HammerCLI::Apipie::Command
+    resource ForemanApi::Resources::SmartProxy
+
     class ListCommand < HammerCLIForeman::ListCommand
-      resource ForemanApi::Resources::SmartProxy, "index"
+
+      action :index
 
       #FIXME: search by unknown type returns 500 from the server, propper error handling should resove this
       output do
@@ -23,7 +26,7 @@ module HammerCLIForeman
 
     class InfoCommand < HammerCLIForeman::InfoCommand
 
-      resource ForemanApi::Resources::SmartProxy, "show"
+      action :show
 
       def retrieve_data
         sp = super
@@ -44,19 +47,21 @@ module HammerCLIForeman
 
     class CreateCommand < HammerCLIForeman::CreateCommand
 
+      action :create
+
       success_message "Smart proxy created"
       failure_message "Could not create the proxy"
-      resource ForemanApi::Resources::SmartProxy, "create"
 
       apipie_options
     end
 
 
     class UpdateCommand < HammerCLIForeman::UpdateCommand
+      
+      action :update
 
       success_message "Smart proxy updated"
       failure_message "Could not update the proxy"
-      resource ForemanApi::Resources::SmartProxy, "update"
 
       apipie_options
     end
@@ -64,12 +69,34 @@ module HammerCLIForeman
 
     class DeleteCommand < HammerCLIForeman::DeleteCommand
 
+      action :destroy
+
       success_message "Smart proxy deleted"
       failure_message "Could not delete the proxy"
-      resource ForemanApi::Resources::SmartProxy, "destroy"
 
       apipie_options
     end
+
+
+    class ImportPuppetClassesCommand < HammerCLI::Apipie::WriteCommand
+
+      action :import_puppetclasses
+
+      command_name    "import_classes"
+      success_message "Puppet classes were imported"
+      failure_message "Import of puppet classes failed"
+
+      option "--dryrun", :flag, "Do not run the import"
+
+      apipie_options :without => [:smart_proxy_id, :dryrun]
+
+      def request_params
+        opts = super
+        opts['dryrun'] = dryrun?
+        opts
+      end
+    end
+
 
     autoload_subcommands
   end
