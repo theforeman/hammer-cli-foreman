@@ -65,11 +65,25 @@ describe HammerCLIForeman::Host do
 
     let(:cmd) { HammerCLIForeman::Host::StatusCommand.new("", ctx) }
 
+    before :each do
+      resource_mock = ApipieResourceMock.new(cmd.class.resource.resource_class)
+      resource_mock.stubs(:power).returns([{'power' => 'running'},""])
+      cmd.class.resource resource_mock
+    end
+
+    context "parameters" do
+      it_should_accept "name", ["--name=host"]
+      it_should_accept "id", ["--id=1"]
+      it_should_fail_with "no arguments"
+    end
+
     context "output" do
       with_params ["--id=1"] do
+        it_should_print_columns ["Status", "Power"]
+
         it "should output status" do
           cmd.stubs(:context).returns({ :adapter => :test })
-          proc { cmd.run(with_params) }.must_output "missing\n"
+          proc { cmd.run(with_params) }.must_output "#Status#Power#\n#missing#running#\n"
         end
       end
     end
@@ -120,10 +134,15 @@ describe HammerCLIForeman::Host do
 
     let(:cmd) { HammerCLIForeman::Host::PuppetRunCommand.new("", ctx) }
 
+    context "parameters" do
+      it_should_accept "name", ["--name=host"]
+      it_should_accept "id", ["--id=1"]
+      it_should_fail_with "no arguments"
+    end
+
     context "output" do
       with_params ["--id=1"] do
         it "should inform that puppet was triggered" do
-
           cmd.stubs(:context).returns({ :adapter => :test })
           proc { cmd.run(with_params) }.must_output "Puppet run triggered\n"
         end
@@ -247,5 +266,34 @@ describe HammerCLIForeman::Host do
 
   end
 
+  context "StartCommand" do
+    let(:cmd) { HammerCLIForeman::Host::StartCommand.new("", ctx) }
+    context "parameters" do
+      it_should_accept "name", ["--name=host"]
+      it_should_accept "id", ["--id=1"]
+      it_should_fail_with "empty params", []
+    end
+  end
+
+  context "StopCommand" do
+    let(:cmd) { HammerCLIForeman::Host::StopCommand.new("", ctx) }
+    context "parameters" do
+      it_should_accept "name", ["--name=host"]
+      it_should_accept "id", ["--id=1"]
+      it_should_accept "id and force", ["--id=1", "--force"]
+      it_should_fail_with "empty params", []
+    end
+  end
+
+  context "RebootCommand" do
+    let(:cmd) { HammerCLIForeman::Host::RebootCommand.new("", ctx) }
+    context "parameters" do
+      it_should_accept "name", ["--name=host"]
+      it_should_accept "id", ["--id=1"]
+      it_should_fail_with "empty params", []
+    end
+  end
+
 end
+
 

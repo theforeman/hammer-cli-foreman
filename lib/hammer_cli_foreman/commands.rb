@@ -33,7 +33,7 @@ module HammerCLIForeman
 
   class InfoCommand < HammerCLI::Apipie::ReadCommand
 
-   action :show
+    action :show
 
     def self.command_name(name=nil)
       super(name) || "info"

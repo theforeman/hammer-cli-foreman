@@ -87,11 +87,12 @@ module HammerCLIForeman
   end
 
 
-  class Host < HammerCLI::AbstractCommand
+  class Host < HammerCLI::Apipie::Command
+
+    resource ForemanApi::Resources::Host
+
     class ListCommand < HammerCLIForeman::ListCommand
       # FIXME: list compute resource (model)
-      resource ForemanApi::Resources::Host, "index"
-
       output do
         from "host" do
           field :id, "Id"
@@ -108,8 +109,6 @@ module HammerCLIForeman
 
 
     class InfoCommand < HammerCLIForeman::InfoCommand
-
-      resource ForemanApi::Resources::Host, "show"
 
       def retrieve_data
         host = super
@@ -167,13 +166,39 @@ module HammerCLIForeman
     end
 
 
-    class StatusCommand < HammerCLIForeman::InfoCommand
+    class StatusCommand < HammerCLI::Apipie::ReadCommand
+
+      identifiers :id, :name
 
       command_name "status"
-      resource ForemanApi::Resources::Host, "status"
 
-      def print_data(records)
-        print_message records["status"]
+      output do
+        field :status, "Status"
+        field :power, "Power"
+      end
+
+      def retrieve_data
+        {
+          :status => get_status,
+          :power => get_power_status
+        }
+      end
+
+      def get_status
+        params = {
+          'id' => get_identifier[0],
+        }
+        status = resource.call(:status, params)[0]
+        status["status"]
+      end
+
+      def get_power_status
+        params = {
+          'id' => get_identifier[0],
+          'power_action' => :state
+        }
+        status = resource.call(:power, params)[0]
+        status["power"]
       end
     end
 
@@ -181,7 +206,7 @@ module HammerCLIForeman
     class PuppetRunCommand < HammerCLIForeman::InfoCommand
 
       command_name "puppetrun"
-      resource ForemanApi::Resources::Host, "puppetrun"
+      action "puppetrun"
 
       def print_data(records)
         print_message 'Puppet run triggered'
@@ -260,7 +285,7 @@ module HammerCLIForeman
 
       success_message "Host created"
       failure_message "Could not create the host"
-      resource ForemanApi::Resources::Host, "create"
+      action "create"
 
       include HammerCLIForeman::CommonHostUpdateOptions
 
@@ -278,7 +303,6 @@ module HammerCLIForeman
 
       success_message "Host updated"
       failure_message "Could not update the host"
-      resource ForemanApi::Resources::Host, "update"
 
       include HammerCLIForeman::CommonHostUpdateOptions
     end
@@ -288,7 +312,6 @@ module HammerCLIForeman
 
       success_message "Host deleted"
       failure_message "Could not delete the host"
-      resource ForemanApi::Resources::Host, "destroy"
 
       apipie_options
     end
@@ -336,6 +359,63 @@ module HammerCLIForeman
         {
           "host_id" => host_id || host_name
         }
+      end
+    end
+
+
+    class StartCommand < HammerCLI::Apipie::WriteCommand
+
+      identifiers :id, :name
+      action "power"
+
+      command_name "start"
+      desc "Power a host on"
+      success_message "The host is starting."
+
+      def power_action
+        :start
+      end
+    end
+
+
+    class StopCommand < HammerCLI::Apipie::WriteCommand
+
+      option '--force', :flag, "Force turning off a host"
+
+      identifiers :id, :name
+      action "power"
+
+      command_name "stop"
+      desc "Power a host off"
+
+      def power_action
+        if force?
+          :cycle
+        else
+          :stop
+        end
+      end
+
+      def success_message
+        if force?
+          "Power off forced."
+        else
+          "Powering the host off."
+        end
+      end
+    end
+
+    class RebootCommand < HammerCLI::Apipie::WriteCommand
+
+      identifiers :id, :name
+      action "power"
+
+      command_name "reboot"
+      desc "Reboot a host"
+      success_message "Host reboot started."
+
+      def power_action
+        :soft
       end
     end
 
