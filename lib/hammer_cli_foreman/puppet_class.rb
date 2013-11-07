@@ -1,6 +1,7 @@
 require 'hammer_cli'
 require 'foreman_api'
 require 'hammer_cli_foreman/commands'
+require 'hammer_cli_foreman/smart_class_parameter'
 
 module HammerCLIForeman
 
@@ -43,6 +44,14 @@ module HammerCLIForeman
         end
       end
 
+    end
+
+
+    class SCParamsCommand < HammerCLIForeman::SmartClassParametersBriefList
+
+      apipie_options :without => [:host_id, :hostgroup_id, :puppetclass_id, :environment_id]
+      option ['--id', '--name'], 'PUPPET_CLASS_ID', 'puppet class id/name', 
+              :attribute_name => :puppetclass_id, :required => true
     end
 
 

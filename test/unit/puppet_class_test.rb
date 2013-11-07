@@ -51,6 +51,21 @@ describe HammerCLIForeman::PuppetClass do
 
   end
 
+  context "SCParamsCommand" do
+
+    before :each do
+      cmd.class.resource ResourceMocks.smart_class_parameter
+    end
+
+    let(:cmd) { HammerCLIForeman::PuppetClass::SCParamsCommand.new("", ctx) }
+
+    context "parameters" do
+      it_should_accept "name", ["--name=env"]
+      it_should_accept "id", ["--id=1"]
+      it_should_fail_with "name or id missing", []
+    end
+
+  end
 
 
 end

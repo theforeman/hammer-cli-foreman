@@ -28,6 +28,7 @@ module HammerCLIForeman
   require 'hammer_cli_foreman/report'
   require 'hammer_cli_foreman/puppet_class'
   require 'hammer_cli_foreman/smart_proxy'
+  require 'hammer_cli_foreman/smart_class_parameter'
   require 'hammer_cli_foreman/subnet'
   require 'hammer_cli_foreman/template'
   require 'hammer_cli_foreman/user'
