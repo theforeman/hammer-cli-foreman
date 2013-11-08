@@ -22,7 +22,7 @@ EOF
   s.test_files = Dir.glob('test/tc_*.rb')
   s.require_paths = ["lib"]
 
-  s.add_dependency 'hammer_cli', '>= 0.0.6'
+  s.add_dependency 'hammer_cli', '>= 0.0.9'
   s.add_dependency 'foreman_api', '= 0.1.8'
   s.add_dependency 'mime-types', '< 2.0.0' if RUBY_VERSION < "1.9.0"
 
