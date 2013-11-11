@@ -20,6 +20,7 @@ EOF
   s.files = Dir['lib/**/*.rb'] + Dir['bin/*']
   # s.test_files    = `git ls-files -- {test,spec,features}/*`.split("\n")
   s.test_files = Dir.glob('test/tc_*.rb')
+  s.extra_rdoc_files = ['README.md'] + Dir['doc/*']
   s.require_paths = ["lib"]
 
   s.add_dependency 'hammer_cli', '>= 0.0.9'

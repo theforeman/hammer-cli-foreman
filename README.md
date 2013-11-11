@@ -3,13 +3,11 @@ Foreman commands for Hammer CLI
 
 This Hammer CLI plugin contains set of commands for [Foreman](http://theforeman.org/).
 
-So far there are following commands for manipulating resources available:
-- Architectures
-- Compute resources
-- Domains
-- Subnets
-- Organizations
-- Users
+
+Documentation
+-------------
+
+ - [Host creation](doc/host_create.md#host-creation)
 
 How to run
 ----------
