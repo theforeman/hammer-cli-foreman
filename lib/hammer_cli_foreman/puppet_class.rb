@@ -51,5 +51,5 @@ module HammerCLIForeman
 
 end
 
-HammerCLI::MainCommand.subcommand 'puppet_class', "Browse and read reports.", HammerCLIForeman::PuppetClass
+HammerCLI::MainCommand.subcommand 'puppet_class', "Search Foreman's puppet modules.", HammerCLIForeman::PuppetClass
 
