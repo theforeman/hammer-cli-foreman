@@ -1,13 +1,15 @@
 require 'hammer_cli/exception_handler'
+require 'hammer_cli_foreman/exceptions'
 
 module HammerCLIForeman
   class ExceptionHandler < HammerCLI::ExceptionHandler
 
     def mappings
       super + [
+        [HammerCLIForeman::OperationNotSupportedError, :handle_unsupported_operation],
         [RestClient::Forbidden, :handle_forbidden],
         [RestClient::UnprocessableEntity, :handle_unprocessable_entity],
-        [ArgumentError, :handle_argument_error]
+        [ArgumentError, :handle_argument_error],
       ]
     end
 
@@ -28,10 +30,18 @@ module HammerCLIForeman
       HammerCLI::EX_USAGE
     end
 
+
     def handle_forbidden(e)
       print_error "Forbidden - server refused to process the request"
       log_full_error e
       HammerCLI::EX_NOPERM
+    end
+
+
+    def handle_unsupported_operation(e)
+      print_error e.message
+      log_full_error e
+      HammerCLI::EX_UNAVAILABLE
     end
 
   end
