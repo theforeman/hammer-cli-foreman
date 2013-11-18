@@ -1,7 +1,8 @@
 # Ruby
 Gemfile.lock
+Gemfile.local
 pkg
 
-# CI
-test/reports/*.xml
+# Tests
+test/reports
 coverage
