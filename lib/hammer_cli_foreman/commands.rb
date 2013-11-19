@@ -2,6 +2,20 @@ require 'hammer_cli'
 
 module HammerCLIForeman
 
+  class WriteCommand < HammerCLI::Apipie::WriteCommand
+
+    def success_message_params(response)
+      if response
+        if response.is_a?(Hash) and !response.empty?
+          response[response.keys[0]]
+        else
+          response
+        end
+      end
+    end
+
+  end
+
   class ListCommand < HammerCLI::Apipie::ReadCommand
 
     action :index
@@ -19,7 +33,7 @@ module HammerCLIForeman
 
   class InfoCommand < HammerCLI::Apipie::ReadCommand
 
-   action :show
+    action :show
 
     def self.command_name(name=nil)
       super(name) || "info"
@@ -38,7 +52,7 @@ module HammerCLIForeman
   end
 
 
-  class CreateCommand < HammerCLI::Apipie::WriteCommand
+  class CreateCommand < WriteCommand
 
     action :create
 
@@ -49,7 +63,7 @@ module HammerCLIForeman
   end
 
 
-  class UpdateCommand < HammerCLI::Apipie::WriteCommand
+  class UpdateCommand < WriteCommand
 
     action :update
 
@@ -77,7 +91,7 @@ module HammerCLIForeman
   end
 
 
-  class DeleteCommand < HammerCLI::Apipie::WriteCommand
+  class DeleteCommand < WriteCommand
 
     action :destroy
 
@@ -98,7 +112,7 @@ module HammerCLIForeman
   end
 
 
-  class AssociatedCommand < HammerCLI::Apipie::WriteCommand
+  class AssociatedCommand < WriteCommand
 
     identifiers :name, :id
     action :update
@@ -175,7 +189,7 @@ module HammerCLIForeman
   class AddAssociatedCommand < AssociatedCommand
 
     def self.command_name(name=nil)
-      super(name) || "add_"+associated_resource.name
+      super(name) || (associated_resource ? "add_"+associated_resource.name : nil)
     end
 
     def self.desc(desc=nil)
@@ -195,7 +209,7 @@ module HammerCLIForeman
   class RemoveAssociatedCommand < AssociatedCommand
 
     def self.command_name(name=nil)
-      super(name) || "remove_"+associated_resource.name
+      super(name) || (associated_resource ? "remove_"+associated_resource.name : nil)
     end
 
     def self.desc(desc=nil)

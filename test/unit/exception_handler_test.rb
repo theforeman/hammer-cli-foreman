@@ -3,8 +3,8 @@ require 'hammer_cli_foreman/exception_handler'
 
 describe HammerCLIForeman::ExceptionHandler do
 
-  let(:output)  { HammerCLI::Output::Output }
-  let(:handler) { HammerCLIForeman::ExceptionHandler.new(:adapter => :silent) }
+  let(:output)  { HammerCLI::Output::Output.new }
+  let(:handler) { HammerCLIForeman::ExceptionHandler.new(:output => output) }
   let(:heading) { "Something went wrong" }
 
   it "should print resource errors on unprocessable entity exception" do
@@ -13,26 +13,36 @@ describe HammerCLIForeman::ExceptionHandler do
    RESPONSE
 
     ex = RestClient::UnprocessableEntity.new(response)
-    output.expects(:print_error).with(heading, "Network address can't be blank\nNetwork address is invalid\nName can't be blank", {}, {:adapter => :silent})
-    handler.handle_exception(ex, :heading => heading)
+    output.expects(:print_error).with(heading, "Network address can't be blank\nNetwork address is invalid\nName can't be blank")
+    err_code = handler.handle_exception(ex, :heading => heading)
+    err_code.must_equal HammerCLI::EX_DATAERR
   end
 
   it "should handle argument error" do
     ex = ArgumentError.new
-    output.expects(:print_error).with(heading, ex.message, {}, {:adapter => :silent})
-    handler.handle_exception(ex, :heading => heading)
+    output.expects(:print_error).with(heading, ex.message)
+    err_code = handler.handle_exception(ex, :heading => heading)
+    err_code.must_equal HammerCLI::EX_USAGE
   end
 
   it "should handle forbidden error" do
     ex = RestClient::Forbidden.new
-    output.expects(:print_error).with('Forbidden - server refused to process the request', nil, {}, {:adapter => :silent})
-    handler.handle_exception(ex)
+    output.expects(:print_error).with('Forbidden - server refused to process the request', nil)
+    err_code = handler.handle_exception(ex)
+    err_code.must_equal HammerCLI::EX_NOPERM
   end
 
   it "should handle unknown exception" do
-    output.expects(:print_error).with(heading, "Error: message", {}, {:adapter => :silent})
+    output.expects(:print_error).with(heading, "Error: message")
     MyException = Class.new(Exception)
-    handler.handle_exception(MyException.new('message'), :heading => heading)
+    err_code = handler.handle_exception(MyException.new('message'), :heading => heading)
+    err_code.must_equal HammerCLI::EX_SOFTWARE
+  end
+
+  it "should handle unsupported operation error" do
+    output.expects(:print_error).with(heading, "message")
+    err_code = handler.handle_exception(HammerCLIForeman::OperationNotSupportedError.new('message'), :heading => heading)
+    err_code.must_equal HammerCLI::EX_UNAVAILABLE
   end
 end
 
