@@ -2,11 +2,9 @@ source "https://rubygems.org"
 
 gemspec
 
+# we'll remove this line once hammer_cli gets more stable
+# and won't change so often
 gem 'hammer_cli', :github => "theforeman/hammer-cli"
-gem 'mime-types', '< 2.0.0', :platforms => [:ruby_18]
-
-gem 'pry'
-gem 'pry-debugger', :platforms => [:ruby_19]
 
 group :test do
   gem 'rake'
@@ -17,3 +15,7 @@ group :test do
   gem 'mocha'
   gem 'ci_reporter'
 end
+
+# load local gemfile
+local_gemfile = File.join(File.dirname(__FILE__), 'Gemfile.local')
+self.instance_eval(Bundler.read_file(local_gemfile)) if File.exist?(local_gemfile)

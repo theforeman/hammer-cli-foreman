@@ -16,15 +16,17 @@ Gem::Specification.new do |s|
 Foreman commands for Hammer CLI
 EOF
 
-  # s.files         = `git ls-files`.split("\n")
-  s.files = Dir['lib/**/*.rb'] + Dir['bin/*']
-  # s.test_files    = `git ls-files -- {test,spec,features}/*`.split("\n")
-  s.test_files = Dir.glob('test/tc_*.rb')
-  s.extra_rdoc_files = ['README.md'] + Dir['doc/*']
+
+
+  s.files            = `git ls-files -- {lib,doc,test}/* README*`.split("\n")
+  s.test_files       = `git ls-files -- test/*`.split("\n")
+  s.extra_rdoc_files = `git ls-files -- doc/* README*`.split("\n")
   s.require_paths = ["lib"]
 
   s.add_dependency 'hammer_cli', '>= 0.0.9'
   s.add_dependency 'foreman_api', '= 0.1.8'
-  s.add_dependency 'mime-types', '< 2.0.0' if RUBY_VERSION < "1.9.0"
+
+  # required for ruby < 1.9.0:
+  s.add_dependency 'mime-types', '< 2.0.0' #newer versions of mime-types are not 1.8 compatible
 
 end
