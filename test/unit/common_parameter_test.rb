@@ -6,8 +6,10 @@ describe HammerCLIForeman::CommonParameter do
 
   extend CommandTestHelper
 
+  let(:resource_mock) { ApipieResourceMock.new(cmd.class.resource.resource_class) }
+
   before :each do
-    cmd.class.resource ApipieResourceMock.new(cmd.class.resource.resource_class)
+    cmd.class.resource resource_mock
   end
 
   context "ListCommand" do
@@ -32,9 +34,9 @@ describe HammerCLIForeman::CommonParameter do
   context "SetCommand" do
 
     let(:cmd) { HammerCLIForeman::CommonParameter::SetCommand.new("", ctx) }
-      before :each do
-        cmd.stubs(:parameter_exist?).returns(false)
-      end
+    before :each do
+      resource_mock.stub_method(:index, [])
+    end
 
     context "parameters" do
       it_should_accept "name and value", ["--name=param", "--value=val"]
@@ -42,16 +44,20 @@ describe HammerCLIForeman::CommonParameter do
       it_should_fail_with "value missing", ["--name=param"]
     end
 
-    with_params ["--name=param", "--value=val"] do
-      it_should_call_action :create, {'common_parameter' => {'name' => 'param', 'value' => 'val'}, 'id' => 'param'}
+    context "adding params" do
+      with_params ["--name=param", "--value=val"] do
+        it_should_call_action :create, {'common_parameter' => {'name' => 'param', 'value' => 'val'}, 'id' => 'param'}
+      end
     end
 
-    with_params ["--name=param", "--value=val"] do
+    context "updating params" do
       before :each do
-        cmd.stubs(:parameter_exist?).returns(true)
+        resource_mock.stub_method(:index, [{'common_parameter' => {'name' => 'param'}}])
       end
 
-      it_should_call_action :update, {'common_parameter' => {'name' => 'param', 'value' => 'val'}, 'id' => 'param'}
+      with_params ["--name=param", "--value=val"] do
+        it_should_call_action :update, {'common_parameter' => {'name' => 'param', 'value' => 'val'}, 'id' => 'param'}
+      end
     end
 
   end

@@ -97,7 +97,7 @@ describe HammerCLIForeman::Domain do
 
     before :each do
       resource_mock = ApipieResourceMock.new(cmd.class.resource.resource_class)
-      resource_mock.stubs(:index).returns([[],""])
+      resource_mock.stub_method(:index, [])
       cmd.class.resource resource_mock
     end
 

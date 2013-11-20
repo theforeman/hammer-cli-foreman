@@ -8,8 +8,8 @@ describe HammerCLIForeman::Location do
 
   before :each do
     resource_mock = ApipieResourceMock.new(cmd.class.resource.resource_class)
-    resource_mock.stubs(:index).returns([[], nil])
-    resource_mock.stubs(:show).returns([{}, nil])
+    resource_mock.stub_method(:index, [])
+    resource_mock.stub_method(:show, {})
     cmd.class.resource resource_mock
   end
 

@@ -4,7 +4,7 @@ class ApipieResourceMock
     @return_values = {}
     @resource = resource
     @resource.doc["methods"].each do |method|
-      stub_method(method)
+      stub_method(method["name"], get_return_value(method))
     end
   end
 
@@ -16,8 +16,14 @@ class ApipieResourceMock
     return self
   end
 
-  def expects_with(method_name, params)
-    self.expects(method_name).with(params).returns(return_value_for(method_name))
+  def expects_with(method_name, params, return_value=nil)
+    return_value ||= return_value_for(method_name)
+    self.expects(method_name).with(params).returns(return_value)
+  end
+
+  def stub_method(method_name, return_value)
+    self.stubs(method_name.to_s).returns([return_value, return_value.to_s])
+    @return_values[method_name.to_s] = return_value
   end
 
   private
@@ -26,14 +32,8 @@ class ApipieResourceMock
     @return_values[method_name.to_s]
   end
 
-  def stub_method(method)
-    value = get_return_value(method)
-    self.stubs(method["name"]).returns(value)
-    @return_values[method["name"].to_s] = value
-  end
-
   def get_return_value(method)
-    return [nil, nil] if method["examples"].empty?
+    return nil if method["examples"].empty?
 
     #parse actual json from the example string
     #examples are in format:
@@ -45,7 +45,7 @@ class ApipieResourceMock
     json_string = method["examples"][0][parse_re, 2]
     response = JSON.parse(json_string) rescue json_string
 
-    [response, nil]
+    response
   end
 
 end
