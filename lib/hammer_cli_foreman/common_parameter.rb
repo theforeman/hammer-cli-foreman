@@ -19,36 +19,30 @@ module HammerCLIForeman
       apipie_options
     end
 
-    class SetCommand < HammerCLI::Apipie::WriteCommand
+    class SetCommand < HammerCLIForeman::WriteCommand
 
       command_name "set"
       desc "Set a global parameter."
+
+      success_message_for :create, "Created parameter [%{name}s] with value [%{value}s]."
+      success_message_for :update, "Parameter [%{name}s] updated to [%{value}s]."
 
       resource ForemanApi::Resources::CommonParameter
 
       option "--name", "NAME", "parameter name", :required => true
       option "--value", "VALUE", "parameter value", :required => true
 
-      def execute
-        if parameter_exist?
-          self.class.action :update
-        else
-          self.class.action :create
-        end
-        super
+      def action
+        @action ||= parameter_exist? ? :update : :create
+        @action
       end
 
-      def print_message
-        if self.class.action == :create
-          msg = "Global parameter created"
-        else
-          msg = "Global parameter updated"
-        end
-        print_message msg
+      def success_message
+        success_message_for(action)
       end
 
       def parameter_exist?
-        params = resource.index(resource_config)[0]
+        params = resource.call(:index)[0]
         params.find { |p| p["common_parameter"]["name"] == name }
       end
 
@@ -65,8 +59,8 @@ module HammerCLIForeman
 
       identifiers :name
 
-      success_message "Global parameter deleted"
-      failure_message "Could not delete the global parameter"
+      success_message "Global parameter [%{name}s] deleted."
+      failure_message "Could not delete the global parameter [%{name}s]"
       resource ForemanApi::Resources::CommonParameter, "destroy"
 
       apipie_options :without => :id
