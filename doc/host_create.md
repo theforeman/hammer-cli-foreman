@@ -72,6 +72,20 @@ See the list of all possible option keys below.
 Provider specific options
 =========================
 
+## Bare Metal
+Available keys for `--interface`:
+```
+type       # one of Nic::Managed, Nic::BMC
+mac
+name
+domain_id
+subnet_id
+ip
+provider   # always IPMI
+username   # BMC only
+password   # BMC only
+```
+
 ## EC2
 Available keys for `--compute-attributes`:
 ```
