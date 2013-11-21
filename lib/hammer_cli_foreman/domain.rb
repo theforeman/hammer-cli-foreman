@@ -47,7 +47,7 @@ module HammerCLIForeman
 
     class CreateCommand < HammerCLIForeman::CreateCommand
 
-      success_message "Domain created"
+      success_message "Domain [%{name}s] created"
       failure_message "Could not create the domain"
       resource ForemanApi::Resources::Domain, "create"
 
@@ -58,7 +58,7 @@ module HammerCLIForeman
 
     class UpdateCommand < HammerCLIForeman::UpdateCommand
 
-      success_message "Domain updated"
+      success_message "Domain [%{name}s] updated"
       failure_message "Could not update the domain"
       resource ForemanApi::Resources::Domain, "update"
 
@@ -69,7 +69,7 @@ module HammerCLIForeman
 
     class DeleteCommand < HammerCLIForeman::DeleteCommand
 
-      success_message "Domain deleted"
+      success_message "Domain [%{name}s] deleted"
       failure_message "Could not delete the domain"
       resource ForemanApi::Resources::Domain, "destroy"
 
