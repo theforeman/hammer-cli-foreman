@@ -2,10 +2,6 @@ source "https://rubygems.org"
 
 gemspec
 
-# we'll remove this line once hammer_cli gets more stable
-# and won't change so often
-gem 'hammer_cli', :github => "theforeman/hammer-cli"
-
 group :test do
   gem 'rake'
   gem 'thor'
