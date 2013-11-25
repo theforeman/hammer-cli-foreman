@@ -32,7 +32,7 @@ module HammerCLIForeman
 
       output ListCommand.output_definition do
         from "domain" do
-          field :fullname, "Full Name"
+          field :fullname, "Description"
           field :dns_id, "DNS Id"
           field :created_at, "Created at", Fields::Date
           field :updated_at, "Updated at", Fields::Date
@@ -47,27 +47,29 @@ module HammerCLIForeman
 
     class CreateCommand < HammerCLIForeman::CreateCommand
 
-      success_message "Domain created"
+      success_message "Domain [%{name}s] created"
       failure_message "Could not create the domain"
       resource ForemanApi::Resources::Domain, "create"
 
-      apipie_options :without => ['domain_parameters_attributes']
+      apipie_options :without => [:domain_parameters_attributes, :fullname]
+      option "--description", "DESC", "Full name describing the domain", :attribute_name => :fullname
     end
 
 
     class UpdateCommand < HammerCLIForeman::UpdateCommand
 
-      success_message "Domain updated"
+      success_message "Domain [%{name}s] updated"
       failure_message "Could not update the domain"
       resource ForemanApi::Resources::Domain, "update"
 
-      apipie_options :without => ['domain_parameters_attributes', 'name', 'id']
+      apipie_options :without => [:domain_parameters_attributes, :name, :id, :fullname]
+      option "--description", "DESC", "Full name describing the domain", :attribute_name => :fullname
     end
 
 
     class DeleteCommand < HammerCLIForeman::DeleteCommand
 
-      success_message "Domain deleted"
+      success_message "Domain [%{name}s] deleted"
       failure_message "Could not delete the domain"
       resource ForemanApi::Resources::Domain, "destroy"
 

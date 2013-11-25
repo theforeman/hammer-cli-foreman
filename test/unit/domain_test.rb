@@ -47,7 +47,7 @@ describe HammerCLIForeman::Domain do
       with_params ["--id=1"] do
         it_should_print_n_records 1
         it_should_print_columns ["Id", "Name", "Created at", "Updated at"]
-        it_should_print_columns ["DNS Id", "Full Name"]
+        it_should_print_columns ["DNS Id", "Description"]
       end
     end
 
@@ -59,7 +59,7 @@ describe HammerCLIForeman::Domain do
     let(:cmd) { HammerCLIForeman::Domain::CreateCommand.new("", ctx) }
 
     context "parameters" do
-      it_should_accept "name, fullname", ["--name=domain", "--fullname=full_domain_name"]
+      it_should_accept "name, fullname", ["--name=domain", "--description=full_domain_name"]
       it_should_fail_with "name missing", ["--full-name=full_domain_name"]
     end
 
@@ -84,10 +84,10 @@ describe HammerCLIForeman::Domain do
     let(:cmd) { HammerCLIForeman::Domain::UpdateCommand.new("", ctx) }
 
     context "parameters" do
-      it_should_accept "name", ["--name=domain", "--new-name=domain2", "--fullname=full_domain_name"]
-      it_should_accept "id", ["--id=1", "--new-name=domain2", "--fullname=full_domain_name"]
+      it_should_accept "name", ["--name=domain", "--new-name=domain2", "--description=full_domain_name"]
+      it_should_accept "id", ["--id=1", "--new-name=domain2", "--description=full_domain_name"]
       it_should_fail_with "no params", []
-      it_should_fail_with "name or id missing", ["--new-name=arch2", "--fullname=full_domain_name"]
+      it_should_fail_with "name or id missing", ["--new-name=arch2", "--description=full_domain_name"]
     end
 
   end
