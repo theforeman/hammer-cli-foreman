@@ -59,8 +59,12 @@ module HammerCLIForeman
       params['host']['host_parameters_attributes'] = parameter_attributes
       params['host']['compute_attributes'] = compute_attributes || {}
       params['host']['compute_attributes']['volumes_attributes'] = nested_attributes(volume_list)
-      params['host']['compute_attributes']['interfaces_attributes'] = nested_attributes(interface_list)
-      params['host']['compute_attributes']['nics_attributes'] = nested_attributes(interface_list)
+      if compute_resource_id
+        params['host']['compute_attributes']['interfaces_attributes'] = nested_attributes(interface_list)
+        params['host']['compute_attributes']['nics_attributes'] = nested_attributes(interface_list)
+      else
+        params['host']['interfaces_attributes'] = nested_attributes(interface_list)
+      end
 
       params
     end
