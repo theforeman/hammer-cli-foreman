@@ -67,7 +67,7 @@ describe HammerCLIForeman::Host do
 
     before :each do
       resource_mock = ApipieResourceMock.new(cmd.class.resource.resource_class)
-      resource_mock.stubs(:power).returns([{'power' => 'running'},""])
+      resource_mock.stub_method(:power, {'power' => 'running'})
       cmd.class.resource resource_mock
     end
 
@@ -236,7 +236,7 @@ describe HammerCLIForeman::Host do
 
     before :each do
       resource_mock = ApipieResourceMock.new(cmd.class.resource.resource_class)
-      resource_mock.stubs(:index).returns([[],""])
+      resource_mock.stub_method(:index, [])
       cmd.class.resource resource_mock
     end
 

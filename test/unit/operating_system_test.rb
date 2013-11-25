@@ -10,8 +10,8 @@ describe HammerCLIForeman::OperatingSystem do
 
   before :each do
     resource_mock = ApipieResourceMock.new(cmd.class.resource.resource_class)
-    resource_mock.stubs(:index).returns([[], nil])
-    resource_mock.stubs(:show).returns([{"operatingsystem" => {}}, nil])
+    resource_mock.stub_method(:index, [])
+    resource_mock.stub_method(:show, {"operatingsystem" => {}})
     cmd.class.resource resource_mock
   end
 
@@ -120,7 +120,7 @@ describe HammerCLIForeman::OperatingSystem do
 
     before :each do
       resource_mock = ApipieResourceMock.new(cmd.class.resource.resource_class)
-      resource_mock.stubs(:index).returns([[],""])
+      resource_mock.stub_method(:index, [])
       cmd.class.resource resource_mock
     end
 

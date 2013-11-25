@@ -69,7 +69,7 @@ describe HammerCLIForeman::Image do
 
     before :each do
       resource_mock = ApipieResourceMock.new(cmd.class.resource.resource_class)
-      resource_mock.stubs(:available_images).returns([[],""])
+      resource_mock.stub_method(:available_images, [])
       cmd.class.resource resource_mock
     end
 

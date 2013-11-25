@@ -16,8 +16,8 @@ describe HammerCLIForeman::Template do
 
   before :each do
     resource_mock = ApipieResourceMock.new(cmd.class.resource.resource_class)
-    resource_mock.stubs(:index).returns([[], nil])
-    resource_mock.stubs(:show).returns([template_hash, nil])
+    resource_mock.stub_method(:index, [])
+    resource_mock.stub_method(:show, template_hash)
     cmd.class.resource resource_mock
     File.stubs(:read).returns("")
   end
@@ -38,10 +38,10 @@ describe HammerCLIForeman::Template do
       it_should_print_columns ["Id", "Name", "Type"]
 
       it "should print template without kind set" do
-        template_wo_kind = { 
-          "config_template" => { 
-            :id => 1, :name => "PXE" 
-          } 
+        template_wo_kind = {
+          "config_template" => {
+            :id => 1, :name => "PXE"
+          }
         }
         mock_resource_method(:index, [[template_wo_kind], nil])
         cmd.run([]).must_equal 0
