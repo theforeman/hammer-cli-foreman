@@ -4,6 +4,7 @@ require 'hammer_cli_foreman/commands'
 require 'hammer_cli_foreman/parameter'
 require 'hammer_cli_foreman/report'
 require 'hammer_cli_foreman/puppet_class'
+require 'hammer_cli_foreman/smart_class_parameter'
 
 module HammerCLIForeman
 
@@ -423,10 +424,16 @@ module HammerCLIForeman
       end
     end
 
+    class SCParamsCommand < HammerCLIForeman::SmartClassParametersList
+
+      apipie_options :without => [:host_id, :hostgroup_id, :puppetclass_id, :environment_id]
+      option ['--id', '--name'], 'HOST_ID', 'host id/name', 
+              :attribute_name => :host_id, :required => true
+    end
+
     autoload_subcommands
   end
 
 end
 
 HammerCLI::MainCommand.subcommand 'host', "Manipulate Foreman's hosts.", HammerCLIForeman::Host
-

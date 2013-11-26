@@ -75,3 +75,14 @@ def mock_resource_method(method, response)
   resource_mock.stubs(method).returns(response)
   cmd.class.resource resource_mock
 end
+
+module ResourceMocks
+
+  def self.smart_class_parameter
+    sc_params = ApipieResourceMock.new(ForemanApi::Resources::SmartClassParameter)
+    sc_params.stubs(:index).returns([{ 'smart_class_parameters' => [ {} ] }, ""])
+    sc_params.stubs(:show).returns([{ 'smart_class_parameter' => { 'override_value_order' => '', 'environments' => [] }}, ""])
+    sc_params
+  end
+
+end 
