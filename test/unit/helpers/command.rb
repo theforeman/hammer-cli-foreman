@@ -20,7 +20,7 @@ module CommandTestHelper
 
   def it_should_fail_with(message, arguments=[])
     it "should fail with " + message.to_s do
-      proc { cmd.run(arguments) }.must_raise Clamp::UsageError
+      cmd.run(arguments).must_equal HammerCLI::EX_USAGE
     end
   end
 
