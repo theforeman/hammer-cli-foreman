@@ -27,6 +27,6 @@ EOF
   s.add_dependency 'foreman_api', '= 0.1.8'
 
   # required for ruby < 1.9.0:
-  s.add_dependency 'mime-types', '< 2.0.0' #newer versions of mime-types are not 1.8 compatible
+  s.add_dependency 'mime-types', '< 2.0.0' if RUBY_VERSION < "1.9.0"
 
 end
