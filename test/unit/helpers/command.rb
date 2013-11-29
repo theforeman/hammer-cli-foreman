@@ -34,7 +34,7 @@ module CommandTestHelper
     it "should print column " + column_name do
       arguments ||= respond_to?(:with_params) ? with_params : []
 
-      cmd.stubs(:context).returns({ :adapter => :test })
+      cmd.stubs(:context).returns(ctx.update(:adapter => :test))
       proc { cmd.run(arguments) }.must_output /.*##{column_name}#.*/
     end
   end
@@ -49,7 +49,7 @@ module CommandTestHelper
     it "should print correct count of records" do
       arguments ||= respond_to?(:with_params) ? with_params : []
 
-      cmd.stubs(:context).returns({ :adapter => :test })
+      cmd.stubs(:context).returns(ctx.update(:adapter => :test))
       count ||= expected_record_count rescue 0
       out, err = capture_io do
         cmd.run(arguments)
