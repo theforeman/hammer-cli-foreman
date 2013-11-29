@@ -50,6 +50,8 @@ module HammerCLIForeman
 
     action :index
 
+    DEFAULT_PER_PAGE = 20
+
     def adapter
       :table
     end
@@ -67,6 +69,43 @@ module HammerCLIForeman
 
     def self.command_name(name=nil)
       super(name) || "list"
+    end
+
+    def execute
+      if respond_to?(:page) && respond_to?(:per_page)
+        self.page ||= 1
+        self.per_page ||= HammerCLI::Settings.get(:ui, :per_page) || DEFAULT_PER_PAGE
+        browse_collection
+      else
+        retrieve_and_print
+      end
+
+      return HammerCLI::EX_OK
+    end
+
+    protected
+
+    def browse_collection
+      list_next = true
+
+      while list_next do
+        d = retrieve_and_print
+
+        if (d.size >= self.per_page.to_i) && interactive?
+          answer = ask("List next page? (Y/n): ").downcase
+          list_next = (answer == 'y' || answer == '')
+          self.page += 1
+        else
+          list_next = false
+        end
+      end
+    end
+
+    def retrieve_and_print
+      d = retrieve_data
+      logger.watch "Retrieved data: ", d
+      print_data d
+      d
     end
 
   end
