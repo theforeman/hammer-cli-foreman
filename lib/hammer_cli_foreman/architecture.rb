@@ -12,10 +12,8 @@ module HammerCLIForeman
     class ListCommand < HammerCLIForeman::ListCommand
 
       output do
-        from "architecture" do
-          field :id, "Id"
-          field :name, "Name"
-        end
+        field :id, "Id"
+        field :name, "Name"
       end
 
       apipie_options
@@ -25,11 +23,9 @@ module HammerCLIForeman
     class InfoCommand < HammerCLIForeman::InfoCommand
 
       output ListCommand.output_definition do
-        from "architecture" do
-          field :operatingsystem_ids, "OS ids", Fields::List
-          field :created_at, "Created at", Fields::Date
-          field :updated_at, "Updated at", Fields::Date
-        end
+        field :operatingsystem_ids, "OS ids", Fields::List
+        field :created_at, "Created at", Fields::Date
+        field :updated_at, "Updated at", Fields::Date
       end
 
     end

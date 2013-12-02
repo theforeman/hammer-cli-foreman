@@ -10,10 +10,8 @@ module HammerCLIForeman
       resource ForemanApi::Resources::Domain, "index"
 
       output do
-        from "domain" do
-          field :id, "Id"
-          field :name, "Name"
-        end
+        field :id, "Id"
+        field :name, "Name"
       end
 
       apipie_options
@@ -24,22 +22,19 @@ module HammerCLIForeman
 
       resource ForemanApi::Resources::Domain, "show"
 
-      def retrieve_data
-        domain = super
-        domain["parameters"] = HammerCLIForeman::Parameter.get_parameters resource_config, domain
-        domain
+      output ListCommand.output_definition do
+        field :fullname, "Description"
+        field :dns_id, "DNS Id"
+        field :created_at, "Created at", Fields::Date
+        field :updated_at, "Updated at", Fields::Date
+        collection :parameters, "Parameters" do
+          field nil, nil, Fields::KeyValue
+        end
       end
 
-      output ListCommand.output_definition do
-        from "domain" do
-          field :fullname, "Description"
-          field :dns_id, "DNS Id"
-          field :created_at, "Created at", Fields::Date
-          field :updated_at, "Updated at", Fields::Date
-        end
-        collection :parameters, "Parameters" do
-          field :parameter, nil, Fields::KeyValue
-        end
+      def extend_data(record)
+        record["parameters"] = HammerCLIForeman::Parameter.get_parameters(resource_config, :domain, record)
+        record
       end
 
     end

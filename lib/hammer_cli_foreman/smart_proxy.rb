@@ -13,11 +13,9 @@ module HammerCLIForeman
 
       #FIXME: search by unknown type returns 500 from the server, propper error handling should resove this
       output do
-        from "smart_proxy" do
-          field :id, "Id"
-          field :name, "Name"
-          field :url, "URL"
-        end
+        field :id, "Id"
+        field :name, "Name"
+        field :url, "URL"
       end
 
       apipie_options
@@ -28,18 +26,15 @@ module HammerCLIForeman
 
       action :show
 
-      def retrieve_data
-        sp = super
-        sp['smart_proxy']['_features'] = sp['smart_proxy']['features'].map { |f| f['feature']['name'] }
-        sp
+      output ListCommand.output_definition do
+        field :_features,  "Features",   Fields::List
+        field :created_at, "Created at", Fields::Date
+        field :updated_at, "Updated at", Fields::Date
       end
 
-      output ListCommand.output_definition do
-        from "smart_proxy" do
-          field :_features,  "Features",   Fields::List
-          field :created_at, "Created at", Fields::Date
-          field :updated_at, "Updated at", Fields::Date
-        end
+      def extend_data(proxy)
+        proxy['_features'] = proxy['features'].map { |f| f['feature']['name'] }
+        proxy
       end
 
     end
@@ -57,7 +52,7 @@ module HammerCLIForeman
 
 
     class UpdateCommand < HammerCLIForeman::UpdateCommand
-      
+
       action :update
 
       success_message "Smart proxy updated"
@@ -96,7 +91,6 @@ module HammerCLIForeman
         opts
       end
     end
-
 
     autoload_subcommands
   end

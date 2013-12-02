@@ -21,19 +21,19 @@ module HammerCLIForeman
       # FIXME: API returns doubled records, probably just if filtered by puppetclasses
       # it seems group by environment is missing
       # having the uniq to fix that
-      res["smart_class_parameters"].uniq 
+      HammerCLI::Output::RecordCollection.new(res.uniq, :meta => res.meta)
     end
   end
 
   class SmartClassParametersList < SmartClassParametersBriefList
 
-    output do 
+    output do
       from :puppetclass do
         field :name, "Puppet class"
         field :id, "Class Id", Fields::Id
       end
     end
-  end 
+  end
 
   class SmartClassParameter < HammerCLI::Apipie::Command
 
@@ -63,7 +63,7 @@ module HammerCLIForeman
             label  "Value" do
               field :id, 'Id'
               field :match, 'Match'
-              field :value, 'Value' 
+              field :value, 'Value'
             end
           end
         end
@@ -71,9 +71,8 @@ module HammerCLIForeman
         field :updated_at, "Updated at", Fields::Date
       end
 
-      def retrieve_data
-        res = super['smart_class_parameter']
-        res['override_value_order'] = res['override_value_order'].split("\n") 
+      def extend_data(res)
+        res['override_value_order'] = res['override_value_order'].split("\n")
         res['_environments'] = res['environments'].map { |e| e['environment']['name']}
         res['_environment_ids'] = res['environments'].map { |e| e['environment']['id']}
         res

@@ -14,10 +14,8 @@ module HammerCLIForeman
       include HammerCLIForeman::ResourceSupportedTest
 
       output do
-        from "location" do
-          field :id, "Id"
-          field :name, "Name"
-        end
+        field :id, "Id"
+        field :name, "Name"
       end
 
       apipie_options
@@ -28,10 +26,8 @@ module HammerCLIForeman
       include HammerCLIForeman::ResourceSupportedTest
 
       output ListCommand.output_definition do
-        from "location" do
-          field :created_at, "Created at", Fields::Date
-          field :updated_at, "Updated at", Fields::Date
-        end
+        field :created_at, "Created at", Fields::Date
+        field :updated_at, "Updated at", Fields::Date
       end
 
     end

@@ -11,17 +11,15 @@ module HammerCLIForeman
       resource ForemanApi::Resources::Hostgroup, "index"
 
       output do
-        from "hostgroup" do
-          field :id, "Id"
-          field :name, "Name"
-          field :label, "Label"
-          field :operatingsystem_id, "Operating System Id"
-          field :subnet_id, "Subnet Id"
-          field :domain_id, "Domain Id"
-          field :environment_id, "Environment Id"
-          field :puppetclass_ids, "Puppetclass Ids", Fields::List
-          field :ancestry, "Ancestry"
-        end
+        field :id, "Id"
+        field :name, "Name"
+        field :label, "Label"
+        field :operatingsystem_id, "Operating System Id"
+        field :subnet_id, "Subnet Id"
+        field :domain_id, "Domain Id"
+        field :environment_id, "Environment Id"
+        field :puppetclass_ids, "Puppetclass Ids", Fields::List
+        field :ancestry, "Ancestry"
       end
 
       apipie_options
@@ -35,13 +33,12 @@ module HammerCLIForeman
 
       output ListCommand.output_definition do
         collection :parameters, "Parameters" do
-          field :parameter, nil, Fields::KeyValue
+          field nil, nil, Fields::KeyValue
         end
       end
 
-      def retrieve_data
-        hostgroup = super
-        hostgroup["parameters"] = HammerCLIForeman::Parameter.get_parameters resource_config, hostgroup
+      def extend_data(hostgroup)
+        hostgroup["parameters"] = HammerCLIForeman::Parameter.get_parameters(resource_config, :hostgroup, hostgroup)
         hostgroup
       end
 
@@ -142,7 +139,7 @@ module HammerCLIForeman
     class SCParamsCommand < HammerCLIForeman::SmartClassParametersList
 
       apipie_options :without => [:host_id, :hostgroup_id, :puppetclass_id, :environment_id]
-      option ['--id', '--name'], 'HOSTGROUP_ID', 'hostgroup id/name', 
+      option ['--id', '--name'], 'HOSTGROUP_ID', 'hostgroup id/name',
             :attribute_name => :hostgroup_id, :required => true
     end
 

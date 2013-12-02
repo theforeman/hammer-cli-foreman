@@ -12,22 +12,18 @@ module HammerCLIForeman
     class ListCommand < HammerCLIForeman::ListCommand
 
       output do
-        from "config_template" do
-          field :id, "Id"
-          field :name, "Name"
-          field :type, "Type"
-        end
+        field :id, "Id"
+        field :name, "Name"
+        field :type, "Type"
       end
 
-      def retrieve_data
-        templates = super
-        templates.each do |tpl|
-          if tpl["config_template"]["snippet"]
-            tpl["config_template"]["type"] = "snippet"
-          else
-            tpl["config_template"]["type"] = tpl["config_template"]["template_kind"]["name"] if tpl["config_template"]["template_kind"]
-          end
+      def extend_data(tpl)
+        if tpl["snippet"]
+          tpl["type"] = "snippet"
+        else
+          tpl["type"] = tpl["template_kind"]["name"] if tpl["template_kind"]
         end
+        tpl
       end
 
       apipie_options
@@ -41,19 +37,16 @@ module HammerCLIForeman
       identifiers :id
 
       output ListCommand.output_definition do
-        from "config_template" do
-          field :operatingsystem_ids, "OS ids", Fields::List
-        end
+        field :operatingsystem_ids, "OS ids", Fields::List
       end
 
-      def retrieve_data
-        template = super
-        if template["config_template"]["snippet"]
-          template["config_template"]["type"] = "snippet"
+      def extend_data(tpl)
+        if tpl["snippet"]
+          tpl["type"] = "snippet"
         else
-          template["config_template"]["type"] = template["config_template"]["template_kind"]["name"]
+          tpl["type"] = tpl["template_kind"]["name"] if tpl["template_kind"]
         end
-        template
+        tpl
       end
 
     end
@@ -65,14 +58,13 @@ module HammerCLIForeman
       desc "List available config template kinds."
 
       output do
-        from "template_kind" do
-          field :name, "Name"
-        end
+        field :name, "Name"
       end
 
       def retrieve_data
-        snippet = { "template_kind" => { "name" => "snippet" }}
-        super << snippet
+        kinds = super
+        kinds << { "name" => "snippet" }
+        kinds
       end
 
       resource ForemanApi::Resources::TemplateKind, "index"
@@ -87,7 +79,7 @@ module HammerCLIForeman
       identifiers :id
 
       def print_data(template)
-        puts template["config_template"]["template"]
+        puts template["template"]
       end
 
     end
@@ -107,8 +99,9 @@ module HammerCLIForeman
       end
 
       def template_kind_id
-        kinds = ForemanApi::Resources::TemplateKind.new(resource_config).index()[0]
-        table = kinds.inject({}){ |result, k| result.update(k["template_kind"]["name"] => k["template_kind"]["id"]) }
+        kinds = HammerCLIForeman.collection_to_common_format(
+                  ForemanApi::Resources::TemplateKind.new(resource_config).index()[0])
+        table = kinds.inject({}){ |result, k| result.update(k["name"] => k["id"]) }
         table[type]
       end
 
@@ -132,8 +125,9 @@ module HammerCLIForeman
       end
 
       def template_kind_id
-        kinds = ForemanApi::Resources::TemplateKind.new(resource_config).index()[0]
-        table = kinds.inject({}){ |result, k| result.update(k["template_kind"]["name"] => k["template_kind"]["id"]) }
+        kinds = HammerCLIForeman.collection_to_common_format(
+                  ForemanApi::Resources::TemplateKind.new(resource_config).index()[0])
+        table = kinds.inject({}){ |result, k| result.update(k["name"] => k["id"]) }
         table[type]
       end
 
@@ -154,6 +148,7 @@ module HammerCLIForeman
 
 
     autoload_subcommands
+
   end
 
 end

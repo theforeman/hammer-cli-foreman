@@ -11,12 +11,10 @@ module HammerCLIForeman
     class ListCommand < HammerCLIForeman::ListCommand
 
       output do
-        from "model" do
-          field :id, "Id"
-          field :name, "Name"
-          field :vendor_class, "Vendor class"
-          field :hardware_model, "HW model"
-        end
+        field :id, "Id"
+        field :name, "Name"
+        field :vendor_class, "Vendor class"
+        field :hardware_model, "HW model"
       end
 
       apipie_options
@@ -26,11 +24,9 @@ module HammerCLIForeman
     class InfoCommand < HammerCLIForeman::InfoCommand
 
       output ListCommand.output_definition do
-        from "model" do
-          field :info, "Info"
-          field :created_at, "Created at", Fields::Date
-          field :updated_at, "Updated at", Fields::Date
-        end
+        field :info, "Info"
+        field :created_at, "Created at", Fields::Date
+        field :updated_at, "Updated at", Fields::Date
       end
 
     end

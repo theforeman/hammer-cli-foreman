@@ -99,14 +99,12 @@ module HammerCLIForeman
     class ListCommand < HammerCLIForeman::ListCommand
       # FIXME: list compute resource (model)
       output do
-        from "host" do
-          field :id, "Id"
-          field :name, "Name"
-          field :operatingsystem_id, "Operating System Id"
-          field :hostgroup_id, "Host Group Id"
-          field :ip, "IP"
-          field :mac, "MAC"
-        end
+        field :id, "Id"
+        field :name, "Name"
+        field :operatingsystem_id, "Operating System Id"
+        field :hostgroup_id, "Host Group Id"
+        field :ip, "IP"
+        field :mac, "MAC"
       end
 
       apipie_options
@@ -115,57 +113,55 @@ module HammerCLIForeman
 
     class InfoCommand < HammerCLIForeman::InfoCommand
 
-      def retrieve_data
-        host = super
-        host["host"]["environment_name"] = host["host"]["environment"]["environment"]["name"] rescue nil
-        host["parameters"] = HammerCLIForeman::Parameter.get_parameters(resource_config, host)
+      def extend_data(host)
+        host["environment_name"] = host["environment"]["environment"]["name"] rescue nil
+        host["parameters"] = HammerCLIForeman::Parameter.get_parameters(resource_config, :host, host)
         host
       end
 
       output ListCommand.output_definition do
-        from "host" do
-          field :uuid, "UUID"
-          field :certname, "Cert name"
+        field :uuid, "UUID"
+        field :certname, "Cert name"
 
-          field :environment_name, "Environment"
-          field :environment_id, "Environment Id"
+        field :environment_name, "Environment"
+        field :environment_id, "Environment Id"
 
-          field :managed, "Managed"
-          field :enabled, "Enabled"
-          field :build, "Build"
+        field :managed, "Managed"
+        field :enabled, "Enabled"
+        field :build, "Build"
 
-          field :use_image, "Use image"
-          field :disk, "Disk"
-          field :image_file, "Image file"
+        field :use_image, "Use image"
+        field :disk, "Disk"
+        field :image_file, "Image file"
 
-          field :sp_name, "SP Name"
-          field :sp_ip, "SP IP"
-          field :sp_mac, "SP MAC"
-          field :sp_subnet, "SP Subnet"
-          field :sp_subnet_id, "SP Subnet Id"
+        field :sp_name, "SP Name"
+        field :sp_ip, "SP IP"
+        field :sp_mac, "SP MAC"
+        field :sp_subnet, "SP Subnet"
+        field :sp_subnet_id, "SP Subnet Id"
 
-          field :created_at, "Created at", Fields::Date
-          field :updated_at, "Updated at", Fields::Date
-          field :installed_at, "Installed at", Fields::Date
-          field :last_report, "Last report", Fields::Date
+        field :created_at, "Created at", Fields::Date
+        field :updated_at, "Updated at", Fields::Date
+        field :installed_at, "Installed at", Fields::Date
+        field :last_report, "Last report", Fields::Date
 
-          field :puppet_ca_proxy_id, "Puppet CA Proxy Id"
-          field :medium_id, "Medium Id"
-          field :model_id, "Model Id"
-          field :owner_id, "Owner Id"
-          field :subnet_id, "Subnet Id"
-          field :domain_id, "Domain Id"
-          field :puppet_proxy_id, "Puppet Proxy Id"
-          field :owner_type, "Owner Type"
-          field :ptable_id, "Partition Table Id"
-          field :architecture_id, "Architecture Id"
-          field :image_id, "Image Id"
-          field :compute_resource_id, "Compute Resource Id"
+        field :puppet_ca_proxy_id, "Puppet CA Proxy Id"
+        field :medium_id, "Medium Id"
+        field :model_id, "Model Id"
+        field :owner_id, "Owner Id"
+        field :subnet_id, "Subnet Id"
+        field :domain_id, "Domain Id"
+        field :puppet_proxy_id, "Puppet Proxy Id"
+        field :owner_type, "Owner Type"
+        field :ptable_id, "Partition Table Id"
+        field :architecture_id, "Architecture Id"
+        field :image_id, "Image Id"
+        field :compute_resource_id, "Compute Resource Id"
 
-          field :comment, "Comment"
-        end
+        field :comment, "Comment"
+
         collection :parameters, "Parameters" do
-          field :parameter, nil, Fields::KeyValue
+          field nil, nil, Fields::KeyValue
         end
       end
     end
@@ -228,10 +224,8 @@ module HammerCLIForeman
       apipie_options :without => declared_identifiers.keys
 
       output do
-        from "fact" do
-          field :fact, "Fact"
-          field :value, "Value"
-        end
+        field :fact, "Fact"
+        field :value, "Value"
       end
 
       def request_params
@@ -241,7 +235,8 @@ module HammerCLIForeman
       end
 
       def retrieve_data
-        HammerCLIForeman::Fact::ListCommand.unhash_facts(super)
+        data = super
+        HammerCLIForeman::Fact::ListCommand.unhash_facts(data)
       end
 
     end
@@ -427,7 +422,7 @@ module HammerCLIForeman
     class SCParamsCommand < HammerCLIForeman::SmartClassParametersList
 
       apipie_options :without => [:host_id, :hostgroup_id, :puppetclass_id, :environment_id]
-      option ['--id', '--name'], 'HOST_ID', 'host id/name', 
+      option ['--id', '--name'], 'HOST_ID', 'host id/name',
               :attribute_name => :host_id, :required => true
     end
 
