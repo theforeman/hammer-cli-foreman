@@ -46,8 +46,8 @@ module HammerCLIForeman
       end
 
       def parameter_exist?
-        params = resource.call(:index, base_action_params)[0]
-        params.find { |p| p["parameter"]["name"] == name }
+        params = HammerCLIForeman.collection_to_common_format(resource.call(:index, base_action_params)[0])
+        params.find { |p| p["name"] == name }
       end
 
       def update_parameter
@@ -58,7 +58,7 @@ module HammerCLIForeman
           }
         }.merge base_action_params
 
-        resource.call(:update, params)
+        HammerCLIForeman.record_to_common_format(resource.call(:update, params))
       end
 
       def create_parameter
@@ -69,7 +69,7 @@ module HammerCLIForeman
           }
         }.merge base_action_params
 
-        resource.call(:create, params)
+        HammerCLIForeman.record_to_common_format(resource.call(:create, params))
       end
 
     end
@@ -94,7 +94,7 @@ module HammerCLIForeman
           "id" => name
         }.merge base_action_params
 
-        resource.call(:destroy, params)
+        HammerCLIForeman.record_to_common_format(resource.call(:destroy, params))
         print_message success_message if success_message
         HammerCLI::EX_OK
       end

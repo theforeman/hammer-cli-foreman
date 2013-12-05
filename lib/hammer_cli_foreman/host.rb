@@ -319,6 +319,8 @@ module HammerCLIForeman
 
     class SetParameterCommand < HammerCLIForeman::Parameter::SetCommand
 
+      resource ForemanApi::Resources::Parameter
+
       desc "Create or update parameter for a host."
 
       option "--host-name", "HOST_NAME", "name of the host the parameter is being set for"
@@ -342,6 +344,8 @@ module HammerCLIForeman
 
 
     class DeleteParameterCommand < HammerCLIForeman::Parameter::DeleteCommand
+
+      resource ForemanApi::Resources::Parameter
 
       desc "Delete parameter for a host."
 

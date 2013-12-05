@@ -74,6 +74,8 @@ module HammerCLIForeman
 
     class SetParameterCommand < HammerCLIForeman::Parameter::SetCommand
 
+      resource ForemanApi::Resources::Parameter
+
       desc "Create or update parameter for a domain."
 
       option "--domain-name", "DOMAIN_NAME", "name of the domain the parameter is being set for"
@@ -97,6 +99,8 @@ module HammerCLIForeman
 
 
     class DeleteParameterCommand < HammerCLIForeman::Parameter::DeleteCommand
+
+      resource ForemanApi::Resources::Parameter
 
       desc "Delete parameter for a domain."
 
