@@ -9,11 +9,21 @@ describe HammerCLIForeman::Output::Formatters::OSNameFormatter do
     formatter = HammerCLIForeman::Output::Formatters::OSNameFormatter.new
     formatter.format({ :name => 'Fedora', :major => '19'}).must_equal 'Fedora 19'
   end
+
+  it "recovers when os is nil" do
+    formatter = HammerCLIForeman::Output::Formatters::OSNameFormatter.new
+    formatter.format(nil).must_equal nil
+  end
 end
 
 describe HammerCLIForeman::Output::Formatters::ServerFormatter do
   it "formats the server" do
     formatter = HammerCLIForeman::Output::Formatters::ServerFormatter.new
     formatter.format({ :name => 'Server', :url => "URL"}).must_equal 'Server (URL)'
+  end
+
+  it "recovers when server is nil" do
+    formatter = HammerCLIForeman::Output::Formatters::ServerFormatter.new
+    formatter.format(nil).must_equal nil
   end
 end

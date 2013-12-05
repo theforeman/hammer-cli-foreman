@@ -8,6 +8,7 @@ module HammerCLIForeman::Output
       end
 
       def format(os)
+        return nil if os.nil?
         name = "%s %s" % [os[:name], os[:major]]
         name += ".%s" % os[:minor] unless (!os.has_key?(:minor) || os[:minor].empty?)
         name
@@ -15,13 +16,13 @@ module HammerCLIForeman::Output
     end
 
     class ServerFormatter < HammerCLI::Output::Formatters::FieldFormatter
-      
+
       def tags
         [:flat]
       end
 
       def format(server)
-        "%s (%s)" % [server[:name], server[:url]]
+        "%s (%s)" % [server[:name], server[:url]] unless server.nil?
       end
     end
 

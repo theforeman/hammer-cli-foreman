@@ -13,11 +13,9 @@ module HammerCLIForeman
       apipie_options
 
       output do
-        from "fact" do
-          field :host, "Host"
-          field :fact, "Fact"
-          field :value, "Value"
-        end
+        field :host, "Host"
+        field :fact, "Fact"
+        field :value, "Value"
       end
 
       def retrieve_data
@@ -25,13 +23,13 @@ module HammerCLIForeman
       end
 
       def self.unhash_facts(facts_hash)
-        facts_hash.inject([]) do |list, (host, facts)|
+        facts = facts_hash.first.inject([]) do |list, (host, facts)|
           list + facts.collect do |(fact, value)|
-            { :fact => { :host => host, :fact => fact, :value => value } }
+            { :host => host, :fact => fact, :value => value }
           end
         end
+        HammerCLI::Output::RecordCollection.new(facts, :meta => facts_hash.meta)
       end
-
     end
 
     autoload_subcommands

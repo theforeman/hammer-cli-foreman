@@ -12,14 +12,15 @@ module HammerCLIForeman
     class ListCommand < HammerCLIForeman::ListCommand
 
       output do
-        from "operatingsystem" do
-          field :id, "Id"
-        end
-        field :operatingsystem, "Name", Fields::OSName
-        from "operatingsystem" do
-          field :release_name, "Release name"
-          field :family, "Family"
-        end
+        field :id, "Id"
+        field :_os_name, "Name", Fields::OSName
+        field :release_name, "Release name"
+        field :family, "Family"
+      end
+
+      def extend_data(os)
+        os["_os_name"] = os.select { |k, v| ["name", "major", "minor"].include? k }
+        os
       end
 
       apipie_options
@@ -31,25 +32,23 @@ module HammerCLIForeman
       identifiers :id, :label
 
       output ListCommand.output_definition do
-        from "operatingsystem" do
-          field :media_names, "Installation media", Fields::List
-          field :architecture_names, "Architectures", Fields::List
-          field :ptable_names, "Partition tables", Fields::List
-          field :config_template_names, "Config templates", Fields::List
-        end
+        field :media_names, "Installation media", Fields::List
+        field :architecture_names, "Architectures", Fields::List
+        field :ptable_names, "Partition tables", Fields::List
+        field :config_template_names, "Config templates", Fields::List
         collection :parameters, "Parameters" do
-          field :parameter, nil, Fields::KeyValue
+          field nil, nil, Fields::KeyValue
         end
       end
 
       #FIXME: remove custom retrieve_data after the api has support for listing names
-      def retrieve_data
-        os = super
-        os["operatingsystem"]["media_names"] = os["operatingsystem"]["media"].collect{|m| m["medium"]["name"] } rescue []
-        os["operatingsystem"]["architecture_names"] = os["operatingsystem"]["architectures"].collect{|m| m["architecture"]["name"] } rescue []
-        os["operatingsystem"]["ptable_names"] = os["operatingsystem"]["ptables"].collect{|m| m["ptable"]["name"] } rescue []
-        os["operatingsystem"]["config_template_names"] = os["operatingsystem"]["config_templates"].collect{|m| m["config_template"]["name"] } rescue []
-        os["parameters"] = HammerCLIForeman::Parameter.get_parameters resource_config, os
+      def extend_data(os)
+        os["_os_name"] = os.select { |k, v| ["name", "major", "minor"].include? k }
+        os["media_names"] = os["media"].collect{|m| m["medium"]["name"] } rescue []
+        os["architecture_names"] = os["architectures"].collect{|m| m["architecture"]["name"] } rescue []
+        os["ptable_names"] = os["ptables"].collect{|m| m["ptable"]["name"] } rescue []
+        os["config_template_names"] = os["config_templates"].collect{|m| m["config_template"]["name"] } rescue []
+        os["parameters"] = HammerCLIForeman::Parameter.get_parameters(resource_config, :operatingsystem, os)
         os
       end
 

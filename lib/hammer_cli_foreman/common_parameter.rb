@@ -10,10 +10,8 @@ module HammerCLIForeman
       resource ForemanApi::Resources::CommonParameter, "index"
 
       output do
-        from "common_parameter" do
-          field :name, "Name"
-          field :value, "Value"
-        end
+        field :name, "Name"
+        field :value, "Value"
       end
 
       apipie_options

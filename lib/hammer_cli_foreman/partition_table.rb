@@ -12,11 +12,9 @@ module HammerCLIForeman
     class ListCommand < HammerCLIForeman::ListCommand
 
       output do
-        from "ptable" do
-          field :id, "Id"
-          field :name, "Name"
-          field :os_family, "OS Family"
-        end
+        field :id, "Id"
+        field :name, "Name"
+        field :os_family, "OS Family"
       end
 
       apipie_options
@@ -26,10 +24,8 @@ module HammerCLIForeman
     class InfoCommand < HammerCLIForeman::InfoCommand
 
       output ListCommand.output_definition do
-        from "ptable" do
-          field :created_at, "Created at", Fields::Date
-          field :updated_at, "Updated at", Fields::Date
-        end
+        field :created_at, "Created at", Fields::Date
+        field :updated_at, "Updated at", Fields::Date
       end
 
     end
@@ -42,7 +38,7 @@ module HammerCLIForeman
 
 
       def print_data(partition_table)
-        puts partition_table["ptable"]["layout"]
+        puts partition_table["layout"]
       end
 
     end

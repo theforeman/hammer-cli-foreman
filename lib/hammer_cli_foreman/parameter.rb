@@ -6,14 +6,13 @@ module HammerCLIForeman
 
   module Parameter
 
-    def self.get_parameters(resource_config, resource)
-      resource_type = resource.keys.first
-      resource = resource[resource_type]
+    def self.get_parameters(resource_config, resource_type, resource)
       params = {
         resource_type.to_s+"_id" => resource["id"] || resource["name"]
       }
 
-      ForemanApi::Resources::Parameter.new(resource_config).index(params)[0]
+      params = ForemanApi::Resources::Parameter.new(resource_config).index(params)[0]
+      HammerCLIForeman.collection_to_common_format(params)
     end
 
     class SetCommand < HammerCLI::Apipie::Command

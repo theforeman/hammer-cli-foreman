@@ -4,25 +4,21 @@ require 'hammer_cli_foreman/commands'
 
 module HammerCLIForeman
 
-  class User < HammerCLI::AbstractCommand
-    class ListCommand < HammerCLIForeman::ListCommand
-      resource ForemanApi::Resources::User, "index"
+  class User < HammerCLI::Apipie::Command
+    resource ForemanApi::Resources::User
 
-      def retrieve_data
-        data = super
-        data.map do |d|
-          d["user"]["full_name"] = [d["user"]["firstname"], d["user"]["lastname"]].join(' ')
-          d
-        end
-      end
+    class ListCommand < HammerCLIForeman::ListCommand
 
       output do
-        from "user" do
-          field :id, "Id"
-          field :login, "Login"
-          field :full_name, "Name"
-          field :mail, "Email"
-        end
+        field :id, "Id"
+        field :login, "Login"
+        field :full_name, "Name"
+        field :mail, "Email"
+      end
+
+      def extend_data(user)
+        user["full_name"] = [user["firstname"], user["lastname"]].join(' ')
+        user
       end
 
       apipie_options
@@ -31,21 +27,17 @@ module HammerCLIForeman
 
     class InfoCommand < HammerCLIForeman::InfoCommand
 
-      resource ForemanApi::Resources::User, "show"
       identifiers :id
 
-      def retrieve_data
-        data = super
-        data["user"]["full_name"] = [data["user"]["firstname"], data["user"]["lastname"]].join(' ')
-        data
+      output ListCommand.output_definition do
+        field :last_login_on, "Last login", Fields::Date
+        field :created_at, "Created at", Fields::Date
+        field :updated_at, "Updated at", Fields::Date
       end
 
-      output ListCommand.output_definition do
-        from "user" do
-          field :last_login_on, "Last login", Fields::Date
-          field :created_at, "Created at", Fields::Date
-          field :updated_at, "Updated at", Fields::Date
-        end
+      def extend_data(user)
+        user["full_name"] = [user["firstname"], user["lastname"]].join(' ')
+        user
       end
 
     end

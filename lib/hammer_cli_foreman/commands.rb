@@ -2,6 +2,32 @@ require 'hammer_cli'
 
 module HammerCLIForeman
 
+  def self.collection_to_common_format(data)
+    if data.class <= Hash && data.has_key?('total') && data.has_key?('results')
+      col = HammerCLI::Output::RecordCollection.new(data['results'],
+        :total => data['total'],
+        :subtotal => data['subtotal'],
+        :page => data['page'],
+        :per_page => data['per_page'],
+        :search => data['search'],
+        :sort_by => data['sort']['by'],
+        :sort_order => data['sort']['order'])
+    elsif data.class <= Hash
+      col = HammerCLI::Output::RecordCollection.new(data)
+    elsif data.class <= Array
+      # remove object types. From [ { 'type' => { 'attr' => val } }, ... ]
+      # produce [ { 'attr' => 'val' }, ... ]
+      col = HammerCLI::Output::RecordCollection.new(data.map { |r| r.keys.length == 1 ? r[r.keys[0]] : r })
+    else
+      raise RuntimeError.new("Received data of unknown format")
+    end
+    col
+  end
+
+  def self.record_to_common_format(data)
+      data.class <= Hash && data.keys.length == 1 ? data[data.keys[0]] : data
+  end
+
   class WriteCommand < HammerCLI::Apipie::WriteCommand
 
     def success_message_params(response)
@@ -14,6 +40,10 @@ module HammerCLIForeman
       end
     end
 
+    def send_request
+      HammerCLIForeman.record_to_common_format(resource.call(action, request_params)[0])
+    end
+
   end
 
   class ListCommand < HammerCLI::Apipie::ReadCommand
@@ -22,6 +52,17 @@ module HammerCLIForeman
 
     def adapter
       :table
+    end
+
+    def retrieve_data
+      data = super
+      set = HammerCLIForeman.collection_to_common_format(data)
+      set.map! { |r| extend_data(r) }
+      set
+    end
+
+    def extend_data(record)
+      record
     end
 
     def self.command_name(name=nil)
@@ -47,6 +88,20 @@ module HammerCLIForeman
 
     def self.apipie_options(options={})
       super({:without => declared_identifiers.keys}.merge(options))
+    end
+
+    def retrieve_data
+      data = super
+      record = HammerCLIForeman.record_to_common_format(data)
+      extend_data(record)
+    end
+
+    def extend_data(record)
+      record
+    end
+
+    def print_data(record)
+      print_record(output_definition, record)
     end
 
   end

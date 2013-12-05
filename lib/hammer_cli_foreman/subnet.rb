@@ -9,12 +9,10 @@ module HammerCLIForeman
       resource ForemanApi::Resources::Subnet, "index"
 
       output do
-        from "subnet" do
-          field :id, "Id"
-          field :name, "Name"
-          field :network, "Network"
-          field :mask, "Mask"
-        end
+        field :id, "Id"
+        field :name, "Name"
+        field :network, "Network"
+        field :mask, "Mask"
       end
 
       apipie_options
@@ -26,21 +24,19 @@ module HammerCLIForeman
       resource ForemanApi::Resources::Subnet, "show"
 
       output ListCommand.output_definition do
-        from "subnet" do
-          field :priority, "Priority"
-          field :dns, "DNS", Fields::Server
-          field :dns_primary, "Primary DNS"
-          field :dns_secondary, "Secondary DNS"
-          field :domain_ids, "Domain ids", Fields::List
-          field :tftp, "TFTP", Fields::Server
-          field :tftp_id, "TFTP id"
-          field :dhcp, "DHCP", Fields::Server
-          field :dhcp_id, "DHCP id"
-          field :vlanid, "vlan id"
-          field :gateway, "Gateway"
-          field :from, "From"
-          field :to, "To"
-        end
+        field :priority, "Priority"
+        field :dns, "DNS", Fields::Server
+        field :dns_primary, "Primary DNS"
+        field :dns_secondary, "Secondary DNS"
+        field :domain_ids, "Domain ids", Fields::List
+        field :tftp, "TFTP", Fields::Server
+        field :tftp_id, "TFTP id"
+        field :dhcp, "DHCP", Fields::Server
+        field :dhcp_id, "DHCP id"
+        field :vlanid, "vlan id"
+        field :gateway, "Gateway"
+        field :from, "From"
+        field :to, "To"
       end
 
     end

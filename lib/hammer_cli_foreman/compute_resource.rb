@@ -11,11 +11,9 @@ module HammerCLIForeman
     class ListCommand < HammerCLIForeman::ListCommand
 
       output do
-        from "compute_resource" do
-          field :id, "Id"
-          field :name, "Name"
-          field :provider, "Provider"
-        end
+        field :id, "Id"
+        field :name, "Name"
+        field :provider, "Provider"
       end
 
       apipie_options
@@ -46,19 +44,17 @@ module HammerCLIForeman
       }
 
       output ListCommand.output_definition do
-        from "compute_resource" do
-          field :url, "Url"
-          field :description, "Description"
-          field :user, "User"
-          field :created_at, "Created at", Fields::Date
-          field :updated_at, "Updated at", Fields::Date
-        end
+        field :url, "Url"
+        field :description, "Description"
+        field :user, "User"
+        field :created_at, "Created at", Fields::Date
+        field :updated_at, "Updated at", Fields::Date
       end
 
       def print_data(data)
-        provider = data["compute_resource"]["provider"].downcase
+        provider = data["provider"].downcase
         output_definition.fields.concat PROVIDER_SPECIFIC_FIELDS[provider]
-        print_records(output_definition, data)
+        print_collection(output_definition, data)
       end
 
     end

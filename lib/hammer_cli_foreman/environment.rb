@@ -11,10 +11,8 @@ module HammerCLIForeman
       resource ForemanApi::Resources::Environment, "index"
 
       output do
-        from "environment" do
-          field :id, "Id"
-          field :name, "Name"
-        end
+        field :id, "Id"
+        field :name, "Name"
       end
 
       apipie_options
@@ -25,10 +23,8 @@ module HammerCLIForeman
       resource ForemanApi::Resources::Environment, "show"
 
       output ListCommand.output_definition do
-        from "environment" do
-          field :created_at, "Created at", Fields::Date
-          field :updated_at, "Updated at", Fields::Date
-        end
+        field :created_at, "Created at", Fields::Date
+        field :updated_at, "Updated at", Fields::Date
       end
 
     end
@@ -66,8 +62,8 @@ module HammerCLIForeman
     class SCParamsCommand < HammerCLIForeman::SmartClassParametersList
 
       apipie_options :without => [:host_id, :hostgroup_id, :puppetclass_id, :environment_id]
-      option ['--id', '--name'], 'ENVIRONMENT_ID', 'environment id/name', 
-            :required => true, :attribute_name => :environment_id 
+      option ['--id', '--name'], 'ENVIRONMENT_ID', 'environment id/name',
+            :required => true, :attribute_name => :environment_id
     end
 
 

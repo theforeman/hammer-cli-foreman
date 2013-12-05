@@ -32,13 +32,11 @@ module HammerCLIForeman
       include HammerCLIForeman::Image::ComputeResourceOptions
 
       output do
-        from "image" do
-          field :id, "Id"
-          field :name, "Name"
-          field :operatingsystem_id, "Operating System Id", Fields::Id
-          field :username, "Username"
-          field :uuid, "UUID"
-        end
+        field :id, "Id"
+        field :name, "Name"
+        field :operatingsystem_id, "Operating System Id", Fields::Id
+        field :username, "Username"
+        field :uuid, "UUID"
       end
 
       def request_params
@@ -57,12 +55,10 @@ module HammerCLIForeman
       identifiers :id
 
       output ListCommand.output_definition do
-        from "image" do
-          field :architecture_id, "Architecture Id", Fields::Id
-          field :iam_role, "IAM role"
-          field :created_at, "Created at", Fields::Date
-          field :updated_at, "Updated at", Fields::Date
-        end
+        field :architecture_id, "Architecture Id", Fields::Id
+        field :iam_role, "IAM role"
+        field :created_at, "Created at", Fields::Date
+        field :updated_at, "Updated at", Fields::Date
       end
 
       def request_params
@@ -83,10 +79,8 @@ module HammerCLIForeman
       include HammerCLIForeman::Image::ComputeResourceOptions
 
       output do
-        from "image" do
-          field :name, "Name"
-          field :uuid, "UUID"
-        end
+        field :name, "Name"
+        field :uuid, "UUID"
       end
 
       def request_params
