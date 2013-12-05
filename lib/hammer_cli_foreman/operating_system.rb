@@ -125,6 +125,8 @@ module HammerCLIForeman
 
     class SetParameterCommand < HammerCLIForeman::Parameter::SetCommand
 
+      resource ForemanApi::Resources::Parameter
+
       desc "Create or update parameter for an operating system."
 
       #FIXME: add option --os-label when api supports it
@@ -148,6 +150,8 @@ module HammerCLIForeman
 
 
     class DeleteParameterCommand < HammerCLIForeman::Parameter::DeleteCommand
+
+      resource ForemanApi::Resources::Parameter
 
       desc "Delete parameter for an operating system."
 
