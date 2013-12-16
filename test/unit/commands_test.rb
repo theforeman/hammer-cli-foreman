@@ -74,6 +74,23 @@ describe HammerCLIForeman do
       rec.must_equal(arch)
 
     end
+  end
 
+  context "Create command" do
+    it "should format created entity in csv output" do
+      ForemanApi::Resources::Architecture.any_instance.stubs(:create).returns([{
+          "architecture" => {
+                             "name" => "i386",
+                               "id" => 3,
+                       "created_at" => "2013-12-16T15:35:21Z",
+              "operatingsystem_ids" => [],
+                       "updated_at" => "2013-12-16T15:35:21Z"
+          }
+      }])
+      arch = HammerCLIForeman::Architecture::CreateCommand.new("", { :adapter => :csv })
+      arch.class.resource(ForemanApi::Resources::Architecture)
+      out, err = capture_io { arch.run(["--name='i386'"]) }
+      out.must_match("Message,Id,Name\nArchitecture created,3,i386\n")
+    end
   end
 end

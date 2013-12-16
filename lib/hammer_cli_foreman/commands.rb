@@ -30,16 +30,6 @@ module HammerCLIForeman
 
   class WriteCommand < HammerCLI::Apipie::WriteCommand
 
-    def success_message_params(response)
-      if response
-        if response.is_a?(Hash) and !response.empty?
-          response[response.keys[0]]
-        else
-          response
-        end
-      end
-    end
-
     def send_request
       HammerCLIForeman.record_to_common_format(resource.call(action, request_params)[0])
     end
