@@ -15,6 +15,8 @@ module HammerCLIForeman
             :puppet_proxy_id, :operatingsystem_id,
             # - temporarily disabled params until we add support for boolean options to apipie -
             :build, :managed, :enabled, :start,
+            # - temporarily disabled params until they are fixed in API
+            :puppet_class_ids, #3884
             # - temporarily disabled params that will be removed from the api ------------------
             :provision_method, :capabilities, :flavour_ref, :image_ref, :start,
             :network, :cpus, :memory, :provider, :type, :tenant_id, :image_id,
@@ -29,6 +31,8 @@ module HammerCLIForeman
       base.option "--partition-table-id", "PARTITION_TABLE_ID", " "
       base.option "--compute-resource-id", "COMPUTE_RESOURCE", " "
       base.option "--partition-table-id", "PARTITION_TABLE", " "
+      base.option "--puppetclass-ids", "PUPPETCLASS_IDS", " ",
+        :format => HammerCLI::Options::Normalizers::List.new
 
       base.option "--build", "BUILD", " ", :default => 'true',
         :format => HammerCLI::Options::Normalizers::Bool.new
@@ -54,6 +58,8 @@ module HammerCLIForeman
       params['host']['build'] = build
       params['host']['managed'] = managed
       params['host']['enabled'] = enabled
+
+      params['host']['puppetclass_ids'] = puppetclass_ids
 
       params['host']['ptable_id'] = partition_table_id
       params['host']['compute_resource_id'] = compute_resource_id
