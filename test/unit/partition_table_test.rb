@@ -4,7 +4,6 @@ require File.join(File.dirname(__FILE__), 'apipie_resource_mock')
 
 describe HammerCLIForeman::PartitionTable do
 
-  let(:ctx) { { :adapter => :silent } }
 
   extend CommandTestHelper
 

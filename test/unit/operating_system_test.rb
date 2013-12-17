@@ -4,8 +4,6 @@ require File.join(File.dirname(__FILE__), 'apipie_resource_mock')
 
 describe HammerCLIForeman::OperatingSystem do
 
-  let(:ctx) { { :adapter => :silent } }
-
   extend CommandTestHelper
 
   before :each do

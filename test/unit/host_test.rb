@@ -82,7 +82,7 @@ describe HammerCLIForeman::Host do
         it_should_print_columns ["Status", "Power"]
 
         it "should output status" do
-          cmd.stubs(:context).returns({ :adapter => :test })
+          cmd.stubs(:context).returns(ctx.update(:adapter => :test))
           proc { cmd.run(with_params) }.must_output "#Status#Power#\n#missing#running#\n"
         end
       end
@@ -143,7 +143,7 @@ describe HammerCLIForeman::Host do
     context "output" do
       with_params ["--id=1"] do
         it "should inform that puppet was triggered" do
-          cmd.stubs(:context).returns({ :adapter => :test })
+          cmd.stubs(:context).returns(ctx.update(:adapter => :test))
           proc { cmd.run(with_params) }.must_output "Puppet run triggered\n"
         end
       end

@@ -16,8 +16,13 @@ require "mocha/setup"
 
 require 'hammer_cli_foreman'
 
-def ctx 
-  { :adapter => :silent }
+def ctx
+  {
+    :adapter => :silent ,
+    :username => 'admin',
+    :password => 'admin',
+    :interactive => false
+  }
 end
 
 
