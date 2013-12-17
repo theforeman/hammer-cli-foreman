@@ -18,9 +18,9 @@ EOF
 
 
 
-  s.files            = `git ls-files -- {lib,doc,test}/* README*`.split("\n")
-  s.test_files       = `git ls-files -- test/*`.split("\n")
-  s.extra_rdoc_files = `git ls-files -- doc/* README*`.split("\n")
+  s.files            = Dir['{lib,doc,test}/**/*', 'README*']
+  s.test_files       = Dir['{test}/**/*']
+  s.extra_rdoc_files = Dir['{doc}/**/*', 'README*']
   s.require_paths = ["lib"]
 
   s.add_dependency 'hammer_cli', '>= 0.0.12'
