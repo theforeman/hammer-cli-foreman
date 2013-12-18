@@ -87,7 +87,7 @@ describe HammerCLIForeman do
                        "updated_at" => "2013-12-16T15:35:21Z"
           }
       }])
-      arch = HammerCLIForeman::Architecture::CreateCommand.new("", { :adapter => :csv })
+      arch = HammerCLIForeman::Architecture::CreateCommand.new("", { :adapter => :csv, :interactive => false })
       arch.class.resource(ForemanApi::Resources::Architecture)
       out, err = capture_io { arch.run(["--name='i386'"]) }
       out.must_match("Message,Id,Name\nArchitecture created,3,i386\n")
