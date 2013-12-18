@@ -23,7 +23,7 @@ EOF
   s.extra_rdoc_files = Dir['{doc}/**/*', 'README*']
   s.require_paths = ["lib"]
 
-  s.add_dependency 'hammer_cli', '>= 0.0.12'
+  s.add_dependency 'hammer_cli', '>= 0.0.13'
   s.add_dependency 'foreman_api', '= 0.1.8'
 
   # required for ruby < 1.9.0:
