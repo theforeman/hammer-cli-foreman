@@ -24,4 +24,7 @@ How to test
 
 Generated coverage reports are stored in ./coverage directory.
 
+License
+-------
 
+This project is licensed under the GPLv3+.
