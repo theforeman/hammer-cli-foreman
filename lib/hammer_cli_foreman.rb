@@ -1,6 +1,7 @@
 require 'hammer_cli'
 require 'hammer_cli/exit_codes'
 
+require 'hammer_cli_foreman/version'
 require 'hammer_cli_foreman/output/fields'
 
 module HammerCLIForeman
@@ -8,7 +9,7 @@ module HammerCLIForeman
   def self.exception_handler_class
     HammerCLIForeman::ExceptionHandler
   end
-  
+
   require 'hammer_cli_foreman/output'
   require 'hammer_cli_foreman/exception_handler'
   require 'hammer_cli_foreman/architecture'
