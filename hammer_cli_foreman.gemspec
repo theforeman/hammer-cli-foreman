@@ -10,6 +10,7 @@ Gem::Specification.new do |s|
   s.authors       = ["Tomáš Strachota", "Martin Bačovský"]
   s.email         = "tstracho@redhat.com"
   s.homepage      = "http://github.com/theforeman/hammer-cli-foreman"
+  s.license       = "GPL v3+"
 
   s.summary       = %q{Foreman commands for Hammer}
   s.description   = <<EOF
