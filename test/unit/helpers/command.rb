@@ -13,7 +13,9 @@ module CommandTestHelper
   def it_should_call_action(action, params, headers={})
     it "should call action "+action.to_s do
       arguments ||= respond_to?(:with_params) ? with_params : []
-      cmd.resource.resource_class.expects_with(action, params, headers)
+      ApipieBindings::API.any_instance.expects(:call).with() do |r,a,p,h,o|
+        (r == cmd.resource.name && a == action && p == params && h == headers)
+      end
       cmd.run(arguments)
     end
   end
@@ -21,7 +23,9 @@ module CommandTestHelper
   def it_should_call_action_and_test_params(action, &block)
     it "should call action "+action.to_s do
       arguments ||= respond_to?(:with_params) ? with_params : []
-      cmd.resource.resource_class.expects_with_block(action, &block)
+      ApipieBindings::API.any_instance.expects(:call).with() do |r,a,p,h,o|
+        (r == cmd.resource.name && a == action && yield(p))
+      end
       cmd.run(arguments)
     end
   end
@@ -34,7 +38,20 @@ module CommandTestHelper
 
   def it_should_accept(message, arguments=[])
     it "should accept " + message.to_s do
-      cmd.run(arguments).must_equal HammerCLI::EX_OK
+      out, err = capture_io do
+        cmd.run(arguments).must_equal HammerCLI::EX_OK
+      end
+    end
+  end
+
+  def it_should_output(message, adapter=:base)
+    it "should output '" + message.to_s + "'" do
+      arguments ||= respond_to?(:with_params) ? with_params : []
+      cmd.stubs(:context).returns(ctx.update(:adapter => adapter))
+      out, err = capture_io do
+        cmd.run(arguments)
+      end
+      out.must_include message
     end
   end
 
@@ -62,7 +79,6 @@ module CommandTestHelper
       out, err = capture_io do
         cmd.run(arguments)
       end
-
       out.split(/\n/).length.must_equal count+1 # plus 1 for line with column headers
     end
   end

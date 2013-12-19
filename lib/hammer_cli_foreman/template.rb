@@ -1,8 +1,8 @@
 module HammerCLIForeman
 
-  class Template < HammerCLI::Apipie::Command
+  class Template < HammerCLIForeman::Command
 
-    resource ForemanApi::Resources::ConfigTemplate
+    resource :config_templates
 
     module TemplateCreateUpdateCommons
 
@@ -11,17 +11,8 @@ module HammerCLIForeman
       end
 
       def option_template_kind_id
-        connection_options = {
-          :connector => HammerCLI::Apipie::ApipieConnector
-        }
-
-        connection = HammerCLI::Connection.create(
-          :template_kinds,
-          resource_config.merge(:definition => HammerCLI::Apipie::ResourceDefinition.new(ForemanApi::Resources::TemplateKind)),
-          connection_options
-        )
-
-        kinds = HammerCLIForeman.collection_to_common_format(connection.call(:index)[0])
+        kinds = HammerCLIForeman.collection_to_common_format(
+          HammerCLIForeman.foreman_resource(:template_kinds).call(:index))
         table = kinds.inject({}){ |result, k| result.update(k["name"] => k["id"]) }
         table[option_type]
       end
@@ -92,7 +83,7 @@ module HammerCLIForeman
         kinds
       end
 
-      resource ForemanApi::Resources::TemplateKind, "index"
+      resource :template_kinds, :index
     end
 
 

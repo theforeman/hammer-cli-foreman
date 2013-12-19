@@ -7,15 +7,14 @@ describe HammerCLIForeman::OperatingSystem do
   extend CommandTestHelper
 
   before :each do
-    HammerCLI::Connection.drop_all
-    resource_mock = ApipieResourceMock.new(cmd.class.resource.resource_class)
-    resource_mock.stub_method(:index, [])
-    resource_mock.stub_method(:show, {"operatingsystem" => {}})
-    cmd.class.resource resource_mock
     cmd.stubs(:name_to_id).returns(1)
   end
 
   context "ListCommand" do
+
+    before :each do
+      ResourceMocks.operatingsystems
+    end
 
     let(:cmd) { HammerCLIForeman::OperatingSystem::ListCommand.new("", ctx) }
 
@@ -25,7 +24,7 @@ describe HammerCLIForeman::OperatingSystem do
     end
 
     context "output" do
-      let(:expected_record_count) { cmd.resource.call(:index)[0].length }
+      let(:expected_record_count) { cmd.resource.call(:index).length }
 
       it_should_print_n_records
       it_should_print_column "Name"
@@ -116,15 +115,13 @@ describe HammerCLIForeman::OperatingSystem do
   context "SetParameterCommand" do
 
     before :each do
-      resource_mock = ApipieResourceMock.new(cmd.class.resource.resource_class)
-      resource_mock.stub_method(:index, [])
-      cmd.class.resource resource_mock
+      ResourceMocks.operatingsystems
     end
 
     let(:cmd) { HammerCLIForeman::OperatingSystem::SetParameterCommand.new("", ctx) }
 
     context "parameters" do
-      it_should_accept "name, value and os id", ["--name=name", "--value=val", "--os-id=id"]
+      it_should_accept "name, value and os id", ["--name=domain", "--value=val", "--os-id=id"]
       it_should_fail_with "name missing", ["--value=val", "--os-id=id"]
       it_should_fail_with "value missing", ["--name=name", "--os-id=id"]
       it_should_fail_with "os id missing", ["--name=name", "--value=val"]

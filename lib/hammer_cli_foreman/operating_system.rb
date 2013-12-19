@@ -1,8 +1,8 @@
 module HammerCLIForeman
 
-  class OperatingSystem < HammerCLI::Apipie::Command
+  class OperatingSystem < HammerCLIForeman::Command
 
-    resource ForemanApi::Resources::OperatingSystem
+    resource :operatingsystems
 
     class ListCommand < HammerCLIForeman::ListCommand
 
@@ -121,7 +121,7 @@ module HammerCLIForeman
 
     class SetParameterCommand < HammerCLIForeman::Parameter::SetCommand
 
-      resource ForemanApi::Resources::Parameter
+      resource :parameters
 
       desc _("Create or update parameter for an operating system.")
 
@@ -147,7 +147,7 @@ module HammerCLIForeman
 
     class DeleteParameterCommand < HammerCLIForeman::Parameter::DeleteCommand
 
-      resource ForemanApi::Resources::Parameter
+      resource :parameters
 
       desc _("Delete parameter for an operating system.")
 

@@ -1,8 +1,10 @@
 module HammerCLIForeman
 
-  class Domain < HammerCLI::AbstractCommand
+  class Domain < HammerCLIForeman::Command
+
+    resource :domains
+
     class ListCommand < HammerCLIForeman::ListCommand
-      resource ForemanApi::Resources::Domain, "index"
 
       output do
         field :id, _("Id")
@@ -14,8 +16,6 @@ module HammerCLIForeman
 
 
     class InfoCommand < HammerCLIForeman::InfoCommand
-
-      resource ForemanApi::Resources::Domain, "show"
 
       output ListCommand.output_definition do
         field :fullname, _("Description")
@@ -40,7 +40,6 @@ module HammerCLIForeman
 
       success_message _("Domain [%{name}s] created")
       failure_message _("Could not create the domain")
-      resource ForemanApi::Resources::Domain, "create"
 
       apipie_options :without => [:domain_parameters_attributes, :fullname]
       option "--description", "DESC", _("Full name describing the domain"), :attribute_name => :option_fullname
@@ -51,7 +50,6 @@ module HammerCLIForeman
 
       success_message _("Domain [%{name}s] updated")
       failure_message _("Could not update the domain")
-      resource ForemanApi::Resources::Domain, "update"
 
       apipie_options :without => [:domain_parameters_attributes, :name, :id, :fullname]
       option "--description", "DESC", _("Full name describing the domain"), :attribute_name => :option_fullname
@@ -62,7 +60,6 @@ module HammerCLIForeman
 
       success_message _("Domain [%{name}s] deleted")
       failure_message _("Could not delete the domain")
-      resource ForemanApi::Resources::Domain, "destroy"
 
       apipie_options
     end
@@ -70,7 +67,7 @@ module HammerCLIForeman
 
     class SetParameterCommand < HammerCLIForeman::Parameter::SetCommand
 
-      resource ForemanApi::Resources::Parameter
+      resource :parameters
 
       desc _("Create or update parameter for a domain.")
 
@@ -96,7 +93,7 @@ module HammerCLIForeman
 
     class DeleteParameterCommand < HammerCLIForeman::Parameter::DeleteCommand
 
-      resource ForemanApi::Resources::Parameter
+      resource :parameters
 
       desc _("Delete parameter for a domain.")
 

@@ -7,12 +7,14 @@ describe HammerCLIForeman::SmartClassParameter do
   extend CommandTestHelper
 
   before :each do
-    HammerCLI::Connection.drop_all
-    cmd.class.resource ResourceMocks.smart_class_parameter
     cmd.stubs(:name_to_id).returns(1)
   end
 
   context "ListCommand" do
+
+    before :each do
+      ResourceMocks.smart_class_parameters_index
+    end
 
     let(:cmd) { HammerCLIForeman::SmartClassParameter::ListCommand.new("", ctx) }
 
@@ -26,7 +28,7 @@ describe HammerCLIForeman::SmartClassParameter do
     end
 
     context "output" do
-      let(:expected_record_count) { cmd.resource.call(:index)[0].length }
+      let(:expected_record_count) { cmd.resource.call(:index).length }
 
       it_should_print_n_records
       it_should_print_column "Id"
@@ -42,15 +44,17 @@ describe HammerCLIForeman::SmartClassParameter do
 
   context "InfoCommand" do
 
-    let(:cmd) { HammerCLIForeman::SmartClassParameter::InfoCommand.new("", ctx) }
+    before :each do
+      ResourceMocks.smart_class_parameters_show
+    end
 
+    let(:cmd) { HammerCLIForeman::SmartClassParameter::InfoCommand.new("", ctx) }
 
     context "parameters" do
       it_should_accept "id", ["--id=1"]
       it_should_accept "name", ["--name=param"]
       it_should_fail_with "no arguments"
     end
-
   end
 
 

@@ -15,11 +15,6 @@ describe HammerCLIForeman::Template do
   }
 
   before :each do
-    HammerCLI::Connection.drop_all
-    resource_mock = ApipieResourceMock.new(cmd.class.resource.resource_class)
-    resource_mock.stub_method(:index, [])
-    resource_mock.stub_method(:show, template_hash)
-    cmd.class.resource resource_mock
     cmd.stubs(:name_to_id).returns(1)
     File.stubs(:read).returns("")
   end
@@ -34,7 +29,7 @@ describe HammerCLIForeman::Template do
     end
 
     context "output" do
-      let(:expected_record_count) { cmd.resource.call(:index)[0].length }
+      let(:expected_record_count) { cmd.resource.call(:index).length }
 
       it_should_print_n_records
       it_should_print_columns ["Id", "Name", "Type"]
@@ -45,7 +40,6 @@ describe HammerCLIForeman::Template do
             :id => 1, :name => "PXE"
           }
         }
-        mock_resource_method(:index, [[template_wo_kind], nil])
         cmd.run([]).must_equal 0
       end
     end
@@ -65,7 +59,7 @@ describe HammerCLIForeman::Template do
             'operatingsystems' => [ { 'id' => 1 }, { 'id' => 3 }, { 'id' =>4 } ]
           }
         }
-        mock_resource_method(:show, [template])
+        ResourceMocks.mock_action_call(:templates, :show, [template])
       end
 
       it_should_accept "id", ["--id=1"]
@@ -81,7 +75,7 @@ describe HammerCLIForeman::Template do
               'operatingsystems' => [ { 'id' => 1 }, { 'id' => 3 }, { 'id' =>4 } ]
             }
           }
-          mock_resource_method(:show, [template])
+          ResourceMocks.mock_action_call(:templates, :show, [template])
         end
 
         it_should_print_n_records 1

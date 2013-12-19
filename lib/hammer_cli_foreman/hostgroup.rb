@@ -12,9 +12,11 @@ module HammerCLIForeman
 
   end
 
-  class Hostgroup < HammerCLI::AbstractCommand
+  class Hostgroup < HammerCLIForeman::Command
+
+    resource :hostgroups
+
     class ListCommand < HammerCLIForeman::ListCommand
-      resource ForemanApi::Resources::Hostgroup, "index"
 
       output do
         field :id, _("Id")
@@ -38,7 +40,6 @@ module HammerCLIForeman
 
 
     class InfoCommand < HammerCLIForeman::InfoCommand
-      resource ForemanApi::Resources::Hostgroup, "show"
 
       identifiers :id
 
@@ -66,7 +67,6 @@ module HammerCLIForeman
 
       success_message _("Hostgroup created")
       failure_message _("Could not create the hostgroup")
-      resource ForemanApi::Resources::Hostgroup, "create"
 
       apipie_options
     end
@@ -83,7 +83,6 @@ module HammerCLIForeman
 
       success_message _("Hostgroup updated")
       failure_message _("Could not update the hostgroup")
-      resource ForemanApi::Resources::Hostgroup, "update"
 
       apipie_options
     end
@@ -95,7 +94,6 @@ module HammerCLIForeman
 
       success_message _("Hostgroup deleted")
       failure_message _("Could not delete the hostgroup")
-      resource ForemanApi::Resources::Hostgroup, "destroy"
 
       apipie_options
     end
@@ -104,7 +102,7 @@ module HammerCLIForeman
     class PuppetClassesCommand < HammerCLIForeman::ListCommand
 
       command_name "puppet_classes"
-      resource ForemanApi::Resources::Puppetclass
+      resource :puppetclasses
 
       identifiers :id
 
@@ -126,7 +124,7 @@ module HammerCLIForeman
 
     class SetParameterCommand < HammerCLIForeman::Parameter::SetCommand
 
-      resource ForemanApi::Resources::Parameter
+      resource :parameters
 
       desc _("Create or update parameter for a hostgroup.")
 
@@ -146,7 +144,7 @@ module HammerCLIForeman
 
     class DeleteParameterCommand < HammerCLIForeman::Parameter::DeleteCommand
 
-      resource ForemanApi::Resources::Parameter
+      resource :parameters
 
       desc _("Delete parameter for a hostgroup.")
 
@@ -176,4 +174,3 @@ module HammerCLIForeman
 end
 
 HammerCLI::MainCommand.subcommand 'hostgroup', _("Manipulate hostgroups."), HammerCLIForeman::Hostgroup
-

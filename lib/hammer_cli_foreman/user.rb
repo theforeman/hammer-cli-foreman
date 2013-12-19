@@ -1,7 +1,8 @@
 module HammerCLIForeman
 
-  class User < HammerCLI::Apipie::Command
-    resource ForemanApi::Resources::User
+  class User < HammerCLIForeman::Command
+
+    resource :users
 
     class ListCommand < HammerCLIForeman::ListCommand
 
@@ -48,7 +49,6 @@ module HammerCLIForeman
 
       success_message _("User created")
       failure_message _("Could not create the user")
-      resource ForemanApi::Resources::User, "create"
 
       apipie_options
     end
@@ -64,7 +64,6 @@ module HammerCLIForeman
 
       success_message _("User updated")
       failure_message _("Could not update the user")
-      resource ForemanApi::Resources::User, "update"
 
       apipie_options
     end
@@ -80,7 +79,6 @@ module HammerCLIForeman
 
       success_message _("User deleted")
       failure_message _("Could not delete the user")
-      resource ForemanApi::Resources::User, "destroy"
 
       apipie_options
     end
@@ -91,4 +89,3 @@ module HammerCLIForeman
 end
 
 HammerCLI::MainCommand.subcommand 'user', _("Manipulate users."), HammerCLIForeman::User
-
