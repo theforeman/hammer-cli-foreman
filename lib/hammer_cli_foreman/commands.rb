@@ -252,13 +252,13 @@ module HammerCLIForeman
     end
 
     def get_current_ids
-      item = resource.call('show', {'id' => get_identifier[0]})[0]
-      item[resource.name][associated_resource.name+'_ids'] || []
+      item = HammerCLIForeman.record_to_common_format(resource.call('show', {'id' => get_identifier[0]})[0])
+      item[associated_resource.name+'_ids'] || []
     end
 
     def get_required_id
-      item = associated_resource.call('show', {'id' => associated_id || associated_name})[0]
-      item[associated_resource.name]['id']
+      item = HammerCLIForeman.record_to_common_format(associated_resource.call('show', {'id' => associated_id || associated_name})[0])
+      item['id']
     end
 
     def request_params

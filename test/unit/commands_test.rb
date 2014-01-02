@@ -93,4 +93,23 @@ describe HammerCLIForeman do
       out.must_match("Message,Id,Name\nArchitecture created,3,i386\n")
     end
   end
+
+  context "AddAssociatedCommand" do
+    it "should associate resource" do
+      ForemanApi::Resources::Organization.any_instance.stubs(:show).returns([{
+                      "id" => 1,
+              "domain_ids" => [2]}])
+      ForemanApi::Resources::Domain.any_instance.stubs(:show).returns([{
+                      "id" => 1,
+                    "name" => "local.lan"}])
+
+      class Assoc < HammerCLIForeman::AddAssociatedCommand
+        resource ForemanApi::Resources::Organization
+        associated_resource ForemanApi::Resources::Domain
+      end
+      res = Assoc.new("", { :adapter => :csv, :interactive => false })
+      res.get_new_ids.sort.must_equal [1, 2]
+     end
+  end
+
 end
