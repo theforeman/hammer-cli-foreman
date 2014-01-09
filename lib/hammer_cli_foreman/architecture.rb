@@ -59,5 +59,5 @@ module HammerCLIForeman
 
 end
 
-HammerCLI::MainCommand.subcommand 'architecture', "Manipulate Foreman's architectures.", HammerCLIForeman::Architecture
+HammerCLI::MainCommand.subcommand 'architecture', "Manipulate architectures.", HammerCLIForeman::Architecture
 

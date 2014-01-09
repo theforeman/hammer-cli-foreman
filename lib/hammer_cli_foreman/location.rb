@@ -78,5 +78,5 @@ module HammerCLIForeman
 
 end
 
-HammerCLI::MainCommand.subcommand 'location', "Manipulate Foreman's locations.", HammerCLIForeman::Location
+HammerCLI::MainCommand.subcommand 'location', "Manipulate locations.", HammerCLIForeman::Location
 

@@ -182,5 +182,5 @@ module HammerCLIForeman
 
 end
 
-HammerCLI::MainCommand.subcommand 'os', "Manipulate Foreman's operating system.", HammerCLIForeman::OperatingSystem
+HammerCLI::MainCommand.subcommand 'os', "Manipulate operating system.", HammerCLIForeman::OperatingSystem
 

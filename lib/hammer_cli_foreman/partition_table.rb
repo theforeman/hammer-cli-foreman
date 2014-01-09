@@ -83,5 +83,5 @@ module HammerCLIForeman
 
 end
 
-HammerCLI::MainCommand.subcommand 'partition_table', "Manipulate Foreman's partition tables.", HammerCLIForeman::PartitionTable
+HammerCLI::MainCommand.subcommand 'partition_table', "Manipulate partition tables.", HammerCLIForeman::PartitionTable
 

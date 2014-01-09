@@ -58,5 +58,5 @@ module HammerCLIForeman
 
 end
 
-HammerCLI::MainCommand.subcommand 'model', "Manipulate Foreman's hardware models.", HammerCLIForeman::Model
+HammerCLI::MainCommand.subcommand 'model', "Manipulate hardware models.", HammerCLIForeman::Model
 

@@ -97,6 +97,6 @@ module HammerCLIForeman
 
 end
 
-HammerCLI::MainCommand.subcommand 'compute_resource', "Manipulate Foreman's compute resources.", HammerCLIForeman::ComputeResource
+HammerCLI::MainCommand.subcommand 'compute_resource', "Manipulate compute resources.", HammerCLIForeman::ComputeResource
 
 
