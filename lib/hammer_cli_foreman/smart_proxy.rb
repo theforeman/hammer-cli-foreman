@@ -33,7 +33,7 @@ module HammerCLIForeman
       end
 
       def extend_data(proxy)
-        proxy['_features'] = proxy['features'].map { |f| f['feature']['name'] }
+        proxy['_features'] = proxy['features'].map { |f| f['name'] }
         proxy
       end
 
