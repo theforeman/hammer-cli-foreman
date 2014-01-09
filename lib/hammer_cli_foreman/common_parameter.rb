@@ -68,4 +68,4 @@ module HammerCLIForeman
   end
 end
 
-HammerCLI::MainCommand.subcommand 'global_parameter', "Manipulate Foreman's global parameters.", HammerCLIForeman::CommonParameter
+HammerCLI::MainCommand.subcommand 'global_parameter', "Manipulate global parameters.", HammerCLIForeman::CommonParameter

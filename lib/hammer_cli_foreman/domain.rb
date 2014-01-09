@@ -126,5 +126,5 @@ module HammerCLIForeman
 
 end
 
-HammerCLI::MainCommand.subcommand 'domain', "Manipulate Foreman's domains.", HammerCLIForeman::Domain
+HammerCLI::MainCommand.subcommand 'domain', "Manipulate domains.", HammerCLIForeman::Domain
 

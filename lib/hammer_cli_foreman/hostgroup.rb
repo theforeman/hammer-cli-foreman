@@ -153,5 +153,5 @@ module HammerCLIForeman
 
 end
 
-HammerCLI::MainCommand.subcommand 'hostgroup', "Manipulate Foreman's hostgroups.", HammerCLIForeman::Hostgroup
+HammerCLI::MainCommand.subcommand 'hostgroup', "Manipulate hostgroups.", HammerCLIForeman::Hostgroup
 

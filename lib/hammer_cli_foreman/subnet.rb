@@ -76,5 +76,5 @@ module HammerCLIForeman
 
 end
 
-HammerCLI::MainCommand.subcommand 'subnet', "Manipulate Foreman's subnets.", HammerCLIForeman::Subnet
+HammerCLI::MainCommand.subcommand 'subnet', "Manipulate subnets.", HammerCLIForeman::Subnet
 

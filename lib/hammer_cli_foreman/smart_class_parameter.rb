@@ -104,6 +104,6 @@ module HammerCLIForeman
 
   end
 
-  HammerCLI::MainCommand.subcommand 'sc_param', "Manipulate Foreman's smart class parameters.", HammerCLIForeman::SmartClassParameter
+  HammerCLI::MainCommand.subcommand 'sc_param', "Manipulate smart class parameters.", HammerCLIForeman::SmartClassParameter
 
 end

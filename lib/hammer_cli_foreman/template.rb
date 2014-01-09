@@ -153,5 +153,5 @@ module HammerCLIForeman
 
 end
 
-HammerCLI::MainCommand.subcommand 'template', "Manipulate Foreman's config templates.", HammerCLIForeman::Template
+HammerCLI::MainCommand.subcommand 'template', "Manipulate config templates.", HammerCLIForeman::Template
 

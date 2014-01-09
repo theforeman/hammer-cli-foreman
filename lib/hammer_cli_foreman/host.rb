@@ -441,4 +441,4 @@ module HammerCLIForeman
 
 end
 
-HammerCLI::MainCommand.subcommand 'host', "Manipulate Foreman's hosts.", HammerCLIForeman::Host
+HammerCLI::MainCommand.subcommand 'host', "Manipulate hosts.", HammerCLIForeman::Host

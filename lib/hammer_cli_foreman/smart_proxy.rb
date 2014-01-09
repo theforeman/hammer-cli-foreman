@@ -97,4 +97,4 @@ module HammerCLIForeman
 
 end
 
-HammerCLI::MainCommand.subcommand 'proxy', "Manipulate Foreman's smart proxies.", HammerCLIForeman::SmartProxy
+HammerCLI::MainCommand.subcommand 'proxy', "Manipulate smart proxies.", HammerCLIForeman::SmartProxy

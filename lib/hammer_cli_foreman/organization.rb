@@ -77,5 +77,5 @@ module HammerCLIForeman
 
 end
 
-HammerCLI::MainCommand.subcommand 'organization', "Manipulate Foreman's organizations.", HammerCLIForeman::Organization
+HammerCLI::MainCommand.subcommand 'organization', "Manipulate organizations.", HammerCLIForeman::Organization
 
