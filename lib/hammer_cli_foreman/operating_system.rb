@@ -52,6 +52,7 @@ module HammerCLIForeman
         os
       end
 
+      apipie_options
     end
 
 

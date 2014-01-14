@@ -42,6 +42,7 @@ module HammerCLIForeman
         hostgroup
       end
 
+      apipie_options
     end
 
 

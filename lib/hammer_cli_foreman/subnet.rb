@@ -39,6 +39,7 @@ module HammerCLIForeman
         field :to, "To"
       end
 
+      apipie_options
     end
 
 

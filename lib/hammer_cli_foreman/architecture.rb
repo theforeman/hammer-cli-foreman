@@ -28,6 +28,7 @@ module HammerCLIForeman
         field :updated_at, "Updated at", Fields::Date
       end
 
+      apipie_options
     end
 
 
@@ -42,6 +43,8 @@ module HammerCLIForeman
     class DeleteCommand < HammerCLIForeman::DeleteCommand
       success_message "Architecture deleted"
       failure_message "Could not delete the architecture"
+
+      apipie_options
     end
 
 

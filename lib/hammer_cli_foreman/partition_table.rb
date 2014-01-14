@@ -28,6 +28,7 @@ module HammerCLIForeman
         field :updated_at, "Updated at", Fields::Date
       end
 
+      apipie_options
     end
 
 
@@ -36,11 +37,11 @@ module HammerCLIForeman
       command_name "dump"
       desc "View partition table content."
 
-
       def print_data(partition_table)
         puts partition_table["layout"]
       end
 
+      apipie_options
     end
 
 
@@ -69,9 +70,10 @@ module HammerCLIForeman
 
 
     class DeleteCommand < HammerCLIForeman::DeleteCommand
-
       success_message "Partition table deleted"
       failure_message "Could not delete the partition table"
+
+      apipie_options
     end
 
 

@@ -2,6 +2,7 @@ require 'hammer_cli'
 require 'foreman_api'
 require 'hammer_cli_foreman/commands'
 
+
 module HammerCLIForeman
 
   class SmartClassParametersBriefList < HammerCLIForeman::ListCommand
@@ -78,10 +79,10 @@ module HammerCLIForeman
         res
       end
 
+      apipie_options
     end
 
     class UpdateCommand < HammerCLIForeman::UpdateCommand
-      # identifiers :id, :name
 
       success_message "Parameter updated"
       failure_message "Could not update the parameter"

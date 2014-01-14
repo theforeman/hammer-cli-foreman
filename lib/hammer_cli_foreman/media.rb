@@ -28,6 +28,7 @@ module HammerCLIForeman
         field :updated_at, "Updated at", Fields::Date
       end
 
+      apipie_options
     end
 
 
