@@ -73,10 +73,10 @@ module HammerCLIForeman
 
       def request_params
         params = method_options
-        params["operatingsystem"]["architecture_ids"] = architecture_ids if architecture_ids
-        params["operatingsystem"]["config_template_ids"] = config_template_ids if config_template_ids
-        params["operatingsystem"]["medium_ids"] = medium_ids if medium_ids
-        params["operatingsystem"]["ptable_ids"] = ptable_ids if ptable_ids
+        params["operatingsystem"]["architecture_ids"] = option_architecture_ids if option_architecture_ids
+        params["operatingsystem"]["config_template_ids"] = option_config_template_ids if option_config_template_ids
+        params["operatingsystem"]["medium_ids"] = option_medium_ids if option_medium_ids
+        params["operatingsystem"]["ptable_ids"] = option_ptable_ids if option_ptable_ids
         params
       end
 
@@ -103,10 +103,10 @@ module HammerCLIForeman
 
       def request_params
         params = method_options
-        params["operatingsystem"]["architecture_ids"] = architecture_ids if architecture_ids
-        params["operatingsystem"]["config_template_ids"] = config_template_ids if config_template_ids
-        params["operatingsystem"]["medium_ids"] = medium_ids if medium_ids
-        params["operatingsystem"]["ptable_ids"] = ptable_ids if ptable_ids
+        params["operatingsystem"]["architecture_ids"] = option_architecture_ids if option_architecture_ids
+        params["operatingsystem"]["config_template_ids"] = option_config_template_ids if option_config_template_ids
+        params["operatingsystem"]["medium_ids"] = option_medium_ids if option_medium_ids
+        params["operatingsystem"]["ptable_ids"] = option_ptable_ids if option_ptable_ids
         params
       end
 
@@ -139,12 +139,12 @@ module HammerCLIForeman
 
       def validate_options
         super
-        validator.any(:os_id).required
+        validator.any(:option_os_id).required
       end
 
       def base_action_params
         {
-          "operatingsystem_id" => os_id
+          "operatingsystem_id" => option_os_id
         }
       end
     end
@@ -162,12 +162,12 @@ module HammerCLIForeman
 
       def validate_options
         super
-        validator.any(:os_id).required
+        validator.any(:option_os_id).required
       end
 
       def base_action_params
         {
-          "operatingsystem_id" => os_id
+          "operatingsystem_id" => option_os_id
         }
       end
     end

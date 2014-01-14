@@ -151,11 +151,11 @@ module HammerCLIForeman
       super(name) || "update"
     end
 
-    identifiers :id, :name => :current_name
+    identifiers :id, :name => :option_current_name
 
     def self.setup_identifier_options
       super
-      option "--new-name", "NEW_NAME", "new name for the resource", :attribute_name => :name if identifier? :name
+      option "--new-name", "NEW_NAME", "new name for the resource", :attribute_name => :option_name if identifier? :name
     end
 
     def request_params

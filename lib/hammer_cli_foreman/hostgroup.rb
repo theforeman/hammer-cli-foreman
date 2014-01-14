@@ -117,7 +117,7 @@ module HammerCLIForeman
 
       def base_action_params
         {
-          "hostgroup_id" => hostgroup_id
+          "hostgroup_id" => option_hostgroup_id
         }
       end
     end
@@ -135,7 +135,7 @@ module HammerCLIForeman
 
       def base_action_params
         {
-          "hostgroup_id" => hostgroup_id
+          "hostgroup_id" => option_hostgroup_id
         }
       end
     end
@@ -145,7 +145,7 @@ module HammerCLIForeman
 
       apipie_options :without => [:host_id, :hostgroup_id, :puppetclass_id, :environment_id]
       option ['--id', '--name'], 'HOSTGROUP_ID', 'hostgroup id/name',
-            :attribute_name => :hostgroup_id, :required => true
+            :attribute_name => :option_hostgroup_id, :required => true
     end
 
 

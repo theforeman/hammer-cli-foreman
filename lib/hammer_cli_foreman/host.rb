@@ -49,28 +49,27 @@ module HammerCLIForeman
         :format => HammerCLI::Options::Normalizers::KeyValueList.new
       base.option "--interface", "INTERFACE", "Interface parameters.", :multivalued => true,
         :format => HammerCLI::Options::Normalizers::KeyValueList.new
-
     end
 
     def request_params
       params = super
 
-      params['host']['build'] = build
-      params['host']['managed'] = managed
-      params['host']['enabled'] = enabled
+      params['host']['build'] = option_build
+      params['host']['managed'] = option_managed
+      params['host']['enabled'] = option_enabled
 
-      params['host']['puppetclass_ids'] = puppetclass_ids
+      params['host']['puppetclass_ids'] = option_puppetclass_ids
 
-      params['host']['ptable_id'] = partition_table_id
-      params['host']['compute_resource_id'] = compute_resource_id
+      params['host']['ptable_id'] = option_partition_table_id
+      params['host']['compute_resource_id'] = option_compute_resource_id
       params['host']['host_parameters_attributes'] = parameter_attributes
-      params['host']['compute_attributes'] = compute_attributes || {}
-      params['host']['compute_attributes']['volumes_attributes'] = nested_attributes(volume_list)
-      if compute_resource_id
-        params['host']['compute_attributes']['interfaces_attributes'] = nested_attributes(interface_list)
-        params['host']['compute_attributes']['nics_attributes'] = nested_attributes(interface_list)
+      params['host']['compute_attributes'] = option_compute_attributes || {}
+      params['host']['compute_attributes']['volumes_attributes'] = nested_attributes(option_volume_list)
+      if option_compute_resource_id
+        params['host']['compute_attributes']['interfaces_attributes'] = nested_attributes(option_interface_list)
+        params['host']['compute_attributes']['nics_attributes'] = nested_attributes(option_interface_list)
       else
-        params['host']['interfaces_attributes'] = nested_attributes(interface_list)
+        params['host']['interfaces_attributes'] = nested_attributes(option_interface_list)
       end
 
       params
@@ -79,8 +78,8 @@ module HammerCLIForeman
     private
 
     def parameter_attributes
-      return {} unless parameters
-      parameters.collect do |key, value|
+      return {} unless option_parameters
+      option_parameters.collect do |key, value|
         {"name"=>key, "value"=>value, "nested"=>""}
       end
     end
@@ -301,10 +300,10 @@ module HammerCLIForeman
       include HammerCLIForeman::CommonHostUpdateOptions
 
       validate_options do
-        unless option(:hostgroup_id).exist?
-          all(:environment_id, :architecture_id, :domain_id,
-            :puppet_proxy_id, :operatingsystem_id,
-            :partition_table_id).required
+        unless option(:option_hostgroup_id).exist?
+          all(:option_environment_id, :option_architecture_id, :option_domain_id,
+            :option_puppet_proxy_id, :option_operatingsystem_id,
+            :option_partition_table_id).required
         end
       end
     end
@@ -343,12 +342,12 @@ module HammerCLIForeman
 
       def validate_options
         super
-        validator.any(:host_name, :host_id).required
+        validator.any(:option_host_name, :option_host_id).required
       end
 
       def base_action_params
         {
-          "host_id" => host_id || host_name
+          "host_id" => option_host_id || option_host_name
         }
       end
     end
@@ -367,12 +366,12 @@ module HammerCLIForeman
 
       def validate_options
         super
-        validator.any(:host_name, :host_id).required
+        validator.any(:option_host_name, :option_host_id).required
       end
 
       def base_action_params
         {
-          "host_id" => host_id || host_name
+          "host_id" => option_host_id || option_host_name
         }
       end
     end
@@ -406,7 +405,7 @@ module HammerCLIForeman
       desc "Power a host off"
 
       def power_action
-        if force?
+        if option_force?
           :cycle
         else
           :stop
@@ -414,7 +413,7 @@ module HammerCLIForeman
       end
 
       def success_message
-        if force?
+        if option_force?
           "Power off forced."
         else
           "Powering the host off."
@@ -444,7 +443,7 @@ module HammerCLIForeman
 
       apipie_options :without => [:host_id, :hostgroup_id, :puppetclass_id, :environment_id]
       option ['--id', '--name'], 'HOST_ID', 'host id/name',
-              :attribute_name => :host_id, :required => true
+              :attribute_name => :option_host_id, :required => true
     end
 
     autoload_subcommands
