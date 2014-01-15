@@ -7,9 +7,20 @@ describe HammerCLIForeman::ExceptionHandler do
   let(:handler) { HammerCLIForeman::ExceptionHandler.new(:output => output) }
   let(:heading) { "Something went wrong" }
 
-  it "should print resource errors on unprocessable entity exception" do
+  it "should print nested resource errors on unprocessable entity exception" do
    response = <<-RESPONSE
    {"subnet":{"id":null,"errors":{"network":["can't be blank","is invalid"],"name":["can't be blank"]},"full_messages":["Network address can't be blank","Network address is invalid","Name can't be blank"]}}
+   RESPONSE
+
+    ex = RestClient::UnprocessableEntity.new(response)
+    output.expects(:print_error).with(heading, "Network address can't be blank\nNetwork address is invalid\nName can't be blank")
+    err_code = handler.handle_exception(ex, :heading => heading)
+    err_code.must_equal HammerCLI::EX_DATAERR
+  end
+
+  it "should print resource errors on unprocessable entity exception" do
+   response = <<-RESPONSE
+   {"id":null,"errors":{"network":["can't be blank","is invalid"],"name":["can't be blank"]},"full_messages":["Network address can't be blank","Network address is invalid","Name can't be blank"]}
    RESPONSE
 
     ex = RestClient::UnprocessableEntity.new(response)
