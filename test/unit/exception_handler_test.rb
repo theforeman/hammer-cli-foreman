@@ -44,5 +44,28 @@ describe HammerCLIForeman::ExceptionHandler do
     err_code = handler.handle_exception(HammerCLIForeman::OperationNotSupportedError.new('message'), :heading => heading)
     err_code.must_equal HammerCLI::EX_UNAVAILABLE
   end
+
+  it "should print resource errors on resource not found exception" do
+   response = <<-RESPONSE
+   {"message":"Resource architecture not found by id '1'"}
+   RESPONSE
+    ex = RestClient::ResourceNotFound.new(response)
+    ex.stubs(:message).returns("")
+
+    output.expects(:print_error).with(heading, "Resource architecture not found by id '1'")
+    err_code = handler.handle_exception(ex, :heading => heading)
+    err_code.must_equal HammerCLI::EX_NOT_FOUND
+  end
+
+  it "should print exception message on resource not found exception without explicit message" do
+   response = "{}"
+    ex = RestClient::ResourceNotFound.new(response)
+    ex.stubs(:message).returns("ResourceNotFound message")
+
+    output.expects(:print_error).with(heading, "ResourceNotFound message")
+    err_code = handler.handle_exception(ex, :heading => heading)
+    err_code.must_equal HammerCLI::EX_NOT_FOUND
+  end
+
 end
 

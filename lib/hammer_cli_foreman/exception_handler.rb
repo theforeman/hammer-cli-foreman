@@ -44,6 +44,16 @@ module HammerCLIForeman
       HammerCLI::EX_UNAVAILABLE
     end
 
+
+    def handle_not_found(e)
+      response = JSON.parse(e.response)
+      message = response["message"] || e.message
+
+      print_error message
+      log_full_error e
+      HammerCLI::EX_NOT_FOUND
+    end
+
   end
 end
 
