@@ -41,7 +41,8 @@ module HammerCLIForeman
 
       def parameter_exist?
         params = resource.call(:index)[0]
-        params.find { |p| p["common_parameter"]["name"] == name }
+        params = HammerCLIForeman.collection_to_common_format(params)
+        params.find { |p| p["name"] == name }
       end
 
       def request_params
