@@ -37,6 +37,7 @@ module HammerCLIForeman
         proxy
       end
 
+      apipie_options
     end
 
 

@@ -37,6 +37,7 @@ module HammerCLIForeman
         record
       end
 
+      apipie_options
     end
 
 

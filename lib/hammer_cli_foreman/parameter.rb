@@ -2,6 +2,7 @@ require 'hammer_cli'
 require 'hammer_cli/messages'
 require 'foreman_api'
 
+
 module HammerCLIForeman
 
   module Parameter

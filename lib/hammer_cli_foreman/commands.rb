@@ -115,10 +115,6 @@ module HammerCLIForeman
       {'id' => get_identifier[0]}
     end
 
-    def self.apipie_options(options={})
-      super({:without => declared_identifiers.keys}.merge(options))
-    end
-
     def retrieve_data
       data = super
       record = HammerCLIForeman.record_to_common_format(data)
@@ -157,19 +153,15 @@ module HammerCLIForeman
 
     identifiers :id, :name => :current_name
 
-    def setup_identifier_options
+    def self.setup_identifier_options
       super
-      self.class.option "--new-name", "NEW_NAME", "new name for the resource", :attribute_name => :name if self.class.identifier? :name
+      option "--new-name", "NEW_NAME", "new name for the resource", :attribute_name => :name if identifier? :name
     end
 
     def request_params
       params = method_options
       params['id'] = get_identifier[0]
       params
-    end
-
-    def self.apipie_options(options={})
-      super({:without => declared_identifiers.keys}.merge(options))
     end
 
   end
@@ -189,10 +181,6 @@ module HammerCLIForeman
       {'id' => get_identifier[0]}
     end
 
-    def self.apipie_options(options={})
-      super({:without => declared_identifiers.keys}.merge(options))
-    end
-
   end
 
 
@@ -207,16 +195,16 @@ module HammerCLIForeman
       validator.any(*self.class.declared_identifiers.values).required
     end
 
-    def initialize(*args)
-      super
+    def self.apipie_options(options={})
       setup_associated_identifier_options
+      super
     end
 
-    def setup_associated_identifier_options
+    def self.setup_associated_identifier_options
       name = associated_resource.name.to_s
       option_switch = "--"+name.gsub('_', '-')
-      self.class.option option_switch, name.upcase, " ", :attribute_name => :associated_name if self.class.declared_associated_identifiers.include? :name
-      self.class.option option_switch+"-id", name.upcase+"_ID", " ", :attribute_name => :associated_id if self.class.declared_associated_identifiers.include? :id
+      option option_switch, name.upcase, " ", :attribute_name => :associated_name if declared_associated_identifiers.include? :name
+      option option_switch+"-id", name.upcase+"_ID", " ", :attribute_name => :associated_id if declared_associated_identifiers.include? :id
     end
 
 

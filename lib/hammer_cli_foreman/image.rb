@@ -50,9 +50,9 @@ module HammerCLIForeman
 
     class InfoCommand < HammerCLIForeman::InfoCommand
 
+      identifiers :id
       include HammerCLIForeman::Image::ComputeResourceOptions
 
-      identifiers :id
 
       output ListCommand.output_definition do
         field :architecture_id, "Architecture Id", Fields::Id
@@ -109,27 +109,28 @@ module HammerCLIForeman
 
     class UpdateCommand < HammerCLIForeman::UpdateCommand
 
+      identifiers :id
       include HammerCLIForeman::Image::ComputeResourceOptions
 
       success_message "Image updated"
       failure_message "Could not update the image"
-      identifiers :id
 
       def request_params
         params = super
         params['compute_resource_id'] = compute_resource_id || compute_resource
         params
       end
+
     end
 
 
     class DeleteCommand < HammerCLIForeman::DeleteCommand
 
+      identifiers :id
       include HammerCLIForeman::Image::ComputeResourceOptions
 
       success_message "Image deleted"
       failure_message "Could not delete the image"
-      identifiers :id
 
       def request_params
         params = super

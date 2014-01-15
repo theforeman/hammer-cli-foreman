@@ -49,6 +49,7 @@ module HammerCLIForeman
         tpl
       end
 
+      apipie_options
     end
 
 
@@ -82,6 +83,7 @@ module HammerCLIForeman
         puts template["template"]
       end
 
+      apipie_options
     end
 
 
@@ -141,6 +143,8 @@ module HammerCLIForeman
 
       success_message "Config template deleted"
       failure_message "Could not delete the config template"
+
+      apipie_options
     end
 
 

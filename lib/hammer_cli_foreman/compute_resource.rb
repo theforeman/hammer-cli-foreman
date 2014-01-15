@@ -57,6 +57,7 @@ module HammerCLIForeman
         print_collection(output_definition, data)
       end
 
+      apipie_options
     end
 
 

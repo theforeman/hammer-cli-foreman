@@ -74,6 +74,7 @@ module HammerCLIForeman
         end
       end
 
+      apipie_options
     end
 
 
@@ -81,6 +82,8 @@ module HammerCLIForeman
       identifiers :id
       success_message "Report has been deleted"
       failure_message "Could not delete the report"
+
+      apipie_options
     end
 
 

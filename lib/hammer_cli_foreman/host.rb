@@ -170,6 +170,8 @@ module HammerCLIForeman
           field nil, nil, Fields::KeyValue
         end
       end
+
+      apipie_options
     end
 
 
@@ -207,6 +209,8 @@ module HammerCLIForeman
         status = resource.call(:power, params)[0]
         status["power"]
       end
+
+      apipie_options
     end
 
 
@@ -218,6 +222,8 @@ module HammerCLIForeman
       def print_data(records)
         print_message 'Puppet run triggered'
       end
+
+      apipie_options
     end
 
 
@@ -284,7 +290,6 @@ module HammerCLIForeman
       def search
         'host.id = %s' % get_identifier[0].to_s
       end
-
     end
 
     class CreateCommand < HammerCLIForeman::CreateCommand
@@ -385,6 +390,8 @@ module HammerCLIForeman
       def power_action
         :start
       end
+
+      apipie_options :without => :power_action
     end
 
 
@@ -413,6 +420,8 @@ module HammerCLIForeman
           "Powering the host off."
         end
       end
+
+      apipie_options :without => :power_action
     end
 
     class RebootCommand < HammerCLI::Apipie::WriteCommand
@@ -427,6 +436,8 @@ module HammerCLIForeman
       def power_action
         :soft
       end
+
+      apipie_options :without => :power_action
     end
 
     class SCParamsCommand < HammerCLIForeman::SmartClassParametersList

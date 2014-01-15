@@ -40,6 +40,7 @@ module HammerCLIForeman
         user
       end
 
+      apipie_options
     end
 
 
