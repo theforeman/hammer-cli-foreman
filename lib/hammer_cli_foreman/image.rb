@@ -20,7 +20,7 @@ module HammerCLIForeman
         base.apipie_options :without => [:compute_resource_id, :id]
 
         base.validate_options do
-          any(:compute_resource_id, :compute_resource).required
+          any(:option_compute_resource_id, :option_compute_resource).required
         end
       end
 
@@ -41,7 +41,7 @@ module HammerCLIForeman
 
       def request_params
         params = super
-        params['compute_resource_id'] = compute_resource_id || compute_resource
+        params['compute_resource_id'] = option_compute_resource_id || option_compute_resource
         params
       end
 
@@ -63,7 +63,7 @@ module HammerCLIForeman
 
       def request_params
         params = super
-        params['compute_resource_id'] = compute_resource_id || compute_resource
+        params['compute_resource_id'] = option_compute_resource_id || option_compute_resource
         params
       end
 
@@ -85,7 +85,7 @@ module HammerCLIForeman
 
       def request_params
         params = super
-        params['id'] = compute_resource_id || compute_resource
+        params['id'] = option_compute_resource_id || option_compute_resource
         params
       end
 
@@ -101,7 +101,7 @@ module HammerCLIForeman
 
       def request_params
         params = super
-        params['compute_resource_id'] = compute_resource_id || compute_resource
+        params['compute_resource_id'] = option_compute_resource_id || option_compute_resource
         params
       end
     end
@@ -117,7 +117,7 @@ module HammerCLIForeman
 
       def request_params
         params = super
-        params['compute_resource_id'] = compute_resource_id || compute_resource
+        params['compute_resource_id'] = option_compute_resource_id || option_compute_resource
         params
       end
 
@@ -134,7 +134,7 @@ module HammerCLIForeman
 
       def request_params
         params = super
-        params['compute_resource_id'] = compute_resource_id || compute_resource
+        params['compute_resource_id'] = option_compute_resource_id || option_compute_resource
         params
       end
 

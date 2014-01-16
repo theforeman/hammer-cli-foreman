@@ -48,7 +48,7 @@ module HammerCLIForeman
       resource ForemanApi::Resources::Domain, "create"
 
       apipie_options :without => [:domain_parameters_attributes, :fullname]
-      option "--description", "DESC", "Full name describing the domain", :attribute_name => :fullname
+      option "--description", "DESC", "Full name describing the domain", :attribute_name => :option_fullname
     end
 
 
@@ -59,7 +59,7 @@ module HammerCLIForeman
       resource ForemanApi::Resources::Domain, "update"
 
       apipie_options :without => [:domain_parameters_attributes, :name, :id, :fullname]
-      option "--description", "DESC", "Full name describing the domain", :attribute_name => :fullname
+      option "--description", "DESC", "Full name describing the domain", :attribute_name => :option_fullname
     end
 
 
@@ -88,12 +88,12 @@ module HammerCLIForeman
 
       def validate_options
         super
-        validator.any(:domain_name, :domain_id).required
+        validator.any(:option_domain_name, :option_domain_id).required
       end
 
       def base_action_params
         {
-          "domain_id" => domain_id || domain_name
+          "domain_id" => option_domain_id || option_domain_name
         }
       end
     end
@@ -112,12 +112,12 @@ module HammerCLIForeman
 
       def validate_options
         super
-        validator.any(:domain_name, :domain_id).required
+        validator.any(:option_domain_name, :option_domain_id).required
       end
 
       def base_action_params
         {
-          "domain_id" => domain_id || domain_name
+          "domain_id" => option_domain_id || option_domain_name
         }
       end
     end

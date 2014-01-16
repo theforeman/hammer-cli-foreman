@@ -42,12 +42,12 @@ module HammerCLIForeman
       def parameter_exist?
         params = resource.call(:index)[0]
         params = HammerCLIForeman.collection_to_common_format(params)
-        params.find { |p| p["name"] == name }
+        params.find { |p| p["name"] == option_name }
       end
 
       def request_params
         params = method_options
-        params['id'] = name
+        params['id'] = option_name
         params
       end
 

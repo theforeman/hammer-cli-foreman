@@ -88,7 +88,7 @@ module HammerCLIForeman
 
       def request_params
         opts = super
-        opts['dryrun'] = dryrun?
+        opts['dryrun'] = option_dryrun?
         opts
       end
     end

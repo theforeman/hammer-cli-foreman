@@ -69,7 +69,7 @@ module HammerCLIForeman
       apipie_options
 
       validate_options do
-        all(:name, :url, :provider).required
+        all(:option_name, :option_url, :option_provider).required
       end
     end
 

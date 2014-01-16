@@ -48,14 +48,14 @@ module HammerCLIForeman
 
       def parameter_exist?
         params = HammerCLIForeman.collection_to_common_format(resource.call(:index, base_action_params)[0])
-        params.find { |p| p["name"] == name }
+        params.find { |p| p["name"] == option_name }
       end
 
       def update_parameter
         params = {
-          "id" => name,
+          "id" => option_name,
           "parameter" => {
-            "value" => value
+            "value" => option_value
           }
         }.merge base_action_params
 
@@ -65,8 +65,8 @@ module HammerCLIForeman
       def create_parameter
         params = {
           "parameter" => {
-            "name" => name,
-            "value" => value
+            "name" => option_name,
+            "value" => option_value
           }
         }.merge base_action_params
 
@@ -92,7 +92,7 @@ module HammerCLIForeman
 
       def execute
         params = {
-          "id" => name
+          "id" => option_name
         }.merge base_action_params
 
         HammerCLIForeman.record_to_common_format(resource.call(:destroy, params))
