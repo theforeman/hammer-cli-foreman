@@ -212,6 +212,14 @@ describe HammerCLIForeman::Host do
           ["--name=host", "--environment-id=1", "--architecture-id=1", "--domain-id=1", "--operatingsystem-id=1"]
       it_should_fail_with "operatingsystem_id missing",
           ["--name=host", "--environment-id=1", "--architecture-id=1", "--domain-id=1", "--puppet-proxy-id=1"]
+
+      with_params ["--name=host", "--environment-id=1", "--architecture-id=1", "--domain-id=1", "--puppet-proxy-id=1", "--operatingsystem-id=1",
+            "--ip=1.2.3.4", "--mac=11:22:33:44:55:66", "--medium-id=1", "--partition-table-id=1", "--subnet-id=1",
+            "--sp-subnet-id=1", "--model-id=1", "--hostgroup-id=1", "--owner-id=1", '--puppet-ca-proxy-id=1', '--puppetclass-ids'] do
+        it_should_call_action_and_test_params(:create) { |par| par["host"]["managed"] == true }
+        it_should_call_action_and_test_params(:create) { |par| par["host"]["build"] == true }
+        it_should_call_action_and_test_params(:create) { |par| par["host"]["enabled"] == true }
+      end
     end
   end
 
@@ -227,6 +235,20 @@ describe HammerCLIForeman::Host do
             "--sp-subnet-id=1", "--model-id=1", "--hostgroup-id=1", "--owner-id=1", '--puppet-ca-proxy-id=1']
       it_should_fail_with "no params", []
       it_should_fail_with "name or id missing", ["--new-name=host2"]
+
+      with_params ["--id=1", "--puppet-proxy-id=1"] do
+        it_should_call_action_and_test_params(:update) { |par| par["host"].key?("managed") != true }
+        it_should_call_action_and_test_params(:update) { |par| par["host"].key?("build") != true }
+        it_should_call_action_and_test_params(:update) { |par| par["host"].key?("enabled") != true }
+      end
+
+      with_params ["--id=1", "--enabled=true"] do
+        it_should_call_action_and_test_params(:update) { |par| par["host"]["enabled"] == true }
+      end
+
+      with_params ["--id=1", "--enabled=false"] do
+        it_should_call_action_and_test_params(:update) { |par| par["host"]["enabled"] == false }
+      end
     end
 
   end

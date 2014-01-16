@@ -18,6 +18,14 @@ module CommandTestHelper
     end
   end
 
+  def it_should_call_action_and_test_params(action, &block)
+    it "should call action "+action.to_s do
+      arguments ||= respond_to?(:with_params) ? with_params : []
+      cmd.resource.resource_class.expects_with_block(action, &block)
+      cmd.run(arguments)
+    end
+  end
+
   def it_should_fail_with(message, arguments=[])
     it "should fail with " + message.to_s do
       cmd.run(arguments).must_equal HammerCLI::EX_USAGE

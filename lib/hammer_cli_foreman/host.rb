@@ -30,12 +30,15 @@ module HammerCLIForeman
       base.option "--puppetclass-ids", "PUPPETCLASS_IDS", " ",
         :format => HammerCLI::Options::Normalizers::List.new
 
-      base.option "--build", "BUILD", " ", :default => 'true',
-        :format => HammerCLI::Options::Normalizers::Bool.new
-      base.option "--managed", "MANAGED", " ", :default => 'true',
-        :format => HammerCLI::Options::Normalizers::Bool.new
-      base.option "--enabled", "ENABLED", " ",  :default => 'true',
-        :format => HammerCLI::Options::Normalizers::Bool.new
+      bme_options = {}
+      bme_options[:default] = 'true' if base.action.to_sym == :create
+
+      bme_options[:format] = HammerCLI::Options::Normalizers::Bool.new
+      base.option "--managed", "MANAGED", " ", bme_options
+      bme_options[:format] = HammerCLI::Options::Normalizers::Bool.new
+      base.option "--build", "BUILD", " ", bme_options
+      bme_options[:format] = HammerCLI::Options::Normalizers::Bool.new
+      base.option "--enabled", "ENABLED", " ",  bme_options
 
       base.option "--parameters", "PARAMS", "Host parameters.",
         :format => HammerCLI::Options::Normalizers::KeyValueList.new
@@ -50,14 +53,14 @@ module HammerCLIForeman
     def request_params
       params = super
 
-      params['host']['build'] = option_build
-      params['host']['managed'] = option_managed
-      params['host']['enabled'] = option_enabled
+      params['host']['build'] = option_build unless option_build.nil?
+      params['host']['managed'] = option_managed unless option_managed.nil?
+      params['host']['enabled'] = option_enabled unless option_enabled.nil?
 
-      params['host']['puppetclass_ids'] = option_puppetclass_ids
+      params['host']['puppetclass_ids'] = option_puppetclass_ids unless option_puppetclass_ids.nil?
 
-      params['host']['ptable_id'] = option_partition_table_id
-      params['host']['compute_resource_id'] = option_compute_resource_id
+      params['host']['ptable_id'] = option_partition_table_id unless option_partition_table_id.nil?
+      params['host']['compute_resource_id'] = option_compute_resource_id unless option_compute_resource_id.nil?
       params['host']['host_parameters_attributes'] = parameter_attributes
       params['host']['compute_attributes'] = option_compute_attributes || {}
       params['host']['compute_attributes']['volumes_attributes'] = nested_attributes(option_volume_list)
