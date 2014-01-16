@@ -7,6 +7,7 @@ describe HammerCLIForeman::Architecture do
   extend CommandTestHelper
 
   before :each do
+    HammerCLI::Settings.load({:_params => {:interactive => false}})
     cmd.class.resource ApipieResourceMock.new(cmd.class.resource.resource_class)
     cmd.stubs(:name_to_id).returns(1)
   end

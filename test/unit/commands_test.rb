@@ -4,6 +4,10 @@ require 'hammer_cli'
 
 describe HammerCLIForeman do
 
+  before :each do
+    HammerCLI::Settings.load({:_params => {:interactive => false}})
+  end
+
   context "collection_to_common_format" do
 
     let(:kind) { { "name" => "PXELinux", "id" => 1 } }
