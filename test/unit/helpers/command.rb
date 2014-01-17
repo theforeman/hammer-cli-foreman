@@ -10,10 +10,10 @@ module CommandTestHelper
     end
   end
 
-  def it_should_call_action(action, params)
+  def it_should_call_action(action, params, headers={})
     it "should call action "+action.to_s do
       arguments ||= respond_to?(:with_params) ? with_params : []
-      cmd.resource.resource_class.expects_with(action, params)
+      cmd.resource.resource_class.expects_with(action, params, headers)
       cmd.run(arguments)
     end
   end

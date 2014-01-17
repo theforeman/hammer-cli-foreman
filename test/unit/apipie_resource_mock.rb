@@ -16,9 +16,9 @@ class ApipieResourceMock
     return self
   end
 
-  def expects_with(method_name, params, return_value=nil)
+  def expects_with(method_name, params, headers=nil, return_value=nil)
     return_value ||= return_value_for(method_name)
-    self.expects(method_name).with(params).returns(return_value)
+    self.expects(method_name).with(params, headers).returns(return_value)
   end
 
   def stub_method(method_name, return_value)
