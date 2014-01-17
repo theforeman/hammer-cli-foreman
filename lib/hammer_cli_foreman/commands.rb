@@ -1,5 +1,3 @@
-require 'hammer_cli'
-
 module HammerCLIForeman
 
   def self.collection_to_common_format(data)

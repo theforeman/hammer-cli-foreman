@@ -1,7 +1,3 @@
-require 'hammer_cli'
-require 'foreman_api'
-require 'hammer_cli_foreman/commands'
-require 'hammer_cli_foreman/parameter'
 require 'hammer_cli_foreman/report'
 require 'hammer_cli_foreman/puppet_class'
 require 'hammer_cli_foreman/smart_class_parameter'

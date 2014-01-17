@@ -1,2 +1,2 @@
-require File.join(File.dirname(__FILE__), 'output/fields')
-require File.join(File.dirname(__FILE__), 'output/formatters')
+require 'hammer_cli_foreman/output/fields'
+require 'hammer_cli_foreman/output/formatters'

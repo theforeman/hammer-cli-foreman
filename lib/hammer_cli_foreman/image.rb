@@ -1,6 +1,3 @@
-require 'hammer_cli'
-require 'foreman_api'
-require 'hammer_cli_foreman/commands'
 require 'hammer_cli_foreman/compute_resource'
 
 module HammerCLIForeman
