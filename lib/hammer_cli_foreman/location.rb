@@ -1,7 +1,3 @@
-require 'hammer_cli'
-require 'foreman_api'
-require 'hammer_cli_foreman/commands'
-require 'hammer_cli_foreman/associating_commands'
 require 'hammer_cli_foreman/resource_supported_test'
 
 module HammerCLIForeman

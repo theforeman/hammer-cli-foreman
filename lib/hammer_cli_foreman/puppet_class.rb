@@ -1,6 +1,3 @@
-require 'hammer_cli'
-require 'foreman_api'
-require 'hammer_cli_foreman/commands'
 require 'hammer_cli_foreman/smart_class_parameter'
 
 module HammerCLIForeman

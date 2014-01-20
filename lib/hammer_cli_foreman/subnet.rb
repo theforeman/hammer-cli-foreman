@@ -1,7 +1,3 @@
-require 'hammer_cli'
-require 'foreman_api'
-require 'hammer_cli_foreman/commands'
-
 module HammerCLIForeman
 
   class Subnet < HammerCLI::AbstractCommand
