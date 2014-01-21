@@ -50,11 +50,11 @@ describe HammerCLIForeman::PartitionTable do
     end
 
     with_params ["--id=83"] do
-      it_should_call_action :show, {'id' => '83'}
+      it_should_call_action :show, {'id' => '83'}, nil
     end
 
     with_params ["--name=ptable"] do
-      it_should_call_action :show, {'id' => 'ptable'}
+      it_should_call_action :show, {'id' => 'ptable'}, nil
     end
 
   end
@@ -71,11 +71,11 @@ describe HammerCLIForeman::PartitionTable do
     end
 
     with_params ["--id=83"] do
-      it_should_call_action :show, {'id' => '83'}
+      it_should_call_action :show, {'id' => '83'}, nil
     end
 
     with_params ["--name=ptable"] do
-      it_should_call_action :show, {'id' => 'ptable'}
+      it_should_call_action :show, {'id' => 'ptable'}, nil
     end
 
   end

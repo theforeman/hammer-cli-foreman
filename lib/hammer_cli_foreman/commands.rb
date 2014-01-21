@@ -28,8 +28,12 @@ module HammerCLIForeman
 
   class WriteCommand < HammerCLI::Apipie::WriteCommand
 
+    def request_headers
+      {}
+    end
+
     def send_request
-      HammerCLIForeman.record_to_common_format(resource.call(action, request_params)[0])
+      HammerCLIForeman.record_to_common_format(resource.call(action, request_params, request_headers)[0])
     end
 
   end
