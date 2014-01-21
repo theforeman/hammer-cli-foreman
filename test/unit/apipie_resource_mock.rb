@@ -21,6 +21,12 @@ class ApipieResourceMock
     self.expects(method_name).with(params, headers).returns(return_value)
   end
 
+  def expects_with_block(method_name, &block)
+    return_value ||= return_value_for(method_name)
+    self.expects(method_name).with() { |param, headers| yield param }
+  end
+
+
   def stub_method(method_name, return_value)
     self.stubs(method_name.to_s).returns([return_value, return_value.to_s])
     @return_values[method_name.to_s] = return_value
@@ -85,4 +91,4 @@ module ResourceMocks
     sc_params
   end
 
-end 
+end
