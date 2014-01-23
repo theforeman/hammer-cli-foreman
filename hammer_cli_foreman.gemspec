@@ -24,10 +24,7 @@ EOF
   s.extra_rdoc_files = Dir['{doc}/**/*', 'README*']
   s.require_paths = ["lib"]
 
-  s.add_dependency 'hammer_cli', '= 0.0.15'
-  s.add_dependency 'foreman_api', '= 0.1.9'
-
-  # required for ruby < 1.9.0:
-  s.add_dependency 'mime-types', '< 2.0.0' #newer versions of mime-types are not 1.8 compatible
+  s.add_dependency 'hammer_cli', '= 0.0.16'
+  s.add_dependency 'foreman_api', '= 0.1.10'
 
 end
