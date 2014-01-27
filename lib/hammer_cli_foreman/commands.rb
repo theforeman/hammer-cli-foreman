@@ -253,7 +253,11 @@ module HammerCLIForeman
 
     def request_params
       params = method_options
-      params[resource.name][associated_resource.name+'_ids'] = get_new_ids
+      if params.key?(resource.name)
+        params[resource.name]["#{associated_resource.name}_ids"] = get_new_ids
+      else
+        params["#{associated_resource.name}_ids"] = get_new_ids
+      end
       params['id'] = get_identifier[0]
       params
     end
