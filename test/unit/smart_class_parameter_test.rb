@@ -7,6 +7,7 @@ describe HammerCLIForeman::SmartClassParameter do
   extend CommandTestHelper
 
   before :each do
+    HammerCLI::Connection.drop_all
     cmd.class.resource ResourceMocks.smart_class_parameter
     cmd.stubs(:name_to_id).returns(1)
   end

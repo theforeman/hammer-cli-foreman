@@ -1,49 +1,9 @@
 module HammerCLIForeman
 
-
-  class Credentials
-
-    def initialize(params={})
-      @username = params[:username]
-      @password = params[:password]
-    end
-
-    def username
-      @username ||= ask_user("username: ") if HammerCLI.interactive?
-      @username
-    end
-
-    def password
-      @password ||= ask_user("password for #{@username}: ", true) if HammerCLI.interactive?
-      @password
-    end
-
-    def empty?
-      !@username && !@password
-    end
-
-    def clear
-      @username = nil
-      @password = nil
-    end
-
-    private
-
-    def ask_user(prompt, silent=false)
-      if silent
-        ask(prompt) {|q| q.echo = false}
-      else
-        ask(prompt)
-      end
-    end
-
-  end
-
-
   def self.credentials
     @credentials ||= Credentials.new(
-      :username => (HammerCLI::Settings.get(:username) || ENV['FOREMAN_USERNAME'] || HammerCLI::Settings.get(:foreman, :username)),
-      :password => (HammerCLI::Settings.get(:password) || ENV['FOREMAN_PASSWORD'] || HammerCLI::Settings.get(:foreman, :password))
+      :username => (HammerCLI::Settings.get(:_params, :username) || ENV['FOREMAN_USERNAME'] || HammerCLI::Settings.get(:foreman, :username)),
+      :password => (HammerCLI::Settings.get(:_params, :password) || ENV['FOREMAN_PASSWORD'] || HammerCLI::Settings.get(:foreman, :password))
     )
     @credentials
   end

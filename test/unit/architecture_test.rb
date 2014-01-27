@@ -8,6 +8,7 @@ describe HammerCLIForeman::Architecture do
 
   before :each do
     HammerCLI::Settings.load({:_params => {:interactive => false}})
+    HammerCLI::Connection.drop_all
     cmd.class.resource ApipieResourceMock.new(cmd.class.resource.resource_class)
     cmd.stubs(:name_to_id).returns(1)
   end
