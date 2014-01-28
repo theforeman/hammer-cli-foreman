@@ -8,6 +8,7 @@ describe HammerCLIForeman::SmartClassParameter do
 
   before :each do
     cmd.class.resource ResourceMocks.smart_class_parameter
+    cmd.stubs(:name_to_id).returns(1)
   end
 
   context "ListCommand" do
@@ -41,7 +42,7 @@ describe HammerCLIForeman::SmartClassParameter do
   context "InfoCommand" do
 
     let(:cmd) { HammerCLIForeman::SmartClassParameter::InfoCommand.new("", ctx) }
-    
+
 
     context "parameters" do
       it_should_accept "id", ["--id=1"]
@@ -59,13 +60,13 @@ describe HammerCLIForeman::SmartClassParameter do
     context "parameters" do
       it_should_accept "id", ["--id=1"]
       it_should_accept "override", ["--id=1","--override=true"]
-      it_should_accept "description", ["--id=1","--description=descr"] 
+      it_should_accept "description", ["--id=1","--description=descr"]
       it_should_accept "default-value", ["--id=1","--default-value=1"]
-      it_should_accept "path  ", ["--id=1","--path=path"]  
+      it_should_accept "path  ", ["--id=1","--path=path"]
       it_should_accept "validator-type", ["--id=1","--validator-type=list"]
       it_should_accept "validator-rule ", ["--id=1","--validator-rule=''"]
       it_should_accept "override-value-order", ["--id=1","--override-value-order=fqdn"]
-      it_should_accept "parameter-type ", ["--id=1","--parameter-type=string"] 
+      it_should_accept "parameter-type ", ["--id=1","--parameter-type=string"]
       it_should_accept "required", ["--id=1","--required=true"]
 
       it_should_fail_with "id missing", []

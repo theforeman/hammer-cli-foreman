@@ -28,10 +28,6 @@ module HammerCLIForeman
 
   class WriteCommand < HammerCLI::Apipie::WriteCommand
 
-    def request_headers
-      {}
-    end
-
     def send_request
       HammerCLIForeman.record_to_common_format(resource.call(action, request_params, request_headers)[0])
     end
@@ -205,7 +201,10 @@ module HammerCLIForeman
     def self.setup_associated_identifier_options
       name = associated_resource.name.to_s
       option_switch = "--"+name.gsub('_', '-')
-      option option_switch, name.upcase, " ", :attribute_name => :associated_name if declared_associated_identifiers.include? :name
+
+      option option_switch, name.upcase, " ", :attribute_name => :associated_name do |value|
+        name_to_id(value, "name", associated_resource)
+      end if declared_associated_identifiers.include? :name
       option option_switch+"-id", name.upcase+"_ID", " ", :attribute_name => :associated_id if declared_associated_identifiers.include? :id
     end
 
@@ -252,12 +251,13 @@ module HammerCLIForeman
     end
 
     def request_params
-      params = method_options
+      params = {}
       if params.key?(resource.name)
-        params[resource.name]["#{associated_resource.name}_ids"] = get_new_ids
+        params[resource.name] = {"#{associated_resource.name}_ids" => get_new_ids }
       else
         params["#{associated_resource.name}_ids"] = get_new_ids
       end
+
       params['id'] = get_identifier[0]
       params
     end

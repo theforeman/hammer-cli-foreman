@@ -10,6 +10,7 @@ describe HammerCLIForeman::CommonParameter do
 
   before :each do
     cmd.class.resource resource_mock
+    cmd.stubs(:name_to_id).returns(1)
   end
 
   context "ListCommand" do

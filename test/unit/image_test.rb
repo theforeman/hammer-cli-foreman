@@ -11,6 +11,7 @@ describe HammerCLIForeman::Image do
 
   before :each do
     cmd.class.resource ApipieResourceMock.new(cmd.class.resource.resource_class)
+    cmd.stubs(:name_to_id).returns(1)
   end
 
   context "ListCommand" do
