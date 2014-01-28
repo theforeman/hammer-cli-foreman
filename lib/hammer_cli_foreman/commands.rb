@@ -242,7 +242,11 @@ module HammerCLIForeman
 
     def get_current_ids
       item = HammerCLIForeman.record_to_common_format(resource.call('show', {'id' => get_identifier[0]})[0])
-      item[associated_resource.name+'_ids'] || []
+      if item.has_key?(associated_resource.plural_name)
+        item[associated_resource.plural_name].map { |assoc| assoc['id'] }
+      else
+        item[associated_resource.name+'_ids'] || []
+      end
     end
 
     def get_required_id

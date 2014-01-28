@@ -110,7 +110,26 @@ describe HammerCLIForeman do
       end
       res = Assoc.new("", { :adapter => :csv, :interactive => false })
       res.get_new_ids.sort.must_equal [1, 2]
-     end
+    end
+
+    it "should associate resource with new format" do
+      ForemanApi::Resources::Organization.any_instance.stubs(:show).returns([{
+                      "id" => 1,
+                 "domains" => [
+                  { "id" => 2, "name" => "global.lan" }]
+                 }])
+      ForemanApi::Resources::Domain.any_instance.stubs(:show).returns([{
+                      "id" => 1,
+                    "name" => "local.lan"}])
+
+      class Assoc < HammerCLIForeman::AddAssociatedCommand
+        resource ForemanApi::Resources::Organization
+        associated_resource ForemanApi::Resources::Domain
+        apipie_options
+      end
+      res = Assoc.new("", { :adapter => :csv, :interactive => false })
+      res.get_new_ids.sort.must_equal [1, 2]
+    end
   end
 
 end
