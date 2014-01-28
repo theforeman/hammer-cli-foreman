@@ -20,7 +20,7 @@ describe HammerCLIForeman::ExceptionHandler do
 
   it "should print resource errors on unprocessable entity exception" do
    response = <<-RESPONSE
-   {"id":null,"errors":{"network":["can't be blank","is invalid"],"name":["can't be blank"]},"full_messages":["Network address can't be blank","Network address is invalid","Name can't be blank"]}
+   {"error":{"id":null,"errors":{"network":["can't be blank","is invalid"],"name":["can't be blank"]},"full_messages":["Network address can't be blank","Network address is invalid","Name can't be blank"]}}
    RESPONSE
 
     ex = RestClient::UnprocessableEntity.new(response)
@@ -58,7 +58,7 @@ describe HammerCLIForeman::ExceptionHandler do
 
   it "should print resource errors on resource not found exception" do
    response = <<-RESPONSE
-   {"message":"Resource architecture not found by id '1'"}
+   {"error":{"message":"Resource architecture not found by id '1'"}}
    RESPONSE
     ex = RestClient::ResourceNotFound.new(response)
     ex.stubs(:message).returns("")
@@ -69,7 +69,7 @@ describe HammerCLIForeman::ExceptionHandler do
   end
 
   it "should print exception message on resource not found exception without explicit message" do
-   response = "{}"
+   response = '{"error": ""}'
     ex = RestClient::ResourceNotFound.new(response)
     ex.stubs(:message).returns("ResourceNotFound message")
 
