@@ -24,7 +24,7 @@ module HammerCLIForeman
 
     class InfoCommand < HammerCLIForeman::InfoCommand
 
-      identifiers :id, :label
+      identifiers :id
 
       output ListCommand.output_definition do
         field :media_names, "Installation media", Fields::List
@@ -91,7 +91,7 @@ module HammerCLIForeman
       option "--ptable-ids", "PTABLE_IDS", "set associated partition tables",
         :format => HammerCLI::Options::Normalizers::List.new
 
-      identifiers :id, :label
+      identifiers :id
 
       success_message "Operating system updated"
       failure_message "Could not update the operating system"
@@ -111,7 +111,7 @@ module HammerCLIForeman
 
     class DeleteCommand < HammerCLIForeman::DeleteCommand
 
-      identifiers :id, :label
+      identifiers :id
 
       success_message "Operating system deleted"
       failure_message "Could not delete the operating system"

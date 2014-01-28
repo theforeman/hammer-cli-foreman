@@ -46,7 +46,6 @@ describe HammerCLIForeman::OperatingSystem do
 
     context "parameters" do
       it_should_accept "id", ["--id=1"]
-      it_should_accept "label", ["--label=os"]
       it_should_fail_with "no arguments"
     end
 
@@ -88,7 +87,6 @@ describe HammerCLIForeman::OperatingSystem do
     let(:cmd) { HammerCLIForeman::OperatingSystem::DeleteCommand.new("", ctx) }
 
     context "parameters" do
-      it_should_accept "label", ["--label=os"]
       it_should_accept "id", ["--id=1"]
       it_should_fail_with "name or id missing", []
     end
@@ -101,7 +99,6 @@ describe HammerCLIForeman::OperatingSystem do
     let(:cmd) { HammerCLIForeman::OperatingSystem::UpdateCommand.new("", ctx) }
 
     context "parameters" do
-      it_should_accept "label", ["--label=os"]
       it_should_accept "id", ["--id=1"]
       it_should_accept "name, major, minor, family, release name", ["--id=83", "--name=os", "--major=1", "--minor=2", "--family=Red Hat", "--release-name=awesome"]
       it_should_fail_with "no params", []
