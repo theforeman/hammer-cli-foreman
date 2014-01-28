@@ -12,11 +12,15 @@ class ApipieResourceMock
     @resource.doc
   end
 
+  def name
+    @resource.name
+  end
+
   def new(attrs)
     return self
   end
 
-  def expects_with(method_name, params, headers=nil, return_value=nil)
+  def expects_with(method_name, params, headers={}, return_value=nil)
     return_value ||= return_value_for(method_name)
     self.expects(method_name).with(params, headers).returns(return_value)
   end

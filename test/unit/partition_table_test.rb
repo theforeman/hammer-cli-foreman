@@ -9,6 +9,7 @@ describe HammerCLIForeman::PartitionTable do
 
   before :each do
     cmd.class.resource ApipieResourceMock.new(cmd.class.resource.resource_class)
+    cmd.stubs(:name_to_id).returns(1)
 
     ::File.stubs(:read).returns("FILE_CONTENT")
   end
@@ -50,11 +51,11 @@ describe HammerCLIForeman::PartitionTable do
     end
 
     with_params ["--id=83"] do
-      it_should_call_action :show, {'id' => '83'}, nil
+      it_should_call_action :show, {'id' => '83'}
     end
 
     with_params ["--name=ptable"] do
-      it_should_call_action :show, {'id' => 'ptable'}, nil
+      it_should_call_action :show, {'id' => 1}
     end
 
   end
@@ -71,11 +72,11 @@ describe HammerCLIForeman::PartitionTable do
     end
 
     with_params ["--id=83"] do
-      it_should_call_action :show, {'id' => '83'}, nil
+      it_should_call_action :show, {'id' => '83'}
     end
 
     with_params ["--name=ptable"] do
-      it_should_call_action :show, {'id' => 'ptable'}, nil
+      it_should_call_action :show, {'id' => 1}
     end
 
   end
@@ -134,7 +135,7 @@ describe HammerCLIForeman::PartitionTable do
     end
 
     with_params ["--name=ptable"] do
-      it_should_call_action :destroy, {'id' => 'ptable'}
+      it_should_call_action :destroy, {'id' => 1}
     end
 
   end

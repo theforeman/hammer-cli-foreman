@@ -19,6 +19,7 @@ describe HammerCLIForeman::Template do
     resource_mock.stub_method(:index, [])
     resource_mock.stub_method(:show, template_hash)
     cmd.class.resource resource_mock
+    cmd.stubs(:name_to_id).returns(1)
     File.stubs(:read).returns("")
   end
 
