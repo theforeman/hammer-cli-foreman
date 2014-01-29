@@ -23,7 +23,11 @@ module HammerCLIForeman
 
     class InfoCommand < HammerCLIForeman::InfoCommand
 
-      identifiers :id
+      identifiers :id, :login
+
+      option '--login', 'LOGIN', "User login" do |value|
+        name_to_id(value, "login", resource)
+      end
 
       output ListCommand.output_definition do
         field :last_login_on, "Last login", Fields::Date
@@ -52,7 +56,11 @@ module HammerCLIForeman
 
     class UpdateCommand < HammerCLIForeman::UpdateCommand
 
-      identifiers :id
+      identifiers :id, :login
+
+      option '--login', 'LOGIN', "User login" do |value|
+        name_to_id(value, "login", resource)
+      end
 
       success_message "User updated"
       failure_message "Could not update the user"
@@ -64,7 +72,11 @@ module HammerCLIForeman
 
     class DeleteCommand < HammerCLIForeman::DeleteCommand
 
-      identifiers :id
+      identifiers :id, :login
+
+      option '--login', 'LOGIN', "User login" do |value|
+        name_to_id(value, "login", resource)
+      end
 
       success_message "User deleted"
       failure_message "Could not delete the user"

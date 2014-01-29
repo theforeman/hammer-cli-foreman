@@ -38,6 +38,7 @@ describe HammerCLIForeman::User do
 
     context "parameters" do
       it_should_accept "id", ["--id=1"]
+      it_should_accept "login", ["--login=admin"]
       it_should_fail_with "no arguments"
     end
 
@@ -74,6 +75,7 @@ describe HammerCLIForeman::User do
 
     context "parameters" do
       it_should_accept "id", ["--id=1"]
+      it_should_accept "login", ["--login=admin"]
       it_should_fail_with "id missing", []
     end
 
@@ -86,6 +88,7 @@ describe HammerCLIForeman::User do
 
     context "parameters" do
       it_should_accept "id", ["--id=1"]
+      it_should_accept "login", ["--login=admin"]
       it_should_fail_with "no params", []
     end
 
