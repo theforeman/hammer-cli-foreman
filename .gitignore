@@ -6,3 +6,7 @@ pkg
 # Tests
 test/reports
 coverage
+
+# rvm/rbenv
+.ruby-gemset
+.ruby-version
