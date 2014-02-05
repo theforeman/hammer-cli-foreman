@@ -62,7 +62,7 @@ module HammerCLIForeman
     def execute
       if respond_to?(:option_page) && respond_to?(:option_per_page)
         self.option_page ||= 1
-        self.option_per_page ||= HammerCLI::Settings.get(:ui, :option_per_page) || DEFAULT_PER_PAGE
+        self.option_per_page ||= HammerCLI::Settings.get(:ui, :per_page) || DEFAULT_PER_PAGE
         browse_collection
       else
         retrieve_and_print
