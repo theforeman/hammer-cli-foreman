@@ -11,6 +11,7 @@ module HammerCLIForeman
 
   require 'hammer_cli_foreman/version'
   require 'hammer_cli_foreman/output'
+  require 'hammer_cli_foreman/credentials'
   require 'hammer_cli_foreman/commands'
   require 'hammer_cli_foreman/associating_commands'
   require 'hammer_cli_foreman/parameter'
@@ -18,6 +19,7 @@ module HammerCLIForeman
   require 'hammer_cli_foreman/common_parameter'
 
   require 'hammer_cli_foreman/architecture'
+  require 'hammer_cli_foreman/auth'
   require 'hammer_cli_foreman/compute_resource'
   require 'hammer_cli_foreman/domain'
   require 'hammer_cli_foreman/environment'

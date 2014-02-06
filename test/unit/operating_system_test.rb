@@ -7,6 +7,7 @@ describe HammerCLIForeman::OperatingSystem do
   extend CommandTestHelper
 
   before :each do
+    HammerCLI::Connection.drop_all
     resource_mock = ApipieResourceMock.new(cmd.class.resource.resource_class)
     resource_mock.stub_method(:index, [])
     resource_mock.stub_method(:show, {"operatingsystem" => {}})

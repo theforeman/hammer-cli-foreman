@@ -9,6 +9,7 @@ describe HammerCLIForeman::CommonParameter do
   let(:resource_mock) { ApipieResourceMock.new(cmd.class.resource.resource_class) }
 
   before :each do
+    HammerCLI::Connection.drop_all
     cmd.class.resource resource_mock
     cmd.stubs(:name_to_id).returns(1)
   end

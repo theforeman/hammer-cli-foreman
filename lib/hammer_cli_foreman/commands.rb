@@ -1,5 +1,30 @@
 module HammerCLIForeman
 
+  def self.credentials
+    @credentials ||= Credentials.new(
+      :username => (HammerCLI::Settings.get(:_params, :username) || ENV['FOREMAN_USERNAME'] || HammerCLI::Settings.get(:foreman, :username)),
+      :password => (HammerCLI::Settings.get(:_params, :password) || ENV['FOREMAN_PASSWORD'] || HammerCLI::Settings.get(:foreman, :password))
+    )
+    @credentials
+  end
+
+  def self.resource_config
+    config = {}
+    config[:base_url] = HammerCLI::Settings.get(:foreman, :host)
+    config[:credentials] = credentials
+    config
+  end
+
+  module ConnectionSetup
+    def connection_name(resource_class)
+      'foreman_'+super(resource_class)
+    end
+
+    def resource_config
+      super.merge(HammerCLIForeman.resource_config)
+    end
+  end
+
   def self.collection_to_common_format(data)
     if data.class <= Hash && data.has_key?('total') && data.has_key?('results')
       col = HammerCLI::Output::RecordCollection.new(data['results'],
@@ -26,7 +51,12 @@ module HammerCLIForeman
       data.class <= Hash && data.keys.length == 1 ? data[data.keys[0]] : data
   end
 
+  class ReadCommand < HammerCLI::Apipie::ReadCommand
+    include HammerCLIForeman::ConnectionSetup
+  end
+
   class WriteCommand < HammerCLI::Apipie::WriteCommand
+    include HammerCLIForeman::ConnectionSetup
 
     def send_request
       HammerCLIForeman.record_to_common_format(resource.call(action, request_params, request_headers)[0])
@@ -34,7 +64,7 @@ module HammerCLIForeman
 
   end
 
-  class ListCommand < HammerCLI::Apipie::ReadCommand
+  class ListCommand < ReadCommand
 
     action :index
 
@@ -99,7 +129,7 @@ module HammerCLIForeman
   end
 
 
-  class InfoCommand < HammerCLI::Apipie::ReadCommand
+  class InfoCommand < ReadCommand
 
     action :show
 
