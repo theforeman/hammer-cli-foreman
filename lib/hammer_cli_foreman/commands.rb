@@ -272,10 +272,10 @@ module HammerCLIForeman
 
     def get_current_ids
       item = HammerCLIForeman.record_to_common_format(resource.call('show', {'id' => get_identifier[0]})[0])
-      if item.has_key?(associated_resource.plural_name)
-        item[associated_resource.plural_name].map { |assoc| assoc['id'] }
+      if item.has_key?(association_name(true))
+        item[association_name(true)].map { |assoc| assoc['id'] }
       else
-        item[associated_resource.name+'_ids'] || []
+        item[association_name+'_ids'] || []
       end
     end
 
@@ -287,13 +287,17 @@ module HammerCLIForeman
     def request_params
       params = {}
       if params.key?(resource.name)
-        params[resource.name] = {"#{associated_resource.name}_ids" => get_new_ids }
+        params[resource.name] = {"#{association_name}_ids" => get_new_ids }
       else
-        params["#{associated_resource.name}_ids"] = get_new_ids
+        params["#{association_name}_ids"] = get_new_ids
       end
 
       params['id'] = get_identifier[0]
       params
+    end
+
+    def association_name(plural = false)
+      plural ? associated_resource.plural_name : associated_resource.name
     end
 
   end
