@@ -10,3 +10,6 @@ coverage
 # rvm/rbenv
 .ruby-gemset
 .ruby-version
+
+# Editors
+tags
