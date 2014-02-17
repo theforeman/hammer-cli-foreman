@@ -241,7 +241,11 @@ module HammerCLIForeman
 
 
     def associated_resource
-      HammerCLI::Apipie::ResourceInstance.from_definition(self.class.associated_resource, resource_config)
+      HammerCLI::Connection.create(
+        connection_name(self.class.associated_resource.resource_class),
+        resource_config.merge(:definition => self.class.associated_resource),
+        connection_options
+      )
     end
 
     def self.associated_resource(resource_class=nil)
@@ -286,7 +290,7 @@ module HammerCLIForeman
     end
 
     def request_params
-      params = {}
+      params = super
       if params.key?(resource.name)
         params[resource.name] = {"#{association_name}_ids" => get_new_ids }
       else
