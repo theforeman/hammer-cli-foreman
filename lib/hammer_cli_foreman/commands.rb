@@ -140,7 +140,8 @@ module HammerCLIForeman
     identifiers :id, :name
 
     def request_params
-      {'id' => get_identifier[0]}
+      params = method_options
+      params.update('id' => get_identifier[0])
     end
 
     def retrieve_data
