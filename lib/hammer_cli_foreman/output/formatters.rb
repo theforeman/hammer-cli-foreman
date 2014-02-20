@@ -9,9 +9,14 @@ module HammerCLIForeman::Output
 
       def format(os)
         return nil if os.nil?
-        name = "%s %s" % [os[:name], os[:major]]
-        name += ".%s" % os[:minor] unless (!os.has_key?(:minor) || os[:minor].empty?)
-        name
+
+        name = os['name'] || os[:name]
+        major = os['major'] || os[:major]
+        minor = os['minor'] || os[:minor]
+
+        formatted_name = "%s %s" % [name, major]
+        formatted_name += ".%s" % minor if (!minor.nil? && !minor.empty?)
+        formatted_name
       end
     end
 
