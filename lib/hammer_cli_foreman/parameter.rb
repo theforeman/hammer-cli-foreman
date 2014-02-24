@@ -9,8 +9,18 @@ module HammerCLIForeman
         resource_type.to_s+"_id" => resource["id"] || resource["name"]
       }
 
-      params = ForemanApi::Resources::Parameter.new(resource_config).index(params)[0]
-      HammerCLIForeman.collection_to_common_format(params)
+      connection_options = {
+        :connector => HammerCLI::Apipie::ApipieConnector
+      }
+
+      connection = HammerCLI::Connection.create(
+        :parameters,
+        resource_config.merge(:definition => HammerCLI::Apipie::ResourceDefinition.new(ForemanApi::Resources::Parameter)),
+        connection_options
+      )
+
+      parameters = connection.call(:index, params)[0]
+      HammerCLIForeman.collection_to_common_format(parameters)
     end
 
     class SetCommand < HammerCLI::Apipie::Command

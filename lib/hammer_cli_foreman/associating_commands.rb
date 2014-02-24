@@ -99,6 +99,9 @@ module HammerCLIForeman
 
         associated_resource ForemanApi::Resources::User
         apipie_options
+
+        success_message "The user has been associated"
+        failure_message "Could not associate the user"
       end
 
       class RemoveUserCommand < HammerCLIForeman::RemoveAssociatedCommand
@@ -106,6 +109,9 @@ module HammerCLIForeman
 
         associated_resource ForemanApi::Resources::User
         apipie_options
+
+        success_message "The user has been disassociated"
+        failure_message "Could not disassociate the user"
       end
     end
 
