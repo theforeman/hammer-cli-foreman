@@ -10,8 +10,8 @@ module HammerCLIForeman
       include HammerCLIForeman::ResourceSupportedTest
 
       output do
-        field :id, "Id"
-        field :name, "Name"
+        field :id, _("Id")
+        field :name, _("Name")
       end
 
       apipie_options
@@ -22,8 +22,8 @@ module HammerCLIForeman
       include HammerCLIForeman::ResourceSupportedTest
 
       output ListCommand.output_definition do
-        field :created_at, "Created at", Fields::Date
-        field :updated_at, "Updated at", Fields::Date
+        field :created_at, _("Created at"), Fields::Date
+        field :updated_at, _("Updated at"), Fields::Date
       end
 
       apipie_options
@@ -33,8 +33,8 @@ module HammerCLIForeman
     class CreateCommand < HammerCLIForeman::CreateCommand
       include HammerCLIForeman::ResourceSupportedTest
 
-      success_message "Organization created"
-      failure_message "Could not create the organization"
+      success_message _("Organization created")
+      failure_message _("Could not create the organization")
 
       apipie_options
     end
@@ -43,8 +43,8 @@ module HammerCLIForeman
     class UpdateCommand < HammerCLIForeman::UpdateCommand
       include HammerCLIForeman::ResourceSupportedTest
 
-      success_message "Organization updated"
-      failure_message "Could not update the organization"
+      success_message _("Organization updated")
+      failure_message _("Could not update the organization")
 
       apipie_options
     end
@@ -53,8 +53,8 @@ module HammerCLIForeman
     class DeleteCommand < HammerCLIForeman::DeleteCommand
       include HammerCLIForeman::ResourceSupportedTest
 
-      success_message "Organization deleted"
-      failure_message "Could not delete the organization"
+      success_message _("Organization deleted")
+      failure_message _("Could not delete the organization")
 
       apipie_options
     end
@@ -74,5 +74,5 @@ module HammerCLIForeman
 
 end
 
-HammerCLI::MainCommand.subcommand 'organization', "Manipulate organizations.", HammerCLIForeman::Organization
+HammerCLI::MainCommand.subcommand 'organization', _("Manipulate organizations."), HammerCLIForeman::Organization
 

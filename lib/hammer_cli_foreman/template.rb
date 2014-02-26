@@ -31,9 +31,9 @@ module HammerCLIForeman
     class ListCommand < HammerCLIForeman::ListCommand
 
       output do
-        field :id, "Id"
-        field :name, "Name"
-        field :type, "Type"
+        field :id, _("Id")
+        field :name, _("Name")
+        field :type, _("Type")
       end
 
       def extend_data(tpl)
@@ -58,7 +58,7 @@ module HammerCLIForeman
       identifiers :id
 
       output ListCommand.output_definition do
-        field :operatingsystem_ids, "OS ids", Fields::List
+        field :operatingsystem_ids, _("OS ids"), Fields::List
       end
 
       def extend_data(tpl)
@@ -80,10 +80,10 @@ module HammerCLIForeman
     class ListKindsCommand < HammerCLIForeman::ListCommand
 
       command_name "kinds"
-      desc "List available config template kinds."
+      desc _("List available config template kinds.")
 
       output do
-        field :name, "Name"
+        field :name, _("Name")
       end
 
       def retrieve_data
@@ -99,7 +99,7 @@ module HammerCLIForeman
     class DumpCommand < HammerCLIForeman::InfoCommand
 
       command_name "dump"
-      desc "View config template content."
+      desc _("View config template content.")
 
       identifiers :id
 
@@ -113,12 +113,12 @@ module HammerCLIForeman
 
     class CreateCommand < HammerCLIForeman::CreateCommand
 
-      option "--file", "TEMPLATE", "Path to a file that contains the template", :attribute_name => :option_template, :required => true,
+      option "--file", "TEMPLATE", _("Path to a file that contains the template"), :attribute_name => :option_template, :required => true,
         :format => HammerCLI::Options::Normalizers::File.new
-      option "--type", "TYPE", "Template type. Eg. snippet, script, provision", :required => true
+      option "--type", "TYPE", _("Template type. Eg. snippet, script, provision"), :required => true
 
-      success_message "Config template created"
-      failure_message "Could not create the config template"
+      success_message _("Config template created")
+      failure_message _("Could not create the config template")
 
       include TemplateCreateUpdateCommons
 
@@ -128,14 +128,14 @@ module HammerCLIForeman
 
     class UpdateCommand < HammerCLIForeman::UpdateCommand
 
-      option "--file", "TEMPLATE", "Path to a file that contains the template", :attribute_name => :option_template,
+      option "--file", "TEMPLATE", _("Path to a file that contains the template"), :attribute_name => :option_template,
         :format => HammerCLI::Options::Normalizers::File.new
-      option "--type", "TYPE", "Template type. Eg. snippet, script, provision"
+      option "--type", "TYPE", _("Template type. Eg. snippet, script, provision")
 
       identifiers :id
 
-      success_message "Config template updated"
-      failure_message "Could not update the config template"
+      success_message _("Config template updated")
+      failure_message _("Could not update the config template")
 
       include TemplateCreateUpdateCommons
 
@@ -147,8 +147,8 @@ module HammerCLIForeman
 
       identifiers :id
 
-      success_message "Config template deleted"
-      failure_message "Could not delete the config template"
+      success_message _("Config template deleted")
+      failure_message _("Could not delete the config template")
 
       apipie_options
     end
@@ -163,5 +163,5 @@ module HammerCLIForeman
 
 end
 
-HammerCLI::MainCommand.subcommand 'template', "Manipulate config templates.", HammerCLIForeman::Template
+HammerCLI::MainCommand.subcommand 'template', _("Manipulate config templates."), HammerCLIForeman::Template
 

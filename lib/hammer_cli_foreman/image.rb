@@ -6,14 +6,14 @@ module HammerCLIForeman
 
     resource ForemanApi::Resources::Image
     command_name 'image'
-    desc "View and manage compute resource's images"
+    desc _("View and manage compute resource's images")
 
 
     module ComputeResourceOptions
 
       def self.included(base)
-        base.option "--compute-resource", "COMPUTE_RESOURCE_NAME", "Compute resource's name"
-        base.option "--compute-resource-id", "COMPUTE_RESOURCE_ID", "Compute resource's id"
+        base.option "--compute-resource", "COMPUTE_RESOURCE_NAME", _("Compute resource's name")
+        base.option "--compute-resource-id", "COMPUTE_RESOURCE_ID", _("Compute resource's id")
         base.apipie_options :without => [:compute_resource_id, :id]
 
         base.validate_options do
@@ -29,11 +29,11 @@ module HammerCLIForeman
       include HammerCLIForeman::Image::ComputeResourceOptions
 
       output do
-        field :id, "Id"
-        field :name, "Name"
-        field :operatingsystem_id, "Operating System Id", Fields::Id
-        field :username, "Username"
-        field :uuid, "UUID"
+        field :id, _("Id")
+        field :name, _("Name")
+        field :operatingsystem_id, _("Operating System Id"), Fields::Id
+        field :username, _("Username")
+        field :uuid, _("UUID")
       end
 
       def request_params
@@ -52,10 +52,10 @@ module HammerCLIForeman
 
 
       output ListCommand.output_definition do
-        field :architecture_id, "Architecture Id", Fields::Id
-        field :iam_role, "IAM role"
-        field :created_at, "Created at", Fields::Date
-        field :updated_at, "Updated at", Fields::Date
+        field :architecture_id, _("Architecture Id"), Fields::Id
+        field :iam_role, _("IAM role")
+        field :created_at, _("Created at"), Fields::Date
+        field :updated_at, _("Updated at"), Fields::Date
       end
 
       def request_params
@@ -69,15 +69,15 @@ module HammerCLIForeman
 
     class AvailableImagesCommand < HammerCLIForeman::ListCommand
 
-      resource ForemanApi::Resources::ComputeResource, "available_images"
+      resource ForemanApi::Resources::ComputeResource, _("available_images")
       command_name 'available'
-      desc "Show images available for addition"
+      desc _("Show images available for addition")
 
       include HammerCLIForeman::Image::ComputeResourceOptions
 
       output do
-        field :name, "Name"
-        field :uuid, "UUID"
+        field :name, _("Name")
+        field :uuid, _("UUID")
       end
 
       def request_params
@@ -93,8 +93,8 @@ module HammerCLIForeman
 
       include HammerCLIForeman::Image::ComputeResourceOptions
 
-      success_message "Image created"
-      failure_message "Could not create the image"
+      success_message _("Image created")
+      failure_message _("Could not create the image")
 
       def request_params
         params = super
@@ -109,8 +109,8 @@ module HammerCLIForeman
       identifiers :id
       include HammerCLIForeman::Image::ComputeResourceOptions
 
-      success_message "Image updated"
-      failure_message "Could not update the image"
+      success_message _("Image updated")
+      failure_message _("Could not update the image")
 
       def request_params
         params = super
@@ -126,8 +126,8 @@ module HammerCLIForeman
       identifiers :id
       include HammerCLIForeman::Image::ComputeResourceOptions
 
-      success_message "Image deleted"
-      failure_message "Could not delete the image"
+      success_message _("Image deleted")
+      failure_message _("Could not delete the image")
 
       def request_params
         params = super

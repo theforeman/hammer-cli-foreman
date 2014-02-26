@@ -9,8 +9,8 @@ module HammerCLIForeman
     class ListCommand < HammerCLIForeman::ListCommand
 
       output do
-        field :id, "Id"
-        field :name, "Name"
+        field :id, _("Id")
+        field :name, _("Name")
       end
 
       def retrieve_data
@@ -32,10 +32,10 @@ module HammerCLIForeman
 
       #FIXME: show environments, hostgroups, variables and parameters
       output ListCommand.output_definition do
-        collection :lookup_keys, "Smart variables" do
+        collection :lookup_keys, _("Smart variables") do
           from :lookup_key do
-            field :key, "Parameter"
-            field :default_value, "Default value"
+            field :key, _("Parameter")
+            field :default_value, _("Default value")
           end
         end
       end
@@ -47,7 +47,7 @@ module HammerCLIForeman
     class SCParamsCommand < HammerCLIForeman::SmartClassParametersBriefList
 
       apipie_options :without => [:host_id, :hostgroup_id, :puppetclass_id, :environment_id]
-      option ['--id', '--name'], 'PUPPET_CLASS_ID', 'puppet class id/name',
+      option ['--id', '--name'], 'PUPPET_CLASS_ID', _('puppet class id/name'),
               :attribute_name => :puppetclass_id, :required => true
     end
 
@@ -57,5 +57,5 @@ module HammerCLIForeman
 
 end
 
-HammerCLI::MainCommand.subcommand 'puppet_class', "Search puppet modules.", HammerCLIForeman::PuppetClass
+HammerCLI::MainCommand.subcommand 'puppet_class', _("Search puppet modules."), HammerCLIForeman::PuppetClass
 

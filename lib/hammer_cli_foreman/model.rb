@@ -7,10 +7,10 @@ module HammerCLIForeman
     class ListCommand < HammerCLIForeman::ListCommand
 
       output do
-        field :id, "Id"
-        field :name, "Name"
-        field :vendor_class, "Vendor class"
-        field :hardware_model, "HW model"
+        field :id, _("Id")
+        field :name, _("Name")
+        field :vendor_class, _("Vendor class")
+        field :hardware_model, _("HW model")
       end
 
       apipie_options
@@ -20,9 +20,9 @@ module HammerCLIForeman
     class InfoCommand < HammerCLIForeman::InfoCommand
 
       output ListCommand.output_definition do
-        field :info, "Info"
-        field :created_at, "Created at", Fields::Date
-        field :updated_at, "Updated at", Fields::Date
+        field :info, _("Info")
+        field :created_at, _("Created at"), Fields::Date
+        field :updated_at, _("Updated at"), Fields::Date
       end
 
       apipie_options
@@ -30,23 +30,23 @@ module HammerCLIForeman
 
 
     class CreateCommand < HammerCLIForeman::CreateCommand
-      success_message "Hardware model created"
-      failure_message "Could not create the hardware model"
+      success_message _("Hardware model created")
+      failure_message _("Could not create the hardware model")
 
       apipie_options
     end
 
     class DeleteCommand < HammerCLIForeman::DeleteCommand
-      success_message "Hardware model deleted"
-      failure_message "Could not delete the hardware model"
+      success_message _("Hardware model deleted")
+      failure_message _("Could not delete the hardware model")
 
       apipie_options
     end
 
 
     class UpdateCommand < HammerCLIForeman::UpdateCommand
-      success_message "Hardware model updated"
-      failure_message "Could not update the hardware model"
+      success_message _("Hardware model updated")
+      failure_message _("Could not update the hardware model")
 
       apipie_options
     end
@@ -57,5 +57,5 @@ module HammerCLIForeman
 
 end
 
-HammerCLI::MainCommand.subcommand 'model', "Manipulate hardware models.", HammerCLIForeman::Model
+HammerCLI::MainCommand.subcommand 'model', _("Manipulate hardware models."), HammerCLIForeman::Model
 

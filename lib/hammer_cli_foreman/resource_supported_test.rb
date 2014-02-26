@@ -8,7 +8,7 @@ module HammerCLIForeman
       if resource_supported?
         super
       else
-        raise OperationNotSupportedError, "The server does not support such operation."
+        raise OperationNotSupportedError, _("The server does not support such operation.")
       end
     end
 

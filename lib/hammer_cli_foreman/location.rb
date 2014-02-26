@@ -10,8 +10,8 @@ module HammerCLIForeman
       include HammerCLIForeman::ResourceSupportedTest
 
       output do
-        field :id, "Id"
-        field :name, "Name"
+        field :id, _("Id")
+        field :name, _("Name")
       end
 
       apipie_options
@@ -22,8 +22,8 @@ module HammerCLIForeman
       include HammerCLIForeman::ResourceSupportedTest
 
       output ListCommand.output_definition do
-        field :created_at, "Created at", Fields::Date
-        field :updated_at, "Updated at", Fields::Date
+        field :created_at, _("Created at"), Fields::Date
+        field :updated_at, _("Updated at"), Fields::Date
       end
 
       apipie_options
@@ -33,8 +33,8 @@ module HammerCLIForeman
     class CreateCommand < HammerCLIForeman::CreateCommand
       include HammerCLIForeman::ResourceSupportedTest
 
-      success_message "Location created"
-      failure_message "Could not create the location"
+      success_message _("Location created")
+      failure_message _("Could not create the location")
 
       apipie_options
     end
@@ -43,8 +43,8 @@ module HammerCLIForeman
     class UpdateCommand < HammerCLIForeman::UpdateCommand
       include HammerCLIForeman::ResourceSupportedTest
 
-      success_message "Location updated"
-      failure_message "Could not update the location"
+      success_message _("Location updated")
+      failure_message _("Could not update the location")
 
       apipie_options
     end
@@ -53,8 +53,8 @@ module HammerCLIForeman
     class DeleteCommand < HammerCLIForeman::DeleteCommand
       include HammerCLIForeman::ResourceSupportedTest
 
-      success_message "Location deleted"
-      failure_message "Could not delete the location"
+      success_message _("Location deleted")
+      failure_message _("Could not delete the location")
 
       apipie_options
     end
@@ -75,5 +75,5 @@ module HammerCLIForeman
 
 end
 
-HammerCLI::MainCommand.subcommand 'location', "Manipulate locations.", HammerCLIForeman::Location
+HammerCLI::MainCommand.subcommand 'location', _("Manipulate locations."), HammerCLIForeman::Location
 

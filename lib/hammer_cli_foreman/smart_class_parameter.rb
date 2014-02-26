@@ -5,11 +5,11 @@ module HammerCLIForeman
     command_name 'sc_params'
 
     output do
-      field :id, "Id"
+      field :id, _("Id")
 
-      field :parameter, "Parameter"
-      field :default_value, "Default Value"
-      field :override, "Override"
+      field :parameter, _("Parameter")
+      field :default_value, _("Default Value")
+      field :override, _("Override")
     end
 
     def retrieve_data
@@ -25,8 +25,8 @@ module HammerCLIForeman
 
     output do
       from :puppetclass do
-        field :name, "Puppet class"
-        field :id, "Class Id", Fields::Id
+        field :name, _("Puppet class")
+        field :id, _("Class Id"), Fields::Id
       end
     end
   end
@@ -43,28 +43,28 @@ module HammerCLIForeman
     class InfoCommand < HammerCLIForeman::InfoCommand
 
       output ListCommand.output_definition do
-        field :description, "Description"
-        field :parameter_type, "Type"
-        field :required, "Required"
-        field :_environments, "Environments", Fields::List
-        field :_environment_ids, "Environment Ids", Fields::List
-        label "Validator" do
-          field :validator_type, "Type"
-          field :validator_rule, "Rule"
+        field :description, _("Description")
+        field :parameter_type, _("Type")
+        field :required, _("Required")
+        field :_environments, _("Environments"), Fields::List
+        field :_environment_ids, _("Environment Ids"), Fields::List
+        label _("Validator") do
+          field :validator_type, _("Type")
+          field :validator_rule, _("Rule")
         end
-        label "Override values" do
-          field :override_value_order, "Order", Fields::List
-          field :override_values_count, "Count"
+        label _("Override values") do
+          field :override_value_order, _("Order"), Fields::List
+          field :override_values_count, _("Count")
           collection :override_values, "Values" do
-            label  "Value" do
-              field :id, 'Id'
-              field :match, 'Match'
-              field :value, 'Value'
+            label  _("Value") do
+              field :id, _('Id')
+              field :match, _('Match')
+              field :value, _('Value')
             end
           end
         end
-        field :created_at, "Created at", Fields::Date
-        field :updated_at, "Updated at", Fields::Date
+        field :created_at, _("Created at"), Fields::Date
+        field :updated_at, _("Updated at"), Fields::Date
       end
 
       def extend_data(res)
@@ -79,19 +79,19 @@ module HammerCLIForeman
 
     class UpdateCommand < HammerCLIForeman::UpdateCommand
 
-      success_message "Parameter updated"
-      failure_message "Could not update the parameter"
+      success_message _("Parameter updated")
+      failure_message _("Could not update the parameter")
 
       apipie_options :without => [:parameter_type, :validator_type, :id, :override, :required]
 
-      option "--override", "OVERRIDE", "Override this parameter.",
+      option "--override", "OVERRIDE", _("Override this parameter."),
         :format => HammerCLI::Options::Normalizers::Bool.new
-      option "--required", "REQUIRED", "This parameter is required.",
+      option "--required", "REQUIRED", _("This parameter is required."),
         :format => HammerCLI::Options::Normalizers::Bool.new
-      option "--parameter-type", "PARAMETER_TYPE", "Type of the parameter.",
+      option "--parameter-type", "PARAMETER_TYPE", _("Type of the parameter."),
         :format => HammerCLI::Options::Normalizers::Enum.new(
             ['string', 'boolean', 'integer', 'real', 'array', 'hash', 'yaml', 'json'])
-      option "--validator-type", "VALIDATOR_TYPE", "Type of the validator.",
+      option "--validator-type", "VALIDATOR_TYPE", _("Type of the validator."),
         :format => HammerCLI::Options::Normalizers::Enum.new(['regexp', 'list', ''])
     end
 
@@ -100,6 +100,6 @@ module HammerCLIForeman
 
   end
 
-  HammerCLI::MainCommand.subcommand 'sc_param', "Manipulate smart class parameters.", HammerCLIForeman::SmartClassParameter
+  HammerCLI::MainCommand.subcommand 'sc_param', _("Manipulate smart class parameters."), HammerCLIForeman::SmartClassParameter
 
 end

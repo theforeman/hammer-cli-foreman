@@ -4,7 +4,7 @@ module HammerCLIForeman
 
     class LoginCommand < HammerCLI::AbstractCommand
       command_name "login"
-      desc "Set credentials"
+      desc _("Set credentials")
 
       def execute
         HammerCLIForeman.credentials.clear
@@ -17,26 +17,26 @@ module HammerCLIForeman
 
     class LogoutCommand < HammerCLI::AbstractCommand
       command_name "logout"
-      desc "Wipe your credentials"
+      desc _("Wipe your credentials")
 
       def execute
         #NOTE: we will change that to drop(:foreman) once dynamic bindings are implemented
         HammerCLIForeman.credentials.clear
         HammerCLI::Connection.drop_all
-        print_message("Credentials deleted.")
+        print_message(_("Credentials deleted."))
         HammerCLI::EX_OK
       end
     end
 
     class InfoCommand < HammerCLI::AbstractCommand
       command_name "status"
-      desc "Information about current connections"
+      desc _("Information about current connections")
 
       def execute
         unless HammerCLIForeman.credentials.empty?
-          print_message("You are logged in as '%s'" % HammerCLIForeman.credentials.username)
+          print_message(_("You are logged in as '%s'") % HammerCLIForeman.credentials.username)
         else
-          print_message("You are currently not logged in to any service.\nUse the service to set credentials.")
+          print_message(_("You are currently not logged in to any service.\nUse the service to set credentials."))
         end
         HammerCLI::EX_OK
       end
@@ -45,5 +45,5 @@ module HammerCLIForeman
     autoload_subcommands
   end
 
-  HammerCLI::ShellMainCommand.subcommand 'auth', "Foreman connection login/logout.", HammerCLIForeman::Auth
+  HammerCLI::ShellMainCommand.subcommand 'auth', _("Foreman connection login/logout."), HammerCLIForeman::Auth
 end

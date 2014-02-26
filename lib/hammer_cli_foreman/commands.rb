@@ -42,7 +42,7 @@ module HammerCLIForeman
       # produce [ { 'attr' => 'val' }, ... ]
       col = HammerCLI::Output::RecordCollection.new(data.map { |r| r.keys.length == 1 ? r[r.keys[0]] : r })
     else
-      raise RuntimeError.new("Received data of unknown format")
+      raise RuntimeError.new(_("Received data of unknown format"))
     end
     col
   end
@@ -110,7 +110,7 @@ module HammerCLIForeman
         d = retrieve_and_print
 
         if (d.size >= self.option_per_page.to_i) && interactive?
-          answer = ask("List next page? (Y/n): ").downcase
+          answer = ask(_("List next page? (%s): ") % 'Y/n').downcase
           list_next = (answer == 'y' || answer == '')
           self.option_page += 1
         else
@@ -184,7 +184,7 @@ module HammerCLIForeman
 
     def self.setup_identifier_options
       super
-      option "--new-name", "NEW_NAME", "new name for the resource", :attribute_name => :option_name if identifier? :name
+      option "--new-name", "NEW_NAME", _("new name for the resource"), :attribute_name => :option_name if identifier? :name
     end
 
     def request_params
@@ -314,7 +314,7 @@ module HammerCLIForeman
     end
 
     def self.desc(desc=nil)
-      "Associate a resource"
+      _("Associate a resource")
     end
 
     def get_new_ids
@@ -334,7 +334,7 @@ module HammerCLIForeman
     end
 
     def self.desc(desc=nil)
-      "Disassociate a resource"
+      _("Disassociate a resource")
     end
 
     def get_new_ids

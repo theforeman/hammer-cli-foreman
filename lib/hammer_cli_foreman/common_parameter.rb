@@ -10,8 +10,8 @@ module HammerCLIForeman
       resource ForemanApi::Resources::CommonParameter, "index"
 
       output do
-        field :name, "Name"
-        field :value, "Value"
+        field :name, _("Name")
+        field :value, _("Value")
       end
 
       apipie_options
@@ -20,15 +20,15 @@ module HammerCLIForeman
     class SetCommand < HammerCLIForeman::WriteCommand
 
       command_name "set"
-      desc "Set a global parameter."
+      desc _("Set a global parameter.")
 
-      success_message_for :create, "Created parameter [%{name}s] with value [%{value}s]."
-      success_message_for :update, "Parameter [%{name}s] updated to [%{value}s]."
+      success_message_for :create, _("Created parameter [%{name}s] with value [%{value}s].")
+      success_message_for :update, _("Parameter [%{name}s] updated to [%{value}s].")
 
       resource ForemanApi::Resources::CommonParameter
 
-      option "--name", "NAME", "parameter name", :required => true
-      option "--value", "VALUE", "parameter value", :required => true
+      option "--name", "NAME", _("parameter name"), :required => true
+      option "--value", "VALUE", _("parameter value"), :required => true
 
       def action
         @action ||= parameter_exist? ? :update : :create
@@ -58,8 +58,8 @@ module HammerCLIForeman
 
       identifiers :name
 
-      success_message "Global parameter [%{name}s] deleted."
-      failure_message "Could not delete the global parameter [%{name}s]"
+      success_message _("Global parameter [%{name}s] deleted.")
+      failure_message _("Could not delete the global parameter [%{name}s]")
       resource ForemanApi::Resources::CommonParameter, "destroy"
 
       apipie_options :without => :id
@@ -69,4 +69,4 @@ module HammerCLIForeman
   end
 end
 
-HammerCLI::MainCommand.subcommand 'global_parameter', "Manipulate global parameters.", HammerCLIForeman::CommonParameter
+HammerCLI::MainCommand.subcommand 'global_parameter', _("Manipulate global parameters."), HammerCLIForeman::CommonParameter
