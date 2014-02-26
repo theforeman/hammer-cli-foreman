@@ -39,10 +39,10 @@ module HammerCLIForeman
       #FIXME: remove custom retrieve_data after the api has support for listing names
       def extend_data(os)
         os["_os_name"] = Hash[os.select { |k, v| ["name", "major", "minor"].include? k }]
-        os["media_names"] = os["media"].collect{|m| m["medium"]["name"] } rescue []
-        os["architecture_names"] = os["architectures"].collect{|m| m["architecture"]["name"] } rescue []
-        os["ptable_names"] = os["ptables"].collect{|m| m["ptable"]["name"] } rescue []
-        os["config_template_names"] = os["config_templates"].collect{|m| m["config_template"]["name"] } rescue []
+        os["media_names"] = os["media"].collect{|m| m["name"] } rescue []
+        os["architecture_names"] = os["architectures"].collect{|m| m["name"] } rescue []
+        os["ptable_names"] = os["ptables"].collect{|m| m["name"] } rescue []
+        os["config_template_names"] = os["config_templates"].collect{|m| m["name"] } rescue []
         os["parameters"] = HammerCLIForeman::Parameter.get_parameters(resource_config, :operatingsystem, os)
         os
       end
