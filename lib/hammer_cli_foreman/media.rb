@@ -23,6 +23,11 @@ module HammerCLIForeman
         field :updated_at, "Updated at", Fields::Date
       end
 
+      def extend_data(res)
+        res['operatingsystem_ids'] = res['operatingsystems'].map { |e| e["id"] } rescue []
+        res
+      end
+
       apipie_options
     end
 
