@@ -58,12 +58,32 @@ describe HammerCLIForeman::Template do
     let(:cmd) { HammerCLIForeman::Template::InfoCommand.new("", ctx) }
 
     context "parameters" do
+      before(:each) do
+        template = {
+          'config_template' => {
+            'id' => 1, 'name' => 'PXE', 'type' => 'something',
+            'operatingsystems' => [ { 'id' => 1 }, { 'id' => 3 }, { 'id' =>4 } ]
+          }
+        }
+        mock_resource_method(:show, [template])
+      end
+
       it_should_accept "id", ["--id=1"]
       it_should_fail_with "no arguments"
     end
 
     context "output" do
       with_params ["--id=1"] do
+        before(:each) do
+          template = {
+            'config_template' => {
+              'id' => 1, 'name' => 'PXE', 'type' => 'something',
+              'operatingsystems' => [ { 'id' => 1 }, { 'id' => 3 }, { 'id' =>4 } ]
+            }
+          }
+          mock_resource_method(:show, [template])
+        end
+
         it_should_print_n_records 1
         it_should_print_columns ["Id", "Name", "Type", "OS ids"]
       end

@@ -41,6 +41,7 @@ module HammerCLIForeman
         else
           tpl["type"] = tpl["template_kind"]["name"] if tpl["template_kind"]
         end
+        tpl['operatingsystem_ids'] = tpl['operatingsystems'].map { |os| os['id'] }
         tpl
       end
 
