@@ -2,10 +2,10 @@ require 'hammer_cli'
 
 module Fields
 
-  class OSName < DataField
+  class OSName < Field
   end
 
-  class Server < DataField
+  class Server < Field
   end
 
 end
