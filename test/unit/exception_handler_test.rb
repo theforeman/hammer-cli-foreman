@@ -57,9 +57,9 @@ describe HammerCLIForeman::ExceptionHandler do
   end
 
   it "should print resource errors on resource not found exception" do
-   response = <<-RESPONSE
-   {"error":{"message":"Resource architecture not found by id '1'"}}
-   RESPONSE
+    response = <<-RESPONSE
+    {"error":{"message":"Resource architecture not found by id '1'"}}
+    RESPONSE
     ex = RestClient::ResourceNotFound.new(response)
     ex.stubs(:message).returns("")
 
@@ -69,13 +69,38 @@ describe HammerCLIForeman::ExceptionHandler do
   end
 
   it "should print exception message on resource not found exception without explicit message" do
-   response = '{"error": ""}'
+    response = '{"error": ""}'
     ex = RestClient::ResourceNotFound.new(response)
     ex.stubs(:message).returns("ResourceNotFound message")
 
     output.expects(:print_error).with(heading, "ResourceNotFound message")
     err_code = handler.handle_exception(ex, :heading => heading)
     err_code.must_equal HammerCLI::EX_NOT_FOUND
+  end
+
+  it "should print resource errors on internal error exception" do
+    response = <<-RESPONSE
+    {"error":{"message":"Some internal exception"}}
+    RESPONSE
+    ex = RestClient::InternalServerError.new(response)
+    ex.stubs(:message).returns("")
+
+    output.expects(:print_error).with(heading, "Some internal exception")
+    err_code = handler.handle_exception(ex, :heading => heading)
+    err_code.must_equal HammerCLI::EX_SOFTWARE
+  end
+
+  it "should print exception message on internal error exception without formatted message" do
+    response = <<-RESPONSE.gsub(/^\s+/, "")
+    Unformatted
+    lines
+    RESPONSE
+    ex = RestClient::InternalServerError.new(response)
+    ex.stubs(:message).returns(response)
+
+    output.expects(:print_error).with("Something went wrong", "Unformatted\nlines\n")
+    err_code = handler.handle_exception(ex, :heading => heading)
+    err_code.must_equal HammerCLI::EX_SOFTWARE
   end
 
 end
