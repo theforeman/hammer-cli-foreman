@@ -69,8 +69,8 @@ module HammerCLIForeman
 
       def extend_data(res)
         res['override_value_order'] = res['override_value_order'].split("\n")
-        res['_environments'] = res['environments'].map { |e| e['environment']['name']}
-        res['_environment_ids'] = res['environments'].map { |e| e['environment']['id']}
+        res['_environments'] = res['environments'].map { |e| e['name']}
+        res['_environment_ids'] = res['environments'].map { |e| e['id']}
         res
       end
 
