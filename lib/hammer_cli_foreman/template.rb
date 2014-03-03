@@ -4,6 +4,30 @@ module HammerCLIForeman
 
     resource ForemanApi::Resources::ConfigTemplate
 
+    module TemplateCreateUpdateCommons
+
+      def option_snippet
+        option_type == "snippet"
+      end
+
+      def option_template_kind_id
+        connection_options = {
+          :connector => HammerCLI::Apipie::ApipieConnector
+        }
+
+        connection = HammerCLI::Connection.create(
+          :template_kinds,
+          resource_config.merge(:definition => HammerCLI::Apipie::ResourceDefinition.new(ForemanApi::Resources::TemplateKind)),
+          connection_options
+        )
+
+        kinds = HammerCLIForeman.collection_to_common_format(connection.call(:index)[0])
+        table = kinds.inject({}){ |result, k| result.update(k["name"] => k["id"]) }
+        table[option_type]
+      end
+
+    end
+
     class ListCommand < HammerCLIForeman::ListCommand
 
       output do
@@ -15,8 +39,10 @@ module HammerCLIForeman
       def extend_data(tpl)
         if tpl["snippet"]
           tpl["type"] = "snippet"
+        elsif tpl["template_kind"]
+          tpl["type"] = tpl["template_kind"]["name"]
         else
-          tpl["type"] = tpl["template_kind"]["name"] if tpl["template_kind"]
+          tpl["type"] = tpl["template_kind_name"]
         end
         tpl
       end
@@ -38,10 +64,12 @@ module HammerCLIForeman
       def extend_data(tpl)
         if tpl["snippet"]
           tpl["type"] = "snippet"
+        elsif tpl["template_kind"]
+          tpl["type"] = tpl["template_kind"]["name"]
         else
-          tpl["type"] = tpl["template_kind"]["name"] if tpl["template_kind"]
+          tpl["type"] = tpl["template_kind_name"]
         end
-        tpl['operatingsystem_ids'] = tpl['operatingsystems'].map { |os| os['id'] }
+        tpl['operatingsystem_ids'] = tpl['operatingsystems'].map { |os| os['id'] } rescue []
         tpl
       end
 
@@ -85,23 +113,14 @@ module HammerCLIForeman
 
     class CreateCommand < HammerCLIForeman::CreateCommand
 
-      option "--file", "TEMPLATE", "Path to a file that contains the template", :attribute_name => :template, :required => true,
+      option "--file", "TEMPLATE", "Path to a file that contains the template", :attribute_name => :option_template, :required => true,
         :format => HammerCLI::Options::Normalizers::File.new
       option "--type", "TYPE", "Template type. Eg. snippet, script, provision", :required => true
 
       success_message "Config template created"
       failure_message "Could not create the config template"
 
-      def snippet
-        type == "snippet"
-      end
-
-      def template_kind_id
-        kinds = HammerCLIForeman.collection_to_common_format(
-                  ForemanApi::Resources::TemplateKind.new(resource_config).index()[0])
-        table = kinds.inject({}){ |result, k| result.update(k["name"] => k["id"]) }
-        table[type]
-      end
+      include TemplateCreateUpdateCommons
 
       apipie_options :without => [:template_combinations_attributes, :template, :snippet, :template_kind_id]
     end
@@ -109,7 +128,7 @@ module HammerCLIForeman
 
     class UpdateCommand < HammerCLIForeman::UpdateCommand
 
-      option "--file", "TEMPLATE", "Path to a file that contains the template", :attribute_name => :template,
+      option "--file", "TEMPLATE", "Path to a file that contains the template", :attribute_name => :option_template,
         :format => HammerCLI::Options::Normalizers::File.new
       option "--type", "TYPE", "Template type. Eg. snippet, script, provision"
 
@@ -118,16 +137,7 @@ module HammerCLIForeman
       success_message "Config template updated"
       failure_message "Could not update the config template"
 
-      def snippet
-        type == "snippet"
-      end
-
-      def template_kind_id
-        kinds = HammerCLIForeman.collection_to_common_format(
-                  ForemanApi::Resources::TemplateKind.new(resource_config).index()[0])
-        table = kinds.inject({}){ |result, k| result.update(k["name"] => k["id"]) }
-        table[type]
-      end
+      include TemplateCreateUpdateCommons
 
       apipie_options :without => [:template_combinations_attributes, :template, :snippet, :template_kind_id]
     end

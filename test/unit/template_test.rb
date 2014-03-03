@@ -120,7 +120,7 @@ describe HammerCLIForeman::Template do
     let(:cmd) { HammerCLIForeman::Template::CreateCommand.new("", ctx) }
 
     before :each do
-      cmd.stubs(:template_kind_id).returns(1)
+      cmd.stubs(:option_template_kind_id).returns(1)
     end
 
     context "parameters" do
@@ -138,7 +138,7 @@ describe HammerCLIForeman::Template do
     let(:cmd) { HammerCLIForeman::Template::UpdateCommand.new("", ctx) }
 
     before :each do
-      cmd.stubs(:template_kind_id).returns(1)
+      cmd.stubs(:option_template_kind_id).returns(1)
     end
 
     context "parameters" do
