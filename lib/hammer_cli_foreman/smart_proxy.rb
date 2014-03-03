@@ -70,7 +70,7 @@ module HammerCLIForeman
     end
 
 
-    class ImportPuppetClassesCommand < HammerCLI::Apipie::WriteCommand
+    class ImportPuppetClassesCommand < HammerCLIForeman::WriteCommand
 
       action :import_puppetclasses
 
