@@ -60,6 +60,7 @@ describe HammerCLIForeman::OperatingSystem do
         it_should_print_column "Architectures"
         it_should_print_column "Partition tables"
         it_should_print_column "Config templates"
+        it_should_print_column "Default OS templates"
         it_should_print_column "Parameters"
       end
     end
