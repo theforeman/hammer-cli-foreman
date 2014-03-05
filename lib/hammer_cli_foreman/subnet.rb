@@ -21,6 +21,7 @@ module HammerCLIForeman
 
       output ListCommand.output_definition do
         field :priority, "Priority"
+        field :dns_id, "DNS id"
         field :dns, "DNS", Fields::Server
         field :dns_primary, "Primary DNS"
         field :dns_secondary, "Secondary DNS"

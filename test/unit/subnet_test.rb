@@ -46,7 +46,7 @@ describe HammerCLIForeman::Subnet do
         it_should_print_n_records 1
         it_should_print_columns ["Id", "Name", "Network", "Mask"]
         it_should_print_columns ["Priority"]
-        it_should_print_columns ["DNS", "Primary DNS", "Secondary DNS"]
+        it_should_print_columns ["DNS", "DNS id", "Primary DNS", "Secondary DNS"]
         it_should_print_columns ["Domain ids", "TFTP", "TFTP id", "DHCP", "DHCP id"]
         it_should_print_columns ["vlan id", "Gateway", "From", "To"]
       end
