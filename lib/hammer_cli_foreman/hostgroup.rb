@@ -13,6 +13,11 @@ module HammerCLIForeman
         field :operatingsystem_id, "Operating System Id"
         field :subnet_id, "Subnet Id"
         field :domain_id, "Domain Id"
+        field :architecture_id, "Architecture Id"
+        field :ptable_id, "Partition Table Id"
+        field :medium_id, "Medium Id"
+        field :puppet_ca_proxy_id, "Puppet CA Proxy Id"
+        field :puppet_proxy_id, "Puppet Master Proxy Id"
         field :environment_id, "Environment Id"
         field :puppetclass_ids, "Puppetclass Ids", Fields::List
         field :ancestry, "Ancestry"
