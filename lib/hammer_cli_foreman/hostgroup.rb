@@ -2,6 +2,16 @@ require 'hammer_cli_foreman/smart_class_parameter'
 
 module HammerCLIForeman
 
+  module HostgroupUpdateCreateCommons
+
+    def request_params
+      params = method_options
+      params['hostgroup']['puppetclass_ids'] = option_puppetclass_ids
+      params
+    end
+
+  end
+
   class Hostgroup < HammerCLI::AbstractCommand
     class ListCommand < HammerCLIForeman::ListCommand
       resource ForemanApi::Resources::Hostgroup, "index"
@@ -49,6 +59,11 @@ module HammerCLIForeman
 
     class CreateCommand < HammerCLIForeman::CreateCommand
 
+      option "--puppetclass-ids", "PUPPETCLASS_IDS", " ",
+        :format => HammerCLI::Options::Normalizers::List.new
+
+      include HostgroupUpdateCreateCommons
+
       success_message "Hostgroup created"
       failure_message "Could not create the hostgroup"
       resource ForemanApi::Resources::Hostgroup, "create"
@@ -58,6 +73,11 @@ module HammerCLIForeman
 
 
     class UpdateCommand < HammerCLIForeman::UpdateCommand
+
+      option "--puppetclass-ids", "PUPPETCLASS_IDS", " ",
+        :format => HammerCLI::Options::Normalizers::List.new
+
+      include HostgroupUpdateCreateCommons
 
       identifiers :id
 
