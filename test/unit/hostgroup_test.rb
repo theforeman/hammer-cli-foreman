@@ -27,6 +27,8 @@ describe HammerCLIForeman::Hostgroup do
       it_should_print_n_records
       it_should_print_columns ["Id", "Name", "Label", "Operating System Id", "Subnet Id"]
       it_should_print_columns ["Domain Id", "Environment Id", "Puppetclass Ids", "Ancestry"]
+      it_should_print_columns ["Architecture Id", "Partition Table Id", "Medium Id"]
+      it_should_print_columns ["Puppet CA Proxy Id", "Puppet Master Proxy Id"]
     end
 
   end
