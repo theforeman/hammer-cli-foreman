@@ -2,6 +2,8 @@ require 'hammer_cli_foreman/report'
 require 'hammer_cli_foreman/puppet_class'
 require 'hammer_cli_foreman/smart_class_parameter'
 
+require 'highline/import'
+
 module HammerCLIForeman
 
   module CommonHostUpdateOptions
@@ -29,6 +31,10 @@ module HammerCLIForeman
       base.option "--partition-table-id", "PARTITION_TABLE", " "
       base.option "--puppetclass-ids", "PUPPETCLASS_IDS", " ",
         :format => HammerCLI::Options::Normalizers::List.new
+      base.option "--root-password", "ROOT_PW", " "
+      base.option "--ask-root-password", "ASK_ROOT_PW", " ",
+        :format => HammerCLI::Options::Normalizers::Bool.new
+
 
       bme_options = {}
       bme_options[:default] = 'true' if base.action.to_sym == :create
@@ -50,6 +56,11 @@ module HammerCLIForeman
         :format => HammerCLI::Options::Normalizers::KeyValueList.new
     end
 
+    def self.ask_password
+      prompt = "Enter the root password for the host: "
+      ask(prompt) {|q| q.echo = false}
+    end
+
     def request_params
       params = super
 
@@ -69,6 +80,12 @@ module HammerCLIForeman
         params['host']['compute_attributes']['nics_attributes'] = nested_attributes(option_interface_list)
       else
         params['host']['interfaces_attributes'] = nested_attributes(option_interface_list)
+      end
+
+      params['host']['root_pass'] = option_root_password unless option_root_password.nil?
+
+      if option_ask_root_password
+        params['host']['root_pass'] = HammerCLIForeman::CommonHostUpdateOptions::ask_password
       end
 
       params

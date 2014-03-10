@@ -197,11 +197,16 @@ describe HammerCLIForeman::Host do
 
     let(:cmd) { HammerCLIForeman::Host::CreateCommand.new("", ctx) }
 
+    before :each do
+      HammerCLIForeman::CommonHostUpdateOptions.stubs(:ask_password).returns("password")
+    end
+
     context "parameters" do
       it_should_accept "name, environment_id, architecture_id, domain_id, puppet_proxy_id, operatingsystem_id and more",
           ["--name=host", "--environment-id=1", "--architecture-id=1", "--domain-id=1", "--puppet-proxy-id=1", "--operatingsystem-id=1",
             "--ip=1.2.3.4", "--mac=11:22:33:44:55:66", "--medium-id=1", "--partition-table-id=1", "--subnet-id=1",
-            "--sp-subnet-id=1", "--model-id=1", "--hostgroup-id=1", "--owner-id=1", '--puppet-ca-proxy-id=1', '--puppetclass-ids']
+            "--sp-subnet-id=1", "--model-id=1", "--hostgroup-id=1", "--owner-id=1", '--puppet-ca-proxy-id=1', '--puppetclass-ids',
+            "--root-password=pwd", "--ask-root-password=true"]
       it_should_fail_with "name or id missing",
           ["--environment-id=1", "--architecture-id=1", "--domain-id=1", "--puppet-proxy-id=1", "--operatingsystem-id=1"]
       it_should_fail_with "environment_id missing",
@@ -217,7 +222,8 @@ describe HammerCLIForeman::Host do
 
       with_params ["--name=host", "--environment-id=1", "--architecture-id=1", "--domain-id=1", "--puppet-proxy-id=1", "--operatingsystem-id=1",
             "--ip=1.2.3.4", "--mac=11:22:33:44:55:66", "--medium-id=1", "--partition-table-id=1", "--subnet-id=1",
-            "--sp-subnet-id=1", "--model-id=1", "--hostgroup-id=1", "--owner-id=1", '--puppet-ca-proxy-id=1', '--puppetclass-ids'] do
+            "--sp-subnet-id=1", "--model-id=1", "--hostgroup-id=1", "--owner-id=1", '--puppet-ca-proxy-id=1', '--puppetclass-ids',
+            "--root-password=pwd", "--ask-root-password=true"] do
         it_should_call_action_and_test_params(:create) { |par| par["host"]["managed"] == true }
         it_should_call_action_and_test_params(:create) { |par| par["host"]["build"] == true }
         it_should_call_action_and_test_params(:create) { |par| par["host"]["enabled"] == true }
@@ -229,12 +235,17 @@ describe HammerCLIForeman::Host do
 
     let(:cmd) { HammerCLIForeman::Host::UpdateCommand.new("", ctx) }
 
+    before :each do
+      HammerCLIForeman::CommonHostUpdateOptions.stubs(:ask_password).returns("password")
+    end
+
     context "parameters" do
       it_should_accept "name", ["--name=host", "--new-name=host2"]
       it_should_accept "id and more", ["--id=1", "--new-name=host2", "--environment-id=1", "--architecture-id=1",
             "--domain-id=1", "--puppet-proxy-id=1", "--operatingsystem-id=1",
             "--ip=1.2.3.4", "--mac=11:22:33:44:55:66", "--medium-id=1", "--partition-table-id=1", "--subnet-id=1",
-            "--sp-subnet-id=1", "--model-id=1", "--hostgroup-id=1", "--owner-id=1", '--puppet-ca-proxy-id=1']
+            "--sp-subnet-id=1", "--model-id=1", "--hostgroup-id=1", "--owner-id=1", '--puppet-ca-proxy-id=1',
+            "--root-password=pwd", "--ask-root-password=true"]
       it_should_fail_with "no params", []
       it_should_fail_with "name or id missing", ["--new-name=host2"]
 
