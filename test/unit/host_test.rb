@@ -57,6 +57,7 @@ describe HammerCLIForeman::Host do
         it_should_print_columns ["Created at", "Updated at", "Installed at", "Last report"]
         it_should_print_columns ["Puppet CA Proxy Id", "Medium Id", "Model Id", "Owner Id", "Subnet Id", "Domain Id"]
         it_should_print_columns ["Puppet Proxy Id", "Owner Type", "Partition Table Id", "Architecture Id", "Image Id", "Compute Resource Id"]
+        it_should_print_columns ["BMC Network Interfaces", "Managed Network Interfaces"]
         it_should_print_columns ["Comment"]
       end
     end
