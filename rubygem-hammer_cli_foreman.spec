@@ -9,7 +9,7 @@
 Summary: Universal command-line interface for Foreman
 Name: rubygem-%{gemname}
 Version: 0.0.18
-Release: 2%{?dist}
+Release: 3%{?dist}
 Group: Development/Languages
 License: GPLv3
 URL: http://github.com/theforeman/hammer-cli-foreman
@@ -74,6 +74,9 @@ cp -pa .%{gem_dir}/* \
 
 
 %changelog
+* Wed Mar 12 2014 Jason Montleon <jmontleo@redhat.com> 0.0.18-3
+- add cli_config.yml (jmontleo@redhat.com)
+
 * Wed Mar 12 2014 Jason Montleon <jmontleo@redhat.com> 0.0.18-2
 - new package built with tito
 
