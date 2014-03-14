@@ -120,6 +120,10 @@ module HammerCLIForeman
       def extend_data(host)
         host["environment_name"] = host["environment"]["environment"]["name"] rescue nil
         host["parameters"] = HammerCLIForeman::Parameter.get_parameters(resource_config, :host, host)
+        host["_bmc_interfaces"] =
+          host["interfaces"].select{|intfs| intfs["type"] == "Nic::BMC" } rescue []
+        host["_managed_interfaces"] =
+          host["interfaces"].select{|intfs| intfs["type"] == "Nic::Managed" } rescue []
         host
       end
 
@@ -167,6 +171,31 @@ module HammerCLIForeman
         collection :parameters, _("Parameters") do
           field nil, nil, Fields::KeyValue
         end
+
+        collection :_bmc_interfaces, "BMC Network Interfaces", :hide_blank => true do
+          field :id, "Id"
+          field :name, "Name"
+          field :ip, "IP"
+          field :mac, "MAC"
+          field :domain_id, "Domain Id"
+          field :domain_name, "Domain Name"
+          field :subnet_id, "Subnet Id"
+          field :subnet_name, "Subnet Name"
+          field :username, "BMC Username"
+          field :password, "BMC Password"
+        end
+
+        collection :_managed_interfaces, "Managed Network Interfaces", :hide_blank => true do
+          field :id, "Id"
+          field :name, "Name"
+          field :ip, "IP"
+          field :mac, "MAC"
+          field :domain_id, "Domain Id"
+          field :domain_name, "Domain Name"
+          field :subnet_id, "Subnet Id"
+          field :subnet_name, "Subnet Name"
+        end
+
       end
 
       apipie_options
