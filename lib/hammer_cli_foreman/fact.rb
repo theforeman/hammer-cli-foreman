@@ -9,9 +9,9 @@ module HammerCLIForeman
       apipie_options
 
       output do
-        field :host, "Host"
-        field :fact, "Fact"
-        field :value, "Value"
+        field :host, _("Host")
+        field :fact, _("Fact")
+        field :value, _("Value")
       end
 
       def retrieve_data
@@ -33,4 +33,4 @@ module HammerCLIForeman
 
 end
 
-HammerCLI::MainCommand.subcommand 'fact', "Search facts.", HammerCLIForeman::Fact
+HammerCLI::MainCommand.subcommand 'fact', _("Search facts."), HammerCLIForeman::Fact

@@ -9,9 +9,9 @@ module HammerCLIForeman
 
       #FIXME: search by unknown type returns 500 from the server, propper error handling should resove this
       output do
-        field :id, "Id"
-        field :name, "Name"
-        field :url, "URL"
+        field :id, _("Id")
+        field :name, _("Name")
+        field :url, _("URL")
       end
 
       apipie_options
@@ -23,9 +23,9 @@ module HammerCLIForeman
       action :show
 
       output ListCommand.output_definition do
-        field :_features,  "Features",   Fields::List
-        field :created_at, "Created at", Fields::Date
-        field :updated_at, "Updated at", Fields::Date
+        field :_features, _( "Features"),   Fields::List
+        field :created_at, _("Created at"), Fields::Date
+        field :updated_at, _("Updated at"), Fields::Date
       end
 
       def extend_data(proxy)
@@ -41,8 +41,8 @@ module HammerCLIForeman
 
       action :create
 
-      success_message "Smart proxy created"
-      failure_message "Could not create the proxy"
+      success_message _("Smart proxy created")
+      failure_message _("Could not create the proxy")
 
       apipie_options
     end
@@ -52,8 +52,8 @@ module HammerCLIForeman
 
       action :update
 
-      success_message "Smart proxy updated"
-      failure_message "Could not update the proxy"
+      success_message _("Smart proxy updated")
+      failure_message _("Could not update the proxy")
 
       apipie_options
     end
@@ -63,8 +63,8 @@ module HammerCLIForeman
 
       action :destroy
 
-      success_message "Smart proxy deleted"
-      failure_message "Could not delete the proxy"
+      success_message _("Smart proxy deleted")
+      failure_message _("Could not delete the proxy")
 
       apipie_options
     end
@@ -75,10 +75,10 @@ module HammerCLIForeman
       action :import_puppetclasses
 
       command_name    "import_classes"
-      success_message "Puppet classes were imported"
-      failure_message "Import of puppet classes failed"
+      success_message _("Puppet classes were imported")
+      failure_message _("Import of puppet classes failed")
 
-      option "--dryrun", :flag, "Do not run the import"
+      option "--dryrun", :flag, _("Do not run the import")
 
       apipie_options :without => [:smart_proxy_id, :dryrun]
 
@@ -94,4 +94,4 @@ module HammerCLIForeman
 
 end
 
-HammerCLI::MainCommand.subcommand 'proxy', "Manipulate smart proxies.", HammerCLIForeman::SmartProxy
+HammerCLI::MainCommand.subcommand 'proxy', _("Manipulate smart proxies."), HammerCLIForeman::SmartProxy

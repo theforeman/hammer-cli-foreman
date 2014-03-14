@@ -11,8 +11,8 @@ module HammerCLIForeman
       resource ForemanApi::Resources::Environment, "index"
 
       output do
-        field :id, "Id"
-        field :name, "Name"
+        field :id, _("Id")
+        field :name, _("Name")
       end
 
       apipie_options
@@ -23,8 +23,8 @@ module HammerCLIForeman
       resource ForemanApi::Resources::Environment, "show"
 
       output ListCommand.output_definition do
-        field :created_at, "Created at", Fields::Date
-        field :updated_at, "Updated at", Fields::Date
+        field :created_at, _("Created at"), Fields::Date
+        field :updated_at, _("Updated at"), Fields::Date
       end
 
       apipie_options
@@ -33,8 +33,8 @@ module HammerCLIForeman
 
     class CreateCommand < HammerCLIForeman::CreateCommand
 
-      success_message "Environment created"
-      failure_message "Could not create the environment"
+      success_message _("Environment created")
+      failure_message _("Could not create the environment")
       resource ForemanApi::Resources::Environment, "create"
 
       apipie_options
@@ -43,8 +43,8 @@ module HammerCLIForeman
 
     class UpdateCommand < HammerCLIForeman::UpdateCommand
 
-      success_message "Environment updated"
-      failure_message "Could not update the environment"
+      success_message _("Environment updated")
+      failure_message _("Could not update the environment")
       resource ForemanApi::Resources::Environment, "update"
 
       apipie_options
@@ -53,8 +53,8 @@ module HammerCLIForeman
 
     class DeleteCommand < HammerCLIForeman::DeleteCommand
 
-      success_message "Environment deleted"
-      failure_message "Could not delete the environment"
+      success_message _("Environment deleted")
+      failure_message _("Could not delete the environment")
       resource ForemanApi::Resources::Environment, "destroy"
 
       apipie_options
@@ -63,7 +63,7 @@ module HammerCLIForeman
     class SCParamsCommand < HammerCLIForeman::SmartClassParametersList
 
       apipie_options :without => [:host_id, :hostgroup_id, :puppetclass_id, :environment_id]
-      option ['--id', '--name'], 'ENVIRONMENT_ID', 'environment id/name',
+      option ['--id', '--name'], 'ENVIRONMENT_ID', _('environment id/name'),
             :required => true, :attribute_name => :environment_id
     end
 

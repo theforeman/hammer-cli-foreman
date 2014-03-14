@@ -7,10 +7,10 @@ module HammerCLIForeman
     class ListCommand < HammerCLIForeman::ListCommand
 
       output do
-        field :id, "Id"
-        field :_os_name, "Name", Fields::OSName
-        field :release_name, "Release name"
-        field :family, "Family"
+        field :id, _("Id")
+        field :_os_name, _("Name"), Fields::OSName
+        field :release_name, _("Release name")
+        field :family, _("Family")
       end
 
       def extend_data(os)
@@ -27,11 +27,11 @@ module HammerCLIForeman
       identifiers :id
 
       output ListCommand.output_definition do
-        field :media_names, "Installation media", Fields::List
-        field :architecture_names, "Architectures", Fields::List
-        field :ptable_names, "Partition tables", Fields::List
-        field :config_template_names, "Config templates", Fields::List
-        collection :parameters, "Parameters" do
+        field :media_names, _("Installation media"), Fields::List
+        field :architecture_names, _("Architectures"), Fields::List
+        field :ptable_names, _("Partition tables"), Fields::List
+        field :config_template_names, _("Config templates"), Fields::List
+        collection :parameters, _("Parameters") do
           field nil, nil, Fields::KeyValue
         end
       end
@@ -54,17 +54,17 @@ module HammerCLIForeman
     class CreateCommand < HammerCLIForeman::CreateCommand
 
       #FIXME: replace with apipie_options when they are added to the api docs
-      option "--architecture-ids", "ARCH_IDS", "set associated architectures",
+      option "--architecture-ids", "ARCH_IDS", _("set associated architectures"),
         :format => HammerCLI::Options::Normalizers::List.new
-      option "--config-template-ids", "CONFIG_TPL_IDS", "set associated templates",
+      option "--config-template-ids", "CONFIG_TPL_IDS", _("set associated templates"),
         :format => HammerCLI::Options::Normalizers::List.new
-      option "--medium-ids", "MEDIUM_IDS", "set associated installation media",
+      option "--medium-ids", "MEDIUM_IDS", _("set associated installation media"),
         :format => HammerCLI::Options::Normalizers::List.new
-      option "--ptable-ids", "PTABLE_IDS", "set associated partition tables",
+      option "--ptable-ids", "PTABLE_IDS", _("set associated partition tables"),
         :format => HammerCLI::Options::Normalizers::List.new
 
-      success_message "Operating system created"
-      failure_message "Could not create the operating system"
+      success_message _("Operating system created")
+      failure_message _("Could not create the operating system")
 
       def request_params
         params = method_options
@@ -82,19 +82,19 @@ module HammerCLIForeman
     class UpdateCommand < HammerCLIForeman::UpdateCommand
 
       #FIXME: replace with apipie_options when they are added to the api docs
-      option "--architecture-ids", "ARCH_IDS", "set associated architectures",
+      option "--architecture-ids", "ARCH_IDS", _("set associated architectures"),
         :format => HammerCLI::Options::Normalizers::List.new
-      option "--config-template-ids", "CONFIG_TPL_IDS", "set associated templates",
+      option "--config-template-ids", "CONFIG_TPL_IDS", _("set associated templates"),
         :format => HammerCLI::Options::Normalizers::List.new
-      option "--medium-ids", "MEDIUM_IDS", "set associated installation media",
+      option "--medium-ids", "MEDIUM_IDS", _("set associated installation media"),
         :format => HammerCLI::Options::Normalizers::List.new
-      option "--ptable-ids", "PTABLE_IDS", "set associated partition tables",
+      option "--ptable-ids", "PTABLE_IDS", _("set associated partition tables"),
         :format => HammerCLI::Options::Normalizers::List.new
 
       identifiers :id
 
-      success_message "Operating system updated"
-      failure_message "Could not update the operating system"
+      success_message _("Operating system updated")
+      failure_message _("Could not update the operating system")
 
       def request_params
         params = method_options
@@ -113,8 +113,8 @@ module HammerCLIForeman
 
       identifiers :id
 
-      success_message "Operating system deleted"
-      failure_message "Could not delete the operating system"
+      success_message _("Operating system deleted")
+      failure_message _("Could not delete the operating system")
 
       apipie_options
     end
@@ -123,14 +123,14 @@ module HammerCLIForeman
 
       resource ForemanApi::Resources::Parameter
 
-      desc "Create or update parameter for an operating system."
+      desc _("Create or update parameter for an operating system.")
 
       #FIXME: add option --os-label when api supports it
-      option "--os-id", "OS_ID", "id of the operating system the parameter is being set for"
+      option "--os-id", "OS_ID", _("id of the operating system the parameter is being set for")
 
-      success_message_for :update, "Operating system parameter updated"
-      success_message_for :create, "New operating system parameter created"
-      failure_message "Could not set operating system parameter"
+      success_message_for :update, _("Operating system parameter updated")
+      success_message_for :create, _("New operating system parameter created")
+      failure_message _("Could not set operating system parameter")
 
       def validate_options
         super
@@ -149,11 +149,11 @@ module HammerCLIForeman
 
       resource ForemanApi::Resources::Parameter
 
-      desc "Delete parameter for an operating system."
+      desc _("Delete parameter for an operating system.")
 
       #FIXME: add option --os-label when api supports it
-      option "--os-id", "OS_ID", "id of the operating system the parameter is being deleted for"
-      success_message "operating system parameter deleted"
+      option "--os-id", "OS_ID", _("id of the operating system the parameter is being deleted for")
+      success_message _("operating system parameter deleted")
 
       def validate_options
         super

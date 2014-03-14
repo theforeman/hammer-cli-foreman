@@ -5,8 +5,8 @@ module HammerCLIForeman
       resource ForemanApi::Resources::Domain, "index"
 
       output do
-        field :id, "Id"
-        field :name, "Name"
+        field :id, _("Id")
+        field :name, _("Name")
       end
 
       apipie_options
@@ -18,11 +18,11 @@ module HammerCLIForeman
       resource ForemanApi::Resources::Domain, "show"
 
       output ListCommand.output_definition do
-        field :fullname, "Description"
-        field :dns_id, "DNS Id"
-        field :created_at, "Created at", Fields::Date
-        field :updated_at, "Updated at", Fields::Date
-        collection :parameters, "Parameters" do
+        field :fullname, _("Description")
+        field :dns_id, _("DNS Id")
+        field :created_at, _("Created at"), Fields::Date
+        field :updated_at, _("Updated at"), Fields::Date
+        collection :parameters, _("Parameters") do
           field nil, nil, Fields::KeyValue
         end
       end
@@ -38,30 +38,30 @@ module HammerCLIForeman
 
     class CreateCommand < HammerCLIForeman::CreateCommand
 
-      success_message "Domain [%{name}s] created"
-      failure_message "Could not create the domain"
+      success_message _("Domain [%{name}s] created")
+      failure_message _("Could not create the domain")
       resource ForemanApi::Resources::Domain, "create"
 
       apipie_options :without => [:domain_parameters_attributes, :fullname]
-      option "--description", "DESC", "Full name describing the domain", :attribute_name => :option_fullname
+      option "--description", "DESC", _("Full name describing the domain"), :attribute_name => :option_fullname
     end
 
 
     class UpdateCommand < HammerCLIForeman::UpdateCommand
 
-      success_message "Domain [%{name}s] updated"
-      failure_message "Could not update the domain"
+      success_message _("Domain [%{name}s] updated")
+      failure_message _("Could not update the domain")
       resource ForemanApi::Resources::Domain, "update"
 
       apipie_options :without => [:domain_parameters_attributes, :name, :id, :fullname]
-      option "--description", "DESC", "Full name describing the domain", :attribute_name => :option_fullname
+      option "--description", "DESC", _("Full name describing the domain"), :attribute_name => :option_fullname
     end
 
 
     class DeleteCommand < HammerCLIForeman::DeleteCommand
 
-      success_message "Domain [%{name}s] deleted"
-      failure_message "Could not delete the domain"
+      success_message _("Domain [%{name}s] deleted")
+      failure_message _("Could not delete the domain")
       resource ForemanApi::Resources::Domain, "destroy"
 
       apipie_options
@@ -72,14 +72,14 @@ module HammerCLIForeman
 
       resource ForemanApi::Resources::Parameter
 
-      desc "Create or update parameter for a domain."
+      desc _("Create or update parameter for a domain.")
 
-      option "--domain-name", "DOMAIN_NAME", "name of the domain the parameter is being set for"
-      option "--domain-id", "DOMAIN_ID", "id of the domain the parameter is being set for"
+      option "--domain-name", "DOMAIN_NAME", _("name of the domain the parameter is being set for")
+      option "--domain-id", "DOMAIN_ID", _("id of the domain the parameter is being set for")
 
-      success_message_for :update, "Domain parameter updated"
-      success_message_for :create, "New domain parameter created"
-      failure_message "Could not set domain parameter"
+      success_message_for :update, _("Domain parameter updated")
+      success_message_for :create, _("New domain parameter created")
+      failure_message _("Could not set domain parameter")
 
       def validate_options
         super
@@ -98,12 +98,12 @@ module HammerCLIForeman
 
       resource ForemanApi::Resources::Parameter
 
-      desc "Delete parameter for a domain."
+      desc _("Delete parameter for a domain.")
 
-      option "--domain-name", "DOMAIN_NAME", "name of the domain the parameter is being deleted for"
-      option "--domain-id", "DOMAIN_ID", "id of the domain the parameter is being deleted for"
+      option "--domain-name", "DOMAIN_NAME", _("name of the domain the parameter is being deleted for")
+      option "--domain-id", "DOMAIN_ID", _("id of the domain the parameter is being deleted for")
 
-      success_message "Domain parameter deleted"
+      success_message _("Domain parameter deleted")
 
       def validate_options
         super
@@ -122,5 +122,5 @@ module HammerCLIForeman
 
 end
 
-HammerCLI::MainCommand.subcommand 'domain', "Manipulate domains.", HammerCLIForeman::Domain
+HammerCLI::MainCommand.subcommand 'domain', _("Manipulate domains."), HammerCLIForeman::Domain
 

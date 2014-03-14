@@ -7,16 +7,16 @@ module HammerCLIForeman
     class ListCommand < HammerCLIForeman::ListCommand
 
       output do
-        field :id, "Id"
-        field :host_name, "Host"
-        field :reported_at, "Last report", Fields::Date
+        field :id, _("Id")
+        field :host_name, _("Host")
+        field :reported_at, _("Last report"), Fields::Date
         from "status" do
-          field :applied, "Applied"
-          field :restarted, "Restarted"
-          field :failed, "Failed"
-          field :failed_restarts, "Restart Failures"
-          field :skipped, "Skipped"
-          field :pending, "Pending"
+          field :applied, _("Applied")
+          field :restarted, _("Restarted")
+          field :failed, _("Failed")
+          field :failed_restarts, _("Restart Failures")
+          field :skipped, _("Skipped")
+          field :pending, _("Pending")
         end
       end
 
@@ -29,42 +29,42 @@ module HammerCLIForeman
       identifiers :id
 
       output do
-        field :id, "Id"
-        field :host_name, "Host"
-        field :reported_at, "Reported at", Fields::Date
-        label "Report status" do
+        field :id, _("Id")
+        field :host_name, _("Host")
+        field :reported_at, _("Reported at"), Fields::Date
+        label _("Report status") do
           from "status" do
-            field :applied, "Applied"
-            field :restarted, "Restarted"
-            field :failed, "Failed"
-            field :failed_restarts, "Restart Failures"
-            field :skipped, "Skipped"
-            field :pending, "Pending"
+            field :applied, _("Applied")
+            field :restarted, _("Restarted")
+            field :failed, _("Failed")
+            field :failed_restarts, _("Restart Failures")
+            field :skipped, _("Skipped")
+            field :pending, _("Pending")
           end
         end
-        label "Report metrics" do
+        label _("Report metrics") do
           from "metrics" do
             from "time" do
-              field :config_retrieval, "config_retrieval"
-              field :exec, "exec"
-              field :file, "file"
-              field :package, "package"
-              field :service, "service"
-              field :user, "user"
-              field :yumrepo, "yumrepo"
-              field :filebucket, "filebucket"
-              field :cron, "cron"
-              field :total, "total"
+              field :config_retrieval, _("config_retrieval")
+              field :exec, _("exec")
+              field :file, _("file")
+              field :package, _("package")
+              field :service, _("service")
+              field :user, _("user")
+              field :yumrepo, _("yumrepo")
+              field :filebucket, _("filebucket")
+              field :cron, _("cron")
+              field :total, _("total")
             end
           end
         end
-        field :logs, "Logs", Fields::Collection do
+        field :logs, _("Logs"), Fields::Collection do
           from :log do
             from :source do
-              field :source, "Resource"
+              field :source, _("Resource")
             end
             from :message do
-              field :message, "Message"
+              field :message, _("Message")
             end
           end
         end
@@ -76,8 +76,8 @@ module HammerCLIForeman
 
     class DeleteCommand < HammerCLIForeman::DeleteCommand
       identifiers :id
-      success_message "Report has been deleted"
-      failure_message "Could not delete the report"
+      success_message _("Report has been deleted")
+      failure_message _("Could not delete the report")
 
       apipie_options
     end
@@ -88,5 +88,5 @@ module HammerCLIForeman
 
 end
 
-HammerCLI::MainCommand.subcommand 'report', "Browse and read reports.", HammerCLIForeman::Report
+HammerCLI::MainCommand.subcommand 'report', _("Browse and read reports."), HammerCLIForeman::Report
 
