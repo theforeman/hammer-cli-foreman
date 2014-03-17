@@ -61,11 +61,11 @@ cp -pa .%{gem_dir}/* \
 %files
 %dir %{geminstdir}
 %{geminstdir}/lib
+%{geminstdir}/locale
 %{_sysconfdir}/foreman
 %config(noreplace) %{_sysconfdir}/foreman/cli_config.yml
 %exclude %{gem_dir}/cache/%{gemname}-%{version}.gem
 %{gem_dir}/specifications/%{gemname}-%{version}.gemspec
-
 %files doc
 %doc %{gem_dir}/doc/%{gemname}-%{version}
 %doc %{geminstdir}/README.md
