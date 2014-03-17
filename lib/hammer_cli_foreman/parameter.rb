@@ -26,6 +26,7 @@ module HammerCLIForeman
     class SetCommand < HammerCLI::Apipie::Command
 
       include HammerCLI::Messages
+      include HammerCLIForeman::ConnectionSetup
 
       option "--name", "NAME", _("parameter name"), :required => true
       option "--value", "VALUE", _("parameter value"), :required => true
