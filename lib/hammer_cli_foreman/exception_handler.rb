@@ -38,7 +38,7 @@ module HammerCLIForeman
 
 
     def handle_forbidden(e)
-      print_error "Forbidden - server refused to process the request"
+      print_error _("Forbidden - server refused to process the request")
       log_full_error e
       HammerCLI::EX_NOPERM
     end

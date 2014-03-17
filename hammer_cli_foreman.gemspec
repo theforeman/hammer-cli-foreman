@@ -19,7 +19,7 @@ EOF
 
 
 
-  s.files            = Dir['{lib,doc,test}/**/*', 'README*']
+  s.files            = Dir['{lib,doc,test,locale}/**/*', 'README*']
   s.test_files       = Dir['{test}/**/*']
   s.extra_rdoc_files = Dir['{doc}/**/*', 'README*']
   s.require_paths = ["lib"]

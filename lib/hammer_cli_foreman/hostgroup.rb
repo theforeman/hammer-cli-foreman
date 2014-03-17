@@ -17,20 +17,20 @@ module HammerCLIForeman
       resource ForemanApi::Resources::Hostgroup, "index"
 
       output do
-        field :id, "Id"
-        field :name, "Name"
-        field :label, "Label"
-        field :operatingsystem_id, "Operating System Id"
-        field :subnet_id, "Subnet Id"
-        field :domain_id, "Domain Id"
-        field :architecture_id, "Architecture Id"
-        field :ptable_id, "Partition Table Id"
-        field :medium_id, "Medium Id"
-        field :puppet_ca_proxy_id, "Puppet CA Proxy Id"
-        field :puppet_proxy_id, "Puppet Master Proxy Id"
-        field :environment_id, "Environment Id"
-        field :puppetclass_ids, "Puppetclass Ids", Fields::List
-        field :ancestry, "Ancestry"
+        field :id, _("Id")
+        field :name, _("Name")
+        field :label, _("Label")
+        field :operatingsystem_id, _("Operating System Id")
+        field :subnet_id, _("Subnet Id")
+        field :domain_id, _("Domain Id")
+        field :architecture_id, _("Architecture Id")
+        field :ptable_id, _("Partition Table Id")
+        field :medium_id, _("Medium Id")
+        field :puppet_ca_proxy_id, _("Puppet CA Proxy Id")
+        field :puppet_proxy_id, _("Puppet Master Proxy Id")
+        field :environment_id, _("Environment Id")
+        field :puppetclass_ids, _("Puppetclass Ids"), Fields::List
+        field :ancestry, _("Ancestry")
       end
 
       apipie_options
@@ -43,7 +43,7 @@ module HammerCLIForeman
       identifiers :id
 
       output ListCommand.output_definition do
-        collection :parameters, "Parameters" do
+        collection :parameters, _("Parameters") do
           field nil, nil, Fields::KeyValue
         end
       end
@@ -64,8 +64,8 @@ module HammerCLIForeman
 
       include HostgroupUpdateCreateCommons
 
-      success_message "Hostgroup created"
-      failure_message "Could not create the hostgroup"
+      success_message _("Hostgroup created")
+      failure_message _("Could not create the hostgroup")
       resource ForemanApi::Resources::Hostgroup, "create"
 
       apipie_options
@@ -81,8 +81,8 @@ module HammerCLIForeman
 
       identifiers :id
 
-      success_message "Hostgroup updated"
-      failure_message "Could not update the hostgroup"
+      success_message _("Hostgroup updated")
+      failure_message _("Could not update the hostgroup")
       resource ForemanApi::Resources::Hostgroup, "update"
 
       apipie_options
@@ -93,8 +93,8 @@ module HammerCLIForeman
 
       identifiers :id
 
-      success_message "Hostgroup deleted"
-      failure_message "Could not delete the hostgroup"
+      success_message _("Hostgroup deleted")
+      failure_message _("Could not delete the hostgroup")
       resource ForemanApi::Resources::Hostgroup, "destroy"
 
       apipie_options
@@ -128,13 +128,13 @@ module HammerCLIForeman
 
       resource ForemanApi::Resources::Parameter
 
-      desc "Create or update parameter for a hostgroup."
+      desc _("Create or update parameter for a hostgroup.")
 
-      option "--hostgroup-id", "HOSTGROUP_ID", "id of the hostgroup the parameter is being set for", :required => true
+      option "--hostgroup-id", "HOSTGROUP_ID", _("id of the hostgroup the parameter is being set for"), :required => true
 
-      success_message_for :update, "Hostgroup parameter updated"
-      success_message_for :create, "New hostgroup parameter created"
-      failure_message "Could not set hostgroup parameter"
+      success_message_for :update, _("Hostgroup parameter updated")
+      success_message_for :create, _("New hostgroup parameter created")
+      failure_message _("Could not set hostgroup parameter")
 
       def base_action_params
         {
@@ -148,11 +148,11 @@ module HammerCLIForeman
 
       resource ForemanApi::Resources::Parameter
 
-      desc "Delete parameter for a hostgroup."
+      desc _("Delete parameter for a hostgroup.")
 
-      option "--hostgroup-id", "HOSTGROUP_ID", "id of the hostgroup the parameter is being deleted for", :required => true
+      option "--hostgroup-id", "HOSTGROUP_ID", _("id of the hostgroup the parameter is being deleted for"), :required => true
 
-      success_message "Hostgroup parameter deleted"
+      success_message _("Hostgroup parameter deleted")
 
       def base_action_params
         {
@@ -165,7 +165,7 @@ module HammerCLIForeman
     class SCParamsCommand < HammerCLIForeman::SmartClassParametersList
 
       apipie_options :without => [:host_id, :hostgroup_id, :puppetclass_id, :environment_id]
-      option ['--id', '--name'], 'HOSTGROUP_ID', 'hostgroup id/name',
+      option ['--id', '--name'], 'HOSTGROUP_ID', _('hostgroup id/name'),
             :attribute_name => :option_hostgroup_id, :required => true
     end
 
@@ -175,5 +175,5 @@ module HammerCLIForeman
 
 end
 
-HammerCLI::MainCommand.subcommand 'hostgroup', "Manipulate hostgroups.", HammerCLIForeman::Hostgroup
+HammerCLI::MainCommand.subcommand 'hostgroup', _("Manipulate hostgroups."), HammerCLIForeman::Hostgroup
 

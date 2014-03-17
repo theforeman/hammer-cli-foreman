@@ -40,13 +40,13 @@ module HammerCLIForeman
       bme_options[:format] = HammerCLI::Options::Normalizers::Bool.new
       base.option "--enabled", "ENABLED", " ",  bme_options
 
-      base.option "--parameters", "PARAMS", "Host parameters.",
+      base.option "--parameters", "PARAMS", _("Host parameters."),
         :format => HammerCLI::Options::Normalizers::KeyValueList.new
-      base.option "--compute-attributes", "COMPUTE_ATTRS", "Compute resource attributes.",
+      base.option "--compute-attributes", "COMPUTE_ATTRS", _("Compute resource attributes."),
         :format => HammerCLI::Options::Normalizers::KeyValueList.new
-      base.option "--volume", "VOLUME", "Volume parameters", :multivalued => true,
+      base.option "--volume", "VOLUME", _("Volume parameters"), :multivalued => true,
         :format => HammerCLI::Options::Normalizers::KeyValueList.new
-      base.option "--interface", "INTERFACE", "Interface parameters.", :multivalued => true,
+      base.option "--interface", "INTERFACE", _("Interface parameters."), :multivalued => true,
         :format => HammerCLI::Options::Normalizers::KeyValueList.new
     end
 
@@ -103,12 +103,12 @@ module HammerCLIForeman
     class ListCommand < HammerCLIForeman::ListCommand
       # FIXME: list compute resource (model)
       output do
-        field :id, "Id"
-        field :name, "Name"
-        field :operatingsystem_id, "Operating System Id"
-        field :hostgroup_id, "Host Group Id"
-        field :ip, "IP"
-        field :mac, "MAC"
+        field :id, _("Id")
+        field :name, _("Name")
+        field :operatingsystem_id, _("Operating System Id")
+        field :hostgroup_id, _("Host Group Id")
+        field :ip, _("IP")
+        field :mac, _("MAC")
       end
 
       apipie_options
@@ -120,53 +120,82 @@ module HammerCLIForeman
       def extend_data(host)
         host["environment_name"] = host["environment"]["environment"]["name"] rescue nil
         host["parameters"] = HammerCLIForeman::Parameter.get_parameters(resource_config, :host, host)
+        host["_bmc_interfaces"] =
+          host["interfaces"].select{|intfs| intfs["type"] == "Nic::BMC" } rescue []
+        host["_managed_interfaces"] =
+          host["interfaces"].select{|intfs| intfs["type"] == "Nic::Managed" } rescue []
         host
       end
 
       output ListCommand.output_definition do
-        field :uuid, "UUID"
-        field :certname, "Cert name"
+        field :uuid, _("UUID")
+        field :certname, _("Cert name")
 
-        field :environment_name, "Environment"
-        field :environment_id, "Environment Id"
+        field :environment_name, _("Environment")
+        field :environment_id, _("Environment Id")
 
-        field :managed, "Managed"
-        field :enabled, "Enabled"
-        field :build, "Build"
+        field :managed, _("Managed")
+        field :enabled, _("Enabled")
+        field :build, _("Build")
 
-        field :use_image, "Use image"
-        field :disk, "Disk"
-        field :image_file, "Image file"
+        field :use_image, _("Use image")
+        field :disk, _("Disk")
+        field :image_file, _("Image file")
 
-        field :sp_name, "SP Name"
-        field :sp_ip, "SP IP"
-        field :sp_mac, "SP MAC"
-        field :sp_subnet, "SP Subnet"
-        field :sp_subnet_id, "SP Subnet Id"
+        field :sp_name, _("SP Name")
+        field :sp_ip, _("SP IP")
+        field :sp_mac, _("SP MAC")
+        field :sp_subnet, _("SP Subnet")
+        field :sp_subnet_id, _("SP Subnet Id")
 
-        field :created_at, "Created at", Fields::Date
-        field :updated_at, "Updated at", Fields::Date
-        field :installed_at, "Installed at", Fields::Date
-        field :last_report, "Last report", Fields::Date
+        field :created_at, _("Created at"), Fields::Date
+        field :updated_at, _("Updated at"), Fields::Date
+        field :installed_at, _("Installed at"), Fields::Date
+        field :last_report, _("Last report"), Fields::Date
 
-        field :puppet_ca_proxy_id, "Puppet CA Proxy Id"
-        field :medium_id, "Medium Id"
-        field :model_id, "Model Id"
-        field :owner_id, "Owner Id"
-        field :subnet_id, "Subnet Id"
-        field :domain_id, "Domain Id"
-        field :puppet_proxy_id, "Puppet Proxy Id"
-        field :owner_type, "Owner Type"
-        field :ptable_id, "Partition Table Id"
-        field :architecture_id, "Architecture Id"
-        field :image_id, "Image Id"
-        field :compute_resource_id, "Compute Resource Id"
+        field :puppet_ca_proxy_id, _("Puppet CA Proxy Id")
+        field :medium_id, _("Medium Id")
+        field :model_id, _("Model Id")
+        field :owner_id, _("Owner Id")
+        field :subnet_id, _("Subnet Id")
+        field :domain_id, _("Domain Id")
+        field :puppet_proxy_id, _("Puppet Proxy Id")
+        field :owner_type, _("Owner Type")
+        field :ptable_id, _("Partition Table Id")
+        field :architecture_id, _("Architecture Id")
+        field :image_id, _("Image Id")
+        field :compute_resource_id, _("Compute Resource Id")
 
-        field :comment, "Comment"
+        field :comment, _("Comment")
 
-        collection :parameters, "Parameters" do
+        collection :parameters, _("Parameters") do
           field nil, nil, Fields::KeyValue
         end
+
+        collection :_bmc_interfaces, _("BMC Network Interfaces"), :hide_blank => true do
+          field :id, _("Id")
+          field :name, _("Name")
+          field :ip, _("IP")
+          field :mac, _("MAC")
+          field :domain_id, _("Domain Id")
+          field :domain_name, _("Domain Name")
+          field :subnet_id, _("Subnet Id")
+          field :subnet_name, _("Subnet Name")
+          field :username, _("BMC Username")
+          field :password, _("BMC Password")
+        end
+
+        collection :_managed_interfaces, _("Managed Network Interfaces"), :hide_blank => true do
+          field :id, _("Id")
+          field :name, _("Name")
+          field :ip, _("IP")
+          field :mac, _("MAC")
+          field :domain_id, _("Domain Id")
+          field :domain_name, _("Domain Name")
+          field :subnet_id, _("Subnet Id")
+          field :subnet_name, _("Subnet Name")
+        end
+
       end
 
       apipie_options
@@ -180,8 +209,8 @@ module HammerCLIForeman
       command_name "status"
 
       output do
-        field :status, "Status"
-        field :power, "Power"
+        field :status, _("Status")
+        field :power, _("Power")
       end
 
       def retrieve_data
@@ -218,7 +247,7 @@ module HammerCLIForeman
       action "puppetrun"
 
       def print_data(records)
-        print_message 'Puppet run triggered'
+        print_message _('Puppet run triggered')
       end
 
       apipie_options
@@ -234,8 +263,8 @@ module HammerCLIForeman
       apipie_options :without => declared_identifiers.keys
 
       output do
-        field :fact, "Fact"
-        field :value, "Value"
+        field :fact, _("Fact")
+        field :value, _("Value")
       end
 
       def request_params
@@ -292,8 +321,8 @@ module HammerCLIForeman
 
     class CreateCommand < HammerCLIForeman::CreateCommand
 
-      success_message "Host created"
-      failure_message "Could not create the host"
+      success_message _("Host created")
+      failure_message _("Could not create the host")
       action "create"
 
       include HammerCLIForeman::CommonHostUpdateOptions
@@ -316,8 +345,8 @@ module HammerCLIForeman
 
     class UpdateCommand < HammerCLIForeman::UpdateCommand
 
-      success_message "Host updated"
-      failure_message "Could not update the host"
+      success_message _("Host updated")
+      failure_message _("Could not update the host")
 
       include HammerCLIForeman::CommonHostUpdateOptions
     end
@@ -325,8 +354,8 @@ module HammerCLIForeman
 
     class DeleteCommand < HammerCLIForeman::DeleteCommand
 
-      success_message "Host deleted"
-      failure_message "Could not delete the host"
+      success_message _("Host deleted")
+      failure_message _("Could not delete the host")
 
       apipie_options
     end
@@ -336,14 +365,14 @@ module HammerCLIForeman
 
       resource ForemanApi::Resources::Parameter
 
-      desc "Create or update parameter for a host."
+      desc _("Create or update parameter for a host.")
 
-      option "--host-name", "HOST_NAME", "name of the host the parameter is being set for"
-      option "--host-id", "HOST_ID", "id of the host the parameter is being set for"
+      option "--host-name", "HOST_NAME", _("name of the host the parameter is being set for")
+      option "--host-id", "HOST_ID", _("id of the host the parameter is being set for")
 
-      success_message_for :update, "Host parameter updated"
-      success_message_for :create, "New host parameter created"
-      failure_message "Could not set host parameter"
+      success_message_for :update, _("Host parameter updated")
+      success_message_for :create, _("New host parameter created")
+      failure_message _("Could not set host parameter")
 
       def validate_options
         super
@@ -362,12 +391,12 @@ module HammerCLIForeman
 
       resource ForemanApi::Resources::Parameter
 
-      desc "Delete parameter for a host."
+      desc _("Delete parameter for a host.")
 
-      option "--host-name", "HOST_NAME", "name of the host the parameter is being deleted for"
-      option "--host-id", "HOST_ID", "id of the host the parameter is being deleted for"
+      option "--host-name", "HOST_NAME", _("name of the host the parameter is being deleted for")
+      option "--host-id", "HOST_ID", _("id of the host the parameter is being deleted for")
 
-      success_message "Host parameter deleted"
+      success_message _("Host parameter deleted")
 
       def validate_options
         super
@@ -388,8 +417,8 @@ module HammerCLIForeman
       action "power"
 
       command_name "start"
-      desc "Power a host on"
-      success_message "The host is starting."
+      desc _("Power a host on")
+      success_message _("The host is starting.")
 
       def power_action
         :start
@@ -401,13 +430,13 @@ module HammerCLIForeman
 
     class StopCommand < HammerCLI::Apipie::WriteCommand
 
-      option '--force', :flag, "Force turning off a host"
+      option '--force', :flag, _("Force turning off a host")
 
       identifiers :id, :name
       action "power"
 
       command_name "stop"
-      desc "Power a host off"
+      desc _("Power a host off")
 
       def power_action
         if option_force?
@@ -419,9 +448,9 @@ module HammerCLIForeman
 
       def success_message
         if option_force?
-          "Power off forced."
+          _("Power off forced.")
         else
-          "Powering the host off."
+          _("Powering the host off.")
         end
       end
 
@@ -434,8 +463,8 @@ module HammerCLIForeman
       action "power"
 
       command_name "reboot"
-      desc "Reboot a host"
-      success_message "Host reboot started."
+      desc _("Reboot a host")
+      success_message _("Host reboot started.")
 
       def power_action
         :soft
@@ -447,7 +476,7 @@ module HammerCLIForeman
     class SCParamsCommand < HammerCLIForeman::SmartClassParametersList
 
       apipie_options :without => [:host_id, :hostgroup_id, :puppetclass_id, :environment_id]
-      option ['--id', '--name'], 'HOST_ID', 'host id/name',
+      option ['--id', '--name'], 'HOST_ID', _('host id/name'),
               :attribute_name => :option_host_id, :required => true
     end
 
@@ -456,4 +485,4 @@ module HammerCLIForeman
 
 end
 
-HammerCLI::MainCommand.subcommand 'host', "Manipulate hosts.", HammerCLIForeman::Host
+HammerCLI::MainCommand.subcommand 'host', ("Manipulate hosts."), HammerCLIForeman::Host

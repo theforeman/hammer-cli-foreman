@@ -9,6 +9,8 @@ module HammerCLIForeman
     HammerCLIForeman::ExceptionHandler
   end
 
+  require 'hammer_cli_foreman/i18n'
+
   require 'hammer_cli_foreman/version'
   require 'hammer_cli_foreman/output'
   require 'hammer_cli_foreman/credentials'

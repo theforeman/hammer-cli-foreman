@@ -5,10 +5,10 @@ module HammerCLIForeman
       resource ForemanApi::Resources::Subnet, "index"
 
       output do
-        field :id, "Id"
-        field :name, "Name"
-        field :network, "Network"
-        field :mask, "Mask"
+        field :id, _("Id")
+        field :name, _("Name")
+        field :network, _("Network")
+        field :mask, _("Mask")
       end
 
       apipie_options
@@ -20,20 +20,20 @@ module HammerCLIForeman
       resource ForemanApi::Resources::Subnet, "show"
 
       output ListCommand.output_definition do
-        field :priority, "Priority"
-        field :dns_id, "DNS id"
-        field :dns, "DNS", Fields::Server
-        field :dns_primary, "Primary DNS"
-        field :dns_secondary, "Secondary DNS"
-        field :domain_ids, "Domain ids", Fields::List
-        field :tftp, "TFTP", Fields::Server
-        field :tftp_id, "TFTP id"
-        field :dhcp, "DHCP", Fields::Server
-        field :dhcp_id, "DHCP id"
-        field :vlanid, "vlan id"
-        field :gateway, "Gateway"
-        field :from, "From"
-        field :to, "To"
+        field :priority, _("Priority")
+        field :dns_id, _("DNS id")
+        field :dns, _("DNS"), Fields::Server
+        field :dns_primary, _("Primary DNS")
+        field :dns_secondary, _("Secondary DNS")
+        field :domain_ids, _("Domain ids"), Fields::List
+        field :tftp, _("TFTP"), Fields::Server
+        field :tftp_id, _("TFTP id")
+        field :dhcp, _("DHCP"), Fields::Server
+        field :dhcp_id, _("DHCP id")
+        field :vlanid, _("vlan id")
+        field :gateway, _("Gateway")
+        field :from, _("From")
+        field :to, _("To")
       end
 
       apipie_options
@@ -42,8 +42,8 @@ module HammerCLIForeman
 
     class CreateCommand < HammerCLIForeman::CreateCommand
 
-      success_message "Subnet created"
-      failure_message "Could not create the subnet"
+      success_message _("Subnet created")
+      failure_message _("Could not create the subnet")
       resource ForemanApi::Resources::Subnet, "create"
 
       apipie_options
@@ -52,8 +52,8 @@ module HammerCLIForeman
 
     class UpdateCommand < HammerCLIForeman::UpdateCommand
 
-      success_message "Subnet updated"
-      failure_message "Could not update the subnet"
+      success_message _("Subnet updated")
+      failure_message _("Could not update the subnet")
       resource ForemanApi::Resources::Subnet, "update"
 
       apipie_options
@@ -62,8 +62,8 @@ module HammerCLIForeman
 
     class DeleteCommand < HammerCLIForeman::DeleteCommand
 
-      success_message "Subnet deleted"
-      failure_message "Could not delete the subnet"
+      success_message _("Subnet deleted")
+      failure_message _("Could not delete the subnet")
       resource ForemanApi::Resources::Subnet, "destroy"
 
       apipie_options
@@ -74,5 +74,5 @@ module HammerCLIForeman
 
 end
 
-HammerCLI::MainCommand.subcommand 'subnet', "Manipulate subnets.", HammerCLIForeman::Subnet
+HammerCLI::MainCommand.subcommand 'subnet', _("Manipulate subnets."), HammerCLIForeman::Subnet
 

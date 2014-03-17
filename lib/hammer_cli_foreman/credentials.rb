@@ -7,12 +7,12 @@ module HammerCLIForeman
     end
 
     def username
-      @username ||= ask_user("[Foreman] username: ") if HammerCLI.interactive?
+      @username ||= ask_user(_("[Foreman] username: ")) if HammerCLI.interactive?
       @username
     end
 
     def password
-      @password ||= ask_user("[Foreman] password for #{@username}: ", true) if HammerCLI.interactive?
+      @password ||= ask_user(_("[Foreman] password for %s: ") % @username, true) if HammerCLI.interactive?
       @password
     end
 

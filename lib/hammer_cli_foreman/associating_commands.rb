@@ -146,8 +146,8 @@ module HammerCLIForeman
         associated_identifiers :id
         apipie_options
 
-        success_message "Operating system has been associated"
-        failure_message "Could not associate the operating system"
+        success_message _("Operating system has been associated")
+        failure_message _("Could not associate the operating system")
       end
 
 
@@ -157,8 +157,8 @@ module HammerCLIForeman
         associated_identifiers :id
         apipie_options
 
-        success_message "Operating system has been disassociated"
-        failure_message "Could not disassociate the operating system"
+        success_message _("Operating system has been disassociated")
+        failure_message _("Could not disassociate the operating system")
       end
     end
 
@@ -167,8 +167,8 @@ module HammerCLIForeman
         associated_resource ForemanApi::Resources::Architecture
         apipie_options
 
-        success_message "Architecture has been associated"
-        failure_message "Could not associate the architecture"
+        success_message _("Architecture has been associated")
+        failure_message _("Could not associate the architecture")
       end
 
 
@@ -176,8 +176,8 @@ module HammerCLIForeman
         associated_resource ForemanApi::Resources::Architecture
         apipie_options
 
-        success_message "Architecture has been disassociated"
-        failure_message "Could not disassociate the architecture"
+        success_message _("Architecture has been disassociated")
+        failure_message _("Could not disassociate the architecture")
       end
     end
 
@@ -186,8 +186,8 @@ module HammerCLIForeman
         associated_resource ForemanApi::Resources::Ptable
         apipie_options
 
-        success_message "Partition table has been associated"
-        failure_message "Could not associate the partition table"
+        success_message _("Partition table has been associated")
+        failure_message _("Could not associate the partition table")
       end
 
 
@@ -195,8 +195,8 @@ module HammerCLIForeman
         associated_resource ForemanApi::Resources::Ptable
         apipie_options
 
-        success_message "Partition table has been disassociated"
-        failure_message "Could not disassociate the partition table"
+        success_message _("Partition table has been disassociated")
+        failure_message _("Could not disassociate the partition table")
       end
     end
 

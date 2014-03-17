@@ -27,8 +27,8 @@ module HammerCLIForeman
 
       include HammerCLI::Messages
 
-      option "--name", "NAME", "parameter name", :required => true
-      option "--value", "VALUE", "parameter value", :required => true
+      option "--name", "NAME", _("parameter name"), :required => true
+      option "--value", "VALUE", _("parameter value"), :required => true
 
       def self.command_name(name=nil)
         super(name) || "set_parameter"
@@ -87,7 +87,7 @@ module HammerCLIForeman
 
       include HammerCLI::Messages
 
-      option "--name", "NAME", "parameter name", :required => true
+      option "--name", "NAME", _("parameter name"), :required => true
 
       def self.command_name(name=nil)
         super(name) || "delete_parameter"
