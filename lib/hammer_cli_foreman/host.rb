@@ -18,6 +18,8 @@ module HammerCLIForeman
             # - temporarily disabled params that will be removed from the api ------------------
             :provision_method, :capabilities, :flavour_ref, :image_ref, :start,
             :network, :cpus, :memory, :provider, :type, :tenant_id, :image_id,
+            # - avoids future conflicts as :root_pass is currently missing in the api docs
+            :root_pass,
             # ----------------------------------------------------------------------------------
             :compute_resource_id, :ptable_id] + base.declared_identifiers.keys
 
