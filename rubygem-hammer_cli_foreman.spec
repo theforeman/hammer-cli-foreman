@@ -9,7 +9,7 @@
 Summary: Universal command-line interface for Foreman
 Name: rubygem-%{gemname}
 Version: 0.0.18
-Release: 5%{?dist}
+Release: 6%{?dist}
 Group: Development/Languages
 License: GPLv3
 URL: http://github.com/theforeman/hammer-cli-foreman
@@ -74,6 +74,9 @@ cp -pa .%{gem_dir}/* \
 
 
 %changelog
+* Mon Mar 17 2014 Jason Montleon <jmontleo@redhat.com> 0.0.18-6
+- update katello module name in cli_config.yml (jmontleo@redhat.com)
+
 * Mon Mar 17 2014 Jason Montleon <jmontleo@redhat.com> 0.0.18-5
 - package new locale files (jmontleo@redhat.com)
 
