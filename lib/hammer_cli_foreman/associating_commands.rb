@@ -1,82 +1,114 @@
 module HammerCLIForeman
   module AssociatingCommands
 
+    module CommandExtension
+
+      def extend_command(base_command)
+        commands = self.constants.map {|c| self.const_get(c)}.select {|c| c < HammerCLI::AbstractCommand }
+
+        commands.each do |cmd|
+          plug_command(cmd, base_command)
+        end
+      end
+
+      def plug_command(command, base_command)
+        cmd_name = base_name(command)
+        base_name = base_name(base_command)
+
+        name = base_name + cmd_name
+
+        cmd_cls = Class.new(command)
+        base_command.const_set(name, cmd_cls)
+
+        cmd_cls.resource(base_command.resource.name)
+        #TODO: update messages to inherit from parents
+        cmd_cls.success_message(command.success_message)
+        cmd_cls.failure_message(command.failure_message)
+        cmd_cls.build_options
+      end
+
+      def base_name(cls)
+        cls.name.split("::")[-1]
+      end
+    end
+
     module Hostgroup
+      extend CommandExtension
+
       class AddHostgroupCommand < HammerCLIForeman::AddAssociatedCommand
         associated_resource :hostgroups
-        apipie_options
       end
 
       class RemoveHostgroupCommand < HammerCLIForeman::RemoveAssociatedCommand
         associated_resource :hostgroups
-        apipie_options
       end
     end
 
     module Environment
+      extend CommandExtension
+
       class AddEnvironmentCommand < HammerCLIForeman::AddAssociatedCommand
         associated_resource :environments
-        apipie_options
       end
 
       class RemoveEnvironmentCommand < HammerCLIForeman::RemoveAssociatedCommand
         associated_resource :environments
-        apipie_options
       end
     end
 
     module Domain
+      extend CommandExtension
+
       class AddDomainCommand < HammerCLIForeman::AddAssociatedCommand
         associated_resource :domains
-        apipie_options
       end
 
       class RemoveDomainCommand < HammerCLIForeman::RemoveAssociatedCommand
         associated_resource :domains
-        apipie_options
       end
     end
 
     module Medium
+      extend CommandExtension
+
       class AddMediumCommand < HammerCLIForeman::AddAssociatedCommand
         associated_resource :media
-        apipie_options
       end
 
       class RemoveMediumCommand < HammerCLIForeman::RemoveAssociatedCommand
         associated_resource :media
-        apipie_options
       end
     end
 
     module Subnet
+      extend CommandExtension
+
       class AddSubnetCommand < HammerCLIForeman::AddAssociatedCommand
         associated_resource :subnets
-        apipie_options
       end
 
       class RemoveSubnetCommand < HammerCLIForeman::RemoveAssociatedCommand
         associated_resource :subnets
-        apipie_options
       end
     end
 
     module ComputeResource
+      extend CommandExtension
+
       class AddComputeResourceCommand < HammerCLIForeman::AddAssociatedCommand
         associated_resource :compute_resources
-        apipie_options
       end
 
       class RemoveComputeResourceCommand < HammerCLIForeman::RemoveAssociatedCommand
         associated_resource :compute_resources
-        apipie_options
       end
     end
 
     module SmartProxy
+      extend CommandExtension
+
       class AddSmartProxyCommand < HammerCLIForeman::AddAssociatedCommand
         associated_resource :smart_proxies
-        apipie_options
 
         def associated_resource_name
           "smart-proxy"
@@ -85,7 +117,6 @@ module HammerCLIForeman
 
       class RemoveSmartProxyCommand < HammerCLIForeman::RemoveAssociatedCommand
         associated_resource :smart_proxies
-        apipie_options
 
         def associated_resource_name
           "smart-proxy"
@@ -94,21 +125,17 @@ module HammerCLIForeman
     end
 
     module User
-      class AddUserCommand < HammerCLIForeman::AddAssociatedCommand
-        associated_identifiers :id
+      extend CommandExtension
 
+      class AddUserCommand < HammerCLIForeman::AddAssociatedCommand
         associated_resource :users
-        apipie_options
 
         success_message "The user has been associated"
         failure_message "Could not associate the user"
       end
 
       class RemoveUserCommand < HammerCLIForeman::RemoveAssociatedCommand
-        associated_identifiers :id
-
         associated_resource :users
-        apipie_options
 
         success_message "The user has been disassociated"
         failure_message "Could not disassociate the user"
@@ -116,35 +143,34 @@ module HammerCLIForeman
     end
 
     module ConfigTemplate
+      extend CommandExtension
+
       class AddConfigTemplateCommand < HammerCLIForeman::AddAssociatedCommand
         associated_resource :config_templates
-        apipie_options
       end
 
       class RemoveConfigTemplateCommand < HammerCLIForeman::RemoveAssociatedCommand
         associated_resource :config_templates
-        apipie_options
       end
     end
 
     module Organization
+      extend CommandExtension
+
       class AddOrganizationCommand < HammerCLIForeman::AddAssociatedCommand
         associated_resource :organizations
-        apipie_options
       end
 
       class RemoveOrganizationCommand < HammerCLIForeman::RemoveAssociatedCommand
         associated_resource :organizations
-        apipie_options
       end
     end
 
     module OperatingSystem
+      extend CommandExtension
+
       class AddOSCommand < HammerCLIForeman::AddAssociatedCommand
         associated_resource :operatingsystems
-
-        associated_identifiers :id
-        apipie_options
 
         success_message _("Operating system has been associated")
         failure_message _("Could not associate the operating system")
@@ -154,18 +180,16 @@ module HammerCLIForeman
       class RemoveOSCommand < HammerCLIForeman::RemoveAssociatedCommand
         associated_resource :operatingsystems
 
-        associated_identifiers :id
-        apipie_options
-
         success_message _("Operating system has been disassociated")
         failure_message _("Could not disassociate the operating system")
       end
     end
 
     module Architecture
+      extend CommandExtension
+
       class AddArchitectureCommand < HammerCLIForeman::AddAssociatedCommand
         associated_resource :architectures
-        apipie_options
 
         success_message _("Architecture has been associated")
         failure_message _("Could not associate the architecture")
@@ -174,7 +198,6 @@ module HammerCLIForeman
 
       class RemoveArchitectureCommand < HammerCLIForeman::RemoveAssociatedCommand
         associated_resource :architectures
-        apipie_options
 
         success_message _("Architecture has been disassociated")
         failure_message _("Could not disassociate the architecture")
@@ -182,9 +205,10 @@ module HammerCLIForeman
     end
 
     module PartitionTable
+      extend CommandExtension
+
       class AddPartitionTableCommand < HammerCLIForeman::AddAssociatedCommand
         associated_resource :ptables
-        apipie_options
 
         success_message _("Partition table has been associated")
         failure_message _("Could not associate the partition table")
@@ -193,7 +217,6 @@ module HammerCLIForeman
 
       class RemovePartitionTableCommand < HammerCLIForeman::RemoveAssociatedCommand
         associated_resource :ptables
-        apipie_options
 
         success_message _("Partition table has been disassociated")
         failure_message _("Could not disassociate the partition table")

@@ -38,15 +38,11 @@ module HammerCLIForeman
         tpl
       end
 
-      apipie_options
+      build_options
     end
 
 
     class InfoCommand < HammerCLIForeman::InfoCommand
-
-      #FIXME: Add name identifier when the find by name issue is fixed in the api
-      #       Api currently does not accept names containing a dot
-      identifiers :id
 
       output ListCommand.output_definition do
         field :operatingsystem_ids, _("OS ids"), Fields::List
@@ -64,7 +60,7 @@ module HammerCLIForeman
         tpl
       end
 
-      apipie_options
+      build_options
     end
 
 
@@ -92,13 +88,11 @@ module HammerCLIForeman
       command_name "dump"
       desc _("View config template content.")
 
-      identifiers :id
-
       def print_data(template)
         puts template["template"]
       end
 
-      apipie_options
+      build_options
     end
 
 
@@ -113,7 +107,7 @@ module HammerCLIForeman
 
       include TemplateCreateUpdateCommons
 
-      apipie_options :without => [:template_combinations_attributes, :template, :snippet, :template_kind_id]
+      build_options :without => [:template_combinations_attributes, :template, :snippet, :template_kind_id]
     end
 
 
@@ -123,29 +117,25 @@ module HammerCLIForeman
         :format => HammerCLI::Options::Normalizers::File.new
       option "--type", "TYPE", _("Template type. Eg. snippet, script, provision")
 
-      identifiers :id
-
       success_message _("Config template updated")
       failure_message _("Could not update the config template")
 
       include TemplateCreateUpdateCommons
 
-      apipie_options :without => [:template_combinations_attributes, :template, :snippet, :template_kind_id]
+      build_options :without => [:template_combinations_attributes, :template, :snippet, :template_kind_id]
     end
 
 
     class DeleteCommand < HammerCLIForeman::DeleteCommand
 
-      identifiers :id
-
       success_message _("Config template deleted")
       failure_message _("Could not delete the config template")
 
-      apipie_options
+      build_options
     end
 
 
-    include HammerCLIForeman::AssociatingCommands::OperatingSystem
+    HammerCLIForeman::AssociatingCommands::OperatingSystem.extend_command(self)
 
 
     autoload_subcommands

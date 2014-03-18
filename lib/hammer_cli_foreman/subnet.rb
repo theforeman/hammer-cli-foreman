@@ -13,7 +13,7 @@ module HammerCLIForeman
         field :mask, _("Mask")
       end
 
-      apipie_options
+      build_options
     end
 
 
@@ -36,7 +36,7 @@ module HammerCLIForeman
         field :to, _("To")
       end
 
-      apipie_options
+      build_options :without => :id
     end
 
 
@@ -45,7 +45,7 @@ module HammerCLIForeman
       success_message _("Subnet created")
       failure_message _("Could not create the subnet")
 
-      apipie_options
+      build_options
     end
 
 
@@ -54,7 +54,7 @@ module HammerCLIForeman
       success_message _("Subnet updated")
       failure_message _("Could not update the subnet")
 
-      apipie_options
+      build_options
     end
 
 
@@ -63,7 +63,7 @@ module HammerCLIForeman
       success_message _("Subnet deleted")
       failure_message _("Could not delete the subnet")
 
-      apipie_options
+      build_options
     end
 
     autoload_subcommands

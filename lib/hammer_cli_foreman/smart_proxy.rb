@@ -15,7 +15,7 @@ module HammerCLIForeman
         field :url, _("URL")
       end
 
-      apipie_options
+      build_options
     end
 
 
@@ -34,7 +34,7 @@ module HammerCLIForeman
         proxy
       end
 
-      apipie_options
+      build_options
     end
 
 
@@ -45,7 +45,7 @@ module HammerCLIForeman
       success_message _("Smart proxy created")
       failure_message _("Could not create the proxy")
 
-      apipie_options
+      build_options
     end
 
 
@@ -56,7 +56,7 @@ module HammerCLIForeman
       success_message _("Smart proxy updated")
       failure_message _("Could not update the proxy")
 
-      apipie_options
+      build_options
     end
 
 
@@ -67,7 +67,7 @@ module HammerCLIForeman
       success_message _("Smart proxy deleted")
       failure_message _("Could not delete the proxy")
 
-      apipie_options
+      build_options
     end
 
 
@@ -81,7 +81,7 @@ module HammerCLIForeman
 
       option "--dryrun", :flag, _("Do not run the import")
 
-      apipie_options :without => [:smart_proxy_id, :dryrun]
+      build_options :without => [:smart_proxy_id, :dryrun]
 
       def request_params
         opts = super

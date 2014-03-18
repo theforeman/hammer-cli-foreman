@@ -6,7 +6,7 @@ module HammerCLIForeman
 
       resource :fact_values, :index
 
-      apipie_options
+      build_options
 
       output do
         field :host, _("Host")

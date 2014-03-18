@@ -14,7 +14,7 @@ module HammerCLIForeman
         field :name, _("Name")
       end
 
-      apipie_options
+      build_options
     end
 
 
@@ -26,7 +26,7 @@ module HammerCLIForeman
         field :updated_at, _("Updated at"), Fields::Date
       end
 
-      apipie_options
+      build_options
     end
 
 
@@ -36,7 +36,7 @@ module HammerCLIForeman
       success_message _("Organization created")
       failure_message _("Could not create the organization")
 
-      apipie_options
+      build_options
     end
 
 
@@ -46,7 +46,7 @@ module HammerCLIForeman
       success_message _("Organization updated")
       failure_message _("Could not update the organization")
 
-      apipie_options
+      build_options
     end
 
 
@@ -56,18 +56,19 @@ module HammerCLIForeman
       success_message _("Organization deleted")
       failure_message _("Could not delete the organization")
 
-      apipie_options
+      build_options
     end
 
-    include HammerCLIForeman::AssociatingCommands::Hostgroup
-    include HammerCLIForeman::AssociatingCommands::Environment
-    include HammerCLIForeman::AssociatingCommands::Domain
-    include HammerCLIForeman::AssociatingCommands::Medium
-    include HammerCLIForeman::AssociatingCommands::Subnet
-    include HammerCLIForeman::AssociatingCommands::ComputeResource
-    include HammerCLIForeman::AssociatingCommands::SmartProxy
-    include HammerCLIForeman::AssociatingCommands::User
-    include HammerCLIForeman::AssociatingCommands::ConfigTemplate
+
+    HammerCLIForeman::AssociatingCommands::Hostgroup.extend_command(self)
+    HammerCLIForeman::AssociatingCommands::Environment.extend_command(self)
+    HammerCLIForeman::AssociatingCommands::Domain.extend_command(self)
+    HammerCLIForeman::AssociatingCommands::Medium.extend_command(self)
+    HammerCLIForeman::AssociatingCommands::Subnet.extend_command(self)
+    HammerCLIForeman::AssociatingCommands::ComputeResource.extend_command(self)
+    HammerCLIForeman::AssociatingCommands::SmartProxy.extend_command(self)
+    HammerCLIForeman::AssociatingCommands::User.extend_command(self)
+    HammerCLIForeman::AssociatingCommands::ConfigTemplate.extend_command(self)
 
     autoload_subcommands
   end

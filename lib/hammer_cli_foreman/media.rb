@@ -11,7 +11,7 @@ module HammerCLIForeman
         field :path, _("Path")
       end
 
-      apipie_options
+      build_options
     end
 
 
@@ -28,7 +28,7 @@ module HammerCLIForeman
         res
       end
 
-      apipie_options
+      build_options
     end
 
 
@@ -37,31 +37,29 @@ module HammerCLIForeman
       success_message _("Installation medium created")
       failure_message _("Could not create the installation medium")
 
-      apipie_options
+      build_options
 
     end
 
 
     class UpdateCommand < HammerCLIForeman::UpdateCommand
-
       success_message _("Installation medium updated")
       failure_message _("Could not update the installation media")
 
-      apipie_options
+      build_options
 
     end
 
 
     class DeleteCommand < HammerCLIForeman::DeleteCommand
-
       success_message _("Installation medium deleted")
       failure_message _("Could not delete the installation media")
 
-      apipie_options
+      build_options
     end
 
 
-    include HammerCLIForeman::AssociatingCommands::OperatingSystem
+    HammerCLIForeman::AssociatingCommands::OperatingSystem.extend_command(self)
 
     autoload_subcommands
   end

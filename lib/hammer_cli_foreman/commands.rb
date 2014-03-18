@@ -65,8 +65,45 @@ module HammerCLIForeman
       data.class <= Hash && data.keys.length == 1 ? data[data.keys[0]] : data
   end
 
+
+  module ResolverCommons
+
+    def self.included(base)
+      base.extend(ClassMethods)
+    end
+
+    def resolver
+      self.class.resolver
+    end
+
+    def searchables
+      self.class.searchables
+    end
+
+    def get_identifier
+      @identifier ||= resolver.send("#{resource.singular_name}_id", all_options)
+      @identifier
+    end
+
+    module ClassMethods
+
+      def resolver
+        api = HammerCLI::Connection.get("foreman").api
+        HammerCLIForeman::IdResolver.new(api, HammerCLIForeman::Searchables.new)
+      end
+
+      def searchables
+        @searchables ||= HammerCLIForeman::Searchables.new
+        @searchables
+      end
+
+    end
+  end
+
+
   class ReadCommand < HammerCLI::Apipie::ReadCommand
     extend HammerCLIForeman::ConnectionSetup
+    include HammerCLIForeman::ResolverCommons
   end
 
   class Command < ReadCommand
@@ -74,6 +111,7 @@ module HammerCLIForeman
 
   class WriteCommand < HammerCLI::Apipie::WriteCommand
     extend HammerCLIForeman::ConnectionSetup
+    include HammerCLIForeman::ResolverCommons
 
     def send_request
       HammerCLIForeman.record_to_common_format(super)
@@ -120,6 +158,17 @@ module HammerCLIForeman
 
     protected
 
+    def request_params
+      params = method_options
+      required_params = resource.action(action).params.select{|p| p.required? && p.name.end_with?("_id") }
+      required_params.each do |p|
+        resource_name = p.name.gsub(/_id$/, "")
+        opts = resolver.scoped_options(resource_name, all_options)
+        params[p.name] = resolver.send(p.name.to_s, opts)
+      end
+      params
+    end
+
     def browse_collection
       list_next = true
 
@@ -143,6 +192,16 @@ module HammerCLIForeman
       d
     end
 
+    def self.custom_option_builders
+      builders = super
+      if resource_defined?
+        builders += [
+          DependentSearchablesOptionBuilder.new(resolver.dependent_resources(resource), searchables)
+        ]
+      end
+      builders
+    end
+
   end
 
 
@@ -154,11 +213,21 @@ module HammerCLIForeman
       super(name) || "info"
     end
 
-    identifiers :id, :name
+    def self.custom_option_builders
+      builders = super
+      if resource_defined?
+        builders += [
+          SearchablesOptionBuilder.new(resource, searchables),
+          DependentSearchablesOptionBuilder.new(resolver.dependent_resources(resource), searchables)
+        ]
+      end
+      builders
+    end
 
     def request_params
       params = method_options
-      params.update('id' => get_identifier[0])
+      params['id'] ||= get_identifier
+      params
     end
 
     def retrieve_data
@@ -186,6 +255,17 @@ module HammerCLIForeman
       super(name) || "create"
     end
 
+    def self.custom_option_builders
+      builders = super
+      if resource_defined?
+        builders += [
+          SearchablesOptionBuilder.new(resource, searchables),
+          DependentSearchablesOptionBuilder.new(resolver.dependent_resources(resource), searchables)
+        ]
+      end
+      builders
+    end
+
   end
 
 
@@ -197,17 +277,32 @@ module HammerCLIForeman
       super(name) || "update"
     end
 
-    identifiers :id, :name => :option_current_name
-
-    def self.setup_identifier_options
-      super
-      option "--new-name", "NEW_NAME", _("new name for the resource"), :attribute_name => :option_name if identifier? :name
+    def self.custom_option_builders
+      builders = super
+      if resource_defined?
+        builders += [
+          SearchablesOptionBuilder.new(resource, searchables),
+          DependentSearchablesOptionBuilder.new(resolver.dependent_resources(resource), searchables),
+          SearchablesUpdateOptionBuilder.new(resource, searchables)
+        ]
+      end
+      builders
     end
 
     def request_params
       params = method_options
-      params['id'] = get_identifier[0]
+      params['id'] = get_identifier
       params
+    end
+
+    def method_options_for_params(params, include_nil=true)
+      opts = super
+      # overwrite searchables with correct values
+      searchables.for(resource).each do |s|
+        new_value = get_option_value("new_#{s.name}")
+        opts[s.name] = new_value unless new_value.nil?
+      end
+      opts
     end
 
   end
@@ -221,10 +316,21 @@ module HammerCLIForeman
       super(name) || "delete"
     end
 
-    identifiers :id, :name
+    def self.custom_option_builders
+      builders = super
+      if resource_defined?
+        builders += [
+          SearchablesOptionBuilder.new(resource, searchables),
+          DependentSearchablesOptionBuilder.new(resolver.dependent_resources(resource), searchables)
+        ]
+      end
+      builders
+    end
 
     def request_params
-      {'id' => get_identifier[0]}
+      params = method_options
+      params['id'] = get_identifier
+      params
     end
 
   end
@@ -232,30 +338,18 @@ module HammerCLIForeman
 
   class AssociatedCommand < WriteCommand
 
-    identifiers :name, :id
+    option "--id", "ID", " "
+
     action :update
 
-    def validate_options
-      associated_ids = self.class.declared_associated_identifiers.collect {|id_name| "associated_#{id_name}" }
-      validator.any(*associated_ids).required
-      validator.any(*self.class.declared_identifiers.values).required
+    def self.custom_option_builders
+      [
+        SearchablesOptionBuilder.new(resource, searchables),
+        DependentSearchablesOptionBuilder.new(resolver.dependent_resources(resource), searchables),
+        DependentSearchablesOptionBuilder.new(associated_resource, searchables),
+        DependentSearchablesOptionBuilder.new(resolver.dependent_resources(associated_resource), searchables)
+      ]
     end
-
-    def self.apipie_options(options={})
-      setup_associated_identifier_options
-      super
-    end
-
-    def self.setup_associated_identifier_options
-      name = associated_resource.singular_name
-      option_switch = "--"+name.gsub('_', '-')
-
-      option option_switch, name.upcase, " ", :attribute_name => :associated_name do |value|
-        name_to_id(value, "name", associated_resource)
-      end if declared_associated_identifiers.include? :name
-      option option_switch+"-id", name.upcase+"_ID", " ", :attribute_name => :associated_id if declared_associated_identifiers.include? :id
-    end
-
 
     def associated_resource
       self.class.associated_resource
@@ -263,43 +357,26 @@ module HammerCLIForeman
 
     def self.associated_resource(resource_class=nil)
       @associated_api_resource = HammerCLIForeman.foreman_resource(resource_class) unless resource_class.nil?
-      return @associated_api_resource
+      return @associated_api_resource if @associated_api_resource
+      return superclass.associated_resource if superclass.respond_to? :associated_resource
     end
 
-
-
-    def self.associated_identifiers(*keys)
-      @associated_identifiers = keys
+    def get_associated_identifier
+      opts = resolver.scoped_options(associated_resource.singular_name, all_options)
+      resolver.send("#{associated_resource.singular_name}_id", opts)
     end
-
-    def self.declared_associated_identifiers
-      if @associated_identifiers
-        return @associated_identifiers
-      elsif superclass.respond_to?(:declared_associated_identifiers, true)
-        superclass.declared_associated_identifiers
-      else
-        []
-      end
-    end
-
-    associated_identifiers :name, :id
 
     def get_new_ids
       []
     end
 
     def get_current_ids
-      item = HammerCLIForeman.record_to_common_format(resource.call(:show, {:id => get_identifier[0]}))
+      item = HammerCLIForeman.record_to_common_format(resource.call(:show, {:id => get_identifier}))
       if item.has_key?(association_name(true))
         item[association_name(true)].map { |assoc| assoc['id'] }
       else
         item[association_name+'_ids'] || []
       end
-    end
-
-    def get_required_id
-      item = HammerCLIForeman.record_to_common_format(associated_resource.call(:show, {:id => associated_id || associated_name}))
-      item['id']
     end
 
     def request_params
@@ -309,7 +386,7 @@ module HammerCLIForeman
       else
         params["#{association_name}_ids"] = get_new_ids
       end
-      params['id'] = get_identifier[0]
+      params['id'] = get_identifier
       params
     end
 
@@ -331,8 +408,8 @@ module HammerCLIForeman
     end
 
     def get_new_ids
-      ids = get_current_ids
-      required_id = get_required_id
+      ids = get_current_ids.map(&:to_s)
+      required_id = get_associated_identifier.to_s
 
       ids << required_id unless ids.include? required_id
       ids
@@ -352,8 +429,8 @@ module HammerCLIForeman
     end
 
     def get_new_ids
-      ids = get_current_ids
-      required_id = get_required_id
+      ids = get_current_ids.map(&:to_s)
+      required_id = get_associated_identifier.to_s
 
       ids = ids.delete_if { |id| id == required_id }
       ids

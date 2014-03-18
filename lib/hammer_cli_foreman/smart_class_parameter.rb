@@ -19,6 +19,8 @@ module HammerCLIForeman
       # having the uniq to fix that
       HammerCLI::Output::RecordCollection.new(res.uniq, :meta => res.meta)
     end
+
+    build_options :without => [:host_id, :hostgroup_id, :puppetclass_id, :environment_id]
   end
 
   class SmartClassParametersList < SmartClassParametersBriefList
@@ -37,7 +39,7 @@ module HammerCLIForeman
 
     class ListCommand < HammerCLIForeman::SmartClassParametersList
       command_name 'list'
-      apipie_options
+      build_options
     end
 
     class InfoCommand < HammerCLIForeman::InfoCommand
@@ -74,7 +76,7 @@ module HammerCLIForeman
         res
       end
 
-      apipie_options
+      build_options
     end
 
     class UpdateCommand < HammerCLIForeman::UpdateCommand
@@ -82,7 +84,7 @@ module HammerCLIForeman
       success_message _("Parameter updated")
       failure_message _("Could not update the parameter")
 
-      apipie_options :without => [:parameter_type, :validator_type, :id, :override, :required]
+      build_options :without => [:parameter_type, :validator_type, :id, :override, :required]
 
       option "--override", "OVERRIDE", _("Override this parameter."),
         :format => HammerCLI::Options::Normalizers::Bool.new

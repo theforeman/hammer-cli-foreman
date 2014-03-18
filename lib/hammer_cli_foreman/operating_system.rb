@@ -18,14 +18,11 @@ module HammerCLIForeman
         os
       end
 
-      apipie_options
+      build_options
     end
 
 
     class InfoCommand < HammerCLIForeman::InfoCommand
-
-      identifiers :id
-
       output ListCommand.output_definition do
         field :media_names, _("Installation media"), Fields::List
         field :architecture_names, _("Architectures"), Fields::List
@@ -48,17 +45,17 @@ module HammerCLIForeman
           os["os_default_templates"].collect{
             |m| "%{config_template_name}s (%{template_kind_name}s)".format(m)
           } rescue []
-        os["parameters"] = HammerCLIForeman::Parameter.get_parameters(resource_config, :operatingsystem, os)
+        os["parameters"] = HammerCLIForeman::Parameter.get_parameters(:operatingsystem, os["id"])
         os
       end
 
-      apipie_options
+      build_options
     end
 
 
     class CreateCommand < HammerCLIForeman::CreateCommand
 
-      #FIXME: replace with apipie_options when they are added to the api docs
+      #FIXME: replace with build_options when they are added to the api docs
       option "--architecture-ids", "ARCH_IDS", _("set associated architectures"),
         :format => HammerCLI::Options::Normalizers::List.new
       option "--config-template-ids", "CONFIG_TPL_IDS", _("set associated templates"),
@@ -80,13 +77,12 @@ module HammerCLIForeman
         params
       end
 
-      apipie_options
+      build_options
     end
 
 
     class UpdateCommand < HammerCLIForeman::UpdateCommand
-
-      #FIXME: replace with apipie_options when they are added to the api docs
+      #FIXME: replace with build_options when they are added to the api docs
       option "--architecture-ids", "ARCH_IDS", _("set associated architectures"),
         :format => HammerCLI::Options::Normalizers::List.new
       option "--config-template-ids", "CONFIG_TPL_IDS", _("set associated templates"),
@@ -95,8 +91,6 @@ module HammerCLIForeman
         :format => HammerCLI::Options::Normalizers::List.new
       option "--ptable-ids", "PTABLE_IDS", _("set associated partition tables"),
         :format => HammerCLI::Options::Normalizers::List.new
-
-      identifiers :id
 
       success_message _("Operating system updated")
       failure_message _("Could not update the operating system")
@@ -110,28 +104,20 @@ module HammerCLIForeman
         params
       end
 
-      apipie_options
+      build_options
     end
 
 
     class DeleteCommand < HammerCLIForeman::DeleteCommand
-
-      identifiers :id
-
       success_message _("Operating system deleted")
       failure_message _("Could not delete the operating system")
 
-      apipie_options
+      build_options
     end
 
+
     class SetParameterCommand < HammerCLIForeman::Parameter::SetCommand
-
-      resource :parameters
-
       desc _("Create or update parameter for an operating system.")
-
-      #FIXME: add option --os-label when api supports it
-      option "--os-id", "OS_ID", _("id of the operating system the parameter is being set for")
 
       success_message_for :update, _("Operating system parameter updated")
       success_message_for :create, _("New operating system parameter created")
@@ -139,37 +125,24 @@ module HammerCLIForeman
 
       def validate_options
         super
-        validator.any(:option_os_id).required
+        validator.any(:option_operatingsystem_id).required
       end
 
-      def base_action_params
-        {
-          "operatingsystem_id" => option_os_id
-        }
-      end
+      build_options
     end
 
 
     class DeleteParameterCommand < HammerCLIForeman::Parameter::DeleteCommand
-
-      resource :parameters
-
       desc _("Delete parameter for an operating system.")
 
-      #FIXME: add option --os-label when api supports it
-      option "--os-id", "OS_ID", _("id of the operating system the parameter is being deleted for")
       success_message _("operating system parameter deleted")
 
       def validate_options
         super
-        validator.any(:option_os_id).required
+        validator.any(:option_operatingsystem_id).required
       end
 
-      def base_action_params
-        {
-          "operatingsystem_id" => option_os_id
-        }
-      end
+      build_options
     end
 
 
@@ -235,7 +208,7 @@ module HammerCLIForeman
         HammerCLI::EX_OK
       end
 
-      apipie_options :without => [:template_kind_id, :type]
+      build_options :without => [:template_kind_id, :type]
     end
 
 
@@ -270,13 +243,13 @@ module HammerCLIForeman
         {"operatingsystem_id" => option_id}
       end
 
-      apipie_options
+      build_options
     end
 
 
-    include HammerCLIForeman::AssociatingCommands::Architecture
-    include HammerCLIForeman::AssociatingCommands::ConfigTemplate
-    include HammerCLIForeman::AssociatingCommands::PartitionTable
+    HammerCLIForeman::AssociatingCommands::Architecture.extend_command(self)
+    HammerCLIForeman::AssociatingCommands::ConfigTemplate.extend_command(self)
+    HammerCLIForeman::AssociatingCommands::PartitionTable.extend_command(self)
 
 
     autoload_subcommands

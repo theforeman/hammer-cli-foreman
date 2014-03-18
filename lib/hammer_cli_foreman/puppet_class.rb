@@ -24,12 +24,11 @@ module HammerCLIForeman
 
       end
 
-      apipie_options
+      build_options
     end
 
 
     class InfoCommand < HammerCLIForeman::InfoCommand
-
       #FIXME: show environments, hostgroups, variables and parameters
       output ListCommand.output_definition do
         collection :lookup_keys, _("Smart variables") do
@@ -40,13 +39,12 @@ module HammerCLIForeman
         end
       end
 
-      apipie_options
+      build_options
     end
 
 
     class SCParamsCommand < HammerCLIForeman::SmartClassParametersBriefList
 
-      apipie_options :without => [:host_id, :hostgroup_id, :puppetclass_id, :environment_id]
       option ['--id', '--name'], 'PUPPET_CLASS_ID', _('puppet class id/name'),
               :attribute_name => :puppetclass_id, :required => true
     end
