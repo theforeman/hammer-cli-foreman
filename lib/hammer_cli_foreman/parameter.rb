@@ -9,23 +9,14 @@ module HammerCLIForeman
         resource_type.to_s+"_id" => resource["id"] || resource["name"]
       }
 
-      connection_options = {
-        :connector => HammerCLI::Apipie::ApipieConnector
-      }
-
-      connection = HammerCLI::Connection.create(
-        :parameters,
-        resource_config.merge(:definition => HammerCLI::Apipie::ResourceDefinition.new(ForemanApi::Resources::Parameter)),
-        connection_options
-      )
-
-      parameters = connection.call(:index, params)[0]
-      HammerCLIForeman.collection_to_common_format(parameters)
+      params = HammerCLIForeman.foreman_resource(:parameters).call(:index, params)
+      HammerCLIForeman.collection_to_common_format(params)
     end
 
-    class SetCommand < HammerCLI::Apipie::Command
+    class SetCommand < HammerCLIForeman::Command
 
       include HammerCLI::Messages
+      include HammerCLIForeman::ConnectionSetup
 
       option "--name", "NAME", _("parameter name"), :required => true
       option "--value", "VALUE", _("parameter value"), :required => true
@@ -35,7 +26,7 @@ module HammerCLIForeman
       end
 
       def self.resource(resource=nil)
-        super(resource) || HammerCLI::Apipie::ResourceDefinition.new(ForemanApi::Resources::Parameter)
+        super(resource) || HammerCLIForeman.foreman_resource(:parameters)
       end
 
       def execute
@@ -54,7 +45,7 @@ module HammerCLIForeman
       end
 
       def parameter_exist?
-        params = HammerCLIForeman.collection_to_common_format(resource.call(:index, base_action_params)[0])
+        params = HammerCLIForeman.collection_to_common_format(resource.call(:index, base_action_params))
         params.find { |p| p["name"] == option_name }
       end
 
@@ -83,9 +74,10 @@ module HammerCLIForeman
     end
 
 
-    class DeleteCommand < HammerCLI::Apipie::Command
+    class DeleteCommand < HammerCLIForeman::Command
 
       include HammerCLI::Messages
+      include HammerCLIForeman::ConnectionSetup
 
       option "--name", "NAME", _("parameter name"), :required => true
 
@@ -94,7 +86,7 @@ module HammerCLIForeman
       end
 
       def self.resource(resource=nil)
-        super(resource) || HammerCLI::Apipie::ResourceDefinition.new(ForemanApi::Resources::Parameter)
+        super(resource) || HammerCLIForeman.foreman_resource(:parameters)
       end
 
       def execute

@@ -2,6 +2,8 @@ require 'hammer_cli_foreman/report'
 require 'hammer_cli_foreman/puppet_class'
 require 'hammer_cli_foreman/smart_class_parameter'
 
+require 'highline/import'
+
 module HammerCLIForeman
 
   module CommonHostUpdateOptions
@@ -16,6 +18,8 @@ module HammerCLIForeman
             # - temporarily disabled params that will be removed from the api ------------------
             :provision_method, :capabilities, :flavour_ref, :image_ref, :start,
             :network, :cpus, :memory, :provider, :type, :tenant_id, :image_id,
+            # - avoids future conflicts as :root_pass is currently missing in the api docs
+            :root_pass,
             # ----------------------------------------------------------------------------------
             :compute_resource_id, :ptable_id] + base.declared_identifiers.keys
 
@@ -29,6 +33,10 @@ module HammerCLIForeman
       base.option "--partition-table-id", "PARTITION_TABLE", " "
       base.option "--puppetclass-ids", "PUPPETCLASS_IDS", " ",
         :format => HammerCLI::Options::Normalizers::List.new
+      base.option "--root-password", "ROOT_PW", " "
+      base.option "--ask-root-password", "ASK_ROOT_PW", " ",
+        :format => HammerCLI::Options::Normalizers::Bool.new
+
 
       bme_options = {}
       bme_options[:default] = 'true' if base.action.to_sym == :create
@@ -50,6 +58,11 @@ module HammerCLIForeman
         :format => HammerCLI::Options::Normalizers::KeyValueList.new
     end
 
+    def self.ask_password
+      prompt = "Enter the root password for the host: "
+      ask(prompt) {|q| q.echo = false}
+    end
+
     def request_params
       params = super
 
@@ -69,6 +82,12 @@ module HammerCLIForeman
         params['host']['compute_attributes']['nics_attributes'] = nested_attributes(option_interface_list)
       else
         params['host']['interfaces_attributes'] = nested_attributes(option_interface_list)
+      end
+
+      params['host']['root_pass'] = option_root_password unless option_root_password.nil?
+
+      if option_ask_root_password
+        params['host']['root_pass'] = HammerCLIForeman::CommonHostUpdateOptions::ask_password
       end
 
       params
@@ -96,9 +115,9 @@ module HammerCLIForeman
   end
 
 
-  class Host < HammerCLI::Apipie::Command
+  class Host < HammerCLIForeman::Command
 
-    resource ForemanApi::Resources::Host
+    resource :hosts
 
     class ListCommand < HammerCLIForeman::ListCommand
       # FIXME: list compute resource (model)
@@ -224,7 +243,7 @@ module HammerCLIForeman
         params = {
           'id' => get_identifier[0],
         }
-        status = resource.call(:status, params)[0]
+        status = resource.call(:status, params)
         status["status"]
       end
 
@@ -233,7 +252,7 @@ module HammerCLIForeman
           'id' => get_identifier[0],
           'power_action' => :state
         }
-        status = resource.call(:power, params)[0]
+        status = resource.call(:power, params)
         status["power"]
       end
 
@@ -244,7 +263,7 @@ module HammerCLIForeman
     class PuppetRunCommand < HammerCLIForeman::InfoCommand
 
       command_name "puppetrun"
-      action "puppetrun"
+      action :puppetrun
 
       def print_data(records)
         print_message _('Puppet run triggered')
@@ -257,7 +276,7 @@ module HammerCLIForeman
     class FactsCommand < HammerCLIForeman::ListCommand
 
       command_name "facts"
-      resource ForemanApi::Resources::FactValue, "index"
+      resource :fact_values, :index
       identifiers :id, :name
 
       apipie_options :without => declared_identifiers.keys
@@ -284,7 +303,7 @@ module HammerCLIForeman
     class PuppetClassesCommand < HammerCLIForeman::ListCommand
 
       command_name "puppet_classes"
-      resource ForemanApi::Resources::Puppetclass
+      resource :puppetclasses
 
       identifiers :id, :name
 
@@ -309,7 +328,7 @@ module HammerCLIForeman
       identifiers :id, :name
 
       command_name "reports"
-      resource ForemanApi::Resources::Report
+      resource :reports
       output HammerCLIForeman::Report::ListCommand.output_definition
 
       apipie_options :without => :search
@@ -323,7 +342,6 @@ module HammerCLIForeman
 
       success_message _("Host created")
       failure_message _("Could not create the host")
-      action "create"
 
       include HammerCLIForeman::CommonHostUpdateOptions
 
@@ -363,7 +381,7 @@ module HammerCLIForeman
 
     class SetParameterCommand < HammerCLIForeman::Parameter::SetCommand
 
-      resource ForemanApi::Resources::Parameter
+      resource :parameters
 
       desc _("Create or update parameter for a host.")
 
@@ -389,7 +407,7 @@ module HammerCLIForeman
 
     class DeleteParameterCommand < HammerCLIForeman::Parameter::DeleteCommand
 
-      resource ForemanApi::Resources::Parameter
+      resource :parameters
 
       desc _("Delete parameter for a host.")
 
@@ -414,14 +432,20 @@ module HammerCLIForeman
     class StartCommand < HammerCLI::Apipie::WriteCommand
 
       identifiers :id, :name
-      action "power"
+      action :power
 
       command_name "start"
       desc _("Power a host on")
       success_message _("The host is starting.")
 
-      def power_action
+      def option_power_action
         :start
+      end
+
+      def request_params
+        params = method_options
+        params['id'] = get_identifier[0]
+        params
       end
 
       apipie_options :without => :power_action
@@ -433,12 +457,12 @@ module HammerCLIForeman
       option '--force', :flag, _("Force turning off a host")
 
       identifiers :id, :name
-      action "power"
+      action :power
 
       command_name "stop"
       desc _("Power a host off")
 
-      def power_action
+      def option_power_action
         if option_force?
           :cycle
         else
@@ -454,20 +478,32 @@ module HammerCLIForeman
         end
       end
 
+      def request_params
+        params = method_options
+        params['id'] = get_identifier[0]
+        params
+      end
+
       apipie_options :without => :power_action
     end
 
     class RebootCommand < HammerCLI::Apipie::WriteCommand
 
       identifiers :id, :name
-      action "power"
+      action :power
 
       command_name "reboot"
       desc _("Reboot a host")
       success_message _("Host reboot started.")
 
-      def power_action
+      def option_power_action
         :soft
+      end
+
+      def request_params
+        params = method_options
+        params['id'] = get_identifier[0]
+        params
       end
 
       apipie_options :without => :power_action

@@ -2,9 +2,9 @@ require 'hammer_cli_foreman/resource_supported_test'
 
 module HammerCLIForeman
 
-  class Location < HammerCLI::Apipie::Command
+  class Location < HammerCLIForeman::Command
 
-    resource ForemanApi::Resources::Location
+    resource :locations
 
     class ListCommand < HammerCLIForeman::ListCommand
       include HammerCLIForeman::ResourceSupportedTest

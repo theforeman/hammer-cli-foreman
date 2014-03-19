@@ -82,7 +82,7 @@ describe HammerCLIForeman do
 
   context "Create command" do
     it "should format created entity in csv output" do
-      ForemanApi::Resources::Architecture.any_instance.stubs(:create).returns([{
+      ResourceMocks.mock_action_call(:architectures, :create, {
           "architecture" => {
                              "name" => "i386",
                                "id" => 3,
@@ -90,9 +90,8 @@ describe HammerCLIForeman do
               "operatingsystem_ids" => [],
                        "updated_at" => "2013-12-16T15:35:21Z"
           }
-      }])
+      })
       arch = HammerCLIForeman::Architecture::CreateCommand.new("", { :adapter => :csv, :interactive => false })
-      arch.class.resource(ForemanApi::Resources::Architecture)
       out, err = capture_io { arch.run(["--name='i386'"]) }
       out.must_match("Message,Id,Name\nArchitecture created,3,i386\n")
     end
@@ -100,38 +99,37 @@ describe HammerCLIForeman do
 
   context "AddAssociatedCommand" do
     it "should associate resource" do
-      ForemanApi::Resources::Organization.any_instance.stubs(:show).returns([{
-                      "id" => 1,
-              "domain_ids" => [2]}])
-      ForemanApi::Resources::Domain.any_instance.stubs(:show).returns([{
-                      "id" => 1,
-                    "name" => "local.lan"}])
+      ResourceMocks.mock_action_calls(
+          [:organizations, :show, { "id" => 1, "domain_ids" => [2] }],
+          [:domains, :show, { "id" => 1, "name" => "local.lan" }])
 
       class Assoc < HammerCLIForeman::AddAssociatedCommand
-        resource ForemanApi::Resources::Organization
-        associated_resource ForemanApi::Resources::Domain
+        resource :organizations
+        associated_resource :domains
+        identifiers :id
         apipie_options
       end
       res = Assoc.new("", { :adapter => :csv, :interactive => false })
+      res.stubs(:get_identifier).returns([1])
+      res.stubs(:associated_id).returns([1])
+
       res.get_new_ids.sort.must_equal [1, 2]
     end
 
     it "should associate resource with new format" do
-      ForemanApi::Resources::Organization.any_instance.stubs(:show).returns([{
-                      "id" => 1,
-                 "domains" => [
-                  { "id" => 2, "name" => "global.lan" }]
-                 }])
-      ForemanApi::Resources::Domain.any_instance.stubs(:show).returns([{
-                      "id" => 1,
-                    "name" => "local.lan"}])
+      ResourceMocks.mock_action_calls(
+          [:organizations, :show, { "id" => 1, "domains" => [{ "id" => 2, "name" => "global.lan" }] }],
+          [:domains, :show, { "id" => 1, "name" => "local.lan" }])
 
       class Assoc < HammerCLIForeman::AddAssociatedCommand
-        resource ForemanApi::Resources::Organization
-        associated_resource ForemanApi::Resources::Domain
+        resource :organizations
+        associated_resource :domains
         apipie_options
       end
       res = Assoc.new("", { :adapter => :csv, :interactive => false })
+      res.stubs(:get_identifier).returns([1])
+      res.stubs(:associated_id).returns([1])
+
       res.get_new_ids.sort.must_equal [1, 2]
     end
   end

@@ -1,8 +1,8 @@
 module HammerCLIForeman
 
-  class Report < HammerCLI::Apipie::Command
+  class Report < HammerCLIForeman::Command
 
-    resource ForemanApi::Resources::Report
+    resource :reports
 
     class ListCommand < HammerCLIForeman::ListCommand
 

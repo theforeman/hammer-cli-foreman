@@ -1,14 +1,11 @@
 require File.join(File.dirname(__FILE__), 'test_helper')
 require File.join(File.dirname(__FILE__), 'apipie_resource_mock')
 
-
 describe HammerCLIForeman::Medium do
 
   extend CommandTestHelper
 
   before :each do
-    HammerCLI::Connection.drop_all
-    cmd.class.resource ApipieResourceMock.new(cmd.class.resource.resource_class)
     cmd.stubs(:name_to_id).returns(1)
   end
 
@@ -22,7 +19,7 @@ describe HammerCLIForeman::Medium do
     end
 
     context "output" do
-      let(:expected_record_count) { cmd.resource.call(:index)[0].length }
+      let(:expected_record_count) { cmd.resource.call(:index).length }
 
       it_should_print_n_records
       it_should_print_column "Name"
@@ -31,7 +28,6 @@ describe HammerCLIForeman::Medium do
     end
 
   end
-
 
   context "InfoCommand" do
 
@@ -55,9 +51,7 @@ describe HammerCLIForeman::Medium do
         it_should_print_column "Updated at"
       end
     end
-
   end
-
 
   context "CreateCommand" do
 
@@ -74,7 +68,6 @@ describe HammerCLIForeman::Medium do
     end
   end
 
-
   context "DeleteCommand" do
 
     let(:cmd) { HammerCLIForeman::Medium::DeleteCommand.new("", ctx) }
@@ -84,9 +77,7 @@ describe HammerCLIForeman::Medium do
       it_should_accept "id", ["--id=1"]
       it_should_fail_with "name or id missing", []
     end
-
   end
-
 
   context "UpdateCommand" do
 

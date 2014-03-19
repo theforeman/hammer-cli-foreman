@@ -1,8 +1,10 @@
 module HammerCLIForeman
 
-  class Subnet < HammerCLI::AbstractCommand
+  class Subnet < HammerCLIForeman::Command
+
+    resource :subnets
+
     class ListCommand < HammerCLIForeman::ListCommand
-      resource ForemanApi::Resources::Subnet, "index"
 
       output do
         field :id, _("Id")
@@ -16,8 +18,6 @@ module HammerCLIForeman
 
 
     class InfoCommand < HammerCLIForeman::InfoCommand
-
-      resource ForemanApi::Resources::Subnet, "show"
 
       output ListCommand.output_definition do
         field :priority, _("Priority")
@@ -44,7 +44,6 @@ module HammerCLIForeman
 
       success_message _("Subnet created")
       failure_message _("Could not create the subnet")
-      resource ForemanApi::Resources::Subnet, "create"
 
       apipie_options
     end
@@ -54,7 +53,6 @@ module HammerCLIForeman
 
       success_message _("Subnet updated")
       failure_message _("Could not update the subnet")
-      resource ForemanApi::Resources::Subnet, "update"
 
       apipie_options
     end
@@ -64,7 +62,6 @@ module HammerCLIForeman
 
       success_message _("Subnet deleted")
       failure_message _("Could not delete the subnet")
-      resource ForemanApi::Resources::Subnet, "destroy"
 
       apipie_options
     end

@@ -25,6 +25,6 @@ EOF
   s.require_paths = ["lib"]
 
   s.add_dependency 'hammer_cli', '>= 0.0.18'
-  s.add_dependency 'foreman_api', '>= 0.1.11'
+  s.add_dependency 'apipie-bindings', '>= 0.0.4'
 
 end

@@ -1,8 +1,8 @@
 module HammerCLIForeman
 
-  class PartitionTable < HammerCLI::Apipie::Command
+  class PartitionTable < HammerCLIForeman::Command
 
-    resource ForemanApi::Resources::Ptable
+    resource :ptables
 
     class ListCommand < HammerCLIForeman::ListCommand
 
@@ -81,4 +81,3 @@ module HammerCLIForeman
 end
 
 HammerCLI::MainCommand.subcommand 'partition_table', _("Manipulate partition tables."), HammerCLIForeman::PartitionTable
-

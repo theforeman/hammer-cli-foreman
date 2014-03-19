@@ -2,9 +2,9 @@ require 'hammer_cli_foreman/resource_supported_test'
 
 module HammerCLIForeman
 
-  class Organization < HammerCLI::Apipie::Command
+  class Organization < HammerCLIForeman::Command
 
-    resource ForemanApi::Resources::Organization
+    resource :organizations
 
     class ListCommand < HammerCLIForeman::ListCommand
       include HammerCLIForeman::ResourceSupportedTest

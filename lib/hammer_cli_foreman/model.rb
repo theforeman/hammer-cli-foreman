@@ -1,8 +1,8 @@
 module HammerCLIForeman
 
-  class Model < HammerCLI::Apipie::Command
+  class Model < HammerCLIForeman::Command
 
-    resource ForemanApi::Resources::Model
+    resource :models
 
     class ListCommand < HammerCLIForeman::ListCommand
 

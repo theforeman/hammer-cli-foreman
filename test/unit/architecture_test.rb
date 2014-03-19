@@ -7,9 +7,6 @@ describe HammerCLIForeman::Architecture do
   extend CommandTestHelper
 
   before :each do
-    HammerCLI::Settings.load({:_params => {:interactive => false}})
-    HammerCLI::Connection.drop_all
-    cmd.class.resource ApipieResourceMock.new(cmd.class.resource.resource_class)
     cmd.stubs(:name_to_id).returns(1)
   end
 
@@ -23,7 +20,7 @@ describe HammerCLIForeman::Architecture do
     end
 
     context "output" do
-      let(:expected_record_count) { cmd.resource.call(:index)[0].length }
+      let(:expected_record_count) { cmd.resource.call(:index).length }
 
       it_should_print_n_records
       it_should_print_column "Name"

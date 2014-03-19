@@ -1,8 +1,8 @@
 module HammerCLIForeman
 
-  class Medium < HammerCLI::Apipie::Command
+  class Medium < HammerCLIForeman::Command
 
-    resource ForemanApi::Resources::Medium
+    resource :media
 
     class ListCommand < HammerCLIForeman::ListCommand
       output do

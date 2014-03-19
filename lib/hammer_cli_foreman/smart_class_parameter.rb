@@ -1,7 +1,7 @@
 module HammerCLIForeman
 
   class SmartClassParametersBriefList < HammerCLIForeman::ListCommand
-    resource ForemanApi::Resources::SmartClassParameter, "index"
+    resource :smart_class_parameters, :index
     command_name 'sc_params'
 
     output do
@@ -31,9 +31,9 @@ module HammerCLIForeman
     end
   end
 
-  class SmartClassParameter < HammerCLI::Apipie::Command
+  class SmartClassParameter < HammerCLIForeman::Command
 
-    resource ForemanApi::Resources::SmartClassParameter
+    resource :smart_class_parameters
 
     class ListCommand < HammerCLIForeman::SmartClassParametersList
       command_name 'list'

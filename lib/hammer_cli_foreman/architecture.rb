@@ -1,8 +1,8 @@
 module HammerCLIForeman
 
-  class Architecture < HammerCLI::Apipie::Command
+  class Architecture < HammerCLIForeman::Command
 
-    resource ForemanApi::Resources::Architecture
+    resource :architectures
 
     class ListCommand < HammerCLIForeman::ListCommand
 

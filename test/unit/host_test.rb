@@ -7,8 +7,6 @@ describe HammerCLIForeman::Host do
   extend CommandTestHelper
 
   before :each do
-    HammerCLI::Connection.drop_all
-    cmd.class.resource ApipieResourceMock.new(cmd.class.resource.resource_class)
     cmd.stubs(:name_to_id).returns(1)
   end
 
@@ -22,7 +20,7 @@ describe HammerCLIForeman::Host do
     end
 
     context "output" do
-      let(:expected_record_count) { cmd.resource.call(:index)[0].length }
+      let(:expected_record_count) { cmd.resource.call(:index).length }
 
       it_should_print_n_records
       it_should_print_columns ["Id", "Name", "Operating System Id", "Host Group Id", "IP", "MAC"]
@@ -69,9 +67,7 @@ describe HammerCLIForeman::Host do
     let(:cmd) { HammerCLIForeman::Host::StatusCommand.new("", ctx) }
 
     before :each do
-      resource_mock = ApipieResourceMock.new(cmd.class.resource.resource_class)
-      resource_mock.stub_method(:power, {'power' => 'running'})
-      cmd.class.resource resource_mock
+      ResourceMocks.mock_action_call(:hosts, :power, {'power' => 'running'} )
     end
 
     context "parameters" do
@@ -198,11 +194,16 @@ describe HammerCLIForeman::Host do
 
     let(:cmd) { HammerCLIForeman::Host::CreateCommand.new("", ctx) }
 
+    before :each do
+      HammerCLIForeman::CommonHostUpdateOptions.stubs(:ask_password).returns("password")
+    end
+
     context "parameters" do
       it_should_accept "name, environment_id, architecture_id, domain_id, puppet_proxy_id, operatingsystem_id and more",
           ["--name=host", "--environment-id=1", "--architecture-id=1", "--domain-id=1", "--puppet-proxy-id=1", "--operatingsystem-id=1",
             "--ip=1.2.3.4", "--mac=11:22:33:44:55:66", "--medium-id=1", "--partition-table-id=1", "--subnet-id=1",
-            "--sp-subnet-id=1", "--model-id=1", "--hostgroup-id=1", "--owner-id=1", '--puppet-ca-proxy-id=1', '--puppetclass-ids']
+            "--sp-subnet-id=1", "--model-id=1", "--hostgroup-id=1", "--owner-id=1", '--puppet-ca-proxy-id=1', '--puppetclass-ids',
+            "--root-password=pwd", "--ask-root-password=true"]
       it_should_fail_with "name or id missing",
           ["--environment-id=1", "--architecture-id=1", "--domain-id=1", "--puppet-proxy-id=1", "--operatingsystem-id=1"]
       it_should_fail_with "environment_id missing",
@@ -218,7 +219,8 @@ describe HammerCLIForeman::Host do
 
       with_params ["--name=host", "--environment-id=1", "--architecture-id=1", "--domain-id=1", "--puppet-proxy-id=1", "--operatingsystem-id=1",
             "--ip=1.2.3.4", "--mac=11:22:33:44:55:66", "--medium-id=1", "--partition-table-id=1", "--subnet-id=1",
-            "--sp-subnet-id=1", "--model-id=1", "--hostgroup-id=1", "--owner-id=1", '--puppet-ca-proxy-id=1', '--puppetclass-ids'] do
+            "--sp-subnet-id=1", "--model-id=1", "--hostgroup-id=1", "--owner-id=1", '--puppet-ca-proxy-id=1', '--puppetclass-ids',
+            "--root-password=pwd", "--ask-root-password=true"] do
         it_should_call_action_and_test_params(:create) { |par| par["host"]["managed"] == true }
         it_should_call_action_and_test_params(:create) { |par| par["host"]["build"] == true }
         it_should_call_action_and_test_params(:create) { |par| par["host"]["enabled"] == true }
@@ -230,12 +232,17 @@ describe HammerCLIForeman::Host do
 
     let(:cmd) { HammerCLIForeman::Host::UpdateCommand.new("", ctx) }
 
+    before :each do
+      HammerCLIForeman::CommonHostUpdateOptions.stubs(:ask_password).returns("password")
+    end
+
     context "parameters" do
       it_should_accept "name", ["--name=host", "--new-name=host2"]
       it_should_accept "id and more", ["--id=1", "--new-name=host2", "--environment-id=1", "--architecture-id=1",
             "--domain-id=1", "--puppet-proxy-id=1", "--operatingsystem-id=1",
             "--ip=1.2.3.4", "--mac=11:22:33:44:55:66", "--medium-id=1", "--partition-table-id=1", "--subnet-id=1",
-            "--sp-subnet-id=1", "--model-id=1", "--hostgroup-id=1", "--owner-id=1", '--puppet-ca-proxy-id=1']
+            "--sp-subnet-id=1", "--model-id=1", "--hostgroup-id=1", "--owner-id=1", '--puppet-ca-proxy-id=1',
+            "--root-password=pwd", "--ask-root-password=true"]
       it_should_fail_with "no params", []
       it_should_fail_with "name or id missing", ["--new-name=host2"]
 
@@ -260,9 +267,7 @@ describe HammerCLIForeman::Host do
   context "SetParameterCommand" do
 
     before :each do
-      resource_mock = ApipieResourceMock.new(cmd.class.resource.resource_class)
-      resource_mock.stub_method(:index, [])
-      cmd.class.resource resource_mock
+      ResourceMocks.parameters_index
     end
 
     let(:cmd) { HammerCLIForeman::Host::SetParameterCommand.new("", ctx) }
@@ -322,7 +327,7 @@ describe HammerCLIForeman::Host do
   context "SCParamsCommand" do
 
     before :each do
-      cmd.class.resource ResourceMocks.smart_class_parameter
+      ResourceMocks.smart_class_parameters_index
     end
 
     let(:cmd) { HammerCLIForeman::Host::SCParamsCommand.new("", ctx) }
