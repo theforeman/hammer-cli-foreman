@@ -22,6 +22,11 @@ describe HammerCLIForeman::Output::Formatters::ServerFormatter do
     formatter.format({ :name => 'Server', :url => "URL"}).must_equal 'Server (URL)'
   end
 
+  it "formats the server" do
+    formatter = HammerCLIForeman::Output::Formatters::ServerFormatter.new
+    formatter.format({ 'name' => 'Server', 'url' => "URL"}).must_equal 'Server (URL)'
+  end
+
   it "recovers when server is nil" do
     formatter = HammerCLIForeman::Output::Formatters::ServerFormatter.new
     formatter.format(nil).must_equal nil
