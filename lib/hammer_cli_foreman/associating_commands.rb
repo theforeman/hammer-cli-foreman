@@ -79,7 +79,7 @@ module HammerCLIForeman
         apipie_options
 
         def associated_resource_name
-          "smart_proxy"
+          "smart-proxy"
         end
       end
 
@@ -88,7 +88,7 @@ module HammerCLIForeman
         apipie_options
 
         def associated_resource_name
-          "smart_proxy"
+          "smart-proxy"
         end
       end
     end
