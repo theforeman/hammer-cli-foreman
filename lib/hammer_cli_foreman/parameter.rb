@@ -77,6 +77,7 @@ module HammerCLIForeman
     class DeleteCommand < HammerCLIForeman::Command
 
       include HammerCLI::Messages
+      include HammerCLIForeman::ConnectionSetup
 
       option "--name", "NAME", _("parameter name"), :required => true
 
