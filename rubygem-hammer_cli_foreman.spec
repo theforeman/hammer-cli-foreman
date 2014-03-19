@@ -9,7 +9,7 @@
 Summary: Universal command-line interface for Foreman
 Name: rubygem-%{gemname}
 Version: 0.0.18
-Release: 6%{?dist}
+Release: 7%{?dist}
 Group: Development/Languages
 License: GPLv3
 URL: http://github.com/theforeman/hammer-cli-foreman
@@ -74,6 +74,21 @@ cp -pa .%{gem_dir}/* \
 
 
 %changelog
+* Wed Mar 19 2014 Jason Montleon <jmontleo@redhat.com> 0.0.18-7
+- Merge remote-tracking branch 'upstream/master' (jmontleo@redhat.com)
+- Merge pull request #106 from tstrachota/set_param (tstrachota@redhat.com)
+- Fixes #4674 - Server formatter fails on not symbol keys (mbacovsk@redhat.com)
+- Merge pull request #89 from mbacovsky/3897_apipie_bindings
+  (martin.bacovsky@gmail.com)
+- Ref #3897 - dynamic bindings (mbacovsk@redhat.com)
+- Merge pull request #105 from bkearney/bkearney/zanata (tstrachota@redhat.com)
+- refs #4572 - unable to delete parameter (tstrachota@redhat.com)
+- Merge pull request #104 from tstrachota/set_param (tstrachota@redhat.com)
+- fixes #4587 - adds host option to pass root password
+  (stephan.dollberg@gmail.com)
+- add zanata translation information (bkearney@redhat.com)
+- fixes #4572 - unable to set parameter (tstrachota@redhat.com)
+
 * Mon Mar 17 2014 Jason Montleon <jmontleo@redhat.com> 0.0.18-6
 - update katello module name in cli_config.yml (jmontleo@redhat.com)
 
