@@ -27,7 +27,13 @@ module HammerCLIForeman::Output
       end
 
       def format(server)
-        "%s (%s)" % [server[:name], server[:url]] unless server.nil?
+        if server.kind_of? Hash
+          name = server[:name] || server['name']
+          url = server[:url] || server['url']
+          "#{name} (#{url})"
+        else
+          server
+        end
       end
     end
 
