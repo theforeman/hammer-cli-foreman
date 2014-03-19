@@ -22,7 +22,7 @@ module HammerCLIForeman
       option "--value", "VALUE", _("parameter value"), :required => true
 
       def self.command_name(name=nil)
-        super(name) || "set_parameter"
+        (super(name) || "set-parameter").gsub('_', '-')
       end
 
       def self.resource(resource=nil)
@@ -82,7 +82,7 @@ module HammerCLIForeman
       option "--name", "NAME", _("parameter name"), :required => true
 
       def self.command_name(name=nil)
-        super(name) || "delete_parameter"
+        (super(name) || "delete-parameter").gsub('_', '-')
       end
 
       def self.resource(resource=nil)

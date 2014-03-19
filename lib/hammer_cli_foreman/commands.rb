@@ -320,7 +320,8 @@ module HammerCLIForeman
   class AddAssociatedCommand < AssociatedCommand
 
     def self.command_name(name=nil)
-      super(name) || (associated_resource ? "add_"+associated_resource.singular_name : nil)
+      name = super(name) || (associated_resource ? "add-"+associated_resource.singular_name : nil)
+      name.respond_to?(:gsub) ? name.gsub('_', '-') : name
     end
 
     def self.desc(desc=nil)
@@ -340,7 +341,8 @@ module HammerCLIForeman
   class RemoveAssociatedCommand < AssociatedCommand
 
     def self.command_name(name=nil)
-      super(name) || (associated_resource ? "remove_"+associated_resource.singular_name : nil)
+      name = super(name) || (associated_resource ? "remove-"+associated_resource.singular_name : nil)
+      name.respond_to?(:gsub) ? name.gsub('_', '-') : name
     end
 
     def self.desc(desc=nil)

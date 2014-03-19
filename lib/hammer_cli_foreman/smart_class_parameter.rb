@@ -2,7 +2,7 @@ module HammerCLIForeman
 
   class SmartClassParametersBriefList < HammerCLIForeman::ListCommand
     resource :smart_class_parameters, :index
-    command_name 'sc_params'
+    command_name 'sc-params'
 
     output do
       field :id, _("Id")
@@ -100,6 +100,6 @@ module HammerCLIForeman
 
   end
 
-  HammerCLI::MainCommand.subcommand 'sc_param', _("Manipulate smart class parameters."), HammerCLIForeman::SmartClassParameter
+  HammerCLI::MainCommand.subcommand 'sc-param', _("Manipulate smart class parameters."), HammerCLIForeman::SmartClassParameter
 
 end

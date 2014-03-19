@@ -75,7 +75,7 @@ module HammerCLIForeman
 
       action :import_puppetclasses
 
-      command_name    "import_classes"
+      command_name    "import-classes"
       success_message _("Puppet classes were imported")
       failure_message _("Import of puppet classes failed")
 
