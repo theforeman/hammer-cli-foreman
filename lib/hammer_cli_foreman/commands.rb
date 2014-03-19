@@ -1,5 +1,7 @@
 module HammerCLIForeman
 
+  CONNECTION_NAME = 'foreman'
+
   def self.credentials
     @credentials ||= Credentials.new(
       :username => (HammerCLI::Settings.get(:_params, :username) || ENV['FOREMAN_USERNAME'] || HammerCLI::Settings.get(:foreman, :username)),
@@ -10,14 +12,24 @@ module HammerCLIForeman
 
   def self.resource_config
     config = {}
-    config[:base_url] = HammerCLI::Settings.get(:foreman, :host)
+    config[:uri] = HammerCLI::Settings.get(:foreman, :host)
     config[:credentials] = credentials
+    config[:logger] = Logging.logger['API']
+    config[:api_version] = 2
+    config[:aggressive_cache_checking] = HammerCLI::Settings.get(:foreman, :refresh_cache) || true
     config
+  end
+
+  def self.foreman_resource(resource)
+    HammerCLI::Connection.create(
+        CONNECTION_NAME,
+        HammerCLI::Apipie::Command.resource_config.merge(resource_config),
+        HammerCLI::Apipie::Command.connection_options).api.resource(resource)
   end
 
   module ConnectionSetup
     def connection_name(resource_class)
-      'foreman_'+super(resource_class)
+      CONNECTION_NAME
     end
 
     def resource_config
@@ -52,14 +64,17 @@ module HammerCLIForeman
   end
 
   class ReadCommand < HammerCLI::Apipie::ReadCommand
-    include HammerCLIForeman::ConnectionSetup
+    extend HammerCLIForeman::ConnectionSetup
+  end
+
+  class Command < ReadCommand
   end
 
   class WriteCommand < HammerCLI::Apipie::WriteCommand
-    include HammerCLIForeman::ConnectionSetup
+    extend HammerCLIForeman::ConnectionSetup
 
     def send_request
-      HammerCLIForeman.record_to_common_format(resource.call(action, request_params, request_headers)[0])
+      HammerCLIForeman.record_to_common_format(super)
     end
 
   end
@@ -230,7 +245,7 @@ module HammerCLIForeman
     end
 
     def self.setup_associated_identifier_options
-      name = associated_resource.name.to_s
+      name = associated_resource.singular_name
       option_switch = "--"+name.gsub('_', '-')
 
       option option_switch, name.upcase, " ", :attribute_name => :associated_name do |value|
@@ -241,15 +256,11 @@ module HammerCLIForeman
 
 
     def associated_resource
-      HammerCLI::Connection.create(
-        connection_name(self.class.associated_resource.resource_class),
-        resource_config.merge(:definition => self.class.associated_resource),
-        connection_options
-      )
+      self.class.associated_resource
     end
 
     def self.associated_resource(resource_class=nil)
-      @associated_api_resource = HammerCLI::Apipie::ResourceDefinition.new(resource_class) unless resource_class.nil?
+      @associated_api_resource = HammerCLIForeman.foreman_resource(resource_class) unless resource_class.nil?
       return @associated_api_resource
     end
 
@@ -276,7 +287,7 @@ module HammerCLIForeman
     end
 
     def get_current_ids
-      item = HammerCLIForeman.record_to_common_format(resource.call('show', {'id' => get_identifier[0]})[0])
+      item = HammerCLIForeman.record_to_common_format(resource.call(:show, {:id => get_identifier[0]}))
       if item.has_key?(association_name(true))
         item[association_name(true)].map { |assoc| assoc['id'] }
       else
@@ -285,24 +296,23 @@ module HammerCLIForeman
     end
 
     def get_required_id
-      item = HammerCLIForeman.record_to_common_format(associated_resource.call('show', {'id' => associated_id || associated_name})[0])
+      item = HammerCLIForeman.record_to_common_format(associated_resource.call(:show, {:id => associated_id || associated_name}))
       item['id']
     end
 
     def request_params
       params = super
-      if params.key?(resource.name)
-        params[resource.name] = {"#{association_name}_ids" => get_new_ids }
+      if params.key?(resource.singular_name)
+        params[resource.singular_name] = {"#{association_name}_ids" => get_new_ids }
       else
         params["#{association_name}_ids"] = get_new_ids
       end
-
       params['id'] = get_identifier[0]
       params
     end
 
     def association_name(plural = false)
-      plural ? associated_resource.plural_name : associated_resource.name
+      plural ? associated_resource.name.to_s : associated_resource.singular_name.to_s
     end
 
   end
@@ -310,7 +320,7 @@ module HammerCLIForeman
   class AddAssociatedCommand < AssociatedCommand
 
     def self.command_name(name=nil)
-      super(name) || (associated_resource ? "add_"+associated_resource.name : nil)
+      super(name) || (associated_resource ? "add_"+associated_resource.singular_name : nil)
     end
 
     def self.desc(desc=nil)
@@ -330,7 +340,7 @@ module HammerCLIForeman
   class RemoveAssociatedCommand < AssociatedCommand
 
     def self.command_name(name=nil)
-      super(name) || (associated_resource ? "remove_"+associated_resource.name : nil)
+      super(name) || (associated_resource ? "remove_"+associated_resource.singular_name : nil)
     end
 
     def self.desc(desc=nil)

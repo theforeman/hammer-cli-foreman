@@ -1,13 +1,12 @@
 require 'hammer_cli'
-require 'foreman_api'
 
 module HammerCLIForeman
 
-  class CommonParameter < HammerCLI::AbstractCommand
+  class CommonParameter < HammerCLIForeman::Command
 
+    resource :common_parameters
 
     class ListCommand < HammerCLIForeman::ListCommand
-      resource ForemanApi::Resources::CommonParameter, "index"
 
       output do
         field :name, _("Name")
@@ -25,8 +24,6 @@ module HammerCLIForeman
       success_message_for :create, _("Created parameter [%{name}s] with value [%{value}s].")
       success_message_for :update, _("Parameter [%{name}s] updated to [%{value}s].")
 
-      resource ForemanApi::Resources::CommonParameter
-
       option "--name", "NAME", _("parameter name"), :required => true
       option "--value", "VALUE", _("parameter value"), :required => true
 
@@ -40,7 +37,7 @@ module HammerCLIForeman
       end
 
       def parameter_exist?
-        params = resource.call(:index)[0]
+        params = resource.call(:index)
         params = HammerCLIForeman.collection_to_common_format(params)
         params.find { |p| p["name"] == option_name }
       end
@@ -60,7 +57,6 @@ module HammerCLIForeman
 
       success_message _("Global parameter [%{name}s] deleted.")
       failure_message _("Could not delete the global parameter [%{name}s]")
-      resource ForemanApi::Resources::CommonParameter, "destroy"
 
       apipie_options :without => :id
     end

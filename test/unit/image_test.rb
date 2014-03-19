@@ -10,8 +10,6 @@ describe HammerCLIForeman::Image do
   extend CommandTestHelper
 
   before :each do
-    HammerCLI::Connection.drop_all
-    cmd.class.resource ApipieResourceMock.new(cmd.class.resource.resource_class)
     cmd.stubs(:name_to_id).returns(1)
   end
 
@@ -22,11 +20,11 @@ describe HammerCLIForeman::Image do
     context "parameters" do
       it_should_accept "compute resource name", ["--compute-resource=cr"]
       it_should_accept "compute resource id", ["--compute-resource-id=1"]
-      # it_should_accept_search_params
+      #it_should_accept_search_params
     end
 
     context "output" do
-      let(:expected_record_count) { cmd.resource.call(:index)[0].length }
+      let(:expected_record_count) { cmd.resource.call(:index, :compute_resource_id=>1).length }
 
       with_params ["--compute-resource-id=1"] do
         it_should_print_n_records
@@ -50,7 +48,7 @@ describe HammerCLIForeman::Image do
     end
 
     context "output" do
-      let(:expected_record_count) { cmd.resource.call(:index)[0].length }
+      let(:expected_record_count) { cmd.resource.call(:index).length }
 
       with_params ["--compute-resource-id=1", "--id=1"] do
         it_should_print_n_records 1
@@ -70,10 +68,10 @@ describe HammerCLIForeman::Image do
     let(:cmd) { HammerCLIForeman::Image::AvailableImagesCommand.new("", ctx) }
 
     before :each do
-      resource_mock = ApipieResourceMock.new(cmd.class.resource.resource_class)
-      resource_mock.stub_method(:available_images, [])
-      cmd.class.resource resource_mock
+
+      ResourceMocks.compute_resources_available_images
     end
+
 
     context "parameters" do
       it_should_accept "compute resource name", ["--compute-resource=cr"]

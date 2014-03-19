@@ -2,9 +2,9 @@ require 'hammer_cli_foreman/compute_resource'
 
 module HammerCLIForeman
 
-  class Image < HammerCLI::Apipie::Command
+  class Image < HammerCLIForeman::Command
 
-    resource ForemanApi::Resources::Image
+    resource :images
     command_name 'image'
     desc _("View and manage compute resource's images")
 
@@ -69,7 +69,7 @@ module HammerCLIForeman
 
     class AvailableImagesCommand < HammerCLIForeman::ListCommand
 
-      resource ForemanApi::Resources::ComputeResource, _("available_images")
+      resource :compute_resources, :available_images
       command_name 'available'
       desc _("Show images available for addition")
 

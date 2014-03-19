@@ -3,79 +3,79 @@ module HammerCLIForeman
 
     module Hostgroup
       class AddHostgroupCommand < HammerCLIForeman::AddAssociatedCommand
-        associated_resource ForemanApi::Resources::Hostgroup
+        associated_resource :hostgroups
         apipie_options
       end
 
       class RemoveHostgroupCommand < HammerCLIForeman::RemoveAssociatedCommand
-        associated_resource ForemanApi::Resources::Hostgroup
+        associated_resource :hostgroups
         apipie_options
       end
     end
 
     module Environment
       class AddEnvironmentCommand < HammerCLIForeman::AddAssociatedCommand
-        associated_resource ForemanApi::Resources::Environment
+        associated_resource :environments
         apipie_options
       end
 
       class RemoveEnvironmentCommand < HammerCLIForeman::RemoveAssociatedCommand
-        associated_resource ForemanApi::Resources::Environment
+        associated_resource :environments
         apipie_options
       end
     end
 
     module Domain
       class AddDomainCommand < HammerCLIForeman::AddAssociatedCommand
-        associated_resource ForemanApi::Resources::Domain
+        associated_resource :domains
         apipie_options
       end
 
       class RemoveDomainCommand < HammerCLIForeman::RemoveAssociatedCommand
-        associated_resource ForemanApi::Resources::Domain
+        associated_resource :domains
         apipie_options
       end
     end
 
     module Medium
       class AddMediumCommand < HammerCLIForeman::AddAssociatedCommand
-        associated_resource ForemanApi::Resources::Medium
+        associated_resource :media
         apipie_options
       end
 
       class RemoveMediumCommand < HammerCLIForeman::RemoveAssociatedCommand
-        associated_resource ForemanApi::Resources::Medium
+        associated_resource :media
         apipie_options
       end
     end
 
     module Subnet
       class AddSubnetCommand < HammerCLIForeman::AddAssociatedCommand
-        associated_resource ForemanApi::Resources::Subnet
+        associated_resource :subnets
         apipie_options
       end
 
       class RemoveSubnetCommand < HammerCLIForeman::RemoveAssociatedCommand
-        associated_resource ForemanApi::Resources::Subnet
+        associated_resource :subnets
         apipie_options
       end
     end
 
     module ComputeResource
       class AddComputeResourceCommand < HammerCLIForeman::AddAssociatedCommand
-        associated_resource ForemanApi::Resources::ComputeResource
+        associated_resource :compute_resources
         apipie_options
       end
 
       class RemoveComputeResourceCommand < HammerCLIForeman::RemoveAssociatedCommand
-        associated_resource ForemanApi::Resources::ComputeResource
+        associated_resource :compute_resources
         apipie_options
       end
     end
 
     module SmartProxy
       class AddSmartProxyCommand < HammerCLIForeman::AddAssociatedCommand
-        associated_resource ForemanApi::Resources::SmartProxy
+        associated_resource :smart_proxies
         apipie_options
 
         def associated_resource_name
@@ -84,7 +84,7 @@ module HammerCLIForeman
       end
 
       class RemoveSmartProxyCommand < HammerCLIForeman::RemoveAssociatedCommand
-        associated_resource ForemanApi::Resources::SmartProxy
+        associated_resource :smart_proxies
         apipie_options
 
         def associated_resource_name
@@ -97,7 +97,7 @@ module HammerCLIForeman
       class AddUserCommand < HammerCLIForeman::AddAssociatedCommand
         associated_identifiers :id
 
-        associated_resource ForemanApi::Resources::User
+        associated_resource :users
         apipie_options
 
         success_message "The user has been associated"
@@ -107,7 +107,7 @@ module HammerCLIForeman
       class RemoveUserCommand < HammerCLIForeman::RemoveAssociatedCommand
         associated_identifiers :id
 
-        associated_resource ForemanApi::Resources::User
+        associated_resource :users
         apipie_options
 
         success_message "The user has been disassociated"
@@ -117,31 +117,31 @@ module HammerCLIForeman
 
     module ConfigTemplate
       class AddConfigTemplateCommand < HammerCLIForeman::AddAssociatedCommand
-        associated_resource ForemanApi::Resources::ConfigTemplate
+        associated_resource :config_templates
         apipie_options
       end
 
       class RemoveConfigTemplateCommand < HammerCLIForeman::RemoveAssociatedCommand
-        associated_resource ForemanApi::Resources::ConfigTemplate
+        associated_resource :config_templates
         apipie_options
       end
     end
 
     module Organization
       class AddOrganizationCommand < HammerCLIForeman::AddAssociatedCommand
-        associated_resource ForemanApi::Resources::Organization
+        associated_resource :organizations
         apipie_options
       end
 
       class RemoveOrganizationCommand < HammerCLIForeman::RemoveAssociatedCommand
-        associated_resource ForemanApi::Resources::Organization
+        associated_resource :organizations
         apipie_options
       end
     end
 
     module OperatingSystem
       class AddOSCommand < HammerCLIForeman::AddAssociatedCommand
-        associated_resource ForemanApi::Resources::OperatingSystem
+        associated_resource :operatingsystems
 
         associated_identifiers :id
         apipie_options
@@ -152,7 +152,7 @@ module HammerCLIForeman
 
 
       class RemoveOSCommand < HammerCLIForeman::RemoveAssociatedCommand
-        associated_resource ForemanApi::Resources::OperatingSystem
+        associated_resource :operatingsystems
 
         associated_identifiers :id
         apipie_options
@@ -164,7 +164,7 @@ module HammerCLIForeman
 
     module Architecture
       class AddArchitectureCommand < HammerCLIForeman::AddAssociatedCommand
-        associated_resource ForemanApi::Resources::Architecture
+        associated_resource :architectures
         apipie_options
 
         success_message _("Architecture has been associated")
@@ -173,7 +173,7 @@ module HammerCLIForeman
 
 
       class RemoveArchitectureCommand < HammerCLIForeman::RemoveAssociatedCommand
-        associated_resource ForemanApi::Resources::Architecture
+        associated_resource :architectures
         apipie_options
 
         success_message _("Architecture has been disassociated")
@@ -183,7 +183,7 @@ module HammerCLIForeman
 
     module PartitionTable
       class AddPartitionTableCommand < HammerCLIForeman::AddAssociatedCommand
-        associated_resource ForemanApi::Resources::Ptable
+        associated_resource :ptables
         apipie_options
 
         success_message _("Partition table has been associated")
@@ -192,7 +192,7 @@ module HammerCLIForeman
 
 
       class RemovePartitionTableCommand < HammerCLIForeman::RemoveAssociatedCommand
-        associated_resource ForemanApi::Resources::Ptable
+        associated_resource :ptables
         apipie_options
 
         success_message _("Partition table has been disassociated")

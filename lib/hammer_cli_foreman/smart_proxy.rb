@@ -1,7 +1,8 @@
 module HammerCLIForeman
 
-  class SmartProxy < HammerCLI::Apipie::Command
-    resource ForemanApi::Resources::SmartProxy
+  class SmartProxy < HammerCLIForeman::Command
+
+    resource :smart_proxies
 
     class ListCommand < HammerCLIForeman::ListCommand
 

@@ -7,8 +7,6 @@ describe HammerCLIForeman::Host do
   extend CommandTestHelper
 
   before :each do
-    HammerCLI::Connection.drop_all
-    cmd.class.resource ApipieResourceMock.new(cmd.class.resource.resource_class)
     cmd.stubs(:name_to_id).returns(1)
   end
 
@@ -22,7 +20,7 @@ describe HammerCLIForeman::Host do
     end
 
     context "output" do
-      let(:expected_record_count) { cmd.resource.call(:index)[0].length }
+      let(:expected_record_count) { cmd.resource.call(:index).length }
 
       it_should_print_n_records
       it_should_print_columns ["Id", "Name", "Operating System Id", "Host Group Id", "IP", "MAC"]
@@ -69,9 +67,7 @@ describe HammerCLIForeman::Host do
     let(:cmd) { HammerCLIForeman::Host::StatusCommand.new("", ctx) }
 
     before :each do
-      resource_mock = ApipieResourceMock.new(cmd.class.resource.resource_class)
-      resource_mock.stub_method(:power, {'power' => 'running'})
-      cmd.class.resource resource_mock
+      ResourceMocks.mock_action_call(:hosts, :power, {'power' => 'running'} )
     end
 
     context "parameters" do
@@ -271,9 +267,7 @@ describe HammerCLIForeman::Host do
   context "SetParameterCommand" do
 
     before :each do
-      resource_mock = ApipieResourceMock.new(cmd.class.resource.resource_class)
-      resource_mock.stub_method(:index, [])
-      cmd.class.resource resource_mock
+      ResourceMocks.parameters_index
     end
 
     let(:cmd) { HammerCLIForeman::Host::SetParameterCommand.new("", ctx) }
@@ -333,7 +327,7 @@ describe HammerCLIForeman::Host do
   context "SCParamsCommand" do
 
     before :each do
-      cmd.class.resource ResourceMocks.smart_class_parameter
+      ResourceMocks.smart_class_parameters_index
     end
 
     let(:cmd) { HammerCLIForeman::Host::SCParamsCommand.new("", ctx) }

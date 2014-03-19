@@ -2,8 +2,8 @@ require 'hammer_cli_foreman/image'
 
 module HammerCLIForeman
 
-  class ComputeResource < HammerCLI::Apipie::Command
-    resource ForemanApi::Resources::ComputeResource
+  class ComputeResource < HammerCLIForeman::Command
+    resource :compute_resources
 
     class ListCommand < HammerCLIForeman::ListCommand
 

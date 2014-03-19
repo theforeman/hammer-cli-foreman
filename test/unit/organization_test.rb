@@ -1,5 +1,7 @@
 require File.join(File.dirname(__FILE__), 'test_helper')
 require File.join(File.dirname(__FILE__), 'helpers/resource_disabled')
+require File.join(File.dirname(__FILE__), 'apipie_resource_mock')
+
 
 describe HammerCLIForeman::Organization do
 
@@ -7,15 +9,14 @@ describe HammerCLIForeman::Organization do
   extend ResourceDisabled
 
   before :each do
-    HammerCLI::Connection.drop_all
-    resource_mock = ApipieResourceMock.new(cmd.class.resource.resource_class)
-    resource_mock.stub_method(:index, [])
-    resource_mock.stub_method(:show, {})
-    cmd.class.resource resource_mock
     cmd.stubs(:name_to_id).returns(1)
   end
 
   context "ListCommand" do
+
+    before :each do
+      ResourceMocks.organizations_index
+    end
 
     let(:cmd) { HammerCLIForeman::Organization::ListCommand.new("", ctx) }
 
@@ -25,7 +26,7 @@ describe HammerCLIForeman::Organization do
     end
 
     context "output" do
-      let(:expected_record_count) { cmd.resource.call(:index)[0].length }
+      let(:expected_record_count) { cmd.resource.call(:index).length }
 
       it_should_print_n_records
       it_should_print_column "Name"
@@ -37,6 +38,10 @@ describe HammerCLIForeman::Organization do
 
 
   context "InfoCommand" do
+
+    before :each do
+      ResourceMocks.organizations_show
+    end
 
     let(:cmd) { HammerCLIForeman::Organization::InfoCommand.new("", ctx) }
 
@@ -104,7 +109,7 @@ describe HammerCLIForeman::Organization do
       it_should_fail_with "name or id missing", ["--new-name=org2"]
     end
 
-     with_params ["--id=1"] do
+    with_params ["--id=1"] do
       it_should_fail_when_disabled
     end
   end

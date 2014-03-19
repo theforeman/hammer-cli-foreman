@@ -6,11 +6,7 @@ describe HammerCLIForeman::CommonParameter do
 
   extend CommandTestHelper
 
-  let(:resource_mock) { ApipieResourceMock.new(cmd.class.resource.resource_class) }
-
   before :each do
-    HammerCLI::Connection.drop_all
-    cmd.class.resource resource_mock
     cmd.stubs(:name_to_id).returns(1)
   end
 
@@ -24,7 +20,7 @@ describe HammerCLIForeman::CommonParameter do
     end
 
     context "output" do
-      let(:expected_record_count) { cmd.resource.call(:index)[0].length }
+      let(:expected_record_count) { cmd.resource.call(:index).length }
 
       it_should_print_n_records
       it_should_print_columns  ["Name", "Value"]
@@ -36,9 +32,6 @@ describe HammerCLIForeman::CommonParameter do
   context "SetCommand" do
 
     let(:cmd) { HammerCLIForeman::CommonParameter::SetCommand.new("", ctx) }
-    before :each do
-      resource_mock.stub_method(:index, [])
-    end
 
     context "parameters" do
       it_should_accept "name and value", ["--name=param", "--value=val"]
@@ -47,18 +40,29 @@ describe HammerCLIForeman::CommonParameter do
     end
 
     context "adding params" do
+      before :each do
+        ResourceMocks.mock_action_calls(
+          [:common_parameters, :index, []],
+          [:common_parameters, :create,
+            {"id" => 1, "name" => "param", "value" => "val"},
+            {'common_parameter' => {'name' => 'param', 'value' => 'val'}, 'id' => 'param'}])
+      end
       with_params ["--name=param", "--value=val"] do
-        it_should_call_action :create, {'common_parameter' => {'name' => 'param', 'value' => 'val'}, 'id' => 'param'}
+        it_should_output "Created parameter [param] with value [val].,1,param", :csv
       end
     end
 
     context "updating params" do
       before :each do
-        resource_mock.stub_method(:index, [{'common_parameter' => {'name' => 'param'}}])
+        ResourceMocks.mock_action_calls(
+          [:common_parameters, :index, [{'name' => 'param', 'value' => 'test'}]],
+          [:common_parameters, :update,
+            {"id" => 1, "name" => "param", "value" => "val"},
+            {'common_parameter' => {'name' => 'param', 'value' => 'val'}, 'id' => 'param'}])
       end
 
       with_params ["--name=param", "--value=val"] do
-        it_should_call_action :update, {'common_parameter' => {'name' => 'param', 'value' => 'val'}, 'id' => 'param'}
+        it_should_output "Parameter [param] updated to [val].,1,param", :csv
       end
     end
 

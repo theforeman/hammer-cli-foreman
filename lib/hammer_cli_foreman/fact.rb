@@ -4,7 +4,7 @@ module HammerCLIForeman
 
     class ListCommand < HammerCLIForeman::ListCommand
 
-      resource ForemanApi::Resources::FactValue, "index"
+      resource :fact_values, :index
 
       apipie_options
 

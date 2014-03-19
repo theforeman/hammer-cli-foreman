@@ -2,9 +2,9 @@ require 'hammer_cli_foreman/smart_class_parameter'
 
 module HammerCLIForeman
 
-  class PuppetClass < HammerCLI::Apipie::Command
+  class PuppetClass < HammerCLIForeman::Command
 
-    resource ForemanApi::Resources::Puppetclass
+    resource :puppetclasses
 
     class ListCommand < HammerCLIForeman::ListCommand
 

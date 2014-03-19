@@ -1,7 +1,6 @@
 require 'hammer_cli'
 require 'hammer_cli/exit_codes'
-
-require 'foreman_api'
+require 'apipie_bindings'
 
 module HammerCLIForeman
 
@@ -33,6 +32,7 @@ module HammerCLIForeman
   require 'hammer_cli_foreman/model'
   require 'hammer_cli_foreman/operating_system'
   require 'hammer_cli_foreman/organization'
+  require 'hammer_cli_foreman/output/fields'
   require 'hammer_cli_foreman/partition_table'
   require 'hammer_cli_foreman/report'
   require 'hammer_cli_foreman/puppet_class'

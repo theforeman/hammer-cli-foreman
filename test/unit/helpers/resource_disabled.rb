@@ -7,13 +7,13 @@ module ResourceDisabled
     context "resource disabled" do
 
       it "should return error" do
-        cmd.class.resource ApipieDisabledResourceMock.new(cmd.class.resource.resource_class)
+        cmd.class.resource.stubs(:call).raises(RestClient::ResourceNotFound)
         arguments = respond_to?(:with_params) ? with_params : []
         cmd.run(arguments).must_equal HammerCLI::EX_UNAVAILABLE
       end
 
       it "should print error message" do
-        cmd.class.resource ApipieDisabledResourceMock.new(cmd.class.resource.resource_class)
+        cmd.class.resource.stubs(:call).raises(RestClient::ResourceNotFound)
         cmd.stubs(:context).returns(ctx.update(:adapter => :test))
 
         arguments = respond_to?(:with_params) ? with_params : []
