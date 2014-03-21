@@ -56,6 +56,8 @@ module HammerCLIForeman
         :format => HammerCLI::Options::Normalizers::KeyValueList.new
       base.option "--interface", "INTERFACE", _("Interface parameters."), :multivalued => true,
         :format => HammerCLI::Options::Normalizers::KeyValueList.new
+      base.option "--provision_method", "METHOD", " ",
+        :format => HammerCLI::Options::Normalizers::Enum.new(['build', 'image'])
     end
 
     def self.ask_password
