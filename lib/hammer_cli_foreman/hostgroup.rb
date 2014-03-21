@@ -101,7 +101,7 @@ module HammerCLIForeman
 
     class PuppetClassesCommand < HammerCLIForeman::ListCommand
 
-      command_name "puppet_classes"
+      command_name "puppet-classes"
       resource :puppetclasses
 
       identifiers :id
