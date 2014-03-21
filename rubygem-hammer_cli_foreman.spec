@@ -9,7 +9,7 @@
 Summary: Universal command-line interface for Foreman
 Name: rubygem-%{gemname}
 Version: 0.0.18
-Release: 7%{?dist}
+Release: 8%{?dist}
 Group: Development/Languages
 License: GPLv3
 URL: http://github.com/theforeman/hammer-cli-foreman
@@ -74,6 +74,13 @@ cp -pa .%{gem_dir}/* \
 
 
 %changelog
+* Fri Mar 21 2014 Jason Montleon <jmontleo@redhat.com> 0.0.18-8
+- Merge remote-tracking branch 'upstream/master' (jmontleo@redhat.com)
+- Merge pull request #108 from mbacovsky/4697_dashes_in_commands
+  (martin.bacovsky@gmail.com)
+- fIXes #4697 - Unify format of hammer commands (dashes in names)
+  (mbacovsk@redhat.com)
+
 * Wed Mar 19 2014 Jason Montleon <jmontleo@redhat.com> 0.0.18-7
 - Merge remote-tracking branch 'upstream/master' (jmontleo@redhat.com)
 - Merge pull request #106 from tstrachota/set_param (tstrachota@redhat.com)
