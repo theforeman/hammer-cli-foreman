@@ -17,6 +17,7 @@ module HammerCLIForeman
     config[:logger] = Logging.logger['API']
     config[:api_version] = 2
     config[:aggressive_cache_checking] = HammerCLI::Settings.get(:foreman, :refresh_cache) || true
+    config[:timeout] = HammerCLI::Settings.get(:foreman, :request_timeout)
     config
   end
 
