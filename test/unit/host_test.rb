@@ -203,7 +203,7 @@ describe HammerCLIForeman::Host do
           ["--name=host", "--environment-id=1", "--architecture-id=1", "--domain-id=1", "--puppet-proxy-id=1", "--operatingsystem-id=1",
             "--ip=1.2.3.4", "--mac=11:22:33:44:55:66", "--medium-id=1", "--partition-table-id=1", "--subnet-id=1",
             "--sp-subnet-id=1", "--model-id=1", "--hostgroup-id=1", "--owner-id=1", '--puppet-ca-proxy-id=1', '--puppetclass-ids',
-            "--root-password=pwd", "--ask-root-password=true"]
+            "--root-password=pwd", "--ask-root-password=true", "--provision-method=build"]
       it_should_fail_with "name or id missing",
           ["--environment-id=1", "--architecture-id=1", "--domain-id=1", "--puppet-proxy-id=1", "--operatingsystem-id=1"]
       it_should_fail_with "environment_id missing",
@@ -220,10 +220,11 @@ describe HammerCLIForeman::Host do
       with_params ["--name=host", "--environment-id=1", "--architecture-id=1", "--domain-id=1", "--puppet-proxy-id=1", "--operatingsystem-id=1",
             "--ip=1.2.3.4", "--mac=11:22:33:44:55:66", "--medium-id=1", "--partition-table-id=1", "--subnet-id=1",
             "--sp-subnet-id=1", "--model-id=1", "--hostgroup-id=1", "--owner-id=1", '--puppet-ca-proxy-id=1', '--puppetclass-ids',
-            "--root-password=pwd", "--ask-root-password=true"] do
+            "--root-password=pwd", "--ask-root-password=true", "--provision-method=build"] do
         it_should_call_action_and_test_params(:create) { |par| par["host"]["managed"] == true }
         it_should_call_action_and_test_params(:create) { |par| par["host"]["build"] == true }
         it_should_call_action_and_test_params(:create) { |par| par["host"]["enabled"] == true }
+        it_should_call_action_and_test_params(:create) { |par| par["host"]["provision_method"] == "build" }
       end
     end
   end
@@ -242,7 +243,7 @@ describe HammerCLIForeman::Host do
             "--domain-id=1", "--puppet-proxy-id=1", "--operatingsystem-id=1",
             "--ip=1.2.3.4", "--mac=11:22:33:44:55:66", "--medium-id=1", "--partition-table-id=1", "--subnet-id=1",
             "--sp-subnet-id=1", "--model-id=1", "--hostgroup-id=1", "--owner-id=1", '--puppet-ca-proxy-id=1',
-            "--root-password=pwd", "--ask-root-password=true"]
+            "--root-password=pwd", "--ask-root-password=true", "--provision-method=build"]
       it_should_fail_with "no params", []
       it_should_fail_with "name or id missing", ["--new-name=host2"]
 
@@ -258,6 +259,10 @@ describe HammerCLIForeman::Host do
 
       with_params ["--id=1", "--enabled=false"] do
         it_should_call_action_and_test_params(:update) { |par| par["host"]["enabled"] == false }
+      end
+
+      with_params ["--id=1","--provision-method=build"] do
+        it_should_call_action_and_test_params(:update) { |par| par["host"]["provision_method"] == "build" }
       end
     end
 
