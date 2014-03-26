@@ -9,7 +9,7 @@
 Summary: Universal command-line interface for Foreman
 Name: rubygem-%{gemname}
 Version: 0.1.0
-Release: 0%{?dist}
+Release: 1%{?dist}
 Group: Development/Languages
 License: GPLv3
 URL: http://github.com/theforeman/hammer-cli-foreman
@@ -74,6 +74,18 @@ cp -pa .%{gem_dir}/* \
 
 
 %changelog
+* Wed Mar 26 2014 Jason Montleon <jmontleo@redhat.com> 0.1.0-1
+- update rpm spec file version (jmontleo@redhat.com)
+- Merge remote-tracking branch 'upstream/master' (jmontleo@redhat.com)
+- Bump to 0.1.0 (martin.bacovsky@gmail.com)
+- Fixes #4849 - Hammer fails silently when no cache is generated
+  (martin.bacovsky@gmail.com)
+- Fixed dep on rake (v 10.2.0 dropped support for ruby 1.8.x)
+  (martin.bacovsky@gmail.com)
+- Fixes #4476 - request localized api responses (tstrachota@redhat.com)
+- Fixes #3598 - request timeout (tstrachota@redhat.com)
+- Add provision_method to host creation (gsutclif@redhat.com)
+
 * Fri Mar 21 2014 Jason Montleon <jmontleo@redhat.com> 0.0.18-8
 - Merge remote-tracking branch 'upstream/master' (jmontleo@redhat.com)
 - Merge pull request #108 from mbacovsky/4697_dashes_in_commands
