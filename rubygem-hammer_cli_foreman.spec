@@ -9,8 +9,8 @@
 
 Summary: Universal command-line interface for Foreman
 Name: rubygem-%{gemname}
-Version: 0.0.18
-Release: 1%{?dist}
+Version: 0.1.0
+Release: 3%{?dist}
 Group: Development/Languages
 License: GPLv3
 URL: http://github.com/theforeman/hammer-cli-foreman
@@ -74,6 +74,22 @@ cp -pa .%{gem_dir}/* \
 
 
 %changelog
+* Wed Mar 26 2014 Jason Montleon <jmontleo@redhat.com> 0.1.0-3
+- update rpm spec file to match upstream and add foreman.yml config
+  (jmontleo@redhat.com)
+
+* Wed Mar 26 2014 Jason Montleon <jmontleo@redhat.com>
+- update rpm spec file to match upstream and add foreman.yml config
+  (jmontleo@redhat.com)
+
+* Wed Mar 26 2014 Jason Montleon <jmontleo@redhat.com>
+- update rpm spec file to match upstream and add foreman.yml config
+  (jmontleo@redhat.com)
+
+* Wed Mar 26 2014 Jason Montleon <jmontleo@redhat.com>
+- update rpm spec file to match upstream and add foreman.yml config
+  (jmontleo@redhat.com)
+
 * Wed Jan 29 2014 Martin Bačovský <mbacovsk@redhat.com> 0.0.18-1
 - Bump to 0.0.18 (mbacovsk@redhat.com)
 
