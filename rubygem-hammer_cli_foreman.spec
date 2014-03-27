@@ -52,8 +52,8 @@ gem install --local --install-dir .%{gem_dir} \
             --force %{SOURCE0}
 
 %install
-mkdir -p %{buildroot}%{_sysconfdir}/%{confdir}/hammer.modules.d
-install -m 755 %{SOURCE1} %{buildroot}%{_sysconfdir}/%{confdir}/hammer.modules.d/foreman.yml
+mkdir -p %{buildroot}%{_sysconfdir}/%{confdir}/cli.modules.d
+install -m 755 %{SOURCE1} %{buildroot}%{_sysconfdir}/%{confdir}/cli.modules.d/foreman.yml
 mkdir -p %{buildroot}%{gem_dir}
 cp -pa .%{gem_dir}/* \
         %{buildroot}%{gem_dir}/
@@ -62,7 +62,7 @@ cp -pa .%{gem_dir}/* \
 %dir %{geminstdir}
 %{geminstdir}/lib
 %{geminstdir}/locale
-%config(noreplace) %{_sysconfdir}/%{confdir}/hammer.modules.d/foreman.yml
+%config(noreplace) %{_sysconfdir}/%{confdir}/cli.modules.d/foreman.yml
 %exclude %{gem_dir}/cache/%{gemname}-%{version}.gem
 %{gem_dir}/specifications/%{gemname}-%{version}.gemspec
 
