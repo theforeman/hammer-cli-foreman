@@ -1,5 +1,5 @@
 %global gemname hammer_cli_foreman
-%global confdir foreman
+%global confdir hammer
 
 %if 0%{?rhel}
 %global gem_dir /usr/lib/ruby/gems/1.8
