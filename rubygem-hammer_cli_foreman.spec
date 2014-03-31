@@ -10,7 +10,7 @@
 Summary: Universal command-line interface for Foreman
 Name: rubygem-%{gemname}
 Version: 0.1.0
-Release: 5%{?dist}
+Release: 6%{?dist}
 Group: Development/Languages
 License: GPLv3
 URL: http://github.com/theforeman/hammer-cli-foreman
@@ -74,6 +74,13 @@ cp -pa .%{gem_dir}/* \
 
 
 %changelog
+* Mon Mar 31 2014 Jason Montleon <jmontleo@redhat.com> 0.1.0-6
+- Merge remote-tracking branch 'upstream/master' (jmontleo@redhat.com)
+- Merge pull request #97 from StephanDollberg/3970_os_default_template
+  (tstrachota@redhat.com)
+- fixes 3970 - adds support for os default templates
+  (stephan.dollberg@gmail.com)
+
 * Thu Mar 27 2014 Jason Montleon <jmontleo@redhat.com> 0.1.0-5
 - update confdir (jmontleo@redhat.com)
 
