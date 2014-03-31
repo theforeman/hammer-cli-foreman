@@ -31,6 +31,7 @@ module HammerCLIForeman
         field :architecture_names, _("Architectures"), Fields::List
         field :ptable_names, _("Partition tables"), Fields::List
         field :config_template_names, _("Config templates"), Fields::List
+        field :default_os_template_names, _("Default OS templates"), Fields::List
         collection :parameters, _("Parameters") do
           field nil, nil, Fields::KeyValue
         end
@@ -43,6 +44,10 @@ module HammerCLIForeman
         os["architecture_names"] = os["architectures"].collect{|m| m["name"] } rescue []
         os["ptable_names"] = os["ptables"].collect{|m| m["name"] } rescue []
         os["config_template_names"] = os["config_templates"].collect{|m| m["name"] } rescue []
+        os["default_os_template_names"] =
+          os["os_default_templates"].collect{
+            |m| "%{config_template_name}s (%{template_kind_name}s)".format(m)
+          } rescue []
         os["parameters"] = HammerCLIForeman::Parameter.get_parameters(resource_config, :operatingsystem, os)
         os
       end
@@ -165,6 +170,107 @@ module HammerCLIForeman
           "operatingsystem_id" => option_os_id
         }
       end
+    end
+
+
+    class SetOsDefaultTemplate < HammerCLIForeman::WriteCommand
+      command_name "set-default-template"
+      resource :os_default_templates
+
+      option "--id", "OS ID", _("operatingsystem id"), :required => true
+      option "--config-template-id", "TPL ID", _("config template id to be set"), :required => true
+
+
+      success_message _("[%{config_template_name}s] was set as default %{template_kind_name}s template")
+      failure_message _("Could not set the os default template")
+
+      def option_type_name
+        tpl = HammerCLIForeman.collection_to_common_format(
+          HammerCLIForeman.foreman_resource(:config_templates).call(:show, {"id" => option_config_template_id}))
+        tpl[0]["template_kind_name"]
+      end
+
+      def base_action_params
+        {"operatingsystem_id" => option_id}
+      end
+
+      def template_exist?(tpl_kind_name)
+        templates = HammerCLIForeman.collection_to_common_format(resource.call(:index, base_action_params))
+        templates.find { |p| p["template_kind_name"] == tpl_kind_name}
+      end
+
+      def update_default_template(tpl)
+        params = {
+          "id" => tpl["id"],
+          "os_default_template" => {
+            "config_template_id" => option_config_template_id,
+            "template_kind_id" => tpl["template_kind_id"]
+          }
+        }.merge base_action_params
+
+        HammerCLIForeman.record_to_common_format(resource.call(:update, params))
+      end
+
+      def create_default_template(tpl_kind_name)
+        params = {
+          "os_default_template" => {
+            "config_template_id" => option_config_template_id,
+            "template_kind_name" => tpl_kind_name
+          }
+        }.merge base_action_params
+
+        HammerCLIForeman.record_to_common_format(resource.call(:create, params))
+      end
+
+      def execute
+        tpl_kind_name = option_type_name
+        tpl = template_exist? tpl_kind_name
+        if tpl
+          update_default_template tpl
+          print_message(success_message, tpl) if success_message
+        else
+          tpl = create_default_template tpl_kind_name
+          print_message(success_message, tpl) if success_message
+        end
+        HammerCLI::EX_OK
+      end
+
+      apipie_options :without => [:template_kind_id, :type]
+    end
+
+
+    class DeleteOsDefaultTemplate < HammerCLIForeman::WriteCommand
+      command_name "delete-default-template"
+      resource :os_default_templates
+
+      option "--id", "OS ID", _("operatingsystem id"), :required => true
+      option "--type", "TPL TYPE", _("Type of the config template"), :required => true
+
+      success_message _("Default template deleted")
+      failure_message _("Could not delete the default template")
+
+      def execute
+        templates = HammerCLIForeman.collection_to_common_format(resource.call(:index, base_action_params))
+        tpl = templates.find { |p| p["template_kind_name"] == option_type }
+
+        if tpl.nil?
+          raise RuntimeError.new(_("Default template of type #{option_type} not found"))
+        end
+
+        params = {
+          "id" => tpl["id"]
+        }.merge base_action_params
+
+        HammerCLIForeman.record_to_common_format(resource.call(:destroy, params))
+        print_message success_message if success_message
+        HammerCLI::EX_OK
+      end
+
+      def base_action_params
+        {"operatingsystem_id" => option_id}
+      end
+
+      apipie_options
     end
 
 
