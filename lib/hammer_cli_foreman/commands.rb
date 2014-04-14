@@ -75,8 +75,17 @@ module HammerCLIForeman
     end
 
     def get_identifier
-      @identifier ||= resolver.send("#{resource.singular_name}_id", all_options)
+      @identifier ||= get_resource_id(resource)
       @identifier
+    end
+
+    def get_resource_id(resource, options={})
+      if options[:scoped]
+        opts = resolver.scoped_options(resource.singular_name, all_options)
+      else
+        opts = all_options
+      end
+      resolver.send("#{resource.singular_name}_id", opts)
     end
 
     def self.resolver
@@ -92,6 +101,16 @@ module HammerCLIForeman
     def send_request
       HammerCLIForeman.record_to_common_format(super)
     end
+
+    def request_params
+      params = super
+      resolver.required_id_params(resource.action(action)).each do |api_param|
+        param_resource = resolver.param_to_resource(api_param.name)
+        params[api_param.name] = get_resource_id(param_resource, :scoped => true)
+      end
+      params
+    end
+
   end
 
 
@@ -135,16 +154,6 @@ module HammerCLIForeman
 
     protected
 
-    def request_params
-      params = method_options
-      required_params = resource.action(action).params.select{|p| p.required? && p.name.end_with?("_id") }
-      required_params.each do |p|
-        resource_name = p.name.gsub(/_id$/, "")
-        opts = resolver.scoped_options(resource_name, all_options)
-        params[p.name] = resolver.send(p.name.to_s, opts)
-      end
-      params
-    end
 
     def browse_collection
       list_next = true
@@ -202,10 +211,11 @@ module HammerCLIForeman
     end
 
     def request_params
-      params = method_options
+      params = super
       params['id'] ||= get_identifier
       params
     end
+
 
     def send_request
       data = super
@@ -267,8 +277,8 @@ module HammerCLIForeman
     end
 
     def request_params
-      params = method_options
-      params['id'] = get_identifier
+      params = super
+      params['id'] ||= get_identifier
       params
     end
 
@@ -305,8 +315,8 @@ module HammerCLIForeman
     end
 
     def request_params
-      params = method_options
-      params['id'] = get_identifier
+      params = super
+      params['id'] ||= get_identifier
       params
     end
 
@@ -339,8 +349,7 @@ module HammerCLIForeman
     end
 
     def get_associated_identifier
-      opts = resolver.scoped_options(associated_resource.singular_name, all_options)
-      resolver.send("#{associated_resource.singular_name}_id", opts)
+      get_resource_id(associated_resource, :scoped => true)
     end
 
     def get_new_ids
@@ -357,7 +366,7 @@ module HammerCLIForeman
     end
 
     def request_params
-      params = super
+      params = method_options
       if params.key?(resource.singular_name)
         params[resource.singular_name] = {"#{association_name}_ids" => get_new_ids }
       else

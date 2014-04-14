@@ -59,14 +59,22 @@ module HammerCLIForeman
 
     def dependent_resources(resource)
       resources = []
-      required_params(resource.action(:index)).each do |param_name|
-        if param_name.end_with?("_id")
-          res = @api.resource(param_to_resource(param_name))
-          resources << res
-          resources += dependent_resources(res)
-        end
+      required_id_params(resource.action(:index)).each do |param|
+        res = param_to_resource(param.name)
+        resources << res
+        resources += dependent_resources(res)
       end
       resources
+    end
+
+    def required_id_params(action)
+      action.params.reject{ |p| !(p.required? && p.name.end_with?("_id")) }
+    end
+
+    def param_to_resource(param_name)
+      resource_name = param_name.gsub(/_id$/, "")
+      resource_name = ApipieBindings::Inflector.pluralize(resource_name.to_s).to_sym
+      @api.resource(resource_name)
     end
 
     protected
@@ -81,12 +89,6 @@ module HammerCLIForeman
       end
     end
 
-    def param_to_resource(param_name)
-      resource_name = param_name.gsub(/_id$/, "")
-      resource_name = ApipieBindings::Inflector.pluralize(resource_name.to_s).to_sym
-      resource_name
-    end
-
     def get_id(resource_name, options)
       options[HammerCLI.option_accessor_name("id")] || find_resource(resource_name, options)['id']
     end
@@ -95,8 +97,8 @@ module HammerCLIForeman
       resource = @api.resource(resource_name)
 
       search_options = search_options(options, resource)
-      required_params(resource.action(:index)).each do |param|
-        search_options[param] ||= send(param, scoped_options(param.gsub(/_id$/, ""), options))
+      required_id_params(resource.action(:index)).each do |param|
+        search_options[param.name] ||= send(param.name, scoped_options(param.name.gsub(/_id$/, ""), options))
       end
       resource.action(:index).routes.each do |route|
         route.params_in_path.each do |param|
@@ -113,10 +115,6 @@ module HammerCLIForeman
       raise _("%s not found") % resource.singular_name if results.empty?
       raise _("%s found more than once") % resource.singular_name if results.count > 1
       results[0]
-    end
-
-    def required_params(action)
-      action.params.reject{ |p| !p.required? }.map(&:name)
     end
 
     def search_options(options, resource)

@@ -25,10 +25,7 @@ module HammerCLIForeman
       end
 
       def get_identifier
-        if @identifier.nil?
-          opts = resolver.scoped_options(resource.singular_name, all_options)
-          @identifier = resolver.send("#{resource.singular_name}_id", opts)
-        end
+        @identifier ||= get_resource_id(resource, :scoped => true)
         @identifier
       end
 
