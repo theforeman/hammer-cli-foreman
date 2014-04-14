@@ -29,16 +29,6 @@ module HammerCLIForeman
         HammerCLI::Apipie::Command.connection_options).api.resource(resource)
   end
 
-  module ConnectionSetup
-    def connection_name(resource_class)
-      CONNECTION_NAME
-    end
-
-    def resource_config
-      super.merge(HammerCLIForeman.resource_config)
-    end
-  end
-
   def self.collection_to_common_format(data)
     if data.class <= Hash && data.has_key?('total') && data.has_key?('results')
       col = HammerCLI::Output::RecordCollection.new(data['results'],
@@ -66,10 +56,14 @@ module HammerCLIForeman
   end
 
 
-  module ResolverCommons
+  class Command < HammerCLI::Apipie::Command
 
-    def self.included(base)
-      base.extend(ClassMethods)
+    def self.connection_name(resource_class)
+      CONNECTION_NAME
+    end
+
+    def self.resource_config
+      super.merge(HammerCLIForeman.resource_config)
     end
 
     def resolver
@@ -85,41 +79,23 @@ module HammerCLIForeman
       @identifier
     end
 
-    module ClassMethods
-
-      def resolver
-        api = HammerCLI::Connection.get("foreman").api
-        HammerCLIForeman::IdResolver.new(api, HammerCLIForeman::Searchables.new)
-      end
-
-      def searchables
-        @searchables ||= HammerCLIForeman::Searchables.new
-        @searchables
-      end
-
+    def self.resolver
+      api = HammerCLI::Connection.get("foreman").api
+      HammerCLIForeman::IdResolver.new(api, HammerCLIForeman::Searchables.new)
     end
-  end
 
-
-  class ReadCommand < HammerCLI::Apipie::ReadCommand
-    extend HammerCLIForeman::ConnectionSetup
-    include HammerCLIForeman::ResolverCommons
-  end
-
-  class Command < ReadCommand
-  end
-
-  class WriteCommand < HammerCLI::Apipie::WriteCommand
-    extend HammerCLIForeman::ConnectionSetup
-    include HammerCLIForeman::ResolverCommons
+    def self.searchables
+      @searchables ||= HammerCLIForeman::Searchables.new
+      @searchables
+    end
 
     def send_request
       HammerCLIForeman.record_to_common_format(super)
     end
-
   end
 
-  class ListCommand < ReadCommand
+
+  class ListCommand < Command
 
     action :index
 
@@ -129,10 +105,11 @@ module HammerCLIForeman
       :table
     end
 
-    def retrieve_data
+    def send_request
       data = super
       set = HammerCLIForeman.collection_to_common_format(data)
       set.map! { |r| extend_data(r) }
+      logger.debug "Retrieved data: " + set.ai(:raw => true) if HammerCLI::Settings.get(:log_api_calls)
       set
     end
 
@@ -186,7 +163,7 @@ module HammerCLIForeman
     end
 
     def retrieve_and_print
-      d = retrieve_data
+      d = send_request
       logger.watch "Retrieved data: ", d
       print_data d
       d
@@ -205,7 +182,7 @@ module HammerCLIForeman
   end
 
 
-  class InfoCommand < ReadCommand
+  class InfoCommand < Command
 
     action :show
 
@@ -230,7 +207,7 @@ module HammerCLIForeman
       params
     end
 
-    def retrieve_data
+    def send_request
       data = super
       record = HammerCLIForeman.record_to_common_format(data)
       extend_data(record)
@@ -247,7 +224,7 @@ module HammerCLIForeman
   end
 
 
-  class CreateCommand < WriteCommand
+  class CreateCommand < Command
 
     action :create
 
@@ -269,7 +246,7 @@ module HammerCLIForeman
   end
 
 
-  class UpdateCommand < WriteCommand
+  class UpdateCommand < Command
 
     action :update
 
@@ -308,7 +285,7 @@ module HammerCLIForeman
   end
 
 
-  class DeleteCommand < WriteCommand
+  class DeleteCommand < Command
 
     action :destroy
 
@@ -336,7 +313,7 @@ module HammerCLIForeman
   end
 
 
-  class AssociatedCommand < WriteCommand
+  class AssociatedCommand < Command
 
     option "--id", "ID", " "
 

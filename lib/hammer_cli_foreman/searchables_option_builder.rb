@@ -75,13 +75,14 @@ module HammerCLIForeman
 
   class SearchablesUpdateOptionBuilder < HammerCLI::AbstractOptionBuilder
 
-    def initialize(searchables)
+    def initialize(resource, searchables)
+      @resource = resource
       @searchables = searchables
     end
 
     def build(builder_params={})
 
-      @searchables.collect do |s|
+      @searchables.for(@resource).collect do |s|
         if s.editable?
           option(
             optionamize("--new-#{s.name}"),

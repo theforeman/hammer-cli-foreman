@@ -220,7 +220,7 @@ module HammerCLIForeman
     end
 
 
-    class StatusCommand < HammerCLI::Apipie::ReadCommand
+    class StatusCommand < HammerCLIForeman::Command
       command_name "status"
 
       output do
@@ -392,7 +392,7 @@ module HammerCLIForeman
     end
 
 
-    class StartCommand < HammerCLI::Apipie::WriteCommand
+    class StartCommand < HammerCLIForeman::Command
       action :power
 
       command_name "start"
@@ -413,7 +413,7 @@ module HammerCLIForeman
     end
 
 
-    class StopCommand < HammerCLI::Apipie::WriteCommand
+    class StopCommand < HammerCLIForeman::Command
       option '--force', :flag, _("Force turning off a host")
 
       action :power
@@ -446,7 +446,7 @@ module HammerCLIForeman
       build_options :without => :power_action
     end
 
-    class RebootCommand < HammerCLI::Apipie::WriteCommand
+    class RebootCommand < HammerCLIForeman::Command
       action :power
 
       command_name "reboot"

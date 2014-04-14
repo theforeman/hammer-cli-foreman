@@ -16,7 +16,7 @@ module HammerCLIForeman
       build_options
     end
 
-    class SetCommand < HammerCLIForeman::WriteCommand
+    class SetCommand < HammerCLIForeman::Command
 
       command_name "set"
       desc _("Set a global parameter.")

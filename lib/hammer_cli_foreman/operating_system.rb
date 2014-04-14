@@ -146,7 +146,7 @@ module HammerCLIForeman
     end
 
 
-    class SetOsDefaultTemplate < HammerCLIForeman::WriteCommand
+    class SetOsDefaultTemplate < HammerCLIForeman::Command
       command_name "set-default-template"
       resource :os_default_templates
 
@@ -212,7 +212,7 @@ module HammerCLIForeman
     end
 
 
-    class DeleteOsDefaultTemplate < HammerCLIForeman::WriteCommand
+    class DeleteOsDefaultTemplate < HammerCLIForeman::Command
       command_name "delete-default-template"
       resource :os_default_templates
 

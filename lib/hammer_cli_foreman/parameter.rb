@@ -15,8 +15,6 @@ module HammerCLIForeman
 
 
     class AbstractParameterCommand < HammerCLIForeman::Command
-      include HammerCLI::Messages
-      include HammerCLIForeman::ConnectionSetup
 
       def self.parameter_resource
         HammerCLIForeman.foreman_resource(:parameters)
