@@ -43,7 +43,7 @@ module HammerCLIForeman
         os["config_template_names"] = os["config_templates"].collect{|m| m["name"] } rescue []
         os["default_os_template_names"] =
           os["os_default_templates"].collect{
-            |m| "%{config_template_name}s (%{template_kind_name}s)".format(m)
+            |m| "%{config_template_name} (%{template_kind_name})".format(m)
           } rescue []
         os["parameters"] = HammerCLIForeman::Parameter.get_parameters(:operatingsystem, os["id"])
         os
@@ -154,7 +154,7 @@ module HammerCLIForeman
       option "--config-template-id", "TPL ID", _("config template id to be set"), :required => true
 
 
-      success_message _("[%{config_template_name}s] was set as default %{template_kind_name}s template")
+      success_message _("[%{config_template_name}] was set as default %{template_kind_name} template")
       failure_message _("Could not set the os default template")
 
       def option_type_name

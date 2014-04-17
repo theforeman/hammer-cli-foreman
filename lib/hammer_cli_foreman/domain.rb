@@ -38,7 +38,7 @@ module HammerCLIForeman
 
     class CreateCommand < HammerCLIForeman::CreateCommand
 
-      success_message _("Domain [%{name}s] created")
+      success_message _("Domain [%{name}] created")
       failure_message _("Could not create the domain")
 
       option "--description", "DESC", _("Full name describing the domain"), :attribute_name => :option_fullname
@@ -48,7 +48,7 @@ module HammerCLIForeman
 
     class UpdateCommand < HammerCLIForeman::UpdateCommand
 
-      success_message _("Domain [%{name}s] updated")
+      success_message _("Domain [%{name}] updated")
       failure_message _("Could not update the domain")
 
       option "--description", "DESC", _("Full name describing the domain"), :attribute_name => :option_fullname
@@ -58,7 +58,7 @@ module HammerCLIForeman
 
     class DeleteCommand < HammerCLIForeman::DeleteCommand
 
-      success_message _("Domain [%{name}s] deleted")
+      success_message _("Domain [%{name}] deleted")
       failure_message _("Could not delete the domain")
 
       build_options
