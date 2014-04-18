@@ -29,15 +29,18 @@ module HammerCLIForeman
 
 
     class InfoCommand < HammerCLIForeman::InfoCommand
-      #FIXME: show environments, hostgroups, variables and parameters
       output ListCommand.output_definition do
-        collection :lookup_keys, _("Smart variables") do
-          from :lookup_key do
-            field :key, _("Parameter")
-            field :default_value, _("Default value")
-          end
+        collection :smart_variables, _("Smart variables") do
+          field :key, _("Parameter")
+          field :default_value, _("Default value")
+        end
+        collection :smart_class_parameters, _("Smart class parameters"), :numbered => false do
+          custom_field Fields::Reference, :name_key => :parameter
         end
       end
+      include HammerCLIForeman::References::Hostgroups
+      include HammerCLIForeman::References::Environments
+      include HammerCLIForeman::References::Parameters
 
       build_options
     end

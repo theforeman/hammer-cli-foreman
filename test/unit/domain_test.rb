@@ -29,10 +29,6 @@ describe HammerCLIForeman::Domain do
 
     let(:cmd) { HammerCLIForeman::Domain::InfoCommand.new("", ctx) }
 
-    before :each do
-      HammerCLIForeman::Parameter.stubs(:get_parameters).returns([])
-    end
-
     context "parameters" do
       it_should_accept "id", ["--id=1"]
       it_should_accept "name", ["--name=arch"]

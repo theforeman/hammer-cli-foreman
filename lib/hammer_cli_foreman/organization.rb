@@ -23,10 +23,23 @@ module HammerCLIForeman
 
       option "--id", "ID", " "
 
+      include HammerCLIForeman::References::Users
+      include HammerCLIForeman::References::SmartProxies
+      include HammerCLIForeman::References::Subnets
+      include HammerCLIForeman::References::ComputeResources
+      include HammerCLIForeman::References::Media
+      include HammerCLIForeman::References::ConfigTemplates
+      include HammerCLIForeman::References::Domains
+      include HammerCLIForeman::References::Environments
+      include HammerCLIForeman::References::Hostgroups
+      include HammerCLIForeman::References::Parameters
       output ListCommand.output_definition do
-        field :created_at, _("Created at"), Fields::Date
-        field :updated_at, _("Updated at"), Fields::Date
+        collection :locations, _("Locations"), :numbered => false, :hide_blank => true do
+          custom_field Fields::Reference
+        end
       end
+      include HammerCLIForeman::References::Timestamps
+
 
       build_options
     end

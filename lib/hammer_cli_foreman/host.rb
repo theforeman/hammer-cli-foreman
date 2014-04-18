@@ -123,8 +123,8 @@ module HammerCLIForeman
       output do
         field :id, _("Id")
         field :name, _("Name")
-        field :operatingsystem_id, _("Operating System Id")
-        field :hostgroup_id, _("Host Group Id")
+        field nil, _("Operating System"), Fields::SingleReference, :key => :operatingsystem
+        field nil, _("Host Group"), Fields::SingleReference, :key => :hostgroup
         field :ip, _("IP")
         field :mac, _("MAC")
       end
@@ -136,8 +136,6 @@ module HammerCLIForeman
     class InfoCommand < HammerCLIForeman::InfoCommand
 
       def extend_data(host)
-        host["environment_name"] = host["environment"]["environment"]["name"] rescue nil
-        host["parameters"] = HammerCLIForeman::Parameter.get_parameters(:host, host["id"])
         host["_bmc_interfaces"] =
           host["interfaces"].select{|intfs| intfs["type"] == "Nic::BMC" } rescue []
         host["_managed_interfaces"] =
@@ -149,8 +147,7 @@ module HammerCLIForeman
         field :uuid, _("UUID")
         field :certname, _("Cert name")
 
-        field :environment_name, _("Environment")
-        field :environment_id, _("Environment Id")
+        field nil, _("Environment"), Fields::SingleReference, :key => :environment
 
         field :managed, _("Managed")
         field :enabled, _("Enabled")
@@ -163,32 +160,26 @@ module HammerCLIForeman
         field :sp_name, _("SP Name")
         field :sp_ip, _("SP IP")
         field :sp_mac, _("SP MAC")
-        field :sp_subnet, _("SP Subnet")
-        field :sp_subnet_id, _("SP Subnet Id")
 
-        field :created_at, _("Created at"), Fields::Date
-        field :updated_at, _("Updated at"), Fields::Date
+        field nil, _("SP Subnet"), Fields::SingleReference, :key => :sp_subnet
+
         field :installed_at, _("Installed at"), Fields::Date
         field :last_report, _("Last report"), Fields::Date
 
         field :puppet_ca_proxy_id, _("Puppet CA Proxy Id")
-        field :medium_id, _("Medium Id")
-        field :model_id, _("Model Id")
+        field nil, _("Medium"), Fields::SingleReference, :key => :medium
+        field nil, _("Model"), Fields::SingleReference, :key => :model
         field :owner_id, _("Owner Id")
-        field :subnet_id, _("Subnet Id")
-        field :domain_id, _("Domain Id")
+        field nil, _("Subnet"), Fields::SingleReference, :key => :subnet
+        field nil, _("Domain"), Fields::SingleReference, :key => :domain
         field :puppet_proxy_id, _("Puppet Proxy Id")
         field :owner_type, _("Owner Type")
-        field :ptable_id, _("Partition Table Id")
-        field :architecture_id, _("Architecture Id")
-        field :image_id, _("Image Id")
-        field :compute_resource_id, _("Compute Resource Id")
+        field nil, _("Partition Table"), Fields::SingleReference, :key => :ptable
+        field nil, _("Architecture"), Fields::SingleReference, :key => :architecture
+        field nil, _("Image"), Fields::SingleReference, :key => :image
+        field nil, _("Compute Resource"), Fields::SingleReference, :key => :compute_resource
 
         field :comment, _("Comment")
-
-        collection :parameters, _("Parameters") do
-          field nil, nil, Fields::KeyValue
-        end
 
         collection :_bmc_interfaces, _("BMC Network Interfaces"), :hide_blank => true do
           field :id, _("Id")
@@ -215,6 +206,8 @@ module HammerCLIForeman
         end
 
       end
+      include HammerCLIForeman::References::Parameters
+      include HammerCLIForeman::References::Timestamps
 
       build_options
     end

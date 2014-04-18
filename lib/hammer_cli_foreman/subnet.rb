@@ -21,20 +21,19 @@ module HammerCLIForeman
 
       output ListCommand.output_definition do
         field :priority, _("Priority")
-        field :dns_id, _("DNS id")
-        field :dns, _("DNS"), Fields::Server
+        field :dns, _("DNS"), Fields::Reference, :details => :url
         field :dns_primary, _("Primary DNS")
         field :dns_secondary, _("Secondary DNS")
-        field :domain_ids, _("Domain ids"), Fields::List
-        field :tftp, _("TFTP"), Fields::Server
-        field :tftp_id, _("TFTP id")
-        field :dhcp, _("DHCP"), Fields::Server
-        field :dhcp_id, _("DHCP id")
-        field :vlanid, _("vlan id")
+        field :tftp, _("TFTP"), Fields::Reference, :details => :url
+        field :dhcp, _("DHCP"), Fields::Reference, :details => :url
+
+        field :vlanid, _("VLAN ID")
         field :gateway, _("Gateway")
         field :from, _("From")
         field :to, _("To")
       end
+      include HammerCLIForeman::References::Domains
+      include HammerCLIForeman::References::Taxonomies
 
       build_options
     end

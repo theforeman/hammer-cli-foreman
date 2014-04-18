@@ -29,7 +29,7 @@ module HammerCLIForeman
       output do
         field :id, _("Id")
         field :name, _("Name")
-        field :operatingsystem_id, _("Operating System Id"), Fields::Id
+        field nil, _("Operating System"), Fields::SingleReference, :key => :operatingsystem
         field :username, _("Username")
         field :uuid, _("UUID")
       end
@@ -43,11 +43,10 @@ module HammerCLIForeman
 
 
       output ListCommand.output_definition do
-        field :architecture_id, _("Architecture Id"), Fields::Id
+        field nil, _("Architecture"), Fields::SingleReference, :key => :architecture
         field :iam_role, _("IAM role")
-        field :created_at, _("Created at"), Fields::Date
-        field :updated_at, _("Updated at"), Fields::Date
       end
+      include HammerCLIForeman::References::Timestamps
     end
 
 

@@ -44,9 +44,9 @@ module HammerCLIForeman
 
     class InfoCommand < HammerCLIForeman::InfoCommand
 
-      output ListCommand.output_definition do
-        field :operatingsystem_ids, _("OS ids"), Fields::List
-      end
+      output ListCommand.output_definition
+      include HammerCLIForeman::References::OperatingSystems
+      include HammerCLIForeman::References::Taxonomies
 
       def extend_data(tpl)
         if tpl["snippet"]

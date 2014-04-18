@@ -43,14 +43,14 @@ module HammerCLIForeman
         field :url, _("Url")
         field :description, _("Description")
         field :user, _("User")
-        field :created_at, _("Created at"), Fields::Date
-        field :updated_at, _("Updated at"), Fields::Date
       end
+      include HammerCLIForeman::References::Taxonomies
+      include HammerCLIForeman::References::Timestamps
 
       def print_data(data)
         provider = data["provider"].downcase
         output_definition.fields.concat PROVIDER_SPECIFIC_FIELDS[provider]
-        print_collection(output_definition, data)
+        super(data)
       end
 
       build_options

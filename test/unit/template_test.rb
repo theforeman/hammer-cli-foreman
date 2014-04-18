@@ -40,6 +40,7 @@ describe HammerCLIForeman::Template do
             :id => 1, :name => "PXE"
           }
         }
+        ResourceMocks.mock_action_call(:templates, :show, template_wo_kind)
         cmd.run([]).must_equal 0
       end
     end
@@ -59,7 +60,7 @@ describe HammerCLIForeman::Template do
             'operatingsystems' => [ { 'id' => 1 }, { 'id' => 3 }, { 'id' =>4 } ]
           }
         }
-        ResourceMocks.mock_action_call(:templates, :show, [template])
+        ResourceMocks.mock_action_call(:templates, :show, template)
       end
 
       it_should_accept "id", ["--id=1"]
@@ -75,11 +76,11 @@ describe HammerCLIForeman::Template do
               'operatingsystems' => [ { 'id' => 1 }, { 'id' => 3 }, { 'id' =>4 } ]
             }
           }
-          ResourceMocks.mock_action_call(:templates, :show, [template])
+          ResourceMocks.mock_action_call(:templates, :show, template)
         end
 
         it_should_print_n_records 1
-        it_should_print_columns ["Id", "Name", "Type", "OS ids"]
+        it_should_print_columns ["Id", "Name", "Type", "Operating systems"]
       end
     end
 

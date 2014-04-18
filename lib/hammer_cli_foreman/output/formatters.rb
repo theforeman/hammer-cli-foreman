@@ -1,44 +1,70 @@
 module HammerCLIForeman::Output
   module Formatters
 
-    class OSNameFormatter < HammerCLI::Output::Formatters::FieldFormatter
+    class SingleReferenceFormatter < HammerCLI::Output::Formatters::FieldFormatter
 
       def tags
         [:flat]
       end
 
-      def format(os)
-        return nil if os.nil?
+      def format(resource, field_params={})
+        return "" if resource.nil?
 
-        name = os['name'] || os[:name]
-        major = os['major'] || os[:major]
-        minor = os['minor'] || os[:minor]
+        key = field_params[:key]
 
-        formatted_name = "%s %s" % [name, major]
-        formatted_name += ".%s" % minor if (!minor.nil? && !minor.empty?)
-        formatted_name
-      end
-    end
+        id_key = "#{key}_id"
+        name_key = "#{key}_name"
 
-    class ServerFormatter < HammerCLI::Output::Formatters::FieldFormatter
+        name = resource[name_key.to_sym] || resource[name_key]
+        id = resource[id_key.to_sym] || resource[id_key]
 
-      def tags
-        [:flat]
-      end
+        context = field_params[:context] || {}
 
-      def format(server)
-        if server.kind_of? Hash
-          name = server[:name] || server['name']
-          url = server[:url] || server['url']
-          "#{name} (#{url})"
+        if context[:show_ids]
+          "#{name} (id: #{id})" if id && name
         else
-          server
+          "#{name}" if name
         end
       end
+
     end
 
-    HammerCLI::Output::Output.register_formatter(OSNameFormatter.new, :OSName)
-    HammerCLI::Output::Output.register_formatter(ServerFormatter.new, :Server)
+    class ReferenceFormatter < HammerCLI::Output::Formatters::FieldFormatter
+
+      def tags
+        [:flat]
+      end
+
+      def format(reference, field_params={})
+        return "" if reference.nil?
+
+        id_key = field_params[:id_key] || :id
+        name_key = field_params[:name_key] || :name
+
+        name = reference[name_key] || reference[name_key.to_s]
+        id = reference[id_key] || reference[id_key.to_s]
+
+        context = field_params[:context] || {}
+
+        details = field_params[:details] || []
+        details = [details] unless details.is_a? Array
+        values = details.collect do |key|
+          reference[key] || reference[key.to_s]
+        end
+        values << "id: #{id}" if context[:show_ids]
+
+        if values.empty?
+          "#{name}" if name
+        else
+          "#{name} (#{values.join(', ')})" if name && !values.empty?
+        end
+      end
+
+    end
+
+    HammerCLI::Output::Output.register_formatter(SingleReferenceFormatter.new, :SingleReference)
+    HammerCLI::Output::Output.register_formatter(ReferenceFormatter.new, :Reference)
+    HammerCLI::Output::Output.register_formatter(ReferenceFormatter.new, :Template)
 
   end
 end
