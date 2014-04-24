@@ -109,10 +109,10 @@ describe HammerCLIForeman do
         build_options
       end
       res = Assoc.new("", { :adapter => :csv, :interactive => false })
-      res.stubs(:get_identifier).returns([1])
-      res.stubs(:associated_id).returns([1])
+      res.stubs(:get_identifier).returns(1)
+      res.stubs(:get_associated_identifier).returns(1)
 
-      res.get_new_ids.sort.must_equal [1, 2]
+      res.get_new_ids.sort.must_equal ['1', '2']
     end
 
     it "should associate resource with new format" do
@@ -126,10 +126,10 @@ describe HammerCLIForeman do
         build_options
       end
       res = Assoc.new("", { :adapter => :csv, :interactive => false })
-      res.stubs(:get_identifier).returns([1])
-      res.stubs(:associated_id).returns([1])
+      res.stubs(:get_identifier).returns(1)
+      res.stubs(:get_associated_identifier).returns(1)
 
-      res.get_new_ids.sort.must_equal [1, 2]
+      res.get_new_ids.sort.must_equal ['1', '2']
     end
   end
 

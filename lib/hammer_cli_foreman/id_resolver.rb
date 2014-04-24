@@ -35,6 +35,8 @@ module HammerCLIForeman
 
   class IdResolver
 
+    attr_reader :api
+
     def initialize(api, searchables)
       @api = api
       @searchables = searchables

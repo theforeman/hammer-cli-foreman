@@ -272,6 +272,9 @@ module HammerCLIForeman
       command_name "facts"
       resource :fact_values, :index
 
+      option "--id", "ID", " "
+      option "--name", "NAME", " "
+
       output do
         field :fact, _("Fact")
         field :value, _("Value")
@@ -279,7 +282,7 @@ module HammerCLIForeman
 
       def request_params
         params = method_options
-        params['host_id'] = get_identifier
+        params['host_id'] = get_resource_id(HammerCLIForeman.foreman_resource(:hosts))
         params
       end
 

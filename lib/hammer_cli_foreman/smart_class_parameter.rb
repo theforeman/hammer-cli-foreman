@@ -84,7 +84,7 @@ module HammerCLIForeman
       success_message _("Parameter updated")
       failure_message _("Could not update the parameter")
 
-      build_options :without => [:parameter_type, :validator_type, :id, :override, :required]
+      build_options :without => [:parameter_type, :validator_type, :override, :required]
 
       option "--override", "OVERRIDE", _("Override this parameter."),
         :format => HammerCLI::Options::Normalizers::Bool.new
