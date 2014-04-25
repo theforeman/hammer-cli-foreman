@@ -1,6 +1,6 @@
 module HammerCLIForeman
 
-  class SmartClassParametersBriefList < HammerCLIForeman::ListCommand
+  class SmartClassParametersBriefList < HammerCLIForeman::AssociatedResourceListCommand
     resource :smart_class_parameters, :index
     command_name 'sc-params'
 
@@ -12,7 +12,7 @@ module HammerCLIForeman
       field :override, _("Override")
     end
 
-    def retrieve_data
+    def send_request
       res = super
       # FIXME: API returns doubled records, probably just if filtered by puppetclasses
       # it seems group by environment is missing
@@ -20,7 +20,10 @@ module HammerCLIForeman
       HammerCLI::Output::RecordCollection.new(res.uniq, :meta => res.meta)
     end
 
-    build_options :without => [:host_id, :hostgroup_id, :puppetclass_id, :environment_id]
+    def self.build_options(options={})
+      options[:without] ||= [:host_id, :hostgroup_id, :puppetclass_id, :environment_id]
+      super(options)
+    end
   end
 
   class SmartClassParametersList < SmartClassParametersBriefList
@@ -37,8 +40,10 @@ module HammerCLIForeman
 
     resource :smart_class_parameters
 
-    class ListCommand < HammerCLIForeman::SmartClassParametersList
-      command_name 'list'
+    class ListCommand < HammerCLIForeman::ListCommand
+
+      output SmartClassParametersList.output_definition
+
       build_options
     end
 

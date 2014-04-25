@@ -73,7 +73,7 @@ module HammerCLIForeman
         field :name, _("Name")
       end
 
-      def retrieve_data
+      def send_request
         kinds = super
         kinds << { "name" => "snippet" }
         kinds

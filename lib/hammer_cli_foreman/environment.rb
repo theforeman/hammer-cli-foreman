@@ -52,11 +52,9 @@ module HammerCLIForeman
       build_options
     end
 
-    #TODO: check
     class SCParamsCommand < HammerCLIForeman::SmartClassParametersList
-
-      option ['--id', '--name'], 'ENVIRONMENT_ID', _('environment id/name'),
-            :required => true, :attribute_name => :environment_id
+      parent_resource :environments
+      build_options
     end
 
 

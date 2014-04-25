@@ -13,7 +13,7 @@ module HammerCLIForeman
         field :name, _("Name")
       end
 
-      def retrieve_data
+      def send_request
         self.class.unhash_classes(super)
       end
 
@@ -44,9 +44,8 @@ module HammerCLIForeman
 
 
     class SCParamsCommand < HammerCLIForeman::SmartClassParametersBriefList
-
-      option ['--id', '--name'], 'PUPPET_CLASS_ID', _('puppet class id/name'),
-              :attribute_name => :puppetclass_id, :required => true
+      parent_resource :puppetclasses
+      build_options
     end
 
 

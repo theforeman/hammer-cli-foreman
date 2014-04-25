@@ -21,6 +21,8 @@ module HammerCLIForeman
     class InfoCommand < HammerCLIForeman::InfoCommand
       include HammerCLIForeman::ResourceSupportedTest
 
+      option "--id", "ID", " "
+
       output ListCommand.output_definition do
         field :created_at, _("Created at"), Fields::Date
         field :updated_at, _("Updated at"), Fields::Date
@@ -43,6 +45,8 @@ module HammerCLIForeman
     class UpdateCommand < HammerCLIForeman::UpdateCommand
       include HammerCLIForeman::ResourceSupportedTest
 
+      option "--id", "ID", " "
+
       success_message _("Organization updated")
       failure_message _("Could not update the organization")
 
@@ -52,6 +56,8 @@ module HammerCLIForeman
 
     class DeleteCommand < HammerCLIForeman::DeleteCommand
       include HammerCLIForeman::ResourceSupportedTest
+
+      option "--id", "ID", " "
 
       success_message _("Organization deleted")
       failure_message _("Could not delete the organization")

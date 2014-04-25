@@ -14,17 +14,17 @@ module HammerCLIForeman
         field :value, _("Value")
       end
 
-      def retrieve_data
+      def send_request
         self.class.unhash_facts(super)
       end
 
-      def self.unhash_facts(facts_hash)
-        facts = facts_hash.first.inject([]) do |list, (host, facts)|
+      def self.unhash_facts(facts_collection)
+        facts = facts_collection.first.inject([]) do |list, (host, facts)|
           list + facts.collect do |(fact, value)|
             { :host => host, :fact => fact, :value => value }
           end
         end
-        HammerCLI::Output::RecordCollection.new(facts, :meta => facts_hash.meta)
+        HammerCLI::Output::RecordCollection.new(facts, :meta => facts_collection.meta)
       end
     end
 

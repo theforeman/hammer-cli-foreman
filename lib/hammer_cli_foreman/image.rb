@@ -57,7 +57,16 @@ module HammerCLIForeman
       command_name 'available'
       desc _("Show images available for addition")
 
+      option "--compute-resource-id", "ID", " "
+      option "--compute-resource", "NAME", " ", :attribute_name => :option_compute_resource_name
+
       include HammerCLIForeman::Image::ComputeResourceOptions
+
+      def request_params
+        params = super
+        params['id'] ||= get_identifier
+        params
+      end
 
       output do
         field :name, _("Name")

@@ -36,7 +36,7 @@ module HammerCLIForeman
         field :to, _("To")
       end
 
-      build_options :without => :id
+      build_options
     end
 
 

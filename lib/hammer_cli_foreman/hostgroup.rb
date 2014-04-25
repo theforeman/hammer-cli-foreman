@@ -97,7 +97,7 @@ module HammerCLIForeman
 
       output HammerCLIForeman::PuppetClass::ListCommand.output_definition
 
-      def retrieve_data
+      def send_request
         HammerCLIForeman::PuppetClass::ListCommand.unhash_classes(super)
       end
 
@@ -131,9 +131,8 @@ module HammerCLIForeman
     end
 
     class SCParamsCommand < HammerCLIForeman::SmartClassParametersList
-
-      option ['--id', '--name'], 'HOSTGROUP_ID', _('hostgroup id/name'),
-            :attribute_name => :option_hostgroup_id, :required => true
+      parent_resource :hostgroups
+      build_options
     end
 
 

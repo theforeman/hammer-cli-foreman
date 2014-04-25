@@ -191,13 +191,7 @@ module HammerCLIForeman
   end
 
 
-  class InfoCommand < Command
-
-    action :show
-
-    def self.command_name(name=nil)
-      super(name) || "info"
-    end
+  class SingleResourceCommand < Command
 
     def self.custom_option_builders
       builders = super
@@ -216,6 +210,48 @@ module HammerCLIForeman
       params
     end
 
+  end
+
+
+  class AssociatedResourceListCommand < ListCommand
+
+    option "--id", "ID", " "
+
+    def parent_resource
+      self.class.parent_resource
+    end
+
+    def self.parent_resource(name=nil)
+      @parent_api_resource = HammerCLIForeman.foreman_resource(name) unless name.nil?
+      return @parent_api_resource if @parent_api_resource
+      return superclass.parent_resource if superclass.respond_to? :parent_resource
+    end
+
+    def self.custom_option_builders
+      [
+        HammerCLI::Apipie::OptionBuilder.new(resource.action(action), :require_options => false),
+        SearchablesOptionBuilder.new(parent_resource, searchables)
+      ]
+    end
+
+    def request_params
+      id_param_name = "#{parent_resource.singular_name}_id"
+
+      params = method_options
+      params[id_param_name] = get_resource_id(parent_resource)
+      params
+    end
+
+  end
+
+
+  class InfoCommand < SingleResourceCommand
+
+    action :show
+
+    def self.command_name(name=nil)
+      super(name) || "info"
+    end
 
     def send_request
       data = super
@@ -256,7 +292,7 @@ module HammerCLIForeman
   end
 
 
-  class UpdateCommand < Command
+  class UpdateCommand < SingleResourceCommand
 
     action :update
 
@@ -268,18 +304,10 @@ module HammerCLIForeman
       builders = super
       if resource_defined?
         builders += [
-          SearchablesOptionBuilder.new(resource, searchables),
-          DependentSearchablesOptionBuilder.new(resolver.dependent_resources(resource), searchables),
           SearchablesUpdateOptionBuilder.new(resource, searchables)
         ]
       end
       builders
-    end
-
-    def request_params
-      params = super
-      params['id'] ||= get_identifier
-      params
     end
 
     def method_options_for_params(params, include_nil=true)
@@ -295,29 +323,12 @@ module HammerCLIForeman
   end
 
 
-  class DeleteCommand < Command
+  class DeleteCommand < SingleResourceCommand
 
     action :destroy
 
     def self.command_name(name=nil)
       super(name) || "delete"
-    end
-
-    def self.custom_option_builders
-      builders = super
-      if resource_defined?
-        builders += [
-          SearchablesOptionBuilder.new(resource, searchables),
-          DependentSearchablesOptionBuilder.new(resolver.dependent_resources(resource), searchables)
-        ]
-      end
-      builders
-    end
-
-    def request_params
-      params = super
-      params['id'] ||= get_identifier
-      params
     end
 
   end
@@ -342,8 +353,8 @@ module HammerCLIForeman
       self.class.associated_resource
     end
 
-    def self.associated_resource(resource_class=nil)
-      @associated_api_resource = HammerCLIForeman.foreman_resource(resource_class) unless resource_class.nil?
+    def self.associated_resource(name=nil)
+      @associated_api_resource = HammerCLIForeman.foreman_resource(name) unless name.nil?
       return @associated_api_resource if @associated_api_resource
       return superclass.associated_resource if superclass.respond_to? :associated_resource
     end

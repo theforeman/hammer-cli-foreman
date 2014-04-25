@@ -34,7 +34,7 @@ module HammerCLIForeman
         end
       end
 
-      #FIXME: remove custom retrieve_data after the api has support for listing names
+      #FIXME: remove custom send_request after the api has support for listing names
       def extend_data(os)
         os["_os_name"] = Hash[os.select { |k, v| ["name", "major", "minor"].include? k }]
         os["media_names"] = os["media"].collect{|m| m["name"] } rescue []

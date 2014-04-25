@@ -220,15 +220,16 @@ module HammerCLIForeman
     end
 
 
-    class StatusCommand < HammerCLIForeman::Command
+    class StatusCommand < HammerCLIForeman::SingleResourceCommand
       command_name "status"
+      action :status
 
       output do
         field :status, _("Status")
         field :power, _("Power")
       end
 
-      def retrieve_data
+      def send_request
         {
           :status => get_status,
           :power => get_power_status
@@ -256,7 +257,7 @@ module HammerCLIForeman
     end
 
 
-    class PuppetRunCommand < HammerCLIForeman::InfoCommand
+    class PuppetRunCommand < HammerCLIForeman::SingleResourceCommand
       command_name "puppetrun"
       action :puppetrun
 
@@ -268,63 +269,47 @@ module HammerCLIForeman
     end
 
 
-    class FactsCommand < HammerCLIForeman::ListCommand
+    class FactsCommand < HammerCLIForeman::AssociatedResourceListCommand
       command_name "facts"
       resource :fact_values, :index
-
-      option "--id", "ID", " "
-      option "--name", "NAME", " "
+      parent_resource :hosts
 
       output do
         field :fact, _("Fact")
         field :value, _("Value")
       end
 
-      def request_params
-        params = method_options
-        params['host_id'] = get_resource_id(HammerCLIForeman.foreman_resource(:hosts))
-        params
-      end
-
-      def retrieve_data
-        data = super
-        HammerCLIForeman::Fact::ListCommand.unhash_facts(data)
+      def send_request
+        HammerCLIForeman::Fact::ListCommand.unhash_facts(super)
       end
 
       build_options
     end
 
 
-    class PuppetClassesCommand < HammerCLIForeman::ListCommand
+    class PuppetClassesCommand < HammerCLIForeman::AssociatedResourceListCommand
       command_name "puppet-classes"
-      resource :puppetclasses
+      resource :puppetclasses, :index
+      parent_resource :hosts
 
       output HammerCLIForeman::PuppetClass::ListCommand.output_definition
 
-      def retrieve_data
+      def send_request
         HammerCLIForeman::PuppetClass::ListCommand.unhash_classes(super)
       end
 
-      def request_params
-        params = method_options
-        params['host_id'] = get_identifier
-        params
-      end
-
-      build_options
+      build_options :without => [:host_id, :hostgroup_id, :environment_id]
     end
 
 
-    class ReportsCommand < HammerCLIForeman::ListCommand
+    class ReportsCommand < HammerCLIForeman::AssociatedResourceListCommand
       command_name "reports"
-      resource :reports
+      resource :reports, :index
+      parent_resource :hosts
+
       output HammerCLIForeman::Report::ListCommand.output_definition
 
-      def search
-        'host.id = %s' % get_identifier.to_s
-      end
-
-      build_options :without => :search
+      build_options
     end
 
     class CreateCommand < HammerCLIForeman::CreateCommand
@@ -395,7 +380,7 @@ module HammerCLIForeman
     end
 
 
-    class StartCommand < HammerCLIForeman::Command
+    class StartCommand < HammerCLIForeman::SingleResourceCommand
       action :power
 
       command_name "start"
@@ -416,7 +401,7 @@ module HammerCLIForeman
     end
 
 
-    class StopCommand < HammerCLIForeman::Command
+    class StopCommand < HammerCLIForeman::SingleResourceCommand
       option '--force', :flag, _("Force turning off a host")
 
       action :power
@@ -449,7 +434,7 @@ module HammerCLIForeman
       build_options :without => :power_action
     end
 
-    class RebootCommand < HammerCLIForeman::Command
+    class RebootCommand < HammerCLIForeman::SingleResourceCommand
       action :power
 
       command_name "reboot"
@@ -470,9 +455,8 @@ module HammerCLIForeman
     end
 
     class SCParamsCommand < HammerCLIForeman::SmartClassParametersList
-
-      option ['--id', '--name'], 'HOST_ID', _('host id/name'),
-              :attribute_name => :option_host_id, :required => true
+      parent_resource :hosts
+      build_options
     end
 
     autoload_subcommands
