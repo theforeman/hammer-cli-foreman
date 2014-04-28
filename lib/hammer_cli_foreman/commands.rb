@@ -128,7 +128,6 @@ module HammerCLIForeman
       data = super
       set = HammerCLIForeman.collection_to_common_format(data)
       set.map! { |r| extend_data(r) }
-      logger.debug "Retrieved data: " + set.ai(:raw => true) if HammerCLI::Settings.get(:log_api_calls)
       set
     end
 
@@ -173,7 +172,6 @@ module HammerCLIForeman
 
     def retrieve_and_print
       d = send_request
-      logger.watch "Retrieved data: ", d
       print_data d
       d
     end
