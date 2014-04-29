@@ -22,11 +22,16 @@ module HammerCLIForeman
     config
   end
 
-  def self.foreman_resource(resource)
+  def self.foreman_api_connection
     HammerCLI::Connection.create(
-        CONNECTION_NAME,
-        HammerCLI::Apipie::Command.resource_config.merge(resource_config),
-        HammerCLI::Apipie::Command.connection_options).api.resource(resource)
+      CONNECTION_NAME,
+      HammerCLI::Apipie::Command.resource_config.merge(resource_config),
+      HammerCLI::Apipie::Command.connection_options
+    )
+  end
+
+  def self.foreman_resource(resource)
+    foreman_api_connection.api.resource(resource)
   end
 
   def self.collection_to_common_format(data)

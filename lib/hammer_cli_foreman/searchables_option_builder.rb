@@ -90,7 +90,7 @@ module HammerCLIForeman
             " "
           )
         end
-      end
+      end.compact
     end
 
   end

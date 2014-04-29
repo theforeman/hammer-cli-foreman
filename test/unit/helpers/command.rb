@@ -17,6 +17,15 @@ class IdResolverTestProxy
     @original_resolver.dependent_resources(resource)
   end
 
+  def required_id_params(action)
+    @original_resolver.required_id_params(action)
+  end
+
+  def param_to_resource(param_name)
+    @original_resolver.param_to_resource(param_name)
+  end
+
+
   protected
 
   def define_id_finders
