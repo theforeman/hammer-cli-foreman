@@ -4,11 +4,7 @@ require File.join(File.dirname(__FILE__), 'apipie_resource_mock')
 
 describe HammerCLIForeman::CommonParameter do
 
-  extend CommandTestHelper
-
-  before :each do
-    cmd.stubs(:name_to_id).returns(1)
-  end
+  include CommandTestHelper
 
   context "ListCommand" do
 
@@ -35,8 +31,9 @@ describe HammerCLIForeman::CommonParameter do
 
     context "parameters" do
       it_should_accept "name and value", ["--name=param", "--value=val"]
-      it_should_fail_with "name missing", ["--value=val"]
-      it_should_fail_with "value missing", ["--name=param"]
+      # it_should_fail_with "name missing", ["--value=val"]
+      # it_should_fail_with "value missing", ["--name=param"]
+      # TODO: temporarily disabled, parameters are checked by the api
     end
 
     context "adding params" do
@@ -75,7 +72,8 @@ describe HammerCLIForeman::CommonParameter do
 
     context "parameters" do
       it_should_accept "name", ["--name=arch"]
-      it_should_fail_with "name missing", []
+      # it_should_fail_with "name missing", []
+      # TODO: temporarily disabled, parameters are checked in the id resolver
     end
 
   end

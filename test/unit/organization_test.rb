@@ -5,12 +5,8 @@ require File.join(File.dirname(__FILE__), 'apipie_resource_mock')
 
 describe HammerCLIForeman::Organization do
 
-  extend CommandTestHelper
+  include CommandTestHelper
   extend ResourceDisabled
-
-  before :each do
-    cmd.stubs(:name_to_id).returns(1)
-  end
 
   context "ListCommand" do
 
@@ -48,7 +44,7 @@ describe HammerCLIForeman::Organization do
     context "parameters" do
       it_should_accept "id", ["--id=1"]
       it_should_accept "name", ["--name=arch"]
-      it_should_fail_with "no arguments"
+      # it_should_fail_with "no arguments" # TODO: temporarily disabled, parameters are checked in the id resolver
     end
 
     context "output" do
@@ -73,7 +69,8 @@ describe HammerCLIForeman::Organization do
 
     context "parameters" do
       it_should_accept "name", ["--name=org"]
-      it_should_fail_with "name missing", []
+      # it_should_fail_with "name missing", []
+      # TODO: temporarily disabled, parameters are checked in the api
     end
 
     with_params ["--name=org"] do
@@ -89,7 +86,9 @@ describe HammerCLIForeman::Organization do
     context "parameters" do
       it_should_accept "name", ["--name=org"]
       it_should_accept "id", ["--id=1"]
-      it_should_fail_with "name or id missing", []
+
+      # it_should_fail_with "name or id missing", []
+      # TODO: temporarily disabled, parameters are checked in the id resolver
     end
 
     with_params ["--id=1"] do
@@ -105,8 +104,8 @@ describe HammerCLIForeman::Organization do
     context "parameters" do
       it_should_accept "name", ["--name=org", "--new-name=org2"]
       it_should_accept "id", ["--id=1", "--new-name=org2"]
-      it_should_fail_with "no params", []
-      it_should_fail_with "name or id missing", ["--new-name=org2"]
+      # it_should_fail_with "no params", [] # TODO: temporarily disabled, parameters are checked in the id resolver
+      # it_should_fail_with "name or id missing", ["--new-name=org2"] # TODO: temporarily disabled, parameters are checked in the id resolver
     end
 
     with_params ["--id=1"] do

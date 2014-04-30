@@ -2,21 +2,21 @@ module ResourceMocks
 
   def self.mock_action_call(resource, action, value, params=:default)
     response = ApipieBindings::Example.new('GET', '/', '', 200, JSON.dump(value))
-    ApipieBindings::API.any_instance.stubs(:fake_responses).returns({ [resource, action] => { params => response } })
+    @mocks ||= {}
+    @mocks[[resource, action]] ||= {}
+    @mocks[[resource, action]][params] = response
+    ApipieBindings::API.any_instance.stubs(:fake_responses).returns(@mocks)
+  end
+
+  def self.clear_mocks
+    @mocks = {}
+    ApipieBindings::API.any_instance.stubs(:fake_responses).returns(@mocks)
   end
 
   def self.mock_action_calls(*calls)
-    responses = calls.inject({}) do |resp, (resource, action, ret_val, par)|
-      params = par || :default
-      response = ApipieBindings::Example.new('GET', '/', '', 200, JSON.dump(ret_val))
-      if resp.has_key?([resource, action])
-        resp[[resource, action]][params] = response
-      else
-        resp[[resource, action]] = { params => response }
-      end
-      resp
+    calls.each do |(resource, action, value, params)|
+      mock_action_call(resource, action, value, (params || :default))
     end
-    ApipieBindings::API.any_instance.stubs(:fake_responses).returns(responses)
   end
 
   def self.smart_class_parameters_index
@@ -65,6 +65,28 @@ module ResourceMocks
 
   def self.parameters_index
     ResourceMocks.mock_action_call(:parameters, :index, [])
+  end
+
+  def self.facts_index
+    ResourceMocks.mock_action_call(:fact_values, :index, {
+      "total"=>5604,
+      "subtotal"=>0,
+      "page"=>1,
+      "per_page"=>20,
+      "search"=>"",
+      "sort" => {
+        "by" => nil,
+        "order" => nil
+      },
+      "results"=>[{
+        "some.host.com" => {
+          "network_br180"=>"10.32.83.0",
+          "mtu_usb0"=>"1500",
+          "physicalprocessorcount"=>"1",
+          "rubyversion"=>"1.8.7"
+        }
+      }]
+    })
   end
 
 end

@@ -4,11 +4,7 @@ require File.join(File.dirname(__FILE__), 'apipie_resource_mock')
 
 describe HammerCLIForeman::Subnet do
 
-  extend CommandTestHelper
-
-  before :each do
-    cmd.stubs(:name_to_id).returns(1)
-  end
+  include CommandTestHelper
 
   context "ListCommand" do
 
@@ -36,11 +32,12 @@ describe HammerCLIForeman::Subnet do
     context "parameters" do
       it_should_accept "id", ["--id=1"]
       it_should_accept "name", ["--name=arch"]
-      it_should_fail_with "no arguments"
+      # it_should_fail_with "no arguments" # TODO: temporarily disabled, parameters are checked in the id resolver
     end
 
     context "output" do
-      with_params ["--id=1"] do
+
+      with_params ["--name=subnet"] do
         it_should_print_n_records 1
         it_should_print_columns ["Id", "Name", "Network", "Mask"]
         it_should_print_columns ["Priority"]
@@ -59,9 +56,10 @@ describe HammerCLIForeman::Subnet do
 
     context "parameters" do
       it_should_accept "name", ["--name=arch", "--network=192.168.83.0", "--mask=255.255.255.0"]
-      it_should_fail_with "name missing",     ["--network=192.168.83.0", "--mask=255.255.255.0"]
-      it_should_fail_with "network missing",  ["--name=arch", "--mask=255.255.255.0"]
-      it_should_fail_with "mask missing",     ["--name=arch", "--network=192.168.83.0"]
+      # it_should_fail_with "name missing",     ["--network=192.168.83.0", "--mask=255.255.255.0"]
+      # it_should_fail_with "network missing",  ["--name=arch", "--mask=255.255.255.0"]
+      # it_should_fail_with "mask missing",     ["--name=arch", "--network=192.168.83.0"]
+      # TODO: temporarily disabled, parameters are checked in the api
     end
 
   end
@@ -74,7 +72,7 @@ describe HammerCLIForeman::Subnet do
     context "parameters" do
       it_should_accept "name", ["--name=arch"]
       it_should_accept "id", ["--id=1"]
-      it_should_fail_with "name or id missing", []
+      # it_should_fail_with "name or id missing", [] # TODO: temporarily disabled, parameters are checked in the id resolver
     end
 
   end
@@ -87,8 +85,9 @@ describe HammerCLIForeman::Subnet do
     context "parameters" do
       it_should_accept "name", ["--name=arch", "--new-name=arch2"]
       it_should_accept "id", ["--id=1", "--new-name=arch2"]
-      it_should_fail_with "no params", []
-      it_should_fail_with "name or id missing", ["--new-name=arch2"]
+      # it_should_fail_with "no params", []
+      # it_should_fail_with "name or id missing", ["--new-name=arch2"]
+      # TODO: temporarily disabled, parameters are checked in the id resolver
     end
 
   end

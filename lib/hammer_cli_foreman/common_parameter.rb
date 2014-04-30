@@ -13,16 +13,16 @@ module HammerCLIForeman
         field :value, _("Value")
       end
 
-      apipie_options
+      build_options
     end
 
-    class SetCommand < HammerCLIForeman::WriteCommand
+    class SetCommand < HammerCLIForeman::Command
 
       command_name "set"
       desc _("Set a global parameter.")
 
-      success_message_for :create, _("Created parameter [%{name}s] with value [%{value}s].")
-      success_message_for :update, _("Parameter [%{name}s] updated to [%{value}s].")
+      success_message_for :create, _("Created parameter [%{name}] with value [%{value}].")
+      success_message_for :update, _("Parameter [%{name}] updated to [%{value}].")
 
       option "--name", "NAME", _("parameter name"), :required => true
       option "--value", "VALUE", _("parameter value"), :required => true
@@ -52,13 +52,10 @@ module HammerCLIForeman
 
 
     class DeleteCommand < HammerCLIForeman::DeleteCommand
+      success_message _("Global parameter [%{name}] deleted.")
+      failure_message _("Could not delete the global parameter [%{name}]")
 
-      identifiers :name
-
-      success_message _("Global parameter [%{name}s] deleted.")
-      failure_message _("Could not delete the global parameter [%{name}s]")
-
-      apipie_options :without => :id
+      build_options :without => :id
     end
 
     autoload_subcommands
