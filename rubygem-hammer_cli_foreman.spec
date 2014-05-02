@@ -17,7 +17,7 @@ URL: http://github.com/theforeman/hammer-cli-foreman
 Source0: %{gemname}-%{version}.gem
 Source1: foreman.yml
 
-%if !(0%{?rhel} > 6 || 0%{?fedora} > 18
+%if !(0%{?rhel} > 6 || 0%{?fedora} > 18)
 Requires: ruby(abi)
 %endif
 
