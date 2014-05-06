@@ -12,12 +12,10 @@ module HammerCLIForeman
     module ComputeResourceOptions
 
       def self.included(base)
-        base.option "--compute-resource", "COMPUTE_RESOURCE_NAME", _("Compute resource's name")
-        base.option "--compute-resource-id", "COMPUTE_RESOURCE_ID", _("Compute resource's id")
-        base.apipie_options :without => [:compute_resource_id, :id]
+        base.build_options
 
         base.validate_options do
-          any(:option_compute_resource_id, :option_compute_resource).required
+          any(:option_compute_resource_id, :option_compute_resource_name).required
         end
       end
 
@@ -36,18 +34,11 @@ module HammerCLIForeman
         field :uuid, _("UUID")
       end
 
-      def request_params
-        params = super
-        params['compute_resource_id'] = option_compute_resource_id || option_compute_resource
-        params
-      end
-
     end
 
 
     class InfoCommand < HammerCLIForeman::InfoCommand
 
-      identifiers :id
       include HammerCLIForeman::Image::ComputeResourceOptions
 
 
@@ -57,13 +48,6 @@ module HammerCLIForeman
         field :created_at, _("Created at"), Fields::Date
         field :updated_at, _("Updated at"), Fields::Date
       end
-
-      def request_params
-        params = super
-        params['compute_resource_id'] = option_compute_resource_id || option_compute_resource
-        params
-      end
-
     end
 
 
@@ -73,17 +57,20 @@ module HammerCLIForeman
       command_name 'available'
       desc _("Show images available for addition")
 
+      option "--compute-resource-id", "ID", " "
+      option "--compute-resource", "NAME", " ", :attribute_name => :option_compute_resource_name
+
       include HammerCLIForeman::Image::ComputeResourceOptions
+
+      def request_params
+        params = super
+        params['id'] ||= get_identifier
+        params
+      end
 
       output do
         field :name, _("Name")
         field :uuid, _("UUID")
-      end
-
-      def request_params
-        params = super
-        params['id'] = option_compute_resource_id || option_compute_resource
-        params
       end
 
     end
@@ -95,46 +82,24 @@ module HammerCLIForeman
 
       success_message _("Image created")
       failure_message _("Could not create the image")
-
-      def request_params
-        params = super
-        params['compute_resource_id'] = option_compute_resource_id || option_compute_resource
-        params
-      end
     end
 
 
     class UpdateCommand < HammerCLIForeman::UpdateCommand
 
-      identifiers :id
       include HammerCLIForeman::Image::ComputeResourceOptions
 
       success_message _("Image updated")
       failure_message _("Could not update the image")
-
-      def request_params
-        params = super
-        params['compute_resource_id'] = option_compute_resource_id || option_compute_resource
-        params
-      end
-
     end
 
 
     class DeleteCommand < HammerCLIForeman::DeleteCommand
 
-      identifiers :id
       include HammerCLIForeman::Image::ComputeResourceOptions
 
       success_message _("Image deleted")
       failure_message _("Could not delete the image")
-
-      def request_params
-        params = super
-        params['compute_resource_id'] = option_compute_resource_id || option_compute_resource
-        params
-      end
-
     end
 
     autoload_subcommands

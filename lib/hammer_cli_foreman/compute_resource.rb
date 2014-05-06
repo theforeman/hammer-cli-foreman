@@ -13,12 +13,11 @@ module HammerCLIForeman
         field :provider, _("Provider")
       end
 
-      apipie_options
+      build_options
     end
 
 
     class InfoCommand < HammerCLIForeman::InfoCommand
-
       PROVIDER_SPECIFIC_FIELDS = {
         'ovirt' => [
           Fields::Field.new(:label => _('UUID'), :path => ["compute_resource", "uuid"])
@@ -54,7 +53,7 @@ module HammerCLIForeman
         print_collection(output_definition, data)
       end
 
-      apipie_options
+      build_options
     end
 
 
@@ -63,7 +62,7 @@ module HammerCLIForeman
       success_message _("Compute resource created")
       failure_message _("Could not create the compute resource")
 
-      apipie_options
+      build_options
 
       validate_options do
         all(:option_name, :option_url, :option_provider).required
@@ -72,20 +71,18 @@ module HammerCLIForeman
 
 
     class UpdateCommand < HammerCLIForeman::UpdateCommand
-
       success_message _("Compute resource updated")
       failure_message _("Could not update the compute resource")
 
-      apipie_options
+      build_options :without => :name
     end
 
 
     class DeleteCommand < HammerCLIForeman::DeleteCommand
-
       success_message _("Compute resource deleted")
       failure_message _("Could not delete the compute resource")
 
-      apipie_options
+      build_options
     end
 
 

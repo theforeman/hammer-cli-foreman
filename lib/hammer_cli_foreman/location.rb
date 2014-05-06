@@ -14,19 +14,21 @@ module HammerCLIForeman
         field :name, _("Name")
       end
 
-      apipie_options
+      build_options
     end
 
 
     class InfoCommand < HammerCLIForeman::InfoCommand
       include HammerCLIForeman::ResourceSupportedTest
 
+      option '--id', 'ID', _("Location numeric id to search by")
+
       output ListCommand.output_definition do
         field :created_at, _("Created at"), Fields::Date
         field :updated_at, _("Updated at"), Fields::Date
       end
 
-      apipie_options
+      build_options
     end
 
 
@@ -36,39 +38,43 @@ module HammerCLIForeman
       success_message _("Location created")
       failure_message _("Could not create the location")
 
-      apipie_options
+      build_options
     end
 
 
     class UpdateCommand < HammerCLIForeman::UpdateCommand
       include HammerCLIForeman::ResourceSupportedTest
 
+      option '--id', 'ID', _("Location numeric id to search by")
+
       success_message _("Location updated")
       failure_message _("Could not update the location")
 
-      apipie_options
+      build_options
     end
 
 
     class DeleteCommand < HammerCLIForeman::DeleteCommand
       include HammerCLIForeman::ResourceSupportedTest
 
+      option '--id', 'ID', _("Location numeric id to search by")
+
       success_message _("Location deleted")
       failure_message _("Could not delete the location")
 
-      apipie_options
+      build_options
     end
 
-    include HammerCLIForeman::AssociatingCommands::Hostgroup
-    include HammerCLIForeman::AssociatingCommands::Environment
-    include HammerCLIForeman::AssociatingCommands::Domain
-    include HammerCLIForeman::AssociatingCommands::Medium
-    include HammerCLIForeman::AssociatingCommands::Subnet
-    include HammerCLIForeman::AssociatingCommands::ComputeResource
-    include HammerCLIForeman::AssociatingCommands::SmartProxy
-    include HammerCLIForeman::AssociatingCommands::User
-    include HammerCLIForeman::AssociatingCommands::ConfigTemplate
-    include HammerCLIForeman::AssociatingCommands::Organization
+    HammerCLIForeman::AssociatingCommands::Hostgroup.extend_command(self)
+    HammerCLIForeman::AssociatingCommands::Environment.extend_command(self)
+    HammerCLIForeman::AssociatingCommands::Domain.extend_command(self)
+    HammerCLIForeman::AssociatingCommands::Medium.extend_command(self)
+    HammerCLIForeman::AssociatingCommands::Subnet.extend_command(self)
+    HammerCLIForeman::AssociatingCommands::ComputeResource.extend_command(self)
+    HammerCLIForeman::AssociatingCommands::SmartProxy.extend_command(self)
+    HammerCLIForeman::AssociatingCommands::User.extend_command(self)
+    HammerCLIForeman::AssociatingCommands::ConfigTemplate.extend_command(self)
+    HammerCLIForeman::AssociatingCommands::Organization.extend_command(self)
 
     autoload_subcommands
   end

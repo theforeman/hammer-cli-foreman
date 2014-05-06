@@ -18,17 +18,11 @@ module HammerCLIForeman
         user
       end
 
-      apipie_options
+      build_options
     end
 
 
     class InfoCommand < HammerCLIForeman::InfoCommand
-
-      identifiers :id, :login
-
-      option '--login', 'LOGIN', _("User login") do |value|
-        name_to_id(value, "login", resource)
-      end
 
       output ListCommand.output_definition do
         field :last_login_on, _("Last login"), Fields::Date
@@ -41,46 +35,31 @@ module HammerCLIForeman
         user
       end
 
-      apipie_options
+      build_options
     end
 
 
     class CreateCommand < HammerCLIForeman::CreateCommand
-
       success_message _("User created")
       failure_message _("Could not create the user")
 
-      apipie_options
+      build_options
     end
 
 
     class UpdateCommand < HammerCLIForeman::UpdateCommand
-
-      identifiers :id, :login
-
-      option '--login', 'LOGIN', _("User login") do |value|
-        name_to_id(value, "login", resource)
-      end
-
       success_message _("User updated")
       failure_message _("Could not update the user")
 
-      apipie_options
+      build_options
     end
 
 
     class DeleteCommand < HammerCLIForeman::DeleteCommand
-
-      identifiers :id, :login
-
-      option '--login', 'LOGIN', _("User login") do |value|
-        name_to_id(value, "login", resource)
-      end
-
       success_message _("User deleted")
       failure_message _("Could not delete the user")
 
-      apipie_options
+      build_options
     end
 
     autoload_subcommands

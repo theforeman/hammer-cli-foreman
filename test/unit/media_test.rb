@@ -3,11 +3,7 @@ require File.join(File.dirname(__FILE__), 'apipie_resource_mock')
 
 describe HammerCLIForeman::Medium do
 
-  extend CommandTestHelper
-
-  before :each do
-    cmd.stubs(:name_to_id).returns(1)
-  end
+  include CommandTestHelper
 
   context "ListCommand" do
 
@@ -36,7 +32,7 @@ describe HammerCLIForeman::Medium do
     context "parameters" do
       it_should_accept "id", ["--id=1"]
       it_should_accept "name", ["--name=medium_x"]
-      it_should_fail_with "no arguments"
+      # it_should_fail_with "no arguments" # TODO: temporarily disabled, parameters are checked in the id resolver
     end
 
     context "output" do
@@ -59,8 +55,9 @@ describe HammerCLIForeman::Medium do
 
     context "parameters" do
       it_should_accept "name, path, os ids", ["--name=media", "--path=http://some.path/abc/$major/Fedora/$arch/", "--operatingsystem-ids=1,2"]
-      it_should_fail_with "name missing", ["--path=http://some.path/abc/$major/Fedora/$arch/"]
-      it_should_fail_with "path missing", ["--name=media"]
+      # it_should_fail_with "name missing", ["--path=http://some.path/abc/$major/Fedora/$arch/"]
+      # it_should_fail_with "path missing", ["--name=media"]
+      # TODO: temporarily disabled, parameters are checked in the api
     end
 
     with_params ["--name=medium_x", "--path=http://some.path/", "--operatingsystem-ids=1,2"] do
@@ -75,7 +72,7 @@ describe HammerCLIForeman::Medium do
     context "parameters" do
       it_should_accept "name", ["--name=media"]
       it_should_accept "id", ["--id=1"]
-      it_should_fail_with "name or id missing", []
+      # it_should_fail_with "name or id missing", [] # TODO: temporarily disabled, parameters are checked in the id resolver
     end
   end
 
@@ -87,12 +84,13 @@ describe HammerCLIForeman::Medium do
       it_should_accept "name", ["--name=medium"]
       it_should_accept "id", ["--id=1"]
       it_should_accept "os ids", ["--id=1", "--operatingsystem-ids=1,2"]
-      it_should_fail_with "no params", []
-      it_should_fail_with "name or id missing", ["--new-name=medium_x", "--path=http://some.path/"]
+      # it_should_fail_with "no params", []
+      # it_should_fail_with "name or id missing", ["--new-name=medium_x", "--path=http://some.path/"]
+      # TODO: temporarily disabled, parameters are checked in the id resolver
     end
 
     with_params ["--id=1", "--new-name=medium_x", "--path=http://some.path/", "--operatingsystem-ids=1,2"] do
-      it_should_call_action :update, {'id' => '1', 'medium' => {'name' => 'medium_x', 'path' => 'http://some.path/', 'operatingsystem_ids' => ['1', '2']}}
+      it_should_call_action :update, {'id' => '1', 'name' => 'medium_x', 'medium' => {'name' => 'medium_x', 'path' => 'http://some.path/', 'operatingsystem_ids' => ['1', '2']}}
     end
 
   end

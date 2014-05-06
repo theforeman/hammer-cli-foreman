@@ -4,29 +4,61 @@ module HammerCLIForeman
 
   module Parameter
 
-    def self.get_parameters(resource_config, resource_type, resource)
+    def self.get_parameters(resource_type, resource_id)
       params = {
-        resource_type.to_s+"_id" => resource["id"] || resource["name"]
+        "#{resource_type}_id" => resource_id
       }
 
       params = HammerCLIForeman.foreman_resource(:parameters).call(:index, params)
       HammerCLIForeman.collection_to_common_format(params)
     end
 
-    class SetCommand < HammerCLIForeman::Command
 
-      include HammerCLI::Messages
-      include HammerCLIForeman::ConnectionSetup
+    class AbstractParameterCommand < HammerCLIForeman::Command
 
+      def self.parameter_resource
+        HammerCLIForeman.foreman_resource(:parameters)
+      end
+
+      def parameter_resource
+        self.class.parameter_resource
+      end
+
+      def get_identifier
+        @identifier ||= get_resource_id(resource, :scoped => true)
+        @identifier
+      end
+
+      def get_parameter_identifier
+        if @parameter_identifier.nil?
+          opts = all_options
+          opts[HammerCLI.option_accessor_name("#{resource.singular_name}_id")] ||= get_identifier
+          @parameter_identifier = resolver.send("#{parameter_resource.singular_name}_id", opts)
+        end
+        @parameter_identifier
+      end
+
+      def base_action_params
+        {
+          "#{resource.singular_name}_id" => get_identifier
+        }
+      end
+
+      def self.custom_option_builders
+        [
+          DependentSearchablesOptionBuilder.new(resource, searchables)
+        ]
+      end
+
+    end
+
+
+    class SetCommand < AbstractParameterCommand
       option "--name", "NAME", _("parameter name"), :required => true
       option "--value", "VALUE", _("parameter value"), :required => true
 
       def self.command_name(name=nil)
         (super(name) || "set-parameter").gsub('_', '-')
-      end
-
-      def self.resource(resource=nil)
-        super(resource) || HammerCLIForeman.foreman_resource(:parameters)
       end
 
       def execute
@@ -40,24 +72,18 @@ module HammerCLIForeman
         HammerCLI::EX_OK
       end
 
-      def base_action_params
-        {}
-      end
-
       def parameter_exist?
-        params = HammerCLIForeman.collection_to_common_format(resource.call(:index, base_action_params))
-        params.find { |p| p["name"] == option_name }
+        get_parameter_identifier rescue false
       end
 
       def update_parameter
         params = {
-          "id" => option_name,
+          "id" => get_parameter_identifier,
           "parameter" => {
             "value" => option_value
           }
-        }.merge base_action_params
-
-        HammerCLIForeman.record_to_common_format(resource.call(:update, params))
+        }.merge(base_action_params)
+        HammerCLIForeman.record_to_common_format(parameter_resource.call(:update, params))
       end
 
       def create_parameter
@@ -66,41 +92,29 @@ module HammerCLIForeman
             "name" => option_name,
             "value" => option_value
           }
-        }.merge base_action_params
+        }.merge(base_action_params)
 
-        HammerCLIForeman.record_to_common_format(resource.call(:create, params))
+        HammerCLIForeman.record_to_common_format(parameter_resource.call(:create, params))
       end
 
     end
 
 
-    class DeleteCommand < HammerCLIForeman::Command
-
-      include HammerCLI::Messages
-      include HammerCLIForeman::ConnectionSetup
-
+    class DeleteCommand < AbstractParameterCommand
       option "--name", "NAME", _("parameter name"), :required => true
 
       def self.command_name(name=nil)
         (super(name) || "delete-parameter").gsub('_', '-')
       end
 
-      def self.resource(resource=nil)
-        super(resource) || HammerCLIForeman.foreman_resource(:parameters)
-      end
-
       def execute
         params = {
-          "id" => option_name
+          "id" => get_parameter_identifier
         }.merge base_action_params
 
-        HammerCLIForeman.record_to_common_format(resource.call(:destroy, params))
+        HammerCLIForeman.record_to_common_format(parameter_resource.call(:destroy, params))
         print_message success_message if success_message
         HammerCLI::EX_OK
-      end
-
-      def base_action_params
-        {}
       end
 
     end

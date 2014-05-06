@@ -20,13 +20,11 @@ module HammerCLIForeman
         end
       end
 
-      apipie_options
+      build_options
     end
 
 
     class InfoCommand < HammerCLIForeman::InfoCommand
-
-      identifiers :id
 
       output do
         field :id, _("Id")
@@ -70,16 +68,15 @@ module HammerCLIForeman
         end
       end
 
-      apipie_options
+      build_options
     end
 
 
     class DeleteCommand < HammerCLIForeman::DeleteCommand
-      identifiers :id
       success_message _("Report has been deleted")
       failure_message _("Could not delete the report")
 
-      apipie_options
+      build_options
     end
 
 

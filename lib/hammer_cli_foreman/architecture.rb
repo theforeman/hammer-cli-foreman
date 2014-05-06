@@ -11,7 +11,7 @@ module HammerCLIForeman
         field :name, _("Name")
       end
 
-      apipie_options
+      build_options
     end
 
 
@@ -23,7 +23,7 @@ module HammerCLIForeman
         field :updated_at, _("Updated at"), Fields::Date
       end
 
-      apipie_options
+      build_options
     end
 
 
@@ -31,7 +31,7 @@ module HammerCLIForeman
       success_message _("Architecture created")
       failure_message _("Could not create the architecture")
 
-      apipie_options
+      build_options
     end
 
 
@@ -39,7 +39,7 @@ module HammerCLIForeman
       success_message _("Architecture deleted")
       failure_message _("Could not delete the architecture")
 
-      apipie_options
+      build_options
     end
 
 
@@ -47,10 +47,10 @@ module HammerCLIForeman
       success_message _("Architecture updated")
       failure_message _("Could not update the architecture")
 
-      apipie_options
+      build_options
     end
 
-    include HammerCLIForeman::AssociatingCommands::OperatingSystem
+    HammerCLIForeman::AssociatingCommands::OperatingSystem.extend_command(self)
 
     autoload_subcommands
   end

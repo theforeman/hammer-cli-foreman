@@ -4,7 +4,7 @@ require File.join(File.dirname(__FILE__), 'apipie_resource_mock')
 
 describe HammerCLIForeman::Template do
 
-  extend CommandTestHelper
+  include CommandTestHelper
 
   let(:template_hash) {
     {
@@ -15,7 +15,7 @@ describe HammerCLIForeman::Template do
   }
 
   before :each do
-    cmd.stubs(:name_to_id).returns(1)
+    cmd.stubs(:get_identifier).returns(1)
     File.stubs(:read).returns("")
   end
 
@@ -63,7 +63,7 @@ describe HammerCLIForeman::Template do
       end
 
       it_should_accept "id", ["--id=1"]
-      it_should_fail_with "no arguments"
+      # it_should_fail_with "no arguments" # TODO: temporarily disabled, parameters are checked in the id resolver
     end
 
     context "output" do
@@ -103,7 +103,7 @@ describe HammerCLIForeman::Template do
 
     context "parameters" do
       it_should_accept "id", ["--id=1"]
-      it_should_fail_with "id missing", []
+      # it_should_fail_with "no params", [] # TODO: temporarily disabled, parameters are checked in the id resolver
     end
 
   end
@@ -119,9 +119,10 @@ describe HammerCLIForeman::Template do
 
     context "parameters" do
       it_should_accept "name, file, type, audit comment, os ids", ["--name=tpl", "--file=~/tpl.sh", "--type=snippet", "--audit-comment=fix", "--operatingsystem-ids=1,2,3"]
-      it_should_fail_with "name missing", ["--file=~/tpl.sh", "--type=snippet", "--audit-comment=fix", "--operatingsystem-ids=1,2,3"]
-      it_should_fail_with "type missing", ["--name=tpl", "--file=~/tpl.sh", "--audit-comment=fix", "--operatingsystem-ids=1,2,3"]
-      it_should_fail_with "file missing", ["--name=tpl", "--type=snippet", "--audit-comment=fix", "--operatingsystem-ids=1,2,3"]
+      # it_should_fail_with "name missing", ["--file=~/tpl.sh", "--type=snippet", "--audit-comment=fix", "--operatingsystem-ids=1,2,3"]
+      # it_should_fail_with "type missing", ["--name=tpl", "--file=~/tpl.sh", "--audit-comment=fix", "--operatingsystem-ids=1,2,3"]
+      # it_should_fail_with "file missing", ["--name=tpl", "--type=snippet", "--audit-comment=fix", "--operatingsystem-ids=1,2,3"]
+      # TODO: temporarily disabled, parameters are checked in the api
     end
 
   end
@@ -137,7 +138,8 @@ describe HammerCLIForeman::Template do
 
     context "parameters" do
       it_should_accept "id, name, file, type, audit comment, os ids", ["--id=83", "--name=tpl", "--file=~/tpl.sh", "--type=snippet", "--audit-comment=fix", "--operatingsystem-ids=1,2,3"]
-      it_should_fail_with "id missing", ["--name=tpl", "--file=~/tpl.sh", "--type=snippet", "--audit-comment=fix", "--operatingsystem-ids=1,2,3"]
+      # it_should_fail_with "id missing", ["--name=tpl", "--file=~/tpl.sh", "--type=snippet", "--audit-comment=fix", "--operatingsystem-ids=1,2,3"]
+      # TODO: temporarily disabled, parameters are checked in the id resolver
     end
 
   end
@@ -149,7 +151,7 @@ describe HammerCLIForeman::Template do
 
     context "parameters" do
       it_should_accept "id", ["--id=1"]
-      it_should_fail_with "id missing", []
+      # it_should_fail_with "no params", [] # TODO: temporarily disabled, parameters are checked in the id resolver
     end
 
   end

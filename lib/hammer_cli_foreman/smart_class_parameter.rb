@@ -1,6 +1,6 @@
 module HammerCLIForeman
 
-  class SmartClassParametersBriefList < HammerCLIForeman::ListCommand
+  class SmartClassParametersBriefList < HammerCLIForeman::AssociatedResourceListCommand
     resource :smart_class_parameters, :index
     command_name 'sc-params'
 
@@ -12,12 +12,17 @@ module HammerCLIForeman
       field :override, _("Override")
     end
 
-    def retrieve_data
+    def send_request
       res = super
       # FIXME: API returns doubled records, probably just if filtered by puppetclasses
       # it seems group by environment is missing
       # having the uniq to fix that
       HammerCLI::Output::RecordCollection.new(res.uniq, :meta => res.meta)
+    end
+
+    def self.build_options(options={})
+      options[:without] ||= [:host_id, :hostgroup_id, :puppetclass_id, :environment_id]
+      super(options)
     end
   end
 
@@ -35,9 +40,11 @@ module HammerCLIForeman
 
     resource :smart_class_parameters
 
-    class ListCommand < HammerCLIForeman::SmartClassParametersList
-      command_name 'list'
-      apipie_options
+    class ListCommand < HammerCLIForeman::ListCommand
+
+      output SmartClassParametersList.output_definition
+
+      build_options
     end
 
     class InfoCommand < HammerCLIForeman::InfoCommand
@@ -74,7 +81,7 @@ module HammerCLIForeman
         res
       end
 
-      apipie_options
+      build_options
     end
 
     class UpdateCommand < HammerCLIForeman::UpdateCommand
@@ -82,7 +89,7 @@ module HammerCLIForeman
       success_message _("Parameter updated")
       failure_message _("Could not update the parameter")
 
-      apipie_options :without => [:parameter_type, :validator_type, :id, :override, :required]
+      build_options :without => [:parameter_type, :validator_type, :override, :required]
 
       option "--override", "OVERRIDE", _("Override this parameter."),
         :format => HammerCLI::Options::Normalizers::Bool.new
