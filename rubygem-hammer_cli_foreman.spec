@@ -10,7 +10,7 @@
 Summary: Universal command-line interface for Foreman
 Name: rubygem-%{gemname}
 Version: 0.1.0
-Release: 10%{?dist}
+Release: 11%{?dist}
 Group: Development/Languages
 License: GPLv3
 URL: http://github.com/theforeman/hammer-cli-foreman
@@ -75,6 +75,9 @@ cp -pa .%{gem_dir}/* \
 
 
 %changelog
+* Tue May 06 2014 Jason Montleon <jmontleo@redhat.com> 0.1.0-11
+- add new file to package file list (jmontleo@redhat.com)
+
 * Tue May 06 2014 Jason Montleon <jmontleo@redhat.com> 0.1.0-10
 - Merge remote-tracking branch 'upstream/master' into SATELLITE-6.0.3
   (jmontleo@redhat.com)
