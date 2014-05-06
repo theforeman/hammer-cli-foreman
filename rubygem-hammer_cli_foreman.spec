@@ -10,7 +10,7 @@
 Summary: Universal command-line interface for Foreman
 Name: rubygem-%{gemname}
 Version: 0.1.0
-Release: 9%{?dist}
+Release: 10%{?dist}
 Group: Development/Languages
 License: GPLv3
 URL: http://github.com/theforeman/hammer-cli-foreman
@@ -74,6 +74,23 @@ cp -pa .%{gem_dir}/* \
 
 
 %changelog
+* Tue May 06 2014 Jason Montleon <jmontleo@redhat.com> 0.1.0-10
+- Merge remote-tracking branch 'upstream/master' into SATELLITE-6.0.3
+  (jmontleo@redhat.com)
+- FIxes #5209 - negative timeout config value causes errors
+  (tstrachota@redhat.com)
+- Refs #4311 - additional tests for the id resolver and option builders
+  (tstrachota@redhat.com)
+- removed log_api_calls setting (tstrachota@redhat.com)
+- Refs #4311 - single resource command, associated list command
+  (tstrachota@redhat.com)
+- Refs #4311 - test fixes (tstrachota@redhat.com)
+- fix in String#format (tstrachota@redhat.com)
+- Refs #4311 - get_resource_id refactoring (tstrachota@redhat.com)
+- Refs #4311 - read and write commands merged (tstrachota@redhat.com)
+- Fixes #4311 - searchables, id resolver and option builders
+  (tstrachota@redhat.com)
+
 * Fri May 02 2014 Jason Montleon <jmontleo@redhat.com> 0.1.0-9
 - remove erroniously added README (jmontleo@redhat.com)
 
