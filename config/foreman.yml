@@ -12,5 +12,5 @@
   # Check API documentation cache status on each request
   #:refresh_cache: false
 
-  # API request timeout, set 0 for infinity
+  # API request timeout, set -1 for infinity
   #:request_timeout: 120 #seconds
