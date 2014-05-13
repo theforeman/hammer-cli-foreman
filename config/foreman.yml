@@ -7,7 +7,7 @@
 
   # Credentials. You'll be asked for the interactively if you leave them blank here
   :username: 'admin'
-  :password: 'changeme'
+  #:password: 'example'
 
   # Check API documentation cache status on each request
   #:refresh_cache: false
