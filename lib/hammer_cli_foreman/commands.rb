@@ -91,7 +91,11 @@ module HammerCLIForeman
       else
         opts = all_options
       end
-      resolver.send("#{resource.singular_name}_id", opts)
+      begin
+        resolver.send("#{resource.singular_name}_id", opts)
+      rescue HammerCLIForeman::MissingSeachOptions => e
+        raise e unless (options[:required] == false)
+      end
     end
 
     def self.resolver
@@ -110,9 +114,10 @@ module HammerCLIForeman
 
     def request_params
       params = super
-      resolver.required_id_params(resource.action(action)).each do |api_param|
+      resolver.id_params(resource.action(action)).each do |api_param|
         param_resource = resolver.param_to_resource(api_param.name)
-        params[api_param.name] = get_resource_id(param_resource, :scoped => true)
+        resource_id = get_resource_id(param_resource, :scoped => true, :required => api_param.required?)
+        params[api_param.name] = resource_id if resource_id
       end
       params
     end
@@ -186,7 +191,8 @@ module HammerCLIForeman
       builders = super
       if resource_defined?
         builders += [
-          DependentSearchablesOptionBuilder.new(resolver.dependent_resources(resource), searchables)
+          DependentSearchablesOptionBuilder.new(resolver.dependent_resources(resource, :required => true, :recursive => true), searchables),
+          DependentSearchablesOptionBuilder.new(resolver.dependent_resources(resource, :required => false, :recursive => false), searchables)
         ]
       end
       builders
@@ -202,7 +208,8 @@ module HammerCLIForeman
       if resource_defined?
         builders += [
           SearchablesOptionBuilder.new(resource, searchables),
-          DependentSearchablesOptionBuilder.new(resolver.dependent_resources(resource), searchables)
+          DependentSearchablesOptionBuilder.new(resolver.dependent_resources(resource, :required => true, :recursive => true), searchables),
+          DependentSearchablesOptionBuilder.new(resolver.dependent_resources(resource, :required => false, :recursive => false), searchables)
         ]
       end
       builders
@@ -287,7 +294,8 @@ module HammerCLIForeman
       if resource_defined?
         builders += [
           SearchablesOptionBuilder.new(resource, searchables),
-          DependentSearchablesOptionBuilder.new(resolver.dependent_resources(resource), searchables)
+          DependentSearchablesOptionBuilder.new(resolver.dependent_resources(resource, :required => true, :recursive => true), searchables),
+          DependentSearchablesOptionBuilder.new(resolver.dependent_resources(resource, :required => false, :recursive => false), searchables)
         ]
       end
       builders
@@ -347,9 +355,9 @@ module HammerCLIForeman
     def self.custom_option_builders
       [
         SearchablesOptionBuilder.new(resource, searchables),
-        DependentSearchablesOptionBuilder.new(resolver.dependent_resources(resource), searchables),
+        DependentSearchablesOptionBuilder.new(resolver.dependent_resources(resource, :required => true, :recursive => true), searchables),
         DependentSearchablesOptionBuilder.new(associated_resource, searchables),
-        DependentSearchablesOptionBuilder.new(resolver.dependent_resources(associated_resource), searchables)
+        DependentSearchablesOptionBuilder.new(resolver.dependent_resources(associated_resource, :required => true, :recursive => true), searchables)
       ]
     end
 
