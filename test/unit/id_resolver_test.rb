@@ -43,23 +43,33 @@ describe HammerCLIForeman::IdResolver do
   end
 
 
-  describe "required id params" do
-
-    it "returns only required params with named ending with _id" do
-      required_params = [
+  describe "id params" do
+      let(:required_params) {[
         stub(:name => "architecture_id", :required? => true),
         stub(:name => "organization_id", :required? => true)
-      ]
-      params = [
-        stub(:name => "domain_id", :required? => false),
+      ]}
+      let(:id_params) {[
+        stub(:name => "domain_id", :required? => false)
+      ]}
+      let(:other_params) {[
         stub(:name => "location", :required? => true),
         stub(:name => "param", :required? => false)
-      ]
-      action = stub(:params => (params+required_params))
+      ]}
+      let(:action) {
+        stub(:params => (required_params+id_params+other_params))
+      }
 
-      resolver.required_id_params(action).must_equal required_params
+    it "returns only required params ending with _id" do
+      resolver.id_params(action, :required => true).must_equal required_params
     end
 
+    it "returns only ending with _id when :required is set to false" do
+      resolver.id_params(action, :required => false).must_equal (required_params+id_params)
+    end
+
+    it "returns required params by default" do
+      resolver.id_params(action).must_equal required_params
+    end
   end
 
   describe "param to resource" do
@@ -74,8 +84,8 @@ describe HammerCLIForeman::IdResolver do
       resolver.param_to_resource("architecture").name.must_equal expected_resource.name
     end
 
-    it "raises exception for unknown resource" do
-      proc { resolver.param_to_resource("unknown") }.must_raise NameError
+    it "returns nil for unknown resource" do
+      resolver.param_to_resource("unknown").must_equal nil
     end
 
   end
@@ -106,11 +116,11 @@ describe HammerCLIForeman::IdResolver do
       let(:resolver_run) { proc { resolver.architecture_id({"option_unknown" => "value"}) } }
 
       it "raises exception" do
-        err = resolver_run.must_raise RuntimeError
+        err = resolver_run.must_raise HammerCLIForeman::MissingSeachOptions
       end
 
       it "builds correct error message" do
-        err = resolver_run.must_raise RuntimeError
+        err = resolver_run.must_raise HammerCLIForeman::MissingSeachOptions
         err.message.must_equal "Missing options to search architecture"
       end
     end
@@ -121,7 +131,7 @@ describe HammerCLIForeman::IdResolver do
       it "raises exception when no resource is found" do
         ResourceMocks.mock_action_call(:architectures, :index, [])
 
-        err = resolver_run.must_raise RuntimeError
+        err = resolver_run.must_raise HammerCLIForeman::ResolverError
         err.message.must_equal "architecture not found"
       end
 
@@ -131,7 +141,7 @@ describe HammerCLIForeman::IdResolver do
           {"id" => 22, "name" => "arch2"}
         ])
 
-        err = resolver_run.must_raise RuntimeError
+        err = resolver_run.must_raise HammerCLIForeman::ResolverError
         err.message.must_equal "architecture found more than once"
       end
 
@@ -168,7 +178,7 @@ describe HammerCLIForeman::IdResolver do
         ResourceMocks.mock_action_call(:images, :index, [])
         ResourceMocks.mock_action_call(:compute_resources, :index, [])
 
-        err = resolver_run.must_raise RuntimeError
+        err = resolver_run.must_raise HammerCLIForeman::ResolverError
         err.message.must_equal "compute_resource not found"
       end
 
@@ -179,7 +189,7 @@ describe HammerCLIForeman::IdResolver do
           {"id" => 22, "name" => "cr2"}
         ])
 
-        err = resolver_run.must_raise RuntimeError
+        err = resolver_run.must_raise HammerCLIForeman::ResolverError
         err.message.must_equal "compute_resource found more than once"
       end
 

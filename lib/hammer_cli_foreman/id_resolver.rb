@@ -32,7 +32,6 @@ module HammerCLIForeman
 
   end
 
-
   class IdResolver
 
     attr_reader :api
@@ -59,27 +58,43 @@ module HammerCLIForeman
       scoped_options
     end
 
-    def dependent_resources(resource)
-      resources = []
-      required_id_params(resource.action(:index)).each do |param|
-        res = param_to_resource(param.name)
-        resources << res
-        resources += dependent_resources(res)
-      end
-      resources
+    def dependent_resources(resource, options={})
+      options[:required] = (options[:required] == true)
+      options[:recursive] = !(options[:recursive] == false)
+
+      resolve_dependent_resources(resource, [], options)
     end
 
-    def required_id_params(action)
-      action.params.reject{ |p| !(p.required? && p.name.end_with?("_id")) }
+    def id_params(action, options={})
+      required = !(options[:required] == false)
+
+      params = action.params.reject{ |p| !(p.name.end_with?("_id")) }
+      params = params.reject{ |p| !(p.required?) } if required
+      params
     end
 
     def param_to_resource(param_name)
       resource_name = param_name.gsub(/_id$/, "")
       resource_name = ApipieBindings::Inflector.pluralize(resource_name.to_s).to_sym
-      @api.resource(resource_name)
+      begin
+        @api.resource(resource_name)
+      rescue NameError
+        nil
+      end
     end
 
     protected
+
+    def resolve_dependent_resources(resource, resources_found, options)
+      id_params(resource.action(:index), :required => options[:required]).each do |param|
+        res = param_to_resource(param.name)
+        if res and !resources_found.map(&:name).include?(res.name)
+          resources_found << res
+          resolve_dependent_resources(res, resources_found, options) if options[:recursive]
+        end
+      end
+      resources_found
+    end
 
     def define_id_finders
       @api.resources.each do |resource|
@@ -99,7 +114,7 @@ module HammerCLIForeman
       resource = @api.resource(resource_name)
 
       search_options = search_options(options, resource)
-      required_id_params(resource.action(:index)).each do |param|
+      id_params(resource.action(:index), :required => true).each do |param|
         search_options[param.name] ||= send(param.name, scoped_options(param.name.gsub(/_id$/, ""), options))
       end
       resource.action(:index).routes.each do |route|
@@ -114,14 +129,18 @@ module HammerCLIForeman
       results = resource.call(:index, search_options)
       results = HammerCLIForeman.collection_to_common_format(results)
 
-      raise _("%s not found") % resource.singular_name if results.empty?
-      raise _("%s found more than once") % resource.singular_name if results.count > 1
+      pick_result(results, resource)
+    end
+
+    def pick_result(results, resource)
+      raise ResolverError.new(_("%s not found") % resource.singular_name) if results.empty?
+      raise ResolverError.new(_("%s found more than once") % resource.singular_name) if results.count > 1
       results[0]
     end
 
     def search_options(options, resource)
       search_options = create_search_options(options, resource)
-      raise _("Missing options to search %s") % resource.singular_name if search_options.empty?
+      raise MissingSeachOptions.new(_("Missing options to search %s") % resource.singular_name) if search_options.empty?
       search_options
     end
 
