@@ -13,12 +13,12 @@ class IdResolverTestProxy
     @original_resolver.scoped_options(scope, options)
   end
 
-  def dependent_resources(resource)
-    @original_resolver.dependent_resources(resource)
+  def dependent_resources(resource, options={})
+    @original_resolver.dependent_resources(resource, options)
   end
 
-  def required_id_params(action)
-    @original_resolver.required_id_params(action)
+  def id_params(action, options={})
+    @original_resolver.id_params(action, options)
   end
 
   def param_to_resource(param_name)
