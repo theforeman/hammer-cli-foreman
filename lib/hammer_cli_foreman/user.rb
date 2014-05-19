@@ -25,9 +25,11 @@ module HammerCLIForeman
     class InfoCommand < HammerCLIForeman::InfoCommand
 
       output ListCommand.output_definition do
+        field :admin, _("Admin"), Fields::Boolean
+        field :auth_source_internal, _("Authorized by"), Fields::Reference
         field :last_login_on, _("Last login"), Fields::Date
-        field :created_at, _("Created at"), Fields::Date
-        field :updated_at, _("Updated at"), Fields::Date
+        HammerCLIForeman::References.taxonomies(self)
+        HammerCLIForeman::References.timestamps(self)
       end
 
       def extend_data(user)

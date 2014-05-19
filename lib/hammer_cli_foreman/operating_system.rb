@@ -8,14 +8,9 @@ module HammerCLIForeman
 
       output do
         field :id, _("Id")
-        field :_os_name, _("Name"), Fields::OSName
+        field :fullname, _("Full name")
         field :release_name, _("Release name")
         field :family, _("Family")
-      end
-
-      def extend_data(os)
-        os["_os_name"] = Hash[os.select { |k, v| ["name", "major", "minor"].include? k }]
-        os
       end
 
       build_options
@@ -24,29 +19,21 @@ module HammerCLIForeman
 
     class InfoCommand < HammerCLIForeman::InfoCommand
       output ListCommand.output_definition do
-        field :media_names, _("Installation media"), Fields::List
-        field :architecture_names, _("Architectures"), Fields::List
-        field :ptable_names, _("Partition tables"), Fields::List
-        field :config_template_names, _("Config templates"), Fields::List
-        field :default_os_template_names, _("Default OS templates"), Fields::List
-        collection :parameters, _("Parameters") do
-          field nil, nil, Fields::KeyValue
+        field :name, _("Name")
+        field :major, _("Major version")
+        field :minor, _("Minor version")
+        collection :ptables, _("Partition tables"), :numbered => false do
+          custom_field Fields::Reference
         end
-      end
-
-      #FIXME: remove custom send_request after the api has support for listing names
-      def extend_data(os)
-        os["_os_name"] = Hash[os.select { |k, v| ["name", "major", "minor"].include? k }]
-        os["media_names"] = os["media"].collect{|m| m["name"] } rescue []
-        os["architecture_names"] = os["architectures"].collect{|m| m["name"] } rescue []
-        os["ptable_names"] = os["ptables"].collect{|m| m["name"] } rescue []
-        os["config_template_names"] = os["config_templates"].collect{|m| m["name"] } rescue []
-        os["default_os_template_names"] =
-          os["os_default_templates"].collect{
-            |m| "%{config_template_name} (%{template_kind_name})".format(m)
-          } rescue []
-        os["parameters"] = HammerCLIForeman::Parameter.get_parameters(:operatingsystem, os["id"])
-        os
+        collection :os_default_templates, _("Default templates"), :numbered => false do
+          custom_field Fields::Template, :id_key => :config_template_id, :name_key => :config_template_name
+        end
+        collection :architectures, _("Architectures"), :numbered => false do
+          custom_field Fields::Reference
+        end
+        HammerCLIForeman::References.media(self)
+        HammerCLIForeman::References.config_templates(self)
+        HammerCLIForeman::References.parameters(self)
       end
 
       build_options

@@ -19,7 +19,7 @@ describe HammerCLIForeman::Host do
       let(:expected_record_count) { cmd.resource.call(:index).length }
 
       it_should_print_n_records
-      it_should_print_columns ["Id", "Name", "Operating System Id", "Host Group Id", "IP", "MAC"]
+      it_should_print_columns ["Id", "Name", "Operating System", "Host Group", "IP", "MAC"]
     end
 
   end
@@ -27,10 +27,6 @@ describe HammerCLIForeman::Host do
   context "InfoCommand" do
 
     let(:cmd) { HammerCLIForeman::Host::InfoCommand.new("", ctx) }
-
-    before :each do
-      HammerCLIForeman::Parameter.stubs(:get_parameters).returns([])
-    end
 
     context "parameters" do
       it_should_accept "id", ["--id=1"]
@@ -41,16 +37,15 @@ describe HammerCLIForeman::Host do
     context "output" do
       with_params ["--id=1"] do
         it_should_print_n_records 1
-        it_should_print_columns ["Id", "Name", "Operating System Id", "Host Group Id", "IP", "MAC"]
+        it_should_print_columns ["Id", "Name", "Operating System", "Host Group", "IP", "MAC"]
 
-        it_should_print_columns ["UUID", "Cert name"]
-        it_should_print_columns ["Environment", "Environment Id"]
+        it_should_print_columns ["UUID", "Cert name", "Environment"]
         it_should_print_columns ["Managed", "Enabled", "Build"]
         it_should_print_columns ["Use image", "Disk", "Image file"]
-        it_should_print_columns ["SP Name", "SP IP", "SP MAC", "SP Subnet", "SP Subnet Id"]
+        it_should_print_columns ["SP Name", "SP IP", "SP MAC", "SP Subnet"]
         it_should_print_columns ["Created at", "Updated at", "Installed at", "Last report"]
-        it_should_print_columns ["Puppet CA Proxy Id", "Medium Id", "Model Id", "Owner Id", "Subnet Id", "Domain Id"]
-        it_should_print_columns ["Puppet Proxy Id", "Owner Type", "Partition Table Id", "Architecture Id", "Image Id", "Compute Resource Id"]
+        it_should_print_columns ["Puppet CA Proxy Id", "Medium", "Model", "Owner Id", "Subnet", "Domain"]
+        it_should_print_columns ["Puppet Proxy Id", "Owner Type", "Partition Table", "Architecture", "Image", "Compute Resource"]
         it_should_print_columns ["BMC Network Interfaces", "Managed Network Interfaces"]
         it_should_print_columns ["Comment"]
       end

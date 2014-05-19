@@ -18,14 +18,9 @@ module HammerCLIForeman
     class InfoCommand < HammerCLIForeman::InfoCommand
       output ListCommand.output_definition do
         field :os_family, _("OS Family")
-        field :operatingsystem_ids, _("OS IDs"), Fields::List
-        field :created_at, _("Created at"), Fields::Date
-        field :updated_at, _("Updated at"), Fields::Date
-      end
-
-      def extend_data(res)
-        res['operatingsystem_ids'] = res['operatingsystems'].map { |e| e["id"] } rescue []
-        res
+        HammerCLIForeman::References.operating_systems(self)
+        HammerCLIForeman::References.taxonomies(self)
+        HammerCLIForeman::References.timestamps(self)
       end
 
       build_options

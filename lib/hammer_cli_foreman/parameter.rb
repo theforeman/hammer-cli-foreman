@@ -4,16 +4,6 @@ module HammerCLIForeman
 
   module Parameter
 
-    def self.get_parameters(resource_type, resource_id)
-      params = {
-        "#{resource_type}_id" => resource_id
-      }
-
-      params = HammerCLIForeman.foreman_resource(:parameters).call(:index, params)
-      HammerCLIForeman.collection_to_common_format(params)
-    end
-
-
     class AbstractParameterCommand < HammerCLIForeman::Command
 
       def self.parameter_resource

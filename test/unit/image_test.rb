@@ -26,7 +26,7 @@ describe HammerCLIForeman::Image do
         it_should_print_n_records
         it_should_print_column "Id"
         it_should_print_column "Name"
-        it_should_print_column "Operating System Id"
+        it_should_print_column "Operating System"
         it_should_print_column "Username"
         it_should_print_column "UUID"
       end
@@ -50,8 +50,8 @@ describe HammerCLIForeman::Image do
         it_should_print_n_records 1
         it_should_print_column "Id"
         it_should_print_column "Name"
-        it_should_print_column "Operating System Id"
-        it_should_print_column "Architecture Id"
+        it_should_print_column "Operating System"
+        it_should_print_column "Architecture"
         it_should_print_column "Username"
         it_should_print_column "UUID"
         it_should_print_column "IAM role"

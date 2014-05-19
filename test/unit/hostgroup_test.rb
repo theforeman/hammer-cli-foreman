@@ -19,10 +19,8 @@ describe HammerCLIForeman::Hostgroup do
       let(:expected_record_count) { cmd.resource.call(:index).length }
 
       it_should_print_n_records
-      it_should_print_columns ["Id", "Name", "Label", "Operating System Id", "Subnet Id"]
-      it_should_print_columns ["Domain Id", "Environment Id", "Puppetclass Ids", "Ancestry"]
-      it_should_print_columns ["Architecture Id", "Partition Table Id", "Medium Id"]
-      it_should_print_columns ["Puppet CA Proxy Id", "Puppet Master Proxy Id"]
+      it_should_print_columns ["Id", "Name", "Label", "Operating System"]
+      it_should_print_columns ["Environment", "Model"]
     end
 
   end
@@ -30,10 +28,6 @@ describe HammerCLIForeman::Hostgroup do
   context "InfoCommand" do
 
     let(:cmd) { HammerCLIForeman::Hostgroup::InfoCommand.new("", ctx) }
-
-    before :each do
-      HammerCLIForeman::Parameter.stubs(:get_parameters).returns([])
-    end
 
     context "parameters" do
       it_should_accept "id", ["--id=1"]
@@ -43,8 +37,8 @@ describe HammerCLIForeman::Hostgroup do
     context "output" do
       with_params ["--id=1"] do
         it_should_print_n_records 1
-        it_should_print_columns ["Id", "Name", "Label", "Operating System Id", "Subnet Id"]
-        it_should_print_columns ["Domain Id", "Environment Id", "Puppetclass Ids", "Ancestry"]
+        it_should_print_columns ["Id", "Name", "Label", "Operating System", "Subnet"]
+        it_should_print_columns ["Domain", "Environment", "Puppetclasses", "Ancestry"]
         it_should_print_columns ["Parameters"]
       end
     end

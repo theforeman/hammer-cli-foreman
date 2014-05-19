@@ -24,8 +24,20 @@ module HammerCLIForeman
       option '--id', 'ID', _("Location numeric id to search by")
 
       output ListCommand.output_definition do
-        field :created_at, _("Created at"), Fields::Date
-        field :updated_at, _("Updated at"), Fields::Date
+        HammerCLIForeman::References.users(self)
+        HammerCLIForeman::References.smart_proxies(self)
+        HammerCLIForeman::References.subnets(self)
+        HammerCLIForeman::References.compute_resources(self)
+        HammerCLIForeman::References.media(self)
+        HammerCLIForeman::References.config_templates(self)
+        HammerCLIForeman::References.domains(self)
+        HammerCLIForeman::References.environments(self)
+        HammerCLIForeman::References.hostgroups(self)
+        HammerCLIForeman::References.parameters(self)
+        collection :organizations, _("Organizations"), :numbered => false, :hide_blank => true do
+          custom_field Fields::Reference
+        end
+        HammerCLIForeman::References.timestamps(self)
       end
 
       build_options
