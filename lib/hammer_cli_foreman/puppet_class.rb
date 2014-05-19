@@ -37,10 +37,10 @@ module HammerCLIForeman
         collection :smart_class_parameters, _("Smart class parameters"), :numbered => false do
           custom_field Fields::Reference, :name_key => :parameter
         end
+        HammerCLIForeman::References.hostgroups(self)
+        HammerCLIForeman::References.environments(self)
+        HammerCLIForeman::References.parameters(self)
       end
-      include HammerCLIForeman::References::Hostgroups
-      include HammerCLIForeman::References::Environments
-      include HammerCLIForeman::References::Parameters
 
       build_options
     end

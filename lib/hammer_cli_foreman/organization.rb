@@ -23,22 +23,22 @@ module HammerCLIForeman
 
       option "--id", "ID", " "
 
-      include HammerCLIForeman::References::Users
-      include HammerCLIForeman::References::SmartProxies
-      include HammerCLIForeman::References::Subnets
-      include HammerCLIForeman::References::ComputeResources
-      include HammerCLIForeman::References::Media
-      include HammerCLIForeman::References::ConfigTemplates
-      include HammerCLIForeman::References::Domains
-      include HammerCLIForeman::References::Environments
-      include HammerCLIForeman::References::Hostgroups
-      include HammerCLIForeman::References::Parameters
       output ListCommand.output_definition do
+        HammerCLIForeman::References.users(self)
+        HammerCLIForeman::References.smart_proxies(self)
+        HammerCLIForeman::References.subnets(self)
+        HammerCLIForeman::References.compute_resources(self)
+        HammerCLIForeman::References.media(self)
+        HammerCLIForeman::References.config_templates(self)
+        HammerCLIForeman::References.domains(self)
+        HammerCLIForeman::References.environments(self)
+        HammerCLIForeman::References.hostgroups(self)
+        HammerCLIForeman::References.parameters(self)
         collection :locations, _("Locations"), :numbered => false, :hide_blank => true do
           custom_field Fields::Reference
         end
+        HammerCLIForeman::References.timestamps(self)
       end
-      include HammerCLIForeman::References::Timestamps
 
 
       build_options

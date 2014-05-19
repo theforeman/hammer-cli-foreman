@@ -44,9 +44,10 @@ module HammerCLIForeman
 
     class InfoCommand < HammerCLIForeman::InfoCommand
 
-      output ListCommand.output_definition
-      include HammerCLIForeman::References::OperatingSystems
-      include HammerCLIForeman::References::Taxonomies
+      output ListCommand.output_definition do
+        HammerCLIForeman::References.operating_systems(self)
+        HammerCLIForeman::References.taxonomies(self)
+      end
 
       def extend_data(tpl)
         if tpl["snippet"]

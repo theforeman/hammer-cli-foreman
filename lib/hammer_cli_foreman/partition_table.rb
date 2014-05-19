@@ -17,9 +17,10 @@ module HammerCLIForeman
 
 
     class InfoCommand < HammerCLIForeman::InfoCommand
-      output ListCommand.output_definition
-      include HammerCLIForeman::References::OperatingSystems
-      include HammerCLIForeman::References::Timestamps
+      output ListCommand.output_definition do
+        HammerCLIForeman::References.operating_systems(self)
+        HammerCLIForeman::References.timestamps(self)
+      end
 
       build_options
     end

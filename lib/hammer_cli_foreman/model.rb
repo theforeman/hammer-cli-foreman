@@ -20,8 +20,8 @@ module HammerCLIForeman
     class InfoCommand < HammerCLIForeman::InfoCommand
       output ListCommand.output_definition do
         field :info, _("Info")
+        HammerCLIForeman::References.timestamps(self)
       end
-      include HammerCLIForeman::References::Timestamps
 
       build_options
     end

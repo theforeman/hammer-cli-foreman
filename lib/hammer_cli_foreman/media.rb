@@ -18,10 +18,10 @@ module HammerCLIForeman
     class InfoCommand < HammerCLIForeman::InfoCommand
       output ListCommand.output_definition do
         field :os_family, _("OS Family")
+        HammerCLIForeman::References.operating_systems(self)
+        HammerCLIForeman::References.taxonomies(self)
+        HammerCLIForeman::References.timestamps(self)
       end
-      include HammerCLIForeman::References::OperatingSystems
-      include HammerCLIForeman::References::Taxonomies
-      include HammerCLIForeman::References::Timestamps
 
       build_options
     end

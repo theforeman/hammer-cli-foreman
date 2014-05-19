@@ -205,9 +205,9 @@ module HammerCLIForeman
           field :subnet_name, _("Subnet Name")
         end
 
+        HammerCLIForeman::References.parameters(self)
+        HammerCLIForeman::References.timestamps(self)
       end
-      include HammerCLIForeman::References::Parameters
-      include HammerCLIForeman::References::Timestamps
 
       build_options
     end

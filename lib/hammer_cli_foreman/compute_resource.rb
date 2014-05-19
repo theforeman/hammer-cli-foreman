@@ -43,9 +43,9 @@ module HammerCLIForeman
         field :url, _("Url")
         field :description, _("Description")
         field :user, _("User")
+        HammerCLIForeman::References.taxonomies(self)
+        HammerCLIForeman::References.timestamps(self)
       end
-      include HammerCLIForeman::References::Taxonomies
-      include HammerCLIForeman::References::Timestamps
 
       def print_data(data)
         provider = data["provider"].downcase

@@ -31,10 +31,10 @@ module HammerCLIForeman
         collection :architectures, _("Architectures"), :numbered => false do
           custom_field Fields::Reference
         end
+        HammerCLIForeman::References.media(self)
+        HammerCLIForeman::References.config_templates(self)
+        HammerCLIForeman::References.parameters(self)
       end
-      include HammerCLIForeman::References::Media
-      include HammerCLIForeman::References::ConfigTemplates
-      include HammerCLIForeman::References::Parameters
 
       build_options
     end

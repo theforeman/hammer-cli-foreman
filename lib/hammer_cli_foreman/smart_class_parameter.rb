@@ -69,9 +69,9 @@ module HammerCLIForeman
             end
           end
         end
+        HammerCLIForeman::References.environments(self)
+        HammerCLIForeman::References.timestamps(self)
       end
-      include HammerCLIForeman::References::Environments
-      include HammerCLIForeman::References::Timestamps
 
       def extend_data(res)
         res['override_value_order'] = res['override_value_order'].split("\n")

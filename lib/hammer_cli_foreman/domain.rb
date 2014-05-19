@@ -20,11 +20,11 @@ module HammerCLIForeman
       output ListCommand.output_definition do
         field :fullname, _("Description")
         field :dns_id, _("DNS Id")
+        HammerCLIForeman::References.subnets(self)
+        HammerCLIForeman::References.taxonomies(self)
+        HammerCLIForeman::References.parameters(self)
+        HammerCLIForeman::References.timestamps(self)
       end
-      include HammerCLIForeman::References::Subnets
-      include HammerCLIForeman::References::Taxonomies
-      include HammerCLIForeman::References::Parameters
-      include HammerCLIForeman::References::Timestamps
 
       build_options
     end

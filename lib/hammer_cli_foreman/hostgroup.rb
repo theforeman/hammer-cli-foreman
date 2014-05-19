@@ -44,10 +44,10 @@ module HammerCLIForeman
         field :puppet_ca_proxy_id, _("Puppet CA Proxy Id")
         field :puppet_proxy_id, _("Puppet Master Proxy Id")
         field nil, _("ComputeProfile"), Fields::SingleReference, :key => :compute_profile
+        HammerCLIForeman::References.puppetclasses(self)
+        HammerCLIForeman::References.parameters(self)
+        HammerCLIForeman::References.taxonomies(self)
       end
-      include HammerCLIForeman::References::Puppetclasses
-      include HammerCLIForeman::References::Parameters
-      include HammerCLIForeman::References::Taxonomies
 
       build_options
     end

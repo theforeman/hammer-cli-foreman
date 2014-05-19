@@ -21,10 +21,10 @@ module HammerCLIForeman
 
     class InfoCommand < HammerCLIForeman::InfoCommand
       output ListCommand.output_definition do
+        HammerCLIForeman::References.puppetclasses(self)
+        HammerCLIForeman::References.taxonomies(self)
+        HammerCLIForeman::References.timestamps(self)
       end
-      include HammerCLIForeman::References::Puppetclasses
-      include HammerCLIForeman::References::Taxonomies
-      include HammerCLIForeman::References::Timestamps
 
       build_options
     end

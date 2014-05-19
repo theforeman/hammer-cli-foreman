@@ -29,9 +29,9 @@ module HammerCLIForeman
         collection :features,  _("Features"), :numbered => false do
           custom_field Fields::Reference
         end
+        HammerCLIForeman::References.taxonomies(self)
+        HammerCLIForeman::References.timestamps(self)
       end
-      include HammerCLIForeman::References::Taxonomies
-      include HammerCLIForeman::References::Timestamps
 
       build_options
     end

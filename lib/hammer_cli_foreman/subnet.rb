@@ -31,9 +31,9 @@ module HammerCLIForeman
         field :gateway, _("Gateway")
         field :from, _("From")
         field :to, _("To")
+        HammerCLIForeman::References.domains(self)
+        HammerCLIForeman::References.taxonomies(self)
       end
-      include HammerCLIForeman::References::Domains
-      include HammerCLIForeman::References::Taxonomies
 
       build_options
     end

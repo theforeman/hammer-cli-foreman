@@ -45,8 +45,8 @@ module HammerCLIForeman
       output ListCommand.output_definition do
         field nil, _("Architecture"), Fields::SingleReference, :key => :architecture
         field :iam_role, _("IAM role")
+        HammerCLIForeman::References.timestamps(self)
       end
-      include HammerCLIForeman::References::Timestamps
     end
 
 
