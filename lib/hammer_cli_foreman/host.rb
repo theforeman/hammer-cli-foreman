@@ -136,11 +136,21 @@ module HammerCLIForeman
     class InfoCommand < HammerCLIForeman::InfoCommand
 
       def extend_data(host)
+        # FIXME: temporary fetching parameters until the api gets fixed.
+        # Noramlly they should come in the host's json.
+        # http://projects.theforeman.org/issues/5820
+        host["parameters"] = get_parameters(host["id"])
+
         host["_bmc_interfaces"] =
           host["interfaces"].select{|intfs| intfs["type"] == "Nic::BMC" } rescue []
         host["_managed_interfaces"] =
           host["interfaces"].select{|intfs| intfs["type"] == "Nic::Managed" } rescue []
         host
+      end
+
+      def get_parameters(host_id)
+        params = HammerCLIForeman.foreman_resource(:parameters).call(:index, :host_id => host_id)
+        HammerCLIForeman.collection_to_common_format(params)
       end
 
       output ListCommand.output_definition do
