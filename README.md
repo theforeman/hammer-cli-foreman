@@ -4,6 +4,7 @@ Foreman commands for Hammer CLI
 This [Hammer CLI](https://github.com/theforeman/hammer-cli) plugin contains
 set of commands for [Foreman](http://theforeman.org/).
 
+Check out the [release notes](doc/release_notes.md#release-notes) to see what's new in the latest version.
 
 Documentation
 -------------
