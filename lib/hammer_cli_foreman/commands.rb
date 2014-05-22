@@ -115,10 +115,12 @@ module HammerCLIForeman
 
     def request_params
       params = super
-      resolver.id_params(resource.action(action)).each do |api_param|
+      resolver.id_params(resource.action(action), :required => false).each do |api_param|
         param_resource = resolver.param_to_resource(api_param.name)
-        resource_id = get_resource_id(param_resource, :scoped => true, :required => api_param.required?)
-        params[api_param.name] = resource_id if resource_id
+        if param_resource
+          resource_id = get_resource_id(param_resource, :scoped => true, :required => api_param.required?)
+          params[api_param.name] = resource_id if resource_id
+        end
       end
       params
     end
