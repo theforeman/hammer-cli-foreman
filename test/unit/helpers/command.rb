@@ -111,7 +111,11 @@ module CommandTestHelper
         arguments ||= respond_to?(:with_params) ? with_params : []
 
         cmd.stubs(:context).returns(ctx.update(:adapter => :test))
-        proc { cmd.run(arguments) }.must_output /.*##{column_name}#.*/
+        out, err = capture_io do
+          cmd.run(arguments)
+        end
+
+        out.split("\n")[0].must_match /.*##{column_name}#.*/
       end
     end
 

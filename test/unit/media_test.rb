@@ -42,7 +42,7 @@ describe HammerCLIForeman::Medium do
         it_should_print_column "Id"
         it_should_print_column "Path"
         it_should_print_column "OS Family"
-        it_should_print_column "OS IDs"
+        it_should_print_column "Operating systems"
         it_should_print_column "Created at"
         it_should_print_column "Updated at"
       end

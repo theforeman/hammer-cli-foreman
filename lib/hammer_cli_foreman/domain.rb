@@ -20,16 +20,10 @@ module HammerCLIForeman
       output ListCommand.output_definition do
         field :fullname, _("Description")
         field :dns_id, _("DNS Id")
-        field :created_at, _("Created at"), Fields::Date
-        field :updated_at, _("Updated at"), Fields::Date
-        collection :parameters, _("Parameters") do
-          field nil, nil, Fields::KeyValue
-        end
-      end
-
-      def extend_data(record)
-        record["parameters"] = HammerCLIForeman::Parameter.get_parameters(:domain, record["id"])
-        record
+        HammerCLIForeman::References.subnets(self)
+        HammerCLIForeman::References.taxonomies(self)
+        HammerCLIForeman::References.parameters(self)
+        HammerCLIForeman::References.timestamps(self)
       end
 
       build_options

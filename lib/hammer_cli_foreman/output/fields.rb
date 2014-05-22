@@ -2,10 +2,18 @@ require 'hammer_cli'
 
 module Fields
 
-  class OSName < Field
+  class SingleReference < Field
   end
 
-  class Server < Field
+  class Reference < Field
+  end
+
+  class Template < Reference
+
+    def initialize(options={})
+      options[:details] ||= [:template_kind_name]
+      super(options)
+    end
   end
 
 end

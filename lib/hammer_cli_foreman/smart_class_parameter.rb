@@ -53,8 +53,7 @@ module HammerCLIForeman
         field :description, _("Description")
         field :parameter_type, _("Type")
         field :required, _("Required")
-        field :_environments, _("Environments"), Fields::List
-        field :_environment_ids, _("Environment Ids"), Fields::List
+
         label _("Validator") do
           field :validator_type, _("Type")
           field :validator_rule, _("Rule")
@@ -70,14 +69,12 @@ module HammerCLIForeman
             end
           end
         end
-        field :created_at, _("Created at"), Fields::Date
-        field :updated_at, _("Updated at"), Fields::Date
+        HammerCLIForeman::References.environments(self)
+        HammerCLIForeman::References.timestamps(self)
       end
 
       def extend_data(res)
         res['override_value_order'] = res['override_value_order'].split("\n")
-        res['_environments'] = res['environments'].map { |e| e['name']}
-        res['_environment_ids'] = res['environments'].map { |e| e['id']}
         res
       end
 

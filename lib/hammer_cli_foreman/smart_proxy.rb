@@ -6,13 +6,17 @@ module HammerCLIForeman
 
     class ListCommand < HammerCLIForeman::ListCommand
 
-      action :index
-
       #FIXME: search by unknown type returns 500 from the server, propper error handling should resove this
       output do
         field :id, _("Id")
         field :name, _("Name")
         field :url, _("URL")
+        field :_features, _( "Features"), Fields::List, :width => 25, :hide_blank => true
+      end
+
+      def extend_data(proxy)
+        proxy['_features'] = proxy['features'].map { |f| f['name'] } if proxy['features']
+        proxy
       end
 
       build_options
@@ -21,17 +25,12 @@ module HammerCLIForeman
 
     class InfoCommand < HammerCLIForeman::InfoCommand
 
-      action :show
-
       output ListCommand.output_definition do
-        field :_features, _( "Features"),   Fields::List
-        field :created_at, _("Created at"), Fields::Date
-        field :updated_at, _("Updated at"), Fields::Date
-      end
-
-      def extend_data(proxy)
-        proxy['_features'] = proxy['features'].map { |f| f['name'] }
-        proxy
+        collection :features,  _("Features"), :numbered => false do
+          custom_field Fields::Reference
+        end
+        HammerCLIForeman::References.taxonomies(self)
+        HammerCLIForeman::References.timestamps(self)
       end
 
       build_options
@@ -39,9 +38,6 @@ module HammerCLIForeman
 
 
     class CreateCommand < HammerCLIForeman::CreateCommand
-
-      action :create
-
       success_message _("Smart proxy created")
       failure_message _("Could not create the proxy")
 
@@ -50,9 +46,6 @@ module HammerCLIForeman
 
 
     class UpdateCommand < HammerCLIForeman::UpdateCommand
-
-      action :update
-
       success_message _("Smart proxy updated")
       failure_message _("Could not update the proxy")
 
@@ -61,9 +54,6 @@ module HammerCLIForeman
 
 
     class DeleteCommand < HammerCLIForeman::DeleteCommand
-
-      action :destroy
-
       success_message _("Smart proxy deleted")
       failure_message _("Could not delete the proxy")
 

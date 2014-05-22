@@ -22,16 +22,9 @@ module HammerCLIForeman
         field :id, _("Id")
         field :name, _("Name")
         field :label, _("Label")
-        field :operatingsystem_id, _("Operating System Id")
-        field :subnet_id, _("Subnet Id")
-        field :domain_id, _("Domain Id")
-        field :architecture_id, _("Architecture Id")
-        field :ptable_id, _("Partition Table Id")
-        field :medium_id, _("Medium Id")
-        field :puppet_ca_proxy_id, _("Puppet CA Proxy Id")
-        field :puppet_proxy_id, _("Puppet Master Proxy Id")
-        field :environment_id, _("Environment Id")
-        field :puppetclass_ids, _("Puppetclass Ids"), Fields::List
+        field nil, _("Operating System"), Fields::SingleReference, :key => :operatingsystem
+        field nil, _("Environment"), Fields::SingleReference, :key => :environment
+        field nil, _("Model"), Fields::SingleReference, :key => :model
         field :ancestry, _("Ancestry")
       end
 
@@ -42,14 +35,18 @@ module HammerCLIForeman
     class InfoCommand < HammerCLIForeman::InfoCommand
 
       output ListCommand.output_definition do
-        collection :parameters, _("Parameters") do
-          field nil, nil, Fields::KeyValue
-        end
-      end
+        field nil, _("Subnet"), Fields::SingleReference, :key => :subnet
 
-      def extend_data(hostgroup)
-        hostgroup["parameters"] = HammerCLIForeman::Parameter.get_parameters(:hostgroup, hostgroup["id"])
-        hostgroup
+        field nil, _("Domain"), Fields::SingleReference, :key => :domain
+        field nil, _("Architecture"), Fields::SingleReference, :key => :architecture
+        field nil, _("Partition Table"), Fields::SingleReference, :key => :ptable
+        field nil, _("Medium"), Fields::SingleReference, :key => :medium
+        field :puppet_ca_proxy_id, _("Puppet CA Proxy Id")
+        field :puppet_proxy_id, _("Puppet Master Proxy Id")
+        field nil, _("ComputeProfile"), Fields::SingleReference, :key => :compute_profile
+        HammerCLIForeman::References.puppetclasses(self)
+        HammerCLIForeman::References.parameters(self)
+        HammerCLIForeman::References.taxonomies(self)
       end
 
       build_options

@@ -21,8 +21,9 @@ module HammerCLIForeman
 
     class InfoCommand < HammerCLIForeman::InfoCommand
       output ListCommand.output_definition do
-        field :created_at, _("Created at"), Fields::Date
-        field :updated_at, _("Updated at"), Fields::Date
+        HammerCLIForeman::References.puppetclasses(self)
+        HammerCLIForeman::References.taxonomies(self)
+        HammerCLIForeman::References.timestamps(self)
       end
 
       build_options

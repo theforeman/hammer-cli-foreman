@@ -20,6 +20,7 @@ module HammerCLIForeman
   begin
     require 'hammer_cli_foreman/commands'
     require 'hammer_cli_foreman/associating_commands'
+    require 'hammer_cli_foreman/references'
     require 'hammer_cli_foreman/parameter'
     require 'hammer_cli_foreman/common_parameter'
 
