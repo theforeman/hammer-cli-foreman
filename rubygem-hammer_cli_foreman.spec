@@ -69,6 +69,7 @@ cp -pa .%{gem_dir}/* \
 
 %files doc
 %doc %{gem_dir}/doc/%{gemname}-%{version}
+%doc %{geminstdir}/doc/release_notes.md
 %doc %{geminstdir}/README.md
 %doc %{geminstdir}/doc/host_create.md
 %doc %{geminstdir}/doc/configuration.md
