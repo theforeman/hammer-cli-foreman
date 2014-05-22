@@ -23,6 +23,7 @@ Requires: ruby(abi)
 
 Requires: ruby(rubygems)
 Requires: rubygem(hammer_cli) >= 0.0.18
+Requires: rubygem(apipie-bindings) >= 0.0.8
 BuildRequires: ruby(rubygems)
 %if 0%{?fedora} || 0%{?rhel} > 6
 BuildRequires: rubygems-devel
