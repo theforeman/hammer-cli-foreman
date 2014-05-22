@@ -10,7 +10,7 @@
 Summary: Universal command-line interface for Foreman
 Name: rubygem-%{gemname}
 Version: 0.1.0
-Release: 13%{?dist}
+Release: 14%{?dist}
 Group: Development/Languages
 License: GPLv3
 URL: http://github.com/theforeman/hammer-cli-foreman
@@ -76,6 +76,25 @@ cp -pa .%{gem_dir}/* \
 
 
 %changelog
+* Thu May 22 2014 Jason Montleon <jmontleo@redhat.com> 0.1.0-14
+- update apipie-bindings dep in rpm spec file (jmontleo@redhat.com)
+- Merge remote-tracking branch 'upstream/master' into SATELLITE-6.0.3
+  (jmontleo@redhat.com)
+- Merge pull request #121 from tstrachota/release_notes
+  (martin.bacovsky@gmail.com)
+- Release notes (tstrachota@redhat.com)
+- Bump to 0.1.1 (martin.bacovsky@gmail.com)
+- Refs #3102 - temporary fix for api not returning param values for hosts
+  (tstrachota@redhat.com)
+- Merge pull request #119 from mbacovsky/4478_localized_api
+  (tstrachota@redhat.com)
+- Refs #4478 - support for API lacalization (martin.bacovsky@gmail.com)
+- Refs #3102 - reference definition turned into functions
+  (tstrachota@redhat.com)
+- More readable output of failed tests for column presence
+  (tstrachota@redhat.com)
+- Fixes #3102 - listing associated resources (tstrachota@redhat.com)
+
 * Sat May 17 2014 Jason Montleon <jmontleo@redhat.com> 0.1.0-13
 - Merge remote-tracking branch 'upstream/master' into SATELLITE-6.0.3
   (jmontleo@redhat.com)
