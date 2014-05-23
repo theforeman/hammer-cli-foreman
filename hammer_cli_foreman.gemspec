@@ -24,8 +24,8 @@ EOF
   s.extra_rdoc_files = Dir['{doc}/**/*', 'README*']
   s.require_paths = ["lib"]
 
-  s.add_dependency 'hammer_cli', '>= 0.1.1'
-  s.add_dependency 'apipie-bindings', '>= 0.0.8'
+  s.add_dependency 'hammer_cli', '>= 0.1.0'
+  s.add_dependency 'apipie-bindings', '>= 0.0.6'
   s.add_dependency 'rest-client', '>= 1.6.5' # lower versions don't allow setting infinite timeouts
 
 end
