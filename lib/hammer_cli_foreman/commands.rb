@@ -414,7 +414,8 @@ module HammerCLIForeman
     end
 
     def self.desc(desc=nil)
-      _("Associate a resource")
+      description = super(desc) || ''
+      description.strip.empty? ? _("Associate a resource") : description
     end
 
     def get_new_ids
@@ -435,7 +436,8 @@ module HammerCLIForeman
     end
 
     def self.desc(desc=nil)
-      _("Disassociate a resource")
+      description = super(desc) || ''
+      description.strip.empty? ? _("Disassociate a resource") : description
     end
 
     def get_new_ids
