@@ -21,6 +21,7 @@ module HammerCLIForeman
         base_command.const_set(name, cmd_cls)
 
         cmd_cls.resource(base_command.resource.name)
+        cmd_cls.desc(command.desc)
         #TODO: update messages to inherit from parents
         cmd_cls.success_message(command.success_message)
         cmd_cls.failure_message(command.failure_message)
@@ -37,10 +38,12 @@ module HammerCLIForeman
 
       class AddHostgroupCommand < HammerCLIForeman::AddAssociatedCommand
         associated_resource :hostgroups
+        desc _("Associate a hostgroup")
       end
 
       class RemoveHostgroupCommand < HammerCLIForeman::RemoveAssociatedCommand
         associated_resource :hostgroups
+        desc _("Disassociate a hostgroup")
       end
     end
 
@@ -49,10 +52,12 @@ module HammerCLIForeman
 
       class AddEnvironmentCommand < HammerCLIForeman::AddAssociatedCommand
         associated_resource :environments
+        desc _("Associate an environment")
       end
 
       class RemoveEnvironmentCommand < HammerCLIForeman::RemoveAssociatedCommand
         associated_resource :environments
+        desc _("Disassociate an environment")
       end
     end
 
@@ -61,10 +66,12 @@ module HammerCLIForeman
 
       class AddDomainCommand < HammerCLIForeman::AddAssociatedCommand
         associated_resource :domains
+        desc _("Associate a domain")
       end
 
       class RemoveDomainCommand < HammerCLIForeman::RemoveAssociatedCommand
         associated_resource :domains
+        desc _("Disassociate a domain")
       end
     end
 
@@ -73,10 +80,12 @@ module HammerCLIForeman
 
       class AddMediumCommand < HammerCLIForeman::AddAssociatedCommand
         associated_resource :media
+        desc _("Associate a medium")
       end
 
       class RemoveMediumCommand < HammerCLIForeman::RemoveAssociatedCommand
         associated_resource :media
+        desc _("Disassociate a medium")
       end
     end
 
@@ -85,10 +94,12 @@ module HammerCLIForeman
 
       class AddSubnetCommand < HammerCLIForeman::AddAssociatedCommand
         associated_resource :subnets
+        desc _("Associate a subnet")
       end
 
       class RemoveSubnetCommand < HammerCLIForeman::RemoveAssociatedCommand
         associated_resource :subnets
+        desc _("Disassociate a subnet")
       end
     end
 
@@ -97,10 +108,12 @@ module HammerCLIForeman
 
       class AddComputeResourceCommand < HammerCLIForeman::AddAssociatedCommand
         associated_resource :compute_resources
+        desc _("Associate a compute resource")
       end
 
       class RemoveComputeResourceCommand < HammerCLIForeman::RemoveAssociatedCommand
         associated_resource :compute_resources
+        desc _("Disassociate a compute resource")
       end
     end
 
@@ -109,6 +122,7 @@ module HammerCLIForeman
 
       class AddSmartProxyCommand < HammerCLIForeman::AddAssociatedCommand
         associated_resource :smart_proxies
+        desc _("Associate a smart proxy")
 
         def associated_resource_name
           "smart-proxy"
@@ -117,6 +131,7 @@ module HammerCLIForeman
 
       class RemoveSmartProxyCommand < HammerCLIForeman::RemoveAssociatedCommand
         associated_resource :smart_proxies
+        desc _("Disassociate a smart proxy")
 
         def associated_resource_name
           "smart-proxy"
@@ -129,6 +144,7 @@ module HammerCLIForeman
 
       class AddUserCommand < HammerCLIForeman::AddAssociatedCommand
         associated_resource :users
+        desc _("Associate an user")
 
         success_message "The user has been associated"
         failure_message "Could not associate the user"
@@ -136,6 +152,7 @@ module HammerCLIForeman
 
       class RemoveUserCommand < HammerCLIForeman::RemoveAssociatedCommand
         associated_resource :users
+        desc _("Disassociate an user")
 
         success_message "The user has been disassociated"
         failure_message "Could not disassociate the user"
@@ -147,10 +164,12 @@ module HammerCLIForeman
 
       class AddConfigTemplateCommand < HammerCLIForeman::AddAssociatedCommand
         associated_resource :config_templates
+        desc _("Associate a configuration template")
       end
 
       class RemoveConfigTemplateCommand < HammerCLIForeman::RemoveAssociatedCommand
         associated_resource :config_templates
+        desc _("Disassociate a configuration template")
       end
     end
 
@@ -159,10 +178,12 @@ module HammerCLIForeman
 
       class AddOrganizationCommand < HammerCLIForeman::AddAssociatedCommand
         associated_resource :organizations
+        desc _("Associate an organization")
       end
 
       class RemoveOrganizationCommand < HammerCLIForeman::RemoveAssociatedCommand
         associated_resource :organizations
+        desc _("Disassociate an organization")
       end
     end
 
@@ -171,6 +192,7 @@ module HammerCLIForeman
 
       class AddOSCommand < HammerCLIForeman::AddAssociatedCommand
         associated_resource :operatingsystems
+        desc _("Associate an operating system")
 
         success_message _("Operating system has been associated")
         failure_message _("Could not associate the operating system")
@@ -179,6 +201,7 @@ module HammerCLIForeman
 
       class RemoveOSCommand < HammerCLIForeman::RemoveAssociatedCommand
         associated_resource :operatingsystems
+        desc _("Disassociate an operating system")
 
         success_message _("Operating system has been disassociated")
         failure_message _("Could not disassociate the operating system")
@@ -190,6 +213,7 @@ module HammerCLIForeman
 
       class AddArchitectureCommand < HammerCLIForeman::AddAssociatedCommand
         associated_resource :architectures
+        desc _("Associate an architecture")
 
         success_message _("Architecture has been associated")
         failure_message _("Could not associate the architecture")
@@ -198,6 +222,7 @@ module HammerCLIForeman
 
       class RemoveArchitectureCommand < HammerCLIForeman::RemoveAssociatedCommand
         associated_resource :architectures
+        desc _("Disassociate an architecture")
 
         success_message _("Architecture has been disassociated")
         failure_message _("Could not disassociate the architecture")
@@ -209,6 +234,7 @@ module HammerCLIForeman
 
       class AddPartitionTableCommand < HammerCLIForeman::AddAssociatedCommand
         associated_resource :ptables
+        desc _("Associate a partition table")
 
         success_message _("Partition table has been associated")
         failure_message _("Could not associate the partition table")
@@ -217,6 +243,7 @@ module HammerCLIForeman
 
       class RemovePartitionTableCommand < HammerCLIForeman::RemoveAssociatedCommand
         associated_resource :ptables
+        desc _("Disassociate a partition table")
 
         success_message _("Partition table has been disassociated")
         failure_message _("Could not disassociate the partition table")
