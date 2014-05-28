@@ -134,3 +134,21 @@ describe HammerCLIForeman do
   end
 
 end
+
+
+describe HammerCLIForeman::Command do
+
+  it "uses foreman option builder" do
+    builder = HammerCLIForeman::Command.option_builder
+    builder.class.must_equal HammerCLIForeman::ForemanOptionBuilder
+  end
+
+  describe "build_options" do
+    it "uses build parameters in the block" do
+      HammerCLIForeman::Command.build_options do |o|
+        o.class.must_equal HammerCLIForeman::BuildParams
+      end
+    end
+  end
+
+end

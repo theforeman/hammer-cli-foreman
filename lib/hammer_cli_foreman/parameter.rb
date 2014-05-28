@@ -7,7 +7,7 @@ module HammerCLIForeman
     class AbstractParameterCommand < HammerCLIForeman::Command
 
       def self.parameter_resource
-        HammerCLIForeman.foreman_resource(:parameters)
+        HammerCLIForeman.foreman_resource!(:parameters)
       end
 
       def parameter_resource
@@ -34,10 +34,12 @@ module HammerCLIForeman
         }
       end
 
-      def self.custom_option_builders
-        [
+      def self.create_option_builder
+        builder = super
+        builder.builders = [
           DependentSearchablesOptionBuilder.new(resource, searchables)
         ]
+        builder
       end
 
     end

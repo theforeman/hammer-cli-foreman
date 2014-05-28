@@ -12,7 +12,7 @@ module HammerCLIForeman
 
       def option_template_kind_id
         kinds = HammerCLIForeman.collection_to_common_format(
-          HammerCLIForeman.foreman_resource(:template_kinds).call(:index))
+          HammerCLIForeman.foreman_resource!(:template_kinds).call(:index))
         table = kinds.inject({}){ |result, k| result.update(k["name"] => k["id"]) }
         table[option_type]
       end
@@ -108,7 +108,10 @@ module HammerCLIForeman
 
       include TemplateCreateUpdateCommons
 
-      build_options :without => [:template_combinations_attributes, :template, :snippet, :template_kind_id]
+      build_options do |o|
+        o.without(:template_combinations_attributes, :template, :snippet, :template_kind_id)
+        o.expand.except(:template_kinds)
+      end
     end
 
 
@@ -123,7 +126,10 @@ module HammerCLIForeman
 
       include TemplateCreateUpdateCommons
 
-      build_options :without => [:template_combinations_attributes, :template, :snippet, :template_kind_id]
+      build_options do |o|
+        o.without(:template_combinations_attributes, :template, :snippet, :template_kind_id)
+        o.expand.except(:template_kinds)
+      end
     end
 
 
