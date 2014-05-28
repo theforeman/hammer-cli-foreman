@@ -45,7 +45,7 @@ module HammerCLIForeman
     def scoped_options(scope, options)
       scoped_options = options.dup
 
-      resource = param_to_resource(scope)
+      resource = HammerCLIForeman.param_to_resource(scope)
       return scoped_options unless resource
 
       option_names = searchables(resource).map { |s| s.name }
@@ -65,43 +65,8 @@ module HammerCLIForeman
       scoped_options
     end
 
-    def dependent_resources(resource, options={})
-      options[:required] = (options[:required] == true)
-      options[:recursive] = !(options[:recursive] == false)
-
-      resolve_dependent_resources(resource, [], options)
-    end
-
-    def id_params(action, options={})
-      required = !(options[:required] == false)
-
-      params = action.params.reject{ |p| !(p.name.end_with?("_id")) }
-      params = params.reject{ |p| !(p.required?) } if required
-      params
-    end
-
-    def param_to_resource(param_name)
-      resource_name = param_name.gsub(/_id$/, "")
-      resource_name = ApipieBindings::Inflector.pluralize(resource_name.to_s).to_sym
-      begin
-        @api.resource(resource_name)
-      rescue NameError
-        nil
-      end
-    end
 
     protected
-
-    def resolve_dependent_resources(resource, resources_found, options)
-      id_params(resource.action(:index), :required => options[:required]).each do |param|
-        res = param_to_resource(param.name)
-        if res and !resources_found.map(&:name).include?(res.name)
-          resources_found << res
-          resolve_dependent_resources(res, resources_found, options) if options[:recursive]
-        end
-      end
-      resources_found
-    end
 
     def define_id_finders
       @api.resources.each do |resource|
@@ -121,7 +86,7 @@ module HammerCLIForeman
       resource = @api.resource(resource_name)
 
       search_options = search_options(options, resource)
-      id_params(resource.action(:index), :required => true).each do |param|
+      IdParamsFilter.new.for_action(resource.action(:index), :only_required => true).each do |param|
         search_options[param.name] ||= send(param.name, scoped_options(param.name.gsub(/_id$/, ""), options))
       end
       resource.action(:index).routes.each do |route|

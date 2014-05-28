@@ -40,7 +40,9 @@ module HammerCLIForeman
         HammerCLIForeman::References.timestamps(self)
       end
 
-      build_options
+      build_options do |o|
+        o.expand.primary(:organizations)
+      end
     end
 
 
@@ -74,7 +76,9 @@ module HammerCLIForeman
       success_message _("Location deleted")
       failure_message _("Could not delete the location")
 
-      build_options
+      build_options do |o|
+        o.expand.primary(:organizations)
+      end
     end
 
     HammerCLIForeman::AssociatingCommands::Hostgroup.extend_command(self)
