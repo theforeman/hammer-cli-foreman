@@ -10,7 +10,7 @@
 Summary: Universal command-line interface for Foreman
 Name: rubygem-%{gemname}
 Version: 0.1.1
-Release: 2%{?dist}
+Release: 3%{?dist}
 Group: Development/Languages
 License: GPLv3
 URL: http://github.com/theforeman/hammer-cli-foreman
@@ -77,6 +77,12 @@ cp -pa .%{gem_dir}/* \
 
 
 %changelog
+* Wed May 28 2014 Jason Montleon <jmontleo@redhat.com> 0.1.1-3
+- Merge remote-tracking branch 'upstream/master' into SATELLITE-6.0.3
+  (jmontleo@redhat.com)
+- Revert "revert version to 0.1.0 for time being" (jmontleo@redhat.com)
+- refs #5793 - add pkg:generate_source task to generate gem (dcleal@redhat.com)
+
 * Thu May 22 2014 Jason Montleon <jmontleo@redhat.com> 0.1.0-15
 - revert version to 0.1.0 for time being (jmontleo@redhat.com)
 - Revert "Bump to 0.1.1" (jmontleo@redhat.com)
