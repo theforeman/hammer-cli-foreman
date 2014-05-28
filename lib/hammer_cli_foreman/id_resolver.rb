@@ -43,16 +43,23 @@ module HammerCLIForeman
     end
 
     def scoped_options(scope, options)
-      prefix = HammerCLI.option_accessor_name("#{scope}_")
-      plain_prefix = HammerCLI.option_accessor_name("")
-
       scoped_options = options.dup
-      options.each do |k, v|
-        if k.start_with? prefix
-          # remove the scope
-          # e.g. option_architecture_id -> option_id
-          scoped_options[k.sub(prefix, plain_prefix)] = v
-          scoped_options.delete(k)
+
+      resource = param_to_resource(scope)
+      return scoped_options unless resource
+
+      option_names = searchables(resource).map { |s| s.name }
+      option_names << "id"
+
+      option_names.each do |name|
+        option = HammerCLI.option_accessor_name(name)
+        scoped_option = HammerCLI.option_accessor_name("#{scope}_#{name}")
+        # remove the scope
+        # e.g. option_architecture_id -> option_id
+        if scoped_options[scoped_option]
+          scoped_options[option] = scoped_options.delete(scoped_option)
+        else
+          scoped_options.delete(option)
         end
       end
       scoped_options
