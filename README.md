@@ -28,6 +28,13 @@ full debug output from the loggers. It should give you an idea what went wrong.
 If you have questions, don't hesitate to contact us on `foreman-users@googlegroups.com` or
 `FreeNode#foreman` irc channel.
 
+
+Developer Docs
+--------------
+If you're planning to contribute,
+look at [the development documentation](doc/developer_docs.md#hammer-development-docs).
+
+
 How to test
 ------------
 
