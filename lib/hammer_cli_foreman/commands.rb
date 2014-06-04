@@ -32,8 +32,25 @@ module HammerCLIForeman
     )
   end
 
-  def self.foreman_resource(resource)
-    foreman_api_connection.api.resource(resource)
+  def self.foreman_resource!(resource_name, options={})
+    if options[:singular]
+      resource_name = ApipieBindings::Inflector.pluralize(resource_name.to_s).to_sym
+    else
+      resource_name = resource_name.to_sym
+    end
+    foreman_api_connection.api.resource(resource_name)
+  end
+
+  def self.foreman_resource(resource_name, options={})
+    begin
+      foreman_resource!(resource_name, options)
+    rescue NameError
+      nil
+    end
+  end
+
+  def self.param_to_resource(param_name)
+    HammerCLIForeman.foreman_resource(param_name.gsub(/_id$/, ""), :singular => true)
   end
 
   def self.collection_to_common_format(data)
@@ -77,8 +94,28 @@ module HammerCLIForeman
       self.class.resolver
     end
 
+    def dependency_resolver
+      self.class.dependency_resolver
+    end
+
     def searchables
       self.class.searchables
+    end
+
+    def self.create_option_builder
+      configurator = BuilderConfigurator.new(searchables, dependency_resolver)
+
+      builder = ForemanOptionBuilder.new(searchables)
+      builder.builders = super.builders
+      builder.builders += configurator.builders_for(resource, resource.action(action)) if resource_defined?
+      builder
+    end
+
+    def self.build_options(builder_params={})
+      builder_params = HammerCLIForeman::BuildParams.new(builder_params)
+      yield(builder_params) if block_given?
+
+      super(builder_params.to_hash, &nil)
     end
 
     def get_identifier
@@ -104,6 +141,10 @@ module HammerCLIForeman
       HammerCLIForeman::IdResolver.new(api, HammerCLIForeman::Searchables.new)
     end
 
+    def self.dependency_resolver
+      HammerCLIForeman::DependencyResolver.new
+    end
+
     def self.searchables
       @searchables ||= HammerCLIForeman::Searchables.new
       @searchables
@@ -115,10 +156,12 @@ module HammerCLIForeman
 
     def request_params
       params = super
-      resolver.id_params(resource.action(action)).each do |api_param|
-        param_resource = resolver.param_to_resource(api_param.name)
-        resource_id = get_resource_id(param_resource, :scoped => true, :required => api_param.required?)
-        params[api_param.name] = resource_id if resource_id
+      IdParamsFilter.new.for_action(resource.action(action), :only_required => false).each do |api_param|
+        param_resource = HammerCLIForeman.param_to_resource(api_param.name)
+        if param_resource
+          resource_id = get_resource_id(param_resource, :scoped => true, :required => api_param.required?)
+          params[api_param.name] = resource_id if resource_id
+        end
       end
       params
     end
@@ -188,33 +231,10 @@ module HammerCLIForeman
       d
     end
 
-    def self.custom_option_builders
-      builders = super
-      if resource_defined?
-        builders += [
-          DependentSearchablesOptionBuilder.new(resolver.dependent_resources(resource, :required => true, :recursive => true), searchables),
-          DependentSearchablesOptionBuilder.new(resolver.dependent_resources(resource, :required => false, :recursive => false), searchables)
-        ]
-      end
-      builders
-    end
-
   end
 
 
   class SingleResourceCommand < Command
-
-    def self.custom_option_builders
-      builders = super
-      if resource_defined?
-        builders += [
-          SearchablesOptionBuilder.new(resource, searchables),
-          DependentSearchablesOptionBuilder.new(resolver.dependent_resources(resource, :required => true, :recursive => true), searchables),
-          DependentSearchablesOptionBuilder.new(resolver.dependent_resources(resource, :required => false, :recursive => false), searchables)
-        ]
-      end
-      builders
-    end
 
     def request_params
       params = super
@@ -234,16 +254,15 @@ module HammerCLIForeman
     end
 
     def self.parent_resource(name=nil)
-      @parent_api_resource = HammerCLIForeman.foreman_resource(name) unless name.nil?
+      @parent_api_resource = HammerCLIForeman.foreman_resource!(name) unless name.nil?
       return @parent_api_resource if @parent_api_resource
       return superclass.parent_resource if superclass.respond_to? :parent_resource
     end
 
-    def self.custom_option_builders
-      [
-        HammerCLI::Apipie::OptionBuilder.new(resource.action(action), :require_options => false),
-        SearchablesOptionBuilder.new(parent_resource, searchables)
-      ]
+    def self.create_option_builder
+      builder = super
+      builder.builders << SearchablesOptionBuilder.new(parent_resource, searchables)
+      builder
     end
 
     def request_params
@@ -290,18 +309,6 @@ module HammerCLIForeman
       super(name) || "create"
     end
 
-    def self.custom_option_builders
-      builders = super
-      if resource_defined?
-        builders += [
-          SearchablesOptionBuilder.new(resource, searchables),
-          DependentSearchablesOptionBuilder.new(resolver.dependent_resources(resource, :required => true, :recursive => true), searchables),
-          DependentSearchablesOptionBuilder.new(resolver.dependent_resources(resource, :required => false, :recursive => false), searchables)
-        ]
-      end
-      builders
-    end
-
   end
 
 
@@ -313,14 +320,10 @@ module HammerCLIForeman
       super(name) || "update"
     end
 
-    def self.custom_option_builders
-      builders = super
-      if resource_defined?
-        builders += [
-          SearchablesUpdateOptionBuilder.new(resource, searchables)
-        ]
-      end
-      builders
+    def self.create_option_builder
+      builder = super
+      builder.builders << SearchablesUpdateOptionBuilder.new(resource, searchables) if resource_defined?
+      builder
     end
 
     def method_options_for_params(params, include_nil=true)
@@ -353,13 +356,23 @@ module HammerCLIForeman
 
     action :update
 
-    def self.custom_option_builders
-      [
+    def self.create_option_builder
+      configurator = BuilderConfigurator.new(searchables, dependency_resolver)
+
+      builder = ForemanOptionBuilder.new(searchables)
+      builder.builders = [
         SearchablesOptionBuilder.new(resource, searchables),
-        DependentSearchablesOptionBuilder.new(resolver.dependent_resources(resource, :required => true, :recursive => true), searchables),
-        DependentSearchablesOptionBuilder.new(associated_resource, searchables),
-        DependentSearchablesOptionBuilder.new(resolver.dependent_resources(associated_resource, :required => true, :recursive => true), searchables)
+        DependentSearchablesOptionBuilder.new(associated_resource, searchables)
       ]
+
+      resources = []
+      resources += dependency_resolver.resource_dependencies(resource, :only_required => true, :recursive => true)
+      resources += dependency_resolver.resource_dependencies(associated_resource, :only_required => true, :recursive => true)
+      resources.each do |r|
+        builder.builders << DependentSearchablesOptionBuilder.new(r, searchables)
+      end
+
+      builder
     end
 
     def associated_resource
@@ -367,7 +380,7 @@ module HammerCLIForeman
     end
 
     def self.associated_resource(name=nil)
-      @associated_api_resource = HammerCLIForeman.foreman_resource(name) unless name.nil?
+      @associated_api_resource = HammerCLIForeman.foreman_resource!(name) unless name.nil?
       return @associated_api_resource if @associated_api_resource
       return superclass.associated_resource if superclass.respond_to? :associated_resource
     end

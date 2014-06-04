@@ -16,8 +16,8 @@ describe HammerCLIForeman::IdResolver do
     it "unscopes options" do
       scoped = {
         "option_id" => 1,
-        "option_org_id" => 2,
-        "option_org_name" => "ACME",
+        "option_organization_id" => 2,
+        "option_organization_name" => "ACME",
         "option_a" => :value
       }
       unscoped = {
@@ -25,84 +25,37 @@ describe HammerCLIForeman::IdResolver do
         "option_name" => "ACME",
         "option_a" => :value
       }
-      resolver.scoped_options("org", scoped).must_equal(unscoped)
+      resolver.scoped_options("organization", scoped).must_equal(unscoped)
+    end
+
+    it "clears old values" do
+      scoped = {
+        "option_id" => 1,
+        "option_name" => "some name",
+        "option_organization_id" => 2,
+        "option_a" => :value
+      }
+      unscoped = {
+        "option_id" => 2,
+        "option_a" => :value
+      }
+      resolver.scoped_options("organization", scoped).must_equal(unscoped)
     end
 
     it "does not change the original options" do
       scoped = {
         "option_id" => 1,
-        "option_org_id" => 2,
-        "option_org_name" => "ACME",
+        "option_organization_id" => 2,
+        "option_organization_name" => "ACME",
         "option_a" => :value
       }
       scoped_original = scoped.dup
-      resolver.scoped_options("org", scoped)
+      resolver.scoped_options("organization", scoped)
       scoped.must_equal(scoped_original)
     end
 
   end
 
-
-  describe "id params" do
-      let(:required_params) {[
-        stub(:name => "architecture_id", :required? => true),
-        stub(:name => "organization_id", :required? => true)
-      ]}
-      let(:id_params) {[
-        stub(:name => "domain_id", :required? => false)
-      ]}
-      let(:other_params) {[
-        stub(:name => "location", :required? => true),
-        stub(:name => "param", :required? => false)
-      ]}
-      let(:action) {
-        stub(:params => (required_params+id_params+other_params))
-      }
-
-    it "returns only required params ending with _id" do
-      resolver.id_params(action, :required => true).must_equal required_params
-    end
-
-    it "returns only ending with _id when :required is set to false" do
-      resolver.id_params(action, :required => false).must_equal (required_params+id_params)
-    end
-
-    it "returns required params by default" do
-      resolver.id_params(action).must_equal required_params
-    end
-  end
-
-  describe "param to resource" do
-
-    let(:expected_resource) { HammerCLIForeman.foreman_resource(:architectures) }
-
-    it "finds resource for params with _id" do
-      resolver.param_to_resource("architecture_id").name.must_equal expected_resource.name
-    end
-
-    it "finds resource for params without _id" do
-      resolver.param_to_resource("architecture").name.must_equal expected_resource.name
-    end
-
-    it "returns nil for unknown resource" do
-      resolver.param_to_resource("unknown").must_equal nil
-    end
-
-  end
-
-  describe "depedent resources" do
-
-    it "returns empty array for an independent resource" do
-      resource = HammerCLIForeman.foreman_resource(:architectures)
-      resolver.dependent_resources(resource).must_equal []
-    end
-
-    it "returns list of dependent resources" do
-      resource = HammerCLIForeman.foreman_resource(:images)
-      resolver.dependent_resources(resource).map(&:name).must_equal [:compute_resources]
-    end
-
-  end
 
   describe "resolving ids" do
 
@@ -171,7 +124,7 @@ describe HammerCLIForeman::IdResolver do
 
     end
 
-    describe "searching dependent resource" do
+    describe "searching dependent resources" do
       let(:resolver_run) { proc { resolver.image_id({"option_name" => "img", "option_compute_resource_name" => "cr"}) } }
 
       it "raises exception when no resource is found" do

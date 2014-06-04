@@ -149,7 +149,7 @@ module HammerCLIForeman
       end
 
       def get_parameters(host_id)
-        params = HammerCLIForeman.foreman_resource(:parameters).call(:index, :host_id => host_id)
+        params = HammerCLIForeman.foreman_resource!(:parameters).call(:index, :host_id => host_id)
         HammerCLIForeman.collection_to_common_format(params)
       end
 

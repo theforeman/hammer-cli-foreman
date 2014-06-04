@@ -146,7 +146,7 @@ module HammerCLIForeman
 
       def option_type_name
         tpl = HammerCLIForeman.collection_to_common_format(
-          HammerCLIForeman.foreman_resource(:config_templates).call(:show, {"id" => option_config_template_id}))
+          HammerCLIForeman.foreman_resource!(:config_templates).call(:show, {"id" => option_config_template_id}))
         tpl[0]["template_kind_name"]
       end
 

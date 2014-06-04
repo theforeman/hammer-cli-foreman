@@ -41,7 +41,9 @@ module HammerCLIForeman
       end
 
 
-      build_options
+      build_options do |o|
+        o.expand.primary(:organizations)
+      end
     end
 
 
@@ -75,7 +77,9 @@ module HammerCLIForeman
       success_message _("Organization deleted")
       failure_message _("Could not delete the organization")
 
-      build_options
+      build_options do |o|
+        o.expand.primary(:organizations)
+      end
     end
 
 
