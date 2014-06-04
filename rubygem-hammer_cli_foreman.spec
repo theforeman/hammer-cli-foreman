@@ -74,7 +74,8 @@ cp -pa .%{gem_dir}/* \
 %doc %{geminstdir}/doc/host_create.md
 %doc %{geminstdir}/doc/configuration.md
 %doc %{geminstdir}/test
-
+%doc %{geminstdir}/doc/developer_docs.md
+%doc %{geminstdir}/doc/option_builder.md
 
 %changelog
 * Wed Jun 04 2014 Jason Montleon <jmontleo@redhat.com> 0.1.1-7
