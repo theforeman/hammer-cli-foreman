@@ -10,7 +10,7 @@
 Summary: Universal command-line interface for Foreman
 Name: rubygem-%{gemname}
 Version: 0.1.1
-Release: 7%{?dist}
+Release: 8%{?dist}
 Group: Development/Languages
 License: GPLv3
 URL: http://github.com/theforeman/hammer-cli-foreman
@@ -78,6 +78,9 @@ cp -pa .%{gem_dir}/* \
 %doc %{geminstdir}/doc/option_builder.md
 
 %changelog
+* Wed Jun 04 2014 Jason Montleon <jmontleo@redhat.com> 0.1.1-8
+- package new docs files (jmontleo@redhat.com)
+
 * Wed Jun 04 2014 Jason Montleon <jmontleo@redhat.com> 0.1.1-7
 - Refs #5747 - Documentation for fine grained control over name expansion
   (tstrachota@redhat.com)
