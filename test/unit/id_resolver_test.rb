@@ -16,8 +16,8 @@ describe HammerCLIForeman::IdResolver do
     it "unscopes options" do
       scoped = {
         "option_id" => 1,
-        "option_org_id" => 2,
-        "option_org_name" => "ACME",
+        "option_organization_id" => 2,
+        "option_organization_name" => "ACME",
         "option_a" => :value
       }
       unscoped = {
@@ -25,18 +25,33 @@ describe HammerCLIForeman::IdResolver do
         "option_name" => "ACME",
         "option_a" => :value
       }
-      resolver.scoped_options("org", scoped).must_equal(unscoped)
+      resolver.scoped_options("organization", scoped).must_equal(unscoped)
+    end
+
+    it "clears old values" do
+      scoped = {
+        "option_id" => 1,
+        "option_name" => "some name",
+        "option_organization_id" => 2,
+        "option_a" => :value
+      }
+      unscoped = {
+        "option_id" => 2,
+        "option_name" => nil,
+        "option_a" => :value
+      }
+      resolver.scoped_options("organization", scoped).must_equal(unscoped)
     end
 
     it "does not change the original options" do
       scoped = {
         "option_id" => 1,
-        "option_org_id" => 2,
-        "option_org_name" => "ACME",
+        "option_organization_id" => 2,
+        "option_organization_name" => "ACME",
         "option_a" => :value
       }
       scoped_original = scoped.dup
-      resolver.scoped_options("org", scoped)
+      resolver.scoped_options("organization", scoped)
       scoped.must_equal(scoped_original)
     end
 
