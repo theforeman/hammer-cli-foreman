@@ -109,8 +109,9 @@ module HammerCLIForeman
       configurator = BuilderConfigurator.new(searchables, dependency_resolver)
 
       builder = ForemanOptionBuilder.new(searchables)
-      builder.builders = super.builders
+      builder.builders = []
       builder.builders += configurator.builders_for(resource, resource.action(action)) if resource_defined?
+      builder.builders += super.builders
       builder
     end
 
@@ -166,7 +167,7 @@ module HammerCLIForeman
       params = super
       # resolve all '<resource_name>_id' parameters if they are defined as options
       # (they can be skipped using .without or .expand.except)
-      IdParamsFilter.new.for_action(resource.action(action), :only_required => false).each do |api_param|
+      IdParamsFilter.new(:only_required => false).for_action(resource.action(action)).each do |api_param|
         param_resource = HammerCLIForeman.param_to_resource(api_param.name)
         if param_resource && respond_to?(HammerCLI.option_accessor_name("#{param_resource.singular_name}_id"))
           resource_id = get_resource_id(param_resource, :scoped => true, :required => api_param.required?)
@@ -253,8 +254,6 @@ module HammerCLIForeman
 
   class AssociatedResourceListCommand < ListCommand
 
-    option "--id", "ID", " "
-
     def parent_resource
       self.class.parent_resource
     end
@@ -268,6 +267,7 @@ module HammerCLIForeman
     def self.create_option_builder
       builder = super
       builder.builders << SearchablesOptionBuilder.new(parent_resource, searchables)
+      builder.builders << IdOptionBuilder.new(parent_resource)
       builder
     end
 
@@ -358,8 +358,6 @@ module HammerCLIForeman
 
   class AssociatedCommand < Command
 
-    option "--id", "ID", " "
-
     action :update
 
     def self.create_option_builder
@@ -377,6 +375,7 @@ module HammerCLIForeman
       resources.each do |r|
         builder.builders << DependentSearchablesOptionBuilder.new(r, searchables)
       end
+      builder.builders << IdOptionBuilder.new(resource)
 
       builder
     end

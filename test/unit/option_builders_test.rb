@@ -344,6 +344,15 @@ describe HammerCLIForeman::DependentSearchablesOptionBuilder do
       ]
     end
 
+    it "creates correct descriptions" do
+      options.map(&:description).must_equal [
+        "Search by name",
+        "Search by label",
+        "Search by uuid",
+        ""
+      ]
+    end
+
     it "creates correct attribute readers" do
       options.map(&:read_method).must_equal [
         "option_architecture_name",
@@ -392,6 +401,31 @@ describe HammerCLIForeman::DependentSearchablesOptionBuilder do
 
   end
 
+  describe "resources with id parameter in show action" do
+
+    before :each do
+      id_param = Object.new
+      id_param.stubs(:name).returns("id")
+      id_param.stubs(:params).returns([])
+      id_param.stubs(:description).returns("DESC")
+
+      action = Object.new
+      action.stubs(:params).returns([id_param])
+
+      resource.stubs(:action).with(:show).returns(action)
+    end
+
+    it "uses descriptions from the action" do
+      options.map(&:description).must_equal [
+        "Search by name",
+        "Search by label",
+        "Search by uuid",
+        "DESC"
+      ]
+    end
+
+  end
+
 end
 
 
@@ -435,5 +469,75 @@ describe HammerCLIForeman::SearchablesUpdateOptionBuilder do
     end
   end
 
+  describe "resources with corresponding parameter in update action" do
+
+    before :each do
+      label_param = Object.new
+      label_param.stubs(:name).returns("label")
+      label_param.stubs(:params).returns([])
+      label_param.stubs(:description).returns("DESC")
+
+      action = Object.new
+      action.stubs(:params).returns([label_param])
+
+      resource.stubs(:action).with(:update).returns(action)
+    end
+
+    it "uses descriptions from the action" do
+      options.map(&:description).must_equal ["DESC"]
+    end
+
+  end
+
+
+end
+
+
+describe HammerCLIForeman::IdOptionBuilder do
+
+  let(:resource) { HammerCLIForeman.foreman_resource!(:architectures) }
+  let(:builder) { HammerCLIForeman::IdOptionBuilder.new(resource) }
+  let(:options) { builder.build }
+
+  describe "resources with parameter :id in show action" do
+
+    before :each do
+      id_param = Object.new
+      id_param.stubs(:name).returns("id")
+      id_param.stubs(:params).returns([])
+      id_param.stubs(:description).returns("DESC")
+
+      action = Object.new
+      action.stubs(:params).returns([id_param])
+
+      resource.stubs(:action).with(:show).returns(action)
+    end
+
+    it "creates options --id" do
+      options.map(&:switches).must_equal [["--id"]]
+    end
+
+    it "uses description from the :id param" do
+      options.map(&:description).must_equal ["DESC"]
+    end
+  end
+
+  describe "resources without parameter :id in show action" do
+
+    before :each do
+      action = Object.new
+      action.stubs(:params).returns([])
+
+      resource.stubs(:action).with(:show).returns(action)
+    end
+
+    it "creates options --id" do
+      options.map(&:switches).must_equal [["--id"]]
+    end
+
+    it "uses empty description" do
+      options.map(&:description).must_equal [" "]
+    end
+  end
 
 end

@@ -18,13 +18,43 @@ module HammerCLIForeman
 
   class Searchables
 
+    protected
+
+    def self.s(name, description, options={})
+      Searchable.new(name, description, options)
+    end
+
+    def self.s_name(description, options={})
+      s("name", description, options)
+    end
+
     SEARCHABLES = {
-      :user => [ Searchable.new("login", _("User's login to search by")) ],
-      :template => [],
-      :image => [],
-      :operatingsystem => []
+      :architecture =>     [ s_name(_("Architecture name")) ],
+      :compute_resource => [ s_name(_("Compute resource name")) ],
+      :domain =>           [ s_name(_("Domain name")) ],
+      :environment =>      [ s_name(_("Environment name")) ],
+      :fact_value =>       [],
+      :host =>             [ s_name(_("Host name")) ],
+      :hostgroup =>        [ s_name(_("Hostgroup name")) ],
+      :image =>            [],
+      :location =>         [ s_name(_("Location name")) ],
+      :medium =>           [ s_name(_("Medium name")) ],
+      :model =>            [ s_name(_("Model name")) ],
+      :organization =>     [ s_name(_("Organization name")) ],
+      :operatingsystem =>  [],
+      :ptable =>           [ s_name(_("Partition table name")) ],
+      :proxy =>            [ s_name(_("Proxy name")) ],
+      :puppetclass =>      [ s_name(_("Puppet class name")) ],
+      :report =>           [ s_name(_("Report name")) ],
+      :subnet =>           [ s_name(_("Subnet name")) ],
+      :template =>         [],
+      :user =>             [ s("login", _("User's login to search by")) ],
+      :common_parameter =>      [ s_name(_("Common parameter name")) ],
+      :smart_class_parameter => [ s_name(_("Smart class parameter name")) ]
     }
-    DEFAULT_SEARCHABLES = [ Searchable.new("name", _("Name to search by")) ]
+    DEFAULT_SEARCHABLES = [ s_name(_("Name to search by")) ]
+
+    public
 
     def for(resource)
       SEARCHABLES[resource.singular_name.to_sym] || DEFAULT_SEARCHABLES
@@ -86,7 +116,7 @@ module HammerCLIForeman
       resource = @api.resource(resource_name)
 
       search_options = search_options(options, resource)
-      IdParamsFilter.new.for_action(resource.action(:index), :only_required => true).each do |param|
+      IdParamsFilter.new(:only_required => true).for_action(resource.action(:index)).each do |param|
         search_options[param.name] ||= send(param.name, scoped_options(param.name.gsub(/_id$/, ""), options))
       end
       resource.action(:index).routes.each do |route|
