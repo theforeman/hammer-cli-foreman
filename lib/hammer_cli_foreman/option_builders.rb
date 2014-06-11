@@ -172,15 +172,17 @@ module HammerCLIForeman
     attr_reader :resource
 
     def build(builder_params={})
-      dependent_options(@resource)
+      resource_name_map = builder_params[:resource_mapping] || {}
+      dependent_options(@resource, resource_name_map)
     end
 
     protected
 
-    def dependent_options(resource)
+    def dependent_options(resource, resource_name_map)
       options = []
       searchables = @searchables.for(resource)
       resource_name = resource.singular_name
+      aliased_name = aliased(resource_name, resource_name_map)
 
       unless searchables.empty?
         first = searchables[0]
@@ -189,8 +191,8 @@ module HammerCLIForeman
         # First option is named by the resource
         # Eg. --organization with accessor option_organization_name
         options << option(
-          optionamize("--#{resource_name}"),
-          "#{resource_name}_#{first.name}".upcase,
+          optionamize("--#{aliased_name}"),
+          "#{aliased_name}_#{first.name}".upcase,
           " ",
           :attribute_name => HammerCLI.option_accessor_name("#{resource_name}_#{first.name}")
         )
@@ -199,19 +201,25 @@ module HammerCLIForeman
         # Eg. --organization-label with accessor option_organization_label
         remaining.each do |s|
           options << option(
-            optionamize("--#{resource_name}-#{s.name}"),
-            "#{resource_name}_#{s.name}".upcase,
-            " "
+            optionamize("--#{aliased_name}-#{s.name}"),
+            "#{aliased_name}_#{s.name}".upcase,
+            " ",
+            :attribute_name => HammerCLI.option_accessor_name("#{resource_name}_#{s.name}")
           )
         end
       end
 
       options << option(
-        optionamize("--#{resource_name}-id"),
-        "#{resource_name}_id".upcase,
-        " "
+        optionamize("--#{aliased_name}-id"),
+        "#{aliased_name}_id".upcase,
+        " ",
+        :attribute_name => HammerCLI.option_accessor_name("#{resource_name}_id")
       )
       options
+    end
+
+    def aliased(name, resource_name_map)
+      resource_name_map[name.to_s] || resource_name_map[name.to_sym] || name
     end
 
   end

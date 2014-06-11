@@ -310,7 +310,8 @@ describe HammerCLIForeman::DependentSearchablesOptionBuilder do
   let(:resource) { HammerCLIForeman.foreman_resource!(:architectures) }
   let(:searchables) { FakeSearchables.new(["name", "label", "uuid"]) }
   let(:builder) { HammerCLIForeman::DependentSearchablesOptionBuilder.new(resource, searchables) }
-  let(:options) { builder.build }
+  let(:builder_params) { {} }
+  let(:options) { builder.build(builder_params) }
 
   describe "empty searchables" do
 
@@ -355,6 +356,40 @@ describe HammerCLIForeman::DependentSearchablesOptionBuilder do
     it "none of the options is required" do
       options.any?{|opt| opt.required? }.must_equal false
     end
+  end
+
+
+  describe "aliasing resource names" do
+
+    let(:builder_params) { {:resource_mapping => {:architecture => :arch}} }
+
+    it "renames options" do
+      options.map(&:switches).must_equal [
+        ["--arch"],       # first option does not have the suffix
+        ["--arch-label"], # other options with suffixes
+        ["--arch-uuid"],
+        ["--arch-id"]     # additional id
+      ]
+    end
+
+    it "renames option types" do
+      options.map(&:type).must_equal [
+        "ARCH_NAME",
+        "ARCH_LABEL",
+        "ARCH_UUID",
+        "ARCH_ID",
+      ]
+    end
+
+    it "keeps option accessor the same" do
+      options.map(&:attribute_name).must_equal [
+        "option_architecture_name",
+        "option_architecture_label",
+        "option_architecture_uuid",
+        "option_architecture_id"
+      ]
+    end
+
   end
 
 end

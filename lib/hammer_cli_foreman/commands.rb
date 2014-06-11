@@ -2,6 +2,9 @@ module HammerCLIForeman
 
   CONNECTION_NAME = 'foreman'
 
+  RESOURCE_NAME_MAPPING = {
+  }
+
   def self.credentials
     @credentials ||= Credentials.new(
       :username => (HammerCLI::Settings.get(:_params, :username) || ENV['FOREMAN_USERNAME'] || HammerCLI::Settings.get(:foreman, :username)),
@@ -111,7 +114,12 @@ module HammerCLIForeman
       builder
     end
 
+    def self.resource_name_mapping
+      HammerCLIForeman::RESOURCE_NAME_MAPPING
+    end
+
     def self.build_options(builder_params={})
+      builder_params[:resource_mapping] ||= resource_name_mapping
       builder_params = HammerCLIForeman::BuildParams.new(builder_params)
       yield(builder_params) if block_given?
 
