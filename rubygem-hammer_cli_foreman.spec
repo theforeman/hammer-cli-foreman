@@ -10,7 +10,7 @@
 Summary: Universal command-line interface for Foreman
 Name: rubygem-%{gemname}
 Version: 0.1.1
-Release: 8%{?dist}
+Release: 9%{?dist}
 Group: Development/Languages
 License: GPLv3
 URL: http://github.com/theforeman/hammer-cli-foreman
@@ -78,6 +78,11 @@ cp -pa .%{gem_dir}/* \
 %doc %{geminstdir}/doc/option_builder.md
 
 %changelog
+* Wed Jun 11 2014 Jason Montleon <jmontleo@redhat.com> 0.1.1-9
+- Fixes #6090 - fix for wrong parameters in proxy import
+  (tstrachota@redhat.com)
+- Refs #6090 - resolving ids in foreman base command (tstrachota@redhat.com)
+
 * Wed Jun 04 2014 Jason Montleon <jmontleo@redhat.com> 0.1.1-8
 - package new docs files (jmontleo@redhat.com)
 
