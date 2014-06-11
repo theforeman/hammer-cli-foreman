@@ -71,7 +71,10 @@ module HammerCLIForeman
 
       option "--dryrun", :flag, _("Do not run the import")
 
-      build_options :without => [:smart_proxy_id, :dryrun]
+      build_options do |o|
+        o.without(:smart_proxy_id, :dryrun)
+        o.expand.except(:smart_proxies)
+      end
 
       def request_params
         opts = super

@@ -43,9 +43,7 @@ module HammerCLIForeman
       end
 
       def request_params
-        params = method_options
-        params['id'] = option_name
-        params
+        method_options.update('id' => option_name)
       end
 
     end
@@ -54,6 +52,10 @@ module HammerCLIForeman
     class DeleteCommand < HammerCLIForeman::DeleteCommand
       success_message _("Global parameter [%{name}] deleted.")
       failure_message _("Could not delete the global parameter [%{name}]")
+
+      def request_params
+        method_options.update('id' => option_name)
+      end
 
       build_options :without => :id
     end

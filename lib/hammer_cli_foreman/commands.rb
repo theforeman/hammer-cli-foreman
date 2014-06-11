@@ -156,13 +156,17 @@ module HammerCLIForeman
 
     def request_params
       params = super
+      # resolve all '<resource_name>_id' parameters if they are defined as options
+      # (they can be skipped using .without or .expand.except)
       IdParamsFilter.new.for_action(resource.action(action), :only_required => false).each do |api_param|
         param_resource = HammerCLIForeman.param_to_resource(api_param.name)
-        if param_resource
+        if param_resource && respond_to?(HammerCLI.option_accessor_name("#{param_resource.singular_name}_id"))
           resource_id = get_resource_id(param_resource, :scoped => true, :required => api_param.required?)
           params[api_param.name] = resource_id if resource_id
         end
       end
+      # resolve 'id' parameter if it's defined as an option
+      params['id'] ||= get_identifier if respond_to?(HammerCLI.option_accessor_name("id"))
       params
     end
 
@@ -235,12 +239,6 @@ module HammerCLIForeman
 
 
   class SingleResourceCommand < Command
-
-    def request_params
-      params = super
-      params['id'] ||= get_identifier
-      params
-    end
 
   end
 
