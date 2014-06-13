@@ -12,7 +12,7 @@ module HammerCLIForeman
 
   def self.resource_config
     config = {}
-    config[:uri] = HammerCLI::Settings.get(:foreman, :host)
+    config[:uri] = HammerCLI::Settings.get(:_params, :host) || HammerCLI::Settings.get(:foreman, :host)
     config[:credentials] = credentials
     config[:logger] = Logging.logger['API']
     config[:api_version] = 2
