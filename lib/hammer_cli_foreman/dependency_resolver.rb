@@ -17,7 +17,7 @@ module HammerCLIForeman
     protected
 
     def resolve_for_action(action, resources_found, options)
-      IdParamsFilter.new.for_action(action, :only_required => options[:only_required]).each do |param|
+      IdParamsFilter.new(:only_required => options[:only_required]).for_action(action).each do |param|
         res = HammerCLIForeman.param_to_resource(param.name)
         if res and !resources_found.map(&:name).include?(res.name)
           resources_found << res

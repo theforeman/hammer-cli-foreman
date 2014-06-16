@@ -141,7 +141,24 @@ module HammerCLIForeman
 
   end
 
-  class SearchablesOptionBuilder < HammerCLI::AbstractOptionBuilder
+  class SearchablesAbstractOptionBuilder < HammerCLI::AbstractOptionBuilder
+
+    protected
+
+    def description(param_name, action_name)
+      return " " unless @resource.has_action? action_name
+
+      params = ParamsNameFilter.new(param_name).for_action(@resource.action(action_name))
+      if params.empty?
+        return " "
+      else
+        return params[0].description
+      end
+    end
+
+  end
+
+  class SearchablesOptionBuilder < SearchablesAbstractOptionBuilder
 
     def initialize(resource, searchables)
       @resource = resource
@@ -162,7 +179,7 @@ module HammerCLIForeman
   end
 
 
-  class DependentSearchablesOptionBuilder < HammerCLI::AbstractOptionBuilder
+  class DependentSearchablesOptionBuilder < SearchablesAbstractOptionBuilder
 
     def initialize(resource, searchables)
       @resource = resource
@@ -172,15 +189,17 @@ module HammerCLIForeman
     attr_reader :resource
 
     def build(builder_params={})
-      dependent_options(@resource)
+      resource_name_map = builder_params[:resource_mapping] || {}
+      dependent_options(@resource, resource_name_map)
     end
 
     protected
 
-    def dependent_options(resource)
+    def dependent_options(resource, resource_name_map)
       options = []
       searchables = @searchables.for(resource)
       resource_name = resource.singular_name
+      aliased_name = aliased(resource_name, resource_name_map)
 
       unless searchables.empty?
         first = searchables[0]
@@ -189,9 +208,9 @@ module HammerCLIForeman
         # First option is named by the resource
         # Eg. --organization with accessor option_organization_name
         options << option(
-          optionamize("--#{resource_name}"),
-          "#{resource_name}_#{first.name}".upcase,
-          " ",
+          optionamize("--#{aliased_name}"),
+          "#{aliased_name}_#{first.name}".upcase,
+          first.description || " ",
           :attribute_name => HammerCLI.option_accessor_name("#{resource_name}_#{first.name}")
         )
 
@@ -199,24 +218,30 @@ module HammerCLIForeman
         # Eg. --organization-label with accessor option_organization_label
         remaining.each do |s|
           options << option(
-            optionamize("--#{resource_name}-#{s.name}"),
-            "#{resource_name}_#{s.name}".upcase,
-            " "
+            optionamize("--#{aliased_name}-#{s.name}"),
+            "#{aliased_name}_#{s.name}".upcase,
+            s.description || " ",
+            :attribute_name => HammerCLI.option_accessor_name("#{resource_name}_#{s.name}")
           )
         end
       end
 
       options << option(
-        optionamize("--#{resource_name}-id"),
-        "#{resource_name}_id".upcase,
-        " "
+        optionamize("--#{aliased_name}-id"),
+        "#{aliased_name}_id".upcase,
+        description("id", :show),
+        :attribute_name => HammerCLI.option_accessor_name("#{resource_name}_id")
       )
       options
     end
 
+    def aliased(name, resource_name_map)
+      resource_name_map[name.to_s] || resource_name_map[name.to_sym] || name
+    end
+
   end
 
-  class SearchablesUpdateOptionBuilder < HammerCLI::AbstractOptionBuilder
+  class SearchablesUpdateOptionBuilder < SearchablesAbstractOptionBuilder
 
     def initialize(resource, searchables)
       @resource = resource
@@ -232,7 +257,7 @@ module HammerCLIForeman
           option(
             optionamize("--new-#{s.name}"),
             "NEW_#{s.name.upcase}",
-            " "
+            description(s.name, :update)
           )
         end
       end.compact
@@ -240,5 +265,21 @@ module HammerCLIForeman
 
   end
 
+  # it adds id with description of the id param from resource's show action
+  class IdOptionBuilder < SearchablesAbstractOptionBuilder
+
+    def initialize(resource)
+      @resource = resource
+    end
+
+    attr_reader :resource
+
+    def build(builder_params={})
+      [
+        option("--id", "ID", description("id", :show))
+      ]
+    end
+
+  end
 
 end

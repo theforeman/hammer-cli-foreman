@@ -15,7 +15,7 @@ module HammerCLIForeman
   require 'hammer_cli_foreman/credentials'
   require 'hammer_cli_foreman/exception_handler'
   require 'hammer_cli_foreman/option_builders'
-  require 'hammer_cli_foreman/id_params_filter'
+  require 'hammer_cli_foreman/param_filters'
   require 'hammer_cli_foreman/id_resolver'
   require 'hammer_cli_foreman/dependency_resolver'
 
