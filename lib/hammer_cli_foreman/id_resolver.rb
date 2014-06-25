@@ -141,7 +141,12 @@ module HammerCLIForeman
     end
 
     def search_options(options, resource)
-      search_options = create_search_options(options, resource)
+      method = "create_#{resource.name}_search_options"
+      search_options = if respond_to?(method)
+                         send(method, options)
+                       else
+                         create_search_options(options, resource)
+                       end
       raise MissingSeachOptions.new(_("Missing options to search %s") % resource.singular_name) if search_options.empty?
       search_options
     end
