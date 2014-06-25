@@ -3,6 +3,7 @@ module HammerCLIForeman
   CONNECTION_NAME = 'foreman'
 
   RESOURCE_NAME_MAPPING = {
+    :usergroup => :user_group
   }
 
   def self.credentials
@@ -172,6 +173,7 @@ module HammerCLIForeman
         if param_resource && respond_to?(HammerCLI.option_accessor_name("#{param_resource.singular_name}_id"))
           resource_id = get_resource_id(param_resource, :scoped => true, :required => api_param.required?)
           params[api_param.name] = resource_id if resource_id
+          params[resource.singular_name][api_param.name] = resource_id if params[resource.singular_name] && resource_id
         end
       end
       # resolve 'id' parameter if it's defined as an option

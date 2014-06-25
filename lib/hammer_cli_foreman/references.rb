@@ -29,6 +29,14 @@ module HammerCLIForeman
       end
     end
 
+    def self.usergroups(dsl)
+      dsl.build do
+        collection :usergroups, _("User groups"), :numbered => false do
+          custom_field Fields::Reference
+        end
+      end
+    end
+
     def self.smart_proxies(dsl)
       dsl.build do
         collection :smart_proxies, _("Smart proxies"), :numbered => false do
@@ -114,6 +122,14 @@ module HammerCLIForeman
       dsl.build do
         collection :operatingsystems, _("Operating systems"), :numbered => false do
           custom_field Fields::Reference, :name_key => :fullname
+        end
+      end
+    end
+
+    def self.roles(dsl)
+      dsl.build do
+        collection :roles, _("Roles"), :numbered => false do
+          custom_field Fields::Reference
         end
       end
     end
