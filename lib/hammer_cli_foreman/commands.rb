@@ -19,7 +19,7 @@ module HammerCLIForeman
     config[:credentials] = credentials
     config[:logger] = Logging.logger['API']
     config[:api_version] = 2
-    config[:aggressive_cache_checking] = HammerCLI::Settings.get(:foreman, :refresh_cache) || true
+    config[:aggressive_cache_checking] = HammerCLI::Settings.get(:foreman, :refresh_cache) || false
     config[:headers] = { "Accept-Language" => HammerCLI::I18n.locale }
     config[:language] = HammerCLI::I18n.locale
     config[:timeout] = HammerCLI::Settings.get(:foreman, :request_timeout)
