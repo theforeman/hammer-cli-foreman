@@ -165,6 +165,8 @@ module HammerCLIForeman
 
     def request_params
       params = super
+      #short-cicuit if id is given
+      return params if options.key? "option_id"
       # resolve all '<resource_name>_id' parameters if they are defined as options
       # (they can be skipped using .without or .expand.except)
       IdParamsFilter.new(:only_required => false).for_action(resource.action(action)).each do |api_param|
