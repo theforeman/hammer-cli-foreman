@@ -164,23 +164,33 @@ module HammerCLIForeman
       HammerCLIForeman.record_to_common_format(super)
     end
 
-    def request_params
-      params = super
+    def customized_options
+      params = options
       # resolve all '<resource_name>_id' parameters if they are defined as options
       # (they can be skipped using .without or .expand.except)
       IdParamsFilter.new(:only_required => false).for_action(resource.action(action)).each do |api_param|
         param_resource = HammerCLIForeman.param_to_resource(api_param.name)
         if param_resource && respond_to?(HammerCLI.option_accessor_name("#{param_resource.singular_name}_id"))
           resource_id = get_resource_id(param_resource, :scoped => true, :required => api_param.required?)
-          params[api_param.name] = resource_id if resource_id
-          params[resource.singular_name][api_param.name] = resource_id if params[resource.singular_name] && resource_id
+          params[HammerCLI.option_accessor_name(api_param.name)] = resource_id if resource_id
         end
       end
       # resolve 'id' parameter if it's defined as an option
-      params['id'] ||= get_identifier if respond_to?(HammerCLI.option_accessor_name("id"))
+      id_option_name = HammerCLI.option_accessor_name('id')
+      params[id_option_name] ||= get_identifier if respond_to?(id_option_name)
       params
     end
 
+    def request_params
+      params = customized_options
+      params_pruned = method_options(params)
+
+      # Options defined manualy in commands are removed in method_options.
+      # Manual ids are common so its handling is covered here
+      id_option_name = HammerCLI.option_accessor_name('id')
+      params_pruned['id'] = params[id_option_name] if params[id_option_name]
+      params_pruned
+    end
   end
 
 
@@ -276,7 +286,7 @@ module HammerCLIForeman
     def request_params
       id_param_name = "#{parent_resource.singular_name}_id"
 
-      params = method_options
+      params = super
       params[id_param_name] = get_resource_id(parent_resource)
       params
     end
@@ -410,7 +420,7 @@ module HammerCLIForeman
     end
 
     def request_params
-      params = method_options
+      params = super
       if params.key?(resource.singular_name)
         params[resource.singular_name] = {"#{association_name}_ids" => get_new_ids }
       else

@@ -5,7 +5,7 @@ module HammerCLIForeman
   module HostgroupUpdateCreateCommons
 
     def request_params
-      params = method_options
+      params = super
       params['hostgroup']['puppetclass_ids'] = option_puppetclass_ids
       params
     end
@@ -99,7 +99,7 @@ module HammerCLIForeman
       end
 
       def request_params
-        params = method_options
+        params = super
         params['hostgroup_id'] = get_identifier
         params
       end

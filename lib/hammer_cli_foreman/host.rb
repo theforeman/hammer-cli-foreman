@@ -395,7 +395,7 @@ module HammerCLIForeman
       end
 
       def request_params
-        params = method_options
+        params = super
         params['id'] = get_identifier
         params
       end
@@ -429,7 +429,7 @@ module HammerCLIForeman
       end
 
       def request_params
-        params = method_options
+        params = super
         params['id'] = get_identifier
         params
       end
@@ -449,7 +449,7 @@ module HammerCLIForeman
       end
 
       def request_params
-        params = method_options
+        params = super
         params['id'] = get_identifier
         params
       end
