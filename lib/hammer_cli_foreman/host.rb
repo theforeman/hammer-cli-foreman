@@ -323,7 +323,7 @@ module HammerCLIForeman
 
       def validate_options
         super
-        unless validator.option(:option_hostgroup_id).exist?
+        unless validator.any(:option_hostgroup_id, :option_hostgroup_name).exist?
           if option_managed
             validator.all(:option_environment_id, :option_architecture_id, :option_domain_id,
                           :option_puppet_proxy_id, :option_operatingsystem_id,
