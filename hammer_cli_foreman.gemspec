@@ -26,6 +26,6 @@ EOF
 
   s.add_dependency 'hammer_cli', '>= 0.1.1'
   s.add_dependency 'apipie-bindings', '>= 0.0.8'
-  s.add_dependency 'rest-client', '>= 1.6.5' # lower versions don't allow setting infinite timeouts
+  s.add_dependency 'rest-client', '>= 1.6.5', '< 1.7' # lower versions don't allow setting infinite timeouts, higher versions are not ruby 1.8 compatible
 
 end
