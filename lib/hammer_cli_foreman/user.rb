@@ -28,6 +28,8 @@ module HammerCLIForeman
         field :admin, _("Admin"), Fields::Boolean
         field :auth_source_internal, _("Authorized by"), Fields::Reference
         field :last_login_on, _("Last login"), Fields::Date
+        HammerCLIForeman::References.roles(self)
+        HammerCLIForeman::References.usergroups(self)
         HammerCLIForeman::References.taxonomies(self)
         HammerCLIForeman::References.timestamps(self)
       end
@@ -63,6 +65,8 @@ module HammerCLIForeman
 
       build_options
     end
+
+    HammerCLIForeman::AssociatingCommands::Role.extend_command(self)
 
     autoload_subcommands
   end

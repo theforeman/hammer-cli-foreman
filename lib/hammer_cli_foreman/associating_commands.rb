@@ -159,6 +159,30 @@ module HammerCLIForeman
       end
     end
 
+    module Usergroup
+      extend CommandExtension
+
+      class AddUsergroupCommand < HammerCLIForeman::AddAssociatedCommand
+        associated_resource :usergroups
+        desc _("Associate an user group")
+
+        command_name 'add-user-group'
+
+        success_message "The user group has been associated"
+        failure_message "Could not associate the user group"
+      end
+
+      class RemoveUsergroupCommand < HammerCLIForeman::RemoveAssociatedCommand
+        associated_resource :usergroups
+        desc _("Disassociate an user group")
+
+        command_name 'remove-user-group'
+
+        success_message "The user group has been disassociated"
+        failure_message "Could not disassociate the user group"
+      end
+    end
+
     module ConfigTemplate
       extend CommandExtension
 
@@ -250,6 +274,26 @@ module HammerCLIForeman
       end
     end
 
+    module Role
+      extend CommandExtension
+
+      class AddRoleCommand < HammerCLIForeman::AddAssociatedCommand
+        associated_resource :roles
+        desc _("Assign a user role")
+
+        success_message _("User role has been assigned")
+        failure_message _("Could not assign the user role")
+      end
+
+
+      class RemoveRoleCommand < HammerCLIForeman::RemoveAssociatedCommand
+        associated_resource :roles
+        desc _("Remove a user role")
+
+        success_message _("User role has been removed")
+        failure_message _("Could not remove the user role")
+      end
+    end
 
   end
 end
