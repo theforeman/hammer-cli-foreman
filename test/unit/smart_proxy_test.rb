@@ -12,7 +12,7 @@ describe HammerCLIForeman::SmartProxy do
 
     context "parameters" do
       it_should_accept "no arguments"
-      it_should_accept "type, page, per_page", ["--type=tftp", "--page=1", "--per-page=2"]
+      it_should_accept_search_params
     end
 
     context "output" do

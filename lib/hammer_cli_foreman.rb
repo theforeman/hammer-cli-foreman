@@ -32,6 +32,7 @@ module HammerCLIForeman
     require 'hammer_cli_foreman/domain'
     require 'hammer_cli_foreman/environment'
     require 'hammer_cli_foreman/fact'
+    require 'hammer_cli_foreman/filter'
     require 'hammer_cli_foreman/host'
     require 'hammer_cli_foreman/hostgroup'
     require 'hammer_cli_foreman/location'
@@ -43,11 +44,13 @@ module HammerCLIForeman
     require 'hammer_cli_foreman/partition_table'
     require 'hammer_cli_foreman/report'
     require 'hammer_cli_foreman/puppet_class'
+    require 'hammer_cli_foreman/role'
     require 'hammer_cli_foreman/smart_proxy'
     require 'hammer_cli_foreman/smart_class_parameter'
     require 'hammer_cli_foreman/subnet'
     require 'hammer_cli_foreman/template'
     require 'hammer_cli_foreman/user'
+    require 'hammer_cli_foreman/usergroup'
 
   rescue => e
     handler = HammerCLIForeman::ExceptionHandler.new(:context => {}, :adapter => :base)
