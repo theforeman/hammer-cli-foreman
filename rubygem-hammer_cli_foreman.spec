@@ -10,7 +10,7 @@
 Summary: Universal command-line interface for Foreman
 Name: rubygem-%{gemname}
 Version: 0.1.1
-Release: 11%{?dist}
+Release: 12%{?dist}
 Group: Development/Languages
 License: GPLv3
 URL: http://github.com/theforeman/hammer-cli-foreman
@@ -78,6 +78,16 @@ cp -pa .%{gem_dir}/* \
 %doc %{geminstdir}/doc/option_builder.md
 
 %changelog
+* Tue Jul 15 2014 Jason Montleon <jmontleo@redhat.com> 0.1.1-12
+- Merge remote-tracking branch 'upstream/master' into SATELLITE-6.0.4
+  (jmontleo@redhat.com)
+- Merge pull request #135 from tstrachota/roles (martin.bacovsky@gmail.com)
+- Refs #2922 - tests updated to use apidoc export for v1.6
+  (tstrachota@redhat.com)
+- fix (tstrachota@redhat.com)
+- Fixes #2922 and #4004 - commands for managing roles, filters, permissions and
+  usergroups (tstrachota@redhat.com)
+
 * Mon Jul 14 2014 Jason Montleon <jmontleo@redhat.com> 0.1.1-11
 - Merge remote-tracking branch 'upstream/master' into SATELLITE-6.0.4
   (jmontleo@redhat.com)
