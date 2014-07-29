@@ -83,6 +83,18 @@ module HammerCLIForeman
       end
     end
 
+
+    class RefreshFeaturesCommand < HammerCLIForeman::Command
+
+      action :refresh
+
+      command_name    "refresh-features"
+      success_message _("Smart proxy features were refreshed")
+      failure_message _("Refresh of smart proxy features failed")
+
+      build_options
+    end
+
     autoload_subcommands
   end
 

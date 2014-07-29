@@ -98,4 +98,16 @@ describe HammerCLIForeman::SmartProxy do
 
   end
 
+  context "RefreshFeaturesCommand" do
+
+    let(:cmd) { HammerCLIForeman::SmartProxy::RefreshFeaturesCommand.new("", ctx) }
+
+    context "parameters" do
+      it_should_accept "id", ["--id=1"]
+      it_should_accept "name", ["--name=proxy"]
+      # it_should_fail_with "name or id missing", [] # TODO: temporarily disabled, parameters are checked in the id resolver
+    end
+
+  end
+
 end

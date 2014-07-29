@@ -56,7 +56,7 @@ module HammerCLIForeman
       failure_message _("Could not create the operating system")
 
       def request_params
-        params = method_options
+        params = super
         params["operatingsystem"]["architecture_ids"] = option_architecture_ids if option_architecture_ids
         params["operatingsystem"]["config_template_ids"] = option_config_template_ids if option_config_template_ids
         params["operatingsystem"]["medium_ids"] = option_medium_ids if option_medium_ids
@@ -83,7 +83,7 @@ module HammerCLIForeman
       failure_message _("Could not update the operating system")
 
       def request_params
-        params = method_options
+        params = super
         params["operatingsystem"]["architecture_ids"] = option_architecture_ids if option_architecture_ids
         params["operatingsystem"]["config_template_ids"] = option_config_template_ids if option_config_template_ids
         params["operatingsystem"]["medium_ids"] = option_medium_ids if option_medium_ids

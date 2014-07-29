@@ -25,7 +25,7 @@ module HammerCLIForeman
       def request_params
         role_id = get_resource_id(HammerCLIForeman.foreman_resource(:roles))
 
-        params = method_options
+        params = super
         params[:search] = "role_id = \"#{role_id}\""
         params
       end
