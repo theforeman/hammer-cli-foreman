@@ -55,5 +55,5 @@ module HammerCLIForeman
 
 end
 
-HammerCLI::MainCommand.subcommand 'model', _("Manipulate hardware models."), HammerCLIForeman::Model
+
 

@@ -63,5 +63,3 @@ module HammerCLIForeman
   end
 
 end
-
-HammerCLI::MainCommand.subcommand 'environment', _("Manipulate environments."), HammerCLIForeman::Environment

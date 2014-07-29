@@ -61,5 +61,5 @@ module HammerCLIForeman
 
 end
 
-HammerCLI::MainCommand.subcommand 'medium', _("Manipulate installation media."), HammerCLIForeman::Medium
+
 

@@ -73,4 +73,4 @@ module HammerCLIForeman
 
 end
 
-HammerCLI::MainCommand.subcommand 'user', _("Manipulate users."), HammerCLIForeman::User
+

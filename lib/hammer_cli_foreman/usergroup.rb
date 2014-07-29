@@ -54,5 +54,5 @@ module HammerCLIForeman
 
 end
 
-HammerCLI::MainCommand.subcommand 'user-group', _("Manage user groups."), HammerCLIForeman::Usergroup
+
 

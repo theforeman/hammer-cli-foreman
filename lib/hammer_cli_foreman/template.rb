@@ -151,5 +151,5 @@ module HammerCLIForeman
 
 end
 
-HammerCLI::MainCommand.subcommand 'template', _("Manipulate config templates."), HammerCLIForeman::Template
+
 

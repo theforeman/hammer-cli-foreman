@@ -1,4 +1,3 @@
-require 'hammer_cli_foreman/compute_resource'
 
 module HammerCLIForeman
 

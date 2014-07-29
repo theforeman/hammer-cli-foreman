@@ -98,5 +98,5 @@ module HammerCLIForeman
 
 end
 
-HammerCLI::MainCommand.subcommand 'organization', _("Manipulate organizations."), HammerCLIForeman::Organization
+
 

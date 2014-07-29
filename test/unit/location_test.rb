@@ -1,6 +1,8 @@
 require File.join(File.dirname(__FILE__), 'test_helper')
 require File.join(File.dirname(__FILE__), 'helpers/resource_disabled')
 
+require 'hammer_cli_foreman/location'
+
 describe HammerCLIForeman::Location do
 
   include CommandTestHelper

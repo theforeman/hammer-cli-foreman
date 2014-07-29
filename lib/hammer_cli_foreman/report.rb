@@ -85,5 +85,5 @@ module HammerCLIForeman
 
 end
 
-HammerCLI::MainCommand.subcommand 'report', _("Browse and read reports."), HammerCLIForeman::Report
+
 
