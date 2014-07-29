@@ -10,7 +10,7 @@
 Summary: Universal command-line interface for Foreman
 Name: rubygem-%{gemname}
 Version: 0.1.1
-Release: 13%{?dist}
+Release: 14%{?dist}
 Group: Development/Languages
 License: GPLv3
 URL: http://github.com/theforeman/hammer-cli-foreman
@@ -78,6 +78,16 @@ cp -pa .%{gem_dir}/* \
 %doc %{geminstdir}/doc/option_builder.md
 
 %changelog
+* Tue Jul 29 2014 Jason Montleon <jmontleo@redhat.com> 0.1.1-14
+- Merge remote-tracking branch 'upstream/master' into SATELLITE-6.0.4
+  (jmontleo@redhat.com)
+- Fixes #6779: Restrict ci_reporter gem to less than 2.0.0 to fix CI
+  (martin.bacovsky@gmail.com)
+- fixes #3387 - add proxy refresh-features command (dcleal@redhat.com)
+- Fixed simplecov dependences (martin.bacovsky@gmail.com)
+- Fixes #6343 - params from searchables are not wrapped
+  (martin.bacovsky@gmail.com)
+
 * Tue Jul 22 2014 Jason Montleon <jmontleo@redhat.com> 0.1.1-13
 - update foreman.yml (jmontleo@redhat.com)
 
