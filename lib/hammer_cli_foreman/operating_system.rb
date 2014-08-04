@@ -244,5 +244,5 @@ module HammerCLIForeman
 
 end
 
-HammerCLI::MainCommand.subcommand 'os', "Manipulate operating system.", HammerCLIForeman::OperatingSystem
+HammerCLI::MainCommand.subcommand 'os', _("Manipulate operating system."), HammerCLIForeman::OperatingSystem
 
