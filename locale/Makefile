@@ -1,5 +1,5 @@
 #
-# Makefile for PO merging and MO generation.
+# Makefile for PO merging and MO generation. More info in the README.
 #
 # make all-mo (default) - generate MO files
 # make check - check translations using translate-tool
@@ -7,6 +7,7 @@
 # make clean - clean everything
 #
 DOMAIN = hammer-cli-foreman
+VERSION = $(shell ruby -e 'require "rubygems";spec = Gem::Specification::load("../hammer_cli_foreman.gemspec");puts spec.version')
 POTFILE = $(DOMAIN).pot
 MOFILE = $(DOMAIN).mo
 POFILES = $(shell find . -name '*.po')
@@ -45,20 +46,20 @@ uniq-po:
 
 tx-pull:
 	tx pull -f
+	for f in $(POFILES) ; do \
+		sed -i 's/^\("Project-Id-Version: \).*$$/\1$(DOMAIN) $(VERSION)\\n"/' $$f; \
+	done
 	-git commit -a -m "i18n - extracting new, pulling from tx"
 
 extract-strings:
-	bundle exec rake locale:find DOMAIN=$(DOMAIN) SKIP_MODEL=1
+	bundle exec rake gettext:find
 
-tx-update: tx-pull extract-strings
-	# merging po files is unnecessary when using transifex.com (amend that)
+reset-po:
+	# merging po files is unnecessary when using transifex.com
 	git checkout -- ../locale/*/*po
+
+tx-update: tx-pull extract-strings reset-po $(MOFILES)
+	# amend mo files
+	git add ../locale/*/LC_MESSAGES
 	git commit -a --amend -m "i18n - extracting new, pulling from tx"
 	-echo Changes commited!
-
-# Remove all MO files
-clean:
-	-rm -f messages.mo
-	find . \( -name "*.mo" -o -name "*.pox" \) -exec rm -f '{}' ';'
-	find . -path *LC_MESSAGES | xargs rm -rf
-
