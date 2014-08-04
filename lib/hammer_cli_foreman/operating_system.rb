@@ -214,7 +214,7 @@ module HammerCLIForeman
         tpl = templates.find { |p| p["template_kind_name"] == option_type }
 
         if tpl.nil?
-          raise RuntimeError.new(_("Default template of type #{option_type} not found"))
+          raise RuntimeError.new(_("Default template of type %s not found") % option_type)
         end
 
         params = {
