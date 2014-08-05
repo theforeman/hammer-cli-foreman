@@ -467,4 +467,4 @@ module HammerCLIForeman
 
 end
 
-HammerCLI::MainCommand.subcommand 'host', ("Manipulate hosts."), HammerCLIForeman::Host
+HammerCLI::MainCommand.subcommand 'host', _("Manipulate hosts."), HammerCLIForeman::Host
