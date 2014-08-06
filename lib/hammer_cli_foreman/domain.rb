@@ -93,5 +93,4 @@ module HammerCLIForeman
 
 end
 
-HammerCLI::MainCommand.subcommand 'domain', _("Manipulate domains."), HammerCLIForeman::Domain
 

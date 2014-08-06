@@ -1,4 +1,5 @@
 require 'hammer_cli_foreman/smart_class_parameter'
+require 'hammer_cli_foreman/puppet_class'
 
 module HammerCLIForeman
 
@@ -138,4 +139,4 @@ module HammerCLIForeman
 
 end
 
-HammerCLI::MainCommand.subcommand 'hostgroup', _("Manipulate hostgroups."), HammerCLIForeman::Hostgroup
+

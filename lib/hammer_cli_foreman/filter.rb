@@ -98,5 +98,5 @@ module HammerCLIForeman
 
 end
 
-HammerCLI::MainCommand.subcommand 'filter', _("Manage permission filters."), HammerCLIForeman::Filter
+
 

@@ -1,6 +1,7 @@
 require File.join(File.dirname(__FILE__), 'test_helper')
 require File.join(File.dirname(__FILE__), 'apipie_resource_mock')
 
+require 'hammer_cli_foreman/smart_class_parameter'
 
 describe HammerCLIForeman::SmartClassParameter do
 

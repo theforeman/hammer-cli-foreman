@@ -1,3 +1,5 @@
+require 'hammer_cli_foreman/filter'
+
 module HammerCLIForeman
 
   class Role < HammerCLIForeman::Command
@@ -72,5 +74,5 @@ module HammerCLIForeman
 
 end
 
-HammerCLI::MainCommand.subcommand 'role', _("Manage user roles."), HammerCLIForeman::Role
+
 

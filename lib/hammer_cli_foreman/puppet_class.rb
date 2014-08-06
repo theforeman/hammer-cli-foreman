@@ -57,5 +57,5 @@ module HammerCLIForeman
 
 end
 
-HammerCLI::MainCommand.subcommand 'puppet-class', _("Search puppet modules."), HammerCLIForeman::PuppetClass
+
 
