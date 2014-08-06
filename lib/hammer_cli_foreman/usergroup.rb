@@ -1,3 +1,5 @@
+require 'hammer_cli_foreman/external_usergroup'
+
 module HammerCLIForeman
 
   class Usergroup < HammerCLIForeman::Command
@@ -17,6 +19,7 @@ module HammerCLIForeman
       output ListCommand.output_definition do
         HammerCLIForeman::References.users(self)
         HammerCLIForeman::References.usergroups(self)
+        HammerCLIForeman::References.external_usergroups(self)
         HammerCLIForeman::References.roles(self)
         HammerCLIForeman::References.timestamps(self)
       end
@@ -50,6 +53,7 @@ module HammerCLIForeman
     HammerCLIForeman::AssociatingCommands::Usergroup.extend_command(self)
 
     autoload_subcommands
+    subcommand 'external', HammerCLIForeman::ExternalUsergroup.desc, HammerCLIForeman::ExternalUsergroup
   end
 
 end

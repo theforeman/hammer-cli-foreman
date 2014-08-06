@@ -134,5 +134,13 @@ module HammerCLIForeman
       end
     end
 
+    def self.external_usergroups(dsl)
+      dsl.build do
+        collection :external_usergroups, _("External user groups"), :numbered => false do
+          custom_field Fields::Reference
+        end
+      end
+    end
+
   end
 end
