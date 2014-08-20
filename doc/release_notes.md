@@ -1,6 +1,14 @@
 Release notes
 =============
 
+### 0.1.3 (2014-08-20)
+* Update foreman.yml
+* Update the zanata.xml file to push to de-DE and es-ES ([#7112](http://projects.theforeman.org/issues/7112))
+* Adding system locale domain ([#7083](http://projects.theforeman.org/issues/7083))
+* Name options for puppet proxies in hostgroup ([#7085](http://projects.theforeman.org/issues/7085))
+* I18n - extracting new, pulling from tx
+
+
 ### 0.1.2
 * Docs for name->id resolution
 * Update with installation details and IRC channel
