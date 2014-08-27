@@ -24,6 +24,10 @@ module HammerCLIForeman
         '/usr/share/locale'
       end
 
+      def domain_name
+        "#{super}@system"
+      end
+
     end
 
   end
