@@ -35,6 +35,10 @@ module HammerCLIForeman
       'HammerCLIForeman::Architecture', 'hammer_cli_foreman/architecture'
     )
 
+    HammerCLI::MainCommand.lazy_subcommand('auth-source', _("Manipulate LDAP auth sources."),
+      'HammerCLIForeman::AuthSourceLdap', 'hammer_cli_foreman/auth_source'
+    )
+
     HammerCLI::MainCommand.lazy_subcommand('compute-resource', _("Manipulate compute resources."),
       'HammerCLIForeman::ComputeResource', 'hammer_cli_foreman/compute_resource'
     )
