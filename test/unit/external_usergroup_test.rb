@@ -75,8 +75,8 @@ describe HammerCLIForeman::ExternalUsergroup do
     let(:cmd) { HammerCLIForeman::ExternalUsergroup::CreateCommand.new("", ctx) }
 
     context "parameters" do
-      it_should_accept "all required params", ["--auth-source-id=1", "--user-group-id=1"]
-      it_should_accept "all required params and resource's name", ["--name=aabbcc123", "--auth-source-id=1", "--user-group-id=1"]
+      # it_should_fail_with "no name", ["--auth-source-id=1", "--user-group-id=1"]
+      it_should_accept "all required params", ["--name=aabbcc123", "--auth-source-id=1", "--user-group-id=1"]
     end
   end
 

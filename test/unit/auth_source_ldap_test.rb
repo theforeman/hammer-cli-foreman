@@ -19,7 +19,7 @@ describe HammerCLIForeman::AuthSourceLdap do
 
     context "output" do
       let(:expected_record_count) do
-        cmd.resource.call(:index).length 
+        cmd.resource.call(:index).length
       end
 
       it_should_print_n_records 1
@@ -59,7 +59,7 @@ describe HammerCLIForeman::AuthSourceLdap do
     let(:cmd) { HammerCLIForeman::AuthSourceLdap::CreateCommand.new("", ctx) }
 
     context "parameters" do
-      it_should_accept "name", ["--name=arch"]
+      it_should_accept "all required params", ["--name=arch", "--host=my.host"]
       # it_should_fail_with "name missing", []
       # TODO: temporarily disabled, parameters are checked in the api
     end
