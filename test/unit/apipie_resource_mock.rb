@@ -27,6 +27,13 @@ module ResourceMocks
     ResourceMocks.mock_action_call(:smart_class_parameters, :show, { 'smart_class_parameter' => { 'override_value_order' => '', 'environments' => [] }})
   end
 
+  def self.smart_variables_index
+    ResourceMocks.mock_action_call(:smart_variables, :index, [ { 'variable' => 'var', 'id' => '1'} ])
+  end
+
+  def self.smart_variables_show
+    ResourceMocks.mock_action_call(:smart_variables, :show, { "id" => 1, "override_value_order" => "fqdn" })
+  end
 
   def self.compute_resources_available_images
     ResourceMocks.mock_action_call(:compute_resources, :available_images, [])

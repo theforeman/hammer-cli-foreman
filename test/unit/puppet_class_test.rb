@@ -57,12 +57,27 @@ describe HammerCLIForeman::PuppetClass do
     let(:cmd) { HammerCLIForeman::PuppetClass::SCParamsCommand.new("", ctx) }
 
     context "parameters" do
-      it_should_accept "name", ["--name=env"]
-      it_should_accept "id", ["--id=1"]
+      it_should_accept "puppet-class", ["--puppet-class=cls"]
+      it_should_accept "puppet-class-id", ["--puppet-class-id=1"]
       # it_should_fail_with "name or id missing", [] # TODO: temporarily disabled, parameters are checked in the id resolver
     end
 
   end
 
+  context "SmartVariablesCommand" do
+
+    before :each do
+      ResourceMocks.smart_variables_index
+    end
+
+    let(:cmd) { HammerCLIForeman::PuppetClass::SmartVariablesCommand.new("", ctx) }
+
+    context "parameters" do
+      it_should_accept "puppet-class", ["--puppet-class=cls"]
+      it_should_accept "puppet-class-id", ["--puppet-class-id=1"]
+      # it_should_fail_with "name or id missing", [] # TODO: temporarily disabled, parameters are checked in the id resolver
+    end
+
+  end
 
 end

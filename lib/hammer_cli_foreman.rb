@@ -107,6 +107,10 @@ module HammerCLIForeman
       'HammerCLIForeman::SmartClassParameter', 'hammer_cli_foreman/smart_class_parameter'
     )
 
+    HammerCLI::MainCommand.lazy_subcommand('smart-variable', _("Manipulate smart variables."),
+      'HammerCLIForeman::SmartVariable', 'hammer_cli_foreman/smart_variable'
+    )
+
     HammerCLI::MainCommand.lazy_subcommand('proxy', _("Manipulate smart proxies."),
       'HammerCLIForeman::SmartProxy', 'hammer_cli_foreman/smart_proxy'
     )

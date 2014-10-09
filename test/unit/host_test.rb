@@ -352,8 +352,24 @@ describe HammerCLIForeman::Host do
     let(:cmd) { HammerCLIForeman::Host::SCParamsCommand.new("", ctx) }
 
     context "parameters" do
-      it_should_accept "name", ["--name=env"]
-      it_should_accept "id", ["--id=1"]
+      it_should_accept "host", ["--host=host"]
+      it_should_accept "host-id", ["--host-id=1"]
+      # it_should_fail_with "name or id missing", [] # TODO: temporarily disabled, parameters are checked in the id resolver
+    end
+
+  end
+
+  context "SmartVariablesCommand" do
+
+    before :each do
+      ResourceMocks.smart_variables_index
+    end
+
+    let(:cmd) { HammerCLIForeman::Host::SmartVariablesCommand.new("", ctx) }
+
+    context "parameters" do
+      it_should_accept "host", ["--host=host"]
+      it_should_accept "host-id", ["--host-id=1"]
       # it_should_fail_with "name or id missing", [] # TODO: temporarily disabled, parameters are checked in the id resolver
     end
 

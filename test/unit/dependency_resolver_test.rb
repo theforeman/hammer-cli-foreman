@@ -15,7 +15,9 @@ describe HammerCLIForeman::DependencyResolver do
 
     it "returns list of dependent resources" do
       resource = HammerCLIForeman.foreman_resource!(:images)
-      resolver.resource_dependencies(resource).map(&:name).must_equal [:compute_resources]
+      resolver.resource_dependencies(resource).map(&:name).sort_by{|sym| sym.to_s}.must_equal [
+        :compute_resources, :organizations, :locations
+      ].sort_by{|sym| sym.to_s}
     end
 
   end
@@ -31,7 +33,7 @@ describe HammerCLIForeman::DependencyResolver do
       action = HammerCLIForeman.foreman_resource!(:hostgroups).action(:create)
       resolver.action_dependencies(action).map(&:name).sort_by{|sym| sym.to_s}.must_equal [
         :environments, :operatingsystems, :architectures, :media,
-        :ptables, :subnets, :domains, :realms
+        :ptables, :subnets, :domains, :realms, :organizations, :locations
       ].sort_by{|sym| sym.to_s}
     end
 
