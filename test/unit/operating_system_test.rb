@@ -24,7 +24,7 @@ describe HammerCLIForeman::OperatingSystem do
       let(:expected_record_count) { cmd.resource.call(:index).length }
 
       it_should_print_n_records
-      it_should_print_column "Full name"
+      it_should_print_column "Title"
       it_should_print_column "Id"
       it_should_print_column "Release name"
       it_should_print_column "Family"
@@ -46,6 +46,7 @@ describe HammerCLIForeman::OperatingSystem do
       with_params ["--id=1"] do
         it_should_print_n_records 1
         it_should_print_column "Name"
+        it_should_print_column "Title"
         it_should_print_column "Id"
         it_should_print_column "Major version"
         it_should_print_column "Minor version"

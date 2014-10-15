@@ -8,7 +8,7 @@ module HammerCLIForeman
 
       output do
         field :id, _("Id")
-        field :fullname, _("Full name")
+        field :title, _("Title")
         field :release_name, _("Release name")
         field :family, _("Family")
       end
