@@ -145,6 +145,10 @@ module HammerCLIForeman
 
     protected
 
+    def option(*args)
+      HammerCLI::Apipie::OptionDefinition.new(*args)
+    end
+
     def description(param_name, action_name)
       return " " unless @resource.has_action? action_name
 
@@ -172,7 +176,8 @@ module HammerCLIForeman
         option(
           optionamize("--#{s.name}"),
           s.name.upcase,
-          s.description
+          s.description,
+          :referenced_resource => @resource.singular_name
         )
       end
     end
@@ -211,7 +216,8 @@ module HammerCLIForeman
           optionamize("--#{aliased_name}"),
           "#{aliased_name}_#{first.name}".upcase,
           first.description || " ",
-          :attribute_name => HammerCLI.option_accessor_name("#{resource_name}_#{first.name}")
+          :attribute_name => HammerCLI.option_accessor_name("#{resource_name}_#{first.name}"),
+          :referenced_resource => resource.singular_name
         )
 
         # Other options are named by the resource plus the searchable name
@@ -221,7 +227,8 @@ module HammerCLIForeman
             optionamize("--#{aliased_name}-#{s.name}"),
             "#{aliased_name}_#{s.name}".upcase,
             s.description || " ",
-            :attribute_name => HammerCLI.option_accessor_name("#{resource_name}_#{s.name}")
+            :attribute_name => HammerCLI.option_accessor_name("#{resource_name}_#{s.name}"),
+            :referenced_resource => resource.singular_name
           )
         end
       end
@@ -230,7 +237,8 @@ module HammerCLIForeman
         optionamize("--#{aliased_name}-id"),
         "#{aliased_name}_id".upcase,
         description("id", :show),
-        :attribute_name => HammerCLI.option_accessor_name("#{resource_name}_id")
+        :attribute_name => HammerCLI.option_accessor_name("#{resource_name}_id"),
+        :referenced_resource => resource.singular_name
       )
       options
     end
@@ -276,7 +284,7 @@ module HammerCLIForeman
 
     def build(builder_params={})
       [
-        option("--id", "ID", description("id", :show))
+        option("--id", "ID", description("id", :show), :referenced_resource => @resource.singular_name)
       ]
     end
 

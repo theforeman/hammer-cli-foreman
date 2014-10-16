@@ -137,8 +137,8 @@ module HammerCLIForeman
     end
 
     def pick_result(results, resource)
-      raise ResolverError.new(_("%s not found") % resource.singular_name) if results.empty?
-      raise ResolverError.new(_("%s found more than once") % resource.singular_name) if results.count > 1
+      raise ResolverError.new(_("%s not found") % resource.singular_name, resource) if results.empty?
+      raise ResolverError.new(_("%s found more than once") % resource.singular_name, resource) if results.count > 1
       results[0]
     end
 
@@ -149,7 +149,7 @@ module HammerCLIForeman
                        else
                          create_search_options(options, resource)
                        end
-      raise MissingSeachOptions.new(_("Missing options to search %s") % resource.singular_name) if search_options.empty?
+      raise MissingSeachOptions.new(_("Missing options to search %s") % resource.singular_name, resource) if search_options.empty?
       search_options
     end
 

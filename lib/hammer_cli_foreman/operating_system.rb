@@ -137,7 +137,7 @@ module HammerCLIForeman
       command_name "set-default-template"
       resource :os_default_templates
 
-      option "--id", "OS ID", _("operatingsystem id"), :required => true
+      option "--id", "OS ID", _("operatingsystem id"), :required => true, :referenced_resource => 'operatingsystem'
       option "--config-template-id", "TPL ID", _("config template id to be set"), :required => true
 
 
@@ -203,7 +203,7 @@ module HammerCLIForeman
       command_name "delete-default-template"
       resource :os_default_templates
 
-      option "--id", "OS ID", _("operatingsystem id"), :required => true
+      option "--id", "OS ID", _("operatingsystem id"), :required => true, :referenced_resource => 'operatingsystem'
       option "--type", "TPL TYPE", _("Type of the config template"), :required => true
 
       success_message _("Default template deleted")

@@ -163,6 +163,25 @@ module HammerCLIForeman
 
     def send_request
       HammerCLIForeman.record_to_common_format(super)
+    rescue HammerCLIForeman::MissingSeachOptions => e
+
+      switches = self.class.find_options(:referenced_resource => e.resource.singular_name).map(&:long_switch)
+
+      if switches.empty?
+        error_message = _("Could not find %{resource}. Some search options were missing, please see --help.")
+      elsif switches.length == 1
+        error_message = _("Could not find %{resource}, please set option %{switches}.")
+      else
+        error_message = _("Could not find %{resource}, please set one of options %{switches}.")
+      end
+
+      raise MissingSeachOptions.new(
+        error_message % {
+          :resource => e.resource.singular_name,
+          :switches => switches.join(", ")
+        },
+        e.resource
+      )
     end
 
     def customized_options

@@ -21,7 +21,7 @@ module HammerCLIForeman
     class InfoCommand < HammerCLIForeman::InfoCommand
       include HammerCLIForeman::ResourceSupportedTest
 
-      option "--id", "ID", " "
+      option "--id", "ID", " ", :referenced_resource => 'organization'
 
       output ListCommand.output_definition do
         HammerCLIForeman::References.users(self)
@@ -60,7 +60,7 @@ module HammerCLIForeman
     class UpdateCommand < HammerCLIForeman::UpdateCommand
       include HammerCLIForeman::ResourceSupportedTest
 
-      option "--id", "ID", " "
+      option "--id", "ID", " ", :referenced_resource => 'organization'
 
       success_message _("Organization updated")
       failure_message _("Could not update the organization")
@@ -72,7 +72,7 @@ module HammerCLIForeman
     class DeleteCommand < HammerCLIForeman::DeleteCommand
       include HammerCLIForeman::ResourceSupportedTest
 
-      option "--id", "ID", " "
+      option "--id", "ID", " ", :referenced_resource => 'organization'
 
       success_message _("Organization deleted")
       failure_message _("Could not delete the organization")
