@@ -42,7 +42,7 @@ module HammerCLIForeman
       :medium =>           [ s_name(_("Medium name")) ],
       :model =>            [ s_name(_("Model name")) ],
       :organization =>     [ s_name(_("Organization name")) ],
-      :operatingsystem =>  [],
+      :operatingsystem =>  [ s("title", _("Operating system title"), :editable => false) ],
       :ptable =>           [ s_name(_("Partition table name")) ],
       :proxy =>            [ s_name(_("Proxy name")) ],
       :puppetclass =>      [ s_name(_("Puppet class name")) ],
