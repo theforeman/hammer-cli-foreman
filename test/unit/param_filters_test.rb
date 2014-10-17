@@ -99,6 +99,71 @@ end
 
 
 
+describe HammerCLIForeman::IdArrayParamsFilter do
+
+  let(:filter) { HammerCLIForeman::IdArrayParamsFilter.new }
+  let(:nonrequired_filter) { HammerCLIForeman::IdArrayParamsFilter.new(:only_required => false) }
+  let(:required_filter) { HammerCLIForeman::IdArrayParamsFilter.new(:only_required => true) }
+
+  describe "params for action" do
+    let(:required_params) {[
+      stub(:name => "architecture_ids", :required? => true, :params => []),
+      stub(:name => "organization_ids", :required? => true, :params => [])
+    ]}
+    let(:id_params) {[
+      stub(:name => "domain_ids", :required? => false, :params => [])
+    ]}
+    let(:other_params) {[
+      stub(:name => "location_id", :required? => true, :params => []),
+      stub(:name => "param", :required? => false, :params => [])
+    ]}
+    let(:hash_param) {
+      stub(:name => "object", :required? => false, :params => (
+        required_params+id_params+other_params
+      ))
+    }
+
+    let(:action) {
+      stub(:params => (required_params+id_params+other_params))
+    }
+
+    it "returns only required params ending with _ids" do
+      required_filter.for_action(action).must_equal required_params
+    end
+
+    it "returns only ending with _ids when :only_required is set to false" do
+      nonrequired_filter.for_action(action).must_equal (required_params+id_params)
+    end
+
+    it "returns required params by default" do
+      filter.for_action(action).must_equal required_params
+    end
+
+    context "with hash params" do
+
+      let(:action) {
+        stub(:params => [hash_param])
+      }
+
+      it "finds params inside a hash" do
+        filter.for_action(action).must_equal required_params
+      end
+
+      it "returns only required params ending with _ids" do
+        required_filter.for_action(action).must_equal required_params
+      end
+
+      it "returns only ending with _ids when :only_required is set to false" do
+        nonrequired_filter.for_action(action).must_equal (required_params+id_params)
+      end
+
+    end
+  end
+
+end
+
+
+
 
 describe HammerCLIForeman::ParamsNameFilter do
 

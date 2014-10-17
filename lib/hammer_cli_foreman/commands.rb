@@ -3,7 +3,12 @@ module HammerCLIForeman
   CONNECTION_NAME = 'foreman'
 
   RESOURCE_NAME_MAPPING = {
-    :usergroup => :user_group
+    :usergroup => :user_group,
+    :usergroups => :user_groups,
+    :ptable => :partition_table,
+    :ptables => :partition_tables,
+    :puppetclass => :puppet_class,
+    :puppetclasses => :puppet_classes
   }
 
   def self.credentials
@@ -55,7 +60,7 @@ module HammerCLIForeman
   end
 
   def self.param_to_resource(param_name)
-    HammerCLIForeman.foreman_resource(param_name.gsub(/_id$/, ""), :singular => true)
+    HammerCLIForeman.foreman_resource(param_name.gsub(/_id[s]?$/, ""), :singular => true)
   end
 
   def self.collection_to_common_format(data)
@@ -147,6 +152,15 @@ module HammerCLIForeman
       end
     end
 
+    def get_resource_ids(resource, options={})
+      opts = resolver.scoped_options(resource.singular_name, all_options)
+      begin
+        resolver.send("#{resource.singular_name}_ids", opts)
+      rescue HammerCLIForeman::MissingSeachOptions => e
+        raise e unless (options[:required] == false)
+      end
+    end
+
     def self.resolver
       api = HammerCLI::Connection.get("foreman").api
       HammerCLIForeman::IdResolver.new(api, HammerCLIForeman::Searchables.new)
@@ -195,6 +209,16 @@ module HammerCLIForeman
           params[HammerCLI.option_accessor_name(api_param.name)] = resource_id if resource_id
         end
       end
+
+      # resolve all '<resource_name>_ids' parameters if they are defined as options
+      IdArrayParamsFilter.new(:only_required => false).for_action(resource.action(action)).each do |api_param|
+        param_resource = HammerCLIForeman.param_to_resource(api_param.name)
+        if param_resource && respond_to?(HammerCLI.option_accessor_name("#{param_resource.singular_name}_ids"))
+          resource_ids = get_resource_ids(param_resource, :scoped => true, :required => api_param.required?)
+          params[HammerCLI.option_accessor_name(api_param.name)] = resource_ids if resource_ids
+        end
+      end
+
       # resolve 'id' parameter if it's defined as an option
       id_option_name = HammerCLI.option_accessor_name('id')
       params[id_option_name] ||= get_identifier if respond_to?(id_option_name)

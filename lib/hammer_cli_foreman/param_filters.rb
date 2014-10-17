@@ -38,8 +38,24 @@ module HammerCLIForeman
 
     def filter(params)
       params = ParamsFlattener.new.filter(params)
-      params = params.reject{ |p| !(p.name.end_with?("_id")) }
-      params = params.reject{ |p| !(p.required?) } if @required
+      params = params.select{ |p| p.name.end_with?("_id") }
+      params = params.select{ |p| p.required? } if @required
+      params
+    end
+
+  end
+
+
+  class IdArrayParamsFilter < AbstractParamsFilter
+
+    def initialize(options={})
+      @required = !(options[:only_required] == false)
+    end
+
+    def filter(params)
+      params = ParamsFlattener.new.filter(params)
+      params = params.select{ |p| p.name.end_with?("_ids") }
+      params = params.select{ |p| p.required? } if @required
       params
     end
 

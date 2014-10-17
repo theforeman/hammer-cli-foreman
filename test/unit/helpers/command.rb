@@ -18,9 +18,13 @@ class IdResolverTestProxy
   def define_id_finders
     @original_resolver.api.resources.each do |resource|
       method_name = "#{resource.singular_name}_id"
-
       self.class.send(:define_method, method_name) do |options|
         1
+      end
+
+      method_name = "#{resource.singular_name}_ids"
+      self.class.send(:define_method, method_name) do |options|
+        [1]
       end
     end
   end
