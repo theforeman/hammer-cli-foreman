@@ -41,7 +41,7 @@ module HammerCLIForeman
       :filter =>           [],
       :host =>             [ s_name(_("Host name")) ],
       :hostgroup =>        [ s_name(_("Hostgroup name")) ],
-      :image =>            [],
+      # :image =>            [],
       :location =>         [ s_name(_("Location name")) ],
       :medium =>           [ s_name(_("Medium name")) ],
       :model =>            [ s_name(_("Model name")) ],
@@ -102,6 +102,21 @@ module HammerCLIForeman
       scoped_options
     end
 
+
+    def puppetclass_id(options)
+      if options[HammerCLI.option_accessor_name("id")]
+        return options[HammerCLI.option_accessor_name("id")]
+      else
+        resource = @api.resource(:puppetclasses)
+        results = resolved_call(:puppetclasses, :index, options)[0]
+        results = results.values.flatten
+        return pick_result(results, resource)['id']
+      end
+    end
+
+    def puppetclass_ids(options)
+      options[HammerCLI.option_accessor_name("ids")] || find_resources(:puppetclasses, options).collect{|h| h.values}.flatten.map{|h| h['id']}
+    end
 
     protected
 

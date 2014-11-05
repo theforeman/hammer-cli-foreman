@@ -20,7 +20,7 @@ describe HammerCLIForeman::SmartClassParameter do
       it_should_accept "hostgroup id", ["--hostgroup-id=1"]
       it_should_accept "host id", ["--host-id=1"]
       it_should_accept "environment id", ["--environment-id=1"]
-      it_should_accept "puppet class id", ["--puppetclass-id=1"]
+      it_should_accept "puppet class id", ["--puppet-class-id=1"]
       it_should_accept_search_params
     end
 
