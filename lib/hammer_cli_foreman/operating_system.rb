@@ -112,7 +112,7 @@ module HammerCLIForeman
 
       def validate_options
         super
-        validator.any(:option_operatingsystem_id).required
+        validator.any(:option_operatingsystem_id, :option_operatingsystem_title).required
       end
 
       build_options
@@ -126,7 +126,7 @@ module HammerCLIForeman
 
       def validate_options
         super
-        validator.any(:option_operatingsystem_id).required
+        validator.any(:option_operatingsystem_id, :option_operatingsystem_title).required
       end
 
       build_options
