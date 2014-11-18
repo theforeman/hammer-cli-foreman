@@ -13,3 +13,6 @@ coverage
 
 # Editors
 tags
+.bin
+.idea
+.bundle
