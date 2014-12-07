@@ -202,7 +202,7 @@ module HammerCLIForeman
     DEFAULT_PER_PAGE = 20
 
     def adapter
-      :table
+      @context[:adapter] || :table
     end
 
     def send_request
@@ -241,7 +241,7 @@ module HammerCLIForeman
       while list_next do
         d = retrieve_and_print
 
-        if (d.size >= self.option_per_page.to_i) && interactive?
+        if (d.size >= self.option_per_page.to_i) && interactive? && adapter != :csv
           answer = ask(_("List next page? (%s): ") % 'Y/n').downcase
           list_next = (answer == 'y' || answer == '')
           self.option_page += 1
