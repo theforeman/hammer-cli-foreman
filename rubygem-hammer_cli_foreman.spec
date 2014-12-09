@@ -78,6 +78,7 @@ cp -pa .%{gem_dir}/* \
 %doc %{geminstdir}/test
 %doc %{geminstdir}/doc/developer_docs.md
 %doc %{geminstdir}/doc/option_builder.md
+%doc %{geminstdir}/doc/name_id_resolution.md
 
 %changelog
 * Tue Dec 09 2014 Jason Montleon <jmontleo@redhat.com> 0.1.3-1
