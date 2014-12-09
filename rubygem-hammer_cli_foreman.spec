@@ -10,7 +10,7 @@
 Summary: Universal command-line interface for Foreman
 Name: rubygem-%{gemname}
 Version: 0.1.3
-Release: 1%{?dist}
+Release: 2%{?dist}
 Group: Development/Languages
 License: GPLv3
 URL: http://github.com/theforeman/hammer-cli-foreman
@@ -81,6 +81,9 @@ cp -pa .%{gem_dir}/* \
 %doc %{geminstdir}/doc/name_id_resolution.md
 
 %changelog
+* Tue Dec 09 2014 Jason Montleon <jmontleo@redhat.com> 0.1.3-2
+- fix rpm spec to include unpackaged new file (jmontleo@redhat.com)
+
 * Tue Dec 09 2014 Jason Montleon <jmontleo@redhat.com> 0.1.3-1
 - use distribution tagger (jmontleo@redhat.com)
 - update to 0.1.3
