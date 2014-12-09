@@ -9,13 +9,12 @@
 
 Summary: Universal command-line interface for Foreman
 Name: rubygem-%{gemname}
-Version: 0.1.1
-Release: 16%{?dist}
+Version: 0.1.3
+Release: 0%{?dist}
 Group: Development/Languages
 License: GPLv3
 URL: http://github.com/theforeman/hammer-cli-foreman
-Source0: %{gemname}-%{version}.gem
-Source1: foreman.yml
+Source0: rubygem-%{gemname}-%{version}.tar.gz
 
 %if !(0%{?rhel} > 6 || 0%{?fedora} > 18)
 Requires: ruby(abi)
@@ -47,14 +46,17 @@ Documentation for %{name}
 
 
 %prep
-%setup -q -c -T
+%setup -q -n rubygem-%{gemname}-%{version}
+%{?scl:scl enable %{scl} "}
+gem build %{gemname}.gemspec
+%{?scl:"}
 mkdir -p .%{gem_dir}
 gem install --local --install-dir .%{gem_dir} \
-            --force %{SOURCE0}
+            --force %{gemname}-%{version}.gem
 
 %install
 mkdir -p %{buildroot}%{_sysconfdir}/%{confdir}/cli.modules.d
-install -m 755 %{SOURCE1} %{buildroot}%{_sysconfdir}/%{confdir}/cli.modules.d/foreman.yml
+install -m 755 foreman.yml %{buildroot}%{_sysconfdir}/%{confdir}/cli.modules.d/foreman.yml
 mkdir -p %{buildroot}%{gem_dir}
 cp -pa .%{gem_dir}/* \
         %{buildroot}%{gem_dir}/
