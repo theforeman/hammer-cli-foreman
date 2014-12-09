@@ -18,7 +18,20 @@ module HammerCLIForeman
       end
     end
 
+    class SystemLocaleDomain < LocaleDomain
+
+      def locale_dir
+        '/usr/share/locale'
+      end
+
+      def domain_name
+        "#{super}@system"
+      end
+
+    end
+
   end
 end
 
 HammerCLI::I18n.add_domain(HammerCLIForeman::I18n::LocaleDomain.new)
+HammerCLI::I18n.add_domain(HammerCLIForeman::I18n::SystemLocaleDomain.new)

@@ -33,4 +33,4 @@ module HammerCLIForeman
 
 end
 
-HammerCLI::MainCommand.subcommand 'fact', _("Search facts."), HammerCLIForeman::Fact
+

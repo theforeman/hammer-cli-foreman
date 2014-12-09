@@ -1,3 +1,5 @@
+require 'hammer_cli_foreman/filter'
+
 module HammerCLIForeman
 
   class Role < HammerCLIForeman::Command
@@ -24,10 +26,7 @@ module HammerCLIForeman
 
       def request_params
         role_id = get_resource_id(HammerCLIForeman.foreman_resource(:roles))
-
-        params = super
-        params[:search] = "role_id = \"#{role_id}\""
-        params
+        { :search => "role_id = \"#{role_id}\"" }
       end
 
       def extend_data(filter)
@@ -72,5 +71,5 @@ module HammerCLIForeman
 
 end
 
-HammerCLI::MainCommand.subcommand 'role', _("Manage user roles."), HammerCLIForeman::Role
+
 

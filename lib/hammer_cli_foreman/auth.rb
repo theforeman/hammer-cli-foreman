@@ -45,5 +45,4 @@ module HammerCLIForeman
     autoload_subcommands
   end
 
-  HammerCLI::ShellMainCommand.subcommand 'auth', _("Foreman connection login/logout."), HammerCLIForeman::Auth
 end

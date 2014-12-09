@@ -1,6 +1,7 @@
 require File.join(File.dirname(__FILE__), 'test_helper')
 require File.join(File.dirname(__FILE__), 'apipie_resource_mock')
 
+require 'hammer_cli_foreman/host'
 
 describe HammerCLIForeman::Host do
 
@@ -221,8 +222,8 @@ describe HammerCLIForeman::Host do
           ["--name=host", "--environment-id=1", "--architecture-id=1", "--domain-id=1", "--operatingsystem-id=1"]
       it_should_fail_with "operatingsystem_id missing",
           ["--name=host", "--environment-id=1", "--architecture-id=1", "--domain-id=1", "--puppet-proxy-id=1"]
-      it_should_accept "only hostgroup name", ["--hostgroup=example"]
-      it_should_accept "only hostgroup ID", ["--hostgroup-id=example"]
+      it_should_accept "only hostgroup name", ["--hostgroup=example", "--name=host"]
+      it_should_accept "only hostgroup ID", ["--hostgroup-id=example", "--name=host"]
 
       with_params ["--name=host", "--environment-id=1", "--architecture-id=1", "--domain-id=1", "--puppet-proxy-id=1", "--operatingsystem-id=1",
             "--ip=1.2.3.4", "--mac=11:22:33:44:55:66", "--medium-id=1", "--partition-table-id=1", "--subnet-id=1",

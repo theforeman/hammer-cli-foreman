@@ -121,7 +121,7 @@ module HammerCLIForeman
     def self.operating_systems(dsl)
       dsl.build do
         collection :operatingsystems, _("Operating systems"), :numbered => false do
-          custom_field Fields::Reference, :name_key => :fullname
+          custom_field Fields::Reference, :name_key => :title
         end
       end
     end
@@ -129,6 +129,14 @@ module HammerCLIForeman
     def self.roles(dsl)
       dsl.build do
         collection :roles, _("Roles"), :numbered => false do
+          custom_field Fields::Reference
+        end
+      end
+    end
+
+    def self.external_usergroups(dsl)
+      dsl.build do
+        collection :external_usergroups, _("External user groups"), :numbered => false do
           custom_field Fields::Reference
         end
       end

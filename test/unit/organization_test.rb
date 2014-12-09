@@ -2,6 +2,7 @@ require File.join(File.dirname(__FILE__), 'test_helper')
 require File.join(File.dirname(__FILE__), 'helpers/resource_disabled')
 require File.join(File.dirname(__FILE__), 'apipie_resource_mock')
 
+require 'hammer_cli_foreman/organization'
 
 describe HammerCLIForeman::Organization do
 

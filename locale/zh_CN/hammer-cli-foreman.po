@@ -1,0 +1,1973 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the hammer-cli-foreman package.
+# 
+# Translators:
+msgid ""
+msgstr ""
+"Project-Id-Version: hammer-cli-foreman 0.1.3\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2014-09-15 12:51+0100\n"
+"PO-Revision-Date: 2014-09-16 09:38+0000\n"
+"Last-Translator: Lukáš Zapletal\n"
+"Language-Team: Chinese (China) (http://www.transifex.com/projects/p/foreman/language/zh_CN/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: zh_CN\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: lib/hammer_cli_foreman/role.rb:11 lib/hammer_cli_foreman/puppet_class.rb:12
+#: lib/hammer_cli_foreman/organization.rb:13
+#: lib/hammer_cli_foreman/partition_table.rb:10
+#: lib/hammer_cli_foreman/usergroup.rb:9 lib/hammer_cli_foreman/user.rb:10
+#: lib/hammer_cli_foreman/hostgroup.rb:39 lib/hammer_cli_foreman/model.rb:10
+#: lib/hammer_cli_foreman/report.rb:10 lib/hammer_cli_foreman/report.rb:30
+#: lib/hammer_cli_foreman/smart_proxy.rb:11 lib/hammer_cli_foreman/filter.rb:9
+#: lib/hammer_cli_foreman/filter.rb:72 lib/hammer_cli_foreman/template.rb:25
+#: lib/hammer_cli_foreman/smart_class_parameter.rb:8
+#: lib/hammer_cli_foreman/smart_class_parameter.rb:66
+#: lib/hammer_cli_foreman/domain.rb:10 lib/hammer_cli_foreman/location.rb:13
+#: lib/hammer_cli_foreman/subnet.rb:10
+#: lib/hammer_cli_foreman/operating_system.rb:10
+#: lib/hammer_cli_foreman/media.rb:9 lib/hammer_cli_foreman/environment.rb:14
+#: lib/hammer_cli_foreman/architecture.rb:10
+#: lib/hammer_cli_foreman/image.rb:29 lib/hammer_cli_foreman/host.rb:124
+#: lib/hammer_cli_foreman/host.rb:195 lib/hammer_cli_foreman/host.rb:208
+#: lib/hammer_cli_foreman/compute_resource.rb:11
+msgid "Id"
+msgstr "Id"
+
+#: lib/hammer_cli_foreman/role.rb:12 lib/hammer_cli_foreman/puppet_class.rb:13
+#: lib/hammer_cli_foreman/organization.rb:14
+#: lib/hammer_cli_foreman/partition_table.rb:11
+#: lib/hammer_cli_foreman/usergroup.rb:10
+#: lib/hammer_cli_foreman/common_parameter.rb:12
+#: lib/hammer_cli_foreman/user.rb:12 lib/hammer_cli_foreman/hostgroup.rb:40
+#: lib/hammer_cli_foreman/model.rb:11 lib/hammer_cli_foreman/smart_proxy.rb:12
+#: lib/hammer_cli_foreman/filter.rb:73 lib/hammer_cli_foreman/filter.rb:90
+#: lib/hammer_cli_foreman/template.rb:26 lib/hammer_cli_foreman/template.rb:74
+#: lib/hammer_cli_foreman/domain.rb:11 lib/hammer_cli_foreman/location.rb:14
+#: lib/hammer_cli_foreman/subnet.rb:11
+#: lib/hammer_cli_foreman/operating_system.rb:22
+#: lib/hammer_cli_foreman/media.rb:10 lib/hammer_cli_foreman/environment.rb:15
+#: lib/hammer_cli_foreman/architecture.rb:11
+#: lib/hammer_cli_foreman/image.rb:30 lib/hammer_cli_foreman/image.rb:70
+#: lib/hammer_cli_foreman/host.rb:125 lib/hammer_cli_foreman/host.rb:196
+#: lib/hammer_cli_foreman/host.rb:209
+#: lib/hammer_cli_foreman/compute_resource.rb:12
+msgid "Name"
+msgstr "名称"
+
+#: lib/hammer_cli_foreman/role.rb:23
+msgid "User role id"
+msgstr "用户角色 id"
+
+#: lib/hammer_cli_foreman/role.rb:36 lib/hammer_cli_foreman/filter.rb:18
+#: lib/hammer_cli_foreman/filter.rb:34 lib/hammer_cli_foreman/filter.rb:78
+msgid "(Miscellaneous)"
+msgstr "（其他）"
+
+#: lib/hammer_cli_foreman/role.rb:37 lib/hammer_cli_foreman/filter.rb:19
+#: lib/hammer_cli_foreman/filter.rb:35
+msgid "none"
+msgstr "无"
+
+#: lib/hammer_cli_foreman/role.rb:50
+msgid "User role [%<name>s] created"
+msgstr "已生成用户角色 [%<name>s]"
+
+#: lib/hammer_cli_foreman/role.rb:51
+msgid "Could not create the user role"
+msgstr "无法生成用户角色"
+
+#: lib/hammer_cli_foreman/role.rb:58
+msgid "User role [%<name>s] updated"
+msgstr "已更新用户角色 [%<name>s]"
+
+#: lib/hammer_cli_foreman/role.rb:59
+msgid "Could not update the user role"
+msgstr "无法更新用户角色"
+
+#: lib/hammer_cli_foreman/role.rb:66
+msgid "User role [%<name>s] deleted"
+msgstr "已删除用户角色 [%<name>s]"
+
+#: lib/hammer_cli_foreman/role.rb:67
+msgid "Could not delete the user roles"
+msgstr "无法删除用户角色"
+
+#: lib/hammer_cli_foreman/puppet_class.rb:33
+msgid "Smart variables"
+msgstr "智能变量"
+
+#: lib/hammer_cli_foreman/puppet_class.rb:34
+#: lib/hammer_cli_foreman/smart_class_parameter.rb:10
+msgid "Parameter"
+msgstr "参数"
+
+#: lib/hammer_cli_foreman/puppet_class.rb:35
+msgid "Default value"
+msgstr "默认值"
+
+#: lib/hammer_cli_foreman/puppet_class.rb:37
+msgid "Smart class parameters"
+msgstr "智能等级参数"
+
+#: lib/hammer_cli_foreman/organization.rb:37
+#: lib/hammer_cli_foreman/references.rb:15
+msgid "Locations"
+msgstr "位置"
+
+#: lib/hammer_cli_foreman/organization.rb:53
+msgid "Organization created"
+msgstr "已生成机构"
+
+#: lib/hammer_cli_foreman/organization.rb:54
+msgid "Could not create the organization"
+msgstr "无法生成机构"
+
+#: lib/hammer_cli_foreman/organization.rb:65
+msgid "Organization updated"
+msgstr "已更新机构"
+
+#: lib/hammer_cli_foreman/organization.rb:66
+msgid "Could not update the organization"
+msgstr "无法更新机构"
+
+#: lib/hammer_cli_foreman/organization.rb:77
+msgid "Organization deleted"
+msgstr "已删除机构"
+
+#: lib/hammer_cli_foreman/organization.rb:78
+msgid "Could not delete the organization"
+msgstr "无法删除机构"
+
+#: lib/hammer_cli_foreman/partition_table.rb:12
+#: lib/hammer_cli_foreman/media.rb:20
+msgid "OS Family"
+msgstr "操作系统集"
+
+#: lib/hammer_cli_foreman/partition_table.rb:31
+msgid "View partition table content."
+msgstr "查看分区表内容。"
+
+#: lib/hammer_cli_foreman/partition_table.rb:43
+#: lib/hammer_cli_foreman/partition_table.rb:54
+msgid "Path to a file that contains the partition layout"
+msgstr "包含分区布局的文件路径"
+
+#: lib/hammer_cli_foreman/partition_table.rb:46
+msgid "Partition table created"
+msgstr "已生成分区表"
+
+#: lib/hammer_cli_foreman/partition_table.rb:47
+msgid "Could not create the partition table"
+msgstr "无法生成分区表"
+
+#: lib/hammer_cli_foreman/partition_table.rb:57
+msgid "Partition table updated"
+msgstr "已更新分区表"
+
+#: lib/hammer_cli_foreman/partition_table.rb:58
+msgid "Could not update the partition table"
+msgstr "无法更新分区表"
+
+#: lib/hammer_cli_foreman/partition_table.rb:65
+msgid "Partition table deleted"
+msgstr "已删除分区"
+
+#: lib/hammer_cli_foreman/partition_table.rb:66
+msgid "Could not delete the partition table"
+msgstr "无法删除分区表"
+
+#: lib/hammer_cli_foreman/usergroup.rb:28
+msgid "User group [%<name>s] created"
+msgstr "已生成用户组 [%<name>s]"
+
+#: lib/hammer_cli_foreman/usergroup.rb:29
+msgid "Could not create the user group"
+msgstr "无法生成用户组"
+
+#: lib/hammer_cli_foreman/usergroup.rb:35
+msgid "User group [%<name>s] updated"
+msgstr "已更新用户组 [%<name>s]"
+
+#: lib/hammer_cli_foreman/usergroup.rb:36
+msgid "Could not update the user group"
+msgstr "无法更新用户组"
+
+#: lib/hammer_cli_foreman/usergroup.rb:42
+msgid "User group [%<name>s] deleted"
+msgstr "已删除用户组 [%<name>s]"
+
+#: lib/hammer_cli_foreman/usergroup.rb:43
+msgid "Could not delete the user group"
+msgstr "无法删除用户组"
+
+#: lib/hammer_cli_foreman/common_parameter.rb:13
+#: lib/hammer_cli_foreman/fact.rb:14
+#: lib/hammer_cli_foreman/smart_class_parameter.rb:65
+#: lib/hammer_cli_foreman/smart_class_parameter.rb:68
+#: lib/hammer_cli_foreman/host.rb:282
+msgid "Value"
+msgstr "值"
+
+#: lib/hammer_cli_foreman/common_parameter.rb:22
+msgid "Set a global parameter."
+msgstr "设置全局值。"
+
+#: lib/hammer_cli_foreman/common_parameter.rb:24
+msgid "Created parameter [%{name}] with value [%{value}]."
+msgstr "使用值 [%{value}] 生成参数 [%{name}]。"
+
+#: lib/hammer_cli_foreman/common_parameter.rb:25
+msgid "Parameter [%{name}] updated to [%{value}]."
+msgstr "参数 [%{name}] 更新至 [%{value}]。"
+
+#: lib/hammer_cli_foreman/common_parameter.rb:27
+#: lib/hammer_cli_foreman/parameter.rb:49
+#: lib/hammer_cli_foreman/parameter.rb:96
+msgid "parameter name"
+msgstr "参数名称"
+
+#: lib/hammer_cli_foreman/common_parameter.rb:28
+#: lib/hammer_cli_foreman/parameter.rb:50
+msgid "parameter value"
+msgstr "参数值"
+
+#: lib/hammer_cli_foreman/common_parameter.rb:53
+msgid "Global parameter [%{name}] deleted."
+msgstr "已删除全局参数 [%{name}]。"
+
+#: lib/hammer_cli_foreman/common_parameter.rb:54
+msgid "Could not delete the global parameter [%{name}]"
+msgstr "无法删除全局参数 [%{name}]"
+
+#: lib/hammer_cli_foreman/common_parameter.rb:67
+msgid "Manipulate global parameters."
+msgstr "Manipulate 全局参数。"
+
+#: lib/hammer_cli_foreman/auth.rb:7
+msgid "Set credentials"
+msgstr "设置证书"
+
+#: lib/hammer_cli_foreman/auth.rb:20
+msgid "Wipe your credentials"
+msgstr "消除你的证书"
+
+#: lib/hammer_cli_foreman/auth.rb:26
+msgid "Credentials deleted."
+msgstr "已删除证书。"
+
+#: lib/hammer_cli_foreman/auth.rb:33
+msgid "Information about current connections"
+msgstr "有关当前连接的信息"
+
+#: lib/hammer_cli_foreman/auth.rb:37
+msgid "You are logged in as '%s'"
+msgstr "您作为 '%s' 登录"
+
+#: lib/hammer_cli_foreman/auth.rb:39
+msgid ""
+"You are currently not logged in to any service.\\nUse the service to set "
+"credentials."
+msgstr "您目前没有登录任何服务。\\n 请使用服务设置证书。"
+
+#: lib/hammer_cli_foreman/user.rb:11
+msgid "Login"
+msgstr "登录"
+
+#: lib/hammer_cli_foreman/user.rb:13
+msgid "Email"
+msgstr "电子邮件"
+
+#: lib/hammer_cli_foreman/user.rb:28
+msgid "Admin"
+msgstr "管理员"
+
+#: lib/hammer_cli_foreman/user.rb:29
+msgid "Authorized by"
+msgstr "授权"
+
+#: lib/hammer_cli_foreman/user.rb:30
+msgid "Last login"
+msgstr "上次登录"
+
+#: lib/hammer_cli_foreman/user.rb:47
+msgid "User created"
+msgstr "已生成用户"
+
+#: lib/hammer_cli_foreman/user.rb:48
+msgid "Could not create the user"
+msgstr "无法生成用户"
+
+#: lib/hammer_cli_foreman/user.rb:55
+msgid "User updated"
+msgstr "已更新用户"
+
+#: lib/hammer_cli_foreman/user.rb:56
+msgid "Could not update the user"
+msgstr "无法更新用户"
+
+#: lib/hammer_cli_foreman/user.rb:63
+msgid "User deleted"
+msgstr "已删除用户"
+
+#: lib/hammer_cli_foreman/user.rb:64
+msgid "Could not delete the user"
+msgstr "无法删除用户"
+
+#: lib/hammer_cli_foreman/hostgroup.rb:9
+msgid "List of puppetclass ids"
+msgstr ""
+
+#: lib/hammer_cli_foreman/hostgroup.rb:11
+msgid "Name of puppet CA proxy"
+msgstr ""
+
+#: lib/hammer_cli_foreman/hostgroup.rb:12
+msgid "Name of puppet proxy"
+msgstr ""
+
+#: lib/hammer_cli_foreman/hostgroup.rb:41
+msgid "Label"
+msgstr "标签"
+
+#: lib/hammer_cli_foreman/hostgroup.rb:42 lib/hammer_cli_foreman/image.rb:31
+#: lib/hammer_cli_foreman/host.rb:126
+msgid "Operating System"
+msgstr "操作系统"
+
+#: lib/hammer_cli_foreman/hostgroup.rb:43 lib/hammer_cli_foreman/host.rb:160
+msgid "Environment"
+msgstr "环境"
+
+#: lib/hammer_cli_foreman/hostgroup.rb:44 lib/hammer_cli_foreman/host.rb:181
+msgid "Model"
+msgstr "型号"
+
+#: lib/hammer_cli_foreman/hostgroup.rb:45
+msgid "Ancestry"
+msgstr "上一层"
+
+#: lib/hammer_cli_foreman/hostgroup.rb:55 lib/hammer_cli_foreman/host.rb:183
+msgid "Subnet"
+msgstr "子网"
+
+#: lib/hammer_cli_foreman/hostgroup.rb:57 lib/hammer_cli_foreman/host.rb:184
+msgid "Domain"
+msgstr "域"
+
+#: lib/hammer_cli_foreman/hostgroup.rb:58 lib/hammer_cli_foreman/image.rb:45
+#: lib/hammer_cli_foreman/host.rb:188
+msgid "Architecture"
+msgstr "架构"
+
+#: lib/hammer_cli_foreman/hostgroup.rb:59 lib/hammer_cli_foreman/host.rb:187
+msgid "Partition Table"
+msgstr "分区表"
+
+#: lib/hammer_cli_foreman/hostgroup.rb:60 lib/hammer_cli_foreman/host.rb:180
+msgid "Medium"
+msgstr "介质"
+
+#: lib/hammer_cli_foreman/hostgroup.rb:61 lib/hammer_cli_foreman/host.rb:179
+msgid "Puppet CA Proxy Id"
+msgstr "Puppet CA 代理服务器 Id"
+
+#: lib/hammer_cli_foreman/hostgroup.rb:62
+msgid "Puppet Master Proxy Id"
+msgstr "Puppet 主代理服务器 Id"
+
+#: lib/hammer_cli_foreman/hostgroup.rb:63
+msgid "ComputeProfile"
+msgstr "ComputeProfile"
+
+#: lib/hammer_cli_foreman/hostgroup.rb:76
+msgid "Hostgroup created"
+msgstr "已生成主机组"
+
+#: lib/hammer_cli_foreman/hostgroup.rb:77
+msgid "Could not create the hostgroup"
+msgstr "无法生成主机组"
+
+#: lib/hammer_cli_foreman/hostgroup.rb:86
+msgid "Hostgroup updated"
+msgstr "已更新主机组"
+
+#: lib/hammer_cli_foreman/hostgroup.rb:87
+msgid "Could not update the hostgroup"
+msgstr "无法更新主机组"
+
+#: lib/hammer_cli_foreman/hostgroup.rb:94
+msgid "Hostgroup deleted"
+msgstr "已删除主机组"
+
+#: lib/hammer_cli_foreman/hostgroup.rb:95
+msgid "Could not delete the hostgroup"
+msgstr "无法删除主机组"
+
+#: lib/hammer_cli_foreman/hostgroup.rb:122
+msgid "Create or update parameter for a hostgroup."
+msgstr "为主机组生成或者更新参数"
+
+#: lib/hammer_cli_foreman/hostgroup.rb:124
+msgid "Hostgroup parameter updated"
+msgstr "已更新主机组参数"
+
+#: lib/hammer_cli_foreman/hostgroup.rb:125
+msgid "New hostgroup parameter created"
+msgstr "已生成新主机组参数"
+
+#: lib/hammer_cli_foreman/hostgroup.rb:126
+msgid "Could not set hostgroup parameter"
+msgstr "无法设置主机组参数"
+
+#: lib/hammer_cli_foreman/hostgroup.rb:133
+msgid "Delete parameter for a hostgroup."
+msgstr "为主机组删除参数"
+
+#: lib/hammer_cli_foreman/hostgroup.rb:135
+msgid "Hostgroup parameter deleted"
+msgstr "已删除主机组参数"
+
+#: lib/hammer_cli_foreman/model.rb:12
+msgid "Vendor class"
+msgstr "供应商类别"
+
+#: lib/hammer_cli_foreman/model.rb:13
+msgid "HW model"
+msgstr "HW 型号"
+
+#: lib/hammer_cli_foreman/model.rb:22
+msgid "Info"
+msgstr "信息"
+
+#: lib/hammer_cli_foreman/model.rb:31
+msgid "Hardware model created"
+msgstr "已生成硬件型号"
+
+#: lib/hammer_cli_foreman/model.rb:32
+msgid "Could not create the hardware model"
+msgstr "无法生成硬件型号"
+
+#: lib/hammer_cli_foreman/model.rb:38
+msgid "Hardware model deleted"
+msgstr "已删除硬件型号"
+
+#: lib/hammer_cli_foreman/model.rb:39
+msgid "Could not delete the hardware model"
+msgstr "无法删除硬件型号"
+
+#: lib/hammer_cli_foreman/model.rb:46
+msgid "Hardware model updated"
+msgstr "已更新硬件型号"
+
+#: lib/hammer_cli_foreman/model.rb:47
+msgid "Could not update the hardware model"
+msgstr "无法更新硬件型号"
+
+#: lib/hammer_cli_foreman/report.rb:11 lib/hammer_cli_foreman/report.rb:31
+#: lib/hammer_cli_foreman/fact.rb:12
+msgid "Host"
+msgstr "主机"
+
+#: lib/hammer_cli_foreman/report.rb:12 lib/hammer_cli_foreman/host.rb:177
+msgid "Last report"
+msgstr "最后的报告"
+
+#: lib/hammer_cli_foreman/report.rb:14 lib/hammer_cli_foreman/report.rb:35
+msgid "Applied"
+msgstr "已批准"
+
+#: lib/hammer_cli_foreman/report.rb:15 lib/hammer_cli_foreman/report.rb:36
+msgid "Restarted"
+msgstr "已重启"
+
+#: lib/hammer_cli_foreman/report.rb:16 lib/hammer_cli_foreman/report.rb:37
+msgid "Failed"
+msgstr "失败"
+
+#: lib/hammer_cli_foreman/report.rb:17 lib/hammer_cli_foreman/report.rb:38
+msgid "Restart Failures"
+msgstr "重启失败"
+
+#: lib/hammer_cli_foreman/report.rb:18 lib/hammer_cli_foreman/report.rb:39
+msgid "Skipped"
+msgstr "忽略"
+
+#: lib/hammer_cli_foreman/report.rb:19 lib/hammer_cli_foreman/report.rb:40
+msgid "Pending"
+msgstr "挂起的"
+
+#: lib/hammer_cli_foreman/report.rb:32
+msgid "Reported at"
+msgstr "报告于"
+
+#: lib/hammer_cli_foreman/report.rb:33
+msgid "Report status"
+msgstr "报告状态"
+
+#: lib/hammer_cli_foreman/report.rb:43
+msgid "Report metrics"
+msgstr "报告指标"
+
+#: lib/hammer_cli_foreman/report.rb:46
+msgid "config_retrieval"
+msgstr "config_retrieval"
+
+#: lib/hammer_cli_foreman/report.rb:47
+msgid "exec"
+msgstr "exec"
+
+#: lib/hammer_cli_foreman/report.rb:48
+msgid "file"
+msgstr "文件"
+
+#: lib/hammer_cli_foreman/report.rb:49
+msgid "package"
+msgstr "软件包"
+
+#: lib/hammer_cli_foreman/report.rb:50
+msgid "service"
+msgstr "服务"
+
+#: lib/hammer_cli_foreman/report.rb:51
+msgid "user"
+msgstr "用户"
+
+#: lib/hammer_cli_foreman/report.rb:52
+msgid "yumrepo"
+msgstr "yumrepo"
+
+#: lib/hammer_cli_foreman/report.rb:53
+msgid "filebucket"
+msgstr "filebucket"
+
+#: lib/hammer_cli_foreman/report.rb:54
+msgid "cron"
+msgstr "cron"
+
+#: lib/hammer_cli_foreman/report.rb:55
+msgid "total"
+msgstr "总计"
+
+#: lib/hammer_cli_foreman/report.rb:59
+msgid "Logs"
+msgstr "日志"
+
+#: lib/hammer_cli_foreman/report.rb:62 lib/hammer_cli_foreman/filter.rb:74
+msgid "Resource"
+msgstr "资源"
+
+#: lib/hammer_cli_foreman/report.rb:65
+msgid "Message"
+msgstr "信息"
+
+#: lib/hammer_cli_foreman/report.rb:76
+msgid "Report has been deleted"
+msgstr "已删除报告"
+
+#: lib/hammer_cli_foreman/report.rb:77
+msgid "Could not delete the report"
+msgstr "无法删除报告"
+
+#: lib/hammer_cli_foreman/smart_proxy.rb:13
+msgid "URL"
+msgstr "链接"
+
+#: lib/hammer_cli_foreman/smart_proxy.rb:14
+#: lib/hammer_cli_foreman/smart_proxy.rb:29
+msgid "Features"
+msgstr "特性"
+
+#: lib/hammer_cli_foreman/smart_proxy.rb:41
+msgid "Smart proxy created"
+msgstr "已生成智能代理服务器"
+
+#: lib/hammer_cli_foreman/smart_proxy.rb:42
+msgid "Could not create the proxy"
+msgstr "无法生成智能代理服务器"
+
+#: lib/hammer_cli_foreman/smart_proxy.rb:49
+msgid "Smart proxy updated"
+msgstr "已更新智能代理服务器"
+
+#: lib/hammer_cli_foreman/smart_proxy.rb:50
+msgid "Could not update the proxy"
+msgstr "无法更新智能代理服务器"
+
+#: lib/hammer_cli_foreman/smart_proxy.rb:57
+msgid "Smart proxy deleted"
+msgstr "已删除智能代理服务器"
+
+#: lib/hammer_cli_foreman/smart_proxy.rb:58
+msgid "Could not delete the proxy"
+msgstr "无法删除智能代理服务器"
+
+#: lib/hammer_cli_foreman/smart_proxy.rb:69
+msgid "Puppet classes were imported"
+msgstr "已导入 Puppet 等级"
+
+#: lib/hammer_cli_foreman/smart_proxy.rb:70
+msgid "Import of puppet classes failed"
+msgstr "导入 puppet 等级失败"
+
+#: lib/hammer_cli_foreman/smart_proxy.rb:72
+msgid "Do not run the import"
+msgstr "无法运行导入"
+
+#: lib/hammer_cli_foreman/smart_proxy.rb:92
+msgid "Smart proxy features were refreshed"
+msgstr "已刷新智能代理服务器"
+
+#: lib/hammer_cli_foreman/smart_proxy.rb:93
+msgid "Refresh of smart proxy features failed"
+msgstr "刷新智能代理服务器失败"
+
+#: lib/hammer_cli_foreman/credentials.rb:10
+msgid "[Foreman] username: "
+msgstr "[Foreman] 用户名："
+
+#: lib/hammer_cli_foreman/credentials.rb:15
+msgid "[Foreman] password for %s: "
+msgstr "%s 的 [Foreman] 密码："
+
+#: lib/hammer_cli_foreman/fact.rb:13 lib/hammer_cli_foreman/host.rb:281
+msgid "Fact"
+msgstr "详情"
+
+#: lib/hammer_cli_foreman/filter.rb:10
+msgid "Resource type"
+msgstr "资源类型"
+
+#: lib/hammer_cli_foreman/filter.rb:11
+msgid "Search"
+msgstr "搜"
+
+#: lib/hammer_cli_foreman/filter.rb:12
+msgid "Unlimited?"
+msgstr "无限的？"
+
+#: lib/hammer_cli_foreman/filter.rb:13
+msgid "Role"
+msgstr "角色"
+
+#: lib/hammer_cli_foreman/filter.rb:14
+msgid "Permissions"
+msgstr "权限"
+
+#: lib/hammer_cli_foreman/filter.rb:44
+msgid "Permission filter for [%<resource_type>s] created"
+msgstr "已为 [%<resource_type>s] 生成权限过滤器 "
+
+#: lib/hammer_cli_foreman/filter.rb:45
+msgid "Could not create the permission filter"
+msgstr "无法生成权限过滤器"
+
+#: lib/hammer_cli_foreman/filter.rb:52
+msgid "Permission filter for [%<resource_type>s] updated"
+msgstr "已为 [%<resource_type>s] 更新权限过滤器 "
+
+#: lib/hammer_cli_foreman/filter.rb:53
+msgid "Could not update the permission filter"
+msgstr "无法更新权限过滤器"
+
+#: lib/hammer_cli_foreman/filter.rb:60
+msgid "Permission filter deleted"
+msgstr "已删除权限过滤器"
+
+#: lib/hammer_cli_foreman/filter.rb:61
+msgid "Could not delete the permission filter"
+msgstr "无法删除权限过滤器"
+
+#: lib/hammer_cli_foreman/template.rb:27
+#: lib/hammer_cli_foreman/smart_class_parameter.rb:54
+#: lib/hammer_cli_foreman/smart_class_parameter.rb:58
+msgid "Type"
+msgstr "类型"
+
+#: lib/hammer_cli_foreman/template.rb:71
+msgid "List available config template kinds."
+msgstr "列出可用配置模板类型。"
+
+#: lib/hammer_cli_foreman/template.rb:90
+msgid "View config template content."
+msgstr "查看配置模板内容。"
+
+#: lib/hammer_cli_foreman/template.rb:102
+#: lib/hammer_cli_foreman/template.rb:120
+msgid "Path to a file that contains the template"
+msgstr "包含模板文件的路径"
+
+#: lib/hammer_cli_foreman/template.rb:104
+#: lib/hammer_cli_foreman/template.rb:122
+msgid "Template type. Eg. snippet, script, provision"
+msgstr "模板类型。例如：snippet，script，provision"
+
+#: lib/hammer_cli_foreman/template.rb:106
+msgid "Config template created"
+msgstr "已生成配置模板"
+
+#: lib/hammer_cli_foreman/template.rb:107
+msgid "Could not create the config template"
+msgstr "无法生成配置模板"
+
+#: lib/hammer_cli_foreman/template.rb:124
+msgid "Config template updated"
+msgstr "已更新配置模板"
+
+#: lib/hammer_cli_foreman/template.rb:125
+msgid "Could not update the config template"
+msgstr "无法更新配置模板"
+
+#: lib/hammer_cli_foreman/template.rb:138
+msgid "Config template deleted"
+msgstr "已删除配置模板"
+
+#: lib/hammer_cli_foreman/template.rb:139
+msgid "Could not delete the config template"
+msgstr "无法删除配置模板"
+
+#: lib/hammer_cli_foreman/exception_handler.rb:41
+msgid "Forbidden - server refused to process the request"
+msgstr "禁止 - 服务器拒绝执行请求"
+
+#: lib/hammer_cli_foreman/exception_handler.rb:75
+msgid "Could not load the API description from the server"
+msgstr ""
+
+#: lib/hammer_cli_foreman/exception_handler.rb:76
+msgid "is the server down?"
+msgstr ""
+
+#: lib/hammer_cli_foreman/exception_handler.rb:77
+msgid ""
+"was '%s' run on the server when using apipie cache? (typical production "
+"settings)"
+msgstr ""
+
+#: lib/hammer_cli_foreman/smart_class_parameter.rb:11
+msgid "Default Value"
+msgstr "默认值"
+
+#: lib/hammer_cli_foreman/smart_class_parameter.rb:12
+msgid "Override"
+msgstr "覆盖"
+
+#: lib/hammer_cli_foreman/smart_class_parameter.rb:33
+msgid "Puppet class"
+msgstr "Puppet 类"
+
+#: lib/hammer_cli_foreman/smart_class_parameter.rb:34
+msgid "Class Id"
+msgstr "分类 Id"
+
+#: lib/hammer_cli_foreman/smart_class_parameter.rb:53
+#: lib/hammer_cli_foreman/domain.rb:21
+#: lib/hammer_cli_foreman/compute_resource.rb:44
+msgid "Description"
+msgstr "描述"
+
+#: lib/hammer_cli_foreman/smart_class_parameter.rb:55
+msgid "Required"
+msgstr "必需的"
+
+#: lib/hammer_cli_foreman/smart_class_parameter.rb:57
+msgid "Validator"
+msgstr "验证程序"
+
+#: lib/hammer_cli_foreman/smart_class_parameter.rb:59
+msgid "Rule"
+msgstr "规则"
+
+#: lib/hammer_cli_foreman/smart_class_parameter.rb:61
+msgid "Override values"
+msgstr "覆盖值"
+
+#: lib/hammer_cli_foreman/smart_class_parameter.rb:62
+msgid "Order"
+msgstr "订购"
+
+#: lib/hammer_cli_foreman/smart_class_parameter.rb:63
+msgid "Count"
+msgstr "计数"
+
+#: lib/hammer_cli_foreman/smart_class_parameter.rb:67
+msgid "Match"
+msgstr "匹配"
+
+#: lib/hammer_cli_foreman/smart_class_parameter.rb:86
+msgid "Parameter updated"
+msgstr "已更新参数"
+
+#: lib/hammer_cli_foreman/smart_class_parameter.rb:87
+msgid "Could not update the parameter"
+msgstr "无法更新参数"
+
+#: lib/hammer_cli_foreman/smart_class_parameter.rb:91
+msgid "Override this parameter."
+msgstr "覆盖整个参数。"
+
+#: lib/hammer_cli_foreman/smart_class_parameter.rb:93
+msgid "This parameter is required."
+msgstr "需要这个参数。"
+
+#: lib/hammer_cli_foreman/smart_class_parameter.rb:95
+msgid "Type of the parameter."
+msgstr "参数类型。"
+
+#: lib/hammer_cli_foreman/smart_class_parameter.rb:98
+msgid "Type of the validator."
+msgstr "验证程序类型。"
+
+#: lib/hammer_cli_foreman/associating_commands.rb:41
+msgid "Associate a hostgroup"
+msgstr "关联主机组"
+
+#: lib/hammer_cli_foreman/associating_commands.rb:46
+msgid "Disassociate a hostgroup"
+msgstr "取消与主机组的关联"
+
+#: lib/hammer_cli_foreman/associating_commands.rb:55
+msgid "Associate an environment"
+msgstr "关联环境"
+
+#: lib/hammer_cli_foreman/associating_commands.rb:60
+msgid "Disassociate an environment"
+msgstr "取消与环境及的关联"
+
+#: lib/hammer_cli_foreman/associating_commands.rb:69
+msgid "Associate a domain"
+msgstr "关联域"
+
+#: lib/hammer_cli_foreman/associating_commands.rb:74
+msgid "Disassociate a domain"
+msgstr "取消与域的关联"
+
+#: lib/hammer_cli_foreman/associating_commands.rb:83
+msgid "Associate a medium"
+msgstr "关联介质"
+
+#: lib/hammer_cli_foreman/associating_commands.rb:88
+msgid "Disassociate a medium"
+msgstr "取消与介质的关联"
+
+#: lib/hammer_cli_foreman/associating_commands.rb:97
+msgid "Associate a subnet"
+msgstr "关联自网"
+
+#: lib/hammer_cli_foreman/associating_commands.rb:102
+msgid "Disassociate a subnet"
+msgstr "取消与自网的关联"
+
+#: lib/hammer_cli_foreman/associating_commands.rb:111
+msgid "Associate a compute resource"
+msgstr "关联计算资源"
+
+#: lib/hammer_cli_foreman/associating_commands.rb:116
+msgid "Disassociate a compute resource"
+msgstr "取消与计算资源的关联"
+
+#: lib/hammer_cli_foreman/associating_commands.rb:125
+msgid "Associate a smart proxy"
+msgstr "关联智能代理服务器"
+
+#: lib/hammer_cli_foreman/associating_commands.rb:134
+msgid "Disassociate a smart proxy"
+msgstr "取消与智能代理服务器的关联"
+
+#: lib/hammer_cli_foreman/associating_commands.rb:147
+msgid "Associate an user"
+msgstr "关联用户"
+
+#: lib/hammer_cli_foreman/associating_commands.rb:155
+msgid "Disassociate an user"
+msgstr "取消与用户的关联"
+
+#: lib/hammer_cli_foreman/associating_commands.rb:167
+msgid "Associate an user group"
+msgstr "关联用户组"
+
+#: lib/hammer_cli_foreman/associating_commands.rb:177
+msgid "Disassociate an user group"
+msgstr "取消与用户组的关联"
+
+#: lib/hammer_cli_foreman/associating_commands.rb:191
+msgid "Associate a configuration template"
+msgstr "关联配置模板"
+
+#: lib/hammer_cli_foreman/associating_commands.rb:196
+msgid "Disassociate a configuration template"
+msgstr "取消与配置模板的关联"
+
+#: lib/hammer_cli_foreman/associating_commands.rb:205
+msgid "Associate an organization"
+msgstr "关联机构"
+
+#: lib/hammer_cli_foreman/associating_commands.rb:210
+msgid "Disassociate an organization"
+msgstr "取消与机构的关联"
+
+#: lib/hammer_cli_foreman/associating_commands.rb:219
+msgid "Associate an operating system"
+msgstr "关联操作系统"
+
+#: lib/hammer_cli_foreman/associating_commands.rb:221
+msgid "Operating system has been associated"
+msgstr "已关联操作系统"
+
+#: lib/hammer_cli_foreman/associating_commands.rb:222
+msgid "Could not associate the operating system"
+msgstr "无法关联该操作系统"
+
+#: lib/hammer_cli_foreman/associating_commands.rb:228
+msgid "Disassociate an operating system"
+msgstr "取消与操作系统的关联"
+
+#: lib/hammer_cli_foreman/associating_commands.rb:230
+msgid "Operating system has been disassociated"
+msgstr "已取消与操作系统的关联"
+
+#: lib/hammer_cli_foreman/associating_commands.rb:231
+msgid "Could not disassociate the operating system"
+msgstr "无法取消与该操作系统的关联"
+
+#: lib/hammer_cli_foreman/associating_commands.rb:240
+msgid "Associate an architecture"
+msgstr "关联架构"
+
+#: lib/hammer_cli_foreman/associating_commands.rb:242
+msgid "Architecture has been associated"
+msgstr "已关联架构"
+
+#: lib/hammer_cli_foreman/associating_commands.rb:243
+msgid "Could not associate the architecture"
+msgstr "无法关联架构"
+
+#: lib/hammer_cli_foreman/associating_commands.rb:249
+msgid "Disassociate an architecture"
+msgstr "取消与架构的关联"
+
+#: lib/hammer_cli_foreman/associating_commands.rb:251
+msgid "Architecture has been disassociated"
+msgstr "已取消与架构的关联"
+
+#: lib/hammer_cli_foreman/associating_commands.rb:252
+msgid "Could not disassociate the architecture"
+msgstr "无法取消与架构的关联"
+
+#: lib/hammer_cli_foreman/associating_commands.rb:261
+msgid "Associate a partition table"
+msgstr "关联分区表"
+
+#: lib/hammer_cli_foreman/associating_commands.rb:263
+msgid "Partition table has been associated"
+msgstr "已关联分区表"
+
+#: lib/hammer_cli_foreman/associating_commands.rb:264
+msgid "Could not associate the partition table"
+msgstr "无法关联分区表"
+
+#: lib/hammer_cli_foreman/associating_commands.rb:270
+msgid "Disassociate a partition table"
+msgstr "取消与分区表的关联"
+
+#: lib/hammer_cli_foreman/associating_commands.rb:272
+msgid "Partition table has been disassociated"
+msgstr "已取消与分区表的关联"
+
+#: lib/hammer_cli_foreman/associating_commands.rb:273
+msgid "Could not disassociate the partition table"
+msgstr "无法取消与分区表的关联"
+
+#: lib/hammer_cli_foreman/associating_commands.rb:282
+msgid "Assign a user role"
+msgstr "分配用户角色"
+
+#: lib/hammer_cli_foreman/associating_commands.rb:284
+msgid "User role has been assigned"
+msgstr "已分配用户角色"
+
+#: lib/hammer_cli_foreman/associating_commands.rb:285
+msgid "Could not assign the user role"
+msgstr "无法分配用户角色"
+
+#: lib/hammer_cli_foreman/associating_commands.rb:291
+msgid "Remove a user role"
+msgstr "删除用户角色"
+
+#: lib/hammer_cli_foreman/associating_commands.rb:293
+msgid "User role has been removed"
+msgstr "已删除用户角色"
+
+#: lib/hammer_cli_foreman/associating_commands.rb:294
+msgid "Could not remove the user role"
+msgstr "无法删除用户角色"
+
+#: lib/hammer_cli_foreman/domain.rb:22
+msgid "DNS Id"
+msgstr "DNS Id"
+
+#: lib/hammer_cli_foreman/domain.rb:35
+msgid "Domain [%{name}] created"
+msgstr "已生成域 [%{name}]"
+
+#: lib/hammer_cli_foreman/domain.rb:36
+msgid "Could not create the domain"
+msgstr "无法生成域"
+
+#: lib/hammer_cli_foreman/domain.rb:38 lib/hammer_cli_foreman/domain.rb:48
+msgid "Full name describing the domain"
+msgstr "描述该域的全名"
+
+#: lib/hammer_cli_foreman/domain.rb:45
+msgid "Domain [%{name}] updated"
+msgstr "已更新域 [%{name}]"
+
+#: lib/hammer_cli_foreman/domain.rb:46
+msgid "Could not update the domain"
+msgstr "无法更新该域"
+
+#: lib/hammer_cli_foreman/domain.rb:55
+msgid "Domain [%{name}] deleted"
+msgstr "已删除域 [%{name}]"
+
+#: lib/hammer_cli_foreman/domain.rb:56
+msgid "Could not delete the domain"
+msgstr "无法删除该域"
+
+#: lib/hammer_cli_foreman/domain.rb:63
+msgid "Create or update parameter for a domain."
+msgstr "为域生成或者更新参数"
+
+#: lib/hammer_cli_foreman/domain.rb:65
+msgid "Domain parameter updated"
+msgstr "已更新域参数"
+
+#: lib/hammer_cli_foreman/domain.rb:66
+msgid "New domain parameter created"
+msgstr "已生成新域参数"
+
+#: lib/hammer_cli_foreman/domain.rb:67
+msgid "Could not set domain parameter"
+msgstr "无法设置域参数"
+
+#: lib/hammer_cli_foreman/domain.rb:79
+msgid "Delete parameter for a domain."
+msgstr "为域删除参数"
+
+#: lib/hammer_cli_foreman/domain.rb:81
+msgid "Domain parameter deleted"
+msgstr "已删除域参数"
+
+#: lib/hammer_cli_foreman/location.rb:24 lib/hammer_cli_foreman/location.rb:62
+#: lib/hammer_cli_foreman/location.rb:74
+msgid "Location numeric id to search by"
+msgstr "根据其进行搜索的位置数字 id"
+
+#: lib/hammer_cli_foreman/location.rb:37
+#: lib/hammer_cli_foreman/references.rb:18
+msgid "Organizations"
+msgstr "组织"
+
+#: lib/hammer_cli_foreman/location.rb:52
+msgid "Location created"
+msgstr "已生成位置"
+
+#: lib/hammer_cli_foreman/location.rb:53
+msgid "Could not create the location"
+msgstr "无法生成位置"
+
+#: lib/hammer_cli_foreman/location.rb:64
+msgid "Location updated"
+msgstr "已更新位置"
+
+#: lib/hammer_cli_foreman/location.rb:65
+msgid "Could not update the location"
+msgstr "无法更新位置"
+
+#: lib/hammer_cli_foreman/location.rb:76
+msgid "Location deleted"
+msgstr "已删除位置"
+
+#: lib/hammer_cli_foreman/location.rb:77
+msgid "Could not delete the location"
+msgstr "无法删除位置"
+
+#: lib/hammer_cli_foreman/subnet.rb:12
+msgid "Network"
+msgstr "网络"
+
+#: lib/hammer_cli_foreman/subnet.rb:13
+msgid "Mask"
+msgstr "子网"
+
+#: lib/hammer_cli_foreman/subnet.rb:23
+msgid "Priority"
+msgstr "优先权"
+
+#: lib/hammer_cli_foreman/subnet.rb:24
+msgid "DNS"
+msgstr "域名"
+
+#: lib/hammer_cli_foreman/subnet.rb:25
+msgid "Primary DNS"
+msgstr "主 DNS"
+
+#: lib/hammer_cli_foreman/subnet.rb:26
+msgid "Secondary DNS"
+msgstr "辅 DNS"
+
+#: lib/hammer_cli_foreman/subnet.rb:27
+msgid "TFTP"
+msgstr "TFTP"
+
+#: lib/hammer_cli_foreman/subnet.rb:28
+msgid "DHCP"
+msgstr "DHCP"
+
+#: lib/hammer_cli_foreman/subnet.rb:30
+msgid "VLAN ID"
+msgstr "VLAN ID"
+
+#: lib/hammer_cli_foreman/subnet.rb:31
+msgid "Gateway"
+msgstr "网关"
+
+#: lib/hammer_cli_foreman/subnet.rb:32
+msgid "From"
+msgstr "自"
+
+#: lib/hammer_cli_foreman/subnet.rb:33
+msgid "To"
+msgstr "至"
+
+#: lib/hammer_cli_foreman/subnet.rb:44
+msgid "Subnet created"
+msgstr "已生成子网"
+
+#: lib/hammer_cli_foreman/subnet.rb:45
+msgid "Could not create the subnet"
+msgstr "无法生成子网"
+
+#: lib/hammer_cli_foreman/subnet.rb:53
+msgid "Subnet updated"
+msgstr "已更新子网"
+
+#: lib/hammer_cli_foreman/subnet.rb:54
+msgid "Could not update the subnet"
+msgstr "无法更新子网"
+
+#: lib/hammer_cli_foreman/subnet.rb:62
+msgid "Subnet deleted"
+msgstr "已删除子网"
+
+#: lib/hammer_cli_foreman/subnet.rb:63
+msgid "Could not delete the subnet"
+msgstr "无法删除子网"
+
+#: lib/hammer_cli_foreman/operating_system.rb:11
+msgid "Full name"
+msgstr "全名"
+
+#: lib/hammer_cli_foreman/operating_system.rb:12
+msgid "Release name"
+msgstr "发行本名称"
+
+#: lib/hammer_cli_foreman/operating_system.rb:13
+msgid "Family"
+msgstr "产品线"
+
+#: lib/hammer_cli_foreman/operating_system.rb:23
+msgid "Major version"
+msgstr "主要版本"
+
+#: lib/hammer_cli_foreman/operating_system.rb:24
+msgid "Minor version"
+msgstr "次要版本"
+
+#: lib/hammer_cli_foreman/operating_system.rb:25
+msgid "Partition tables"
+msgstr "分区表"
+
+#: lib/hammer_cli_foreman/operating_system.rb:28
+msgid "Default templates"
+msgstr "默认模板"
+
+#: lib/hammer_cli_foreman/operating_system.rb:31
+msgid "Architectures"
+msgstr "架构"
+
+#: lib/hammer_cli_foreman/operating_system.rb:46
+#: lib/hammer_cli_foreman/operating_system.rb:73
+msgid "set associated architectures"
+msgstr "设置关联的架构"
+
+#: lib/hammer_cli_foreman/operating_system.rb:48
+#: lib/hammer_cli_foreman/operating_system.rb:75
+msgid "set associated templates"
+msgstr "设置关联的模板"
+
+#: lib/hammer_cli_foreman/operating_system.rb:50
+#: lib/hammer_cli_foreman/operating_system.rb:77
+msgid "set associated installation media"
+msgstr "设置关联的安装介质"
+
+#: lib/hammer_cli_foreman/operating_system.rb:52
+#: lib/hammer_cli_foreman/operating_system.rb:79
+msgid "set associated partition tables"
+msgstr "设置关联的分区表"
+
+#: lib/hammer_cli_foreman/operating_system.rb:55
+msgid "Operating system created"
+msgstr "已生成操作系统"
+
+#: lib/hammer_cli_foreman/operating_system.rb:56
+msgid "Could not create the operating system"
+msgstr "无法生成操作系统"
+
+#: lib/hammer_cli_foreman/operating_system.rb:82
+msgid "Operating system updated"
+msgstr "已更新操作系统"
+
+#: lib/hammer_cli_foreman/operating_system.rb:83
+msgid "Could not update the operating system"
+msgstr "无法更新操作系统"
+
+#: lib/hammer_cli_foreman/operating_system.rb:99
+msgid "Operating system deleted"
+msgstr "已删除操作系统"
+
+#: lib/hammer_cli_foreman/operating_system.rb:100
+msgid "Could not delete the operating system"
+msgstr "无法删除操作系统"
+
+#: lib/hammer_cli_foreman/operating_system.rb:107
+msgid "Create or update parameter for an operating system."
+msgstr "生成或者更新操作系统参数"
+
+#: lib/hammer_cli_foreman/operating_system.rb:109
+msgid "Operating system parameter updated"
+msgstr "已更新操作系统参数"
+
+#: lib/hammer_cli_foreman/operating_system.rb:110
+msgid "New operating system parameter created"
+msgstr "已生成新操作系统参数"
+
+#: lib/hammer_cli_foreman/operating_system.rb:111
+msgid "Could not set operating system parameter"
+msgstr "无法设置操作系统参数"
+
+#: lib/hammer_cli_foreman/operating_system.rb:123
+msgid "Delete parameter for an operating system."
+msgstr "删除操作系统参数"
+
+#: lib/hammer_cli_foreman/operating_system.rb:125
+msgid "operating system parameter deleted"
+msgstr "已删除操作系统参数"
+
+#: lib/hammer_cli_foreman/operating_system.rb:140
+#: lib/hammer_cli_foreman/operating_system.rb:206
+msgid "operatingsystem id"
+msgstr "operatingsystem id"
+
+#: lib/hammer_cli_foreman/operating_system.rb:141
+msgid "config template id to be set"
+msgstr "要设置的配置模板 id"
+
+#: lib/hammer_cli_foreman/operating_system.rb:144
+msgid ""
+"[%{config_template_name}] was set as default %{template_kind_name} template"
+msgstr "将 [%{config_template_name}] 设置为默认 %{template_kind_name} 模板"
+
+#: lib/hammer_cli_foreman/operating_system.rb:145
+msgid "Could not set the os default template"
+msgstr "无法设置 os 默认模板"
+
+#: lib/hammer_cli_foreman/operating_system.rb:207
+msgid "Type of the config template"
+msgstr "配置模板类型"
+
+#: lib/hammer_cli_foreman/operating_system.rb:209
+msgid "Default template deleted"
+msgstr "已删除默认模板"
+
+#: lib/hammer_cli_foreman/operating_system.rb:210
+msgid "Could not delete the default template"
+msgstr "无法删除默认模板"
+
+#: lib/hammer_cli_foreman/operating_system.rb:217
+msgid "Default template of type %s not found"
+msgstr ""
+
+#: lib/hammer_cli_foreman/resource_supported_test.rb:11
+msgid "The server does not support such operation."
+msgstr "该服务器不支持此操作。"
+
+#: lib/hammer_cli_foreman/commands.rb:77
+msgid "Received data of unknown format"
+msgstr "收到未知格式数据"
+
+#: lib/hammer_cli_foreman/commands.rb:244
+msgid "List next page? (%s): "
+msgstr "列出下一页？（%s）："
+
+#: lib/hammer_cli_foreman/commands.rb:448
+msgid "Associate a resource"
+msgstr "关联资源"
+
+#: lib/hammer_cli_foreman/commands.rb:470
+msgid "Disassociate a resource"
+msgstr "取消资源关联"
+
+#: lib/hammer_cli_foreman/media.rb:11
+msgid "Path"
+msgstr "路径"
+
+#: lib/hammer_cli_foreman/media.rb:32
+msgid "Installation medium created"
+msgstr "已生成安装介质"
+
+#: lib/hammer_cli_foreman/media.rb:33
+msgid "Could not create the installation medium"
+msgstr "无法生成安装介质"
+
+#: lib/hammer_cli_foreman/media.rb:41
+msgid "Installation medium updated"
+msgstr "已更新安装介质"
+
+#: lib/hammer_cli_foreman/media.rb:42
+msgid "Could not update the installation media"
+msgstr "已删除安装介质"
+
+#: lib/hammer_cli_foreman/media.rb:50
+msgid "Installation medium deleted"
+msgstr "已删除安装介质"
+
+#: lib/hammer_cli_foreman/media.rb:51
+msgid "Could not delete the installation media"
+msgstr "无法删除安装介质"
+
+#: lib/hammer_cli_foreman/id_resolver.rb:32
+msgid "Architecture name"
+msgstr "架构名"
+
+#: lib/hammer_cli_foreman/id_resolver.rb:33
+msgid "Compute resource name"
+msgstr "计算资源名"
+
+#: lib/hammer_cli_foreman/id_resolver.rb:34
+msgid "Domain name"
+msgstr "域名"
+
+#: lib/hammer_cli_foreman/id_resolver.rb:35
+msgid "Environment name"
+msgstr "环境名"
+
+#: lib/hammer_cli_foreman/id_resolver.rb:38
+msgid "Host name"
+msgstr "主机名"
+
+#: lib/hammer_cli_foreman/id_resolver.rb:39
+msgid "Hostgroup name"
+msgstr "主机组名"
+
+#: lib/hammer_cli_foreman/id_resolver.rb:41
+msgid "Location name"
+msgstr "位置名称"
+
+#: lib/hammer_cli_foreman/id_resolver.rb:42
+msgid "Medium name"
+msgstr "介质名"
+
+#: lib/hammer_cli_foreman/id_resolver.rb:43
+msgid "Model name"
+msgstr "型号名"
+
+#: lib/hammer_cli_foreman/id_resolver.rb:44
+msgid "Organization name"
+msgstr "机构名"
+
+#: lib/hammer_cli_foreman/id_resolver.rb:46
+msgid "Partition table name"
+msgstr "分区表名"
+
+#: lib/hammer_cli_foreman/id_resolver.rb:47
+msgid "Proxy name"
+msgstr "代理服务器名"
+
+#: lib/hammer_cli_foreman/id_resolver.rb:48
+msgid "Puppet class name"
+msgstr "Puppet 等级名"
+
+#: lib/hammer_cli_foreman/id_resolver.rb:49
+msgid "Report name"
+msgstr "报告名"
+
+#: lib/hammer_cli_foreman/id_resolver.rb:50
+msgid "User role name"
+msgstr "用户角色名"
+
+#: lib/hammer_cli_foreman/id_resolver.rb:51
+msgid "Subnet name"
+msgstr "子网名"
+
+#: lib/hammer_cli_foreman/id_resolver.rb:53
+msgid "User's login to search by"
+msgstr "根据其进行搜索的用户登录"
+
+#: lib/hammer_cli_foreman/id_resolver.rb:54
+msgid "Common parameter name"
+msgstr "通用参数名"
+
+#: lib/hammer_cli_foreman/id_resolver.rb:55
+msgid "Smart class parameter name"
+msgstr "智能等级参数名"
+
+#: lib/hammer_cli_foreman/id_resolver.rb:57
+msgid "Name to search by"
+msgstr "根据其进行搜索的名称"
+
+#: lib/hammer_cli_foreman/id_resolver.rb:140
+msgid "%s not found"
+msgstr "未找到 %s"
+
+#: lib/hammer_cli_foreman/id_resolver.rb:141
+msgid "%s found more than once"
+msgstr "找到一次以上 %s"
+
+#: lib/hammer_cli_foreman/id_resolver.rb:152
+msgid "Missing options to search %s"
+msgstr "缺少搜索 %s 的选项"
+
+#: lib/hammer_cli_foreman/environment.rb:34
+msgid "Environment created"
+msgstr "已生成环境"
+
+#: lib/hammer_cli_foreman/environment.rb:35
+msgid "Could not create the environment"
+msgstr "无法生成环境"
+
+#: lib/hammer_cli_foreman/environment.rb:42
+msgid "Environment updated"
+msgstr "已更新环境"
+
+#: lib/hammer_cli_foreman/environment.rb:43
+msgid "Could not update the environment"
+msgstr "无法更新环境"
+
+#: lib/hammer_cli_foreman/environment.rb:50
+msgid "Environment deleted"
+msgstr "已删除环境"
+
+#: lib/hammer_cli_foreman/environment.rb:51
+msgid "Could not delete the environment"
+msgstr "无法删除环境"
+
+#: lib/hammer_cli_foreman/architecture.rb:31
+msgid "Architecture created"
+msgstr "已生成架构"
+
+#: lib/hammer_cli_foreman/architecture.rb:32
+msgid "Could not create the architecture"
+msgstr "无法生成架构"
+
+#: lib/hammer_cli_foreman/architecture.rb:39
+msgid "Architecture deleted"
+msgstr "已删除架构"
+
+#: lib/hammer_cli_foreman/architecture.rb:40
+msgid "Could not delete the architecture"
+msgstr "无法删除架构"
+
+#: lib/hammer_cli_foreman/architecture.rb:47
+msgid "Architecture updated"
+msgstr "已更新架构"
+
+#: lib/hammer_cli_foreman/architecture.rb:48
+msgid "Could not update the architecture"
+msgstr "无法更新架构"
+
+#: lib/hammer_cli_foreman/image.rb:8
+msgid "View and manage compute resource's images"
+msgstr "查看并管理计算资源映像"
+
+#: lib/hammer_cli_foreman/image.rb:32
+msgid "Username"
+msgstr "用户名"
+
+#: lib/hammer_cli_foreman/image.rb:33 lib/hammer_cli_foreman/image.rb:71
+#: lib/hammer_cli_foreman/host.rb:157
+#: lib/hammer_cli_foreman/compute_resource.rb:23
+#: lib/hammer_cli_foreman/compute_resource.rb:29
+msgid "UUID"
+msgstr "UUID"
+
+#: lib/hammer_cli_foreman/image.rb:46
+msgid "IAM role"
+msgstr "IAM 角色"
+
+#: lib/hammer_cli_foreman/image.rb:56
+msgid "Show images available for addition"
+msgstr "显示可添加的映像"
+
+#: lib/hammer_cli_foreman/image.rb:81
+msgid "Image created"
+msgstr "已生成映像"
+
+#: lib/hammer_cli_foreman/image.rb:82
+msgid "Could not create the image"
+msgstr "无法生成映像"
+
+#: lib/hammer_cli_foreman/image.rb:90
+msgid "Image updated"
+msgstr "已更新映像"
+
+#: lib/hammer_cli_foreman/image.rb:91
+msgid "Could not update the image"
+msgstr "无法更新映像"
+
+#: lib/hammer_cli_foreman/image.rb:99
+msgid "Image deleted"
+msgstr "已删除映像"
+
+#: lib/hammer_cli_foreman/image.rb:100
+msgid "Could not delete the image"
+msgstr "无法删除映像"
+
+#: lib/hammer_cli_foreman/host.rb:36
+msgid "Host parameters."
+msgstr "主机参数。"
+
+#: lib/hammer_cli_foreman/host.rb:38
+msgid "Compute resource attributes."
+msgstr "计算资源属性。"
+
+#: lib/hammer_cli_foreman/host.rb:40
+msgid "Volume parameters"
+msgstr "卷参数"
+
+#: lib/hammer_cli_foreman/host.rb:42
+msgid "Interface parameters."
+msgstr "界面参数"
+
+#: lib/hammer_cli_foreman/host.rb:127
+msgid "Host Group"
+msgstr "主机组"
+
+#: lib/hammer_cli_foreman/host.rb:128 lib/hammer_cli_foreman/host.rb:197
+#: lib/hammer_cli_foreman/host.rb:210
+msgid "IP"
+msgstr "IP"
+
+#: lib/hammer_cli_foreman/host.rb:129 lib/hammer_cli_foreman/host.rb:198
+#: lib/hammer_cli_foreman/host.rb:211
+msgid "MAC"
+msgstr "MAC"
+
+#: lib/hammer_cli_foreman/host.rb:158
+msgid "Cert name"
+msgstr "证书名"
+
+#: lib/hammer_cli_foreman/host.rb:162
+msgid "Managed"
+msgstr "已管理"
+
+#: lib/hammer_cli_foreman/host.rb:163
+msgid "Enabled"
+msgstr "已启用"
+
+#: lib/hammer_cli_foreman/host.rb:164
+msgid "Build"
+msgstr "创建"
+
+#: lib/hammer_cli_foreman/host.rb:166
+msgid "Use image"
+msgstr "使用映像"
+
+#: lib/hammer_cli_foreman/host.rb:167
+msgid "Disk"
+msgstr "磁盘"
+
+#: lib/hammer_cli_foreman/host.rb:168
+msgid "Image file"
+msgstr "映像文件"
+
+#: lib/hammer_cli_foreman/host.rb:170
+msgid "SP Name"
+msgstr "SP 名"
+
+#: lib/hammer_cli_foreman/host.rb:171
+msgid "SP IP"
+msgstr "SP IP"
+
+#: lib/hammer_cli_foreman/host.rb:172
+msgid "SP MAC"
+msgstr "SP MAC"
+
+#: lib/hammer_cli_foreman/host.rb:174
+msgid "SP Subnet"
+msgstr "SP 子网"
+
+#: lib/hammer_cli_foreman/host.rb:176
+msgid "Installed at"
+msgstr "已安装于"
+
+#: lib/hammer_cli_foreman/host.rb:182
+msgid "Owner Id"
+msgstr "拥有者 Id"
+
+#: lib/hammer_cli_foreman/host.rb:185
+msgid "Puppet Proxy Id"
+msgstr "Puppet 代理服务器 Id"
+
+#: lib/hammer_cli_foreman/host.rb:186
+msgid "Owner Type"
+msgstr "拥有者类型"
+
+#: lib/hammer_cli_foreman/host.rb:189
+msgid "Image"
+msgstr "介质"
+
+#: lib/hammer_cli_foreman/host.rb:190
+msgid "Compute Resource"
+msgstr "计算机资源"
+
+#: lib/hammer_cli_foreman/host.rb:192
+msgid "Comment"
+msgstr "注释"
+
+#: lib/hammer_cli_foreman/host.rb:194
+msgid "BMC Network Interfaces"
+msgstr "BMC 网络接口"
+
+#: lib/hammer_cli_foreman/host.rb:199 lib/hammer_cli_foreman/host.rb:212
+msgid "Domain Id"
+msgstr "域 Id"
+
+#: lib/hammer_cli_foreman/host.rb:200 lib/hammer_cli_foreman/host.rb:213
+msgid "Domain Name"
+msgstr "域名"
+
+#: lib/hammer_cli_foreman/host.rb:201 lib/hammer_cli_foreman/host.rb:214
+msgid "Subnet Id"
+msgstr "子网 Id"
+
+#: lib/hammer_cli_foreman/host.rb:202 lib/hammer_cli_foreman/host.rb:215
+msgid "Subnet Name"
+msgstr "子网名"
+
+#: lib/hammer_cli_foreman/host.rb:203
+msgid "BMC Username"
+msgstr "BMC 用户名"
+
+#: lib/hammer_cli_foreman/host.rb:204
+msgid "BMC Password"
+msgstr "BMC 密码"
+
+#: lib/hammer_cli_foreman/host.rb:207
+msgid "Managed Network Interfaces"
+msgstr "已管理网络接口"
+
+#: lib/hammer_cli_foreman/host.rb:231
+msgid "Status"
+msgstr "状态"
+
+#: lib/hammer_cli_foreman/host.rb:232
+msgid "Power"
+msgstr "开启"
+
+#: lib/hammer_cli_foreman/host.rb:268
+msgid "Puppet run triggered"
+msgstr "启动 Puppet 运行"
+
+#: lib/hammer_cli_foreman/host.rb:319
+msgid "Host created"
+msgstr "已生成主机"
+
+#: lib/hammer_cli_foreman/host.rb:320
+msgid "Could not create the host"
+msgstr "无法生成主机"
+
+#: lib/hammer_cli_foreman/host.rb:341
+msgid "Host updated"
+msgstr "已更新主机"
+
+#: lib/hammer_cli_foreman/host.rb:342
+msgid "Could not update the host"
+msgstr "无法更新主机"
+
+#: lib/hammer_cli_foreman/host.rb:349
+msgid "Host deleted"
+msgstr "已删除主机"
+
+#: lib/hammer_cli_foreman/host.rb:350
+msgid "Could not delete the host"
+msgstr "无法删除主机"
+
+#: lib/hammer_cli_foreman/host.rb:357
+msgid "Create or update parameter for a host."
+msgstr "为主机生成或者更新参数"
+
+#: lib/hammer_cli_foreman/host.rb:359
+msgid "Host parameter updated"
+msgstr "已更新主机参数"
+
+#: lib/hammer_cli_foreman/host.rb:360
+msgid "New host parameter created"
+msgstr "已生成新主机参数"
+
+#: lib/hammer_cli_foreman/host.rb:361
+msgid "Could not set host parameter"
+msgstr "无法设置主机参数"
+
+#: lib/hammer_cli_foreman/host.rb:373
+msgid "Delete parameter for a host."
+msgstr "为主机删除参数"
+
+#: lib/hammer_cli_foreman/host.rb:375
+msgid "Host parameter deleted"
+msgstr "已删除主机参数"
+
+#: lib/hammer_cli_foreman/host.rb:390
+msgid "Power a host on"
+msgstr "打开主机"
+
+#: lib/hammer_cli_foreman/host.rb:391
+msgid "The host is starting."
+msgstr "主机正在启动。"
+
+#: lib/hammer_cli_foreman/host.rb:408
+msgid "Force turning off a host"
+msgstr "强制关闭主机"
+
+#: lib/hammer_cli_foreman/host.rb:413
+msgid "Power a host off"
+msgstr "关闭主机"
+
+#: lib/hammer_cli_foreman/host.rb:425
+msgid "Power off forced."
+msgstr "强制关机。"
+
+#: lib/hammer_cli_foreman/host.rb:427
+msgid "Powering the host off."
+msgstr "主机正在关机。"
+
+#: lib/hammer_cli_foreman/host.rb:444
+msgid "Reboot a host"
+msgstr "重启主机"
+
+#: lib/hammer_cli_foreman/host.rb:445
+msgid "Host reboot started."
+msgstr "已重启主机。"
+
+#: lib/hammer_cli_foreman/references.rb:8
+msgid "Created at"
+msgstr "创建于"
+
+#: lib/hammer_cli_foreman/references.rb:9
+msgid "Updated at"
+msgstr "更新于"
+
+#: lib/hammer_cli_foreman/references.rb:26
+msgid "Users"
+msgstr "用户"
+
+#: lib/hammer_cli_foreman/references.rb:34
+msgid "User groups"
+msgstr "用户组"
+
+#: lib/hammer_cli_foreman/references.rb:42
+msgid "Smart proxies"
+msgstr "智能代理服务器"
+
+#: lib/hammer_cli_foreman/references.rb:50
+msgid "Compute resources"
+msgstr "计算机资源"
+
+#: lib/hammer_cli_foreman/references.rb:58
+msgid "Installation media"
+msgstr "安装介质"
+
+#: lib/hammer_cli_foreman/references.rb:66
+msgid "Templates"
+msgstr "模板"
+
+#: lib/hammer_cli_foreman/references.rb:74
+msgid "Domains"
+msgstr "域名"
+
+#: lib/hammer_cli_foreman/references.rb:82
+msgid "Environments"
+msgstr "环境"
+
+#: lib/hammer_cli_foreman/references.rb:90
+msgid "Hostgroups"
+msgstr "主机组"
+
+#: lib/hammer_cli_foreman/references.rb:98
+msgid "Subnets"
+msgstr "子网"
+
+#: lib/hammer_cli_foreman/references.rb:107
+msgid "Parameters"
+msgstr "参数"
+
+#: lib/hammer_cli_foreman/references.rb:115
+msgid "Puppetclasses"
+msgstr "Puppetclasses"
+
+#: lib/hammer_cli_foreman/references.rb:123
+msgid "Operating systems"
+msgstr "操作系统"
+
+#: lib/hammer_cli_foreman/references.rb:131
+msgid "Roles"
+msgstr "角色"
+
+#: lib/hammer_cli_foreman/compute_resource.rb:13
+msgid "Provider"
+msgstr "提供者"
+
+#: lib/hammer_cli_foreman/compute_resource.rb:26
+#: lib/hammer_cli_foreman/compute_resource.rb:36
+msgid "Region"
+msgstr "区域"
+
+#: lib/hammer_cli_foreman/compute_resource.rb:30
+msgid "Server"
+msgstr "服务器"
+
+#: lib/hammer_cli_foreman/compute_resource.rb:33
+msgid "Tenant"
+msgstr "承租人"
+
+#: lib/hammer_cli_foreman/compute_resource.rb:43
+msgid "Url"
+msgstr "Url"
+
+#: lib/hammer_cli_foreman/compute_resource.rb:45
+msgid "User"
+msgstr "用户"
+
+#: lib/hammer_cli_foreman/compute_resource.rb:62
+msgid "Compute resource created"
+msgstr "已生成计算资源"
+
+#: lib/hammer_cli_foreman/compute_resource.rb:63
+msgid "Could not create the compute resource"
+msgstr "无法生成计算资源"
+
+#: lib/hammer_cli_foreman/compute_resource.rb:74
+msgid "Compute resource updated"
+msgstr "已更新计算资源"
+
+#: lib/hammer_cli_foreman/compute_resource.rb:75
+msgid "Could not update the compute resource"
+msgstr "无法更新计算资源"
+
+#: lib/hammer_cli_foreman/compute_resource.rb:82
+msgid "Compute resource deleted"
+msgstr "已删除计算资源"
+
+#: lib/hammer_cli_foreman/compute_resource.rb:83
+msgid "Could not delete the compute resource"
+msgstr "无法删除计算资源"
+
+#: lib/hammer_cli_foreman.rb:30
+msgid "Foreman connection login/logout."
+msgstr "Foreman 连接登录/退出。"
+
+#: lib/hammer_cli_foreman.rb:34
+msgid "Manipulate architectures."
+msgstr "修改架构。"
+
+#: lib/hammer_cli_foreman.rb:38
+msgid "Manipulate compute resources."
+msgstr "修改计算资源"
+
+#: lib/hammer_cli_foreman.rb:42
+msgid "Manipulate domains."
+msgstr "修改域。"
+
+#: lib/hammer_cli_foreman.rb:46
+msgid "Manipulate environments."
+msgstr ""
+
+#: lib/hammer_cli_foreman.rb:50
+msgid "Search facts."
+msgstr "搜索详情。"
+
+#: lib/hammer_cli_foreman.rb:54
+msgid "Manage permission filters."
+msgstr "管理权限过滤器。"
+
+#: lib/hammer_cli_foreman.rb:58
+msgid "Manipulate hosts."
+msgstr ""
+
+#: lib/hammer_cli_foreman.rb:62
+msgid "Manipulate hostgroups."
+msgstr "修改主机组。"
+
+#: lib/hammer_cli_foreman.rb:66
+msgid "Manipulate locations."
+msgstr "修改位置。"
+
+#: lib/hammer_cli_foreman.rb:70
+msgid "Manipulate installation media."
+msgstr "操作安装介质。"
+
+#: lib/hammer_cli_foreman.rb:74
+msgid "Manipulate hardware models."
+msgstr "修改硬件型号。"
+
+#: lib/hammer_cli_foreman.rb:78
+msgid "Manipulate operating system."
+msgstr ""
+
+#: lib/hammer_cli_foreman.rb:82
+msgid "Manipulate organizations."
+msgstr "修改机构。"
+
+#: lib/hammer_cli_foreman.rb:86
+msgid "Manipulate partition tables."
+msgstr "修改分区表。"
+
+#: lib/hammer_cli_foreman.rb:90
+msgid "Search puppet modules."
+msgstr "搜索 puppet 模块。"
+
+#: lib/hammer_cli_foreman.rb:94
+msgid "Browse and read reports."
+msgstr "浏览并读取报告。"
+
+#: lib/hammer_cli_foreman.rb:98
+msgid "Manage user roles."
+msgstr "管理用户角色。"
+
+#: lib/hammer_cli_foreman.rb:102
+msgid "Manipulate smart class parameters."
+msgstr "修改智能等级参数。"
+
+#: lib/hammer_cli_foreman.rb:106
+msgid "Manipulate smart proxies."
+msgstr "修改智能代理服务器。"
+
+#: lib/hammer_cli_foreman.rb:110
+msgid "Manipulate subnets."
+msgstr "修改子网。"
+
+#: lib/hammer_cli_foreman.rb:114
+msgid "Manipulate config templates."
+msgstr "修改配置模板。"
+
+#: lib/hammer_cli_foreman.rb:118
+msgid "Manipulate users."
+msgstr "修改用户。"
+
+#: lib/hammer_cli_foreman.rb:122
+msgid "Manage user groups."
+msgstr "管理用户组。"

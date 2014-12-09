@@ -1,6 +1,8 @@
 require File.join(File.dirname(__FILE__), 'test_helper')
 require File.join(File.dirname(__FILE__), 'apipie_resource_mock')
 
+require 'hammer_cli_foreman/media'
+
 describe HammerCLIForeman::Medium do
 
   include CommandTestHelper

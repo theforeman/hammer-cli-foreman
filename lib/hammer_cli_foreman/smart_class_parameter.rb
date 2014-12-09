@@ -104,6 +104,6 @@ module HammerCLIForeman
 
   end
 
-  HammerCLI::MainCommand.subcommand 'sc-param', _("Manipulate smart class parameters."), HammerCLIForeman::SmartClassParameter
+
 
 end

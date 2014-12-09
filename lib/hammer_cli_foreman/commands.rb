@@ -7,7 +7,7 @@ module HammerCLIForeman
   }
 
   def self.credentials
-    @credentials ||= Credentials.new(
+    @credentials ||= BasicCredentials.new(
       :username => (HammerCLI::Settings.get(:_params, :username) || ENV['FOREMAN_USERNAME'] || HammerCLI::Settings.get(:foreman, :username)),
       :password => (HammerCLI::Settings.get(:_params, :password) || ENV['FOREMAN_PASSWORD'] || HammerCLI::Settings.get(:foreman, :password))
     )
@@ -25,6 +25,7 @@ module HammerCLIForeman
     config[:language] = HammerCLI::I18n.locale
     config[:timeout] = HammerCLI::Settings.get(:foreman, :request_timeout)
     config[:timeout] = -1 if (config[:timeout] && config[:timeout].to_i < 0)
+    config[:apidoc_authenticated] = false
     config
   end
 

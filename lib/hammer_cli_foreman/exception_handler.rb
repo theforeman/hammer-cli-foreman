@@ -72,9 +72,9 @@ module HammerCLIForeman
 
     def handle_apipie_docloading_error(e)
       rake_command = 'foreman-rake apipie:cache'
-      print_error _("Could not load API description from the server\n"\
-          "  - is your server down?\n"\
-          "  - was \"#{rake_command}\" run on the server when using apipie cache? (typical production settings))\n")
+      print_error _("Could not load the API description from the server") + "\n  - " +
+                  _("is the server down?") + "\n  - " +
+                  _("was '%s' run on the server when using apipie cache? (typical production settings)") % rake_command
       log_full_error e
       HammerCLI::EX_CONFIG
     end

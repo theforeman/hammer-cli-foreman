@@ -1,6 +1,7 @@
 require File.join(File.dirname(__FILE__), 'test_helper')
 require File.join(File.dirname(__FILE__), 'apipie_resource_mock')
 
+require 'hammer_cli_foreman/puppet_class'
 
 describe HammerCLIForeman::PuppetClass do
 

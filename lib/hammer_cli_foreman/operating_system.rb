@@ -8,7 +8,7 @@ module HammerCLIForeman
 
       output do
         field :id, _("Id")
-        field :fullname, _("Full name")
+        field :title, _("Title")
         field :release_name, _("Release name")
         field :family, _("Family")
       end
@@ -112,7 +112,7 @@ module HammerCLIForeman
 
       def validate_options
         super
-        validator.any(:option_operatingsystem_id).required
+        validator.any(:option_operatingsystem_id, :option_operatingsystem_title).required
       end
 
       build_options
@@ -126,7 +126,7 @@ module HammerCLIForeman
 
       def validate_options
         super
-        validator.any(:option_operatingsystem_id).required
+        validator.any(:option_operatingsystem_id, :option_operatingsystem_title).required
       end
 
       build_options
@@ -214,7 +214,7 @@ module HammerCLIForeman
         tpl = templates.find { |p| p["template_kind_name"] == option_type }
 
         if tpl.nil?
-          raise RuntimeError.new(_("Default template of type #{option_type} not found"))
+          raise RuntimeError.new(_("Default template of type %s not found") % option_type)
         end
 
         params = {
@@ -243,6 +243,4 @@ module HammerCLIForeman
   end
 
 end
-
-HammerCLI::MainCommand.subcommand 'os', "Manipulate operating system.", HammerCLIForeman::OperatingSystem
 

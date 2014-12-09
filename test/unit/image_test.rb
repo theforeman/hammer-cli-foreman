@@ -2,7 +2,7 @@ require File.join(File.dirname(__FILE__), 'test_helper')
 require File.join(File.dirname(__FILE__), 'apipie_resource_mock')
 require File.join(File.dirname(__FILE__), 'test_output_adapter')
 
-
+require 'hammer_cli_foreman/image'
 
 describe HammerCLIForeman::Image do
 

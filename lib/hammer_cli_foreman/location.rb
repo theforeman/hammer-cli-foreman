@@ -97,5 +97,5 @@ module HammerCLIForeman
 
 end
 
-HammerCLI::MainCommand.subcommand 'location', _("Manipulate locations."), HammerCLIForeman::Location
+
 

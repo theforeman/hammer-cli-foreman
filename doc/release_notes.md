@@ -1,6 +1,46 @@
 Release notes
 =============
 
+### 0.1.3 (2014-08-20)
+* Update foreman.yml
+* Update the zanata.xml file to push to de-DE and es-ES ([#7112](http://projects.theforeman.org/issues/7112))
+* Adding system locale domain ([#7083](http://projects.theforeman.org/issues/7083))
+* Name options for puppet proxies in hostgroup ([#7085](http://projects.theforeman.org/issues/7085))
+* I18n - extracting new, pulling from tx
+
+
+### 0.1.2
+* Docs for name->id resolution
+* Update with installation details and IRC channel
+* Lazy loaded subcommands ([#6761](http://projects.theforeman.org/issues/6761))
+* I18n - fix some broken subcommand description extractions
+* I18n - fix strings to be properly extracted without interpolation
+* I18n - add en_GB locale
+* I18n - extracting new, pulling from tx
+* Initial update of translations, fixed Makefile
+* Fixed pagination ([#6766](http://projects.theforeman.org/issues/6766))
+* Restrict ci_reporter gem to less than 2.0.0 to fix CI ([#6779](http://projects.theforeman.org/issues/6779))
+* Add proxy refresh-features command ([#3387](http://projects.theforeman.org/issues/3387))
+* Fixed simplecov dependences
+* Params from searchables are not wrapped ([#6343](http://projects.theforeman.org/issues/6343))
+* rest-client > 1.7 does not support ruby 1.8 ([#6534](http://projects.theforeman.org/issues/6534))
+* Tests updated to use apidoc export for v1.6 ([#2922](http://projects.theforeman.org/issues/2922))
+* Commands for managing roles, filters, permissions and usergroups ([#2922](http://projects.theforeman.org/issues/2922), [#4004](http://projects.theforeman.org/issues/4004))
+* Obey refresh_cache default of false ([#6478](http://projects.theforeman.org/issues/6478))
+* Creating a more generic hook for search_options ([#6203](http://projects.theforeman.org/issues/6203))
+* Permit only --hostgroup when creating host ([#6335](http://projects.theforeman.org/issues/6335))
+* Better option descriptions ([#6093](http://projects.theforeman.org/issues/6093))
+* Mapping resource names in options ([#6092](http://projects.theforeman.org/issues/6092))
+* Add --server cli option ([#6219](http://projects.theforeman.org/issues/6219))
+* Fix for wrong parameters in proxy import ([#6090](http://projects.theforeman.org/issues/6090))
+* Resolving ids in foreman base command ([#6090](http://projects.theforeman.org/issues/6090))
+* Documentation for fine grained control over name expansion ([#5747](http://projects.theforeman.org/issues/5747))
+* Fine grained control over name expansion ([#5747](http://projects.theforeman.org/issues/5747))
+* Scoped options were not cleaning original options ([#5873](http://projects.theforeman.org/issues/5873))
+* List actions don't resolve ids for optional parameters ([#5873](http://projects.theforeman.org/issues/5873))
+* Help for associating commands is too generic ([#3512](http://projects.theforeman.org/issues/3512))
+* Add pkg:generate_source task to generate gem ([#5793](http://projects.theforeman.org/issues/5793))
+
 ### 0.1.1
 * Support for os default templates ([#3970](http://projects.theforeman.org/issues/3970))
 * Searching all resources by name ([#4311](http://projects.theforeman.org/issues/4311))

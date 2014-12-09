@@ -15,8 +15,8 @@ Documentation
 How to run
 ----------
 
-The work is still in progress and there are no builds ready yet. You can install the plugin from source.
-See [Hammer CLI readme](https://github.com/theforeman/hammer-cli/blob/master/README.md#how-to-run) for details.
+We build rpms, debs and gems. Alternatively you can install hammer from a git checkout.
+See our [Hammer CLI installation and configuration instuctions](https://github.com/theforeman/hammer-cli/blob/master/doc/installation.md#installation).
 
 
 Having issues?
@@ -26,7 +26,7 @@ If one of hammer commands doesn't work as you would expect, you can run `hammer 
 full debug output from the loggers. It should give you an idea what went wrong.
 
 If you have questions, don't hesitate to contact us on `foreman-users@googlegroups.com` or
-`FreeNode#foreman` irc channel.
+the `Freenode#theforeman` IRC channel.
 
 
 Developer Docs

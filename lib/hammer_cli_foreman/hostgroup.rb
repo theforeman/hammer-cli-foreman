@@ -1,13 +1,30 @@
 require 'hammer_cli_foreman/smart_class_parameter'
+require 'hammer_cli_foreman/puppet_class'
 
 module HammerCLIForeman
 
   module HostgroupUpdateCreateCommons
 
+    def self.included(base)
+      base.option "--puppetclass-ids", "PUPPETCLASS_IDS", _("List of puppetclass ids"),
+        :format => HammerCLI::Options::Normalizers::List.new
+      base.option "--puppet-ca-proxy", "PUPPET_CA_PROXY_NAME", _("Name of puppet CA proxy")
+      base.option "--puppet-proxy", "PUPPET_PROXY_NAME",  _("Name of puppet proxy")
+    end
+
     def request_params
       params = super
+
+      params['hostgroup']["puppet_proxy_id"] ||= proxy_id(option_puppet_proxy)
+      params['hostgroup']["puppet_ca_proxy_id"] ||= proxy_id(option_puppet_ca_proxy)
       params['hostgroup']['puppetclass_ids'] = option_puppetclass_ids
       params
+    end
+
+    private
+
+    def proxy_id(name)
+      resolver.smart_proxy_id('option_name' => name) if name
     end
 
   end
@@ -54,10 +71,6 @@ module HammerCLIForeman
 
 
     class CreateCommand < HammerCLIForeman::CreateCommand
-
-      option "--puppetclass-ids", "PUPPETCLASS_IDS", " ",
-        :format => HammerCLI::Options::Normalizers::List.new
-
       include HostgroupUpdateCreateCommons
 
       success_message _("Hostgroup created")
@@ -68,9 +81,6 @@ module HammerCLIForeman
 
 
     class UpdateCommand < HammerCLIForeman::UpdateCommand
-      option "--puppetclass-ids", "PUPPETCLASS_IDS", " ",
-        :format => HammerCLI::Options::Normalizers::List.new
-
       include HostgroupUpdateCreateCommons
 
       success_message _("Hostgroup updated")
@@ -138,4 +148,4 @@ module HammerCLIForeman
 
 end
 
-HammerCLI::MainCommand.subcommand 'hostgroup', _("Manipulate hostgroups."), HammerCLIForeman::Hostgroup
+
