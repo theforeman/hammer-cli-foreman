@@ -3,7 +3,16 @@ module HammerCLIForeman
   class OperationNotSupportedError < StandardError; end
 
   # Resolver exceptions
-  class ResolverError < StandardError; end
+  class ResolverError < StandardError
+
+    attr_reader :resource
+
+    def initialize(msg, resource)
+      @resource = resource
+      super(msg)
+    end
+  end
+
   class MissingSeachOptions < ResolverError; end
 
 end

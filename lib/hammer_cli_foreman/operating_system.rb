@@ -41,55 +41,16 @@ module HammerCLIForeman
 
 
     class CreateCommand < HammerCLIForeman::CreateCommand
-
-      #FIXME: replace with build_options when they are added to the api docs
-      option "--architecture-ids", "ARCH_IDS", _("set associated architectures"),
-        :format => HammerCLI::Options::Normalizers::List.new
-      option "--config-template-ids", "CONFIG_TPL_IDS", _("set associated templates"),
-        :format => HammerCLI::Options::Normalizers::List.new
-      option "--medium-ids", "MEDIUM_IDS", _("set associated installation media"),
-        :format => HammerCLI::Options::Normalizers::List.new
-      option "--ptable-ids", "PTABLE_IDS", _("set associated partition tables"),
-        :format => HammerCLI::Options::Normalizers::List.new
-
       success_message _("Operating system created")
       failure_message _("Could not create the operating system")
-
-      def request_params
-        params = super
-        params["operatingsystem"]["architecture_ids"] = option_architecture_ids if option_architecture_ids
-        params["operatingsystem"]["config_template_ids"] = option_config_template_ids if option_config_template_ids
-        params["operatingsystem"]["medium_ids"] = option_medium_ids if option_medium_ids
-        params["operatingsystem"]["ptable_ids"] = option_ptable_ids if option_ptable_ids
-        params
-      end
 
       build_options
     end
 
 
     class UpdateCommand < HammerCLIForeman::UpdateCommand
-      #FIXME: replace with build_options when they are added to the api docs
-      option "--architecture-ids", "ARCH_IDS", _("set associated architectures"),
-        :format => HammerCLI::Options::Normalizers::List.new
-      option "--config-template-ids", "CONFIG_TPL_IDS", _("set associated templates"),
-        :format => HammerCLI::Options::Normalizers::List.new
-      option "--medium-ids", "MEDIUM_IDS", _("set associated installation media"),
-        :format => HammerCLI::Options::Normalizers::List.new
-      option "--ptable-ids", "PTABLE_IDS", _("set associated partition tables"),
-        :format => HammerCLI::Options::Normalizers::List.new
-
       success_message _("Operating system updated")
       failure_message _("Could not update the operating system")
-
-      def request_params
-        params = super
-        params["operatingsystem"]["architecture_ids"] = option_architecture_ids if option_architecture_ids
-        params["operatingsystem"]["config_template_ids"] = option_config_template_ids if option_config_template_ids
-        params["operatingsystem"]["medium_ids"] = option_medium_ids if option_medium_ids
-        params["operatingsystem"]["ptable_ids"] = option_ptable_ids if option_ptable_ids
-        params
-      end
 
       build_options
     end
@@ -137,7 +98,7 @@ module HammerCLIForeman
       command_name "set-default-template"
       resource :os_default_templates
 
-      option "--id", "OS ID", _("operatingsystem id"), :required => true
+      option "--id", "OS ID", _("operatingsystem id"), :required => true, :referenced_resource => 'operatingsystem'
       option "--config-template-id", "TPL ID", _("config template id to be set"), :required => true
 
 
@@ -203,7 +164,7 @@ module HammerCLIForeman
       command_name "delete-default-template"
       resource :os_default_templates
 
-      option "--id", "OS ID", _("operatingsystem id"), :required => true
+      option "--id", "OS ID", _("operatingsystem id"), :required => true, :referenced_resource => 'operatingsystem'
       option "--type", "TPL TYPE", _("Type of the config template"), :required => true
 
       success_message _("Default template deleted")
