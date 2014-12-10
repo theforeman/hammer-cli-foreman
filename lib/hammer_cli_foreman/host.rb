@@ -20,6 +20,9 @@ module HammerCLIForeman
 
       base.option "--puppet-proxy", "PUPPET_PROXY_NAME", ""
       base.option "--puppet-ca-proxy", "PUPPET_CA_PROXY_NAME", ""
+      base.option "--puppet-class-ids", "PUPPET_CLASS_IDS", "",
+        :format => HammerCLI::Options::Normalizers::List.new,
+        :attribute_name => :option_puppetclass_ids
       base.option "--puppet-classes", "PUPPET_CLASS_NAMES", "",
         :format => HammerCLI::Options::Normalizers::List.new
 
@@ -49,7 +52,7 @@ module HammerCLIForeman
             :provision_method, :capabilities, :flavour_ref, :image_ref, :start,
             :network, :cpus, :memory, :provider, :type, :tenant_id, :image_id,
             # ----------------------------------------------------------------------------------
-            :host_parameters_attributes]
+            :puppet_class_ids, :host_parameters_attributes]
     end
 
     def self.ask_password
@@ -62,7 +65,7 @@ module HammerCLIForeman
       params['host']['owner_id'] ||= get_resource_id(HammerCLIForeman.foreman_resource(:users), :required => false, :scoped => true)
       params['host']['puppet_proxy_id'] ||= proxy_id(option_puppet_proxy)
       params['host']['puppet_ca_proxy_id'] ||= proxy_id(option_puppet_ca_proxy)
-      params['host']['puppet_class_ids'] ||= puppet_class_ids(option_puppet_classes)
+      params['host']['puppetclass_ids'] ||= puppet_class_ids(option_puppet_classes)
 
       params['host']['build'] = option_build unless option_build.nil?
       params['host']['managed'] = option_managed unless option_managed.nil?
