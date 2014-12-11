@@ -1,6 +1,24 @@
 Release notes
 =============
 
+### 0.1.4 (2014-12-11)
+* sending puppet class ids ([#8651](http://projects.theforeman.org/issues/8651))
+* setting --puppet-class-ids on host create/update throws api exception ([#8642](http://projects.theforeman.org/issues/8642))
+* adding name equivalents to params in host/hostgroup create/update ([#8299](http://projects.theforeman.org/issues/8299))
+* id resolution for associted resources ([#8246](http://projects.theforeman.org/issues/8246))
+* added missing search option error message ([#5556](http://projects.theforeman.org/issues/5556))
+* OSs referenced by title ([#8247](http://projects.theforeman.org/issues/8247))
+* credentials definition moved to ApipieBindings ([#7408](http://projects.theforeman.org/issues/7408))
+* listing filters for roles always fail with an exception ([#7913](http://projects.theforeman.org/issues/7913))
+* api for operating systems now uses field 'title' ([#7917](http://projects.theforeman.org/issues/7917))
+* i18n - add zh_CN language
+* i18n - add de, it, pt_BR, zh_TW, ru, ja, ko languages
+* external user groups CLI ([#6879](http://projects.theforeman.org/issues/6879))
+* moved LDAP auth sources to separate command
+* adds command to manage ldap auth sources ([#2924](http://projects.theforeman.org/issues/2924))
+* avoid locale domain name conflict ([#7262](http://projects.theforeman.org/issues/7262))
+
+
 ### 0.1.3 (2014-08-20)
 * Update foreman.yml
 * Update the zanata.xml file to push to de-DE and es-ES ([#7112](http://projects.theforeman.org/issues/7112))
