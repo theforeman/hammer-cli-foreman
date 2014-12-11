@@ -65,7 +65,7 @@ module HammerCLIForeman
       params['host']['owner_id'] ||= get_resource_id(HammerCLIForeman.foreman_resource(:users), :required => false, :scoped => true)
       params['host']['puppet_proxy_id'] ||= proxy_id(option_puppet_proxy)
       params['host']['puppet_ca_proxy_id'] ||= proxy_id(option_puppet_ca_proxy)
-      params['host']['puppetclass_ids'] ||= puppet_class_ids(option_puppet_classes)
+      params['host']['puppetclass_ids'] = option_puppetclass_ids || puppet_class_ids(option_puppet_classes)
 
       params['host']['build'] = option_build unless option_build.nil?
       params['host']['managed'] = option_managed unless option_managed.nil?
