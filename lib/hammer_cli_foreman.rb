@@ -127,6 +127,10 @@ module HammerCLIForeman
       'HammerCLIForeman::Usergroup', 'hammer_cli_foreman/usergroup'
     )
 
+    HammerCLI::MainCommand.lazy_subcommand('deployment', _("Manage deployments."),
+      'HammerCLIForeman::Deployment', 'hammer_cli_foreman/deployment'
+    )
+
 
   rescue => e
     handler = HammerCLIForeman::ExceptionHandler.new(:context => {}, :adapter => :base)
