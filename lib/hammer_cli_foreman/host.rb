@@ -1,3 +1,4 @@
+require 'hammer_cli_foreman/fact'
 require 'hammer_cli_foreman/report'
 require 'hammer_cli_foreman/puppet_class'
 require 'hammer_cli_foreman/smart_class_parameter'
