@@ -5,16 +5,17 @@
 %global gem_dir /usr/lib/ruby/gems/1.8
 %endif
 
-%global geminstdir %{gem_dir}/gems/%{gemname}-%{version}
+%global geminstdir %{gem_dir}/gems/%{gemname}-%{gemversion}
+%global gemversion 0.1.3
 
 Summary: Universal command-line interface for Foreman
 Name: rubygem-%{gemname}
-Version: 0.1.3
-Release: 2%{?dist}
+Version: 0.1.3.0
+Release: 1%{?dist}
 Group: Development/Languages
 License: GPLv3
 URL: http://github.com/theforeman/hammer-cli-foreman
-Source0: rubygem-%{gemname}-%{version}.tar.gz
+Source0: %{gemname}-%{gemversion}.gem
 
 %if !(0%{?rhel} > 6 || 0%{?fedora} > 18)
 Requires: ruby(abi)
@@ -29,7 +30,7 @@ BuildRequires: rubygems-devel
 %endif
 BuildRequires: ruby
 BuildArch: noarch
-Provides: rubygem(%{gemname}) = %{version}
+Provides: rubygem(%{gemname}) = %{gemversion}
 
 %description
 Hammer cli provides universal extendable CLI interface for ruby apps
@@ -46,13 +47,10 @@ Documentation for %{name}
 
 
 %prep
-%setup -q -n rubygem-%{gemname}-%{version}
-%{?scl:scl enable %{scl} "}
-gem build %{gemname}.gemspec
-%{?scl:"}
+%setup -n %{gemname}-%{gemversion} -T -c
 mkdir -p .%{gem_dir}
 gem install --local --install-dir .%{gem_dir} \
-            --force %{gemname}-%{version}.gem
+            --force %{SOURCE0}
 
 %install
 mkdir -p %{buildroot}%{_sysconfdir}/%{confdir}/cli.modules.d
@@ -66,11 +64,11 @@ cp -pa .%{gem_dir}/* \
 %{geminstdir}/lib
 %{geminstdir}/locale
 %config(noreplace) %{_sysconfdir}/%{confdir}/cli.modules.d/foreman.yml
-%exclude %{gem_dir}/cache/%{gemname}-%{version}.gem
-%{gem_dir}/specifications/%{gemname}-%{version}.gemspec
+%exclude %{gem_dir}/cache/%{gemname}-%{gemversion}.gem
+%{gem_dir}/specifications/%{gemname}-%{gemversion}.gemspec
 
 %files doc
-%doc %{gem_dir}/doc/%{gemname}-%{version}
+%doc %{gem_dir}/doc/%{gemname}-%{gemversion}
 %doc %{geminstdir}/doc/release_notes.md
 %doc %{geminstdir}/README.md
 %doc %{geminstdir}/doc/host_create.md
