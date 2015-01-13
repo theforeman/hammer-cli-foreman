@@ -10,7 +10,7 @@
 
 Summary: Universal command-line interface for Foreman
 Name: rubygem-%{gemname}
-Version: 0.1.3.1
+Version: 0.1.3.2
 Release: 1%{?dist}
 Group: Development/Languages
 License: GPLv3
@@ -80,6 +80,9 @@ cp -pa .%{gem_dir}/* \
 %doc %{geminstdir}/doc/name_id_resolution.md
 
 %changelog
+* Tue Jan 13 2015 Jason Montleon <jmontleo@redhat.com> 0.1.3.2-1
+- add foreman.yml source to rpm spec (jmontleo@redhat.com)
+
 * Tue Jan 13 2015 Jason Montleon <jmontleo@redhat.com> 0.1.3.1-1
 - update versioning (jmontleo@redhat.com)
 
