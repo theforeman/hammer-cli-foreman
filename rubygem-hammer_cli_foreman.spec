@@ -6,11 +6,11 @@
 %endif
 
 %global geminstdir %{gem_dir}/gems/%{gemname}-%{gemversion}
-%global gemversion 0.1.3
+%global gemversion 0.1.4
 
 Summary: Universal command-line interface for Foreman
 Name: rubygem-%{gemname}
-Version: 0.1.3.3
+Version: 0.1.4.1
 Release: 1%{?dist}
 Group: Development/Languages
 License: GPLv3
@@ -80,6 +80,23 @@ cp -pa .%{gem_dir}/* \
 %doc %{geminstdir}/doc/name_id_resolution.md
 
 %changelog
+* Tue Jan 20 2015 Jason Montleon <jmontleo@redhat.com> 0.1.4.1-1
+- Merge remote-tracking branch 'upstream/master' into SATELLITE-6.1.0
+  (jmontleo@redhat.com)
+- Fixes #7187 - List of host facts is shown correctly (orabin@redhat.com)
+- Fixes #8829 - add config directory to gemspec (kvedulv@kvedulv.de)
+- fixes #3898 - list commands should not be interactive for csv output
+  (tcaspy@gmail.com)
+- i18n - extracting new, pulling from tx (martin.bacovsky@gmail.com)
+- Bump to 0.1.4 (martin.bacovsky@gmail.com)
+- Fixes #8651 - sending puppet class ids (tstrachota@redhat.com)
+- Fixes #8642 - setting --puppet-class-ids on host create/update throws api
+  exception (tstrachota@redhat.com)
+- Fixes #8299 - adding name equivalents to params in host/hostgroup
+  create/update (tstrachota@redhat.com)
+- Fixes #8246 - plural resolution (tstrachota@redhat.com)
+- Fixes #5556 - missing search option error message (tstrachota@redhat.com)
+
 * Tue Jan 13 2015 Jason Montleon <jmontleo@redhat.com> 0.1.3.3-1
 - install foreman.yml from SOURCE1 (jmontleo@redhat.com)
 
