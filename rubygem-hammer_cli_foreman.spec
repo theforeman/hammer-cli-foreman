@@ -10,7 +10,7 @@
 
 Summary: Universal command-line interface for Foreman
 Name: rubygem-%{gemname}
-Version: 0.1.4.1
+Version: 0.1.4.2
 Release: 1%{?dist}
 Group: Development/Languages
 License: GPLv3
@@ -81,6 +81,9 @@ cp -pa .%{gem_dir}/* \
 %doc %{geminstdir}/doc/name_id_resolution.md
 
 %changelog
+* Tue Jan 20 2015 Jason Montleon <jmontleo@redhat.com> 0.1.4.2-1
+- package config (jmontleo@redhat.com)
+
 * Tue Jan 20 2015 Jason Montleon <jmontleo@redhat.com> 0.1.4.1-1
 - Merge remote-tracking branch 'upstream/master' into SATELLITE-6.1.0
   (jmontleo@redhat.com)
