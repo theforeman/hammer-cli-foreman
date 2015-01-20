@@ -62,6 +62,7 @@ cp -pa .%{gem_dir}/* \
 
 %files
 %dir %{geminstdir}
+%{geminstdir}/config
 %{geminstdir}/lib
 %{geminstdir}/locale
 %config(noreplace) %{_sysconfdir}/%{confdir}/cli.modules.d/foreman.yml
