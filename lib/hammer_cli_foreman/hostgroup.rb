@@ -6,18 +6,21 @@ module HammerCLIForeman
   module HostgroupUpdateCreateCommons
 
     def self.included(base)
-      base.option "--puppetclass-ids", "PUPPETCLASS_IDS", _("List of puppetclass ids"),
+      base.option "--puppet-class-ids", "PUPPETCLASS_IDS", _("List of puppetclass ids"),
         :format => HammerCLI::Options::Normalizers::List.new
       base.option "--puppet-ca-proxy", "PUPPET_CA_PROXY_NAME", _("Name of puppet CA proxy")
       base.option "--puppet-proxy", "PUPPET_PROXY_NAME",  _("Name of puppet proxy")
+      base.option "--parent", "PARENT_NAME",  _("Name of parent hostgroup")
+      base.option "--puppet-classes", "PUPPET_CLASS_NAMES", "",
+        :format => HammerCLI::Options::Normalizers::List.new
     end
 
     def request_params
       params = super
-
+      params['hostgroup']["parent_id"] ||= resolver.hostgroup_id('option_name' => option_parent) if option_parent
       params['hostgroup']["puppet_proxy_id"] ||= proxy_id(option_puppet_proxy)
       params['hostgroup']["puppet_ca_proxy_id"] ||= proxy_id(option_puppet_ca_proxy)
-      params['hostgroup']['puppetclass_ids'] = option_puppetclass_ids
+      params['hostgroup']['puppetclass_ids'] = option_puppet_class_ids || puppet_class_ids(option_puppet_classes)
       params
     end
 
@@ -25,6 +28,10 @@ module HammerCLIForeman
 
     def proxy_id(name)
       resolver.smart_proxy_id('option_name' => name) if name
+    end
+
+    def puppet_class_ids(names)
+      resolver.puppetclass_ids('option_names' => names) if names
     end
 
   end
@@ -38,11 +45,10 @@ module HammerCLIForeman
       output do
         field :id, _("Id")
         field :name, _("Name")
-        field :label, _("Label")
+        field :title, _("Title")
         field nil, _("Operating System"), Fields::SingleReference, :key => :operatingsystem
         field nil, _("Environment"), Fields::SingleReference, :key => :environment
         field nil, _("Model"), Fields::SingleReference, :key => :model
-        field :ancestry, _("Ancestry")
       end
 
       build_options
@@ -64,6 +70,7 @@ module HammerCLIForeman
         HammerCLIForeman::References.puppetclasses(self)
         HammerCLIForeman::References.parameters(self)
         HammerCLIForeman::References.taxonomies(self)
+        field :ancestry, _("Parent Id")
       end
 
       build_options

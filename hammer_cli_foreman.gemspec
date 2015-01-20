@@ -19,12 +19,12 @@ EOF
 
 
 
-  s.files            = Dir['{lib,doc,test,locale}/**/*', 'README*']
+  s.files            = Dir['{lib,doc,test,locale,config}/**/*', 'README*']
   s.test_files       = Dir['{test}/**/*']
   s.extra_rdoc_files = Dir['{doc}/**/*', 'README*']
   s.require_paths = ["lib"]
 
-  s.add_dependency 'hammer_cli', '>= 0.1.2'
+  s.add_dependency 'hammer_cli', '>= 0.1.4'
   s.add_dependency 'apipie-bindings', '>= 0.0.11'
   s.add_dependency 'rest-client', '>= 1.6.5', '< 1.7' # lower versions don't allow setting infinite timeouts, higher versions are not ruby 1.8 compatible
 

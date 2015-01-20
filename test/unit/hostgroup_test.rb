@@ -20,7 +20,7 @@ describe HammerCLIForeman::Hostgroup do
       let(:expected_record_count) { cmd.resource.call(:index).length }
 
       it_should_print_n_records
-      it_should_print_columns ["Id", "Name", "Label", "Operating System"]
+      it_should_print_columns ["Id", "Name", "Title", "Operating System"]
       it_should_print_columns ["Environment", "Model"]
     end
 
@@ -38,8 +38,8 @@ describe HammerCLIForeman::Hostgroup do
     context "output" do
       with_params ["--id=1"] do
         it_should_print_n_records 1
-        it_should_print_columns ["Id", "Name", "Label", "Operating System", "Subnet"]
-        it_should_print_columns ["Domain", "Environment", "Puppetclasses", "Ancestry"]
+        it_should_print_columns ["Id", "Name", "Title", "Operating System", "Subnet"]
+        it_should_print_columns ["Domain", "Environment", "Puppetclasses", "Parent Id"]
         it_should_print_columns ["Parameters"]
       end
     end
@@ -64,7 +64,7 @@ describe HammerCLIForeman::Hostgroup do
     context "parameters" do
       it_should_accept "name, parent_id, environment_id, architecture_id, domain_id, puppet_proxy_id, operatingsystem_id and more",
           ["--name=hostgroup", "--parent-id=1", "--environment-id=1", "--architecture-id=1", "--domain-id=1", "--puppet-proxy-id=1",
-            "--operatingsystem-id=1", "--medium-id=1", "--ptable-id=1", "--subnet-id=1", '--puppet-ca-proxy-id=1', '--puppetclass-ids=1,2']
+            "--operatingsystem-id=1", "--medium-id=1", "--partition-table-id=1", "--subnet-id=1", '--puppet-ca-proxy-id=1', '--puppet-class-ids=1,2']
       # it_should_fail_with "name or id missing",
       #    ["--environment-id=1", "--architecture-id=1", "--domain-id=1", "--puppet-proxy-id=1", "--operatingsystem-id=1"]
       # TODO: temporarily disabled, parameters are checked in the api
@@ -78,7 +78,7 @@ describe HammerCLIForeman::Hostgroup do
     context "parameters" do
       it_should_accept "name, parent_id, environment_id, architecture_id, domain_id, puppet_proxy_id, operatingsystem_id and more",
           ["--id=1 --name=hostgroup2", "--parent-id=1", "--environment-id=1", "--architecture-id=1", "--domain-id=1", "--puppet-proxy-id=1",
-            "--operatingsystem-id=1", "--medium-id=1", "--ptable-id=1", "--subnet-id=1", '--puppet-ca-proxy-id=1', '--puppetclass-ids=1,2']
+            "--operatingsystem-id=1", "--medium-id=1", "--partition-table-id=1", "--subnet-id=1", '--puppet-ca-proxy-id=1', '--puppet-class-ids=1,2']
       # it_should_fail_with "no params", []
       # it_should_fail_with "id missing", ["--name=host2"]
       # TODO: temporarily disabled, parameters are checked in the id resolver

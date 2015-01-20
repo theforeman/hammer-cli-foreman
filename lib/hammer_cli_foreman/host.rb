@@ -1,3 +1,4 @@
+require 'hammer_cli_foreman/fact'
 require 'hammer_cli_foreman/report'
 require 'hammer_cli_foreman/puppet_class'
 require 'hammer_cli_foreman/smart_class_parameter'
@@ -9,19 +10,22 @@ module HammerCLIForeman
   module CommonHostUpdateOptions
 
     def self.included(base)
-      base.option "--environment-id", "ENVIRONMENT_ID", " "
-      base.option "--architecture-id", "ARCHITECTURE_ID", " "
-      base.option "--domain-id", "DOMAIN_ID", " "
-      base.option "--puppet-proxy-id", "PUPPET_PROXY_ID", " "
-      base.option "--operatingsystem-id", "OPERATINGSYSTEM_ID", " "
-      base.option "--partition-table-id", "PARTITION_TABLE_ID", " "
-      base.option "--compute-resource-id", "COMPUTE_RESOURCE", " "
-      base.option "--puppetclass-ids", "PUPPETCLASS_IDS", " ",
-        :format => HammerCLI::Options::Normalizers::List.new
+      base.option "--owner", "OWNER_LOGIN", _("Login of the owner"),
+        :attribute_name => :option_user_login
+      base.option "--owner-id", "OWNER_ID", _("ID of the owner"),
+        :attribute_name => :option_user_id
+
       base.option "--root-password", "ROOT_PW", " "
       base.option "--ask-root-password", "ASK_ROOT_PW", " ",
         :format => HammerCLI::Options::Normalizers::Bool.new
 
+      base.option "--puppet-proxy", "PUPPET_PROXY_NAME", ""
+      base.option "--puppet-ca-proxy", "PUPPET_CA_PROXY_NAME", ""
+      base.option "--puppet-class-ids", "PUPPET_CLASS_IDS", "",
+        :format => HammerCLI::Options::Normalizers::List.new,
+        :attribute_name => :option_puppetclass_ids
+      base.option "--puppet-classes", "PUPPET_CLASS_NAMES", "",
+        :format => HammerCLI::Options::Normalizers::List.new
 
       bme_options = {}
       bme_options[:default] = 'true' if base.action.to_sym == :create
@@ -45,16 +49,11 @@ module HammerCLIForeman
         :format => HammerCLI::Options::Normalizers::Enum.new(['build', 'image'])
 
       base.build_options :without => [
-            # - temporarily disabled params until they are fixed in API ------------------------
-            # issue #3884
-            :puppet_class_ids,
             # - temporarily disabled params that will be removed from the api ------------------
             :provision_method, :capabilities, :flavour_ref, :image_ref, :start,
             :network, :cpus, :memory, :provider, :type, :tenant_id, :image_id,
-            # - avoids future conflicts as :root_pass is currently missing in the api docs
-            :root_pass,
             # ----------------------------------------------------------------------------------
-            :ptable_id, :host_parameters_attributes]
+            :puppet_class_ids, :host_parameters_attributes]
     end
 
     def self.ask_password
@@ -64,15 +63,14 @@ module HammerCLIForeman
 
     def request_params
       params = super
+      params['host']['owner_id'] ||= get_resource_id(HammerCLIForeman.foreman_resource(:users), :required => false, :scoped => true)
+      params['host']['puppet_proxy_id'] ||= proxy_id(option_puppet_proxy)
+      params['host']['puppet_ca_proxy_id'] ||= proxy_id(option_puppet_ca_proxy)
+      params['host']['puppetclass_ids'] = option_puppetclass_ids || puppet_class_ids(option_puppet_classes)
 
       params['host']['build'] = option_build unless option_build.nil?
       params['host']['managed'] = option_managed unless option_managed.nil?
       params['host']['enabled'] = option_enabled unless option_enabled.nil?
-
-      params['host']['puppetclass_ids'] = option_puppetclass_ids unless option_puppetclass_ids.nil?
-
-      params['host']['ptable_id'] = option_partition_table_id unless option_partition_table_id.nil?
-      params['host']['compute_resource_id'] = option_compute_resource_id unless option_compute_resource_id.nil?
       params['host']['host_parameters_attributes'] = parameter_attributes
       params['host']['compute_attributes'] = option_compute_attributes || {}
       params['host']['compute_attributes']['volumes_attributes'] = nested_attributes(option_volume_list)
@@ -88,11 +86,18 @@ module HammerCLIForeman
       if option_ask_root_password
         params['host']['root_pass'] = HammerCLIForeman::CommonHostUpdateOptions::ask_password
       end
-
       params
     end
 
     private
+
+    def proxy_id(name)
+      resolver.smart_proxy_id('option_name' => name) if name
+    end
+
+    def puppet_class_ids(names)
+      resolver.puppetclass_ids('option_names' => names) if names
+    end
 
     def parameter_attributes
       return {} unless option_parameters
@@ -327,7 +332,7 @@ module HammerCLIForeman
           if option_managed
             validator.all(:option_environment_id, :option_architecture_id, :option_domain_id,
                           :option_puppet_proxy_id, :option_operatingsystem_id,
-                          :option_partition_table_id).required
+                          :option_ptable_id).required
           else
             # unmanaged host only requires environment
             validator.option(:option_environment_id).required

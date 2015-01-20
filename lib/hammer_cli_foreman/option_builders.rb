@@ -81,6 +81,11 @@ module HammerCLIForeman
         builders << DependentSearchablesOptionBuilder.new(dep_resource, @searchables)
       end
 
+      IdArrayParamsFilter.new(:only_required => false).for_action(action).each do |p|
+        resource = HammerCLIForeman.param_to_resource(p.name)
+        builders << DependentSearchablesArrayOptionBuilder.new(resource, @searchables) unless resource.nil?
+      end
+
       builders
     end
 
@@ -145,6 +150,10 @@ module HammerCLIForeman
 
     protected
 
+    def option(*args)
+      HammerCLI::Apipie::OptionDefinition.new(*args)
+    end
+
     def description(param_name, action_name)
       return " " unless @resource.has_action? action_name
 
@@ -172,7 +181,8 @@ module HammerCLIForeman
         option(
           optionamize("--#{s.name}"),
           s.name.upcase,
-          s.description
+          s.description,
+          :referenced_resource => @resource.singular_name
         )
       end
     end
@@ -211,7 +221,8 @@ module HammerCLIForeman
           optionamize("--#{aliased_name}"),
           "#{aliased_name}_#{first.name}".upcase,
           first.description || " ",
-          :attribute_name => HammerCLI.option_accessor_name("#{resource_name}_#{first.name}")
+          :attribute_name => HammerCLI.option_accessor_name("#{resource_name}_#{first.name}"),
+          :referenced_resource => resource.singular_name
         )
 
         # Other options are named by the resource plus the searchable name
@@ -221,7 +232,8 @@ module HammerCLIForeman
             optionamize("--#{aliased_name}-#{s.name}"),
             "#{aliased_name}_#{s.name}".upcase,
             s.description || " ",
-            :attribute_name => HammerCLI.option_accessor_name("#{resource_name}_#{s.name}")
+            :attribute_name => HammerCLI.option_accessor_name("#{resource_name}_#{s.name}"),
+            :referenced_resource => resource.singular_name
           )
         end
       end
@@ -230,7 +242,8 @@ module HammerCLIForeman
         optionamize("--#{aliased_name}-id"),
         "#{aliased_name}_id".upcase,
         description("id", :show),
-        :attribute_name => HammerCLI.option_accessor_name("#{resource_name}_id")
+        :attribute_name => HammerCLI.option_accessor_name("#{resource_name}_id"),
+        :referenced_resource => resource.singular_name
       )
       options
     end
@@ -239,6 +252,52 @@ module HammerCLIForeman
       resource_name_map[name.to_s] || resource_name_map[name.to_sym] || name
     end
 
+  end
+
+
+
+  class DependentSearchablesArrayOptionBuilder < DependentSearchablesOptionBuilder
+
+
+    def dependent_options(resource, resource_name_map)
+      options = []
+      searchables = @searchables.for(resource)
+      resource_name = resource.singular_name
+
+      aliased_name = aliased(resource_name, resource_name_map)
+      aliased_plural_name = aliased(resource.name, resource_name_map)
+
+      unless searchables.empty?
+        first = searchables[0]
+        remaining = searchables[1..-1] || []
+
+        # First option is named by the resource
+        # Eg. --organizations with accessor option_organization_names
+        options << option(
+          optionamize("--#{aliased_plural_name}"),
+          "#{aliased_name}_#{first.plural_name}".upcase,
+          " ",
+          :attribute_name => HammerCLI.option_accessor_name("#{resource_name}_#{first.plural_name}"),
+          :format => HammerCLI::Options::Normalizers::List.new,
+          :referenced_resource => resource.singular_name
+        )
+
+        # Other options are named by the resource plus the searchable name
+        # Eg. --organization-labels with accessor option_organization_labels
+        remaining.each do |s|
+          options << option(
+            optionamize("--#{aliased_name}-#{s.plural_name}"),
+            "#{aliased_name}_#{s.plural_name}".upcase,
+            " ",
+            :attribute_name => HammerCLI.option_accessor_name("#{resource_name}_#{s.plural_name}"),
+            :format => HammerCLI::Options::Normalizers::List.new,
+            :referenced_resource => resource.singular_name
+          )
+        end
+      end
+
+      options
+    end
   end
 
   class SearchablesUpdateOptionBuilder < SearchablesAbstractOptionBuilder
@@ -276,7 +335,7 @@ module HammerCLIForeman
 
     def build(builder_params={})
       [
-        option("--id", "ID", description("id", :show))
+        option("--id", "ID", description("id", :show), :referenced_resource => @resource.singular_name)
       ]
     end
 
