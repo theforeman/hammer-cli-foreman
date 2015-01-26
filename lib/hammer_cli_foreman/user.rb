@@ -27,6 +27,8 @@ module HammerCLIForeman
       output ListCommand.output_definition do
         field :admin, _("Admin"), Fields::Boolean
         field :auth_source_internal, _("Authorized by"), Fields::Reference
+        field :locale, _("Locale")
+        field :timezone, _("Timezone")
         field :last_login_on, _("Last login"), Fields::Date
         HammerCLIForeman::References.roles(self)
         HammerCLIForeman::References.usergroups(self)
@@ -35,6 +37,8 @@ module HammerCLIForeman
       end
 
       def extend_data(user)
+        user["locale"] ||= _('default') if user.has_key?("locale")
+        user["timezone"] ||= _('default') if user.has_key?("timezone")
         user["full_name"] = [user["firstname"], user["lastname"]].join(' ')
         user
       end
@@ -44,7 +48,7 @@ module HammerCLIForeman
 
 
     class CreateCommand < HammerCLIForeman::CreateCommand
-      success_message _("User created")
+      success_message _("User [%{login}] created")
       failure_message _("Could not create the user")
 
       build_options
@@ -52,7 +56,7 @@ module HammerCLIForeman
 
 
     class UpdateCommand < HammerCLIForeman::UpdateCommand
-      success_message _("User updated")
+      success_message _("User [%{login}] updated")
       failure_message _("Could not update the user")
 
       build_options
@@ -60,7 +64,7 @@ module HammerCLIForeman
 
 
     class DeleteCommand < HammerCLIForeman::DeleteCommand
-      success_message _("User deleted")
+      success_message _("User [%{login}] deleted")
       failure_message _("Could not delete the user")
 
       build_options
