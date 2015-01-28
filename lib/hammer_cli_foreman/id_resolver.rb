@@ -52,6 +52,7 @@ module HammerCLIForeman
       :puppetclass =>      [ s_name(_("Puppet class name")) ],
       :report =>           [ s_name(_("Report name")) ],
       :role =>             [ s_name(_("User role name")) ],
+      :setting =>          [ s_name(_("Setting name"), :editable => false) ],
       :subnet =>           [ s_name(_("Subnet name")) ],
       :template =>         [],
       :user =>             [ s("login", _("User's login to search by")) ],
