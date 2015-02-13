@@ -1,59 +1,1311 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the hammer-cli-foreman package.
-# 
+#
 # Translators:
 # Automatically generated, 2014
 msgid ""
 msgstr ""
 "Project-Id-Version: hammer-cli-foreman 0.1.4\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-09-19 13:34+0200\n"
+"POT-Creation-Date: 2015-02-13 15:58-0500\n"
 "PO-Revision-Date: 2014-10-11 10:31+0000\n"
 "Last-Translator: Lukáš Zapletal\n"
-"Language-Team: Japanese (http://www.transifex.com/projects/p/foreman/language/ja/)\n"
+"Language-Team: Japanese (http://www.transifex.com/projects/p/foreman/"
+"language/ja/)\n"
+"Language: ja\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: ja\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
-#: lib/hammer_cli_foreman/report.rb:10 lib/hammer_cli_foreman/report.rb:30
-#: lib/hammer_cli_foreman/external_usergroup.rb:10
+#: lib/hammer_cli_foreman.rb:30
+msgid "Foreman connection login/logout."
+msgstr "Foreman 接続のログイン/ログアウト。"
+
+#: lib/hammer_cli_foreman.rb:34
+msgid "Manipulate architectures."
+msgstr "アーキテクチャーの操作。"
+
+#: lib/hammer_cli_foreman.rb:38
+msgid "Manipulate auth sources."
+msgstr ""
+
+#: lib/hammer_cli_foreman.rb:42
+msgid "Manipulate compute resources."
+msgstr "コンピュートリソースの操作。"
+
+#: lib/hammer_cli_foreman.rb:46
+msgid "Manipulate domains."
+msgstr "ドメインの操作。"
+
+#: lib/hammer_cli_foreman.rb:50
+msgid "Manipulate environments."
+msgstr ""
+
+#: lib/hammer_cli_foreman.rb:54
+msgid "Search facts."
+msgstr "ホストの検索。"
+
+#: lib/hammer_cli_foreman.rb:58
+msgid "Manage permission filters."
+msgstr "パーミッションフィルターを管理します。"
+
+#: lib/hammer_cli_foreman.rb:62
+msgid "Manipulate hosts."
+msgstr ""
+
+#: lib/hammer_cli_foreman.rb:66
+msgid "Manipulate hostgroups."
+msgstr "ホストグループの操作。"
+
+#: lib/hammer_cli_foreman.rb:70
+msgid "Manipulate locations."
+msgstr "ロケーションの操作。"
+
+#: lib/hammer_cli_foreman.rb:74
+msgid "Manipulate installation media."
+msgstr "インストールメディアの操作。"
+
+#: lib/hammer_cli_foreman.rb:78
+msgid "Manipulate hardware models."
+msgstr "ハードウェアモデルの操作。"
+
+#: lib/hammer_cli_foreman.rb:82
+msgid "Manipulate operating system."
+msgstr ""
+
+#: lib/hammer_cli_foreman.rb:86
+msgid "Manipulate organizations."
+msgstr "組織の操作。"
+
+#: lib/hammer_cli_foreman.rb:90
+msgid "Manipulate partition tables."
+msgstr "パーティションテーブルの操作。"
+
+#: lib/hammer_cli_foreman.rb:94
+msgid "Search puppet modules."
+msgstr "Puppet モジュールの検索。"
+
+#: lib/hammer_cli_foreman.rb:98
+msgid "Browse and read reports."
+msgstr "レポートの参照および閲覧。"
+
+#: lib/hammer_cli_foreman.rb:102
+msgid "Manage user roles."
+msgstr "ユーザーロールを管理します。"
+
+#: lib/hammer_cli_foreman.rb:106
+msgid "Manipulate smart class parameters."
+msgstr "スマートクラスパラメーターの操作。"
+
+#: lib/hammer_cli_foreman.rb:110
+msgid "Manipulate smart proxies."
+msgstr "スマートプロキシーの操作。"
+
+#: lib/hammer_cli_foreman.rb:114
+msgid "Manipulate subnets."
+msgstr "サブネットの操作。"
+
+#: lib/hammer_cli_foreman.rb:118
+msgid "Manipulate config templates."
+msgstr "設定テンプレートの操作。"
+
+#: lib/hammer_cli_foreman.rb:122
+msgid "Manipulate users."
+msgstr "ユーザーの操作。"
+
+#: lib/hammer_cli_foreman.rb:126
+msgid "Manage user groups."
+msgstr "ユーザーグループを管理します。"
+
+#: lib/hammer_cli_foreman/id_resolver.rb:36
+msgid "Architecture name"
+msgstr "アーキテクチャー名"
+
+#: lib/hammer_cli_foreman/id_resolver.rb:37
+msgid "Compute resource name"
+msgstr "コンピュートリソース名"
+
+#: lib/hammer_cli_foreman/id_resolver.rb:38
+msgid "Domain name"
+msgstr "ドメイン名"
+
+#: lib/hammer_cli_foreman/id_resolver.rb:39
+msgid "Environment name"
+msgstr "環境名"
+
+#: lib/hammer_cli_foreman/id_resolver.rb:42
+msgid "Host name"
+msgstr "ホスト名"
+
+#: lib/hammer_cli_foreman/id_resolver.rb:43
+msgid "Hostgroup name"
+msgstr "ホストグループ名"
+
+#: lib/hammer_cli_foreman/id_resolver.rb:45
+msgid "Location name"
+msgstr "ロケーション名"
+
+#: lib/hammer_cli_foreman/id_resolver.rb:46
+msgid "Medium name"
+msgstr "メディア名"
+
+#: lib/hammer_cli_foreman/id_resolver.rb:47
+msgid "Model name"
+msgstr "モデル名"
+
+#: lib/hammer_cli_foreman/id_resolver.rb:48
+msgid "Organization name"
+msgstr "組織名"
+
+#: lib/hammer_cli_foreman/id_resolver.rb:49
+#, fuzzy
+msgid "Operating system title"
+msgstr "オペレーティングシステムが作成されました"
+
+#: lib/hammer_cli_foreman/id_resolver.rb:50
+msgid "Partition table name"
+msgstr "パーティションテーブル名"
+
+#: lib/hammer_cli_foreman/id_resolver.rb:51
+msgid "Proxy name"
+msgstr "プロキシー名"
+
+#: lib/hammer_cli_foreman/id_resolver.rb:52
+msgid "Puppet class name"
+msgstr "Puppet クラス名"
+
+#: lib/hammer_cli_foreman/id_resolver.rb:53
+msgid "Report name"
+msgstr "レポート名"
+
+#: lib/hammer_cli_foreman/id_resolver.rb:54
+msgid "User role name"
+msgstr "ユーザーロール名"
+
+#: lib/hammer_cli_foreman/id_resolver.rb:55
+msgid "Subnet name"
+msgstr "サブネット名"
+
+#: lib/hammer_cli_foreman/id_resolver.rb:57
+msgid "User's login to search by"
+msgstr "検索するユーザーのログイン"
+
+#: lib/hammer_cli_foreman/id_resolver.rb:58
+msgid "Common parameter name"
+msgstr "共通パラメーター名"
+
+#: lib/hammer_cli_foreman/id_resolver.rb:59
+msgid "Smart class parameter name"
+msgstr "スマートクラスパラメーター名"
+
+#: lib/hammer_cli_foreman/id_resolver.rb:61
+msgid "Name to search by"
+msgstr "検索する名前"
+
+#: lib/hammer_cli_foreman/id_resolver.rb:149
+#, fuzzy
+msgid "one of %s not found"
+msgstr "%s が見つかりませんでした"
+
+#: lib/hammer_cli_foreman/id_resolver.rb:191
+msgid "%s not found"
+msgstr "%s が見つかりませんでした"
+
+#: lib/hammer_cli_foreman/id_resolver.rb:192
+msgid "%s found more than once"
+msgstr "%s が 2 回以上見つかりました"
+
+#: lib/hammer_cli_foreman/id_resolver.rb:203
+msgid "Missing options to search %s"
+msgstr "%s の検索に足りないオプション"
+
+#: lib/hammer_cli_foreman/architecture.rb:10
+#: lib/hammer_cli_foreman/auth_source_ldap.rb:13
 #: lib/hammer_cli_foreman/organization.rb:13
-#: lib/hammer_cli_foreman/subnet.rb:10 lib/hammer_cli_foreman/model.rb:10
-#: lib/hammer_cli_foreman/role.rb:11 lib/hammer_cli_foreman/media.rb:9
-#: lib/hammer_cli_foreman/override_value.rb:28
-#: lib/hammer_cli_foreman/compute_resource.rb:11
-#: lib/hammer_cli_foreman/smart_variables.rb:7
-#: lib/hammer_cli_foreman/smart_variables.rb:65
-#: lib/hammer_cli_foreman/hostgroup.rb:39
-#: lib/hammer_cli_foreman/template.rb:25 lib/hammer_cli_foreman/host.rb:124
-#: lib/hammer_cli_foreman/host.rb:195 lib/hammer_cli_foreman/host.rb:208
-#: lib/hammer_cli_foreman/operating_system.rb:10
-#: lib/hammer_cli_foreman/smart_proxy.rb:11
+#: lib/hammer_cli_foreman/subnet.rb:10
 #: lib/hammer_cli_foreman/environment.rb:14
+#: lib/hammer_cli_foreman/partition_table.rb:10
+#: lib/hammer_cli_foreman/compute_resource.rb:11
+#: lib/hammer_cli_foreman/usergroup.rb:11 lib/hammer_cli_foreman/host.rb:129
+#: lib/hammer_cli_foreman/host.rb:200 lib/hammer_cli_foreman/host.rb:213
+#: lib/hammer_cli_foreman/location.rb:13
+#: lib/hammer_cli_foreman/hostgroup.rb:46 lib/hammer_cli_foreman/user.rb:10
+#: lib/hammer_cli_foreman/external_usergroup.rb:10
+#: lib/hammer_cli_foreman/filter.rb:9 lib/hammer_cli_foreman/filter.rb:72
+#: lib/hammer_cli_foreman/report.rb:10 lib/hammer_cli_foreman/report.rb:30
+#: lib/hammer_cli_foreman/media.rb:9 lib/hammer_cli_foreman/role.rb:11
+#: lib/hammer_cli_foreman/image.rb:29
 #: lib/hammer_cli_foreman/puppet_class.rb:12
-#: lib/hammer_cli_foreman/domain.rb:10
+#: lib/hammer_cli_foreman/model.rb:10
 #: lib/hammer_cli_foreman/smart_class_parameter.rb:8
 #: lib/hammer_cli_foreman/smart_class_parameter.rb:66
-#: lib/hammer_cli_foreman/usergroup.rb:11 lib/hammer_cli_foreman/image.rb:29
-#: lib/hammer_cli_foreman/partition_table.rb:10
-#: lib/hammer_cli_foreman/user.rb:10 lib/hammer_cli_foreman/filter.rb:9
-#: lib/hammer_cli_foreman/filter.rb:72 lib/hammer_cli_foreman/location.rb:13
-#: lib/hammer_cli_foreman/auth_source_ldap.rb:13
-#: lib/hammer_cli_foreman/architecture.rb:10
+#: lib/hammer_cli_foreman/domain.rb:31 lib/hammer_cli_foreman/template.rb:25
+#: lib/hammer_cli_foreman/operating_system.rb:10
+#: lib/hammer_cli_foreman/smart_proxy.rb:11
 msgid "Id"
 msgstr "ID"
+
+#: lib/hammer_cli_foreman/architecture.rb:11
+#: lib/hammer_cli_foreman/auth_source_ldap.rb:14
+#: lib/hammer_cli_foreman/organization.rb:14
+#: lib/hammer_cli_foreman/subnet.rb:11
+#: lib/hammer_cli_foreman/environment.rb:15
+#: lib/hammer_cli_foreman/partition_table.rb:11
+#: lib/hammer_cli_foreman/compute_resource.rb:12
+#: lib/hammer_cli_foreman/usergroup.rb:12 lib/hammer_cli_foreman/host.rb:130
+#: lib/hammer_cli_foreman/host.rb:201 lib/hammer_cli_foreman/host.rb:214
+#: lib/hammer_cli_foreman/location.rb:14
+#: lib/hammer_cli_foreman/hostgroup.rb:47 lib/hammer_cli_foreman/user.rb:12
+#: lib/hammer_cli_foreman/external_usergroup.rb:11
+#: lib/hammer_cli_foreman/external_usergroup.rb:42
+#: lib/hammer_cli_foreman/filter.rb:73 lib/hammer_cli_foreman/filter.rb:90
+#: lib/hammer_cli_foreman/media.rb:10 lib/hammer_cli_foreman/role.rb:12
+#: lib/hammer_cli_foreman/image.rb:30 lib/hammer_cli_foreman/image.rb:70
+#: lib/hammer_cli_foreman/puppet_class.rb:13
+#: lib/hammer_cli_foreman/model.rb:11
+#: lib/hammer_cli_foreman/common_parameter.rb:12
+#: lib/hammer_cli_foreman/domain.rb:32 lib/hammer_cli_foreman/template.rb:26
+#: lib/hammer_cli_foreman/template.rb:74
+#: lib/hammer_cli_foreman/operating_system.rb:22
+#: lib/hammer_cli_foreman/smart_proxy.rb:12
+msgid "Name"
+msgstr "名前"
+
+#: lib/hammer_cli_foreman/architecture.rb:31
+msgid "Architecture created"
+msgstr "アーキテクチャーが作成されました"
+
+#: lib/hammer_cli_foreman/architecture.rb:32
+msgid "Could not create the architecture"
+msgstr "アーキテクチャーを作成できませんでした"
+
+#: lib/hammer_cli_foreman/architecture.rb:39
+msgid "Architecture deleted"
+msgstr "アーキテクチャーが削除されました"
+
+#: lib/hammer_cli_foreman/architecture.rb:40
+msgid "Could not delete the architecture"
+msgstr "アーキテクチャーを削除できませんでした"
+
+#: lib/hammer_cli_foreman/architecture.rb:47
+msgid "Architecture updated"
+msgstr "アーキテクチャーが更新されました"
+
+#: lib/hammer_cli_foreman/architecture.rb:48
+msgid "Could not update the architecture"
+msgstr "アーキテクチャーを更新できませんでした"
+
+#: lib/hammer_cli_foreman/auth_source_ldap.rb:7
+msgid "Manage LDAP auth sources."
+msgstr ""
+
+#: lib/hammer_cli_foreman/auth_source_ldap.rb:15
+msgid "LDAPS?"
+msgstr ""
+
+#: lib/hammer_cli_foreman/auth_source_ldap.rb:16
+msgid "Port"
+msgstr ""
+
+#: lib/hammer_cli_foreman/auth_source_ldap.rb:17
+msgid "Server Type"
+msgstr ""
+
+#: lib/hammer_cli_foreman/auth_source_ldap.rb:27
+msgid "Account Username"
+msgstr ""
+
+#: lib/hammer_cli_foreman/auth_source_ldap.rb:28
+msgid "Base DN"
+msgstr "ベース DN"
+
+#: lib/hammer_cli_foreman/auth_source_ldap.rb:29
+msgid "LDAP filter"
+msgstr "LDAP フィルター"
+
+#: lib/hammer_cli_foreman/auth_source_ldap.rb:30
+msgid "Automatically Create Accounts?"
+msgstr ""
+
+#: lib/hammer_cli_foreman/auth_source_ldap.rb:31
+msgid "Login Name Attribute"
+msgstr ""
+
+#: lib/hammer_cli_foreman/auth_source_ldap.rb:32
+msgid "First Name Attribute"
+msgstr ""
+
+#: lib/hammer_cli_foreman/auth_source_ldap.rb:33
+msgid "Last Name Attribute"
+msgstr ""
+
+#: lib/hammer_cli_foreman/auth_source_ldap.rb:34
+msgid "Email Address Attribute"
+msgstr ""
+
+#: lib/hammer_cli_foreman/auth_source_ldap.rb:35
+msgid "Photo Attribute"
+msgstr ""
+
+#: lib/hammer_cli_foreman/auth_source_ldap.rb:43
+msgid "Auth source created"
+msgstr ""
+
+#: lib/hammer_cli_foreman/auth_source_ldap.rb:44
+msgid "Could not create the Auth Source"
+msgstr ""
+
+#: lib/hammer_cli_foreman/auth_source_ldap.rb:51
+msgid "Auth source deleted"
+msgstr ""
+
+#: lib/hammer_cli_foreman/auth_source_ldap.rb:52
+msgid "Could not delete the Auth Source"
+msgstr ""
+
+#: lib/hammer_cli_foreman/auth_source_ldap.rb:59
+msgid "Auth source updated"
+msgstr ""
+
+#: lib/hammer_cli_foreman/auth_source_ldap.rb:60
+msgid "Could not update the Auth Source"
+msgstr ""
+
+#: lib/hammer_cli_foreman/organization.rb:37
+#: lib/hammer_cli_foreman/references.rb:15
+msgid "Locations"
+msgstr "ロケーション"
+
+#: lib/hammer_cli_foreman/organization.rb:53
+msgid "Organization created"
+msgstr "組織が作成されました"
+
+#: lib/hammer_cli_foreman/organization.rb:54
+msgid "Could not create the organization"
+msgstr "組織を作成できませんでした"
+
+#: lib/hammer_cli_foreman/organization.rb:65
+msgid "Organization updated"
+msgstr "組織が更新されました"
+
+#: lib/hammer_cli_foreman/organization.rb:66
+msgid "Could not update the organization"
+msgstr "組織を更新できませんでした"
+
+#: lib/hammer_cli_foreman/organization.rb:77
+msgid "Organization deleted"
+msgstr "組織が削除されました"
+
+#: lib/hammer_cli_foreman/organization.rb:78
+msgid "Could not delete the organization"
+msgstr "組織を削除できませんでした"
+
+#: lib/hammer_cli_foreman/subnet.rb:12
+msgid "Network"
+msgstr "ネットワーク"
+
+#: lib/hammer_cli_foreman/subnet.rb:13
+msgid "Mask"
+msgstr "マスク"
+
+#: lib/hammer_cli_foreman/subnet.rb:23
+msgid "Priority"
+msgstr "優先度"
+
+#: lib/hammer_cli_foreman/subnet.rb:24
+msgid "DNS"
+msgstr "DNS"
+
+#: lib/hammer_cli_foreman/subnet.rb:25
+msgid "Primary DNS"
+msgstr "プライマリー DNS"
+
+#: lib/hammer_cli_foreman/subnet.rb:26
+msgid "Secondary DNS"
+msgstr "セカンダリー DNS"
+
+#: lib/hammer_cli_foreman/subnet.rb:27
+msgid "TFTP"
+msgstr "TFTP"
+
+#: lib/hammer_cli_foreman/subnet.rb:28
+msgid "DHCP"
+msgstr "DHCP"
+
+#: lib/hammer_cli_foreman/subnet.rb:30
+msgid "VLAN ID"
+msgstr "VLAN ID"
+
+#: lib/hammer_cli_foreman/subnet.rb:31
+msgid "Gateway"
+msgstr "ゲートウェイ"
+
+#: lib/hammer_cli_foreman/subnet.rb:32
+msgid "From"
+msgstr "起点"
+
+#: lib/hammer_cli_foreman/subnet.rb:33
+msgid "To"
+msgstr "終点"
+
+#: lib/hammer_cli_foreman/subnet.rb:44
+msgid "Subnet created"
+msgstr "サブネットが作成されました"
+
+#: lib/hammer_cli_foreman/subnet.rb:45
+msgid "Could not create the subnet"
+msgstr "サブネットを作成できませんでした"
+
+#: lib/hammer_cli_foreman/subnet.rb:53
+msgid "Subnet updated"
+msgstr "サブネットが更新されました"
+
+#: lib/hammer_cli_foreman/subnet.rb:54
+msgid "Could not update the subnet"
+msgstr "サブネットを更新できませんでした"
+
+#: lib/hammer_cli_foreman/subnet.rb:62
+msgid "Subnet deleted"
+msgstr "サブネットが削除されました"
+
+#: lib/hammer_cli_foreman/subnet.rb:63
+msgid "Could not delete the subnet"
+msgstr "サブネットを削除できませんでした"
+
+#: lib/hammer_cli_foreman/environment.rb:34
+msgid "Environment created"
+msgstr "環境が作成されました"
+
+#: lib/hammer_cli_foreman/environment.rb:35
+msgid "Could not create the environment"
+msgstr "環境を作成できませんでした"
+
+#: lib/hammer_cli_foreman/environment.rb:42
+msgid "Environment updated"
+msgstr "環境が更新されました"
+
+#: lib/hammer_cli_foreman/environment.rb:43
+msgid "Could not update the environment"
+msgstr "環境を更新できませんでした"
+
+#: lib/hammer_cli_foreman/environment.rb:50
+msgid "Environment deleted"
+msgstr "環境が削除されました"
+
+#: lib/hammer_cli_foreman/environment.rb:51
+msgid "Could not delete the environment"
+msgstr "環境を削除できませんでした"
+
+#: lib/hammer_cli_foreman/exception_handler.rb:41
+msgid "Forbidden - server refused to process the request"
+msgstr "許可されていません - サーバーは要求の処理を拒否しました"
+
+#: lib/hammer_cli_foreman/exception_handler.rb:75
+msgid "Could not load the API description from the server"
+msgstr ""
+
+#: lib/hammer_cli_foreman/exception_handler.rb:76
+msgid "is the server down?"
+msgstr ""
+
+#: lib/hammer_cli_foreman/exception_handler.rb:77
+msgid ""
+"was '%s' run on the server when using apipie cache? (typical production "
+"settings)"
+msgstr ""
+
+#: lib/hammer_cli_foreman/partition_table.rb:12
+#: lib/hammer_cli_foreman/media.rb:20
+msgid "OS Family"
+msgstr "OS 種別"
+
+#: lib/hammer_cli_foreman/partition_table.rb:31
+msgid "View partition table content."
+msgstr "パーティションテーブル数の表示。"
+
+#: lib/hammer_cli_foreman/partition_table.rb:43
+#: lib/hammer_cli_foreman/partition_table.rb:54
+msgid "Path to a file that contains the partition layout"
+msgstr "パーティションレイアウトを含むファイルのパス"
+
+#: lib/hammer_cli_foreman/partition_table.rb:46
+msgid "Partition table created"
+msgstr "パーティションテーブルが作成されました"
+
+#: lib/hammer_cli_foreman/partition_table.rb:47
+msgid "Could not create the partition table"
+msgstr "パーティションテーブルを作成できませんでした"
+
+#: lib/hammer_cli_foreman/partition_table.rb:57
+msgid "Partition table updated"
+msgstr "パーティションテーブルが更新されました"
+
+#: lib/hammer_cli_foreman/partition_table.rb:58
+msgid "Could not update the partition table"
+msgstr "パーティションテーブルを更新できませんでした"
+
+#: lib/hammer_cli_foreman/partition_table.rb:65
+msgid "Partition table deleted"
+msgstr "パーティションテーブルが削除されました"
+
+#: lib/hammer_cli_foreman/partition_table.rb:66
+msgid "Could not delete the partition table"
+msgstr "パーティションテーブルを削除できませんでした"
+
+#: lib/hammer_cli_foreman/compute_resource.rb:13
+msgid "Provider"
+msgstr "プロバイダー"
+
+#: lib/hammer_cli_foreman/compute_resource.rb:23
+#: lib/hammer_cli_foreman/compute_resource.rb:29
+#: lib/hammer_cli_foreman/host.rb:162 lib/hammer_cli_foreman/image.rb:33
+#: lib/hammer_cli_foreman/image.rb:71
+msgid "UUID"
+msgstr "UUID"
+
+#: lib/hammer_cli_foreman/compute_resource.rb:26
+#: lib/hammer_cli_foreman/compute_resource.rb:36
+msgid "Region"
+msgstr "リージョン"
+
+#: lib/hammer_cli_foreman/compute_resource.rb:30
+msgid "Server"
+msgstr "サーバー"
+
+#: lib/hammer_cli_foreman/compute_resource.rb:33
+msgid "Tenant"
+msgstr "テナント"
+
+#: lib/hammer_cli_foreman/compute_resource.rb:43
+msgid "Url"
+msgstr "URL"
+
+#: lib/hammer_cli_foreman/compute_resource.rb:44
+#: lib/hammer_cli_foreman/smart_class_parameter.rb:53
+#: lib/hammer_cli_foreman/domain.rb:42
+msgid "Description"
+msgstr "説明"
+
+#: lib/hammer_cli_foreman/compute_resource.rb:45
+msgid "User"
+msgstr "ユーザー"
+
+#: lib/hammer_cli_foreman/compute_resource.rb:62
+msgid "Compute resource created"
+msgstr "コンピュートリソースが作成されました"
+
+#: lib/hammer_cli_foreman/compute_resource.rb:63
+msgid "Could not create the compute resource"
+msgstr "コンピュートリソースを作成できませんでした"
+
+#: lib/hammer_cli_foreman/compute_resource.rb:74
+msgid "Compute resource updated"
+msgstr "コンピュートリソースが更新されました"
+
+#: lib/hammer_cli_foreman/compute_resource.rb:75
+msgid "Could not update the compute resource"
+msgstr "コンピュートリソースを更新できませんでした"
+
+#: lib/hammer_cli_foreman/compute_resource.rb:82
+msgid "Compute resource deleted"
+msgstr "コンピュートリソースが削除されました"
+
+#: lib/hammer_cli_foreman/compute_resource.rb:83
+msgid "Could not delete the compute resource"
+msgstr "コンピュートリソースを削除できませんでした"
+
+#: lib/hammer_cli_foreman/usergroup.rb:31
+msgid "User group [%<name>s] created"
+msgstr "ユーザーグループ [%<name>s] が作成されました"
+
+#: lib/hammer_cli_foreman/usergroup.rb:32
+msgid "Could not create the user group"
+msgstr "ユーザーグループを作成できませんでした"
+
+#: lib/hammer_cli_foreman/usergroup.rb:38
+msgid "User group [%<name>s] updated"
+msgstr "ユーザーグループ [%<name>s] が更新されました"
+
+#: lib/hammer_cli_foreman/usergroup.rb:39
+msgid "Could not update the user group"
+msgstr "ユーザーグループを更新できませんでした"
+
+#: lib/hammer_cli_foreman/usergroup.rb:45
+msgid "User group [%<name>s] deleted"
+msgstr "ユーザーグループ [%<name>s] が削除されました"
+
+#: lib/hammer_cli_foreman/usergroup.rb:46
+msgid "Could not delete the user group"
+msgstr "ユーザーグループを削除できませんでした"
+
+#: lib/hammer_cli_foreman/host.rb:13
+msgid "Login of the owner"
+msgstr ""
+
+#: lib/hammer_cli_foreman/host.rb:15
+msgid "ID of the owner"
+msgstr ""
+
+#: lib/hammer_cli_foreman/host.rb:40
+msgid "Host parameters."
+msgstr "ホストパラメーター。"
+
+#: lib/hammer_cli_foreman/host.rb:42
+msgid "Compute resource attributes."
+msgstr "コンピュートリソース属性。"
+
+#: lib/hammer_cli_foreman/host.rb:44
+msgid "Volume parameters"
+msgstr "ボリュームパラメーター"
+
+#: lib/hammer_cli_foreman/host.rb:46
+msgid "Interface parameters."
+msgstr "インターフェースパラメーター。"
+
+#: lib/hammer_cli_foreman/host.rb:131 lib/hammer_cli_foreman/hostgroup.rb:49
+#: lib/hammer_cli_foreman/image.rb:31
+msgid "Operating System"
+msgstr "オペレーティングシステム"
+
+#: lib/hammer_cli_foreman/host.rb:132
+msgid "Host Group"
+msgstr "ホストグループ"
+
+#: lib/hammer_cli_foreman/host.rb:133 lib/hammer_cli_foreman/host.rb:202
+#: lib/hammer_cli_foreman/host.rb:215
+msgid "IP"
+msgstr "IP アドレス"
+
+#: lib/hammer_cli_foreman/host.rb:134 lib/hammer_cli_foreman/host.rb:203
+#: lib/hammer_cli_foreman/host.rb:216
+msgid "MAC"
+msgstr "MAC"
+
+#: lib/hammer_cli_foreman/host.rb:163
+msgid "Cert name"
+msgstr "証明書名"
+
+#: lib/hammer_cli_foreman/host.rb:165 lib/hammer_cli_foreman/hostgroup.rb:50
+msgid "Environment"
+msgstr "環境"
+
+#: lib/hammer_cli_foreman/host.rb:167
+msgid "Managed"
+msgstr "管理"
+
+#: lib/hammer_cli_foreman/host.rb:168
+msgid "Enabled"
+msgstr "有効化"
+
+#: lib/hammer_cli_foreman/host.rb:169
+msgid "Build"
+msgstr "ビルド"
+
+#: lib/hammer_cli_foreman/host.rb:171
+msgid "Use image"
+msgstr "イメージの使用"
+
+#: lib/hammer_cli_foreman/host.rb:172
+msgid "Disk"
+msgstr "ディスク"
+
+#: lib/hammer_cli_foreman/host.rb:173
+msgid "Image file"
+msgstr "イメージファイル"
+
+#: lib/hammer_cli_foreman/host.rb:175
+msgid "SP Name"
+msgstr "SP 名"
+
+#: lib/hammer_cli_foreman/host.rb:176
+msgid "SP IP"
+msgstr "SP IP"
+
+#: lib/hammer_cli_foreman/host.rb:177
+msgid "SP MAC"
+msgstr "SP MAC"
+
+#: lib/hammer_cli_foreman/host.rb:179
+msgid "SP Subnet"
+msgstr "SP サブネット"
+
+#: lib/hammer_cli_foreman/host.rb:181
+msgid "Installed at"
+msgstr "インストール:"
+
+#: lib/hammer_cli_foreman/host.rb:182 lib/hammer_cli_foreman/report.rb:12
+msgid "Last report"
+msgstr "最終レポート"
+
+#: lib/hammer_cli_foreman/host.rb:184 lib/hammer_cli_foreman/hostgroup.rb:67
+msgid "Puppet CA Proxy Id"
+msgstr "Puppet CA プロキシー ID"
+
+#: lib/hammer_cli_foreman/host.rb:185 lib/hammer_cli_foreman/hostgroup.rb:66
+msgid "Medium"
+msgstr "メディア"
+
+#: lib/hammer_cli_foreman/host.rb:186 lib/hammer_cli_foreman/hostgroup.rb:51
+msgid "Model"
+msgstr "モデル"
+
+#: lib/hammer_cli_foreman/host.rb:187
+msgid "Owner Id"
+msgstr "所有者 ID "
+
+#: lib/hammer_cli_foreman/host.rb:188 lib/hammer_cli_foreman/hostgroup.rb:61
+msgid "Subnet"
+msgstr "サブネット"
+
+#: lib/hammer_cli_foreman/host.rb:189 lib/hammer_cli_foreman/hostgroup.rb:63
+msgid "Domain"
+msgstr "ドメイン"
+
+#: lib/hammer_cli_foreman/host.rb:190
+msgid "Puppet Proxy Id"
+msgstr "Puppet プロキシー ID"
+
+#: lib/hammer_cli_foreman/host.rb:191
+msgid "Owner Type"
+msgstr "所有者タイプ"
+
+#: lib/hammer_cli_foreman/host.rb:192 lib/hammer_cli_foreman/hostgroup.rb:65
+msgid "Partition Table"
+msgstr "パーティションテーブル"
+
+#: lib/hammer_cli_foreman/host.rb:193 lib/hammer_cli_foreman/hostgroup.rb:64
+#: lib/hammer_cli_foreman/image.rb:45
+msgid "Architecture"
+msgstr "アーキテクチャー"
+
+#: lib/hammer_cli_foreman/host.rb:194
+msgid "Image"
+msgstr "イメージ"
+
+#: lib/hammer_cli_foreman/host.rb:195
+msgid "Compute Resource"
+msgstr "コンピュートリソース"
+
+#: lib/hammer_cli_foreman/host.rb:197
+msgid "Comment"
+msgstr "コメント"
+
+#: lib/hammer_cli_foreman/host.rb:199
+msgid "BMC Network Interfaces"
+msgstr "BMC ネットワークインターフェース"
+
+#: lib/hammer_cli_foreman/host.rb:204 lib/hammer_cli_foreman/host.rb:217
+msgid "Domain Id"
+msgstr "ドメイン ID"
+
+#: lib/hammer_cli_foreman/host.rb:205 lib/hammer_cli_foreman/host.rb:218
+msgid "Domain Name"
+msgstr "ドメイン名"
+
+#: lib/hammer_cli_foreman/host.rb:206 lib/hammer_cli_foreman/host.rb:219
+msgid "Subnet Id"
+msgstr "サブネット ID"
+
+#: lib/hammer_cli_foreman/host.rb:207 lib/hammer_cli_foreman/host.rb:220
+msgid "Subnet Name"
+msgstr "サブネット名"
+
+#: lib/hammer_cli_foreman/host.rb:208
+msgid "BMC Username"
+msgstr "BMC ユーザー名"
+
+#: lib/hammer_cli_foreman/host.rb:209
+msgid "BMC Password"
+msgstr "BMC パスワード"
+
+#: lib/hammer_cli_foreman/host.rb:212
+msgid "Managed Network Interfaces"
+msgstr "管理ネットワークインターフェース"
+
+#: lib/hammer_cli_foreman/host.rb:236
+msgid "Status"
+msgstr "状態"
+
+#: lib/hammer_cli_foreman/host.rb:237
+msgid "Power"
+msgstr "パワー"
+
+#: lib/hammer_cli_foreman/host.rb:273
+msgid "Puppet run triggered"
+msgstr "Puppet run がトリガーされました"
+
+#: lib/hammer_cli_foreman/host.rb:286 lib/hammer_cli_foreman/fact.rb:13
+msgid "Fact"
+msgstr "ファクト"
+
+#: lib/hammer_cli_foreman/host.rb:287
+#: lib/hammer_cli_foreman/common_parameter.rb:13
+#: lib/hammer_cli_foreman/fact.rb:14
+#: lib/hammer_cli_foreman/smart_class_parameter.rb:65
+#: lib/hammer_cli_foreman/smart_class_parameter.rb:68
+msgid "Value"
+msgstr "値"
+
+#: lib/hammer_cli_foreman/host.rb:324
+msgid "Host created"
+msgstr "ホストが作成されました"
+
+#: lib/hammer_cli_foreman/host.rb:325
+msgid "Could not create the host"
+msgstr "ホストを作成できませんでした"
+
+#: lib/hammer_cli_foreman/host.rb:346
+msgid "Host updated"
+msgstr "ホストが更新されました"
+
+#: lib/hammer_cli_foreman/host.rb:347
+msgid "Could not update the host"
+msgstr "ホストを更新できませんでした"
+
+#: lib/hammer_cli_foreman/host.rb:354
+msgid "Host deleted"
+msgstr "ホストが削除されました"
+
+#: lib/hammer_cli_foreman/host.rb:355
+msgid "Could not delete the host"
+msgstr "ホストを削除できませんでした"
+
+#: lib/hammer_cli_foreman/host.rb:362
+msgid "Create or update parameter for a host."
+msgstr "ホストのパラメーターを作成または更新します。"
+
+#: lib/hammer_cli_foreman/host.rb:364
+msgid "Host parameter updated"
+msgstr "ホストパラメーターが更新されました"
+
+#: lib/hammer_cli_foreman/host.rb:365
+msgid "New host parameter created"
+msgstr "新規ホストパラメーターが作成されました"
+
+#: lib/hammer_cli_foreman/host.rb:366
+msgid "Could not set host parameter"
+msgstr "ホストパラメーターを設定できませんでした"
+
+#: lib/hammer_cli_foreman/host.rb:378
+msgid "Delete parameter for a host."
+msgstr "ホストのパラメーターを削除します。"
+
+#: lib/hammer_cli_foreman/host.rb:380
+msgid "Host parameter deleted"
+msgstr "ホストパラメーターが削除されました"
+
+#: lib/hammer_cli_foreman/host.rb:395
+msgid "Power a host on"
+msgstr "ホストのパワーをオンにする"
+
+#: lib/hammer_cli_foreman/host.rb:396
+msgid "The host is starting."
+msgstr "ホストが起動中です。"
+
+#: lib/hammer_cli_foreman/host.rb:413
+msgid "Force turning off a host"
+msgstr "ホストを強制的にオフにする"
+
+#: lib/hammer_cli_foreman/host.rb:418
+msgid "Power a host off"
+msgstr "ホストのパワーをオフにする"
+
+#: lib/hammer_cli_foreman/host.rb:430
+msgid "Power off forced."
+msgstr "パワーオフが強制されました。"
+
+#: lib/hammer_cli_foreman/host.rb:432
+msgid "Powering the host off."
+msgstr "ホストのパワーをオフにしています。"
+
+#: lib/hammer_cli_foreman/host.rb:449
+msgid "Reboot a host"
+msgstr "ホストの再起動"
+
+#: lib/hammer_cli_foreman/host.rb:450
+msgid "Host reboot started."
+msgstr "ホストの再起動が開始されました。"
+
+#: lib/hammer_cli_foreman/credentials.rb:26
+#, fuzzy
+msgid "[Foreman] Username: "
+msgstr "[Foreman] ユーザー名: "
+
+#: lib/hammer_cli_foreman/credentials.rb:33
+#, fuzzy
+msgid "[Foreman] Password for %s: "
+msgstr "%s の [Foreman] パスワード: "
+
+#: lib/hammer_cli_foreman/references.rb:8
+msgid "Created at"
+msgstr "作成:"
+
+#: lib/hammer_cli_foreman/references.rb:9
+msgid "Updated at"
+msgstr "更新:"
+
+#: lib/hammer_cli_foreman/references.rb:18
+#: lib/hammer_cli_foreman/location.rb:37
+msgid "Organizations"
+msgstr "組織"
+
+#: lib/hammer_cli_foreman/references.rb:26
+msgid "Users"
+msgstr "ユーザー"
+
+#: lib/hammer_cli_foreman/references.rb:34
+msgid "User groups"
+msgstr "ユーザーグループ"
+
+#: lib/hammer_cli_foreman/references.rb:42
+msgid "Smart proxies"
+msgstr "スマートプロキシ"
+
+#: lib/hammer_cli_foreman/references.rb:50
+msgid "Compute resources"
+msgstr "コンピュートリソース"
+
+#: lib/hammer_cli_foreman/references.rb:58
+msgid "Installation media"
+msgstr "インストールメディア"
+
+#: lib/hammer_cli_foreman/references.rb:66
+msgid "Templates"
+msgstr "テンプレート"
+
+#: lib/hammer_cli_foreman/references.rb:74
+msgid "Domains"
+msgstr "ドメイン"
+
+#: lib/hammer_cli_foreman/references.rb:82
+msgid "Environments"
+msgstr "環境"
+
+#: lib/hammer_cli_foreman/references.rb:90
+msgid "Hostgroups"
+msgstr "ホストグループ "
+
+#: lib/hammer_cli_foreman/references.rb:98
+msgid "Subnets"
+msgstr "サブネット"
+
+#: lib/hammer_cli_foreman/references.rb:107
+msgid "Parameters"
+msgstr "パラメーター"
+
+#: lib/hammer_cli_foreman/references.rb:115
+msgid "Puppetclasses"
+msgstr "Puppet クラス"
+
+#: lib/hammer_cli_foreman/references.rb:123
+msgid "Operating systems"
+msgstr "オペレーティングシステム"
+
+#: lib/hammer_cli_foreman/references.rb:131
+msgid "Roles"
+msgstr "ロール"
+
+#: lib/hammer_cli_foreman/references.rb:139
+msgid "External user groups"
+msgstr ""
+
+#: lib/hammer_cli_foreman/location.rb:24 lib/hammer_cli_foreman/location.rb:62
+#: lib/hammer_cli_foreman/location.rb:74
+msgid "Location numeric id to search by"
+msgstr "検索対象のロケーション数値 ID"
+
+#: lib/hammer_cli_foreman/location.rb:52
+msgid "Location created"
+msgstr "ロケーションが作成されました"
+
+#: lib/hammer_cli_foreman/location.rb:53
+msgid "Could not create the location"
+msgstr "ロケーションを作成できませんでした"
+
+#: lib/hammer_cli_foreman/location.rb:64
+msgid "Location updated"
+msgstr "ロケーションが更新されました"
+
+#: lib/hammer_cli_foreman/location.rb:65
+msgid "Could not update the location"
+msgstr "ロケーションを更新できませんでした"
+
+#: lib/hammer_cli_foreman/location.rb:76
+msgid "Location deleted"
+msgstr "ロケーションが削除されました"
+
+#: lib/hammer_cli_foreman/location.rb:77
+msgid "Could not delete the location"
+msgstr "ロケーションを削除できませんでした"
+
+#: lib/hammer_cli_foreman/hostgroup.rb:9
+msgid "List of puppetclass ids"
+msgstr ""
+
+#: lib/hammer_cli_foreman/hostgroup.rb:11
+msgid "Name of puppet CA proxy"
+msgstr ""
+
+#: lib/hammer_cli_foreman/hostgroup.rb:12
+msgid "Name of puppet proxy"
+msgstr ""
+
+#: lib/hammer_cli_foreman/hostgroup.rb:13
+#, fuzzy
+msgid "Name of parent hostgroup"
+msgstr "ホストグループを更新できませんでした"
+
+#: lib/hammer_cli_foreman/hostgroup.rb:48
+#: lib/hammer_cli_foreman/operating_system.rb:11
+msgid "Title"
+msgstr ""
+
+#: lib/hammer_cli_foreman/hostgroup.rb:68
+msgid "Puppet Master Proxy Id"
+msgstr "Puppet マスタープロキシー ID"
+
+#: lib/hammer_cli_foreman/hostgroup.rb:69
+msgid "ComputeProfile"
+msgstr "ComputeProfile"
+
+#: lib/hammer_cli_foreman/hostgroup.rb:73
+msgid "Parent Id"
+msgstr ""
+
+#: lib/hammer_cli_foreman/hostgroup.rb:83
+msgid "Hostgroup created"
+msgstr "ホストグループが作成されました"
+
+#: lib/hammer_cli_foreman/hostgroup.rb:84
+msgid "Could not create the hostgroup"
+msgstr "ホストグループを作成できませんでした"
+
+#: lib/hammer_cli_foreman/hostgroup.rb:93
+msgid "Hostgroup updated"
+msgstr "ホストグループが更新されました"
+
+#: lib/hammer_cli_foreman/hostgroup.rb:94
+msgid "Could not update the hostgroup"
+msgstr "ホストグループを更新できませんでした"
+
+#: lib/hammer_cli_foreman/hostgroup.rb:101
+msgid "Hostgroup deleted"
+msgstr "ホストグループが削除されました"
+
+#: lib/hammer_cli_foreman/hostgroup.rb:102
+msgid "Could not delete the hostgroup"
+msgstr "ホストグループを削除できませんでした"
+
+#: lib/hammer_cli_foreman/hostgroup.rb:129
+msgid "Create or update parameter for a hostgroup."
+msgstr "ホストグループのパラメーターを作成または更新します。"
+
+#: lib/hammer_cli_foreman/hostgroup.rb:131
+msgid "Hostgroup parameter updated"
+msgstr "ホストグループのパラメーターが更新されました"
+
+#: lib/hammer_cli_foreman/hostgroup.rb:132
+msgid "New hostgroup parameter created"
+msgstr "新規のホストグループパラメーターが作成されました"
+
+#: lib/hammer_cli_foreman/hostgroup.rb:133
+msgid "Could not set hostgroup parameter"
+msgstr "ホストグループのパラメーターを設定できませんでした"
+
+#: lib/hammer_cli_foreman/hostgroup.rb:140
+msgid "Delete parameter for a hostgroup."
+msgstr "ホストグループのパラメーターの削除。"
+
+#: lib/hammer_cli_foreman/hostgroup.rb:142
+msgid "Hostgroup parameter deleted"
+msgstr "ホストグループのパラメーターが削除されました。"
+
+#: lib/hammer_cli_foreman/commands.rb:83
+msgid "Received data of unknown format"
+msgstr "不明な形式のデータが取得されました。"
+
+#: lib/hammer_cli_foreman/commands.rb:185
+msgid ""
+"Could not find %{resource}. Some search options were missing, please see --"
+"help."
+msgstr ""
+
+#: lib/hammer_cli_foreman/commands.rb:187
+msgid "Could not find %{resource}, please set option %{switches}."
+msgstr ""
+
+#: lib/hammer_cli_foreman/commands.rb:189
+msgid "Could not find %{resource}, please set one of options %{switches}."
+msgstr ""
+
+#: lib/hammer_cli_foreman/commands.rb:288
+msgid "List next page? (%s): "
+msgstr "次のページをリストしますか? (%s): "
+
+#: lib/hammer_cli_foreman/commands.rb:492
+msgid "Associate a resource"
+msgstr "リソースの関連付け"
+
+#: lib/hammer_cli_foreman/commands.rb:514
+msgid "Disassociate a resource"
+msgstr "リソースの関連付けを解除"
+
+#: lib/hammer_cli_foreman/user.rb:11
+msgid "Login"
+msgstr "ログイン"
+
+#: lib/hammer_cli_foreman/user.rb:13
+msgid "Email"
+msgstr "メール"
+
+#: lib/hammer_cli_foreman/user.rb:28
+msgid "Admin"
+msgstr "管理者"
+
+#: lib/hammer_cli_foreman/user.rb:29
+msgid "Authorized by"
+msgstr "認証元"
+
+#: lib/hammer_cli_foreman/user.rb:30
+msgid "Last login"
+msgstr "最終ログイン"
+
+#: lib/hammer_cli_foreman/user.rb:47
+msgid "User created"
+msgstr "ユーザーが作成されました"
+
+#: lib/hammer_cli_foreman/user.rb:48
+msgid "Could not create the user"
+msgstr "ユーザーを作成できませんでした"
+
+#: lib/hammer_cli_foreman/user.rb:55
+msgid "User updated"
+msgstr "ユーザーが更新されました"
+
+#: lib/hammer_cli_foreman/user.rb:56
+msgid "Could not update the user"
+msgstr "ユーザーを更新できませんでした"
+
+#: lib/hammer_cli_foreman/user.rb:63
+msgid "User deleted"
+msgstr "ユーザーが削除されました"
+
+#: lib/hammer_cli_foreman/user.rb:64
+msgid "Could not delete the user"
+msgstr "ユーザーを削除できませんでした"
+
+#: lib/hammer_cli_foreman/external_usergroup.rb:6
+msgid "View and manage user group's external user groups"
+msgstr ""
+
+#: lib/hammer_cli_foreman/external_usergroup.rb:12
+#: lib/hammer_cli_foreman/external_usergroup.rb:43
+msgid "Auth source"
+msgstr "認証ソース"
+
+#: lib/hammer_cli_foreman/external_usergroup.rb:39
+msgid "Refresh external user group"
+msgstr ""
+
+#: lib/hammer_cli_foreman/external_usergroup.rb:57
+msgid "External user group created"
+msgstr ""
+
+#: lib/hammer_cli_foreman/external_usergroup.rb:58
+msgid "Could not create external user group"
+msgstr ""
+
+#: lib/hammer_cli_foreman/external_usergroup.rb:65
+msgid "External user group updated"
+msgstr ""
+
+#: lib/hammer_cli_foreman/external_usergroup.rb:66
+msgid "Could not update external user group"
+msgstr ""
+
+#: lib/hammer_cli_foreman/external_usergroup.rb:73
+msgid "External user group deleted"
+msgstr ""
+
+#: lib/hammer_cli_foreman/external_usergroup.rb:74
+msgid "Could not delete the external user group"
+msgstr ""
+
+#: lib/hammer_cli_foreman/filter.rb:10
+msgid "Resource type"
+msgstr "リソースタイプ"
+
+#: lib/hammer_cli_foreman/filter.rb:11
+msgid "Search"
+msgstr "検索"
+
+#: lib/hammer_cli_foreman/filter.rb:12
+msgid "Unlimited?"
+msgstr "無制限ですか?"
+
+#: lib/hammer_cli_foreman/filter.rb:13
+msgid "Role"
+msgstr "ロール"
+
+#: lib/hammer_cli_foreman/filter.rb:14
+msgid "Permissions"
+msgstr "パーミッション"
+
+#: lib/hammer_cli_foreman/filter.rb:18 lib/hammer_cli_foreman/filter.rb:34
+#: lib/hammer_cli_foreman/filter.rb:78 lib/hammer_cli_foreman/role.rb:33
+msgid "(Miscellaneous)"
+msgstr "(その他)"
+
+#: lib/hammer_cli_foreman/filter.rb:19 lib/hammer_cli_foreman/filter.rb:35
+#: lib/hammer_cli_foreman/role.rb:34
+msgid "none"
+msgstr "なし"
+
+#: lib/hammer_cli_foreman/filter.rb:44
+msgid "Permission filter for [%<resource_type>s] created"
+msgstr " [%<resource_type>s] のパーミッションフィルターが作成されました"
+
+#: lib/hammer_cli_foreman/filter.rb:45
+msgid "Could not create the permission filter"
+msgstr "パーミッションフィルターを作成できませんでした"
+
+#: lib/hammer_cli_foreman/filter.rb:52
+msgid "Permission filter for [%<resource_type>s] updated"
+msgstr "[%<resource_type>s] のパーミッションフィルターが更新されました"
+
+#: lib/hammer_cli_foreman/filter.rb:53
+msgid "Could not update the permission filter"
+msgstr "パーミッションフィルターを更新できませんでした"
+
+#: lib/hammer_cli_foreman/filter.rb:60
+msgid "Permission filter deleted"
+msgstr "パーミッションフィルターが削除されました"
+
+#: lib/hammer_cli_foreman/filter.rb:61
+msgid "Could not delete the permission filter"
+msgstr "パーミッションフィルターを削除できませんでした"
+
+#: lib/hammer_cli_foreman/filter.rb:74 lib/hammer_cli_foreman/report.rb:62
+msgid "Resource"
+msgstr "リソース"
+
+#: lib/hammer_cli_foreman/parameter.rb:49
+#: lib/hammer_cli_foreman/parameter.rb:96
+#: lib/hammer_cli_foreman/common_parameter.rb:27
+msgid "parameter name"
+msgstr "パラメーター名"
+
+#: lib/hammer_cli_foreman/parameter.rb:50
+#: lib/hammer_cli_foreman/common_parameter.rb:28
+msgid "parameter value"
+msgstr "パラメーター値"
 
 #: lib/hammer_cli_foreman/report.rb:11 lib/hammer_cli_foreman/report.rb:31
 #: lib/hammer_cli_foreman/fact.rb:12
 msgid "Host"
 msgstr "ホスト"
-
-#: lib/hammer_cli_foreman/report.rb:12 lib/hammer_cli_foreman/host.rb:177
-msgid "Last report"
-msgstr "最終レポート"
 
 #: lib/hammer_cli_foreman/report.rb:14 lib/hammer_cli_foreman/report.rb:35
 msgid "Applied"
@@ -135,10 +1387,6 @@ msgstr "合計"
 msgid "Logs"
 msgstr "ログ"
 
-#: lib/hammer_cli_foreman/report.rb:62 lib/hammer_cli_foreman/filter.rb:74
-msgid "Resource"
-msgstr "リソース"
-
 #: lib/hammer_cli_foreman/report.rb:65
 msgid "Message"
 msgstr "メッセージ"
@@ -151,214 +1399,146 @@ msgstr "レポートが削除されました"
 msgid "Could not delete the report"
 msgstr "レポートを削除できませんでした"
 
-#: lib/hammer_cli_foreman/external_usergroup.rb:6
-msgid "View and manage user group's external user groups"
+#: lib/hammer_cli_foreman/media.rb:11
+msgid "Path"
+msgstr "パス"
+
+#: lib/hammer_cli_foreman/media.rb:32
+msgid "Installation medium created"
+msgstr "インストールメディアが作成されました"
+
+#: lib/hammer_cli_foreman/media.rb:33
+msgid "Could not create the installation medium"
+msgstr "インストールメディアを作成できませんでした"
+
+#: lib/hammer_cli_foreman/media.rb:41
+msgid "Installation medium updated"
+msgstr "インストールメディアが更新されました"
+
+#: lib/hammer_cli_foreman/media.rb:42
+msgid "Could not update the installation media"
+msgstr "インストールメディアを更新できませんでした"
+
+#: lib/hammer_cli_foreman/media.rb:50
+msgid "Installation medium deleted"
+msgstr "インストールメディアが削除されました"
+
+#: lib/hammer_cli_foreman/media.rb:51
+msgid "Could not delete the installation media"
+msgstr "インストールメディアを削除できませんでした"
+
+#: lib/hammer_cli_foreman/role.rb:23
+msgid "User role id"
+msgstr "ユーザーロール ID"
+
+#: lib/hammer_cli_foreman/role.rb:47
+msgid "User role [%<name>s] created"
+msgstr "ユーザーロール [%<name>s] が作成されました"
+
+#: lib/hammer_cli_foreman/role.rb:48
+msgid "Could not create the user role"
+msgstr "ユーザーロールを作成できませんでした"
+
+#: lib/hammer_cli_foreman/role.rb:55
+msgid "User role [%<name>s] updated"
+msgstr "ユーザーロール [%<name>s] が更新されました"
+
+#: lib/hammer_cli_foreman/role.rb:56
+msgid "Could not update the user role"
+msgstr "ユーザーロールを更新できませんでした"
+
+#: lib/hammer_cli_foreman/role.rb:63
+msgid "User role [%<name>s] deleted"
+msgstr "ユーザーロール [%<name>s] が削除されました"
+
+#: lib/hammer_cli_foreman/role.rb:64
+msgid "Could not delete the user roles"
+msgstr "ユーザーロールを削除できませんでした"
+
+#: lib/hammer_cli_foreman/image.rb:8
+msgid "View and manage compute resource's images"
+msgstr "コンピュートリソースのイメージの表示および管理"
+
+#: lib/hammer_cli_foreman/image.rb:32
+msgid "Username"
+msgstr "ユーザー名"
+
+#: lib/hammer_cli_foreman/image.rb:46
+msgid "IAM role"
+msgstr "IAM ロール"
+
+#: lib/hammer_cli_foreman/image.rb:56
+msgid "Show images available for addition"
+msgstr "追加に使用できるイメージの表示"
+
+#: lib/hammer_cli_foreman/image.rb:81
+msgid "Image created"
+msgstr "イメージが作成されました"
+
+#: lib/hammer_cli_foreman/image.rb:82
+msgid "Could not create the image"
+msgstr "イメージを作成できませんでした"
+
+#: lib/hammer_cli_foreman/image.rb:90
+msgid "Image updated"
+msgstr "イメージが更新されました"
+
+#: lib/hammer_cli_foreman/image.rb:91
+msgid "Could not update the image"
+msgstr "イメージを更新できませんでした"
+
+#: lib/hammer_cli_foreman/image.rb:99
+msgid "Image deleted"
+msgstr "イメージが削除されました"
+
+#: lib/hammer_cli_foreman/image.rb:100
+msgid "Could not delete the image"
+msgstr "イメージを削除できませんでした"
+
+#: lib/hammer_cli_foreman/puppet_class.rb:33
+msgid "Smart variables"
+msgstr "スマート変数"
+
+#: lib/hammer_cli_foreman/puppet_class.rb:34
+#: lib/hammer_cli_foreman/smart_class_parameter.rb:10
+msgid "Parameter"
+msgstr "パラメーター"
+
+#: lib/hammer_cli_foreman/puppet_class.rb:35
+msgid "Default value"
+msgstr "デフォルト値"
+
+#: lib/hammer_cli_foreman/puppet_class.rb:37
+msgid "Smart class parameters"
+msgstr "スマートクラスパラメーター"
+
+#: lib/hammer_cli_foreman/auth.rb:7
+msgid "Set credentials"
+msgstr "資格情報の設定"
+
+#: lib/hammer_cli_foreman/auth.rb:20
+msgid "Wipe your credentials"
+msgstr "資格情報のワイプ"
+
+#: lib/hammer_cli_foreman/auth.rb:26
+msgid "Credentials deleted."
+msgstr "資格情報が削除されました。"
+
+#: lib/hammer_cli_foreman/auth.rb:33
+msgid "Information about current connections"
+msgstr "現在の接続についての情報"
+
+#: lib/hammer_cli_foreman/auth.rb:37
+msgid "You are logged in as '%s'"
+msgstr "ユーザーは '%s' としてログインしています"
+
+#: lib/hammer_cli_foreman/auth.rb:39
+msgid ""
+"You are currently not logged in to any service.\\nUse the service to set "
+"credentials."
 msgstr ""
-
-#: lib/hammer_cli_foreman/external_usergroup.rb:11
-#: lib/hammer_cli_foreman/external_usergroup.rb:42
-#: lib/hammer_cli_foreman/organization.rb:14
-#: lib/hammer_cli_foreman/common_parameter.rb:12
-#: lib/hammer_cli_foreman/subnet.rb:11 lib/hammer_cli_foreman/model.rb:11
-#: lib/hammer_cli_foreman/role.rb:12 lib/hammer_cli_foreman/media.rb:10
-#: lib/hammer_cli_foreman/override_value.rb:29
-#: lib/hammer_cli_foreman/compute_resource.rb:12
-#: lib/hammer_cli_foreman/hostgroup.rb:40
-#: lib/hammer_cli_foreman/template.rb:26 lib/hammer_cli_foreman/template.rb:74
-#: lib/hammer_cli_foreman/host.rb:125 lib/hammer_cli_foreman/host.rb:196
-#: lib/hammer_cli_foreman/host.rb:209
-#: lib/hammer_cli_foreman/operating_system.rb:22
-#: lib/hammer_cli_foreman/smart_proxy.rb:12
-#: lib/hammer_cli_foreman/environment.rb:15
-#: lib/hammer_cli_foreman/puppet_class.rb:13
-#: lib/hammer_cli_foreman/domain.rb:11 lib/hammer_cli_foreman/usergroup.rb:12
-#: lib/hammer_cli_foreman/image.rb:30 lib/hammer_cli_foreman/image.rb:70
-#: lib/hammer_cli_foreman/partition_table.rb:11
-#: lib/hammer_cli_foreman/user.rb:12 lib/hammer_cli_foreman/filter.rb:73
-#: lib/hammer_cli_foreman/filter.rb:90 lib/hammer_cli_foreman/location.rb:14
-#: lib/hammer_cli_foreman/auth_source_ldap.rb:14
-#: lib/hammer_cli_foreman/architecture.rb:11
-msgid "Name"
-msgstr "名前"
-
-#: lib/hammer_cli_foreman/external_usergroup.rb:12
-#: lib/hammer_cli_foreman/external_usergroup.rb:43
-msgid "Auth source"
-msgstr "認証ソース"
-
-#: lib/hammer_cli_foreman/external_usergroup.rb:39
-msgid "Refresh external user group"
-msgstr ""
-
-#: lib/hammer_cli_foreman/external_usergroup.rb:57
-msgid "External user group created"
-msgstr ""
-
-#: lib/hammer_cli_foreman/external_usergroup.rb:58
-msgid "Could not create external user group"
-msgstr ""
-
-#: lib/hammer_cli_foreman/external_usergroup.rb:65
-msgid "External user group updated"
-msgstr ""
-
-#: lib/hammer_cli_foreman/external_usergroup.rb:66
-msgid "Could not update external user group"
-msgstr ""
-
-#: lib/hammer_cli_foreman/external_usergroup.rb:73
-msgid "External user group deleted"
-msgstr ""
-
-#: lib/hammer_cli_foreman/external_usergroup.rb:74
-msgid "Could not delete the external user group"
-msgstr ""
-
-#: lib/hammer_cli_foreman/organization.rb:37
-#: lib/hammer_cli_foreman/references.rb:15
-msgid "Locations"
-msgstr "ロケーション"
-
-#: lib/hammer_cli_foreman/organization.rb:53
-msgid "Organization created"
-msgstr "組織が作成されました"
-
-#: lib/hammer_cli_foreman/organization.rb:54
-msgid "Could not create the organization"
-msgstr "組織を作成できませんでした"
-
-#: lib/hammer_cli_foreman/organization.rb:65
-msgid "Organization updated"
-msgstr "組織が更新されました"
-
-#: lib/hammer_cli_foreman/organization.rb:66
-msgid "Could not update the organization"
-msgstr "組織を更新できませんでした"
-
-#: lib/hammer_cli_foreman/organization.rb:77
-msgid "Organization deleted"
-msgstr "組織が削除されました"
-
-#: lib/hammer_cli_foreman/organization.rb:78
-msgid "Could not delete the organization"
-msgstr "組織を削除できませんでした"
-
-#: lib/hammer_cli_foreman/common_parameter.rb:13
-#: lib/hammer_cli_foreman/fact.rb:14
-#: lib/hammer_cli_foreman/smart_variables.rb:64
-#: lib/hammer_cli_foreman/smart_variables.rb:67
-#: lib/hammer_cli_foreman/host.rb:282
-#: lib/hammer_cli_foreman/smart_class_parameter.rb:65
-#: lib/hammer_cli_foreman/smart_class_parameter.rb:68
-msgid "Value"
-msgstr "値"
-
-#: lib/hammer_cli_foreman/common_parameter.rb:22
-msgid "Set a global parameter."
-msgstr "グローバルパラメーターの設定。"
-
-#: lib/hammer_cli_foreman/common_parameter.rb:24
-msgid "Created parameter [%{name}] with value [%{value}]."
-msgstr "値 [%{value}] でパラメーター [%{name}] を作成しました。"
-
-#: lib/hammer_cli_foreman/common_parameter.rb:25
-msgid "Parameter [%{name}] updated to [%{value}]."
-msgstr "パラメーター [%{name}] が [%{value}] に更新されました。"
-
-#: lib/hammer_cli_foreman/common_parameter.rb:27
-#: lib/hammer_cli_foreman/parameter.rb:49
-#: lib/hammer_cli_foreman/parameter.rb:96
-msgid "parameter name"
-msgstr "パラメーター名"
-
-#: lib/hammer_cli_foreman/common_parameter.rb:28
-#: lib/hammer_cli_foreman/parameter.rb:50
-msgid "parameter value"
-msgstr "パラメーター値"
-
-#: lib/hammer_cli_foreman/common_parameter.rb:53
-msgid "Global parameter [%{name}] deleted."
-msgstr "グローバルパラメーター [%{name}] が削除されました。"
-
-#: lib/hammer_cli_foreman/common_parameter.rb:54
-msgid "Could not delete the global parameter [%{name}]"
-msgstr "グローバルパラメーター [%{name}] を削除できませんでした"
-
-#: lib/hammer_cli_foreman/common_parameter.rb:67
-msgid "Manipulate global parameters."
-msgstr "グローバルパラメーターの操作。"
-
-#: lib/hammer_cli_foreman/subnet.rb:12
-msgid "Network"
-msgstr "ネットワーク"
-
-#: lib/hammer_cli_foreman/subnet.rb:13
-msgid "Mask"
-msgstr "マスク"
-
-#: lib/hammer_cli_foreman/subnet.rb:23
-msgid "Priority"
-msgstr "優先度"
-
-#: lib/hammer_cli_foreman/subnet.rb:24
-msgid "DNS"
-msgstr "DNS"
-
-#: lib/hammer_cli_foreman/subnet.rb:25
-msgid "Primary DNS"
-msgstr "プライマリー DNS"
-
-#: lib/hammer_cli_foreman/subnet.rb:26
-msgid "Secondary DNS"
-msgstr "セカンダリー DNS"
-
-#: lib/hammer_cli_foreman/subnet.rb:27
-msgid "TFTP"
-msgstr "TFTP"
-
-#: lib/hammer_cli_foreman/subnet.rb:28
-msgid "DHCP"
-msgstr "DHCP"
-
-#: lib/hammer_cli_foreman/subnet.rb:30
-msgid "VLAN ID"
-msgstr "VLAN ID"
-
-#: lib/hammer_cli_foreman/subnet.rb:31
-msgid "Gateway"
-msgstr "ゲートウェイ"
-
-#: lib/hammer_cli_foreman/subnet.rb:32
-msgid "From"
-msgstr "起点"
-
-#: lib/hammer_cli_foreman/subnet.rb:33
-msgid "To"
-msgstr "終点"
-
-#: lib/hammer_cli_foreman/subnet.rb:44
-msgid "Subnet created"
-msgstr "サブネットが作成されました"
-
-#: lib/hammer_cli_foreman/subnet.rb:45
-msgid "Could not create the subnet"
-msgstr "サブネットを作成できませんでした"
-
-#: lib/hammer_cli_foreman/subnet.rb:53
-msgid "Subnet updated"
-msgstr "サブネットが更新されました"
-
-#: lib/hammer_cli_foreman/subnet.rb:54
-msgid "Could not update the subnet"
-msgstr "サブネットを更新できませんでした"
-
-#: lib/hammer_cli_foreman/subnet.rb:62
-msgid "Subnet deleted"
-msgstr "サブネットが削除されました"
-
-#: lib/hammer_cli_foreman/subnet.rb:63
-msgid "Could not delete the subnet"
-msgstr "サブネットを削除できませんでした"
+"ユーザーは現在いずれのサービスにもログインしていません。\\n資格情報を設定する"
+"ためにサービスを使用します。"
 
 #: lib/hammer_cli_foreman/model.rb:12
 msgid "Vendor class"
@@ -396,212 +1576,167 @@ msgstr "ハードウェアモデルが更新されました"
 msgid "Could not update the hardware model"
 msgstr "ハードウェアモデルを更新できませんでした"
 
-#: lib/hammer_cli_foreman/role.rb:23
-msgid "User role id"
-msgstr "ユーザーロール ID"
+#: lib/hammer_cli_foreman/common_parameter.rb:22
+msgid "Set a global parameter."
+msgstr "グローバルパラメーターの設定。"
 
-#: lib/hammer_cli_foreman/role.rb:36 lib/hammer_cli_foreman/filter.rb:18
-#: lib/hammer_cli_foreman/filter.rb:34 lib/hammer_cli_foreman/filter.rb:78
-msgid "(Miscellaneous)"
-msgstr "(その他)"
+#: lib/hammer_cli_foreman/common_parameter.rb:24
+msgid "Created parameter [%{name}] with value [%{value}]."
+msgstr "値 [%{value}] でパラメーター [%{name}] を作成しました。"
 
-#: lib/hammer_cli_foreman/role.rb:37 lib/hammer_cli_foreman/filter.rb:19
-#: lib/hammer_cli_foreman/filter.rb:35
-msgid "none"
-msgstr "なし"
+#: lib/hammer_cli_foreman/common_parameter.rb:25
+msgid "Parameter [%{name}] updated to [%{value}]."
+msgstr "パラメーター [%{name}] が [%{value}] に更新されました。"
 
-#: lib/hammer_cli_foreman/role.rb:50
-msgid "User role [%<name>s] created"
-msgstr "ユーザーロール [%<name>s] が作成されました"
+#: lib/hammer_cli_foreman/common_parameter.rb:53
+msgid "Global parameter [%{name}] deleted."
+msgstr "グローバルパラメーター [%{name}] が削除されました。"
 
-#: lib/hammer_cli_foreman/role.rb:51
-msgid "Could not create the user role"
-msgstr "ユーザーロールを作成できませんでした"
+#: lib/hammer_cli_foreman/common_parameter.rb:54
+msgid "Could not delete the global parameter [%{name}]"
+msgstr "グローバルパラメーター [%{name}] を削除できませんでした"
 
-#: lib/hammer_cli_foreman/role.rb:58
-msgid "User role [%<name>s] updated"
-msgstr "ユーザーロール [%<name>s] が更新されました"
+#: lib/hammer_cli_foreman/common_parameter.rb:67
+msgid "Manipulate global parameters."
+msgstr "グローバルパラメーターの操作。"
 
-#: lib/hammer_cli_foreman/role.rb:59
-msgid "Could not update the user role"
-msgstr "ユーザーロールを更新できませんでした"
+#: lib/hammer_cli_foreman/smart_class_parameter.rb:11
+msgid "Default Value"
+msgstr "デフォルト値"
 
-#: lib/hammer_cli_foreman/role.rb:66
-msgid "User role [%<name>s] deleted"
-msgstr "ユーザーロール [%<name>s] が削除されました"
+#: lib/hammer_cli_foreman/smart_class_parameter.rb:12
+msgid "Override"
+msgstr "上書き"
 
-#: lib/hammer_cli_foreman/role.rb:67
-msgid "Could not delete the user roles"
-msgstr "ユーザーロールを削除できませんでした"
+#: lib/hammer_cli_foreman/smart_class_parameter.rb:33
+msgid "Puppet class"
+msgstr "Puppet クラス"
 
-#: lib/hammer_cli_foreman/fact.rb:13 lib/hammer_cli_foreman/host.rb:281
-msgid "Fact"
-msgstr "ファクト"
+#: lib/hammer_cli_foreman/smart_class_parameter.rb:34
+msgid "Class Id"
+msgstr "クラス ID"
 
-#: lib/hammer_cli_foreman/media.rb:11
-msgid "Path"
-msgstr "パス"
+#: lib/hammer_cli_foreman/smart_class_parameter.rb:54
+#: lib/hammer_cli_foreman/smart_class_parameter.rb:58
+#: lib/hammer_cli_foreman/template.rb:27
+msgid "Type"
+msgstr "タイプ"
 
-#: lib/hammer_cli_foreman/media.rb:20
-#: lib/hammer_cli_foreman/partition_table.rb:12
-msgid "OS Family"
-msgstr "OS 種別"
+#: lib/hammer_cli_foreman/smart_class_parameter.rb:55
+msgid "Required"
+msgstr "必須"
 
-#: lib/hammer_cli_foreman/media.rb:32
-msgid "Installation medium created"
-msgstr "インストールメディアが作成されました"
+#: lib/hammer_cli_foreman/smart_class_parameter.rb:57
+msgid "Validator"
+msgstr "バリデーター"
 
-#: lib/hammer_cli_foreman/media.rb:33
-msgid "Could not create the installation medium"
-msgstr "インストールメディアを作成できませんでした"
+#: lib/hammer_cli_foreman/smart_class_parameter.rb:59
+msgid "Rule"
+msgstr "ルール"
 
-#: lib/hammer_cli_foreman/media.rb:41
-msgid "Installation medium updated"
-msgstr "インストールメディアが更新されました"
+#: lib/hammer_cli_foreman/smart_class_parameter.rb:61
+msgid "Override values"
+msgstr "値の上書き"
 
-#: lib/hammer_cli_foreman/media.rb:42
-msgid "Could not update the installation media"
-msgstr "インストールメディアを更新できませんでした"
+#: lib/hammer_cli_foreman/smart_class_parameter.rb:62
+msgid "Order"
+msgstr "順序"
 
-#: lib/hammer_cli_foreman/media.rb:50
-msgid "Installation medium deleted"
-msgstr "インストールメディアが削除されました"
+#: lib/hammer_cli_foreman/smart_class_parameter.rb:63
+msgid "Count"
+msgstr "カウント"
 
-#: lib/hammer_cli_foreman/media.rb:51
-msgid "Could not delete the installation media"
-msgstr "インストールメディアを削除できませんでした"
+#: lib/hammer_cli_foreman/smart_class_parameter.rb:67
+msgid "Match"
+msgstr "一致"
 
-#: lib/hammer_cli_foreman/override_value.rb:7
-msgid "View and manage override values"
+#: lib/hammer_cli_foreman/smart_class_parameter.rb:86
+msgid "Parameter updated"
+msgstr "パラメーターが更新されました"
+
+#: lib/hammer_cli_foreman/smart_class_parameter.rb:87
+msgid "Could not update the parameter"
+msgstr "パラメーターを更新できませんでした"
+
+#: lib/hammer_cli_foreman/smart_class_parameter.rb:91
+msgid "Override this parameter."
+msgstr "このパラメーターの上書き。"
+
+#: lib/hammer_cli_foreman/smart_class_parameter.rb:93
+msgid "This parameter is required."
+msgstr "このパラメーターは必須です。"
+
+#: lib/hammer_cli_foreman/smart_class_parameter.rb:95
+msgid "Type of the parameter."
+msgstr "パラメーターのタイプ。"
+
+#: lib/hammer_cli_foreman/smart_class_parameter.rb:98
+msgid "Type of the validator."
+msgstr "バリデーターのタイプ。"
+
+#: lib/hammer_cli_foreman/domain.rb:6
+msgid "ID of DNS proxy to use within this domain"
 msgstr ""
 
-#: lib/hammer_cli_foreman/override_value.rb:30
-#: lib/hammer_cli_foreman/hostgroup.rb:42 lib/hammer_cli_foreman/host.rb:126
-#: lib/hammer_cli_foreman/image.rb:31
-msgid "Operating System"
-msgstr "オペレーティングシステム"
-
-#: lib/hammer_cli_foreman/override_value.rb:31
-#: lib/hammer_cli_foreman/image.rb:32
-msgid "Username"
-msgstr "ユーザー名"
-
-#: lib/hammer_cli_foreman/override_value.rb:32
-#: lib/hammer_cli_foreman/compute_resource.rb:23
-#: lib/hammer_cli_foreman/compute_resource.rb:29
-#: lib/hammer_cli_foreman/host.rb:157 lib/hammer_cli_foreman/image.rb:33
-#: lib/hammer_cli_foreman/image.rb:71
-msgid "UUID"
-msgstr "UUID"
-
-#: lib/hammer_cli_foreman/override_value.rb:44
-#: lib/hammer_cli_foreman/hostgroup.rb:58 lib/hammer_cli_foreman/host.rb:188
-#: lib/hammer_cli_foreman/image.rb:45
-msgid "Architecture"
-msgstr "アーキテクチャー"
-
-#: lib/hammer_cli_foreman/override_value.rb:45
-#: lib/hammer_cli_foreman/image.rb:46
-msgid "IAM role"
-msgstr "IAM ロール"
-
-#: lib/hammer_cli_foreman/override_value.rb:55
-msgid "OverrideValue created"
+#: lib/hammer_cli_foreman/domain.rb:7
+msgid "Name of DNS proxy to use within this domain"
 msgstr ""
 
-#: lib/hammer_cli_foreman/override_value.rb:56
-msgid "Could not create the override_value"
-msgstr ""
+#: lib/hammer_cli_foreman/domain.rb:43
+msgid "DNS Id"
+msgstr "DNS ID"
 
-#: lib/hammer_cli_foreman/override_value.rb:64
-msgid "OverrideValue updated"
-msgstr ""
+#: lib/hammer_cli_foreman/domain.rb:57
+msgid "Domain [%{name}] created"
+msgstr "ドメイン [%{name}] が作成されました"
 
-#: lib/hammer_cli_foreman/override_value.rb:65
-msgid "Could not update the override_value"
-msgstr ""
+#: lib/hammer_cli_foreman/domain.rb:58
+msgid "Could not create the domain"
+msgstr "ドメインを作成できませんでした"
 
-#: lib/hammer_cli_foreman/override_value.rb:73
-msgid "OverrideValue deleted"
-msgstr ""
+#: lib/hammer_cli_foreman/domain.rb:60 lib/hammer_cli_foreman/domain.rb:71
+msgid "Full name describing the domain"
+msgstr "ドメインを表すフルネーム"
 
-#: lib/hammer_cli_foreman/override_value.rb:74
-msgid "Could not delete the override_value"
-msgstr ""
+#: lib/hammer_cli_foreman/domain.rb:68
+msgid "Domain [%{name}] updated"
+msgstr "ドメイン [%{name}] が更新されました"
 
-#: lib/hammer_cli_foreman/exception_handler.rb:41
-msgid "Forbidden - server refused to process the request"
-msgstr "許可されていません - サーバーは要求の処理を拒否しました"
+#: lib/hammer_cli_foreman/domain.rb:69
+msgid "Could not update the domain"
+msgstr "ドメインを更新できませんでした"
 
-#: lib/hammer_cli_foreman/exception_handler.rb:75
-msgid "Could not load the API description from the server"
-msgstr ""
+#: lib/hammer_cli_foreman/domain.rb:78
+msgid "Domain [%{name}] deleted"
+msgstr "ドメイン [%{name}] が削除されました"
 
-#: lib/hammer_cli_foreman/exception_handler.rb:76
-msgid "is the server down?"
-msgstr ""
+#: lib/hammer_cli_foreman/domain.rb:79
+msgid "Could not delete the domain"
+msgstr "ドメインを削除できませんでした"
 
-#: lib/hammer_cli_foreman/exception_handler.rb:77
-msgid ""
-"was '%s' run on the server when using apipie cache? (typical production "
-"settings)"
-msgstr ""
+#: lib/hammer_cli_foreman/domain.rb:86
+msgid "Create or update parameter for a domain."
+msgstr "ドメインのパラメーターを作成または更新します。"
 
-#: lib/hammer_cli_foreman/compute_resource.rb:13
-msgid "Provider"
-msgstr "プロバイダー"
+#: lib/hammer_cli_foreman/domain.rb:88
+msgid "Domain parameter updated"
+msgstr "ドメインのパラメーターが更新されました"
 
-#: lib/hammer_cli_foreman/compute_resource.rb:26
-#: lib/hammer_cli_foreman/compute_resource.rb:36
-msgid "Region"
-msgstr "リージョン"
+#: lib/hammer_cli_foreman/domain.rb:89
+msgid "New domain parameter created"
+msgstr "新規のドメインパラメーターが作成されました"
 
-#: lib/hammer_cli_foreman/compute_resource.rb:30
-msgid "Server"
-msgstr "サーバー"
+#: lib/hammer_cli_foreman/domain.rb:90
+msgid "Could not set domain parameter"
+msgstr "ドメインパラメーターを設定できませんでした"
 
-#: lib/hammer_cli_foreman/compute_resource.rb:33
-msgid "Tenant"
-msgstr "テナント"
+#: lib/hammer_cli_foreman/domain.rb:102
+msgid "Delete parameter for a domain."
+msgstr "ドメインのパラメーターの削除。"
 
-#: lib/hammer_cli_foreman/compute_resource.rb:43
-msgid "Url"
-msgstr "URL"
-
-#: lib/hammer_cli_foreman/compute_resource.rb:44
-#: lib/hammer_cli_foreman/smart_variables.rb:52
-#: lib/hammer_cli_foreman/domain.rb:21
-#: lib/hammer_cli_foreman/smart_class_parameter.rb:53
-msgid "Description"
-msgstr "説明"
-
-#: lib/hammer_cli_foreman/compute_resource.rb:45
-msgid "User"
-msgstr "ユーザー"
-
-#: lib/hammer_cli_foreman/compute_resource.rb:62
-msgid "Compute resource created"
-msgstr "コンピュートリソースが作成されました"
-
-#: lib/hammer_cli_foreman/compute_resource.rb:63
-msgid "Could not create the compute resource"
-msgstr "コンピュートリソースを作成できませんでした"
-
-#: lib/hammer_cli_foreman/compute_resource.rb:74
-msgid "Compute resource updated"
-msgstr "コンピュートリソースが更新されました"
-
-#: lib/hammer_cli_foreman/compute_resource.rb:75
-msgid "Could not update the compute resource"
-msgstr "コンピュートリソースを更新できませんでした"
-
-#: lib/hammer_cli_foreman/compute_resource.rb:82
-msgid "Compute resource deleted"
-msgstr "コンピュートリソースが削除されました"
-
-#: lib/hammer_cli_foreman/compute_resource.rb:83
-msgid "Could not delete the compute resource"
-msgstr "コンピュートリソースを削除できませんでした"
+#: lib/hammer_cli_foreman/domain.rb:104
+msgid "Domain parameter deleted"
+msgstr "ドメインのパラメーターが削除されました。"
 
 #: lib/hammer_cli_foreman/associating_commands.rb:41
 msgid "Associate a hostgroup"
@@ -787,212 +1922,9 @@ msgstr "ユーザーロールが削除されています"
 msgid "Could not remove the user role"
 msgstr "ユーザーロールを削除できませんでした"
 
-#: lib/hammer_cli_foreman/smart_variables.rb:9
-#: lib/hammer_cli_foreman/puppet_class.rb:34
-#: lib/hammer_cli_foreman/smart_class_parameter.rb:10
-msgid "Parameter"
-msgstr "パラメーター"
-
-#: lib/hammer_cli_foreman/smart_variables.rb:10
-#: lib/hammer_cli_foreman/smart_class_parameter.rb:11
-msgid "Default Value"
-msgstr "デフォルト値"
-
-#: lib/hammer_cli_foreman/smart_variables.rb:11
-#: lib/hammer_cli_foreman/smart_class_parameter.rb:12
-msgid "Override"
-msgstr "上書き"
-
-#: lib/hammer_cli_foreman/smart_variables.rb:32
-#: lib/hammer_cli_foreman/smart_class_parameter.rb:33
-msgid "Puppet class"
-msgstr "Puppet クラス"
-
-#: lib/hammer_cli_foreman/smart_variables.rb:33
-#: lib/hammer_cli_foreman/smart_class_parameter.rb:34
-msgid "Class Id"
-msgstr "クラス ID"
-
-#: lib/hammer_cli_foreman/smart_variables.rb:53
-#: lib/hammer_cli_foreman/smart_variables.rb:57
-#: lib/hammer_cli_foreman/template.rb:27
-#: lib/hammer_cli_foreman/smart_class_parameter.rb:54
-#: lib/hammer_cli_foreman/smart_class_parameter.rb:58
-msgid "Type"
-msgstr "タイプ"
-
-#: lib/hammer_cli_foreman/smart_variables.rb:54
-#: lib/hammer_cli_foreman/smart_class_parameter.rb:55
-msgid "Required"
-msgstr "必須"
-
-#: lib/hammer_cli_foreman/smart_variables.rb:56
-#: lib/hammer_cli_foreman/smart_class_parameter.rb:57
-msgid "Validator"
-msgstr "バリデーター"
-
-#: lib/hammer_cli_foreman/smart_variables.rb:58
-#: lib/hammer_cli_foreman/smart_class_parameter.rb:59
-msgid "Rule"
-msgstr "ルール"
-
-#: lib/hammer_cli_foreman/smart_variables.rb:60
-#: lib/hammer_cli_foreman/smart_class_parameter.rb:61
-msgid "Override values"
-msgstr "値の上書き"
-
-#: lib/hammer_cli_foreman/smart_variables.rb:61
-#: lib/hammer_cli_foreman/smart_class_parameter.rb:62
-msgid "Order"
-msgstr "順序"
-
-#: lib/hammer_cli_foreman/smart_variables.rb:62
-#: lib/hammer_cli_foreman/smart_class_parameter.rb:63
-msgid "Count"
-msgstr "カウント"
-
-#: lib/hammer_cli_foreman/smart_variables.rb:66
-#: lib/hammer_cli_foreman/smart_class_parameter.rb:67
-msgid "Match"
-msgstr "一致"
-
-#: lib/hammer_cli_foreman/smart_variables.rb:85
-#: lib/hammer_cli_foreman/smart_class_parameter.rb:86
-msgid "Parameter updated"
-msgstr "パラメーターが更新されました"
-
-#: lib/hammer_cli_foreman/smart_variables.rb:86
-#: lib/hammer_cli_foreman/smart_class_parameter.rb:87
-msgid "Could not update the parameter"
-msgstr "パラメーターを更新できませんでした"
-
-#: lib/hammer_cli_foreman/smart_variables.rb:90
-#: lib/hammer_cli_foreman/smart_class_parameter.rb:91
-msgid "Override this parameter."
-msgstr "このパラメーターの上書き。"
-
-#: lib/hammer_cli_foreman/smart_variables.rb:92
-#: lib/hammer_cli_foreman/smart_class_parameter.rb:93
-msgid "This parameter is required."
-msgstr "このパラメーターは必須です。"
-
-#: lib/hammer_cli_foreman/smart_variables.rb:94
-#: lib/hammer_cli_foreman/smart_class_parameter.rb:95
-msgid "Type of the parameter."
-msgstr "パラメーターのタイプ。"
-
-#: lib/hammer_cli_foreman/smart_variables.rb:97
-#: lib/hammer_cli_foreman/smart_class_parameter.rb:98
-msgid "Type of the validator."
-msgstr "バリデーターのタイプ。"
-
-#: lib/hammer_cli_foreman/smart_variables.rb:109
-msgid "Manipulate smart variables."
-msgstr ""
-
-#: lib/hammer_cli_foreman/hostgroup.rb:9
-msgid "List of puppetclass ids"
-msgstr ""
-
-#: lib/hammer_cli_foreman/hostgroup.rb:11
-msgid "Name of puppet CA proxy"
-msgstr ""
-
-#: lib/hammer_cli_foreman/hostgroup.rb:12
-msgid "Name of puppet proxy"
-msgstr ""
-
-#: lib/hammer_cli_foreman/hostgroup.rb:41
-msgid "Label"
-msgstr "ラベル"
-
-#: lib/hammer_cli_foreman/hostgroup.rb:43 lib/hammer_cli_foreman/host.rb:160
-msgid "Environment"
-msgstr "環境"
-
-#: lib/hammer_cli_foreman/hostgroup.rb:44 lib/hammer_cli_foreman/host.rb:181
-msgid "Model"
-msgstr "モデル"
-
-#: lib/hammer_cli_foreman/hostgroup.rb:45
-msgid "Ancestry"
-msgstr "上位"
-
-#: lib/hammer_cli_foreman/hostgroup.rb:55 lib/hammer_cli_foreman/host.rb:183
-msgid "Subnet"
-msgstr "サブネット"
-
-#: lib/hammer_cli_foreman/hostgroup.rb:57 lib/hammer_cli_foreman/host.rb:184
-msgid "Domain"
-msgstr "ドメイン"
-
-#: lib/hammer_cli_foreman/hostgroup.rb:59 lib/hammer_cli_foreman/host.rb:187
-msgid "Partition Table"
-msgstr "パーティションテーブル"
-
-#: lib/hammer_cli_foreman/hostgroup.rb:60 lib/hammer_cli_foreman/host.rb:180
-msgid "Medium"
-msgstr "メディア"
-
-#: lib/hammer_cli_foreman/hostgroup.rb:61 lib/hammer_cli_foreman/host.rb:179
-msgid "Puppet CA Proxy Id"
-msgstr "Puppet CA プロキシー ID"
-
-#: lib/hammer_cli_foreman/hostgroup.rb:62
-msgid "Puppet Master Proxy Id"
-msgstr "Puppet マスタープロキシー ID"
-
-#: lib/hammer_cli_foreman/hostgroup.rb:63
-msgid "ComputeProfile"
-msgstr "ComputeProfile"
-
-#: lib/hammer_cli_foreman/hostgroup.rb:76
-msgid "Hostgroup created"
-msgstr "ホストグループが作成されました"
-
-#: lib/hammer_cli_foreman/hostgroup.rb:77
-msgid "Could not create the hostgroup"
-msgstr "ホストグループを作成できませんでした"
-
-#: lib/hammer_cli_foreman/hostgroup.rb:86
-msgid "Hostgroup updated"
-msgstr "ホストグループが更新されました"
-
-#: lib/hammer_cli_foreman/hostgroup.rb:87
-msgid "Could not update the hostgroup"
-msgstr "ホストグループを更新できませんでした"
-
-#: lib/hammer_cli_foreman/hostgroup.rb:94
-msgid "Hostgroup deleted"
-msgstr "ホストグループが削除されました"
-
-#: lib/hammer_cli_foreman/hostgroup.rb:95
-msgid "Could not delete the hostgroup"
-msgstr "ホストグループを削除できませんでした"
-
-#: lib/hammer_cli_foreman/hostgroup.rb:122
-msgid "Create or update parameter for a hostgroup."
-msgstr "ホストグループのパラメーターを作成または更新します。"
-
-#: lib/hammer_cli_foreman/hostgroup.rb:124
-msgid "Hostgroup parameter updated"
-msgstr "ホストグループのパラメーターが更新されました"
-
-#: lib/hammer_cli_foreman/hostgroup.rb:125
-msgid "New hostgroup parameter created"
-msgstr "新規のホストグループパラメーターが作成されました"
-
-#: lib/hammer_cli_foreman/hostgroup.rb:126
-msgid "Could not set hostgroup parameter"
-msgstr "ホストグループのパラメーターを設定できませんでした"
-
-#: lib/hammer_cli_foreman/hostgroup.rb:133
-msgid "Delete parameter for a hostgroup."
-msgstr "ホストグループのパラメーターの削除。"
-
-#: lib/hammer_cli_foreman/hostgroup.rb:135
-msgid "Hostgroup parameter deleted"
-msgstr "ホストグループのパラメーターが削除されました。"
+#: lib/hammer_cli_foreman/resource_supported_test.rb:11
+msgid "The server does not support such operation."
+msgstr "サーバーはこの操作に対応していません。"
 
 #: lib/hammer_cli_foreman/template.rb:71
 msgid "List available config template kinds."
@@ -1036,329 +1968,6 @@ msgstr "設定テンプレートが削除されました"
 msgid "Could not delete the config template"
 msgstr "設定テンプレートを削除できませんでした"
 
-#: lib/hammer_cli_foreman/host.rb:36
-msgid "Host parameters."
-msgstr "ホストパラメーター。"
-
-#: lib/hammer_cli_foreman/host.rb:38
-msgid "Compute resource attributes."
-msgstr "コンピュートリソース属性。"
-
-#: lib/hammer_cli_foreman/host.rb:40
-msgid "Volume parameters"
-msgstr "ボリュームパラメーター"
-
-#: lib/hammer_cli_foreman/host.rb:42
-msgid "Interface parameters."
-msgstr "インターフェースパラメーター。"
-
-#: lib/hammer_cli_foreman/host.rb:127
-msgid "Host Group"
-msgstr "ホストグループ"
-
-#: lib/hammer_cli_foreman/host.rb:128 lib/hammer_cli_foreman/host.rb:197
-#: lib/hammer_cli_foreman/host.rb:210
-msgid "IP"
-msgstr "IP アドレス"
-
-#: lib/hammer_cli_foreman/host.rb:129 lib/hammer_cli_foreman/host.rb:198
-#: lib/hammer_cli_foreman/host.rb:211
-msgid "MAC"
-msgstr "MAC"
-
-#: lib/hammer_cli_foreman/host.rb:158
-msgid "Cert name"
-msgstr "証明書名"
-
-#: lib/hammer_cli_foreman/host.rb:162
-msgid "Managed"
-msgstr "管理"
-
-#: lib/hammer_cli_foreman/host.rb:163
-msgid "Enabled"
-msgstr "有効化"
-
-#: lib/hammer_cli_foreman/host.rb:164
-msgid "Build"
-msgstr "ビルド"
-
-#: lib/hammer_cli_foreman/host.rb:166
-msgid "Use image"
-msgstr "イメージの使用"
-
-#: lib/hammer_cli_foreman/host.rb:167
-msgid "Disk"
-msgstr "ディスク"
-
-#: lib/hammer_cli_foreman/host.rb:168
-msgid "Image file"
-msgstr "イメージファイル"
-
-#: lib/hammer_cli_foreman/host.rb:170
-msgid "SP Name"
-msgstr "SP 名"
-
-#: lib/hammer_cli_foreman/host.rb:171
-msgid "SP IP"
-msgstr "SP IP"
-
-#: lib/hammer_cli_foreman/host.rb:172
-msgid "SP MAC"
-msgstr "SP MAC"
-
-#: lib/hammer_cli_foreman/host.rb:174
-msgid "SP Subnet"
-msgstr "SP サブネット"
-
-#: lib/hammer_cli_foreman/host.rb:176
-msgid "Installed at"
-msgstr "インストール:"
-
-#: lib/hammer_cli_foreman/host.rb:182
-msgid "Owner Id"
-msgstr "所有者 ID "
-
-#: lib/hammer_cli_foreman/host.rb:185
-msgid "Puppet Proxy Id"
-msgstr "Puppet プロキシー ID"
-
-#: lib/hammer_cli_foreman/host.rb:186
-msgid "Owner Type"
-msgstr "所有者タイプ"
-
-#: lib/hammer_cli_foreman/host.rb:189
-msgid "Image"
-msgstr "イメージ"
-
-#: lib/hammer_cli_foreman/host.rb:190
-msgid "Compute Resource"
-msgstr "コンピュートリソース"
-
-#: lib/hammer_cli_foreman/host.rb:192
-msgid "Comment"
-msgstr "コメント"
-
-#: lib/hammer_cli_foreman/host.rb:194
-msgid "BMC Network Interfaces"
-msgstr "BMC ネットワークインターフェース"
-
-#: lib/hammer_cli_foreman/host.rb:199 lib/hammer_cli_foreman/host.rb:212
-msgid "Domain Id"
-msgstr "ドメイン ID"
-
-#: lib/hammer_cli_foreman/host.rb:200 lib/hammer_cli_foreman/host.rb:213
-msgid "Domain Name"
-msgstr "ドメイン名"
-
-#: lib/hammer_cli_foreman/host.rb:201 lib/hammer_cli_foreman/host.rb:214
-msgid "Subnet Id"
-msgstr "サブネット ID"
-
-#: lib/hammer_cli_foreman/host.rb:202 lib/hammer_cli_foreman/host.rb:215
-msgid "Subnet Name"
-msgstr "サブネット名"
-
-#: lib/hammer_cli_foreman/host.rb:203
-msgid "BMC Username"
-msgstr "BMC ユーザー名"
-
-#: lib/hammer_cli_foreman/host.rb:204
-msgid "BMC Password"
-msgstr "BMC パスワード"
-
-#: lib/hammer_cli_foreman/host.rb:207
-msgid "Managed Network Interfaces"
-msgstr "管理ネットワークインターフェース"
-
-#: lib/hammer_cli_foreman/host.rb:231
-msgid "Status"
-msgstr "状態"
-
-#: lib/hammer_cli_foreman/host.rb:232
-msgid "Power"
-msgstr "パワー"
-
-#: lib/hammer_cli_foreman/host.rb:268
-msgid "Puppet run triggered"
-msgstr "Puppet run がトリガーされました"
-
-#: lib/hammer_cli_foreman/host.rb:319
-msgid "Host created"
-msgstr "ホストが作成されました"
-
-#: lib/hammer_cli_foreman/host.rb:320
-msgid "Could not create the host"
-msgstr "ホストを作成できませんでした"
-
-#: lib/hammer_cli_foreman/host.rb:341
-msgid "Host updated"
-msgstr "ホストが更新されました"
-
-#: lib/hammer_cli_foreman/host.rb:342
-msgid "Could not update the host"
-msgstr "ホストを更新できませんでした"
-
-#: lib/hammer_cli_foreman/host.rb:349
-msgid "Host deleted"
-msgstr "ホストが削除されました"
-
-#: lib/hammer_cli_foreman/host.rb:350
-msgid "Could not delete the host"
-msgstr "ホストを削除できませんでした"
-
-#: lib/hammer_cli_foreman/host.rb:357
-msgid "Create or update parameter for a host."
-msgstr "ホストのパラメーターを作成または更新します。"
-
-#: lib/hammer_cli_foreman/host.rb:359
-msgid "Host parameter updated"
-msgstr "ホストパラメーターが更新されました"
-
-#: lib/hammer_cli_foreman/host.rb:360
-msgid "New host parameter created"
-msgstr "新規ホストパラメーターが作成されました"
-
-#: lib/hammer_cli_foreman/host.rb:361
-msgid "Could not set host parameter"
-msgstr "ホストパラメーターを設定できませんでした"
-
-#: lib/hammer_cli_foreman/host.rb:373
-msgid "Delete parameter for a host."
-msgstr "ホストのパラメーターを削除します。"
-
-#: lib/hammer_cli_foreman/host.rb:375
-msgid "Host parameter deleted"
-msgstr "ホストパラメーターが削除されました"
-
-#: lib/hammer_cli_foreman/host.rb:390
-msgid "Power a host on"
-msgstr "ホストのパワーをオンにする"
-
-#: lib/hammer_cli_foreman/host.rb:391
-msgid "The host is starting."
-msgstr "ホストが起動中です。"
-
-#: lib/hammer_cli_foreman/host.rb:408
-msgid "Force turning off a host"
-msgstr "ホストを強制的にオフにする"
-
-#: lib/hammer_cli_foreman/host.rb:413
-msgid "Power a host off"
-msgstr "ホストのパワーをオフにする"
-
-#: lib/hammer_cli_foreman/host.rb:425
-msgid "Power off forced."
-msgstr "パワーオフが強制されました。"
-
-#: lib/hammer_cli_foreman/host.rb:427
-msgid "Powering the host off."
-msgstr "ホストのパワーをオフにしています。"
-
-#: lib/hammer_cli_foreman/host.rb:444
-msgid "Reboot a host"
-msgstr "ホストの再起動"
-
-#: lib/hammer_cli_foreman/host.rb:445
-msgid "Host reboot started."
-msgstr "ホストの再起動が開始されました。"
-
-#: lib/hammer_cli_foreman/commands.rb:77
-msgid "Received data of unknown format"
-msgstr "不明な形式のデータが取得されました。"
-
-#: lib/hammer_cli_foreman/commands.rb:244
-msgid "List next page? (%s): "
-msgstr "次のページをリストしますか? (%s): "
-
-#: lib/hammer_cli_foreman/commands.rb:448
-msgid "Associate a resource"
-msgstr "リソースの関連付け"
-
-#: lib/hammer_cli_foreman/commands.rb:470
-msgid "Disassociate a resource"
-msgstr "リソースの関連付けを解除"
-
-#: lib/hammer_cli_foreman/references.rb:8
-msgid "Created at"
-msgstr "作成:"
-
-#: lib/hammer_cli_foreman/references.rb:9
-msgid "Updated at"
-msgstr "更新:"
-
-#: lib/hammer_cli_foreman/references.rb:18
-#: lib/hammer_cli_foreman/location.rb:37
-msgid "Organizations"
-msgstr "組織"
-
-#: lib/hammer_cli_foreman/references.rb:26
-msgid "Users"
-msgstr "ユーザー"
-
-#: lib/hammer_cli_foreman/references.rb:34
-msgid "User groups"
-msgstr "ユーザーグループ"
-
-#: lib/hammer_cli_foreman/references.rb:42
-msgid "Smart proxies"
-msgstr "スマートプロキシ"
-
-#: lib/hammer_cli_foreman/references.rb:50
-msgid "Compute resources"
-msgstr "コンピュートリソース"
-
-#: lib/hammer_cli_foreman/references.rb:58
-msgid "Installation media"
-msgstr "インストールメディア"
-
-#: lib/hammer_cli_foreman/references.rb:66
-msgid "Templates"
-msgstr "テンプレート"
-
-#: lib/hammer_cli_foreman/references.rb:74
-msgid "Domains"
-msgstr "ドメイン"
-
-#: lib/hammer_cli_foreman/references.rb:82
-msgid "Environments"
-msgstr "環境"
-
-#: lib/hammer_cli_foreman/references.rb:90
-msgid "Hostgroups"
-msgstr "ホストグループ "
-
-#: lib/hammer_cli_foreman/references.rb:98
-msgid "Subnets"
-msgstr "サブネット"
-
-#: lib/hammer_cli_foreman/references.rb:107
-msgid "Parameters"
-msgstr "パラメーター"
-
-#: lib/hammer_cli_foreman/references.rb:115
-msgid "Puppetclasses"
-msgstr "Puppet クラス"
-
-#: lib/hammer_cli_foreman/references.rb:123
-msgid "Operating systems"
-msgstr "オペレーティングシステム"
-
-#: lib/hammer_cli_foreman/references.rb:131
-msgid "Roles"
-msgstr "ロール"
-
-#: lib/hammer_cli_foreman/references.rb:139
-msgid "External user groups"
-msgstr ""
-
-#: lib/hammer_cli_foreman/resource_supported_test.rb:11
-msgid "The server does not support such operation."
-msgstr "サーバーはこの操作に対応していません。"
-
-#: lib/hammer_cli_foreman/operating_system.rb:11
-msgid "Full name"
-msgstr "フルネーム"
-
 #: lib/hammer_cli_foreman/operating_system.rb:12
 msgid "Release name"
 msgstr "リリース名"
@@ -1387,105 +1996,87 @@ msgstr "デフォルトテンプレート"
 msgid "Architectures"
 msgstr "アーキテクチャー"
 
-#: lib/hammer_cli_foreman/operating_system.rb:46
-#: lib/hammer_cli_foreman/operating_system.rb:73
-msgid "set associated architectures"
-msgstr "関連付けられたアーキテクチャーの設定"
-
-#: lib/hammer_cli_foreman/operating_system.rb:48
-#: lib/hammer_cli_foreman/operating_system.rb:75
-msgid "set associated templates"
-msgstr "関連付けられたテンプレートの設定"
-
-#: lib/hammer_cli_foreman/operating_system.rb:50
-#: lib/hammer_cli_foreman/operating_system.rb:77
-msgid "set associated installation media"
-msgstr "関連付けられたインストールメディアの設定"
-
-#: lib/hammer_cli_foreman/operating_system.rb:52
-#: lib/hammer_cli_foreman/operating_system.rb:79
-msgid "set associated partition tables"
-msgstr "関連付けられたパーティションテーブルの設定"
-
-#: lib/hammer_cli_foreman/operating_system.rb:55
+#: lib/hammer_cli_foreman/operating_system.rb:44
 msgid "Operating system created"
 msgstr "オペレーティングシステムが作成されました"
 
-#: lib/hammer_cli_foreman/operating_system.rb:56
+#: lib/hammer_cli_foreman/operating_system.rb:45
 msgid "Could not create the operating system"
 msgstr "オペレーティングシステムを作成できませんでした"
 
-#: lib/hammer_cli_foreman/operating_system.rb:82
+#: lib/hammer_cli_foreman/operating_system.rb:52
 msgid "Operating system updated"
 msgstr "オペレーティングシステムが更新されました"
 
-#: lib/hammer_cli_foreman/operating_system.rb:83
+#: lib/hammer_cli_foreman/operating_system.rb:53
 msgid "Could not update the operating system"
 msgstr "オペレーティングシステムを更新できませんでした"
 
-#: lib/hammer_cli_foreman/operating_system.rb:99
+#: lib/hammer_cli_foreman/operating_system.rb:60
 msgid "Operating system deleted"
 msgstr "オペレーティングシステムが削除されました"
 
-#: lib/hammer_cli_foreman/operating_system.rb:100
+#: lib/hammer_cli_foreman/operating_system.rb:61
 msgid "Could not delete the operating system"
 msgstr "オペレーティングシステムを削除できませんでした"
 
-#: lib/hammer_cli_foreman/operating_system.rb:107
+#: lib/hammer_cli_foreman/operating_system.rb:68
 msgid "Create or update parameter for an operating system."
 msgstr "オペレーティングシステムのパラメーターを作成または更新します。"
 
-#: lib/hammer_cli_foreman/operating_system.rb:109
+#: lib/hammer_cli_foreman/operating_system.rb:70
 msgid "Operating system parameter updated"
 msgstr "オペレーティングシステムのパラメーターが更新されました"
 
-#: lib/hammer_cli_foreman/operating_system.rb:110
+#: lib/hammer_cli_foreman/operating_system.rb:71
 msgid "New operating system parameter created"
 msgstr "新規のオペレーティングシステムパラメーターが作成されました"
 
-#: lib/hammer_cli_foreman/operating_system.rb:111
+#: lib/hammer_cli_foreman/operating_system.rb:72
 msgid "Could not set operating system parameter"
 msgstr "オペレーティングシステムのパラメーターを設定できませんでした"
 
-#: lib/hammer_cli_foreman/operating_system.rb:123
+#: lib/hammer_cli_foreman/operating_system.rb:84
 msgid "Delete parameter for an operating system."
 msgstr "オペレーティングシステムのパラメーターの削除。"
 
-#: lib/hammer_cli_foreman/operating_system.rb:125
+#: lib/hammer_cli_foreman/operating_system.rb:86
 msgid "operating system parameter deleted"
 msgstr "オペレーティングシステムのパラメーターが削除されました"
 
-#: lib/hammer_cli_foreman/operating_system.rb:140
-#: lib/hammer_cli_foreman/operating_system.rb:206
+#: lib/hammer_cli_foreman/operating_system.rb:101
+#: lib/hammer_cli_foreman/operating_system.rb:167
 msgid "operatingsystem id"
 msgstr "オペレーティングシステム ID"
 
-#: lib/hammer_cli_foreman/operating_system.rb:141
+#: lib/hammer_cli_foreman/operating_system.rb:102
 msgid "config template id to be set"
 msgstr "設定する設定テンプレート ID"
 
-#: lib/hammer_cli_foreman/operating_system.rb:144
+#: lib/hammer_cli_foreman/operating_system.rb:105
 msgid ""
 "[%{config_template_name}] was set as default %{template_kind_name} template"
-msgstr "[%{config_template_name}] はデフォルトの %{template_kind_name} テンプレートとして設定されています"
+msgstr ""
+"[%{config_template_name}] はデフォルトの %{template_kind_name} テンプレートと"
+"して設定されています"
 
-#: lib/hammer_cli_foreman/operating_system.rb:145
+#: lib/hammer_cli_foreman/operating_system.rb:106
 msgid "Could not set the os default template"
 msgstr "OS デフォルトテンプレートを設定できませんでした"
 
-#: lib/hammer_cli_foreman/operating_system.rb:207
+#: lib/hammer_cli_foreman/operating_system.rb:168
 msgid "Type of the config template"
 msgstr "設定テンプレートのタイプ"
 
-#: lib/hammer_cli_foreman/operating_system.rb:209
+#: lib/hammer_cli_foreman/operating_system.rb:170
 msgid "Default template deleted"
 msgstr "デフォルトテンプレートが削除されました"
 
-#: lib/hammer_cli_foreman/operating_system.rb:210
+#: lib/hammer_cli_foreman/operating_system.rb:171
 msgid "Could not delete the default template"
 msgstr "デフォルトテンプレートを削除できませんでした"
 
-#: lib/hammer_cli_foreman/operating_system.rb:217
+#: lib/hammer_cli_foreman/operating_system.rb:178
 msgid "Default template of type %s not found"
 msgstr ""
 
@@ -1542,626 +2133,23 @@ msgstr "スマートプロキシー機能が更新されました"
 msgid "Refresh of smart proxy features failed"
 msgstr "スマートプロキシー機能が更新が失敗しました"
 
-#: lib/hammer_cli_foreman/environment.rb:34
-msgid "Environment created"
-msgstr "環境が作成されました"
+#~ msgid "Label"
+#~ msgstr "ラベル"
 
-#: lib/hammer_cli_foreman/environment.rb:35
-msgid "Could not create the environment"
-msgstr "環境を作成できませんでした"
+#~ msgid "Ancestry"
+#~ msgstr "上位"
 
-#: lib/hammer_cli_foreman/environment.rb:42
-msgid "Environment updated"
-msgstr "環境が更新されました"
+#~ msgid "Full name"
+#~ msgstr "フルネーム"
 
-#: lib/hammer_cli_foreman/environment.rb:43
-msgid "Could not update the environment"
-msgstr "環境を更新できませんでした"
+#~ msgid "set associated architectures"
+#~ msgstr "関連付けられたアーキテクチャーの設定"
 
-#: lib/hammer_cli_foreman/environment.rb:50
-msgid "Environment deleted"
-msgstr "環境が削除されました"
+#~ msgid "set associated templates"
+#~ msgstr "関連付けられたテンプレートの設定"
 
-#: lib/hammer_cli_foreman/environment.rb:51
-msgid "Could not delete the environment"
-msgstr "環境を削除できませんでした"
+#~ msgid "set associated installation media"
+#~ msgstr "関連付けられたインストールメディアの設定"
 
-#: lib/hammer_cli_foreman/puppet_class.rb:33
-msgid "Smart variables"
-msgstr "スマート変数"
-
-#: lib/hammer_cli_foreman/puppet_class.rb:35
-msgid "Default value"
-msgstr "デフォルト値"
-
-#: lib/hammer_cli_foreman/puppet_class.rb:37
-msgid "Smart class parameters"
-msgstr "スマートクラスパラメーター"
-
-#: lib/hammer_cli_foreman/domain.rb:22
-msgid "DNS Id"
-msgstr "DNS ID"
-
-#: lib/hammer_cli_foreman/domain.rb:35
-msgid "Domain [%{name}] created"
-msgstr "ドメイン [%{name}] が作成されました"
-
-#: lib/hammer_cli_foreman/domain.rb:36
-msgid "Could not create the domain"
-msgstr "ドメインを作成できませんでした"
-
-#: lib/hammer_cli_foreman/domain.rb:38 lib/hammer_cli_foreman/domain.rb:48
-msgid "Full name describing the domain"
-msgstr "ドメインを表すフルネーム"
-
-#: lib/hammer_cli_foreman/domain.rb:45
-msgid "Domain [%{name}] updated"
-msgstr "ドメイン [%{name}] が更新されました"
-
-#: lib/hammer_cli_foreman/domain.rb:46
-msgid "Could not update the domain"
-msgstr "ドメインを更新できませんでした"
-
-#: lib/hammer_cli_foreman/domain.rb:55
-msgid "Domain [%{name}] deleted"
-msgstr "ドメイン [%{name}] が削除されました"
-
-#: lib/hammer_cli_foreman/domain.rb:56
-msgid "Could not delete the domain"
-msgstr "ドメインを削除できませんでした"
-
-#: lib/hammer_cli_foreman/domain.rb:63
-msgid "Create or update parameter for a domain."
-msgstr "ドメインのパラメーターを作成または更新します。"
-
-#: lib/hammer_cli_foreman/domain.rb:65
-msgid "Domain parameter updated"
-msgstr "ドメインのパラメーターが更新されました"
-
-#: lib/hammer_cli_foreman/domain.rb:66
-msgid "New domain parameter created"
-msgstr "新規のドメインパラメーターが作成されました"
-
-#: lib/hammer_cli_foreman/domain.rb:67
-msgid "Could not set domain parameter"
-msgstr "ドメインパラメーターを設定できませんでした"
-
-#: lib/hammer_cli_foreman/domain.rb:79
-msgid "Delete parameter for a domain."
-msgstr "ドメインのパラメーターの削除。"
-
-#: lib/hammer_cli_foreman/domain.rb:81
-msgid "Domain parameter deleted"
-msgstr "ドメインのパラメーターが削除されました。"
-
-#: lib/hammer_cli_foreman/auth.rb:7
-msgid "Set credentials"
-msgstr "資格情報の設定"
-
-#: lib/hammer_cli_foreman/auth.rb:20
-msgid "Wipe your credentials"
-msgstr "資格情報のワイプ"
-
-#: lib/hammer_cli_foreman/auth.rb:26
-msgid "Credentials deleted."
-msgstr "資格情報が削除されました。"
-
-#: lib/hammer_cli_foreman/auth.rb:33
-msgid "Information about current connections"
-msgstr "現在の接続についての情報"
-
-#: lib/hammer_cli_foreman/auth.rb:37
-msgid "You are logged in as '%s'"
-msgstr "ユーザーは '%s' としてログインしています"
-
-#: lib/hammer_cli_foreman/auth.rb:39
-msgid ""
-"You are currently not logged in to any service.\\nUse the service to set "
-"credentials."
-msgstr "ユーザーは現在いずれのサービスにもログインしていません。\\n資格情報を設定するためにサービスを使用します。"
-
-#: lib/hammer_cli_foreman/usergroup.rb:31
-msgid "User group [%<name>s] created"
-msgstr "ユーザーグループ [%<name>s] が作成されました"
-
-#: lib/hammer_cli_foreman/usergroup.rb:32
-msgid "Could not create the user group"
-msgstr "ユーザーグループを作成できませんでした"
-
-#: lib/hammer_cli_foreman/usergroup.rb:38
-msgid "User group [%<name>s] updated"
-msgstr "ユーザーグループ [%<name>s] が更新されました"
-
-#: lib/hammer_cli_foreman/usergroup.rb:39
-msgid "Could not update the user group"
-msgstr "ユーザーグループを更新できませんでした"
-
-#: lib/hammer_cli_foreman/usergroup.rb:45
-msgid "User group [%<name>s] deleted"
-msgstr "ユーザーグループ [%<name>s] が削除されました"
-
-#: lib/hammer_cli_foreman/usergroup.rb:46
-msgid "Could not delete the user group"
-msgstr "ユーザーグループを削除できませんでした"
-
-#: lib/hammer_cli_foreman/image.rb:8
-msgid "View and manage compute resource's images"
-msgstr "コンピュートリソースのイメージの表示および管理"
-
-#: lib/hammer_cli_foreman/image.rb:56
-msgid "Show images available for addition"
-msgstr "追加に使用できるイメージの表示"
-
-#: lib/hammer_cli_foreman/image.rb:81
-msgid "Image created"
-msgstr "イメージが作成されました"
-
-#: lib/hammer_cli_foreman/image.rb:82
-msgid "Could not create the image"
-msgstr "イメージを作成できませんでした"
-
-#: lib/hammer_cli_foreman/image.rb:90
-msgid "Image updated"
-msgstr "イメージが更新されました"
-
-#: lib/hammer_cli_foreman/image.rb:91
-msgid "Could not update the image"
-msgstr "イメージを更新できませんでした"
-
-#: lib/hammer_cli_foreman/image.rb:99
-msgid "Image deleted"
-msgstr "イメージが削除されました"
-
-#: lib/hammer_cli_foreman/image.rb:100
-msgid "Could not delete the image"
-msgstr "イメージを削除できませんでした"
-
-#: lib/hammer_cli_foreman/partition_table.rb:31
-msgid "View partition table content."
-msgstr "パーティションテーブル数の表示。"
-
-#: lib/hammer_cli_foreman/partition_table.rb:43
-#: lib/hammer_cli_foreman/partition_table.rb:54
-msgid "Path to a file that contains the partition layout"
-msgstr "パーティションレイアウトを含むファイルのパス"
-
-#: lib/hammer_cli_foreman/partition_table.rb:46
-msgid "Partition table created"
-msgstr "パーティションテーブルが作成されました"
-
-#: lib/hammer_cli_foreman/partition_table.rb:47
-msgid "Could not create the partition table"
-msgstr "パーティションテーブルを作成できませんでした"
-
-#: lib/hammer_cli_foreman/partition_table.rb:57
-msgid "Partition table updated"
-msgstr "パーティションテーブルが更新されました"
-
-#: lib/hammer_cli_foreman/partition_table.rb:58
-msgid "Could not update the partition table"
-msgstr "パーティションテーブルを更新できませんでした"
-
-#: lib/hammer_cli_foreman/partition_table.rb:65
-msgid "Partition table deleted"
-msgstr "パーティションテーブルが削除されました"
-
-#: lib/hammer_cli_foreman/partition_table.rb:66
-msgid "Could not delete the partition table"
-msgstr "パーティションテーブルを削除できませんでした"
-
-#: lib/hammer_cli_foreman/credentials.rb:10
-msgid "[Foreman] username: "
-msgstr "[Foreman] ユーザー名: "
-
-#: lib/hammer_cli_foreman/credentials.rb:15
-msgid "[Foreman] password for %s: "
-msgstr "%s の [Foreman] パスワード: "
-
-#: lib/hammer_cli_foreman/id_resolver.rb:32
-msgid "Architecture name"
-msgstr "アーキテクチャー名"
-
-#: lib/hammer_cli_foreman/id_resolver.rb:33
-msgid "Compute resource name"
-msgstr "コンピュートリソース名"
-
-#: lib/hammer_cli_foreman/id_resolver.rb:34
-msgid "Domain name"
-msgstr "ドメイン名"
-
-#: lib/hammer_cli_foreman/id_resolver.rb:35
-msgid "Environment name"
-msgstr "環境名"
-
-#: lib/hammer_cli_foreman/id_resolver.rb:38
-msgid "Host name"
-msgstr "ホスト名"
-
-#: lib/hammer_cli_foreman/id_resolver.rb:39
-msgid "Hostgroup name"
-msgstr "ホストグループ名"
-
-#: lib/hammer_cli_foreman/id_resolver.rb:41
-msgid "Location name"
-msgstr "ロケーション名"
-
-#: lib/hammer_cli_foreman/id_resolver.rb:42
-msgid "Medium name"
-msgstr "メディア名"
-
-#: lib/hammer_cli_foreman/id_resolver.rb:43
-msgid "Model name"
-msgstr "モデル名"
-
-#: lib/hammer_cli_foreman/id_resolver.rb:44
-msgid "Organization name"
-msgstr "組織名"
-
-#: lib/hammer_cli_foreman/id_resolver.rb:46
-msgid "Partition table name"
-msgstr "パーティションテーブル名"
-
-#: lib/hammer_cli_foreman/id_resolver.rb:47
-msgid "Proxy name"
-msgstr "プロキシー名"
-
-#: lib/hammer_cli_foreman/id_resolver.rb:48
-msgid "Puppet class name"
-msgstr "Puppet クラス名"
-
-#: lib/hammer_cli_foreman/id_resolver.rb:49
-msgid "Report name"
-msgstr "レポート名"
-
-#: lib/hammer_cli_foreman/id_resolver.rb:50
-msgid "User role name"
-msgstr "ユーザーロール名"
-
-#: lib/hammer_cli_foreman/id_resolver.rb:51
-msgid "Subnet name"
-msgstr "サブネット名"
-
-#: lib/hammer_cli_foreman/id_resolver.rb:53
-msgid "User's login to search by"
-msgstr "検索するユーザーのログイン"
-
-#: lib/hammer_cli_foreman/id_resolver.rb:54
-msgid "Common parameter name"
-msgstr "共通パラメーター名"
-
-#: lib/hammer_cli_foreman/id_resolver.rb:55
-msgid "Smart class parameter name"
-msgstr "スマートクラスパラメーター名"
-
-#: lib/hammer_cli_foreman/id_resolver.rb:57
-msgid "Name to search by"
-msgstr "検索する名前"
-
-#: lib/hammer_cli_foreman/id_resolver.rb:140
-msgid "%s not found"
-msgstr "%s が見つかりませんでした"
-
-#: lib/hammer_cli_foreman/id_resolver.rb:141
-msgid "%s found more than once"
-msgstr "%s が 2 回以上見つかりました"
-
-#: lib/hammer_cli_foreman/id_resolver.rb:152
-msgid "Missing options to search %s"
-msgstr "%s の検索に足りないオプション"
-
-#: lib/hammer_cli_foreman/user.rb:11
-msgid "Login"
-msgstr "ログイン"
-
-#: lib/hammer_cli_foreman/user.rb:13
-msgid "Email"
-msgstr "メール"
-
-#: lib/hammer_cli_foreman/user.rb:28
-msgid "Admin"
-msgstr "管理者"
-
-#: lib/hammer_cli_foreman/user.rb:29
-msgid "Authorized by"
-msgstr "認証元"
-
-#: lib/hammer_cli_foreman/user.rb:30
-msgid "Last login"
-msgstr "最終ログイン"
-
-#: lib/hammer_cli_foreman/user.rb:47
-msgid "User created"
-msgstr "ユーザーが作成されました"
-
-#: lib/hammer_cli_foreman/user.rb:48
-msgid "Could not create the user"
-msgstr "ユーザーを作成できませんでした"
-
-#: lib/hammer_cli_foreman/user.rb:55
-msgid "User updated"
-msgstr "ユーザーが更新されました"
-
-#: lib/hammer_cli_foreman/user.rb:56
-msgid "Could not update the user"
-msgstr "ユーザーを更新できませんでした"
-
-#: lib/hammer_cli_foreman/user.rb:63
-msgid "User deleted"
-msgstr "ユーザーが削除されました"
-
-#: lib/hammer_cli_foreman/user.rb:64
-msgid "Could not delete the user"
-msgstr "ユーザーを削除できませんでした"
-
-#: lib/hammer_cli_foreman/filter.rb:10
-msgid "Resource type"
-msgstr "リソースタイプ"
-
-#: lib/hammer_cli_foreman/filter.rb:11
-msgid "Search"
-msgstr "検索"
-
-#: lib/hammer_cli_foreman/filter.rb:12
-msgid "Unlimited?"
-msgstr "無制限ですか?"
-
-#: lib/hammer_cli_foreman/filter.rb:13
-msgid "Role"
-msgstr "ロール"
-
-#: lib/hammer_cli_foreman/filter.rb:14
-msgid "Permissions"
-msgstr "パーミッション"
-
-#: lib/hammer_cli_foreman/filter.rb:44
-msgid "Permission filter for [%<resource_type>s] created"
-msgstr " [%<resource_type>s] のパーミッションフィルターが作成されました"
-
-#: lib/hammer_cli_foreman/filter.rb:45
-msgid "Could not create the permission filter"
-msgstr "パーミッションフィルターを作成できませんでした"
-
-#: lib/hammer_cli_foreman/filter.rb:52
-msgid "Permission filter for [%<resource_type>s] updated"
-msgstr "[%<resource_type>s] のパーミッションフィルターが更新されました"
-
-#: lib/hammer_cli_foreman/filter.rb:53
-msgid "Could not update the permission filter"
-msgstr "パーミッションフィルターを更新できませんでした"
-
-#: lib/hammer_cli_foreman/filter.rb:60
-msgid "Permission filter deleted"
-msgstr "パーミッションフィルターが削除されました"
-
-#: lib/hammer_cli_foreman/filter.rb:61
-msgid "Could not delete the permission filter"
-msgstr "パーミッションフィルターを削除できませんでした"
-
-#: lib/hammer_cli_foreman/location.rb:24 lib/hammer_cli_foreman/location.rb:62
-#: lib/hammer_cli_foreman/location.rb:74
-msgid "Location numeric id to search by"
-msgstr "検索対象のロケーション数値 ID"
-
-#: lib/hammer_cli_foreman/location.rb:52
-msgid "Location created"
-msgstr "ロケーションが作成されました"
-
-#: lib/hammer_cli_foreman/location.rb:53
-msgid "Could not create the location"
-msgstr "ロケーションを作成できませんでした"
-
-#: lib/hammer_cli_foreman/location.rb:64
-msgid "Location updated"
-msgstr "ロケーションが更新されました"
-
-#: lib/hammer_cli_foreman/location.rb:65
-msgid "Could not update the location"
-msgstr "ロケーションを更新できませんでした"
-
-#: lib/hammer_cli_foreman/location.rb:76
-msgid "Location deleted"
-msgstr "ロケーションが削除されました"
-
-#: lib/hammer_cli_foreman/location.rb:77
-msgid "Could not delete the location"
-msgstr "ロケーションを削除できませんでした"
-
-#: lib/hammer_cli_foreman/auth_source_ldap.rb:7
-msgid "Manage LDAP auth sources."
-msgstr ""
-
-#: lib/hammer_cli_foreman/auth_source_ldap.rb:15
-msgid "LDAPS?"
-msgstr ""
-
-#: lib/hammer_cli_foreman/auth_source_ldap.rb:16
-msgid "Port"
-msgstr ""
-
-#: lib/hammer_cli_foreman/auth_source_ldap.rb:17
-msgid "Server Type"
-msgstr ""
-
-#: lib/hammer_cli_foreman/auth_source_ldap.rb:27
-msgid "Account Username"
-msgstr ""
-
-#: lib/hammer_cli_foreman/auth_source_ldap.rb:28
-msgid "Base DN"
-msgstr "ベース DN"
-
-#: lib/hammer_cli_foreman/auth_source_ldap.rb:29
-msgid "LDAP filter"
-msgstr "LDAP フィルター"
-
-#: lib/hammer_cli_foreman/auth_source_ldap.rb:30
-msgid "Automatically Create Accounts?"
-msgstr ""
-
-#: lib/hammer_cli_foreman/auth_source_ldap.rb:31
-msgid "Login Name Attribute"
-msgstr ""
-
-#: lib/hammer_cli_foreman/auth_source_ldap.rb:32
-msgid "First Name Attribute"
-msgstr ""
-
-#: lib/hammer_cli_foreman/auth_source_ldap.rb:33
-msgid "Last Name Attribute"
-msgstr ""
-
-#: lib/hammer_cli_foreman/auth_source_ldap.rb:34
-msgid "Email Address Attribute"
-msgstr ""
-
-#: lib/hammer_cli_foreman/auth_source_ldap.rb:35
-msgid "Photo Attribute"
-msgstr ""
-
-#: lib/hammer_cli_foreman/auth_source_ldap.rb:43
-msgid "Auth source created"
-msgstr ""
-
-#: lib/hammer_cli_foreman/auth_source_ldap.rb:44
-msgid "Could not create the Auth Source"
-msgstr ""
-
-#: lib/hammer_cli_foreman/auth_source_ldap.rb:51
-msgid "Auth source deleted"
-msgstr ""
-
-#: lib/hammer_cli_foreman/auth_source_ldap.rb:52
-msgid "Could not delete the Auth Source"
-msgstr ""
-
-#: lib/hammer_cli_foreman/auth_source_ldap.rb:59
-msgid "Auth source updated"
-msgstr ""
-
-#: lib/hammer_cli_foreman/auth_source_ldap.rb:60
-msgid "Could not update the Auth Source"
-msgstr ""
-
-#: lib/hammer_cli_foreman/architecture.rb:31
-msgid "Architecture created"
-msgstr "アーキテクチャーが作成されました"
-
-#: lib/hammer_cli_foreman/architecture.rb:32
-msgid "Could not create the architecture"
-msgstr "アーキテクチャーを作成できませんでした"
-
-#: lib/hammer_cli_foreman/architecture.rb:39
-msgid "Architecture deleted"
-msgstr "アーキテクチャーが削除されました"
-
-#: lib/hammer_cli_foreman/architecture.rb:40
-msgid "Could not delete the architecture"
-msgstr "アーキテクチャーを削除できませんでした"
-
-#: lib/hammer_cli_foreman/architecture.rb:47
-msgid "Architecture updated"
-msgstr "アーキテクチャーが更新されました"
-
-#: lib/hammer_cli_foreman/architecture.rb:48
-msgid "Could not update the architecture"
-msgstr "アーキテクチャーを更新できませんでした"
-
-#: lib/hammer_cli_foreman.rb:30
-msgid "Foreman connection login/logout."
-msgstr "Foreman 接続のログイン/ログアウト。"
-
-#: lib/hammer_cli_foreman.rb:34
-msgid "Manipulate architectures."
-msgstr "アーキテクチャーの操作。"
-
-#: lib/hammer_cli_foreman.rb:38
-msgid "Manipulate auth sources."
-msgstr ""
-
-#: lib/hammer_cli_foreman.rb:42
-msgid "Manipulate compute resources."
-msgstr "コンピュートリソースの操作。"
-
-#: lib/hammer_cli_foreman.rb:46
-msgid "Manipulate domains."
-msgstr "ドメインの操作。"
-
-#: lib/hammer_cli_foreman.rb:50
-msgid "Manipulate environments."
-msgstr ""
-
-#: lib/hammer_cli_foreman.rb:54
-msgid "Search facts."
-msgstr "ホストの検索。"
-
-#: lib/hammer_cli_foreman.rb:58
-msgid "Manage permission filters."
-msgstr "パーミッションフィルターを管理します。"
-
-#: lib/hammer_cli_foreman.rb:62
-msgid "Manipulate hosts."
-msgstr ""
-
-#: lib/hammer_cli_foreman.rb:66
-msgid "Manipulate hostgroups."
-msgstr "ホストグループの操作。"
-
-#: lib/hammer_cli_foreman.rb:70
-msgid "Manipulate locations."
-msgstr "ロケーションの操作。"
-
-#: lib/hammer_cli_foreman.rb:74
-msgid "Manipulate installation media."
-msgstr "インストールメディアの操作。"
-
-#: lib/hammer_cli_foreman.rb:78
-msgid "Manipulate hardware models."
-msgstr "ハードウェアモデルの操作。"
-
-#: lib/hammer_cli_foreman.rb:82
-msgid "Manipulate operating system."
-msgstr ""
-
-#: lib/hammer_cli_foreman.rb:86
-msgid "Manipulate organizations."
-msgstr "組織の操作。"
-
-#: lib/hammer_cli_foreman.rb:90
-msgid "Manipulate partition tables."
-msgstr "パーティションテーブルの操作。"
-
-#: lib/hammer_cli_foreman.rb:94
-msgid "Search puppet modules."
-msgstr "Puppet モジュールの検索。"
-
-#: lib/hammer_cli_foreman.rb:98
-msgid "Browse and read reports."
-msgstr "レポートの参照および閲覧。"
-
-#: lib/hammer_cli_foreman.rb:102
-msgid "Manage user roles."
-msgstr "ユーザーロールを管理します。"
-
-#: lib/hammer_cli_foreman.rb:106
-msgid "Manipulate smart class parameters."
-msgstr "スマートクラスパラメーターの操作。"
-
-#: lib/hammer_cli_foreman.rb:110
-msgid "Manipulate smart proxies."
-msgstr "スマートプロキシーの操作。"
-
-#: lib/hammer_cli_foreman.rb:114
-msgid "Manipulate subnets."
-msgstr "サブネットの操作。"
-
-#: lib/hammer_cli_foreman.rb:118
-msgid "Manipulate config templates."
-msgstr "設定テンプレートの操作。"
-
-#: lib/hammer_cli_foreman.rb:122
-msgid "Manipulate users."
-msgstr "ユーザーの操作。"
-
-#: lib/hammer_cli_foreman.rb:126
-msgid "Manage user groups."
-msgstr "ユーザーグループを管理します。"
+#~ msgid "set associated partition tables"
+#~ msgstr "関連付けられたパーティションテーブルの設定"
