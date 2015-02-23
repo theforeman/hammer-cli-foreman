@@ -2,6 +2,10 @@
 Gemfile.lock
 Gemfile.local
 pkg
+.bundle
+
+# RubyMine
+.idea
 
 # Tests
 test/reports
