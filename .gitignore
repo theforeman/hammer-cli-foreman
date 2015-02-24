@@ -2,7 +2,8 @@
 Gemfile.lock
 Gemfile.local
 pkg
-
+.bundle
+.idea
 # Tests
 test/reports
 coverage

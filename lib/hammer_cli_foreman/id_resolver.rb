@@ -40,7 +40,7 @@ module HammerCLIForeman
       :fact_value =>       [],
       :filter =>           [],
       :host =>             [ s_name(_("Host name")) ],
-      :hostgroup =>        [ s_name(_("Hostgroup name")) ],
+      :hostgroup =>        [ s_name(_("Hostgroup name")),s("title", _("Hostgroup title"),:editable => false) ],
       # :image =>            [],
       :location =>         [ s_name(_("Location name")) ],
       :medium =>           [ s_name(_("Medium name")) ],
