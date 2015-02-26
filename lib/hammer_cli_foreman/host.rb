@@ -295,10 +295,9 @@ module HammerCLIForeman
     end
 
 
-    class PuppetClassesCommand < HammerCLIForeman::AssociatedResourceListCommand
+    class PuppetClassesCommand < HammerCLIForeman::ListCommand
       command_name "puppet-classes"
-      resource :puppetclasses, :index
-      parent_resource :hosts
+      resource :puppetclasses
 
       output HammerCLIForeman::PuppetClass::ListCommand.output_definition
 
@@ -306,7 +305,10 @@ module HammerCLIForeman
         HammerCLIForeman::PuppetClass::ListCommand.unhash_classes(super)
       end
 
-      build_options :without => [:host_id, :hostgroup_id, :environment_id]
+      build_options do |o|
+        o.without(:hostgroup_id, :environment_id)
+        o.expand.only(:hosts)
+      end
     end
 
 

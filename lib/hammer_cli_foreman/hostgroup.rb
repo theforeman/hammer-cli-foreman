@@ -115,13 +115,10 @@ module HammerCLIForeman
         HammerCLIForeman::PuppetClass::ListCommand.unhash_classes(super)
       end
 
-      def request_params
-        params = super
-        params['hostgroup_id'] = get_identifier
-        params
+      build_options do |o|
+        o.without(:host_id, :environment_id)
+        o.expand.only(:hostgroups)
       end
-
-      build_options
     end
 
 

@@ -115,15 +115,15 @@ describe HammerCLIForeman::Host do
     let(:cmd) { HammerCLIForeman::Host::PuppetClassesCommand.new("", ctx) }
 
     context "parameters" do
-      it_should_accept "name", ["--name=host"]
-      it_should_accept "id", ["--id=1"]
-      # it_should_fail_with "name or id missing", []
+      it_should_accept "host", ["--host=name=my5name.mydomain.net"]
+      it_should_accept "host-id", ["--host-id=1"]
+      # it_should_fail_with "host or host-id missing", []
       # TODO: temporarily disabled, parameters are checked in the id resolver
     end
 
     context "output" do
 
-      with_params ["--name=my5name.mydomain.net"] do
+      with_params ["--host=my5name.mydomain.net"] do
         it_should_print_column "Id"
         it_should_print_column "Name"
       end
