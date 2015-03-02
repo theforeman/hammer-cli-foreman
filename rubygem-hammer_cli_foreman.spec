@@ -23,6 +23,9 @@ Requires: ruby(abi)
 
 Requires: ruby(rubygems)
 Requires: rubygem(hammer_cli) >= 0.1.1
+Requires: rubygem(hammer_cli_foreman_discovery)
+Requires: rubygem(hammer_cli_foreman_bootdisk)
+Requires: rubygem(hammer_cli_foreman_tasks)
 Requires: rubygem(apipie-bindings) >= 0.0.8
 BuildRequires: ruby(rubygems)
 %if 0%{?fedora} || 0%{?rhel} > 6
