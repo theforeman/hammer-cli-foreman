@@ -9,7 +9,7 @@
 
 Summary: Universal command-line interface for Foreman
 Name: rubygem-%{gemname}
-Version: 0.1.4.5
+Version: 0.1.4.6
 Release: 1%{?dist}
 Group: Development/Languages
 License: GPLv3
@@ -83,6 +83,12 @@ cp -pa .%{gem_dir}/* \
 %doc %{geminstdir}/doc/name_id_resolution.md
 
 %changelog
+* Mon Mar 02 2015 Jason Montleon <jmontleo@redhat.com> 0.1.4.6-1
+- update version (jmontleo@redhat.com)
+- Fixes #7473 - puppet-classes in host and hostgroup returns without an error
+  (orabin@redhat.com)
+- require hammer_cli_foreman_* packages BZ1196621 (jmontleo@redhat.com)
+
 * Tue Feb 24 2015 Jason Montleon <jmontleo@redhat.com> 0.1.4.4-1
 - update version for new build (jmontleo@redhat.com)
 
