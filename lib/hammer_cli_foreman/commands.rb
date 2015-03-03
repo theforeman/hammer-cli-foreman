@@ -176,7 +176,7 @@ module HammerCLIForeman
     end
 
     def send_request
-      HammerCLIForeman.record_to_common_format(super)
+      transform_format(super)
     rescue HammerCLIForeman::MissingSeachOptions => e
 
       switches = self.class.find_options(:referenced_resource => e.resource.singular_name).map(&:long_switch)
@@ -196,6 +196,10 @@ module HammerCLIForeman
         },
         e.resource
       )
+    end
+
+    def transform_format(data)
+      HammerCLIForeman.record_to_common_format(data)
     end
 
     def customized_options
@@ -235,6 +239,7 @@ module HammerCLIForeman
       params_pruned['id'] = params[id_option_name] if params[id_option_name]
       params_pruned
     end
+
   end
 
 
@@ -249,10 +254,13 @@ module HammerCLIForeman
     end
 
     def send_request
-      data = super
-      set = HammerCLIForeman.collection_to_common_format(data)
+      set = super
       set.map! { |r| extend_data(r) }
       set
+    end
+
+    def transform_format(data)
+      HammerCLIForeman.collection_to_common_format(data)
     end
 
     def extend_data(record)
@@ -347,8 +355,7 @@ module HammerCLIForeman
     end
 
     def send_request
-      data = super
-      record = HammerCLIForeman.record_to_common_format(data)
+      record = super
       extend_data(record)
     end
 
