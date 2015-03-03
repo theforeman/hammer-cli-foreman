@@ -111,6 +111,10 @@ module HammerCLIForeman
       'HammerCLIForeman::SmartProxy', 'hammer_cli_foreman/smart_proxy'
     )
 
+    HammerCLI::MainCommand.lazy_subcommand('settings', _("Change server settings."),
+      'HammerCLIForeman::Settings', 'hammer_cli_foreman/settings'
+    )
+
     HammerCLI::MainCommand.lazy_subcommand('subnet', _("Manipulate subnets."),
       'HammerCLIForeman::Subnet', 'hammer_cli_foreman/subnet'
     )
