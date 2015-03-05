@@ -10,43 +10,72 @@ Usage:
     hammer host create [OPTIONS]
 
 Options:
-    --name NAME
-    --ip IP                       Not required if using a subnet with dhcp proxy.
-    --mac MAC                     Not required if it's a virtual machine.
-    --puppet-class-ids PUPPET_CLASS_IDS Comma separated list of values.
-    --medium-id MEDIUM_ID
-    --subnet-id SUBNET_ID
-    --sp-subnet-id SP_SUBNET_ID
-    --model-id MODEL_ID
-    --hostgroup-id HOSTGROUP_ID
-    --owner-id OWNER_ID
-    --puppet-ca-proxy-id PUPPET_CA_PROXY_ID
-    --security-groups SECURITY_GROUPS
-    --environment-id ENVIRONMENT_ID
-    --architecture-id ARCHITECTURE_ID
-    --domain-id DOMAIN_ID
-    --puppet-proxy-id PUPPET_PROXY_ID
-    --operatingsystem-id OPERATINGSYSTEM_ID
-    --partition-table-id PARTITION_TABLE_ID
-    --compute-resource-id COMPUTE_RESOURCE
-    --partition-table-id PARTITION_TABLE
-    --build BUILD                 One of true/false, yes/no, 1/0.
-                                  Default: "true"
-    --managed MANAGED             One of true/false, yes/no, 1/0.
-                                  Default: "true"
-    --enabled ENABLED             One of true/false, yes/no, 1/0.
-                                  Default: "true"
-    --parameters PARAMS           Host parameters.
-                                  Comma-separated list of key=value.
-    --compute-attributes COMPUTE_ATTRS Compute resource attributes.
-                                  Comma-separated list of key=value.
-    --volume VOLUME               Volume parameters
-                                  Comma-separated list of key=value.
-                                  Can be specified multiple times.
-    --interface INTERFACE         Interface parameters.
-                                  Comma-separated list of key=value.
-                                  Can be specified multiple times.
-    -h, --help                    print help
+ --architecture ARCHITECTURE_NAME          Architecture name
+ --architecture-id ARCHITECTURE_ID
+ --ask-root-password ASK_ROOT_PW           One of true/false, yes/no, 1/0.
+ --build BUILD                             One of true/false, yes/no, 1/0.
+                                           Default: "true"
+ --comment COMMENT                         Additional information about this host
+ --compute-attributes COMPUTE_ATTRS        Compute resource attributes.
+                                           Comma-separated list of key=value.
+ --compute-profile COMPUTE_PROFILE_NAME    Name to search by
+ --compute-profile-id COMPUTE_PROFILE_ID
+ --compute-resource COMPUTE_RESOURCE_NAME  Compute resource name
+ --compute-resource-id COMPUTE_RESOURCE_ID
+ --domain DOMAIN_NAME                      Domain name
+ --domain-id DOMAIN_ID                     Numerical ID or domain name
+ --enabled ENABLED                         One of true/false, yes/no, 1/0.
+                                           Default: "true"
+ --environment ENVIRONMENT_NAME            Environment name
+ --environment-id ENVIRONMENT_ID
+ --hostgroup HOSTGROUP_NAME                Hostgroup name
+ --hostgroup-id HOSTGROUP_ID
+ --hostgroup-title HOSTGROUP_TITLE         Hostgroup title
+ --image IMAGE_NAME                        Name to search by
+ --image-id IMAGE_ID
+ --interface INTERFACE                     Interface parameters.
+                                           Comma-separated list of key=value.
+                                           Can be specified multiple times.
+ --ip IP                                   not required if using a subnet with DHCP proxy
+ --location LOCATION_NAME                  Location name
+ --location-id LOCATION_ID
+ --mac MAC                                 required for managed host that is bare metal, not required if it’s a virtual machine
+ --managed MANAGED                         One of true/false, yes/no, 1/0.
+                                           Default: "true"
+ --medium MEDIUM_NAME                      Medium name
+ --medium-id MEDIUM_ID
+ --model MODEL_NAME                        Model name
+ --model-id MODEL_ID
+ --name NAME
+ --operatingsystem OPERATINGSYSTEM_TITLE   Operating system title
+ --operatingsystem-id OPERATINGSYSTEM_ID
+ --organization ORGANIZATION_NAME          Organization name
+ --organization-id ORGANIZATION_ID
+ --owner OWNER_LOGIN                       Login of the owner
+ --owner-id OWNER_ID                       ID of the owner
+ --owner-type OWNER_TYPE                   Host’s owner type
+ --parameters PARAMS                       Host parameters.
+                                           Comma-separated list of key=value.
+ --partition-table PARTITION_TABLE_NAME    Partition table name
+ --partition-table-id PARTITION_TABLE_ID
+ --progress-report-id PROGRESS_REPORT_ID   UUID to track orchestration tasks status, GET /api/orchestration/:UUID/tasks
+ --provision-method METHOD                 One of 'build', 'image'
+ --puppet-ca-proxy PUPPET_CA_PROXY_NAME
+ --puppet-ca-proxy-id PUPPET_CA_PROXY_ID
+ --puppet-class-ids PUPPET_CLASS_IDS       Comma separated list of values.
+ --puppet-classes PUPPET_CLASS_NAMES       Comma separated list of values.
+ --puppet-proxy PUPPET_PROXY_NAME
+ --puppet-proxy-id PUPPET_PROXY_ID
+ --realm REALM_NAME                        Name to search by
+ --realm-id REALM_ID                       Numerical ID or realm name
+ --root-pass ROOT_PASS                     required if host is managed and value is not inherited from host group or default password in settings
+ --root-password ROOT_PW
+ --subnet SUBNET_NAME                      Subnet name
+ --subnet-id SUBNET_ID
+ --volume VOLUME                           Volume parameters
+                                           Comma-separated list of key=value.
+                                           Can be specified multiple times.
+ -h, --help                                print help
 ```
 
 Example
@@ -56,35 +85,54 @@ An example command for creating a host with 2 volumes (5GB raw + 10 GB qcow2) us
 a default network interface on a libvirt provider can look like this:
 ```bash
 hammer host create
-  --hostgroup-id=4                           # most of the settings is done in the hostgroup
-  --compute-resource-id=1                    # set the libvirt provider
+  --hostgroup=my_hostgroup                   # most of the settings is done in the hostgroup
+  --compute-resource=libvirt                 # set the libvirt provider
   --compute-attributes="cpus=2"              # specify the provider specific options, see the list below
-  --interface="type=network,network=default" # add a network interface, can be passed multiple times
+  --interface="primary=true,compute_type=network,compute_network=default" # add a network interface, can be passed multiple times
   --volume="capacity=5G"                     # add a volume, can be passed multiple times
   --volume="capacity=10G,format_type=qcow2"  # add another volume with different size and type
   --name="test-host"
-  --ip="1.2.3.4"
 ```
 
 See the list of all possible option keys below.
 
 
-Provider specific options
+Common interface settings
 =========================
 
-## Bare Metal
+Please note that managed hosts need to have one primary interface. Always set `primary=true` for one of your interfaces.
+
 Available keys for `--interface`:
 ```
-type       # one of Nic::Managed, Nic::BMC
 mac
-name
-domain_id
-subnet_id
 ip
+type       # One of interface, bmc, bond
+name
+subnet_id
+domain_id
+identifier
+managed    # true/false
+primary    # true/false, each managed hosts needs to have one primary interface.
+provision  # true/false
+virtual    # true/false
+
+# for virtual interfaces:
+tag         # VLAN tag, this attribute has precedence over the subnet VLAN ID. Only for virtual interfaces.
+attached_to # Identifier of the interface to which this interface belongs, e.g. eth1.
+
+# for bonds:
+mode             # One of balance-rr, active-backup, balance-xor, broadcast, 802.3ad, balance-tlb, balance-alb
+attached_devices # Identifiers of slave interfaces, e.g. [eth1,eth2].
+bond_options
+
+# for BMCs:
 provider   # always IPMI
-username   # BMC only
-password   # BMC only
+username
+password
 ```
+
+Provider specific options
+=========================
 
 ## EC2
 Available keys for `--compute-attributes`:
@@ -115,9 +163,9 @@ start         # boolean, whether to start the machine or not
 
 Available keys for `--interface`:
 ```
-type              # one of [:bridge, :network]
-network / :bridge # name of interface according to type
-model             # one of [virtio, rtl8139, ne2k_pci, pcnet, e1000]
+compute_type                      # one of [:bridge, :network]
+compute_network / compute_bridge  # name of interface according to type
+compute_model                     # one of [virtio, rtl8139, ne2k_pci, pcnet, e1000]
 ```
 
 Available keys for `--volume`:
@@ -149,8 +197,8 @@ start      # boolean, whether to start the machine or not
 
 Available keys for `--interface`:
 ```
-name         # eg. eth0
-network      # select one of available networks for a cluster
+compute_name         # eg. eth0
+compute_network      # select one of available networks for a cluster
 ```
 
 Available keys for `--volume`:
@@ -178,7 +226,7 @@ path
 
 Available keys for `--interface`:
 ```
-network
+compute_network
 ```
 
 Available keys for `--volume`:

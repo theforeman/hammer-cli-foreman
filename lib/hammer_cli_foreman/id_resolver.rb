@@ -42,6 +42,7 @@ module HammerCLIForeman
       :host =>             [ s_name(_("Host name")) ],
       :hostgroup =>        [ s_name(_("Hostgroup name")), s("title", _("Hostgroup title"),:editable => false) ],
       # :image =>            [],
+      :interface =>        [],
       :location =>         [ s_name(_("Location name")) ],
       :medium =>           [ s_name(_("Medium name")) ],
       :model =>            [ s_name(_("Model name")) ],

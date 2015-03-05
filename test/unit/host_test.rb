@@ -42,17 +42,11 @@ describe HammerCLIForeman::Host do
     context "output" do
       with_params ["--id=1"] do
         it_should_print_n_records 1
-        it_should_print_columns ["Id", "Name", "Operating System", "Host Group", "IP", "MAC"]
-
-        it_should_print_columns ["UUID", "Cert name", "Environment"]
-        it_should_print_columns ["Managed", "Enabled", "Build"]
-        it_should_print_columns ["Use image", "Disk", "Image file"]
-        it_should_print_columns ["SP Name", "SP IP", "SP MAC", "SP Subnet"]
-        it_should_print_columns ["Created at", "Updated at", "Installed at", "Last report"]
-        it_should_print_columns ["Puppet CA Proxy Id", "Medium", "Model", "Owner Id", "Subnet", "Domain"]
-        it_should_print_columns ["Puppet Proxy Id", "Owner Type", "Partition Table", "Architecture", "Image", "Compute Resource"]
-        it_should_print_columns ["BMC Network Interfaces", "Managed Network Interfaces"]
-        it_should_print_columns ["Comment"]
+        it_should_print_columns ["Id", "Name", "Organization", "Location"]
+        it_should_print_columns ["Host Group", "Compute Resource", "Compute Profile", "Environment"]
+        it_should_print_columns ["Puppet CA Id", "Puppet Master Id", "Cert name"]
+        it_should_print_columns ["Managed", "Installed at", "Last report"]
+        it_should_print_columns ["Network", "Network interfaces", "Operating system", "Parameters", "Additional info"]
       end
     end
 
@@ -209,31 +203,36 @@ describe HammerCLIForeman::Host do
           ["--name=host", "--environment-id=1", "--architecture-id=1", "--domain-id=1", "--puppet-proxy-id=1", "--operatingsystem-id=1",
             "--ip=1.2.3.4", "--mac=11:22:33:44:55:66", "--medium-id=1", "--partition-table-id=1", "--subnet-id=1",
             "--sp-subnet-id=1", "--model-id=1", "--hostgroup-id=1", "--owner-id=1", '--puppet-ca-proxy-id=1', '--puppet-class-ids',
-            "--root-password=pwd", "--ask-root-password=true", "--provision-method=build"]
+            "--root-password=pwd", "--ask-root-password=true", "--provision-method=build", "--interface=primary=true,provision=true"]
       it_should_fail_with "name or id missing",
-          ["--environment-id=1", "--architecture-id=1", "--domain-id=1", "--puppet-proxy-id=1", "--operatingsystem-id=1"]
+          ["--environment-id=1", "--architecture-id=1", "--domain-id=1", "--puppet-proxy-id=1", "--operatingsystem-id=1", "--interface=primary=true,provision=true"]
       it_should_fail_with "environment_id missing",
-          ["--name=host", "--architecture-id=1", "--domain-id=1", "--puppet-proxy-id=1", "--operatingsystem-id=1"]
+          ["--name=host", "--architecture-id=1", "--domain-id=1", "--puppet-proxy-id=1", "--operatingsystem-id=1", "--interface=primary=true,provision=true"]
       it_should_fail_with "architecture_id missing",
-          ["--name=host", "--environment-id=1", "--domain-id=1", "--puppet-proxy-id=1", "--operatingsystem-id=1"]
+          ["--name=host", "--environment-id=1", "--domain-id=1", "--puppet-proxy-id=1", "--operatingsystem-id=1", "--interface=primary=true,provision=true"]
       it_should_fail_with "domain_id missing",
-          ["--name=host", "--environment-id=1", "--architecture-id=1", "--puppet-proxy-id=1", "--operatingsystem-id=1"]
+          ["--name=host", "--environment-id=1", "--architecture-id=1", "--puppet-proxy-id=1", "--operatingsystem-id=1", "--interface=primary=true,provision=true"]
       it_should_fail_with "puppet_proxy_id missing",
-          ["--name=host", "--environment-id=1", "--architecture-id=1", "--domain-id=1", "--operatingsystem-id=1"]
+          ["--name=host", "--environment-id=1", "--architecture-id=1", "--domain-id=1", "--operatingsystem-id=1", "--interface=primary=true,provision=true"]
       it_should_fail_with "operatingsystem_id missing",
-          ["--name=host", "--environment-id=1", "--architecture-id=1", "--domain-id=1", "--puppet-proxy-id=1"]
-      it_should_accept "only hostgroup name", ["--hostgroup=example", "--name=host"]
-      it_should_accept "only hostgroup ID", ["--hostgroup-id=example", "--name=host"]
+          ["--name=host", "--environment-id=1", "--architecture-id=1", "--domain-id=1", "--puppet-proxy-id=1", "--interface=primary=true,provision=true"]
+      it_should_accept "only hostgroup name", ["--hostgroup=example", "--name=host", "--interface=primary=true,provision=true"]
+      it_should_accept "only hostgroup ID", ["--hostgroup-id=example", "--name=host", "--interface=primary=true,provision=true"]
 
       with_params ["--name=host", "--environment-id=1", "--architecture-id=1", "--domain-id=1", "--puppet-proxy-id=1", "--operatingsystem-id=1",
             "--ip=1.2.3.4", "--mac=11:22:33:44:55:66", "--medium-id=1", "--partition-table-id=1", "--subnet-id=1",
             "--sp-subnet-id=1", "--model-id=1", "--hostgroup-id=1", "--owner-id=1", '--puppet-ca-proxy-id=1', '--puppet-class-ids',
-            "--root-password=pwd", "--ask-root-password=true", "--provision-method=build"] do
+            "--root-password=pwd", "--ask-root-password=true", "--provision-method=build", "--interface=primary=true,provision=true"] do
         it_should_call_action_and_test_params(:create) { |par| par["host"]["managed"] == true }
         it_should_call_action_and_test_params(:create) { |par| par["host"]["build"] == true }
         it_should_call_action_and_test_params(:create) { |par| par["host"]["enabled"] == true }
         it_should_call_action_and_test_params(:create) { |par| par["host"]["provision_method"] == "build" }
+        it_should_call_action_and_test_params(:create) { |par| par["host"]["interfaces_attributes"]["0"]["primary"] == "true" }
+        it_should_call_action_and_test_params(:create) { |par| par["host"]["interfaces_attributes"]["0"]["provision"] == "true" }
       end
+
+      it_should_fail_with "primary interface missing", ["--hostgroup-id=example", "--interface=primary=true"]
+      it_should_fail_with "provision interface missing", ["--hostgroup-id=example", "--interface=provision=true"]
     end
   end
 
@@ -273,6 +272,7 @@ describe HammerCLIForeman::Host do
       with_params ["--id=1","--provision-method=build"] do
         it_should_call_action_and_test_params(:update) { |par| par["host"]["provision_method"] == "build" }
       end
+
     end
 
   end
