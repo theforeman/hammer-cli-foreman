@@ -24,14 +24,10 @@ module HammerCLIForeman
         '/usr/share/locale'
       end
 
-      def domain_name
-        "#{super}@system"
-      end
-
     end
 
   end
 end
 
-HammerCLI::I18n.add_domain(HammerCLIForeman::I18n::LocaleDomain.new)
-HammerCLI::I18n.add_domain(HammerCLIForeman::I18n::SystemLocaleDomain.new)
+domain = [HammerCLIForeman::I18n::LocaleDomain.new, HammerCLIForeman::I18n::SystemLocaleDomain.new].find { |d| d.available? }
+HammerCLI::I18n.add_domain(domain) if domain
