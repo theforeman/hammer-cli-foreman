@@ -1,22 +1,24 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the hammer-cli-foreman package.
-#
+# 
 # Translators:
+# Leah Liu <lliu@redhat.com>, 2015. #zanata
 msgid ""
 msgstr ""
 "Project-Id-Version: hammer-cli-foreman 0.1.4\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2015-02-13 15:58-0500\n"
-"PO-Revision-Date: 2014-10-11 10:31+0000\n"
-"Last-Translator: Lukáš Zapletal\n"
+"PO-Revision-Date: 2015-03-12 03:19+0000\n"
+"Last-Translator: Leah Liu <lliu@redhat.com>\n"
 "Language-Team: Chinese (China) (http://www.transifex.com/projects/p/foreman/"
 "language/zh_CN/)\n"
-"Language: zh_CN\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Language: zh-CN\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Zanata 3.6.0\n"
 
 #: lib/hammer_cli_foreman.rb:30
 msgid "Foreman connection login/logout."
@@ -28,7 +30,7 @@ msgstr "修改架构。"
 
 #: lib/hammer_cli_foreman.rb:38
 msgid "Manipulate auth sources."
-msgstr ""
+msgstr "修改认证源。"
 
 #: lib/hammer_cli_foreman.rb:42
 msgid "Manipulate compute resources."
@@ -40,7 +42,7 @@ msgstr "修改域。"
 
 #: lib/hammer_cli_foreman.rb:50
 msgid "Manipulate environments."
-msgstr ""
+msgstr "修改环境。"
 
 #: lib/hammer_cli_foreman.rb:54
 msgid "Search facts."
@@ -52,7 +54,7 @@ msgstr "管理权限过滤器。"
 
 #: lib/hammer_cli_foreman.rb:62
 msgid "Manipulate hosts."
-msgstr ""
+msgstr "修改主机。"
 
 #: lib/hammer_cli_foreman.rb:66
 msgid "Manipulate hostgroups."
@@ -72,7 +74,7 @@ msgstr "修改硬件型号。"
 
 #: lib/hammer_cli_foreman.rb:82
 msgid "Manipulate operating system."
-msgstr ""
+msgstr "修改操作系统。"
 
 #: lib/hammer_cli_foreman.rb:86
 msgid "Manipulate organizations."
@@ -159,9 +161,8 @@ msgid "Organization name"
 msgstr "机构名"
 
 #: lib/hammer_cli_foreman/id_resolver.rb:49
-#, fuzzy
 msgid "Operating system title"
-msgstr "已生成操作系统"
+msgstr "操作系统标题"
 
 #: lib/hammer_cli_foreman/id_resolver.rb:50
 msgid "Partition table name"
@@ -204,9 +205,8 @@ msgid "Name to search by"
 msgstr "根据其进行搜索的名称"
 
 #: lib/hammer_cli_foreman/id_resolver.rb:149
-#, fuzzy
 msgid "one of %s not found"
-msgstr "未找到 %s"
+msgstr "未找到 %s 之一"
 
 #: lib/hammer_cli_foreman/id_resolver.rb:191
 msgid "%s not found"
@@ -227,20 +227,27 @@ msgstr "缺少搜索 %s 的选项"
 #: lib/hammer_cli_foreman/environment.rb:14
 #: lib/hammer_cli_foreman/partition_table.rb:10
 #: lib/hammer_cli_foreman/compute_resource.rb:11
-#: lib/hammer_cli_foreman/usergroup.rb:11 lib/hammer_cli_foreman/host.rb:129
-#: lib/hammer_cli_foreman/host.rb:200 lib/hammer_cli_foreman/host.rb:213
+#: lib/hammer_cli_foreman/usergroup.rb:11
+#: lib/hammer_cli_foreman/host.rb:129
+#: lib/hammer_cli_foreman/host.rb:200
+#: lib/hammer_cli_foreman/host.rb:213
 #: lib/hammer_cli_foreman/location.rb:13
-#: lib/hammer_cli_foreman/hostgroup.rb:46 lib/hammer_cli_foreman/user.rb:10
+#: lib/hammer_cli_foreman/hostgroup.rb:46
+#: lib/hammer_cli_foreman/user.rb:10
 #: lib/hammer_cli_foreman/external_usergroup.rb:10
-#: lib/hammer_cli_foreman/filter.rb:9 lib/hammer_cli_foreman/filter.rb:72
-#: lib/hammer_cli_foreman/report.rb:10 lib/hammer_cli_foreman/report.rb:30
-#: lib/hammer_cli_foreman/media.rb:9 lib/hammer_cli_foreman/role.rb:11
+#: lib/hammer_cli_foreman/filter.rb:9
+#: lib/hammer_cli_foreman/filter.rb:72
+#: lib/hammer_cli_foreman/report.rb:10
+#: lib/hammer_cli_foreman/report.rb:30
+#: lib/hammer_cli_foreman/media.rb:9
+#: lib/hammer_cli_foreman/role.rb:11
 #: lib/hammer_cli_foreman/image.rb:29
 #: lib/hammer_cli_foreman/puppet_class.rb:12
 #: lib/hammer_cli_foreman/model.rb:10
 #: lib/hammer_cli_foreman/smart_class_parameter.rb:8
 #: lib/hammer_cli_foreman/smart_class_parameter.rb:66
-#: lib/hammer_cli_foreman/domain.rb:31 lib/hammer_cli_foreman/template.rb:25
+#: lib/hammer_cli_foreman/domain.rb:31
+#: lib/hammer_cli_foreman/template.rb:25
 #: lib/hammer_cli_foreman/operating_system.rb:10
 #: lib/hammer_cli_foreman/smart_proxy.rb:11
 msgid "Id"
@@ -253,19 +260,26 @@ msgstr "Id"
 #: lib/hammer_cli_foreman/environment.rb:15
 #: lib/hammer_cli_foreman/partition_table.rb:11
 #: lib/hammer_cli_foreman/compute_resource.rb:12
-#: lib/hammer_cli_foreman/usergroup.rb:12 lib/hammer_cli_foreman/host.rb:130
-#: lib/hammer_cli_foreman/host.rb:201 lib/hammer_cli_foreman/host.rb:214
+#: lib/hammer_cli_foreman/usergroup.rb:12
+#: lib/hammer_cli_foreman/host.rb:130
+#: lib/hammer_cli_foreman/host.rb:201
+#: lib/hammer_cli_foreman/host.rb:214
 #: lib/hammer_cli_foreman/location.rb:14
-#: lib/hammer_cli_foreman/hostgroup.rb:47 lib/hammer_cli_foreman/user.rb:12
+#: lib/hammer_cli_foreman/hostgroup.rb:47
+#: lib/hammer_cli_foreman/user.rb:12
 #: lib/hammer_cli_foreman/external_usergroup.rb:11
 #: lib/hammer_cli_foreman/external_usergroup.rb:42
-#: lib/hammer_cli_foreman/filter.rb:73 lib/hammer_cli_foreman/filter.rb:90
-#: lib/hammer_cli_foreman/media.rb:10 lib/hammer_cli_foreman/role.rb:12
-#: lib/hammer_cli_foreman/image.rb:30 lib/hammer_cli_foreman/image.rb:70
+#: lib/hammer_cli_foreman/filter.rb:73
+#: lib/hammer_cli_foreman/filter.rb:90
+#: lib/hammer_cli_foreman/media.rb:10
+#: lib/hammer_cli_foreman/role.rb:12
+#: lib/hammer_cli_foreman/image.rb:30
+#: lib/hammer_cli_foreman/image.rb:70
 #: lib/hammer_cli_foreman/puppet_class.rb:13
 #: lib/hammer_cli_foreman/model.rb:11
 #: lib/hammer_cli_foreman/common_parameter.rb:12
-#: lib/hammer_cli_foreman/domain.rb:32 lib/hammer_cli_foreman/template.rb:26
+#: lib/hammer_cli_foreman/domain.rb:32
+#: lib/hammer_cli_foreman/template.rb:26
 #: lib/hammer_cli_foreman/template.rb:74
 #: lib/hammer_cli_foreman/operating_system.rb:22
 #: lib/hammer_cli_foreman/smart_proxy.rb:12
@@ -298,23 +312,24 @@ msgstr "无法更新架构"
 
 #: lib/hammer_cli_foreman/auth_source_ldap.rb:7
 msgid "Manage LDAP auth sources."
-msgstr ""
+msgstr "管理 LDAP 认证源"
 
 #: lib/hammer_cli_foreman/auth_source_ldap.rb:15
 msgid "LDAPS?"
-msgstr ""
+msgstr "使用 LDAPS？"
 
+# translation auto-copied from project webkitgtk3, version 2.0.3, document webkitgtk3, author Leah Liu
 #: lib/hammer_cli_foreman/auth_source_ldap.rb:16
 msgid "Port"
-msgstr ""
+msgstr "端口"
 
 #: lib/hammer_cli_foreman/auth_source_ldap.rb:17
 msgid "Server Type"
-msgstr ""
+msgstr "服务器类型"
 
 #: lib/hammer_cli_foreman/auth_source_ldap.rb:27
 msgid "Account Username"
-msgstr ""
+msgstr "帐户用户名"
 
 #: lib/hammer_cli_foreman/auth_source_ldap.rb:28
 msgid "Base DN"
@@ -326,51 +341,51 @@ msgstr "LDAP 过滤器"
 
 #: lib/hammer_cli_foreman/auth_source_ldap.rb:30
 msgid "Automatically Create Accounts?"
-msgstr ""
+msgstr "自动创建帐户？"
 
 #: lib/hammer_cli_foreman/auth_source_ldap.rb:31
 msgid "Login Name Attribute"
-msgstr ""
+msgstr "Login Name 属性"
 
 #: lib/hammer_cli_foreman/auth_source_ldap.rb:32
 msgid "First Name Attribute"
-msgstr ""
+msgstr "First Name 属性"
 
 #: lib/hammer_cli_foreman/auth_source_ldap.rb:33
 msgid "Last Name Attribute"
-msgstr ""
+msgstr "Last Name 属性"
 
 #: lib/hammer_cli_foreman/auth_source_ldap.rb:34
 msgid "Email Address Attribute"
-msgstr ""
+msgstr "Email Address 属性"
 
 #: lib/hammer_cli_foreman/auth_source_ldap.rb:35
 msgid "Photo Attribute"
-msgstr ""
+msgstr "Photo 属性"
 
 #: lib/hammer_cli_foreman/auth_source_ldap.rb:43
 msgid "Auth source created"
-msgstr ""
+msgstr "已生成认证源"
 
 #: lib/hammer_cli_foreman/auth_source_ldap.rb:44
 msgid "Could not create the Auth Source"
-msgstr ""
+msgstr "无法生成认证源"
 
 #: lib/hammer_cli_foreman/auth_source_ldap.rb:51
 msgid "Auth source deleted"
-msgstr ""
+msgstr "已删除认证源"
 
 #: lib/hammer_cli_foreman/auth_source_ldap.rb:52
 msgid "Could not delete the Auth Source"
-msgstr ""
+msgstr "无法删除认证源"
 
 #: lib/hammer_cli_foreman/auth_source_ldap.rb:59
 msgid "Auth source updated"
-msgstr ""
+msgstr "已更新认证源"
 
 #: lib/hammer_cli_foreman/auth_source_ldap.rb:60
 msgid "Could not update the Auth Source"
-msgstr ""
+msgstr "无法更新认证源"
 
 #: lib/hammer_cli_foreman/organization.rb:37
 #: lib/hammer_cli_foreman/references.rb:15
@@ -503,17 +518,17 @@ msgstr "禁止 - 服务器拒绝执行请求"
 
 #: lib/hammer_cli_foreman/exception_handler.rb:75
 msgid "Could not load the API description from the server"
-msgstr ""
+msgstr "无法从服务器载入 API 描述"
 
 #: lib/hammer_cli_foreman/exception_handler.rb:76
 msgid "is the server down?"
-msgstr ""
+msgstr "服务器宕机了吗？"
 
 #: lib/hammer_cli_foreman/exception_handler.rb:77
 msgid ""
 "was '%s' run on the server when using apipie cache? (typical production "
 "settings)"
-msgstr ""
+msgstr "使用 apipie 缓存时服务器中是否运行了 '%s'？（典型产品设置）"
 
 #: lib/hammer_cli_foreman/partition_table.rb:12
 #: lib/hammer_cli_foreman/media.rb:20
@@ -559,7 +574,8 @@ msgstr "提供者"
 
 #: lib/hammer_cli_foreman/compute_resource.rb:23
 #: lib/hammer_cli_foreman/compute_resource.rb:29
-#: lib/hammer_cli_foreman/host.rb:162 lib/hammer_cli_foreman/image.rb:33
+#: lib/hammer_cli_foreman/host.rb:162
+#: lib/hammer_cli_foreman/image.rb:33
 #: lib/hammer_cli_foreman/image.rb:71
 msgid "UUID"
 msgstr "UUID"
@@ -641,11 +657,11 @@ msgstr "无法删除用户组"
 
 #: lib/hammer_cli_foreman/host.rb:13
 msgid "Login of the owner"
-msgstr ""
+msgstr "拥有者登录"
 
 #: lib/hammer_cli_foreman/host.rb:15
 msgid "ID of the owner"
-msgstr ""
+msgstr "拥有者 ID"
 
 #: lib/hammer_cli_foreman/host.rb:40
 msgid "Host parameters."
@@ -663,7 +679,8 @@ msgstr "卷参数"
 msgid "Interface parameters."
 msgstr "界面参数"
 
-#: lib/hammer_cli_foreman/host.rb:131 lib/hammer_cli_foreman/hostgroup.rb:49
+#: lib/hammer_cli_foreman/host.rb:131
+#: lib/hammer_cli_foreman/hostgroup.rb:49
 #: lib/hammer_cli_foreman/image.rb:31
 msgid "Operating System"
 msgstr "操作系统"
@@ -672,12 +689,14 @@ msgstr "操作系统"
 msgid "Host Group"
 msgstr "主机组"
 
-#: lib/hammer_cli_foreman/host.rb:133 lib/hammer_cli_foreman/host.rb:202
+#: lib/hammer_cli_foreman/host.rb:133
+#: lib/hammer_cli_foreman/host.rb:202
 #: lib/hammer_cli_foreman/host.rb:215
 msgid "IP"
 msgstr "IP"
 
-#: lib/hammer_cli_foreman/host.rb:134 lib/hammer_cli_foreman/host.rb:203
+#: lib/hammer_cli_foreman/host.rb:134
+#: lib/hammer_cli_foreman/host.rb:203
 #: lib/hammer_cli_foreman/host.rb:216
 msgid "MAC"
 msgstr "MAC"
@@ -686,7 +705,8 @@ msgstr "MAC"
 msgid "Cert name"
 msgstr "证书名"
 
-#: lib/hammer_cli_foreman/host.rb:165 lib/hammer_cli_foreman/hostgroup.rb:50
+#: lib/hammer_cli_foreman/host.rb:165
+#: lib/hammer_cli_foreman/hostgroup.rb:50
 msgid "Environment"
 msgstr "环境"
 
@@ -734,19 +754,23 @@ msgstr "SP 子网"
 msgid "Installed at"
 msgstr "已安装于"
 
-#: lib/hammer_cli_foreman/host.rb:182 lib/hammer_cli_foreman/report.rb:12
+#: lib/hammer_cli_foreman/host.rb:182
+#: lib/hammer_cli_foreman/report.rb:12
 msgid "Last report"
 msgstr "最后的报告"
 
-#: lib/hammer_cli_foreman/host.rb:184 lib/hammer_cli_foreman/hostgroup.rb:67
+#: lib/hammer_cli_foreman/host.rb:184
+#: lib/hammer_cli_foreman/hostgroup.rb:67
 msgid "Puppet CA Proxy Id"
 msgstr "Puppet CA 代理服务器 Id"
 
-#: lib/hammer_cli_foreman/host.rb:185 lib/hammer_cli_foreman/hostgroup.rb:66
+#: lib/hammer_cli_foreman/host.rb:185
+#: lib/hammer_cli_foreman/hostgroup.rb:66
 msgid "Medium"
 msgstr "介质"
 
-#: lib/hammer_cli_foreman/host.rb:186 lib/hammer_cli_foreman/hostgroup.rb:51
+#: lib/hammer_cli_foreman/host.rb:186
+#: lib/hammer_cli_foreman/hostgroup.rb:51
 msgid "Model"
 msgstr "型号"
 
@@ -754,11 +778,13 @@ msgstr "型号"
 msgid "Owner Id"
 msgstr "拥有者 Id"
 
-#: lib/hammer_cli_foreman/host.rb:188 lib/hammer_cli_foreman/hostgroup.rb:61
+#: lib/hammer_cli_foreman/host.rb:188
+#: lib/hammer_cli_foreman/hostgroup.rb:61
 msgid "Subnet"
 msgstr "子网"
 
-#: lib/hammer_cli_foreman/host.rb:189 lib/hammer_cli_foreman/hostgroup.rb:63
+#: lib/hammer_cli_foreman/host.rb:189
+#: lib/hammer_cli_foreman/hostgroup.rb:63
 msgid "Domain"
 msgstr "域"
 
@@ -770,11 +796,13 @@ msgstr "Puppet 代理服务器 Id"
 msgid "Owner Type"
 msgstr "拥有者类型"
 
-#: lib/hammer_cli_foreman/host.rb:192 lib/hammer_cli_foreman/hostgroup.rb:65
+#: lib/hammer_cli_foreman/host.rb:192
+#: lib/hammer_cli_foreman/hostgroup.rb:65
 msgid "Partition Table"
 msgstr "分区表"
 
-#: lib/hammer_cli_foreman/host.rb:193 lib/hammer_cli_foreman/hostgroup.rb:64
+#: lib/hammer_cli_foreman/host.rb:193
+#: lib/hammer_cli_foreman/hostgroup.rb:64
 #: lib/hammer_cli_foreman/image.rb:45
 msgid "Architecture"
 msgstr "架构"
@@ -795,19 +823,23 @@ msgstr "注释"
 msgid "BMC Network Interfaces"
 msgstr "BMC 网络接口"
 
-#: lib/hammer_cli_foreman/host.rb:204 lib/hammer_cli_foreman/host.rb:217
+#: lib/hammer_cli_foreman/host.rb:204
+#: lib/hammer_cli_foreman/host.rb:217
 msgid "Domain Id"
 msgstr "域 Id"
 
-#: lib/hammer_cli_foreman/host.rb:205 lib/hammer_cli_foreman/host.rb:218
+#: lib/hammer_cli_foreman/host.rb:205
+#: lib/hammer_cli_foreman/host.rb:218
 msgid "Domain Name"
 msgstr "域名"
 
-#: lib/hammer_cli_foreman/host.rb:206 lib/hammer_cli_foreman/host.rb:219
+#: lib/hammer_cli_foreman/host.rb:206
+#: lib/hammer_cli_foreman/host.rb:219
 msgid "Subnet Id"
 msgstr "子网 Id"
 
-#: lib/hammer_cli_foreman/host.rb:207 lib/hammer_cli_foreman/host.rb:220
+#: lib/hammer_cli_foreman/host.rb:207
+#: lib/hammer_cli_foreman/host.rb:220
 msgid "Subnet Name"
 msgstr "子网名"
 
@@ -835,7 +867,8 @@ msgstr "开启"
 msgid "Puppet run triggered"
 msgstr "启动 Puppet 运行"
 
-#: lib/hammer_cli_foreman/host.rb:286 lib/hammer_cli_foreman/fact.rb:13
+#: lib/hammer_cli_foreman/host.rb:286
+#: lib/hammer_cli_foreman/fact.rb:13
 msgid "Fact"
 msgstr "详情"
 
@@ -928,14 +961,12 @@ msgid "Host reboot started."
 msgstr "已重启主机。"
 
 #: lib/hammer_cli_foreman/credentials.rb:26
-#, fuzzy
 msgid "[Foreman] Username: "
 msgstr "[Foreman] 用户名："
 
 #: lib/hammer_cli_foreman/credentials.rb:33
-#, fuzzy
 msgid "[Foreman] Password for %s: "
-msgstr "%s 的 [Foreman] 密码："
+msgstr "%s  [Foreman] 密码："
 
 #: lib/hammer_cli_foreman/references.rb:8
 msgid "Created at"
@@ -1008,9 +1039,10 @@ msgstr "角色"
 
 #: lib/hammer_cli_foreman/references.rb:139
 msgid "External user groups"
-msgstr ""
+msgstr "外部用户组"
 
-#: lib/hammer_cli_foreman/location.rb:24 lib/hammer_cli_foreman/location.rb:62
+#: lib/hammer_cli_foreman/location.rb:24
+#: lib/hammer_cli_foreman/location.rb:62
 #: lib/hammer_cli_foreman/location.rb:74
 msgid "Location numeric id to search by"
 msgstr "根据其进行搜索的位置数字 id"
@@ -1041,25 +1073,25 @@ msgstr "无法删除位置"
 
 #: lib/hammer_cli_foreman/hostgroup.rb:9
 msgid "List of puppetclass ids"
-msgstr ""
+msgstr "puppetclass id 列表"
 
 #: lib/hammer_cli_foreman/hostgroup.rb:11
 msgid "Name of puppet CA proxy"
-msgstr ""
+msgstr "puppet CA 代理服务器名称"
 
 #: lib/hammer_cli_foreman/hostgroup.rb:12
 msgid "Name of puppet proxy"
-msgstr ""
+msgstr "puppet 代理服务器名称"
 
 #: lib/hammer_cli_foreman/hostgroup.rb:13
-#, fuzzy
 msgid "Name of parent hostgroup"
-msgstr "无法更新主机组"
+msgstr "上级主机组名称"
 
+# translation auto-copied from project evolution, version 3.8.5, document evolution-3.8
 #: lib/hammer_cli_foreman/hostgroup.rb:48
 #: lib/hammer_cli_foreman/operating_system.rb:11
 msgid "Title"
-msgstr ""
+msgstr "头衔"
 
 #: lib/hammer_cli_foreman/hostgroup.rb:68
 msgid "Puppet Master Proxy Id"
@@ -1071,7 +1103,7 @@ msgstr "ComputeProfile"
 
 #: lib/hammer_cli_foreman/hostgroup.rb:73
 msgid "Parent Id"
-msgstr ""
+msgstr "上级 Id"
 
 #: lib/hammer_cli_foreman/hostgroup.rb:83
 msgid "Hostgroup created"
@@ -1129,15 +1161,15 @@ msgstr "收到未知格式数据"
 msgid ""
 "Could not find %{resource}. Some search options were missing, please see --"
 "help."
-msgstr ""
+msgstr "无法找到 %{resource}。缺少一些搜索选项，请查看 --help。"
 
 #: lib/hammer_cli_foreman/commands.rb:187
 msgid "Could not find %{resource}, please set option %{switches}."
-msgstr ""
+msgstr "无法找到 %{resource}，请设定选项 %{switches}。"
 
 #: lib/hammer_cli_foreman/commands.rb:189
 msgid "Could not find %{resource}, please set one of options %{switches}."
-msgstr ""
+msgstr "无法找到 %{resource}，请设定选项 %{switches} 之一。"
 
 #: lib/hammer_cli_foreman/commands.rb:288
 msgid "List next page? (%s): "
@@ -1197,7 +1229,7 @@ msgstr "无法删除用户"
 
 #: lib/hammer_cli_foreman/external_usergroup.rb:6
 msgid "View and manage user group's external user groups"
-msgstr ""
+msgstr "查看并管理用户组的外部用户组"
 
 #: lib/hammer_cli_foreman/external_usergroup.rb:12
 #: lib/hammer_cli_foreman/external_usergroup.rb:43
@@ -1206,31 +1238,31 @@ msgstr "认证源"
 
 #: lib/hammer_cli_foreman/external_usergroup.rb:39
 msgid "Refresh external user group"
-msgstr ""
+msgstr "刷新外部用户组"
 
 #: lib/hammer_cli_foreman/external_usergroup.rb:57
 msgid "External user group created"
-msgstr ""
+msgstr "已生成外部用户组"
 
 #: lib/hammer_cli_foreman/external_usergroup.rb:58
 msgid "Could not create external user group"
-msgstr ""
+msgstr "无法生成外部用户组"
 
 #: lib/hammer_cli_foreman/external_usergroup.rb:65
 msgid "External user group updated"
-msgstr ""
+msgstr "已更新外部用户组"
 
 #: lib/hammer_cli_foreman/external_usergroup.rb:66
 msgid "Could not update external user group"
-msgstr ""
+msgstr "无法更新外部用户组"
 
 #: lib/hammer_cli_foreman/external_usergroup.rb:73
 msgid "External user group deleted"
-msgstr ""
+msgstr "已删除外部用户组"
 
 #: lib/hammer_cli_foreman/external_usergroup.rb:74
 msgid "Could not delete the external user group"
-msgstr ""
+msgstr "无法删除外部用户组"
 
 #: lib/hammer_cli_foreman/filter.rb:10
 msgid "Resource type"
@@ -1252,12 +1284,15 @@ msgstr "角色"
 msgid "Permissions"
 msgstr "权限"
 
-#: lib/hammer_cli_foreman/filter.rb:18 lib/hammer_cli_foreman/filter.rb:34
-#: lib/hammer_cli_foreman/filter.rb:78 lib/hammer_cli_foreman/role.rb:33
+#: lib/hammer_cli_foreman/filter.rb:18
+#: lib/hammer_cli_foreman/filter.rb:34
+#: lib/hammer_cli_foreman/filter.rb:78
+#: lib/hammer_cli_foreman/role.rb:33
 msgid "(Miscellaneous)"
 msgstr "（其他）"
 
-#: lib/hammer_cli_foreman/filter.rb:19 lib/hammer_cli_foreman/filter.rb:35
+#: lib/hammer_cli_foreman/filter.rb:19
+#: lib/hammer_cli_foreman/filter.rb:35
 #: lib/hammer_cli_foreman/role.rb:34
 msgid "none"
 msgstr "无"
@@ -1286,7 +1321,8 @@ msgstr "已删除权限过滤器"
 msgid "Could not delete the permission filter"
 msgstr "无法删除权限过滤器"
 
-#: lib/hammer_cli_foreman/filter.rb:74 lib/hammer_cli_foreman/report.rb:62
+#: lib/hammer_cli_foreman/filter.rb:74
+#: lib/hammer_cli_foreman/report.rb:62
 msgid "Resource"
 msgstr "资源"
 
@@ -1301,32 +1337,39 @@ msgstr "参数名称"
 msgid "parameter value"
 msgstr "参数值"
 
-#: lib/hammer_cli_foreman/report.rb:11 lib/hammer_cli_foreman/report.rb:31
+#: lib/hammer_cli_foreman/report.rb:11
+#: lib/hammer_cli_foreman/report.rb:31
 #: lib/hammer_cli_foreman/fact.rb:12
 msgid "Host"
 msgstr "主机"
 
-#: lib/hammer_cli_foreman/report.rb:14 lib/hammer_cli_foreman/report.rb:35
+#: lib/hammer_cli_foreman/report.rb:14
+#: lib/hammer_cli_foreman/report.rb:35
 msgid "Applied"
 msgstr "已批准"
 
-#: lib/hammer_cli_foreman/report.rb:15 lib/hammer_cli_foreman/report.rb:36
+#: lib/hammer_cli_foreman/report.rb:15
+#: lib/hammer_cli_foreman/report.rb:36
 msgid "Restarted"
 msgstr "已重启"
 
-#: lib/hammer_cli_foreman/report.rb:16 lib/hammer_cli_foreman/report.rb:37
+#: lib/hammer_cli_foreman/report.rb:16
+#: lib/hammer_cli_foreman/report.rb:37
 msgid "Failed"
 msgstr "失败"
 
-#: lib/hammer_cli_foreman/report.rb:17 lib/hammer_cli_foreman/report.rb:38
+#: lib/hammer_cli_foreman/report.rb:17
+#: lib/hammer_cli_foreman/report.rb:38
 msgid "Restart Failures"
 msgstr "重启失败"
 
-#: lib/hammer_cli_foreman/report.rb:18 lib/hammer_cli_foreman/report.rb:39
+#: lib/hammer_cli_foreman/report.rb:18
+#: lib/hammer_cli_foreman/report.rb:39
 msgid "Skipped"
 msgstr "忽略"
 
-#: lib/hammer_cli_foreman/report.rb:19 lib/hammer_cli_foreman/report.rb:40
+#: lib/hammer_cli_foreman/report.rb:19
+#: lib/hammer_cli_foreman/report.rb:40
 msgid "Pending"
 msgstr "挂起的"
 
@@ -1673,11 +1716,11 @@ msgstr "验证程序类型。"
 
 #: lib/hammer_cli_foreman/domain.rb:6
 msgid "ID of DNS proxy to use within this domain"
-msgstr ""
+msgstr "在这个域中使用的 DNS 代理服务器 ID"
 
 #: lib/hammer_cli_foreman/domain.rb:7
 msgid "Name of DNS proxy to use within this domain"
-msgstr ""
+msgstr "在这个域中使用的 DNS 代理服务器名称"
 
 #: lib/hammer_cli_foreman/domain.rb:43
 msgid "DNS Id"
@@ -1691,7 +1734,8 @@ msgstr "已生成域 [%{name}]"
 msgid "Could not create the domain"
 msgstr "无法生成域"
 
-#: lib/hammer_cli_foreman/domain.rb:60 lib/hammer_cli_foreman/domain.rb:71
+#: lib/hammer_cli_foreman/domain.rb:60
+#: lib/hammer_cli_foreman/domain.rb:71
 msgid "Full name describing the domain"
 msgstr "描述该域的全名"
 
@@ -2073,7 +2117,7 @@ msgstr "无法删除默认模板"
 
 #: lib/hammer_cli_foreman/operating_system.rb:178
 msgid "Default template of type %s not found"
-msgstr ""
+msgstr "未找到默认模板类型 %s"
 
 #: lib/hammer_cli_foreman/smart_proxy.rb:13
 msgid "URL"
@@ -2127,24 +2171,3 @@ msgstr "已刷新智能代理服务器"
 #: lib/hammer_cli_foreman/smart_proxy.rb:93
 msgid "Refresh of smart proxy features failed"
 msgstr "刷新智能代理服务器失败"
-
-#~ msgid "Label"
-#~ msgstr "标签"
-
-#~ msgid "Ancestry"
-#~ msgstr "上一层"
-
-#~ msgid "Full name"
-#~ msgstr "全名"
-
-#~ msgid "set associated architectures"
-#~ msgstr "设置关联的架构"
-
-#~ msgid "set associated templates"
-#~ msgstr "设置关联的模板"
-
-#~ msgid "set associated installation media"
-#~ msgstr "设置关联的安装介质"
-
-#~ msgid "set associated partition tables"
-#~ msgstr "设置关联的分区表"
