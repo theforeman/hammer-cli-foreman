@@ -5,12 +5,21 @@ module HammerCLIForeman
   class ComputeResource < HammerCLIForeman::Command
     resource :compute_resources
 
+    module ProviderNameLegacy
+      def extend_data(data)
+        # api used to return provider_friendly_name as a provider
+        data['provider_friendly_name'] ||= data['provider']
+        data
+      end
+    end
+
     class ListCommand < HammerCLIForeman::ListCommand
+      include ProviderNameLegacy
 
       output do
         field :id, _("Id")
         field :name, _("Name")
-        field :provider, _("Provider")
+        field :provider_friendly_name, _("Provider")
       end
 
       build_options
@@ -18,6 +27,8 @@ module HammerCLIForeman
 
 
     class InfoCommand < HammerCLIForeman::InfoCommand
+      include ProviderNameLegacy
+
       PROVIDER_SPECIFIC_FIELDS = {
         'ovirt' => [
           Fields::Field.new(:label => _('UUID'), :path => ["compute_resource", "uuid"])
@@ -49,7 +60,7 @@ module HammerCLIForeman
 
       def print_data(data)
         provider = data["provider"].downcase
-        output_definition.fields.concat PROVIDER_SPECIFIC_FIELDS[provider]
+        output_definition.fields.concat(PROVIDER_SPECIFIC_FIELDS[provider] || [])
         super(data)
       end
 
