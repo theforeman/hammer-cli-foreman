@@ -47,6 +47,7 @@ module HammerCLIForeman
       :model =>            [ s_name(_("Model name")) ],
       :organization =>     [ s_name(_("Organization name")) ],
       :operatingsystem =>  [ s("title", _("Operating system title"), :editable => false) ],
+      :override_value =>   [],
       :ptable =>           [ s_name(_("Partition table name")) ],
       :proxy =>            [ s_name(_("Proxy name")) ],
       :puppetclass =>      [ s_name(_("Puppet class name")) ],
@@ -57,7 +58,8 @@ module HammerCLIForeman
       :template =>         [],
       :user =>             [ s("login", _("User's login to search by")) ],
       :common_parameter =>      [ s_name(_("Common parameter name")) ],
-      :smart_class_parameter => [ s_name(_("Smart class parameter name")) ]
+      :smart_class_parameter => [ s_name(_("Smart class parameter name")) ],
+      :smart_variable => [ s_name(_("Smart variable name")) ]
     }
     DEFAULT_SEARCHABLES = [ s_name(_("Name to search by")) ]
 
@@ -128,11 +130,11 @@ module HammerCLIForeman
 
         self.class.send(:define_method, method_name) do |options|
           get_id(resource.name, options)
-        end unless respond_to?(method_name)
+        end unless respond_to?(method_name, true)
 
         self.class.send(:define_method, plural_method_name) do |options|
           get_ids(resource.name, options)
-        end unless respond_to?(plural_method_name)
+        end unless respond_to?(plural_method_name, true)
       end
     end
 
@@ -152,10 +154,15 @@ module HammerCLIForeman
     end
 
     def find_resource(resource_name, options)
+      results = find_resource_raw(resource_name, options)
       resource = @api.resource(resource_name)
-      results = resolved_call(resource_name, :index, options)
       pick_result(results, resource)
     end
+
+    def find_resource_raw(resource_name, options)
+      resolved_call(resource_name, :index, options)
+    end
+
 
     def resolved_call(resource_name, action_name, options)
       resource = @api.resource(resource_name)
@@ -196,7 +203,7 @@ module HammerCLIForeman
 
     def search_options(options, resource)
       method = "create_#{resource.name}_search_options"
-      search_options = if respond_to?(method)
+      search_options = if respond_to?(method, true)
                          send(method, options)
                        else
                          create_search_options(options, resource)
@@ -220,6 +227,32 @@ module HammerCLIForeman
         end
       end
       0
+    end
+
+    # puppet class search results are in non-standard format
+    # and needs to be un-hashed first
+    def puppetclass_id(options)
+      return options[HammerCLI.option_accessor_name("id")] if options[HammerCLI.option_accessor_name("id")]
+      resource = @api.resource(:puppetclasses)
+      results = find_resource_raw(:puppetclasses, options)
+      require('hammer_cli_foreman/puppet_class')
+      results = HammerCLIForeman::PuppetClass::ListCommand.unhash_classes(results)
+      pick_result(results, resource)['id']
+    end
+
+    def create_smart_class_parameters_search_options(options)
+      search_options = {}
+      value = options[HammerCLI.option_accessor_name('name')]
+      search_options[:search] = "key = \"#{value}\""
+      search_options[:puppetclass_id] = puppetclass_id(scoped_options("puppetclass", options))
+      search_options
+    end
+
+    def create_smart_variables_search_options(options)
+      search_options = {}
+      value = options[HammerCLI.option_accessor_name('name')]
+      search_options[:search] = "key = \"#{value}\""
+      search_options
     end
 
     def create_search_options(options, resource)

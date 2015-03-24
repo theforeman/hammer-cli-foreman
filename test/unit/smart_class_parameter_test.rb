@@ -20,7 +20,7 @@ describe HammerCLIForeman::SmartClassParameter do
       it_should_accept "hostgroup id", ["--hostgroup-id=1"]
       it_should_accept "host id", ["--host-id=1"]
       it_should_accept "environment id", ["--environment-id=1"]
-      it_should_accept "puppet class id", ["--puppet-class-id=1"]
+      it_should_accept "puppet-class-id", ["--puppet-class-id=1"]
       it_should_accept_search_params
     end
 
@@ -49,7 +49,8 @@ describe HammerCLIForeman::SmartClassParameter do
 
     context "parameters" do
       it_should_accept "id", ["--id=1"]
-      it_should_accept "name", ["--name=param"]
+      it_should_accept "name, puppet-class", ["--name=par", "--puppet-class=ntp"]
+      it_should_fail_with "name", ["--name=par"]
       # it_should_fail_with "no arguments"
       # TODO: temporarily disabled, parameters are checked in the id resolver
     end
@@ -62,6 +63,8 @@ describe HammerCLIForeman::SmartClassParameter do
 
     context "parameters" do
       it_should_accept "id", ["--id=1"]
+      it_should_accept "name, puppet-class", ["--name=par", "--puppet-class=ntp"]
+      it_should_fail_with "name", ["--name=par"]
       it_should_accept "override", ["--id=1","--override=true"]
       it_should_accept "description", ["--id=1","--description=descr"]
       it_should_accept "default-value", ["--id=1","--default-value=1"]
@@ -78,5 +81,26 @@ describe HammerCLIForeman::SmartClassParameter do
 
   end
 
+  context "AddOverrideValueCommand" do
+
+    let(:cmd) { HammerCLIForeman::SmartClassParameter::AddOverrideValueCommand.new("", ctx) }
+
+    context "parameters" do
+      it_should_accept "smart-class-parametr-id, match, value", ["--smart-class-parameter-id=1", "--match='domain=my.lan'", "--value=1"]
+      it_should_accept "smart-class-parameter, puppet-class, match, value", ["--smart-class-parameter=par", "--puppet-class=ntp", "--match='domain=my.lan'", "--value=1"]
+      it_should_fail_with "smart-class-parameter, match, value", ["--smart-class-parameter=par", "--match='domain=my.lan'", "--value=1"]
+    end
+  end
+
+  context "RemoveOverrideValueCommand" do
+
+    let(:cmd) { HammerCLIForeman::SmartClassParameter::RemoveOverrideValueCommand.new("", ctx) }
+
+    context "parameters" do
+      it_should_accept "smart-class-parametr-id, id", ["--smart-class-parameter-id=1", "--id=1"]
+      it_should_accept "smart-class-parameter, puppet-class, id", ["--smart-class-parameter=par", "--puppet-class=ntp", "--id=1"]
+      it_should_fail_with "smart-class-parameter, id", ["--smart-class-parameter=par", "--id=1"]
+    end
+  end
 
 end

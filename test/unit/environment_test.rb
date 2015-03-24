@@ -99,8 +99,8 @@ describe HammerCLIForeman::Environment do
     let(:cmd) { HammerCLIForeman::Environment::SCParamsCommand.new("", ctx) }
 
     context "parameters" do
-      it_should_accept "name", ["--name=env"]
-      it_should_accept "id", ["--id=1"]
+      it_should_accept "environment", ["--environment=env"]
+      it_should_accept "environment-id", ["--environment-id=1"]
       # it_should_fail_with "name or id missing", [] # TODO: temporarily disabled, parameters are checked in the id resolver
     end
 

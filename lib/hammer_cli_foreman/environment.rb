@@ -54,8 +54,7 @@ module HammerCLIForeman
     end
 
     class SCParamsCommand < HammerCLIForeman::SmartClassParametersList
-      parent_resource :environments
-      build_options
+      build_options_for :environments
     end
 
 

@@ -2,6 +2,7 @@ require 'hammer_cli_foreman/fact'
 require 'hammer_cli_foreman/report'
 require 'hammer_cli_foreman/puppet_class'
 require 'hammer_cli_foreman/smart_class_parameter'
+require 'hammer_cli_foreman/smart_variable'
 
 require 'highline/import'
 
@@ -465,8 +466,21 @@ module HammerCLIForeman
     end
 
     class SCParamsCommand < HammerCLIForeman::SmartClassParametersList
-      parent_resource :hosts
-      build_options
+      build_options_for :hosts
+
+      def validate_options
+        super
+        validator.any(:option_host_name, :option_host_id).required
+      end
+    end
+
+    class SmartVariablesCommand < HammerCLIForeman::SmartVariablesList
+      build_options_for :hosts
+
+      def validate_options
+        super
+        validator.any(:option_host_name, :option_host_id).required
+      end
     end
 
     autoload_subcommands

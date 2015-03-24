@@ -1,4 +1,5 @@
 require 'hammer_cli_foreman/smart_class_parameter'
+require 'hammer_cli_foreman/smart_variable'
 
 module HammerCLIForeman
 
@@ -47,8 +48,21 @@ module HammerCLIForeman
 
 
     class SCParamsCommand < HammerCLIForeman::SmartClassParametersBriefList
-      parent_resource :puppetclasses
-      build_options
+      build_options_for :puppetclasses
+
+      def validate_options
+        super
+        validator.any(:option_puppetclass_name, :option_puppetclass_id).required
+      end
+    end
+
+    class SmartVariablesCommand < HammerCLIForeman::SmartVariablesBriefList
+      build_options_for :puppetclasses
+
+      def validate_options
+        super
+        validator.any(:option_puppetclass_name, :option_puppetclass_id).required
+      end
     end
 
 
