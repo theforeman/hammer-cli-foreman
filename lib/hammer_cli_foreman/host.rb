@@ -3,6 +3,7 @@ require 'hammer_cli_foreman/report'
 require 'hammer_cli_foreman/puppet_class'
 require 'hammer_cli_foreman/smart_class_parameter'
 require 'hammer_cli_foreman/smart_variable'
+require 'hammer_cli_foreman/interface'
 
 require 'highline/import'
 
@@ -54,7 +55,7 @@ module HammerCLIForeman
             :provision_method, :capabilities, :flavour_ref, :image_ref, :start,
             :network, :cpus, :memory, :provider, :type, :tenant_id, :image_id,
             # ----------------------------------------------------------------------------------
-            :puppet_class_ids, :host_parameters_attributes]
+            :puppet_class_ids, :host_parameters_attributes, :interfaces_attributes]
     end
 
     def self.ask_password
@@ -75,18 +76,17 @@ module HammerCLIForeman
       params['host']['host_parameters_attributes'] = parameter_attributes
       params['host']['compute_attributes'] = option_compute_attributes || {}
       params['host']['compute_attributes']['volumes_attributes'] = nested_attributes(option_volume_list)
-      if option_compute_resource_id
-        params['host']['compute_attributes']['interfaces_attributes'] = nested_attributes(option_interface_list)
-        params['host']['compute_attributes']['nics_attributes'] = nested_attributes(option_interface_list)
-      else
-        params['host']['interfaces_attributes'] = nested_attributes(option_interface_list)
-      end
+      params['host']['interfaces_attributes'] = interfaces_attributes
+
+      # check primary and provision interfaces, only for create
+      check_mandatory_interfaces(params['host']['interfaces_attributes']) if params['id'].nil?
 
       params['host']['root_pass'] = option_root_password unless option_root_password.nil?
 
       if option_ask_root_password
         params['host']['root_pass'] = HammerCLIForeman::CommonHostUpdateOptions::ask_password
       end
+
       params
     end
 
@@ -117,6 +117,30 @@ module HammerCLIForeman
       nested_hash
     end
 
+    def interfaces_attributes
+      # move each attribute starting with "compute_" to compute_attributes
+      nic_list = option_interface_list.collect do |nic|
+        compute_attributes = {}
+        nic.keys.each do |key|
+          if key.start_with? 'compute_'
+            compute_attributes[key.gsub('compute_', '')] = nic.delete(key)
+          end
+        end
+        nic['compute_attributes'] = compute_attributes unless compute_attributes.empty?
+        nic
+      end
+      nested_attributes(nic_list)
+    end
+
+    def check_mandatory_interfaces(nics)
+      unless nics.any? { |key, nic| nic['primary'] == 'true' }
+        signal_usage_error _('At least one interface must be set as primary')
+      end
+      unless nics.any? { |key, nic| nic['provision'] == 'true' }
+        signal_usage_error _('At least one interface must be set as provision')
+      end
+    end
+
   end
 
 
@@ -142,15 +166,18 @@ module HammerCLIForeman
     class InfoCommand < HammerCLIForeman::InfoCommand
 
       def extend_data(host)
+        host['compute_resource_name'] ||= _('Bare Metal')
+        host['image_file'] = nil if host['image_file'].empty?
+        host['interfaces'] = host['interfaces'].map do |nic|
+          nic['_type'] = HammerCLIForeman::Interface.format_type(nic)
+          nic
+        end if host['interfaces']
+
         # FIXME: temporary fetching parameters until the api gets fixed.
         # Noramlly they should come in the host's json.
         # http://projects.theforeman.org/issues/5820
-        host["parameters"] = get_parameters(host["id"])
+        host['parameters'] = get_parameters(host["id"])
 
-        host["_bmc_interfaces"] =
-          host["interfaces"].select{|intfs| intfs["type"] == "Nic::BMC" } rescue []
-        host["_managed_interfaces"] =
-          host["interfaces"].select{|intfs| intfs["type"] == "Nic::Managed" } rescue []
         host
       end
 
@@ -159,70 +186,73 @@ module HammerCLIForeman
         HammerCLIForeman.collection_to_common_format(params)
       end
 
-      output ListCommand.output_definition do
-        field :uuid, _("UUID")
-        field :certname, _("Cert name")
 
+      output do
+        field :id, _("Id")
+        field :uuid, _("UUID"), Fields::Field, :hide_blank => true
+        field :name, _("Name")
+        field nil, _("Organization"), Fields::SingleReference, :key => :organization, :hide_blank => true
+        field nil, _("Location"), Fields::SingleReference, :key => :location, :hide_blank => true
+        field nil, _("Host Group"), Fields::SingleReference, :key => :hostgroup
+        field nil, _("Compute Resource"), Fields::SingleReference, :key => :compute_resource
+        field nil, _("Compute Profile"), Fields::SingleReference, :key => :compute_profile, :hide_blank => true
         field nil, _("Environment"), Fields::SingleReference, :key => :environment
-
-        field :managed, _("Managed")
-        field :enabled, _("Enabled")
-        field :build, _("Build")
-
-        field :use_image, _("Use image")
-        field :disk, _("Disk")
-        field :image_file, _("Image file")
-
-        field :sp_name, _("SP Name")
-        field :sp_ip, _("SP IP")
-        field :sp_mac, _("SP MAC")
-
-        field nil, _("SP Subnet"), Fields::SingleReference, :key => :sp_subnet
+        field :puppet_ca_proxy_id, _("Puppet CA Id")
+        field :puppet_proxy_id, _("Puppet Master Id")
+        field :certname, _("Cert name")
+        field :managed, _("Managed"), Fields::Boolean
 
         field :installed_at, _("Installed at"), Fields::Date
         field :last_report, _("Last report"), Fields::Date
 
-        field :puppet_ca_proxy_id, _("Puppet CA Proxy Id")
-        field nil, _("Medium"), Fields::SingleReference, :key => :medium
-        field nil, _("Model"), Fields::SingleReference, :key => :model
-        field :owner_id, _("Owner Id")
-        field nil, _("Subnet"), Fields::SingleReference, :key => :subnet
-        field nil, _("Domain"), Fields::SingleReference, :key => :domain
-        field :puppet_proxy_id, _("Puppet Proxy Id")
-        field :owner_type, _("Owner Type")
-        field nil, _("Partition Table"), Fields::SingleReference, :key => :ptable
-        field nil, _("Architecture"), Fields::SingleReference, :key => :architecture
-        field nil, _("Image"), Fields::SingleReference, :key => :image
-        field nil, _("Compute Resource"), Fields::SingleReference, :key => :compute_resource
-
-        field :comment, _("Comment")
-
-        collection :_bmc_interfaces, _("BMC Network Interfaces"), :hide_blank => true do
-          field :id, _("Id")
-          field :name, _("Name")
+        label _("Network") do
           field :ip, _("IP")
           field :mac, _("MAC")
-          field :domain_id, _("Domain Id")
-          field :domain_name, _("Domain Name")
-          field :subnet_id, _("Subnet Id")
-          field :subnet_name, _("Subnet Name")
-          field :username, _("BMC Username")
-          field :password, _("BMC Password")
+          field nil, _("Subnet"), Fields::SingleReference, :key => :subnet
+          field nil, _("Domain"), Fields::SingleReference, :key => :domain
+          field nil, _("Service provider"), Fields::Label, :hide_blank => true do
+            field :sp_name, _("SP Name"), Fields::Field, :hide_blank => true
+            field :sp_ip, _("SP IP"), Fields::Field, :hide_blank => true
+            field :sp_mac, _("SP MAC"), Fields::Field, :hide_blank => true
+            field nil, _("SP Subnet"), Fields::SingleReference, :key => :sp_subnet, :hide_blank => true
+          end
         end
 
-        collection :_managed_interfaces, _("Managed Network Interfaces"), :hide_blank => true do
-          field :id, _("Id")
-          field :name, _("Name")
-          field :ip, _("IP")
-          field :mac, _("MAC")
-          field :domain_id, _("Domain Id")
-          field :domain_name, _("Domain Name")
-          field :subnet_id, _("Subnet Id")
-          field :subnet_name, _("Subnet Name")
+        collection :interfaces, _("Network interfaces") do
+          field :id, _('Id')
+          field :identifier, _('Identifier')
+          field :_type, _('Type')
+          field :mac, _('MAC address')
+          field :ip, _('IP address')
+          field :fqdn, _('FQDN')
+        end
+
+        label _("Operating system") do
+          field nil, _("Architecture"), Fields::SingleReference, :key => :architecture
+          field nil, _("Operating System"), Fields::SingleReference, :key => :operatingsystem
+          # provision_method
+          # for network based
+          field :build, _("Build"), Fields::Boolean
+          field nil, _("Medium"), Fields::SingleReference, :key => :medium
+          field nil, _("Partition Table"), Fields::SingleReference, :key => :ptable
+          field :disk, _("Custom partition table"), Fields::LongText
+          # image
+          # for image based
+          field nil, _("Image"), Fields::SingleReference, :key => :image, :hide_blank => true
+          field :image_file, _("Image file"), Fields::Field, :hide_blank => true
+          field :use_image, _("Use image"), Fields::Boolean, :hide_blank => true
         end
 
         HammerCLIForeman::References.parameters(self)
-        HammerCLIForeman::References.timestamps(self)
+
+        # additional info
+        label _("Additional info") do
+          field :owner_id, _("Owner Id")
+          field :owner_type, _("Owner Type")
+          field :enabled, _("Enabled"), Fields::Boolean
+          field nil, _("Model"), Fields::SingleReference, :key => :model, :hide_blank => true
+          field :comment, _("Comment"), Fields::LongText
+        end
       end
 
       build_options
@@ -484,6 +514,8 @@ module HammerCLIForeman
     end
 
     autoload_subcommands
+
+    subcommand 'interface', HammerCLIForeman::Interface.desc, HammerCLIForeman::Interface
   end
 
 end

@@ -20,11 +20,9 @@ module HammerCLIForeman::Output
 
         context = field_params[:context] || {}
 
-        if context[:show_ids]
-          "#{name} (id: #{id})" if id && name
-        else
-          "#{name}" if name
-        end
+        out = "#{name}"
+        out += " (id: #{id})" if context[:show_ids] && id
+        out
       end
 
     end
