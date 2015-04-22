@@ -143,6 +143,48 @@ describe HammerCLIForeman::Command do
     builder.class.must_equal HammerCLIForeman::ForemanOptionBuilder
   end
 
+  it "properly raises error on intentional searching of parameters that are not required" do 
+    class TestList < HammerCLIForeman::ListCommand
+      resource :domains
+      build_options
+    end
+
+    com = TestList.new("", { :adapter => :csv, :interactive => false })
+    
+    com.resolver.class.any_instance.stubs(:location_id).raises(
+      HammerCLIForeman::MissingSeachOptions.new(
+        "Error", 
+        HammerCLIForeman.foreman_api_connection.api.resource(:locations)
+      )
+    )
+    out, err = capture_io do
+      com.run(['--location', 'loc']).wont_equal HammerCLI::EX_OK
+    end
+    err.must_equal "Error: Could not find location, please set one of options --location, --location-id.\n"
+
+  end
+
+  it "ignores error on attempt to search of parameters that are not required" do 
+    class TestList < HammerCLIForeman::ListCommand
+      resource :domains
+      build_options
+    end
+
+    com = TestList.new("", { :adapter => :csv, :interactive => false })
+    
+    com.resolver.class.any_instance.stubs(:location_id).raises(
+      HammerCLIForeman::MissingSeachOptions.new(
+        "Error", 
+        HammerCLIForeman.foreman_api_connection.api.resource(:locations)
+      )
+    )
+    
+    out, err = capture_io do
+      com.run([]).must_equal HammerCLI::EX_OK
+    end
+
+  end
+
   describe "build_options" do
     it "uses build parameters in the block" do
       HammerCLIForeman::Command.build_options do |o|

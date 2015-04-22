@@ -148,7 +148,10 @@ module HammerCLIForeman
       begin
         resolver.send("#{resource.singular_name}_id", opts)
       rescue HammerCLIForeman::MissingSeachOptions => e
-        raise e unless (options[:required] == false)
+        if (options[:required] == true || resource_search_requested(resource, opts))
+          logger.info "Error occured while searching for #{resource.singular_name}"
+          raise e
+        end
       end
     end
 
@@ -157,7 +160,10 @@ module HammerCLIForeman
       begin
         resolver.send("#{resource.singular_name}_ids", opts)
       rescue HammerCLIForeman::MissingSeachOptions => e
-        raise e unless (options[:required] == false)
+        if (options[:required] == true || resource_search_requested(resource, opts, true))
+          logger.info "Error occured while searching for #{resource.name}"
+          raise e
+        end
       end
     end
 
@@ -238,6 +244,17 @@ module HammerCLIForeman
       id_option_name = HammerCLI.option_accessor_name('id')
       params_pruned['id'] = params[id_option_name] if params[id_option_name]
       params_pruned
+    end
+
+    private
+
+    def resource_search_requested(resource, options, plural=false)
+      # check if any searchable for given resource is set
+      filed_options = Hash[options.select { |opt, value| !value.nil? }].keys
+      searchable_options = searchables.for(resource).map do |o|
+        HammerCLI.option_accessor_name(plural ? o.plural_name : o.name)
+      end
+      !(filed_options & searchable_options).empty?
     end
 
   end
