@@ -9,7 +9,7 @@
 
 Summary: Universal command-line interface for Foreman
 Name: rubygem-%{gemname}
-Version: 0.1.4.7
+Version: 0.1.4.8
 Release: 1%{?dist}
 Group: Development/Languages
 License: GPLv3
@@ -83,6 +83,10 @@ cp -pa .%{gem_dir}/* \
 %doc %{geminstdir}/doc/name_id_resolution.md
 
 %changelog
+* Tue Apr 21 2015 Mike McCune <mmccune@redhat.com> 0.1.4.8-1
+- Fixes #7699 - can't convert nil into Array in compute resouce info
+  (tstrachota@redhat.com)
+
 * Tue Mar 24 2015 Jason Montleon <jmontleo@redhat.com> 0.1.4.7-1
 - update version (jmontleo@redhat.com)
 - 98+ percent on all strings (bkearney@redhat.com)
