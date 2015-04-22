@@ -273,6 +273,13 @@ describe HammerCLIForeman::Host do
         it_should_call_action_and_test_params(:update) { |par| par["host"]["provision_method"] == "build" }
       end
 
+      # test it doesn't add nil values for unspecified params during update
+      with_params ["--id=1", "--new-name=host2"] do
+        it_should_call_action_and_test_params(:update) do |par|
+          nil_keys = par["host"].select { |key, value| value.nil? }
+          nil_keys.empty?
+        end
+      end
     end
 
   end
