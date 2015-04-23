@@ -1,6 +1,26 @@
 Release notes
 =============
 
+### 0.2.0 (2015-04-23)
+* Adding default org and loc to user info ([#10251](http://projects.theforeman.org/issues/10251))
+* Host update resets some attributes ([#10215](http://projects.theforeman.org/issues/10215))
+* Improve handling of id search errors ([#9971](http://projects.theforeman.org/issues/9971))
+* Commands for managing host's interfaces ([#3849](http://projects.theforeman.org/issues/3849))
+* Support for smart variables and override values ([#2928](http://projects.theforeman.org/issues/2928))
+* Can't convert nil into Array in compute resouce info ([#7699](http://projects.theforeman.org/issues/7699))
+* Use correct domain for system locales, only load one domain ([#9648](http://projects.theforeman.org/issues/9648))
+* Allow disablement of record_to_common_format ([#8227](http://projects.theforeman.org/issues/8227))
+* Puppet-classes in host and hostgroup returns without an error ([#7473](http://projects.theforeman.org/issues/7473))
+* Does not resolve a nested host group to id when updating a host ([#9318](http://projects.theforeman.org/issues/9318))
+* User info doesn't display timezone and locale ([#9114](http://projects.theforeman.org/issues/9114))
+* Update to gettext 3.x ([#8980](http://projects.theforeman.org/issues/8980))
+* Commands for settings ([#2918](http://projects.theforeman.org/issues/2918))
+* Adds dns name association to domain cli ([#3630](http://projects.theforeman.org/issues/3630))
+* List of host facts is shown correctly ([#7187](http://projects.theforeman.org/issues/7187))
+* Add config directory to gemspec ([#8829](http://projects.theforeman.org/issues/8829))
+* List commands should not be interactive for csv output ([#3898](http://projects.theforeman.org/issues/3898))
+
+
 ### 0.1.4 (2014-12-11)
 * sending puppet class ids ([#8651](http://projects.theforeman.org/issues/8651))
 * setting --puppet-class-ids on host create/update throws api exception ([#8642](http://projects.theforeman.org/issues/8642))
