@@ -11,10 +11,9 @@ msgstr ""
 "Project-Id-Version: hammer-cli-foreman 0.1.4\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2015-02-13 15:58-0500\n"
-"PO-Revision-Date: 2015-03-18 04:06+0000\n"
+"PO-Revision-Date: 2015-03-31 03:47+0000\n"
 "Last-Translator: asasaki <asasaki@redhat.com>\n"
-"Language-Team: Japanese (http://www.transifex.com/projects/p/foreman/"
-"language/ja/)\n"
+"Language-Team: Japanese (http://www.transifex.com/projects/p/foreman/language/ja/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -208,7 +207,7 @@ msgstr "検索する名前"
 
 #: lib/hammer_cli_foreman/id_resolver.rb:149
 msgid "one of %s not found"
-msgstr "%s の内の 1 つが見つかりませんでした"
+msgstr "%s の 1 つが見つかりませんでした"
 
 #: lib/hammer_cli_foreman/id_resolver.rb:191
 msgid "%s not found"
@@ -228,28 +227,21 @@ msgstr "%s の検索に足りないオプション"
 #: lib/hammer_cli_foreman/subnet.rb:10
 #: lib/hammer_cli_foreman/environment.rb:14
 #: lib/hammer_cli_foreman/partition_table.rb:10
-#: lib/hammer_cli_foreman/compute_resource.rb:11
-#: lib/hammer_cli_foreman/usergroup.rb:11
-#: lib/hammer_cli_foreman/host.rb:129
-#: lib/hammer_cli_foreman/host.rb:200
-#: lib/hammer_cli_foreman/host.rb:213
+#: lib/hammer_cli_foreman/compute_resource.rb:20
+#: lib/hammer_cli_foreman/usergroup.rb:11 lib/hammer_cli_foreman/host.rb:129
+#: lib/hammer_cli_foreman/host.rb:200 lib/hammer_cli_foreman/host.rb:213
 #: lib/hammer_cli_foreman/location.rb:13
-#: lib/hammer_cli_foreman/hostgroup.rb:46
-#: lib/hammer_cli_foreman/user.rb:10
+#: lib/hammer_cli_foreman/hostgroup.rb:46 lib/hammer_cli_foreman/user.rb:10
 #: lib/hammer_cli_foreman/external_usergroup.rb:10
-#: lib/hammer_cli_foreman/filter.rb:9
-#: lib/hammer_cli_foreman/filter.rb:72
-#: lib/hammer_cli_foreman/report.rb:10
-#: lib/hammer_cli_foreman/report.rb:30
-#: lib/hammer_cli_foreman/media.rb:9
-#: lib/hammer_cli_foreman/role.rb:11
+#: lib/hammer_cli_foreman/filter.rb:9 lib/hammer_cli_foreman/filter.rb:72
+#: lib/hammer_cli_foreman/report.rb:10 lib/hammer_cli_foreman/report.rb:30
+#: lib/hammer_cli_foreman/media.rb:9 lib/hammer_cli_foreman/role.rb:11
 #: lib/hammer_cli_foreman/image.rb:29
 #: lib/hammer_cli_foreman/puppet_class.rb:12
 #: lib/hammer_cli_foreman/model.rb:10
 #: lib/hammer_cli_foreman/smart_class_parameter.rb:8
 #: lib/hammer_cli_foreman/smart_class_parameter.rb:66
-#: lib/hammer_cli_foreman/domain.rb:31
-#: lib/hammer_cli_foreman/template.rb:25
+#: lib/hammer_cli_foreman/domain.rb:31 lib/hammer_cli_foreman/template.rb:25
 #: lib/hammer_cli_foreman/operating_system.rb:10
 #: lib/hammer_cli_foreman/smart_proxy.rb:11
 msgid "Id"
@@ -261,27 +253,20 @@ msgstr "ID"
 #: lib/hammer_cli_foreman/subnet.rb:11
 #: lib/hammer_cli_foreman/environment.rb:15
 #: lib/hammer_cli_foreman/partition_table.rb:11
-#: lib/hammer_cli_foreman/compute_resource.rb:12
-#: lib/hammer_cli_foreman/usergroup.rb:12
-#: lib/hammer_cli_foreman/host.rb:130
-#: lib/hammer_cli_foreman/host.rb:201
-#: lib/hammer_cli_foreman/host.rb:214
+#: lib/hammer_cli_foreman/compute_resource.rb:21
+#: lib/hammer_cli_foreman/usergroup.rb:12 lib/hammer_cli_foreman/host.rb:130
+#: lib/hammer_cli_foreman/host.rb:201 lib/hammer_cli_foreman/host.rb:214
 #: lib/hammer_cli_foreman/location.rb:14
-#: lib/hammer_cli_foreman/hostgroup.rb:47
-#: lib/hammer_cli_foreman/user.rb:12
+#: lib/hammer_cli_foreman/hostgroup.rb:47 lib/hammer_cli_foreman/user.rb:12
 #: lib/hammer_cli_foreman/external_usergroup.rb:11
 #: lib/hammer_cli_foreman/external_usergroup.rb:42
-#: lib/hammer_cli_foreman/filter.rb:73
-#: lib/hammer_cli_foreman/filter.rb:90
-#: lib/hammer_cli_foreman/media.rb:10
-#: lib/hammer_cli_foreman/role.rb:12
-#: lib/hammer_cli_foreman/image.rb:30
-#: lib/hammer_cli_foreman/image.rb:70
+#: lib/hammer_cli_foreman/filter.rb:73 lib/hammer_cli_foreman/filter.rb:90
+#: lib/hammer_cli_foreman/media.rb:10 lib/hammer_cli_foreman/role.rb:12
+#: lib/hammer_cli_foreman/image.rb:30 lib/hammer_cli_foreman/image.rb:70
 #: lib/hammer_cli_foreman/puppet_class.rb:13
 #: lib/hammer_cli_foreman/model.rb:11
 #: lib/hammer_cli_foreman/common_parameter.rb:12
-#: lib/hammer_cli_foreman/domain.rb:32
-#: lib/hammer_cli_foreman/template.rb:26
+#: lib/hammer_cli_foreman/domain.rb:32 lib/hammer_cli_foreman/template.rb:26
 #: lib/hammer_cli_foreman/template.rb:74
 #: lib/hammer_cli_foreman/operating_system.rb:22
 #: lib/hammer_cli_foreman/smart_proxy.rb:12
@@ -320,12 +305,14 @@ msgstr "LDAP 認証ソースを管理します。"
 msgid "LDAPS?"
 msgstr "LDAPS?"
 
-# translation auto-copied from project RHELOSP Deploying Learning Env, version 5.0, document topics/OpenStack_Networking_API
+# translation auto-copied from project RHELOSP Deploying Learning Env, version
+# 5.0, document topics/OpenStack_Networking_API
 #: lib/hammer_cli_foreman/auth_source_ldap.rb:16
 msgid "Port"
 msgstr "ポート"
 
-# translation auto-copied from project Red Hat Subscription Manager, version 1.0, document Workflows, author nnakakit
+# translation auto-copied from project Red Hat Subscription Manager, version
+# 1.0, document Workflows, author nnakakit
 #: lib/hammer_cli_foreman/auth_source_ldap.rb:17
 msgid "Server Type"
 msgstr "サーバーのタイプ"
@@ -352,11 +339,11 @@ msgstr "ログイン名属性"
 
 #: lib/hammer_cli_foreman/auth_source_ldap.rb:32
 msgid "First Name Attribute"
-msgstr "ファーストネーム属性"
+msgstr "名属性"
 
 #: lib/hammer_cli_foreman/auth_source_ldap.rb:33
 msgid "Last Name Attribute"
-msgstr "ラストネーム属性"
+msgstr "姓属性"
 
 #: lib/hammer_cli_foreman/auth_source_ldap.rb:34
 msgid "Email Address Attribute"
@@ -376,7 +363,7 @@ msgstr "認証ソースを作成できませんでした"
 
 #: lib/hammer_cli_foreman/auth_source_ldap.rb:51
 msgid "Auth source deleted"
-msgstr "認証ソースを削除"
+msgstr "認証ソースが削除されました"
 
 #: lib/hammer_cli_foreman/auth_source_ldap.rb:52
 msgid "Could not delete the Auth Source"
@@ -384,7 +371,7 @@ msgstr "認証ソースを削除できませんでした"
 
 #: lib/hammer_cli_foreman/auth_source_ldap.rb:59
 msgid "Auth source updated"
-msgstr "認証ソースを更新"
+msgstr "認証ソースが更新されました"
 
 #: lib/hammer_cli_foreman/auth_source_ldap.rb:60
 msgid "Could not update the Auth Source"
@@ -571,66 +558,65 @@ msgstr "パーティションテーブルが削除されました"
 msgid "Could not delete the partition table"
 msgstr "パーティションテーブルを削除できませんでした"
 
-#: lib/hammer_cli_foreman/compute_resource.rb:13
+#: lib/hammer_cli_foreman/compute_resource.rb:22
 msgid "Provider"
 msgstr "プロバイダー"
 
-#: lib/hammer_cli_foreman/compute_resource.rb:23
-#: lib/hammer_cli_foreman/compute_resource.rb:29
-#: lib/hammer_cli_foreman/host.rb:162
-#: lib/hammer_cli_foreman/image.rb:33
+#: lib/hammer_cli_foreman/compute_resource.rb:34
+#: lib/hammer_cli_foreman/compute_resource.rb:40
+#: lib/hammer_cli_foreman/host.rb:162 lib/hammer_cli_foreman/image.rb:33
 #: lib/hammer_cli_foreman/image.rb:71
 msgid "UUID"
 msgstr "UUID"
 
-#: lib/hammer_cli_foreman/compute_resource.rb:26
-#: lib/hammer_cli_foreman/compute_resource.rb:36
+#: lib/hammer_cli_foreman/compute_resource.rb:37
+#: lib/hammer_cli_foreman/compute_resource.rb:47
 msgid "Region"
 msgstr "リージョン"
 
-#: lib/hammer_cli_foreman/compute_resource.rb:30
+#: lib/hammer_cli_foreman/compute_resource.rb:41
 msgid "Server"
 msgstr "サーバー"
 
-#: lib/hammer_cli_foreman/compute_resource.rb:33
+#: lib/hammer_cli_foreman/compute_resource.rb:44
 msgid "Tenant"
 msgstr "テナント"
 
-#: lib/hammer_cli_foreman/compute_resource.rb:43
+#: lib/hammer_cli_foreman/compute_resource.rb:54
 msgid "Url"
 msgstr "URL"
 
-#: lib/hammer_cli_foreman/compute_resource.rb:44
+#: lib/hammer_cli_foreman/compute_resource.rb:55
 #: lib/hammer_cli_foreman/smart_class_parameter.rb:53
 #: lib/hammer_cli_foreman/domain.rb:42
 msgid "Description"
 msgstr "説明"
 
-#: lib/hammer_cli_foreman/compute_resource.rb:45
+#: lib/hammer_cli_foreman/compute_resource.rb:56
 msgid "User"
 msgstr "ユーザー"
 
-#: lib/hammer_cli_foreman/compute_resource.rb:62
+#: lib/hammer_cli_foreman/compute_resource.rb:73
 msgid "Compute resource created"
 msgstr "コンピュートリソースが作成されました"
 
-#: lib/hammer_cli_foreman/compute_resource.rb:63
+#: lib/hammer_cli_foreman/compute_resource.rb:74
 msgid "Could not create the compute resource"
 msgstr "コンピュートリソースを作成できませんでした"
 
-#: lib/hammer_cli_foreman/compute_resource.rb:74
+#: lib/hammer_cli_foreman/compute_resource.rb:85
 msgid "Compute resource updated"
 msgstr "コンピュートリソースが更新されました"
 
-#: lib/hammer_cli_foreman/compute_resource.rb:75
+#: lib/hammer_cli_foreman/compute_resource.rb:86
 msgid "Could not update the compute resource"
 msgstr "コンピュートリソースを更新できませんでした"
 
-#: lib/hammer_cli_foreman/compute_resource.rb:82
+#: lib/hammer_cli_foreman/compute_resource.rb:93
 msgid "Compute resource deleted"
 msgstr "コンピュートリソースが削除されました"
 
-#: lib/hammer_cli_foreman/compute_resource.rb:83
+#: lib/hammer_cli_foreman/compute_resource.rb:94
 msgid "Could not delete the compute resource"
 msgstr "コンピュートリソースを削除できませんでした"
 
@@ -682,8 +668,7 @@ msgstr "ボリュームパラメーター"
 msgid "Interface parameters."
 msgstr "インターフェースパラメーター。"
 
-#: lib/hammer_cli_foreman/host.rb:131
-#: lib/hammer_cli_foreman/hostgroup.rb:49
+#: lib/hammer_cli_foreman/host.rb:131 lib/hammer_cli_foreman/hostgroup.rb:49
 #: lib/hammer_cli_foreman/image.rb:31
 msgid "Operating System"
 msgstr "オペレーティングシステム"
@@ -692,14 +677,12 @@ msgstr "オペレーティングシステム"
 msgid "Host Group"
 msgstr "ホストグループ"
 
-#: lib/hammer_cli_foreman/host.rb:133
-#: lib/hammer_cli_foreman/host.rb:202
+#: lib/hammer_cli_foreman/host.rb:133 lib/hammer_cli_foreman/host.rb:202
 #: lib/hammer_cli_foreman/host.rb:215
 msgid "IP"
 msgstr "IP アドレス"
 
-#: lib/hammer_cli_foreman/host.rb:134
-#: lib/hammer_cli_foreman/host.rb:203
+#: lib/hammer_cli_foreman/host.rb:134 lib/hammer_cli_foreman/host.rb:203
 #: lib/hammer_cli_foreman/host.rb:216
 msgid "MAC"
 msgstr "MAC"
@@ -708,8 +691,7 @@ msgstr "MAC"
 msgid "Cert name"
 msgstr "証明書名"
 
-#: lib/hammer_cli_foreman/host.rb:165
-#: lib/hammer_cli_foreman/hostgroup.rb:50
+#: lib/hammer_cli_foreman/host.rb:165 lib/hammer_cli_foreman/hostgroup.rb:50
 msgid "Environment"
 msgstr "環境"
 
@@ -757,23 +739,19 @@ msgstr "SP サブネット"
 msgid "Installed at"
 msgstr "インストール:"
 
-#: lib/hammer_cli_foreman/host.rb:182
-#: lib/hammer_cli_foreman/report.rb:12
+#: lib/hammer_cli_foreman/host.rb:182 lib/hammer_cli_foreman/report.rb:12
 msgid "Last report"
 msgstr "最終レポート"
 
-#: lib/hammer_cli_foreman/host.rb:184
-#: lib/hammer_cli_foreman/hostgroup.rb:67
+#: lib/hammer_cli_foreman/host.rb:184 lib/hammer_cli_foreman/hostgroup.rb:67
 msgid "Puppet CA Proxy Id"
 msgstr "Puppet CA プロキシー ID"
 
-#: lib/hammer_cli_foreman/host.rb:185
-#: lib/hammer_cli_foreman/hostgroup.rb:66
+#: lib/hammer_cli_foreman/host.rb:185 lib/hammer_cli_foreman/hostgroup.rb:66
 msgid "Medium"
 msgstr "メディア"
 
-#: lib/hammer_cli_foreman/host.rb:186
-#: lib/hammer_cli_foreman/hostgroup.rb:51
+#: lib/hammer_cli_foreman/host.rb:186 lib/hammer_cli_foreman/hostgroup.rb:51
 msgid "Model"
 msgstr "モデル"
 
@@ -781,13 +759,11 @@ msgstr "モデル"
 msgid "Owner Id"
 msgstr "所有者 ID "
 
-#: lib/hammer_cli_foreman/host.rb:188
-#: lib/hammer_cli_foreman/hostgroup.rb:61
+#: lib/hammer_cli_foreman/host.rb:188 lib/hammer_cli_foreman/hostgroup.rb:61
 msgid "Subnet"
 msgstr "サブネット"
 
-#: lib/hammer_cli_foreman/host.rb:189
-#: lib/hammer_cli_foreman/hostgroup.rb:63
+#: lib/hammer_cli_foreman/host.rb:189 lib/hammer_cli_foreman/hostgroup.rb:63
 msgid "Domain"
 msgstr "ドメイン"
 
@@ -799,13 +775,11 @@ msgstr "Puppet プロキシー ID"
 msgid "Owner Type"
 msgstr "所有者タイプ"
 
-#: lib/hammer_cli_foreman/host.rb:192
-#: lib/hammer_cli_foreman/hostgroup.rb:65
+#: lib/hammer_cli_foreman/host.rb:192 lib/hammer_cli_foreman/hostgroup.rb:65
 msgid "Partition Table"
 msgstr "パーティションテーブル"
 
-#: lib/hammer_cli_foreman/host.rb:193
-#: lib/hammer_cli_foreman/hostgroup.rb:64
+#: lib/hammer_cli_foreman/host.rb:193 lib/hammer_cli_foreman/hostgroup.rb:64
 #: lib/hammer_cli_foreman/image.rb:45
 msgid "Architecture"
 msgstr "アーキテクチャー"
@@ -826,23 +800,19 @@ msgstr "コメント"
 msgid "BMC Network Interfaces"
 msgstr "BMC ネットワークインターフェース"
 
-#: lib/hammer_cli_foreman/host.rb:204
-#: lib/hammer_cli_foreman/host.rb:217
+#: lib/hammer_cli_foreman/host.rb:204 lib/hammer_cli_foreman/host.rb:217
 msgid "Domain Id"
 msgstr "ドメイン ID"
 
-#: lib/hammer_cli_foreman/host.rb:205
-#: lib/hammer_cli_foreman/host.rb:218
+#: lib/hammer_cli_foreman/host.rb:205 lib/hammer_cli_foreman/host.rb:218
 msgid "Domain Name"
 msgstr "ドメイン名"
 
-#: lib/hammer_cli_foreman/host.rb:206
-#: lib/hammer_cli_foreman/host.rb:219
+#: lib/hammer_cli_foreman/host.rb:206 lib/hammer_cli_foreman/host.rb:219
 msgid "Subnet Id"
 msgstr "サブネット ID"
 
-#: lib/hammer_cli_foreman/host.rb:207
-#: lib/hammer_cli_foreman/host.rb:220
+#: lib/hammer_cli_foreman/host.rb:207 lib/hammer_cli_foreman/host.rb:220
 msgid "Subnet Name"
 msgstr "サブネット名"
 
@@ -870,8 +840,7 @@ msgstr "パワー"
 msgid "Puppet run triggered"
 msgstr "Puppet run がトリガーされました"
 
-#: lib/hammer_cli_foreman/host.rb:286
-#: lib/hammer_cli_foreman/fact.rb:13
+#: lib/hammer_cli_foreman/host.rb:286 lib/hammer_cli_foreman/fact.rb:13
 msgid "Fact"
 msgstr "ファクト"
 
@@ -883,83 +852,83 @@ msgstr "ファクト"
 msgid "Value"
 msgstr "値"
 
-#: lib/hammer_cli_foreman/host.rb:324
+#: lib/hammer_cli_foreman/host.rb:326
 msgid "Host created"
 msgstr "ホストが作成されました"
 
-#: lib/hammer_cli_foreman/host.rb:325
+#: lib/hammer_cli_foreman/host.rb:327
 msgid "Could not create the host"
 msgstr "ホストを作成できませんでした"
 
-#: lib/hammer_cli_foreman/host.rb:346
+#: lib/hammer_cli_foreman/host.rb:348
 msgid "Host updated"
 msgstr "ホストが更新されました"
 
-#: lib/hammer_cli_foreman/host.rb:347
+#: lib/hammer_cli_foreman/host.rb:349
 msgid "Could not update the host"
 msgstr "ホストを更新できませんでした"
 
-#: lib/hammer_cli_foreman/host.rb:354
+#: lib/hammer_cli_foreman/host.rb:356
 msgid "Host deleted"
 msgstr "ホストが削除されました"
 
-#: lib/hammer_cli_foreman/host.rb:355
+#: lib/hammer_cli_foreman/host.rb:357
 msgid "Could not delete the host"
 msgstr "ホストを削除できませんでした"
 
-#: lib/hammer_cli_foreman/host.rb:362
+#: lib/hammer_cli_foreman/host.rb:364
 msgid "Create or update parameter for a host."
 msgstr "ホストのパラメーターを作成または更新します。"
 
-#: lib/hammer_cli_foreman/host.rb:364
+#: lib/hammer_cli_foreman/host.rb:366
 msgid "Host parameter updated"
 msgstr "ホストパラメーターが更新されました"
 
-#: lib/hammer_cli_foreman/host.rb:365
+#: lib/hammer_cli_foreman/host.rb:367
 msgid "New host parameter created"
 msgstr "新規ホストパラメーターが作成されました"
 
-#: lib/hammer_cli_foreman/host.rb:366
+#: lib/hammer_cli_foreman/host.rb:368
 msgid "Could not set host parameter"
 msgstr "ホストパラメーターを設定できませんでした"
 
-#: lib/hammer_cli_foreman/host.rb:378
+#: lib/hammer_cli_foreman/host.rb:380
 msgid "Delete parameter for a host."
 msgstr "ホストのパラメーターを削除します。"
 
-#: lib/hammer_cli_foreman/host.rb:380
+#: lib/hammer_cli_foreman/host.rb:382
 msgid "Host parameter deleted"
 msgstr "ホストパラメーターが削除されました"
 
-#: lib/hammer_cli_foreman/host.rb:395
+#: lib/hammer_cli_foreman/host.rb:397
 msgid "Power a host on"
 msgstr "ホストのパワーをオンにする"
 
-#: lib/hammer_cli_foreman/host.rb:396
+#: lib/hammer_cli_foreman/host.rb:398
 msgid "The host is starting."
 msgstr "ホストが起動中です。"
 
-#: lib/hammer_cli_foreman/host.rb:413
+#: lib/hammer_cli_foreman/host.rb:415
 msgid "Force turning off a host"
 msgstr "ホストを強制的にオフにする"
 
-#: lib/hammer_cli_foreman/host.rb:418
+#: lib/hammer_cli_foreman/host.rb:420
 msgid "Power a host off"
 msgstr "ホストのパワーをオフにする"
 
-#: lib/hammer_cli_foreman/host.rb:430
+#: lib/hammer_cli_foreman/host.rb:432
 msgid "Power off forced."
 msgstr "パワーオフが強制されました。"
 
-#: lib/hammer_cli_foreman/host.rb:432
+#: lib/hammer_cli_foreman/host.rb:434
 msgid "Powering the host off."
 msgstr "ホストのパワーをオフにしています。"
 
-#: lib/hammer_cli_foreman/host.rb:449
+#: lib/hammer_cli_foreman/host.rb:451
 msgid "Reboot a host"
 msgstr "ホストの再起動"
 
-#: lib/hammer_cli_foreman/host.rb:450
+#: lib/hammer_cli_foreman/host.rb:452
 msgid "Host reboot started."
 msgstr "ホストの再起動が開始されました。"
 
@@ -1044,8 +1013,7 @@ msgstr "ロール"
 msgid "External user groups"
 msgstr "外部ユーザーグループ"
 
-#: lib/hammer_cli_foreman/location.rb:24
-#: lib/hammer_cli_foreman/location.rb:62
+#: lib/hammer_cli_foreman/location.rb:24 lib/hammer_cli_foreman/location.rb:62
 #: lib/hammer_cli_foreman/location.rb:74
 msgid "Location numeric id to search by"
 msgstr "検索対象のロケーション数値 ID"
@@ -1090,7 +1058,8 @@ msgstr "Puppet プロキシーの名前"
 msgid "Name of parent hostgroup"
 msgstr "親ホストグループの名前"
 
-# translation auto-copied from project evolution, version 3.8.5, document evolution-3.8
+# translation auto-copied from project evolution, version 3.8.5, document
+# evolution-3.8
 #: lib/hammer_cli_foreman/hostgroup.rb:48
 #: lib/hammer_cli_foreman/operating_system.rb:11
 msgid "Title"
@@ -1102,7 +1071,7 @@ msgstr "Puppet マスタープロキシー ID"
 
 #: lib/hammer_cli_foreman/hostgroup.rb:69
 msgid "ComputeProfile"
-msgstr "ComputeProfile"
+msgstr "コンピュートプロファイル"
 
 #: lib/hammer_cli_foreman/hostgroup.rb:73
 msgid "Parent Id"
@@ -1132,27 +1101,27 @@ msgstr "ホストグループが削除されました"
 msgid "Could not delete the hostgroup"
 msgstr "ホストグループを削除できませんでした"
 
-#: lib/hammer_cli_foreman/hostgroup.rb:129
+#: lib/hammer_cli_foreman/hostgroup.rb:126
 msgid "Create or update parameter for a hostgroup."
 msgstr "ホストグループのパラメーターを作成または更新します。"
 
-#: lib/hammer_cli_foreman/hostgroup.rb:131
+#: lib/hammer_cli_foreman/hostgroup.rb:128
 msgid "Hostgroup parameter updated"
 msgstr "ホストグループのパラメーターが更新されました"
 
-#: lib/hammer_cli_foreman/hostgroup.rb:132
+#: lib/hammer_cli_foreman/hostgroup.rb:129
 msgid "New hostgroup parameter created"
 msgstr "新規ホストグループパラメーターが作成されました"
 
-#: lib/hammer_cli_foreman/hostgroup.rb:133
+#: lib/hammer_cli_foreman/hostgroup.rb:130
 msgid "Could not set hostgroup parameter"
 msgstr "ホストグループのパラメーターを設定できませんでした"
 
-#: lib/hammer_cli_foreman/hostgroup.rb:140
+#: lib/hammer_cli_foreman/hostgroup.rb:137
 msgid "Delete parameter for a hostgroup."
 msgstr "ホストグループのパラメーターの削除。"
 
-#: lib/hammer_cli_foreman/hostgroup.rb:142
+#: lib/hammer_cli_foreman/hostgroup.rb:139
 msgid "Hostgroup parameter deleted"
 msgstr "ホストグループのパラメーターが削除されました。"
 
@@ -1162,17 +1131,17 @@ msgstr "不明な形式のデータが受信されました。"
 
 #: lib/hammer_cli_foreman/commands.rb:185
 msgid ""
-"Could not find %{resource}. Some search options were missing, please see --"
-"help."
-msgstr "%{resource} を見つけることができませんでした。一部の検索オプションが足りません。--help を参照してください。"
+"Could not find %{resource}. Some search options were missing, please see "
+"--help."
+msgstr "%{resource} が見つかりませんでした。一部の検索オプションが足りません。--help を参照してください。"
 
 #: lib/hammer_cli_foreman/commands.rb:187
 msgid "Could not find %{resource}, please set option %{switches}."
-msgstr "%{resource} を見つけることができませんでした。オプション %{switches} を設定してください。"
+msgstr "%{resource} が見つかりませんでした。オプション %{switches} を設定してください。"
 
 #: lib/hammer_cli_foreman/commands.rb:189
 msgid "Could not find %{resource}, please set one of options %{switches}."
-msgstr "%{resource} を見つけることができませんでした。オプション %{switches} のいずれかを設定してください。"
+msgstr "%{resource} が見つかりませんでした。オプション %{switches} のいずれかを設定してください。"
 
 #: lib/hammer_cli_foreman/commands.rb:288
 msgid "List next page? (%s): "
@@ -1200,7 +1169,7 @@ msgstr "管理者"
 
 #: lib/hammer_cli_foreman/user.rb:29
 msgid "Authorized by"
-msgstr "認証元"
+msgstr "認証先"
 
 #: lib/hammer_cli_foreman/user.rb:30
 msgid "Last login"
@@ -1287,15 +1256,12 @@ msgstr "ロール"
 msgid "Permissions"
 msgstr "パーミッション"
 
-#: lib/hammer_cli_foreman/filter.rb:18
-#: lib/hammer_cli_foreman/filter.rb:34
-#: lib/hammer_cli_foreman/filter.rb:78
-#: lib/hammer_cli_foreman/role.rb:33
+#: lib/hammer_cli_foreman/filter.rb:18 lib/hammer_cli_foreman/filter.rb:34
+#: lib/hammer_cli_foreman/filter.rb:78 lib/hammer_cli_foreman/role.rb:33
 msgid "(Miscellaneous)"
 msgstr "(その他)"
 
-#: lib/hammer_cli_foreman/filter.rb:19
-#: lib/hammer_cli_foreman/filter.rb:35
+#: lib/hammer_cli_foreman/filter.rb:19 lib/hammer_cli_foreman/filter.rb:35
 #: lib/hammer_cli_foreman/role.rb:34
 msgid "none"
 msgstr "なし"
@@ -1324,8 +1290,7 @@ msgstr "パーミッションフィルターが削除されました"
 msgid "Could not delete the permission filter"
 msgstr "パーミッションフィルターを削除できませんでした"
 
-#: lib/hammer_cli_foreman/filter.rb:74
-#: lib/hammer_cli_foreman/report.rb:62
+#: lib/hammer_cli_foreman/filter.rb:74 lib/hammer_cli_foreman/report.rb:62
 msgid "Resource"
 msgstr "リソース"
 
@@ -1340,39 +1305,32 @@ msgstr "パラメーター名"
 msgid "parameter value"
 msgstr "パラメーター値"
 
-#: lib/hammer_cli_foreman/report.rb:11
-#: lib/hammer_cli_foreman/report.rb:31
+#: lib/hammer_cli_foreman/report.rb:11 lib/hammer_cli_foreman/report.rb:31
 #: lib/hammer_cli_foreman/fact.rb:12
 msgid "Host"
 msgstr "ホスト"
 
-#: lib/hammer_cli_foreman/report.rb:14
-#: lib/hammer_cli_foreman/report.rb:35
+#: lib/hammer_cli_foreman/report.rb:14 lib/hammer_cli_foreman/report.rb:35
 msgid "Applied"
 msgstr "適用"
 
-#: lib/hammer_cli_foreman/report.rb:15
-#: lib/hammer_cli_foreman/report.rb:36
+#: lib/hammer_cli_foreman/report.rb:15 lib/hammer_cli_foreman/report.rb:36
 msgid "Restarted"
 msgstr "再起動"
 
-#: lib/hammer_cli_foreman/report.rb:16
-#: lib/hammer_cli_foreman/report.rb:37
+#: lib/hammer_cli_foreman/report.rb:16 lib/hammer_cli_foreman/report.rb:37
 msgid "Failed"
 msgstr "失敗"
 
-#: lib/hammer_cli_foreman/report.rb:17
-#: lib/hammer_cli_foreman/report.rb:38
+#: lib/hammer_cli_foreman/report.rb:17 lib/hammer_cli_foreman/report.rb:38
 msgid "Restart Failures"
 msgstr "再起動の失敗"
 
-#: lib/hammer_cli_foreman/report.rb:18
-#: lib/hammer_cli_foreman/report.rb:39
+#: lib/hammer_cli_foreman/report.rb:18 lib/hammer_cli_foreman/report.rb:39
 msgid "Skipped"
 msgstr "スキップ"
 
-#: lib/hammer_cli_foreman/report.rb:19
-#: lib/hammer_cli_foreman/report.rb:40
+#: lib/hammer_cli_foreman/report.rb:19 lib/hammer_cli_foreman/report.rb:40
 msgid "Pending"
 msgstr "保留"
 
@@ -1737,8 +1695,7 @@ msgstr "ドメイン [%{name}] が作成されました"
 msgid "Could not create the domain"
 msgstr "ドメインを作成できませんでした"
 
-#: lib/hammer_cli_foreman/domain.rb:60
-#: lib/hammer_cli_foreman/domain.rb:71
+#: lib/hammer_cli_foreman/domain.rb:60 lib/hammer_cli_foreman/domain.rb:71
 msgid "Full name describing the domain"
 msgstr "ドメインを表すフルネーム"
 
