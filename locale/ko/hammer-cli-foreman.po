@@ -12,7 +12,8 @@ msgstr ""
 "POT-Creation-Date: 2015-02-13 15:58-0500\n"
 "PO-Revision-Date: 2015-03-13 01:56+0000\n"
 "Last-Translator: eukim <eukim@redhat.com>\n"
-"Language-Team: Korean (http://www.transifex.com/projects/p/foreman/language/ko/)\n"
+"Language-Team: Korean (http://www.transifex.com/projects/p/foreman/language/"
+"ko/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -227,20 +228,27 @@ msgstr "%s의 검색에 누락된 옵션 "
 #: lib/hammer_cli_foreman/environment.rb:14
 #: lib/hammer_cli_foreman/partition_table.rb:10
 #: lib/hammer_cli_foreman/compute_resource.rb:20
-#: lib/hammer_cli_foreman/usergroup.rb:11 lib/hammer_cli_foreman/host.rb:129
-#: lib/hammer_cli_foreman/host.rb:200 lib/hammer_cli_foreman/host.rb:213
+#: lib/hammer_cli_foreman/usergroup.rb:11
+#: lib/hammer_cli_foreman/host.rb:129
+#: lib/hammer_cli_foreman/host.rb:200
+#: lib/hammer_cli_foreman/host.rb:213
 #: lib/hammer_cli_foreman/location.rb:13
-#: lib/hammer_cli_foreman/hostgroup.rb:46 lib/hammer_cli_foreman/user.rb:10
+#: lib/hammer_cli_foreman/hostgroup.rb:46
+#: lib/hammer_cli_foreman/user.rb:10
 #: lib/hammer_cli_foreman/external_usergroup.rb:10
-#: lib/hammer_cli_foreman/filter.rb:9 lib/hammer_cli_foreman/filter.rb:72
-#: lib/hammer_cli_foreman/report.rb:10 lib/hammer_cli_foreman/report.rb:30
-#: lib/hammer_cli_foreman/media.rb:9 lib/hammer_cli_foreman/role.rb:11
+#: lib/hammer_cli_foreman/filter.rb:9
+#: lib/hammer_cli_foreman/filter.rb:72
+#: lib/hammer_cli_foreman/report.rb:10
+#: lib/hammer_cli_foreman/report.rb:30
+#: lib/hammer_cli_foreman/media.rb:9
+#: lib/hammer_cli_foreman/role.rb:11
 #: lib/hammer_cli_foreman/image.rb:29
 #: lib/hammer_cli_foreman/puppet_class.rb:12
 #: lib/hammer_cli_foreman/model.rb:10
 #: lib/hammer_cli_foreman/smart_class_parameter.rb:8
 #: lib/hammer_cli_foreman/smart_class_parameter.rb:66
-#: lib/hammer_cli_foreman/domain.rb:31 lib/hammer_cli_foreman/template.rb:25
+#: lib/hammer_cli_foreman/domain.rb:31
+#: lib/hammer_cli_foreman/template.rb:25
 #: lib/hammer_cli_foreman/operating_system.rb:10
 #: lib/hammer_cli_foreman/smart_proxy.rb:11
 msgid "Id"
@@ -253,19 +261,26 @@ msgstr "ID "
 #: lib/hammer_cli_foreman/environment.rb:15
 #: lib/hammer_cli_foreman/partition_table.rb:11
 #: lib/hammer_cli_foreman/compute_resource.rb:21
-#: lib/hammer_cli_foreman/usergroup.rb:12 lib/hammer_cli_foreman/host.rb:130
-#: lib/hammer_cli_foreman/host.rb:201 lib/hammer_cli_foreman/host.rb:214
+#: lib/hammer_cli_foreman/usergroup.rb:12
+#: lib/hammer_cli_foreman/host.rb:130
+#: lib/hammer_cli_foreman/host.rb:201
+#: lib/hammer_cli_foreman/host.rb:214
 #: lib/hammer_cli_foreman/location.rb:14
-#: lib/hammer_cli_foreman/hostgroup.rb:47 lib/hammer_cli_foreman/user.rb:12
+#: lib/hammer_cli_foreman/hostgroup.rb:47
+#: lib/hammer_cli_foreman/user.rb:12
 #: lib/hammer_cli_foreman/external_usergroup.rb:11
 #: lib/hammer_cli_foreman/external_usergroup.rb:42
-#: lib/hammer_cli_foreman/filter.rb:73 lib/hammer_cli_foreman/filter.rb:90
-#: lib/hammer_cli_foreman/media.rb:10 lib/hammer_cli_foreman/role.rb:12
-#: lib/hammer_cli_foreman/image.rb:30 lib/hammer_cli_foreman/image.rb:70
+#: lib/hammer_cli_foreman/filter.rb:73
+#: lib/hammer_cli_foreman/filter.rb:90
+#: lib/hammer_cli_foreman/media.rb:10
+#: lib/hammer_cli_foreman/role.rb:12
+#: lib/hammer_cli_foreman/image.rb:30
+#: lib/hammer_cli_foreman/image.rb:70
 #: lib/hammer_cli_foreman/puppet_class.rb:13
 #: lib/hammer_cli_foreman/model.rb:11
 #: lib/hammer_cli_foreman/common_parameter.rb:12
-#: lib/hammer_cli_foreman/domain.rb:32 lib/hammer_cli_foreman/template.rb:26
+#: lib/hammer_cli_foreman/domain.rb:32
+#: lib/hammer_cli_foreman/template.rb:26
 #: lib/hammer_cli_foreman/template.rb:74
 #: lib/hammer_cli_foreman/operating_system.rb:22
 #: lib/hammer_cli_foreman/smart_proxy.rb:12
@@ -304,8 +319,7 @@ msgstr "LDAP 인증 소스를 관리합니다. "
 msgid "LDAPS?"
 msgstr "LDAPS?"
 
-# translation auto-copied from project Red Hat Satellite Installation Guide,
-# version 6.0, document Prerequisites3
+# translation auto-copied from project Red Hat Satellite Installation Guide, version 6.0, document Prerequisites3
 #: lib/hammer_cli_foreman/auth_source_ldap.rb:16
 msgid "Port"
 msgstr "포트"
@@ -561,7 +575,8 @@ msgstr "공급자 "
 
 #: lib/hammer_cli_foreman/compute_resource.rb:34
 #: lib/hammer_cli_foreman/compute_resource.rb:40
-#: lib/hammer_cli_foreman/host.rb:162 lib/hammer_cli_foreman/image.rb:33
+#: lib/hammer_cli_foreman/host.rb:162
+#: lib/hammer_cli_foreman/image.rb:33
 #: lib/hammer_cli_foreman/image.rb:71
 msgid "UUID"
 msgstr "UUID"
@@ -665,7 +680,8 @@ msgstr "볼륨 매개 변수 "
 msgid "Interface parameters."
 msgstr "인터페이스 매개 변수 "
 
-#: lib/hammer_cli_foreman/host.rb:131 lib/hammer_cli_foreman/hostgroup.rb:49
+#: lib/hammer_cli_foreman/host.rb:131
+#: lib/hammer_cli_foreman/hostgroup.rb:49
 #: lib/hammer_cli_foreman/image.rb:31
 msgid "Operating System"
 msgstr "운영체제"
@@ -674,12 +690,14 @@ msgstr "운영체제"
 msgid "Host Group"
 msgstr "호스트 그룹 "
 
-#: lib/hammer_cli_foreman/host.rb:133 lib/hammer_cli_foreman/host.rb:202
+#: lib/hammer_cli_foreman/host.rb:133
+#: lib/hammer_cli_foreman/host.rb:202
 #: lib/hammer_cli_foreman/host.rb:215
 msgid "IP"
 msgstr "IP "
 
-#: lib/hammer_cli_foreman/host.rb:134 lib/hammer_cli_foreman/host.rb:203
+#: lib/hammer_cli_foreman/host.rb:134
+#: lib/hammer_cli_foreman/host.rb:203
 #: lib/hammer_cli_foreman/host.rb:216
 msgid "MAC"
 msgstr "MAC"
@@ -688,7 +706,8 @@ msgstr "MAC"
 msgid "Cert name"
 msgstr "인증서 이름 "
 
-#: lib/hammer_cli_foreman/host.rb:165 lib/hammer_cli_foreman/hostgroup.rb:50
+#: lib/hammer_cli_foreman/host.rb:165
+#: lib/hammer_cli_foreman/hostgroup.rb:50
 msgid "Environment"
 msgstr "환경 "
 
@@ -736,19 +755,23 @@ msgstr "SP 서브넷 "
 msgid "Installed at"
 msgstr "설치됨 "
 
-#: lib/hammer_cli_foreman/host.rb:182 lib/hammer_cli_foreman/report.rb:12
+#: lib/hammer_cli_foreman/host.rb:182
+#: lib/hammer_cli_foreman/report.rb:12
 msgid "Last report"
 msgstr "마지막 보고 "
 
-#: lib/hammer_cli_foreman/host.rb:184 lib/hammer_cli_foreman/hostgroup.rb:67
+#: lib/hammer_cli_foreman/host.rb:184
+#: lib/hammer_cli_foreman/hostgroup.rb:67
 msgid "Puppet CA Proxy Id"
 msgstr "Puppet CA 프록시 Id"
 
-#: lib/hammer_cli_foreman/host.rb:185 lib/hammer_cli_foreman/hostgroup.rb:66
+#: lib/hammer_cli_foreman/host.rb:185
+#: lib/hammer_cli_foreman/hostgroup.rb:66
 msgid "Medium"
 msgstr "미디어 "
 
-#: lib/hammer_cli_foreman/host.rb:186 lib/hammer_cli_foreman/hostgroup.rb:51
+#: lib/hammer_cli_foreman/host.rb:186
+#: lib/hammer_cli_foreman/hostgroup.rb:51
 msgid "Model"
 msgstr "모델 "
 
@@ -756,11 +779,13 @@ msgstr "모델 "
 msgid "Owner Id"
 msgstr "소유자 Id"
 
-#: lib/hammer_cli_foreman/host.rb:188 lib/hammer_cli_foreman/hostgroup.rb:61
+#: lib/hammer_cli_foreman/host.rb:188
+#: lib/hammer_cli_foreman/hostgroup.rb:61
 msgid "Subnet"
 msgstr "서브넷"
 
-#: lib/hammer_cli_foreman/host.rb:189 lib/hammer_cli_foreman/hostgroup.rb:63
+#: lib/hammer_cli_foreman/host.rb:189
+#: lib/hammer_cli_foreman/hostgroup.rb:63
 msgid "Domain"
 msgstr "도메인 "
 
@@ -772,11 +797,13 @@ msgstr "Puppet 프록시 Id"
 msgid "Owner Type"
 msgstr "소유자 유형 "
 
-#: lib/hammer_cli_foreman/host.rb:192 lib/hammer_cli_foreman/hostgroup.rb:65
+#: lib/hammer_cli_foreman/host.rb:192
+#: lib/hammer_cli_foreman/hostgroup.rb:65
 msgid "Partition Table"
 msgstr "파티션 테이블 "
 
-#: lib/hammer_cli_foreman/host.rb:193 lib/hammer_cli_foreman/hostgroup.rb:64
+#: lib/hammer_cli_foreman/host.rb:193
+#: lib/hammer_cli_foreman/hostgroup.rb:64
 #: lib/hammer_cli_foreman/image.rb:45
 msgid "Architecture"
 msgstr "아키텍처 "
@@ -797,19 +824,23 @@ msgstr "코멘트 "
 msgid "BMC Network Interfaces"
 msgstr "BMC 네트워크 인터페이스 "
 
-#: lib/hammer_cli_foreman/host.rb:204 lib/hammer_cli_foreman/host.rb:217
+#: lib/hammer_cli_foreman/host.rb:204
+#: lib/hammer_cli_foreman/host.rb:217
 msgid "Domain Id"
 msgstr "도메인 ID "
 
-#: lib/hammer_cli_foreman/host.rb:205 lib/hammer_cli_foreman/host.rb:218
+#: lib/hammer_cli_foreman/host.rb:205
+#: lib/hammer_cli_foreman/host.rb:218
 msgid "Domain Name"
 msgstr "도메인 이름 "
 
-#: lib/hammer_cli_foreman/host.rb:206 lib/hammer_cli_foreman/host.rb:219
+#: lib/hammer_cli_foreman/host.rb:206
+#: lib/hammer_cli_foreman/host.rb:219
 msgid "Subnet Id"
 msgstr "서브넷 ID"
 
-#: lib/hammer_cli_foreman/host.rb:207 lib/hammer_cli_foreman/host.rb:220
+#: lib/hammer_cli_foreman/host.rb:207
+#: lib/hammer_cli_foreman/host.rb:220
 msgid "Subnet Name"
 msgstr "서브넷 이름 "
 
@@ -837,7 +868,8 @@ msgstr "전원"
 msgid "Puppet run triggered"
 msgstr "Puppet run이 실행되었습니다 "
 
-#: lib/hammer_cli_foreman/host.rb:286 lib/hammer_cli_foreman/fact.rb:13
+#: lib/hammer_cli_foreman/host.rb:286
+#: lib/hammer_cli_foreman/fact.rb:13
 msgid "Fact"
 msgstr "팩트 "
 
@@ -1010,7 +1042,8 @@ msgstr "역할 "
 msgid "External user groups"
 msgstr "외부 사용자 그룹 "
 
-#: lib/hammer_cli_foreman/location.rb:24 lib/hammer_cli_foreman/location.rb:62
+#: lib/hammer_cli_foreman/location.rb:24
+#: lib/hammer_cli_foreman/location.rb:62
 #: lib/hammer_cli_foreman/location.rb:74
 msgid "Location numeric id to search by"
 msgstr "검색 대상 위치의 숫자로된 ID "
@@ -1055,8 +1088,7 @@ msgstr "Puppet 프록시 이름 "
 msgid "Name of parent hostgroup"
 msgstr "부모 호스트 그룹 이름 "
 
-# translation auto-copied from project libvirt, version 1.1.1, document
-# libvirt
+# translation auto-copied from project libvirt, version 1.1.1, document libvirt
 #: lib/hammer_cli_foreman/hostgroup.rb:48
 #: lib/hammer_cli_foreman/operating_system.rb:11
 msgid "Title"
@@ -1128,8 +1160,8 @@ msgstr "알 수 없는 형식의 데이터를 수신했습니다 "
 
 #: lib/hammer_cli_foreman/commands.rb:185
 msgid ""
-"Could not find %{resource}. Some search options were missing, please see "
-"--help."
+"Could not find %{resource}. Some search options were missing, please see --"
+"help."
 msgstr "%{resource}를 찾을 수 없습니다. 일부 검색 옵션이 누락되어 있습니다. --help를 참조하십시오. "
 
 #: lib/hammer_cli_foreman/commands.rb:187
@@ -1253,12 +1285,15 @@ msgstr "역할 "
 msgid "Permissions"
 msgstr "권한 "
 
-#: lib/hammer_cli_foreman/filter.rb:18 lib/hammer_cli_foreman/filter.rb:34
-#: lib/hammer_cli_foreman/filter.rb:78 lib/hammer_cli_foreman/role.rb:33
+#: lib/hammer_cli_foreman/filter.rb:18
+#: lib/hammer_cli_foreman/filter.rb:34
+#: lib/hammer_cli_foreman/filter.rb:78
+#: lib/hammer_cli_foreman/role.rb:33
 msgid "(Miscellaneous)"
 msgstr "(기타)"
 
-#: lib/hammer_cli_foreman/filter.rb:19 lib/hammer_cli_foreman/filter.rb:35
+#: lib/hammer_cli_foreman/filter.rb:19
+#: lib/hammer_cli_foreman/filter.rb:35
 #: lib/hammer_cli_foreman/role.rb:34
 msgid "none"
 msgstr "없음 "
@@ -1287,7 +1322,8 @@ msgstr "권한 필터가 삭제되었습니다 "
 msgid "Could not delete the permission filter"
 msgstr "권한 필터를 삭제할 수 없습니다 "
 
-#: lib/hammer_cli_foreman/filter.rb:74 lib/hammer_cli_foreman/report.rb:62
+#: lib/hammer_cli_foreman/filter.rb:74
+#: lib/hammer_cli_foreman/report.rb:62
 msgid "Resource"
 msgstr "리소스 "
 
@@ -1302,32 +1338,39 @@ msgstr "매개 변수 이름 "
 msgid "parameter value"
 msgstr "매개 변수 값 "
 
-#: lib/hammer_cli_foreman/report.rb:11 lib/hammer_cli_foreman/report.rb:31
+#: lib/hammer_cli_foreman/report.rb:11
+#: lib/hammer_cli_foreman/report.rb:31
 #: lib/hammer_cli_foreman/fact.rb:12
 msgid "Host"
 msgstr "호스트 "
 
-#: lib/hammer_cli_foreman/report.rb:14 lib/hammer_cli_foreman/report.rb:35
+#: lib/hammer_cli_foreman/report.rb:14
+#: lib/hammer_cli_foreman/report.rb:35
 msgid "Applied"
 msgstr "적용됨 "
 
-#: lib/hammer_cli_foreman/report.rb:15 lib/hammer_cli_foreman/report.rb:36
+#: lib/hammer_cli_foreman/report.rb:15
+#: lib/hammer_cli_foreman/report.rb:36
 msgid "Restarted"
 msgstr "다시 시작됨 "
 
-#: lib/hammer_cli_foreman/report.rb:16 lib/hammer_cli_foreman/report.rb:37
+#: lib/hammer_cli_foreman/report.rb:16
+#: lib/hammer_cli_foreman/report.rb:37
 msgid "Failed"
 msgstr "실패 "
 
-#: lib/hammer_cli_foreman/report.rb:17 lib/hammer_cli_foreman/report.rb:38
+#: lib/hammer_cli_foreman/report.rb:17
+#: lib/hammer_cli_foreman/report.rb:38
 msgid "Restart Failures"
 msgstr "다시 시작 실패 "
 
-#: lib/hammer_cli_foreman/report.rb:18 lib/hammer_cli_foreman/report.rb:39
+#: lib/hammer_cli_foreman/report.rb:18
+#: lib/hammer_cli_foreman/report.rb:39
 msgid "Skipped"
 msgstr "건너 뛰기 "
 
-#: lib/hammer_cli_foreman/report.rb:19 lib/hammer_cli_foreman/report.rb:40
+#: lib/hammer_cli_foreman/report.rb:19
+#: lib/hammer_cli_foreman/report.rb:40
 msgid "Pending"
 msgstr "보류 중 "
 
@@ -1692,7 +1735,8 @@ msgstr "도메인 [%{name}] 이(가) 생성되었습니다 "
 msgid "Could not create the domain"
 msgstr "도메인을 생성할 수 없습니다 "
 
-#: lib/hammer_cli_foreman/domain.rb:60 lib/hammer_cli_foreman/domain.rb:71
+#: lib/hammer_cli_foreman/domain.rb:60
+#: lib/hammer_cli_foreman/domain.rb:71
 msgid "Full name describing the domain"
 msgstr "도메인을 나타내는 전체 이름 "
 
