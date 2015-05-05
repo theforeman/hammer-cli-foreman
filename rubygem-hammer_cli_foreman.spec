@@ -9,7 +9,7 @@
 
 Summary: Universal command-line interface for Foreman
 Name: rubygem-%{gemname}
-Version: 0.1.4.10
+Version: 0.1.4.11
 Release: 1%{?dist}
 Group: Development/Languages
 License: GPLv3
@@ -83,6 +83,9 @@ cp -pa .%{gem_dir}/* \
 %doc %{geminstdir}/doc/name_id_resolution.md
 
 %changelog
+* Tue May 05 2015 Mike McCune <mmccune@redhat.com> 0.1.4.11-1
+- Pull in final french strings from zanata (bkearney@redhat.com)
+
 * Tue Apr 28 2015 Mike McCune <mmccune@redhat.com> 0.1.4.10-1
 - Add in strings from zanata. All but french are done (bkearney@redhat.com)
 - Fixes #9971 -improve handling of id search errors (martin.bacovsky@gmail.com)
