@@ -217,7 +217,7 @@ describe HammerCLIForeman::Host do
       it_should_fail_with "operatingsystem_id missing",
           ["--name=host", "--environment-id=1", "--architecture-id=1", "--domain-id=1", "--puppet-proxy-id=1", "--interface=primary=true,provision=true"]
       it_should_accept "only hostgroup name", ["--hostgroup=example", "--name=host", "--interface=primary=true,provision=true"]
-      it_should_accept "only hostgroup ID", ["--hostgroup-id=example", "--name=host", "--interface=primary=true,provision=true"]
+      it_should_accept "only hostgroup ID", ["--hostgroup-id=1", "--name=host", "--interface=primary=true,provision=true"]
 
       with_params ["--name=host", "--environment-id=1", "--architecture-id=1", "--domain-id=1", "--puppet-proxy-id=1", "--operatingsystem-id=1",
             "--ip=1.2.3.4", "--mac=11:22:33:44:55:66", "--medium-id=1", "--partition-table-id=1", "--subnet-id=1",
@@ -299,7 +299,7 @@ describe HammerCLIForeman::Host do
 
     context "parameters" do
       it_should_accept "name, value and host name", ["--name=name", "--value=val", "--host=name"]
-      it_should_accept "name, value and host id", ["--name=name", "--value=val", "--host-id=id"]
+      it_should_accept "name, value and host id", ["--name=name", "--value=val", "--host-id=1"]
       it_should_fail_with "name missing", ["--value=val", "--host=name"]
       it_should_fail_with "value missing", ["--name=name", "--host=name"]
       # it_should_fail_with "host name or id missing", ["--name=name", "--value=val"]
@@ -315,7 +315,7 @@ describe HammerCLIForeman::Host do
 
     context "parameters" do
       it_should_accept "name and host name", ["--name=name", "--host=name"]
-      it_should_accept "name and host id", ["--name=name", "--host-id=id"]
+      it_should_accept "name and host id", ["--name=name", "--host-id=1"]
       # it_should_fail_with "name missing", ["--host=name"]
       # it_should_fail_with "host name or id missing", ["--name=name"]
       # TODO: temporarily disabled, parameters are checked in the id resolver
@@ -387,5 +387,3 @@ describe HammerCLIForeman::Host do
   end
 
 end
-
-

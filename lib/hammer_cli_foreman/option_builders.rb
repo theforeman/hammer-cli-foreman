@@ -243,6 +243,7 @@ module HammerCLIForeman
         "#{aliased_name}_id".upcase,
         description("id", :show),
         :attribute_name => HammerCLI.option_accessor_name("#{resource_name}_id"),
+        :format => HammerCLI::Options::Normalizers::Number.new,
         :referenced_resource => resource.singular_name
       )
       options
