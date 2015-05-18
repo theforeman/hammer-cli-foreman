@@ -264,6 +264,7 @@ module HammerCLIForeman
 
     action :index
 
+    RETRIEVE_ALL_PER_PAGE = 1000
     DEFAULT_PER_PAGE = 20
 
     def adapter
@@ -289,12 +290,12 @@ module HammerCLIForeman
     end
 
     def execute
-      if respond_to?(:option_page) && respond_to?(:option_per_page)
-        self.option_page = (self.option_page || 1).to_i
-        self.option_per_page ||= HammerCLI::Settings.get(:ui, :per_page) || DEFAULT_PER_PAGE
-        browse_collection
+      if should_retrieve_all?
+        print_data(retrieve_all)
       else
-        retrieve_and_print
+        self.option_page = (self.option_page || 1).to_i if respond_to?(:option_page)
+        self.option_per_page = (self.option_per_page || HammerCLI::Settings.get(:ui, :per_page) || DEFAULT_PER_PAGE).to_i if respond_to?(:option_per_page)
+        print_data(send_request)
       end
 
       return HammerCLI::EX_OK
@@ -302,27 +303,27 @@ module HammerCLIForeman
 
     protected
 
+    def retrieve_all
+      self.option_per_page = RETRIEVE_ALL_PER_PAGE
+      self.option_page = 1
 
-    def browse_collection
-      list_next = true
+      d = send_request
+      all = d
 
-      while list_next do
-        d = retrieve_and_print
-
-        if (d.size >= self.option_per_page.to_i) && interactive? && adapter != :csv
-          answer = ask(_("List next page? (%s): ") % 'Y/n').downcase
-          list_next = (answer == 'y' || answer == '')
-          self.option_page += 1
-        else
-          list_next = false
-        end
+      while (d.size == RETRIEVE_ALL_PER_PAGE) do
+        self.option_page += 1
+        d = send_request
+        all += d
       end
+      all
     end
 
-    def retrieve_and_print
-      d = send_request
-      print_data d
-      d
+    def pagination_supported?
+      respond_to?(:option_page) && respond_to?(:option_per_page)
+    end
+
+    def should_retrieve_all?
+      pagination_supported? && option_per_page.nil? && option_page.nil?
     end
 
   end
