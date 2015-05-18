@@ -6,6 +6,7 @@ There's a lot of useful information in
 Studying it first can help you to understand the basic principles.
 
 Foreman plugin extends the Hammer Core in following areas:
+ - [Using HammerCLIForeman::Command](using_hammer_cli_foreman_command.md)
  - [Building options](option_builder.md#option-builder)
  - [Automatic name resolution](name_id_resolution.md#name---id-resolution)
 
