@@ -218,32 +218,35 @@ module HammerCLIForeman
         # First option is named by the resource
         # Eg. --organization with accessor option_organization_name
         options << option(
-          optionamize("--#{aliased_name}"),
+          unify_options("--#{aliased_name}", "--#{resource_name}"),
           "#{aliased_name}_#{first.name}".upcase,
           first.description || " ",
           :attribute_name => HammerCLI.option_accessor_name("#{resource_name}_#{first.name}"),
-          :referenced_resource => resource.singular_name
+          :referenced_resource => resource.singular_name,
+          :deprecated => compute_deprecated(resource_name, aliased_name, '')
         )
 
         # Other options are named by the resource plus the searchable name
         # Eg. --organization-label with accessor option_organization_label
         remaining.each do |s|
           options << option(
-            optionamize("--#{aliased_name}-#{s.name}"),
+            unify_options("--#{aliased_name}-#{s.name}", "--#{resource_name}-#{s.name}"),
             "#{aliased_name}_#{s.name}".upcase,
             s.description || " ",
             :attribute_name => HammerCLI.option_accessor_name("#{resource_name}_#{s.name}"),
-            :referenced_resource => resource.singular_name
+            :referenced_resource => resource.singular_name,
+            :deprecated => compute_deprecated(resource_name, aliased_name, '')
           )
         end
       end
 
       options << option(
-        optionamize("--#{aliased_name}-id"),
+        unify_options("--#{aliased_name}-id", "--#{resource_name}-id"),
         "#{aliased_name}_id".upcase,
         description("id", :show),
         :attribute_name => HammerCLI.option_accessor_name("#{resource_name}_id"),
-        :referenced_resource => resource.singular_name
+        :referenced_resource => resource.singular_name,
+        :deprecated => compute_deprecated(resource_name, aliased_name, '-id')
       )
       options
     end
@@ -252,6 +255,18 @@ module HammerCLIForeman
       resource_name_map[name.to_s] || resource_name_map[name.to_sym] || name
     end
 
+    def unify_options(*names)
+      names.map { |name| optionamize(name) }.uniq
+    end
+
+    def compute_deprecated(name, aliased_name, suffix)
+      deprecated = {}
+      if name != aliased_name
+        msg = _("use %s instead") % optionamize("--#{aliased_name}#{suffix}")
+        deprecated[optionamize("--#{name}#{suffix}")] = msg
+      end
+      deprecated
+    end
   end
 
 
@@ -274,7 +289,7 @@ module HammerCLIForeman
         # First option is named by the resource
         # Eg. --organizations with accessor option_organization_names
         options << option(
-          optionamize("--#{aliased_plural_name}"),
+          unify_options("--#{aliased_plural_name}", "--#{resource.name}"),
           "#{aliased_name}_#{first.plural_name}".upcase,
           " ",
           :attribute_name => HammerCLI.option_accessor_name("#{resource_name}_#{first.plural_name}"),
@@ -286,7 +301,7 @@ module HammerCLIForeman
         # Eg. --organization-labels with accessor option_organization_labels
         remaining.each do |s|
           options << option(
-            optionamize("--#{aliased_name}-#{s.plural_name}"),
+            unify_options("--#{aliased_name}-#{s.plural_name}", "--#{resource_name}-#{s.plural_name}"),
             "#{aliased_name}_#{s.plural_name}".upcase,
             " ",
             :attribute_name => HammerCLI.option_accessor_name("#{resource_name}_#{s.plural_name}"),
@@ -296,8 +311,17 @@ module HammerCLIForeman
         end
       end
 
+      options << option(
+        unify_options("--#{aliased_name}-ids", "--#{resource_name}-ids"),
+        "#{aliased_name}_ids".upcase,
+        description("id", :show),
+        :attribute_name => HammerCLI.option_accessor_name("#{resource_name}_ids"),
+        :referenced_resource => resource.singular_name,
+        :deprecated => compute_deprecated(resource_name, aliased_name, '-ids')
+      )
       options
     end
+
   end
 
   class SearchablesUpdateOptionBuilder < SearchablesAbstractOptionBuilder
