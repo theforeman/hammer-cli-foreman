@@ -6,8 +6,9 @@ module HammerCLIForeman
   module HostgroupUpdateCreateCommons
 
     def self.included(base)
-      base.option "--puppet-class-ids", "PUPPETCLASS_IDS", _("List of puppetclass ids"),
-        :format => HammerCLI::Options::Normalizers::List.new
+      base.option ["--puppet-class-ids", "--puppetclass-ids"], "PUPPETCLASS_IDS", _("List of puppetclass ids"),
+        :format => HammerCLI::Options::Normalizers::List.new,
+        :deprecated => { "--puppetclass-ids" => _("Use --puppet-class-ids instead") }
       base.option "--puppet-ca-proxy", "PUPPET_CA_PROXY_NAME", _("Name of puppet CA proxy")
       base.option "--puppet-proxy", "PUPPET_PROXY_NAME",  _("Name of puppet proxy")
       base.option "--parent", "PARENT_NAME",  _("Name of parent hostgroup")
@@ -108,6 +109,15 @@ module HammerCLIForeman
     class PuppetClassesCommand < HammerCLIForeman::ListCommand
       command_name "puppet-classes"
       resource :puppetclasses
+
+      option "--environment", "ENVIRONMENT", _("Environment name [DEPRECATED]"),
+        :deprecated => _("Use 'hammer puppet-class list --environment ENVIRONMENT' instead.")
+      option "--environment-id", "ENVIRONMENT_ID", _("Environment Id [DEPRECATED]"),
+        :deprecated => _("Use 'hammer puppet-class list --environment-id ENVIRONMENT_ID' instead.")
+      option "--host", "HOST", _("Host name [DEPRECATED]"),
+        :deprecated => _("Use 'hammer puppet-class list --host HOST' instead.")
+      option "--host-id", "HOST_ID", _("Host Id [DEPRECATED]"),
+        :deprecated => _("Use 'hammer puppet-class list --host-id HOST_ID' instead.")
 
       output HammerCLIForeman::PuppetClass::ListCommand.output_definition
 
