@@ -9,7 +9,7 @@
 
 Summary: Universal command-line interface for Foreman
 Name: rubygem-%{gemname}
-Version: 0.1.4.11
+Version: 0.1.4.12
 Release: 1%{?dist}
 Group: Development/Languages
 License: GPLv3
@@ -83,6 +83,13 @@ cp -pa .%{gem_dir}/* \
 %doc %{geminstdir}/doc/name_id_resolution.md
 
 %changelog
+* Tue May 26 2015 Mike McCune <mmccune@redhat.com> 0.1.4.12-1
+- Merge branch '1223086_param_diff' into 'SATELLITE-6.1.0'
+  (bkearney@redhat.com)
+- Fixes #10534 - turn off pagination by default (tstrachota@redhat.com)
+- Fixes BZ#1223086 - handle incompatible changes in command parameters
+  (martin.bacovsky@gmail.com)
+
 * Tue May 05 2015 Mike McCune <mmccune@redhat.com> 0.1.4.11-1
 - Pull in final french strings from zanata (bkearney@redhat.com)
 
