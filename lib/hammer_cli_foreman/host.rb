@@ -21,7 +21,7 @@ module HammerCLIForeman
 
       base.option "--puppet-proxy", "PUPPET_PROXY_NAME", ""
       base.option "--puppet-ca-proxy", "PUPPET_CA_PROXY_NAME", ""
-      base.option ["--puppet-class-ids", "--puppetclass_ids"], "PUPPET_CLASS_IDS", "",
+      base.option ["--puppet-class-ids", "--puppetclass-ids"], "PUPPET_CLASS_IDS", "",
         :format => HammerCLI::Options::Normalizers::List.new,
         :attribute_name => :option_puppetclass_ids,
         :deprecated => { "--puppetclass-ids" => _("Use --puppet-class-ids instead") }
