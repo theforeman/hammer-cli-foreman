@@ -82,7 +82,7 @@ Example
 =======
 
 An example command for creating a host with 2 volumes (5GB raw + 10 GB qcow2) using
-a default network interface on a libvirt provider can look like this:
+a default network interface on a **libvirt** provider can look like this:
 ```bash
 hammer host create
   --hostgroup=my_hostgroup                   # most of the settings is done in the hostgroup
@@ -94,6 +94,7 @@ hammer host create
   --name="test-host"
 ```
 
+Please note that volumes, interfaces and compute attributes **differ significantly** across compute resource types.
 See the list of all possible option keys below.
 
 
