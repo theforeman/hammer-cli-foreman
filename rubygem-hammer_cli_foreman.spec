@@ -9,7 +9,7 @@
 
 Summary: Universal command-line interface for Foreman
 Name: rubygem-%{gemname}
-Version: 0.1.4.12
+Version: 0.1.4.13
 Release: 1%{?dist}
 Group: Development/Languages
 License: GPLv3
@@ -83,6 +83,10 @@ cp -pa .%{gem_dir}/* \
 %doc %{geminstdir}/doc/name_id_resolution.md
 
 %changelog
+* Tue Jun 02 2015 Mike McCune <mmccune@redhat.com> 0.1.4.13-1
+- Refs #1223086 - fixed typo in host create --puppetclass-ids param
+  (martin.bacovsky@gmail.com)
+
 * Tue May 26 2015 Mike McCune <mmccune@redhat.com> 0.1.4.12-1
 - Merge branch '1223086_param_diff' into 'SATELLITE-6.1.0'
   (bkearney@redhat.com)
