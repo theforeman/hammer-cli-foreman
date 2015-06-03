@@ -317,7 +317,8 @@ module HammerCLIForeman
         description("id", :show),
         :attribute_name => HammerCLI.option_accessor_name("#{resource_name}_ids"),
         :referenced_resource => resource.singular_name,
-        :deprecated => compute_deprecated(resource_name, aliased_name, '-ids')
+        :deprecated => compute_deprecated(resource_name, aliased_name, '-ids'),
+        :format => HammerCLI::Options::Normalizers::List.new
       )
       options
     end
