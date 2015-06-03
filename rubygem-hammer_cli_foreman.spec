@@ -9,7 +9,7 @@
 
 Summary: Universal command-line interface for Foreman
 Name: rubygem-%{gemname}
-Version: 0.1.4.13
+Version: 0.1.4.14
 Release: 1%{?dist}
 Group: Development/Languages
 License: GPLv3
@@ -83,6 +83,10 @@ cp -pa .%{gem_dir}/* \
 %doc %{geminstdir}/doc/name_id_resolution.md
 
 %changelog
+* Wed Jun 03 2015 Mike McCune <mmccune@redhat.com> 0.1.4.14-1
+- Fixes BZ 1226192 - adding list normalizer for *-ids options
+  (tstrachota@redhat.com)
+
 * Tue Jun 02 2015 Mike McCune <mmccune@redhat.com> 0.1.4.13-1
 - Refs #1223086 - fixed typo in host create --puppetclass-ids param
   (martin.bacovsky@gmail.com)
