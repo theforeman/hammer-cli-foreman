@@ -4,6 +4,11 @@ Host Creation
 Host creation is one of the most complex commands in the hammer's foreman plugin. The majority of its parameters
 is obvious but there are some that need further explanation as their values differ with the type of a compute resource.
 
+**Warning:**
+Output of `hammer host create -h` may vary with the Foreman server used and plugins installed.
+
+Sample help output for `hammer-cli-foreman 0.2.0` and `Foreman 1.8` follows:
+
 ```
 $ hammer host create -h
 Usage:
@@ -236,4 +241,3 @@ datastore
 name
 size_gb    # integer number
 ```
-
