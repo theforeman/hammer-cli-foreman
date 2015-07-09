@@ -3,7 +3,7 @@ Gemfile.lock
 Gemfile.local
 pkg
 .bundle
-
+.rvmrc
 # RubyMine
 .idea
 
@@ -21,3 +21,5 @@ tags
 # Locale files
 locale/*/*.edit.po
 locale/*/*.po.time_stamp
+config/cli_config.yml
+config/cli.modules.d/

@@ -14,3 +14,9 @@
 
   # API request timeout. Set to -1 for no timeout
   #:request_timeout: 120 #seconds
+
+  # Set default values for those options
+  #:organization_id: -1
+  #:organization_name: -1
+  #:location_id: -1
+  #:location_name: -1

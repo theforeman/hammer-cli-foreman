@@ -1,5 +1,6 @@
 module HammerCLIForeman
 
+  DEFAULT_OPTIONS_FOR_COMMANDS = ['organization_id', 'location_id', 'organization_name', 'location_name']
   CONNECTION_NAME = 'foreman'
 
   RESOURCE_NAME_MAPPING = {
@@ -181,7 +182,20 @@ module HammerCLIForeman
       @searchables
     end
 
+    def check_for_default_options()
+      DEFAULT_OPTIONS_FOR_COMMANDS.each do |option|
+      if use_default?(option)
+        self.instance_variable_set("@option_#{option}", HammerCLI::Settings.get(:foreman, option.to_sym))
+      end
+      end
+    end
+
+    def use_default?(option)
+      self.instance_variable_defined?("@option_#{option}") && self.instance_variable_get("@option_#{option}").nil? && HammerCLI::Settings.get(:foreman, option.to_sym)
+    end
+
     def send_request
+      check_for_default_options()
       transform_format(super)
     rescue HammerCLIForeman::MissingSeachOptions => e
 
