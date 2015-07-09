@@ -142,6 +142,21 @@ module HammerCLIForeman
     end
 
 
+    class BuildPXEDefaultCommand < HammerCLIForeman::Command
+
+      action :build_pxe_default
+
+      command_name "build-pxe-default"
+      desc _("Update the default PXE menu on all configured TFTP servers")
+
+      def print_data(message)
+        puts message
+      end
+
+      build_options
+    end
+
+
     HammerCLIForeman::AssociatingCommands::OperatingSystem.extend_command(self)
 
 

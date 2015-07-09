@@ -98,7 +98,19 @@ describe HammerCLIForeman::ExceptionHandler do
     ex = RestClient::InternalServerError.new(response)
     ex.stubs(:message).returns(response)
 
-    output.expects(:print_error).with("Something went wrong", "Unformatted\nlines\n")
+    output.expects(:print_error).with(heading, "Unformatted\nlines\n")
+    err_code = handler.handle_exception(ex, :heading => heading)
+    err_code.must_equal HammerCLI::EX_SOFTWARE
+  end
+
+  it "should print exception message on internal error exception with message that is not nested" do
+    response = <<-RESPONSE
+    {"message":"Some internal exception"}
+    RESPONSE
+    ex = RestClient::InternalServerError.new(response)
+    ex.stubs(:message).returns(response)
+
+    output.expects(:print_error).with(heading, "Some internal exception")
     err_code = handler.handle_exception(ex, :heading => heading)
     err_code.must_equal HammerCLI::EX_SOFTWARE
   end
