@@ -96,7 +96,7 @@ describe HammerCLIForeman::Hostgroup do
     let(:cmd) { HammerCLIForeman::Hostgroup::SetParameterCommand.new("", ctx) }
 
     context "parameters" do
-      it_should_accept "name, value and hostgroup id", ["--name=name", "--value=val", "--hostgroup-id=id"]
+      it_should_accept "name, value and hostgroup id", ["--name=name", "--value=val", "--hostgroup-id=1"]
       it_should_fail_with "name missing", ["--value=val", "--hostgroup-id=1"]
       it_should_fail_with "value missing", ["--name=name", "--hostgroup-id=1"]
       # it_should_fail_with "hostgroup id missing", ["--name=name", "--value=val"] # TODO: temporarily disabled, parameters are checked in the id resolver
@@ -110,7 +110,7 @@ describe HammerCLIForeman::Hostgroup do
     let(:cmd) { HammerCLIForeman::Hostgroup::DeleteParameterCommand.new("", ctx) }
 
     context "parameters" do
-      it_should_accept "name and hostgroup id", ["--name=param", "--hostgroup-id=id"]
+      it_should_accept "name and hostgroup id", ["--name=param", "--hostgroup-id=1"]
       # it_should_fail_with "name missing", ["--hostgroup-id=id"]
       # it_should_fail_with "hostgroup id missing", ["--name=param"]
       # TODO: temporarily disabled, parameters are checked in the id resolver
@@ -152,4 +152,3 @@ describe HammerCLIForeman::Hostgroup do
   end
 
 end
-
