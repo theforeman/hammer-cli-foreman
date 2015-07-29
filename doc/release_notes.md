@@ -1,6 +1,15 @@
 Release notes
 =============
 
+### 0.3.0 (2015-07-29)
+* Add normalizer converting id parameter values to numbers ([#11137](http://projects.theforeman.org/issues/11137))
+* Docs - updated information about host creation
+* Added some rough docs showing HammerCLIForeman::Command
+* Adding a command for building PXE default ([#3968](http://projects.theforeman.org/issues/3968))
+* Turn off pagination by default ([#10534](http://projects.theforeman.org/issues/10534))
+* Can't set array parameters on hosts ([#10547](http://projects.theforeman.org/issues/10547))
+
+
 ### 0.2.0 (2015-04-23)
 * Adding default org and loc to user info ([#10251](http://projects.theforeman.org/issues/10251))
 * Host update resets some attributes ([#10215](http://projects.theforeman.org/issues/10215))
