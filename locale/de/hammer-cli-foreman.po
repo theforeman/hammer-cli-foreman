@@ -3,17 +3,18 @@
 # This file is distributed under the same license as the hammer-cli-foreman package.
 # 
 # Translators:
+# Christina Gurski <Gurski_christina@yahoo.de>, 2015
 # Ettore Atalan <atalanttore@googlemail.com>, 2014
 # Marcel Fuhrmann <marcel@mfsystems.me>, 2015
 # simon11 <simon.stieger.98@live.de>, 2014
 # simon11 <simon.stieger.98@live.de>, 2014
 msgid ""
 msgstr ""
-"Project-Id-Version: hammer-cli-foreman 0.2.0\n"
+"Project-Id-Version: hammer-cli-foreman 0.3.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-12-11 13:21+0100\n"
-"PO-Revision-Date: 2015-03-22 03:37+0000\n"
-"Last-Translator: Marcel Fuhrmann <marcel@mfsystems.me>\n"
+"PO-Revision-Date: 2015-06-27 20:10+0000\n"
+"Last-Translator: Christina Gurski <Gurski_christina@yahoo.de>\n"
 "Language-Team: German (http://www.transifex.com/projects/p/foreman/language/de/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -153,7 +154,7 @@ msgstr "Bericht konnte nicht gelöscht werden"
 
 #: lib/hammer_cli_foreman/external_usergroup.rb:6
 msgid "View and manage user group's external user groups"
-msgstr ""
+msgstr "Externe Benutzergruppen der Benutzergruppe anzeigen und verwalten"
 
 #: lib/hammer_cli_foreman/external_usergroup.rb:11
 #: lib/hammer_cli_foreman/external_usergroup.rb:42
@@ -483,7 +484,7 @@ msgstr "ist der Server nicht verfügbar?"
 msgid ""
 "was '%s' run on the server when using apipie cache? (typical production "
 "settings)"
-msgstr ""
+msgstr "Wurde '%s' auf dem Server ausgeführt, während Apipe-Cache in Verwendung war? (typische Produktionseinstellungen)"
 
 #: lib/hammer_cli_foreman/compute_resource.rb:13
 msgid "Provider"
@@ -900,7 +901,7 @@ msgstr "Konfigurationsvorlage konnte nicht gelöscht werden"
 
 #: lib/hammer_cli_foreman/host.rb:12
 msgid "Login of the owner"
-msgstr ""
+msgstr "Anmeldung des Eigentümers"
 
 #: lib/hammer_cli_foreman/host.rb:14
 msgid "ID of the owner"
@@ -1140,15 +1141,15 @@ msgstr "Daten in unbekanntem Format erhalten"
 msgid ""
 "Could not find %{resource}. Some search options were missing, please see "
 "--help."
-msgstr ""
+msgstr "%{resource} nicht gefunden. Einige Suchoptionen fehlten, siehe --help"
 
 #: lib/hammer_cli_foreman/commands.rb:187
 msgid "Could not find %{resource}, please set option %{switches}."
-msgstr ""
+msgstr "%{resource} nicht gefunden. Bitte Option %{switches}  setzen."
 
 #: lib/hammer_cli_foreman/commands.rb:189
 msgid "Could not find %{resource}, please set one of options %{switches}."
-msgstr ""
+msgstr "%{resource} nicht gefunden. Bitte eine der Optionen %{switches}  setzen."
 
 #: lib/hammer_cli_foreman/commands.rb:288
 msgid "List next page? (%s): "
@@ -1784,7 +1785,7 @@ msgstr "Zu suchender Name"
 
 #: lib/hammer_cli_foreman/id_resolver.rb:149
 msgid "one of %s not found"
-msgstr ""
+msgstr "eine von %s nicht gefunden"
 
 #: lib/hammer_cli_foreman/id_resolver.rb:191
 msgid "%s not found"
@@ -1917,7 +1918,7 @@ msgstr "Ort konnte nicht entfernt werden"
 
 #: lib/hammer_cli_foreman/auth_source_ldap.rb:7
 msgid "Manage LDAP auth sources."
-msgstr ""
+msgstr "LDAP-Authentifizierungsquellen verwalten"
 
 #: lib/hammer_cli_foreman/auth_source_ldap.rb:15
 msgid "LDAPS?"
@@ -1969,27 +1970,27 @@ msgstr "Fotoattribut"
 
 #: lib/hammer_cli_foreman/auth_source_ldap.rb:43
 msgid "Auth source created"
-msgstr ""
+msgstr "Authentifizierungsquelle erstellt"
 
 #: lib/hammer_cli_foreman/auth_source_ldap.rb:44
 msgid "Could not create the Auth Source"
-msgstr ""
+msgstr "Authentifzierungsquelle konnte nicht erstellt werden"
 
 #: lib/hammer_cli_foreman/auth_source_ldap.rb:51
 msgid "Auth source deleted"
-msgstr ""
+msgstr "Authentifizierungsquelle gelöscht"
 
 #: lib/hammer_cli_foreman/auth_source_ldap.rb:52
 msgid "Could not delete the Auth Source"
-msgstr ""
+msgstr "Authentifizierungsquelle konnte nicht gelöscht werden"
 
 #: lib/hammer_cli_foreman/auth_source_ldap.rb:59
 msgid "Auth source updated"
-msgstr ""
+msgstr "Authentifizierungsquelle aktualisiert"
 
 #: lib/hammer_cli_foreman/auth_source_ldap.rb:60
 msgid "Could not update the Auth Source"
-msgstr ""
+msgstr "Authentifizierungsquelle konnte nicht aktualisiert werden"
 
 #: lib/hammer_cli_foreman/architecture.rb:31
 msgid "Architecture created"
@@ -2025,7 +2026,7 @@ msgstr "Architekturen bearbeiten."
 
 #: lib/hammer_cli_foreman.rb:38
 msgid "Manipulate auth sources."
-msgstr ""
+msgstr "Authentifizierungsquellen bearbeiten"
 
 #: lib/hammer_cli_foreman.rb:42
 msgid "Manipulate compute resources."
@@ -2037,7 +2038,7 @@ msgstr "Domains bearbeiten."
 
 #: lib/hammer_cli_foreman.rb:50
 msgid "Manipulate environments."
-msgstr ""
+msgstr "Umgebungen bearbeiten"
 
 #: lib/hammer_cli_foreman.rb:54
 msgid "Search facts."
@@ -2049,7 +2050,7 @@ msgstr "Berechtigungsfilter verwalten."
 
 #: lib/hammer_cli_foreman.rb:62
 msgid "Manipulate hosts."
-msgstr ""
+msgstr "Hosts bearbeiten"
 
 #: lib/hammer_cli_foreman.rb:66
 msgid "Manipulate hostgroups."
@@ -2069,7 +2070,7 @@ msgstr "Hardwaremodelle bearbeiten."
 
 #: lib/hammer_cli_foreman.rb:82
 msgid "Manipulate operating system."
-msgstr ""
+msgstr "Betriebssystem bearbeiten"
 
 #: lib/hammer_cli_foreman.rb:86
 msgid "Manipulate organizations."

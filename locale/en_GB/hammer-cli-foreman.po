@@ -6,10 +6,10 @@
 # Dominic Cleal <dcleal@redhat.com>, 2014
 msgid ""
 msgstr ""
-"Project-Id-Version: hammer-cli-foreman 0.2.0\n"
+"Project-Id-Version: hammer-cli-foreman 0.3.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-12-11 13:21+0100\n"
-"PO-Revision-Date: 2015-03-22 03:37+0000\n"
+"PO-Revision-Date: 2015-07-22 22:56+0000\n"
 "Last-Translator: Lukáš Zapletal\n"
 "Language-Team: English (United Kingdom) (http://www.transifex.com/projects/p/foreman/language/en_GB/)\n"
 "MIME-Version: 1.0\n"
@@ -46,11 +46,11 @@ msgstr ""
 #: lib/hammer_cli_foreman/report.rb:11 lib/hammer_cli_foreman/report.rb:31
 #: lib/hammer_cli_foreman/fact.rb:12
 msgid "Host"
-msgstr ""
+msgstr "Host"
 
 #: lib/hammer_cli_foreman/report.rb:12 lib/hammer_cli_foreman/host.rb:181
 msgid "Last report"
-msgstr ""
+msgstr "Last report"
 
 #: lib/hammer_cli_foreman/report.rb:14 lib/hammer_cli_foreman/report.rb:35
 msgid "Applied"
@@ -291,7 +291,7 @@ msgstr ""
 
 #: lib/hammer_cli_foreman/subnet.rb:23
 msgid "Priority"
-msgstr ""
+msgstr "Priority"
 
 #: lib/hammer_cli_foreman/subnet.rb:24
 msgid "DNS"
@@ -768,7 +768,7 @@ msgstr "Subnet"
 
 #: lib/hammer_cli_foreman/hostgroup.rb:63 lib/hammer_cli_foreman/host.rb:188
 msgid "Domain"
-msgstr ""
+msgstr "Domain"
 
 #: lib/hammer_cli_foreman/hostgroup.rb:64 lib/hammer_cli_foreman/host.rb:192
 #: lib/hammer_cli_foreman/image.rb:45
@@ -851,7 +851,7 @@ msgstr ""
 #: lib/hammer_cli_foreman/smart_class_parameter.rb:54
 #: lib/hammer_cli_foreman/smart_class_parameter.rb:58
 msgid "Type"
-msgstr ""
+msgstr "Type"
 
 #: lib/hammer_cli_foreman/template.rb:71
 msgid "List available config template kinds."
@@ -921,17 +921,17 @@ msgstr ""
 
 #: lib/hammer_cli_foreman/host.rb:131
 msgid "Host Group"
-msgstr ""
+msgstr "Host Group"
 
 #: lib/hammer_cli_foreman/host.rb:132 lib/hammer_cli_foreman/host.rb:201
 #: lib/hammer_cli_foreman/host.rb:214
 msgid "IP"
-msgstr ""
+msgstr "IP"
 
 #: lib/hammer_cli_foreman/host.rb:133 lib/hammer_cli_foreman/host.rb:202
 #: lib/hammer_cli_foreman/host.rb:215
 msgid "MAC"
-msgstr ""
+msgstr "MAC"
 
 #: lib/hammer_cli_foreman/host.rb:162
 msgid "Cert name"
@@ -943,7 +943,7 @@ msgstr ""
 
 #: lib/hammer_cli_foreman/host.rb:167
 msgid "Enabled"
-msgstr ""
+msgstr "Enabled"
 
 #: lib/hammer_cli_foreman/host.rb:168
 msgid "Build"
@@ -1051,11 +1051,11 @@ msgstr ""
 
 #: lib/hammer_cli_foreman/host.rb:323
 msgid "Host created"
-msgstr ""
+msgstr "Host created"
 
 #: lib/hammer_cli_foreman/host.rb:324
 msgid "Could not create the host"
-msgstr ""
+msgstr "Could not create the host"
 
 #: lib/hammer_cli_foreman/host.rb:345
 msgid "Host updated"
@@ -1067,11 +1067,11 @@ msgstr ""
 
 #: lib/hammer_cli_foreman/host.rb:353
 msgid "Host deleted"
-msgstr ""
+msgstr "Host deleted"
 
 #: lib/hammer_cli_foreman/host.rb:354
 msgid "Could not delete the host"
-msgstr ""
+msgstr "Could not delete the host"
 
 #: lib/hammer_cli_foreman/host.rb:361
 msgid "Create or update parameter for a host."
@@ -1123,7 +1123,7 @@ msgstr ""
 
 #: lib/hammer_cli_foreman/host.rb:448
 msgid "Reboot a host"
-msgstr ""
+msgstr "Reboot a host"
 
 #: lib/hammer_cli_foreman/host.rb:449
 msgid "Host reboot started."
@@ -1190,7 +1190,7 @@ msgstr ""
 
 #: lib/hammer_cli_foreman/references.rb:58
 msgid "Installation media"
-msgstr ""
+msgstr "Installation media"
 
 #: lib/hammer_cli_foreman/references.rb:66
 msgid "Templates"
@@ -1845,7 +1845,7 @@ msgstr ""
 
 #: lib/hammer_cli_foreman/filter.rb:11
 msgid "Search"
-msgstr ""
+msgstr "Search"
 
 #: lib/hammer_cli_foreman/filter.rb:12
 msgid "Unlimited?"

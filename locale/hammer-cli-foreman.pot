@@ -6,10 +6,10 @@
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: hammer-cli-foreman 0.2.0\n"
+"Project-Id-Version: hammer-cli-foreman 0.3.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-04-23 17:25+0200\n"
-"PO-Revision-Date: 2015-04-23 17:25+0200\n"
+"POT-Creation-Date: 2015-07-29 17:24+0200\n"
+"PO-Revision-Date: 2015-07-29 17:24+0200\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: \n"
@@ -519,15 +519,11 @@ msgstr ""
 msgid "Could not find %{resource}, please set one of options %{switches}."
 msgstr ""
 
-#: ../lib/hammer_cli_foreman/commands.rb:313
-msgid "List next page? (%s): "
-msgstr ""
-
-#: ../lib/hammer_cli_foreman/commands.rb:516
+#: ../lib/hammer_cli_foreman/commands.rb:517
 msgid "Associate a resource"
 msgstr ""
 
-#: ../lib/hammer_cli_foreman/commands.rb:538
+#: ../lib/hammer_cli_foreman/commands.rb:539
 msgid "Disassociate a resource"
 msgstr ""
 
@@ -2323,6 +2319,10 @@ msgstr ""
 
 #: ../lib/hammer_cli_foreman/template.rb:139
 msgid "Could not delete the config template"
+msgstr ""
+
+#: ../lib/hammer_cli_foreman/template.rb:150
+msgid "Update the default PXE menu on all configured TFTP servers"
 msgstr ""
 
 #: ../lib/hammer_cli_foreman/user.rb:11

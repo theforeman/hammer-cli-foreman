@@ -3,19 +3,20 @@
 # This file is distributed under the same license as the hammer-cli-foreman package.
 # 
 # Translators:
+# Vladimir Pavlov <v.pavlov@i-teco.ru>, 2015
 msgid ""
 msgstr ""
-"Project-Id-Version: hammer-cli-foreman 0.2.0\n"
+"Project-Id-Version: hammer-cli-foreman 0.3.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-12-11 13:21+0100\n"
-"PO-Revision-Date: 2015-03-31 09:42+0000\n"
-"Last-Translator: Lukáš Zapletal\n"
+"PO-Revision-Date: 2015-07-02 10:43+0000\n"
+"Last-Translator: Vladimir Pavlov <v.pavlov@i-teco.ru>\n"
 "Language-Team: Russian (http://www.transifex.com/projects/p/foreman/language/ru/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Language: ru\n"
-"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+"Plural-Forms: nplurals=4; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || (n%10>=5 && n%10<=9) || (n%100>=11 && n%100<=14)? 2 : 3);\n"
 
 #: lib/hammer_cli_foreman/report.rb:10 lib/hammer_cli_foreman/report.rb:30
 #: lib/hammer_cli_foreman/external_usergroup.rb:10
@@ -149,7 +150,7 @@ msgstr "Не удалось удалить отчет"
 
 #: lib/hammer_cli_foreman/external_usergroup.rb:6
 msgid "View and manage user group's external user groups"
-msgstr ""
+msgstr "Отображение и управление внешними группами пользователя"
 
 #: lib/hammer_cli_foreman/external_usergroup.rb:11
 #: lib/hammer_cli_foreman/external_usergroup.rb:42
@@ -187,27 +188,27 @@ msgstr "Обновить внешнюю группу пользователя"
 
 #: lib/hammer_cli_foreman/external_usergroup.rb:57
 msgid "External user group created"
-msgstr ""
+msgstr "Внешняя группа пользователя создана"
 
 #: lib/hammer_cli_foreman/external_usergroup.rb:58
 msgid "Could not create external user group"
-msgstr ""
+msgstr "Не удалось создать внешнюю группу пользователя"
 
 #: lib/hammer_cli_foreman/external_usergroup.rb:65
 msgid "External user group updated"
-msgstr ""
+msgstr "Внешняя группа пользователя обновлена"
 
 #: lib/hammer_cli_foreman/external_usergroup.rb:66
 msgid "Could not update external user group"
-msgstr ""
+msgstr "Не удалось обновить внешнюю группу пользователя"
 
 #: lib/hammer_cli_foreman/external_usergroup.rb:73
 msgid "External user group deleted"
-msgstr ""
+msgstr "Внешняя группа пользователя удалена"
 
 #: lib/hammer_cli_foreman/external_usergroup.rb:74
 msgid "Could not delete the external user group"
-msgstr ""
+msgstr "Не удалось удалить внешнюю группу пользователя"
 
 #: lib/hammer_cli_foreman/organization.rb:37
 #: lib/hammer_cli_foreman/references.rb:15
@@ -469,17 +470,17 @@ msgstr "Запрещено: сервер отказал в обработке з
 
 #: lib/hammer_cli_foreman/exception_handler.rb:75
 msgid "Could not load the API description from the server"
-msgstr ""
+msgstr "Не удалось загрузить описание API с сервера"
 
 #: lib/hammer_cli_foreman/exception_handler.rb:76
 msgid "is the server down?"
-msgstr ""
+msgstr "сервер выключен?"
 
 #: lib/hammer_cli_foreman/exception_handler.rb:77
 msgid ""
 "was '%s' run on the server when using apipie cache? (typical production "
 "settings)"
-msgstr ""
+msgstr "'%s' был запущен на сервере когда использовался кэш apipie? (типовая продуктивная настройка)"
 
 #: lib/hammer_cli_foreman/compute_resource.rb:13
 msgid "Provider"
@@ -545,11 +546,11 @@ msgstr "Не удалось удалить вычислительный ресу
 
 #: lib/hammer_cli_foreman/associating_commands.rb:41
 msgid "Associate a hostgroup"
-msgstr "Связать с группой хостов"
+msgstr "Связать с группой узлов"
 
 #: lib/hammer_cli_foreman/associating_commands.rb:46
 msgid "Disassociate a hostgroup"
-msgstr "Удалить связь с группой хостов"
+msgstr "Удалить связь с группой узлов"
 
 #: lib/hammer_cli_foreman/associating_commands.rb:55
 msgid "Associate an environment"
@@ -729,24 +730,24 @@ msgstr "Не удалось удалить роль пользователя"
 
 #: lib/hammer_cli_foreman/hostgroup.rb:9
 msgid "List of puppetclass ids"
-msgstr ""
+msgstr "Список кодов классов puppet"
 
 #: lib/hammer_cli_foreman/hostgroup.rb:11
 msgid "Name of puppet CA proxy"
-msgstr ""
+msgstr "Имя прокси CA Puppet"
 
 #: lib/hammer_cli_foreman/hostgroup.rb:12
 msgid "Name of puppet proxy"
-msgstr ""
+msgstr "Имя прокси puppet"
 
 #: lib/hammer_cli_foreman/hostgroup.rb:13
 msgid "Name of parent hostgroup"
-msgstr ""
+msgstr "Имя родительской группы узлов"
 
 #: lib/hammer_cli_foreman/hostgroup.rb:48
 #: lib/hammer_cli_foreman/operating_system.rb:11
 msgid "Title"
-msgstr ""
+msgstr "Заголовок"
 
 #: lib/hammer_cli_foreman/hostgroup.rb:49 lib/hammer_cli_foreman/host.rb:130
 #: lib/hammer_cli_foreman/image.rb:31
@@ -796,51 +797,51 @@ msgstr "Профиль ресурса"
 
 #: lib/hammer_cli_foreman/hostgroup.rb:73
 msgid "Parent Id"
-msgstr ""
+msgstr "Код родителя"
 
 #: lib/hammer_cli_foreman/hostgroup.rb:83
 msgid "Hostgroup created"
-msgstr "Группа создана"
+msgstr "Группа узлов создана"
 
 #: lib/hammer_cli_foreman/hostgroup.rb:84
 msgid "Could not create the hostgroup"
-msgstr "Не удалось создать группу хостов"
+msgstr "Не удалось создать группу узлов"
 
 #: lib/hammer_cli_foreman/hostgroup.rb:93
 msgid "Hostgroup updated"
-msgstr "Группа обновлена"
+msgstr "Группа узлов обновлена"
 
 #: lib/hammer_cli_foreman/hostgroup.rb:94
 msgid "Could not update the hostgroup"
-msgstr "Не удалось обновить группу"
+msgstr "Не удалось обновить группу узлов"
 
 #: lib/hammer_cli_foreman/hostgroup.rb:101
 msgid "Hostgroup deleted"
-msgstr "Группа удалена"
+msgstr "Группа узлов удалена"
 
 #: lib/hammer_cli_foreman/hostgroup.rb:102
 msgid "Could not delete the hostgroup"
-msgstr "Не удалось удалить группу хостов"
+msgstr "Не удалось удалить группу узлов"
 
 #: lib/hammer_cli_foreman/hostgroup.rb:129
 msgid "Create or update parameter for a hostgroup."
-msgstr "Создать или обновить параметр группы хостов"
+msgstr "Создать или обновить параметр группы узлов"
 
 #: lib/hammer_cli_foreman/hostgroup.rb:131
 msgid "Hostgroup parameter updated"
-msgstr "Параметр группы обновлен"
+msgstr "Параметр группы узлов обновлен"
 
 #: lib/hammer_cli_foreman/hostgroup.rb:132
 msgid "New hostgroup parameter created"
-msgstr "Параметр группы хостов создан"
+msgstr "Параметр группы узлов создан"
 
 #: lib/hammer_cli_foreman/hostgroup.rb:133
 msgid "Could not set hostgroup parameter"
-msgstr "Не удалось установить параметр группы хостов"
+msgstr "Не удалось установить параметр группы узлов"
 
 #: lib/hammer_cli_foreman/hostgroup.rb:140
 msgid "Delete parameter for a hostgroup."
-msgstr "Удалить параметры группы хостов"
+msgstr "Удалить параметры группы узлов"
 
 #: lib/hammer_cli_foreman/hostgroup.rb:142
 msgid "Hostgroup parameter deleted"
@@ -896,15 +897,15 @@ msgstr "Не удалось удалить шаблон"
 
 #: lib/hammer_cli_foreman/host.rb:12
 msgid "Login of the owner"
-msgstr ""
+msgstr "Логин владельца"
 
 #: lib/hammer_cli_foreman/host.rb:14
 msgid "ID of the owner"
-msgstr ""
+msgstr "Код владельца"
 
 #: lib/hammer_cli_foreman/host.rb:39
 msgid "Host parameters."
-msgstr "Параметры хоста"
+msgstr "Параметры узла."
 
 #: lib/hammer_cli_foreman/host.rb:41
 msgid "Compute resource attributes."
@@ -920,7 +921,7 @@ msgstr "Параметры интерфейса"
 
 #: lib/hammer_cli_foreman/host.rb:131
 msgid "Host Group"
-msgstr "Группа хостов"
+msgstr "Группа узлов"
 
 #: lib/hammer_cli_foreman/host.rb:132 lib/hammer_cli_foreman/host.rb:201
 #: lib/hammer_cli_foreman/host.rb:214
@@ -1050,67 +1051,67 @@ msgstr "Puppetrun запущен"
 
 #: lib/hammer_cli_foreman/host.rb:323
 msgid "Host created"
-msgstr "Хост создан"
+msgstr "Узел создан"
 
 #: lib/hammer_cli_foreman/host.rb:324
 msgid "Could not create the host"
-msgstr "Не удалось создать хост"
+msgstr "Не удалось создать узел"
 
 #: lib/hammer_cli_foreman/host.rb:345
 msgid "Host updated"
-msgstr "Хост обновлен"
+msgstr "Узел обновлен"
 
 #: lib/hammer_cli_foreman/host.rb:346
 msgid "Could not update the host"
-msgstr "Не удалось обновить хост"
+msgstr "Не удалось обновить узел"
 
 #: lib/hammer_cli_foreman/host.rb:353
 msgid "Host deleted"
-msgstr "Хост удален"
+msgstr "Узел удален"
 
 #: lib/hammer_cli_foreman/host.rb:354
 msgid "Could not delete the host"
-msgstr "Не удалось удалить хост"
+msgstr "Не удалось удалить узел"
 
 #: lib/hammer_cli_foreman/host.rb:361
 msgid "Create or update parameter for a host."
-msgstr "Создать или обновить параметр хоста"
+msgstr "Создать или обновить параметр узла."
 
 #: lib/hammer_cli_foreman/host.rb:363
 msgid "Host parameter updated"
-msgstr "Параметр хоста обновлен"
+msgstr "Параметр узла обновлен"
 
 #: lib/hammer_cli_foreman/host.rb:364
 msgid "New host parameter created"
-msgstr "Параметр хоста создан"
+msgstr "Параметр узла создан"
 
 #: lib/hammer_cli_foreman/host.rb:365
 msgid "Could not set host parameter"
-msgstr "Не удалось установить параметр хоста"
+msgstr "Не удалось установить параметр узла"
 
 #: lib/hammer_cli_foreman/host.rb:377
 msgid "Delete parameter for a host."
-msgstr "Удалить параметр хоста"
+msgstr "Удалить параметр узла"
 
 #: lib/hammer_cli_foreman/host.rb:379
 msgid "Host parameter deleted"
-msgstr "Параметр хоста удален"
+msgstr "Параметр узла удален"
 
 #: lib/hammer_cli_foreman/host.rb:394
 msgid "Power a host on"
-msgstr "Включить хост"
+msgstr "Включить узел"
 
 #: lib/hammer_cli_foreman/host.rb:395
 msgid "The host is starting."
-msgstr "Хост запускается."
+msgstr "Узел запускается."
 
 #: lib/hammer_cli_foreman/host.rb:412
 msgid "Force turning off a host"
-msgstr "Принудительно выключить хост"
+msgstr "Принудительно выключить узел"
 
 #: lib/hammer_cli_foreman/host.rb:417
 msgid "Power a host off"
-msgstr "Выключить хост"
+msgstr "Выключить узел"
 
 #: lib/hammer_cli_foreman/host.rb:429
 msgid "Power off forced."
@@ -1118,15 +1119,15 @@ msgstr "Принудительное отключение"
 
 #: lib/hammer_cli_foreman/host.rb:431
 msgid "Powering the host off."
-msgstr "Хост выключается."
+msgstr "Узел выключается."
 
 #: lib/hammer_cli_foreman/host.rb:448
 msgid "Reboot a host"
-msgstr "Перезагрузить хост"
+msgstr "Перезагрузить узел"
 
 #: lib/hammer_cli_foreman/host.rb:449
 msgid "Host reboot started."
-msgstr "Хост будет перезагружен."
+msgstr "Узел будет перезагружен."
 
 #: lib/hammer_cli_foreman/commands.rb:83
 msgid "Received data of unknown format"
@@ -1136,15 +1137,15 @@ msgstr "Неизвестный формат полученных данных"
 msgid ""
 "Could not find %{resource}. Some search options were missing, please see "
 "--help."
-msgstr ""
+msgstr "Не удалось найти %{resource}. Некоторые параметры поиска были пропущены, смотрите --help."
 
 #: lib/hammer_cli_foreman/commands.rb:187
 msgid "Could not find %{resource}, please set option %{switches}."
-msgstr ""
+msgstr "Не удалось найти %{resource}, установите опцию %{switches}."
 
 #: lib/hammer_cli_foreman/commands.rb:189
 msgid "Could not find %{resource}, please set one of options %{switches}."
-msgstr ""
+msgstr "Не удалось найти %{resource}, установите одну из опций %{switches}."
 
 #: lib/hammer_cli_foreman/commands.rb:288
 msgid "List next page? (%s): "
@@ -1205,7 +1206,7 @@ msgstr "Окружения"
 
 #: lib/hammer_cli_foreman/references.rb:90
 msgid "Hostgroups"
-msgstr "Группы хостов"
+msgstr "Группы узлов"
 
 #: lib/hammer_cli_foreman/references.rb:98
 msgid "Subnets"
@@ -1229,7 +1230,7 @@ msgstr "Роли"
 
 #: lib/hammer_cli_foreman/references.rb:139
 msgid "External user groups"
-msgstr ""
+msgstr "Внешние группы пользователей"
 
 #: lib/hammer_cli_foreman/resource_supported_test.rb:11
 msgid "The server does not support such operation."
@@ -1343,7 +1344,7 @@ msgstr "Не удалось удалить исходный шаблон"
 
 #: lib/hammer_cli_foreman/operating_system.rb:178
 msgid "Default template of type %s not found"
-msgstr ""
+msgstr "Шаблон по умолчанию типа %s не найден"
 
 #: lib/hammer_cli_foreman/smart_proxy.rb:13
 msgid "URL"
@@ -1688,11 +1689,11 @@ msgstr "Не удалось удалить таблицу разделов"
 
 #: lib/hammer_cli_foreman/credentials.rb:26
 msgid "[Foreman] Username: "
-msgstr ""
+msgstr "Имя пользователя [Foreman]:"
 
 #: lib/hammer_cli_foreman/credentials.rb:33
 msgid "[Foreman] Password for %s: "
-msgstr ""
+msgstr "Пароль [Foreman] для %s:"
 
 #: lib/hammer_cli_foreman/id_resolver.rb:36
 msgid "Architecture name"
@@ -1712,11 +1713,11 @@ msgstr "Имя окружения"
 
 #: lib/hammer_cli_foreman/id_resolver.rb:42
 msgid "Host name"
-msgstr "Имя хоста"
+msgstr "Имя узла"
 
 #: lib/hammer_cli_foreman/id_resolver.rb:43
 msgid "Hostgroup name"
-msgstr "Имя группы хостов"
+msgstr "Имя группы узлов"
 
 #: lib/hammer_cli_foreman/id_resolver.rb:45
 msgid "Location name"
@@ -1736,7 +1737,7 @@ msgstr "Имя организации"
 
 #: lib/hammer_cli_foreman/id_resolver.rb:49
 msgid "Operating system title"
-msgstr ""
+msgstr "Заголовок операционной системы"
 
 #: lib/hammer_cli_foreman/id_resolver.rb:50
 msgid "Partition table name"
@@ -1780,7 +1781,7 @@ msgstr "Искомое имя"
 
 #: lib/hammer_cli_foreman/id_resolver.rb:149
 msgid "one of %s not found"
-msgstr ""
+msgstr "один из %s не найден"
 
 #: lib/hammer_cli_foreman/id_resolver.rb:191
 msgid "%s not found"
@@ -1913,23 +1914,23 @@ msgstr "Не удалось удалить расположение"
 
 #: lib/hammer_cli_foreman/auth_source_ldap.rb:7
 msgid "Manage LDAP auth sources."
-msgstr ""
+msgstr "Управление источниками LDAP авторизации."
 
 #: lib/hammer_cli_foreman/auth_source_ldap.rb:15
 msgid "LDAPS?"
-msgstr ""
+msgstr "LDAP?"
 
 #: lib/hammer_cli_foreman/auth_source_ldap.rb:16
 msgid "Port"
-msgstr ""
+msgstr "Порт"
 
 #: lib/hammer_cli_foreman/auth_source_ldap.rb:17
 msgid "Server Type"
-msgstr ""
+msgstr "Тип сервера"
 
 #: lib/hammer_cli_foreman/auth_source_ldap.rb:27
 msgid "Account Username"
-msgstr ""
+msgstr "Имя пользователя учетной записи"
 
 #: lib/hammer_cli_foreman/auth_source_ldap.rb:28
 msgid "Base DN"
@@ -1941,51 +1942,51 @@ msgstr "Фильтр LDAP"
 
 #: lib/hammer_cli_foreman/auth_source_ldap.rb:30
 msgid "Automatically Create Accounts?"
-msgstr ""
+msgstr "Автоматически создать учетные записи?"
 
 #: lib/hammer_cli_foreman/auth_source_ldap.rb:31
 msgid "Login Name Attribute"
-msgstr ""
+msgstr "Атрибут имени пользователя"
 
 #: lib/hammer_cli_foreman/auth_source_ldap.rb:32
 msgid "First Name Attribute"
-msgstr ""
+msgstr "Атрибут имени"
 
 #: lib/hammer_cli_foreman/auth_source_ldap.rb:33
 msgid "Last Name Attribute"
-msgstr ""
+msgstr "Атрибут фамилии"
 
 #: lib/hammer_cli_foreman/auth_source_ldap.rb:34
 msgid "Email Address Attribute"
-msgstr ""
+msgstr "Атрибут электронной почты"
 
 #: lib/hammer_cli_foreman/auth_source_ldap.rb:35
 msgid "Photo Attribute"
-msgstr ""
+msgstr "Атрибут фотографии"
 
 #: lib/hammer_cli_foreman/auth_source_ldap.rb:43
 msgid "Auth source created"
-msgstr ""
+msgstr "Источник авторизации создан"
 
 #: lib/hammer_cli_foreman/auth_source_ldap.rb:44
 msgid "Could not create the Auth Source"
-msgstr ""
+msgstr "Не удалось создать источник авторизации"
 
 #: lib/hammer_cli_foreman/auth_source_ldap.rb:51
 msgid "Auth source deleted"
-msgstr ""
+msgstr "Источник авторизации удален"
 
 #: lib/hammer_cli_foreman/auth_source_ldap.rb:52
 msgid "Could not delete the Auth Source"
-msgstr ""
+msgstr "Не удалось удалить источник авторизации"
 
 #: lib/hammer_cli_foreman/auth_source_ldap.rb:59
 msgid "Auth source updated"
-msgstr ""
+msgstr "Источник авторизации обновлен"
 
 #: lib/hammer_cli_foreman/auth_source_ldap.rb:60
 msgid "Could not update the Auth Source"
-msgstr ""
+msgstr "Не удалось обновить источник авторизации"
 
 #: lib/hammer_cli_foreman/architecture.rb:31
 msgid "Architecture created"
@@ -2021,7 +2022,7 @@ msgstr "Управление архитектурами"
 
 #: lib/hammer_cli_foreman.rb:38
 msgid "Manipulate auth sources."
-msgstr ""
+msgstr "Управление источниками авторизации."
 
 #: lib/hammer_cli_foreman.rb:42
 msgid "Manipulate compute resources."
@@ -2033,7 +2034,7 @@ msgstr "Управление доменами"
 
 #: lib/hammer_cli_foreman.rb:50
 msgid "Manipulate environments."
-msgstr ""
+msgstr "Управлению окружениями"
 
 #: lib/hammer_cli_foreman.rb:54
 msgid "Search facts."
@@ -2045,11 +2046,11 @@ msgstr "Управление фильтрами разрешений"
 
 #: lib/hammer_cli_foreman.rb:62
 msgid "Manipulate hosts."
-msgstr ""
+msgstr "Управление узлами."
 
 #: lib/hammer_cli_foreman.rb:66
 msgid "Manipulate hostgroups."
-msgstr "Управление группами хостов"
+msgstr "Управление группами узлов."
 
 #: lib/hammer_cli_foreman.rb:70
 msgid "Manipulate locations."
@@ -2065,7 +2066,7 @@ msgstr "Управление моделями оборудования"
 
 #: lib/hammer_cli_foreman.rb:82
 msgid "Manipulate operating system."
-msgstr ""
+msgstr "Управление операционными системами."
 
 #: lib/hammer_cli_foreman.rb:86
 msgid "Manipulate organizations."

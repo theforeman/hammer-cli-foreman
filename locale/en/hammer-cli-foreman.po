@@ -5,7 +5,7 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: hammer-cli-foreman 0.2.0\n"
+"Project-Id-Version: hammer-cli-foreman 0.3.0\n"
 "Report-Msgid-Bugs-To: \n"
 "PO-Revision-Date: 2014-03-04 16:47+0000\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
@@ -348,9 +348,6 @@ msgid "Could not find %{resource}, please set option %{switches}."
 msgstr ""
 
 msgid "Could not find %{resource}, please set one of options %{switches}."
-msgstr ""
-
-msgid "List next page? (%s): "
 msgstr ""
 
 msgid "Associate a resource"
@@ -1638,6 +1635,9 @@ msgid "Config template deleted"
 msgstr ""
 
 msgid "Could not delete the config template"
+msgstr ""
+
+msgid "Update the default PXE menu on all configured TFTP servers"
 msgstr ""
 
 msgid "Login"
