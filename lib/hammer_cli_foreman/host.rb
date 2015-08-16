@@ -59,7 +59,7 @@ module HammerCLIForeman
     end
 
     def self.ask_password
-      prompt = "Enter the root password for the host: "
+      prompt = _("Enter the root password for the host:") + " "
       ask(prompt) {|q| q.echo = false}
     end
 
