@@ -19,6 +19,8 @@ module HammerCLIForeman
   require 'hammer_cli_foreman/param_filters'
   require 'hammer_cli_foreman/id_resolver'
   require 'hammer_cli_foreman/dependency_resolver'
+  require 'hammer_cli_foreman/defaults'
+
 
   begin
     require 'hammer_cli_foreman/commands'
