@@ -14,6 +14,14 @@ module HammerCLIForeman
       base.option "--parent", "PARENT_NAME",  _("Name of parent hostgroup")
       base.option "--puppet-classes", "PUPPET_CLASS_NAMES", "",
         :format => HammerCLI::Options::Normalizers::List.new
+      base.option "--root-pass", "ROOT_PASSWORD",  _("Root password")
+      base.option "--ask-root-pass", "ASK_ROOT_PW", "",
+        :format => HammerCLI::Options::Normalizers::Bool.new
+    end
+
+    def self.ask_password
+      prompt = _("Enter the root password for the host group:") + " "
+      ask(prompt) {|q| q.echo = false}
     end
 
     def request_params
@@ -22,6 +30,8 @@ module HammerCLIForeman
       params['hostgroup']["puppet_proxy_id"] ||= proxy_id(option_puppet_proxy)
       params['hostgroup']["puppet_ca_proxy_id"] ||= proxy_id(option_puppet_ca_proxy)
       params['hostgroup']['puppetclass_ids'] = option_puppet_class_ids || puppet_class_ids(option_puppet_classes)
+      params['hostgroup']['root_pass'] = option_root_pass if option_root_pass
+      params['hostgroup']['root_pass'] = HammerCLIForeman::HostgroupUpdateCreateCommons::ask_password if option_ask_root_pass
       params
     end
 
