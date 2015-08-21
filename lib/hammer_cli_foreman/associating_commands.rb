@@ -146,16 +146,16 @@ module HammerCLIForeman
         associated_resource :users
         desc _("Associate an user")
 
-        success_message "The user has been associated"
-        failure_message "Could not associate the user"
+        success_message _("The user has been associated")
+        failure_message _("Could not associate the user")
       end
 
       class RemoveUserCommand < HammerCLIForeman::RemoveAssociatedCommand
         associated_resource :users
         desc _("Disassociate an user")
 
-        success_message "The user has been disassociated"
-        failure_message "Could not disassociate the user"
+        success_message _("The user has been disassociated")
+        failure_message _("Could not disassociate the user")
       end
     end
 
@@ -168,8 +168,8 @@ module HammerCLIForeman
 
         command_name 'add-user-group'
 
-        success_message "The user group has been associated"
-        failure_message "Could not associate the user group"
+        success_message _("The user group has been associated")
+        failure_message _("Could not associate the user group")
       end
 
       class RemoveUsergroupCommand < HammerCLIForeman::RemoveAssociatedCommand
@@ -178,8 +178,8 @@ module HammerCLIForeman
 
         command_name 'remove-user-group'
 
-        success_message "The user group has been disassociated"
-        failure_message "Could not disassociate the user group"
+        success_message _("The user group has been disassociated")
+        failure_message _("Could not disassociate the user group")
       end
     end
 
