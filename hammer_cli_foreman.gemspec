@@ -17,8 +17,6 @@ Gem::Specification.new do |s|
 Foreman commands for Hammer CLI
 EOF
 
-
-
   s.files            = Dir['{lib,doc,test,locale,config}/**/*', 'README*']
   s.test_files       = Dir['{test}/**/*']
   s.extra_rdoc_files = Dir['{doc}/**/*', 'README*']
