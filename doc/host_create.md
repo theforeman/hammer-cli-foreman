@@ -232,6 +232,16 @@ path
 
 Available keys for `--interface`:
 ```
+compute_type      # Type of the network adapter, for example one of:
+                  #   VirtualVmxnet
+                  #   VirtualVmxnet2
+                  #   VirtualVmxnet3
+                  #   VirtualE1000
+                  #   VirtualE1000e
+                  #   VirtualPCNet32
+                  # See documentation center for your version of vSphere to find
+                  # more details about available adapter types:
+                  # https://www.vmware.com/support/pubs/
 compute_network
 ```
 
