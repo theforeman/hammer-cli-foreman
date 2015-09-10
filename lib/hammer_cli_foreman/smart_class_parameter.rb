@@ -68,6 +68,7 @@ module HammerCLIForeman
         end
         label _("Override values") do
           field :merge_overrides, _("Merge overrides"), Fields::Boolean
+          field :merge_default, _("Merge default value"), Fields::Boolean
           field :avoid_duplicates, _("Avoid duplicates"), Fields::Boolean
           field :override_value_order, _("Order"), Fields::List
           collection :override_values, _("Values") do
