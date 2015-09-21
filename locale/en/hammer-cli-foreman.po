@@ -5,7 +5,7 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: hammer-cli-foreman 0.3.0\n"
+"Project-Id-Version: hammer-cli-foreman 0.4.0\n"
 "Report-Msgid-Bugs-To: \n"
 "PO-Revision-Date: 2014-03-04 16:47+0000\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
@@ -166,13 +166,37 @@ msgstr ""
 msgid "Associate an user"
 msgstr ""
 
+msgid "The user has been associated"
+msgstr ""
+
+msgid "Could not associate the user"
+msgstr ""
+
 msgid "Disassociate an user"
+msgstr ""
+
+msgid "The user has been disassociated"
+msgstr ""
+
+msgid "Could not disassociate the user"
 msgstr ""
 
 msgid "Associate an user group"
 msgstr ""
 
+msgid "The user group has been associated"
+msgstr ""
+
+msgid "Could not associate the user group"
+msgstr ""
+
 msgid "Disassociate an user group"
+msgstr ""
+
+msgid "The user group has been disassociated"
+msgstr ""
+
+msgid "Could not disassociate the user group"
 msgstr ""
 
 msgid "Associate a configuration template"
@@ -604,6 +628,9 @@ msgstr ""
 msgid "Interface parameters."
 msgstr ""
 
+msgid "Enter the root password for the host:"
+msgstr ""
+
 msgid "At least one interface must be set as primary"
 msgstr ""
 
@@ -824,6 +851,12 @@ msgid "Name of puppet proxy"
 msgstr ""
 
 msgid "Name of parent hostgroup"
+msgstr ""
+
+msgid "Root password"
+msgstr ""
+
+msgid "Enter the root password for the host group:"
 msgstr ""
 
 msgid "Title"
@@ -1452,6 +1485,9 @@ msgid "Override values"
 msgstr ""
 
 msgid "Merge overrides"
+msgstr ""
+
+msgid "Merge default value"
 msgstr ""
 
 msgid "Avoid duplicates"

@@ -4,15 +4,16 @@
 # 
 # Translators:
 # Diego de Souza Lopes <djkakaroto@gmail.com>, 2015
-# Especialista em Automatizaçao <alvin@intechne.com.br>, 2014
+# Junior Alvim <alvin@intechne.com.br>, 2014
+# Fabio Dias <fabioqos@gmail.com>, 2015
 msgid ""
 msgstr ""
-"Project-Id-Version: hammer-cli-foreman 0.3.0\n"
+"Project-Id-Version: hammer-cli-foreman 0.4.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-12-11 13:21+0100\n"
-"PO-Revision-Date: 2015-03-22 03:37+0000\n"
-"Last-Translator: Diego de Souza Lopes <djkakaroto@gmail.com>\n"
-"Language-Team: Portuguese (Brazil) (http://www.transifex.com/projects/p/foreman/language/pt_BR/)\n"
+"PO-Revision-Date: 2015-09-16 12:51+0000\n"
+"Last-Translator: Fabio Dias <fabioqos@gmail.com>\n"
+"Language-Team: Portuguese (Brazil) (http://www.transifex.com/foreman/foreman/language/pt_BR/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -471,17 +472,17 @@ msgstr "Proibído - servidor recusou a processar a requisição"
 
 #: lib/hammer_cli_foreman/exception_handler.rb:75
 msgid "Could not load the API description from the server"
-msgstr ""
+msgstr "Não pode carregar a descrição da API do servidor"
 
 #: lib/hammer_cli_foreman/exception_handler.rb:76
 msgid "is the server down?"
-msgstr ""
+msgstr "O servidor está caído?"
 
 #: lib/hammer_cli_foreman/exception_handler.rb:77
 msgid ""
 "was '%s' run on the server when using apipie cache? (typical production "
 "settings)"
-msgstr ""
+msgstr "O '%s' estava rodando no servidor quando usava apipie cache? (Configurações típicas em produção)"
 
 #: lib/hammer_cli_foreman/compute_resource.rb:13
 msgid "Provider"
@@ -731,19 +732,19 @@ msgstr "Não foi possível remover a função de usuário"
 
 #: lib/hammer_cli_foreman/hostgroup.rb:9
 msgid "List of puppetclass ids"
-msgstr ""
+msgstr "Lista dos puppetclass ids"
 
 #: lib/hammer_cli_foreman/hostgroup.rb:11
 msgid "Name of puppet CA proxy"
-msgstr ""
+msgstr "Nome do puppet CA proxy"
 
 #: lib/hammer_cli_foreman/hostgroup.rb:12
 msgid "Name of puppet proxy"
-msgstr ""
+msgstr "Nome do puppet proxy"
 
 #: lib/hammer_cli_foreman/hostgroup.rb:13
 msgid "Name of parent hostgroup"
-msgstr ""
+msgstr "Nome do hostgroup pai"
 
 #: lib/hammer_cli_foreman/hostgroup.rb:48
 #: lib/hammer_cli_foreman/operating_system.rb:11
@@ -798,7 +799,7 @@ msgstr "Perfil de Computador"
 
 #: lib/hammer_cli_foreman/hostgroup.rb:73
 msgid "Parent Id"
-msgstr ""
+msgstr "Id pai"
 
 #: lib/hammer_cli_foreman/hostgroup.rb:83
 msgid "Hostgroup created"
@@ -898,11 +899,11 @@ msgstr "Não foi possível remover modelo de config"
 
 #: lib/hammer_cli_foreman/host.rb:12
 msgid "Login of the owner"
-msgstr ""
+msgstr "Login do dono"
 
 #: lib/hammer_cli_foreman/host.rb:14
 msgid "ID of the owner"
-msgstr ""
+msgstr "ID do dono"
 
 #: lib/hammer_cli_foreman/host.rb:39
 msgid "Host parameters."
@@ -1138,15 +1139,15 @@ msgstr "Dados recebidos de formato desconhecido"
 msgid ""
 "Could not find %{resource}. Some search options were missing, please see "
 "--help."
-msgstr ""
+msgstr "Não pode localizar %{resource}. Algumas opções de busca não foram especificadas, por favor veja --help."
 
 #: lib/hammer_cli_foreman/commands.rb:187
 msgid "Could not find %{resource}, please set option %{switches}."
-msgstr ""
+msgstr "Não pode encontrar %{resource}, por favor, especifique a opção %{switches}."
 
 #: lib/hammer_cli_foreman/commands.rb:189
 msgid "Could not find %{resource}, please set one of options %{switches}."
-msgstr ""
+msgstr "Não pode encontrar %{resource}, por favor especifique uma opção %{switches}."
 
 #: lib/hammer_cli_foreman/commands.rb:288
 msgid "List next page? (%s): "
@@ -1231,7 +1232,7 @@ msgstr "Papéis"
 
 #: lib/hammer_cli_foreman/references.rb:139
 msgid "External user groups"
-msgstr ""
+msgstr "Grupo de usuários externo"
 
 #: lib/hammer_cli_foreman/resource_supported_test.rb:11
 msgid "The server does not support such operation."
@@ -1345,7 +1346,7 @@ msgstr "Não foi possível remover o modelo padrão"
 
 #: lib/hammer_cli_foreman/operating_system.rb:178
 msgid "Default template of type %s not found"
-msgstr ""
+msgstr "Template padrão do tipo %s não encontrado"
 
 #: lib/hammer_cli_foreman/smart_proxy.rb:13
 msgid "URL"
@@ -1915,7 +1916,7 @@ msgstr "Não foi possível remover o local"
 
 #: lib/hammer_cli_foreman/auth_source_ldap.rb:7
 msgid "Manage LDAP auth sources."
-msgstr ""
+msgstr "Gerencie a fonte do LDAP auth"
 
 #: lib/hammer_cli_foreman/auth_source_ldap.rb:15
 msgid "LDAPS?"
@@ -1931,7 +1932,7 @@ msgstr "Tipo de Servidor"
 
 #: lib/hammer_cli_foreman/auth_source_ldap.rb:27
 msgid "Account Username"
-msgstr ""
+msgstr "Conta do Usuário"
 
 #: lib/hammer_cli_foreman/auth_source_ldap.rb:28
 msgid "Base DN"
@@ -1943,7 +1944,7 @@ msgstr "Filtro LDAP"
 
 #: lib/hammer_cli_foreman/auth_source_ldap.rb:30
 msgid "Automatically Create Accounts?"
-msgstr ""
+msgstr "Criar contas automaticamente"
 
 #: lib/hammer_cli_foreman/auth_source_ldap.rb:31
 msgid "Login Name Attribute"
@@ -1967,27 +1968,27 @@ msgstr "Atributo de Foto"
 
 #: lib/hammer_cli_foreman/auth_source_ldap.rb:43
 msgid "Auth source created"
-msgstr ""
+msgstr "Auth fonte criado"
 
 #: lib/hammer_cli_foreman/auth_source_ldap.rb:44
 msgid "Could not create the Auth Source"
-msgstr ""
+msgstr "Não pode criar a fonte auth"
 
 #: lib/hammer_cli_foreman/auth_source_ldap.rb:51
 msgid "Auth source deleted"
-msgstr ""
+msgstr "Fonte do auth apagado"
 
 #: lib/hammer_cli_foreman/auth_source_ldap.rb:52
 msgid "Could not delete the Auth Source"
-msgstr ""
+msgstr "Não pode apagar a fonte do auth"
 
 #: lib/hammer_cli_foreman/auth_source_ldap.rb:59
 msgid "Auth source updated"
-msgstr ""
+msgstr "Fonte do Auth atualizado"
 
 #: lib/hammer_cli_foreman/auth_source_ldap.rb:60
 msgid "Could not update the Auth Source"
-msgstr ""
+msgstr "Não pode atualizar a fonte do Auth"
 
 #: lib/hammer_cli_foreman/architecture.rb:31
 msgid "Architecture created"
@@ -2023,7 +2024,7 @@ msgstr "Manipular Arquiteturas"
 
 #: lib/hammer_cli_foreman.rb:38
 msgid "Manipulate auth sources."
-msgstr ""
+msgstr "Manipular fonte do Auth"
 
 #: lib/hammer_cli_foreman.rb:42
 msgid "Manipulate compute resources."
