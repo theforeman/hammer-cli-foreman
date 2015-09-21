@@ -1,6 +1,15 @@
 Release notes
 =============
 
+### 0.4.0 (2015-09-21)
+* Adding match_default to smart variables and smart class parameters ([#10731](http://projects.theforeman.org/issues/10731))
+* Missing field for VMWare host creation docs ([#11088](http://projects.theforeman.org/issues/11088))
+* Delete direct dependencies (refs [#11452](http://projects.theforeman.org/issues/11452))
+* Messages in associating commands weren't translated ([#7236](http://projects.theforeman.org/issues/7236))
+* Add root_pass option ([#11236](http://projects.theforeman.org/issues/11236))
+* Drop Ruby 1.8 support (refs [#11280](http://projects.theforeman.org/issues/11280))
+
+
 ### 0.3.0 (2015-07-29)
 * Add normalizer converting id parameter values to numbers ([#11137](http://projects.theforeman.org/issues/11137))
 * Docs - updated information about host creation

@@ -22,6 +22,6 @@ EOF
   s.extra_rdoc_files = Dir['{doc}/**/*', 'README*']
   s.require_paths = ["lib"]
 
-  s.add_dependency 'hammer_cli', '>= 0.3.0'
+  s.add_dependency 'hammer_cli', '>= 0.4.0'
 
 end
