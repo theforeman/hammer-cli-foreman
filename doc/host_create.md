@@ -221,13 +221,19 @@ flavor_id
 image_id
 ```
 
-## vmWare
+## VMware
 Available keys for `--compute-attributes`:
 ```
-cpus       # cpu count
-memory_mb  # integer number
-cluster
-path
+cpus                 # cpu count
+corespersocket       # number of cores per socket
+                     # (applicable to hardware versions < 10 only)
+memory_mb            # integer number
+cluster              # cluster id from VMware
+path                 # path to folder
+guest_id             # guest OS id form VMware
+scsi_controller_type # id of the controller from VMWare
+hardware_version     # hardware version id from VMWare
+start                # 1/0
 ```
 
 Available keys for `--interface`:
@@ -242,12 +248,14 @@ compute_type      # Type of the network adapter, for example one of:
                   # See documentation center for your version of vSphere to find
                   # more details about available adapter types:
                   # https://www.vmware.com/support/pubs/
-compute_network
+compute_network   # network id from VMware
 ```
 
 Available keys for `--volume`:
 ```
-datastore
+datastore  # datastore id from VMware
 name
 size_gb    # integer number
+thin       # true/false
+eager_zero # true/false
 ```
