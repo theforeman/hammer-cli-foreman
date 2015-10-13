@@ -202,6 +202,9 @@ module HammerCLIForeman
         },
         e.resource
       )
+    rescue Exception => e
+      HammerCLIForeman.foreman_api_connection.api.clear_credentials if e.to_s.include?"401"
+      raise e
     end
 
     def transform_format(data)
