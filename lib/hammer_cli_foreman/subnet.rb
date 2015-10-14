@@ -26,7 +26,7 @@ module HammerCLIForeman
         field :dns_secondary, _("Secondary DNS")
         field :tftp, _("TFTP"), Fields::Reference, :details => :url
         field :dhcp, _("DHCP"), Fields::Reference, :details => :url
-
+        field :ipam, _("IPAM")
         field :vlanid, _("VLAN ID")
         field :gateway, _("Gateway")
         field :from, _("From")
