@@ -514,6 +514,15 @@ module HammerCLIForeman
       end
     end
 
+    class RebuildConfigCommand < HammerCLIForeman::SingleResourceCommand
+      action :rebuild_config
+      command_name "rebuild-config"
+      desc _('Rebuild orchestration related configurations for host')
+      success_message _('Configuration successfully rebuilt.')
+
+      build_options
+    end
+
     autoload_subcommands
 
     subcommand 'interface', HammerCLIForeman::Interface.desc, HammerCLIForeman::Interface
