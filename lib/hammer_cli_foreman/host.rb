@@ -112,7 +112,11 @@ module HammerCLIForeman
     def parameter_attributes
       return {} unless option_parameters
       option_parameters.collect do |key, value|
-        {"name"=>key, "value"=>value.inspect}
+        if value.is_a? String
+          {"name"=>key, "value"=>value}
+        else
+          {"name"=>key, "value"=>value.inspect}
+        end
       end
     end
 
