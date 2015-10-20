@@ -231,8 +231,11 @@ describe HammerCLIForeman::Host do
         it_should_call_action_and_test_params(:create) { |par| par["host"]["interfaces_attributes"]["0"]["provision"] == "true" }
       end
 
-      with_params ["--name=host", "--hostgroup-id=1", "--interface=primary=true,provision=true", "--parameters=servers=[pool.ntp.org,ntp.time.org]"] do
-        it_should_call_action_and_test_params(:create) { |par| par["host"]["host_parameters_attributes"][0]["value"] == "[\"pool.ntp.org\", \"ntp.time.org\"]" }
+      with_params ["--name=host", "--hostgroup-id=1", "--interface=primary=true,provision=true", "--parameters=servers=[pool.ntp.org,ntp.time.org],password=secret"] do
+        it_should_call_action_and_test_params(:create) do |par|
+          par["host"]["host_parameters_attributes"][0]["value"] == "[\"pool.ntp.org\", \"ntp.time.org\"]" &&
+          par["host"]["host_parameters_attributes"][1]["value"] == "secret"
+        end
       end
 
       it_should_fail_with "primary interface missing", ["--hostgroup-id=example", "--interface=primary=true"]
