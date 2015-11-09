@@ -38,6 +38,8 @@ module HammerCLIForeman
       base.option "--build", "BUILD", " ", bme_options
       bme_options[:format] = HammerCLI::Options::Normalizers::Bool.new
       base.option "--enabled", "ENABLED", " ",  bme_options
+      bme_options[:format] = HammerCLI::Options::Normalizers::Bool.new
+      base.option "--overwrite", "OVERWRITE", " ",  bme_options
 
       base.option "--parameters", "PARAMS", _("Host parameters."),
         :format => HammerCLI::Options::Normalizers::KeyValueList.new
@@ -81,6 +83,7 @@ module HammerCLIForeman
       params['host']['build'] = option_build unless option_build.nil?
       params['host']['managed'] = option_managed unless option_managed.nil?
       params['host']['enabled'] = option_enabled unless option_enabled.nil?
+      params['host']['overwrite'] = option_overwrite unless option_overwrite.nil?
 
       params['host']['host_parameters_attributes'] = parameter_attributes
       params['host']['compute_attributes'] = option_compute_attributes || {}
