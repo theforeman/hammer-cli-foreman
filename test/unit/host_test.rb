@@ -266,6 +266,7 @@ describe HammerCLIForeman::Host do
         it_should_call_action_and_test_params(:update) { |par| par["host"].key?("managed") != true }
         it_should_call_action_and_test_params(:update) { |par| par["host"].key?("build") != true }
         it_should_call_action_and_test_params(:update) { |par| par["host"].key?("enabled") != true }
+        it_should_call_action_and_test_params(:update) { |par| par["host"].key?("overwrite") != true }
       end
 
       with_params ["--id=1", "--enabled=true"] do
@@ -274,6 +275,10 @@ describe HammerCLIForeman::Host do
 
       with_params ["--id=1", "--enabled=false"] do
         it_should_call_action_and_test_params(:update) { |par| par["host"]["enabled"] == false }
+      end
+
+      with_params ["--id=1", "--overwrite=true"] do
+        it_should_call_action_and_test_params(:update) { |par| par["host"]["overwrite"] == true }
       end
 
       with_params ["--id=1","--provision-method=build"] do
