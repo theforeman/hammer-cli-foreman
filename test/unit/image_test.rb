@@ -20,7 +20,7 @@ describe HammerCLIForeman::Image do
     end
 
     context "output" do
-      let(:expected_record_count) { cmd.resource.call(:index, :compute_resource_id=>1).length }
+      let(:expected_record_count) { count_records(cmd.resource.call(:index, :compute_resource_id=>1)) }
 
       with_params ["--compute-resource-id=1"] do
         it_should_print_n_records
@@ -130,5 +130,3 @@ describe HammerCLIForeman::Image do
   end
 
 end
-
-

@@ -20,7 +20,8 @@ module ResourceMocks
   end
 
   def self.smart_class_parameters_index
-    ResourceMocks.mock_action_call(:smart_class_parameters, :index, [ { 'parameter' => 'config', 'id' => '1'} ])
+    ResourceMocks.mock_action_call(:smart_class_parameters, :index,
+      { "results" => [ { 'parameter' => 'config', 'id' => '1'} ] })
   end
 
   def self.smart_class_parameters_show
@@ -28,7 +29,8 @@ module ResourceMocks
   end
 
   def self.smart_variables_index
-    ResourceMocks.mock_action_call(:smart_variables, :index, [ { 'variable' => 'var', 'id' => '1'} ])
+    ResourceMocks.mock_action_call(:smart_variables, :index,
+      { "results" => [ { 'variable' => 'var', 'id' => '1'} ] })
   end
 
   def self.smart_variables_show
@@ -41,7 +43,15 @@ module ResourceMocks
 
 
   def self.organizations_index
-    ResourceMocks.mock_action_call(:organizations, :index, [ { } ])
+    ResourceMocks.mock_action_call(:organizations, :index, {
+     "results" => [
+        {
+                 "label" => "Default_Organization",
+                    "id" => 1,
+                  "name" => "Default_Organization",
+                 "title" => "Default_Organization"
+        }
+      ]})
   end
 
   def self.organizations_show
@@ -52,7 +62,17 @@ module ResourceMocks
   end
 
   def self.locations_index
-    ResourceMocks.mock_action_call(:locations, :index, [ { } ])
+    ResourceMocks.mock_action_call(:locations, :index, {
+      "results" => [
+        {
+              "ancestry" => nil,
+            "created_at" => "2014-07-17T17:21:49+02:00",
+            "updated_at" => "2015-06-17T13:18:10+02:00",
+                    "id" => 2,
+                  "name" => "Default_Location",
+                 "title" => "Default_Location"
+        }
+      ]})
   end
 
   def self.locations_show
@@ -65,7 +85,6 @@ module ResourceMocks
   def self.operatingsystems
     ResourceMocks.mock_action_calls(
       [:parameters, :index, []],
-      [:operatingsystems, :index, [ {} ]],
       [:operatingsystems, :show, {}]
       )
   end
@@ -95,5 +114,4 @@ module ResourceMocks
       }]
     })
   end
-
 end

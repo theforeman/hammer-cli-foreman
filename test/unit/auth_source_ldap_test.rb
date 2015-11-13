@@ -18,9 +18,7 @@ describe HammerCLIForeman::AuthSourceLdap do
     end
 
     context "output" do
-      let(:expected_record_count) do
-        cmd.resource.call(:index).length
-      end
+      let(:expected_record_count) { count_records(cmd.resource.call(:index)) }
 
       it_should_print_n_records 1
       it_should_print_column "Name"

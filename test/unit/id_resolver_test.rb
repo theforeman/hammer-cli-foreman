@@ -4,7 +4,11 @@ require File.join(File.dirname(__FILE__), 'helpers/fake_searchables')
 
 describe HammerCLIForeman::IdResolver do
 
-  let(:api) { HammerCLIForeman.foreman_api_connection.api }
+  let(:api) do ApipieBindings::API.new({
+    :apidoc_cache_dir => 'test/unit/data',
+    :apidoc_cache_name => 'test_api',
+    :dry_run => true})
+  end
   let(:searchables) { FakeSearchables.new(['name','label']) }
   let(:resolver) { HammerCLIForeman::IdResolver.new(api, searchables) }
 
@@ -66,7 +70,7 @@ describe HammerCLIForeman::IdResolver do
     end
 
     describe "when no search options are found" do
-      let(:resolver_run) { proc { resolver.architecture_id({"option_unknown" => "value"}) } }
+      let(:resolver_run) { proc { resolver.comment_id({"option_unknown" => "value"}) } }
 
       it "raises exception" do
         err = resolver_run.must_raise HammerCLIForeman::MissingSeachOptions
@@ -74,49 +78,49 @@ describe HammerCLIForeman::IdResolver do
 
       it "builds correct error message" do
         err = resolver_run.must_raise HammerCLIForeman::MissingSeachOptions
-        err.message.must_equal "Missing options to search architecture"
+        err.message.must_equal "Missing options to search comment"
       end
     end
 
     describe "searching independent resource" do
-      let(:resolver_run) { proc { resolver.architecture_id({"option_name" => "arch"}) } }
+      let(:resolver_run) { proc { resolver.user_id({"option_name" => "John Doe"}) } }
 
       it "raises exception when no resource is found" do
-        ResourceMocks.mock_action_call(:architectures, :index, [])
+        ResourceMocks.mock_action_call(:users, :index, [])
 
         err = resolver_run.must_raise HammerCLIForeman::ResolverError
-        err.message.must_equal "architecture not found"
+        err.message.must_equal "user not found"
       end
 
       it "raises exception when multiple resources are found" do
-        ResourceMocks.mock_action_call(:architectures, :index, [
-          {"id" => 11, "name" => "arch1"},
-          {"id" => 22, "name" => "arch2"}
+        ResourceMocks.mock_action_call(:users, :index, [
+          {"id" => 11, "name" => "user11"},
+          {"id" => 22, "name" => "user22"}
         ])
 
         err = resolver_run.must_raise HammerCLIForeman::ResolverError
-        err.message.must_equal "found more than one architecture"
+        err.message.must_equal "found more than one user"
       end
 
       it "calls index action with appropriate search params" do
         ApipieBindings::API.any_instance.expects(:call).with() do |resource, action, params, headers, opts|
-          ( resource == :architectures &&
+          ( resource == :users &&
             action == :index &&
-            params[:search] == "name = \"arch\"")
-        end.returns({"id" => 11, "name" => "arch1"})
+            params[:search] == "name = \"John Doe\"")
+        end.returns({"id" => 1, "name" => "John Doe"})
 
         resolver_run.call
       end
 
       it "uses option id when it's available" do
-        ResourceMocks.mock_action_call(:architectures, :index, [])
+        ResourceMocks.mock_action_call(:users, :index, [])
 
-        resolver.architecture_id({"option_id" => 83, "option_name" => "arch"}).must_equal 83
+        resolver.user_id({"option_id" => 83, "option_name" => "John Doe"}).must_equal 83
       end
 
       it "returns id of the resource" do
-        ResourceMocks.mock_action_call(:architectures, :index, [
-          {"id" => 11, "name" => "arch1"}
+        ResourceMocks.mock_action_call(:users, :index, [
+          {"id" => 11, "name" => "John Doe"}
         ])
 
         resolver_run.call.must_equal 11
@@ -125,51 +129,50 @@ describe HammerCLIForeman::IdResolver do
     end
 
     describe "searching dependent resources" do
-      let(:resolver_run) { proc { resolver.image_id({"option_name" => "img", "option_compute_resource_name" => "cr"}) } }
+      let(:resolver_run) { proc { resolver.post_id({"option_name" => "Post 11", "option_user_name" => "User 22"}) } }
 
       it "raises exception when no resource is found" do
-        ResourceMocks.mock_action_call(:images, :index, [])
-        ResourceMocks.mock_action_call(:compute_resources, :index, [])
+        ResourceMocks.mock_action_call(:posts, :index, [])
+        ResourceMocks.mock_action_call(:users, :index, [])
 
         err = resolver_run.must_raise HammerCLIForeman::ResolverError
-        err.message.must_equal "compute_resource not found"
+        err.message.must_equal "user not found"
       end
 
       it "raises exception when multiple resources are found" do
-        ResourceMocks.mock_action_call(:images, :index, [])
-        ResourceMocks.mock_action_call(:compute_resources, :index, [
-          {"id" => 11, "name" => "cr1"},
-          {"id" => 22, "name" => "cr2"}
+        ResourceMocks.mock_action_call(:posts, :index, [])
+        ResourceMocks.mock_action_call(:users, :index, [
+          {"id" => 11, "name" => "user1"},
+          {"id" => 22, "name" => "user2"}
         ])
 
         err = resolver_run.must_raise HammerCLIForeman::ResolverError
-        err.message.must_equal "found more than one compute_resource"
+        err.message.must_equal "found more than one user"
       end
 
       it "calls index action with appropriate search params" do
         ApipieBindings::API.any_instance.expects(:call).with() do |resource, action, params, headers, opts|
-          ( resource == :compute_resources &&
+          ( resource == :users &&
             action == :index &&
-            params[:search] == "name = \"cr\"")
-        end.returns({"id" => 11, "name" => "cr"})
+            params[:search] == "name = \"User 22\"")
+        end.returns({"id" => 22, "name" => "User 22"})
 
         ApipieBindings::API.any_instance.expects(:call).with() do |resource, action, params, headers, opts|
-          ( resource == :images &&
+          ( resource == :posts &&
             action == :index &&
-            params[:search] == "name = \"img\"")
-        end.returns({"id" => 11, "name" => "img"})
+            params[:search] == "name = \"Post 11\"")
+        end.returns({"id" => 11, "name" => "Post 11"})
 
         resolver_run.call
       end
 
       it "returns id of the resource" do
-        ResourceMocks.mock_action_call(:images, :index, [
-          {"id" => 11, "name" => "img1"}
+        ResourceMocks.mock_action_call(:posts, :index, [
+          {"id" => 11, "name" => "Post 11"}
         ])
-        ResourceMocks.mock_action_call(:compute_resources, :index, [
-          {"id" => 22, "name" => "cr2"}
+        ResourceMocks.mock_action_call(:users, :index, [
+          {"id" => 22, "name" => "User 22"}
         ])
-
         resolver_run.call.must_equal 11
       end
     end

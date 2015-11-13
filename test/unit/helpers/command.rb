@@ -24,7 +24,7 @@ class IdResolverTestProxy
 
       method_name = "#{resource.singular_name}_ids"
       self.class.send(:define_method, method_name) do |options|
-        [1]
+        options["option_#{resource.singular_name}_ids"].nil? ? nil : [1]
       end
     end
   end
@@ -41,6 +41,10 @@ module CommandTestHelper
       resolver = cmd.resolver
       cmd.stubs(:resolver).returns(IdResolverTestProxy.new(resolver))
     end
+  end
+
+  def count_records(data)
+    HammerCLIForeman.collection_to_common_format(data['results']).count
   end
 
   module ClassMethods

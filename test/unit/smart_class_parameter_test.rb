@@ -25,7 +25,7 @@ describe HammerCLIForeman::SmartClassParameter do
     end
 
     context "output" do
-      let(:expected_record_count) { cmd.resource.call(:index).length }
+      let(:expected_record_count) { count_records(cmd.resource.call(:index)) }
 
       it_should_print_n_records
       it_should_print_column "Id"
