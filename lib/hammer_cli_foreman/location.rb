@@ -81,6 +81,27 @@ module HammerCLIForeman
       end
     end
 
+
+    class SetParameterCommand < HammerCLIForeman::Parameter::SetCommand
+      desc _("Create or update parameter for a location.")
+
+      success_message_for :update, _("Parameter [%{name}] updated to value [%{value}]")
+      success_message_for :create, _("Parameter [%{name}] created with value [%{value}]")
+      failure_message _("Could not set location parameter")
+
+      build_options
+    end
+
+
+    class DeleteParameterCommand < HammerCLIForeman::Parameter::DeleteCommand
+      desc _("Delete parameter for a location.")
+
+      success_message _("Parameter [%{name}] deleted")
+      failure_message _("Could not delete location parameter")
+
+      build_options
+    end
+
     HammerCLIForeman::AssociatingCommands::Hostgroup.extend_command(self)
     HammerCLIForeman::AssociatingCommands::Environment.extend_command(self)
     HammerCLIForeman::AssociatingCommands::Domain.extend_command(self)
