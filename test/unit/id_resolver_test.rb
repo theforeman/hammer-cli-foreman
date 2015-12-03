@@ -95,7 +95,7 @@ describe HammerCLIForeman::IdResolver do
         ])
 
         err = resolver_run.must_raise HammerCLIForeman::ResolverError
-        err.message.must_equal "architecture found more than once"
+        err.message.must_equal "found more than one architecture"
       end
 
       it "calls index action with appropriate search params" do
@@ -143,7 +143,7 @@ describe HammerCLIForeman::IdResolver do
         ])
 
         err = resolver_run.must_raise HammerCLIForeman::ResolverError
-        err.message.must_equal "compute_resource found more than once"
+        err.message.must_equal "found more than one compute_resource"
       end
 
       it "calls index action with appropriate search params" do

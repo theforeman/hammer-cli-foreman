@@ -198,7 +198,7 @@ module HammerCLIForeman
 
     def pick_result(results, resource)
       raise ResolverError.new(_("%s not found") % resource.singular_name, resource) if results.empty?
-      raise ResolverError.new(_("%s found more than once") % resource.singular_name, resource) if results.count > 1
+      raise ResolverError.new(_("found more than one %s") % resource.singular_name, resource) if results.count > 1
       results[0]
     end
 
