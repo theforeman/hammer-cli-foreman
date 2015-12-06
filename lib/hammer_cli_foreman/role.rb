@@ -15,6 +15,19 @@ module HammerCLIForeman
       build_options
     end
 
+    class InfoCommand < HammerCLIForeman::InfoCommand
+      output ListCommand.output_definition do
+        field :builtin_text, _("Builtin")
+      end
+
+      def extend_data(data)
+        data['builtin_text'] = (data['builtin'].to_i > 0) ? _('Yes') : _('No')
+        data
+      end
+
+      build_options
+    end
+
 
     class FiltersCommand < HammerCLIForeman::ListCommand
       command_name "filters"

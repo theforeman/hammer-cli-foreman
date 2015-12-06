@@ -29,6 +29,21 @@ describe HammerCLIForeman::Role do
   end
 
 
+  context "InfoCommand" do
+
+    let(:cmd) { HammerCLIForeman::Role::InfoCommand.new("", ctx) }
+
+    context "output" do
+
+      with_params ["--name=role"] do
+        it_should_print_n_records 1
+        it_should_print_columns ["Id", "Name", "Builtin"]
+      end
+    end
+
+  end
+
+
   context "CreateCommand" do
 
     let(:cmd) { HammerCLIForeman::Role::CreateCommand.new("", ctx) }
