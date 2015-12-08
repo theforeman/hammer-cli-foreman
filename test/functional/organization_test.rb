@@ -18,11 +18,11 @@ describe "parameters" do
 
     before do
       @cmd = ["organization", "set-parameter"]
-      @params = []
     end
 
     it "should print error on missing --name" do
-      @params = ['--value=1']
+      params = ['--value=1']
+
       expected_result = usage_error_result(
         @cmd,
         "Could not set organization parameter",
@@ -30,12 +30,13 @@ describe "parameters" do
       )
 
       api_expects_no_call
-      result = run_cmd(@cmd + @params)
+      result = run_cmd(@cmd + params)
       assert_cmd(expected_result, result)
     end
 
     it "should print error on missing --value" do
-      @params = ['--name=A']
+      params = ['--name=A']
+
       expected_result = usage_error_result(
         @cmd,
         "Could not set organization parameter",
@@ -43,12 +44,13 @@ describe "parameters" do
       )
 
       api_expects_no_call
-      result = run_cmd(@cmd + @params)
+      result = run_cmd(@cmd + params)
       assert_cmd(expected_result, result)
     end
 
 
     it "should create new parameter" do
+      params = ['--name=A', '--value=1', '--organization-id=3']
 
       api_expects(:parameters, :index, 'Attempt find parameters') do |par|
         par['organization_id'].to_i == 3
@@ -58,13 +60,14 @@ describe "parameters" do
         par['parameter']['value'] == '1'
       end.returns({:name => 'A', :value => '1'})
 
-      @params = ['--name=A', '--value=1', '--organization-id=3']
-      result = run_cmd(@cmd + @params)
+      result = run_cmd(@cmd + params)
       assert_cmd(success_result("Parameter [A] created with value [1]\n"), result)
     end
 
 
     it "should update existing parameter" do
+      params = ['--name=A', '--value=1', '--organization-id=3']
+
       api_expects(:parameters, :index, 'Find parameter') do |par|
         par['organization_id'].to_i == 3
       end.returns(index_response([param]))
@@ -74,9 +77,7 @@ describe "parameters" do
         par['parameter']['value'] == '1'
       end.returns({:name => 'A', :value => '1'})
 
-
-      @params = ['--name=A', '--value=1', '--organization-id=3']
-      result = run_cmd(@cmd + @params)
+      result = run_cmd(@cmd + params)
       assert_cmd(success_result("Parameter [A] updated to value [1]\n"), result)
     end
   end
@@ -85,10 +86,11 @@ describe "parameters" do
   describe "delete" do
     before do
       @cmd = ["organization", "delete-parameter"]
-      @params = []
     end
 
     it "should print error on missing --name" do
+      params = []
+
       expected_result = usage_error_result(
         @cmd,
         "Could not delete organization parameter",
@@ -96,11 +98,13 @@ describe "parameters" do
       )
 
       api_expects_no_call
-      result = run_cmd(@cmd + @params)
+      result = run_cmd(@cmd + params)
       assert_cmd(expected_result, result)
     end
 
     it "should print error when the parameter doesn't exist" do
+      params = ['--name=A', '--organization-id=3']
+
       api_expects(:parameters, :index, 'Find parameter') do |par|
         par['organization_id'].to_i == 3
       end.returns(index_response([]))
@@ -111,12 +115,13 @@ describe "parameters" do
         "parameter not found"
       )
 
-      @params = ['--name=A', '--organization-id=3']
-      result = run_cmd(@cmd + @params)
+      result = run_cmd(@cmd + params)
       assert_cmd(expected_result, result)
     end
 
     it "should delete the parameter" do
+      params = ['--name=A', '--organization-id=3']
+
       api_expects(:parameters, :index, 'Find parameter') do |par|
         par['organization_id'].to_i == 3
       end.returns(index_response([param]))
@@ -128,8 +133,7 @@ describe "parameters" do
         "Parameter [A] deleted\n"
       )
 
-      @params = ['--name=A', '--organization-id=3']
-      result = run_cmd(@cmd + @params)
+      result = run_cmd(@cmd + params)
       assert_cmd(expected_result, result)
     end
   end
