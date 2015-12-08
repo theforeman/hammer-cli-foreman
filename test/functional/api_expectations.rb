@@ -11,9 +11,9 @@ module APIExpectations
       resource, action, params, headers, options = actual_parameters.shift(5)
 
       result = true
-      result = result && (resource.to_s == @expected_resource.to_s) unless @expected_resource.nil?
-      result = result && (action.to_s == @expected_action.to_s) unless @expected_action.nil?
-      result = result && @block.call(params) if @block
+      result &&= (resource.to_s == @expected_resource.to_s) unless @expected_resource.nil?
+      result &&= (action.to_s == @expected_action.to_s) unless @expected_action.nil?
+      result &&= @block.call(params) if @block
       result
     end
 
