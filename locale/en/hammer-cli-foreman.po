@@ -455,6 +455,9 @@ msgstr ""
 msgid "[Foreman] Password for %s: "
 msgstr ""
 
+msgid "Use the default organization and/or location from the server"
+msgstr ""
+
 msgid "ID of DNS proxy to use within this domain"
 msgstr ""
 
@@ -925,10 +928,10 @@ msgstr ""
 msgid "Host name"
 msgstr ""
 
-msgid "Hostgroup title"
+msgid "Hostgroup name"
 msgstr ""
 
-msgid "Hostgroup name"
+msgid "Hostgroup title"
 msgstr ""
 
 msgid "Location name"
@@ -988,7 +991,7 @@ msgstr ""
 msgid "%s not found"
 msgstr ""
 
-msgid "%s found more than once"
+msgid "found more than one %s"
 msgstr ""
 
 msgid "Missing options to search %s"
@@ -1119,6 +1122,27 @@ msgid "Location deleted"
 msgstr ""
 
 msgid "Could not delete the location"
+msgstr ""
+
+msgid "Create or update parameter for a location."
+msgstr ""
+
+msgid "Parameter [%{name}] updated to value [%{value}]"
+msgstr ""
+
+msgid "Parameter [%{name}] created with value [%{value}]"
+msgstr ""
+
+msgid "Could not set location parameter"
+msgstr ""
+
+msgid "Delete parameter for a location."
+msgstr ""
+
+msgid "Parameter [%{name}] deleted"
+msgstr ""
+
+msgid "Could not delete location parameter"
 msgstr ""
 
 msgid "Path"
@@ -1272,6 +1296,18 @@ msgid "Organization deleted"
 msgstr ""
 
 msgid "Could not delete the organization"
+msgstr ""
+
+msgid "Create or update parameter for an organization."
+msgstr ""
+
+msgid "Could not set organization parameter"
+msgstr ""
+
+msgid "Delete parameter for an organization."
+msgstr ""
+
+msgid "Could not delete organization parameter"
 msgstr ""
 
 msgid "View partition table content."
@@ -1611,6 +1647,9 @@ msgid "TFTP"
 msgstr ""
 
 msgid "DHCP"
+msgstr ""
+
+msgid "IPAM"
 msgstr ""
 
 msgid "VLAN ID"

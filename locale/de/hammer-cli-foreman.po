@@ -1,27 +1,26 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the hammer-cli-foreman package.
-#
+# 
 # Translators:
-# Ettore Atalan <atalanttore@googlemail.com>, 2014
+# Christina Gurski <Gurski_christina@yahoo.de>, 2015
+# Ettore Atalan <atalanttore@googlemail.com>, 2014-2015
+# Marcel Fuhrmann <marcel@mfsystems.me>, 2015
 # simon11 <simon.stieger.98@live.de>, 2014
 # simon11 <simon.stieger.98@live.de>, 2014
-# hpeters <hpeters@redhat.com>, 2015. #zanata
 msgid ""
 msgstr ""
-"Project-Id-Version: hammer-cli-foreman 0.1.4\n"
+"Project-Id-Version: hammer-cli-foreman 0.4.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2015-09-21 16:50+0200\n"
-"PO-Revision-Date: 2015-03-18 01:54+0000\n"
-"Last-Translator: hpeters <hpeters@redhat.com>\n"
-"Language-Team: German (http://www.transifex.com/projects/p/foreman/language/"
-"de/)\n"
-"Language: de\n"
+"PO-Revision-Date: 2015-10-15 20:27+0000\n"
+"Last-Translator: mbacovsky <martin.bacovsky@gmail.com>\n"
+"Language-Team: German (http://www.transifex.com/foreman/foreman/language/de/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Language: de\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Zanata 3.6.0\n"
 
 #: ../lib/hammer_cli_foreman.rb:30
 msgid "Foreman connection login/logout."
@@ -113,7 +112,7 @@ msgstr "Smart-Proxys bearbeiten."
 
 #: ../lib/hammer_cli_foreman.rb:118
 msgid "Change server settings."
-msgstr ""
+msgstr "Servereinstellungen ändern."
 
 #: ../lib/hammer_cli_foreman.rb:122
 msgid "Manipulate subnets."
@@ -283,11 +282,11 @@ msgstr "Benutzer zuweisen"
 
 #: ../lib/hammer_cli_foreman/associating_commands.rb:149
 msgid "The user has been associated"
-msgstr ""
+msgstr "Benutzer wurde zugewiesen"
 
 #: ../lib/hammer_cli_foreman/associating_commands.rb:150
 msgid "Could not associate the user"
-msgstr ""
+msgstr "Benutzer konnte nicht zugewiesen werden"
 
 #: ../lib/hammer_cli_foreman/associating_commands.rb:155
 msgid "Disassociate an user"
@@ -295,11 +294,11 @@ msgstr "Benutzer lösen"
 
 #: ../lib/hammer_cli_foreman/associating_commands.rb:157
 msgid "The user has been disassociated"
-msgstr ""
+msgstr "Benutzer wurde gelöst"
 
 #: ../lib/hammer_cli_foreman/associating_commands.rb:158
 msgid "Could not disassociate the user"
-msgstr ""
+msgstr "Benutzer konnte nicht gelöst werden"
 
 #: ../lib/hammer_cli_foreman/associating_commands.rb:167
 msgid "Associate an user group"
@@ -307,11 +306,11 @@ msgstr "Benutzergruppe zuweisen"
 
 #: ../lib/hammer_cli_foreman/associating_commands.rb:171
 msgid "The user group has been associated"
-msgstr ""
+msgstr "Benutzergruppe wurde zugewiesen"
 
 #: ../lib/hammer_cli_foreman/associating_commands.rb:172
 msgid "Could not associate the user group"
-msgstr ""
+msgstr "Benutzergruppe konnte nicht zugewiesen werden"
 
 #: ../lib/hammer_cli_foreman/associating_commands.rb:177
 msgid "Disassociate an user group"
@@ -319,11 +318,11 @@ msgstr "Benutzergruppe lösen"
 
 #: ../lib/hammer_cli_foreman/associating_commands.rb:181
 msgid "The user group has been disassociated"
-msgstr ""
+msgstr "Benutzergruppe wurde gelöst"
 
 #: ../lib/hammer_cli_foreman/associating_commands.rb:182
 msgid "Could not disassociate the user group"
-msgstr ""
+msgstr "Benutzergruppe konnte nicht gelöst werden"
 
 #: ../lib/hammer_cli_foreman/associating_commands.rb:191
 msgid "Associate a configuration template"
@@ -545,23 +544,17 @@ msgstr "Daten in unbekanntem Format erhalten"
 
 #: ../lib/hammer_cli_foreman/commands.rb:191
 msgid ""
-"Could not find %{resource}. Some search options were missing, please see --"
-"help."
-msgstr ""
-"%{resource} konnte nicht gefunden werden. Einige Suchoptionen fehlten; siehe "
+"Could not find %{resource}. Some search options were missing, please see "
 "--help."
+msgstr "%{resource} konnte nicht gefunden werden. Einige Suchoptionen fehlten; siehe --help."
 
 #: ../lib/hammer_cli_foreman/commands.rb:193
 msgid "Could not find %{resource}, please set option %{switches}."
-msgstr ""
-"%{resource} konnte nicht gefunden werden, bitte legen Sie die Option "
-"%{switches} fest."
+msgstr "%{resource} konnte nicht gefunden werden, bitte legen Sie die Option %{switches} fest."
 
 #: ../lib/hammer_cli_foreman/commands.rb:195
 msgid "Could not find %{resource}, please set one of options %{switches}."
-msgstr ""
-"%{resource} konnte nicht gefunden werden, bitte legen Sie eine der Optionen "
-"%{switches} fest."
+msgstr "%{resource} konnte nicht gefunden werden, bitte legen Sie eine der Optionen %{switches} fest."
 
 #: ../lib/hammer_cli_foreman/commands.rb:517
 msgid "Associate a resource"
@@ -792,9 +785,7 @@ msgstr "ist der Server nicht verfügbar?"
 msgid ""
 "was '%s' run on the server when using apipie cache? (typical production "
 "settings)"
-msgstr ""
-"lief \"%s\" auf dem Server, als apipie-Cache verwendet wurde? (typische "
-"Produktionseinstellungen)"
+msgstr "lief \"%s\" auf dem Server, als apipie-Cache verwendet wurde? (typische Produktionseinstellungen)"
 
 #: ../lib/hammer_cli_foreman/external_usergroup.rb:6
 msgid "View and manage user group's external user groups"
@@ -928,7 +919,7 @@ msgstr "Schnittstellenparameter."
 
 #: ../lib/hammer_cli_foreman/host.rb:62
 msgid "Enter the root password for the host:"
-msgstr ""
+msgstr "Geben Sie das Root-Passwort für den Host ein:"
 
 #: ../lib/hammer_cli_foreman/host.rb:146
 msgid "At least one interface must be set as primary"
@@ -962,11 +953,11 @@ msgstr ""
 
 #: ../lib/hammer_cli_foreman/host.rb:203
 msgid "Organization"
-msgstr ""
+msgstr "Organisation"
 
 #: ../lib/hammer_cli_foreman/host.rb:204
 msgid "Location"
-msgstr ""
+msgstr "Ort"
 
 #: ../lib/hammer_cli_foreman/host.rb:206
 msgid "Compute Resource"
@@ -974,7 +965,7 @@ msgstr "Rechnerresource"
 
 #: ../lib/hammer_cli_foreman/host.rb:207
 msgid "Compute Profile"
-msgstr ""
+msgstr "Rechenprofil"
 
 #: ../lib/hammer_cli_foreman/host.rb:208
 #: ../lib/hammer_cli_foreman/hostgroup.rb:61
@@ -1026,7 +1017,7 @@ msgstr "Domain"
 
 #: ../lib/hammer_cli_foreman/host.rb:222
 msgid "Service provider"
-msgstr ""
+msgstr "Dienstanbieter"
 
 #: ../lib/hammer_cli_foreman/host.rb:223
 msgid "SP Name"
@@ -1046,13 +1037,13 @@ msgstr "SP-Subnetz"
 
 #: ../lib/hammer_cli_foreman/host.rb:230
 msgid "Network interfaces"
-msgstr ""
+msgstr "Netzwerkschnittstellen"
 
 #: ../lib/hammer_cli_foreman/host.rb:232
 #: ../lib/hammer_cli_foreman/interface.rb:24
 #: ../lib/hammer_cli_foreman/interface.rb:44
 msgid "Identifier"
-msgstr ""
+msgstr "Bezeichner"
 
 #: ../lib/hammer_cli_foreman/host.rb:233
 #: ../lib/hammer_cli_foreman/interface.rb:25
@@ -1069,21 +1060,21 @@ msgstr "Typ"
 #: ../lib/hammer_cli_foreman/interface.rb:26
 #: ../lib/hammer_cli_foreman/interface.rb:46
 msgid "MAC address"
-msgstr ""
+msgstr "MAC-Adresse"
 
 #: ../lib/hammer_cli_foreman/host.rb:235
 #: ../lib/hammer_cli_foreman/interface.rb:27
 #: ../lib/hammer_cli_foreman/interface.rb:47
 msgid "IP address"
-msgstr ""
+msgstr "IP-Adresse"
 
 #: ../lib/hammer_cli_foreman/host.rb:236
 msgid "FQDN"
-msgstr ""
+msgstr "FQDN"
 
 #: ../lib/hammer_cli_foreman/host.rb:239
 msgid "Operating system"
-msgstr ""
+msgstr "Betriebssystem"
 
 #: ../lib/hammer_cli_foreman/host.rb:240
 #: ../lib/hammer_cli_foreman/hostgroup.rb:75
@@ -1107,7 +1098,7 @@ msgstr "Partitionstabelle"
 
 #: ../lib/hammer_cli_foreman/host.rb:247
 msgid "Custom partition table"
-msgstr ""
+msgstr "Benutzerdefinierte Partitionstabelle"
 
 #: ../lib/hammer_cli_foreman/host.rb:250
 msgid "Image"
@@ -1123,7 +1114,7 @@ msgstr "Image verwenden"
 
 #: ../lib/hammer_cli_foreman/host.rb:258
 msgid "Additional info"
-msgstr ""
+msgstr "Zusätzliche Informationen"
 
 #: ../lib/hammer_cli_foreman/host.rb:259
 msgid "Owner Id"
@@ -1256,13 +1247,12 @@ msgstr "Name der übergeordneten Hostgruppe"
 
 #: ../lib/hammer_cli_foreman/hostgroup.rb:17
 msgid "Root password"
-msgstr ""
+msgstr "Root-Passwort"
 
 #: ../lib/hammer_cli_foreman/hostgroup.rb:23
 msgid "Enter the root password for the host group:"
 msgstr ""
 
-# translation auto-copied from project evolution, version 3.8.5, document evolution-3.8
 #: ../lib/hammer_cli_foreman/hostgroup.rb:59
 #: ../lib/hammer_cli_foreman/operating_system.rb:11
 msgid "Title"
@@ -1354,7 +1344,7 @@ msgstr "Hostname"
 
 #: ../lib/hammer_cli_foreman/id_resolver.rb:43
 msgid "Hostgroup title"
-msgstr ""
+msgstr "Hostgruppentitel"
 
 #: ../lib/hammer_cli_foreman/id_resolver.rb:43
 msgid "Hostgroup name"
@@ -1402,7 +1392,7 @@ msgstr "Benutzerrollenname"
 
 #: ../lib/hammer_cli_foreman/id_resolver.rb:57
 msgid "Setting name"
-msgstr ""
+msgstr "Einstellungsname"
 
 #: ../lib/hammer_cli_foreman/id_resolver.rb:58
 msgid "Subnet name"
@@ -1491,7 +1481,7 @@ msgstr ""
 
 #: ../lib/hammer_cli_foreman/interface.rb:10
 msgid "primary"
-msgstr ""
+msgstr "primär"
 
 #: ../lib/hammer_cli_foreman/interface.rb:11
 msgid "provision"
@@ -1500,11 +1490,11 @@ msgstr ""
 #: ../lib/hammer_cli_foreman/interface.rb:28
 #: ../lib/hammer_cli_foreman/interface.rb:48
 msgid "DNS name"
-msgstr ""
+msgstr "DNS-Name"
 
 #: ../lib/hammer_cli_foreman/interface.rb:52
 msgid "Primary"
-msgstr ""
+msgstr "Primär"
 
 #: ../lib/hammer_cli_foreman/interface.rb:53
 msgid "Provision"
@@ -1512,7 +1502,7 @@ msgstr ""
 
 #: ../lib/hammer_cli_foreman/interface.rb:54
 msgid "Virtual"
-msgstr ""
+msgstr "Virtuell"
 
 #: ../lib/hammer_cli_foreman/interface.rb:55
 msgid "Tag"
@@ -1520,11 +1510,11 @@ msgstr ""
 
 #: ../lib/hammer_cli_foreman/interface.rb:56
 msgid "Attached to"
-msgstr ""
+msgstr "Verbunden mit"
 
 #: ../lib/hammer_cli_foreman/interface.rb:58
 msgid "BMC"
-msgstr ""
+msgstr "BMC"
 
 #: ../lib/hammer_cli_foreman/interface.rb:63
 msgid "Bond"
@@ -1532,11 +1522,11 @@ msgstr ""
 
 #: ../lib/hammer_cli_foreman/interface.rb:64
 msgid "Mode"
-msgstr ""
+msgstr "Modus"
 
 #: ../lib/hammer_cli_foreman/interface.rb:65
 msgid "Attached devices"
-msgstr ""
+msgstr "Verbundene Geräte"
 
 #: ../lib/hammer_cli_foreman/interface.rb:66
 msgid "Bond options"
@@ -1556,11 +1546,11 @@ msgstr ""
 
 #: ../lib/hammer_cli_foreman/interface.rb:128
 msgid "Interface created"
-msgstr ""
+msgstr "Schnittstelle erstellt"
 
 #: ../lib/hammer_cli_foreman/interface.rb:129
 msgid "Could not create the interface"
-msgstr ""
+msgstr "Schnittstelle konnte nicht erstellt werden"
 
 #: ../lib/hammer_cli_foreman/interface.rb:131
 #: ../lib/hammer_cli_foreman/interface.rb:144
@@ -1569,19 +1559,19 @@ msgstr ""
 
 #: ../lib/hammer_cli_foreman/interface.rb:141
 msgid "Interface updated"
-msgstr ""
+msgstr "Schnittstelle aktualisiert"
 
 #: ../lib/hammer_cli_foreman/interface.rb:142
 msgid "Could not update the interface"
-msgstr ""
+msgstr "Schnittstelle konnte nicht aktualisiert werden"
 
 #: ../lib/hammer_cli_foreman/interface.rb:154
 msgid "Interface deleted"
-msgstr ""
+msgstr "Schnittstelle gelöscht"
 
 #: ../lib/hammer_cli_foreman/interface.rb:155
 msgid "Could not delete the interface"
-msgstr ""
+msgstr "Schnittstelle konnte nicht gelöscht werden"
 
 #: ../lib/hammer_cli_foreman/location.rb:24
 #: ../lib/hammer_cli_foreman/location.rb:62
@@ -1741,9 +1731,7 @@ msgstr "Betriebssystem konnte nicht gelöscht werden"
 
 #: ../lib/hammer_cli_foreman/operating_system.rb:68
 msgid "Create or update parameter for an operating system."
-msgstr ""
-"Parameter für ein Betriebssystem konnte nicht erstellt oder aktualisiert "
-"werden."
+msgstr "Parameter für ein Betriebssystem konnte nicht erstellt oder aktualisiert werden."
 
 #: ../lib/hammer_cli_foreman/operating_system.rb:70
 msgid "Operating system parameter updated"
@@ -1777,9 +1765,7 @@ msgstr "ID der festzulegenden Konfigurationsvorlage"
 #: ../lib/hammer_cli_foreman/operating_system.rb:105
 msgid ""
 "[%{config_template_name}] was set as default %{template_kind_name} template"
-msgstr ""
-"[%{config_template_name}] wurde als standardmäßige %{template_kind_name} "
-"Vorlage festgelegt"
+msgstr "[%{config_template_name}] wurde als standardmäßige %{template_kind_name} Vorlage festgelegt"
 
 #: ../lib/hammer_cli_foreman/operating_system.rb:106
 msgid "Could not set the os default template"
@@ -2080,11 +2066,11 @@ msgstr "Benutzerrollen konnten nicht gelöscht werden"
 
 #: ../lib/hammer_cli_foreman/settings.rb:28
 msgid "Setting [%{name}] updated to [%{value}]"
-msgstr ""
+msgstr "Einstellung [%{name}] aktualisiert auf [%{value}]."
 
 #: ../lib/hammer_cli_foreman/settings.rb:29
 msgid "Could not update the setting"
-msgstr ""
+msgstr "Einstellung konnte nicht aktualisiert werden"
 
 #: ../lib/hammer_cli_foreman/smart_class_parameter.rb:11
 #: ../lib/hammer_cli_foreman/smart_variable.rb:11
@@ -2137,7 +2123,7 @@ msgstr ""
 #: ../lib/hammer_cli_foreman/smart_class_parameter.rb:72
 #: ../lib/hammer_cli_foreman/smart_variable.rb:60
 msgid "Avoid duplicates"
-msgstr ""
+msgstr "Duplikate vermeiden"
 
 #: ../lib/hammer_cli_foreman/smart_class_parameter.rb:73
 #: ../lib/hammer_cli_foreman/smart_variable.rb:61
@@ -2147,7 +2133,7 @@ msgstr "Reihenfolge"
 #: ../lib/hammer_cli_foreman/smart_class_parameter.rb:74
 #: ../lib/hammer_cli_foreman/smart_variable.rb:62
 msgid "Values"
-msgstr ""
+msgstr "Werte"
 
 #: ../lib/hammer_cli_foreman/smart_class_parameter.rb:76
 #: ../lib/hammer_cli_foreman/smart_variable.rb:64
@@ -2264,7 +2250,7 @@ msgstr ""
 #: ../lib/hammer_cli_foreman/smart_variable.rb:87
 #: ../lib/hammer_cli_foreman/smart_variable.rb:101
 msgid "Type of the variable."
-msgstr ""
+msgstr "Typ der Variable."
 
 #: ../lib/hammer_cli_foreman/smart_variable.rb:96
 msgid "Smart variable [%{variable}] updated"
@@ -2394,7 +2380,7 @@ msgstr "Konfigurationsvorlage konnte nicht gelöscht werden"
 
 #: ../lib/hammer_cli_foreman/template.rb:150
 msgid "Update the default PXE menu on all configured TFTP servers"
-msgstr ""
+msgstr "Standard-PXE-Menü auf allen konfigurierten TFTP-Servern aktualisieren"
 
 #: ../lib/hammer_cli_foreman/user.rb:11
 msgid "Login"
@@ -2414,11 +2400,11 @@ msgstr "Autorisiert durch"
 
 #: ../lib/hammer_cli_foreman/user.rb:30
 msgid "Locale"
-msgstr ""
+msgstr "Sprachumgebung"
 
 #: ../lib/hammer_cli_foreman/user.rb:31
 msgid "Timezone"
-msgstr ""
+msgstr "Zeitzone"
 
 #: ../lib/hammer_cli_foreman/user.rb:32
 msgid "Last login"
@@ -2426,19 +2412,19 @@ msgstr "Letzte Anmeldung"
 
 #: ../lib/hammer_cli_foreman/user.rb:33
 msgid "Default organization"
-msgstr ""
+msgstr "Standardmäßige Organisation"
 
 #: ../lib/hammer_cli_foreman/user.rb:34
 msgid "Default location"
-msgstr ""
+msgstr "Standardmäßiger Standort"
 
 #: ../lib/hammer_cli_foreman/user.rb:42 ../lib/hammer_cli_foreman/user.rb:43
 msgid "default"
-msgstr ""
+msgstr "Standard"
 
 #: ../lib/hammer_cli_foreman/user.rb:53
 msgid "User [%{login}] created"
-msgstr ""
+msgstr "Benutzer [%{login}] erstellt"
 
 #: ../lib/hammer_cli_foreman/user.rb:54
 msgid "Could not create the user"
@@ -2446,7 +2432,7 @@ msgstr "Benutzer konnte nicht erstellt werden"
 
 #: ../lib/hammer_cli_foreman/user.rb:61
 msgid "User [%{login}] updated"
-msgstr ""
+msgstr "Benutzer [%{login}] aktualisiert"
 
 #: ../lib/hammer_cli_foreman/user.rb:62
 msgid "Could not update the user"
@@ -2454,7 +2440,7 @@ msgstr "Benutzer konnte nicht aktualisiert werden"
 
 #: ../lib/hammer_cli_foreman/user.rb:69
 msgid "User [%{login}] deleted"
-msgstr ""
+msgstr "Benutzer [%{login}] gelöscht"
 
 #: ../lib/hammer_cli_foreman/user.rb:70
 msgid "Could not delete the user"

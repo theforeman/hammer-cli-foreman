@@ -1,26 +1,23 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the hammer-cli-foreman package.
-#
+# 
 # Translators:
 # Automatically generated, 2014
 # Giuseppe Pignataro <anubisteam01@gmail.com>, 2014
-# fvalen <fvalen@redhat.com>, 2015. #zanata
 msgid ""
 msgstr ""
-"Project-Id-Version: hammer-cli-foreman 0.1.4\n"
+"Project-Id-Version: hammer-cli-foreman 0.4.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2015-09-21 16:50+0200\n"
-"PO-Revision-Date: 2015-03-13 03:11+0000\n"
-"Last-Translator: fvalen <fvalen@redhat.com>\n"
-"Language-Team: Italian (http://www.transifex.com/projects/p/foreman/language/"
-"it/)\n"
-"Language: it\n"
+"PO-Revision-Date: 2015-10-08 11:29+0000\n"
+"Last-Translator: mbacovsky <martin.bacovsky@gmail.com>\n"
+"Language-Team: Italian (http://www.transifex.com/foreman/foreman/language/it/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Language: it\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Zanata 3.6.0\n"
 
 #: ../lib/hammer_cli_foreman.rb:30
 msgid "Foreman connection login/logout."
@@ -470,7 +467,6 @@ msgstr "Gestisci sorgenti di autenticazione LDAP."
 msgid "LDAPS?"
 msgstr "LDAPS?"
 
-# translation auto-copied from project Red Hat Satellite Installation Guide, version 6.0, document Prerequisites3
 #: ../lib/hammer_cli_foreman/auth_source_ldap.rb:16
 msgid "Port"
 msgstr "Porta"
@@ -545,11 +541,9 @@ msgstr "Dati ricevuti con un formato sconosciuto"
 
 #: ../lib/hammer_cli_foreman/commands.rb:191
 msgid ""
-"Could not find %{resource}. Some search options were missing, please see --"
-"help."
-msgstr ""
-"Impossibile trovare %{resource}. Alcune opzioni risultano mancanti, "
-"consultare --help."
+"Could not find %{resource}. Some search options were missing, please see "
+"--help."
+msgstr "Impossibile trovare %{resource}. Alcune opzioni risultano mancanti, consultare --help."
 
 #: ../lib/hammer_cli_foreman/commands.rb:193
 msgid "Could not find %{resource}, please set option %{switches}."
@@ -557,8 +551,7 @@ msgstr "Impossibile trovare %{resource}, impostare l'opzione %{switches}."
 
 #: ../lib/hammer_cli_foreman/commands.rb:195
 msgid "Could not find %{resource}, please set one of options %{switches}."
-msgstr ""
-"Impossibile trovare %{resource}, impostare una delle opzioni %{switches}."
+msgstr "Impossibile trovare %{resource}, impostare una delle opzioni %{switches}."
 
 #: ../lib/hammer_cli_foreman/commands.rb:517
 msgid "Associate a resource"
@@ -789,9 +782,7 @@ msgstr "il server non è attivo?"
 msgid ""
 "was '%s' run on the server when using apipie cache? (typical production "
 "settings)"
-msgstr ""
-"'%s' era in esecuzione sul server durante l'utilizzo di apipie cache? "
-"(impostazioni tipiche di produzione)"
+msgstr "'%s' era in esecuzione sul server durante l'utilizzo di apipie cache? (impostazioni tipiche di produzione)"
 
 #: ../lib/hammer_cli_foreman/external_usergroup.rb:6
 msgid "View and manage user group's external user groups"
@@ -1259,7 +1250,6 @@ msgstr ""
 msgid "Enter the root password for the host group:"
 msgstr ""
 
-# translation auto-copied from project libvirt, version 1.1.1, document libvirt
 #: ../lib/hammer_cli_foreman/hostgroup.rb:59
 #: ../lib/hammer_cli_foreman/operating_system.rb:11
 msgid "Title"
@@ -1772,9 +1762,7 @@ msgstr "id modello di configurazione da impostare"
 #: ../lib/hammer_cli_foreman/operating_system.rb:105
 msgid ""
 "[%{config_template_name}] was set as default %{template_kind_name} template"
-msgstr ""
-"[%{config_template_name}] è stato impostato come modello   "
-"%{template_kind_name} predefinito"
+msgstr "[%{config_template_name}] è stato impostato come modello   %{template_kind_name} predefinito"
 
 #: ../lib/hammer_cli_foreman/operating_system.rb:106
 msgid "Could not set the os default template"

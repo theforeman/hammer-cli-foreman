@@ -1,26 +1,23 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the hammer-cli-foreman package.
-#
+# 
 # Translators:
 # Automatically generated, 2014
-# asasaki <asasaki@redhat.com>, 2015. #zanata
-# nnakakit <nnakakit@redhat.com>, 2015. #zanata
+# Shuji Yamada <uzy.exe@gmail.com>, 2015
 msgid ""
 msgstr ""
-"Project-Id-Version: hammer-cli-foreman 0.1.4\n"
+"Project-Id-Version: hammer-cli-foreman 0.4.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2015-09-21 16:50+0200\n"
-"PO-Revision-Date: 2015-03-31 03:47+0000\n"
-"Last-Translator: asasaki <asasaki@redhat.com>\n"
-"Language-Team: Japanese (http://www.transifex.com/projects/p/foreman/"
-"language/ja/)\n"
-"Language: ja\n"
+"PO-Revision-Date: 2015-10-08 11:29+0000\n"
+"Last-Translator: mbacovsky <martin.bacovsky@gmail.com>\n"
+"Language-Team: Japanese (http://www.transifex.com/foreman/foreman/language/ja/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Language: ja\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Zanata 3.6.0\n"
 
 #: ../lib/hammer_cli_foreman.rb:30
 msgid "Foreman connection login/logout."
@@ -470,12 +467,10 @@ msgstr "LDAP 認証ソースを管理します。"
 msgid "LDAPS?"
 msgstr "LDAPS?"
 
-# translation auto-copied from project RHELOSP Deploying Learning Env, version 5.0, document topics/OpenStack_Networking_API
 #: ../lib/hammer_cli_foreman/auth_source_ldap.rb:16
 msgid "Port"
 msgstr "ポート"
 
-# translation auto-copied from project Red Hat Subscription Manager, version 1.0, document Workflows, author nnakakit
 #: ../lib/hammer_cli_foreman/auth_source_ldap.rb:17
 msgid "Server Type"
 msgstr "サーバーのタイプ"
@@ -546,23 +541,17 @@ msgstr "不明な形式のデータが受信されました。"
 
 #: ../lib/hammer_cli_foreman/commands.rb:191
 msgid ""
-"Could not find %{resource}. Some search options were missing, please see --"
-"help."
-msgstr ""
-"%{resource} が見つかりませんでした。一部の検索オプションが足りません。--help "
-"を参照してください。"
+"Could not find %{resource}. Some search options were missing, please see "
+"--help."
+msgstr "%{resource} が見つかりませんでした。一部の検索オプションが足りません。--help を参照してください。"
 
 #: ../lib/hammer_cli_foreman/commands.rb:193
 msgid "Could not find %{resource}, please set option %{switches}."
-msgstr ""
-"%{resource} が見つかりませんでした。オプション %{switches} を設定してくださ"
-"い。"
+msgstr "%{resource} が見つかりませんでした。オプション %{switches} を設定してください。"
 
 #: ../lib/hammer_cli_foreman/commands.rb:195
 msgid "Could not find %{resource}, please set one of options %{switches}."
-msgstr ""
-"%{resource} が見つかりませんでした。オプション %{switches} のいずれかを設定し"
-"てください。"
+msgstr "%{resource} が見つかりませんでした。オプション %{switches} のいずれかを設定してください。"
 
 #: ../lib/hammer_cli_foreman/commands.rb:517
 msgid "Associate a resource"
@@ -793,9 +782,7 @@ msgstr "サーバーは停止していますか?"
 msgid ""
 "was '%s' run on the server when using apipie cache? (typical production "
 "settings)"
-msgstr ""
-"apipie キャッシュの使用時に '%s' がサーバーで実行されましたか? (通常の本番設"
-"定)"
+msgstr "apipie キャッシュの使用時に '%s' がサーバーで実行されましたか? (通常の本番設定)"
 
 #: ../lib/hammer_cli_foreman/external_usergroup.rb:6
 msgid "View and manage user group's external user groups"
@@ -1263,7 +1250,6 @@ msgstr ""
 msgid "Enter the root password for the host group:"
 msgstr ""
 
-# translation auto-copied from project evolution, version 3.8.5, document evolution-3.8
 #: ../lib/hammer_cli_foreman/hostgroup.rb:59
 #: ../lib/hammer_cli_foreman/operating_system.rb:11
 msgid "Title"
@@ -1776,9 +1762,7 @@ msgstr "設定する設定テンプレート ID"
 #: ../lib/hammer_cli_foreman/operating_system.rb:105
 msgid ""
 "[%{config_template_name}] was set as default %{template_kind_name} template"
-msgstr ""
-"[%{config_template_name}] はデフォルトの %{template_kind_name} テンプレートと"
-"して設定されていました"
+msgstr "[%{config_template_name}] はデフォルトの %{template_kind_name} テンプレートとして設定されていました"
 
 #: ../lib/hammer_cli_foreman/operating_system.rb:106
 msgid "Could not set the os default template"
