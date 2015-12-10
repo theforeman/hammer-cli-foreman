@@ -1,0 +1,609 @@
+{
+  "docs": {
+    "name": "Dummy",
+    "info": "Another API description",
+    "copyright": null,
+    "doc_url": "./apipie/1.0",
+    "api_url": "/",
+    "resources": {
+      "posts": {
+        "doc_url": "./apipie/1.0/posts",
+        "api_url": "/",
+        "name": "Posts",
+        "short_description": null,
+        "full_description": null,
+        "version": "1.0",
+        "formats": null,
+        "metadata": null,
+        "methods": [
+          {
+            "doc_url": "./apipie/1.0/posts/index",
+            "name": "index",
+            "apis": [
+              {
+                "api_url": "/users/:user_id/posts",
+                "http_method": "GET",
+                "short_description": null,
+                "deprecated": null
+              }
+            ],
+            "formats": null,
+            "full_description": "",
+            "errors": [],
+            "params": [
+              {
+                "name": "user_id",
+                "full_name": "user_id",
+                "description": "\n<p>ID of user</p>\n",
+                "required": true,
+                "allow_nil": false,
+                "validator": "Must be String",
+                "expected_type": "string",
+                "metadata": null,
+                "show": true
+              }
+            ],
+            "examples": [
+              "GET /users/1/posts\n200\n[ {\"post\": {\"id\": 1, \"title\": \"Hello World\", \"body\": \"This is the body of the post\"}}]\n"
+            ],
+            "metadata": null,
+            "see": []
+          },
+          {
+            "doc_url": "./apipie/1.0/posts/show",
+            "name": "show",
+            "apis": [
+              {
+                "api_url": "/users/:user_id/posts/:id",
+                "http_method": "GET",
+                "short_description": null,
+                "deprecated": null
+              }
+            ],
+            "formats": null,
+            "full_description": "",
+            "errors": [],
+            "params": [
+              {
+                "name": "user_id",
+                "full_name": "user_id",
+                "description": "\n<p>ID of user</p>\n",
+                "required": true,
+                "allow_nil": false,
+                "validator": "Must be String",
+                "expected_type": "string",
+                "metadata": null,
+                "show": true
+              },
+              {
+                "name": "id",
+                "full_name": "id",
+                "description": "DESC",
+                "required": true,
+                "allow_nil": false,
+                "validator": "Must be String",
+                "expected_type": "string",
+                "metadata": null,
+                "show": true
+              }
+            ],
+            "examples": [],
+            "metadata": null,
+            "see": []
+          },
+          {
+            "doc_url": "./apipie/1.0/posts/create",
+            "name": "create",
+            "apis": [
+              {
+                "api_url": "/users/:user_id/posts",
+                "http_method": "POST",
+                "short_description": null,
+                "deprecated": null
+              }
+            ],
+            "formats": null,
+            "full_description": "",
+            "errors": [],
+            "params": [],
+            "examples": [],
+            "metadata": null,
+            "see": []
+          },
+          {
+            "doc_url": "./apipie/1.0/posts/update",
+            "name": "update",
+            "apis": [
+              {
+                "api_url": "/users/:user_id/posts/:id",
+                "http_method": "PATCH",
+                "short_description": null,
+                "deprecated": null
+              },
+              {
+                "api_url": "/users/:user_id/posts/:id",
+                "http_method": "PUT",
+                "short_description": null,
+                "deprecated": null
+              }
+            ],
+            "formats": null,
+            "full_description": "",
+            "errors": [],
+            "params": [],
+            "examples": [],
+            "metadata": null,
+            "see": []
+          },
+          {
+            "doc_url": "./apipie/1.0/posts/destroy",
+            "name": "destroy",
+            "apis": [
+              {
+                "api_url": "/users/:user_id/posts/:id",
+                "http_method": "DELETE",
+                "short_description": null,
+                "deprecated": null
+              }
+            ],
+            "formats": null,
+            "full_description": "",
+            "errors": [],
+            "params": [],
+            "examples": [],
+            "metadata": null,
+            "see": []
+          }
+        ]
+      },
+      "users": {
+        "doc_url": "./apipie/1.0/users",
+        "api_url": "/",
+        "name": "Users",
+        "short_description": null,
+        "full_description": null,
+        "version": "1.0",
+        "formats": null,
+        "metadata": null,
+        "methods": [
+          {
+            "doc_url": "./apipie/1.0/users/index",
+            "name": "index",
+            "apis": [
+              {
+                "api_url": "/users",
+                "http_method": "GET",
+                "short_description": null,
+                "deprecated": null
+              }
+            ],
+            "formats": null,
+            "full_description": "",
+            "errors": [],
+            "params": [],
+            "examples": [
+              "GET /users\n200\n[ {\"user\":{\"name\":\"John Doe\" }} ]\n"
+            ],
+            "metadata": null,
+            "see": []
+          },
+          {
+            "doc_url": "./apipie/1.0/users/show",
+            "name": "show",
+            "apis": [
+              {
+                "api_url": "/users/:id",
+                "http_method": "GET",
+                "short_description": null,
+                "deprecated": null
+              }
+            ],
+            "formats": null,
+            "full_description": "",
+            "errors": [],
+            "params": [
+              {
+                "name": "id",
+                "full_name": "id",
+                "description": "DESC",
+                "required": true,
+                "allow_nil": false,
+                "validator": "Must be String",
+                "expected_type": "string",
+                "metadata": null,
+                "show": true
+              }
+            ],
+            "examples": [],
+            "metadata": null,
+            "see": []
+          },
+          {
+            "doc_url": "./apipie/1.0/users/create",
+            "name": "create",
+            "apis": [
+              {
+                "api_url": "/users",
+                "http_method": "POST",
+                "short_description": null,
+                "deprecated": null
+              }
+            ],
+            "formats": null,
+            "full_description": "",
+            "errors": [],
+            "params": [
+              {
+                "name": "user",
+                "full_name": "user",
+                "description": "",
+                "required": false,
+                "allow_nil": false,
+                "validator": "Must be a Hash",
+                "expected_type": "hash",
+                "metadata": null,
+                "show": true,
+                "params": [
+                  {
+                    "name": "name",
+                    "full_name": "user[name]",
+                    "description": "",
+                    "required": true,
+                    "allow_nil": false,
+                    "validator": "Must be String",
+                    "expected_type": "string",
+                    "metadata": null,
+                    "show": true
+                  },
+                  {
+                    "name": "vip",
+                    "full_name": "user[vip]",
+                    "description": "",
+                    "required": false,
+                    "allow_nil": false,
+                    "validator": "Must be 'true' or 'false'",
+                    "expected_type": "boolean",
+                    "metadata": null,
+                    "show": true
+                  },
+                  {
+                    "name": "address",
+                    "full_name": "user[address]",
+                    "description": "",
+                    "required": false,
+                    "allow_nil": false,
+                    "validator": "Must be a Hash",
+                    "expected_type": "hash",
+                    "metadata": null,
+                    "show": true,
+                    "params": [
+                      {
+                        "name": "city",
+                        "full_name": "user[address][city]",
+                        "description": "",
+                        "required": true,
+                        "allow_nil": false,
+                        "validator": "Must be String",
+                        "expected_type": "string",
+                        "metadata": null,
+                        "show": true
+                      },
+                      {
+                        "name": "street",
+                        "full_name": "user[address][street]",
+                        "description": "",
+                        "required": false,
+                        "allow_nil": false,
+                        "validator": "Must be String",
+                        "expected_type": "string",
+                        "metadata": null,
+                        "show": true
+                      }
+                    ]
+                  },
+                  {
+                    "name": "contacts",
+                    "full_name": "user[contacts]",
+                    "description": "",
+                    "required": false,
+                    "allow_nil": false,
+                    "validator": "Must be an Array of nested elements",
+                    "expected_type": "array",
+                    "metadata": null,
+                    "show": true,
+                    "params": [
+                      {
+                        "name": "contact",
+                        "full_name": "user[contacts][contact]",
+                        "description": "",
+                        "required": true,
+                        "allow_nil": false,
+                        "validator": "Must be String",
+                        "expected_type": "string",
+                        "metadata": null,
+                        "show": true
+                      },
+                      {
+                        "name": "kind",
+                        "full_name": "user[contacts][kind]",
+                        "description": "",
+                        "required": false,
+                        "allow_nil": false,
+                        "validator": "Must be String",
+                        "expected_type": "string",
+                        "metadata": null,
+                        "show": true
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "examples": [],
+            "metadata": null,
+            "see": []
+          },
+          {
+            "doc_url": "./apipie/1.0/users/update",
+            "name": "update",
+            "apis": [
+              {
+                "api_url": "/users/:id",
+                "http_method": "PATCH",
+                "short_description": null,
+                "deprecated": null
+              },
+              {
+                "api_url": "/users/:id",
+                "http_method": "PUT",
+                "short_description": null,
+                "deprecated": null
+              }
+            ],
+            "formats": null,
+            "full_description": "",
+            "errors": [],
+            "params": [],
+            "examples": [],
+            "metadata": null,
+            "see": []
+          },
+          {
+            "doc_url": "./apipie/1.0/users/destroy",
+            "name": "destroy",
+            "apis": [
+              {
+                "api_url": "/users/:id",
+                "http_method": "DELETE",
+                "short_description": null,
+                "deprecated": null
+              }
+            ],
+            "formats": null,
+            "full_description": "",
+            "errors": [],
+            "params": [],
+            "examples": [],
+            "metadata": null,
+            "see": []
+          },
+          {
+            "doc_url": "./apipie/1.0/users/create_unnested",
+            "name": "create_unnested",
+            "apis": [
+              {
+                "api_url": "/users/create_unnested",
+                "http_method": "POST",
+                "short_description": null,
+                "deprecated": null
+              }
+            ],
+            "formats": null,
+            "full_description": "",
+            "errors": [],
+            "params": [
+              {
+                "name": "name",
+                "full_name": "name",
+                "description": "",
+                "required": true,
+                "allow_nil": false,
+                "validator": "Must be String",
+                "expected_type": "string",
+                "metadata": null,
+                "show": true
+              }
+            ],
+            "examples": [],
+            "metadata": null,
+            "see": []
+          }
+        ]
+      },
+      "comments": {
+        "doc_url": "./apipie/1.0/comments",
+        "api_url": "/",
+        "name": "Comments",
+        "short_description": null,
+        "full_description": null,
+        "version": "1.0",
+        "formats": null,
+        "metadata": null,
+        "methods": [
+          {
+            "doc_url": "./apipie/1.0/comments/index",
+            "name": "index",
+            "apis": [
+              {
+                "api_url": "/users/:user_id/posts/:post_id/comments",
+                "http_method": "GET",
+                "short_description": null,
+                "deprecated": null
+              }
+            ],
+            "formats": null,
+            "full_description": "",
+            "errors": [],
+            "params": [
+              {
+                "name": "user_id",
+                "full_name": "user_id",
+                "description": "\n<p>ID of user</p>\n",
+                "required": true,
+                "allow_nil": false,
+                "validator": "Must be String",
+                "expected_type": "string",
+                "metadata": null,
+                "show": true
+              },
+              {
+                "name": "post_id",
+                "full_name": "post_id",
+                "description": "\n<p>ID of post</p>\n",
+                "required": true,
+                "allow_nil": false,
+                "validator": "Must be String",
+                "expected_type": "string",
+                "metadata": null,
+                "show": true
+              }
+            ],
+            "examples": [],
+            "metadata": null,
+            "see": []
+          },
+          {
+            "doc_url": "./apipie/1.0/comments/show",
+            "name": "show",
+            "apis": [
+              {
+                "api_url": "/users/:user_id/posts/:post_id/comments/:id",
+                "http_method": "GET",
+                "short_description": null,
+                "deprecated": null
+              }
+            ],
+            "formats": null,
+            "full_description": "",
+            "errors": [],
+            "params": [],
+            "examples": [],
+            "metadata": null,
+            "see": []
+          },
+          {
+            "doc_url": "./apipie/1.0/comments/create",
+            "name": "create",
+            "apis": [
+              {
+                "api_url": "/users/:user_id/posts/:post_id/comments",
+                "http_method": "POST",
+                "short_description": null,
+                "deprecated": null
+              }
+            ],
+            "formats": null,
+            "full_description": "",
+            "errors": [],
+            "params": [
+              {
+                "name": "user_id",
+                "full_name": "user_id",
+                "description": "\n<p>ID of user</p>\n",
+                "required": true,
+                "allow_nil": false,
+                "validator": "Must be String",
+                "expected_type": "string",
+                "metadata": null,
+                "show": true
+              },
+              {
+                "name": "post_id",
+                "full_name": "post_id",
+                "description": "\n<p>ID of post</p>\n",
+                "required": true,
+                "allow_nil": false,
+                "validator": "Must be String",
+                "expected_type": "string",
+                "metadata": null,
+                "show": true
+              },
+              {
+                "name": "comment",
+                "full_name": "comment",
+                "description": "\n<p>Comment</p>\n",
+                "required": true,
+                "allow_nil": false,
+                "validator": "Must be Hash",
+                "expected_type": "hash",
+                "metadata": null,
+                "show": true,
+                "params": [
+                  {
+                    "name": "user_id",
+                    "full_name": "comment[user_id]",
+                    "description": "\n<p>ID of commenter</p>\n",
+                    "required": true,
+                    "allow_nil": false,
+                    "validator": "Must be String",
+                    "expected_type": "string",
+                    "metadata": null,
+                    "show": true
+                  }
+                ]
+              }
+            ],
+            "examples": [],
+            "metadata": null,
+            "see": []
+          },
+          {
+            "doc_url": "./apipie/1.0/comments/update",
+            "name": "update",
+            "apis": [
+              {
+                "api_url": "/users/:user_id/posts/:post_id/comments/:id",
+                "http_method": "PATCH",
+                "short_description": null,
+                "deprecated": null
+              },
+              {
+                "api_url": "/users/:user_id/posts/:post_id/comments/:id",
+                "http_method": "PUT",
+                "short_description": null,
+                "deprecated": null
+              }
+            ],
+            "formats": null,
+            "full_description": "",
+            "errors": [],
+            "params": [],
+            "examples": [],
+            "metadata": null,
+            "see": []
+          },
+          {
+            "doc_url": "./apipie/1.0/comments/destroy",
+            "name": "destroy",
+            "apis": [
+              {
+                "api_url": "/users/:user_id/posts/:post_id/comments/:id",
+                "http_method": "DELETE",
+                "short_description": null,
+                "deprecated": null
+              }
+            ],
+            "formats": null,
+            "full_description": "",
+            "errors": [],
+            "params": [],
+            "examples": [],
+            "metadata": null,
+            "see": []
+          }
+        ]
+      }
+    },
+    "link_extension": ".html"
+  }
+}

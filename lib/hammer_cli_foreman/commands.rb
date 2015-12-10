@@ -42,13 +42,17 @@ module HammerCLIForeman
     )
   end
 
+  def self.foreman_api
+    foreman_api_connection.api
+  end
+
   def self.foreman_resource!(resource_name, options={})
     if options[:singular]
       resource_name = ApipieBindings::Inflector.pluralize(resource_name.to_s).to_sym
     else
       resource_name = resource_name.to_sym
     end
-    foreman_api_connection.api.resource(resource_name)
+    foreman_api.resource(resource_name)
   end
 
   def self.foreman_resource(resource_name, options={})

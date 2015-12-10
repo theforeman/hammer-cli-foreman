@@ -17,7 +17,7 @@ describe HammerCLIForeman::Host do
     end
 
     context "output" do
-      let(:expected_record_count) { cmd.resource.call(:index).length }
+      let(:expected_record_count) { count_records(cmd.resource.call(:index)) }
 
       it_should_print_n_records
       it_should_print_columns ["Id", "Name", "Operating System", "Host Group", "IP", "MAC"]
@@ -73,7 +73,7 @@ describe HammerCLIForeman::Host do
 
         it "should output status" do
           cmd.stubs(:context).returns(ctx.update(:adapter => :test))
-          proc { cmd.run(with_params) }.must_output "#Status#Power#\n#missing#running#\n"
+          proc { cmd.run(with_params) }.must_output "#Status#Power#\n#No reports#running#\n"
         end
       end
     end
@@ -160,7 +160,7 @@ describe HammerCLIForeman::Host do
 
     context "output" do
       with_params ["--id=1"] do
-        let(:expected_record_count) { cmd.resource.call(:index)[0].length }
+        let(:expected_record_count) { count_records(cmd.resource.call(:index)) }
 
         it_should_print_n_records
         it_should_print_column "Id"
@@ -202,7 +202,7 @@ describe HammerCLIForeman::Host do
       it_should_accept "name, environment_id, architecture_id, domain_id, puppet_proxy_id, operatingsystem_id and more",
           ["--name=host", "--environment-id=1", "--architecture-id=1", "--domain-id=1", "--puppet-proxy-id=1", "--operatingsystem-id=1",
             "--ip=1.2.3.4", "--mac=11:22:33:44:55:66", "--medium-id=1", "--partition-table-id=1", "--subnet-id=1",
-            "--sp-subnet-id=1", "--model-id=1", "--hostgroup-id=1", "--owner-id=1", '--puppet-ca-proxy-id=1', '--puppet-class-ids',
+            "--model-id=1", "--hostgroup-id=1", "--owner-id=1", '--puppet-ca-proxy-id=1', '--puppet-class-ids',
             "--root-password=pwd", "--ask-root-password=true", "--provision-method=build", "--interface=primary=true,provision=true"]
       it_should_fail_with "name or id missing",
           ["--environment-id=1", "--architecture-id=1", "--domain-id=1", "--puppet-proxy-id=1", "--operatingsystem-id=1", "--interface=primary=true,provision=true"]
@@ -221,7 +221,7 @@ describe HammerCLIForeman::Host do
 
       with_params ["--name=host", "--environment-id=1", "--architecture-id=1", "--domain-id=1", "--puppet-proxy-id=1", "--operatingsystem-id=1",
             "--ip=1.2.3.4", "--mac=11:22:33:44:55:66", "--medium-id=1", "--partition-table-id=1", "--subnet-id=1",
-            "--sp-subnet-id=1", "--model-id=1", "--hostgroup-id=1", "--owner-id=1", '--puppet-ca-proxy-id=1', '--puppet-class-ids',
+            "--model-id=1", "--hostgroup-id=1", "--owner-id=1", '--puppet-ca-proxy-id=1', '--puppet-class-ids',
             "--root-password=pwd", "--ask-root-password=true", "--provision-method=build", "--interface=primary=true,provision=true"] do
         it_should_call_action_and_test_params(:create) { |par| par["host"]["managed"] == true }
         it_should_call_action_and_test_params(:create) { |par| par["host"]["build"] == true }
@@ -256,7 +256,7 @@ describe HammerCLIForeman::Host do
       it_should_accept "id and more", ["--id=1", "--new-name=host2", "--environment-id=1", "--architecture-id=1",
             "--domain-id=1", "--puppet-proxy-id=1", "--operatingsystem-id=1",
             "--ip=1.2.3.4", "--mac=11:22:33:44:55:66", "--medium-id=1", "--partition-table-id=1", "--subnet-id=1",
-            "--sp-subnet-id=1", "--model-id=1", "--hostgroup-id=1", "--owner-id=1", '--puppet-ca-proxy-id=1',
+            "--model-id=1", "--hostgroup-id=1", "--owner-id=1", '--puppet-ca-proxy-id=1',
             "--root-password=pwd", "--ask-root-password=true", "--provision-method=build"]
       # it_should_fail_with "no params", []
       # it_should_fail_with "name or id missing", ["--new-name=host2"]

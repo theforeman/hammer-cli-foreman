@@ -75,7 +75,12 @@ end
 
 describe HammerCLIForeman::BuilderConfigurator do
 
-  let(:resource) { HammerCLIForeman.foreman_resource!(:operatingsystems)}
+  let(:api) do ApipieBindings::API.new({
+    :apidoc_cache_dir => 'test/unit/data',
+    :apidoc_cache_name => 'test_api',
+    :dry_run => true})
+  end
+  let(:resource) { api.resource(:users) }
   let(:action) { resource.action(:index)}
 
   let(:searchables) { FakeSearchables.new(["name", "label"]) }
@@ -100,7 +105,6 @@ describe HammerCLIForeman::BuilderConfigurator do
     it "adds no option builder" do
       result_classes.must_equal []
     end
-
   end
 
   describe "simple show action without dependent resources" do
@@ -108,24 +112,23 @@ describe HammerCLIForeman::BuilderConfigurator do
     let(:action) { resource.action(:show)}
 
     it "adds searchable options builder" do
-      resource_names(builders_by_class(HammerCLIForeman::SearchablesOptionBuilder)).must_equal [:operatingsystems]
+      resource_names(builders_by_class(HammerCLIForeman::SearchablesOptionBuilder)).must_equal [:users]
     end
-
   end
 
   describe "action with dependent resources" do
 
-    let(:resource) { HammerCLIForeman.foreman_resource!(:images)}
-    let(:action) { HammerCLIForeman.foreman_resource!(:images).action(:show)}
+    let(:resource) { api.resource(:posts) }
+    let(:action) { resource.action(:show)}
 
     it "adds searchable options builder" do
-      resource_names(builders_by_class(HammerCLIForeman::SearchablesOptionBuilder)).must_equal [:images]
+      resource_names(builders_by_class(HammerCLIForeman::SearchablesOptionBuilder)).must_equal [:posts]
     end
 
     it "adds dependent searchable option builders" do
-      resource_names(builders_by_class(HammerCLIForeman::DependentSearchablesOptionBuilder)).must_equal [
-        :compute_resources
-      ]
+      resources = resource_names(builders_by_class(HammerCLIForeman::DependentSearchablesOptionBuilder)).sort
+      expected = [:users]
+      resources.must_equal expected.sort
     end
 
   end
@@ -133,6 +136,12 @@ describe HammerCLIForeman::BuilderConfigurator do
 end
 
 describe HammerCLIForeman::ForemanOptionBuilder do
+
+  let(:api) do ApipieBindings::API.new({
+    :apidoc_cache_dir => 'test/unit/data',
+    :apidoc_cache_name => 'test_api',
+    :dry_run => true})
+  end
 
   let(:options) {
     [
@@ -144,6 +153,9 @@ describe HammerCLIForeman::ForemanOptionBuilder do
   let(:container) { HammerCLIForeman::ForemanOptionBuilder.new(searchables) }
   let(:builder_classes) { container.builders.map(&:class) }
 
+  before :each do
+    HammerCLIForeman.stubs(:foreman_api).returns(api)
+  end
 
   it "collects options from contained builders" do
     builder = Object.new
@@ -168,7 +180,7 @@ describe HammerCLIForeman::ForemanOptionBuilder do
 
     it "can remove original searchable builder" do
       container.builders = [
-        HammerCLIForeman::SearchablesOptionBuilder.new(HammerCLIForeman.foreman_resource(:organizations), FakeSearchables.new(["aaa", "bbb"]))
+        HammerCLIForeman::SearchablesOptionBuilder.new(api.resource(:users), FakeSearchables.new(["aaa", "bbb"]))
       ]
       @build_options = {:expand => {:primary => false}}
       option_switches.must_equal []
@@ -176,7 +188,7 @@ describe HammerCLIForeman::ForemanOptionBuilder do
 
     it "can add custom searchable builder" do
       container.builders = []
-      @build_options = {:expand => {:primary => :organizations}}
+      @build_options = {:expand => {:primary => :users}}
       option_switches.must_equal [
         ["--name"],
         ["--label"]
@@ -185,9 +197,9 @@ describe HammerCLIForeman::ForemanOptionBuilder do
 
     it "can replace original searchable builder with a custom one" do
       container.builders = [
-        HammerCLIForeman::SearchablesOptionBuilder.new(HammerCLIForeman.foreman_resource(:locations), FakeSearchables.new(["aaa", "bbb"]))
+        HammerCLIForeman::SearchablesOptionBuilder.new(api.resource(:posts), FakeSearchables.new(["aaa", "bbb"]))
       ]
-      @build_options = {:expand => {:primary => :organizations}}
+      @build_options = {:expand => {:primary => :users}}
       option_switches.must_equal [
         ["--name"],
         ["--label"]
@@ -201,69 +213,70 @@ describe HammerCLIForeman::ForemanOptionBuilder do
 
     before :each do
       container.builders = [
-        HammerCLIForeman::DependentSearchablesOptionBuilder.new(HammerCLIForeman.foreman_resource(:organizations), searchables),
-        HammerCLIForeman::DependentSearchablesOptionBuilder.new(HammerCLIForeman.foreman_resource(:locations), searchables)
+        HammerCLIForeman::DependentSearchablesOptionBuilder.new(api.resource(:users), searchables),
+        HammerCLIForeman::DependentSearchablesOptionBuilder.new(api.resource(:posts), searchables)
       ]
     end
 
     it "does not filter searchable builders by default" do
       @build_options = {:expand => {}}
       option_switches.must_equal [
-        ["--organization"],
-        ["--organization-label"],
-        ["--organization-id"],
-        ["--location"],
-        ["--location-label"],
-        ["--location-id"]
+        ["--user"],
+        ["--user-label"],
+        ["--user-id"],
+        ["--post"],
+        ["--post-label"],
+        ["--post-id"]
       ]
     end
 
     it "adds dependent searchable builders on explicit requirement" do
-      @build_options = {:expand => {:including => [:organizations, :architectures]}}
+      @build_options = {:expand => {:including => [:posts, :comments]}}
       option_switches.must_equal [
-        ["--organization"],
-        ["--organization-label"],
-        ["--organization-id"],
-        ["--location"],
-        ["--location-label"],
-        ["--location-id"],
-        ["--architecture"],
-        ["--architecture-label"],
-        ["--architecture-id"]
+        ["--user"],
+        ["--user-label"],
+        ["--user-id"],
+        ["--post"],
+        ["--post-label"],
+        ["--post-id"],
+        ["--comment"],
+        ["--comment-label"],
+        ["--comment-id"]
       ]
     end
 
     it "filters dependent searchable builders on explicit requirement" do
-      @build_options = {:expand => {:except => [:organizations]}}
+      @build_options = {:expand => {:except => [:users]}}
       option_switches.must_equal [
-        ["--location"],
-        ["--location-label"],
-        ["--location-id"]
+        ["--post"],
+        ["--post-label"],
+        ["--post-id"]
       ]
     end
 
     it "specifies custom set of dependent searchable builders on explicit requirement" do
-      @build_options = {:expand => {:only => [:architectures, :organizations]}}
+      @build_options = {:expand => {:only => [:comments, :users]}}
       option_switches.must_equal [
-        ["--organization"],
-        ["--organization-label"],
-        ["--organization-id"],
-        ["--architecture"],
-        ["--architecture-label"],
-        ["--architecture-id"]
+        ["--user"],
+        ["--user-label"],
+        ["--user-id"],
+        ["--comment"],
+        ["--comment-label"],
+        ["--comment-id"]
       ]
     end
-
   end
-
-
-
 end
 
 
 describe HammerCLIForeman::SearchablesOptionBuilder do
 
-  let(:resource) { HammerCLIForeman.foreman_resource!(:architectures) }
+  let(:api) do ApipieBindings::API.new({
+    :apidoc_cache_dir => 'test/unit/data',
+    :apidoc_cache_name => 'test_api',
+    :dry_run => true})
+  end
+  let(:resource) { api.resource(:users) }
   let(:searchables) { FakeSearchables.new(["name", "label"]) }
   let(:builder) { HammerCLIForeman::SearchablesOptionBuilder.new(resource, searchables) }
   let(:options) { builder.build }
@@ -301,13 +314,17 @@ describe HammerCLIForeman::SearchablesOptionBuilder do
       options.any?{|opt| opt.required? }.must_equal false
     end
   end
-
 end
 
 
 describe HammerCLIForeman::DependentSearchablesOptionBuilder do
 
-  let(:resource) { HammerCLIForeman.foreman_resource!(:architectures) }
+  let(:api) do ApipieBindings::API.new({
+    :apidoc_cache_dir => 'test/unit/data',
+    :apidoc_cache_name => 'test_api',
+    :dry_run => true})
+  end
+  let(:resource) { api.resource(:users) }
   let(:searchables) { FakeSearchables.new(["name", "label", "uuid"]) }
   let(:builder) { HammerCLIForeman::DependentSearchablesOptionBuilder.new(resource, searchables) }
   let(:builder_params) { {} }
@@ -318,29 +335,27 @@ describe HammerCLIForeman::DependentSearchablesOptionBuilder do
     let(:searchables) { FakeSearchables.new([]) }
 
     it "builds only id options" do
-      options.map(&:switches).must_equal [["--architecture-id"]]
+      options.map(&:switches).must_equal [["--user-id"]]
     end
-
   end
-
 
   describe "multiple searchables" do
 
     it "creates correct switches" do
       options.map(&:switches).must_equal [
-        ["--architecture"],       # first option does not have the suffix
-        ["--architecture-label"], # other options with suffixes
-        ["--architecture-uuid"],
-        ["--architecture-id"]     # additional id
+        ["--user"],       # first option does not have the suffix
+        ["--user-label"], # other options with suffixes
+        ["--user-uuid"],
+        ["--user-id"]     # additional id
       ]
     end
 
     it "creates correct option types" do
       options.map(&:type).must_equal [
-        "ARCHITECTURE_NAME",
-        "ARCHITECTURE_LABEL",
-        "ARCHITECTURE_UUID",
-        "ARCHITECTURE_ID",
+        "USER_NAME",
+        "USER_LABEL",
+        "USER_UUID",
+        "USER_ID",
       ]
     end
 
@@ -349,16 +364,16 @@ describe HammerCLIForeman::DependentSearchablesOptionBuilder do
         "Search by name",
         "Search by label",
         "Search by uuid",
-        ""
+        "DESC"
       ]
     end
 
     it "creates correct attribute readers" do
       options.map(&:read_method).must_equal [
-        "option_architecture_name",
-        "option_architecture_label",
-        "option_architecture_uuid",
-        "option_architecture_id",
+        "option_user_name",
+        "option_user_label",
+        "option_user_uuid",
+        "option_user_id",
       ]
     end
 
@@ -370,50 +385,37 @@ describe HammerCLIForeman::DependentSearchablesOptionBuilder do
 
   describe "aliasing resource names" do
 
-    let(:builder_params) { {:resource_mapping => {:architecture => :arch}} }
+    let(:builder_params) { {:resource_mapping => {:user => :usr}} }
 
     it "renames options" do
       options.map(&:switches).must_equal [
-        ["--arch"],       # first option does not have the suffix
-        ["--arch-label"], # other options with suffixes
-        ["--arch-uuid"],
-        ["--arch-id"]     # additional id
+        ["--usr"],       # first option does not have the suffix
+        ["--usr-label"], # other options with suffixes
+        ["--usr-uuid"],
+        ["--usr-id"]     # additional id
       ]
     end
 
     it "renames option types" do
       options.map(&:type).must_equal [
-        "ARCH_NAME",
-        "ARCH_LABEL",
-        "ARCH_UUID",
-        "ARCH_ID",
+        "USR_NAME",
+        "USR_LABEL",
+        "USR_UUID",
+        "USR_ID",
       ]
     end
 
     it "keeps option accessor the same" do
       options.map(&:attribute_name).must_equal [
-        "option_architecture_name",
-        "option_architecture_label",
-        "option_architecture_uuid",
-        "option_architecture_id"
+        "option_user_name",
+        "option_user_label",
+        "option_user_uuid",
+        "option_user_id"
       ]
     end
-
   end
 
   describe "resources with id parameter in show action" do
-
-    before :each do
-      id_param = Object.new
-      id_param.stubs(:name).returns("id")
-      id_param.stubs(:params).returns([])
-      id_param.stubs(:description).returns("DESC")
-
-      action = Object.new
-      action.stubs(:params).returns([id_param])
-
-      resource.stubs(:action).with(:show).returns(action)
-    end
 
     it "uses descriptions from the action" do
       options.map(&:description).must_equal [
@@ -423,15 +425,16 @@ describe HammerCLIForeman::DependentSearchablesOptionBuilder do
         "DESC"
       ]
     end
-
   end
-
 end
 
-
 describe HammerCLIForeman::SearchablesUpdateOptionBuilder do
-
-  let(:resource) { HammerCLIForeman.foreman_resource!(:architectures) }
+  let(:api) do ApipieBindings::API.new({
+    :apidoc_cache_dir => 'test/unit/data',
+    :apidoc_cache_name => 'test_api',
+    :dry_run => true})
+  end
+  let(:resource) { api.resource(:users) }
   let(:searchables) { FakeSearchables.new(["name"], ["label"]) }
   let(:builder) { HammerCLIForeman::SearchablesUpdateOptionBuilder.new(resource, searchables) }
   let(:options) { builder.build }
@@ -486,33 +489,20 @@ describe HammerCLIForeman::SearchablesUpdateOptionBuilder do
     it "uses descriptions from the action" do
       options.map(&:description).must_equal ["DESC"]
     end
-
   end
-
-
 end
 
-
 describe HammerCLIForeman::IdOptionBuilder do
-
-  let(:resource) { HammerCLIForeman.foreman_resource!(:architectures) }
+  let(:api) do ApipieBindings::API.new({
+    :apidoc_cache_dir => 'test/unit/data',
+    :apidoc_cache_name => 'test_api',
+    :dry_run => true})
+  end
+  let(:resource) { api.resource(:users) }
   let(:builder) { HammerCLIForeman::IdOptionBuilder.new(resource) }
   let(:options) { builder.build }
 
   describe "resources with parameter :id in show action" do
-
-    before :each do
-      id_param = Object.new
-      id_param.stubs(:name).returns("id")
-      id_param.stubs(:params).returns([])
-      id_param.stubs(:description).returns("DESC")
-
-      action = Object.new
-      action.stubs(:params).returns([id_param])
-
-      resource.stubs(:action).with(:show).returns(action)
-    end
-
     it "creates options --id" do
       options.map(&:switches).must_equal [["--id"]]
     end

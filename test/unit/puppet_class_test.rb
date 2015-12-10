@@ -18,7 +18,10 @@ describe HammerCLIForeman::PuppetClass do
     end
 
     context "output" do
-      let(:expected_record_count) { cmd.resource.call(:index).length }
+      let(:expected_record_count) do
+        # data are retuned in specific format
+        HammerCLIForeman.collection_to_common_format(cmd.resource.call(:index)).first.keys.count
+      end
 
       it_should_print_n_records
       it_should_print_column "Id"

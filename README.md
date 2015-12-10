@@ -38,10 +38,21 @@ look at [the development documentation](doc/developer_docs.md#hammer-development
 How to test
 ------------
 
-    $ bundle install
-    $ bundle exec "rake test"
+```bash
+   $ bundle install
+   $ bundle exec "rake test"
+```
 
 Generated coverage reports are stored in ./coverage directory.
+
+There is support for testing against API documentation (and sample data) generated from different versions of Foreman.
+The required version of Foreman can be set in env variable `TEST_API_VERSION`. Make sure the requested data are
+in `test/unit/data/<version>/`.
+
+```bash
+  $ TEST_API_VERSION=1.10 bundle exec rake test
+```
+
 
 License
 -------
