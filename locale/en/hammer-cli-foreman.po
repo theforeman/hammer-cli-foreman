@@ -928,10 +928,10 @@ msgstr ""
 msgid "Host name"
 msgstr ""
 
-msgid "Hostgroup name"
+msgid "Hostgroup title"
 msgstr ""
 
-msgid "Hostgroup title"
+msgid "Hostgroup name"
 msgstr ""
 
 msgid "Location name"
@@ -1467,6 +1467,15 @@ msgid "Could not delete the report"
 msgstr ""
 
 msgid "The server does not support such operation."
+msgstr ""
+
+msgid "Builtin"
+msgstr ""
+
+msgid "No"
+msgstr ""
+
+msgid "Yes"
 msgstr ""
 
 msgid "User role id"
