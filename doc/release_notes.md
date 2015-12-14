@@ -1,6 +1,17 @@
 Release notes
 =============
 
+### 0.5.0 (2015-12-14)
+* Addng info command to role ([#7412](http://projects.theforeman.org/issues/7412))
+* Add defaults support for location/organization ([#11402](http://projects.theforeman.org/issues/11402))
+* Tests updated to work with Foreman 1.10 API ([#12260](http://projects.theforeman.org/issues/12260))
+* Commands for setting parameters at taxonomies ([#12699](http://projects.theforeman.org/issues/12699))
+* Change once to one in error message ([#12695](http://projects.theforeman.org/issues/12695))
+* Host create VMware docs update ([#12087](http://projects.theforeman.org/issues/12087))
+* Add option to overwrite conflicts on host changes ([#9208](http://projects.theforeman.org/issues/9208))
+* String parameters get double-quoted ([#12202](http://projects.theforeman.org/issues/12202))
+* Added IPAM desc on info command ([#11074](http://projects.theforeman.org/issues/11074))
+
 ### 0.4.0 (2015-09-21)
 * Adding match_default to smart variables and smart class parameters ([#10731](http://projects.theforeman.org/issues/10731))
 * Missing field for VMWare host creation docs ([#11088](http://projects.theforeman.org/issues/11088))
