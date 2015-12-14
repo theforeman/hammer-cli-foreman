@@ -1,6 +1,9 @@
 Release notes
 =============
 
+### 0.5.1 (2015-12-14)
+* Fixing dependency issues
+
 ### 0.5.0 (2015-12-14)
 * Addng info command to role ([#7412](http://projects.theforeman.org/issues/7412))
 * Add defaults support for location/organization ([#11402](http://projects.theforeman.org/issues/11402))
