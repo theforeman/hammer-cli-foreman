@@ -9,7 +9,7 @@
 
 Summary: Universal command-line interface for Foreman
 Name: rubygem-%{gemname}
-Version: 0.1.4.14
+Version: 0.1.4.15
 Release: 1%{?dist}
 Group: Development/Languages
 License: GPLv3
@@ -83,6 +83,11 @@ cp -pa .%{gem_dir}/* \
 %doc %{geminstdir}/doc/name_id_resolution.md
 
 %changelog
+* Fri Dec 18 2015 Chris Peters <chrispeters.psu@gmail.com> 0.1.4.15-1
+- Bump version (chrispeters.psu@gmail.com)
+- Fixes #12699 - Commands for setting parameters at taxonomies
+  (tstrachota@redhat.com)
+
 * Wed Jun 03 2015 Mike McCune <mmccune@redhat.com> 0.1.4.14-1
 - Fixes BZ 1226192 - adding list normalizer for *-ids options
   (tstrachota@redhat.com)
