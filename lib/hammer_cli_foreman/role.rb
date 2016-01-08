@@ -53,6 +53,10 @@ module HammerCLIForeman
         o.expand.primary(:roles)
         o.without(:search)
       end
+
+      def validate_options
+        validator.any(:option_name, :option_id).required
+      end
     end
 
 

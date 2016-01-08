@@ -94,14 +94,17 @@ describe HammerCLIForeman::Role do
     context "parameters" do
       it_should_accept "name", ["--name=role"]
       it_should_accept "id", ["--id=1"]
+      it_should_fail_with "no arguments"
     end
 
     context "output" do
-      it_should_print_column "Id"
-      it_should_print_column "Resource type"
-      it_should_print_column "Search"
-      it_should_print_column "Role"
-      it_should_print_column "Permissions"
+      with_params ["--id=1"] do
+        it_should_print_column "Id"
+        it_should_print_column "Resource type"
+        it_should_print_column "Search"
+        it_should_print_column "Role"
+        it_should_print_column "Permissions"
+      end
     end
 
   end
