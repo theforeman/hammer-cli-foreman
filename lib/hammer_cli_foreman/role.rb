@@ -33,7 +33,7 @@ module HammerCLIForeman
       command_name "filters"
       resource :filters, :index
 
-      option "--id", "ID", _("User role id"), :referenced_resource => 'role'
+      option "--id", "ID", _("User role id"), :referenced_resource => 'role', :required => true
 
       output HammerCLIForeman::Filter::ListCommand.output_definition
 
