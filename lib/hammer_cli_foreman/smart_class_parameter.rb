@@ -32,10 +32,8 @@ module HammerCLIForeman
   class SmartClassParametersList < SmartClassParametersBriefList
 
     output do
-      from :puppetclass do
-        field :name, _("Puppet class")
-        field :id, _("Class Id"), Fields::Id
-      end
+      field :puppetclass_name, _("Puppet class")
+      field :puppetclass_id, _("Class Id"), Fields::Id
     end
   end
 
