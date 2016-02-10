@@ -25,8 +25,8 @@ describe "parameters" do
 
       expected_result = usage_error_result(
         @cmd,
-        "Could not set organization parameter",
-        "option '--name' is required"
+        "option '--name' is required",
+        "Could not set organization parameter"
       )
 
       api_expects_no_call
@@ -39,8 +39,8 @@ describe "parameters" do
 
       expected_result = usage_error_result(
         @cmd,
-        "Could not set organization parameter",
-        "option '--value' is required"
+        "option '--value' is required",
+        "Could not set organization parameter"
       )
 
       api_expects_no_call
@@ -93,8 +93,8 @@ describe "parameters" do
 
       expected_result = usage_error_result(
         @cmd,
-        "Could not delete organization parameter",
-        "option '--name' is required"
+        "option '--name' is required",
+        "Could not delete organization parameter"
       )
 
       api_expects_no_call
@@ -111,8 +111,8 @@ describe "parameters" do
 
       expected_result = common_error_result(
         @cmd,
-        "Could not delete organization parameter",
-        "parameter not found"
+        "parameter not found",
+        "Could not delete organization parameter"
       )
 
       result = run_cmd(@cmd + params)
