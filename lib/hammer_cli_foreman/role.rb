@@ -33,7 +33,7 @@ module HammerCLIForeman
       command_name "filters"
       resource :filters, :index
 
-      option "--id", "ID", _("User role id"), :referenced_resource => 'role', :required => true
+      option "--id", "ID", _("User role id"), :referenced_resource => 'role'
 
       output HammerCLIForeman::Filter::ListCommand.output_definition
 
@@ -52,6 +52,10 @@ module HammerCLIForeman
       build_options do |o|
         o.expand.primary(:roles)
         o.without(:search)
+      end
+
+      def validate_options
+        validator.any(:option_name, :option_id).required
       end
     end
 
