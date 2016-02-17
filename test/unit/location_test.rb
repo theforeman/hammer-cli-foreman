@@ -52,6 +52,7 @@ describe HammerCLIForeman::Location do
         it_should_print_n_records 1
         it_should_print_column "Name"
         it_should_print_column "Id"
+        it_should_print_column "Parent"
         it_should_print_column "Created at"
         it_should_print_column "Updated at"
       end

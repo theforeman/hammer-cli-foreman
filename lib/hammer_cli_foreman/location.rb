@@ -24,6 +24,7 @@ module HammerCLIForeman
       option '--id', 'ID', _("Location numeric id to search by")
 
       output ListCommand.output_definition do
+        field nil, _("Parent"), Fields::SingleReference, :key => :parent
         HammerCLIForeman::References.users(self)
         HammerCLIForeman::References.smart_proxies(self)
         HammerCLIForeman::References.subnets(self)
