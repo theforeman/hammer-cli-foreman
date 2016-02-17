@@ -49,6 +49,7 @@ module HammerCLIForeman
 
       output ListCommand.output_definition do
         field :description, _("Description")
+        field :hidden_value?, _("Hidden Value?")
 
         label _("Validator") do
           field :validator_type, _("Type")
