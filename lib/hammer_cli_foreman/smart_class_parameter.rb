@@ -58,6 +58,7 @@ module HammerCLIForeman
       output ListCommand.output_definition do
         field :description, _("Description")
         field :parameter_type, _("Type")
+        field :hidden_value?, _("Hidden Value?")
         field :required, _("Required")
 
         label _("Validator") do
