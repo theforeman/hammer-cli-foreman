@@ -4,17 +4,17 @@
 # 
 # Translators:
 # Christina Gurski <Gurski_christina@yahoo.de>, 2015
-# Ettore Atalan <atalanttore@googlemail.com>, 2014-2015
+# Ettore Atalan <atalanttore@googlemail.com>, 2014-2016
 # Marcel Fuhrmann <marcel@mfsystems.me>, 2015
 # simon11 <simon.stieger.98@live.de>, 2014
 # simon11 <simon.stieger.98@live.de>, 2014
 msgid ""
 msgstr ""
-"Project-Id-Version: hammer-cli-foreman 0.4.0\n"
+"Project-Id-Version: hammer-cli-foreman 0.6.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-12-10 13:31+0000\n"
-"PO-Revision-Date: 2015-12-11 09:30+0000\n"
-"Last-Translator: Lukáš Zapletal\n"
+"POT-Creation-Date: 2015-12-11 04:48+0000\n"
+"PO-Revision-Date: 2016-01-17 22:47+0000\n"
+"Last-Translator: Ettore Atalan <atalanttore@googlemail.com>\n"
 "Language-Team: German (http://www.transifex.com/foreman/foreman/language/de/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -859,12 +859,12 @@ msgstr "Berechtigungen"
 
 #: ../lib/hammer_cli_foreman/filter.rb:18
 #: ../lib/hammer_cli_foreman/filter.rb:34
-#: ../lib/hammer_cli_foreman/filter.rb:78 ../lib/hammer_cli_foreman/role.rb:33
+#: ../lib/hammer_cli_foreman/filter.rb:78 ../lib/hammer_cli_foreman/role.rb:46
 msgid "(Miscellaneous)"
 msgstr "(Verschiedenes)"
 
 #: ../lib/hammer_cli_foreman/filter.rb:19
-#: ../lib/hammer_cli_foreman/filter.rb:35 ../lib/hammer_cli_foreman/role.rb:34
+#: ../lib/hammer_cli_foreman/filter.rb:35 ../lib/hammer_cli_foreman/role.rb:47
 msgid "none"
 msgstr "keine"
 
@@ -1347,12 +1347,12 @@ msgid "Host name"
 msgstr "Hostname"
 
 #: ../lib/hammer_cli_foreman/id_resolver.rb:43
-msgid "Hostgroup name"
-msgstr "Hostgruppenname"
-
-#: ../lib/hammer_cli_foreman/id_resolver.rb:43
 msgid "Hostgroup title"
 msgstr "Hostgruppentitel"
+
+#: ../lib/hammer_cli_foreman/id_resolver.rb:43
+msgid "Hostgroup name"
+msgstr "Hostgruppenname"
 
 #: ../lib/hammer_cli_foreman/id_resolver.rb:46
 msgid "Location name"
@@ -2087,31 +2087,43 @@ msgstr "Bericht konnte nicht gelöscht werden"
 msgid "The server does not support such operation."
 msgstr "Diese Operation wird vom Server nicht unterstützt."
 
-#: ../lib/hammer_cli_foreman/role.rb:23
+#: ../lib/hammer_cli_foreman/role.rb:20
+msgid "Builtin"
+msgstr ""
+
+#: ../lib/hammer_cli_foreman/role.rb:24
+msgid "No"
+msgstr "Nein"
+
+#: ../lib/hammer_cli_foreman/role.rb:24
+msgid "Yes"
+msgstr "Ja"
+
+#: ../lib/hammer_cli_foreman/role.rb:36
 msgid "User role id"
 msgstr "Benutzerrollen-ID"
 
-#: ../lib/hammer_cli_foreman/role.rb:47
+#: ../lib/hammer_cli_foreman/role.rb:60
 msgid "User role [%<name>s] created"
 msgstr "Benutzerrolle [%<name>s] erstellt"
 
-#: ../lib/hammer_cli_foreman/role.rb:48
+#: ../lib/hammer_cli_foreman/role.rb:61
 msgid "Could not create the user role"
 msgstr "Benutzerrolle konnte nicht erstellt werden"
 
-#: ../lib/hammer_cli_foreman/role.rb:55
+#: ../lib/hammer_cli_foreman/role.rb:68
 msgid "User role [%<name>s] updated"
 msgstr "Benutzerrolle [%<name>s] aktualisiert"
 
-#: ../lib/hammer_cli_foreman/role.rb:56
+#: ../lib/hammer_cli_foreman/role.rb:69
 msgid "Could not update the user role"
 msgstr "Benutzerrolle konnte nicht aktualisiert werden"
 
-#: ../lib/hammer_cli_foreman/role.rb:63
+#: ../lib/hammer_cli_foreman/role.rb:76
 msgid "User role [%<name>s] deleted"
 msgstr "Benutzerrolle [%<name>s] gelöscht"
 
-#: ../lib/hammer_cli_foreman/role.rb:64
+#: ../lib/hammer_cli_foreman/role.rb:77
 msgid "Could not delete the user roles"
 msgstr "Benutzerrollen konnten nicht gelöscht werden"
 
@@ -2169,7 +2181,7 @@ msgstr ""
 #: ../lib/hammer_cli_foreman/smart_class_parameter.rb:71
 #: ../lib/hammer_cli_foreman/smart_variable.rb:59
 msgid "Merge default value"
-msgstr ""
+msgstr "Standardwert zusammenführen"
 
 #: ../lib/hammer_cli_foreman/smart_class_parameter.rb:72
 #: ../lib/hammer_cli_foreman/smart_variable.rb:60
@@ -2349,7 +2361,7 @@ msgstr "DHCP"
 
 #: ../lib/hammer_cli_foreman/subnet.rb:29
 msgid "IPAM"
-msgstr ""
+msgstr "IPAM"
 
 #: ../lib/hammer_cli_foreman/subnet.rb:30
 msgid "VLAN ID"

@@ -6,10 +6,10 @@
 # Dominic Cleal <dominic@cleal.org>, 2014
 msgid ""
 msgstr ""
-"Project-Id-Version: hammer-cli-foreman 0.4.0\n"
+"Project-Id-Version: hammer-cli-foreman 0.6.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-12-10 13:31+0000\n"
-"PO-Revision-Date: 2015-12-11 09:30+0000\n"
+"POT-Creation-Date: 2015-12-11 04:48+0000\n"
+"PO-Revision-Date: 2015-12-15 09:31+0000\n"
 "Last-Translator: Lukáš Zapletal\n"
 "Language-Team: Korean (http://www.transifex.com/foreman/foreman/language/ko/)\n"
 "MIME-Version: 1.0\n"
@@ -855,12 +855,12 @@ msgstr "권한 "
 
 #: ../lib/hammer_cli_foreman/filter.rb:18
 #: ../lib/hammer_cli_foreman/filter.rb:34
-#: ../lib/hammer_cli_foreman/filter.rb:78 ../lib/hammer_cli_foreman/role.rb:33
+#: ../lib/hammer_cli_foreman/filter.rb:78 ../lib/hammer_cli_foreman/role.rb:46
 msgid "(Miscellaneous)"
 msgstr "(기타)"
 
 #: ../lib/hammer_cli_foreman/filter.rb:19
-#: ../lib/hammer_cli_foreman/filter.rb:35 ../lib/hammer_cli_foreman/role.rb:34
+#: ../lib/hammer_cli_foreman/filter.rb:35 ../lib/hammer_cli_foreman/role.rb:47
 msgid "none"
 msgstr "없음 "
 
@@ -1343,12 +1343,12 @@ msgid "Host name"
 msgstr "호스트 이름 "
 
 #: ../lib/hammer_cli_foreman/id_resolver.rb:43
-msgid "Hostgroup name"
-msgstr "호스트 그룹 이름 "
-
-#: ../lib/hammer_cli_foreman/id_resolver.rb:43
 msgid "Hostgroup title"
 msgstr ""
+
+#: ../lib/hammer_cli_foreman/id_resolver.rb:43
+msgid "Hostgroup name"
+msgstr "호스트 그룹 이름 "
 
 #: ../lib/hammer_cli_foreman/id_resolver.rb:46
 msgid "Location name"
@@ -2083,31 +2083,43 @@ msgstr "보고서를 삭제할 수 없습니다 "
 msgid "The server does not support such operation."
 msgstr "서버가 이러한 동작을 지원하지 않습니다. "
 
-#: ../lib/hammer_cli_foreman/role.rb:23
+#: ../lib/hammer_cli_foreman/role.rb:20
+msgid "Builtin"
+msgstr ""
+
+#: ../lib/hammer_cli_foreman/role.rb:24
+msgid "No"
+msgstr ""
+
+#: ../lib/hammer_cli_foreman/role.rb:24
+msgid "Yes"
+msgstr ""
+
+#: ../lib/hammer_cli_foreman/role.rb:36
 msgid "User role id"
 msgstr "사용자 역할 ID"
 
-#: ../lib/hammer_cli_foreman/role.rb:47
+#: ../lib/hammer_cli_foreman/role.rb:60
 msgid "User role [%<name>s] created"
 msgstr "사용자 역할 [%<name>s]이(가) 생성되었습니다 "
 
-#: ../lib/hammer_cli_foreman/role.rb:48
+#: ../lib/hammer_cli_foreman/role.rb:61
 msgid "Could not create the user role"
 msgstr "사용자 역할을 생성할 수 없습니다 "
 
-#: ../lib/hammer_cli_foreman/role.rb:55
+#: ../lib/hammer_cli_foreman/role.rb:68
 msgid "User role [%<name>s] updated"
 msgstr "사용자 역할 [%<name>s]이(가) 업데이트되었습니다 "
 
-#: ../lib/hammer_cli_foreman/role.rb:56
+#: ../lib/hammer_cli_foreman/role.rb:69
 msgid "Could not update the user role"
 msgstr "사용자 역할을 업데이트할 수 없습니다 "
 
-#: ../lib/hammer_cli_foreman/role.rb:63
+#: ../lib/hammer_cli_foreman/role.rb:76
 msgid "User role [%<name>s] deleted"
 msgstr "사용자 역할 [%<name>s]이(가) 삭제되었습니다 "
 
-#: ../lib/hammer_cli_foreman/role.rb:64
+#: ../lib/hammer_cli_foreman/role.rb:77
 msgid "Could not delete the user roles"
 msgstr "사용자 역할을 삭제할 수 없습니다 "
 

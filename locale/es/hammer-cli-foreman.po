@@ -11,11 +11,11 @@
 # Sergio Ocón <sergio.ocon@redhat.com>, 2014
 msgid ""
 msgstr ""
-"Project-Id-Version: hammer-cli-foreman 0.4.0\n"
+"Project-Id-Version: hammer-cli-foreman 0.6.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-12-10 13:31+0000\n"
-"PO-Revision-Date: 2015-12-11 19:10+0000\n"
-"Last-Translator: francis <hackgo@gmail.com>\n"
+"POT-Creation-Date: 2015-12-11 04:48+0000\n"
+"PO-Revision-Date: 2015-12-15 09:31+0000\n"
+"Last-Translator: Lukáš Zapletal\n"
 "Language-Team: Spanish (http://www.transifex.com/foreman/foreman/language/es/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -860,12 +860,12 @@ msgstr "Permisos"
 
 #: ../lib/hammer_cli_foreman/filter.rb:18
 #: ../lib/hammer_cli_foreman/filter.rb:34
-#: ../lib/hammer_cli_foreman/filter.rb:78 ../lib/hammer_cli_foreman/role.rb:33
+#: ../lib/hammer_cli_foreman/filter.rb:78 ../lib/hammer_cli_foreman/role.rb:46
 msgid "(Miscellaneous)"
 msgstr "(Varios)"
 
 #: ../lib/hammer_cli_foreman/filter.rb:19
-#: ../lib/hammer_cli_foreman/filter.rb:35 ../lib/hammer_cli_foreman/role.rb:34
+#: ../lib/hammer_cli_foreman/filter.rb:35 ../lib/hammer_cli_foreman/role.rb:47
 msgid "none"
 msgstr "nada"
 
@@ -1348,12 +1348,12 @@ msgid "Host name"
 msgstr "Nombre de host"
 
 #: ../lib/hammer_cli_foreman/id_resolver.rb:43
-msgid "Hostgroup name"
-msgstr "Nombre de grupo de hosts"
-
-#: ../lib/hammer_cli_foreman/id_resolver.rb:43
 msgid "Hostgroup title"
 msgstr "Título del grupo de host"
+
+#: ../lib/hammer_cli_foreman/id_resolver.rb:43
+msgid "Hostgroup name"
+msgstr "Nombre de grupo de hosts"
 
 #: ../lib/hammer_cli_foreman/id_resolver.rb:46
 msgid "Location name"
@@ -2088,31 +2088,43 @@ msgstr "No se pudo borrar el informe"
 msgid "The server does not support such operation."
 msgstr "El servidor no soporta esa operación."
 
-#: ../lib/hammer_cli_foreman/role.rb:23
+#: ../lib/hammer_cli_foreman/role.rb:20
+msgid "Builtin"
+msgstr ""
+
+#: ../lib/hammer_cli_foreman/role.rb:24
+msgid "No"
+msgstr ""
+
+#: ../lib/hammer_cli_foreman/role.rb:24
+msgid "Yes"
+msgstr ""
+
+#: ../lib/hammer_cli_foreman/role.rb:36
 msgid "User role id"
 msgstr "ID de rol de usuario"
 
-#: ../lib/hammer_cli_foreman/role.rb:47
+#: ../lib/hammer_cli_foreman/role.rb:60
 msgid "User role [%<name>s] created"
 msgstr "Rol de usuario [%<name>s] creado"
 
-#: ../lib/hammer_cli_foreman/role.rb:48
+#: ../lib/hammer_cli_foreman/role.rb:61
 msgid "Could not create the user role"
 msgstr "No se pudo crear el rol de usuario"
 
-#: ../lib/hammer_cli_foreman/role.rb:55
+#: ../lib/hammer_cli_foreman/role.rb:68
 msgid "User role [%<name>s] updated"
 msgstr "Rol de usuario [%<name>s] actualizado"
 
-#: ../lib/hammer_cli_foreman/role.rb:56
+#: ../lib/hammer_cli_foreman/role.rb:69
 msgid "Could not update the user role"
 msgstr "No se pudo actualizar el rol de usuario"
 
-#: ../lib/hammer_cli_foreman/role.rb:63
+#: ../lib/hammer_cli_foreman/role.rb:76
 msgid "User role [%<name>s] deleted"
 msgstr "Rol de usuario [%<name>s] borrado"
 
-#: ../lib/hammer_cli_foreman/role.rb:64
+#: ../lib/hammer_cli_foreman/role.rb:77
 msgid "Could not delete the user roles"
 msgstr "No se pudieron borrar los roles del usuario"
 

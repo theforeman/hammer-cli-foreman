@@ -3,16 +3,16 @@
 # This file is distributed under the same license as the hammer-cli-foreman package.
 # 
 # Translators:
-# Claer <transiblu@claer.hammock.fr>, 2014-2015
+# Claer <transiblu@claer.hammock.fr>, 2014-2016
 # Dominic Cleal <dominic@cleal.org>, 2014
 # Pierre-Emmanuel Dutang <dutangp@gmail.com>, 2014
 msgid ""
 msgstr ""
-"Project-Id-Version: hammer-cli-foreman 0.4.0\n"
+"Project-Id-Version: hammer-cli-foreman 0.6.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-12-10 13:31+0000\n"
-"PO-Revision-Date: 2015-12-11 09:30+0000\n"
-"Last-Translator: Lukáš Zapletal\n"
+"POT-Creation-Date: 2015-12-11 04:48+0000\n"
+"PO-Revision-Date: 2016-01-21 14:31+0000\n"
+"Last-Translator: Claer <transiblu@claer.hammock.fr>\n"
 "Language-Team: French (http://www.transifex.com/foreman/foreman/language/fr/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -62,7 +62,7 @@ msgstr "Gestion des groupes d'hôtes"
 
 #: ../lib/hammer_cli_foreman.rb:72
 msgid "Manipulate locations."
-msgstr "Gestion des localisations."
+msgstr "Gestion des emplacements."
 
 #: ../lib/hammer_cli_foreman.rb:76
 msgid "Manipulate installation media."
@@ -680,7 +680,7 @@ msgstr "[Foreman] mot de passe pour %s :"
 
 #: ../lib/hammer_cli_foreman/defaults.rb:7
 msgid "Use the default organization and/or location from the server"
-msgstr ""
+msgstr "Utiliser les organisations et/ou emplacements par défaut de ce serveur"
 
 #: ../lib/hammer_cli_foreman/domain.rb:6
 msgid "ID of DNS proxy to use within this domain"
@@ -857,12 +857,12 @@ msgstr "Permissions"
 
 #: ../lib/hammer_cli_foreman/filter.rb:18
 #: ../lib/hammer_cli_foreman/filter.rb:34
-#: ../lib/hammer_cli_foreman/filter.rb:78 ../lib/hammer_cli_foreman/role.rb:33
+#: ../lib/hammer_cli_foreman/filter.rb:78 ../lib/hammer_cli_foreman/role.rb:46
 msgid "(Miscellaneous)"
 msgstr "(Divers)"
 
 #: ../lib/hammer_cli_foreman/filter.rb:19
-#: ../lib/hammer_cli_foreman/filter.rb:35 ../lib/hammer_cli_foreman/role.rb:34
+#: ../lib/hammer_cli_foreman/filter.rb:35 ../lib/hammer_cli_foreman/role.rb:47
 msgid "none"
 msgstr "Aucun"
 
@@ -1345,16 +1345,16 @@ msgid "Host name"
 msgstr "Nom d'hôte"
 
 #: ../lib/hammer_cli_foreman/id_resolver.rb:43
-msgid "Hostgroup name"
-msgstr "Nom du groupe d'hôtes"
-
-#: ../lib/hammer_cli_foreman/id_resolver.rb:43
 msgid "Hostgroup title"
 msgstr "Titre du groupe d'hôtes"
 
+#: ../lib/hammer_cli_foreman/id_resolver.rb:43
+msgid "Hostgroup name"
+msgstr "Nom du groupe d'hôtes"
+
 #: ../lib/hammer_cli_foreman/id_resolver.rb:46
 msgid "Location name"
-msgstr "Nom de la localisation"
+msgstr "Nom de l'emplacement"
 
 #: ../lib/hammer_cli_foreman/id_resolver.rb:47
 msgid "Medium name"
@@ -1430,7 +1430,7 @@ msgstr "%s non trouvé"
 
 #: ../lib/hammer_cli_foreman/id_resolver.rb:201
 msgid "found more than one %s"
-msgstr ""
+msgstr "plus d'un %s ont été trouvés"
 
 #: ../lib/hammer_cli_foreman/id_resolver.rb:212
 msgid "Missing options to search %s"
@@ -1579,7 +1579,7 @@ msgstr "Impossible de supprimer cette interface"
 #: ../lib/hammer_cli_foreman/location.rb:62
 #: ../lib/hammer_cli_foreman/location.rb:74
 msgid "Location numeric id to search by"
-msgstr "Recherche par id de localisation"
+msgstr "Recherche par id d'emplacement"
 
 #: ../lib/hammer_cli_foreman/location.rb:37
 #: ../lib/hammer_cli_foreman/references.rb:18
@@ -1588,58 +1588,58 @@ msgstr "Organisations"
 
 #: ../lib/hammer_cli_foreman/location.rb:52
 msgid "Location created"
-msgstr "Localisation créée"
+msgstr "Emplacement créé"
 
 #: ../lib/hammer_cli_foreman/location.rb:53
 msgid "Could not create the location"
-msgstr "Impossible de créer la localisation"
+msgstr "Impossible de créer l'emplacement"
 
 #: ../lib/hammer_cli_foreman/location.rb:64
 msgid "Location updated"
-msgstr "Localisation mise à jour"
+msgstr "Emplacement mis à jour"
 
 #: ../lib/hammer_cli_foreman/location.rb:65
 msgid "Could not update the location"
-msgstr "Impossible de mettre à jour la localisation"
+msgstr "Impossible de mettre à jour l'emplacement"
 
 #: ../lib/hammer_cli_foreman/location.rb:76
 msgid "Location deleted"
-msgstr "Localisation supprimée"
+msgstr "Emplacement supprimé"
 
 #: ../lib/hammer_cli_foreman/location.rb:77
 msgid "Could not delete the location"
-msgstr "Impossible de supprimer la localisation"
+msgstr "Impossible de supprimer l'emplacement"
 
 #: ../lib/hammer_cli_foreman/location.rb:86
 msgid "Create or update parameter for a location."
-msgstr ""
+msgstr "Créer ou changer un paramètre d'un emplacement."
 
 #: ../lib/hammer_cli_foreman/location.rb:88
 #: ../lib/hammer_cli_foreman/organization.rb:89
 msgid "Parameter [%{name}] updated to value [%{value}]"
-msgstr ""
+msgstr "Paramètre [%{name}] mis à jour avec la valeur [%{value}]"
 
 #: ../lib/hammer_cli_foreman/location.rb:89
 #: ../lib/hammer_cli_foreman/organization.rb:90
 msgid "Parameter [%{name}] created with value [%{value}]"
-msgstr ""
+msgstr "Paramètre [%{name}] créé avec la valeur [%{value}]"
 
 #: ../lib/hammer_cli_foreman/location.rb:90
 msgid "Could not set location parameter"
-msgstr ""
+msgstr "Impossible de positionner le paramètre de l'emplacement"
 
 #: ../lib/hammer_cli_foreman/location.rb:97
 msgid "Delete parameter for a location."
-msgstr ""
+msgstr "Suppression du paramètre d'un emplacement."
 
 #: ../lib/hammer_cli_foreman/location.rb:99
 #: ../lib/hammer_cli_foreman/organization.rb:100
 msgid "Parameter [%{name}] deleted"
-msgstr ""
+msgstr "Paramètre [%{name}] supprimé"
 
 #: ../lib/hammer_cli_foreman/location.rb:100
 msgid "Could not delete location parameter"
-msgstr ""
+msgstr "Impossible de supprimer le paramètre de l'emplacement"
 
 #: ../lib/hammer_cli_foreman/media.rb:11
 msgid "Path"
@@ -1823,7 +1823,7 @@ msgstr "Modèle par défaut de type %s non trouvé"
 #: ../lib/hammer_cli_foreman/organization.rb:37
 #: ../lib/hammer_cli_foreman/references.rb:15
 msgid "Locations"
-msgstr "Localisations"
+msgstr "Emplacements"
 
 #: ../lib/hammer_cli_foreman/organization.rb:53
 msgid "Organization created"
@@ -1851,19 +1851,19 @@ msgstr "Impossible de supprimer l'organisation"
 
 #: ../lib/hammer_cli_foreman/organization.rb:87
 msgid "Create or update parameter for an organization."
-msgstr ""
+msgstr "Créer ou changer un paramètre d'une organisation."
 
 #: ../lib/hammer_cli_foreman/organization.rb:91
 msgid "Could not set organization parameter"
-msgstr ""
+msgstr "Impossible de positionner le paramètre de l'organisation"
 
 #: ../lib/hammer_cli_foreman/organization.rb:98
 msgid "Delete parameter for an organization."
-msgstr ""
+msgstr "Supprimer un paramètre d'une organisation."
 
 #: ../lib/hammer_cli_foreman/organization.rb:101
 msgid "Could not delete organization parameter"
-msgstr ""
+msgstr "Impossible de supprimer le paramètre de l'organisation"
 
 #: ../lib/hammer_cli_foreman/partition_table.rb:31
 msgid "View partition table content."
@@ -2085,31 +2085,43 @@ msgstr "Impossible de supprimer le rapport"
 msgid "The server does not support such operation."
 msgstr "Le serveur ne supporte pas cette opération."
 
-#: ../lib/hammer_cli_foreman/role.rb:23
+#: ../lib/hammer_cli_foreman/role.rb:20
+msgid "Builtin"
+msgstr "Intégré"
+
+#: ../lib/hammer_cli_foreman/role.rb:24
+msgid "No"
+msgstr "Non"
+
+#: ../lib/hammer_cli_foreman/role.rb:24
+msgid "Yes"
+msgstr "Oui"
+
+#: ../lib/hammer_cli_foreman/role.rb:36
 msgid "User role id"
 msgstr "Identifiant du rôle utilisateur"
 
-#: ../lib/hammer_cli_foreman/role.rb:47
+#: ../lib/hammer_cli_foreman/role.rb:60
 msgid "User role [%<name>s] created"
 msgstr "Rôle utilisateur [%<name>s] créé"
 
-#: ../lib/hammer_cli_foreman/role.rb:48
+#: ../lib/hammer_cli_foreman/role.rb:61
 msgid "Could not create the user role"
 msgstr "Impossible de créer le rôle utilisateur"
 
-#: ../lib/hammer_cli_foreman/role.rb:55
+#: ../lib/hammer_cli_foreman/role.rb:68
 msgid "User role [%<name>s] updated"
 msgstr "Rôle utilisateur [%<name>s] mis à jour"
 
-#: ../lib/hammer_cli_foreman/role.rb:56
+#: ../lib/hammer_cli_foreman/role.rb:69
 msgid "Could not update the user role"
 msgstr "Impossible de mettre à jour le rôle utilisateur"
 
-#: ../lib/hammer_cli_foreman/role.rb:63
+#: ../lib/hammer_cli_foreman/role.rb:76
 msgid "User role [%<name>s] deleted"
 msgstr "Rôle utilisateur [%<name>s] supprimé"
 
-#: ../lib/hammer_cli_foreman/role.rb:64
+#: ../lib/hammer_cli_foreman/role.rb:77
 msgid "Could not delete the user roles"
 msgstr "Impossible de supprimer le rôle utilisateur"
 
@@ -2347,7 +2359,7 @@ msgstr "DHCP"
 
 #: ../lib/hammer_cli_foreman/subnet.rb:29
 msgid "IPAM"
-msgstr ""
+msgstr "IPAM"
 
 #: ../lib/hammer_cli_foreman/subnet.rb:30
 msgid "VLAN ID"
