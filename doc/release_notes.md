@@ -1,6 +1,15 @@
 Release notes
 =============
 
+### 0.6.0 (2016-02-25)
+* Names of sc-params are immutable ([#13830](http://projects.theforeman.org/issues/13830))
+* Support for command testing moved to core ([#4118](http://projects.theforeman.org/issues/4118))
+* Adding parent to taxonomies info command ([#13758](http://projects.theforeman.org/issues/13758))
+* Showing hidden_value? for smart variables and class parameters ([#13750](http://projects.theforeman.org/issues/13750))
+* Executing "hammer role filters" command throws SQL errors ([#13064](http://projects.theforeman.org/issues/13064))
+* Remove psych require from Gemfile ([#12797](http://projects.theforeman.org/issues/12797))
+* Hammer listing the sc-params shows puppetclass ([#12998](http://projects.theforeman.org/issues/12998))
+
 ### 0.5.1 (2015-12-14)
 * Fixing dependency issues
 
