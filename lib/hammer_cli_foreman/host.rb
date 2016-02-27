@@ -90,9 +90,6 @@ module HammerCLIForeman
       params['host']['compute_attributes']['volumes_attributes'] = nested_attributes(option_volume_list)
       params['host']['interfaces_attributes'] = interfaces_attributes
 
-      # check primary and provision interfaces, only for create
-      check_mandatory_interfaces(params['host']['interfaces_attributes']) if params['id'].nil?
-
       params['host']['root_pass'] = option_root_password unless option_root_password.nil?
 
       if option_ask_root_password
@@ -146,15 +143,6 @@ module HammerCLIForeman
         nic
       end
       nested_attributes(nic_list)
-    end
-
-    def check_mandatory_interfaces(nics)
-      unless nics.any? { |key, nic| nic['primary'] == 'true' }
-        signal_usage_error _('At least one interface must be set as primary')
-      end
-      unless nics.any? { |key, nic| nic['provision'] == 'true' }
-        signal_usage_error _('At least one interface must be set as provision')
-      end
     end
 
   end
