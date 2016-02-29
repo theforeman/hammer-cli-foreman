@@ -157,5 +157,4 @@ describe HammerCLIForeman::Template do
     end
 
   end
-
 end
