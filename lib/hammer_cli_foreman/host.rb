@@ -131,8 +131,10 @@ module HammerCLIForeman
     end
 
     def interfaces_attributes
+      return {} if option_interface_list.empty?
+
       # move each attribute starting with "compute_" to compute_attributes
-      nic_list = option_interface_list.collect do |nic|
+      option_interface_list.collect do |nic|
         compute_attributes = {}
         nic.keys.each do |key|
           if key.start_with? 'compute_'
@@ -142,7 +144,6 @@ module HammerCLIForeman
         nic['compute_attributes'] = compute_attributes unless compute_attributes.empty?
         nic
       end
-      nested_attributes(nic_list)
     end
 
   end
