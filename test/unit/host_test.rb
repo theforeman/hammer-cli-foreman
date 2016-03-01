@@ -227,8 +227,8 @@ describe HammerCLIForeman::Host do
         it_should_call_action_and_test_params(:create) { |par| par["host"]["build"] == true }
         it_should_call_action_and_test_params(:create) { |par| par["host"]["enabled"] == true }
         it_should_call_action_and_test_params(:create) { |par| par["host"]["provision_method"] == "build" }
-        it_should_call_action_and_test_params(:create) { |par| par["host"]["interfaces_attributes"]["0"]["primary"] == "true" }
-        it_should_call_action_and_test_params(:create) { |par| par["host"]["interfaces_attributes"]["0"]["provision"] == "true" }
+        it_should_call_action_and_test_params(:create) { |par| par["host"]["interfaces_attributes"][0]["primary"] == "true" }
+        it_should_call_action_and_test_params(:create) { |par| par["host"]["interfaces_attributes"][0]["provision"] == "true" }
       end
 
       with_params ["--name=host", "--hostgroup-id=1", "--interface=primary=true,provision=true", "--parameters=servers=[pool.ntp.org,ntp.time.org],password=secret"] do
