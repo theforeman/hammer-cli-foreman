@@ -9,11 +9,13 @@ module HammerCLIForeman
         end
 
         def matches?(actual_parameters)
-          resource, action, params, headers, options = actual_parameters.shift(5)
+          action, params, headers, options = actual_parameters.shift(4)
+          action_name = action.name.to_s
+          resource_name = action.resource.to_s
 
           result = true
-          result &&= (resource.to_s == @expected_resource.to_s) unless @expected_resource.nil?
-          result &&= (action.to_s == @expected_action.to_s) unless @expected_action.nil?
+          result &&= (resource_name == @expected_resource.to_s) unless @expected_resource.nil?
+          result &&= (action_name == @expected_action.to_s) unless @expected_action.nil?
           result &&= @block.call(params) if @block
           result
         end
@@ -37,7 +39,7 @@ module HammerCLIForeman
       end
 
       def api_expects(resource=nil, action=nil, note=nil, &block)
-        ex = ApipieBindings::API.any_instance.expects(:call)
+        ex = ApipieBindings::API.any_instance.expects(:call_action)
         ex.extend(ExpectationExtensions)
         ex.with(BlockMatcher.new(resource, action, &block))
         ex.set_note(note)
