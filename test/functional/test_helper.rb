@@ -1,7 +1,7 @@
 require File.join(File.dirname(__FILE__), '../test_helper')
 
-require File.join(File.dirname(__FILE__), 'command_assertions')
-require File.join(File.dirname(__FILE__), 'api_expectations')
+require 'hammer_cli/testing/command_assertions'
+require 'hammer_cli_foreman/testing/api_expectations'
 
-include CommandAssertions
-include APIExpectations
+include HammerCLI::Testing::CommandAssertions
+include HammerCLIForeman::Testing::APIExpectations

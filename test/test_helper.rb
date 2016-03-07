@@ -20,7 +20,7 @@ require 'hammer_cli_foreman/commands'
 FOREMAN_VERSION = Gem::Version.new(ENV['TEST_API_VERSION'] || '1.10')
 
 HammerCLIForeman.stubs(:resource_config).returns({
-  :apidoc_cache_dir => 'test/unit/data/' + FOREMAN_VERSION.to_s,
+  :apidoc_cache_dir => 'test/data/' + FOREMAN_VERSION.to_s,
   :apidoc_cache_name => 'foreman_api',
   :dry_run => true})
 
