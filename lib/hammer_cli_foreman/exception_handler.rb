@@ -10,6 +10,7 @@ module HammerCLIForeman
         [RestClient::InternalServerError, :handle_internal_error],
         [RestClient::Forbidden, :handle_forbidden],
         [RestClient::UnprocessableEntity, :handle_unprocessable_entity],
+        [RestClient::MovedPermanently, :handle_moved_permanently],
         [ArgumentError, :handle_argument_error],
       ]
     end
@@ -21,6 +22,18 @@ module HammerCLIForeman
       response = HammerCLIForeman.record_to_common_format(response) unless response.has_key?('message')
       print_error response['message'] || response['full_messages']
       HammerCLI::EX_DATAERR
+    end
+
+
+    def handle_moved_permanently(e)
+      error = [_("Redirection of API call detected.")]
+      https_message = _("It seems hammer is configured to use HTTP and the server prefers HTTPS.")
+      error << https_message if strip_protocol(e.response.headers[:location]) == strip_protocol(e.response.request.url)
+      error << _("Update your server url configuration")
+      error << _("you can set 'follow_redirects' to one of :default or :always to enable redirects following")
+      print_error error.join("\n")
+      log_full_error e
+      HammerCLI::EX_CONFIG
     end
 
 
@@ -79,5 +92,10 @@ module HammerCLIForeman
       HammerCLI::EX_CONFIG
     end
 
+    private
+
+    def strip_protocol(url)
+      url.gsub(%r'^http(s)?://','').gsub(%r'//', '/')
+    end
   end
 end

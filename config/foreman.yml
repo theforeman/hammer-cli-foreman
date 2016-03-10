@@ -14,3 +14,7 @@
 
   # API request timeout. Set to -1 for no timeout
   #:request_timeout: 120 #seconds
+
+  # Follow API redirects. One of :never, :default, :always
+  # Value :default means RestClient default behaviour - follow only in GET and HEAD requests
+  #:follow_redirects: :never
