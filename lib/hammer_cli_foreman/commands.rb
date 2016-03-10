@@ -25,6 +25,7 @@ module HammerCLIForeman
     config[:credentials] = credentials
     config[:logger] = Logging.logger['API']
     config[:api_version] = 2
+    config[:follow_redirects] = HammerCLI::Settings.get(:foreman, :follow_redirects) || :never
     config[:aggressive_cache_checking] = HammerCLI::Settings.get(:foreman, :refresh_cache) || false
     config[:headers] = { "Accept-Language" => HammerCLI::I18n.locale }
     config[:language] = HammerCLI::I18n.locale
