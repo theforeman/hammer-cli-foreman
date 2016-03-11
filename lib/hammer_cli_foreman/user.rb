@@ -26,7 +26,7 @@ module HammerCLIForeman
 
       output ListCommand.output_definition do
         field :admin, _("Admin"), Fields::Boolean
-        field :auth_source_internal, _("Authorized by"), Fields::Reference
+        field nil, _("Authorized by"), Fields::SingleReference, :key => :auth_source
         field :locale, _("Locale")
         field :timezone, _("Timezone")
         field :last_login_on, _("Last login"), Fields::Date
