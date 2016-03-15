@@ -1,6 +1,9 @@
 Release notes
 =============
 
+### 0.6.1 (2016-03-15)
+* Host creation error: ApipieBindings::InvalidArgumentTypesError ([#13966](http://projects.theforeman.org/issues/13966))
+
 ### 0.6.0 (2016-02-25)
 * Names of sc-params are immutable ([#13830](http://projects.theforeman.org/issues/13830))
 * Support for command testing moved to core ([#4118](http://projects.theforeman.org/issues/4118))
