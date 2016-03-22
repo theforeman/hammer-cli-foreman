@@ -1,6 +1,10 @@
 Release notes
 =============
 
+### 0.6.2 (2016-03-22)
+* hammer-cli-foreman-0.6.1 misses dependency on apipie-bindings >=0.0.16 ([#14312](http://projects.theforeman.org/issues/14312))
+* Specifying provision and primary flags should not be mandatory ([#13927](http://projects.theforeman.org/issues/13927))
+
 ### 0.6.1 (2016-03-15)
 * Host creation error: ApipieBindings::InvalidArgumentTypesError ([#13966](http://projects.theforeman.org/issues/13966))
 
