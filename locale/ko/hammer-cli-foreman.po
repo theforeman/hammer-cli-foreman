@@ -1,26 +1,15 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the hammer-cli-foreman package.
-# 
+#
 # Translators:
 # Dominic Cleal <dominic@cleal.org>, 2014
 msgid ""
-msgstr ""
-"Project-Id-Version: hammer-cli-foreman 0.4.0\n"
-"Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-12-10 13:31+0000\n"
-"PO-Revision-Date: 2015-12-11 09:30+0000\n"
-"Last-Translator: Lukáš Zapletal\n"
-"Language-Team: Korean (http://www.transifex.com/foreman/foreman/language/ko/)\n"
-"MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=UTF-8\n"
-"Content-Transfer-Encoding: 8bit\n"
-"Language: ko\n"
-"Plural-Forms: nplurals=1; plural=0;\n"
+msgstr "Project-Id-Version: hammer-cli-foreman 0.4.0\nReport-Msgid-Bugs-To: \nPOT-Creation-Date: 2015-12-10 13:31+0000\nPO-Revision-Date: 2015-12-11 09:30+0000\nLast-Translator: Lukáš Zapletal\nLanguage-Team: Korean (http://www.transifex.com/foreman/foreman/language/ko/)\nMIME-Version: 1.0\nContent-Type: text/plain; charset=UTF-8\nContent-Transfer-Encoding: 8bit\nLanguage: ko\nPlural-Forms: nplurals=1; plural=0;\n"
 
 #: ../lib/hammer_cli_foreman.rb:32
 msgid "Foreman connection login/logout."
-msgstr "Foreman 연결 로그인/로그아웃."
+msgstr "Satellite 연결 로그인/로그아웃."
 
 #: ../lib/hammer_cli_foreman.rb:36
 msgid "Manipulate architectures."
@@ -453,9 +442,7 @@ msgid "You are logged in as '%s'"
 msgstr "'%s'로 로그인되었습니다 "
 
 #: ../lib/hammer_cli_foreman/auth.rb:39
-msgid ""
-"You are currently not logged in to any service.\n"
-"Use the service to set credentials."
+msgid "You are currently not logged in to any service.\nUse the service to set credentials."
 msgstr ""
 
 #: ../lib/hammer_cli_foreman/auth_source_ldap.rb:7
@@ -539,9 +526,7 @@ msgid "Received data of unknown format"
 msgstr "알 수 없는 형식의 데이터를 수신했습니다 "
 
 #: ../lib/hammer_cli_foreman/commands.rb:195
-msgid ""
-"Could not find %{resource}. Some search options were missing, please see "
-"--help."
+msgid "Could not find %{resource}. Some search options were missing, please see --help."
 msgstr "%{resource}를 찾을 수 없습니다. 일부 검색 옵션이 누락되어 있습니다. --help를 참조하십시오. "
 
 #: ../lib/hammer_cli_foreman/commands.rb:197
@@ -670,11 +655,11 @@ msgstr "컴퓨터 리소스를 삭제할 수 없습니다 "
 
 #: ../lib/hammer_cli_foreman/credentials.rb:26
 msgid "[Foreman] Username: "
-msgstr "[Foreman] 사용자 이름: "
+msgstr "[Satellite] 사용자 이름: "
 
 #: ../lib/hammer_cli_foreman/credentials.rb:33
 msgid "[Foreman] Password for %s: "
-msgstr "%s의 [Foreman] 암호: "
+msgstr "%s의 [Satellite] 암호: "
 
 #: ../lib/hammer_cli_foreman/defaults.rb:7
 msgid "Use the default organization and/or location from the server"
@@ -782,9 +767,7 @@ msgid "is the server down?"
 msgstr "서버가 중지되어 있습니까?"
 
 #: ../lib/hammer_cli_foreman/exception_handler.rb:77
-msgid ""
-"was '%s' run on the server when using apipie cache? (typical production "
-"settings)"
+msgid "was '%s' run on the server when using apipie cache? (typical production settings)"
 msgstr "apipie 캐시를 사용할 때 서버에서 '%s'가 실행되었습니까? (일반 제품 설정)"
 
 #: ../lib/hammer_cli_foreman/external_usergroup.rb:6
@@ -1533,15 +1516,11 @@ msgid "Bond options"
 msgstr ""
 
 #: ../lib/hammer_cli_foreman/interface.rb:77
-msgid ""
-"Should this interface be used for constructing the FQDN of the host? Each "
-"managed hosts needs to have one primary interface."
+msgid "Should this interface be used for constructing the FQDN of the host? Each managed hosts needs to have one primary interface."
 msgstr ""
 
 #: ../lib/hammer_cli_foreman/interface.rb:78
-msgid ""
-"Should this interface be used for TFTP of PXELinux (or SSH for image-based "
-"hosts)? Each managed hosts needs to have one provision interface."
+msgid "Should this interface be used for TFTP of PXELinux (or SSH for image-based hosts)? Each managed hosts needs to have one provision interface."
 msgstr ""
 
 #: ../lib/hammer_cli_foreman/interface.rb:128
@@ -1794,8 +1773,7 @@ msgid "config template id to be set"
 msgstr "설정할 설정 템플릿 ID "
 
 #: ../lib/hammer_cli_foreman/operating_system.rb:105
-msgid ""
-"[%{config_template_name}] was set as default %{template_kind_name} template"
+msgid "[%{config_template_name}] was set as default %{template_kind_name} template"
 msgstr "[%{config_template_name}]이(가) 기본값 %{template_kind_name}  템플릿으로 설정되었습니다 "
 
 #: ../lib/hammer_cli_foreman/operating_system.rb:106

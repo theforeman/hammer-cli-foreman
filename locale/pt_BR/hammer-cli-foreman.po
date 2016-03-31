@@ -1,29 +1,18 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the hammer-cli-foreman package.
-# 
+#
 # Translators:
 # Diego de Souza Lopes <djkakaroto@gmail.com>, 2015
 # Junior Alvim <alvin@intechne.com.br>, 2014
 # Fabio Dias <fabioqos@gmail.com>, 2015
 # Valeria S Silva <valeriassilva@live.com>, 2015
 msgid ""
-msgstr ""
-"Project-Id-Version: hammer-cli-foreman 0.4.0\n"
-"Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-12-10 13:31+0000\n"
-"PO-Revision-Date: 2015-12-11 09:30+0000\n"
-"Last-Translator: Lukáš Zapletal\n"
-"Language-Team: Portuguese (Brazil) (http://www.transifex.com/foreman/foreman/language/pt_BR/)\n"
-"MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=UTF-8\n"
-"Content-Transfer-Encoding: 8bit\n"
-"Language: pt_BR\n"
-"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+msgstr "Project-Id-Version: hammer-cli-foreman 0.4.0\nReport-Msgid-Bugs-To: \nPOT-Creation-Date: 2015-12-10 13:31+0000\nPO-Revision-Date: 2015-12-11 09:30+0000\nLast-Translator: Lukáš Zapletal\nLanguage-Team: Portuguese (Brazil) (http://www.transifex.com/foreman/foreman/language/pt_BR/)\nMIME-Version: 1.0\nContent-Type: text/plain; charset=UTF-8\nContent-Transfer-Encoding: 8bit\nLanguage: pt_BR\nPlural-Forms: nplurals=2; plural=(n > 1);\n"
 
 #: ../lib/hammer_cli_foreman.rb:32
 msgid "Foreman connection login/logout."
-msgstr "A conexão de login/logout do Foreman"
+msgstr "A conexão de login/logout do Satellite"
 
 #: ../lib/hammer_cli_foreman.rb:36
 msgid "Manipulate architectures."
@@ -107,7 +96,7 @@ msgstr "Manipule variaveis smart"
 
 #: ../lib/hammer_cli_foreman.rb:116
 msgid "Manipulate smart proxies."
-msgstr "Manipular os proxies inteligentes."
+msgstr "Manipular os Capsules inteligentes."
 
 #: ../lib/hammer_cli_foreman.rb:120
 msgid "Change server settings."
@@ -269,11 +258,11 @@ msgstr "Desassociar um recurso de computador"
 
 #: ../lib/hammer_cli_foreman/associating_commands.rb:125
 msgid "Associate a smart proxy"
-msgstr "Associar um proxy inteligente"
+msgstr "Associar um Capsule inteligente"
 
 #: ../lib/hammer_cli_foreman/associating_commands.rb:134
 msgid "Disassociate a smart proxy"
-msgstr "Desassociar um proxy inteligente"
+msgstr "Desassociar um Capsule inteligente"
 
 #: ../lib/hammer_cli_foreman/associating_commands.rb:147
 msgid "Associate an user"
@@ -456,9 +445,7 @@ msgid "You are logged in as '%s'"
 msgstr "Você está autenticado como '%s'"
 
 #: ../lib/hammer_cli_foreman/auth.rb:39
-msgid ""
-"You are currently not logged in to any service.\n"
-"Use the service to set credentials."
+msgid "You are currently not logged in to any service.\nUse the service to set credentials."
 msgstr "No momento você não esta logado em nenhum serviço. \nUsar o serviço para definir credenciais."
 
 #: ../lib/hammer_cli_foreman/auth_source_ldap.rb:7
@@ -542,9 +529,7 @@ msgid "Received data of unknown format"
 msgstr "Dados recebidos de formato desconhecido"
 
 #: ../lib/hammer_cli_foreman/commands.rb:195
-msgid ""
-"Could not find %{resource}. Some search options were missing, please see "
-"--help."
+msgid "Could not find %{resource}. Some search options were missing, please see --help."
 msgstr "Não foi possível encontrar o %{resource}. Algumas opções estavam faltando, por favor veja --help."
 
 #: ../lib/hammer_cli_foreman/commands.rb:197
@@ -673,11 +658,11 @@ msgstr "Não foi possível remover um recurso de computador"
 
 #: ../lib/hammer_cli_foreman/credentials.rb:26
 msgid "[Foreman] Username: "
-msgstr "[Foreman] nome de usuário:  "
+msgstr "[Satellite] nome de usuário:  "
 
 #: ../lib/hammer_cli_foreman/credentials.rb:33
 msgid "[Foreman] Password for %s: "
-msgstr "[Foreman] senha para %s:  "
+msgstr "[Satellite] senha para %s:  "
 
 #: ../lib/hammer_cli_foreman/defaults.rb:7
 msgid "Use the default organization and/or location from the server"
@@ -685,11 +670,11 @@ msgstr ""
 
 #: ../lib/hammer_cli_foreman/domain.rb:6
 msgid "ID of DNS proxy to use within this domain"
-msgstr "ID do Proxy DNS para usar dentro deste domínio"
+msgstr "ID do Capsule DNS para usar dentro deste domínio"
 
 #: ../lib/hammer_cli_foreman/domain.rb:7
 msgid "Name of DNS proxy to use within this domain"
-msgstr "Nome do Proxy DNS para usar dentro deste domínio"
+msgstr "Nome do Capsule DNS para usar dentro deste domínio"
 
 #: ../lib/hammer_cli_foreman/domain.rb:43
 msgid "DNS Id"
@@ -785,9 +770,7 @@ msgid "is the server down?"
 msgstr "o servidor está desligado?"
 
 #: ../lib/hammer_cli_foreman/exception_handler.rb:77
-msgid ""
-"was '%s' run on the server when using apipie cache? (typical production "
-"settings)"
+msgid "was '%s' run on the server when using apipie cache? (typical production settings)"
 msgstr "o '%s' foi executado no servidor ao utilizar o apipie cache? (configurações de produção típicas)"
 
 #: ../lib/hammer_cli_foreman/external_usergroup.rb:6
@@ -1238,11 +1221,11 @@ msgstr "Lista de ids de  puppetclass"
 
 #: ../lib/hammer_cli_foreman/hostgroup.rb:12
 msgid "Name of puppet CA proxy"
-msgstr "nome do proxy CA do puppet"
+msgstr "nome do Capsule CA do puppet"
 
 #: ../lib/hammer_cli_foreman/hostgroup.rb:13
 msgid "Name of puppet proxy"
-msgstr "nome do puppet proxy"
+msgstr "nome do puppet Capsule"
 
 #: ../lib/hammer_cli_foreman/hostgroup.rb:14
 msgid "Name of parent hostgroup"
@@ -1263,11 +1246,11 @@ msgstr "Tratamento"
 
 #: ../lib/hammer_cli_foreman/hostgroup.rb:78
 msgid "Puppet CA Proxy Id"
-msgstr "Puppet CA Proxy Id"
+msgstr "Puppet CA Capsule Id"
 
 #: ../lib/hammer_cli_foreman/hostgroup.rb:79
 msgid "Puppet Master Proxy Id"
-msgstr "ID do Puppet Master Proxy"
+msgstr "ID do Puppet Master Capsule"
 
 #: ../lib/hammer_cli_foreman/hostgroup.rb:80
 msgid "ComputeProfile"
@@ -1379,7 +1362,7 @@ msgstr "Nome da tabela de partição"
 
 #: ../lib/hammer_cli_foreman/id_resolver.rb:53
 msgid "Proxy name"
-msgstr "Nome do Proxy"
+msgstr "Nome do Capsule"
 
 #: ../lib/hammer_cli_foreman/id_resolver.rb:54
 msgid "Puppet class name"
@@ -1536,15 +1519,11 @@ msgid "Bond options"
 msgstr "Opcoes de Bond"
 
 #: ../lib/hammer_cli_foreman/interface.rb:77
-msgid ""
-"Should this interface be used for constructing the FQDN of the host? Each "
-"managed hosts needs to have one primary interface."
+msgid "Should this interface be used for constructing the FQDN of the host? Each managed hosts needs to have one primary interface."
 msgstr "Está interface deverá ser usada para a construção do FQDN do host? Cada gerenciamento de host precisa ter uma interface primária."
 
 #: ../lib/hammer_cli_foreman/interface.rb:78
-msgid ""
-"Should this interface be used for TFTP of PXELinux (or SSH for image-based "
-"hosts)? Each managed hosts needs to have one provision interface."
+msgid "Should this interface be used for TFTP of PXELinux (or SSH for image-based hosts)? Each managed hosts needs to have one provision interface."
 msgstr "Esta interface deverá ser usada para TFTP do PXELinux (ou SSH para a base de imagem host)? Cada gerenciamento de host precisa ter uma interface de provisão."
 
 #: ../lib/hammer_cli_foreman/interface.rb:128
@@ -1797,8 +1776,7 @@ msgid "config template id to be set"
 msgstr "id de modelo de config a ser definido"
 
 #: ../lib/hammer_cli_foreman/operating_system.rb:105
-msgid ""
-"[%{config_template_name}] was set as default %{template_kind_name} template"
+msgid "[%{config_template_name}] was set as default %{template_kind_name} template"
 msgstr "[%{config_template_name}] era definido como modelo padrão %{template_kind_name}"
 
 #: ../lib/hammer_cli_foreman/operating_system.rb:106
@@ -1934,7 +1912,7 @@ msgstr "Grupos de usuários"
 
 #: ../lib/hammer_cli_foreman/references.rb:42
 msgid "Smart proxies"
-msgstr "Proxies Inteligentes"
+msgstr "Capsules Inteligentes"
 
 #: ../lib/hammer_cli_foreman/references.rb:50
 msgid "Compute resources"
@@ -2247,27 +2225,27 @@ msgstr "Recursos"
 
 #: ../lib/hammer_cli_foreman/smart_proxy.rb:41
 msgid "Smart proxy created"
-msgstr "Proxy inteligente criado"
+msgstr "Capsule inteligente criado"
 
 #: ../lib/hammer_cli_foreman/smart_proxy.rb:42
 msgid "Could not create the proxy"
-msgstr "Não foi possível criar um proxy"
+msgstr "Não foi possível criar um Capsule"
 
 #: ../lib/hammer_cli_foreman/smart_proxy.rb:49
 msgid "Smart proxy updated"
-msgstr "Proxy inteligente atualizado"
+msgstr "Capsule inteligente atualizado"
 
 #: ../lib/hammer_cli_foreman/smart_proxy.rb:50
 msgid "Could not update the proxy"
-msgstr "Não foi possível atualizar o proxy"
+msgstr "Não foi possível atualizar o Capsule"
 
 #: ../lib/hammer_cli_foreman/smart_proxy.rb:57
 msgid "Smart proxy deleted"
-msgstr "Proxy Inteligente removido"
+msgstr "Capsule Inteligente removido"
 
 #: ../lib/hammer_cli_foreman/smart_proxy.rb:58
 msgid "Could not delete the proxy"
-msgstr "Não foi possível remover o proxy"
+msgstr "Não foi possível remover o Capsule"
 
 #: ../lib/hammer_cli_foreman/smart_proxy.rb:69
 msgid "Puppet classes were imported"
@@ -2283,11 +2261,11 @@ msgstr "Não execute a importação"
 
 #: ../lib/hammer_cli_foreman/smart_proxy.rb:92
 msgid "Smart proxy features were refreshed"
-msgstr "Recursos de proxy inteligentes foram atualizados"
+msgstr "Recursos de Capsule inteligentes foram atualizados"
 
 #: ../lib/hammer_cli_foreman/smart_proxy.rb:93
 msgid "Refresh of smart proxy features failed"
-msgstr "Falha ao atualizar os recursos do proxy inteligente "
+msgstr "Falha ao atualizar os recursos do Capsule inteligente "
 
 #: ../lib/hammer_cli_foreman/smart_variable.rb:82
 msgid "Smart variable [%{variable}] created"

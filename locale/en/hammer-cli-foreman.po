@@ -4,20 +4,10 @@
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
 msgid ""
-msgstr ""
-"Project-Id-Version: hammer-cli-foreman 0.4.0\n"
-"Report-Msgid-Bugs-To: \n"
-"PO-Revision-Date: 2014-03-04 16:47+0000\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
-"Language: \n"
-"MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=UTF-8\n"
-"Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
+msgstr "Project-Id-Version: hammer-cli-foreman 0.4.0\nReport-Msgid-Bugs-To: \nPO-Revision-Date: 2014-03-04 16:47+0000\nLast-Translator: FULL NAME <EMAIL@ADDRESS>\nLanguage-Team: LANGUAGE <LL@li.org>\nLanguage: \nMIME-Version: 1.0\nContent-Type: text/plain; charset=UTF-8\nContent-Transfer-Encoding: 8bit\nPlural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 
 msgid "Foreman connection login/logout."
-msgstr ""
+msgstr "Satellite connection login/logout."
 
 msgid "Manipulate architectures."
 msgstr ""
@@ -80,7 +70,7 @@ msgid "Manipulate smart variables."
 msgstr ""
 
 msgid "Manipulate smart proxies."
-msgstr ""
+msgstr "Manipulate capsules."
 
 msgid "Change server settings."
 msgstr ""
@@ -158,10 +148,10 @@ msgid "Disassociate a compute resource"
 msgstr ""
 
 msgid "Associate a smart proxy"
-msgstr ""
+msgstr "Associate a capsule"
 
 msgid "Disassociate a smart proxy"
-msgstr ""
+msgstr "Disassociate a capsule"
 
 msgid "Associate an user"
 msgstr ""
@@ -298,9 +288,7 @@ msgstr ""
 msgid "You are logged in as '%s'"
 msgstr ""
 
-msgid ""
-"You are currently not logged in to any service.\n"
-"Use the service to set credentials."
+msgid "You are currently not logged in to any service.\nUse the service to set credentials."
 msgstr ""
 
 msgid "Manage LDAP auth sources."
@@ -363,9 +351,7 @@ msgstr ""
 msgid "Received data of unknown format"
 msgstr ""
 
-msgid ""
-"Could not find %{resource}. Some search options were missing, please see --hel"
-"p."
+msgid "Could not find %{resource}. Some search options were missing, please see --help."
 msgstr ""
 
 msgid "Could not find %{resource}, please set option %{switches}."
@@ -450,19 +436,19 @@ msgid "Could not delete the compute resource"
 msgstr ""
 
 msgid "[Foreman] Username: "
-msgstr ""
+msgstr "[Satellite] Username: "
 
 msgid "[Foreman] Password for %s: "
-msgstr ""
+msgstr "[Satellite] Password for %s: "
 
 msgid "Use the default organization and/or location from the server"
 msgstr ""
 
 msgid "ID of DNS proxy to use within this domain"
-msgstr ""
+msgstr "ID of DNS Capsule to use within this domain"
 
 msgid "Name of DNS proxy to use within this domain"
-msgstr ""
+msgstr "Name of DNS Capsule to use within this domain"
 
 msgid "DNS Id"
 msgstr ""
@@ -533,9 +519,7 @@ msgstr ""
 msgid "is the server down?"
 msgstr ""
 
-msgid ""
-"was '%s' run on the server when using apipie cache? (typical production settin"
-"gs)"
+msgid "was '%s' run on the server when using apipie cache? (typical production settings)"
 msgstr ""
 
 msgid "View and manage user group's external user groups"
@@ -848,10 +832,10 @@ msgid "List of puppetclass ids"
 msgstr ""
 
 msgid "Name of puppet CA proxy"
-msgstr ""
+msgstr "Name of puppet CA Capsule"
 
 msgid "Name of puppet proxy"
-msgstr ""
+msgstr "Name of puppet Capsule"
 
 msgid "Name of parent hostgroup"
 msgstr ""
@@ -866,10 +850,10 @@ msgid "Title"
 msgstr ""
 
 msgid "Puppet CA Proxy Id"
-msgstr ""
+msgstr "Puppet CA Capsule Id"
 
 msgid "Puppet Master Proxy Id"
-msgstr ""
+msgstr "Puppet Master Capsule Id"
 
 msgid "ComputeProfile"
 msgstr ""
@@ -953,7 +937,7 @@ msgid "Partition table name"
 msgstr ""
 
 msgid "Proxy name"
-msgstr ""
+msgstr "Capsule name"
 
 msgid "Puppet class name"
 msgstr ""
@@ -1069,14 +1053,10 @@ msgstr ""
 msgid "Bond options"
 msgstr ""
 
-msgid ""
-"Should this interface be used for constructing the FQDN of the host? Each mana"
-"ged hosts needs to have one primary interface."
+msgid "Should this interface be used for constructing the FQDN of the host? Each managed hosts needs to have one primary interface."
 msgstr ""
 
-msgid ""
-"Should this interface be used for TFTP of PXELinux (or SSH for image-based hos"
-"ts)? Each managed hosts needs to have one provision interface."
+msgid "Should this interface be used for TFTP of PXELinux (or SSH for image-based hosts)? Each managed hosts needs to have one provision interface."
 msgstr ""
 
 msgid "Interface created"
@@ -1359,7 +1339,7 @@ msgid "User groups"
 msgstr ""
 
 msgid "Smart proxies"
-msgstr ""
+msgstr "Capsules"
 
 msgid "Compute resources"
 msgstr ""
@@ -1584,22 +1564,22 @@ msgid "Features"
 msgstr ""
 
 msgid "Smart proxy created"
-msgstr ""
+msgstr "Capsule created"
 
 msgid "Could not create the proxy"
-msgstr ""
+msgstr "Could not create the Capsule"
 
 msgid "Smart proxy updated"
-msgstr ""
+msgstr "Capsule updated"
 
 msgid "Could not update the proxy"
-msgstr ""
+msgstr "Could not update the Capsule"
 
 msgid "Smart proxy deleted"
-msgstr ""
+msgstr "Capsule deleted"
 
 msgid "Could not delete the proxy"
-msgstr ""
+msgstr "Could not delete the Capsule"
 
 msgid "Puppet classes were imported"
 msgstr ""
@@ -1611,10 +1591,10 @@ msgid "Do not run the import"
 msgstr ""
 
 msgid "Smart proxy features were refreshed"
-msgstr ""
+msgstr "Capsule features were refreshed"
 
 msgid "Refresh of smart proxy features failed"
-msgstr ""
+msgstr "Refresh of capsule features failed"
 
 msgid "Smart variable [%{variable}] created"
 msgstr ""
