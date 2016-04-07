@@ -138,3 +138,74 @@ describe "parameters" do
     end
   end
 end
+
+describe 'associating commands' do
+  def failure_test(message, &block)
+    error = Errno::ECONNREFUSED.new 'connect(2) for "testhost" port 3000'
+    block.call.raises(error)
+    result = run_cmd(@cmd + @params)
+    expected = common_error_result(
+      @cmd,
+      error.message,
+      message
+    )
+    assert_cmd(expected, result)
+  end
+
+  describe 'add domain' do
+    before do
+      @cmd = %w(organization add-domain)
+      @params = %w(--id=1 --domain-id=5)
+    end
+
+    it "should output success message" do
+      api_expects(:organizations, :show, 'Find organization') do |par|
+        par[:id] == '1'
+      end.returns({:id => 1, 'domains' => [{'id' => '1'}]})
+      api_expects(:organizations, :update, 'Update organization') do |par|
+        par['id'] == '1' &&
+          par['organization']['domain_ids'] == ['1', '5']
+      end
+      result = run_cmd(@cmd + @params)
+      expected = success_result("The domain was associated\n")
+      assert_cmd(expected, result)
+    end
+
+    it "should output failure message" do
+      failure_test "Could not associate the domain" do
+        api_expects(:organizations, :show, 'Find organization') do |par|
+          par[:id] == '1'
+        end
+      end
+    end
+  end
+
+  describe 'remove domain' do
+    before do
+      @cmd = %w(organization remove-domain)
+      @params = %w(--id=1 --domain-id=5)
+    end
+
+    it "should output success message" do
+      domains = ['1', '5'].map { |x| { 'id' => x } }
+      api_expects(:organizations, :show, 'Find organization') do |par|
+        par[:id] == '1'
+      end.returns({:id => 1, 'domains' => domains})
+      api_expects(:organizations, :update, 'Update organization') do |par|
+        par['id'] == '1' &&
+          par['organization']['domain_ids'] == ['1']
+      end
+      result = run_cmd(@cmd + @params)
+      expected = success_result("The domain has been disassociated\n")
+      assert_cmd(expected, result)
+    end
+
+    it "should output failure message" do
+      failure_test "Could not disassociate the domain" do
+        api_expects(:organizations, :show, 'Find organization') do |par|
+          par[:id] == '1'
+        end
+      end
+    end
+  end
+end

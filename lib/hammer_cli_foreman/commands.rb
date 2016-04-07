@@ -476,6 +476,11 @@ module HammerCLIForeman
       return superclass.associated_resource if superclass.respond_to? :associated_resource
     end
 
+    def self.default_message(format)
+      name = associated_resource ? associated_resource.singular_name.to_s : nil
+      format % { :resource_name => name.gsub(/_|-/, ' ') } unless name.nil?
+    end
+
     def get_associated_identifier
       get_resource_id(associated_resource, :scoped => true)
     end
@@ -522,6 +527,22 @@ module HammerCLIForeman
       description.strip.empty? ? _("Associate a resource") : description
     end
 
+    def self.failure_message(msg = nil)
+      if msg.nil?
+        super(default_message "Could not associate the %{resource_name}")
+      else
+        super msg
+      end
+    end
+
+    def self.success_message(msg = nil)
+      if msg.nil?
+        super(default_message "The %{resource_name} was associated")
+      else
+        super msg
+      end
+    end
+
     def get_new_ids
       ids = get_current_ids.map(&:to_s)
       required_id = get_associated_identifier.to_s
@@ -552,7 +573,20 @@ module HammerCLIForeman
       ids
     end
 
+    def self.failure_message(msg = nil)
+      if msg.nil?
+        super(default_message "Could not disassociate the %{resource_name}")
+      else
+        super msg
+      end
+    end
+
+    def self.success_message(msg = nil)
+      if msg.nil?
+        super(default_message "The %{resource_name} has been disassociated")
+      else
+        super msg
+      end
+    end
   end
-
-
 end
