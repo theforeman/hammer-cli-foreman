@@ -528,19 +528,11 @@ module HammerCLIForeman
     end
 
     def self.failure_message(msg = nil)
-      if msg.nil?
-        super(default_message "Could not associate the %{resource_name}")
-      else
-        super msg
-      end
+      super(msg) || default_message(_('Could not associate the %{resource_name}'))
     end
 
     def self.success_message(msg = nil)
-      if msg.nil?
-        super(default_message "The %{resource_name} was associated")
-      else
-        super msg
-      end
+      super(msg) || default_message(_('The %{resource_name} has been associated'))
     end
 
     def get_new_ids
@@ -574,19 +566,11 @@ module HammerCLIForeman
     end
 
     def self.failure_message(msg = nil)
-      if msg.nil?
-        super(default_message "Could not disassociate the %{resource_name}")
-      else
-        super msg
-      end
+      super(msg) || default_message(_('Could not disassociate the %{resource_name}'))
     end
 
     def self.success_message(msg = nil)
-      if msg.nil?
-        super(default_message "The %{resource_name} has been disassociated")
-      else
-        super msg
-      end
+      super(msg) || default_message(_('The %{resource_name} has been disassociated'))
     end
   end
 end
