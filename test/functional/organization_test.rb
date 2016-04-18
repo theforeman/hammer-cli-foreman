@@ -167,7 +167,7 @@ describe 'associating commands' do
           par['organization']['domain_ids'] == ['1', '5']
       end
       result = run_cmd(@cmd + @params)
-      expected = success_result("The domain was associated\n")
+      expected = success_result("The domain has been associated\n")
       assert_cmd(expected, result)
     end
 
