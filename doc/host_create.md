@@ -233,7 +233,7 @@ path                 # path to folder
 guest_id             # guest OS id form VMware
 scsi_controller_type # id of the controller from VMWare
 hardware_version     # hardware version id from VMWare
-start                # 1/0
+start                # Must be a 1 or 0, whether to start the machine or not
 ```
 
 Available keys for `--interface`:
