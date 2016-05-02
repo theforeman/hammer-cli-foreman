@@ -47,7 +47,7 @@ module HammerCLIForeman
       end
 
       def api_expects_no_call
-        ApipieBindings::API.any_instance.expects(:call).never
+        ApipieBindings::API.any_instance.expects(:call_action).never
       end
 
       def index_response(items)

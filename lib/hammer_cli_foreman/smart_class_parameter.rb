@@ -32,10 +32,8 @@ module HammerCLIForeman
   class SmartClassParametersList < SmartClassParametersBriefList
 
     output do
-      from :puppetclass do
-        field :name, _("Puppet class")
-        field :id, _("Class Id"), Fields::Id
-      end
+      field :puppetclass_name, _("Puppet class")
+      field :puppetclass_id, _("Class Id"), Fields::Id
     end
   end
 
@@ -60,6 +58,7 @@ module HammerCLIForeman
       output ListCommand.output_definition do
         field :description, _("Description")
         field :parameter_type, _("Type")
+        field :hidden_value?, _("Hidden Value?")
         field :required, _("Required")
 
         label _("Validator") do

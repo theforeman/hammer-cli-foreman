@@ -39,11 +39,17 @@ module HammerCLIForeman
       class AddHostgroupCommand < HammerCLIForeman::AddAssociatedCommand
         associated_resource :hostgroups
         desc _("Associate a hostgroup")
+
+        success_message _("The hostgroup has been associated")
+        failure_message _("Could not associate the hostgroup")
       end
 
       class RemoveHostgroupCommand < HammerCLIForeman::RemoveAssociatedCommand
         associated_resource :hostgroups
         desc _("Disassociate a hostgroup")
+
+        success_message _("The hostgroup has been disassociated")
+        failure_message _("Could not disassociate the hostgroup")
       end
     end
 
@@ -53,11 +59,17 @@ module HammerCLIForeman
       class AddEnvironmentCommand < HammerCLIForeman::AddAssociatedCommand
         associated_resource :environments
         desc _("Associate an environment")
+
+        success_message _("The environment has been associated")
+        failure_message _("Could not associate the environment")
       end
 
       class RemoveEnvironmentCommand < HammerCLIForeman::RemoveAssociatedCommand
         associated_resource :environments
         desc _("Disassociate an environment")
+
+        success_message _("The environment has been disassociated")
+        failure_message _("Could not disassociate the environment")
       end
     end
 
@@ -67,11 +79,17 @@ module HammerCLIForeman
       class AddDomainCommand < HammerCLIForeman::AddAssociatedCommand
         associated_resource :domains
         desc _("Associate a domain")
+
+        success_message _("The domain has been associated")
+        failure_message _("Could not associate the domain")
       end
 
       class RemoveDomainCommand < HammerCLIForeman::RemoveAssociatedCommand
         associated_resource :domains
         desc _("Disassociate a domain")
+
+        success_message _("The domain has been disassociated")
+        failure_message _("Could not disassociate the domain")
       end
     end
 
@@ -81,11 +99,17 @@ module HammerCLIForeman
       class AddMediumCommand < HammerCLIForeman::AddAssociatedCommand
         associated_resource :media
         desc _("Associate a medium")
+
+        success_message _("The medium has been associated")
+        failure_message _("Could not associate the medium")
       end
 
       class RemoveMediumCommand < HammerCLIForeman::RemoveAssociatedCommand
         associated_resource :media
         desc _("Disassociate a medium")
+
+        success_message _("The medium has been disassociated")
+        failure_message _("Could not disassociate the medium")
       end
     end
 
@@ -95,11 +119,17 @@ module HammerCLIForeman
       class AddSubnetCommand < HammerCLIForeman::AddAssociatedCommand
         associated_resource :subnets
         desc _("Associate a subnet")
+
+        success_message _("The subnet has been associated")
+        failure_message _("Could not associate the subnet")
       end
 
       class RemoveSubnetCommand < HammerCLIForeman::RemoveAssociatedCommand
         associated_resource :subnets
         desc _("Disassociate a subnet")
+
+        success_message _("The subnet has been disassociated")
+        failure_message _("Could not disassociate the subnet")
       end
     end
 
@@ -109,11 +139,17 @@ module HammerCLIForeman
       class AddComputeResourceCommand < HammerCLIForeman::AddAssociatedCommand
         associated_resource :compute_resources
         desc _("Associate a compute resource")
+
+        success_message _("The compute resource has been associated")
+        failure_message _("Could not associate the compute resource")
       end
 
       class RemoveComputeResourceCommand < HammerCLIForeman::RemoveAssociatedCommand
         associated_resource :compute_resources
         desc _("Disassociate a compute resource")
+
+        success_message _("The compute resource has been disassociated")
+        failure_message _("Could not disassociate the compute resource")
       end
     end
 
@@ -124,6 +160,9 @@ module HammerCLIForeman
         associated_resource :smart_proxies
         desc _("Associate a smart proxy")
 
+        success_message _("The smart proxy has been associated")
+        failure_message _("Could not associate the smart proxy")
+
         def associated_resource_name
           "smart-proxy"
         end
@@ -132,6 +171,9 @@ module HammerCLIForeman
       class RemoveSmartProxyCommand < HammerCLIForeman::RemoveAssociatedCommand
         associated_resource :smart_proxies
         desc _("Disassociate a smart proxy")
+
+        success_message _("The smart proxy has been disassociated")
+        failure_message _("Could not disassociate the smart proxy")
 
         def associated_resource_name
           "smart-proxy"
@@ -189,11 +231,17 @@ module HammerCLIForeman
       class AddConfigTemplateCommand < HammerCLIForeman::AddAssociatedCommand
         associated_resource :config_templates
         desc _("Associate a configuration template")
+
+        success_message _("The configuration template has been associated")
+        failure_message _("Could not associate the configuration template")
       end
 
       class RemoveConfigTemplateCommand < HammerCLIForeman::RemoveAssociatedCommand
         associated_resource :config_templates
         desc _("Disassociate a configuration template")
+
+        success_message _("The configuration template has been disassociated")
+        failure_message _("Could not disassociate the configuration template")
       end
     end
 
@@ -203,11 +251,17 @@ module HammerCLIForeman
       class AddOrganizationCommand < HammerCLIForeman::AddAssociatedCommand
         associated_resource :organizations
         desc _("Associate an organization")
+
+        success_message _("The organization has been associated")
+        failure_message _("Could not associate the organization")
       end
 
       class RemoveOrganizationCommand < HammerCLIForeman::RemoveAssociatedCommand
         associated_resource :organizations
         desc _("Disassociate an organization")
+
+        success_message _("The organization has been disassociated")
+        failure_message _("Could not disassociate the organization")
       end
     end
 
