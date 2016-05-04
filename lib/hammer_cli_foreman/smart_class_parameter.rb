@@ -138,6 +138,8 @@ module HammerCLIForeman
       end
 
       validate_options do
+        any(:option_value, :option_use_puppet_default).required
+        all(:option_value, :option_use_puppet_default).rejected
         if option(:option_smart_class_parameter_name).exist?
           any(:option_puppetclass_name, :option_puppetclass_id).required
         end
