@@ -119,7 +119,7 @@ module HammerCLIForeman
     end
 
     def puppetclass_ids(options)
-      options[HammerCLI.option_accessor_name("ids")] || find_puppetclasses(options).values.collect { |c| c.first['id'] }
+      options[HammerCLI.option_accessor_name("ids")] || find_puppetclasses(options).collect { |c| c['id'] }
     end
 
     protected
@@ -157,7 +157,7 @@ module HammerCLIForeman
     def find_puppetclasses(options)
       resource_name = :puppetclasses
       resource = @api.resource(resource_name)
-      results = resolved_call(resource_name, :index, options).first
+      results = resolved_call(resource_name, :index, options).first.values.flatten
       raise ResolverError.new(_("one of %s not found") % resource.name, resource) if results.count < expected_record_count(options, resource)
       results
     end

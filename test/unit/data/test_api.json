@@ -602,6 +602,49 @@
             "see": []
           }
         ]
+      },
+      "puppetclasses": {
+        "doc_url": "./apipie/1.0/puppetclasses",
+        "api_url": "/",
+        "name": "Puppetclasses",
+        "short_description": null,
+        "full_description": null,
+        "version": "1.0",
+        "formats": null,
+        "metadata": null,
+        "methods": [
+          {
+            "doc_url": "./apipie/1.0/puppetclasses/index",
+            "name": "index",
+            "apis": [
+              {
+                "api_url": "/api/v2/puppetclasses",
+                "http_method": "GET",
+                "short_description": null,
+                "deprecated": null
+              }
+            ],
+            "formats": null,
+            "full_description": "",
+            "errors": [],
+            "params": [
+              {
+                "name": "search",
+                "full_name": "search",
+                "description": "\n<p>Search string</p>\n",
+                "required": false,
+                "allow_nil": false,
+                "validator": "Must be String",
+                "expected_type": "string",
+                "metadata": null,
+                "show": true
+              }
+            ],
+            "examples": [],
+            "metadata": null,
+            "see": []
+          }
+        ]
       }
     },
     "link_extension": ".html"
