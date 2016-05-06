@@ -231,8 +231,8 @@ memory_mb            # integer number
 cluster              # cluster id from VMware
 path                 # path to folder
 guest_id             # guest OS id form VMware
-scsi_controller_type # id of the controller from VMWare
-hardware_version     # hardware version id from VMWare
+scsi_controller_type # id of the controller from VMware
+hardware_version     # hardware version id from VMware
 start                # 1/0
 ```
 
