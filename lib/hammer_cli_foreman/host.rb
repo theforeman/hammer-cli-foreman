@@ -350,7 +350,7 @@ module HammerCLIForeman
 
     class ReportsCommand < HammerCLIForeman::AssociatedResourceListCommand
       command_name "reports"
-      resource :reports, :index
+      resource :config_reports, :index
       parent_resource :hosts
 
       output HammerCLIForeman::Report::ListCommand.output_definition
