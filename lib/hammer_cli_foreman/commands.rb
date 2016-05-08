@@ -152,7 +152,7 @@ module HammerCLIForeman
       end
       begin
         resolver.send("#{resource.singular_name}_id", opts)
-      rescue HammerCLIForeman::MissingSeachOptions => e
+      rescue HammerCLIForeman::MissingSearchOptions => e
         if (options[:required] == true || resource_search_requested(resource, opts))
           logger.info "Error occured while searching for #{resource.singular_name}"
           raise e
@@ -164,7 +164,7 @@ module HammerCLIForeman
       opts = resolver.scoped_options(resource.singular_name, all_options)
       begin
         resolver.send("#{resource.singular_name}_ids", opts)
-      rescue HammerCLIForeman::MissingSeachOptions => e
+      rescue HammerCLIForeman::MissingSearchOptions => e
         if (options[:required] == true || resource_search_requested(resource, opts, true))
           logger.info "Error occured while searching for #{resource.name}"
           raise e
@@ -188,7 +188,7 @@ module HammerCLIForeman
 
     def send_request
       transform_format(super)
-    rescue HammerCLIForeman::MissingSeachOptions => e
+    rescue HammerCLIForeman::MissingSearchOptions => e
 
       switches = self.class.find_options(:referenced_resource => e.resource.singular_name).map(&:long_switch)
 
@@ -200,7 +200,7 @@ module HammerCLIForeman
         error_message = _("Could not find %{resource}, please set one of options %{switches}.")
       end
 
-      raise MissingSeachOptions.new(
+      raise MissingSearchOptions.new(
         error_message % {
           :resource => e.resource.singular_name,
           :switches => switches.join(", ")

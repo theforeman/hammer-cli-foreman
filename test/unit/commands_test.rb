@@ -152,7 +152,7 @@ describe HammerCLIForeman::Command do
     com = TestList.new("", { :adapter => :csv, :interactive => false })
     
     com.resolver.class.any_instance.stubs(:location_id).raises(
-      HammerCLIForeman::MissingSeachOptions.new(
+      HammerCLIForeman::MissingSearchOptions.new(
         "Error", 
         HammerCLIForeman.foreman_api_connection.api.resource(:locations)
       )
@@ -173,7 +173,7 @@ describe HammerCLIForeman::Command do
     com = TestList.new("", { :adapter => :csv, :interactive => false })
     
     com.resolver.class.any_instance.stubs(:location_id).raises(
-      HammerCLIForeman::MissingSeachOptions.new(
+      HammerCLIForeman::MissingSearchOptions.new(
         "Error", 
         HammerCLIForeman.foreman_api_connection.api.resource(:locations)
       )
