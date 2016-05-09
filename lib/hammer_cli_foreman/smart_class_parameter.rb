@@ -129,7 +129,7 @@ module HammerCLIForeman
       command_name 'add-override-value'
 
       success_message _("Override value created")
-      failure_message _("Could not create the override_value")
+      failure_message _("Could not create the override value")
 
       build_options do |options|
         options.without(:smart_variable_id)
