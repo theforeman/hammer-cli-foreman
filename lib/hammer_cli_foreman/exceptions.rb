@@ -13,7 +13,7 @@ module HammerCLIForeman
     end
   end
 
-  class MissingSeachOptions < ResolverError; end
+  class MissingSearchOptions < ResolverError; end
 
 end
 

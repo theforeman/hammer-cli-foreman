@@ -73,11 +73,11 @@ describe HammerCLIForeman::IdResolver do
       let(:resolver_run) { proc { resolver.comment_id({"option_unknown" => "value"}) } }
 
       it "raises exception" do
-        err = resolver_run.must_raise HammerCLIForeman::MissingSeachOptions
+        err = resolver_run.must_raise HammerCLIForeman::MissingSearchOptions
       end
 
       it "builds correct error message" do
-        err = resolver_run.must_raise HammerCLIForeman::MissingSeachOptions
+        err = resolver_run.must_raise HammerCLIForeman::MissingSearchOptions
         err.message.must_equal "Missing options to search comment"
       end
     end
