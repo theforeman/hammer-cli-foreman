@@ -177,5 +177,21 @@ describe HammerCLIForeman::IdResolver do
       end
     end
 
+    describe 'searching for puppetclasses' do
+      let(:resolver_run) { proc { resolver.puppetclass_ids('option_names' => ['apache::mod::authnz_ldap', 'git::params', 'apache::dev']) } }
+
+      it "returns ids of the classes" do
+        ResourceMocks.mock_action_call(:puppetclasses, :index, {
+          'apache' => [
+            { 'id' => 70, 'name' => 'apache::dev', 'created_at' => '2015-01-27T07:24:57.134Z', 'updated_at' => '2015-03-05T17:27:54.282Z' },
+            { 'id' => 27, 'name' => 'apache::mod::authnz_ldap', 'created_at' => '2015-01-27T07:24:56.378Z','updated_at' => '2015-01-27T07:24:56.378Z' }
+          ],
+          'git' => [
+            { 'id' => 85, 'name' => 'git::params', 'created_at' => '2015-01-27T07:24:57.306Z', 'updated_at' => '2015-01-27T07:24:57.306Z' }
+          ] })
+
+        resolver_run.call.must_equal [70, 27, 85]
+      end
+    end
   end
 end
