@@ -169,7 +169,7 @@ start         # boolean, whether to start the machine or not
 
 Available keys for `--interface`:
 ```
-compute_type                      # one of [:bridge, :network]
+compute_type                      # one of [bridge, network]
 compute_network / compute_bridge  # name of interface according to type
 compute_model                     # one of [virtio, rtl8139, ne2k_pci, pcnet, e1000]
 ```
