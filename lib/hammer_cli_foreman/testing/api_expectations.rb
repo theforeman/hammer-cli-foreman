@@ -50,13 +50,13 @@ module HammerCLIForeman
         ApipieBindings::API.any_instance.expects(:call_action).never
       end
 
-      def index_response(items)
+      def index_response(items, options={})
         cnt = items.length
         {
-          "total" => cnt,
-          "subtotal" => cnt,
-          "page" => 1,
-          "per_page" => cnt,
+          "total" => options.fetch(:total, cnt),
+          "subtotal" => options.fetch(:subtotal, cnt),
+          "page" => options.fetch(:page, 1),
+          "per_page" => options.fetch(:per_page, cnt),
           "search" => "",
           "sort" => {
             "by" => nil,

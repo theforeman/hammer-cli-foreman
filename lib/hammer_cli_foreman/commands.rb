@@ -328,7 +328,7 @@ module HammerCLIForeman
     end
 
     def should_retrieve_all?
-      pagination_supported? && option_per_page.nil? && option_page.nil?
+      pagination_supported? && option_per_page.nil? && option_page.nil? && HammerCLI::Settings.get(:ui, :per_page).nil?
     end
 
   end
