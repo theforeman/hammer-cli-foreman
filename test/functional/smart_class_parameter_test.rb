@@ -33,7 +33,7 @@ describe 'sc-params add-override-value' do
   ] }
 
   it 'allows to set value' do
-    params = ['--value', override_value]
+    params = ['--use-puppet-default', false, '--value', override_value]
 
     expected_result = success_result("Override value created\n")
 
@@ -58,11 +58,11 @@ describe 'sc-params add-override-value' do
   end
 
   it 'does not allow to use puppet default and value at the same time' do
-    params = %w(--value something --use-puppet-default 1)
+    params = ['--value', 'something', '--use-puppet-default', true]
 
     expected_result = usage_error_result(
       cmd,
-      "You can't set all options --value, --use-puppet-default at one time",
+      "Cannot use --value when --use-puppet-default is true",
       'Could not create the override_value'
     )
 
