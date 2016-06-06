@@ -143,17 +143,17 @@ describe HammerCLIForeman::Command do
     builder.class.must_equal HammerCLIForeman::ForemanOptionBuilder
   end
 
-  it "properly raises error on intentional searching of parameters that are not required" do 
+  it "properly raises error on intentional searching of parameters that are not required" do
     class TestList < HammerCLIForeman::ListCommand
       resource :domains
       build_options
     end
 
     com = TestList.new("", { :adapter => :csv, :interactive => false })
-    
+
     com.resolver.class.any_instance.stubs(:location_id).raises(
       HammerCLIForeman::MissingSearchOptions.new(
-        "Error", 
+        "Error",
         HammerCLIForeman.foreman_api_connection.api.resource(:locations)
       )
     )
@@ -164,21 +164,21 @@ describe HammerCLIForeman::Command do
 
   end
 
-  it "ignores error on attempt to search of parameters that are not required" do 
+  it "ignores error on attempt to search of parameters that are not required" do
     class TestList < HammerCLIForeman::ListCommand
       resource :domains
       build_options
     end
 
     com = TestList.new("", { :adapter => :csv, :interactive => false })
-    
+
     com.resolver.class.any_instance.stubs(:location_id).raises(
       HammerCLIForeman::MissingSearchOptions.new(
-        "Error", 
+        "Error",
         HammerCLIForeman.foreman_api_connection.api.resource(:locations)
       )
     )
-    
+
     out, err = capture_io do
       com.run([]).must_equal HammerCLI::EX_OK
     end
@@ -193,4 +193,88 @@ describe HammerCLIForeman::Command do
     end
   end
 
+end
+
+describe HammerCLIForeman::ListCommand do
+  class TestList < HammerCLIForeman::ListCommand
+    resource :domains
+    option '--page', 'PAGE', ''
+    option '--per-page', 'PER_PAGE', ''
+  end
+
+  def build_items(cnt)
+    (1..cnt).map do |i|
+      {:id => i, :name => "Item #{i}"}
+    end
+  end
+
+  def expect_paged_call(page, per_page, item_cnt)
+    api_expects(:domains, :index, "List records page #{page}") do |par|
+      par["page"].to_s == page.to_s && par["per_page"].to_s == per_page.to_s
+    end.returns(index_response(build_items(item_cnt)))
+  end
+
+  let(:per_page_all) { HammerCLIForeman::ListCommand::RETRIEVE_ALL_PER_PAGE }
+  let(:cmd) { TestList.new("", { :interactive => false }) }
+
+  after do
+    HammerCLI::Settings.clear
+  end
+
+  context "without per_page in settings" do
+    it "prints only first page when there's not enough records" do
+      expect_paged_call(1, 1000, 10)
+      cmd.run([])
+    end
+
+    it "prints all records" do
+      expect_paged_call(1, per_page_all, 1000)
+      expect_paged_call(2, per_page_all, 1000)
+      expect_paged_call(3, per_page_all, 10)
+      cmd.run([])
+    end
+
+    it "uses --per-page value" do
+      per_page = 10
+      expect_paged_call(1, per_page, 10)
+      cmd.run(["--per-page=#{per_page}"])
+    end
+
+    it "uses both --per-page and --page value" do
+      per_page = 10
+      expect_paged_call(2, per_page, 10)
+      cmd.run(["--per-page=#{per_page}", '--page=2'])
+    end
+
+    it "sets per_page to 20 when only --page is used" do
+      expect_paged_call(2, 20, 10)
+      cmd.run(['--page=2'])
+    end
+  end
+
+  context "with per_page in settings" do
+    let(:per_page_in_settings) { 30 }
+    before do
+      HammerCLI::Settings.load({ :ui => { :per_page => per_page_in_settings } })
+    end
+
+    it "gives preference to --per-page option over per_page setting" do
+      per_page = 10
+      expect_paged_call(1, per_page, 10)
+      cmd.run(["--per-page=#{per_page}"])
+    end
+
+    it "respects per_page setting when the adapter allows pagination by default" do
+      expect_paged_call(1, per_page_in_settings, 30)
+      cmd = TestList.new("", { :adapter => :base, :interactive => false })
+      cmd.run([])
+    end
+
+    it "prints all records when the adapter doesn't allow pagination by default" do
+      expect_paged_call(1, per_page_all, 1000)
+      expect_paged_call(2, per_page_all, 10)
+      cmd = TestList.new("", { :adapter => :csv, :interactive => false })
+      cmd.run([])
+    end
+  end
 end
