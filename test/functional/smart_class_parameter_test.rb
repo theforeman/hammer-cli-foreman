@@ -33,28 +33,37 @@ describe 'sc-params add-override-value' do
   ] }
 
   it 'allows to set value' do
-    params = ['--use-puppet-default', false, '--value', override_value]
-
+    params = ['--value', override_value]
     expected_result = success_result("Override value created\n")
 
-    api_expects(:puppetclasses, :index, 'Find puppet class') do |par|
-      par[:search] == %Q(name = "#{puppet_class['name']}")
-    end.returns(index_response('motd' => [puppet_class]))
+    prepare_api_expectations = proc do
+      expectations = []
+      expectations << api_expects(:puppetclasses, :index, 'Find puppet class') do |par|
+        par[:search] == %Q(name = "#{puppet_class['name']}")
+      end.returns(index_response('motd' => [puppet_class]))
 
-    api_expects(:smart_class_parameters, :index, 'Find smart parameter') do |par|
-      par[:search] == %Q(key = "#{parameter['name']}") &&
-        par[:puppetclass_id] == puppet_class['id']
-    end.returns(index_response([parameter]))
+      expectations << api_expects(:smart_class_parameters, :index, 'Find smart parameter') do |par|
+        par[:search] == %Q(key = "#{parameter['name']}") &&
+          par[:puppetclass_id] == puppet_class['id']
+      end.returns(index_response([parameter]))
 
-    api_expects(:override_values, :create, 'Create override value') do |par|
-      val = par['override_value']
-      par['smart_class_parameter_id'] == parameter['id'] &&
-        val['match'] == match &&
-        val['value'] == override_value
+      expectations << api_expects(:override_values, :create, 'Create override value') do |par|
+        val = par['override_value']
+        par['smart_class_parameter_id'] == parameter['id'] &&
+          val['match'] == match &&
+          val['value'] == override_value
+      end
     end
 
+    expectations = prepare_api_expectations.call()
     result = run_cmd(cmd + base + params)
     assert_cmd(expected_result, result)
+    assert expectations.all?(&:verified?)
+
+    expectations = prepare_api_expectations.call()
+    result = run_cmd(cmd + base + params + ['--use-puppet-default', false])
+    assert_cmd(expected_result, result)
+    assert expectations.all?(&:verified?)
   end
 
   it 'does not allow to use puppet default and value at the same time' do
