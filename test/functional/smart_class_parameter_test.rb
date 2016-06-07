@@ -72,7 +72,7 @@ describe 'sc-params add-override-value' do
     expected_result = usage_error_result(
       cmd,
       "Cannot use --value when --use-puppet-default is true",
-      'Could not create the override_value'
+      'Could not create the override value'
     )
 
     api_expects_no_call
