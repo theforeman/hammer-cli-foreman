@@ -28,7 +28,7 @@ describe 'template' do
 
       expected_result = usage_error_result(
         @cmd,
-        'Options --new-name are required',
+        'Option --new-name is required',
         'Could not clone the config template')
 
       api_expects_no_call

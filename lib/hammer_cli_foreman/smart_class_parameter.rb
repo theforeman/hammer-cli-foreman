@@ -138,6 +138,10 @@ module HammerCLIForeman
       end
 
       validate_options do
+        if option(:option_use_puppet_default).value
+          option(:option_value).rejected(:msg => _('Cannot use --value when --use-puppet-default is true'))
+        end
+
         if option(:option_smart_class_parameter_name).exist?
           any(:option_puppetclass_name, :option_puppetclass_id).required
         end
