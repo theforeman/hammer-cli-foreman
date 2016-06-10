@@ -25,6 +25,3 @@ HammerCLIForeman.stubs(:resource_config).returns({
   :dry_run => true})
 
 require 'hammer_cli_foreman'
-
-require 'hammer_cli_foreman/testing/api_expectations'
-include HammerCLIForeman::Testing::APIExpectations
