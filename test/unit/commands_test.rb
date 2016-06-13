@@ -143,14 +143,14 @@ describe HammerCLIForeman::Command do
     builder.class.must_equal HammerCLIForeman::ForemanOptionBuilder
   end
 
-  it "properly raises error on intentional searching of parameters that are not required" do 
+  it "properly raises error on intentional searching of parameters that are not required" do
     class TestList < HammerCLIForeman::ListCommand
       resource :domains
       build_options
     end
 
     com = TestList.new("", { :adapter => :csv, :interactive => false })
-    
+
     com.resolver.class.any_instance.stubs(:location_id).raises(
       HammerCLIForeman::MissingSeachOptions.new(
         "Error", 
@@ -164,21 +164,21 @@ describe HammerCLIForeman::Command do
 
   end
 
-  it "ignores error on attempt to search of parameters that are not required" do 
+  it "ignores error on attempt to search of parameters that are not required" do
     class TestList < HammerCLIForeman::ListCommand
       resource :domains
       build_options
     end
 
     com = TestList.new("", { :adapter => :csv, :interactive => false })
-    
+
     com.resolver.class.any_instance.stubs(:location_id).raises(
       HammerCLIForeman::MissingSeachOptions.new(
         "Error", 
         HammerCLIForeman.foreman_api_connection.api.resource(:locations)
       )
     )
-    
+
     out, err = capture_io do
       com.run([]).must_equal HammerCLI::EX_OK
     end
