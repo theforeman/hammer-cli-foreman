@@ -1,6 +1,31 @@
 Release notes
 =============
 
+### 0.7.0 (2016-06-14)
+* Let print adapters decide whether to paginate ([#15257](http://projects.theforeman.org/issues/15257))
+* Forbid setting smart param override value and puppet default ([#13832](http://projects.theforeman.org/issues/13832))
+* Add rebuild config option for host ([PR#231](https://github.com/theforeman/hammer-cli-foreman/pull/231)) ([#12103](http://projects.theforeman.org/issues/12103))
+* Removing wrong colons from host create docs
+* i18n - remove underscore from override value error message
+* Typo in MissingSeachOptions ([#14007](http://projects.theforeman.org/issues/14007))
+* Add Catalan language ([#14947](http://projects.theforeman.org/issues/14947))
+* Hammer shows incorrect admin status when assign admin role using user group ([#14606](http://projects.theforeman.org/issues/14606))
+* Fixed response parsing for puppetclasses parameter ([#14930](http://projects.theforeman.org/issues/14930))
+* Display locked flag for templates and ptables ([#14943](http://projects.theforeman.org/issues/14943))
+* Document vmware `start` parameter
+* Fixes VMware name in docs for host create
+* Respect per_page set in config file ([#14530](http://projects.theforeman.org/issues/14530))
+* Provide success/failure message for associating commands ([#7492](http://projects.theforeman.org/issues/7492))
+* Add support for Gemfile.local.rb ([#14466](http://projects.theforeman.org/issues/14466))
+* Fixing path in docs for generated test json ([PR#226](https://github.com/theforeman/hammer-cli-foreman/pull/226))
+* Added clone command to config templates ([#13946](http://projects.theforeman.org/issues/13946))
+* Handle API request redirects with useful message ([#11147](http://projects.theforeman.org/issues/11147))
+* Newer version of apipie validates types for arrays ([#13966](http://projects.theforeman.org/issues/13966))
+* Show auth source name for all auth sources ([#7468](http://projects.theforeman.org/issues/7468))
+* Environment and Puppet proxy is not required ([#13926](http://projects.theforeman.org/issues/13926))
+* Added special method for dealing with puppetclasses ([#11880](http://projects.theforeman.org/issues/11880))
+* Make primary and provision flag optional ([#13927](http://projects.theforeman.org/issues/13927))
+
 ### 0.6.0 (2016-02-25)
 * Names of sc-params are immutable ([#13830](http://projects.theforeman.org/issues/13830))
 * Support for command testing moved to core ([#4118](http://projects.theforeman.org/issues/4118))
