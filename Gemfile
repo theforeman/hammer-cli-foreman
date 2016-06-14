@@ -14,6 +14,10 @@ group :test do
   gem 'ci_reporter', '>= 1.6.3', "< 2.0.0", :require => false
 end
 
+group :development, :test do
+  gem 'hammer_cli', git: 'https://github.com/theforeman/hammer-cli.git'
+end
+
 # load local gemfile
 ['Gemfile.local.rb', 'Gemfile.local'].map do |file_name|
   local_gemfile = File.join(File.dirname(__FILE__), file_name)
