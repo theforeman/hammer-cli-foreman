@@ -1,6 +1,8 @@
 source "https://rubygems.org"
 
-gemspec
+group :production do
+  gemspec
+end
 
 gem 'gettext', '>= 3.1.3', '< 4.0.0'
 
@@ -12,6 +14,11 @@ group :test do
   gem 'simplecov'
   gem 'mocha'
   gem 'ci_reporter', '>= 1.6.3', "< 2.0.0", :require => false
+end
+
+group :test, :development do
+  gem 'hammer_cli', git: 'https://github.com/theforeman/hammer-cli.git'
+  gem 'apipie-bindings', '>=0.0.16'
 end
 
 # load local gemfile
