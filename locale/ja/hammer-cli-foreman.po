@@ -7,11 +7,11 @@
 # Shuji Yamada <uzy.exe@gmail.com>, 2015
 msgid ""
 msgstr ""
-"Project-Id-Version: hammer-cli-foreman 0.6.0\n"
+"Project-Id-Version: hammer-cli-foreman 0.7.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-12-11 04:48+0000\n"
-"PO-Revision-Date: 2015-12-15 09:31+0000\n"
-"Last-Translator: Lukáš Zapletal\n"
+"POT-Creation-Date: 2016-02-25 15:04+0100\n"
+"PO-Revision-Date: 2016-03-08 17:58+0000\n"
+"Last-Translator: Bryan Kearney <bryan.kearney@gmail.com>\n"
 "Language-Team: Japanese (http://www.transifex.com/foreman/foreman/language/ja/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -151,10 +151,10 @@ msgstr "ユーザーグループを管理します。"
 #: ../lib/hammer_cli_foreman/report.rb:30 ../lib/hammer_cli_foreman/role.rb:11
 #: ../lib/hammer_cli_foreman/settings.rb:11
 #: ../lib/hammer_cli_foreman/smart_class_parameter.rb:8
-#: ../lib/hammer_cli_foreman/smart_class_parameter.rb:75
+#: ../lib/hammer_cli_foreman/smart_class_parameter.rb:74
 #: ../lib/hammer_cli_foreman/smart_proxy.rb:11
 #: ../lib/hammer_cli_foreman/smart_variable.rb:8
-#: ../lib/hammer_cli_foreman/smart_variable.rb:63
+#: ../lib/hammer_cli_foreman/smart_variable.rb:64
 #: ../lib/hammer_cli_foreman/subnet.rb:10
 #: ../lib/hammer_cli_foreman/template.rb:25
 #: ../lib/hammer_cli_foreman/user.rb:10
@@ -564,8 +564,8 @@ msgstr "リソースの関連付けを解除"
 #: ../lib/hammer_cli_foreman/common_parameter.rb:13
 #: ../lib/hammer_cli_foreman/fact.rb:14 ../lib/hammer_cli_foreman/host.rb:334
 #: ../lib/hammer_cli_foreman/settings.rb:13
-#: ../lib/hammer_cli_foreman/smart_class_parameter.rb:77
-#: ../lib/hammer_cli_foreman/smart_variable.rb:65
+#: ../lib/hammer_cli_foreman/smart_class_parameter.rb:76
+#: ../lib/hammer_cli_foreman/smart_variable.rb:66
 msgid "Value"
 msgstr "値"
 
@@ -636,7 +636,7 @@ msgstr "URL"
 #: ../lib/hammer_cli_foreman/compute_resource.rb:55
 #: ../lib/hammer_cli_foreman/domain.rb:42
 #: ../lib/hammer_cli_foreman/settings.rb:14
-#: ../lib/hammer_cli_foreman/smart_class_parameter.rb:61
+#: ../lib/hammer_cli_foreman/smart_class_parameter.rb:59
 #: ../lib/hammer_cli_foreman/smart_variable.rb:51
 msgid "Description"
 msgstr "説明"
@@ -920,7 +920,7 @@ msgstr "インターフェースパラメーター。"
 
 #: ../lib/hammer_cli_foreman/host.rb:64
 msgid "Enter the root password for the host:"
-msgstr ""
+msgstr "ホストの root パスワードを入力:"
 
 #: ../lib/hammer_cli_foreman/host.rb:153
 msgid "At least one interface must be set as primary"
@@ -950,15 +950,15 @@ msgstr "MAC"
 
 #: ../lib/hammer_cli_foreman/host.rb:185
 msgid "Bare Metal"
-msgstr ""
+msgstr "ベアメタル"
 
 #: ../lib/hammer_cli_foreman/host.rb:210
 msgid "Organization"
-msgstr ""
+msgstr "組織"
 
 #: ../lib/hammer_cli_foreman/host.rb:211
 msgid "Location"
-msgstr ""
+msgstr "場所"
 
 #: ../lib/hammer_cli_foreman/host.rb:213
 msgid "Compute Resource"
@@ -966,7 +966,7 @@ msgstr "コンピュートリソース"
 
 #: ../lib/hammer_cli_foreman/host.rb:214
 msgid "Compute Profile"
-msgstr ""
+msgstr "コンピュートプロファイル"
 
 #: ../lib/hammer_cli_foreman/host.rb:215
 #: ../lib/hammer_cli_foreman/hostgroup.rb:61
@@ -1038,21 +1038,21 @@ msgstr "SP サブネット"
 
 #: ../lib/hammer_cli_foreman/host.rb:237
 msgid "Network interfaces"
-msgstr ""
+msgstr "ネットワークインターフェース"
 
 #: ../lib/hammer_cli_foreman/host.rb:239
 #: ../lib/hammer_cli_foreman/interface.rb:24
 #: ../lib/hammer_cli_foreman/interface.rb:44
 msgid "Identifier"
-msgstr ""
+msgstr "識別子"
 
 #: ../lib/hammer_cli_foreman/host.rb:240
 #: ../lib/hammer_cli_foreman/interface.rb:25
 #: ../lib/hammer_cli_foreman/interface.rb:45
-#: ../lib/hammer_cli_foreman/smart_class_parameter.rb:62
-#: ../lib/hammer_cli_foreman/smart_class_parameter.rb:66
+#: ../lib/hammer_cli_foreman/smart_class_parameter.rb:60
+#: ../lib/hammer_cli_foreman/smart_class_parameter.rb:65
 #: ../lib/hammer_cli_foreman/smart_variable.rb:12
-#: ../lib/hammer_cli_foreman/smart_variable.rb:54
+#: ../lib/hammer_cli_foreman/smart_variable.rb:55
 #: ../lib/hammer_cli_foreman/template.rb:27
 msgid "Type"
 msgstr "タイプ"
@@ -1061,13 +1061,13 @@ msgstr "タイプ"
 #: ../lib/hammer_cli_foreman/interface.rb:26
 #: ../lib/hammer_cli_foreman/interface.rb:46
 msgid "MAC address"
-msgstr ""
+msgstr "MAC アドレス"
 
 #: ../lib/hammer_cli_foreman/host.rb:242
 #: ../lib/hammer_cli_foreman/interface.rb:27
 #: ../lib/hammer_cli_foreman/interface.rb:47
 msgid "IP address"
-msgstr ""
+msgstr "IP アドレス"
 
 #: ../lib/hammer_cli_foreman/host.rb:243
 msgid "FQDN"
@@ -1075,7 +1075,7 @@ msgstr ""
 
 #: ../lib/hammer_cli_foreman/host.rb:246
 msgid "Operating system"
-msgstr ""
+msgstr "Operating system"
 
 #: ../lib/hammer_cli_foreman/host.rb:247
 #: ../lib/hammer_cli_foreman/hostgroup.rb:75
@@ -1115,7 +1115,7 @@ msgstr "イメージの使用"
 
 #: ../lib/hammer_cli_foreman/host.rb:265
 msgid "Additional info"
-msgstr ""
+msgstr "追加情報"
 
 #: ../lib/hammer_cli_foreman/host.rb:266
 msgid "Owner Id"
@@ -1248,7 +1248,7 @@ msgstr "親ホストグループの名前"
 
 #: ../lib/hammer_cli_foreman/hostgroup.rb:17
 msgid "Root password"
-msgstr ""
+msgstr "root パスワード"
 
 #: ../lib/hammer_cli_foreman/hostgroup.rb:23
 msgid "Enter the root password for the host group:"
@@ -1344,12 +1344,12 @@ msgid "Host name"
 msgstr "ホスト名"
 
 #: ../lib/hammer_cli_foreman/id_resolver.rb:43
-msgid "Hostgroup title"
-msgstr ""
-
-#: ../lib/hammer_cli_foreman/id_resolver.rb:43
 msgid "Hostgroup name"
 msgstr "ホストグループ名"
+
+#: ../lib/hammer_cli_foreman/id_resolver.rb:43
+msgid "Hostgroup title"
+msgstr ""
 
 #: ../lib/hammer_cli_foreman/id_resolver.rb:46
 msgid "Location name"
@@ -1482,7 +1482,7 @@ msgstr ""
 
 #: ../lib/hammer_cli_foreman/interface.rb:10
 msgid "primary"
-msgstr ""
+msgstr "プライマリー"
 
 #: ../lib/hammer_cli_foreman/interface.rb:11
 msgid "provision"
@@ -1491,23 +1491,23 @@ msgstr ""
 #: ../lib/hammer_cli_foreman/interface.rb:28
 #: ../lib/hammer_cli_foreman/interface.rb:48
 msgid "DNS name"
-msgstr ""
+msgstr "DNS 名"
 
 #: ../lib/hammer_cli_foreman/interface.rb:52
 msgid "Primary"
-msgstr ""
+msgstr "プライマリ"
 
 #: ../lib/hammer_cli_foreman/interface.rb:53
 msgid "Provision"
-msgstr ""
+msgstr "プロビジョニング"
 
 #: ../lib/hammer_cli_foreman/interface.rb:54
 msgid "Virtual"
-msgstr ""
+msgstr "仮想"
 
 #: ../lib/hammer_cli_foreman/interface.rb:55
 msgid "Tag"
-msgstr ""
+msgstr "タグ"
 
 #: ../lib/hammer_cli_foreman/interface.rb:56
 msgid "Attached to"
@@ -1515,15 +1515,15 @@ msgstr ""
 
 #: ../lib/hammer_cli_foreman/interface.rb:58
 msgid "BMC"
-msgstr ""
+msgstr "BMC"
 
 #: ../lib/hammer_cli_foreman/interface.rb:63
 msgid "Bond"
-msgstr ""
+msgstr "ボンド"
 
 #: ../lib/hammer_cli_foreman/interface.rb:64
 msgid "Mode"
-msgstr ""
+msgstr "モード"
 
 #: ../lib/hammer_cli_foreman/interface.rb:65
 msgid "Attached devices"
@@ -1575,68 +1575,73 @@ msgid "Could not delete the interface"
 msgstr ""
 
 #: ../lib/hammer_cli_foreman/location.rb:24
-#: ../lib/hammer_cli_foreman/location.rb:62
-#: ../lib/hammer_cli_foreman/location.rb:74
+#: ../lib/hammer_cli_foreman/location.rb:63
+#: ../lib/hammer_cli_foreman/location.rb:75
 msgid "Location numeric id to search by"
 msgstr "検索対象のロケーション数値 ID"
 
-#: ../lib/hammer_cli_foreman/location.rb:37
+#: ../lib/hammer_cli_foreman/location.rb:27
+#: ../lib/hammer_cli_foreman/organization.rb:27
+msgid "Parent"
+msgstr ""
+
+#: ../lib/hammer_cli_foreman/location.rb:38
 #: ../lib/hammer_cli_foreman/references.rb:18
 msgid "Organizations"
 msgstr "組織"
 
-#: ../lib/hammer_cli_foreman/location.rb:52
+#: ../lib/hammer_cli_foreman/location.rb:53
 msgid "Location created"
 msgstr "ロケーションが作成されました"
 
-#: ../lib/hammer_cli_foreman/location.rb:53
+#: ../lib/hammer_cli_foreman/location.rb:54
 msgid "Could not create the location"
 msgstr "ロケーションを作成できませんでした"
 
-#: ../lib/hammer_cli_foreman/location.rb:64
+#: ../lib/hammer_cli_foreman/location.rb:65
 msgid "Location updated"
 msgstr "ロケーションが更新されました"
 
-#: ../lib/hammer_cli_foreman/location.rb:65
+#: ../lib/hammer_cli_foreman/location.rb:66
 msgid "Could not update the location"
 msgstr "ロケーションを更新できませんでした"
 
-#: ../lib/hammer_cli_foreman/location.rb:76
+#: ../lib/hammer_cli_foreman/location.rb:77
 msgid "Location deleted"
 msgstr "ロケーションが削除されました"
 
-#: ../lib/hammer_cli_foreman/location.rb:77
+#: ../lib/hammer_cli_foreman/location.rb:78
 msgid "Could not delete the location"
 msgstr "ロケーションを削除できませんでした"
 
-#: ../lib/hammer_cli_foreman/location.rb:86
+#: ../lib/hammer_cli_foreman/location.rb:87
 msgid "Create or update parameter for a location."
-msgstr ""
-
-#: ../lib/hammer_cli_foreman/location.rb:88
-#: ../lib/hammer_cli_foreman/organization.rb:89
-msgid "Parameter [%{name}] updated to value [%{value}]"
 msgstr ""
 
 #: ../lib/hammer_cli_foreman/location.rb:89
 #: ../lib/hammer_cli_foreman/organization.rb:90
-msgid "Parameter [%{name}] created with value [%{value}]"
+msgid "Parameter [%{name}] updated to value [%{value}]"
 msgstr ""
 
 #: ../lib/hammer_cli_foreman/location.rb:90
+#: ../lib/hammer_cli_foreman/organization.rb:91
+msgid "Parameter [%{name}] created with value [%{value}]"
+msgstr ""
+
+#: ../lib/hammer_cli_foreman/location.rb:91
 msgid "Could not set location parameter"
 msgstr ""
 
-#: ../lib/hammer_cli_foreman/location.rb:97
+#: ../lib/hammer_cli_foreman/location.rb:98
 msgid "Delete parameter for a location."
 msgstr ""
 
-#: ../lib/hammer_cli_foreman/location.rb:99
-#: ../lib/hammer_cli_foreman/organization.rb:100
+#: ../lib/hammer_cli_foreman/location.rb:100
+#: ../lib/hammer_cli_foreman/organization.rb:101
 msgid "Parameter [%{name}] deleted"
 msgstr ""
 
-#: ../lib/hammer_cli_foreman/location.rb:100
+#: ../lib/hammer_cli_foreman/location.rb:101
 msgid "Could not delete location parameter"
 msgstr ""
 
@@ -1819,48 +1824,48 @@ msgstr "デフォルトテンプレートを削除できませんでした"
 msgid "Default template of type %s not found"
 msgstr "タイプ %s のデフォルトテンプレートが見つかりませんでした"
 
-#: ../lib/hammer_cli_foreman/organization.rb:37
+#: ../lib/hammer_cli_foreman/organization.rb:38
 #: ../lib/hammer_cli_foreman/references.rb:15
 msgid "Locations"
 msgstr "ロケーション"
 
-#: ../lib/hammer_cli_foreman/organization.rb:53
+#: ../lib/hammer_cli_foreman/organization.rb:54
 msgid "Organization created"
 msgstr "組織が作成されました"
 
-#: ../lib/hammer_cli_foreman/organization.rb:54
+#: ../lib/hammer_cli_foreman/organization.rb:55
 msgid "Could not create the organization"
 msgstr "組織を作成できませんでした"
 
-#: ../lib/hammer_cli_foreman/organization.rb:65
+#: ../lib/hammer_cli_foreman/organization.rb:66
 msgid "Organization updated"
 msgstr "組織が更新されました"
 
-#: ../lib/hammer_cli_foreman/organization.rb:66
+#: ../lib/hammer_cli_foreman/organization.rb:67
 msgid "Could not update the organization"
 msgstr "組織を更新できませんでした"
 
-#: ../lib/hammer_cli_foreman/organization.rb:77
+#: ../lib/hammer_cli_foreman/organization.rb:78
 msgid "Organization deleted"
 msgstr "組織が削除されました"
 
-#: ../lib/hammer_cli_foreman/organization.rb:78
+#: ../lib/hammer_cli_foreman/organization.rb:79
 msgid "Could not delete the organization"
 msgstr "組織を削除できませんでした"
 
-#: ../lib/hammer_cli_foreman/organization.rb:87
+#: ../lib/hammer_cli_foreman/organization.rb:88
 msgid "Create or update parameter for an organization."
 msgstr ""
 
-#: ../lib/hammer_cli_foreman/organization.rb:91
+#: ../lib/hammer_cli_foreman/organization.rb:92
 msgid "Could not set organization parameter"
 msgstr ""
 
-#: ../lib/hammer_cli_foreman/organization.rb:98
+#: ../lib/hammer_cli_foreman/organization.rb:99
 msgid "Delete parameter for an organization."
 msgstr ""
 
-#: ../lib/hammer_cli_foreman/organization.rb:101
+#: ../lib/hammer_cli_foreman/organization.rb:102
 msgid "Could not delete organization parameter"
 msgstr ""
 
@@ -2089,38 +2094,38 @@ msgid "Builtin"
 msgstr ""
 
 #: ../lib/hammer_cli_foreman/role.rb:24
-msgid "No"
-msgstr ""
+msgid "Yes"
+msgstr "はい"
 
 #: ../lib/hammer_cli_foreman/role.rb:24
-msgid "Yes"
-msgstr ""
+msgid "No"
+msgstr "いいえ"
 
 #: ../lib/hammer_cli_foreman/role.rb:36
 msgid "User role id"
 msgstr "ユーザーロール ID"
 
-#: ../lib/hammer_cli_foreman/role.rb:60
+#: ../lib/hammer_cli_foreman/role.rb:64
 msgid "User role [%<name>s] created"
 msgstr "ユーザーロール [%<name>s] が作成されました"
 
-#: ../lib/hammer_cli_foreman/role.rb:61
+#: ../lib/hammer_cli_foreman/role.rb:65
 msgid "Could not create the user role"
 msgstr "ユーザーロールを作成できませんでした"
 
-#: ../lib/hammer_cli_foreman/role.rb:68
+#: ../lib/hammer_cli_foreman/role.rb:72
 msgid "User role [%<name>s] updated"
 msgstr "ユーザーロール [%<name>s] が更新されました"
 
-#: ../lib/hammer_cli_foreman/role.rb:69
+#: ../lib/hammer_cli_foreman/role.rb:73
 msgid "Could not update the user role"
 msgstr "ユーザーロールを更新できませんでした"
 
-#: ../lib/hammer_cli_foreman/role.rb:76
+#: ../lib/hammer_cli_foreman/role.rb:80
 msgid "User role [%<name>s] deleted"
 msgstr "ユーザーロール [%<name>s] が削除されました"
 
-#: ../lib/hammer_cli_foreman/role.rb:77
+#: ../lib/hammer_cli_foreman/role.rb:81
 msgid "Could not delete the user roles"
 msgstr "ユーザーロールを削除できませんでした"
 
@@ -2141,108 +2146,113 @@ msgstr "デフォルト値"
 msgid "Override"
 msgstr "上書き"
 
-#: ../lib/hammer_cli_foreman/smart_class_parameter.rb:36
+#: ../lib/hammer_cli_foreman/smart_class_parameter.rb:35
 #: ../lib/hammer_cli_foreman/smart_variable.rb:27
 msgid "Puppet class"
 msgstr "Puppet クラス"
 
-#: ../lib/hammer_cli_foreman/smart_class_parameter.rb:37
+#: ../lib/hammer_cli_foreman/smart_class_parameter.rb:36
 #: ../lib/hammer_cli_foreman/smart_variable.rb:28
 msgid "Class Id"
 msgstr "クラス ID"
 
-#: ../lib/hammer_cli_foreman/smart_class_parameter.rb:63
+#: ../lib/hammer_cli_foreman/smart_class_parameter.rb:61
+#: ../lib/hammer_cli_foreman/smart_variable.rb:52
+msgid "Hidden Value?"
+msgstr ""
+
+#: ../lib/hammer_cli_foreman/smart_class_parameter.rb:62
 msgid "Required"
 msgstr "必須"
 
-#: ../lib/hammer_cli_foreman/smart_class_parameter.rb:65
-#: ../lib/hammer_cli_foreman/smart_variable.rb:53
+#: ../lib/hammer_cli_foreman/smart_class_parameter.rb:64
+#: ../lib/hammer_cli_foreman/smart_variable.rb:54
 msgid "Validator"
 msgstr "バリデーター"
 
-#: ../lib/hammer_cli_foreman/smart_class_parameter.rb:67
-#: ../lib/hammer_cli_foreman/smart_variable.rb:55
+#: ../lib/hammer_cli_foreman/smart_class_parameter.rb:66
+#: ../lib/hammer_cli_foreman/smart_variable.rb:56
 msgid "Rule"
 msgstr "ルール"
 
-#: ../lib/hammer_cli_foreman/smart_class_parameter.rb:69
-#: ../lib/hammer_cli_foreman/smart_variable.rb:57
+#: ../lib/hammer_cli_foreman/smart_class_parameter.rb:68
+#: ../lib/hammer_cli_foreman/smart_variable.rb:58
 msgid "Override values"
 msgstr "値の上書き"
 
-#: ../lib/hammer_cli_foreman/smart_class_parameter.rb:70
-#: ../lib/hammer_cli_foreman/smart_variable.rb:58
+#: ../lib/hammer_cli_foreman/smart_class_parameter.rb:69
+#: ../lib/hammer_cli_foreman/smart_variable.rb:59
 msgid "Merge overrides"
 msgstr ""
 
-#: ../lib/hammer_cli_foreman/smart_class_parameter.rb:71
-#: ../lib/hammer_cli_foreman/smart_variable.rb:59
+#: ../lib/hammer_cli_foreman/smart_class_parameter.rb:70
+#: ../lib/hammer_cli_foreman/smart_variable.rb:60
 msgid "Merge default value"
 msgstr ""
 
-#: ../lib/hammer_cli_foreman/smart_class_parameter.rb:72
-#: ../lib/hammer_cli_foreman/smart_variable.rb:60
+#: ../lib/hammer_cli_foreman/smart_class_parameter.rb:71
+#: ../lib/hammer_cli_foreman/smart_variable.rb:61
 msgid "Avoid duplicates"
 msgstr ""
 
-#: ../lib/hammer_cli_foreman/smart_class_parameter.rb:73
-#: ../lib/hammer_cli_foreman/smart_variable.rb:61
+#: ../lib/hammer_cli_foreman/smart_class_parameter.rb:72
+#: ../lib/hammer_cli_foreman/smart_variable.rb:62
 msgid "Order"
 msgstr "順序"
 
-#: ../lib/hammer_cli_foreman/smart_class_parameter.rb:74
-#: ../lib/hammer_cli_foreman/smart_variable.rb:62
+#: ../lib/hammer_cli_foreman/smart_class_parameter.rb:73
+#: ../lib/hammer_cli_foreman/smart_variable.rb:63
 msgid "Values"
-msgstr ""
+msgstr "値"
 
-#: ../lib/hammer_cli_foreman/smart_class_parameter.rb:76
-#: ../lib/hammer_cli_foreman/smart_variable.rb:64
+#: ../lib/hammer_cli_foreman/smart_class_parameter.rb:75
+#: ../lib/hammer_cli_foreman/smart_variable.rb:65
 msgid "Match"
 msgstr "一致"
 
-#: ../lib/hammer_cli_foreman/smart_class_parameter.rb:103
+#: ../lib/hammer_cli_foreman/smart_class_parameter.rb:102
 msgid "Parameter updated"
 msgstr "パラメーターが更新されました"
 
-#: ../lib/hammer_cli_foreman/smart_class_parameter.rb:104
+#: ../lib/hammer_cli_foreman/smart_class_parameter.rb:103
 msgid "Could not update the parameter"
 msgstr "パラメーターを更新できませんでした"
 
-#: ../lib/hammer_cli_foreman/smart_class_parameter.rb:111
+#: ../lib/hammer_cli_foreman/smart_class_parameter.rb:110
 msgid "Override this parameter."
 msgstr "このパラメーターの上書き。"
 
-#: ../lib/hammer_cli_foreman/smart_class_parameter.rb:113
+#: ../lib/hammer_cli_foreman/smart_class_parameter.rb:112
 msgid "This parameter is required."
 msgstr "このパラメーターは必須です。"
 
-#: ../lib/hammer_cli_foreman/smart_class_parameter.rb:115
+#: ../lib/hammer_cli_foreman/smart_class_parameter.rb:114
 msgid "Type of the parameter."
 msgstr "パラメーターのタイプ。"
 
-#: ../lib/hammer_cli_foreman/smart_class_parameter.rb:118
-#: ../lib/hammer_cli_foreman/smart_variable.rb:90
-#: ../lib/hammer_cli_foreman/smart_variable.rb:104
+#: ../lib/hammer_cli_foreman/smart_class_parameter.rb:117
+#: ../lib/hammer_cli_foreman/smart_variable.rb:91
+#: ../lib/hammer_cli_foreman/smart_variable.rb:105
 msgid "Type of the validator."
 msgstr "バリデーターのタイプ。"
 
-#: ../lib/hammer_cli_foreman/smart_class_parameter.rb:132
-#: ../lib/hammer_cli_foreman/smart_variable.rb:122
+#: ../lib/hammer_cli_foreman/smart_class_parameter.rb:131
+#: ../lib/hammer_cli_foreman/smart_variable.rb:123
 msgid "Override value created"
 msgstr ""
 
-#: ../lib/hammer_cli_foreman/smart_class_parameter.rb:133
-#: ../lib/hammer_cli_foreman/smart_variable.rb:123
+#: ../lib/hammer_cli_foreman/smart_class_parameter.rb:132
+#: ../lib/hammer_cli_foreman/smart_variable.rb:124
 msgid "Could not create the override_value"
 msgstr ""
 
-#: ../lib/hammer_cli_foreman/smart_class_parameter.rb:152
-#: ../lib/hammer_cli_foreman/smart_variable.rb:135
+#: ../lib/hammer_cli_foreman/smart_class_parameter.rb:151
+#: ../lib/hammer_cli_foreman/smart_variable.rb:136
 msgid "Override value deleted"
 msgstr ""
 
-#: ../lib/hammer_cli_foreman/smart_class_parameter.rb:153
-#: ../lib/hammer_cli_foreman/smart_variable.rb:136
+#: ../lib/hammer_cli_foreman/smart_class_parameter.rb:152
+#: ../lib/hammer_cli_foreman/smart_variable.rb:137
 msgid "Could not delete the override value"
 msgstr ""
 
@@ -2299,32 +2309,32 @@ msgstr "スマートプロキシー機能が更新されました"
 msgid "Refresh of smart proxy features failed"
 msgstr "スマートプロキシー機能が更新が失敗しました"
 
-#: ../lib/hammer_cli_foreman/smart_variable.rb:82
+#: ../lib/hammer_cli_foreman/smart_variable.rb:83
 msgid "Smart variable [%{variable}] created"
 msgstr ""
 
-#: ../lib/hammer_cli_foreman/smart_variable.rb:83
+#: ../lib/hammer_cli_foreman/smart_variable.rb:84
 msgid "Could not create the smart variable"
 msgstr ""
 
-#: ../lib/hammer_cli_foreman/smart_variable.rb:87
-#: ../lib/hammer_cli_foreman/smart_variable.rb:101
+#: ../lib/hammer_cli_foreman/smart_variable.rb:88
+#: ../lib/hammer_cli_foreman/smart_variable.rb:102
 msgid "Type of the variable."
 msgstr ""
 
-#: ../lib/hammer_cli_foreman/smart_variable.rb:96
+#: ../lib/hammer_cli_foreman/smart_variable.rb:97
 msgid "Smart variable [%{variable}] updated"
 msgstr ""
 
-#: ../lib/hammer_cli_foreman/smart_variable.rb:97
+#: ../lib/hammer_cli_foreman/smart_variable.rb:98
 msgid "Could not update the smart variable"
 msgstr ""
 
-#: ../lib/hammer_cli_foreman/smart_variable.rb:111
+#: ../lib/hammer_cli_foreman/smart_variable.rb:112
 msgid "Smart variable [%{variable}] deleted"
 msgstr ""
 
-#: ../lib/hammer_cli_foreman/smart_variable.rb:112
+#: ../lib/hammer_cli_foreman/smart_variable.rb:113
 msgid "Could not delete the smart variable"
 msgstr ""
 
@@ -2358,7 +2368,7 @@ msgstr "DHCP"
 
 #: ../lib/hammer_cli_foreman/subnet.rb:29
 msgid "IPAM"
-msgstr ""
+msgstr "IPAM"
 
 #: ../lib/hammer_cli_foreman/subnet.rb:30
 msgid "VLAN ID"
@@ -2444,7 +2454,7 @@ msgstr "設定テンプレートを削除できませんでした"
 
 #: ../lib/hammer_cli_foreman/template.rb:150
 msgid "Update the default PXE menu on all configured TFTP servers"
-msgstr ""
+msgstr "すべての設定済み TFTP サーバーでのデフォルト PXE メニューの更新"
 
 #: ../lib/hammer_cli_foreman/user.rb:11
 msgid "Login"
@@ -2464,11 +2474,11 @@ msgstr "認証先"
 
 #: ../lib/hammer_cli_foreman/user.rb:30
 msgid "Locale"
-msgstr ""
+msgstr "ロケール"
 
 #: ../lib/hammer_cli_foreman/user.rb:31
 msgid "Timezone"
-msgstr ""
+msgstr "タイムゾーン"
 
 #: ../lib/hammer_cli_foreman/user.rb:32
 msgid "Last login"
@@ -2476,15 +2486,15 @@ msgstr "最終ログイン"
 
 #: ../lib/hammer_cli_foreman/user.rb:33
 msgid "Default organization"
-msgstr ""
+msgstr "デフォルトの組織"
 
 #: ../lib/hammer_cli_foreman/user.rb:34
 msgid "Default location"
-msgstr ""
+msgstr "デフォルトの場所"
 
 #: ../lib/hammer_cli_foreman/user.rb:42 ../lib/hammer_cli_foreman/user.rb:43
 msgid "default"
-msgstr ""
+msgstr "デフォルト"
 
 #: ../lib/hammer_cli_foreman/user.rb:53
 msgid "User [%{login}] created"

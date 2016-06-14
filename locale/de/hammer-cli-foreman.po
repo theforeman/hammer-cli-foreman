@@ -10,10 +10,10 @@
 # simon11 <simon.stieger.98@live.de>, 2014
 msgid ""
 msgstr ""
-"Project-Id-Version: hammer-cli-foreman 0.6.0\n"
+"Project-Id-Version: hammer-cli-foreman 0.7.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-12-11 04:48+0000\n"
-"PO-Revision-Date: 2016-01-17 22:47+0000\n"
+"POT-Creation-Date: 2016-02-25 15:04+0100\n"
+"PO-Revision-Date: 2016-05-26 12:51+0000\n"
 "Last-Translator: Ettore Atalan <atalanttore@googlemail.com>\n"
 "Language-Team: German (http://www.transifex.com/foreman/foreman/language/de/)\n"
 "MIME-Version: 1.0\n"
@@ -154,10 +154,10 @@ msgstr "Benutzergruppen verwalten."
 #: ../lib/hammer_cli_foreman/report.rb:30 ../lib/hammer_cli_foreman/role.rb:11
 #: ../lib/hammer_cli_foreman/settings.rb:11
 #: ../lib/hammer_cli_foreman/smart_class_parameter.rb:8
-#: ../lib/hammer_cli_foreman/smart_class_parameter.rb:75
+#: ../lib/hammer_cli_foreman/smart_class_parameter.rb:74
 #: ../lib/hammer_cli_foreman/smart_proxy.rb:11
 #: ../lib/hammer_cli_foreman/smart_variable.rb:8
-#: ../lib/hammer_cli_foreman/smart_variable.rb:63
+#: ../lib/hammer_cli_foreman/smart_variable.rb:64
 #: ../lib/hammer_cli_foreman/subnet.rb:10
 #: ../lib/hammer_cli_foreman/template.rb:25
 #: ../lib/hammer_cli_foreman/user.rb:10
@@ -567,8 +567,8 @@ msgstr "Ressource lösen"
 #: ../lib/hammer_cli_foreman/common_parameter.rb:13
 #: ../lib/hammer_cli_foreman/fact.rb:14 ../lib/hammer_cli_foreman/host.rb:334
 #: ../lib/hammer_cli_foreman/settings.rb:13
-#: ../lib/hammer_cli_foreman/smart_class_parameter.rb:77
-#: ../lib/hammer_cli_foreman/smart_variable.rb:65
+#: ../lib/hammer_cli_foreman/smart_class_parameter.rb:76
+#: ../lib/hammer_cli_foreman/smart_variable.rb:66
 msgid "Value"
 msgstr "Wert"
 
@@ -639,7 +639,7 @@ msgstr "URL"
 #: ../lib/hammer_cli_foreman/compute_resource.rb:55
 #: ../lib/hammer_cli_foreman/domain.rb:42
 #: ../lib/hammer_cli_foreman/settings.rb:14
-#: ../lib/hammer_cli_foreman/smart_class_parameter.rb:61
+#: ../lib/hammer_cli_foreman/smart_class_parameter.rb:59
 #: ../lib/hammer_cli_foreman/smart_variable.rb:51
 msgid "Description"
 msgstr "Beschreibung"
@@ -1052,10 +1052,10 @@ msgstr "Bezeichner"
 #: ../lib/hammer_cli_foreman/host.rb:240
 #: ../lib/hammer_cli_foreman/interface.rb:25
 #: ../lib/hammer_cli_foreman/interface.rb:45
-#: ../lib/hammer_cli_foreman/smart_class_parameter.rb:62
-#: ../lib/hammer_cli_foreman/smart_class_parameter.rb:66
+#: ../lib/hammer_cli_foreman/smart_class_parameter.rb:60
+#: ../lib/hammer_cli_foreman/smart_class_parameter.rb:65
 #: ../lib/hammer_cli_foreman/smart_variable.rb:12
-#: ../lib/hammer_cli_foreman/smart_variable.rb:54
+#: ../lib/hammer_cli_foreman/smart_variable.rb:55
 #: ../lib/hammer_cli_foreman/template.rb:27
 msgid "Type"
 msgstr "Typ"
@@ -1347,12 +1347,12 @@ msgid "Host name"
 msgstr "Hostname"
 
 #: ../lib/hammer_cli_foreman/id_resolver.rb:43
-msgid "Hostgroup title"
-msgstr "Hostgruppentitel"
-
-#: ../lib/hammer_cli_foreman/id_resolver.rb:43
 msgid "Hostgroup name"
 msgstr "Hostgruppenname"
+
+#: ../lib/hammer_cli_foreman/id_resolver.rb:43
+msgid "Hostgroup title"
+msgstr "Hostgruppentitel"
 
 #: ../lib/hammer_cli_foreman/id_resolver.rb:46
 msgid "Location name"
@@ -1432,7 +1432,7 @@ msgstr "%s nicht gefunden"
 
 #: ../lib/hammer_cli_foreman/id_resolver.rb:201
 msgid "found more than one %s"
-msgstr ""
+msgstr "mehr als ein %s gefunden"
 
 #: ../lib/hammer_cli_foreman/id_resolver.rb:212
 msgid "Missing options to search %s"
@@ -1481,7 +1481,7 @@ msgstr "Image konnte nicht gelöscht werden"
 
 #: ../lib/hammer_cli_foreman/interface.rb:6
 msgid "View and manage host's network interfaces"
-msgstr ""
+msgstr "Netzwerkschnittstellen des Hosts ansehen and verwalten"
 
 #: ../lib/hammer_cli_foreman/interface.rb:10
 msgid "primary"
@@ -1489,7 +1489,7 @@ msgstr "primär"
 
 #: ../lib/hammer_cli_foreman/interface.rb:11
 msgid "provision"
-msgstr ""
+msgstr "Bereitstellen"
 
 #: ../lib/hammer_cli_foreman/interface.rb:28
 #: ../lib/hammer_cli_foreman/interface.rb:48
@@ -1502,7 +1502,7 @@ msgstr "Primär"
 
 #: ../lib/hammer_cli_foreman/interface.rb:53
 msgid "Provision"
-msgstr ""
+msgstr "Bereitstellen"
 
 #: ../lib/hammer_cli_foreman/interface.rb:54
 msgid "Virtual"
@@ -1559,7 +1559,7 @@ msgstr "Schnittstelle konnte nicht erstellt werden"
 #: ../lib/hammer_cli_foreman/interface.rb:131
 #: ../lib/hammer_cli_foreman/interface.rb:144
 msgid "Compute resource specific attributes."
-msgstr ""
+msgstr "Ressourcenspezifische Attribute berechnen."
 
 #: ../lib/hammer_cli_foreman/interface.rb:141
 msgid "Interface updated"
@@ -1578,70 +1578,75 @@ msgid "Could not delete the interface"
 msgstr "Schnittstelle konnte nicht gelöscht werden"
 
 #: ../lib/hammer_cli_foreman/location.rb:24
-#: ../lib/hammer_cli_foreman/location.rb:62
-#: ../lib/hammer_cli_foreman/location.rb:74
+#: ../lib/hammer_cli_foreman/location.rb:63
+#: ../lib/hammer_cli_foreman/location.rb:75
 msgid "Location numeric id to search by"
 msgstr "Zu suchende numerische Standort-ID"
 
-#: ../lib/hammer_cli_foreman/location.rb:37
+#: ../lib/hammer_cli_foreman/location.rb:27
+#: ../lib/hammer_cli_foreman/organization.rb:27
+msgid "Parent"
+msgstr "Übergeordnet"
+
+#: ../lib/hammer_cli_foreman/location.rb:38
 #: ../lib/hammer_cli_foreman/references.rb:18
 msgid "Organizations"
 msgstr "Organisationen"
 
-#: ../lib/hammer_cli_foreman/location.rb:52
+#: ../lib/hammer_cli_foreman/location.rb:53
 msgid "Location created"
 msgstr "Standort erstellt"
 
-#: ../lib/hammer_cli_foreman/location.rb:53
+#: ../lib/hammer_cli_foreman/location.rb:54
 msgid "Could not create the location"
 msgstr "Standort konnte nicht erstellt werden"
 
-#: ../lib/hammer_cli_foreman/location.rb:64
+#: ../lib/hammer_cli_foreman/location.rb:65
 msgid "Location updated"
 msgstr "Standort aktualisiert"
 
-#: ../lib/hammer_cli_foreman/location.rb:65
+#: ../lib/hammer_cli_foreman/location.rb:66
 msgid "Could not update the location"
 msgstr "Standort konnte nicht aktualisiert werden"
 
-#: ../lib/hammer_cli_foreman/location.rb:76
+#: ../lib/hammer_cli_foreman/location.rb:77
 msgid "Location deleted"
 msgstr "Standort gelöscht"
 
-#: ../lib/hammer_cli_foreman/location.rb:77
+#: ../lib/hammer_cli_foreman/location.rb:78
 msgid "Could not delete the location"
 msgstr "Standort konnte nicht gelöscht werden"
 
-#: ../lib/hammer_cli_foreman/location.rb:86
+#: ../lib/hammer_cli_foreman/location.rb:87
 msgid "Create or update parameter for a location."
-msgstr ""
-
-#: ../lib/hammer_cli_foreman/location.rb:88
-#: ../lib/hammer_cli_foreman/organization.rb:89
-msgid "Parameter [%{name}] updated to value [%{value}]"
-msgstr ""
+msgstr "Parameter für einen Standort erstellen oder aktualisieren."
 
 #: ../lib/hammer_cli_foreman/location.rb:89
 #: ../lib/hammer_cli_foreman/organization.rb:90
-msgid "Parameter [%{name}] created with value [%{value}]"
-msgstr ""
+msgid "Parameter [%{name}] updated to value [%{value}]"
+msgstr "Parameter [%{name}] aktualisiert auf Wert [%{value}]"
 
 #: ../lib/hammer_cli_foreman/location.rb:90
+#: ../lib/hammer_cli_foreman/organization.rb:91
+msgid "Parameter [%{name}] created with value [%{value}]"
+msgstr "Parameter [%{name}] erstellt mit Wert [%{value}]"
+
+#: ../lib/hammer_cli_foreman/location.rb:91
 msgid "Could not set location parameter"
-msgstr ""
+msgstr "Standortparameter konnte nicht festgelegt werden"
 
-#: ../lib/hammer_cli_foreman/location.rb:97
+#: ../lib/hammer_cli_foreman/location.rb:98
 msgid "Delete parameter for a location."
-msgstr ""
-
-#: ../lib/hammer_cli_foreman/location.rb:99
-#: ../lib/hammer_cli_foreman/organization.rb:100
-msgid "Parameter [%{name}] deleted"
-msgstr ""
+msgstr "Parameter für einen Standort löschen."
 
 #: ../lib/hammer_cli_foreman/location.rb:100
+#: ../lib/hammer_cli_foreman/organization.rb:101
+msgid "Parameter [%{name}] deleted"
+msgstr "Parameter [%{name}] gelöscht"
+
+#: ../lib/hammer_cli_foreman/location.rb:101
 msgid "Could not delete location parameter"
-msgstr ""
+msgstr "Standortparameter konnte nicht gelöscht werden"
 
 #: ../lib/hammer_cli_foreman/media.rb:11
 msgid "Path"
@@ -1822,50 +1827,50 @@ msgstr "Standardvorlage konnte nicht gelöscht werden"
 msgid "Default template of type %s not found"
 msgstr "Standardvorlage des Typs %s nicht gefunden"
 
-#: ../lib/hammer_cli_foreman/organization.rb:37
+#: ../lib/hammer_cli_foreman/organization.rb:38
 #: ../lib/hammer_cli_foreman/references.rb:15
 msgid "Locations"
 msgstr "Standorte"
 
-#: ../lib/hammer_cli_foreman/organization.rb:53
+#: ../lib/hammer_cli_foreman/organization.rb:54
 msgid "Organization created"
 msgstr "Organisation erstellt"
 
-#: ../lib/hammer_cli_foreman/organization.rb:54
+#: ../lib/hammer_cli_foreman/organization.rb:55
 msgid "Could not create the organization"
 msgstr "Organisation konnte nicht erstellt werden"
 
-#: ../lib/hammer_cli_foreman/organization.rb:65
+#: ../lib/hammer_cli_foreman/organization.rb:66
 msgid "Organization updated"
 msgstr "Organisation aktualisiert"
 
-#: ../lib/hammer_cli_foreman/organization.rb:66
+#: ../lib/hammer_cli_foreman/organization.rb:67
 msgid "Could not update the organization"
 msgstr "Organisation konnte nicht aktualisiert werden"
 
-#: ../lib/hammer_cli_foreman/organization.rb:77
+#: ../lib/hammer_cli_foreman/organization.rb:78
 msgid "Organization deleted"
 msgstr "Organisation gelöscht"
 
-#: ../lib/hammer_cli_foreman/organization.rb:78
+#: ../lib/hammer_cli_foreman/organization.rb:79
 msgid "Could not delete the organization"
 msgstr "Organisation konnte nicht gelöscht werden"
 
-#: ../lib/hammer_cli_foreman/organization.rb:87
+#: ../lib/hammer_cli_foreman/organization.rb:88
 msgid "Create or update parameter for an organization."
-msgstr ""
+msgstr "Parameter für eine Organisation erstellen oder aktualisieren."
 
-#: ../lib/hammer_cli_foreman/organization.rb:91
+#: ../lib/hammer_cli_foreman/organization.rb:92
 msgid "Could not set organization parameter"
-msgstr ""
+msgstr "Organisationsparameter konnte nicht festgelegt werden"
 
-#: ../lib/hammer_cli_foreman/organization.rb:98
+#: ../lib/hammer_cli_foreman/organization.rb:99
 msgid "Delete parameter for an organization."
-msgstr ""
+msgstr "Parameter für eine Organisation löschen"
 
-#: ../lib/hammer_cli_foreman/organization.rb:101
+#: ../lib/hammer_cli_foreman/organization.rb:102
 msgid "Could not delete organization parameter"
-msgstr ""
+msgstr "Organisationsparameter konnte nicht gelöscht werden"
 
 #: ../lib/hammer_cli_foreman/partition_table.rb:31
 msgid "View partition table content."
@@ -2089,41 +2094,41 @@ msgstr "Diese Operation wird vom Server nicht unterstützt."
 
 #: ../lib/hammer_cli_foreman/role.rb:20
 msgid "Builtin"
-msgstr ""
-
-#: ../lib/hammer_cli_foreman/role.rb:24
-msgid "No"
-msgstr "Nein"
+msgstr "Eingebaut"
 
 #: ../lib/hammer_cli_foreman/role.rb:24
 msgid "Yes"
 msgstr "Ja"
 
+#: ../lib/hammer_cli_foreman/role.rb:24
+msgid "No"
+msgstr "Nein"
+
 #: ../lib/hammer_cli_foreman/role.rb:36
 msgid "User role id"
 msgstr "Benutzerrollen-ID"
 
-#: ../lib/hammer_cli_foreman/role.rb:60
+#: ../lib/hammer_cli_foreman/role.rb:64
 msgid "User role [%<name>s] created"
 msgstr "Benutzerrolle [%<name>s] erstellt"
 
-#: ../lib/hammer_cli_foreman/role.rb:61
+#: ../lib/hammer_cli_foreman/role.rb:65
 msgid "Could not create the user role"
 msgstr "Benutzerrolle konnte nicht erstellt werden"
 
-#: ../lib/hammer_cli_foreman/role.rb:68
+#: ../lib/hammer_cli_foreman/role.rb:72
 msgid "User role [%<name>s] updated"
 msgstr "Benutzerrolle [%<name>s] aktualisiert"
 
-#: ../lib/hammer_cli_foreman/role.rb:69
+#: ../lib/hammer_cli_foreman/role.rb:73
 msgid "Could not update the user role"
 msgstr "Benutzerrolle konnte nicht aktualisiert werden"
 
-#: ../lib/hammer_cli_foreman/role.rb:76
+#: ../lib/hammer_cli_foreman/role.rb:80
 msgid "User role [%<name>s] deleted"
 msgstr "Benutzerrolle [%<name>s] gelöscht"
 
-#: ../lib/hammer_cli_foreman/role.rb:77
+#: ../lib/hammer_cli_foreman/role.rb:81
 msgid "Could not delete the user roles"
 msgstr "Benutzerrollen konnten nicht gelöscht werden"
 
@@ -2144,110 +2149,115 @@ msgstr "Standardwert"
 msgid "Override"
 msgstr "Überschreiben"
 
-#: ../lib/hammer_cli_foreman/smart_class_parameter.rb:36
+#: ../lib/hammer_cli_foreman/smart_class_parameter.rb:35
 #: ../lib/hammer_cli_foreman/smart_variable.rb:27
 msgid "Puppet class"
 msgstr "Puppet-Klasse"
 
-#: ../lib/hammer_cli_foreman/smart_class_parameter.rb:37
+#: ../lib/hammer_cli_foreman/smart_class_parameter.rb:36
 #: ../lib/hammer_cli_foreman/smart_variable.rb:28
 msgid "Class Id"
 msgstr "Klassen-ID"
 
-#: ../lib/hammer_cli_foreman/smart_class_parameter.rb:63
+#: ../lib/hammer_cli_foreman/smart_class_parameter.rb:61
+#: ../lib/hammer_cli_foreman/smart_variable.rb:52
+msgid "Hidden Value?"
+msgstr "Versteckter Wert?"
+
+#: ../lib/hammer_cli_foreman/smart_class_parameter.rb:62
 msgid "Required"
 msgstr "Erforderlich"
 
-#: ../lib/hammer_cli_foreman/smart_class_parameter.rb:65
-#: ../lib/hammer_cli_foreman/smart_variable.rb:53
+#: ../lib/hammer_cli_foreman/smart_class_parameter.rb:64
+#: ../lib/hammer_cli_foreman/smart_variable.rb:54
 msgid "Validator"
 msgstr "Prüfung"
 
-#: ../lib/hammer_cli_foreman/smart_class_parameter.rb:67
-#: ../lib/hammer_cli_foreman/smart_variable.rb:55
+#: ../lib/hammer_cli_foreman/smart_class_parameter.rb:66
+#: ../lib/hammer_cli_foreman/smart_variable.rb:56
 msgid "Rule"
 msgstr "Regel"
 
-#: ../lib/hammer_cli_foreman/smart_class_parameter.rb:69
-#: ../lib/hammer_cli_foreman/smart_variable.rb:57
+#: ../lib/hammer_cli_foreman/smart_class_parameter.rb:68
+#: ../lib/hammer_cli_foreman/smart_variable.rb:58
 msgid "Override values"
 msgstr "Überschreibungswerte"
 
-#: ../lib/hammer_cli_foreman/smart_class_parameter.rb:70
-#: ../lib/hammer_cli_foreman/smart_variable.rb:58
-msgid "Merge overrides"
-msgstr ""
-
-#: ../lib/hammer_cli_foreman/smart_class_parameter.rb:71
+#: ../lib/hammer_cli_foreman/smart_class_parameter.rb:69
 #: ../lib/hammer_cli_foreman/smart_variable.rb:59
+msgid "Merge overrides"
+msgstr "Überschreibungen zusammenführen"
+
+#: ../lib/hammer_cli_foreman/smart_class_parameter.rb:70
+#: ../lib/hammer_cli_foreman/smart_variable.rb:60
 msgid "Merge default value"
 msgstr "Standardwert zusammenführen"
 
-#: ../lib/hammer_cli_foreman/smart_class_parameter.rb:72
-#: ../lib/hammer_cli_foreman/smart_variable.rb:60
+#: ../lib/hammer_cli_foreman/smart_class_parameter.rb:71
+#: ../lib/hammer_cli_foreman/smart_variable.rb:61
 msgid "Avoid duplicates"
 msgstr "Duplikate vermeiden"
 
-#: ../lib/hammer_cli_foreman/smart_class_parameter.rb:73
-#: ../lib/hammer_cli_foreman/smart_variable.rb:61
+#: ../lib/hammer_cli_foreman/smart_class_parameter.rb:72
+#: ../lib/hammer_cli_foreman/smart_variable.rb:62
 msgid "Order"
 msgstr "Reihenfolge"
 
-#: ../lib/hammer_cli_foreman/smart_class_parameter.rb:74
-#: ../lib/hammer_cli_foreman/smart_variable.rb:62
+#: ../lib/hammer_cli_foreman/smart_class_parameter.rb:73
+#: ../lib/hammer_cli_foreman/smart_variable.rb:63
 msgid "Values"
 msgstr "Werte"
 
-#: ../lib/hammer_cli_foreman/smart_class_parameter.rb:76
-#: ../lib/hammer_cli_foreman/smart_variable.rb:64
+#: ../lib/hammer_cli_foreman/smart_class_parameter.rb:75
+#: ../lib/hammer_cli_foreman/smart_variable.rb:65
 msgid "Match"
 msgstr "Übereinstimmung"
 
-#: ../lib/hammer_cli_foreman/smart_class_parameter.rb:103
+#: ../lib/hammer_cli_foreman/smart_class_parameter.rb:102
 msgid "Parameter updated"
 msgstr "Parameter aktualisiert"
 
-#: ../lib/hammer_cli_foreman/smart_class_parameter.rb:104
+#: ../lib/hammer_cli_foreman/smart_class_parameter.rb:103
 msgid "Could not update the parameter"
 msgstr "Parameter konnte nicht aktualisiert werden"
 
-#: ../lib/hammer_cli_foreman/smart_class_parameter.rb:111
+#: ../lib/hammer_cli_foreman/smart_class_parameter.rb:110
 msgid "Override this parameter."
 msgstr "Diesen Parameter überschreiben."
 
-#: ../lib/hammer_cli_foreman/smart_class_parameter.rb:113
+#: ../lib/hammer_cli_foreman/smart_class_parameter.rb:112
 msgid "This parameter is required."
 msgstr "Dieser Parameter ist erforderlich."
 
-#: ../lib/hammer_cli_foreman/smart_class_parameter.rb:115
+#: ../lib/hammer_cli_foreman/smart_class_parameter.rb:114
 msgid "Type of the parameter."
 msgstr "Typ des Parameters."
 
-#: ../lib/hammer_cli_foreman/smart_class_parameter.rb:118
-#: ../lib/hammer_cli_foreman/smart_variable.rb:90
-#: ../lib/hammer_cli_foreman/smart_variable.rb:104
+#: ../lib/hammer_cli_foreman/smart_class_parameter.rb:117
+#: ../lib/hammer_cli_foreman/smart_variable.rb:91
+#: ../lib/hammer_cli_foreman/smart_variable.rb:105
 msgid "Type of the validator."
 msgstr "Typ der Prüfung."
 
-#: ../lib/hammer_cli_foreman/smart_class_parameter.rb:132
-#: ../lib/hammer_cli_foreman/smart_variable.rb:122
-msgid "Override value created"
-msgstr ""
-
-#: ../lib/hammer_cli_foreman/smart_class_parameter.rb:133
+#: ../lib/hammer_cli_foreman/smart_class_parameter.rb:131
 #: ../lib/hammer_cli_foreman/smart_variable.rb:123
+msgid "Override value created"
+msgstr "Überschreibungswert erstellt"
+
+#: ../lib/hammer_cli_foreman/smart_class_parameter.rb:132
+#: ../lib/hammer_cli_foreman/smart_variable.rb:124
 msgid "Could not create the override_value"
-msgstr ""
+msgstr "Überschreibungswert konnte nicht erstellt werden"
+
+#: ../lib/hammer_cli_foreman/smart_class_parameter.rb:151
+#: ../lib/hammer_cli_foreman/smart_variable.rb:136
+msgid "Override value deleted"
+msgstr "Überschreibungswert gelöscht"
 
 #: ../lib/hammer_cli_foreman/smart_class_parameter.rb:152
-#: ../lib/hammer_cli_foreman/smart_variable.rb:135
-msgid "Override value deleted"
-msgstr ""
-
-#: ../lib/hammer_cli_foreman/smart_class_parameter.rb:153
-#: ../lib/hammer_cli_foreman/smart_variable.rb:136
+#: ../lib/hammer_cli_foreman/smart_variable.rb:137
 msgid "Could not delete the override value"
-msgstr ""
+msgstr "Überschreibungwert konnte nicht gelöscht werden"
 
 #: ../lib/hammer_cli_foreman/smart_proxy.rb:13
 msgid "URL"
@@ -2302,32 +2312,32 @@ msgstr "Smart-Proxy-Funktionen wurden aktualisiert"
 msgid "Refresh of smart proxy features failed"
 msgstr "Fehler beim Aktualisieren von Smart-Proxy-Funktionen"
 
-#: ../lib/hammer_cli_foreman/smart_variable.rb:82
+#: ../lib/hammer_cli_foreman/smart_variable.rb:83
 msgid "Smart variable [%{variable}] created"
 msgstr ""
 
-#: ../lib/hammer_cli_foreman/smart_variable.rb:83
+#: ../lib/hammer_cli_foreman/smart_variable.rb:84
 msgid "Could not create the smart variable"
 msgstr ""
 
-#: ../lib/hammer_cli_foreman/smart_variable.rb:87
-#: ../lib/hammer_cli_foreman/smart_variable.rb:101
+#: ../lib/hammer_cli_foreman/smart_variable.rb:88
+#: ../lib/hammer_cli_foreman/smart_variable.rb:102
 msgid "Type of the variable."
 msgstr "Typ der Variable."
 
-#: ../lib/hammer_cli_foreman/smart_variable.rb:96
+#: ../lib/hammer_cli_foreman/smart_variable.rb:97
 msgid "Smart variable [%{variable}] updated"
 msgstr ""
 
-#: ../lib/hammer_cli_foreman/smart_variable.rb:97
+#: ../lib/hammer_cli_foreman/smart_variable.rb:98
 msgid "Could not update the smart variable"
 msgstr ""
 
-#: ../lib/hammer_cli_foreman/smart_variable.rb:111
+#: ../lib/hammer_cli_foreman/smart_variable.rb:112
 msgid "Smart variable [%{variable}] deleted"
 msgstr ""
 
-#: ../lib/hammer_cli_foreman/smart_variable.rb:112
+#: ../lib/hammer_cli_foreman/smart_variable.rb:113
 msgid "Could not delete the smart variable"
 msgstr ""
 

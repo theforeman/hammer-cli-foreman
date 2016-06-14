@@ -5,7 +5,7 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: hammer-cli-foreman 0.6.0\n"
+"Project-Id-Version: hammer-cli-foreman 0.7.0\n"
 "Report-Msgid-Bugs-To: \n"
 "PO-Revision-Date: 2014-03-04 16:47+0000\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
@@ -124,43 +124,127 @@ msgstr ""
 msgid "Associate a hostgroup"
 msgstr ""
 
+msgid "The hostgroup has been associated"
+msgstr ""
+
+msgid "Could not associate the hostgroup"
+msgstr ""
+
 msgid "Disassociate a hostgroup"
+msgstr ""
+
+msgid "The hostgroup has been disassociated"
+msgstr ""
+
+msgid "Could not disassociate the hostgroup"
 msgstr ""
 
 msgid "Associate an environment"
 msgstr ""
 
+msgid "The environment has been associated"
+msgstr ""
+
+msgid "Could not associate the environment"
+msgstr ""
+
 msgid "Disassociate an environment"
+msgstr ""
+
+msgid "The environment has been disassociated"
+msgstr ""
+
+msgid "Could not disassociate the environment"
 msgstr ""
 
 msgid "Associate a domain"
 msgstr ""
 
+msgid "The domain has been associated"
+msgstr ""
+
+msgid "Could not associate the domain"
+msgstr ""
+
 msgid "Disassociate a domain"
+msgstr ""
+
+msgid "The domain has been disassociated"
+msgstr ""
+
+msgid "Could not disassociate the domain"
 msgstr ""
 
 msgid "Associate a medium"
 msgstr ""
 
+msgid "The medium has been associated"
+msgstr ""
+
+msgid "Could not associate the medium"
+msgstr ""
+
 msgid "Disassociate a medium"
+msgstr ""
+
+msgid "The medium has been disassociated"
+msgstr ""
+
+msgid "Could not disassociate the medium"
 msgstr ""
 
 msgid "Associate a subnet"
 msgstr ""
 
+msgid "The subnet has been associated"
+msgstr ""
+
+msgid "Could not associate the subnet"
+msgstr ""
+
 msgid "Disassociate a subnet"
+msgstr ""
+
+msgid "The subnet has been disassociated"
+msgstr ""
+
+msgid "Could not disassociate the subnet"
 msgstr ""
 
 msgid "Associate a compute resource"
 msgstr ""
 
+msgid "The compute resource has been associated"
+msgstr ""
+
+msgid "Could not associate the compute resource"
+msgstr ""
+
 msgid "Disassociate a compute resource"
+msgstr ""
+
+msgid "The compute resource has been disassociated"
+msgstr ""
+
+msgid "Could not disassociate the compute resource"
 msgstr ""
 
 msgid "Associate a smart proxy"
 msgstr ""
 
+msgid "The smart proxy has been associated"
+msgstr ""
+
+msgid "Could not associate the smart proxy"
+msgstr ""
+
 msgid "Disassociate a smart proxy"
+msgstr ""
+
+msgid "The smart proxy has been disassociated"
+msgstr ""
+
+msgid "Could not disassociate the smart proxy"
 msgstr ""
 
 msgid "Associate an user"
@@ -202,13 +286,37 @@ msgstr ""
 msgid "Associate a configuration template"
 msgstr ""
 
+msgid "The configuration template has been associated"
+msgstr ""
+
+msgid "Could not associate the configuration template"
+msgstr ""
+
 msgid "Disassociate a configuration template"
+msgstr ""
+
+msgid "The configuration template has been disassociated"
+msgstr ""
+
+msgid "Could not disassociate the configuration template"
 msgstr ""
 
 msgid "Associate an organization"
 msgstr ""
 
+msgid "The organization has been associated"
+msgstr ""
+
+msgid "Could not associate the organization"
+msgstr ""
+
 msgid "Disassociate an organization"
+msgstr ""
+
+msgid "The organization has been disassociated"
+msgstr ""
+
+msgid "Could not disassociate the organization"
 msgstr ""
 
 msgid "Associate an operating system"
@@ -377,7 +485,19 @@ msgstr ""
 msgid "Associate a resource"
 msgstr ""
 
+msgid "Could not associate the %{resource_name}"
+msgstr ""
+
+msgid "The %{resource_name} has been associated"
+msgstr ""
+
 msgid "Disassociate a resource"
+msgstr ""
+
+msgid "Could not disassociate the %{resource_name}"
+msgstr ""
+
+msgid "The %{resource_name} has been disassociated"
 msgstr ""
 
 msgid "Value"
@@ -524,6 +644,20 @@ msgstr ""
 msgid "Could not delete the environment"
 msgstr ""
 
+msgid "Redirection of API call detected."
+msgstr ""
+
+msgid "It seems hammer is configured to use HTTP and the server prefers HTTPS."
+msgstr ""
+
+msgid "Update your server url configuration"
+msgstr ""
+
+msgid ""
+"you can set 'follow_redirects' to one of :default or :always to enable redirec"
+"ts following"
+msgstr ""
+
 msgid "Forbidden - server refused to process the request"
 msgstr ""
 
@@ -632,12 +766,6 @@ msgid "Interface parameters."
 msgstr ""
 
 msgid "Enter the root password for the host:"
-msgstr ""
-
-msgid "At least one interface must be set as primary"
-msgstr ""
-
-msgid "At least one interface must be set as provision"
 msgstr ""
 
 msgid "Operating System"
@@ -842,6 +970,12 @@ msgid "Reboot a host"
 msgstr ""
 
 msgid "Host reboot started."
+msgstr ""
+
+msgid "Rebuild orchestration related configurations for host"
+msgstr ""
+
+msgid "Configuration successfully rebuilt."
 msgstr ""
 
 msgid "List of puppetclass ids"
@@ -1313,6 +1447,9 @@ msgstr ""
 msgid "Could not delete organization parameter"
 msgstr ""
 
+msgid "Locked"
+msgstr ""
+
 msgid "View partition table content."
 msgstr ""
 
@@ -1574,7 +1711,10 @@ msgstr ""
 msgid "Override value created"
 msgstr ""
 
-msgid "Could not create the override_value"
+msgid "Could not create the override value"
+msgstr ""
+
+msgid "Cannot use --value when --use-puppet-default is true"
 msgstr ""
 
 msgid "Override value deleted"
@@ -1730,6 +1870,12 @@ msgstr ""
 msgid "Update the default PXE menu on all configured TFTP servers"
 msgstr ""
 
+msgid "Config template cloned"
+msgstr ""
+
+msgid "Could not clone the config template"
+msgstr ""
+
 msgid "Login"
 msgstr ""
 
@@ -1737,6 +1883,9 @@ msgid "Email"
 msgstr ""
 
 msgid "Admin"
+msgstr ""
+
+msgid "Effective admin"
 msgstr ""
 
 msgid "Authorized by"
