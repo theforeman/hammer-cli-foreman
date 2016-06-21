@@ -12,6 +12,7 @@ module HammerCLIForeman
       output do
         field :id, _("Id")
         field :name, _("Name")
+        field :description, _("Description")
       end
 
       build_options

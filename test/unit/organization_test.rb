@@ -26,6 +26,7 @@ describe HammerCLIForeman::Organization do
       let(:expected_record_count) { count_records(cmd.resource.call(:index)) }
 
       it_should_print_n_records
+      it_should_print_column "Description"
       it_should_print_column "Name"
       it_should_print_column "Id"
     end
