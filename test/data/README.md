@@ -17,9 +17,9 @@
     ```bash
     $ FOREMAN_APIPIE_LANGS=en rake apipie:cache
     ```
- 1. in **hammer-cli-foreman** in `test/unit/data/` Create directory with name matching the Foreman version in `test/unit/data/` (e.g. `test/unit/data/1.10`)
+ 1. in **hammer-cli-foreman** in `test/data/` Create directory with name matching the Foreman version in `test/data/` (e.g. `test/data/1.10`)
  1. copy the API cache from the Foreman instance into the newly created directory and name it as `foreman_api.json`
- 1. update the following line in `test/unit/test_helper.rb` to match the new default Foreman version
+ 1. update the following line in `test/test_helper.rb` to match the new default Foreman version
 
     ```ruby
     FOREMAN_VERSION = Gem::Version.new(ENV['TEST_API_VERSION'] || '1.10')
