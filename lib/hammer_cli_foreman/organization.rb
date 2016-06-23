@@ -114,6 +114,7 @@ module HammerCLIForeman
     HammerCLIForeman::AssociatingCommands::SmartProxy.extend_command(self)
     HammerCLIForeman::AssociatingCommands::User.extend_command(self)
     HammerCLIForeman::AssociatingCommands::ConfigTemplate.extend_command(self)
+    HammerCLIForeman::AssociatingCommands::Location.extend_command(self)
 
     autoload_subcommands
   end

@@ -349,6 +349,27 @@ module HammerCLIForeman
       end
     end
 
+    module Location
+      extend CommandExtension
+
+      class AddLocationCommand < HammerCLIForeman::AddAssociatedCommand
+        associated_resource :locations
+        desc _("Associate a location")
+
+        success_message _("The location has been associated")
+        failure_message _("Could not associate the location")
+      end
+
+      class RemoveLocationCommand < HammerCLIForeman::RemoveAssociatedCommand
+        associated_resource :locations
+        desc _("Disassociate a location")
+
+        success_message _("The location has been disassociated")
+        failure_message _("Could not disassociate the location")
+      end
+    end
+
+
   end
 end
 
