@@ -24,5 +24,6 @@ EOF
 
   s.add_dependency 'hammer_cli', '>= 0.9.0'
   s.add_dependency 'apipie-bindings', '>= 0.0.19'
+  s.add_dependency 'hammer_cli_foreman_tasks', '>= 0.0.5'
 
 end

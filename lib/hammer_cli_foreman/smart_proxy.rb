@@ -62,23 +62,27 @@ module HammerCLIForeman
 
 
     class ImportPuppetClassesCommand < HammerCLIForeman::Command
+      include HammerCLIForemanTasks::Async
 
       action :import_puppetclasses
 
       command_name    "import-classes"
-      success_message _("Puppet classes were imported")
+      success_message _("Puppet classes import succeeded")
       failure_message _("Import of puppet classes failed")
 
       option "--dryrun", :flag, _("Do not run the import")
+      option "--background", :flag, _("Run import on background")
 
       build_options do |o|
         o.without(:smart_proxy_id, :dryrun)
+        o.without(:smart_proxy_id, :background)
         o.expand.except(:smart_proxies)
       end
 
       def request_params
         opts = super
         opts['dryrun'] = option_dryrun? || false
+        opts['background'] = option_background? || false
         opts
       end
     end
