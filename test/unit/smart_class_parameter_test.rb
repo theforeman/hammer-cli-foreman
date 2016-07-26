@@ -50,6 +50,7 @@ describe HammerCLIForeman::SmartClassParameter do
     context "parameters" do
       it_should_accept "id", ["--id=1"]
       it_should_accept "name, puppet-class", ["--name=par", "--puppet-class=ntp"]
+      it_should_accept "name, puppet-class, env", ["--name=par", "--puppet-class=ntp", "--environment=development"]
       it_should_fail_with "name", ["--name=par"]
       # it_should_fail_with "no arguments"
       # TODO: temporarily disabled, parameters are checked in the id resolver
@@ -64,6 +65,7 @@ describe HammerCLIForeman::SmartClassParameter do
     context "parameters" do
       it_should_accept "id", ["--id=1"]
       it_should_accept "name, puppet-class", ["--name=par", "--puppet-class=ntp"]
+      it_should_accept "name, puppet-class, env", ["--name=par", "--puppet-class=ntp", "--environment=development"]
       it_should_fail_with "name", ["--name=par"]
       it_should_accept "override", ["--id=1","--override=true"]
       it_should_accept "description", ["--id=1","--description=descr"]

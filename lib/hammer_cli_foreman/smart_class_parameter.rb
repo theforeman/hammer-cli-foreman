@@ -87,7 +87,7 @@ module HammerCLIForeman
       end
 
       build_options do |options|
-        options.expand.including(:puppetclasses)
+        options.expand.including(:puppetclasses, :environments)
       end
 
       validate_options do
@@ -103,7 +103,7 @@ module HammerCLIForeman
       failure_message _("Could not update the parameter")
 
       build_options do |options|
-        options.expand.including(:puppetclasses)
+        options.expand.including(:puppetclasses, :environments)
         options.without(:parameter_type, :validator_type, :override, :required)
       end
 
