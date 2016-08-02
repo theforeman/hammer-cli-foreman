@@ -29,10 +29,6 @@ describe HammerCLIForeman::Host do
 
     let(:cmd) { HammerCLIForeman::Host::InfoCommand.new("", ctx) }
 
-    before :each do
-      cmd.stubs(:get_parameters).returns([])
-    end
-
     context "parameters" do
       it_should_accept "id", ["--id=1"]
       it_should_accept "name", ["--name=host"]

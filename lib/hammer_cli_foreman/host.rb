@@ -178,11 +178,6 @@ module HammerCLIForeman
           nic
         end if host['interfaces']
 
-        # FIXME: temporary fetching parameters until the api gets fixed.
-        # Noramlly they should come in the host's json.
-        # http://projects.theforeman.org/issues/5820
-        host['parameters'] = get_parameters(host["id"])
-
         host
       end
 
