@@ -10,6 +10,7 @@ module HammerCLIForeman
       output do
         field :id, _("Id")
         field :name, _("Name")
+        field :admin, _("Admin"), Fields::Boolean
       end
 
       build_options
@@ -57,6 +58,3 @@ module HammerCLIForeman
   end
 
 end
-
-
-
