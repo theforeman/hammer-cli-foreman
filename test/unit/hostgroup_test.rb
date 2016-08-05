@@ -40,7 +40,7 @@ describe HammerCLIForeman::Hostgroup do
         it_should_print_n_records 1
         it_should_print_columns ["Id", "Name", "Title", "Operating System", "Subnet"]
         it_should_print_columns ["Domain", "Environment", "Puppetclasses", "Parent Id"]
-        it_should_print_columns ["Parameters"]
+        it_should_print_columns ["Content View", "Lifecycle Environment", "Parameters"]
       end
     end
 

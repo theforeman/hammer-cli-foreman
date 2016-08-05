@@ -75,6 +75,8 @@ module HammerCLIForeman
         field nil, _("Architecture"), Fields::SingleReference, :key => :architecture
         field nil, _("Partition Table"), Fields::SingleReference, :key => :ptable
         field nil, _("Medium"), Fields::SingleReference, :key => :medium
+        field :content_view_name, _("Content View")
+        field :lifecycle_environment_name, _("Lifecycle Environment")
         field :puppet_ca_proxy_id, _("Puppet CA Proxy Id")
         field :puppet_proxy_id, _("Puppet Master Proxy Id")
         field nil, _("ComputeProfile"), Fields::SingleReference, :key => :compute_profile
