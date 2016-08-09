@@ -31,8 +31,18 @@ module HammerCLIForeman
 
     def self.usergroups(dsl)
       dsl.build do
-        collection :usergroups, _("User groups"), :numbered => false do
+        collection :usergroups, _("User groups"), :numbered => true do
           custom_field Fields::Reference
+          collection :roles, _("Roles"), :numbered => false do
+            custom_field Fields::Reference
+          end
+        end
+        collection :cached_usergroups, _("Inherited User groups"), :numbered => true do
+          field :id, "Id", Fields::Id
+          field :name, "Usergroup"
+          collection :cached_roles, _("Roles"), :numbered => false do
+            custom_field Fields::Reference
+          end
         end
       end
     end
