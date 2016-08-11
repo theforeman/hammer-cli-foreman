@@ -54,6 +54,13 @@ describe HammerCLIForeman::SmartClassParameter do
       # it_should_fail_with "no arguments"
       # TODO: temporarily disabled, parameters are checked in the id resolver
     end
+
+    context "output" do
+      with_params ["--id=1"] do
+        it_should_print_n_records 1
+        it_should_print_columns ["Description", "Type", "Use puppet default", "Required"]
+      end
+    end
   end
 
 
