@@ -7,7 +7,7 @@ module HammerCLIForeman
     output do
       field :id, _("Id")
 
-      field :variable, _("Name")
+      field :variable, _('Variable')
       field :default_value, _("Default Value")
       field :parameter_type, _("Type")
     end
@@ -46,6 +46,8 @@ module HammerCLIForeman
     end
 
     class InfoCommand < HammerCLIForeman::InfoCommand
+
+      option '--name', 'NAME', _('Smart variable name'), :deprecated => _('Use --variable instead')
 
       output ListCommand.output_definition do
         field :description, _("Description")
@@ -108,6 +110,7 @@ module HammerCLIForeman
 
 
     class DeleteCommand < HammerCLIForeman::DeleteCommand
+      option '--name', 'NAME', _('Smart variable name'), :deprecated => _('Use --variable instead')
 
       success_message _("Smart variable [%{variable}] deleted")
       failure_message _("Could not delete the smart variable")

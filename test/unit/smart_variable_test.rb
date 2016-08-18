@@ -28,7 +28,7 @@ describe HammerCLIForeman::SmartVariable do
 
       it_should_print_n_records
       it_should_print_column "Id"
-      it_should_print_column "Name"
+      it_should_print_column "Variable"
       it_should_print_column "Default Value"
       it_should_print_column "Type"
       it_should_print_column "Class Id"
