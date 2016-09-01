@@ -6,10 +6,10 @@
 # Dominic Cleal <dominic@cleal.org>, 2014
 msgid ""
 msgstr ""
-"Project-Id-Version: hammer-cli-foreman 0.7.0\n"
+"Project-Id-Version: hammer-cli-foreman 0.8.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-02-25 15:04+0100\n"
-"PO-Revision-Date: 2016-03-08 17:54+0000\n"
+"POT-Creation-Date: 2016-06-14 23:53+0200\n"
+"PO-Revision-Date: 2016-08-22 15:08+0000\n"
 "Last-Translator: Bryan Kearney <bryan.kearney@gmail.com>\n"
 "Language-Team: Korean (http://www.transifex.com/foreman/foreman/language/ko/)\n"
 "MIME-Version: 1.0\n"
@@ -100,7 +100,7 @@ msgstr "스마트 클래스 매개 변수를 조정합니다. "
 
 #: ../lib/hammer_cli_foreman.rb:112
 msgid "Manipulate smart variables."
-msgstr ""
+msgstr "스마트 변수를 조정합니다."
 
 #: ../lib/hammer_cli_foreman.rb:116
 msgid "Manipulate smart proxies."
@@ -108,7 +108,7 @@ msgstr "스마트 프록시를 조정합니다."
 
 #: ../lib/hammer_cli_foreman.rb:120
 msgid "Change server settings."
-msgstr ""
+msgstr "서버 설정을 변경합니다."
 
 #: ../lib/hammer_cli_foreman.rb:124
 msgid "Manipulate subnets."
@@ -134,8 +134,8 @@ msgstr "사용자 그룹을 관리합니다."
 #: ../lib/hammer_cli_foreman/external_usergroup.rb:10
 #: ../lib/hammer_cli_foreman/filter.rb:9
 #: ../lib/hammer_cli_foreman/filter.rb:72
-#: ../lib/hammer_cli_foreman/host.rb:170 ../lib/hammer_cli_foreman/host.rb:207
-#: ../lib/hammer_cli_foreman/host.rb:238
+#: ../lib/hammer_cli_foreman/host.rb:159 ../lib/hammer_cli_foreman/host.rb:196
+#: ../lib/hammer_cli_foreman/host.rb:227
 #: ../lib/hammer_cli_foreman/hostgroup.rb:57
 #: ../lib/hammer_cli_foreman/image.rb:29
 #: ../lib/hammer_cli_foreman/interface.rb:23
@@ -171,7 +171,7 @@ msgstr "ID "
 #: ../lib/hammer_cli_foreman/external_usergroup.rb:42
 #: ../lib/hammer_cli_foreman/filter.rb:73
 #: ../lib/hammer_cli_foreman/filter.rb:90
-#: ../lib/hammer_cli_foreman/host.rb:171 ../lib/hammer_cli_foreman/host.rb:209
+#: ../lib/hammer_cli_foreman/host.rb:160 ../lib/hammer_cli_foreman/host.rb:198
 #: ../lib/hammer_cli_foreman/hostgroup.rb:58
 #: ../lib/hammer_cli_foreman/image.rb:30 ../lib/hammer_cli_foreman/image.rb:70
 #: ../lib/hammer_cli_foreman/location.rb:14
@@ -186,7 +186,7 @@ msgstr "ID "
 #: ../lib/hammer_cli_foreman/smart_variable.rb:10
 #: ../lib/hammer_cli_foreman/subnet.rb:11
 #: ../lib/hammer_cli_foreman/template.rb:26
-#: ../lib/hammer_cli_foreman/template.rb:74
+#: ../lib/hammer_cli_foreman/template.rb:75
 #: ../lib/hammer_cli_foreman/user.rb:12
 #: ../lib/hammer_cli_foreman/usergroup.rb:12
 msgid "Name"
@@ -220,215 +220,359 @@ msgstr "아키텍처를 업데이트할 수 없습니다 "
 msgid "Associate a hostgroup"
 msgstr "호스트 그룹 연결 "
 
-#: ../lib/hammer_cli_foreman/associating_commands.rb:46
+#: ../lib/hammer_cli_foreman/associating_commands.rb:43
+msgid "The hostgroup has been associated"
+msgstr ""
+
+#: ../lib/hammer_cli_foreman/associating_commands.rb:44
+msgid "Could not associate the hostgroup"
+msgstr ""
+
+#: ../lib/hammer_cli_foreman/associating_commands.rb:49
 msgid "Disassociate a hostgroup"
 msgstr "호스트 그룹 연결 해제 "
 
-#: ../lib/hammer_cli_foreman/associating_commands.rb:55
+#: ../lib/hammer_cli_foreman/associating_commands.rb:51
+msgid "The hostgroup has been disassociated"
+msgstr ""
+
+#: ../lib/hammer_cli_foreman/associating_commands.rb:52
+msgid "Could not disassociate the hostgroup"
+msgstr ""
+
+#: ../lib/hammer_cli_foreman/associating_commands.rb:61
 msgid "Associate an environment"
 msgstr "환경 연결 "
 
-#: ../lib/hammer_cli_foreman/associating_commands.rb:60
+#: ../lib/hammer_cli_foreman/associating_commands.rb:63
+msgid "The environment has been associated"
+msgstr ""
+
+#: ../lib/hammer_cli_foreman/associating_commands.rb:64
+msgid "Could not associate the environment"
+msgstr ""
+
+#: ../lib/hammer_cli_foreman/associating_commands.rb:69
 msgid "Disassociate an environment"
 msgstr "환경 연결 해제 "
 
-#: ../lib/hammer_cli_foreman/associating_commands.rb:69
+#: ../lib/hammer_cli_foreman/associating_commands.rb:71
+msgid "The environment has been disassociated"
+msgstr ""
+
+#: ../lib/hammer_cli_foreman/associating_commands.rb:72
+msgid "Could not disassociate the environment"
+msgstr ""
+
+#: ../lib/hammer_cli_foreman/associating_commands.rb:81
 msgid "Associate a domain"
 msgstr "도메인 연결 "
 
-#: ../lib/hammer_cli_foreman/associating_commands.rb:74
+#: ../lib/hammer_cli_foreman/associating_commands.rb:83
+msgid "The domain has been associated"
+msgstr ""
+
+#: ../lib/hammer_cli_foreman/associating_commands.rb:84
+msgid "Could not associate the domain"
+msgstr ""
+
+#: ../lib/hammer_cli_foreman/associating_commands.rb:89
 msgid "Disassociate a domain"
 msgstr "도메인 연결 해제 "
 
-#: ../lib/hammer_cli_foreman/associating_commands.rb:83
+#: ../lib/hammer_cli_foreman/associating_commands.rb:91
+msgid "The domain has been disassociated"
+msgstr ""
+
+#: ../lib/hammer_cli_foreman/associating_commands.rb:92
+msgid "Could not disassociate the domain"
+msgstr ""
+
+#: ../lib/hammer_cli_foreman/associating_commands.rb:101
 msgid "Associate a medium"
 msgstr "미디어 연결 "
 
-#: ../lib/hammer_cli_foreman/associating_commands.rb:88
+#: ../lib/hammer_cli_foreman/associating_commands.rb:103
+msgid "The medium has been associated"
+msgstr ""
+
+#: ../lib/hammer_cli_foreman/associating_commands.rb:104
+msgid "Could not associate the medium"
+msgstr ""
+
+#: ../lib/hammer_cli_foreman/associating_commands.rb:109
 msgid "Disassociate a medium"
 msgstr "미디어 연결 해제 "
 
-#: ../lib/hammer_cli_foreman/associating_commands.rb:97
+#: ../lib/hammer_cli_foreman/associating_commands.rb:111
+msgid "The medium has been disassociated"
+msgstr ""
+
+#: ../lib/hammer_cli_foreman/associating_commands.rb:112
+msgid "Could not disassociate the medium"
+msgstr ""
+
+#: ../lib/hammer_cli_foreman/associating_commands.rb:121
 msgid "Associate a subnet"
 msgstr "서브넷 연결 "
 
-#: ../lib/hammer_cli_foreman/associating_commands.rb:102
+#: ../lib/hammer_cli_foreman/associating_commands.rb:123
+msgid "The subnet has been associated"
+msgstr ""
+
+#: ../lib/hammer_cli_foreman/associating_commands.rb:124
+msgid "Could not associate the subnet"
+msgstr ""
+
+#: ../lib/hammer_cli_foreman/associating_commands.rb:129
 msgid "Disassociate a subnet"
 msgstr "서브넷 연결 해제 "
 
-#: ../lib/hammer_cli_foreman/associating_commands.rb:111
+#: ../lib/hammer_cli_foreman/associating_commands.rb:131
+msgid "The subnet has been disassociated"
+msgstr ""
+
+#: ../lib/hammer_cli_foreman/associating_commands.rb:132
+msgid "Could not disassociate the subnet"
+msgstr ""
+
+#: ../lib/hammer_cli_foreman/associating_commands.rb:141
 msgid "Associate a compute resource"
 msgstr "컴퓨터 리소스 연결 "
 
-#: ../lib/hammer_cli_foreman/associating_commands.rb:116
+#: ../lib/hammer_cli_foreman/associating_commands.rb:143
+msgid "The compute resource has been associated"
+msgstr ""
+
+#: ../lib/hammer_cli_foreman/associating_commands.rb:144
+msgid "Could not associate the compute resource"
+msgstr ""
+
+#: ../lib/hammer_cli_foreman/associating_commands.rb:149
 msgid "Disassociate a compute resource"
 msgstr "컴퓨터 리소스 연결 해제 "
 
-#: ../lib/hammer_cli_foreman/associating_commands.rb:125
+#: ../lib/hammer_cli_foreman/associating_commands.rb:151
+msgid "The compute resource has been disassociated"
+msgstr ""
+
+#: ../lib/hammer_cli_foreman/associating_commands.rb:152
+msgid "Could not disassociate the compute resource"
+msgstr ""
+
+#: ../lib/hammer_cli_foreman/associating_commands.rb:161
 msgid "Associate a smart proxy"
 msgstr "스마트 프록시 연결 "
 
-#: ../lib/hammer_cli_foreman/associating_commands.rb:134
+#: ../lib/hammer_cli_foreman/associating_commands.rb:163
+msgid "The smart proxy has been associated"
+msgstr ""
+
+#: ../lib/hammer_cli_foreman/associating_commands.rb:164
+msgid "Could not associate the smart proxy"
+msgstr ""
+
+#: ../lib/hammer_cli_foreman/associating_commands.rb:173
 msgid "Disassociate a smart proxy"
 msgstr "스마트 프록시 연결 해제 "
 
-#: ../lib/hammer_cli_foreman/associating_commands.rb:147
+#: ../lib/hammer_cli_foreman/associating_commands.rb:175
+msgid "The smart proxy has been disassociated"
+msgstr ""
+
+#: ../lib/hammer_cli_foreman/associating_commands.rb:176
+msgid "Could not disassociate the smart proxy"
+msgstr ""
+
+#: ../lib/hammer_cli_foreman/associating_commands.rb:189
 msgid "Associate an user"
 msgstr "사용자 연결 "
 
-#: ../lib/hammer_cli_foreman/associating_commands.rb:149
+#: ../lib/hammer_cli_foreman/associating_commands.rb:191
 msgid "The user has been associated"
-msgstr ""
+msgstr "사용자가 연결되어 있습니다."
 
-#: ../lib/hammer_cli_foreman/associating_commands.rb:150
+#: ../lib/hammer_cli_foreman/associating_commands.rb:192
 msgid "Could not associate the user"
-msgstr ""
+msgstr "사용자를 연결할 수 없습니다."
 
-#: ../lib/hammer_cli_foreman/associating_commands.rb:155
+#: ../lib/hammer_cli_foreman/associating_commands.rb:197
 msgid "Disassociate an user"
 msgstr "사용자 연결 해제 "
 
-#: ../lib/hammer_cli_foreman/associating_commands.rb:157
+#: ../lib/hammer_cli_foreman/associating_commands.rb:199
 msgid "The user has been disassociated"
-msgstr ""
+msgstr "사용자가 연결 해제되었습니다"
 
-#: ../lib/hammer_cli_foreman/associating_commands.rb:158
+#: ../lib/hammer_cli_foreman/associating_commands.rb:200
 msgid "Could not disassociate the user"
-msgstr ""
+msgstr "사용자를 연결 해제할 수 없습니다"
 
-#: ../lib/hammer_cli_foreman/associating_commands.rb:167
+#: ../lib/hammer_cli_foreman/associating_commands.rb:209
 msgid "Associate an user group"
 msgstr "사용자 그룹 연결 "
 
-#: ../lib/hammer_cli_foreman/associating_commands.rb:171
+#: ../lib/hammer_cli_foreman/associating_commands.rb:213
 msgid "The user group has been associated"
-msgstr ""
+msgstr "사용자 그룹이 연결되어 있습니다"
 
-#: ../lib/hammer_cli_foreman/associating_commands.rb:172
+#: ../lib/hammer_cli_foreman/associating_commands.rb:214
 msgid "Could not associate the user group"
-msgstr ""
+msgstr "사용자 그룹을 연결할 수 없습니다"
 
-#: ../lib/hammer_cli_foreman/associating_commands.rb:177
+#: ../lib/hammer_cli_foreman/associating_commands.rb:219
 msgid "Disassociate an user group"
 msgstr "사용자 그룹 연결 해제 "
 
-#: ../lib/hammer_cli_foreman/associating_commands.rb:181
+#: ../lib/hammer_cli_foreman/associating_commands.rb:223
 msgid "The user group has been disassociated"
-msgstr ""
+msgstr "사용자 그룹이 연결 해제되었습니다"
 
-#: ../lib/hammer_cli_foreman/associating_commands.rb:182
+#: ../lib/hammer_cli_foreman/associating_commands.rb:224
 msgid "Could not disassociate the user group"
-msgstr ""
+msgstr "사용자 그룹을 연결 해제할 수 없습니다"
 
-#: ../lib/hammer_cli_foreman/associating_commands.rb:191
+#: ../lib/hammer_cli_foreman/associating_commands.rb:233
 msgid "Associate a configuration template"
 msgstr "설정 템플릿 연결 "
 
-#: ../lib/hammer_cli_foreman/associating_commands.rb:196
+#: ../lib/hammer_cli_foreman/associating_commands.rb:235
+msgid "The configuration template has been associated"
+msgstr ""
+
+#: ../lib/hammer_cli_foreman/associating_commands.rb:236
+msgid "Could not associate the configuration template"
+msgstr ""
+
+#: ../lib/hammer_cli_foreman/associating_commands.rb:241
 msgid "Disassociate a configuration template"
 msgstr "설정 템플릿 연결 해제 "
 
-#: ../lib/hammer_cli_foreman/associating_commands.rb:205
+#: ../lib/hammer_cli_foreman/associating_commands.rb:243
+msgid "The configuration template has been disassociated"
+msgstr ""
+
+#: ../lib/hammer_cli_foreman/associating_commands.rb:244
+msgid "Could not disassociate the configuration template"
+msgstr ""
+
+#: ../lib/hammer_cli_foreman/associating_commands.rb:253
 msgid "Associate an organization"
 msgstr "조직 연결 "
 
-#: ../lib/hammer_cli_foreman/associating_commands.rb:210
+#: ../lib/hammer_cli_foreman/associating_commands.rb:255
+msgid "The organization has been associated"
+msgstr ""
+
+#: ../lib/hammer_cli_foreman/associating_commands.rb:256
+msgid "Could not associate the organization"
+msgstr ""
+
+#: ../lib/hammer_cli_foreman/associating_commands.rb:261
 msgid "Disassociate an organization"
 msgstr "조직 연결 해제 "
 
-#: ../lib/hammer_cli_foreman/associating_commands.rb:219
+#: ../lib/hammer_cli_foreman/associating_commands.rb:263
+msgid "The organization has been disassociated"
+msgstr ""
+
+#: ../lib/hammer_cli_foreman/associating_commands.rb:264
+msgid "Could not disassociate the organization"
+msgstr ""
+
+#: ../lib/hammer_cli_foreman/associating_commands.rb:273
 msgid "Associate an operating system"
 msgstr "운영 체제 연결 "
 
-#: ../lib/hammer_cli_foreman/associating_commands.rb:221
+#: ../lib/hammer_cli_foreman/associating_commands.rb:275
 msgid "Operating system has been associated"
 msgstr "운영 체제가 연결되었습니다 "
 
-#: ../lib/hammer_cli_foreman/associating_commands.rb:222
+#: ../lib/hammer_cli_foreman/associating_commands.rb:276
 msgid "Could not associate the operating system"
 msgstr "운영 체제를 연결할 수 없습니다 "
 
-#: ../lib/hammer_cli_foreman/associating_commands.rb:228
+#: ../lib/hammer_cli_foreman/associating_commands.rb:282
 msgid "Disassociate an operating system"
 msgstr "운영 체제 연결 해제 "
 
-#: ../lib/hammer_cli_foreman/associating_commands.rb:230
+#: ../lib/hammer_cli_foreman/associating_commands.rb:284
 msgid "Operating system has been disassociated"
 msgstr "운영 체제가 연결 해제되었습니다 "
 
-#: ../lib/hammer_cli_foreman/associating_commands.rb:231
+#: ../lib/hammer_cli_foreman/associating_commands.rb:285
 msgid "Could not disassociate the operating system"
 msgstr "운영 체제를 연결 해제할 수 없습니다 "
 
-#: ../lib/hammer_cli_foreman/associating_commands.rb:240
+#: ../lib/hammer_cli_foreman/associating_commands.rb:294
 msgid "Associate an architecture"
 msgstr "아키텍처 연결 "
 
-#: ../lib/hammer_cli_foreman/associating_commands.rb:242
+#: ../lib/hammer_cli_foreman/associating_commands.rb:296
 msgid "Architecture has been associated"
 msgstr "아키텍처가 연결되었습니다 "
 
-#: ../lib/hammer_cli_foreman/associating_commands.rb:243
+#: ../lib/hammer_cli_foreman/associating_commands.rb:297
 msgid "Could not associate the architecture"
 msgstr "아키텍처를 연결할 수 없습니다 "
 
-#: ../lib/hammer_cli_foreman/associating_commands.rb:249
+#: ../lib/hammer_cli_foreman/associating_commands.rb:303
 msgid "Disassociate an architecture"
 msgstr "아키텍처 연결 해제 "
 
-#: ../lib/hammer_cli_foreman/associating_commands.rb:251
+#: ../lib/hammer_cli_foreman/associating_commands.rb:305
 msgid "Architecture has been disassociated"
 msgstr "아키텍처가 연결 해제되었습니다 "
 
-#: ../lib/hammer_cli_foreman/associating_commands.rb:252
+#: ../lib/hammer_cli_foreman/associating_commands.rb:306
 msgid "Could not disassociate the architecture"
 msgstr "아키텍처를 연결 해제할 수 없습니다 "
 
-#: ../lib/hammer_cli_foreman/associating_commands.rb:261
+#: ../lib/hammer_cli_foreman/associating_commands.rb:315
 msgid "Associate a partition table"
 msgstr "파티션 테이블 연결 "
 
-#: ../lib/hammer_cli_foreman/associating_commands.rb:263
+#: ../lib/hammer_cli_foreman/associating_commands.rb:317
 msgid "Partition table has been associated"
 msgstr "파티션 테이블이 연결되었습니다 "
 
-#: ../lib/hammer_cli_foreman/associating_commands.rb:264
+#: ../lib/hammer_cli_foreman/associating_commands.rb:318
 msgid "Could not associate the partition table"
 msgstr "파티션 테이블을 연결할 수 없습니다 "
 
-#: ../lib/hammer_cli_foreman/associating_commands.rb:270
+#: ../lib/hammer_cli_foreman/associating_commands.rb:324
 msgid "Disassociate a partition table"
 msgstr "파티션 테이블 연결 해제 "
 
-#: ../lib/hammer_cli_foreman/associating_commands.rb:272
+#: ../lib/hammer_cli_foreman/associating_commands.rb:326
 msgid "Partition table has been disassociated"
 msgstr "파티션 테이블이 연결 해제되었습니다 "
 
-#: ../lib/hammer_cli_foreman/associating_commands.rb:273
+#: ../lib/hammer_cli_foreman/associating_commands.rb:327
 msgid "Could not disassociate the partition table"
 msgstr "파티션 테이블을 연결 해제할 수 없습니다 "
 
-#: ../lib/hammer_cli_foreman/associating_commands.rb:282
+#: ../lib/hammer_cli_foreman/associating_commands.rb:336
 msgid "Assign a user role"
 msgstr "사용자 역할 할당 "
 
-#: ../lib/hammer_cli_foreman/associating_commands.rb:284
+#: ../lib/hammer_cli_foreman/associating_commands.rb:338
 msgid "User role has been assigned"
 msgstr "사용자 역할이 할당되었습니다 "
 
-#: ../lib/hammer_cli_foreman/associating_commands.rb:285
+#: ../lib/hammer_cli_foreman/associating_commands.rb:339
 msgid "Could not assign the user role"
 msgstr "사용자 역할을 할당할 수 없습니다 "
 
-#: ../lib/hammer_cli_foreman/associating_commands.rb:291
+#: ../lib/hammer_cli_foreman/associating_commands.rb:345
 msgid "Remove a user role"
 msgstr "사용자 역할 삭제 "
 
-#: ../lib/hammer_cli_foreman/associating_commands.rb:293
+#: ../lib/hammer_cli_foreman/associating_commands.rb:347
 msgid "User role has been removed"
 msgstr "사용자 역할이 삭제되었습니다 "
 
-#: ../lib/hammer_cli_foreman/associating_commands.rb:294
+#: ../lib/hammer_cli_foreman/associating_commands.rb:348
 msgid "Could not remove the user role"
 msgstr "사용자 역할을 삭제할 수 없습니다 "
 
@@ -456,7 +600,7 @@ msgstr "'%s'로 로그인되었습니다 "
 msgid ""
 "You are currently not logged in to any service.\n"
 "Use the service to set credentials."
-msgstr ""
+msgstr "현재 서비스에 로그인되어 있지 않습니다.\n자격 증명을 설정하려면 서비스를 사용하십시오."
 
 #: ../lib/hammer_cli_foreman/auth_source_ldap.rb:7
 msgid "Manage LDAP auth sources."
@@ -534,34 +678,50 @@ msgstr "인증 소스가 업데이트되었습니다 "
 msgid "Could not update the Auth Source"
 msgstr "인증 소스를 업데이트할 수 없습니다 "
 
-#: ../lib/hammer_cli_foreman/commands.rb:87
+#: ../lib/hammer_cli_foreman/commands.rb:88
 msgid "Received data of unknown format"
 msgstr "알 수 없는 형식의 데이터를 수신했습니다 "
 
-#: ../lib/hammer_cli_foreman/commands.rb:195
+#: ../lib/hammer_cli_foreman/commands.rb:196
 msgid ""
 "Could not find %{resource}. Some search options were missing, please see "
 "--help."
 msgstr "%{resource}를 찾을 수 없습니다. 일부 검색 옵션이 누락되어 있습니다. --help를 참조하십시오. "
 
-#: ../lib/hammer_cli_foreman/commands.rb:197
+#: ../lib/hammer_cli_foreman/commands.rb:198
 msgid "Could not find %{resource}, please set option %{switches}."
 msgstr "%{resource}를 찾을 수 없습니다. 옵션 %{switches}을 설정하십시오. "
 
-#: ../lib/hammer_cli_foreman/commands.rb:199
+#: ../lib/hammer_cli_foreman/commands.rb:200
 msgid "Could not find %{resource}, please set one of options %{switches}."
 msgstr "%{resource}를 찾을 수 없습니다. 옵션 %{switches} 중 하나를 설정하십시오. "
 
-#: ../lib/hammer_cli_foreman/commands.rb:521
+#: ../lib/hammer_cli_foreman/commands.rb:529
 msgid "Associate a resource"
 msgstr "리소스 연결 "
 
-#: ../lib/hammer_cli_foreman/commands.rb:543
+#: ../lib/hammer_cli_foreman/commands.rb:533
+msgid "Could not associate the %{resource_name}"
+msgstr ""
+
+#: ../lib/hammer_cli_foreman/commands.rb:537
+msgid "The %{resource_name} has been associated"
+msgstr ""
+
+#: ../lib/hammer_cli_foreman/commands.rb:559
 msgid "Disassociate a resource"
 msgstr "리소스 연결 해제 "
 
+#: ../lib/hammer_cli_foreman/commands.rb:571
+msgid "Could not disassociate the %{resource_name}"
+msgstr ""
+
+#: ../lib/hammer_cli_foreman/commands.rb:575
+msgid "The %{resource_name} has been disassociated"
+msgstr ""
+
 #: ../lib/hammer_cli_foreman/common_parameter.rb:13
-#: ../lib/hammer_cli_foreman/fact.rb:14 ../lib/hammer_cli_foreman/host.rb:334
+#: ../lib/hammer_cli_foreman/fact.rb:14 ../lib/hammer_cli_foreman/host.rb:323
 #: ../lib/hammer_cli_foreman/settings.rb:13
 #: ../lib/hammer_cli_foreman/smart_class_parameter.rb:76
 #: ../lib/hammer_cli_foreman/smart_variable.rb:66
@@ -610,7 +770,7 @@ msgstr "공급자 "
 
 #: ../lib/hammer_cli_foreman/compute_resource.rb:34
 #: ../lib/hammer_cli_foreman/compute_resource.rb:40
-#: ../lib/hammer_cli_foreman/host.rb:208 ../lib/hammer_cli_foreman/image.rb:33
+#: ../lib/hammer_cli_foreman/host.rb:197 ../lib/hammer_cli_foreman/image.rb:33
 #: ../lib/hammer_cli_foreman/image.rb:71
 msgid "UUID"
 msgstr "UUID"
@@ -678,7 +838,7 @@ msgstr "%s의 [Foreman] 암호: "
 
 #: ../lib/hammer_cli_foreman/defaults.rb:7
 msgid "Use the default organization and/or location from the server"
-msgstr ""
+msgstr "서버에서 기본 조직 및/또는 위치 사용"
 
 #: ../lib/hammer_cli_foreman/domain.rb:6
 msgid "ID of DNS proxy to use within this domain"
@@ -769,19 +929,38 @@ msgstr "환경이 삭제되었습니다 "
 msgid "Could not delete the environment"
 msgstr "환경을 삭제할 수 없습니다 "
 
-#: ../lib/hammer_cli_foreman/exception_handler.rb:41
+#: ../lib/hammer_cli_foreman/exception_handler.rb:29
+msgid "Redirection of API call detected."
+msgstr ""
+
+#: ../lib/hammer_cli_foreman/exception_handler.rb:30
+msgid ""
+"It seems hammer is configured to use HTTP and the server prefers HTTPS."
+msgstr ""
+
+#: ../lib/hammer_cli_foreman/exception_handler.rb:32
+msgid "Update your server url configuration"
+msgstr ""
+
+#: ../lib/hammer_cli_foreman/exception_handler.rb:33
+msgid ""
+"you can set 'follow_redirects' to one of :default or :always to enable "
+"redirects following"
+msgstr ""
+
+#: ../lib/hammer_cli_foreman/exception_handler.rb:54
 msgid "Forbidden - server refused to process the request"
 msgstr "거부 - 서버가 요청 처리를 거부했습니다 "
 
-#: ../lib/hammer_cli_foreman/exception_handler.rb:75
+#: ../lib/hammer_cli_foreman/exception_handler.rb:88
 msgid "Could not load the API description from the server"
 msgstr "서버에서 API 설명을 불러올 수 없습니다 "
 
-#: ../lib/hammer_cli_foreman/exception_handler.rb:76
+#: ../lib/hammer_cli_foreman/exception_handler.rb:89
 msgid "is the server down?"
 msgstr "서버가 중지되어 있습니까?"
 
-#: ../lib/hammer_cli_foreman/exception_handler.rb:77
+#: ../lib/hammer_cli_foreman/exception_handler.rb:90
 msgid ""
 "was '%s' run on the server when using apipie cache? (typical production "
 "settings)"
@@ -829,7 +1008,7 @@ msgstr "외부 사용자 그룹을 삭제할 수 없습니다 "
 msgid "Host"
 msgstr "호스트 "
 
-#: ../lib/hammer_cli_foreman/fact.rb:13 ../lib/hammer_cli_foreman/host.rb:333
+#: ../lib/hammer_cli_foreman/fact.rb:13 ../lib/hammer_cli_foreman/host.rb:322
 msgid "Fact"
 msgstr "팩트 "
 
@@ -921,131 +1100,123 @@ msgstr "인터페이스 매개 변수 "
 msgid "Enter the root password for the host:"
 msgstr "호스트의 root 암호를 입력하십시오: "
 
-#: ../lib/hammer_cli_foreman/host.rb:153
-msgid "At least one interface must be set as primary"
-msgstr ""
-
-#: ../lib/hammer_cli_foreman/host.rb:156
-msgid "At least one interface must be set as provision"
-msgstr ""
-
-#: ../lib/hammer_cli_foreman/host.rb:172 ../lib/hammer_cli_foreman/host.rb:248
+#: ../lib/hammer_cli_foreman/host.rb:161 ../lib/hammer_cli_foreman/host.rb:237
 #: ../lib/hammer_cli_foreman/hostgroup.rb:60
 #: ../lib/hammer_cli_foreman/image.rb:31
 msgid "Operating System"
 msgstr "운영체제"
 
-#: ../lib/hammer_cli_foreman/host.rb:173 ../lib/hammer_cli_foreman/host.rb:212
+#: ../lib/hammer_cli_foreman/host.rb:162 ../lib/hammer_cli_foreman/host.rb:201
 msgid "Host Group"
 msgstr "호스트 그룹 "
 
-#: ../lib/hammer_cli_foreman/host.rb:174 ../lib/hammer_cli_foreman/host.rb:225
+#: ../lib/hammer_cli_foreman/host.rb:163 ../lib/hammer_cli_foreman/host.rb:214
 msgid "IP"
 msgstr "IP "
 
-#: ../lib/hammer_cli_foreman/host.rb:175 ../lib/hammer_cli_foreman/host.rb:226
+#: ../lib/hammer_cli_foreman/host.rb:164 ../lib/hammer_cli_foreman/host.rb:215
 msgid "MAC"
 msgstr "MAC"
 
-#: ../lib/hammer_cli_foreman/host.rb:185
+#: ../lib/hammer_cli_foreman/host.rb:174
 msgid "Bare Metal"
 msgstr "베어 메탈 "
 
-#: ../lib/hammer_cli_foreman/host.rb:210
+#: ../lib/hammer_cli_foreman/host.rb:199
 msgid "Organization"
 msgstr "조직"
 
-#: ../lib/hammer_cli_foreman/host.rb:211
+#: ../lib/hammer_cli_foreman/host.rb:200
 msgid "Location"
 msgstr "위치"
 
-#: ../lib/hammer_cli_foreman/host.rb:213
+#: ../lib/hammer_cli_foreman/host.rb:202
 msgid "Compute Resource"
 msgstr "컴퓨터 리소스 "
 
-#: ../lib/hammer_cli_foreman/host.rb:214
+#: ../lib/hammer_cli_foreman/host.rb:203
 msgid "Compute Profile"
 msgstr "컴퓨팅 프로파일 (Compute Profile)"
 
-#: ../lib/hammer_cli_foreman/host.rb:215
+#: ../lib/hammer_cli_foreman/host.rb:204
 #: ../lib/hammer_cli_foreman/hostgroup.rb:61
 msgid "Environment"
 msgstr "환경 "
 
-#: ../lib/hammer_cli_foreman/host.rb:216
+#: ../lib/hammer_cli_foreman/host.rb:205
 msgid "Puppet CA Id"
-msgstr ""
+msgstr "Puppet CA ID"
 
-#: ../lib/hammer_cli_foreman/host.rb:217
+#: ../lib/hammer_cli_foreman/host.rb:206
 msgid "Puppet Master Id"
-msgstr ""
+msgstr "Puppet 마스터 ID"
 
-#: ../lib/hammer_cli_foreman/host.rb:218
+#: ../lib/hammer_cli_foreman/host.rb:207
 msgid "Cert name"
 msgstr "인증서 이름 "
 
-#: ../lib/hammer_cli_foreman/host.rb:219
+#: ../lib/hammer_cli_foreman/host.rb:208
 #: ../lib/hammer_cli_foreman/interface.rb:51
 msgid "Managed"
 msgstr "관리됨 "
 
-#: ../lib/hammer_cli_foreman/host.rb:221
+#: ../lib/hammer_cli_foreman/host.rb:210
 msgid "Installed at"
 msgstr "설치됨 "
 
-#: ../lib/hammer_cli_foreman/host.rb:222
+#: ../lib/hammer_cli_foreman/host.rb:211
 #: ../lib/hammer_cli_foreman/report.rb:12
 msgid "Last report"
 msgstr "마지막 보고 "
 
-#: ../lib/hammer_cli_foreman/host.rb:224
+#: ../lib/hammer_cli_foreman/host.rb:213
 #: ../lib/hammer_cli_foreman/subnet.rb:12
 msgid "Network"
 msgstr "네트워크"
 
-#: ../lib/hammer_cli_foreman/host.rb:227
+#: ../lib/hammer_cli_foreman/host.rb:216
 #: ../lib/hammer_cli_foreman/hostgroup.rb:72
 #: ../lib/hammer_cli_foreman/interface.rb:49
 msgid "Subnet"
 msgstr "서브넷"
 
-#: ../lib/hammer_cli_foreman/host.rb:228
+#: ../lib/hammer_cli_foreman/host.rb:217
 #: ../lib/hammer_cli_foreman/hostgroup.rb:74
 #: ../lib/hammer_cli_foreman/interface.rb:50
 msgid "Domain"
 msgstr "도메인 "
 
-#: ../lib/hammer_cli_foreman/host.rb:229
+#: ../lib/hammer_cli_foreman/host.rb:218
 msgid "Service provider"
-msgstr ""
+msgstr "서비스 공급자"
 
-#: ../lib/hammer_cli_foreman/host.rb:230
+#: ../lib/hammer_cli_foreman/host.rb:219
 msgid "SP Name"
 msgstr "SP 이름 "
 
-#: ../lib/hammer_cli_foreman/host.rb:231
+#: ../lib/hammer_cli_foreman/host.rb:220
 msgid "SP IP"
 msgstr "SP IP"
 
-#: ../lib/hammer_cli_foreman/host.rb:232
+#: ../lib/hammer_cli_foreman/host.rb:221
 msgid "SP MAC"
 msgstr "SP MAC"
 
-#: ../lib/hammer_cli_foreman/host.rb:233
+#: ../lib/hammer_cli_foreman/host.rb:222
 msgid "SP Subnet"
 msgstr "SP 서브넷 "
 
-#: ../lib/hammer_cli_foreman/host.rb:237
+#: ../lib/hammer_cli_foreman/host.rb:226
 msgid "Network interfaces"
 msgstr "네트워크 인터페이스 "
 
-#: ../lib/hammer_cli_foreman/host.rb:239
+#: ../lib/hammer_cli_foreman/host.rb:228
 #: ../lib/hammer_cli_foreman/interface.rb:24
 #: ../lib/hammer_cli_foreman/interface.rb:44
 msgid "Identifier"
 msgstr "식별자 "
 
-#: ../lib/hammer_cli_foreman/host.rb:240
+#: ../lib/hammer_cli_foreman/host.rb:229
 #: ../lib/hammer_cli_foreman/interface.rb:25
 #: ../lib/hammer_cli_foreman/interface.rb:45
 #: ../lib/hammer_cli_foreman/smart_class_parameter.rb:60
@@ -1056,178 +1227,186 @@ msgstr "식별자 "
 msgid "Type"
 msgstr "유형"
 
-#: ../lib/hammer_cli_foreman/host.rb:241
+#: ../lib/hammer_cli_foreman/host.rb:230
 #: ../lib/hammer_cli_foreman/interface.rb:26
 #: ../lib/hammer_cli_foreman/interface.rb:46
 msgid "MAC address"
 msgstr "MAC 주소"
 
-#: ../lib/hammer_cli_foreman/host.rb:242
+#: ../lib/hammer_cli_foreman/host.rb:231
 #: ../lib/hammer_cli_foreman/interface.rb:27
 #: ../lib/hammer_cli_foreman/interface.rb:47
 msgid "IP address"
 msgstr "IP 주소 "
 
-#: ../lib/hammer_cli_foreman/host.rb:243
+#: ../lib/hammer_cli_foreman/host.rb:232
 msgid "FQDN"
-msgstr ""
+msgstr "FQDN"
 
-#: ../lib/hammer_cli_foreman/host.rb:246
+#: ../lib/hammer_cli_foreman/host.rb:235
 msgid "Operating system"
 msgstr "운영 체제 "
 
-#: ../lib/hammer_cli_foreman/host.rb:247
+#: ../lib/hammer_cli_foreman/host.rb:236
 #: ../lib/hammer_cli_foreman/hostgroup.rb:75
 #: ../lib/hammer_cli_foreman/image.rb:45
 msgid "Architecture"
 msgstr "아키텍처 "
 
-#: ../lib/hammer_cli_foreman/host.rb:251
+#: ../lib/hammer_cli_foreman/host.rb:240
 msgid "Build"
 msgstr "빌드 "
 
-#: ../lib/hammer_cli_foreman/host.rb:252
+#: ../lib/hammer_cli_foreman/host.rb:241
 #: ../lib/hammer_cli_foreman/hostgroup.rb:77
 msgid "Medium"
 msgstr "미디어 "
 
-#: ../lib/hammer_cli_foreman/host.rb:253
+#: ../lib/hammer_cli_foreman/host.rb:242
 #: ../lib/hammer_cli_foreman/hostgroup.rb:76
 msgid "Partition Table"
 msgstr "파티션 테이블 "
 
-#: ../lib/hammer_cli_foreman/host.rb:254
+#: ../lib/hammer_cli_foreman/host.rb:243
 msgid "Custom partition table"
-msgstr ""
+msgstr "사용자 정의 파티션 테이블"
 
-#: ../lib/hammer_cli_foreman/host.rb:257
+#: ../lib/hammer_cli_foreman/host.rb:246
 msgid "Image"
 msgstr "이미지 "
 
-#: ../lib/hammer_cli_foreman/host.rb:258
+#: ../lib/hammer_cli_foreman/host.rb:247
 msgid "Image file"
 msgstr "이미지 파일 "
 
-#: ../lib/hammer_cli_foreman/host.rb:259
+#: ../lib/hammer_cli_foreman/host.rb:248
 msgid "Use image"
 msgstr "이미지 사용 "
 
-#: ../lib/hammer_cli_foreman/host.rb:265
+#: ../lib/hammer_cli_foreman/host.rb:254
 msgid "Additional info"
 msgstr "추가 정보 "
 
-#: ../lib/hammer_cli_foreman/host.rb:266
+#: ../lib/hammer_cli_foreman/host.rb:255
 msgid "Owner Id"
 msgstr "소유자 Id"
 
-#: ../lib/hammer_cli_foreman/host.rb:267
+#: ../lib/hammer_cli_foreman/host.rb:256
 msgid "Owner Type"
 msgstr "소유자 유형 "
 
-#: ../lib/hammer_cli_foreman/host.rb:268
+#: ../lib/hammer_cli_foreman/host.rb:257
 msgid "Enabled"
 msgstr "활성화됨 "
 
-#: ../lib/hammer_cli_foreman/host.rb:269
+#: ../lib/hammer_cli_foreman/host.rb:258
 #: ../lib/hammer_cli_foreman/hostgroup.rb:62
 msgid "Model"
 msgstr "모델 "
 
-#: ../lib/hammer_cli_foreman/host.rb:270
+#: ../lib/hammer_cli_foreman/host.rb:259
 msgid "Comment"
 msgstr "코멘트 "
 
-#: ../lib/hammer_cli_foreman/host.rb:283
+#: ../lib/hammer_cli_foreman/host.rb:272
 msgid "Status"
 msgstr "상태 "
 
-#: ../lib/hammer_cli_foreman/host.rb:284
+#: ../lib/hammer_cli_foreman/host.rb:273
 msgid "Power"
 msgstr "전원"
 
-#: ../lib/hammer_cli_foreman/host.rb:320
+#: ../lib/hammer_cli_foreman/host.rb:309
 msgid "Puppet run triggered"
 msgstr "Puppet run이 실행되었습니다 "
 
-#: ../lib/hammer_cli_foreman/host.rb:373
+#: ../lib/hammer_cli_foreman/host.rb:362
 msgid "Host created"
 msgstr "호스트가 생성되었습니다 "
 
-#: ../lib/hammer_cli_foreman/host.rb:374
+#: ../lib/hammer_cli_foreman/host.rb:363
 msgid "Could not create the host"
 msgstr "호스트를 생성할 수 없습니다 "
 
-#: ../lib/hammer_cli_foreman/host.rb:395
+#: ../lib/hammer_cli_foreman/host.rb:380
 msgid "Host updated"
 msgstr "호스트가 업데이트되었습니다 "
 
-#: ../lib/hammer_cli_foreman/host.rb:396
+#: ../lib/hammer_cli_foreman/host.rb:381
 msgid "Could not update the host"
 msgstr "호스트를 업데이트할 수 없습니다 "
 
-#: ../lib/hammer_cli_foreman/host.rb:403
+#: ../lib/hammer_cli_foreman/host.rb:388
 msgid "Host deleted"
 msgstr "호스트가 삭제되었습니다 "
 
-#: ../lib/hammer_cli_foreman/host.rb:404
+#: ../lib/hammer_cli_foreman/host.rb:389
 msgid "Could not delete the host"
 msgstr "호스트를 삭제할 수 없습니다 "
 
-#: ../lib/hammer_cli_foreman/host.rb:411
+#: ../lib/hammer_cli_foreman/host.rb:396
 msgid "Create or update parameter for a host."
 msgstr "호스트의 매개 변수를 생성 또는 업데이트합니다. "
 
-#: ../lib/hammer_cli_foreman/host.rb:413
+#: ../lib/hammer_cli_foreman/host.rb:398
 msgid "Host parameter updated"
 msgstr "호스트 매개 변수가 업데이트되었습니다 "
 
-#: ../lib/hammer_cli_foreman/host.rb:414
+#: ../lib/hammer_cli_foreman/host.rb:399
 msgid "New host parameter created"
 msgstr "새 호스트 매개 변수가 생성되었습니다 "
 
-#: ../lib/hammer_cli_foreman/host.rb:415
+#: ../lib/hammer_cli_foreman/host.rb:400
 msgid "Could not set host parameter"
 msgstr "호스트 매개 변수를 설정할 수 없습니다 "
 
-#: ../lib/hammer_cli_foreman/host.rb:427
+#: ../lib/hammer_cli_foreman/host.rb:412
 msgid "Delete parameter for a host."
 msgstr "호스트의 매개 변수를 삭제합니다. "
 
-#: ../lib/hammer_cli_foreman/host.rb:429
+#: ../lib/hammer_cli_foreman/host.rb:414
 msgid "Host parameter deleted"
 msgstr "호스트 매개 변수가 삭제되었습니다 "
 
-#: ../lib/hammer_cli_foreman/host.rb:444
+#: ../lib/hammer_cli_foreman/host.rb:429
 msgid "Power a host on"
 msgstr "호스트 전원 켜기 "
 
-#: ../lib/hammer_cli_foreman/host.rb:445
+#: ../lib/hammer_cli_foreman/host.rb:430
 msgid "The host is starting."
 msgstr "호스트가 시작되고 있습니다. "
 
-#: ../lib/hammer_cli_foreman/host.rb:462
+#: ../lib/hammer_cli_foreman/host.rb:447
 msgid "Force turning off a host"
 msgstr "강제로 호스트 전원 끄기 "
 
-#: ../lib/hammer_cli_foreman/host.rb:467
+#: ../lib/hammer_cli_foreman/host.rb:452
 msgid "Power a host off"
 msgstr "호스트 전원 끄기 "
 
-#: ../lib/hammer_cli_foreman/host.rb:479
+#: ../lib/hammer_cli_foreman/host.rb:464
 msgid "Power off forced."
 msgstr "강제로 전원을 끕니다. "
 
-#: ../lib/hammer_cli_foreman/host.rb:481
+#: ../lib/hammer_cli_foreman/host.rb:466
 msgid "Powering the host off."
 msgstr "호스트 전원을 끄고 있습니다. "
 
-#: ../lib/hammer_cli_foreman/host.rb:498
+#: ../lib/hammer_cli_foreman/host.rb:483
 msgid "Reboot a host"
 msgstr "호스트 재부팅 "
 
-#: ../lib/hammer_cli_foreman/host.rb:499
+#: ../lib/hammer_cli_foreman/host.rb:484
 msgid "Host reboot started."
 msgstr "호스트 재부팅을 시작했습니다. "
+
+#: ../lib/hammer_cli_foreman/host.rb:520
+msgid "Rebuild orchestration related configurations for host"
+msgstr ""
+
+#: ../lib/hammer_cli_foreman/host.rb:521
+msgid "Configuration successfully rebuilt."
+msgstr "구성이 다시 빌드되었습니다."
 
 #: ../lib/hammer_cli_foreman/hostgroup.rb:10
 msgid "List of puppetclass ids"
@@ -1251,7 +1430,7 @@ msgstr "루트 암호"
 
 #: ../lib/hammer_cli_foreman/hostgroup.rb:23
 msgid "Enter the root password for the host group:"
-msgstr ""
+msgstr "호스트 그룹의 root 암호를 입력하십시오:"
 
 #: ../lib/hammer_cli_foreman/hostgroup.rb:59
 #: ../lib/hammer_cli_foreman/operating_system.rb:11
@@ -1348,7 +1527,7 @@ msgstr "호스트 그룹 이름 "
 
 #: ../lib/hammer_cli_foreman/id_resolver.rb:43
 msgid "Hostgroup title"
-msgstr ""
+msgstr "호스트 그룹 제목"
 
 #: ../lib/hammer_cli_foreman/id_resolver.rb:46
 msgid "Location name"
@@ -1392,7 +1571,7 @@ msgstr "사용자 역할 이름 "
 
 #: ../lib/hammer_cli_foreman/id_resolver.rb:57
 msgid "Setting name"
-msgstr ""
+msgstr "설정 이름"
 
 #: ../lib/hammer_cli_foreman/id_resolver.rb:58
 msgid "Subnet name"
@@ -1412,25 +1591,26 @@ msgstr "스마트 클래스 매개 변수 이름 "
 
 #: ../lib/hammer_cli_foreman/id_resolver.rb:63
 msgid "Smart variable name"
-msgstr ""
+msgstr "스마트 변수 이름"
 
 #: ../lib/hammer_cli_foreman/id_resolver.rb:65
 msgid "Name to search by"
 msgstr "검색할 이름 "
 
 #: ../lib/hammer_cli_foreman/id_resolver.rb:153
+#: ../lib/hammer_cli_foreman/id_resolver.rb:161
 msgid "one of %s not found"
 msgstr "%s 중 하나를 찾을 수 없습니다 "
 
-#: ../lib/hammer_cli_foreman/id_resolver.rb:200
+#: ../lib/hammer_cli_foreman/id_resolver.rb:208
 msgid "%s not found"
 msgstr "%s을(를) 찾을 수 없음 "
 
-#: ../lib/hammer_cli_foreman/id_resolver.rb:201
+#: ../lib/hammer_cli_foreman/id_resolver.rb:209
 msgid "found more than one %s"
-msgstr ""
+msgstr "%s이(가) 둘 이상 있습니다"
 
-#: ../lib/hammer_cli_foreman/id_resolver.rb:212
+#: ../lib/hammer_cli_foreman/id_resolver.rb:220
 msgid "Missing options to search %s"
 msgstr "%s의 검색에 누락된 옵션 "
 
@@ -1477,15 +1657,15 @@ msgstr "이미지를 삭제할 수 없습니다 "
 
 #: ../lib/hammer_cli_foreman/interface.rb:6
 msgid "View and manage host's network interfaces"
-msgstr ""
+msgstr "호스트의 네트워크 인터페이스 보기 및 관리"
 
 #: ../lib/hammer_cli_foreman/interface.rb:10
 msgid "primary"
-msgstr ""
+msgstr "주요"
 
 #: ../lib/hammer_cli_foreman/interface.rb:11
 msgid "provision"
-msgstr ""
+msgstr "프로비저닝 "
 
 #: ../lib/hammer_cli_foreman/interface.rb:28
 #: ../lib/hammer_cli_foreman/interface.rb:48
@@ -1510,7 +1690,7 @@ msgstr "태그"
 
 #: ../lib/hammer_cli_foreman/interface.rb:56
 msgid "Attached to"
-msgstr ""
+msgstr "다음에 연결됨"
 
 #: ../lib/hammer_cli_foreman/interface.rb:58
 msgid "BMC"
@@ -1518,7 +1698,7 @@ msgstr "BMC"
 
 #: ../lib/hammer_cli_foreman/interface.rb:63
 msgid "Bond"
-msgstr "본딩 "
+msgstr "본딩"
 
 #: ../lib/hammer_cli_foreman/interface.rb:64
 msgid "Mode"
@@ -1526,52 +1706,52 @@ msgstr "모드"
 
 #: ../lib/hammer_cli_foreman/interface.rb:65
 msgid "Attached devices"
-msgstr ""
+msgstr "연결된 장치"
 
 #: ../lib/hammer_cli_foreman/interface.rb:66
 msgid "Bond options"
-msgstr ""
+msgstr "본드 옵션"
 
 #: ../lib/hammer_cli_foreman/interface.rb:77
 msgid ""
 "Should this interface be used for constructing the FQDN of the host? Each "
 "managed hosts needs to have one primary interface."
-msgstr ""
+msgstr "호스트의 FQDN을 구성하는 데 이 인터페이스를 사용하시겠습니까? 관리형 호스트마다 기본 인터페이스가 하나씩 필요합니다."
 
 #: ../lib/hammer_cli_foreman/interface.rb:78
 msgid ""
 "Should this interface be used for TFTP of PXELinux (or SSH for image-based "
 "hosts)? Each managed hosts needs to have one provision interface."
-msgstr ""
+msgstr "이 인터페이스를 PXELinux의 TFTP(또는 이미지 기반 호스트의 SSH)에 사용하시겠습니까? 관리형 호스트마다 프로비저닝 인터페이스가 하나씩 필요합니다."
 
 #: ../lib/hammer_cli_foreman/interface.rb:128
 msgid "Interface created"
-msgstr ""
+msgstr "인터페이스가 생성되었습니다"
 
 #: ../lib/hammer_cli_foreman/interface.rb:129
 msgid "Could not create the interface"
-msgstr ""
+msgstr "인터페이스를 생성할 수 없습니다"
 
 #: ../lib/hammer_cli_foreman/interface.rb:131
 #: ../lib/hammer_cli_foreman/interface.rb:144
 msgid "Compute resource specific attributes."
-msgstr ""
+msgstr "컴퓨팅 리소스별 속성입니다."
 
 #: ../lib/hammer_cli_foreman/interface.rb:141
 msgid "Interface updated"
-msgstr ""
+msgstr "인터페이스가 업데이트되었습니다"
 
 #: ../lib/hammer_cli_foreman/interface.rb:142
 msgid "Could not update the interface"
-msgstr ""
+msgstr "인터페이스를 업데이트할 수 없습니다"
 
 #: ../lib/hammer_cli_foreman/interface.rb:154
 msgid "Interface deleted"
-msgstr ""
+msgstr "인터페이스가 삭제되었습니다"
 
 #: ../lib/hammer_cli_foreman/interface.rb:155
 msgid "Could not delete the interface"
-msgstr ""
+msgstr "인터페이스를 삭제할 수 없습니다"
 
 #: ../lib/hammer_cli_foreman/location.rb:24
 #: ../lib/hammer_cli_foreman/location.rb:63
@@ -1615,34 +1795,34 @@ msgstr "위치를 삭제할 수 없습니다 "
 
 #: ../lib/hammer_cli_foreman/location.rb:87
 msgid "Create or update parameter for a location."
-msgstr ""
+msgstr "위치의 매개 변수를 생성 또는 업데이트합니다."
 
 #: ../lib/hammer_cli_foreman/location.rb:89
 #: ../lib/hammer_cli_foreman/organization.rb:90
 msgid "Parameter [%{name}] updated to value [%{value}]"
-msgstr ""
+msgstr "매개 변수 [%{name}]이(가) 값 [%{value}](으)로 업데이트되었습니다"
 
 #: ../lib/hammer_cli_foreman/location.rb:90
 #: ../lib/hammer_cli_foreman/organization.rb:91
 msgid "Parameter [%{name}] created with value [%{value}]"
-msgstr ""
+msgstr "매개 변수 [%{name}]이(가) 값 [%{value}](으)로 생성되었습니다"
 
 #: ../lib/hammer_cli_foreman/location.rb:91
 msgid "Could not set location parameter"
-msgstr ""
+msgstr "위치 매개 변수를 설정할 수 없습니다"
 
 #: ../lib/hammer_cli_foreman/location.rb:98
 msgid "Delete parameter for a location."
-msgstr ""
+msgstr "위치의 매개 변수를 삭제합니다."
 
 #: ../lib/hammer_cli_foreman/location.rb:100
 #: ../lib/hammer_cli_foreman/organization.rb:101
 msgid "Parameter [%{name}] deleted"
-msgstr ""
+msgstr "매개 변수 [%{name}]이(가) 삭제되었습니다"
 
 #: ../lib/hammer_cli_foreman/location.rb:101
 msgid "Could not delete location parameter"
-msgstr ""
+msgstr "위치 매개 변수를 삭제할 수 없습니다"
 
 #: ../lib/hammer_cli_foreman/media.rb:11
 msgid "Path"
@@ -1854,50 +2034,55 @@ msgstr "조직을 삭제할 수 없습니다 "
 
 #: ../lib/hammer_cli_foreman/organization.rb:88
 msgid "Create or update parameter for an organization."
-msgstr ""
+msgstr "조직의 매개 변수를 생성하거나 업데이트합니다."
 
 #: ../lib/hammer_cli_foreman/organization.rb:92
 msgid "Could not set organization parameter"
-msgstr ""
+msgstr "조직 매개 변수를 설정할 수 없습니다"
 
 #: ../lib/hammer_cli_foreman/organization.rb:99
 msgid "Delete parameter for an organization."
-msgstr ""
+msgstr "조직의 매개 변수를 삭제합니다."
 
 #: ../lib/hammer_cli_foreman/organization.rb:102
 msgid "Could not delete organization parameter"
+msgstr "조직 매개 변수를 삭제할 수 없습니다"
+
+#: ../lib/hammer_cli_foreman/partition_table.rb:21
+#: ../lib/hammer_cli_foreman/template.rb:48
+msgid "Locked"
 msgstr ""
 
-#: ../lib/hammer_cli_foreman/partition_table.rb:31
+#: ../lib/hammer_cli_foreman/partition_table.rb:32
 msgid "View partition table content."
 msgstr "파티션 테이블 내용을 표시합니다. "
 
-#: ../lib/hammer_cli_foreman/partition_table.rb:43
-#: ../lib/hammer_cli_foreman/partition_table.rb:54
+#: ../lib/hammer_cli_foreman/partition_table.rb:44
+#: ../lib/hammer_cli_foreman/partition_table.rb:55
 msgid "Path to a file that contains the partition layout"
 msgstr "파티션 레이아웃이 들어 있는 파일로의 경로 "
 
-#: ../lib/hammer_cli_foreman/partition_table.rb:46
+#: ../lib/hammer_cli_foreman/partition_table.rb:47
 msgid "Partition table created"
 msgstr "파티션 테이블이 생성되었습니다 "
 
-#: ../lib/hammer_cli_foreman/partition_table.rb:47
+#: ../lib/hammer_cli_foreman/partition_table.rb:48
 msgid "Could not create the partition table"
 msgstr "파티션 테이블을 생성할 수 없습니다 "
 
-#: ../lib/hammer_cli_foreman/partition_table.rb:57
+#: ../lib/hammer_cli_foreman/partition_table.rb:58
 msgid "Partition table updated"
 msgstr "파티션 테이블이 업데이트되었습니다 "
 
-#: ../lib/hammer_cli_foreman/partition_table.rb:58
+#: ../lib/hammer_cli_foreman/partition_table.rb:59
 msgid "Could not update the partition table"
 msgstr "파티션 테이블을 업데이트할 수 없습니다 "
 
-#: ../lib/hammer_cli_foreman/partition_table.rb:65
+#: ../lib/hammer_cli_foreman/partition_table.rb:66
 msgid "Partition table deleted"
 msgstr "파티션 테이블이 삭제되었습니다 "
 
-#: ../lib/hammer_cli_foreman/partition_table.rb:66
+#: ../lib/hammer_cli_foreman/partition_table.rb:67
 msgid "Could not delete the partition table"
 msgstr "파티션 테이블을 삭제할 수 없습니다 "
 
@@ -2090,7 +2275,7 @@ msgstr "서버가 이러한 동작을 지원하지 않습니다. "
 
 #: ../lib/hammer_cli_foreman/role.rb:20
 msgid "Builtin"
-msgstr ""
+msgstr "내장됨"
 
 #: ../lib/hammer_cli_foreman/role.rb:24
 msgid "Yes"
@@ -2130,11 +2315,11 @@ msgstr "사용자 역할을 삭제할 수 없습니다 "
 
 #: ../lib/hammer_cli_foreman/settings.rb:28
 msgid "Setting [%{name}] updated to [%{value}]"
-msgstr ""
+msgstr "설정 [%{name}]이(가) [%{value}](으)로 업데이트되었습니다"
 
 #: ../lib/hammer_cli_foreman/settings.rb:29
 msgid "Could not update the setting"
-msgstr ""
+msgstr "설정을 업데이트할 수 없습니다"
 
 #: ../lib/hammer_cli_foreman/smart_class_parameter.rb:11
 #: ../lib/hammer_cli_foreman/smart_variable.rb:11
@@ -2182,17 +2367,17 @@ msgstr "값 덮어쓰기 "
 #: ../lib/hammer_cli_foreman/smart_class_parameter.rb:69
 #: ../lib/hammer_cli_foreman/smart_variable.rb:59
 msgid "Merge overrides"
-msgstr ""
+msgstr "덮어쓰기 병합"
 
 #: ../lib/hammer_cli_foreman/smart_class_parameter.rb:70
 #: ../lib/hammer_cli_foreman/smart_variable.rb:60
 msgid "Merge default value"
-msgstr ""
+msgstr "기본값 병합"
 
 #: ../lib/hammer_cli_foreman/smart_class_parameter.rb:71
 #: ../lib/hammer_cli_foreman/smart_variable.rb:61
 msgid "Avoid duplicates"
-msgstr ""
+msgstr "중복 방지"
 
 #: ../lib/hammer_cli_foreman/smart_class_parameter.rb:72
 #: ../lib/hammer_cli_foreman/smart_variable.rb:62
@@ -2238,22 +2423,26 @@ msgstr "유효성 검사 유형 "
 #: ../lib/hammer_cli_foreman/smart_class_parameter.rb:131
 #: ../lib/hammer_cli_foreman/smart_variable.rb:123
 msgid "Override value created"
-msgstr ""
+msgstr "덮어쓰기 값이 생성되었습니다"
 
 #: ../lib/hammer_cli_foreman/smart_class_parameter.rb:132
 #: ../lib/hammer_cli_foreman/smart_variable.rb:124
-msgid "Could not create the override_value"
+msgid "Could not create the override value"
 msgstr ""
 
-#: ../lib/hammer_cli_foreman/smart_class_parameter.rb:151
+#: ../lib/hammer_cli_foreman/smart_class_parameter.rb:142
+msgid "Cannot use --value when --use-puppet-default is true"
+msgstr ""
+
+#: ../lib/hammer_cli_foreman/smart_class_parameter.rb:155
 #: ../lib/hammer_cli_foreman/smart_variable.rb:136
 msgid "Override value deleted"
-msgstr ""
+msgstr "덮어쓰기 값이 삭제되었습니다"
 
-#: ../lib/hammer_cli_foreman/smart_class_parameter.rb:152
+#: ../lib/hammer_cli_foreman/smart_class_parameter.rb:156
 #: ../lib/hammer_cli_foreman/smart_variable.rb:137
 msgid "Could not delete the override value"
-msgstr ""
+msgstr "덮어쓰기 값을 삭제할 수 없습니다"
 
 #: ../lib/hammer_cli_foreman/smart_proxy.rb:13
 msgid "URL"
@@ -2310,32 +2499,32 @@ msgstr "스마트 프록시 기능 새로 고침을 실패했습니다 "
 
 #: ../lib/hammer_cli_foreman/smart_variable.rb:83
 msgid "Smart variable [%{variable}] created"
-msgstr ""
+msgstr "스마트 변수 [%{variable}]이(가) 생성되었습니다"
 
 #: ../lib/hammer_cli_foreman/smart_variable.rb:84
 msgid "Could not create the smart variable"
-msgstr ""
+msgstr "스마트 변수를 생성할 수 없습니다"
 
 #: ../lib/hammer_cli_foreman/smart_variable.rb:88
 #: ../lib/hammer_cli_foreman/smart_variable.rb:102
 msgid "Type of the variable."
-msgstr ""
+msgstr "변수의 유형입니다."
 
 #: ../lib/hammer_cli_foreman/smart_variable.rb:97
 msgid "Smart variable [%{variable}] updated"
-msgstr ""
+msgstr "스마트 변수 [%{variable}]이(가) 업데이트되었습니다"
 
 #: ../lib/hammer_cli_foreman/smart_variable.rb:98
 msgid "Could not update the smart variable"
-msgstr ""
+msgstr "스마트 변수를 업데이트할 수 없습니다"
 
 #: ../lib/hammer_cli_foreman/smart_variable.rb:112
 msgid "Smart variable [%{variable}] deleted"
-msgstr ""
+msgstr "스마트 변수 [%{variable}]이(가) 삭제되었습니다"
 
 #: ../lib/hammer_cli_foreman/smart_variable.rb:113
 msgid "Could not delete the smart variable"
-msgstr ""
+msgstr "스마트 변수를 삭제할 수 없습니다"
 
 #: ../lib/hammer_cli_foreman/subnet.rb:13
 msgid "Mask"
@@ -2409,51 +2598,59 @@ msgstr "서브넷이 삭제되었습니다 "
 msgid "Could not delete the subnet"
 msgstr "서브넷을 삭제할 수 없습니다 "
 
-#: ../lib/hammer_cli_foreman/template.rb:71
+#: ../lib/hammer_cli_foreman/template.rb:72
 msgid "List available config template kinds."
 msgstr "사용 가능한 설정 템플릿 종류를 나열합니다. "
 
-#: ../lib/hammer_cli_foreman/template.rb:90
+#: ../lib/hammer_cli_foreman/template.rb:91
 msgid "View config template content."
 msgstr "설정 템플릿 내용을 표시합니다. "
 
-#: ../lib/hammer_cli_foreman/template.rb:102
-#: ../lib/hammer_cli_foreman/template.rb:120
+#: ../lib/hammer_cli_foreman/template.rb:103
+#: ../lib/hammer_cli_foreman/template.rb:121
 msgid "Path to a file that contains the template"
 msgstr "템플릿이 들어있는 파일로의 경로 "
 
-#: ../lib/hammer_cli_foreman/template.rb:104
-#: ../lib/hammer_cli_foreman/template.rb:122
+#: ../lib/hammer_cli_foreman/template.rb:105
+#: ../lib/hammer_cli_foreman/template.rb:123
 msgid "Template type. Eg. snippet, script, provision"
 msgstr "템플릿 유형. 예: 조각 모음, 스트립트, 프로비저닝 "
 
-#: ../lib/hammer_cli_foreman/template.rb:106
+#: ../lib/hammer_cli_foreman/template.rb:107
 msgid "Config template created"
 msgstr "설정 템플릿이 생성되었습니다 "
 
-#: ../lib/hammer_cli_foreman/template.rb:107
+#: ../lib/hammer_cli_foreman/template.rb:108
 msgid "Could not create the config template"
 msgstr "설정 템플릿을 생성할 수 없습니다 "
 
-#: ../lib/hammer_cli_foreman/template.rb:124
+#: ../lib/hammer_cli_foreman/template.rb:125
 msgid "Config template updated"
 msgstr "설정 템플릿이 업데이트되었습니다 "
 
-#: ../lib/hammer_cli_foreman/template.rb:125
+#: ../lib/hammer_cli_foreman/template.rb:126
 msgid "Could not update the config template"
 msgstr "설정 템플릿을 업데이트할 수 없습니다 "
 
-#: ../lib/hammer_cli_foreman/template.rb:138
+#: ../lib/hammer_cli_foreman/template.rb:139
 msgid "Config template deleted"
 msgstr "설정 템플릿이 삭제되었습니다 "
 
-#: ../lib/hammer_cli_foreman/template.rb:139
+#: ../lib/hammer_cli_foreman/template.rb:140
 msgid "Could not delete the config template"
 msgstr "설정 템플릿을 삭제할 수 없습니다 "
 
-#: ../lib/hammer_cli_foreman/template.rb:150
+#: ../lib/hammer_cli_foreman/template.rb:151
 msgid "Update the default PXE menu on all configured TFTP servers"
 msgstr "설정된 모든 TFTP 서버에 있는 기본 PXE 메뉴 업데이트 "
+
+#: ../lib/hammer_cli_foreman/template.rb:164
+msgid "Config template cloned"
+msgstr ""
+
+#: ../lib/hammer_cli_foreman/template.rb:165
+msgid "Could not clone the config template"
+msgstr ""
 
 #: ../lib/hammer_cli_foreman/user.rb:11
 msgid "Login"
@@ -2468,54 +2665,58 @@ msgid "Admin"
 msgstr "관리자 "
 
 #: ../lib/hammer_cli_foreman/user.rb:29
+msgid "Effective admin"
+msgstr ""
+
+#: ../lib/hammer_cli_foreman/user.rb:30
 msgid "Authorized by"
 msgstr "승인자 "
 
-#: ../lib/hammer_cli_foreman/user.rb:30
+#: ../lib/hammer_cli_foreman/user.rb:31
 msgid "Locale"
 msgstr "로케일 "
 
-#: ../lib/hammer_cli_foreman/user.rb:31
+#: ../lib/hammer_cli_foreman/user.rb:32
 msgid "Timezone"
 msgstr "시간대"
 
-#: ../lib/hammer_cli_foreman/user.rb:32
+#: ../lib/hammer_cli_foreman/user.rb:33
 msgid "Last login"
 msgstr "마지막 로그인"
 
-#: ../lib/hammer_cli_foreman/user.rb:33
-msgid "Default organization"
-msgstr ""
-
 #: ../lib/hammer_cli_foreman/user.rb:34
+msgid "Default organization"
+msgstr "기본 조직"
+
+#: ../lib/hammer_cli_foreman/user.rb:35
 msgid "Default location"
 msgstr "기본 위치"
 
-#: ../lib/hammer_cli_foreman/user.rb:42 ../lib/hammer_cli_foreman/user.rb:43
+#: ../lib/hammer_cli_foreman/user.rb:43 ../lib/hammer_cli_foreman/user.rb:44
 msgid "default"
 msgstr "기본값 "
 
-#: ../lib/hammer_cli_foreman/user.rb:53
-msgid "User [%{login}] created"
-msgstr ""
-
 #: ../lib/hammer_cli_foreman/user.rb:54
+msgid "User [%{login}] created"
+msgstr "[%{login}] 사용자가 생성되었습니다"
+
+#: ../lib/hammer_cli_foreman/user.rb:55
 msgid "Could not create the user"
 msgstr "사용자를 생성할 수 없습니다 "
 
-#: ../lib/hammer_cli_foreman/user.rb:61
-msgid "User [%{login}] updated"
-msgstr ""
-
 #: ../lib/hammer_cli_foreman/user.rb:62
+msgid "User [%{login}] updated"
+msgstr "[%{login}] 사용자가 업데이트되었습니다"
+
+#: ../lib/hammer_cli_foreman/user.rb:63
 msgid "Could not update the user"
 msgstr "사용자를 업데이트할 수 없습니다 "
 
-#: ../lib/hammer_cli_foreman/user.rb:69
-msgid "User [%{login}] deleted"
-msgstr ""
-
 #: ../lib/hammer_cli_foreman/user.rb:70
+msgid "User [%{login}] deleted"
+msgstr "[%{login}] 사용자가 삭제되었습니다"
+
+#: ../lib/hammer_cli_foreman/user.rb:71
 msgid "Could not delete the user"
 msgstr "사용자를 삭제할 수 없습니다 "
 

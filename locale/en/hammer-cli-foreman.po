@@ -5,7 +5,7 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: hammer-cli-foreman 0.7.0\n"
+"Project-Id-Version: hammer-cli-foreman 0.8.0\n"
 "Report-Msgid-Bugs-To: \n"
 "PO-Revision-Date: 2014-03-04 16:47+0000\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
@@ -80,6 +80,9 @@ msgid "Manipulate smart variables."
 msgstr ""
 
 msgid "Manipulate smart proxies."
+msgstr ""
+
+msgid "Manipulate realms."
 msgstr ""
 
 msgid "Change server settings."
@@ -389,6 +392,24 @@ msgid "User role has been removed"
 msgstr ""
 
 msgid "Could not remove the user role"
+msgstr ""
+
+msgid "Associate a location"
+msgstr ""
+
+msgid "The location has been associated"
+msgstr ""
+
+msgid "Could not associate the location"
+msgstr ""
+
+msgid "Disassociate a location"
+msgstr ""
+
+msgid "The location has been disassociated"
+msgstr ""
+
+msgid "Could not disassociate the location"
 msgstr ""
 
 msgid "Set credentials"
@@ -1486,6 +1507,30 @@ msgstr ""
 msgid "Smart class parameters"
 msgstr ""
 
+msgid "Realm proxy id"
+msgstr ""
+
+msgid "Realm type"
+msgstr ""
+
+msgid "Realm [%{name}] created"
+msgstr ""
+
+msgid "Could not create the realm"
+msgstr ""
+
+msgid "Realm [%{name}] updated"
+msgstr ""
+
+msgid "Could not update the realm"
+msgstr ""
+
+msgid "Realm [%{name}] deleted"
+msgstr ""
+
+msgid "Could not delete the realm"
+msgstr ""
+
 msgid "Created at"
 msgstr ""
 
@@ -1660,6 +1705,9 @@ msgstr ""
 msgid "Hidden Value?"
 msgstr ""
 
+msgid "Use puppet default"
+msgstr ""
+
 msgid "Required"
 msgstr ""
 
@@ -1760,6 +1808,12 @@ msgid "Smart proxy features were refreshed"
 msgstr ""
 
 msgid "Refresh of smart proxy features failed"
+msgstr ""
+
+msgid "Variable"
+msgstr ""
+
+msgid "Use --variable instead"
 msgstr ""
 
 msgid "Smart variable [%{variable}] created"
