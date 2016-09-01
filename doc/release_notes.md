@@ -1,5 +1,16 @@
 Release notes
 =============
+### 0.8.0 (2016-09-01)
+* add realm commands to hammer ([PR #240](https://github.com/theforeman/hammer-cli-foreman/pull/240)) ([#4918](http://projects.theforeman.org/issues/4918))
+* Renamed name to variable for smart_variables ([#16119](http://projects.theforeman.org/issues/16119))
+* displaying use_puppet_default in sc-param info ([#16059](http://projects.theforeman.org/issues/16059))
+* show admin flag in user-group listing ([#12473](http://projects.theforeman.org/issues/12473))
+* pin fast_gettext to < 1.1.0 for ruby < 2.1 ([PR #257](https://github.com/theforeman/hammer-cli-foreman/pull/257)) ([#16141](http://projects.theforeman.org/issues/16141))
+* Remove parameters api call from host info command ([#15585](http://projects.theforeman.org/issues/15585))
+* Add hostgroup create/update tests ([#15312](http://projects.theforeman.org/issues/15312))
+* Add description to organization and location list ([PR #247](https://github.com/theforeman/hammer-cli-foreman/pull/247)) ([#15502](http://projects.theforeman.org/issues/15502))
+* Add add/remove location command to organization ([PR #248](https://github.com/theforeman/hammer-cli-foreman/pull/248)) ([#15501](http://projects.theforeman.org/issues/15501))
+* Update documented test data path ([PR #246](https://github.com/theforeman/hammer-cli-foreman/pull/246)) ([#15433](http://projects.theforeman.org/issues/15433))
 
 ### 0.7.0 (2016-06-14)
 * Let print adapters decide whether to paginate ([#15257](http://projects.theforeman.org/issues/15257))
