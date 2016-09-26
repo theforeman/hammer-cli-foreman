@@ -34,6 +34,7 @@ module HammerCLIForeman
 
     SEARCHABLES = {
       :architecture =>     [ s_name(_("Architecture name")) ],
+      :audit =>            [],
       :compute_resource => [ s_name(_("Compute resource name")) ],
       :domain =>           [ s_name(_("Domain name")) ],
       :environment =>      [ s_name(_("Environment name")) ],

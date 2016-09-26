@@ -41,6 +41,10 @@ module HammerCLIForeman
       'HammerCLIForeman::AuthSource', 'hammer_cli_foreman/auth_source'
     )
 
+    HammerCLI::MainCommand.lazy_subcommand('audit', _("Search audit trails."),
+      'HammerCLIForeman::Audit', 'hammer_cli_foreman/audit'
+    )
+
     HammerCLI::MainCommand.lazy_subcommand('compute-resource', _("Manipulate compute resources"),
       'HammerCLIForeman::ComputeResource', 'hammer_cli_foreman/compute_resource'
     )
