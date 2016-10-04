@@ -18,6 +18,7 @@ module HammerCLIForeman
     class InfoCommand < HammerCLIForeman::InfoCommand
       output ListCommand.output_definition do
         field :builtin_text, _("Builtin")
+        field :description, _("Description")
       end
 
       def extend_data(data)
