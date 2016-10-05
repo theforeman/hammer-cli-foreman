@@ -17,7 +17,9 @@ module HammerCLIForeman
     end
 
     class InfoCommand < HammerCLIForeman::InfoCommand
-      output ListCommand.output_definition
+      output ListCommand.output_definition do
+        HammerCLIForeman::References.taxonomies(self)
+      end
       build_options
     end
 
