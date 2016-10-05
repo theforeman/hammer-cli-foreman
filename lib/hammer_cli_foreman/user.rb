@@ -31,6 +31,7 @@ module HammerCLIForeman
         field :locale, _("Locale")
         field :timezone, _("Timezone")
         field :last_login_on, _("Last login"), Fields::Date
+        field :description, _("Description")
         custom_field Fields::Reference, :label => _("Default organization"), :path => [:default_organization]
         custom_field Fields::Reference, :label => _("Default location"), :path => [:default_location]
         HammerCLIForeman::References.roles(self)
