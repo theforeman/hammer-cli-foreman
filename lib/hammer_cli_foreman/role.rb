@@ -10,21 +10,14 @@ module HammerCLIForeman
       output do
         field :id, _("Id")
         field :name, _("Name")
+        field :builtin, _("Builtin"),  Fields::Boolean
       end
 
       build_options
     end
 
     class InfoCommand < HammerCLIForeman::InfoCommand
-      output ListCommand.output_definition do
-        field :builtin_text, _("Builtin")
-      end
-
-      def extend_data(data)
-        data['builtin_text'] = (data['builtin'].to_i > 0) ? _('Yes') : _('No')
-        data
-      end
-
+      output ListCommand.output_definition
       build_options
     end
 
