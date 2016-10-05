@@ -17,6 +17,7 @@ module HammerCLIForeman
 
     class InfoCommand < HammerCLIForeman::InfoCommand
       output ListCommand.output_definition do
+        HammerCLIForeman::References.taxonomies(self)
         field :builtin_text, _("Builtin")
       end
 
