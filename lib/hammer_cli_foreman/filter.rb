@@ -10,6 +10,7 @@ module HammerCLIForeman
         field :resource_type, _("Resource type")
         field :search, _("Search")
         field :unlimited?, _("Unlimited?"), Fields::Boolean
+        field :override?, _("Override?"), Fields::Boolean
         field :role, _("Role"), Fields::Reference
         field :permissions, _("Permissions"), Fields::List
       end
