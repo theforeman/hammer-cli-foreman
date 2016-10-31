@@ -13,7 +13,6 @@ module HammerCLIForeman
   require 'hammer_cli_foreman/version'
   require 'hammer_cli_foreman/output'
   require 'hammer_cli_foreman/output/fields'
-  require 'hammer_cli_foreman/credentials'
   require 'hammer_cli_foreman/exception_handler'
   require 'hammer_cli_foreman/option_builders'
   require 'hammer_cli_foreman/param_filters'

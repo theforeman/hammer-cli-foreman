@@ -1,6 +1,6 @@
-module HammerCLIForeman
+require 'hammer_cli_foreman/api'
 
-  CONNECTION_NAME = 'foreman'
+module HammerCLIForeman
 
   RESOURCE_NAME_MAPPING = {
     :usergroup => :user_group,
@@ -11,40 +11,8 @@ module HammerCLIForeman
     :puppetclasses => :puppet_classes
   }
 
-  def self.credentials
-    @credentials ||= BasicCredentials.new(
-      :username => (HammerCLI::Settings.get(:_params, :username) || ENV['FOREMAN_USERNAME'] || HammerCLI::Settings.get(:foreman, :username)),
-      :password => (HammerCLI::Settings.get(:_params, :password) || ENV['FOREMAN_PASSWORD'] || HammerCLI::Settings.get(:foreman, :password))
-    )
-    @credentials
-  end
-
-  def self.resource_config
-    config = {}
-    config[:uri] = HammerCLI::Settings.get(:_params, :host) || HammerCLI::Settings.get(:foreman, :host)
-    config[:credentials] = credentials
-    config[:logger] = Logging.logger['API']
-    config[:api_version] = 2
-    config[:follow_redirects] = HammerCLI::Settings.get(:foreman, :follow_redirects) || :never
-    config[:aggressive_cache_checking] = HammerCLI::Settings.get(:foreman, :refresh_cache) || false
-    config[:headers] = { "Accept-Language" => HammerCLI::I18n.locale }
-    config[:language] = HammerCLI::I18n.locale
-    config[:timeout] = HammerCLI::Settings.get(:foreman, :request_timeout)
-    config[:timeout] = -1 if (config[:timeout] && config[:timeout].to_i < 0)
-    config[:apidoc_authenticated] = false
-    config
-  end
-
-  def self.foreman_api_connection
-    HammerCLI::Connection.create(
-      CONNECTION_NAME,
-      HammerCLI::Apipie::Command.resource_config.merge(resource_config),
-      HammerCLI::Apipie::Command.connection_options
-    )
-  end
-
   def self.foreman_api
-    foreman_api_connection.api
+    foreman_api_connection
   end
 
   def self.foreman_resource!(resource_name, options={})
@@ -173,7 +141,7 @@ module HammerCLIForeman
     end
 
     def self.resolver
-      api = HammerCLI::Connection.get("foreman").api
+      api = HammerCLI.context[:api_connection].get("foreman")
       HammerCLIForeman::IdResolver.new(api, HammerCLIForeman::Searchables.new)
     end
 
