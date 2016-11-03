@@ -31,20 +31,20 @@ module HammerCLIForeman
 
       PROVIDER_SPECIFIC_FIELDS = {
         'ovirt' => [
-          Fields::Field.new(:label => _('UUID'), :path => ["compute_resource", "uuid"])
+          Fields::Field.new(:label => _('Datacenter'), :path => [:datacenter])
         ],
         'ec2' => [
-          Fields::Field.new(:label => _('Region'), :path => ["compute_resource", "region"])
+          Fields::Field.new(:label => _('Region'), :path => [:region])
         ],
         'vmware' => [
-          Fields::Field.new(:label => _('UUID'), :path => ["compute_resource", "uuid"]),
-          Fields::Field.new(:label => _('Server'), :path => ["compute_resource", "server"])
+          Fields::Field.new(:label => _('Datacenter'), :path => [:datacenter]),
+          Fields::Field.new(:label => _('Server'), :path => [:server])
         ],
         'openstack' => [
-          Fields::Field.new(:label => _('Tenant'), :path => ["compute_resource", "tenant"])
+          Fields::Field.new(:label => _('Tenant'), :path => [:tenant])
         ],
         'rackspace' => [
-          Fields::Field.new(:label => _('Region'), :path => ["compute_resource", "region"])
+          Fields::Field.new(:label => _('Region'), :path => [:region])
         ],
         'libvirt' => [
         ]
