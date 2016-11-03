@@ -3,7 +3,7 @@ module HammerCLIForeman
     module CommonUpdateHelp
       def self.included(base)
         base.extend_help do |h|
-          h.section 'Available keys for --interface' do |h|
+          h.section _('Available keys for %{option}') % { :option => '--interface' } do |h|
             h.list([
               'mac',
               'ip',
@@ -17,20 +17,20 @@ module HammerCLIForeman
               ['provision', 'true/false'],
               ['virtual',   'true/false']
             ])
-            h.section 'For virtual=true' do |h|
+            h.section _('For %{condition}') % { :condition => 'virtual=true' } do |h|
               h.list([
                 ['tag',         _('VLAN tag, this attribute has precedence over the subnet VLAN ID. Only for virtual interfaces.')],
                 ['attached_to', _('Identifier of the interface to which this interface belongs, e.g. eth1.')]
               ])
             end
-            h.section 'For type=bond' do |h|
+            h.section _('For %{condition}') % { :condition => 'type=bond' } do |h|
               h.list([
                 ['mode',             _('Possible values: %s') % 'balance-rr, active-backup, balance-xor, broadcast, 802.3ad, balance-tlb, balance-alb'],
                 ['attached_devices', _('Identifiers of slave interfaces, e.g. [eth1,eth2]')],
                 'bond_options'
               ])
             end
-            h.section 'For type=bmc' do |h|
+            h.section _('For %{condition}') % { :condition => 'type=bmc' } do |h|
               h.list([
                 ['provider', _('always IPMI')],
                 'username',
@@ -39,7 +39,7 @@ module HammerCLIForeman
             end
           end
 
-          h.section 'Provider specific options' do |h|
+          h.section _('Provider specific options') do |h|
             HammerCLIForeman::Host.cr_help_extensions.each do |name, help|
               h.section name do |h|
                 help.call(h)
