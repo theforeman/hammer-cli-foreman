@@ -13,7 +13,7 @@ module HammerCLIForeman
               ['template', _('Hardware profile to use')],
               ['cores',    _('Integer value, number of cores')],
               ['memory',   _('Amount of memory, integer value in bytes')],
-              ['start',    _('Boolean, whether to start the machine or not')]
+              ['start',    _('Boolean (expressed as 0 or 1), whether to start the machine or not')]
             ])
           end
           h.section '--interface' do |h|

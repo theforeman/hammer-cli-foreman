@@ -3,14 +3,16 @@ module HammerCLIForeman
     module Rackspace
       class HostHelpExtenstion
         def name
-          _('oVirt')
+          _('Rackspace')
         end
 
         def host_create_help(h)
-          h.list([
-            'flavor_id',
-            'image_id'
-          ])
+          h.section '--compute-attributes' do |h|
+            h.list([
+              'flavor_id',
+              'image_id'
+            ])
+          end
         end
       end
     end
