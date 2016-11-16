@@ -70,7 +70,8 @@ module HammerCLIForeman
           field :merge_overrides, _("Merge overrides"), Fields::Boolean
           field :merge_default, _("Merge default value"), Fields::Boolean
           field :avoid_duplicates, _("Avoid duplicates"), Fields::Boolean
-          field :override_value_order, _("Order"), Fields::List
+          field :override_value_order, _("Order"), Fields::LongText
+
           collection :override_values, _("Values") do
               field :id, _('Id')
               field :match, _('Match')
@@ -83,7 +84,6 @@ module HammerCLIForeman
       end
 
       def extend_data(res)
-        res['override_value_order'] = res['override_value_order'].split(/\r?\n/)
         res['parameter_type'] ||= 'string'
         res['use_puppet_default'] ||= false
         res
