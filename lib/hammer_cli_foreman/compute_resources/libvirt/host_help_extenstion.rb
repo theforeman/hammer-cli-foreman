@@ -11,7 +11,7 @@ module HammerCLIForeman
             h.list([
               ['cpus',   _('Number of CPUs')],
               ['memory', _('String, amount of memory, value in bytes')],
-              ['start',  _('Boolean, whether to start the machine or not')]
+              ['start',  _('Boolean (expressed as 0 or 1), whether to start the machine or not')]
             ])
           end
           h.section '--interface' do |h|
