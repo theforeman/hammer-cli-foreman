@@ -44,6 +44,7 @@ module HammerCLIForeman
         user["locale"] ||= _('default') if user.has_key?("locale")
         user["timezone"] ||= _('default') if user.has_key?("timezone")
         user["full_name"] = [user["firstname"], user["lastname"]].join(' ')
+        user["cached_usergroups"] = user.fetch('cached_usergroups', []) - user["usergroups"]
         user
       end
 
