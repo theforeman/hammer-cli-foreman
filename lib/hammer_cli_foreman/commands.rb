@@ -30,7 +30,9 @@ module HammerCLIForeman
     config[:headers] = { "Accept-Language" => HammerCLI::I18n.locale }
     config[:language] = HammerCLI::I18n.locale
     config[:timeout] = HammerCLI::Settings.get(:foreman, :request_timeout)
-    config[:timeout] = -1 if (config[:timeout] && config[:timeout].to_i < 0)
+    if (config[:timeout] && config[:timeout].to_i < 0)
+      config[:timeout] = (RestClient.version < '2.0.0') ? -1 : nil
+    end
     config[:apidoc_authenticated] = false
     config
   end
