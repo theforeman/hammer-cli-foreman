@@ -30,10 +30,13 @@ module HammerCLIForeman
       protected
 
       def create_authenticator(uri, settings)
-        @authenticator ||= SessionAuthenticatorWrapper.new(InteractiveBasicAuth.new(
+        return @authenticator unless @authenticator.nil?
+
+        @authenticator = InteractiveBasicAuth.new(
           settings.get(:_params, :username) || ENV['FOREMAN_USERNAME'] || settings.get(:foreman, :username),
           settings.get(:_params, :password) || ENV['FOREMAN_PASSWORD'] || settings.get(:foreman, :password)
-        ), uri)
+        )
+        @authenticator = SessionAuthenticatorWrapper.new(@authenticator, uri) if settings.get(:foreman, :use_sessions)
 
         @authenticator
       end
