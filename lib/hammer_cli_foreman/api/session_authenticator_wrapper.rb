@@ -7,6 +7,7 @@ module HammerCLIForeman
 
       def initialize(authenticator, url, storage_dir = nil)
         @authenticator = authenticator
+        @url = url
 
         uri = URI.parse(url)
         @session_file = "#{uri.scheme}_#{uri.host}"
@@ -15,6 +16,19 @@ module HammerCLIForeman
         @permissions_ok = check_storage_permissions
         warn _("Can't use session auth due to invalid permissions on session files.") unless @permissions_ok
       end
+
+      def clear
+        destroy_session
+      end
+
+      def status
+        if load_session
+          _("Session exist")
+        else
+          _("You are currently not logged in")
+        end
+      end
+
 
       def authenticate(request, args)
         @session_id ||= load_session

@@ -14,6 +14,19 @@ module HammerCLIForeman
         )
       end
 
+      def login
+        # Call some api entry point to trigger the
+        @api.resource(:home).action(:status).call
+      end
+
+      def logout
+        @authenticator.clear if @authenticator.respond_to?(:clear)
+      end
+
+      def login_status
+        @authenticator.status
+      end
+
       protected
 
       def create_authenticator(uri, settings)

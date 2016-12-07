@@ -7,10 +7,9 @@ module HammerCLIForeman
       desc _("Set credentials")
 
       def execute
-        HammerCLIForeman.credentials.clear
-        HammerCLI::Connection.drop_all
-        HammerCLIForeman.credentials.username
-        HammerCLIForeman.credentials.password
+        HammerCLIForeman.foreman_api_connection.logout
+        context[:api_connection].drop_all
+        HammerCLIForeman.foreman_api_connection.login
         HammerCLI::EX_OK
       end
     end
@@ -20,9 +19,8 @@ module HammerCLIForeman
       desc _("Wipe your credentials")
 
       def execute
-        #NOTE: we will change that to drop(:foreman) once dynamic bindings are implemented
-        HammerCLIForeman.credentials.clear
-        HammerCLI::Connection.drop_all
+        HammerCLIForeman.foreman_api_connection.logout
+        context[:api_connection].drop_all
         print_message(_("Credentials deleted."))
         HammerCLI::EX_OK
       end
@@ -33,11 +31,7 @@ module HammerCLIForeman
       desc _("Information about current connections")
 
       def execute
-        unless HammerCLIForeman.credentials.empty?
-          print_message(_("You are logged in as '%s'") % HammerCLIForeman.credentials.username)
-        else
-          print_message(_("You are currently not logged in to any service.\nUse the service to set credentials."))
-        end
+        print_message(HammerCLIForeman.foreman_api_connection.login_status)
         HammerCLI::EX_OK
       end
     end

@@ -15,6 +15,14 @@ module HammerCLIForeman
         ex.message = _("Invalid username or password")
       end
 
+      def status
+        unless @user.nil? || @password.nil?
+          _("You are logged in as '%s'") % @user
+        else
+          _("You are currently not logged in")
+        end
+      end
+
       private
 
       def ask_user(prompt, silent=false)
