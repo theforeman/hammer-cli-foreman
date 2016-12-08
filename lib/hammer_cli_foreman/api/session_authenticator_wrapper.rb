@@ -23,15 +23,16 @@ module HammerCLIForeman
 
       def status
         if load_session
-          _("Session exist")
+          _("Session exist, currently logged in as '%s'") % @user
         else
           _("You are currently not logged in")
         end
       end
 
-
       def authenticate(request, args)
-        @session_id ||= load_session
+        load_session
+
+        destroy_session if (@authenticator.user != @user)
 
         if @permissions_ok && @session_id
           jar = HTTP::CookieJar.new
@@ -44,9 +45,8 @@ module HammerCLIForeman
       end
 
       def error(ex)
-        @session_id ||= load_session
+        load_session
         if ex.is_a?(RestClient::Unauthorized) && !@session_id.nil?
-          @session_id = nil
           destroy_session
           ex.message = _("Session has expired")
         else
@@ -57,7 +57,7 @@ module HammerCLIForeman
       def response(r)
         @session_id = r.cookies['_session_id']
         if (@session_id && r.code != 401)
-          save_session(@session_id)
+          save_session(@session_id, @authenticator.user)
         end
         @authenticator.response(r)
       end
@@ -70,17 +70,27 @@ module HammerCLIForeman
 
       def load_session
         if File.exist?(session_storage)
-          File.read(session_storage)
+          session_data = JSON.parse(File.read(session_storage))
+          @user = session_data['user_name']
+          @session_id = session_data['session_id']
         end
+      rescue JSON::ParserError
+        warn _('Invalid session file format')
+        nil
       end
 
-      def save_session(session_id)
+      def save_session(session_id, user_name)
         File.open(session_storage, 'w', 0600) do |f|
-          f.write(session_id)
+          session = JSON.generate({
+            :session_id => session_id,
+            :user_name => user_name
+          })
+          f.write(session)
         end
       end
 
       def destroy_session
+        @user = @session_id = nil
         File.delete(session_storage) if File.exist?(session_storage)
       end
 

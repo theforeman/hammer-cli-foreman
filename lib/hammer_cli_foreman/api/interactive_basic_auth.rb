@@ -5,8 +5,8 @@ module HammerCLIForeman
     class InteractiveBasicAuth < ApipieBindings::Authenticators::BasicAuth
       def authenticate(request, args)
         if HammerCLI.interactive?
-          @user ||= ask_user(_("[Foreman] Username: "))
-          @password ||= ask_user(_("[Foreman] Password for %s: ") % @user, true)
+          get_user
+          get_password
         end
         super
       end
@@ -23,7 +23,19 @@ module HammerCLIForeman
         end
       end
 
+      def user
+        get_user
+      end
+
       private
+
+      def get_user
+        @user ||= ask_user(_("[Foreman] Username: "))
+      end
+
+      def get_password
+        @password ||= ask_user(_("[Foreman] Password for %s: ") % @user, true)
+      end
 
       def ask_user(prompt, silent=false)
         if silent

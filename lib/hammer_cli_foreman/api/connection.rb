@@ -37,7 +37,6 @@ module HammerCLIForeman
           settings.get(:_params, :password) || ENV['FOREMAN_PASSWORD'] || settings.get(:foreman, :password)
         )
         @authenticator = SessionAuthenticatorWrapper.new(@authenticator, uri) if settings.get(:foreman, :use_sessions)
-
         @authenticator
       end
 

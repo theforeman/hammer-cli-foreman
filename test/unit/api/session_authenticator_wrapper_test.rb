@@ -11,9 +11,16 @@ describe HammerCLIForeman::Api::SessionAuthenticatorWrapper do
     "#{dir}/http_foreman.example.com"
   end
 
+  def write_session(dir, content, permissions=nil)
+    File.open(session_file(dir), 'w', permissions) do |f|
+      f.write(content)
+    end
+  end
+
   def prepare_session_storage(options = {}, &block)
     options[:dir_permissions] ||= 0700
     options[:file_permissions] ||= 0600
+    options[:user_name] ||= 'admin'
 
     out = err = ""
 
@@ -22,9 +29,11 @@ describe HammerCLIForeman::Api::SessionAuthenticatorWrapper do
       FileUtils.chmod(options[:dir_permissions], dir)
 
       if options[:session_id]
-        File.open(session_file(dir), 'w', options[:file_permissions]) do |f|
-          f.write(options[:session_id])
-        end
+        session = JSON.dump({
+          :session_id => options[:session_id],
+          :user_name => options[:user_name]
+        })
+        write_session(dir, session, options[:file_permissions])
       end
 
       out, err = capture_io do
@@ -60,6 +69,7 @@ describe HammerCLIForeman::Api::SessionAuthenticatorWrapper do
     context "when there's saved session" do
       it 'sets session id in cookies' do
         prepare_session_storage :session_id => 'SOME_SESSION_ID' do |auth, dir|
+          wrapped_auth.expects(:user).returns('admin')
           auth.authenticate(request, args)
 
           assert_equal "_session_id=SOME_SESSION_ID", request['Cookie']
@@ -69,6 +79,7 @@ describe HammerCLIForeman::Api::SessionAuthenticatorWrapper do
       it 'ignores session when the session file has wrong permissions' do
         prepare_session_storage :session_id => 'SOME_SESSION_ID', :file_permissions => 0644 do |auth, dir|
           wrapped_auth.expects(:authenticate).with(request, args)
+          wrapped_auth.expects(:user).returns('admin')
           auth.authenticate(request, args)
 
           assert_nil request['Cookie']
@@ -78,9 +89,46 @@ describe HammerCLIForeman::Api::SessionAuthenticatorWrapper do
       it 'ignores session when the directory has wrong permissions' do
         prepare_session_storage :session_id => 'SOME_SESSION_ID', :dir_permissions => 0744 do |auth, dir|
           wrapped_auth.expects(:authenticate).with(request, args)
+          wrapped_auth.expects(:user).returns('admin')
           auth.authenticate(request, args)
 
           assert_nil request['Cookie']
+        end
+      end
+
+      it "drops the session when usernames don't match" do
+        prepare_session_storage :session_id => 'SOME_SESSION_ID' do |auth, dir|
+          wrapped_auth.expects(:authenticate).with(request, args)
+          wrapped_auth.expects(:user).returns('other_user')
+          auth.authenticate(request, args)
+
+          refute File.exist?(session_file(dir))
+        end
+      end
+    end
+
+    context "when the session file is corrupted" do
+      it 'reports error' do
+        dir, out, err = prepare_session_storage :session_id => 'SOME_SESSION_ID' do |auth, dir|
+          write_session(dir, '{not a valid: json')
+
+          wrapped_auth.expects(:authenticate).with(request, args)
+          wrapped_auth.expects(:user).returns('admin')
+          auth.authenticate(request, args)
+        end
+
+        assert_match /Invalid session file format/, err
+      end
+
+      it 'deletes the session file' do
+        prepare_session_storage :session_id => 'SOME_SESSION_ID' do |auth, dir|
+          write_session(dir, '{not a valid: json')
+
+          wrapped_auth.expects(:authenticate).with(request, args)
+          wrapped_auth.expects(:user).returns('admin')
+          auth.authenticate(request, args)
+
+          refute File.exist?(session_file(dir))
         end
       end
     end
@@ -89,6 +137,7 @@ describe HammerCLIForeman::Api::SessionAuthenticatorWrapper do
       it 'passes to wrapped authenticator' do
         prepare_session_storage do |auth, dir|
           wrapped_auth.expects(:authenticate).with(request, args)
+          wrapped_auth.expects(:user).returns('admin')
           auth.authenticate(request, args)
         end
       end
@@ -122,9 +171,26 @@ describe HammerCLIForeman::Api::SessionAuthenticatorWrapper do
         resp = stub(:cookies => {'_session_id' => 'NEW_SESSION_ID'}, :code => 200)
 
         wrapped_auth.expects(:response).with(resp)
+        wrapped_auth.expects(:user).returns('admin')
         auth.response(resp)
 
-        assert_equal 'NEW_SESSION_ID', File.read(session_file(dir))
+        session = JSON.parse(File.read(session_file(dir)))
+
+        assert_equal 'NEW_SESSION_ID', session['session_id']
+      end
+    end
+
+    it "saves username" do
+      prepare_session_storage do |auth, dir|
+        resp = stub(:cookies => {'_session_id' => 'NEW_SESSION_ID'}, :code => 200)
+
+        wrapped_auth.expects(:response).with(resp)
+        wrapped_auth.expects(:user).returns('admin')
+        auth.response(resp)
+
+        session = JSON.parse(File.read(session_file(dir)))
+
+        assert_equal 'admin', session['user_name']
       end
     end
 
