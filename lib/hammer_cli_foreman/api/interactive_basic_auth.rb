@@ -12,7 +12,7 @@ module HammerCLIForeman
       end
 
       def error(ex)
-        ex.message = _("Invalid username or password")
+        ex.message = _("Invalid username or password") if ex.is_a?(RestClient::Unauthorized)
       end
 
       def status

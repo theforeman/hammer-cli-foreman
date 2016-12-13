@@ -145,22 +145,65 @@ describe HammerCLIForeman::Api::SessionAuthenticatorWrapper do
   end
 
   describe '#error' do
-    it 'deletes saved session on unauthorized exception when there is existing session' do
-      prepare_session_storage :session_id => 'SOME_SESSION_ID' do |auth, dir|
-        ex = RestClient::Unauthorized.new
+    context 'when there is existing session' do
+      it 'deletes saved session on unauthorized exception' do
+        prepare_session_storage :session_id => 'SOME_SESSION_ID' do |auth, dir|
+          ex = RestClient::Unauthorized.new
 
-        auth.error(ex)
+          auth.error(ex)
 
-        refute File.exist?(session_file(dir))
+          refute File.exist?(session_file(dir))
+        end
+      end
+
+      it 'overrides 401 error message' do
+        prepare_session_storage :session_id => 'SOME_SESSION_ID' do |auth, dir|
+          ex = RestClient::Unauthorized.new
+          auth.error(ex)
+
+          assert_equal 'Session has expired', ex.message
+        end
+      end
+
+      it 'keeps error message for other exceptions' do
+        prepare_session_storage :session_id => 'SOME_SESSION_ID' do |auth, dir|
+          ex = RuntimeError.new('Some error')
+          wrapped_auth.expects(:error).with(ex)
+          auth.error(ex)
+
+          assert_equal 'Some error', ex.message
+        end
+      end
+
+      it 'keeps sessione for other exceptions' do
+        prepare_session_storage :session_id => 'SOME_SESSION_ID' do |auth, dir|
+          ex = RuntimeError.new('Some error')
+          wrapped_auth.expects(:error).with(ex)
+          auth.error(ex)
+
+          assert File.exist?(session_file(dir))
+        end
       end
     end
 
-    it 'passes exception to wrapped authenticator on unauthorized exception when there is no existing session' do
-      prepare_session_storage do |auth, dir|
-        ex = RestClient::Unauthorized.new
+    context 'when there is no existing session' do
+      it 'passes exception to wrapped authenticator on unauthorized exception' do
+        prepare_session_storage do |auth, dir|
+          ex = RestClient::Unauthorized.new
 
-        wrapped_auth.expects(:error).with(ex)
-        auth.error(ex)
+          wrapped_auth.expects(:error).with(ex)
+          auth.error(ex)
+        end
+      end
+
+      it 'keeps error message for other exceptions' do
+        prepare_session_storage do |auth, dir|
+          ex = RuntimeError.new('Some error')
+          wrapped_auth.expects(:error).with(ex)
+          auth.error(ex)
+
+          assert_equal 'Some error', ex.message
+        end
       end
     end
   end
