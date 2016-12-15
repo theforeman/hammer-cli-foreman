@@ -1,5 +1,19 @@
 Release notes
 =============
+### 0.9.0 (2016-12-15)
+* Auth overrides only unauthorized exception ([PR #271](https://github.com/theforeman/hammer-cli-foreman/pull/271)) ([#17650](http://projects.theforeman.org/issues/17650))
+* Session auth in hammer ([PR #269](https://github.com/theforeman/hammer-cli-foreman/pull/269)) ([#8016](http://projects.theforeman.org/issues/8016))
+* Display override value order as long text ([#17355](http://projects.theforeman.org/issues/17355))
+* Showing roles inherited from usergroups ([#16016](http://projects.theforeman.org/issues/16016))
+* The 'start' key always needs a 1 or 0 ([#17393](http://projects.theforeman.org/issues/17393))
+* Compute resource specific details in host help ([PR #263](https://github.com/theforeman/hammer-cli-foreman/pull/263)) ([#12472](http://projects.theforeman.org/issues/12472))
+* Fix compute-resource info ([#17077](http://projects.theforeman.org/issues/17077))
+* List override in filter output ([#17109](http://projects.theforeman.org/issues/17109))
+* Added description field to User in hammer ([#16772](http://projects.theforeman.org/issues/16772))
+* Added description field to Roles in hammer ([#16771](http://projects.theforeman.org/issues/16771))
+* add taxonomies to role info ([#16799](http://projects.theforeman.org/issues/16799))
+* Adds 'builtin' attribute to Role list ([#16406](http://projects.theforeman.org/issues/16406))
+
 ### 0.8.0 (2016-09-01)
 * add realm commands to hammer ([PR #240](https://github.com/theforeman/hammer-cli-foreman/pull/240)) ([#4918](http://projects.theforeman.org/issues/4918))
 * Renamed name to variable for smart_variables ([#16119](http://projects.theforeman.org/issues/16119))
