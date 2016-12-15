@@ -5,7 +5,7 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: hammer-cli-foreman 0.8.0\n"
+"Project-Id-Version: hammer-cli-foreman 0.9.0\n"
 "Report-Msgid-Bugs-To: \n"
 "PO-Revision-Date: 2014-03-04 16:47+0000\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
@@ -98,6 +98,36 @@ msgid "Manipulate users."
 msgstr ""
 
 msgid "Manage user groups."
+msgstr ""
+
+msgid "Invalid username or password"
+msgstr ""
+
+msgid "You are logged in as '%s'"
+msgstr ""
+
+msgid "You are currently not logged in"
+msgstr ""
+
+msgid "[Foreman] Username: "
+msgstr ""
+
+msgid "[Foreman] Password for %s: "
+msgstr ""
+
+msgid "Can't use session auth due to invalid permissions on session files."
+msgstr ""
+
+msgid "Session exist, currently logged in as '%s'"
+msgstr ""
+
+msgid "Session has expired"
+msgstr ""
+
+msgid "Invalid session file format"
+msgstr ""
+
+msgid "Invalid permissions for %{file}: %{mode}, expected %{expected_mode}"
 msgstr ""
 
 msgid "Id"
@@ -415,6 +445,15 @@ msgstr ""
 msgid "Set credentials"
 msgstr ""
 
+msgid "username to access the remote system"
+msgstr ""
+
+msgid "password to access the remote system"
+msgstr ""
+
+msgid "Successfully logged in."
+msgstr ""
+
 msgid "Wipe your credentials"
 msgstr ""
 
@@ -422,14 +461,6 @@ msgid "Credentials deleted."
 msgstr ""
 
 msgid "Information about current connections"
-msgstr ""
-
-msgid "You are logged in as '%s'"
-msgstr ""
-
-msgid ""
-"You are currently not logged in to any service.\n"
-"Use the service to set credentials."
 msgstr ""
 
 msgid "Manage LDAP auth sources."
@@ -551,7 +582,7 @@ msgstr ""
 msgid "Provider"
 msgstr ""
 
-msgid "UUID"
+msgid "Datacenter"
 msgstr ""
 
 msgid "Region"
@@ -590,10 +621,114 @@ msgstr ""
 msgid "Could not delete the compute resource"
 msgstr ""
 
-msgid "[Foreman] Username: "
+msgid "EC2"
 msgstr ""
 
-msgid "[Foreman] Password for %s: "
+msgid "GCE"
+msgstr ""
+
+msgid "Libvirt"
+msgstr ""
+
+msgid "Number of CPUs"
+msgstr ""
+
+msgid "String, amount of memory, value in bytes"
+msgstr ""
+
+msgid "Boolean (expressed as 0 or 1), whether to start the machine or not"
+msgstr ""
+
+msgid "Possible values: %s"
+msgstr ""
+
+msgid "Name of interface according to type"
+msgstr ""
+
+msgid "One of available storage pools"
+msgstr ""
+
+msgid "String value, eg. 10G"
+msgstr ""
+
+msgid "OpenStack"
+msgstr ""
+
+msgid "oVirt"
+msgstr ""
+
+msgid "Hardware profile to use"
+msgstr ""
+
+msgid "Integer value, number of cores"
+msgstr ""
+
+msgid "Amount of memory, integer value in bytes"
+msgstr ""
+
+msgid "Eg. eth0"
+msgstr ""
+
+msgid "Select one of available networks for a cluster"
+msgstr ""
+
+msgid "Volume size in GB, integer value"
+msgstr ""
+
+msgid "Select one of available storage domains"
+msgstr ""
+
+msgid "Boolean, only one volume can be bootable"
+msgstr ""
+
+msgid "Rackspace"
+msgstr ""
+
+msgid "VMWare"
+msgstr ""
+
+msgid "Cpu count"
+msgstr ""
+
+msgid "Number of cores per socket (applicable to hardware versions < 10 only)"
+msgstr ""
+
+msgid "Integer number, amount of memory in MB"
+msgstr ""
+
+msgid "Cluster id from VMware"
+msgstr ""
+
+msgid "Path to folder"
+msgstr ""
+
+msgid "Guest OS id form VMware"
+msgstr ""
+
+msgid "Id of the controller from VMware"
+msgstr ""
+
+msgid "Hardware version id from VMware"
+msgstr ""
+
+msgid "Must be a 1 or 0, whether to start the machine or not"
+msgstr ""
+
+msgid "Network id from VMware"
+msgstr ""
+
+msgid "Datastore id from VMware"
+msgstr ""
+
+msgid "Integer number, volume size in GB"
+msgstr ""
+
+msgid "Type of the network adapter, for example one of:"
+msgstr ""
+
+msgid ""
+"See documentation center for your version of vSphere to find more details abou"
+"t available adapter types:"
 msgstr ""
 
 msgid "Use the default organization and/or location from the server"
@@ -735,6 +870,9 @@ msgstr ""
 msgid "Unlimited?"
 msgstr ""
 
+msgid "Override?"
+msgstr ""
+
 msgid "Role"
 msgstr ""
 
@@ -768,27 +906,6 @@ msgstr ""
 msgid "Resource"
 msgstr ""
 
-msgid "Login of the owner"
-msgstr ""
-
-msgid "ID of the owner"
-msgstr ""
-
-msgid "Host parameters."
-msgstr ""
-
-msgid "Compute resource attributes."
-msgstr ""
-
-msgid "Volume parameters"
-msgstr ""
-
-msgid "Interface parameters."
-msgstr ""
-
-msgid "Enter the root password for the host:"
-msgstr ""
-
 msgid "Operating System"
 msgstr ""
 
@@ -802,6 +919,9 @@ msgid "MAC"
 msgstr ""
 
 msgid "Bare Metal"
+msgstr ""
+
+msgid "UUID"
 msgstr ""
 
 msgid "Organization"
@@ -1066,6 +1186,53 @@ msgid "Delete parameter for a hostgroup."
 msgstr ""
 
 msgid "Hostgroup parameter deleted"
+msgstr ""
+
+msgid "Available keys for %{option}"
+msgstr ""
+
+msgid "%{value}, each managed hosts needs to have one primary interface."
+msgstr ""
+
+msgid "For %{condition}"
+msgstr ""
+
+msgid ""
+"VLAN tag, this attribute has precedence over the subnet VLAN ID. Only for virt"
+"ual interfaces."
+msgstr ""
+
+msgid "Identifier of the interface to which this interface belongs, e.g. eth1."
+msgstr ""
+
+msgid "Identifiers of slave interfaces, e.g. [eth1,eth2]"
+msgstr ""
+
+msgid "always IPMI"
+msgstr ""
+
+msgid "Provider specific options"
+msgstr ""
+
+msgid "Login of the owner"
+msgstr ""
+
+msgid "ID of the owner"
+msgstr ""
+
+msgid "Host parameters."
+msgstr ""
+
+msgid "Compute resource attributes."
+msgstr ""
+
+msgid "Volume parameters"
+msgstr ""
+
+msgid "Interface parameters."
+msgstr ""
+
+msgid "Enter the root password for the host:"
 msgstr ""
 
 msgid "Architecture name"
@@ -1543,6 +1710,15 @@ msgstr ""
 msgid "User groups"
 msgstr ""
 
+msgid "Usergroup"
+msgstr ""
+
+msgid "Roles"
+msgstr ""
+
+msgid "Inherited User groups"
+msgstr ""
+
 msgid "Smart proxies"
 msgstr ""
 
@@ -1574,9 +1750,6 @@ msgid "Puppetclasses"
 msgstr ""
 
 msgid "Operating systems"
-msgstr ""
-
-msgid "Roles"
 msgstr ""
 
 msgid "External user groups"
@@ -1655,12 +1828,6 @@ msgid "The server does not support such operation."
 msgstr ""
 
 msgid "Builtin"
-msgstr ""
-
-msgid "Yes"
-msgstr ""
-
-msgid "No"
 msgstr ""
 
 msgid "User role id"
