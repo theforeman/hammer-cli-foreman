@@ -41,17 +41,78 @@ module HammerCLIForeman
       build_options
     end
 
+
+    module TaxonomyCheck
+      def taxonomy_options?
+        option_location_names || option_location_ids || option_organization_names || option_organization_ids
+      end
+
+      def signal_override_usage_error
+        signal_usage_error _('Organizations and locations can be set only for overriding filters')
+      end
+
+      def self.included(base)
+        base.extend_help do |h|
+          h.section('Overriding organizations and locations') do
+            override_condition = "--override=true"
+            org_opts = '--organization[s|-ids]'
+            loc_opts = '--location[s|-ids]'
+
+            h.text(_("Filters inherrit organizations and locations from it's role by default. This behavior can be changed by setting %{condition}\n"+
+              "Therefore options %{org_opts} and %{loc_opts} are applicable only when the override flag is set.") % {
+              :org_opts => org_opts,
+              :loc_opts => loc_opts,
+              :condition => override_condition
+            })
+          end
+        end
+      end
+    end
+
+
     class CreateCommand < HammerCLIForeman::CreateCommand
+      include TaxonomyCheck
+
       success_message _("Permission filter for [%<resource_type>s] created")
       failure_message _("Could not create the permission filter")
+
+      def execute
+        signal_override_usage_error if !option_override && taxonomy_options?
+        super
+      end
 
       build_options
     end
 
 
     class UpdateCommand < HammerCLIForeman::UpdateCommand
+      include TaxonomyCheck
+
       success_message _("Permission filter for [%<resource_type>s] updated")
       failure_message _("Could not update the permission filter")
+
+      def request_params
+        params = super
+        if override?
+          # Clear taxonomies in case the filter is switching override from true to false
+          params['filter']['location_ids'] = []
+          params['filter']['organization_ids'] = []
+        end
+        params
+      end
+
+      def execute
+        signal_override_usage_error if !override? && taxonomy_options?
+        super
+      end
+
+      def override?
+        option_override || filter['override?']
+      end
+
+      def filter
+        @filter ||= HammerCLIForeman.foreman_resource!(:filters).action(:show).call({ :id => option_id }, request_headers, request_options)
+      end
 
       build_options
     end
