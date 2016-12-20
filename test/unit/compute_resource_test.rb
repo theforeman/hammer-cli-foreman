@@ -9,6 +9,9 @@ describe HammerCLIForeman::ComputeResource do
   include CommandTestHelper
 
   context "ListCommand" do
+    before do
+      ResourceMocks.mock_action_call(:compute_resources, :index, [])
+    end
 
     let(:cmd) { HammerCLIForeman::ComputeResource::ListCommand.new("", ctx) }
 

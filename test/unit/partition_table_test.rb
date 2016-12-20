@@ -15,6 +15,9 @@ describe HammerCLIForeman::PartitionTable do
   end
 
   context "ListCommand" do
+    before do
+      ResourceMocks.mock_action_call(:ptables, :index, [])
+    end
 
     let(:cmd) { HammerCLIForeman::PartitionTable::ListCommand.new("", ctx) }
 

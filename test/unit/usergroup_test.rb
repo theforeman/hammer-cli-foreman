@@ -9,6 +9,9 @@ describe HammerCLIForeman::Usergroup do
 
 
   context "ListCommand" do
+    before do
+      ResourceMocks.mock_action_call(:usergroups, :index, [])
+    end
 
     let(:cmd) { HammerCLIForeman::Usergroup::ListCommand.new("", ctx) }
 

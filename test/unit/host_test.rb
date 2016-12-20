@@ -8,6 +8,9 @@ describe HammerCLIForeman::Host do
   include CommandTestHelper
 
   context "ListCommand" do
+    before do
+      ResourceMocks.mock_action_call(:hosts, :index, [])
+    end
 
     let(:cmd) { HammerCLIForeman::Host::ListCommand.new("", ctx) }
 
@@ -26,6 +29,9 @@ describe HammerCLIForeman::Host do
   end
 
   context "InfoCommand" do
+    before do
+      ResourceMocks.hosts_show
+    end
 
     let(:cmd) { HammerCLIForeman::Host::InfoCommand.new("", ctx) }
 
@@ -101,6 +107,9 @@ describe HammerCLIForeman::Host do
 
 
   context "PuppetClassesCommand" do
+    before do
+      ResourceMocks.mock_action_call(:puppetclasses, :index, {})
+    end
 
     let(:cmd) { HammerCLIForeman::Host::PuppetClassesCommand.new("", ctx) }
 
@@ -146,6 +155,9 @@ describe HammerCLIForeman::Host do
 
 
   context "ReportsCommand" do
+    before do
+      ResourceMocks.mock_action_call(:reports, :index, [])
+    end
 
     let(:cmd) { HammerCLIForeman::Host::ReportsCommand.new("", ctx) }
 

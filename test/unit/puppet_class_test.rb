@@ -8,6 +8,9 @@ describe HammerCLIForeman::PuppetClass do
   include CommandTestHelper
 
   context "ListCommand" do
+    before do
+      ResourceMocks.mock_action_call(:puppetclasses, :index, {})
+    end
 
     let(:cmd) { HammerCLIForeman::PuppetClass::ListCommand.new("", ctx) }
 

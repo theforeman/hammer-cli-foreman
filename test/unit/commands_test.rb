@@ -179,6 +179,8 @@ describe HammerCLIForeman::Command do
       )
     )
 
+    ResourceMocks.mock_action_call(:domains, :index, [])
+
     out, err = capture_io do
       com.run([]).must_equal HammerCLI::EX_OK
     end

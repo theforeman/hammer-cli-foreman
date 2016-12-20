@@ -113,7 +113,6 @@ describe HammerCLIForeman::SmartVariable do
       it_should_accept "match, value and smart-variable-id", ["--match='environment=Dev'","--value=5","--smart-variable-id=1"]
       it_should_accept "smart-variable, match, value", ["--smart-variable=var", "--match='domain=my.lan'", "--value=1"]
       it_should_fail_with "smart-variable, value", ["--smart-variable-id=1","--value=5"]
-      it_should_fail_with "smart-variable, match", ["--smart-variable-id=1","--match='environment=Dev'"]
     end
 
   end
