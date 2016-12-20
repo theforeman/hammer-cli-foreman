@@ -58,7 +58,7 @@ module HammerCLIForeman
             org_opts = '--organization[s|-ids]'
             loc_opts = '--location[s|-ids]'
 
-            h.text(_("Filters inherrit organizations and locations from it's role by default. This behavior can be changed by setting %{condition}\n"+
+            h.text(_("Filters inherit organizations and locations from its role by default. This behavior can be changed by setting %{condition}\n"+
               "Therefore options %{org_opts} and %{loc_opts} are applicable only when the override flag is set.") % {
               :org_opts => org_opts,
               :loc_opts => loc_opts,
