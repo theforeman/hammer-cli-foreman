@@ -8,6 +8,9 @@ describe HammerCLIForeman::Subnet do
   include CommandTestHelper
 
   context "ListCommand" do
+    before do
+      ResourceMocks.mock_action_call(:subnets, :index, [])
+    end
 
     let(:cmd) { HammerCLIForeman::Subnet::ListCommand.new("", ctx) }
 

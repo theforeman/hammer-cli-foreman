@@ -10,6 +10,9 @@ describe HammerCLIForeman::User do
   let(:cmd_module) { HammerCLIForeman::User }
 
   context "ListCommand" do
+    before do
+      ResourceMocks.mock_action_call(:users, :index, [])
+    end
 
     let(:cmd) { cmd_module::ListCommand.new("", ctx ) }
 
@@ -28,6 +31,9 @@ describe HammerCLIForeman::User do
 
 
   context "InfoCommand" do
+    before do
+      ResourceMocks.users_show
+    end
 
     let(:cmd) { cmd_module::InfoCommand.new("", ctx) }
 

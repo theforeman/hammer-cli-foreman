@@ -8,6 +8,9 @@ describe HammerCLIForeman::SmartProxy do
   include CommandTestHelper
 
   context "ListCommand" do
+    before do
+      ResourceMocks.mock_action_call(:smart_proxies, :index, [])
+    end
 
     let(:cmd) { HammerCLIForeman::SmartProxy::ListCommand.new("", ctx) }
 

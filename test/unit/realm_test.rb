@@ -8,6 +8,9 @@ describe HammerCLIForeman::Realm do
   include CommandTestHelper
 
   context "ListCommand" do
+    before do
+      ResourceMocks.mock_action_call(:realms, :index, [])
+    end
 
     let(:cmd) { HammerCLIForeman::Realm::ListCommand.new("", ctx) }
 

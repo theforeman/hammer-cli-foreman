@@ -8,6 +8,9 @@ describe HammerCLIForeman::Environment do
   include CommandTestHelper
 
   context "ListCommand" do
+    before do
+      ResourceMocks.mock_action_call(:environments, :index, [])
+    end
 
     let(:cmd) { HammerCLIForeman::Environment::ListCommand.new("", ctx) }
 

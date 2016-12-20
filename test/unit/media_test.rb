@@ -8,6 +8,9 @@ describe HammerCLIForeman::Medium do
   include CommandTestHelper
 
   context "ListCommand" do
+    before do
+      ResourceMocks.mock_action_call(:media, :index, [])
+    end
 
     let(:cmd) { HammerCLIForeman::Medium::ListCommand.new("", ctx) }
 

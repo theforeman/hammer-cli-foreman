@@ -8,6 +8,9 @@ describe HammerCLIForeman::AuthSourceLdap do
   include CommandTestHelper
 
   context "ListCommand" do
+    before do
+      ResourceMocks.mock_action_call(:auth_source_ldaps, :index, [])
+    end
 
     let(:cmd) { HammerCLIForeman::AuthSourceLdap::ListCommand.new("", ctx) }
 

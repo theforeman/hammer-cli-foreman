@@ -8,6 +8,9 @@ describe HammerCLIForeman::Domain do
   include CommandTestHelper
 
   context "ListCommand" do
+    before do
+      ResourceMocks.mock_action_call(:domains, :index, [])
+    end
 
     let(:cmd) { HammerCLIForeman::Domain::ListCommand.new("", ctx) }
 

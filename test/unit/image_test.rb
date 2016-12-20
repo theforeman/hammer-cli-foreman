@@ -10,6 +10,9 @@ describe HammerCLIForeman::Image do
   include CommandTestHelper
 
   context "ListCommand" do
+    before do
+      ResourceMocks.mock_action_call(:images, :index, [])
+    end
 
     let(:cmd) { HammerCLIForeman::Image::ListCommand.new("", ctx) }
 

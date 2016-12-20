@@ -8,6 +8,9 @@ describe HammerCLIForeman::CommonParameter do
   include CommandTestHelper
 
   context "ListCommand" do
+    before do
+      ResourceMocks.mock_action_call(:common_parameters, :index, [])
+    end
 
     let(:cmd) { HammerCLIForeman::CommonParameter::ListCommand.new("", ctx) }
 

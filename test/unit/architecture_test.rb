@@ -8,6 +8,9 @@ describe HammerCLIForeman::Architecture do
   include CommandTestHelper
 
   context "ListCommand" do
+    before do
+      ResourceMocks.mock_action_call(:architectures, :index, [])
+    end
 
     let(:cmd) { HammerCLIForeman::Architecture::ListCommand.new("", ctx) }
 

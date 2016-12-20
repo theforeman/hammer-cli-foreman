@@ -8,6 +8,9 @@ describe HammerCLIForeman::Model do
   include CommandTestHelper
 
   context "ListCommand" do
+    before do
+      ResourceMocks.mock_action_call(:models, :index, [])
+    end
 
     let(:cmd) { HammerCLIForeman::Model::ListCommand.new("", ctx) }
 

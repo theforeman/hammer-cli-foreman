@@ -54,6 +54,146 @@ module ResourceMocks
       ]})
   end
 
+  def self.users_show
+    ResourceMocks.mock_action_call(:users, :show, {
+      "firstname" => "Admin",
+      "lastname" => "User",
+      "mail" => "root@example.com",
+      "admin" => true,
+      "auth_source_id" => 1,
+      "auth_source_name" => "Internal",
+      "timezone" => nil,
+      "locale" => nil,
+      "last_login_on" => "2016-12-20 17:30:13 UTC",
+      "created_at" => "2016-10-24 08:11:24 UTC",
+      "updated_at" => "2016-10-24 08:11:38 UTC",
+      "id" => 3,
+      "login" => "admin",
+      "description" => nil,
+      "default_location" => nil,
+      "locations" => [],
+      "default_organization" => {
+        "id" => 1,
+        "name" => "Default Organization",
+        "title" => "Default Organization",
+        "description" => nil
+      },
+      "organizations" => [],
+      "effective_admin" => true,
+      "cached_usergroups" => [],
+      "auth_source_internal" => {
+        "id" => 1,
+        "type" => "AuthSourceInternal",
+        "name" => "Internal"
+      },
+      "mail_notifications" => [],
+      "roles" => [{
+        "name" => "Default role",
+        "id" => 9,
+        "description" => nil
+      }],
+      "usergroups" => []
+    })
+  end
+
+  def self.hosts_show
+    ResourceMocks.mock_action_call(:hosts, :show, {
+      "ip" => "192.168.122.51",
+      "ip6" => nil,
+      "environment_id" => 1,
+      "environment_name" => "production",
+      "last_report" => "2016-10-24 12:06:31 UTC",
+      "mac" => "52:54:00:ce:b2:b9",
+      "realm_id" => nil,
+      "realm_name" => nil,
+      "sp_mac" => nil,
+      "sp_ip" => nil,
+      "sp_name" => nil,
+      "domain_id" => 1,
+      "domain_name" => "tstrachota.usersys.redhat.com",
+      "architecture_id" => 1,
+      "architecture_name" => "x86_64",
+      "operatingsystem_id" => 1,
+      "operatingsystem_name" => "CentOS 7.2.1511",
+      "build" => false,
+      "model_id" => 1,
+      "hostgroup_id" => nil,
+      "owner_id" => nil,
+      "owner_type" => nil,
+      "enabled" => true,
+      "managed" => false,
+      "use_image" => nil,
+      "image_file" => "",
+      "uuid" => nil,
+      "compute_resource_id" => nil,
+      "compute_resource_name" => nil,
+      "compute_profile_id" => nil,
+      "compute_profile_name" => nil,
+      "capabilities" => ["build"],
+      "provision_method" => "build",
+      "certname" => "foreman.example.com",
+      "image_id" => nil,
+      "image_name" => nil,
+      "created_at" => "2016-10-24 08:36:43 UTC",
+      "updated_at" => "2016-10-24 12:06:46 UTC",
+      "last_compile" => "2016-10-24 12:06:41 UTC",
+      "global_status" => 0,
+      "global_status_label" => "Warning",
+      "organization_id" => nil,
+      "organization_name" => nil,
+      "location_id" => nil,
+      "location_name" => nil,
+      "puppet_status" => 0,
+      "model_name" => "KVM",
+      "configuration_status" => 0,
+      "configuration_status_label" => "No reports",
+      "name" => "foreman.example.com",
+      "id" => 1,
+      "puppet_proxy_id" => 1,
+      "puppet_proxy_name" => "foreman.example.com",
+      "puppet_ca_proxy_id" => 1,
+      "puppet_ca_proxy_name" => "foreman.example.com",
+      "puppet_proxy" => {
+        "name" => "foreman.example.com",
+        "id" => 1,
+        "url" => "https://foreman.example.com:9090"
+      },
+      "puppet_ca_proxy" => {
+        "name" => "foreman.example.com",
+        "id" => 1,
+        "url" => "https://foreman.example.com:9090"
+      },
+      "hostgroup_name" => nil,
+      "hostgroup_title" => nil,
+      "parameters" => [],
+      "all_parameters" => [],
+      "interfaces" => [{
+        "id" => 1,
+        "name" => "foreman.example.com",
+        "ip" => "192.168.122.51",
+        "mac" => "52:54:00:ce:b2:b9",
+        "identifier" => "eth0",
+        "primary" => true,
+        "provision" => true,
+        "type" => "interface"
+      },
+      {
+        "id" => 2,
+        "name" => nil,
+        "ip" => "10.34.130.105",
+        "mac" => "52:54:00:f5:1b:57",
+        "identifier" => "eth1",
+        "primary" => false,
+        "provision" => false,
+        "type" => "interface"
+      }],
+      "puppetclasses" => [],
+      "config_groups" => [],
+      "all_puppetclasses" => []
+    })
+  end
+
+
   def self.organizations_show
     ResourceMocks.mock_action_calls(
       [:organizations, :index, [{ "id" => 2, "name" => "ACME" }]],
@@ -85,6 +225,7 @@ module ResourceMocks
   def self.operatingsystems
     ResourceMocks.mock_action_calls(
       [:parameters, :index, []],
+      [:operatingsystems, :index, []],
       [:operatingsystems, :show, {}]
       )
   end
