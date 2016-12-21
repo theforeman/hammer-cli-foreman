@@ -58,8 +58,12 @@ describe HammerCLIForeman::Filter do
   end
 
   context "CreateCommand" do
-
     let(:cmd) { HammerCLIForeman::Filter::CreateCommand.new("", ctx) }
+
+    before do
+      # FIXME: remove stubbing option_override once tests are switched to apidoc 1.14+
+      cmd.stubs(:option_override).returns(false)
+    end
 
     context "parameters" do
       it_should_accept "role id and permission ids", ["--role-id=1", "--permission-ids=1,2"]
@@ -79,8 +83,12 @@ describe HammerCLIForeman::Filter do
   end
 
   context "UpdateCommand" do
-
     let(:cmd) { HammerCLIForeman::Filter::UpdateCommand.new("", ctx) }
+
+    before do
+      # FIXME: remove stubbing option_override once tests are switched to apidoc 1.14+
+      cmd.stubs(:option_override).returns(false)
+    end
 
     context "parameters" do
       it_should_accept "id, role id and permission ids", ["--id=1", "--role-id=1", "--permission-ids=1,2"]
