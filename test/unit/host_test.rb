@@ -195,7 +195,7 @@ describe HammerCLIForeman::Host do
     let(:cmd) { HammerCLIForeman::Host::CreateCommand.new("", ctx) }
 
     before :each do
-      HammerCLIForeman::CommonHostUpdateOptions.stubs(:ask_password).returns("password")
+      HammerCLIForeman::Hosts::CommonUpdateOptions.stubs(:ask_password).returns("password")
     end
 
     context "parameters" do
@@ -248,7 +248,7 @@ describe HammerCLIForeman::Host do
     let(:cmd) { HammerCLIForeman::Host::UpdateCommand.new("", ctx) }
 
     before :each do
-      HammerCLIForeman::CommonHostUpdateOptions.stubs(:ask_password).returns("password")
+      HammerCLIForeman::Hosts::CommonUpdateOptions.stubs(:ask_password).returns("password")
     end
 
     context "parameters" do

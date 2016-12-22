@@ -1,0 +1,7 @@
+require 'hammer_cli_foreman/compute_resources/ec2'
+require 'hammer_cli_foreman/compute_resources/gce'
+require 'hammer_cli_foreman/compute_resources/libvirt'
+require 'hammer_cli_foreman/compute_resources/openstack'
+require 'hammer_cli_foreman/compute_resources/ovirt'
+require 'hammer_cli_foreman/compute_resources/rackspace'
+require 'hammer_cli_foreman/compute_resources/vmware'
