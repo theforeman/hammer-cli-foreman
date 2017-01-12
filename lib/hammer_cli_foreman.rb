@@ -140,6 +140,9 @@ module HammerCLIForeman
       'HammerCLIForeman::Usergroup', 'hammer_cli_foreman/usergroup'
     )
 
+    HammerCLI::MainCommand.lazy_subcommand('config-group', _("Manipulate config groups."),
+      'HammerCLIForeman::ConfigGroup', 'hammer_cli_foreman/config_group'
+    )
 
   rescue => e
     handler = HammerCLIForeman::ExceptionHandler.new(:context => {}, :adapter => :base)
