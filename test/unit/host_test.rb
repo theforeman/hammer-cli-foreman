@@ -59,7 +59,8 @@ describe HammerCLIForeman::Host do
     let(:cmd) { HammerCLIForeman::Host::StatusCommand.new("", ctx) }
 
     before :each do
-      ResourceMocks.mock_action_call(:hosts, :power, {'power' => 'running'} )
+      ResourceMocks.mock_action_call(:hosts, :power, { 'power' => 'running' } )
+      ResourceMocks.mock_action_call(:hosts, :status, { 'status' => 'No reports' } )
     end
 
     context "parameters" do

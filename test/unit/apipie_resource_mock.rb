@@ -255,4 +255,35 @@ module ResourceMocks
       }]
     })
   end
+
+  def self.auth_source_ldap_index
+    ResourceMocks.mock_action_call(:auth_source_ldaps, :index, {
+      "results" => [{
+        "name" => "my LDAP",
+        "id" => 1,
+        "tls" => false,
+        "port" => 389,
+        "server_type" => "POSIX"
+      }]
+    })
+  end
+
+  def self.compute_resource_show
+    cr = {
+      "name" => "My compute resource",
+      "id" => 42,
+      "provider" => "Libvirt"
+    }
+    ResourceMocks.mock_action_calls(
+      [:compute_resources, :index, [ "results" => cr ]],
+      [:compute_resources, :show, cr]
+    )
+  end
+
+  def self.common_parameter_show
+    ResourceMocks.mock_action_call(:common_parameters, :show, {
+      "name" => "my param",
+      "value" => "random value"
+    })
+  end
 end
