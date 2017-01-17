@@ -31,6 +31,9 @@ describe HammerCLIForeman::ComputeResource do
 
 
   context "InfoCommand" do
+    before do
+      ResourceMocks.compute_resource_show
+    end
 
     let(:cmd) { HammerCLIForeman::ComputeResource::InfoCommand.new("", ctx) }
 
