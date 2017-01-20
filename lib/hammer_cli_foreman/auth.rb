@@ -31,7 +31,7 @@ module HammerCLIForeman
       def execute
         HammerCLIForeman.foreman_api_connection.logout
         context[:api_connection].drop_all
-        print_message(_("Credentials deleted."))
+        print_message(_("Logged out."))
         HammerCLI::EX_OK
       end
     end
