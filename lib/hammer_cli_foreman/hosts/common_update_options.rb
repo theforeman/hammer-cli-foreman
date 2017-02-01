@@ -8,7 +8,10 @@ module HammerCLIForeman
         base.option "--owner-id", "OWNER_ID", _("ID of the owner"),
           :attribute_name => :option_user_id
 
-        base.option "--root-password", "ROOT_PW", " "
+        base.option ["--root-password", "--root-pass"], "ROOT_PW",
+          _("Required if host is managed and value is not inherited from host group or default password in settings"),
+          :deprecated => { '--root-pass' => _("Use --root-password instead") }
+
         base.option "--ask-root-password", "ASK_ROOT_PW", " ",
           :format => HammerCLI::Options::Normalizers::Bool.new
 
@@ -48,7 +51,7 @@ module HammerCLIForeman
               :provision_method, :capabilities, :flavour_ref, :image_ref, :start,
               :network, :cpus, :memory, :provider, :type, :tenant_id, :image_id,
               # ----------------------------------------------------------------------------------
-              :puppet_class_ids, :host_parameters_attributes, :interfaces_attributes]
+              :puppet_class_ids, :host_parameters_attributes, :interfaces_attributes, :root_pass]
       end
 
       def self.ask_password
