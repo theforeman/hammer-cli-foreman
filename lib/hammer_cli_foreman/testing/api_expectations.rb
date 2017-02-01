@@ -53,7 +53,12 @@ module HammerCLIForeman
       def api_expects_search(resource=nil, search_options={}, note=nil)
         note ||= "Find #{resource}"
 
-        search_query = search_options.map{|k, v| "#{k} = \"#{v}\"" }.join(" or ")
+        if search_options.is_a?(Hash)
+          search_query = search_options.map{|k, v| "#{k} = \"#{v}\"" }.join(" or ")
+        else
+          search_query = search_options
+        end
+
         api_expects(resource, :index, note) do |params|
           params[:search] == search_query
         end

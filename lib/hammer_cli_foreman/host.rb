@@ -235,8 +235,10 @@ module HammerCLIForeman
         super
         unless validator.any(:option_hostgroup_id, :option_hostgroup_name).exist?
           if option_managed
-            validator.all(:option_architecture_id, :option_domain_id,
-                          :option_operatingsystem_id, :option_ptable_id).required
+            validator.any(:option_architecture_name, :option_architecture_id).required
+            validator.any(:option_domain_name, :option_domain_id).required
+            validator.any(:option_operatingsystem_title, :option_operatingsystem_id).required
+            validator.any(:option_ptable_name, :option_ptable_id).required
           end
         end
       end
