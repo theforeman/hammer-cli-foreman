@@ -100,6 +100,14 @@ module HammerCLIForeman
         resolver.puppetclass_ids('option_names' => names) if names
       end
 
+      def subnet_id(name)
+        resolver.subnet_id('option_name' => name) if name
+      end
+
+      def domain_id(name)
+        resolver.domain_id('option_name' => name) if name
+      end
+
       def parameter_attributes
         return {} unless option_parameters
         option_parameters.collect do |key, value|
@@ -132,6 +140,10 @@ module HammerCLIForeman
               compute_attributes[key.gsub('compute_', '')] = nic.delete(key)
             end
           end
+          subnet_name = nic.delete('subnet')
+          nic['subnet_id'] ||= subnet_id(subnet_name) if subnet_name
+          domain_name = nic.delete('domain')
+          nic['domain_id'] ||= domain_id(domain_name) if domain_name
           nic['compute_attributes'] = compute_attributes unless compute_attributes.empty?
           nic
         end

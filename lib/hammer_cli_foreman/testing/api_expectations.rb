@@ -50,6 +50,15 @@ module HammerCLIForeman
         ApipieBindings::API.any_instance.expects(:call_action).never
       end
 
+      def api_expects_search(resource=nil, search_options={}, note=nil)
+        note ||= "Find #{resource}"
+
+        search_query = search_options.map{|k, v| "#{k} = \"#{v}\"" }.join(" or ")
+        api_expects(resource, :index, note) do |params|
+          params[:search] == search_query
+        end
+      end
+
       def index_response(items, options={})
         cnt = items.length
         {
