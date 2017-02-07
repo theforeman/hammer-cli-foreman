@@ -321,7 +321,7 @@ module HammerCLIForeman
 
       def option_power_action
         if option_force?
-          :cycle
+          :poweroff
         else
           :stop
         end
