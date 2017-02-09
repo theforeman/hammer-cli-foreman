@@ -1,3 +1,4 @@
+require 'hammer_cli_foreman/compute_resources/default/compute_attributes'
 require 'hammer_cli_foreman/compute_resources/ec2'
 require 'hammer_cli_foreman/compute_resources/gce'
 require 'hammer_cli_foreman/compute_resources/libvirt'
