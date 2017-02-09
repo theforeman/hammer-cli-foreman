@@ -71,6 +71,23 @@ module HammerCLIForeman
       build_options
     end
 
+    class CloneCommand < HammerCLIForeman::UpdateCommand
+      action :clone
+
+      def self.command_name(name = "clone")
+        super(name)
+      end
+
+      validate_options do
+        option(:option_new_name).required
+      end
+
+      success_message _("User role cloned")
+      failure_message _("Could not clone the user role")
+
+      build_options
+    end
+
 
     class DeleteCommand < HammerCLIForeman::DeleteCommand
       success_message _("User role [%<name>s] deleted")
