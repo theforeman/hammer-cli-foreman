@@ -53,7 +53,7 @@ describe HammerCLIForeman::Api::InteractiveBasicAuth do
   end
 
   describe '#user' do
-    it "returns nil when it wasn't provided" do
+    it "returns nil when username wasn't provided" do
       auth = HammerCLIForeman::Api::InteractiveBasicAuth.new(nil, nil)
 
       assert_nil auth.user
