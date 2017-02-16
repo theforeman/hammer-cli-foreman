@@ -17,7 +17,10 @@ Gem::Specification.new do |s|
 Foreman commands for Hammer CLI
 EOF
 
-  s.files            = Dir['{lib,doc,test,locale,config}/**/*', 'README*']
+  locales = Dir['locale/*'].select { |f| File.directory?(f) }
+  s.files = Dir['{lib,doc,test,config}/**/*', 'LICENSE', 'README*'] +
+    locales.map { |loc| "#{loc}/LC_MESSAGES/hammer-cli-foreman.mo" }
+
   s.test_files       = Dir['{test}/**/*']
   s.extra_rdoc_files = Dir['{doc}/**/*', 'README*']
   s.require_paths = ["lib"]
