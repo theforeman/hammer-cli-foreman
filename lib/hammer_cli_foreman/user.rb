@@ -51,11 +51,35 @@ module HammerCLIForeman
       build_options
     end
 
+    module CommonUpdateOptions
+      def self.included(base)
+        base.option '--default-organization', 'DEFAULT_ORGANIZATION_NAME', _("Default organization name")
+        base.option '--default-location', 'DEFAULT_LOCATION_NAME', _("Default location name")
+      end
+
+      def request_params
+        params = super
+        org_id = organization_id(option_default_organization)
+        params['user']['default_organization_id'] ||= org_id unless org_id.nil?
+        loc_id = location_id(option_default_location)
+        params['user']['default_location_id'] ||= loc_id unless loc_id.nil?
+        params
+      end
+
+      def organization_id(name)
+        resolver.organization_id('option_name' => name) if name
+      end
+
+      def location_id(name)
+        resolver.location_id('option_name' => name) if name
+      end
+    end
 
     class CreateCommand < HammerCLIForeman::CreateCommand
       success_message _("User [%{login}] created")
       failure_message _("Could not create the user")
 
+      include CommonUpdateOptions
       build_options
     end
 
@@ -64,6 +88,7 @@ module HammerCLIForeman
       success_message _("User [%{login}] updated")
       failure_message _("Could not update the user")
 
+      include CommonUpdateOptions
       build_options
     end
 
