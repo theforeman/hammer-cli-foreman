@@ -3,7 +3,8 @@ require File.join(File.dirname(__FILE__), 'test_helper')
 
 describe "host create" do
   let(:cmd) { ["host", "create"] }
-  let(:minimal_params) { ['--hostgroup-id=1', '--location-id=1', '--organization-id=1', '--name=test'] }
+  let(:minimal_params_without_hosgroup) { ['--location-id=1', '--organization-id=1', '--name=test'] }
+  let(:minimal_params) { ['--hostgroup-id=1'] + minimal_params_without_hosgroup }
 
   it "passes interface attributes to server" do
     params = ['--interface', 'identifier=eth0,ip=10.0.0.4,primary=true,provision=true']
@@ -78,6 +79,28 @@ describe "host create" do
     expected_result = success_result("Host created\n")
 
     result = run_cmd(cmd + minimal_params + params)
+    assert_cmd(expected_result, result)
+  end
+
+  it "accepts --architecture, --domain, --operatingsystem and --partition-table when no hostgroup is used" do
+    params = [
+      '--architecture=x86_64',
+      '--domain=test.org',
+      '--operatingsystem=rhel',
+      '--partition-table=default'
+    ]
+
+    mock_item = { 'id' => '1' }
+
+    api_expects_search(:architectures,    { :name => 'x86_64' }).returns(index_response([mock_item]))
+    api_expects_search(:domains,          { :name => 'test.org' }).returns(index_response([mock_item])).at_least_once
+    api_expects_search(:operatingsystems, { :title => 'rhel' }).returns(index_response([mock_item]))
+    api_expects_search(:ptables,          { :name => 'default' }).returns(index_response([mock_item]))
+    api_expects(:hosts, :create, 'Create host with interfaces params').returns({})
+
+    expected_result = success_result("Host created\n")
+
+    result = run_cmd(cmd + minimal_params_without_hosgroup + params)
     assert_cmd(expected_result, result)
   end
 end
