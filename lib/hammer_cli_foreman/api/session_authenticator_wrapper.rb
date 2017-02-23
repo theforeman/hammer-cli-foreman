@@ -32,7 +32,8 @@ module HammerCLIForeman
       def authenticate(request, args)
         load_session
 
-        destroy_session if (@authenticator.user != @user)
+        user = @authenticator.user
+        destroy_session if (user && user != @user)
 
         if @permissions_ok && @session_id
           jar = HTTP::CookieJar.new

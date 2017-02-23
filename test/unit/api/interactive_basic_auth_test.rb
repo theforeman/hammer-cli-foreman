@@ -53,11 +53,10 @@ describe HammerCLIForeman::Api::InteractiveBasicAuth do
   end
 
   describe '#user' do
-    it "asks for username whe it wasn't provided" do
+    it "returns nil when username wasn't provided" do
       auth = HammerCLIForeman::Api::InteractiveBasicAuth.new(nil, nil)
-      auth.expects(:ask_user).with("[Foreman] Username: ").returns('user1')
 
-      assert_equal 'user1', auth.user
+      assert_nil auth.user
     end
 
     it "returns the username" do

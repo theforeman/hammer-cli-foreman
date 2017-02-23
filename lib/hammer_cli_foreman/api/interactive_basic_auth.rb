@@ -24,7 +24,7 @@ module HammerCLIForeman
       end
 
       def user
-        get_user
+        @user
       end
 
       private

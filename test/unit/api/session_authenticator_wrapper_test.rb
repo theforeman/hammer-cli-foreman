@@ -105,6 +105,16 @@ describe HammerCLIForeman::Api::SessionAuthenticatorWrapper do
           refute File.exist?(session_file(dir))
         end
       end
+
+      it "keeps the session when username is nil" do
+        prepare_session_storage :session_id => 'SOME_SESSION_ID' do |auth, dir|
+          wrapped_auth.expects(:user).returns(nil)
+          auth.authenticate(request, args)
+
+          assert_equal "_session_id=SOME_SESSION_ID", request['Cookie']
+          assert File.exist?(session_file(dir))
+        end
+      end
     end
 
     context "when the session file is corrupted" do
