@@ -1,7 +1,8 @@
 require 'hammer_cli'
 module HammerCLIForeman
   class Defaults < HammerCLI::BaseDefaultsProvider
-    def initialize
+    def initialize(api_connection = HammerCLIForeman.foreman_api_connection)
+      @api_connection = api_connection
       @provider_name = 'foreman'
       @supported_defaults = [:organization_id, :location_id]
       @description = _('Use the default organization and/or location from the server')
@@ -21,9 +22,11 @@ module HammerCLIForeman
 
     private
     def get_user
-      HammerCLIForeman.foreman_resource(:users).action(:index).call(:search =>"login="+HammerCLIForeman.credentials.username)
+      login = @api_connection.authenticator.user
+      users = @api_connection.resource(:users).action(:index).call(:search => "login=#{login}")
+      users
     end
   end
-  HammerCLI.defaults.register_provider(Defaults.new())
 
+  HammerCLI.defaults.register_provider(Defaults.new)
 end
