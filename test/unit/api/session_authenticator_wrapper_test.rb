@@ -270,4 +270,18 @@ describe HammerCLIForeman::Api::SessionAuthenticatorWrapper do
     end
   end
 
+  describe '#user' do
+    it "returns nil when wrapped authenticator doesn't respond to #user" do
+      prepare_session_storage do |auth, dir|
+        assert_nil auth.user
+      end
+    end
+
+    it "calls #user on the wrapped authentocator" do
+      prepare_session_storage do |auth, dir|
+        wrapped_auth.expects(:user).returns('admin')
+        assert_equal 'admin', auth.user
+      end
+    end
+  end
 end

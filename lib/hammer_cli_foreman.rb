@@ -18,8 +18,6 @@ module HammerCLIForeman
   require 'hammer_cli_foreman/param_filters'
   require 'hammer_cli_foreman/id_resolver'
   require 'hammer_cli_foreman/dependency_resolver'
-  require 'hammer_cli_foreman/defaults'
-
 
   begin
     require 'hammer_cli_foreman/commands'
@@ -27,6 +25,7 @@ module HammerCLIForeman
     require 'hammer_cli_foreman/references'
     require 'hammer_cli_foreman/parameter'
     require 'hammer_cli_foreman/common_parameter'
+    require 'hammer_cli_foreman/defaults'
 
     HammerCLI::MainCommand.lazy_subcommand('auth', _("Foreman connection login/logout."),
       'HammerCLIForeman::Auth', 'hammer_cli_foreman/auth'
