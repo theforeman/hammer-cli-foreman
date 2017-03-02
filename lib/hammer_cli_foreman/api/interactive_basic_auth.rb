@@ -23,8 +23,8 @@ module HammerCLIForeman
         end
       end
 
-      def user
-        @user
+      def user(ask=nil)
+        @user ||= ask && get_user
       end
 
       private

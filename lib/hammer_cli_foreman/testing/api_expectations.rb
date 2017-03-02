@@ -116,7 +116,9 @@ module HammerCLIForeman
       end
 
       class TestAuthenticator < ApipieBindings::Authenticators::BasicAuth
-        attr_reader :user
+        def user(ask=nil)
+          @user
+        end
       end
 
       class FakeApiConnection < HammerCLI::Apipie::ApiConnection
