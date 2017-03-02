@@ -11,11 +11,12 @@ module HammerCLIForeman::Output
         return "" if resource.nil?
 
         key = field_params[:key]
+        display_field = field_params[:display_field] || 'name'
 
         id_key = "#{key}_id"
-        name_key = "#{key}_name"
+        display_key = "#{key}_#{display_field}"
 
-        name = resource[name_key.to_sym] || resource[name_key]
+        name = resource[display_key.to_sym] || resource[display_key]
         id = resource[id_key.to_sym] || resource[id_key]
 
         context = field_params[:context] || {}

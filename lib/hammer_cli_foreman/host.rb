@@ -30,7 +30,7 @@ module HammerCLIForeman
         field :id, _("Id")
         field :name, _("Name")
         field nil, _("Operating System"), Fields::SingleReference, :key => :operatingsystem
-        field :hostgroup_title, _("Host Group")
+        field nil, _("Host Group"), Fields::SingleReference, :key => :hostgroup, :display_field => 'title'
         field :ip, _("IP")
         field :mac, _("MAC")
       end
@@ -64,7 +64,7 @@ module HammerCLIForeman
         field :name, _("Name")
         field nil, _("Organization"), Fields::SingleReference, :key => :organization, :hide_blank => true
         field nil, _("Location"), Fields::SingleReference, :key => :location, :hide_blank => true
-        field :hostgroup_title, _("Host Group")
+        field nil, _("Host Group"), Fields::SingleReference, :key => :hostgroup, :display_field => 'title'
         field nil, _("Compute Resource"), Fields::SingleReference, :key => :compute_resource
         field nil, _("Compute Profile"), Fields::SingleReference, :key => :compute_profile, :hide_blank => true
         field nil, _("Environment"), Fields::SingleReference, :key => :environment
