@@ -62,8 +62,8 @@ module HammerCLIForeman
         @authenticator.response(r)
       end
 
-      def user
-        @authenticator.user if @authenticator.respond_to?(:user)
+      def user(ask=nil)
+        @authenticator.user(ask) if @authenticator.respond_to?(:user)
       end
 
       protected
