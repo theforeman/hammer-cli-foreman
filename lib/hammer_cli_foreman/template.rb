@@ -69,7 +69,7 @@ module HammerCLIForeman
     class ListKindsCommand < HammerCLIForeman::ListCommand
 
       command_name "kinds"
-      desc _("List available config template kinds.")
+      desc _("List available provisioning template kinds.")
 
       output do
         field :name, _("Name")
@@ -88,7 +88,7 @@ module HammerCLIForeman
     class DumpCommand < HammerCLIForeman::InfoCommand
 
       command_name "dump"
-      desc _("View config template content.")
+      desc _("View provisioning template content.")
 
       def print_data(template)
         puts template["template"]
@@ -104,8 +104,8 @@ module HammerCLIForeman
         :format => HammerCLI::Options::Normalizers::File.new
       option "--type", "TYPE", _("Template type. Eg. snippet, script, provision"), :required => true
 
-      success_message _("Config template created")
-      failure_message _("Could not create the config template")
+      success_message _("Provisioning template created")
+      failure_message _("Could not create the provisioning template")
 
       include TemplateCreateUpdateCommons
 
@@ -122,8 +122,8 @@ module HammerCLIForeman
         :format => HammerCLI::Options::Normalizers::File.new
       option "--type", "TYPE", _("Template type. Eg. snippet, script, provision")
 
-      success_message _("Config template updated")
-      failure_message _("Could not update the config template")
+      success_message _("Provisioning template updated")
+      failure_message _("Could not update the provisioning template")
 
       include TemplateCreateUpdateCommons
 
@@ -136,8 +136,8 @@ module HammerCLIForeman
 
     class DeleteCommand < HammerCLIForeman::DeleteCommand
 
-      success_message _("Config template deleted")
-      failure_message _("Could not delete the config template")
+      success_message _("Provisioning template deleted")
+      failure_message _("Could not delete the provisioning template")
 
       build_options
     end
@@ -161,8 +161,8 @@ module HammerCLIForeman
       action :clone
       command_name 'clone'
 
-      success_message _('Config template cloned')
-      failure_message _('Could not clone the config template')
+      success_message _('Provisioning template cloned')
+      failure_message _('Could not clone the provisioning template')
 
       validate_options do
         option(:option_new_name).required

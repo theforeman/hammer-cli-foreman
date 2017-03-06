@@ -11,7 +11,7 @@ describe 'template' do
 
       expected_result = CommandExpectation.new
       expected_result.expected_err =
-        ['Could not clone the config template:',
+        ['Could not clone the provisioning template:',
          "  Missing arguments for 'id'",
          ''].join("\n")
       expected_result.expected_exit_code = HammerCLI::EX_USAGE
@@ -29,7 +29,7 @@ describe 'template' do
       expected_result = usage_error_result(
         @cmd,
         'Option --new-name is required',
-        'Could not clone the config template')
+        'Could not clone the provisioning template')
 
       api_expects_no_call
 
@@ -47,7 +47,7 @@ describe 'template' do
 
       result = run_cmd(@cmd + params)
 
-      assert_cmd(success_result("Config template cloned\n"), result)
+      assert_cmd(success_result("Provisioning template cloned\n"), result)
     end
 
     it 'should clone a template by name' do
@@ -74,7 +74,7 @@ describe 'template' do
 
       result = run_cmd(@cmd + params)
 
-      assert_cmd(success_result("Config template cloned\n"), result)
+      assert_cmd(success_result("Provisioning template cloned\n"), result)
     end
   end
 end
