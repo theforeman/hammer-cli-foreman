@@ -6,9 +6,10 @@ module Fields
 
     def display?(value)
       id_key = "#{parameters[:key]}_id"
-      name_key = "#{parameters[:key]}_name"
+      display_field = parameters[:display_field] || 'name'
+      display_key = "#{parameters[:key]}_#{display_field}"
 
-      (value[name_key.to_sym] || value[name_key]) && (value[id_key.to_sym] || value[id_key])
+      (value[display_key.to_sym] || value[display_key]) && (value[id_key.to_sym] || value[id_key])
     end
   end
 

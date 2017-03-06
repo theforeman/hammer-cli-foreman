@@ -99,7 +99,7 @@ module HammerCLIForeman
     def self.hostgroups(dsl)
       dsl.build do
         collection :hostgroups, _("Hostgroups"), :numbered => false do
-          custom_field Fields::Reference
+          custom_field Fields::Reference, :name_key => :title
         end
       end
     end
