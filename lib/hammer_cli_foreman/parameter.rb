@@ -48,6 +48,7 @@ module HammerCLIForeman
     class SetCommand < AbstractParameterCommand
       option "--name", "NAME", _("parameter name"), :required => true
       option "--value", "VALUE", _("parameter value"), :required => true
+      option "--hidden-value", "HIDDEN_VALUE", _("should the value be hidden"), :format => HammerCLI::Options::Normalizers::Bool.new
 
       def self.command_name(name=nil)
         (super(name) || "set-parameter").gsub('_', '-')
@@ -72,7 +73,8 @@ module HammerCLIForeman
         params = {
           "id" => get_parameter_identifier,
           "parameter" => {
-            "value" => option_value
+            "value" => option_value,
+            "hidden_value" => option_hidden_value
           }
         }.merge(base_action_params)
         HammerCLIForeman.record_to_common_format(parameter_resource.call(:update, params))
@@ -82,7 +84,8 @@ module HammerCLIForeman
         params = {
           "parameter" => {
             "name" => option_name,
-            "value" => option_value
+            "value" => option_value,
+            "hidden_value" => option_hidden_value
           }
         }.merge(base_action_params)
 

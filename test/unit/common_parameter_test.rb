@@ -37,7 +37,7 @@ describe HammerCLIForeman::CommonParameter do
     let(:cmd) { HammerCLIForeman::CommonParameter::SetCommand.new("", ctx) }
 
     context "parameters" do
-      it_should_accept "name and value", ["--name=param", "--value=val"]
+      it_should_accept "name, value and hidden-value", ["--name=param", "--value=val", "--hidden-value=true"]
       # it_should_fail_with "name missing", ["--value=val"]
       # it_should_fail_with "value missing", ["--name=param"]
       # TODO: temporarily disabled, parameters are checked by the api
@@ -48,10 +48,10 @@ describe HammerCLIForeman::CommonParameter do
         ResourceMocks.mock_action_calls(
           [:common_parameters, :index, []],
           [:common_parameters, :create,
-            {"id" => 1, "name" => "param", "value" => "val"},
-            {'common_parameter' => {'name' => 'param', 'value' => 'val'}, 'id' => 'param'}])
+            {"id" => 1, "name" => "param", "value" => "val", "hidden-value" => false},
+            {'common_parameter' => {'name' => 'param', 'value' => 'val', 'hidden_value' => false}, 'id' => 'param'}])
       end
-      with_params ["--name=param", "--value=val"] do
+      with_params ["--name=param", "--value=val", "--hidden-value=false"] do
         it_should_output "Created parameter [param] with value [val].,1,param", :csv
       end
     end
@@ -61,11 +61,11 @@ describe HammerCLIForeman::CommonParameter do
         ResourceMocks.mock_action_calls(
           [:common_parameters, :index, [{'name' => 'param', 'value' => 'test'}]],
           [:common_parameters, :update,
-            {"id" => 1, "name" => "param", "value" => "val"},
-            {'common_parameter' => {'name' => 'param', 'value' => 'val'}, 'id' => 'param'}])
+            {"id" => 1, "name" => "param", "value" => "val", "hidden-value" => false},
+            {'common_parameter' => {'name' => 'param', 'value' => 'val', 'hidden_value' => false}, 'id' => 'param'}])
       end
 
-      with_params ["--name=param", "--value=val"] do
+      with_params ["--name=param", "--value=val", "--hidden-value=false"] do
         it_should_output "Parameter [param] updated to [val].,1,param", :csv
       end
     end
