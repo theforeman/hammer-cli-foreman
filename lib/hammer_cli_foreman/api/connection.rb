@@ -51,7 +51,7 @@ module HammerCLIForeman
       end
 
       def use_basic_auth?(settings)
-        settings.get(:_params, :auth_with_client_cert) || settings.get(:ssl, :auth_with_client_cert)
+        settings.get(:_params, :ssl_with_basic_auth) || settings.get(:ssl, :ssl_with_basic_auth)
       end
 
       def build_default_params(settings, logger, locale)
