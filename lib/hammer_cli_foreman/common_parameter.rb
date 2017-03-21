@@ -26,6 +26,7 @@ module HammerCLIForeman
 
       option "--name", "NAME", _("parameter name"), :required => true
       option "--value", "VALUE", _("parameter value"), :required => true
+      option "--hidden-value", "HIDDEN_VALUE", _("should the value be hidden"), :format => HammerCLI::Options::Normalizers::Bool.new
 
       def action
         @action ||= parameter_exist? ? :update : :create
