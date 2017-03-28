@@ -25,7 +25,7 @@ EOF
   s.extra_rdoc_files = Dir['{doc}/**/*', 'README*']
   s.require_paths = ["lib"]
 
-  s.add_dependency 'hammer_cli', '>= 0.9.0'
+  s.add_dependency 'hammer_cli', '>= 0.10.0'
   s.add_dependency 'apipie-bindings', '>= 0.0.19'
 
 end

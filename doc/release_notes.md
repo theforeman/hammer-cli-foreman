@@ -1,5 +1,23 @@
 Release notes
 =============
+
+### 0.10.0 (2017-03-28)
+* Adding --hidden-value option to parameters (#290) ([#18878](http://projects.theforeman.org/issues/18878))
+* Add command to clone user role ([#18318](http://projects.theforeman.org/issues/18318))
+* Default organization/location work with authenticators ([#17936](http://projects.theforeman.org/issues/17936))
+* Display hostgroup title on host actions ([#18739](http://projects.theforeman.org/issues/18739))
+* Respect original request_params ([#18790](http://projects.theforeman.org/issues/18790))
+* Rename config template to provisioning template ([#18654](http://projects.theforeman.org/issues/18654))
+* User create/update accepts organization/location name ([#17923](http://projects.theforeman.org/issues/17923))
+* Skip generating option --root-pass for host create ([#18337](http://projects.theforeman.org/issues/18337))
+* Session authenticator keeps asking for user ([#18170](http://projects.theforeman.org/issues/18170))
+* Host create uses name options ([#18339](http://projects.theforeman.org/issues/18339))
+* Only include .mo files below locale/ ([#18439](http://projects.theforeman.org/issues/18439))
+* Add config group commands ([#7520](http://projects.theforeman.org/issues/7520))
+* Poweroff hosts when using --force option ([#18319](http://projects.theforeman.org/issues/18319))
+* Resolve subnet and domain for host create/update (#273) ([#17247](http://projects.theforeman.org/issues/17247))
+* Prevent from setting taxonomies for non-overriding filters ([#17730](http://projects.theforeman.org/issues/17730))
+
 ### 0.9.0 (2016-12-15)
 * Auth overrides only unauthorized exception ([PR #271](https://github.com/theforeman/hammer-cli-foreman/pull/271)) ([#17650](http://projects.theforeman.org/issues/17650))
 * Session auth in hammer ([PR #269](https://github.com/theforeman/hammer-cli-foreman/pull/269)) ([#8016](http://projects.theforeman.org/issues/8016))
