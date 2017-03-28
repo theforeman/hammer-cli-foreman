@@ -5,7 +5,7 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: hammer-cli-foreman 0.9.0\n"
+"Project-Id-Version: hammer-cli-foreman 0.10.0\n"
 "Report-Msgid-Bugs-To: \n"
 "PO-Revision-Date: 2014-03-04 16:47+0000\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
@@ -98,6 +98,9 @@ msgid "Manipulate users."
 msgstr ""
 
 msgid "Manage user groups."
+msgstr ""
+
+msgid "Manipulate config groups."
 msgstr ""
 
 msgid "Invalid username or password"
@@ -457,7 +460,7 @@ msgstr ""
 msgid "Wipe your credentials"
 msgstr ""
 
-msgid "Credentials deleted."
+msgid "Logged out."
 msgstr ""
 
 msgid "Information about current connections"
@@ -568,6 +571,9 @@ msgid "parameter name"
 msgstr ""
 
 msgid "parameter value"
+msgstr ""
+
+msgid "should the value be hidden"
 msgstr ""
 
 msgid "Global parameter [%{name}] deleted."
@@ -731,6 +737,27 @@ msgid ""
 "t available adapter types:"
 msgstr ""
 
+msgid "ID"
+msgstr ""
+
+msgid "Config group created"
+msgstr ""
+
+msgid "Could not create the config group"
+msgstr ""
+
+msgid "Config group updated"
+msgstr ""
+
+msgid "Could not update the config group"
+msgstr ""
+
+msgid "Config group has been deleted"
+msgstr ""
+
+msgid "Could not delete the config group"
+msgstr ""
+
 msgid "Use the default organization and/or location from the server"
 msgstr ""
 
@@ -817,15 +844,34 @@ msgstr ""
 msgid "Forbidden - server refused to process the request"
 msgstr ""
 
-msgid "Could not load the API description from the server"
-msgstr ""
-
-msgid "is the server down?"
+msgid ""
+"Make sure you configured the correct URL and have the server's CA certificate "
+"installed on your system."
 msgstr ""
 
 msgid ""
-"was '%s' run on the server when using apipie cache? (typical production settin"
-"gs)"
+"You can use hammer to fetch the CA certificate from the server. Be aware that "
+"hammer cannot verify whether the certificate is correct and you should verify "
+"its authenticity after downloading it."
+msgstr ""
+
+msgid "Download the certificate and save it as a CRT file as follows:"
+msgstr ""
+
+msgid ""
+"As root install the certificate and update the list of trusted CA certificates"
+" as follows:"
+msgstr ""
+
+msgid "on Redhat systems"
+msgstr ""
+
+msgid "on Debian systems"
+msgstr ""
+
+msgid ""
+"Alternatively you can save the CA certificate into a custom location and use o"
+"ption --ssl-ca-file or corresponding setting in your configuration file."
 msgstr ""
 
 msgid "View and manage user group's external user groups"
@@ -883,6 +929,16 @@ msgid "(Miscellaneous)"
 msgstr ""
 
 msgid "none"
+msgstr ""
+
+msgid "Organizations and locations can be set only for overriding filters"
+msgstr ""
+
+msgid ""
+"Filters inherit organizations and locations from its role by default. This beh"
+"avior can be changed by setting %{condition}\n"
+"Therefore options %{org_opts} and %{loc_opts} are applicable only when the ove"
+"rride flag is set."
 msgstr ""
 
 msgid "Permission filter for [%<resource_type>s] created"
@@ -1218,6 +1274,14 @@ msgid "Login of the owner"
 msgstr ""
 
 msgid "ID of the owner"
+msgstr ""
+
+msgid ""
+"Required if host is managed and value is not inherited from host group or defa"
+"ult password in settings"
+msgstr ""
+
+msgid "Use --root-password instead"
 msgstr ""
 
 msgid "Host parameters."
@@ -1845,6 +1909,12 @@ msgstr ""
 msgid "Could not update the user role"
 msgstr ""
 
+msgid "User role cloned"
+msgstr ""
+
+msgid "Could not clone the user role"
+msgstr ""
+
 msgid "User role [%<name>s] deleted"
 msgstr ""
 
@@ -2058,10 +2128,10 @@ msgstr ""
 msgid "Could not delete the subnet"
 msgstr ""
 
-msgid "List available config template kinds."
+msgid "List available provisioning template kinds."
 msgstr ""
 
-msgid "View config template content."
+msgid "View provisioning template content."
 msgstr ""
 
 msgid "Path to a file that contains the template"
@@ -2070,31 +2140,31 @@ msgstr ""
 msgid "Template type. Eg. snippet, script, provision"
 msgstr ""
 
-msgid "Config template created"
+msgid "Provisioning template created"
 msgstr ""
 
-msgid "Could not create the config template"
+msgid "Could not create the provisioning template"
 msgstr ""
 
-msgid "Config template updated"
+msgid "Provisioning template updated"
 msgstr ""
 
-msgid "Could not update the config template"
+msgid "Could not update the provisioning template"
 msgstr ""
 
-msgid "Config template deleted"
+msgid "Provisioning template deleted"
 msgstr ""
 
-msgid "Could not delete the config template"
+msgid "Could not delete the provisioning template"
 msgstr ""
 
 msgid "Update the default PXE menu on all configured TFTP servers"
 msgstr ""
 
-msgid "Config template cloned"
+msgid "Provisioning template cloned"
 msgstr ""
 
-msgid "Could not clone the config template"
+msgid "Could not clone the provisioning template"
 msgstr ""
 
 msgid "Login"
@@ -2128,6 +2198,12 @@ msgid "Default location"
 msgstr ""
 
 msgid "default"
+msgstr ""
+
+msgid "Default organization name"
+msgstr ""
+
+msgid "Default location name"
 msgstr ""
 
 msgid "User [%{login}] created"

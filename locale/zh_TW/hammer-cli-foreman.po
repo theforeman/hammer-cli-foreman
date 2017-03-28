@@ -5,11 +5,11 @@
 # Translators:
 msgid ""
 msgstr ""
-"Project-Id-Version: hammer-cli-foreman 0.9.0\n"
+"Project-Id-Version: hammer-cli-foreman 0.10.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-09-01 12:48+0200\n"
-"PO-Revision-Date: 2016-09-02 09:32+0000\n"
-"Last-Translator: Lukáš Zapletal\n"
+"POT-Creation-Date: 2016-12-15 22:40+0100\n"
+"PO-Revision-Date: 2017-03-15 12:51+0000\n"
+"Last-Translator: Bryan Kearney <bryan.kearney@gmail.com>\n"
 "Language-Team: Chinese (Taiwan) (http://www.transifex.com/foreman/foreman/language/zh_TW/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -17,117 +17,158 @@ msgstr ""
 "Language: zh_TW\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
-#: ../lib/hammer_cli_foreman.rb:32
+#: ../lib/hammer_cli_foreman.rb:31
 msgid "Foreman connection login/logout."
 msgstr "Foreman 連線登錄/登出。"
 
-#: ../lib/hammer_cli_foreman.rb:36
+#: ../lib/hammer_cli_foreman.rb:35
 msgid "Manipulate architectures."
 msgstr "操作架構。"
 
-#: ../lib/hammer_cli_foreman.rb:40
+#: ../lib/hammer_cli_foreman.rb:39
 msgid "Manipulate auth sources."
 msgstr "操作 auth 來源。"
 
-#: ../lib/hammer_cli_foreman.rb:44
+#: ../lib/hammer_cli_foreman.rb:43
 msgid "Manipulate compute resources."
 msgstr "操作運算資源。"
 
-#: ../lib/hammer_cli_foreman.rb:48
+#: ../lib/hammer_cli_foreman.rb:47
 msgid "Manipulate domains."
 msgstr "操作網域。"
 
-#: ../lib/hammer_cli_foreman.rb:52
+#: ../lib/hammer_cli_foreman.rb:51
 msgid "Manipulate environments."
 msgstr "操作環境"
 
-#: ../lib/hammer_cli_foreman.rb:56
+#: ../lib/hammer_cli_foreman.rb:55
 msgid "Search facts."
 msgstr "搜尋詳情。"
 
-#: ../lib/hammer_cli_foreman.rb:60
+#: ../lib/hammer_cli_foreman.rb:59
 msgid "Manage permission filters."
 msgstr "管理權限篩選器。"
 
-#: ../lib/hammer_cli_foreman.rb:64
+#: ../lib/hammer_cli_foreman.rb:63
 msgid "Manipulate hosts."
 msgstr "操作主機。"
 
-#: ../lib/hammer_cli_foreman.rb:68
+#: ../lib/hammer_cli_foreman.rb:67
 msgid "Manipulate hostgroups."
 msgstr "操作主機群組。"
 
-#: ../lib/hammer_cli_foreman.rb:72
+#: ../lib/hammer_cli_foreman.rb:71
 msgid "Manipulate locations."
 msgstr "操作位置。"
 
-#: ../lib/hammer_cli_foreman.rb:76
+#: ../lib/hammer_cli_foreman.rb:75
 msgid "Manipulate installation media."
 msgstr "操作安裝媒介。"
 
-#: ../lib/hammer_cli_foreman.rb:80
+#: ../lib/hammer_cli_foreman.rb:79
 msgid "Manipulate hardware models."
 msgstr "操作硬體型號。"
 
-#: ../lib/hammer_cli_foreman.rb:84
+#: ../lib/hammer_cli_foreman.rb:83
 msgid "Manipulate operating system."
 msgstr "操作作業系統。"
 
-#: ../lib/hammer_cli_foreman.rb:88
+#: ../lib/hammer_cli_foreman.rb:87
 msgid "Manipulate organizations."
 msgstr "操作組織。"
 
-#: ../lib/hammer_cli_foreman.rb:92
+#: ../lib/hammer_cli_foreman.rb:91
 msgid "Manipulate partition tables."
 msgstr "操作分割表。"
 
-#: ../lib/hammer_cli_foreman.rb:96
+#: ../lib/hammer_cli_foreman.rb:95
 msgid "Search puppet modules."
 msgstr "搜尋 puppet 模組。"
 
-#: ../lib/hammer_cli_foreman.rb:100
+#: ../lib/hammer_cli_foreman.rb:99
 msgid "Browse and read reports."
 msgstr "瀏覽和閱讀報告。"
 
-#: ../lib/hammer_cli_foreman.rb:104
+#: ../lib/hammer_cli_foreman.rb:103
 msgid "Manage user roles."
 msgstr "管理使用者角色。"
 
-#: ../lib/hammer_cli_foreman.rb:108
+#: ../lib/hammer_cli_foreman.rb:107
 msgid "Manipulate smart class parameters."
 msgstr "操作智慧類別的參數。"
 
-#: ../lib/hammer_cli_foreman.rb:112
+#: ../lib/hammer_cli_foreman.rb:111
 msgid "Manipulate smart variables."
 msgstr "操作智慧變數。"
 
-#: ../lib/hammer_cli_foreman.rb:116
+#: ../lib/hammer_cli_foreman.rb:115
 msgid "Manipulate smart proxies."
 msgstr "操作智慧協定。"
 
-#: ../lib/hammer_cli_foreman.rb:120
+#: ../lib/hammer_cli_foreman.rb:119
 msgid "Manipulate realms."
 msgstr ""
 
-#: ../lib/hammer_cli_foreman.rb:124
+#: ../lib/hammer_cli_foreman.rb:123
 msgid "Change server settings."
 msgstr "修改伺服器設定。"
 
-#: ../lib/hammer_cli_foreman.rb:128
+#: ../lib/hammer_cli_foreman.rb:127
 msgid "Manipulate subnets."
 msgstr "操作子網路。"
 
-#: ../lib/hammer_cli_foreman.rb:132
+#: ../lib/hammer_cli_foreman.rb:131
 msgid "Manipulate config templates."
 msgstr "操作配置範本。"
 
-#: ../lib/hammer_cli_foreman.rb:136
+#: ../lib/hammer_cli_foreman.rb:135
 msgid "Manipulate users."
 msgstr "操作使用者。"
 
-#: ../lib/hammer_cli_foreman.rb:140
+#: ../lib/hammer_cli_foreman.rb:139
 msgid "Manage user groups."
 msgstr "管理使用者群組。"
+
+#: ../lib/hammer_cli_foreman/api/interactive_basic_auth.rb:15
+msgid "Invalid username or password"
+msgstr "無效的帳號或密碼"
+
+#: ../lib/hammer_cli_foreman/api/interactive_basic_auth.rb:20
+msgid "You are logged in as '%s'"
+msgstr "您目前已經以「%s」身份登入"
+
+#: ../lib/hammer_cli_foreman/api/interactive_basic_auth.rb:22
+#: ../lib/hammer_cli_foreman/api/session_authenticator_wrapper.rb:28
+msgid "You are currently not logged in"
+msgstr ""
+
+#: ../lib/hammer_cli_foreman/api/interactive_basic_auth.rb:33
+msgid "[Foreman] Username: "
+msgstr "[Foreman] 使用者名稱："
+
+#: ../lib/hammer_cli_foreman/api/interactive_basic_auth.rb:37
+msgid "[Foreman] Password for %s: "
+msgstr "[Foreman] %s 的密碼："
+
+#: ../lib/hammer_cli_foreman/api/session_authenticator_wrapper.rb:17
+msgid "Can't use session auth due to invalid permissions on session files."
+msgstr ""
+
+#: ../lib/hammer_cli_foreman/api/session_authenticator_wrapper.rb:26
+msgid "Session exist, currently logged in as '%s'"
+msgstr ""
+
+#: ../lib/hammer_cli_foreman/api/session_authenticator_wrapper.rb:51
+msgid "Session has expired"
+msgstr ""
+
+#: ../lib/hammer_cli_foreman/api/session_authenticator_wrapper.rb:78
+msgid "Invalid session file format"
+msgstr ""
+
+#: ../lib/hammer_cli_foreman/api/session_authenticator_wrapper.rb:106
+msgid "Invalid permissions for %{file}: %{mode}, expected %{expected_mode}"
+msgstr ""
 
 #: ../lib/hammer_cli_foreman/architecture.rb:10
 #: ../lib/hammer_cli_foreman/auth_source_ldap.rb:13
@@ -136,9 +177,8 @@ msgstr "管理使用者群組。"
 #: ../lib/hammer_cli_foreman/environment.rb:14
 #: ../lib/hammer_cli_foreman/external_usergroup.rb:10
 #: ../lib/hammer_cli_foreman/filter.rb:9
-#: ../lib/hammer_cli_foreman/filter.rb:72
-#: ../lib/hammer_cli_foreman/host.rb:159 ../lib/hammer_cli_foreman/host.rb:191
-#: ../lib/hammer_cli_foreman/host.rb:222
+#: ../lib/hammer_cli_foreman/filter.rb:73 ../lib/hammer_cli_foreman/host.rb:30
+#: ../lib/hammer_cli_foreman/host.rb:62 ../lib/hammer_cli_foreman/host.rb:93
 #: ../lib/hammer_cli_foreman/hostgroup.rb:57
 #: ../lib/hammer_cli_foreman/image.rb:29
 #: ../lib/hammer_cli_foreman/interface.rb:23
@@ -149,11 +189,14 @@ msgstr "管理使用者群組。"
 #: ../lib/hammer_cli_foreman/organization.rb:13
 #: ../lib/hammer_cli_foreman/partition_table.rb:10
 #: ../lib/hammer_cli_foreman/puppet_class.rb:13
-#: ../lib/hammer_cli_foreman/realm.rb:8 ../lib/hammer_cli_foreman/report.rb:10
+#: ../lib/hammer_cli_foreman/realm.rb:8
+#: ../lib/hammer_cli_foreman/references.rb:36
+#: ../lib/hammer_cli_foreman/references.rb:43
+#: ../lib/hammer_cli_foreman/report.rb:10
 #: ../lib/hammer_cli_foreman/report.rb:30 ../lib/hammer_cli_foreman/role.rb:11
 #: ../lib/hammer_cli_foreman/settings.rb:11
 #: ../lib/hammer_cli_foreman/smart_class_parameter.rb:8
-#: ../lib/hammer_cli_foreman/smart_class_parameter.rb:75
+#: ../lib/hammer_cli_foreman/smart_class_parameter.rb:76
 #: ../lib/hammer_cli_foreman/smart_proxy.rb:11
 #: ../lib/hammer_cli_foreman/smart_variable.rb:8
 #: ../lib/hammer_cli_foreman/smart_variable.rb:66
@@ -172,9 +215,9 @@ msgstr "ID"
 #: ../lib/hammer_cli_foreman/environment.rb:15
 #: ../lib/hammer_cli_foreman/external_usergroup.rb:11
 #: ../lib/hammer_cli_foreman/external_usergroup.rb:42
-#: ../lib/hammer_cli_foreman/filter.rb:73
-#: ../lib/hammer_cli_foreman/filter.rb:90
-#: ../lib/hammer_cli_foreman/host.rb:160 ../lib/hammer_cli_foreman/host.rb:193
+#: ../lib/hammer_cli_foreman/filter.rb:74
+#: ../lib/hammer_cli_foreman/filter.rb:91 ../lib/hammer_cli_foreman/host.rb:31
+#: ../lib/hammer_cli_foreman/host.rb:64
 #: ../lib/hammer_cli_foreman/hostgroup.rb:58
 #: ../lib/hammer_cli_foreman/image.rb:30 ../lib/hammer_cli_foreman/image.rb:70
 #: ../lib/hammer_cli_foreman/location.rb:14
@@ -606,27 +649,29 @@ msgstr ""
 msgid "Set credentials"
 msgstr "設定認證"
 
-#: ../lib/hammer_cli_foreman/auth.rb:20
+#: ../lib/hammer_cli_foreman/auth.rb:9
+msgid "username to access the remote system"
+msgstr "用來存取遠端系統的使用者名稱"
+
+#: ../lib/hammer_cli_foreman/auth.rb:10
+msgid "password to access the remote system"
+msgstr "用來存取遠端系統的密碼"
+
+#: ../lib/hammer_cli_foreman/auth.rb:22
+msgid "Successfully logged in."
+msgstr ""
+
+#: ../lib/hammer_cli_foreman/auth.rb:29
 msgid "Wipe your credentials"
 msgstr "清除您的認證"
 
-#: ../lib/hammer_cli_foreman/auth.rb:26
+#: ../lib/hammer_cli_foreman/auth.rb:34
 msgid "Credentials deleted."
 msgstr "認證已刪除。"
 
-#: ../lib/hammer_cli_foreman/auth.rb:33
+#: ../lib/hammer_cli_foreman/auth.rb:41
 msgid "Information about current connections"
 msgstr "有關於目前連線的資訊"
-
-#: ../lib/hammer_cli_foreman/auth.rb:37
-msgid "You are logged in as '%s'"
-msgstr "您目前已經以「%s」身份登入"
-
-#: ../lib/hammer_cli_foreman/auth.rb:39
-msgid ""
-"You are currently not logged in to any service.\n"
-"Use the service to set credentials."
-msgstr "您目前尚未登入任何服務。\n請使用此服務來設定認證。"
 
 #: ../lib/hammer_cli_foreman/auth_source_ldap.rb:7
 msgid "Manage LDAP auth sources."
@@ -704,52 +749,52 @@ msgstr "Auth 來源已更新"
 msgid "Could not update the Auth Source"
 msgstr "無法更新 Auth 來源"
 
-#: ../lib/hammer_cli_foreman/commands.rb:88
+#: ../lib/hammer_cli_foreman/commands.rb:56
 msgid "Received data of unknown format"
 msgstr "收到了不明格式的資料"
 
-#: ../lib/hammer_cli_foreman/commands.rb:196
+#: ../lib/hammer_cli_foreman/commands.rb:164
 msgid ""
 "Could not find %{resource}. Some search options were missing, please see "
 "--help."
 msgstr "找不到 %{resource}。部分搜尋選項遺失，請查看 --help。"
 
-#: ../lib/hammer_cli_foreman/commands.rb:198
+#: ../lib/hammer_cli_foreman/commands.rb:166
 msgid "Could not find %{resource}, please set option %{switches}."
 msgstr "找不到 %{resource}，請設置選項 %{switches}。"
 
-#: ../lib/hammer_cli_foreman/commands.rb:200
+#: ../lib/hammer_cli_foreman/commands.rb:168
 msgid "Could not find %{resource}, please set one of options %{switches}."
 msgstr "找不到 %{resource}，請設置 %{switches} 選項之一。"
 
-#: ../lib/hammer_cli_foreman/commands.rb:529
+#: ../lib/hammer_cli_foreman/commands.rb:497
 msgid "Associate a resource"
 msgstr "使資源相聯"
 
-#: ../lib/hammer_cli_foreman/commands.rb:533
+#: ../lib/hammer_cli_foreman/commands.rb:501
 msgid "Could not associate the %{resource_name}"
 msgstr ""
 
-#: ../lib/hammer_cli_foreman/commands.rb:537
+#: ../lib/hammer_cli_foreman/commands.rb:505
 msgid "The %{resource_name} has been associated"
 msgstr ""
 
-#: ../lib/hammer_cli_foreman/commands.rb:559
+#: ../lib/hammer_cli_foreman/commands.rb:527
 msgid "Disassociate a resource"
 msgstr "解除資源的相聯"
 
-#: ../lib/hammer_cli_foreman/commands.rb:571
+#: ../lib/hammer_cli_foreman/commands.rb:539
 msgid "Could not disassociate the %{resource_name}"
 msgstr ""
 
-#: ../lib/hammer_cli_foreman/commands.rb:575
+#: ../lib/hammer_cli_foreman/commands.rb:543
 msgid "The %{resource_name} has been disassociated"
 msgstr ""
 
 #: ../lib/hammer_cli_foreman/common_parameter.rb:13
-#: ../lib/hammer_cli_foreman/fact.rb:14 ../lib/hammer_cli_foreman/host.rb:318
+#: ../lib/hammer_cli_foreman/fact.rb:14 ../lib/hammer_cli_foreman/host.rb:189
 #: ../lib/hammer_cli_foreman/settings.rb:13
-#: ../lib/hammer_cli_foreman/smart_class_parameter.rb:77
+#: ../lib/hammer_cli_foreman/smart_class_parameter.rb:78
 #: ../lib/hammer_cli_foreman/smart_variable.rb:68
 msgid "Value"
 msgstr "值"
@@ -796,10 +841,8 @@ msgstr "供應方"
 
 #: ../lib/hammer_cli_foreman/compute_resource.rb:34
 #: ../lib/hammer_cli_foreman/compute_resource.rb:40
-#: ../lib/hammer_cli_foreman/host.rb:192 ../lib/hammer_cli_foreman/image.rb:33
-#: ../lib/hammer_cli_foreman/image.rb:71
-msgid "UUID"
-msgstr "UUID"
+msgid "Datacenter"
+msgstr "資料中心"
 
 #: ../lib/hammer_cli_foreman/compute_resource.rb:37
 #: ../lib/hammer_cli_foreman/compute_resource.rb:47
@@ -822,9 +865,11 @@ msgstr "URL"
 #: ../lib/hammer_cli_foreman/domain.rb:42
 #: ../lib/hammer_cli_foreman/location.rb:15
 #: ../lib/hammer_cli_foreman/organization.rb:15
+#: ../lib/hammer_cli_foreman/role.rb:21
 #: ../lib/hammer_cli_foreman/settings.rb:14
 #: ../lib/hammer_cli_foreman/smart_class_parameter.rb:59
 #: ../lib/hammer_cli_foreman/smart_variable.rb:53
+#: ../lib/hammer_cli_foreman/user.rb:34
 msgid "Description"
 msgstr "描述"
 
@@ -856,13 +901,156 @@ msgstr "已刪除運算資源"
 msgid "Could not delete the compute resource"
 msgstr "無法刪除運算資源"
 
-#: ../lib/hammer_cli_foreman/credentials.rb:26
-msgid "[Foreman] Username: "
-msgstr "[Foreman] 使用者名稱："
+#: ../lib/hammer_cli_foreman/compute_resources/ec2/host_help_extenstion.rb:6
+msgid "EC2"
+msgstr "EC2"
 
-#: ../lib/hammer_cli_foreman/credentials.rb:33
-msgid "[Foreman] Password for %s: "
-msgstr "[Foreman] %s 的密碼："
+#: ../lib/hammer_cli_foreman/compute_resources/gce/host_help_extenstion.rb:6
+msgid "GCE"
+msgstr ""
+
+#: ../lib/hammer_cli_foreman/compute_resources/libvirt/host_help_extenstion.rb:6
+msgid "Libvirt"
+msgstr ""
+
+#: ../lib/hammer_cli_foreman/compute_resources/libvirt/host_help_extenstion.rb:12
+msgid "Number of CPUs"
+msgstr "CPU 數量"
+
+#: ../lib/hammer_cli_foreman/compute_resources/libvirt/host_help_extenstion.rb:13
+msgid "String, amount of memory, value in bytes"
+msgstr ""
+
+#: ../lib/hammer_cli_foreman/compute_resources/libvirt/host_help_extenstion.rb:14
+#: ../lib/hammer_cli_foreman/compute_resources/ovirt/host_help_extenstion.rb:16
+msgid "Boolean (expressed as 0 or 1), whether to start the machine or not"
+msgstr ""
+
+#: ../lib/hammer_cli_foreman/compute_resources/libvirt/host_help_extenstion.rb:19
+#: ../lib/hammer_cli_foreman/compute_resources/libvirt/host_help_extenstion.rb:21
+#: ../lib/hammer_cli_foreman/compute_resources/libvirt/host_help_extenstion.rb:28
+#: ../lib/hammer_cli_foreman/hosts/common_update_help.rb:10
+#: ../lib/hammer_cli_foreman/hosts/common_update_help.rb:28
+msgid "Possible values: %s"
+msgstr ""
+
+#: ../lib/hammer_cli_foreman/compute_resources/libvirt/host_help_extenstion.rb:20
+msgid "Name of interface according to type"
+msgstr ""
+
+#: ../lib/hammer_cli_foreman/compute_resources/libvirt/host_help_extenstion.rb:26
+msgid "One of available storage pools"
+msgstr ""
+
+#: ../lib/hammer_cli_foreman/compute_resources/libvirt/host_help_extenstion.rb:27
+msgid "String value, eg. 10G"
+msgstr ""
+
+#: ../lib/hammer_cli_foreman/compute_resources/openstack/host_help_extenstion.rb:6
+msgid "OpenStack"
+msgstr ""
+
+#: ../lib/hammer_cli_foreman/compute_resources/ovirt/host_help_extenstion.rb:6
+msgid "oVirt"
+msgstr ""
+
+#: ../lib/hammer_cli_foreman/compute_resources/ovirt/host_help_extenstion.rb:13
+msgid "Hardware profile to use"
+msgstr ""
+
+#: ../lib/hammer_cli_foreman/compute_resources/ovirt/host_help_extenstion.rb:14
+msgid "Integer value, number of cores"
+msgstr ""
+
+#: ../lib/hammer_cli_foreman/compute_resources/ovirt/host_help_extenstion.rb:15
+msgid "Amount of memory, integer value in bytes"
+msgstr ""
+
+#: ../lib/hammer_cli_foreman/compute_resources/ovirt/host_help_extenstion.rb:21
+msgid "Eg. eth0"
+msgstr ""
+
+#: ../lib/hammer_cli_foreman/compute_resources/ovirt/host_help_extenstion.rb:22
+msgid "Select one of available networks for a cluster"
+msgstr ""
+
+#: ../lib/hammer_cli_foreman/compute_resources/ovirt/host_help_extenstion.rb:27
+msgid "Volume size in GB, integer value"
+msgstr ""
+
+#: ../lib/hammer_cli_foreman/compute_resources/ovirt/host_help_extenstion.rb:28
+msgid "Select one of available storage domains"
+msgstr ""
+
+#: ../lib/hammer_cli_foreman/compute_resources/ovirt/host_help_extenstion.rb:29
+msgid "Boolean, only one volume can be bootable"
+msgstr ""
+
+#: ../lib/hammer_cli_foreman/compute_resources/rackspace/host_help_extenstion.rb:6
+msgid "Rackspace"
+msgstr ""
+
+#: ../lib/hammer_cli_foreman/compute_resources/vmware/host_help_extenstion.rb:15
+msgid "VMWare"
+msgstr ""
+
+#: ../lib/hammer_cli_foreman/compute_resources/vmware/host_help_extenstion.rb:21
+msgid "Cpu count"
+msgstr ""
+
+#: ../lib/hammer_cli_foreman/compute_resources/vmware/host_help_extenstion.rb:22
+msgid "Number of cores per socket (applicable to hardware versions < 10 only)"
+msgstr ""
+
+#: ../lib/hammer_cli_foreman/compute_resources/vmware/host_help_extenstion.rb:23
+msgid "Integer number, amount of memory in MB"
+msgstr ""
+
+#: ../lib/hammer_cli_foreman/compute_resources/vmware/host_help_extenstion.rb:24
+msgid "Cluster id from VMware"
+msgstr ""
+
+#: ../lib/hammer_cli_foreman/compute_resources/vmware/host_help_extenstion.rb:25
+msgid "Path to folder"
+msgstr ""
+
+#: ../lib/hammer_cli_foreman/compute_resources/vmware/host_help_extenstion.rb:26
+msgid "Guest OS id form VMware"
+msgstr ""
+
+#: ../lib/hammer_cli_foreman/compute_resources/vmware/host_help_extenstion.rb:27
+msgid "Id of the controller from VMware"
+msgstr ""
+
+#: ../lib/hammer_cli_foreman/compute_resources/vmware/host_help_extenstion.rb:28
+msgid "Hardware version id from VMware"
+msgstr ""
+
+#: ../lib/hammer_cli_foreman/compute_resources/vmware/host_help_extenstion.rb:29
+msgid "Must be a 1 or 0, whether to start the machine or not"
+msgstr ""
+
+#: ../lib/hammer_cli_foreman/compute_resources/vmware/host_help_extenstion.rb:35
+msgid "Network id from VMware"
+msgstr ""
+
+#: ../lib/hammer_cli_foreman/compute_resources/vmware/host_help_extenstion.rb:41
+msgid "Datastore id from VMware"
+msgstr ""
+
+#: ../lib/hammer_cli_foreman/compute_resources/vmware/host_help_extenstion.rb:42
+msgid "Integer number, volume size in GB"
+msgstr ""
+
+#: ../lib/hammer_cli_foreman/compute_resources/vmware/host_help_extenstion.rb:53
+msgid "Type of the network adapter, for example one of:"
+msgstr ""
+
+#: ../lib/hammer_cli_foreman/compute_resources/vmware/host_help_extenstion.rb:55
+msgid ""
+"See documentation center for your version of vSphere to find more details "
+"about available adapter types:"
+msgstr ""
 
 #: ../lib/hammer_cli_foreman/defaults.rb:7
 msgid "Use the default organization and/or location from the server"
@@ -1036,7 +1224,7 @@ msgstr "無法刪除外部使用者群組"
 msgid "Host"
 msgstr "主機"
 
-#: ../lib/hammer_cli_foreman/fact.rb:13 ../lib/hammer_cli_foreman/host.rb:317
+#: ../lib/hammer_cli_foreman/fact.rb:13 ../lib/hammer_cli_foreman/host.rb:188
 msgid "Fact"
 msgstr "詳情"
 
@@ -1053,198 +1241,177 @@ msgid "Unlimited?"
 msgstr "無限制？"
 
 #: ../lib/hammer_cli_foreman/filter.rb:13
+msgid "Override?"
+msgstr ""
+
+#: ../lib/hammer_cli_foreman/filter.rb:14
 msgid "Role"
 msgstr "角色"
 
-#: ../lib/hammer_cli_foreman/filter.rb:14
+#: ../lib/hammer_cli_foreman/filter.rb:15
 msgid "Permissions"
 msgstr "權限"
 
-#: ../lib/hammer_cli_foreman/filter.rb:18
-#: ../lib/hammer_cli_foreman/filter.rb:34
-#: ../lib/hammer_cli_foreman/filter.rb:78 ../lib/hammer_cli_foreman/role.rb:46
+#: ../lib/hammer_cli_foreman/filter.rb:19
+#: ../lib/hammer_cli_foreman/filter.rb:35
+#: ../lib/hammer_cli_foreman/filter.rb:79 ../lib/hammer_cli_foreman/role.rb:42
 msgid "(Miscellaneous)"
 msgstr "（雜項）"
 
-#: ../lib/hammer_cli_foreman/filter.rb:19
-#: ../lib/hammer_cli_foreman/filter.rb:35 ../lib/hammer_cli_foreman/role.rb:47
+#: ../lib/hammer_cli_foreman/filter.rb:20
+#: ../lib/hammer_cli_foreman/filter.rb:36 ../lib/hammer_cli_foreman/role.rb:43
 msgid "none"
 msgstr "無"
 
-#: ../lib/hammer_cli_foreman/filter.rb:44
+#: ../lib/hammer_cli_foreman/filter.rb:45
 msgid "Permission filter for [%<resource_type>s] created"
 msgstr "已建立 [%<resource_type>s] 的權限篩選器"
 
-#: ../lib/hammer_cli_foreman/filter.rb:45
+#: ../lib/hammer_cli_foreman/filter.rb:46
 msgid "Could not create the permission filter"
 msgstr "無法建立權限篩選器"
 
-#: ../lib/hammer_cli_foreman/filter.rb:52
+#: ../lib/hammer_cli_foreman/filter.rb:53
 msgid "Permission filter for [%<resource_type>s] updated"
 msgstr "已更新 [%<resource_type>s] 的權限篩選器"
 
-#: ../lib/hammer_cli_foreman/filter.rb:53
+#: ../lib/hammer_cli_foreman/filter.rb:54
 msgid "Could not update the permission filter"
 msgstr "無法更新權限篩選器"
 
-#: ../lib/hammer_cli_foreman/filter.rb:60
+#: ../lib/hammer_cli_foreman/filter.rb:61
 msgid "Permission filter deleted"
 msgstr "已刪除權限篩選器"
 
-#: ../lib/hammer_cli_foreman/filter.rb:61
+#: ../lib/hammer_cli_foreman/filter.rb:62
 msgid "Could not delete the permission filter"
 msgstr "無法刪除權限篩選器"
 
-#: ../lib/hammer_cli_foreman/filter.rb:74
+#: ../lib/hammer_cli_foreman/filter.rb:75
 #: ../lib/hammer_cli_foreman/report.rb:62
 msgid "Resource"
 msgstr "資源"
 
-#: ../lib/hammer_cli_foreman/host.rb:15
-msgid "Login of the owner"
-msgstr "擁有者的登錄帳號"
-
-#: ../lib/hammer_cli_foreman/host.rb:17
-msgid "ID of the owner"
-msgstr "擁有者的 ID"
-
-#: ../lib/hammer_cli_foreman/host.rb:44
-msgid "Host parameters."
-msgstr "主機參數。"
-
-#: ../lib/hammer_cli_foreman/host.rb:46
-msgid "Compute resource attributes."
-msgstr "運算資源屬性。"
-
-#: ../lib/hammer_cli_foreman/host.rb:48
-msgid "Volume parameters"
-msgstr "卷冊參數"
-
-#: ../lib/hammer_cli_foreman/host.rb:50
-msgid "Interface parameters."
-msgstr "介面參數。"
-
-#: ../lib/hammer_cli_foreman/host.rb:64
-msgid "Enter the root password for the host:"
-msgstr "輸入主機的 root 密碼："
-
-#: ../lib/hammer_cli_foreman/host.rb:161 ../lib/hammer_cli_foreman/host.rb:232
+#: ../lib/hammer_cli_foreman/host.rb:32 ../lib/hammer_cli_foreman/host.rb:103
 #: ../lib/hammer_cli_foreman/hostgroup.rb:60
 #: ../lib/hammer_cli_foreman/image.rb:31
 msgid "Operating System"
 msgstr "作業系統"
 
-#: ../lib/hammer_cli_foreman/host.rb:162 ../lib/hammer_cli_foreman/host.rb:196
+#: ../lib/hammer_cli_foreman/host.rb:33 ../lib/hammer_cli_foreman/host.rb:67
 msgid "Host Group"
 msgstr "主機群組"
 
-#: ../lib/hammer_cli_foreman/host.rb:163 ../lib/hammer_cli_foreman/host.rb:209
+#: ../lib/hammer_cli_foreman/host.rb:34 ../lib/hammer_cli_foreman/host.rb:80
 msgid "IP"
 msgstr "IP"
 
-#: ../lib/hammer_cli_foreman/host.rb:164 ../lib/hammer_cli_foreman/host.rb:210
+#: ../lib/hammer_cli_foreman/host.rb:35 ../lib/hammer_cli_foreman/host.rb:81
 msgid "MAC"
 msgstr "MAC"
 
-#: ../lib/hammer_cli_foreman/host.rb:174
+#: ../lib/hammer_cli_foreman/host.rb:45
 msgid "Bare Metal"
 msgstr "裸機"
 
-#: ../lib/hammer_cli_foreman/host.rb:194
+#: ../lib/hammer_cli_foreman/host.rb:63 ../lib/hammer_cli_foreman/image.rb:33
+#: ../lib/hammer_cli_foreman/image.rb:71
+msgid "UUID"
+msgstr "UUID"
+
+#: ../lib/hammer_cli_foreman/host.rb:65
 msgid "Organization"
 msgstr "團體"
 
-#: ../lib/hammer_cli_foreman/host.rb:195
+#: ../lib/hammer_cli_foreman/host.rb:66
 msgid "Location"
 msgstr "位置"
 
-#: ../lib/hammer_cli_foreman/host.rb:197
+#: ../lib/hammer_cli_foreman/host.rb:68
 msgid "Compute Resource"
 msgstr "運算資源"
 
-#: ../lib/hammer_cli_foreman/host.rb:198
+#: ../lib/hammer_cli_foreman/host.rb:69
 msgid "Compute Profile"
 msgstr "運算設定檔"
 
-#: ../lib/hammer_cli_foreman/host.rb:199
+#: ../lib/hammer_cli_foreman/host.rb:70
 #: ../lib/hammer_cli_foreman/hostgroup.rb:61
 msgid "Environment"
 msgstr "環境"
 
-#: ../lib/hammer_cli_foreman/host.rb:200
+#: ../lib/hammer_cli_foreman/host.rb:71
 msgid "Puppet CA Id"
 msgstr "Puppet CA  ID"
 
-#: ../lib/hammer_cli_foreman/host.rb:201
+#: ../lib/hammer_cli_foreman/host.rb:72
 msgid "Puppet Master Id"
 msgstr "Puppet 主 ID"
 
-#: ../lib/hammer_cli_foreman/host.rb:202
+#: ../lib/hammer_cli_foreman/host.rb:73
 msgid "Cert name"
 msgstr "憑證名稱"
 
-#: ../lib/hammer_cli_foreman/host.rb:203
+#: ../lib/hammer_cli_foreman/host.rb:74
 #: ../lib/hammer_cli_foreman/interface.rb:51
 msgid "Managed"
 msgstr "已管理"
 
-#: ../lib/hammer_cli_foreman/host.rb:205
+#: ../lib/hammer_cli_foreman/host.rb:76
 msgid "Installed at"
 msgstr "安裝於"
 
-#: ../lib/hammer_cli_foreman/host.rb:206
-#: ../lib/hammer_cli_foreman/report.rb:12
+#: ../lib/hammer_cli_foreman/host.rb:77 ../lib/hammer_cli_foreman/report.rb:12
 msgid "Last report"
 msgstr "最後一份報告"
 
-#: ../lib/hammer_cli_foreman/host.rb:208
-#: ../lib/hammer_cli_foreman/subnet.rb:12
+#: ../lib/hammer_cli_foreman/host.rb:79 ../lib/hammer_cli_foreman/subnet.rb:12
 msgid "Network"
 msgstr "網路"
 
-#: ../lib/hammer_cli_foreman/host.rb:211
+#: ../lib/hammer_cli_foreman/host.rb:82
 #: ../lib/hammer_cli_foreman/hostgroup.rb:72
 #: ../lib/hammer_cli_foreman/interface.rb:49
 msgid "Subnet"
 msgstr "子網路"
 
-#: ../lib/hammer_cli_foreman/host.rb:212
+#: ../lib/hammer_cli_foreman/host.rb:83
 #: ../lib/hammer_cli_foreman/hostgroup.rb:74
 #: ../lib/hammer_cli_foreman/interface.rb:50
 msgid "Domain"
 msgstr "網域"
 
-#: ../lib/hammer_cli_foreman/host.rb:213
+#: ../lib/hammer_cli_foreman/host.rb:84
 msgid "Service provider"
 msgstr "服務供應商"
 
-#: ../lib/hammer_cli_foreman/host.rb:214
+#: ../lib/hammer_cli_foreman/host.rb:85
 msgid "SP Name"
 msgstr "SP 名稱"
 
-#: ../lib/hammer_cli_foreman/host.rb:215
+#: ../lib/hammer_cli_foreman/host.rb:86
 msgid "SP IP"
 msgstr "SP IP"
 
-#: ../lib/hammer_cli_foreman/host.rb:216
+#: ../lib/hammer_cli_foreman/host.rb:87
 msgid "SP MAC"
 msgstr "SP MAC"
 
-#: ../lib/hammer_cli_foreman/host.rb:217
+#: ../lib/hammer_cli_foreman/host.rb:88
 msgid "SP Subnet"
 msgstr "SP 子網路"
 
-#: ../lib/hammer_cli_foreman/host.rb:221
+#: ../lib/hammer_cli_foreman/host.rb:92
 msgid "Network interfaces"
 msgstr "網路介面卡"
 
-#: ../lib/hammer_cli_foreman/host.rb:223
+#: ../lib/hammer_cli_foreman/host.rb:94
 #: ../lib/hammer_cli_foreman/interface.rb:24
 #: ../lib/hammer_cli_foreman/interface.rb:44
 msgid "Identifier"
 msgstr "辨識碼"
 
-#: ../lib/hammer_cli_foreman/host.rb:224
+#: ../lib/hammer_cli_foreman/host.rb:95
 #: ../lib/hammer_cli_foreman/interface.rb:25
 #: ../lib/hammer_cli_foreman/interface.rb:45
 #: ../lib/hammer_cli_foreman/smart_class_parameter.rb:60
@@ -1255,184 +1422,184 @@ msgstr "辨識碼"
 msgid "Type"
 msgstr "類型"
 
-#: ../lib/hammer_cli_foreman/host.rb:225
+#: ../lib/hammer_cli_foreman/host.rb:96
 #: ../lib/hammer_cli_foreman/interface.rb:26
 #: ../lib/hammer_cli_foreman/interface.rb:46
 msgid "MAC address"
 msgstr "MAC 位址"
 
-#: ../lib/hammer_cli_foreman/host.rb:226
+#: ../lib/hammer_cli_foreman/host.rb:97
 #: ../lib/hammer_cli_foreman/interface.rb:27
 #: ../lib/hammer_cli_foreman/interface.rb:47
 msgid "IP address"
 msgstr "IP 位址"
 
-#: ../lib/hammer_cli_foreman/host.rb:227
+#: ../lib/hammer_cli_foreman/host.rb:98
 msgid "FQDN"
 msgstr "FQDN"
 
-#: ../lib/hammer_cli_foreman/host.rb:230
+#: ../lib/hammer_cli_foreman/host.rb:101
 msgid "Operating system"
 msgstr "作業系統"
 
-#: ../lib/hammer_cli_foreman/host.rb:231
+#: ../lib/hammer_cli_foreman/host.rb:102
 #: ../lib/hammer_cli_foreman/hostgroup.rb:75
 #: ../lib/hammer_cli_foreman/image.rb:45
 msgid "Architecture"
 msgstr "架構"
 
-#: ../lib/hammer_cli_foreman/host.rb:235
+#: ../lib/hammer_cli_foreman/host.rb:106
 msgid "Build"
 msgstr "組建"
 
-#: ../lib/hammer_cli_foreman/host.rb:236
+#: ../lib/hammer_cli_foreman/host.rb:107
 #: ../lib/hammer_cli_foreman/hostgroup.rb:77
 msgid "Medium"
 msgstr "媒介"
 
-#: ../lib/hammer_cli_foreman/host.rb:237
+#: ../lib/hammer_cli_foreman/host.rb:108
 #: ../lib/hammer_cli_foreman/hostgroup.rb:76
 msgid "Partition Table"
 msgstr "分割表"
 
-#: ../lib/hammer_cli_foreman/host.rb:238
+#: ../lib/hammer_cli_foreman/host.rb:109
 msgid "Custom partition table"
 msgstr "自訂分割表"
 
-#: ../lib/hammer_cli_foreman/host.rb:241
+#: ../lib/hammer_cli_foreman/host.rb:112
 msgid "Image"
 msgstr "映像檔"
 
-#: ../lib/hammer_cli_foreman/host.rb:242
+#: ../lib/hammer_cli_foreman/host.rb:113
 msgid "Image file"
 msgstr "映像檔"
 
-#: ../lib/hammer_cli_foreman/host.rb:243
+#: ../lib/hammer_cli_foreman/host.rb:114
 msgid "Use image"
 msgstr "使用映像檔"
 
-#: ../lib/hammer_cli_foreman/host.rb:249
+#: ../lib/hammer_cli_foreman/host.rb:120
 msgid "Additional info"
 msgstr "額外資訊"
 
-#: ../lib/hammer_cli_foreman/host.rb:250
+#: ../lib/hammer_cli_foreman/host.rb:121
 msgid "Owner Id"
 msgstr "擁有者 ID"
 
-#: ../lib/hammer_cli_foreman/host.rb:251
+#: ../lib/hammer_cli_foreman/host.rb:122
 msgid "Owner Type"
 msgstr "擁有者類型"
 
-#: ../lib/hammer_cli_foreman/host.rb:252
+#: ../lib/hammer_cli_foreman/host.rb:123
 msgid "Enabled"
 msgstr "已啟用"
 
-#: ../lib/hammer_cli_foreman/host.rb:253
+#: ../lib/hammer_cli_foreman/host.rb:124
 #: ../lib/hammer_cli_foreman/hostgroup.rb:62
 msgid "Model"
 msgstr "型號"
 
-#: ../lib/hammer_cli_foreman/host.rb:254
+#: ../lib/hammer_cli_foreman/host.rb:125
 msgid "Comment"
 msgstr "備註"
 
-#: ../lib/hammer_cli_foreman/host.rb:267
+#: ../lib/hammer_cli_foreman/host.rb:138
 msgid "Status"
 msgstr "狀態"
 
-#: ../lib/hammer_cli_foreman/host.rb:268
+#: ../lib/hammer_cli_foreman/host.rb:139
 msgid "Power"
 msgstr "電源"
 
-#: ../lib/hammer_cli_foreman/host.rb:304
+#: ../lib/hammer_cli_foreman/host.rb:175
 msgid "Puppet run triggered"
 msgstr "已啟動 Puppet run"
 
-#: ../lib/hammer_cli_foreman/host.rb:357
+#: ../lib/hammer_cli_foreman/host.rb:228
 msgid "Host created"
 msgstr "已建立主機"
 
-#: ../lib/hammer_cli_foreman/host.rb:358
+#: ../lib/hammer_cli_foreman/host.rb:229
 msgid "Could not create the host"
 msgstr "無法建立主機"
 
-#: ../lib/hammer_cli_foreman/host.rb:375
+#: ../lib/hammer_cli_foreman/host.rb:247
 msgid "Host updated"
 msgstr "已更新主機"
 
-#: ../lib/hammer_cli_foreman/host.rb:376
+#: ../lib/hammer_cli_foreman/host.rb:248
 msgid "Could not update the host"
 msgstr "無法更新主機"
 
-#: ../lib/hammer_cli_foreman/host.rb:383
+#: ../lib/hammer_cli_foreman/host.rb:256
 msgid "Host deleted"
 msgstr "已刪除主機"
 
-#: ../lib/hammer_cli_foreman/host.rb:384
+#: ../lib/hammer_cli_foreman/host.rb:257
 msgid "Could not delete the host"
 msgstr "無法刪除主機"
 
-#: ../lib/hammer_cli_foreman/host.rb:391
+#: ../lib/hammer_cli_foreman/host.rb:264
 msgid "Create or update parameter for a host."
 msgstr "建立或更新主機參數。"
 
-#: ../lib/hammer_cli_foreman/host.rb:393
+#: ../lib/hammer_cli_foreman/host.rb:266
 msgid "Host parameter updated"
 msgstr "已更新主機參數"
 
-#: ../lib/hammer_cli_foreman/host.rb:394
+#: ../lib/hammer_cli_foreman/host.rb:267
 msgid "New host parameter created"
 msgstr "已建立新的主機參數"
 
-#: ../lib/hammer_cli_foreman/host.rb:395
+#: ../lib/hammer_cli_foreman/host.rb:268
 msgid "Could not set host parameter"
 msgstr "無法設置主機參數"
 
-#: ../lib/hammer_cli_foreman/host.rb:407
+#: ../lib/hammer_cli_foreman/host.rb:280
 msgid "Delete parameter for a host."
 msgstr "刪除主機的參數。"
 
-#: ../lib/hammer_cli_foreman/host.rb:409
+#: ../lib/hammer_cli_foreman/host.rb:282
 msgid "Host parameter deleted"
 msgstr "已刪除主機參數"
 
-#: ../lib/hammer_cli_foreman/host.rb:424
+#: ../lib/hammer_cli_foreman/host.rb:297
 msgid "Power a host on"
 msgstr "啟動主機電源"
 
-#: ../lib/hammer_cli_foreman/host.rb:425
+#: ../lib/hammer_cli_foreman/host.rb:298
 msgid "The host is starting."
 msgstr "主機正在啟動。"
 
-#: ../lib/hammer_cli_foreman/host.rb:442
+#: ../lib/hammer_cli_foreman/host.rb:315
 msgid "Force turning off a host"
 msgstr "強制關閉主機"
 
-#: ../lib/hammer_cli_foreman/host.rb:447
+#: ../lib/hammer_cli_foreman/host.rb:320
 msgid "Power a host off"
 msgstr "關閉主機電源"
 
-#: ../lib/hammer_cli_foreman/host.rb:459
+#: ../lib/hammer_cli_foreman/host.rb:332
 msgid "Power off forced."
 msgstr "強制關閉電源。"
 
-#: ../lib/hammer_cli_foreman/host.rb:461
+#: ../lib/hammer_cli_foreman/host.rb:334
 msgid "Powering the host off."
 msgstr "關閉主機電源。"
 
-#: ../lib/hammer_cli_foreman/host.rb:478
+#: ../lib/hammer_cli_foreman/host.rb:351
 msgid "Reboot a host"
 msgstr "重新啟動主機"
 
-#: ../lib/hammer_cli_foreman/host.rb:479
+#: ../lib/hammer_cli_foreman/host.rb:352
 msgid "Host reboot started."
 msgstr "已開始重新啟動主機。"
 
-#: ../lib/hammer_cli_foreman/host.rb:515
+#: ../lib/hammer_cli_foreman/host.rb:388
 msgid "Rebuild orchestration related configurations for host"
 msgstr ""
 
-#: ../lib/hammer_cli_foreman/host.rb:516
+#: ../lib/hammer_cli_foreman/host.rb:389
 msgid "Configuration successfully rebuilt."
 msgstr "配置重建成功。"
 
@@ -1529,6 +1696,71 @@ msgstr "刪除主機群組的參數。"
 msgid "Hostgroup parameter deleted"
 msgstr "已刪除主機群組參數"
 
+#: ../lib/hammer_cli_foreman/hosts/common_update_help.rb:6
+msgid "Available keys for %{option}"
+msgstr ""
+
+#: ../lib/hammer_cli_foreman/hosts/common_update_help.rb:16
+msgid "%{value}, each managed hosts needs to have one primary interface."
+msgstr ""
+
+#: ../lib/hammer_cli_foreman/hosts/common_update_help.rb:20
+#: ../lib/hammer_cli_foreman/hosts/common_update_help.rb:26
+#: ../lib/hammer_cli_foreman/hosts/common_update_help.rb:33
+msgid "For %{condition}"
+msgstr ""
+
+#: ../lib/hammer_cli_foreman/hosts/common_update_help.rb:22
+msgid ""
+"VLAN tag, this attribute has precedence over the subnet VLAN ID. Only for "
+"virtual interfaces."
+msgstr "VLAN 標籤，這個屬性擁有比子網路 VLAN ID 更高的優先權。僅適用於虛擬介面卡。"
+
+#: ../lib/hammer_cli_foreman/hosts/common_update_help.rb:23
+msgid ""
+"Identifier of the interface to which this interface belongs, e.g. eth1."
+msgstr ""
+
+#: ../lib/hammer_cli_foreman/hosts/common_update_help.rb:29
+msgid "Identifiers of slave interfaces, e.g. [eth1,eth2]"
+msgstr ""
+
+#: ../lib/hammer_cli_foreman/hosts/common_update_help.rb:35
+msgid "always IPMI"
+msgstr ""
+
+#: ../lib/hammer_cli_foreman/hosts/common_update_help.rb:42
+msgid "Provider specific options"
+msgstr ""
+
+#: ../lib/hammer_cli_foreman/hosts/common_update_options.rb:6
+msgid "Login of the owner"
+msgstr "擁有者的登錄帳號"
+
+#: ../lib/hammer_cli_foreman/hosts/common_update_options.rb:8
+msgid "ID of the owner"
+msgstr "擁有者的 ID"
+
+#: ../lib/hammer_cli_foreman/hosts/common_update_options.rb:35
+msgid "Host parameters."
+msgstr "主機參數。"
+
+#: ../lib/hammer_cli_foreman/hosts/common_update_options.rb:37
+msgid "Compute resource attributes."
+msgstr "運算資源屬性。"
+
+#: ../lib/hammer_cli_foreman/hosts/common_update_options.rb:39
+msgid "Volume parameters"
+msgstr "卷冊參數"
+
+#: ../lib/hammer_cli_foreman/hosts/common_update_options.rb:41
+msgid "Interface parameters."
+msgstr "介面參數。"
+
+#: ../lib/hammer_cli_foreman/hosts/common_update_options.rb:55
+msgid "Enter the root password for the host:"
+msgstr "輸入主機的 root 密碼："
+
 #: ../lib/hammer_cli_foreman/id_resolver.rb:36
 msgid "Architecture name"
 msgstr "架構名稱"
@@ -1619,7 +1851,7 @@ msgstr "智慧類別參數名稱"
 
 #: ../lib/hammer_cli_foreman/id_resolver.rb:63
 #: ../lib/hammer_cli_foreman/smart_variable.rb:50
-#: ../lib/hammer_cli_foreman/smart_variable.rb:113
+#: ../lib/hammer_cli_foreman/smart_variable.rb:112
 msgid "Smart variable name"
 msgstr "智慧變數名稱"
 
@@ -1792,7 +2024,7 @@ msgstr "欲使用來進行搜尋的位置數字 ID"
 #: ../lib/hammer_cli_foreman/location.rb:28
 #: ../lib/hammer_cli_foreman/organization.rb:28
 msgid "Parent"
-msgstr ""
+msgstr "父"
 
 #: ../lib/hammer_cli_foreman/location.rb:39
 #: ../lib/hammer_cli_foreman/references.rb:18
@@ -2081,7 +2313,7 @@ msgstr "無法刪除組織參數"
 #: ../lib/hammer_cli_foreman/partition_table.rb:21
 #: ../lib/hammer_cli_foreman/template.rb:48
 msgid "Locked"
-msgstr ""
+msgstr "已鎖定"
 
 #: ../lib/hammer_cli_foreman/partition_table.rb:32
 msgid "View partition table content."
@@ -2139,7 +2371,7 @@ msgstr ""
 
 #: ../lib/hammer_cli_foreman/realm.rb:19
 msgid "Realm type"
-msgstr ""
+msgstr "領域類型"
 
 #: ../lib/hammer_cli_foreman/realm.rb:29
 msgid "Realm [%{name}] created"
@@ -2181,55 +2413,66 @@ msgstr "使用者"
 msgid "User groups"
 msgstr "使用者群組"
 
+#: ../lib/hammer_cli_foreman/references.rb:35
 #: ../lib/hammer_cli_foreman/references.rb:42
-msgid "Smart proxies"
-msgstr "智慧協定"
+msgid "Usergroup"
+msgstr "使用者群組"
 
-#: ../lib/hammer_cli_foreman/references.rb:50
-msgid "Compute resources"
-msgstr "運算資源"
-
-#: ../lib/hammer_cli_foreman/references.rb:58
-msgid "Installation media"
-msgstr "安裝媒介"
-
-#: ../lib/hammer_cli_foreman/references.rb:66
-msgid "Templates"
-msgstr "範本"
-
-#: ../lib/hammer_cli_foreman/references.rb:74
-msgid "Domains"
-msgstr "網域"
-
-#: ../lib/hammer_cli_foreman/references.rb:82
-msgid "Environments"
-msgstr "環境"
-
-#: ../lib/hammer_cli_foreman/references.rb:90
-msgid "Hostgroups"
-msgstr "主機群組"
-
-#: ../lib/hammer_cli_foreman/references.rb:98
-msgid "Subnets"
-msgstr "子網路"
-
-#: ../lib/hammer_cli_foreman/references.rb:107
-msgid "Parameters"
-msgstr "參數"
-
-#: ../lib/hammer_cli_foreman/references.rb:115
-msgid "Puppetclasses"
-msgstr "Puppetclasses"
-
-#: ../lib/hammer_cli_foreman/references.rb:123
-msgid "Operating systems"
-msgstr "作業系統"
-
-#: ../lib/hammer_cli_foreman/references.rb:131
+#: ../lib/hammer_cli_foreman/references.rb:37
+#: ../lib/hammer_cli_foreman/references.rb:44
+#: ../lib/hammer_cli_foreman/references.rb:142
 msgid "Roles"
 msgstr "角色"
 
-#: ../lib/hammer_cli_foreman/references.rb:139
+#: ../lib/hammer_cli_foreman/references.rb:41
+msgid "Inherited User groups"
+msgstr ""
+
+#: ../lib/hammer_cli_foreman/references.rb:53
+msgid "Smart proxies"
+msgstr "智慧協定"
+
+#: ../lib/hammer_cli_foreman/references.rb:61
+msgid "Compute resources"
+msgstr "運算資源"
+
+#: ../lib/hammer_cli_foreman/references.rb:69
+msgid "Installation media"
+msgstr "安裝媒介"
+
+#: ../lib/hammer_cli_foreman/references.rb:77
+msgid "Templates"
+msgstr "範本"
+
+#: ../lib/hammer_cli_foreman/references.rb:85
+msgid "Domains"
+msgstr "網域"
+
+#: ../lib/hammer_cli_foreman/references.rb:93
+msgid "Environments"
+msgstr "環境"
+
+#: ../lib/hammer_cli_foreman/references.rb:101
+msgid "Hostgroups"
+msgstr "主機群組"
+
+#: ../lib/hammer_cli_foreman/references.rb:109
+msgid "Subnets"
+msgstr "子網路"
+
+#: ../lib/hammer_cli_foreman/references.rb:118
+msgid "Parameters"
+msgstr "參數"
+
+#: ../lib/hammer_cli_foreman/references.rb:126
+msgid "Puppetclasses"
+msgstr "Puppetclasses"
+
+#: ../lib/hammer_cli_foreman/references.rb:134
+msgid "Operating systems"
+msgstr "作業系統"
+
+#: ../lib/hammer_cli_foreman/references.rb:150
 msgid "External user groups"
 msgstr "外部使用者群組"
 
@@ -2335,43 +2578,35 @@ msgstr "無法刪除報告"
 msgid "The server does not support such operation."
 msgstr "伺服器不支援此類型的操作。"
 
-#: ../lib/hammer_cli_foreman/role.rb:20
+#: ../lib/hammer_cli_foreman/role.rb:13
 msgid "Builtin"
 msgstr "內建"
 
-#: ../lib/hammer_cli_foreman/role.rb:24
-msgid "Yes"
-msgstr "是"
-
-#: ../lib/hammer_cli_foreman/role.rb:24
-msgid "No"
-msgstr "否"
-
-#: ../lib/hammer_cli_foreman/role.rb:36
+#: ../lib/hammer_cli_foreman/role.rb:32
 msgid "User role id"
 msgstr "使用者角色 ID"
 
-#: ../lib/hammer_cli_foreman/role.rb:64
+#: ../lib/hammer_cli_foreman/role.rb:60
 msgid "User role [%<name>s] created"
 msgstr "使用者角色 [%<name>s] 已建立"
 
-#: ../lib/hammer_cli_foreman/role.rb:65
+#: ../lib/hammer_cli_foreman/role.rb:61
 msgid "Could not create the user role"
 msgstr "無法建立使用者角色"
 
-#: ../lib/hammer_cli_foreman/role.rb:72
+#: ../lib/hammer_cli_foreman/role.rb:68
 msgid "User role [%<name>s] updated"
 msgstr "使用者角色 [%<name>s] 已更新"
 
-#: ../lib/hammer_cli_foreman/role.rb:73
+#: ../lib/hammer_cli_foreman/role.rb:69
 msgid "Could not update the user role"
 msgstr "無法更新使用者角色"
 
-#: ../lib/hammer_cli_foreman/role.rb:80
+#: ../lib/hammer_cli_foreman/role.rb:76
 msgid "User role [%<name>s] deleted"
 msgstr "使用者角色 [%<name>s] 已刪除"
 
-#: ../lib/hammer_cli_foreman/role.rb:81
+#: ../lib/hammer_cli_foreman/role.rb:77
 msgid "Could not delete the user roles"
 msgstr "無法刪除使用者角色"
 
@@ -2408,7 +2643,7 @@ msgid "Hidden Value?"
 msgstr ""
 
 #: ../lib/hammer_cli_foreman/smart_class_parameter.rb:62
-#: ../lib/hammer_cli_foreman/smart_class_parameter.rb:78
+#: ../lib/hammer_cli_foreman/smart_class_parameter.rb:79
 msgid "Use puppet default"
 msgstr ""
 
@@ -2451,12 +2686,12 @@ msgstr "避免重複項目"
 msgid "Order"
 msgstr "順序"
 
-#: ../lib/hammer_cli_foreman/smart_class_parameter.rb:74
+#: ../lib/hammer_cli_foreman/smart_class_parameter.rb:75
 #: ../lib/hammer_cli_foreman/smart_variable.rb:65
 msgid "Values"
 msgstr "數值"
 
-#: ../lib/hammer_cli_foreman/smart_class_parameter.rb:76
+#: ../lib/hammer_cli_foreman/smart_class_parameter.rb:77
 #: ../lib/hammer_cli_foreman/smart_variable.rb:67
 msgid "Match"
 msgstr "比對"
@@ -2482,18 +2717,18 @@ msgid "Type of the parameter."
 msgstr "參數的類型。"
 
 #: ../lib/hammer_cli_foreman/smart_class_parameter.rb:120
-#: ../lib/hammer_cli_foreman/smart_variable.rb:93
-#: ../lib/hammer_cli_foreman/smart_variable.rb:107
+#: ../lib/hammer_cli_foreman/smart_variable.rb:92
+#: ../lib/hammer_cli_foreman/smart_variable.rb:106
 msgid "Type of the validator."
 msgstr "驗證程式的類型。"
 
 #: ../lib/hammer_cli_foreman/smart_class_parameter.rb:134
-#: ../lib/hammer_cli_foreman/smart_variable.rb:126
+#: ../lib/hammer_cli_foreman/smart_variable.rb:125
 msgid "Override value created"
 msgstr "置換值已建立"
 
 #: ../lib/hammer_cli_foreman/smart_class_parameter.rb:135
-#: ../lib/hammer_cli_foreman/smart_variable.rb:127
+#: ../lib/hammer_cli_foreman/smart_variable.rb:126
 msgid "Could not create the override value"
 msgstr ""
 
@@ -2502,12 +2737,12 @@ msgid "Cannot use --value when --use-puppet-default is true"
 msgstr ""
 
 #: ../lib/hammer_cli_foreman/smart_class_parameter.rb:158
-#: ../lib/hammer_cli_foreman/smart_variable.rb:139
+#: ../lib/hammer_cli_foreman/smart_variable.rb:138
 msgid "Override value deleted"
 msgstr "置換值已刪除"
 
 #: ../lib/hammer_cli_foreman/smart_class_parameter.rb:159
-#: ../lib/hammer_cli_foreman/smart_variable.rb:140
+#: ../lib/hammer_cli_foreman/smart_variable.rb:139
 msgid "Could not delete the override value"
 msgstr "無法刪除置換值"
 
@@ -2566,39 +2801,39 @@ msgstr "更新智慧協定功能失敗"
 
 #: ../lib/hammer_cli_foreman/smart_variable.rb:10
 msgid "Variable"
-msgstr ""
+msgstr "無定向"
 
 #: ../lib/hammer_cli_foreman/smart_variable.rb:50
-#: ../lib/hammer_cli_foreman/smart_variable.rb:113
+#: ../lib/hammer_cli_foreman/smart_variable.rb:112
 msgid "Use --variable instead"
 msgstr ""
 
-#: ../lib/hammer_cli_foreman/smart_variable.rb:85
+#: ../lib/hammer_cli_foreman/smart_variable.rb:84
 msgid "Smart variable [%{variable}] created"
 msgstr "智慧變數 [%{variable}] 已建立"
 
-#: ../lib/hammer_cli_foreman/smart_variable.rb:86
+#: ../lib/hammer_cli_foreman/smart_variable.rb:85
 msgid "Could not create the smart variable"
 msgstr "無法建立智慧型變數"
 
-#: ../lib/hammer_cli_foreman/smart_variable.rb:90
-#: ../lib/hammer_cli_foreman/smart_variable.rb:104
+#: ../lib/hammer_cli_foreman/smart_variable.rb:89
+#: ../lib/hammer_cli_foreman/smart_variable.rb:103
 msgid "Type of the variable."
 msgstr "變數類型。"
 
-#: ../lib/hammer_cli_foreman/smart_variable.rb:99
+#: ../lib/hammer_cli_foreman/smart_variable.rb:98
 msgid "Smart variable [%{variable}] updated"
 msgstr "智慧變數 [%{variable}] 已更新"
 
-#: ../lib/hammer_cli_foreman/smart_variable.rb:100
+#: ../lib/hammer_cli_foreman/smart_variable.rb:99
 msgid "Could not update the smart variable"
 msgstr "無法更新智慧型變數"
 
-#: ../lib/hammer_cli_foreman/smart_variable.rb:115
+#: ../lib/hammer_cli_foreman/smart_variable.rb:114
 msgid "Smart variable [%{variable}] deleted"
 msgstr "智慧變數 [%{variable}] 已刪除"
 
-#: ../lib/hammer_cli_foreman/smart_variable.rb:116
+#: ../lib/hammer_cli_foreman/smart_variable.rb:115
 msgid "Could not delete the smart variable"
 msgstr "無法刪除智慧型變數"
 
@@ -2761,39 +2996,39 @@ msgstr "時區"
 msgid "Last login"
 msgstr "最後登錄"
 
-#: ../lib/hammer_cli_foreman/user.rb:34
+#: ../lib/hammer_cli_foreman/user.rb:35
 msgid "Default organization"
 msgstr "預設組織"
 
-#: ../lib/hammer_cli_foreman/user.rb:35
+#: ../lib/hammer_cli_foreman/user.rb:36
 msgid "Default location"
 msgstr "預設位置"
 
-#: ../lib/hammer_cli_foreman/user.rb:43 ../lib/hammer_cli_foreman/user.rb:44
+#: ../lib/hammer_cli_foreman/user.rb:44 ../lib/hammer_cli_foreman/user.rb:45
 msgid "default"
 msgstr "default"
 
-#: ../lib/hammer_cli_foreman/user.rb:54
+#: ../lib/hammer_cli_foreman/user.rb:56
 msgid "User [%{login}] created"
 msgstr "使用者 [%{login}] 已建立"
 
-#: ../lib/hammer_cli_foreman/user.rb:55
+#: ../lib/hammer_cli_foreman/user.rb:57
 msgid "Could not create the user"
 msgstr "無法建立使用者"
 
-#: ../lib/hammer_cli_foreman/user.rb:62
+#: ../lib/hammer_cli_foreman/user.rb:64
 msgid "User [%{login}] updated"
 msgstr "使用者 [%{login}] 已更新"
 
-#: ../lib/hammer_cli_foreman/user.rb:63
+#: ../lib/hammer_cli_foreman/user.rb:65
 msgid "Could not update the user"
 msgstr "無法更新使用者"
 
-#: ../lib/hammer_cli_foreman/user.rb:70
+#: ../lib/hammer_cli_foreman/user.rb:72
 msgid "User [%{login}] deleted"
 msgstr "使用者 [%{login}] 已刪除"
 
-#: ../lib/hammer_cli_foreman/user.rb:71
+#: ../lib/hammer_cli_foreman/user.rb:73
 msgid "Could not delete the user"
 msgstr "無法刪除使用者"
 
