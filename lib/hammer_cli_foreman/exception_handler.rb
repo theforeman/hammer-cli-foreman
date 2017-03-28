@@ -90,8 +90,7 @@ module HammerCLIForeman
         host = '<FOREMAN_HOST>'
         cert_name = "#{host}.crt"
       else
-        host = uri.host
-        host += ":#{uri.port}" if uri.port
+        host = uri.to_s
         cert_name = "#{uri.host}.crt"
       end
 
@@ -105,15 +104,15 @@ module HammerCLIForeman
       _("Make sure you configured the correct URL and have the server's CA certificate installed on your system.") + "\n\n" +
       _("You can use hammer to fetch the CA certificate from the server. Be aware that hammer cannot verify whether the certificate is correct and you should verify its authenticity after downloading it.") +
       "\n\n" +
-      _("Download the certificate to a secure location and save it as a CRT file as follows:") +
+      _("Download the certificate and save it as a CRT file as follows:") +
       "\n\n  $ #{cmd} > #{cert_name}\n\n" +
-      _("As root install the certificate as follows:") + "\n\n" +
-      "  " + _("on Redhat systems") + ":\n  $ #{rh_install_cmd}\n\n" +
-      "  " + _("on Debian systems") + ":\n  $ #{deb_install_cmd}\n\n" +
-      _("As root update the list of trusted CA certificates:") +
-      "\n\n" +
-      "  " + _("on Redhat systems") + ":\n  $ #{rh_update_cmd}\n\n" +
-      "  " + _("on Debian systems") + ":\n  $ #{deb_update_cmd}\n\n" +
+      _("As root install the certificate and update the list of trusted CA certificates as follows:") + "\n\n" +
+      "  " + _("on Redhat systems") +  ":\n" +
+      "  $ #{rh_install_cmd}\n" +
+      "  $ #{rh_update_cmd}\n\n" +
+      "  " + _("on Debian systems") + ":\n" +
+      "  $ #{deb_install_cmd}\n" +
+      "  $ #{deb_update_cmd}\n\n" +
       _("Alternatively you can save the CA certificate into a custom location and use option --ssl-ca-file or corresponding setting in your configuration file.") +
       "\n"
     end
