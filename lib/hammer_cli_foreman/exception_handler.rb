@@ -83,16 +83,42 @@ module HammerCLIForeman
       log_full_error e
     end
 
-    def handle_apipie_docloading_error(e)
-      rake_command = "foreman-rake apipie:cache"
-      message = _("Could not load the API description from the server") + ":"
-      message += "\n#{e.original_error.message}" if e.respond_to?(:original_error)
-      message += "\n  - " +
-                 _("is the server down?") + "\n  - " +
-                 _("was '%s' run on the server when using apipie cache? (typical production settings)") % rake_command
-      print_error message
-      log_full_error e
-      HammerCLI::EX_CONFIG
+    def ssl_cert_instructions
+      host_url = HammerCLI::Settings.get(:_params, :host) || HammerCLI::Settings.get(:foreman, :host)
+      uri = URI.parse(host_url)
+      if uri.host.nil?
+        host = '<FOREMAN_HOST>'
+        cert_name = "#{host}.crt"
+      else
+        host = uri.to_s
+        cert_name = "#{uri.host}.crt"
+      end
+
+      cmd = "hammer --fetch-ca-cert #{host}"
+
+      rh_install_cmd = "install #{cert_name} /etc/pki/ca-trust/source/anchors/"
+      rh_update_cmd = "update-ca-trust"
+      deb_install_cmd = "install #{cert_name} /usr/local/share/ca-certificates/"
+      deb_update_cmd = "update-ca-certificates"
+
+      _("Make sure you configured the correct URL and have the server's CA certificate installed on your system.") + "\n\n" +
+      _("You can use hammer to fetch the CA certificate from the server. Be aware that hammer cannot verify whether the certificate is correct and you should verify its authenticity after downloading it.") +
+      "\n\n" +
+      _("Download the certificate and save it as a CRT file as follows:") +
+      "\n\n  $ #{cmd} > #{cert_name}\n\n" +
+      _("As root install the certificate and update the list of trusted CA certificates as follows:") + "\n\n" +
+      "  " + _("on Redhat systems") +  ":\n" +
+      "  $ #{rh_install_cmd}\n" +
+      "  $ #{rh_update_cmd}\n\n" +
+      "  " + _("on Debian systems") + ":\n" +
+      "  $ #{deb_install_cmd}\n" +
+      "  $ #{deb_update_cmd}\n\n" +
+      _("Alternatively you can save the CA certificate into a custom location and use option --ssl-ca-file or corresponding setting in your configuration file.") +
+      "\n"
+    end
+
+    def rake_command
+      "foreman-rake apipie:cache"
     end
 
     private
