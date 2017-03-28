@@ -6,6 +6,18 @@ describe "host create" do
   let(:minimal_params_without_hosgroup) { ['--location-id=1', '--organization-id=1', '--name=test'] }
   let(:minimal_params) { ['--hostgroup-id=1'] + minimal_params_without_hosgroup }
 
+  it "accepts hostgroup title" do
+    api_expects_search(:hostgroups, { :title => 'test/hg1' }).returns(index_response([{ 'id' => '83' }]))
+    api_expects(:hosts, :create, 'Create host with interfaces params') do |par|
+      par['host']['hostgroup_id'] == '83'
+    end.returns({})
+
+    expected_result = success_result("Host created\n")
+
+    result = run_cmd(cmd + minimal_params_without_hosgroup + ['--hostgroup-title=test/hg1'])
+    assert_cmd(expected_result, result)
+  end
+
   it "passes interface attributes to server" do
     params = ['--interface', 'identifier=eth0,ip=10.0.0.4,primary=true,provision=true']
 

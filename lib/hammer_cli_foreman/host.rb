@@ -233,7 +233,7 @@ module HammerCLIForeman
 
       def validate_options
         super
-        unless validator.any(:option_hostgroup_id, :option_hostgroup_name).exist?
+        unless validator.any(:option_hostgroup_id, :option_hostgroup_name, :option_hostgroup_title).exist?
           if option_managed
             validator.any(:option_architecture_name, :option_architecture_id).required
             validator.any(:option_domain_name, :option_domain_id).required
