@@ -33,6 +33,7 @@ module HammerCLIForeman
         field :to, _("To")
         HammerCLIForeman::References.domains(self)
         HammerCLIForeman::References.taxonomies(self)
+        HammerCLIForeman::References.parameters(self)
       end
 
       build_options
