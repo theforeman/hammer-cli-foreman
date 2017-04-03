@@ -96,25 +96,11 @@ module HammerCLIForeman
 
       cmd = "hammer --fetch-ca-cert #{host}"
 
-      rh_install_cmd = "install #{cert_name} /etc/pki/ca-trust/source/anchors/"
-      rh_update_cmd = "update-ca-trust"
-      deb_install_cmd = "install #{cert_name} /usr/local/share/ca-certificates/"
-      deb_update_cmd = "update-ca-certificates"
-
       _("Make sure you configured the correct URL and have the server's CA certificate installed on your system.") + "\n\n" +
       _("You can use hammer to fetch the CA certificate from the server. Be aware that hammer cannot verify whether the certificate is correct and you should verify its authenticity after downloading it.") +
       "\n\n" +
-      _("Download the certificate and save it as a CRT file as follows:") +
-      "\n\n  $ #{cmd} > #{cert_name}\n\n" +
-      _("As root install the certificate and update the list of trusted CA certificates as follows:") + "\n\n" +
-      "  " + _("on Redhat systems") +  ":\n" +
-      "  $ #{rh_install_cmd}\n" +
-      "  $ #{rh_update_cmd}\n\n" +
-      "  " + _("on Debian systems") + ":\n" +
-      "  $ #{deb_install_cmd}\n" +
-      "  $ #{deb_update_cmd}\n\n" +
-      _("Alternatively you can save the CA certificate into a custom location and use option --ssl-ca-file or corresponding setting in your configuration file.") +
-      "\n"
+      _("Download the certificate as follows:") +
+      "\n\n  $ #{cmd}\n\n"
     end
 
     def rake_command
