@@ -96,6 +96,30 @@ module HammerCLIForeman
       build_options
     end
 
+    class AvailableNetworksCommand < HammerCLIForeman::ListCommand
+
+      resource :compute_resources, :available_networks
+      command_name 'networks'
+      desc _("Show available networks")
+
+      build_options
+
+      validate_options do
+        any(:option_id, :option_name).required
+      end
+
+      def request_params
+        params = super
+        params['id'] ||= get_identifier
+        params
+      end
+
+      output do
+        field :name, _("Name")
+        field :id, _("Id")
+      end
+
+    end
 
     autoload_subcommands
     subcommand 'image', HammerCLIForeman::Image.desc, HammerCLIForeman::Image
