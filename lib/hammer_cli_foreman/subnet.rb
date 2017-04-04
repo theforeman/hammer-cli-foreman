@@ -11,6 +11,7 @@ module HammerCLIForeman
         field :name, _("Name")
         field :network, _("Network")
         field :mask, _("Mask")
+        field :vlanid, _("VLAN ID")
       end
 
       build_options
@@ -27,7 +28,6 @@ module HammerCLIForeman
         field :tftp, _("TFTP"), Fields::Reference, :details => :url
         field :dhcp, _("DHCP"), Fields::Reference, :details => :url
         field :ipam, _("IPAM")
-        field :vlanid, _("VLAN ID")
         field :gateway, _("Gateway")
         field :from, _("From")
         field :to, _("To")
