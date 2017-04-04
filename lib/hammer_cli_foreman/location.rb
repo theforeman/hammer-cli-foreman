@@ -11,6 +11,7 @@ module HammerCLIForeman
 
       output do
         field :id, _("Id")
+        field :title, _("Title")
         field :name, _("Name")
         field :description, _("Description")
       end

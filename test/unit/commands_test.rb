@@ -160,7 +160,7 @@ describe HammerCLIForeman::Command do
     out, err = capture_io do
       com.run(['--location', 'loc']).wont_equal HammerCLI::EX_OK
     end
-    err.must_equal "Error: Could not find location, please set one of options --location, --location-id.\n"
+    err.must_equal "Error: Could not find location, please set one of options --location, --location-title, --location-id.\n"
 
   end
 

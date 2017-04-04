@@ -13,10 +13,10 @@ module HammerCLIForeman
     def self.taxonomies(dsl)
       dsl.build do
         collection :locations, _("Locations"), :numbered => false, :hide_blank => true do
-          custom_field Fields::Reference
+          custom_field Fields::Reference, :name_key => :title
         end
         collection :organizations, _("Organizations"), :numbered => false, :hide_blank => true do
-          custom_field Fields::Reference
+          custom_field Fields::Reference, :name_key => :title
         end
       end
     end
