@@ -9,7 +9,6 @@ module HammerCLIForeman
         @authenticator = authenticator
         @url = url
 
-        uri = URI.parse(url)
         @session_file = "#{uri.scheme}_#{uri.host}"
         @storage_dir = storage_dir || File.expand_path(SESSION_STORAGE)
 
@@ -37,7 +36,7 @@ module HammerCLIForeman
 
         if @permissions_ok && @session_id
           jar = HTTP::CookieJar.new
-          jar.add(HTTP::Cookie.new('_session_id', @session_id, domain: request.uri.hostname.downcase, path: '/', for_domain: true))
+          jar.add(HTTP::Cookie.new('_session_id', @session_id, domain: uri.hostname.downcase, path: '/', for_domain: true))
           request['Cookie'] = HTTP::Cookie.cookie_value(jar.cookies)
           request
         else
@@ -68,6 +67,10 @@ module HammerCLIForeman
       end
 
       protected
+
+      def uri
+        @uri ||= URI.parse(@url)
+      end
 
       def session_storage
         "#{@storage_dir}/#{@session_file}"
