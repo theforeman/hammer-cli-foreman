@@ -44,6 +44,7 @@ describe HammerCLIForeman::Subnet do
       with_params ["--name=subnet"] do
         it_should_print_n_records 1
         it_should_print_columns ["Id", "Name", "Network", "Mask"]
+        it_should_print_columns ["Description"]
         it_should_print_columns ["Priority"]
         it_should_print_columns ["DNS", "Primary DNS", "Secondary DNS"]
         it_should_print_columns ["Domains", "TFTP", "DHCP"]
