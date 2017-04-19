@@ -112,7 +112,7 @@ module HammerCLIForeman
       end
 
       def parameter_attributes
-        return {} unless option_parameters
+        return [] unless option_parameters
         option_parameters.collect do |key, value|
           if value.is_a? String
             {"name"=>key, "value"=>value}
@@ -133,7 +133,7 @@ module HammerCLIForeman
       end
 
       def interfaces_attributes
-        return {} if option_interface_list.empty?
+        return [] if option_interface_list.empty?
 
         # move each attribute starting with "compute_" to compute_attributes
         option_interface_list.collect do |nic|
