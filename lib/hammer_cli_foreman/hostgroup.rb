@@ -27,9 +27,12 @@ module HammerCLIForeman
     def request_params
       params = super
       params['hostgroup']["parent_id"] ||= resolver.hostgroup_id('option_name' => option_parent) if option_parent
-      params['hostgroup']["puppet_proxy_id"] ||= proxy_id(option_puppet_proxy)
-      params['hostgroup']["puppet_ca_proxy_id"] ||= proxy_id(option_puppet_ca_proxy)
-      params['hostgroup']['puppetclass_ids'] = option_puppet_class_ids || puppet_class_ids(option_puppet_classes)
+      params['hostgroup']["puppet_proxy_id"] ||= proxy_id(option_puppet_proxy) if option_puppet_proxy
+      params['hostgroup']["puppet_ca_proxy_id"] ||= proxy_id(option_puppet_ca_proxy) if option_puppet_ca_proxy
+
+      puppetclass_ids = option_puppet_class_ids || puppet_class_ids(option_puppet_classes)
+      params['hostgroup']['puppetclass_ids'] = puppetclass_ids unless puppetclass_ids.nil?
+
       params['hostgroup']['root_pass'] = option_root_pass if option_root_pass
       params['hostgroup']['root_pass'] = HammerCLIForeman::HostgroupUpdateCreateCommons::ask_password if option_ask_root_pass
       params
