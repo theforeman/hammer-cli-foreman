@@ -28,7 +28,7 @@ describe "host create" do
     # which causes failure in nested attributes assignment in the host model
 
     api_expects(:hosts, :create, 'Create host with empty interfaces') do |par|
-      par['host']['interfaces_attributes'] == {}
+      par['host']['interfaces_attributes'] == []
     end.returns({})
 
     expected_result = success_result("Host created\n")
