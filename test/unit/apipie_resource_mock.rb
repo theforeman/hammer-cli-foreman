@@ -41,6 +41,9 @@ module ResourceMocks
     ResourceMocks.mock_action_call(:compute_resources, :available_images, [])
   end
 
+  def self.compute_resources_available_networks
+    ResourceMocks.mock_action_call(:compute_resources, :available_networks, [])
+  end
 
   def self.organizations_index
     ResourceMocks.mock_action_call(:organizations, :index, {

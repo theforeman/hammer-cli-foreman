@@ -94,5 +94,29 @@ describe HammerCLIForeman::ComputeResource do
 
   end
 
+  context "AvailableNetworksCommand" do
+    before do
+      ResourceMocks.compute_resources_available_networks
+    end
+
+    let(:cmd) { HammerCLIForeman::ComputeResource::AvailableNetworksCommand.new("", ctx) }
+
+    context "parameters" do
+      it_should_accept "id", ["--id=1"]
+      it_should_accept "name", ["--name=arch"]
+      # it_should_fail_with "no params", [] # TODO: temporarily disabled, parameters are checked in the id resolver
+      # it_should_fail_with "name or id missing", ["--new-name=arch2"] # TODO: temporarily disabled, parameters are checked in the id resolver
+    end
+
+    context "output" do
+      let(:expected_record_count) { count_records(cmd.resource.call(:available_networks)) }
+
+      with_params ["--name=testcr"] do
+        it_should_print_n_records
+        it_should_print_columns ["Name", "Id"]
+      end
+    end
+
+  end
 
 end
