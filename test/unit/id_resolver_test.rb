@@ -62,6 +62,10 @@ describe HammerCLIForeman::IdResolver do
 
 
   describe "resolving ids" do
+    let(:john_id) { 11 }
+    let(:john) { {"id" => john_id, "name" => "John Doe"} }
+    let(:jane_id) { 22 }
+    let(:jane) { {"id" => jane_id, "name" => "Jane Doe"} }
 
     it "must define methods for all resources" do
       expected_method_names = api.resources.map(&:singular_name).collect{|r| "#{r}_id"}
@@ -93,10 +97,7 @@ describe HammerCLIForeman::IdResolver do
       end
 
       it "raises exception when multiple resources are found" do
-        ResourceMocks.mock_action_call(:users, :index, [
-          {"id" => 11, "name" => "user11"},
-          {"id" => 22, "name" => "user22"}
-        ])
+        ResourceMocks.mock_action_call(:users, :index, [john, jane])
 
         err = resolver_run.must_raise HammerCLIForeman::ResolverError
         err.message.must_equal "found more than one user"
@@ -107,7 +108,7 @@ describe HammerCLIForeman::IdResolver do
           ( resource == :users &&
             action == :index &&
             params[:search] == "name = \"John Doe\"")
-        end.returns({"id" => 1, "name" => "John Doe"})
+        end.returns(john)
 
         resolver_run.call
       end
@@ -119,17 +120,15 @@ describe HammerCLIForeman::IdResolver do
       end
 
       it "returns id of the resource" do
-        ResourceMocks.mock_action_call(:users, :index, [
-          {"id" => 11, "name" => "John Doe"}
-        ])
+        ResourceMocks.mock_action_call(:users, :index, [john])
 
-        resolver_run.call.must_equal 11
+        resolver_run.call.must_equal john_id
       end
 
     end
 
     describe "searching dependent resources" do
-      let(:resolver_run) { proc { resolver.post_id({"option_name" => "Post 11", "option_user_name" => "User 22"}) } }
+      let(:resolver_run) { proc { resolver.post_id({"option_name" => "Post 11", "option_user_name" => "John Doe"}) } }
 
       it "raises exception when no resource is found" do
         ResourceMocks.mock_action_call(:posts, :index, [])
@@ -141,10 +140,7 @@ describe HammerCLIForeman::IdResolver do
 
       it "raises exception when multiple resources are found" do
         ResourceMocks.mock_action_call(:posts, :index, [])
-        ResourceMocks.mock_action_call(:users, :index, [
-          {"id" => 11, "name" => "user1"},
-          {"id" => 22, "name" => "user2"}
-        ])
+        ResourceMocks.mock_action_call(:users, :index, [john, jane])
 
         err = resolver_run.must_raise HammerCLIForeman::ResolverError
         err.message.must_equal "found more than one user"
@@ -154,8 +150,8 @@ describe HammerCLIForeman::IdResolver do
         ApipieBindings::API.any_instance.expects(:call).with() do |resource, action, params, headers, opts|
           ( resource == :users &&
             action == :index &&
-            params[:search] == "name = \"User 22\"")
-        end.returns({"id" => 22, "name" => "User 22"})
+            params[:search] == "name = \"John Doe\"")
+        end.returns(john)
 
         ApipieBindings::API.any_instance.expects(:call).with() do |resource, action, params, headers, opts|
           ( resource == :posts &&
@@ -178,9 +174,7 @@ describe HammerCLIForeman::IdResolver do
     end
 
     describe 'searching for puppetclasses' do
-      let(:resolver_run) { proc { resolver.puppetclass_ids('option_names' => ['apache::mod::authnz_ldap', 'git::params', 'apache::dev']) } }
-
-      it "returns ids of the classes" do
+      before do
         ResourceMocks.mock_action_call(:puppetclasses, :index, {
           'apache' => [
             { 'id' => 70, 'name' => 'apache::dev', 'created_at' => '2015-01-27T07:24:57.134Z', 'updated_at' => '2015-03-05T17:27:54.282Z' },
@@ -188,9 +182,53 @@ describe HammerCLIForeman::IdResolver do
           ],
           'git' => [
             { 'id' => 85, 'name' => 'git::params', 'created_at' => '2015-01-27T07:24:57.306Z', 'updated_at' => '2015-01-27T07:24:57.306Z' }
-          ] })
+          ]
+        })
+      end
 
-        resolver_run.call.must_equal [70, 27, 85]
+      it "returns ids from options" do
+        result = resolver.user_ids({"option_ids" => [4, 5], "option_names" => ['apache::dev']})
+        assert_equal [4, 5], result
+      end
+
+      it "returns ids of the classes" do
+        class_names = ['apache::mod::authnz_ldap', 'git::params', 'apache::dev']
+        assert_equal [70, 27, 85], resolver.puppetclass_ids('option_names' => class_names)
+      end
+
+      it 'returns empty array for empty class array' do
+        assert_equal [], resolver.puppetclass_ids('option_names' => [])
+      end
+    end
+
+    describe "searching for multiple resources" do
+      it "returns ids from options" do
+        result = resolver.user_ids({"option_ids" => [4, 5], "option_names" => ["some", "names"]})
+        assert_equal [4, 5], result
+      end
+
+      it "finds multiple ids" do
+        ApipieBindings::API.any_instance.expects(:call).with() do |resource, action, params, headers, opts|
+          ( resource == :users &&
+            action == :index &&
+            params[:search] == "name = \"John Doe\" or name = \"Jane Doe\"")
+        end.returns([john, jane])
+
+        assert_equal [john_id, jane_id], resolver.user_ids({"option_names" => ["John Doe", "Jane Doe"]})
+      end
+
+      it "raises exception when wrong number of resources is found" do
+        ResourceMocks.mock_action_call(:users, :index, [john])
+
+        assert_raises HammerCLIForeman::ResolverError do
+          resolver.user_ids({"option_names" => ["John Doe", "Jane Doe"]})
+        end
+      end
+
+      it "returns empty array for empty input" do
+        ResourceMocks.mock_action_call(:users, :index, [john, jane])
+
+        assert_equal [], resolver.user_ids({"option_names" => []})
       end
     end
   end
