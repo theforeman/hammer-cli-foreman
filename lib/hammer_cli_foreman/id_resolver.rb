@@ -144,8 +144,8 @@ module HammerCLIForeman
     end
 
     def get_ids(resource_name, options)
-      if options[HammerCLI.option_accessor_name("ids")]
-        options[HammerCLI.option_accessor_name("ids")]
+      if (ids = options[HammerCLI.option_accessor_name("ids")])
+        ids
       elsif !options_empty?(@api.resource(resource_name), options)
         find_resources(resource_name, options).map{|r| r['id']}
       else
@@ -164,8 +164,8 @@ module HammerCLIForeman
       resource_name = :puppetclasses
       resource = @api.resource(resource_name)
 
-      if options[HammerCLI.option_accessor_name("ids")]
-        options[HammerCLI.option_accessor_name("ids")]
+      if (ids = options[HammerCLI.option_accessor_name("ids")])
+        ids
       elsif !options_empty?(resource, options)
         results = resolved_call(resource_name, :index, options).first.values.flatten
         raise ResolverError.new(_("one of %s not found") % resource.name, resource) if results.count < expected_record_count(options, resource)
