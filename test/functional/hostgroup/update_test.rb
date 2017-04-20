@@ -298,6 +298,13 @@ module HammerCLIForeman
         end
         run_cmd(%w(hostgroup update --id 1 --subnet subnet1))
       end
+
+      it "doesn't send any additional values in the update request" do
+        api_expects(:hostgroups, :update) do |p|
+          p['hostgroup'] == {}
+        end
+        run_cmd(%w(hostgroup update --id 1))
+      end
     end
   end
 end
