@@ -274,6 +274,9 @@ module HammerCLIForeman
       value = options[HammerCLI.option_accessor_name('name')]
       search_options[:search] = "key = \"#{value}\""
       search_options[:puppetclass_id] = puppetclass_id(scoped_options("puppetclass", options))
+      if (options[HammerCLI.option_accessor_name("environment_id")] || options[HammerCLI.option_accessor_name("environment_name")])
+        search_options[:environment_id] = environment_id(scoped_options("environment", options))
+      end
       search_options
     end
 
