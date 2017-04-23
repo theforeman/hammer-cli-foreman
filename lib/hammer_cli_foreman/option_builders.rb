@@ -69,8 +69,9 @@ module HammerCLIForeman
 
       dependent_resources = []
 
+      builders << SearchablesOptionBuilder.new(resource, @searchables)
+
       if action.params.find{ |p| p.name == "id" }
-        builders << SearchablesOptionBuilder.new(resource, @searchables)
         dependent_resources += @dependency_resolver.resource_dependencies(resource, :only_required => true, :recursive => true)
       end
 
