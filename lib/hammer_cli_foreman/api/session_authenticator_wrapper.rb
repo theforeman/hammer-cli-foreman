@@ -48,9 +48,9 @@ module HammerCLIForeman
         load_session
         if ex.is_a?(RestClient::Unauthorized) && !@session_id.nil?
           destroy_session
-          ex.message = _("Session has expired")
+          return UnauthorizedError.new(_("Session has expired"))
         else
-          @authenticator.error(ex)
+          return @authenticator.error(ex)
         end
       end
 

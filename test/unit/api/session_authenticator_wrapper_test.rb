@@ -166,26 +166,26 @@ describe HammerCLIForeman::Api::SessionAuthenticatorWrapper do
         end
       end
 
-      it 'overrides 401 error message' do
+      it 'overrides 401 exception' do
         prepare_session_storage :session_id => 'SOME_SESSION_ID' do |auth, dir|
           ex = RestClient::Unauthorized.new
-          auth.error(ex)
+          new_ex = auth.error(ex)
 
-          assert_equal 'Session has expired', ex.message
+          assert_equal 'Session has expired', new_ex.message
         end
       end
 
-      it 'keeps error message for other exceptions' do
+      it 'does not override other exceptions' do
         prepare_session_storage :session_id => 'SOME_SESSION_ID' do |auth, dir|
           ex = RuntimeError.new('Some error')
           wrapped_auth.expects(:error).with(ex)
-          auth.error(ex)
+          new_ex = auth.error(ex)
 
-          assert_equal 'Some error', ex.message
+          assert_nil new_ex
         end
       end
 
-      it 'keeps sessione for other exceptions' do
+      it 'keeps session for other exceptions' do
         prepare_session_storage :session_id => 'SOME_SESSION_ID' do |auth, dir|
           ex = RuntimeError.new('Some error')
           wrapped_auth.expects(:error).with(ex)

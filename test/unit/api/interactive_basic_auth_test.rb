@@ -69,18 +69,18 @@ describe HammerCLIForeman::Api::InteractiveBasicAuth do
   describe '#error' do
     let(:auth) { HammerCLIForeman::Api::InteractiveBasicAuth.new(nil, nil) }
 
-    it 'overrides exception message for unauthorized exception' do
+    it 'overrides unauthorized exception' do
       ex = RestClient::Unauthorized.new
-      auth.error(ex)
+      new_ex = auth.error(ex)
 
-      assert_equal 'Invalid username or password', ex.message
+      assert_equal 'Invalid username or password', new_ex.message
     end
 
-    it 'keeps the message for other exceptions' do
+    it 'does not override other exceptions' do
       ex = RuntimeError.new('Some error')
-      auth.error(ex)
+      new_ex = auth.error(ex)
 
-      assert_equal 'Some error', ex.message
+      assert_nil new_ex
     end
   end
 end
