@@ -11,11 +11,18 @@ module HammerCLIForeman
         [RestClient::Forbidden, :handle_forbidden],
         [RestClient::UnprocessableEntity, :handle_unprocessable_entity],
         [RestClient::MovedPermanently, :handle_moved_permanently],
+        [HammerCLIForeman::Api::UnauthorizedError, :handle_foreman_unauthorized],
         [ArgumentError, :handle_argument_error],
       ]
     end
 
     protected
+
+    def handle_foreman_unauthorized(e)
+      print_error e.message
+      log_full_error e
+      HammerCLI::EX_UNAUTHORIZED
+    end
 
     def handle_unprocessable_entity(e)
       response = JSON.parse(e.response)
