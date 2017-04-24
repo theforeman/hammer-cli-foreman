@@ -27,5 +27,6 @@ EOF
 
   s.add_dependency 'hammer_cli', '>= 0.10.0'
   s.add_dependency 'apipie-bindings', '>= 0.0.19'
+  s.add_dependency 'rest-client', '>= 1.8.0', '< 3.0.0'
 
 end
