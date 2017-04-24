@@ -12,11 +12,17 @@ module HammerCLIForeman
         [RestClient::UnprocessableEntity, :handle_unprocessable_entity],
         [RestClient::MovedPermanently, :handle_moved_permanently],
         [HammerCLIForeman::Api::UnauthorizedError, :handle_foreman_unauthorized],
+        [HammerCLIForeman::Api::SessionExpired, :handle_sesion_expired],
         [ArgumentError, :handle_argument_error],
       ]
     end
 
     protected
+
+    def handle_sesion_expired(e)
+      log_full_error e
+      HammerCLI::EX_RETRY
+    end
 
     def handle_foreman_unauthorized(e)
       print_error e.message
