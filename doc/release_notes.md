@@ -1,6 +1,15 @@
 Release notes
 =============
 
+### 0.10.1 (2017-04-24)
+* Require apipie-bindings >= 0.2.0 ([#19362](http://projects.theforeman.org/issues/19362))
+* Require rest-client >= 1.8.0 ([PR #306](https://github.com/theforeman/hammer-cli-foreman/pull/306)) ([#19358](http://projects.theforeman.org/issues/19358))
+* Custom error for 401 unauthorized ([PR #305](https://github.com/theforeman/hammer-cli-foreman/pull/305)) ([#19362](http://projects.theforeman.org/issues/19362))
+* Use Array for empty attributes ([#19312](http://projects.theforeman.org/issues/19312))
+* Prevent sending nil values in hostgroup update ([#14872](http://projects.theforeman.org/issues/14872))
+* Install server CA cert without root access ([#19083](http://projects.theforeman.org/issues/19083))
+* Make session authenticator compatible with rest-client 1.8 ([#19159](http://projects.theforeman.org/issues/19159))
+
 ### 0.10.0 (2017-03-28)
 * Adding --hidden-value option to parameters (#290) ([#18878](http://projects.theforeman.org/issues/18878))
 * Add command to clone user role ([#18318](http://projects.theforeman.org/issues/18318))
