@@ -5,7 +5,7 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: hammer-cli-foreman 0.10.0\n"
+"Project-Id-Version: hammer-cli-foreman 0.10.1\n"
 "Report-Msgid-Bugs-To: \n"
 "PO-Revision-Date: 2014-03-04 16:47+0000\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
@@ -855,23 +855,7 @@ msgid ""
 "its authenticity after downloading it."
 msgstr ""
 
-msgid "Download the certificate and save it as a CRT file as follows:"
-msgstr ""
-
-msgid ""
-"As root install the certificate and update the list of trusted CA certificates"
-" as follows:"
-msgstr ""
-
-msgid "on Redhat systems"
-msgstr ""
-
-msgid "on Debian systems"
-msgstr ""
-
-msgid ""
-"Alternatively you can save the CA certificate into a custom location and use o"
-"ption --ssl-ca-file or corresponding setting in your configuration file."
+msgid "Download the certificate as follows:"
 msgstr ""
 
 msgid "View and manage user group's external user groups"
