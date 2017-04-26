@@ -24,7 +24,7 @@ describe HammerCLIForeman::User do
     context "output" do
       let(:expected_record_count) { count_records(cmd.resource.call(:index)) }
       it_should_print_n_records
-      it_should_print_columns ["Id", "Login", "Name", "Email"]
+      it_should_print_columns ["Id", "Login", "Name", "Email", "Admin", "Last login", "Authorized by"]
     end
 
   end
