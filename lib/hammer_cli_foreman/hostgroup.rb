@@ -72,6 +72,7 @@ module HammerCLIForeman
     class InfoCommand < HammerCLIForeman::InfoCommand
 
       output ListCommand.output_definition do
+        field :description, _("Description"), Fields::LongText, :hide_blank => true
         field nil, _("Subnet"), Fields::SingleReference, :key => :subnet
 
         field nil, _("Domain"), Fields::SingleReference, :key => :domain
