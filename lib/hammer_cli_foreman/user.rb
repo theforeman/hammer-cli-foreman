@@ -11,6 +11,9 @@ module HammerCLIForeman
         field :login, _("Login")
         field :full_name, _("Name")
         field :mail, _("Email")
+        field :admin, _("Admin"), Fields::Boolean
+        field :last_login_on, _("Last login"), Fields::Date
+        field nil, _("Authorized by"), Fields::SingleReference, :key => :auth_source
       end
 
       def extend_data(user)
@@ -25,12 +28,9 @@ module HammerCLIForeman
     class InfoCommand < HammerCLIForeman::InfoCommand
 
       output ListCommand.output_definition do
-        field :admin, _("Admin"), Fields::Boolean
         field :effective_admin, _("Effective admin"), Fields::Boolean
-        field nil, _("Authorized by"), Fields::SingleReference, :key => :auth_source
         field :locale, _("Locale")
         field :timezone, _("Timezone")
-        field :last_login_on, _("Last login"), Fields::Date
         field :description, _("Description")
         custom_field Fields::Reference, :label => _("Default organization"), :path => [:default_organization]
         custom_field Fields::Reference, :label => _("Default location"), :path => [:default_location]
