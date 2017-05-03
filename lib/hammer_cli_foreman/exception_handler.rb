@@ -93,6 +93,7 @@ module HammerCLIForeman
     def ssl_cert_instructions
       host_url = HammerCLI::Settings.get(:_params, :host) || HammerCLI::Settings.get(:foreman, :host)
       uri = URI.parse(host_url)
+      ssl_option = HammerCLI::SSLOptions.new.get_options(uri)
       if uri.host.nil?
         host = '<FOREMAN_HOST>'
         cert_name = "#{host}.crt"
@@ -103,11 +104,19 @@ module HammerCLIForeman
 
       cmd = "hammer --fetch-ca-cert #{host}"
 
-      _("Make sure you configured the correct URL and have the server's CA certificate installed on your system.") + "\n\n" +
-      _("You can use hammer to fetch the CA certificate from the server. Be aware that hammer cannot verify whether the certificate is correct and you should verify its authenticity after downloading it.") +
-      "\n\n" +
-      _("Download the certificate as follows:") +
-      "\n\n  $ #{cmd}\n\n"
+      if !ssl_option[:ssl_ca_path].nil? || !ssl_option[:ssl_ca_file].nil?
+        instructions = _("The following configuration option were used for the SSL connection:" ) + "\n"
+        instructions << "  ssl_ca_path = #{ssl_option[:ssl_ca_path]}\n" unless ssl_option[:ssl_ca_path].nil?
+        instructions << "  ssl_ca_file = #{ssl_option[:ssl_ca_file]}\n" unless ssl_option[:ssl_ca_file].nil?
+        instructions << "\n" + _("Make sure the location contains an unexpired and valid CA certificate for #{host_url}")
+      else
+        instructions = _("You can use hammer to fetch the CA certificate from the server. Be aware that hammer cannot verify whether the certificate is correct and you should verify its authenticity after downloading it.")
+        instructions << "\n\n" + _("Download the certificate as follows:")
+        instructions << "\n\n  $ #{cmd}\n\n"
+      end
+
+      _("Make sure you configured the correct URL and have the server's CA certificate installed on your system.") +
+          "\n\n" + instructions
     end
 
     def rake_command
