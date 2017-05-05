@@ -844,9 +844,12 @@ msgstr ""
 msgid "Forbidden - server refused to process the request"
 msgstr ""
 
+msgid "The following configuration option were used for the SSL connection:"
+msgstr ""
+
 msgid ""
-"Make sure you configured the correct URL and have the server's CA certificate "
-"installed on your system."
+"\"Make sure the location contains an unexpired and valid CA certificate for #{h"
+"ost_url}\""
 msgstr ""
 
 msgid ""
@@ -856,6 +859,11 @@ msgid ""
 msgstr ""
 
 msgid "Download the certificate as follows:"
+msgstr ""
+
+msgid ""
+"Make sure you configured the correct URL and have the server's CA certificate "
+"installed on your system."
 msgstr ""
 
 msgid "View and manage user group's external user groups"

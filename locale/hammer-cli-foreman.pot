@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: hammer-cli-foreman 0.10.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-04-25 03:03+0200\n"
-"PO-Revision-Date: 2017-04-25 03:03+0200\n"
+"POT-Creation-Date: 2017-05-05 13:46+0200\n"
+"PO-Revision-Date: 2017-05-05 13:46+0200\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: \n"
@@ -759,41 +759,41 @@ msgstr ""
 msgid "Received data of unknown format"
 msgstr ""
 
-#: ../lib/hammer_cli_foreman/commands.rb:164
+#: ../lib/hammer_cli_foreman/commands.rb:172
 msgid ""
 "Could not find %{resource}. Some search options were missing, please see --hel"
 "p."
 msgstr ""
 
-#: ../lib/hammer_cli_foreman/commands.rb:166
+#: ../lib/hammer_cli_foreman/commands.rb:174
 msgid "Could not find %{resource}, please set option %{switches}."
 msgstr ""
 
-#: ../lib/hammer_cli_foreman/commands.rb:168
+#: ../lib/hammer_cli_foreman/commands.rb:176
 msgid "Could not find %{resource}, please set one of options %{switches}."
 msgstr ""
 
-#: ../lib/hammer_cli_foreman/commands.rb:497
+#: ../lib/hammer_cli_foreman/commands.rb:505
 msgid "Associate a resource"
 msgstr ""
 
-#: ../lib/hammer_cli_foreman/commands.rb:501
+#: ../lib/hammer_cli_foreman/commands.rb:509
 msgid "Could not associate the %{resource_name}"
 msgstr ""
 
-#: ../lib/hammer_cli_foreman/commands.rb:505
+#: ../lib/hammer_cli_foreman/commands.rb:513
 msgid "The %{resource_name} has been associated"
 msgstr ""
 
-#: ../lib/hammer_cli_foreman/commands.rb:527
+#: ../lib/hammer_cli_foreman/commands.rb:535
 msgid "Disassociate a resource"
 msgstr ""
 
-#: ../lib/hammer_cli_foreman/commands.rb:539
+#: ../lib/hammer_cli_foreman/commands.rb:547
 msgid "Could not disassociate the %{resource_name}"
 msgstr ""
 
-#: ../lib/hammer_cli_foreman/commands.rb:543
+#: ../lib/hammer_cli_foreman/commands.rb:551
 msgid "The %{resource_name} has been disassociated"
 msgstr ""
 
@@ -1209,43 +1209,53 @@ msgstr ""
 msgid "Could not delete the environment"
 msgstr ""
 
-#: ../lib/hammer_cli_foreman/exception_handler.rb:36
+#: ../lib/hammer_cli_foreman/exception_handler.rb:42
 msgid "Redirection of API call detected."
 msgstr ""
 
-#: ../lib/hammer_cli_foreman/exception_handler.rb:37
+#: ../lib/hammer_cli_foreman/exception_handler.rb:43
 msgid "It seems hammer is configured to use HTTP and the server prefers HTTPS."
 msgstr ""
 
-#: ../lib/hammer_cli_foreman/exception_handler.rb:39
+#: ../lib/hammer_cli_foreman/exception_handler.rb:45
 msgid "Update your server url configuration"
 msgstr ""
 
-#: ../lib/hammer_cli_foreman/exception_handler.rb:40
+#: ../lib/hammer_cli_foreman/exception_handler.rb:46
 msgid ""
 "you can set 'follow_redirects' to one of :default or :always to enable redirec"
 "ts following"
 msgstr ""
 
-#: ../lib/hammer_cli_foreman/exception_handler.rb:61
+#: ../lib/hammer_cli_foreman/exception_handler.rb:67
 msgid "Forbidden - server refused to process the request"
 msgstr ""
 
-#: ../lib/hammer_cli_foreman/exception_handler.rb:106
-msgid ""
-"Make sure you configured the correct URL and have the server's CA certificate "
-"installed on your system."
+#: ../lib/hammer_cli_foreman/exception_handler.rb:114
+msgid "The following configuration option were used for the SSL connection:"
 msgstr ""
 
-#: ../lib/hammer_cli_foreman/exception_handler.rb:107
+#: ../lib/hammer_cli_foreman/exception_handler.rb:117
+msgid ""
+"\"Make sure the location contains an unexpired and valid CA certificate for #{h"
+"ost_url}\""
+msgstr ""
+
+#: ../lib/hammer_cli_foreman/exception_handler.rb:119
 msgid ""
 "You can use hammer to fetch the CA certificate from the server. Be aware that "
 "hammer cannot verify whether the certificate is correct and you should verify "
 "its authenticity after downloading it."
 msgstr ""
 
-#: ../lib/hammer_cli_foreman/exception_handler.rb:109
+#: ../lib/hammer_cli_foreman/exception_handler.rb:120
 msgid "Download the certificate as follows:"
+msgstr ""
+
+#: ../lib/hammer_cli_foreman/exception_handler.rb:124
+msgid ""
+"Make sure you configured the correct URL and have the server's CA certificate "
+"installed on your system."
 msgstr ""
 
 #: ../lib/hammer_cli_foreman/external_usergroup.rb:6
