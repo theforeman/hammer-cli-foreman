@@ -5,7 +5,7 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: hammer-cli-foreman 0.10.0\n"
+"Project-Id-Version: hammer-cli-foreman 0.11.pre.develop\n"
 "Report-Msgid-Bugs-To: \n"
 "PO-Revision-Date: 2014-03-04 16:47+0000\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
@@ -627,6 +627,9 @@ msgstr ""
 msgid "Could not delete the compute resource"
 msgstr ""
 
+msgid "Show available networks"
+msgstr ""
+
 msgid "EC2"
 msgstr ""
 
@@ -844,9 +847,12 @@ msgstr ""
 msgid "Forbidden - server refused to process the request"
 msgstr ""
 
+msgid "The following configuration option were used for the SSL connection:"
+msgstr ""
+
 msgid ""
-"Make sure you configured the correct URL and have the server's CA certificate "
-"installed on your system."
+"\"Make sure the location contains an unexpired and valid CA certificate for #{h"
+"ost_url}\""
 msgstr ""
 
 msgid ""
@@ -855,23 +861,12 @@ msgid ""
 "its authenticity after downloading it."
 msgstr ""
 
-msgid "Download the certificate and save it as a CRT file as follows:"
+msgid "Download the certificate as follows:"
 msgstr ""
 
 msgid ""
-"As root install the certificate and update the list of trusted CA certificates"
-" as follows:"
-msgstr ""
-
-msgid "on Redhat systems"
-msgstr ""
-
-msgid "on Debian systems"
-msgstr ""
-
-msgid ""
-"Alternatively you can save the CA certificate into a custom location and use o"
-"ption --ssl-ca-file or corresponding setting in your configuration file."
+"Make sure you configured the correct URL and have the server's CA certificate "
+"installed on your system."
 msgstr ""
 
 msgid "View and manage user group's external user groups"
@@ -2077,6 +2072,9 @@ msgstr ""
 msgid "Mask"
 msgstr ""
 
+msgid "VLAN ID"
+msgstr ""
+
 msgid "Priority"
 msgstr ""
 
@@ -2096,9 +2094,6 @@ msgid "DHCP"
 msgstr ""
 
 msgid "IPAM"
-msgstr ""
-
-msgid "VLAN ID"
 msgstr ""
 
 msgid "Gateway"
@@ -2126,6 +2121,24 @@ msgid "Subnet deleted"
 msgstr ""
 
 msgid "Could not delete the subnet"
+msgstr ""
+
+msgid "Create or update parameter for a subnet."
+msgstr ""
+
+msgid "Subnet parameter updated"
+msgstr ""
+
+msgid "New subnet parameter created"
+msgstr ""
+
+msgid "Could not set subnet parameter"
+msgstr ""
+
+msgid "Delete parameter for a subnet."
+msgstr ""
+
+msgid "Subnet parameter deleted"
 msgstr ""
 
 msgid "List available provisioning template kinds."
@@ -2176,19 +2189,19 @@ msgstr ""
 msgid "Admin"
 msgstr ""
 
-msgid "Effective admin"
+msgid "Last login"
 msgstr ""
 
 msgid "Authorized by"
+msgstr ""
+
+msgid "Effective admin"
 msgstr ""
 
 msgid "Locale"
 msgstr ""
 
 msgid "Timezone"
-msgstr ""
-
-msgid "Last login"
 msgstr ""
 
 msgid "Default organization"
