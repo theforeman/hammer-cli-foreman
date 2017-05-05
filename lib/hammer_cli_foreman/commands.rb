@@ -85,6 +85,14 @@ module HammerCLIForeman
       self.class.searchables
     end
 
+    def exception_handler_class
+      #search for exception handler class in parent modules/classes
+      HammerCLI.constant_path(self.class.name.to_s).reverse.each do |mod|
+        return mod.exception_handler_class if mod.respond_to? :exception_handler_class
+      end
+      HammerCLIForeman::ExceptionHandler
+    end
+
     def self.create_option_builder
       configurator = BuilderConfigurator.new(searchables, dependency_resolver)
 
