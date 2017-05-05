@@ -1,6 +1,11 @@
 Release notes
 =============
 
+### 0.10.2 (2017-05-05)
+* Provide default exception handler ([#19470](http://projects.theforeman.org/issues/19470))
+* Retry command on session expiry ([#19431](http://projects.theforeman.org/issues/19431))
+* More detailed instructions on SSL verification fail ([#19390](http://projects.theforeman.org/issues/19390))
+
 ### 0.10.1 (2017-04-24)
 * Require apipie-bindings >= 0.2.0 ([#19362](http://projects.theforeman.org/issues/19362))
 * Require rest-client >= 1.8.0 ([PR #306](https://github.com/theforeman/hammer-cli-foreman/pull/306)) ([#19358](http://projects.theforeman.org/issues/19358))
