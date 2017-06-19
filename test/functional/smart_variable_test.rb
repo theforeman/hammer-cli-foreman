@@ -3,13 +3,13 @@ require File.join(File.dirname(__FILE__), 'test_helper')
 describe 'smart-variable update' do
   let(:cmd) { %w(smart-variable update) }
 
-  it 'allows to save new name' do
-    params = ['--id=1', '--new-variable=name2']
+  it 'allows to save new name and override value order' do
+    params = ['--id=1', '--new-variable=name2', '--override-value-order=\'fqdn\',\'hostgroup\',\'domain\',\'os\'']
 
     expected_result = success_result("Smart variable [name2] updated\n")
 
     api_expects(:smart_variables, :update, 'Update the variable') do |par|
-      par['smart_variable']['variable'] == 'name2'
+     (par['smart_variable']['variable'] == 'name2') && (par['smart_variable']['override_value_order'] == "fqdn\nhostgroup\ndomain\nos")
     end.returns(
       'description' => '',
       'parameter_type' => 'string',
@@ -18,7 +18,7 @@ describe 'smart-variable update' do
       'hidden_value' => '*****',
       'validator_type' => '',
       'validator_rule' => nil,
-      'override_value_order' => 'fqdn\nhostgroup\nos\ndomain',
+      'override_value_order' => 'fqdn\nhostgroup\ndomain\nos',
       'merge_overrides' => false,
       'merge_default' => false,
       'avoid_duplicates' => false,

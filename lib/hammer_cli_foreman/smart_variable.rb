@@ -1,5 +1,27 @@
 module HammerCLIForeman
 
+  module SmartVariableUpdateCreateCommons
+
+    def self.included(base)
+      base.option "--variable-type", "VARIABLE_TYPE", _("Type of the variable."),
+                  :format => HammerCLI::Options::Normalizers::Enum.new(
+                      ['string', 'boolean', 'integer', 'real', 'array', 'hash', 'yaml', 'json'])
+      base.option "--validator-type", "VALIDATOR_TYPE", _("Type of the validator."),
+                  :format => HammerCLI::Options::Normalizers::Enum.new(['regexp', 'list', ''])
+      base.option "--override-value-order", "OVERRIDE_VALUE_ORDER", _("The order in which values are resolved"),
+                  :format => HammerCLI::Options::Normalizers::List.new
+
+      base.build_options :without => [:variable_type, :validator_type, :override_value_order]
+    end
+
+    def request_params
+      params = super
+      override_order = params['smart_variable']['override_value_order']
+      params['smart_variable']['override_value_order'] = override_order.join("\n") if override_order.is_a?(Array)
+      params
+    end
+  end
+
   class SmartVariablesBriefList < HammerCLIForeman::ListCommand
     resource :smart_variables, :index
     command_name 'smart-variables'
@@ -80,31 +102,17 @@ module HammerCLIForeman
     end
 
     class CreateCommand < HammerCLIForeman::CreateCommand
+      include SmartVariableUpdateCreateCommons
 
       success_message _("Smart variable [%{variable}] created")
       failure_message _("Could not create the smart variable")
-
-      build_options :without => [:variable_type, :validator_type]
-
-      option "--variable-type", "VARIABLE_TYPE", _("Type of the variable."),
-        :format => HammerCLI::Options::Normalizers::Enum.new(
-            ['string', 'boolean', 'integer', 'real', 'array', 'hash', 'yaml', 'json'])
-      option "--validator-type", "VALIDATOR_TYPE", _("Type of the validator."),
-        :format => HammerCLI::Options::Normalizers::Enum.new(['regexp', 'list', ''])
     end
 
     class UpdateCommand < HammerCLIForeman::UpdateCommand
+      include SmartVariableUpdateCreateCommons
 
       success_message _("Smart variable [%{variable}] updated")
       failure_message _("Could not update the smart variable")
-
-      build_options :without => [:variable_type, :validator_type]
-
-      option "--variable-type", "VARIABLE_TYPE", _("Type of the variable."),
-        :format => HammerCLI::Options::Normalizers::Enum.new(
-            ['string', 'boolean', 'integer', 'real', 'array', 'hash', 'yaml', 'json'])
-      option "--validator-type", "VALIDATOR_TYPE", _("Type of the validator."),
-        :format => HammerCLI::Options::Normalizers::Enum.new(['regexp', 'list', ''])
     end
 
 
