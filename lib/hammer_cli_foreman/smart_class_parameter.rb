@@ -107,7 +107,7 @@ module HammerCLIForeman
 
       build_options do |options|
         options.expand.including(:puppetclasses)
-        options.without(:parameter_type, :validator_type, :override, :required)
+        options.without(:parameter_type, :validator_type, :override, :required, :override_value_order)
       end
 
       option "--override", "OVERRIDE", _("Override this parameter."),
@@ -119,11 +119,20 @@ module HammerCLIForeman
             ['string', 'boolean', 'integer', 'real', 'array', 'hash', 'yaml', 'json'])
       option "--validator-type", "VALIDATOR_TYPE", _("Type of the validator."),
         :format => HammerCLI::Options::Normalizers::Enum.new(['regexp', 'list', ''])
+      option "--override-value-order", "OVERRIDE_VALUE_ORDER", _("The order in which values are resolved"),
+             :format => HammerCLI::Options::Normalizers::List.new
 
       validate_options do
         if option(:option_name).exist?
           any(:option_puppetclass_name, :option_puppetclass_id).required
         end
+      end
+
+      def request_params
+        params = super
+        override_order = params['smart_class_parameter']['override_value_order']
+        params['smart_class_parameter']['override_value_order'] = override_order.join("\n") if override_order.is_a?(Array)
+        params
       end
     end
 
