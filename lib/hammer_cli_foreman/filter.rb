@@ -93,7 +93,7 @@ module HammerCLIForeman
 
       def request_params
         params = super
-        if override?
+        if !override?
           # Clear taxonomies in case the filter is switching override from true to false
           params['filter']['location_ids'] = []
           params['filter']['organization_ids'] = []
@@ -107,7 +107,11 @@ module HammerCLIForeman
       end
 
       def override?
-        option_override || filter['override?']
+        if option_override.nil?
+          filter['override?']
+        else
+          option_override
+        end
       end
 
       def filter
