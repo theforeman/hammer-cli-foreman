@@ -43,6 +43,16 @@ describe HammerCLIForeman::ExceptionHandler do
     err_code.must_equal HammerCLI::EX_NOPERM
   end
 
+  it "handles forbidden error with permission details" do
+    response = <<-RESPONSE
+    {"error":{"message":"Access denied", "details": "You're missing permission view_hosts"}}
+    RESPONSE
+    ex = RestClient::Forbidden.new(response)
+    ex.message = 'Forbidden'
+    output.expects(:print_error).with("Access denied\nYou're missing permission view_hosts", nil)
+    assert_equal(HammerCLI::EX_NOPERM, handler.handle_exception(ex))
+  end
+
   it "should handle unknown exception" do
     output.expects(:print_error).with(heading, "Error: message")
     MyException = Class.new(Exception)

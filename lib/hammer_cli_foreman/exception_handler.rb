@@ -64,7 +64,16 @@ module HammerCLIForeman
 
 
     def handle_forbidden(e)
-      print_error _("Forbidden - server refused to process the request")
+      if e.response
+        response = JSON.parse(e.response)
+        error = response['error']
+        if error && error['message'] && error['details']
+          message = error['message'] + "\n" + error['details']
+        end
+      end
+      message ||= _("Forbidden - server refused to process the request")
+
+      print_error message
       log_full_error e
       HammerCLI::EX_NOPERM
     end
