@@ -7,7 +7,7 @@ module HammerCLIForeman
     module TemplateCreateUpdateCommons
 
       def option_snippet
-        option_type == "snippet"
+        option_type && (option_type == "snippet")
       end
 
       def option_template_kind_id
