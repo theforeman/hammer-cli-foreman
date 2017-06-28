@@ -23,7 +23,7 @@ module HammerCLIForeman
 
       def status
         if load_session
-          _("Session exist, currently logged in as '%s'") % @user
+          _("Session exists, currently logged in as '%s'") % @user
         else
           _("You are currently not logged in")
         end
