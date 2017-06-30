@@ -77,4 +77,24 @@ describe 'template' do
       assert_cmd(success_result("Provisioning template cloned\n"), result)
     end
   end
+
+  describe 'update' do
+    before do
+      @cmd = %w(template update)
+    end
+
+    it "doesn't send snippet flag when --type is undefined" do
+      params = ['--id=1', '--locked=true']
+
+      api_expects(:template_kinds, :index, 'Get list of template kinds').returns(index_response([]))
+      api_expects(:config_templates, :update, 'Update the template') do |par|
+        par['config_template']['locked'] == true &&
+        par['config_template']['snippet'].nil?
+      end.returns(:name => 'A', :value => '1')
+
+      result = run_cmd(@cmd + params)
+
+      assert_cmd(success_result("Provisioning template updated\n"), result)
+    end
+  end
 end
