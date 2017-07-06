@@ -28,7 +28,7 @@ describe HammerCLIForeman::AuthSourceLdap do
       it_should_print_column "Id"
       it_should_print_column "LDAPS\\?"
       it_should_print_column "Port"
-      it_should_print_column "Server Type"
+      it_should_print_column "Server"
     end
 
   end
@@ -47,8 +47,7 @@ describe HammerCLIForeman::AuthSourceLdap do
     context "output" do
       with_params ["--id=1"] do
         it_should_print_n_records 1
-        it_should_print_column "Name"
-        it_should_print_column "Id"
+	it_should_print_columns ["Server", "Account", "Attribute mappings", "Locations", "Organizations"]
       end
     end
 
