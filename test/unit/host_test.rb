@@ -48,7 +48,7 @@ describe HammerCLIForeman::Host do
         it_should_print_columns ["Host Group", "Compute Resource", "Compute Profile", "Environment"]
         it_should_print_columns ["Puppet CA Id", "Puppet Master Id", "Cert name"]
         it_should_print_columns ["Managed", "Installed at", "Last report"]
-        it_should_print_columns ["Network", "Network interfaces", "Operating system", "Parameters", "Additional info"]
+        it_should_print_columns ["Network", "Network interfaces", "Operating system", "Parameters", "All parameters", "Additional info"]
       end
     end
 

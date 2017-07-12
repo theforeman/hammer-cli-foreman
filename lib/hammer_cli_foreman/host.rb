@@ -52,12 +52,6 @@ module HammerCLIForeman
         host
       end
 
-      def get_parameters(host_id)
-        params = HammerCLIForeman.foreman_resource!(:parameters).call(:index, :host_id => host_id)
-        HammerCLIForeman.collection_to_common_format(params)
-      end
-
-
       output do
         field :id, _("Id")
         field :uuid, _("UUID"), Fields::Field, :hide_blank => true
@@ -115,6 +109,7 @@ module HammerCLIForeman
         end
 
         HammerCLIForeman::References.parameters(self)
+        HammerCLIForeman::References.all_parameters(self)
 
         # additional info
         label _("Additional info") do
