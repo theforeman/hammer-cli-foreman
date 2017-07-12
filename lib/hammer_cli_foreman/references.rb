@@ -121,6 +121,14 @@ module HammerCLIForeman
       end
     end
 
+    def self.all_parameters(dsl)
+      dsl.build do
+        collection :all_parameters, _("All parameters"), :numbered => false do
+          custom_field Fields::KeyValue
+        end
+      end
+    end
+
     def self.puppetclasses(dsl)
       dsl.build do
         collection :puppetclasses, _("Puppetclasses"), :numbered => false do
