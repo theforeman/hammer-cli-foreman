@@ -15,16 +15,16 @@ module HammerCLIForeman
           return HammerCLI::EX_USAGE
         end
 
-        HammerCLIForeman.foreman_api_connection.logout
-        context[:api_connection].drop_all
-        HammerCLI::Settings.load({
-          :_params => {
-            :username => option_username,
-            :password => option_password
-          }
-        })
+        # Make sure we reflect also credentials set for the main hammer command
+        # ( hammer -u test auth login )
+        HammerCLIForeman.foreman_api_connection.authenticator.set_credentials(
+          option_username || HammerCLI::Settings.get('_params', 'username'),
+          option_password || HammerCLI::Settings.get('_params', 'password')
+        )
+        HammerCLIForeman.foreman_api_connection.authenticator.force_user_change
         HammerCLIForeman.foreman_api_connection.login
-        print_message(_("Successfully logged in."))
+
+        print_message(_("Successfully logged in as '%s'.") % HammerCLIForeman.foreman_api_connection.authenticator.user)
         HammerCLI::EX_OK
       end
     end
@@ -35,7 +35,6 @@ module HammerCLIForeman
 
       def execute
         HammerCLIForeman.foreman_api_connection.logout
-        context[:api_connection].drop_all
         print_message(_("Logged out."))
         HammerCLI::EX_OK
       end

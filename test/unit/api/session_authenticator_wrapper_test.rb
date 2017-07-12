@@ -96,13 +96,14 @@ describe HammerCLIForeman::Api::SessionAuthenticatorWrapper do
         end
       end
 
-      it "drops the session when usernames don't match" do
+      it "keeps the session and sets cuser_changed flag when usernames don't match and " do
         prepare_session_storage :session_id => 'SOME_SESSION_ID' do |auth, dir|
           wrapped_auth.expects(:authenticate).with(request, args)
           wrapped_auth.expects(:user).returns('other_user')
           auth.authenticate(request, args)
 
-          refute File.exist?(session_file(dir))
+          assert File.exist?(session_file(dir))
+          assert auth.user_changed?
         end
       end
 
@@ -194,6 +195,28 @@ describe HammerCLIForeman::Api::SessionAuthenticatorWrapper do
           assert File.exist?(session_file(dir))
         end
       end
+
+      context 'when user has changed' do
+        it 'sets a special error message' do
+          prepare_session_storage :session_id => 'SOME_SESSION_ID' do |auth, dir|
+            auth.force_user_change
+            ex = RestClient::Unauthorized.new
+            new_ex = auth.error(ex)
+
+            assert_equal "Invalid username or password, continuing with session for 'admin'", new_ex.message
+          end
+        end
+
+        it 'keeps the previous session' do
+          prepare_session_storage :session_id => 'SOME_SESSION_ID' do |auth, dir|
+            auth.force_user_change
+            ex = RestClient::Unauthorized.new
+            auth.error(ex)
+
+            assert File.exist?(session_file(dir))
+          end
+        end
+      end
     end
 
     context 'when there is no existing session' do
@@ -281,6 +304,53 @@ describe HammerCLIForeman::Api::SessionAuthenticatorWrapper do
       prepare_session_storage do |auth, dir|
         wrapped_auth.expects(:user).returns('admin')
         assert_equal 'admin', auth.user
+      end
+    end
+  end
+
+  describe '#user_changed?' do
+    it 'is false by default' do
+      prepare_session_storage do |auth, dir|
+        refute auth.user_changed?
+      end
+    end
+  end
+
+  describe '#force_user_change' do
+    it 'sets force user change flag' do
+      prepare_session_storage do |auth, dir|
+        auth.force_user_change
+        assert auth.user_changed?
+      end
+    end
+  end
+
+  describe '#set_credentials' do
+    it 'passes credentials to a wrapped authenticator' do
+      prepare_session_storage do |auth, dir|
+        wrapped_auth.expects(:set_credentials).with('admin', 'password')
+        auth.set_credentials('admin', 'password')
+      end
+    end
+
+    it "doesn't pass the credentials when a wrapped autneticator doesn't support it" do
+      prepare_session_storage do |auth, dir|
+        auth.set_credentials('admin', 'password')
+      end
+    end
+  end
+
+  describe '#clear' do
+    it 'passes clear to a wrapped authenticator' do
+      prepare_session_storage do |auth, dir|
+        wrapped_auth.expects(:clear)
+        auth.clear
+      end
+    end
+
+    it "doesn't pass clear when a wrapped autneticator doesn't support it" do
+      prepare_session_storage do |auth, dir|
+        auth.clear
       end
     end
   end

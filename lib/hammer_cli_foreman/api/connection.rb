@@ -36,11 +36,18 @@ module HammerCLIForeman
         if ssl_cert_authentication?(settings) && !use_basic_auth?(settings)
           @authenticator = VoidAuth.new
         else
-          @authenticator = InteractiveBasicAuth.new(
-            settings.get(:_params, :username) || ENV['FOREMAN_USERNAME'] || settings.get(:foreman, :username),
-            settings.get(:_params, :password) || ENV['FOREMAN_PASSWORD'] || settings.get(:foreman, :password)
-          )
-          @authenticator = SessionAuthenticatorWrapper.new(@authenticator, uri) if settings.get(:foreman, :use_sessions)
+          if settings.get(:foreman, :use_sessions)
+            @authenticator = InteractiveBasicAuth.new(
+              settings.get(:_params, :username) || ENV['FOREMAN_USERNAME'],
+              settings.get(:_params, :password) || ENV['FOREMAN_PASSWORD']
+            )
+            @authenticator = SessionAuthenticatorWrapper.new(@authenticator, uri)
+          else
+            @authenticator = InteractiveBasicAuth.new(
+              settings.get(:_params, :username) || ENV['FOREMAN_USERNAME'] || settings.get(:foreman, :username),
+              settings.get(:_params, :password) || ENV['FOREMAN_PASSWORD'] || settings.get(:foreman, :password)
+            )
+          end
           @authenticator
         end
       end
