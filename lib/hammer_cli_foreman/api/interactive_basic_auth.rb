@@ -17,9 +17,9 @@ module HammerCLIForeman
 
       def status
         unless @user.nil? || @password.nil?
-          _("You are logged in as '%s'") % @user
+          _("Using configured credentials for user '%s'.") % @user
         else
-          _("You are currently not logged in")
+          _("Credentials are not configured.")
         end
       end
 
