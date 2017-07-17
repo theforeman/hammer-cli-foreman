@@ -24,7 +24,7 @@ module HammerCLIForeman
         if load_session
           _("Session exists, currently logged in as '%s'") % @user
         else
-          _("You are currently not logged in")
+          _("Using sessions, you are currently not logged in.")
         end
       end
 
