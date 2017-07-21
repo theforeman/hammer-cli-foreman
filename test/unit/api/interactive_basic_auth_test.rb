@@ -83,4 +83,22 @@ describe HammerCLIForeman::Api::InteractiveBasicAuth do
       assert_nil new_ex
     end
   end
+
+  describe '#set_credentials' do
+    let(:auth) { HammerCLIForeman::Api::InteractiveBasicAuth.new(nil, nil) }
+
+    it 'sets username and password' do
+      auth.set_credentials('admin', 'password')
+      assert_equal 'admin', auth.user
+    end
+  end
+
+  describe '#clear' do
+    let(:auth) { HammerCLIForeman::Api::InteractiveBasicAuth.new('user', 'password') }
+
+    it 'clears username and password' do
+      auth.clear
+      assert_nil auth.user
+    end
+  end
 end
