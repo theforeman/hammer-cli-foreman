@@ -106,10 +106,10 @@ msgstr ""
 msgid "Invalid username or password"
 msgstr ""
 
-msgid "You are logged in as '%s'"
+msgid "Using configured credentials for user '%s'."
 msgstr ""
 
-msgid "You are currently not logged in"
+msgid "Credentials are not configured."
 msgstr ""
 
 msgid "[Foreman] Username: "
@@ -121,7 +121,13 @@ msgstr ""
 msgid "Can't use session auth due to invalid permissions on session files."
 msgstr ""
 
-msgid "Session exist, currently logged in as '%s'"
+msgid "Session exists, currently logged in as '%s'"
+msgstr ""
+
+msgid "Using sessions, you are currently not logged in."
+msgstr ""
+
+msgid "Invalid username or password, continuing with session for '%s'"
 msgstr ""
 
 msgid "Session has expired"
@@ -454,7 +460,12 @@ msgstr ""
 msgid "password to access the remote system"
 msgstr ""
 
-msgid "Successfully logged in."
+msgid ""
+"Can't perform login. Make sure sessions are enabled in hammer configuration "
+"file."
+msgstr ""
+
+msgid "Successfully logged in as '%s'."
 msgstr ""
 
 msgid "Wipe your credentials"
@@ -469,13 +480,22 @@ msgstr ""
 msgid "Manage LDAP auth sources."
 msgstr ""
 
-msgid "LDAPS?"
+msgid "Server"
 msgstr ""
 
 msgid "Port"
 msgstr ""
 
+msgid "LDAPS?"
+msgstr ""
+
+msgid "LDAPS"
+msgstr ""
+
 msgid "Server Type"
+msgstr ""
+
+msgid "Account"
 msgstr ""
 
 msgid "Account Username"
@@ -484,10 +504,22 @@ msgstr ""
 msgid "Base DN"
 msgstr ""
 
+msgid "Groups base DN"
+msgstr ""
+
+msgid "Use Netgroups"
+msgstr ""
+
 msgid "LDAP filter"
 msgstr ""
 
 msgid "Automatically Create Accounts?"
+msgstr ""
+
+msgid "Usergroup sync"
+msgstr ""
+
+msgid "Attribute mappings"
 msgstr ""
 
 msgid "Login Name Attribute"
@@ -505,19 +537,19 @@ msgstr ""
 msgid "Photo Attribute"
 msgstr ""
 
-msgid "Auth source created"
+msgid "Auth source [%{name}] created"
 msgstr ""
 
 msgid "Could not create the Auth Source"
 msgstr ""
 
-msgid "Auth source deleted"
+msgid "Auth source [%{name}] deleted"
 msgstr ""
 
 msgid "Could not delete the Auth Source"
 msgstr ""
 
-msgid "Auth source updated"
+msgid "Auth source [%{name}] updated"
 msgstr ""
 
 msgid "Could not update the Auth Source"
@@ -592,9 +624,6 @@ msgid "Datacenter"
 msgstr ""
 
 msgid "Region"
-msgstr ""
-
-msgid "Server"
 msgstr ""
 
 msgid "Tenant"
@@ -1318,6 +1347,9 @@ msgstr ""
 msgid "Location name"
 msgstr ""
 
+msgid "Location title"
+msgstr ""
+
 msgid "Medium name"
 msgstr ""
 
@@ -1325,6 +1357,9 @@ msgid "Model name"
 msgstr ""
 
 msgid "Organization name"
+msgstr ""
+
+msgid "Organization title"
 msgstr ""
 
 msgid "Operating system title"
@@ -1806,6 +1841,9 @@ msgstr ""
 msgid "Parameters"
 msgstr ""
 
+msgid "All parameters"
+msgstr ""
+
 msgid "Puppetclasses"
 msgstr ""
 
@@ -1989,6 +2027,9 @@ msgstr ""
 msgid "Type of the validator."
 msgstr ""
 
+msgid "The order in which values are resolved"
+msgstr ""
+
 msgid "Override value created"
 msgstr ""
 
@@ -2043,6 +2084,9 @@ msgstr ""
 msgid "Refresh of smart proxy features failed"
 msgstr ""
 
+msgid "Type of the variable."
+msgstr ""
+
 msgid "Variable"
 msgstr ""
 
@@ -2053,9 +2097,6 @@ msgid "Smart variable [%{variable}] created"
 msgstr ""
 
 msgid "Could not create the smart variable"
-msgstr ""
-
-msgid "Type of the variable."
 msgstr ""
 
 msgid "Smart variable [%{variable}] updated"
@@ -2218,6 +2259,12 @@ msgid "Default organization name"
 msgstr ""
 
 msgid "Default location name"
+msgstr ""
+
+msgid "Enter user's current password:"
+msgstr ""
+
+msgid "Enter user's new password:"
 msgstr ""
 
 msgid "User [%{login}] created"

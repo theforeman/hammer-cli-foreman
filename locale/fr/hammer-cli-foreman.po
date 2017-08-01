@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: hammer-cli-foreman 0.11.pre.develop\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-05-05 15:31+0200\n"
+"POT-Creation-Date: 2017-08-01 13:02+0200\n"
 "PO-Revision-Date: 2017-03-29 08:19+0000\n"
 "Last-Translator: Lukáš Zapletal\n"
 "Language-Team: French (http://www.transifex.com/foreman/foreman/language/"
@@ -111,11 +111,11 @@ msgstr ""
 msgid "Invalid username or password"
 msgstr "Utilisateur ou mot de passe incorrect"
 
-msgid "You are logged in as '%s'"
-msgstr "Vous êtes identifié comme '%s'"
+msgid "Using configured credentials for user '%s'."
+msgstr ""
 
-msgid "You are currently not logged in"
-msgstr "Vous n'êtes pas connecté"
+msgid "Credentials are not configured."
+msgstr ""
 
 msgid "[Foreman] Username: "
 msgstr "[Foreman] nom d'utilisateur :"
@@ -128,8 +128,14 @@ msgstr ""
 "Impossible d'utiliser l'auth session en raison de permissions incorrectes "
 "dans les fichers de session."
 
-msgid "Session exist, currently logged in as '%s'"
-msgstr "Session existe, actuellement connecté en tant que '%s'"
+msgid "Session exists, currently logged in as '%s'"
+msgstr ""
+
+msgid "Using sessions, you are currently not logged in."
+msgstr ""
+
+msgid "Invalid username or password, continuing with session for '%s'"
+msgstr ""
 
 msgid "Session has expired"
 msgstr "Session expirée"
@@ -462,8 +468,13 @@ msgstr "nom d'utilisateur pour accéder au système distant"
 msgid "password to access the remote system"
 msgstr "mot de passe pour accéder au système distant"
 
-msgid "Successfully logged in."
-msgstr "Connection réussie."
+msgid ""
+"Can't perform login. Make sure sessions are enabled in hammer configuration "
+"file."
+msgstr ""
+
+msgid "Successfully logged in as '%s'."
+msgstr ""
 
 msgid "Wipe your credentials"
 msgstr "Supprimer vos authentifiants"
@@ -477,14 +488,23 @@ msgstr "Information à propos des connexions en cours"
 msgid "Manage LDAP auth sources."
 msgstr "Gérer les sources d'authentification LDAP."
 
-msgid "LDAPS?"
-msgstr "LDAPS ?"
+msgid "Server"
+msgstr "Serveur"
 
 msgid "Port"
 msgstr "Port"
 
+msgid "LDAPS?"
+msgstr "LDAPS ?"
+
+msgid "LDAPS"
+msgstr ""
+
 msgid "Server Type"
 msgstr "Type de serveur"
+
+msgid "Account"
+msgstr ""
 
 msgid "Account Username"
 msgstr "Nom du compte utilisateur"
@@ -492,11 +512,23 @@ msgstr "Nom du compte utilisateur"
 msgid "Base DN"
 msgstr "Base DN"
 
+msgid "Groups base DN"
+msgstr ""
+
+msgid "Use Netgroups"
+msgstr ""
+
 msgid "LDAP filter"
 msgstr "Filtre LDAP"
 
 msgid "Automatically Create Accounts?"
 msgstr "Créer automatiquement les comptes utilisateur ?"
+
+msgid "Usergroup sync"
+msgstr ""
+
+msgid "Attribute mappings"
+msgstr ""
 
 msgid "Login Name Attribute"
 msgstr "Attribut Login"
@@ -513,20 +545,20 @@ msgstr "Attribut adresse mail"
 msgid "Photo Attribute"
 msgstr "Attribut Photo"
 
-msgid "Auth source created"
-msgstr "Source d'authentification créée"
+msgid "Auth source [%{name}] created"
+msgstr ""
 
 msgid "Could not create the Auth Source"
 msgstr "Impossible de créer la source d'authentification"
 
-msgid "Auth source deleted"
-msgstr "Source d'authentification supprimée"
+msgid "Auth source [%{name}] deleted"
+msgstr ""
 
 msgid "Could not delete the Auth Source"
 msgstr "Impossible de supprimer la source d'authentification"
 
-msgid "Auth source updated"
-msgstr "Source d'authentification mis à jour"
+msgid "Auth source [%{name}] updated"
+msgstr ""
 
 msgid "Could not update the Auth Source"
 msgstr "Impossible de mettre à jour la source d'authentification"
@@ -604,9 +636,6 @@ msgstr "Centre de données"
 
 msgid "Region"
 msgstr "Région"
-
-msgid "Server"
-msgstr "Serveur"
 
 msgid "Tenant"
 msgstr "Tenant"
@@ -1336,6 +1365,9 @@ msgstr "Titre du groupe d'hôtes"
 msgid "Location name"
 msgstr "Nom de l'emplacement"
 
+msgid "Location title"
+msgstr ""
+
 msgid "Medium name"
 msgstr "Nom du medium"
 
@@ -1344,6 +1376,9 @@ msgstr "Nom du modèle"
 
 msgid "Organization name"
 msgstr "Nom de l'organisation"
+
+msgid "Organization title"
+msgstr ""
 
 msgid "Operating system title"
 msgstr "Titre du système d'exploitation"
@@ -1831,6 +1866,9 @@ msgstr "Sous-réseaux"
 msgid "Parameters"
 msgstr "Paramètres"
 
+msgid "All parameters"
+msgstr ""
+
 msgid "Puppetclasses"
 msgstr "Classes Puppet"
 
@@ -2014,6 +2052,9 @@ msgstr "Type de paramètre."
 msgid "Type of the validator."
 msgstr "Type du validateur."
 
+msgid "The order in which values are resolved"
+msgstr ""
+
 msgid "Override value created"
 msgstr "Valeur de surcharge créée"
 
@@ -2068,6 +2109,9 @@ msgstr "Fonctions smart proxy rechargées"
 msgid "Refresh of smart proxy features failed"
 msgstr "Rechargement des fonctions smart proxy échoué"
 
+msgid "Type of the variable."
+msgstr "Type de variable."
+
 msgid "Variable"
 msgstr "Variable"
 
@@ -2079,9 +2123,6 @@ msgstr "Smart variable [%{variable}] créée"
 
 msgid "Could not create the smart variable"
 msgstr "Impossible de créer la smart variable"
-
-msgid "Type of the variable."
-msgstr "Type de variable."
 
 msgid "Smart variable [%{variable}] updated"
 msgstr "Smart variable [%{variable}] mis à jour"
@@ -2252,6 +2293,12 @@ msgstr ""
 msgid "Default location name"
 msgstr ""
 
+msgid "Enter user's current password:"
+msgstr ""
+
+msgid "Enter user's new password:"
+msgstr ""
+
 msgid "User [%{login}] created"
 msgstr "Utilisateur [%{login}] créé"
 
@@ -2287,3 +2334,24 @@ msgstr "Groupe d'utilisateurs [%<name>s] supprimé"
 
 msgid "Could not delete the user group"
 msgstr "Impossible de supprimer le groupe d'utilisateurs"
+
+#~ msgid "You are logged in as '%s'"
+#~ msgstr "Vous êtes identifié comme '%s'"
+
+#~ msgid "You are currently not logged in"
+#~ msgstr "Vous n'êtes pas connecté"
+
+#~ msgid "Session exist, currently logged in as '%s'"
+#~ msgstr "Session existe, actuellement connecté en tant que '%s'"
+
+#~ msgid "Successfully logged in."
+#~ msgstr "Connection réussie."
+
+#~ msgid "Auth source created"
+#~ msgstr "Source d'authentification créée"
+
+#~ msgid "Auth source deleted"
+#~ msgstr "Source d'authentification supprimée"
+
+#~ msgid "Auth source updated"
+#~ msgstr "Source d'authentification mis à jour"

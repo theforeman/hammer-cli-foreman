@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: hammer-cli-foreman 0.11.pre.develop\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-05-05 15:31+0200\n"
+"POT-Creation-Date: 2017-08-01 13:02+0200\n"
 "PO-Revision-Date: 2017-03-29 08:19+0000\n"
 "Last-Translator: Lukáš Zapletal\n"
 "Language-Team: Italian (http://www.transifex.com/foreman/foreman/language/"
@@ -110,10 +110,10 @@ msgstr ""
 msgid "Invalid username or password"
 msgstr "Password o nome utente non validi"
 
-msgid "You are logged in as '%s'"
-msgstr "Sei registrato come '%s'"
+msgid "Using configured credentials for user '%s'."
+msgstr ""
 
-msgid "You are currently not logged in"
+msgid "Credentials are not configured."
 msgstr ""
 
 msgid "[Foreman] Username: "
@@ -125,7 +125,13 @@ msgstr "[Foreman] Password per %s: "
 msgid "Can't use session auth due to invalid permissions on session files."
 msgstr ""
 
-msgid "Session exist, currently logged in as '%s'"
+msgid "Session exists, currently logged in as '%s'"
+msgstr ""
+
+msgid "Using sessions, you are currently not logged in."
+msgstr ""
+
+msgid "Invalid username or password, continuing with session for '%s'"
 msgstr ""
 
 msgid "Session has expired"
@@ -458,7 +464,12 @@ msgstr "nome utente per accedere al sistema remoto"
 msgid "password to access the remote system"
 msgstr "password per accedere al sistema remoto"
 
-msgid "Successfully logged in."
+msgid ""
+"Can't perform login. Make sure sessions are enabled in hammer configuration "
+"file."
+msgstr ""
+
+msgid "Successfully logged in as '%s'."
 msgstr ""
 
 msgid "Wipe your credentials"
@@ -473,14 +484,23 @@ msgstr "Informazioni sulle connessioni correnti"
 msgid "Manage LDAP auth sources."
 msgstr "Gestisci sorgenti di autenticazione LDAP."
 
-msgid "LDAPS?"
-msgstr "LDAPS?"
+msgid "Server"
+msgstr "Server"
 
 msgid "Port"
 msgstr "Porta"
 
+msgid "LDAPS?"
+msgstr "LDAPS?"
+
+msgid "LDAPS"
+msgstr ""
+
 msgid "Server Type"
 msgstr "Tipo di server"
+
+msgid "Account"
+msgstr ""
 
 msgid "Account Username"
 msgstr "Nome utente account"
@@ -488,11 +508,23 @@ msgstr "Nome utente account"
 msgid "Base DN"
 msgstr "DN di base"
 
+msgid "Groups base DN"
+msgstr ""
+
+msgid "Use Netgroups"
+msgstr ""
+
 msgid "LDAP filter"
 msgstr "Filtro LDAP"
 
 msgid "Automatically Create Accounts?"
 msgstr "Crea automaticamente gli account?"
+
+msgid "Usergroup sync"
+msgstr ""
+
+msgid "Attribute mappings"
+msgstr ""
 
 msgid "Login Name Attribute"
 msgstr "Attributo nome per l'accesso"
@@ -509,20 +541,20 @@ msgstr "Attributo indirizzo email"
 msgid "Photo Attribute"
 msgstr "Attributo foto"
 
-msgid "Auth source created"
-msgstr "Sorgente di autenticazione creato"
+msgid "Auth source [%{name}] created"
+msgstr ""
 
 msgid "Could not create the Auth Source"
 msgstr "Impossibile creare il sorgente di autenticazione"
 
-msgid "Auth source deleted"
-msgstr "Sorgente di autenticazione rimosso"
+msgid "Auth source [%{name}] deleted"
+msgstr ""
 
 msgid "Could not delete the Auth Source"
 msgstr "Impossibile cancellare il sorgente di autenticazione"
 
-msgid "Auth source updated"
-msgstr "Sorgente di autenticazione aggiornato"
+msgid "Auth source [%{name}] updated"
+msgstr ""
 
 msgid "Could not update the Auth Source"
 msgstr "Impossibile aggiornare il sorgente di autenticazione"
@@ -600,9 +632,6 @@ msgstr "Datacenter"
 
 msgid "Region"
 msgstr "Regione"
-
-msgid "Server"
-msgstr "Server"
 
 msgid "Tenant"
 msgstr "Titolare"
@@ -1327,6 +1356,9 @@ msgstr ""
 msgid "Location name"
 msgstr "Nome posizione"
 
+msgid "Location title"
+msgstr ""
+
 msgid "Medium name"
 msgstr "Nome supporto"
 
@@ -1335,6 +1367,9 @@ msgstr "Nome modello"
 
 msgid "Organization name"
 msgstr "Nome organizzazione"
+
+msgid "Organization title"
+msgstr ""
 
 msgid "Operating system title"
 msgstr "Titolo sistema operativo"
@@ -1817,6 +1852,9 @@ msgstr "Sottoreti"
 msgid "Parameters"
 msgstr "Parametri"
 
+msgid "All parameters"
+msgstr ""
+
 msgid "Puppetclasses"
 msgstr "Puppetclasses"
 
@@ -2000,6 +2038,9 @@ msgstr "Tipo di parametro."
 msgid "Type of the validator."
 msgstr "Tipo di convalidatore."
 
+msgid "The order in which values are resolved"
+msgstr ""
+
 msgid "Override value created"
 msgstr ""
 
@@ -2054,6 +2095,9 @@ msgstr "Aggiornate le funzionalità di Smart proxy"
 msgid "Refresh of smart proxy features failed"
 msgstr "Aggiornamento funzionalità smart proxy fallito"
 
+msgid "Type of the variable."
+msgstr ""
+
 msgid "Variable"
 msgstr "Variabile"
 
@@ -2064,9 +2108,6 @@ msgid "Smart variable [%{variable}] created"
 msgstr ""
 
 msgid "Could not create the smart variable"
-msgstr ""
-
-msgid "Type of the variable."
 msgstr ""
 
 msgid "Smart variable [%{variable}] updated"
@@ -2237,6 +2278,12 @@ msgstr ""
 msgid "Default location name"
 msgstr ""
 
+msgid "Enter user's current password:"
+msgstr ""
+
+msgid "Enter user's new password:"
+msgstr ""
+
 msgid "User [%{login}] created"
 msgstr ""
 
@@ -2272,3 +2319,15 @@ msgstr "Gruppo utenti [%<name>s] rimosso"
 
 msgid "Could not delete the user group"
 msgstr "Impossibile cancellare il gruppo di utenti"
+
+#~ msgid "You are logged in as '%s'"
+#~ msgstr "Sei registrato come '%s'"
+
+#~ msgid "Auth source created"
+#~ msgstr "Sorgente di autenticazione creato"
+
+#~ msgid "Auth source deleted"
+#~ msgstr "Sorgente di autenticazione rimosso"
+
+#~ msgid "Auth source updated"
+#~ msgstr "Sorgente di autenticazione aggiornato"

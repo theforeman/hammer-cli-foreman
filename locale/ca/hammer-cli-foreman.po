@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: hammer-cli-foreman 0.11.pre.develop\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-05-05 15:31+0200\n"
+"POT-Creation-Date: 2017-08-01 13:02+0200\n"
 "PO-Revision-Date: 2017-03-29 08:19+0000\n"
 "Last-Translator: Lukáš Zapletal\n"
 "Language-Team: Catalan (http://www.transifex.com/foreman/foreman/language/"
@@ -109,10 +109,10 @@ msgstr ""
 msgid "Invalid username or password"
 msgstr ""
 
-msgid "You are logged in as '%s'"
-msgstr "Heu iniciat la sessió com a «%s»"
+msgid "Using configured credentials for user '%s'."
+msgstr ""
 
-msgid "You are currently not logged in"
+msgid "Credentials are not configured."
 msgstr ""
 
 msgid "[Foreman] Username: "
@@ -124,7 +124,13 @@ msgstr "[Foreman] Contrasenya per a %s: "
 msgid "Can't use session auth due to invalid permissions on session files."
 msgstr ""
 
-msgid "Session exist, currently logged in as '%s'"
+msgid "Session exists, currently logged in as '%s'"
+msgstr ""
+
+msgid "Using sessions, you are currently not logged in."
+msgstr ""
+
+msgid "Invalid username or password, continuing with session for '%s'"
 msgstr ""
 
 msgid "Session has expired"
@@ -457,7 +463,12 @@ msgstr ""
 msgid "password to access the remote system"
 msgstr ""
 
-msgid "Successfully logged in."
+msgid ""
+"Can't perform login. Make sure sessions are enabled in hammer configuration "
+"file."
+msgstr ""
+
+msgid "Successfully logged in as '%s'."
 msgstr ""
 
 msgid "Wipe your credentials"
@@ -472,14 +483,23 @@ msgstr "Informació sobre les connexions actuals"
 msgid "Manage LDAP auth sources."
 msgstr "Gestiona els orígens d'autenticació LDAP."
 
-msgid "LDAPS?"
-msgstr "LDAPS?"
+msgid "Server"
+msgstr "Servidor"
 
 msgid "Port"
 msgstr "Port"
 
+msgid "LDAPS?"
+msgstr "LDAPS?"
+
+msgid "LDAPS"
+msgstr ""
+
 msgid "Server Type"
 msgstr "Tipus de servidor"
+
+msgid "Account"
+msgstr ""
 
 msgid "Account Username"
 msgstr "Nom d'usuari del compte"
@@ -487,11 +507,23 @@ msgstr "Nom d'usuari del compte"
 msgid "Base DN"
 msgstr "DN base"
 
+msgid "Groups base DN"
+msgstr ""
+
+msgid "Use Netgroups"
+msgstr ""
+
 msgid "LDAP filter"
 msgstr "Filtre LDAP"
 
 msgid "Automatically Create Accounts?"
 msgstr "Voleu crear automàticament els comptes?"
+
+msgid "Usergroup sync"
+msgstr ""
+
+msgid "Attribute mappings"
+msgstr ""
 
 msgid "Login Name Attribute"
 msgstr "Atribut del nom d'usuari"
@@ -508,20 +540,20 @@ msgstr "Atribut de l'adreça de correu electrònic"
 msgid "Photo Attribute"
 msgstr "Atribut de la foto"
 
-msgid "Auth source created"
-msgstr "S'ha creat l'origen d'autenticació"
+msgid "Auth source [%{name}] created"
+msgstr ""
 
 msgid "Could not create the Auth Source"
 msgstr "No s'ha pogut crear l'origen d'autenticació"
 
-msgid "Auth source deleted"
-msgstr "S'ha suprimit l'origen d'autenticació"
+msgid "Auth source [%{name}] deleted"
+msgstr ""
 
 msgid "Could not delete the Auth Source"
 msgstr "No s'ha pogut suprimir l'origen d'autenticació"
 
-msgid "Auth source updated"
-msgstr "S'ha actualitzat l'origen d'autenticació"
+msgid "Auth source [%{name}] updated"
+msgstr ""
 
 msgid "Could not update the Auth Source"
 msgstr "No s'ha pogut actualitzar l'origen d'autenticació"
@@ -599,9 +631,6 @@ msgstr ""
 
 msgid "Region"
 msgstr "Regió"
-
-msgid "Server"
-msgstr "Servidor"
 
 msgid "Tenant"
 msgstr "Inquilí"
@@ -1325,6 +1354,9 @@ msgstr "Títol del grup d'amfitrions"
 msgid "Location name"
 msgstr "Nom de la ubicació"
 
+msgid "Location title"
+msgstr ""
+
 msgid "Medium name"
 msgstr "Nom del mitjà"
 
@@ -1333,6 +1365,9 @@ msgstr "Nom del model"
 
 msgid "Organization name"
 msgstr "Nom de l'organització"
+
+msgid "Organization title"
+msgstr ""
 
 msgid "Operating system title"
 msgstr "Títol del sistema operatiu"
@@ -1813,6 +1848,9 @@ msgstr "Subxarxes"
 msgid "Parameters"
 msgstr "Paràmetres"
 
+msgid "All parameters"
+msgstr ""
+
 msgid "Puppetclasses"
 msgstr "Puppetclasses"
 
@@ -1996,6 +2034,9 @@ msgstr "Tipus de paràmetre."
 msgid "Type of the validator."
 msgstr "Tipus de validador."
 
+msgid "The order in which values are resolved"
+msgstr ""
+
 msgid "Override value created"
 msgstr "S'ha creat el valor de sobreescriu"
 
@@ -2053,6 +2094,9 @@ msgstr ""
 "No s'han pogut refrescar les característiques del servidor intermediari "
 "intel·ligent"
 
+msgid "Type of the variable."
+msgstr "Tipus de variable."
+
 msgid "Variable"
 msgstr ""
 
@@ -2064,9 +2108,6 @@ msgstr "S'ha creat la variable intel·ligent [%{variable}]"
 
 msgid "Could not create the smart variable"
 msgstr "No s'ha pogut crear la variable intel·ligent"
-
-msgid "Type of the variable."
-msgstr "Tipus de variable."
 
 msgid "Smart variable [%{variable}] updated"
 msgstr "S'ha actualitzat la variable intel·ligent [%{variable}]"
@@ -2237,6 +2278,12 @@ msgstr ""
 msgid "Default location name"
 msgstr ""
 
+msgid "Enter user's current password:"
+msgstr ""
+
+msgid "Enter user's new password:"
+msgstr ""
+
 msgid "User [%{login}] created"
 msgstr "S'ha creat l'usuari [%{login}]"
 
@@ -2272,3 +2319,15 @@ msgstr "S'ha suprimit el grup d'usuaris [%<name>s]"
 
 msgid "Could not delete the user group"
 msgstr "No s'ha pogut suprimir el grup d'usuaris"
+
+#~ msgid "You are logged in as '%s'"
+#~ msgstr "Heu iniciat la sessió com a «%s»"
+
+#~ msgid "Auth source created"
+#~ msgstr "S'ha creat l'origen d'autenticació"
+
+#~ msgid "Auth source deleted"
+#~ msgstr "S'ha suprimit l'origen d'autenticació"
+
+#~ msgid "Auth source updated"
+#~ msgstr "S'ha actualitzat l'origen d'autenticació"

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: hammer-cli-foreman 0.11.pre.develop\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-05-05 15:31+0200\n"
+"POT-Creation-Date: 2017-08-01 13:02+0200\n"
 "PO-Revision-Date: 2017-03-29 08:19+0000\n"
 "Last-Translator: Lukáš Zapletal\n"
 "Language-Team: Chinese (China) (http://www.transifex.com/foreman/foreman/"
@@ -108,10 +108,10 @@ msgstr ""
 msgid "Invalid username or password"
 msgstr "用户名或密码错误"
 
-msgid "You are logged in as '%s'"
-msgstr "您作为 '%s' 登录"
+msgid "Using configured credentials for user '%s'."
+msgstr ""
 
-msgid "You are currently not logged in"
+msgid "Credentials are not configured."
 msgstr ""
 
 msgid "[Foreman] Username: "
@@ -123,7 +123,13 @@ msgstr "%s  [Foreman] 密码："
 msgid "Can't use session auth due to invalid permissions on session files."
 msgstr ""
 
-msgid "Session exist, currently logged in as '%s'"
+msgid "Session exists, currently logged in as '%s'"
+msgstr ""
+
+msgid "Using sessions, you are currently not logged in."
+msgstr ""
+
+msgid "Invalid username or password, continuing with session for '%s'"
 msgstr ""
 
 msgid "Session has expired"
@@ -456,7 +462,12 @@ msgstr "访问远程系统的用户名"
 msgid "password to access the remote system"
 msgstr "访问远程系统的密码"
 
-msgid "Successfully logged in."
+msgid ""
+"Can't perform login. Make sure sessions are enabled in hammer configuration "
+"file."
+msgstr ""
+
+msgid "Successfully logged in as '%s'."
 msgstr ""
 
 msgid "Wipe your credentials"
@@ -471,14 +482,23 @@ msgstr "有关当前连接的信息"
 msgid "Manage LDAP auth sources."
 msgstr "管理 LDAP 认证源"
 
-msgid "LDAPS?"
-msgstr "使用 LDAPS？"
+msgid "Server"
+msgstr "服务器"
 
 msgid "Port"
 msgstr "端口"
 
+msgid "LDAPS?"
+msgstr "使用 LDAPS？"
+
+msgid "LDAPS"
+msgstr ""
+
 msgid "Server Type"
 msgstr "服务器类型"
+
+msgid "Account"
+msgstr ""
 
 msgid "Account Username"
 msgstr "帐户用户名"
@@ -486,11 +506,23 @@ msgstr "帐户用户名"
 msgid "Base DN"
 msgstr "基础 DN"
 
+msgid "Groups base DN"
+msgstr ""
+
+msgid "Use Netgroups"
+msgstr ""
+
 msgid "LDAP filter"
 msgstr "LDAP 过滤器"
 
 msgid "Automatically Create Accounts?"
 msgstr "自动创建帐户？"
+
+msgid "Usergroup sync"
+msgstr ""
+
+msgid "Attribute mappings"
+msgstr ""
 
 msgid "Login Name Attribute"
 msgstr "Login Name 属性"
@@ -507,20 +539,20 @@ msgstr "Email Address 属性"
 msgid "Photo Attribute"
 msgstr "Photo 属性"
 
-msgid "Auth source created"
-msgstr "已生成认证源"
+msgid "Auth source [%{name}] created"
+msgstr ""
 
 msgid "Could not create the Auth Source"
 msgstr "无法生成认证源"
 
-msgid "Auth source deleted"
-msgstr "已删除认证源"
+msgid "Auth source [%{name}] deleted"
+msgstr ""
 
 msgid "Could not delete the Auth Source"
 msgstr "无法删除认证源"
 
-msgid "Auth source updated"
-msgstr "已更新认证源"
+msgid "Auth source [%{name}] updated"
+msgstr ""
 
 msgid "Could not update the Auth Source"
 msgstr "无法更新认证源"
@@ -595,9 +627,6 @@ msgstr "数据中心"
 
 msgid "Region"
 msgstr "区域"
-
-msgid "Server"
-msgstr "服务器"
 
 msgid "Tenant"
 msgstr "承租人"
@@ -1320,6 +1349,9 @@ msgstr "主机组标题"
 msgid "Location name"
 msgstr "位置名称"
 
+msgid "Location title"
+msgstr ""
+
 msgid "Medium name"
 msgstr "介质名"
 
@@ -1328,6 +1360,9 @@ msgstr "型号名"
 
 msgid "Organization name"
 msgstr "机构名"
+
+msgid "Organization title"
+msgstr ""
 
 msgid "Operating system title"
 msgstr "操作系统标题"
@@ -1810,6 +1845,9 @@ msgstr "子网"
 msgid "Parameters"
 msgstr "参数"
 
+msgid "All parameters"
+msgstr ""
+
 msgid "Puppetclasses"
 msgstr "Puppetclasses"
 
@@ -1993,6 +2031,9 @@ msgstr "参数类型。"
 msgid "Type of the validator."
 msgstr "验证程序类型。"
 
+msgid "The order in which values are resolved"
+msgstr ""
+
 msgid "Override value created"
 msgstr "创建替代值"
 
@@ -2047,6 +2088,9 @@ msgstr "已刷新智能代理服务器"
 msgid "Refresh of smart proxy features failed"
 msgstr "刷新智能代理服务器失败"
 
+msgid "Type of the variable."
+msgstr "变量类型。"
+
 msgid "Variable"
 msgstr "变量"
 
@@ -2058,9 +2102,6 @@ msgstr "创建智能变量 [%{variable}]"
 
 msgid "Could not create the smart variable"
 msgstr "无法创建该智能变量"
-
-msgid "Type of the variable."
-msgstr "变量类型。"
 
 msgid "Smart variable [%{variable}] updated"
 msgstr "更新智能变量 [%{variable}]"
@@ -2230,6 +2271,12 @@ msgstr ""
 msgid "Default location name"
 msgstr ""
 
+msgid "Enter user's current password:"
+msgstr ""
+
+msgid "Enter user's new password:"
+msgstr ""
+
 msgid "User [%{login}] created"
 msgstr "创建用户 [%{login}]"
 
@@ -2265,3 +2312,15 @@ msgstr "已删除用户组 [%<name>s]"
 
 msgid "Could not delete the user group"
 msgstr "无法删除用户组"
+
+#~ msgid "You are logged in as '%s'"
+#~ msgstr "您作为 '%s' 登录"
+
+#~ msgid "Auth source created"
+#~ msgstr "已生成认证源"
+
+#~ msgid "Auth source deleted"
+#~ msgstr "已删除认证源"
+
+#~ msgid "Auth source updated"
+#~ msgstr "已更新认证源"

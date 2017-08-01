@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: hammer-cli-foreman 0.11.pre.develop\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-05-05 15:31+0200\n"
+"POT-Creation-Date: 2017-08-01 13:02+0200\n"
 "PO-Revision-Date: 2017-03-29 08:19+0000\n"
 "Last-Translator: Lukáš Zapletal\n"
 "Language-Team: Korean (http://www.transifex.com/foreman/foreman/language/"
@@ -109,10 +109,10 @@ msgstr ""
 msgid "Invalid username or password"
 msgstr "잘못된 사용자 이름 또는 비밀번호"
 
-msgid "You are logged in as '%s'"
-msgstr "'%s'로 로그인되었습니다 "
+msgid "Using configured credentials for user '%s'."
+msgstr ""
 
-msgid "You are currently not logged in"
+msgid "Credentials are not configured."
 msgstr ""
 
 msgid "[Foreman] Username: "
@@ -124,7 +124,13 @@ msgstr "%s의 [Foreman] 암호: "
 msgid "Can't use session auth due to invalid permissions on session files."
 msgstr ""
 
-msgid "Session exist, currently logged in as '%s'"
+msgid "Session exists, currently logged in as '%s'"
+msgstr ""
+
+msgid "Using sessions, you are currently not logged in."
+msgstr ""
+
+msgid "Invalid username or password, continuing with session for '%s'"
 msgstr ""
 
 msgid "Session has expired"
@@ -457,7 +463,12 @@ msgstr "원격 시스템에 액세스하기 위한 사용자 이름 "
 msgid "password to access the remote system"
 msgstr "원격 시스템에 액세스하기 위한 암호 "
 
-msgid "Successfully logged in."
+msgid ""
+"Can't perform login. Make sure sessions are enabled in hammer configuration "
+"file."
+msgstr ""
+
+msgid "Successfully logged in as '%s'."
 msgstr ""
 
 msgid "Wipe your credentials"
@@ -472,14 +483,23 @@ msgstr "현재 연결에 대한 정보 "
 msgid "Manage LDAP auth sources."
 msgstr "LDAP 인증 소스를 관리합니다. "
 
-msgid "LDAPS?"
-msgstr "LDAPS?"
+msgid "Server"
+msgstr "서버 "
 
 msgid "Port"
 msgstr "포트"
 
+msgid "LDAPS?"
+msgstr "LDAPS?"
+
+msgid "LDAPS"
+msgstr ""
+
 msgid "Server Type"
 msgstr "서버 유형 "
+
+msgid "Account"
+msgstr ""
 
 msgid "Account Username"
 msgstr "계정 사용자 이름 "
@@ -487,11 +507,23 @@ msgstr "계정 사용자 이름 "
 msgid "Base DN"
 msgstr "기본 DN"
 
+msgid "Groups base DN"
+msgstr ""
+
+msgid "Use Netgroups"
+msgstr ""
+
 msgid "LDAP filter"
 msgstr "LDAP 필터 "
 
 msgid "Automatically Create Accounts?"
 msgstr "자동으로 계정을 생성하시겠습니까? "
+
+msgid "Usergroup sync"
+msgstr ""
+
+msgid "Attribute mappings"
+msgstr ""
 
 msgid "Login Name Attribute"
 msgstr "로그인 이름 속성 "
@@ -508,20 +540,20 @@ msgstr "이메일 주소 속성 "
 msgid "Photo Attribute"
 msgstr "사진 속성 "
 
-msgid "Auth source created"
-msgstr "인증 소스가 생성되었습니다 "
+msgid "Auth source [%{name}] created"
+msgstr ""
 
 msgid "Could not create the Auth Source"
 msgstr "인증 소스를 생성할 수 없습니다 "
 
-msgid "Auth source deleted"
-msgstr "인증 소스가 삭제되었습니다 "
+msgid "Auth source [%{name}] deleted"
+msgstr ""
 
 msgid "Could not delete the Auth Source"
 msgstr "인증 소스를 삭제할 수 없습니다 "
 
-msgid "Auth source updated"
-msgstr "인증 소스가 업데이트되었습니다 "
+msgid "Auth source [%{name}] updated"
+msgstr ""
 
 msgid "Could not update the Auth Source"
 msgstr "인증 소스를 업데이트할 수 없습니다 "
@@ -599,9 +631,6 @@ msgstr "Datacenter"
 
 msgid "Region"
 msgstr "지역 "
-
-msgid "Server"
-msgstr "서버 "
 
 msgid "Tenant"
 msgstr "테넌트 "
@@ -1326,6 +1355,9 @@ msgstr "호스트 그룹 제목"
 msgid "Location name"
 msgstr "위치 이름 "
 
+msgid "Location title"
+msgstr ""
+
 msgid "Medium name"
 msgstr "미디어 이름 "
 
@@ -1334,6 +1366,9 @@ msgstr "모델 이름 "
 
 msgid "Organization name"
 msgstr "조직 이름 "
+
+msgid "Organization title"
+msgstr ""
 
 msgid "Operating system title"
 msgstr "운영 체제 제목 "
@@ -1820,6 +1855,9 @@ msgstr "서브넷 "
 msgid "Parameters"
 msgstr "매개 변수 "
 
+msgid "All parameters"
+msgstr ""
+
 msgid "Puppetclasses"
 msgstr "Puppet 클래스 "
 
@@ -2003,6 +2041,9 @@ msgstr "매개 변수 유형 "
 msgid "Type of the validator."
 msgstr "유효성 검사 유형 "
 
+msgid "The order in which values are resolved"
+msgstr ""
+
 msgid "Override value created"
 msgstr "덮어쓰기 값이 생성되었습니다"
 
@@ -2057,6 +2098,9 @@ msgstr "스마트 프록시 기능을 새로고침했습니다 "
 msgid "Refresh of smart proxy features failed"
 msgstr "스마트 프록시 기능 새로 고침을 실패했습니다 "
 
+msgid "Type of the variable."
+msgstr "변수의 유형입니다."
+
 msgid "Variable"
 msgstr "가변"
 
@@ -2068,9 +2112,6 @@ msgstr "스마트 변수 [%{variable}]이(가) 생성되었습니다"
 
 msgid "Could not create the smart variable"
 msgstr "스마트 변수를 생성할 수 없습니다"
-
-msgid "Type of the variable."
-msgstr "변수의 유형입니다."
 
 msgid "Smart variable [%{variable}] updated"
 msgstr "스마트 변수 [%{variable}]이(가) 업데이트되었습니다"
@@ -2240,6 +2281,12 @@ msgstr ""
 msgid "Default location name"
 msgstr ""
 
+msgid "Enter user's current password:"
+msgstr ""
+
+msgid "Enter user's new password:"
+msgstr ""
+
 msgid "User [%{login}] created"
 msgstr "[%{login}] 사용자가 생성되었습니다"
 
@@ -2275,3 +2322,15 @@ msgstr "사용자 그룹 [%<name>s]이(가) 삭제되었습니다 "
 
 msgid "Could not delete the user group"
 msgstr "사용자 그룹을 삭제할 수 없습니다 "
+
+#~ msgid "You are logged in as '%s'"
+#~ msgstr "'%s'로 로그인되었습니다 "
+
+#~ msgid "Auth source created"
+#~ msgstr "인증 소스가 생성되었습니다 "
+
+#~ msgid "Auth source deleted"
+#~ msgstr "인증 소스가 삭제되었습니다 "
+
+#~ msgid "Auth source updated"
+#~ msgstr "인증 소스가 업데이트되었습니다 "

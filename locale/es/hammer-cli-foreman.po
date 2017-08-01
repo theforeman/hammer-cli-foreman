@@ -14,7 +14,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: hammer-cli-foreman 0.11.pre.develop\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-05-05 15:31+0200\n"
+"POT-Creation-Date: 2017-08-01 13:02+0200\n"
 "PO-Revision-Date: 2017-03-29 08:19+0000\n"
 "Last-Translator: Lukáš Zapletal\n"
 "Language-Team: Spanish (http://www.transifex.com/foreman/foreman/language/"
@@ -115,10 +115,10 @@ msgstr ""
 msgid "Invalid username or password"
 msgstr "Nombre de usuario o contraseña incorrecta"
 
-msgid "You are logged in as '%s'"
-msgstr "Ha ingresado como '%s'"
+msgid "Using configured credentials for user '%s'."
+msgstr ""
 
-msgid "You are currently not logged in"
+msgid "Credentials are not configured."
 msgstr ""
 
 msgid "[Foreman] Username: "
@@ -130,7 +130,13 @@ msgstr "[Foreman] Contraseña para %s: "
 msgid "Can't use session auth due to invalid permissions on session files."
 msgstr ""
 
-msgid "Session exist, currently logged in as '%s'"
+msgid "Session exists, currently logged in as '%s'"
+msgstr ""
+
+msgid "Using sessions, you are currently not logged in."
+msgstr ""
+
+msgid "Invalid username or password, continuing with session for '%s'"
 msgstr ""
 
 msgid "Session has expired"
@@ -463,7 +469,12 @@ msgstr "nombre de usuario para acceder al sistema remoto"
 msgid "password to access the remote system"
 msgstr "palabra clave para acceder al sistema remoto"
 
-msgid "Successfully logged in."
+msgid ""
+"Can't perform login. Make sure sessions are enabled in hammer configuration "
+"file."
+msgstr ""
+
+msgid "Successfully logged in as '%s'."
 msgstr ""
 
 msgid "Wipe your credentials"
@@ -478,14 +489,23 @@ msgstr "Información sobre conexiones vigentes"
 msgid "Manage LDAP auth sources."
 msgstr "Administrar fuentes de autenticación LDAP"
 
-msgid "LDAPS?"
-msgstr "¿LDAP?"
+msgid "Server"
+msgstr "Servidor"
 
 msgid "Port"
 msgstr "Puerto"
 
+msgid "LDAPS?"
+msgstr "¿LDAP?"
+
+msgid "LDAPS"
+msgstr ""
+
 msgid "Server Type"
 msgstr "Tipo de servidor"
+
+msgid "Account"
+msgstr ""
 
 msgid "Account Username"
 msgstr "Nombre de usuario de la cuenta"
@@ -493,11 +513,23 @@ msgstr "Nombre de usuario de la cuenta"
 msgid "Base DN"
 msgstr "DN base"
 
+msgid "Groups base DN"
+msgstr ""
+
+msgid "Use Netgroups"
+msgstr ""
+
 msgid "LDAP filter"
 msgstr "Filtro LDAP"
 
 msgid "Automatically Create Accounts?"
 msgstr "¿Crear cuentas automáticamente?"
+
+msgid "Usergroup sync"
+msgstr ""
+
+msgid "Attribute mappings"
+msgstr ""
 
 msgid "Login Name Attribute"
 msgstr "Atributo nombre de usuario"
@@ -514,20 +546,20 @@ msgstr "Atributo correo-e"
 msgid "Photo Attribute"
 msgstr "Atributo foto"
 
-msgid "Auth source created"
-msgstr "Se creó la fuente de autenticación"
+msgid "Auth source [%{name}] created"
+msgstr ""
 
 msgid "Could not create the Auth Source"
 msgstr "No se pudo crear la fuente de autenticación"
 
-msgid "Auth source deleted"
-msgstr "Se borró la fuente de autenticación"
+msgid "Auth source [%{name}] deleted"
+msgstr ""
 
 msgid "Could not delete the Auth Source"
 msgstr "No se pudo borrar fuente de autenticación"
 
-msgid "Auth source updated"
-msgstr "Se actualizó fuente de autenticación"
+msgid "Auth source [%{name}] updated"
+msgstr ""
 
 msgid "Could not update the Auth Source"
 msgstr "No se pudo actualizar fuente de autenticación"
@@ -607,9 +639,6 @@ msgstr "Centro de datos"
 
 msgid "Region"
 msgstr "Región"
-
-msgid "Server"
-msgstr "Servidor"
 
 msgid "Tenant"
 msgstr "Inquilino"
@@ -1339,6 +1368,9 @@ msgstr "Título del grupo de host"
 msgid "Location name"
 msgstr "Nombre de ubicación"
 
+msgid "Location title"
+msgstr ""
+
 msgid "Medium name"
 msgstr "Nombre de medio"
 
@@ -1347,6 +1379,9 @@ msgstr "Nombre de modelo"
 
 msgid "Organization name"
 msgstr "Nombre de organización"
+
+msgid "Organization title"
+msgstr ""
 
 msgid "Operating system title"
 msgstr "Título de sistema operativo"
@@ -1834,6 +1869,9 @@ msgstr "Subredes"
 msgid "Parameters"
 msgstr "Parámetros"
 
+msgid "All parameters"
+msgstr ""
+
 msgid "Puppetclasses"
 msgstr "Puppetclasses"
 
@@ -2017,6 +2055,9 @@ msgstr "Tipo de parámetro."
 msgid "Type of the validator."
 msgstr "Tipo de validador."
 
+msgid "The order in which values are resolved"
+msgstr ""
+
 msgid "Override value created"
 msgstr "Sustituir valor creado"
 
@@ -2071,6 +2112,9 @@ msgstr "Se actualizaron las funcionalidades del proxy inteligente"
 msgid "Refresh of smart proxy features failed"
 msgstr "Error al actualizar las funcionalidades del proxy inteligente"
 
+msgid "Type of the variable."
+msgstr "Tipo de variable."
+
 msgid "Variable"
 msgstr "Variable"
 
@@ -2082,9 +2126,6 @@ msgstr "Variable inteligente [%{variable}] creada"
 
 msgid "Could not create the smart variable"
 msgstr "No se pudo crear la variable inteligente"
-
-msgid "Type of the variable."
-msgstr "Tipo de variable."
 
 msgid "Smart variable [%{variable}] updated"
 msgstr "Variable inteligente [%{variable}] actualizada"
@@ -2256,6 +2297,12 @@ msgstr ""
 msgid "Default location name"
 msgstr ""
 
+msgid "Enter user's current password:"
+msgstr ""
+
+msgid "Enter user's new password:"
+msgstr ""
+
 msgid "User [%{login}] created"
 msgstr "Se creó el usuario [%{login}]"
 
@@ -2291,3 +2338,15 @@ msgstr "Se borró el grupo de usuarios [%<name>s]"
 
 msgid "Could not delete the user group"
 msgstr "No se pudo borrar el grupo de usuarios"
+
+#~ msgid "You are logged in as '%s'"
+#~ msgstr "Ha ingresado como '%s'"
+
+#~ msgid "Auth source created"
+#~ msgstr "Se creó la fuente de autenticación"
+
+#~ msgid "Auth source deleted"
+#~ msgstr "Se borró la fuente de autenticación"
+
+#~ msgid "Auth source updated"
+#~ msgstr "Se actualizó fuente de autenticación"

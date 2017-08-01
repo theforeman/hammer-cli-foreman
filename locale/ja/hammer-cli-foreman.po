@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: hammer-cli-foreman 0.11.pre.develop\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-05-05 15:31+0200\n"
+"POT-Creation-Date: 2017-08-01 13:02+0200\n"
 "PO-Revision-Date: 2017-03-29 08:19+0000\n"
 "Last-Translator: Lukáš Zapletal\n"
 "Language-Team: Japanese (http://www.transifex.com/foreman/foreman/language/"
@@ -110,11 +110,11 @@ msgstr ""
 msgid "Invalid username or password"
 msgstr "無効なユーザー名またはパスワード"
 
-msgid "You are logged in as '%s'"
-msgstr "ユーザーは '%s' としてログインしています"
+msgid "Using configured credentials for user '%s'."
+msgstr ""
 
-msgid "You are currently not logged in"
-msgstr "現在ログインしていません"
+msgid "Credentials are not configured."
+msgstr ""
 
 msgid "[Foreman] Username: "
 msgstr "[Foreman] ユーザー名: "
@@ -127,8 +127,14 @@ msgstr ""
 "セッションファイルのパーミッションが無効なため、セッション認証を使用できませ"
 "ん。"
 
-msgid "Session exist, currently logged in as '%s'"
-msgstr "セッションが存在します。現在 '%s' としてログインしています"
+msgid "Session exists, currently logged in as '%s'"
+msgstr ""
+
+msgid "Using sessions, you are currently not logged in."
+msgstr ""
+
+msgid "Invalid username or password, continuing with session for '%s'"
+msgstr ""
 
 msgid "Session has expired"
 msgstr "セッションの有効期限が切れています"
@@ -461,8 +467,13 @@ msgstr "リモートシステムにアクセスするためのユーザー名"
 msgid "password to access the remote system"
 msgstr "リモートシステムにアクセスするためのパスワード"
 
-msgid "Successfully logged in."
-msgstr "正常にログインしています"
+msgid ""
+"Can't perform login. Make sure sessions are enabled in hammer configuration "
+"file."
+msgstr ""
+
+msgid "Successfully logged in as '%s'."
+msgstr ""
 
 msgid "Wipe your credentials"
 msgstr "資格情報のワイプ"
@@ -476,14 +487,23 @@ msgstr "現在の接続についての情報"
 msgid "Manage LDAP auth sources."
 msgstr "LDAP 認証ソースを管理します。"
 
-msgid "LDAPS?"
-msgstr "LDAPS?"
+msgid "Server"
+msgstr "サーバー"
 
 msgid "Port"
 msgstr "ポート"
 
+msgid "LDAPS?"
+msgstr "LDAPS?"
+
+msgid "LDAPS"
+msgstr ""
+
 msgid "Server Type"
 msgstr "サーバーのタイプ"
+
+msgid "Account"
+msgstr ""
 
 msgid "Account Username"
 msgstr "アカウントのユーザー名"
@@ -491,11 +511,23 @@ msgstr "アカウントのユーザー名"
 msgid "Base DN"
 msgstr "ベース DN"
 
+msgid "Groups base DN"
+msgstr ""
+
+msgid "Use Netgroups"
+msgstr ""
+
 msgid "LDAP filter"
 msgstr "LDAP フィルター"
 
 msgid "Automatically Create Accounts?"
 msgstr "アカウントを自動的に作成しますか?"
+
+msgid "Usergroup sync"
+msgstr ""
+
+msgid "Attribute mappings"
+msgstr ""
 
 msgid "Login Name Attribute"
 msgstr "ログイン名属性"
@@ -512,20 +544,20 @@ msgstr "メールアドレス属性"
 msgid "Photo Attribute"
 msgstr "写真属性"
 
-msgid "Auth source created"
-msgstr "認証ソースが作成されました"
+msgid "Auth source [%{name}] created"
+msgstr ""
 
 msgid "Could not create the Auth Source"
 msgstr "認証ソースを作成できませんでした"
 
-msgid "Auth source deleted"
-msgstr "認証ソースが削除されました"
+msgid "Auth source [%{name}] deleted"
+msgstr ""
 
 msgid "Could not delete the Auth Source"
 msgstr "認証ソースを削除できませんでした"
 
-msgid "Auth source updated"
-msgstr "認証ソースが更新されました"
+msgid "Auth source [%{name}] updated"
+msgstr ""
 
 msgid "Could not update the Auth Source"
 msgstr "認証ソースを更新できませんでした"
@@ -606,9 +638,6 @@ msgstr "データセンター"
 
 msgid "Region"
 msgstr "リージョン"
-
-msgid "Server"
-msgstr "サーバー"
 
 msgid "Tenant"
 msgstr "テナント"
@@ -1341,6 +1370,9 @@ msgstr "ホストグループタイトル"
 msgid "Location name"
 msgstr "ロケーション名"
 
+msgid "Location title"
+msgstr ""
+
 msgid "Medium name"
 msgstr "メディア名"
 
@@ -1349,6 +1381,9 @@ msgstr "モデル名"
 
 msgid "Organization name"
 msgstr "組織名"
+
+msgid "Organization title"
+msgstr ""
 
 msgid "Operating system title"
 msgstr "オペレーティングシステムのタイトル"
@@ -1836,6 +1871,9 @@ msgstr "サブネット"
 msgid "Parameters"
 msgstr "パラメーター"
 
+msgid "All parameters"
+msgstr ""
+
 msgid "Puppetclasses"
 msgstr "Puppet クラス"
 
@@ -2019,6 +2057,9 @@ msgstr "パラメーターのタイプ。"
 msgid "Type of the validator."
 msgstr "バリデーターのタイプ。"
 
+msgid "The order in which values are resolved"
+msgstr ""
+
 msgid "Override value created"
 msgstr "作成された値を上書き"
 
@@ -2073,6 +2114,9 @@ msgstr "スマートプロキシー機能が更新されました"
 msgid "Refresh of smart proxy features failed"
 msgstr "スマートプロキシー機能が更新が失敗しました"
 
+msgid "Type of the variable."
+msgstr "変数のタイプ。"
+
 msgid "Variable"
 msgstr "変数"
 
@@ -2084,9 +2128,6 @@ msgstr "スマート変数 [%{variable}] が作成されました"
 
 msgid "Could not create the smart variable"
 msgstr "スマート変数を作成できませんでした"
-
-msgid "Type of the variable."
-msgstr "変数のタイプ。"
 
 msgid "Smart variable [%{variable}] updated"
 msgstr "スマート変数 [%{variable}] が更新されました"
@@ -2256,6 +2297,12 @@ msgstr ""
 msgid "Default location name"
 msgstr ""
 
+msgid "Enter user's current password:"
+msgstr ""
+
+msgid "Enter user's new password:"
+msgstr ""
+
 msgid "User [%{login}] created"
 msgstr "ユーザー [%{login}] が作成されました"
 
@@ -2291,3 +2338,24 @@ msgstr "ユーザーグループ [%<name>s] が削除されました"
 
 msgid "Could not delete the user group"
 msgstr "ユーザーグループを削除できませんでした"
+
+#~ msgid "You are logged in as '%s'"
+#~ msgstr "ユーザーは '%s' としてログインしています"
+
+#~ msgid "You are currently not logged in"
+#~ msgstr "現在ログインしていません"
+
+#~ msgid "Session exist, currently logged in as '%s'"
+#~ msgstr "セッションが存在します。現在 '%s' としてログインしています"
+
+#~ msgid "Successfully logged in."
+#~ msgstr "正常にログインしています"
+
+#~ msgid "Auth source created"
+#~ msgstr "認証ソースが作成されました"
+
+#~ msgid "Auth source deleted"
+#~ msgstr "認証ソースが削除されました"
+
+#~ msgid "Auth source updated"
+#~ msgstr "認証ソースが更新されました"

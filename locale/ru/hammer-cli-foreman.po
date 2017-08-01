@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: hammer-cli-foreman 0.11.pre.develop\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-05-05 15:31+0200\n"
+"POT-Creation-Date: 2017-08-01 13:02+0200\n"
 "PO-Revision-Date: 2017-03-29 08:19+0000\n"
 "Last-Translator: Lukáš Zapletal\n"
 "Language-Team: Russian (http://www.transifex.com/foreman/foreman/language/"
@@ -112,10 +112,10 @@ msgstr ""
 msgid "Invalid username or password"
 msgstr "Неверное имя пользователя или пароль"
 
-msgid "You are logged in as '%s'"
-msgstr "Вы вошли как «%s»"
+msgid "Using configured credentials for user '%s'."
+msgstr ""
 
-msgid "You are currently not logged in"
+msgid "Credentials are not configured."
 msgstr ""
 
 msgid "[Foreman] Username: "
@@ -127,7 +127,13 @@ msgstr "Пароль [Foreman] для %s:"
 msgid "Can't use session auth due to invalid permissions on session files."
 msgstr ""
 
-msgid "Session exist, currently logged in as '%s'"
+msgid "Session exists, currently logged in as '%s'"
+msgstr ""
+
+msgid "Using sessions, you are currently not logged in."
+msgstr ""
+
+msgid "Invalid username or password, continuing with session for '%s'"
 msgstr ""
 
 msgid "Session has expired"
@@ -460,7 +466,12 @@ msgstr "имя пользователя для доступа к удаленн�
 msgid "password to access the remote system"
 msgstr "пароль доступа к удаленной системе"
 
-msgid "Successfully logged in."
+msgid ""
+"Can't perform login. Make sure sessions are enabled in hammer configuration "
+"file."
+msgstr ""
+
+msgid "Successfully logged in as '%s'."
 msgstr ""
 
 msgid "Wipe your credentials"
@@ -475,14 +486,23 @@ msgstr "Сведения о текущих подключениях"
 msgid "Manage LDAP auth sources."
 msgstr "Управление источниками идентификации LDAP"
 
-msgid "LDAPS?"
-msgstr "LDAPS"
+msgid "Server"
+msgstr "Сервер"
 
 msgid "Port"
 msgstr "Порт"
 
+msgid "LDAPS?"
+msgstr "LDAPS"
+
+msgid "LDAPS"
+msgstr ""
+
 msgid "Server Type"
 msgstr "Тип сервера"
+
+msgid "Account"
+msgstr ""
 
 msgid "Account Username"
 msgstr "Имя пользователя"
@@ -490,11 +510,23 @@ msgstr "Имя пользователя"
 msgid "Base DN"
 msgstr "Базовое DN"
 
+msgid "Groups base DN"
+msgstr ""
+
+msgid "Use Netgroups"
+msgstr ""
+
 msgid "LDAP filter"
 msgstr "Фильтр LDAP"
 
 msgid "Automatically Create Accounts?"
 msgstr "Автоматическая регистрация"
+
+msgid "Usergroup sync"
+msgstr ""
+
+msgid "Attribute mappings"
+msgstr ""
 
 msgid "Login Name Attribute"
 msgstr "Имя входа"
@@ -511,20 +543,20 @@ msgstr "Электронный адрес"
 msgid "Photo Attribute"
 msgstr "Фотография"
 
-msgid "Auth source created"
-msgstr "Источник идентификации создан"
+msgid "Auth source [%{name}] created"
+msgstr ""
 
 msgid "Could not create the Auth Source"
 msgstr "Не удалось создать источник идентификации"
 
-msgid "Auth source deleted"
-msgstr "Источник идентификации удален"
+msgid "Auth source [%{name}] deleted"
+msgstr ""
 
 msgid "Could not delete the Auth Source"
 msgstr "Не удалось удалить источник идентификации"
 
-msgid "Auth source updated"
-msgstr "Источник идентификации обновлен"
+msgid "Auth source [%{name}] updated"
+msgstr ""
 
 msgid "Could not update the Auth Source"
 msgstr "Не удалось обновить источник идентификации"
@@ -599,9 +631,6 @@ msgstr "Центр данных"
 
 msgid "Region"
 msgstr "Регион"
-
-msgid "Server"
-msgstr "Сервер"
 
 msgid "Tenant"
 msgstr "Арендатор"
@@ -1326,6 +1355,9 @@ msgstr "Название группы узлов"
 msgid "Location name"
 msgstr "Имя местоположения"
 
+msgid "Location title"
+msgstr ""
+
 msgid "Medium name"
 msgstr "Имя носителя"
 
@@ -1334,6 +1366,9 @@ msgstr "Имя модели"
 
 msgid "Organization name"
 msgstr "Имя организации"
+
+msgid "Organization title"
+msgstr ""
 
 msgid "Operating system title"
 msgstr "Операционная система"
@@ -1821,6 +1856,9 @@ msgstr "Подсети"
 msgid "Parameters"
 msgstr "Параметры"
 
+msgid "All parameters"
+msgstr ""
+
 msgid "Puppetclasses"
 msgstr "Классы Puppet"
 
@@ -2004,6 +2042,9 @@ msgstr "Тип параметра"
 msgid "Type of the validator."
 msgstr "Тип проверки"
 
+msgid "The order in which values are resolved"
+msgstr ""
+
 msgid "Override value created"
 msgstr "Значение переопределения создано"
 
@@ -2058,6 +2099,9 @@ msgstr "Функции капсулы были обновлены"
 msgid "Refresh of smart proxy features failed"
 msgstr "Не удалось обновить функции капсулы"
 
+msgid "Type of the variable."
+msgstr "Тип переменной"
+
 msgid "Variable"
 msgstr "Переменная"
 
@@ -2069,9 +2113,6 @@ msgstr "Смарт-переменная [%{variable}] создана"
 
 msgid "Could not create the smart variable"
 msgstr "Не удалось создать смарт-переменную"
-
-msgid "Type of the variable."
-msgstr "Тип переменной"
 
 msgid "Smart variable [%{variable}] updated"
 msgstr "Смарт-переменная [%{variable}] была обновлена"
@@ -2241,6 +2282,12 @@ msgstr ""
 msgid "Default location name"
 msgstr ""
 
+msgid "Enter user's current password:"
+msgstr ""
+
+msgid "Enter user's new password:"
+msgstr ""
+
 msgid "User [%{login}] created"
 msgstr "Пользователь [%{login}] создан"
 
@@ -2276,3 +2323,15 @@ msgstr "Группа [%<name>s] удалена"
 
 msgid "Could not delete the user group"
 msgstr "Не удалось удалить группу"
+
+#~ msgid "You are logged in as '%s'"
+#~ msgstr "Вы вошли как «%s»"
+
+#~ msgid "Auth source created"
+#~ msgstr "Источник идентификации создан"
+
+#~ msgid "Auth source deleted"
+#~ msgstr "Источник идентификации удален"
+
+#~ msgid "Auth source updated"
+#~ msgstr "Источник идентификации обновлен"

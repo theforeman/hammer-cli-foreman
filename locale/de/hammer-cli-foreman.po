@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: hammer-cli-foreman 0.11.pre.develop\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-05-05 15:31+0200\n"
+"POT-Creation-Date: 2017-08-01 13:02+0200\n"
 "PO-Revision-Date: 2017-03-29 08:19+0000\n"
 "Last-Translator: Lukáš Zapletal\n"
 "Language-Team: German (http://www.transifex.com/foreman/foreman/language/"
@@ -113,10 +113,10 @@ msgstr ""
 msgid "Invalid username or password"
 msgstr "Ungültiger Benutzername oder Passwort"
 
-msgid "You are logged in as '%s'"
-msgstr "Sie sind als \"%s\" angemeldet"
+msgid "Using configured credentials for user '%s'."
+msgstr ""
 
-msgid "You are currently not logged in"
+msgid "Credentials are not configured."
 msgstr ""
 
 msgid "[Foreman] Username: "
@@ -128,7 +128,13 @@ msgstr "[Foreman]-Passwort für %s: "
 msgid "Can't use session auth due to invalid permissions on session files."
 msgstr ""
 
-msgid "Session exist, currently logged in as '%s'"
+msgid "Session exists, currently logged in as '%s'"
+msgstr ""
+
+msgid "Using sessions, you are currently not logged in."
+msgstr ""
+
+msgid "Invalid username or password, continuing with session for '%s'"
 msgstr ""
 
 msgid "Session has expired"
@@ -461,8 +467,13 @@ msgstr "Benutzername zum Zugriff auf das entfernte System"
 msgid "password to access the remote system"
 msgstr "Passwort zum Zugriff auf das entfernte System"
 
-msgid "Successfully logged in."
-msgstr "Erfolgreich angemeldet."
+msgid ""
+"Can't perform login. Make sure sessions are enabled in hammer configuration "
+"file."
+msgstr ""
+
+msgid "Successfully logged in as '%s'."
+msgstr ""
 
 msgid "Wipe your credentials"
 msgstr "Berechtigungsnachweise löschen"
@@ -476,14 +487,23 @@ msgstr "Informationen über aktuelle Verbindungen"
 msgid "Manage LDAP auth sources."
 msgstr "LDAP-Authentifizierungsquellen verwalten."
 
-msgid "LDAPS?"
-msgstr "LDAPS?"
+msgid "Server"
+msgstr "Server"
 
 msgid "Port"
 msgstr "Port"
 
+msgid "LDAPS?"
+msgstr "LDAPS?"
+
+msgid "LDAPS"
+msgstr ""
+
 msgid "Server Type"
 msgstr "Servertyp"
+
+msgid "Account"
+msgstr ""
 
 msgid "Account Username"
 msgstr "Account-Benutzername"
@@ -491,11 +511,23 @@ msgstr "Account-Benutzername"
 msgid "Base DN"
 msgstr "Basis-DN"
 
+msgid "Groups base DN"
+msgstr ""
+
+msgid "Use Netgroups"
+msgstr ""
+
 msgid "LDAP filter"
 msgstr "LDAP-Filter"
 
 msgid "Automatically Create Accounts?"
 msgstr "Accounts automatisch erstellen?"
+
+msgid "Usergroup sync"
+msgstr ""
+
+msgid "Attribute mappings"
+msgstr ""
 
 msgid "Login Name Attribute"
 msgstr "Benutzername-Attribut"
@@ -512,20 +544,20 @@ msgstr "E-Mail-Adress-Attribut"
 msgid "Photo Attribute"
 msgstr "Fotoattribut"
 
-msgid "Auth source created"
-msgstr "Authentifizierungsquelle erstellt"
+msgid "Auth source [%{name}] created"
+msgstr ""
 
 msgid "Could not create the Auth Source"
 msgstr "Authentifizierungsquelle konnte nicht erstellt werden"
 
-msgid "Auth source deleted"
-msgstr "Authentifizierungsquelle gelöscht"
+msgid "Auth source [%{name}] deleted"
+msgstr ""
 
 msgid "Could not delete the Auth Source"
 msgstr "Authentifizierungsquelle konnte nicht gelöscht werden"
 
-msgid "Auth source updated"
-msgstr "Authentifizierungsquelle aktualisiert"
+msgid "Auth source [%{name}] updated"
+msgstr ""
 
 msgid "Could not update the Auth Source"
 msgstr "Authentifizierungsquelle konnte nicht aktualisiert werden"
@@ -606,9 +638,6 @@ msgstr "Rechenzentrum"
 
 msgid "Region"
 msgstr "Region"
-
-msgid "Server"
-msgstr "Server"
 
 msgid "Tenant"
 msgstr "Mandant"
@@ -1333,6 +1362,9 @@ msgstr "Hostgruppentitel"
 msgid "Location name"
 msgstr "Standortname"
 
+msgid "Location title"
+msgstr ""
+
 msgid "Medium name"
 msgstr "Mediumname"
 
@@ -1341,6 +1373,9 @@ msgstr "Modellname"
 
 msgid "Organization name"
 msgstr "Organisationsname"
+
+msgid "Organization title"
+msgstr ""
 
 msgid "Operating system title"
 msgstr "Betriebssystemtitel"
@@ -1830,6 +1865,9 @@ msgstr "Subnetze"
 msgid "Parameters"
 msgstr "Parameter"
 
+msgid "All parameters"
+msgstr ""
+
 msgid "Puppetclasses"
 msgstr "Puppet-Klassen"
 
@@ -2013,6 +2051,9 @@ msgstr "Typ des Parameters."
 msgid "Type of the validator."
 msgstr "Typ der Prüfung."
 
+msgid "The order in which values are resolved"
+msgstr ""
+
 msgid "Override value created"
 msgstr "Überschreibungswert erstellt"
 
@@ -2067,6 +2108,9 @@ msgstr "Smart-Proxy-Funktionen wurden aktualisiert"
 msgid "Refresh of smart proxy features failed"
 msgstr "Fehler beim Aktualisieren von Smart-Proxy-Funktionen"
 
+msgid "Type of the variable."
+msgstr "Typ der Variable."
+
 msgid "Variable"
 msgstr "Variable"
 
@@ -2078,9 +2122,6 @@ msgstr "Smart-Variable [%{variable}] erstellt"
 
 msgid "Could not create the smart variable"
 msgstr "Smart-Variable konnte nicht erstellt werden"
-
-msgid "Type of the variable."
-msgstr "Typ der Variable."
 
 msgid "Smart variable [%{variable}] updated"
 msgstr "Smart-Variable [%{variable}] aktualisiert"
@@ -2250,6 +2291,12 @@ msgstr ""
 msgid "Default location name"
 msgstr ""
 
+msgid "Enter user's current password:"
+msgstr ""
+
+msgid "Enter user's new password:"
+msgstr ""
+
 msgid "User [%{login}] created"
 msgstr "Benutzer [%{login}] erstellt"
 
@@ -2285,3 +2332,18 @@ msgstr "Benutzergruppe [%<name>s] gelöscht"
 
 msgid "Could not delete the user group"
 msgstr "Benutzergruppe konnte nicht gelöscht werden"
+
+#~ msgid "You are logged in as '%s'"
+#~ msgstr "Sie sind als \"%s\" angemeldet"
+
+#~ msgid "Successfully logged in."
+#~ msgstr "Erfolgreich angemeldet."
+
+#~ msgid "Auth source created"
+#~ msgstr "Authentifizierungsquelle erstellt"
+
+#~ msgid "Auth source deleted"
+#~ msgstr "Authentifizierungsquelle gelöscht"
+
+#~ msgid "Auth source updated"
+#~ msgstr "Authentifizierungsquelle aktualisiert"
