@@ -45,7 +45,7 @@ It's disabled by default. To turn it on, put following into your config file:
 :foreman:
   :use_sessions: true
 ```
-Unfortunately retry on session expiry is yet to be implemented. Therefore you'll observe first command to fail
-after the session expires.
+Please note that when you turn sessions on, the credentials stored in your config file will be ignored.
 
 The default session timeout is 1 hour. This can be changed in the Foreman: `Settings > Authentication > Idle timeout`
+When the session expires hammer will prompt for username and password again.
