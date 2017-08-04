@@ -34,7 +34,7 @@ module HammerCLIForeman
         return @authenticator if @authenticator
 
         if ssl_cert_authentication?(settings) && !use_basic_auth?(settings)
-          @authenticator = VoidAuth.new
+          @authenticator = VoidAuth.new(_('Using certificate authentication.'))
         else
           if settings.get(:foreman, :use_sessions)
             @authenticator = InteractiveBasicAuth.new(
