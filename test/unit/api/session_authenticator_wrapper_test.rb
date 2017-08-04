@@ -355,4 +355,18 @@ describe HammerCLIForeman::Api::SessionAuthenticatorWrapper do
       end
     end
   end
+
+  describe '#status' do
+    it 'informs that there is no existing session' do
+      prepare_session_storage do |auth, dir|
+        assert_equal "Using sessions, you are currently not logged in.", auth.status
+      end
+    end
+
+    it "informas about existing session" do
+      prepare_session_storage :session_id => 'SOME_SESSION_ID' do |auth, dir|
+        assert_equal "Session exists, currently logged in as 'admin'", auth.status
+      end
+    end
+  end
 end

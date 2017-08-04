@@ -101,4 +101,23 @@ describe HammerCLIForeman::Api::InteractiveBasicAuth do
       assert_nil auth.user
     end
   end
+
+  describe '#status' do
+    let(:auth) { HammerCLIForeman::Api::InteractiveBasicAuth.new(nil, nil) }
+
+    it 'says user is logged only when both username and password are present' do
+      auth.set_credentials('admin', 'password')
+      assert_equal "Using configured credentials for user 'admin'.", auth.status
+    end
+
+    it 'says user is not logged when only username is present' do
+      auth.set_credentials('admin', nil)
+      assert_equal "Credentials are not configured.", auth.status
+    end
+
+    it 'says user is not logged when only password is present' do
+      auth.set_credentials(nil, 'password')
+      assert_equal "Credentials are not configured.", auth.status
+    end
+  end
 end
