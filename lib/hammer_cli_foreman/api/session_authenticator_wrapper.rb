@@ -5,6 +5,8 @@ module HammerCLIForeman
     class SessionAuthenticatorWrapper < ApipieBindings::Authenticators::Base
       SESSION_STORAGE = '~/.hammer/sessions/'
 
+      attr_reader :session_id
+
       def initialize(authenticator, url, storage_dir = nil)
         @authenticator = authenticator
         @url = url
@@ -69,8 +71,8 @@ module HammerCLIForeman
       end
 
       def response(r)
-        @session_id = r.cookies['_session_id']
-        if (@session_id && r.code != 401)
+        if (r.cookies['_session_id'] && r.code != 401)
+          @session_id = r.cookies['_session_id']
           save_session(@session_id, @authenticator.user)
         end
         @authenticator.response(r)
