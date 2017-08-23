@@ -61,7 +61,7 @@ module HammerCLIForeman
         field :name, _("Name")
         field :title, _("Title")
         field nil, _("Operating System"), Fields::SingleReference, :key => :operatingsystem
-        field nil, _("Environment"), Fields::SingleReference, :key => :environment
+        field nil, _("Puppet Environment"), Fields::SingleReference, :key => :environment
         field nil, _("Model"), Fields::SingleReference, :key => :model
       end
 
@@ -73,19 +73,28 @@ module HammerCLIForeman
 
       output ListCommand.output_definition do
         field :description, _("Description"), Fields::LongText, :hide_blank => true
-        field nil, _("Subnet"), Fields::SingleReference, :key => :subnet
-
-        field nil, _("Domain"), Fields::SingleReference, :key => :domain
-        field nil, _("Architecture"), Fields::SingleReference, :key => :architecture
-        field nil, _("Partition Table"), Fields::SingleReference, :key => :ptable
-        field nil, _("Medium"), Fields::SingleReference, :key => :medium
-        field :puppet_ca_proxy_id, _("Puppet CA Proxy Id")
-        field :puppet_proxy_id, _("Puppet Master Proxy Id")
+        field :parent_id, _("Parent Id"), Fields::Field, :hide_blank => true
+        field nil, _("Parent"), Fields::SingleReference, :key => :parent, :hide_blank => true
+        field :puppet_ca_proxy_id, _("Puppet CA Proxy Id"), Fields::Field, :hide_blank => true
+        field nil, _("Puppet CA Proxy"), Fields::SingleReference, :key => :puppet_ca_proxy
+        field :puppet_proxy_id, _("Puppet Master Proxy Id"), Fields::Field, :hide_blank => true
+        field nil, _("Puppet Master Proxy"), Fields::SingleReference, :key => :puppet_proxy
         field nil, _("ComputeProfile"), Fields::SingleReference, :key => :compute_profile
+        label _('Network') do
+          field nil, _("Subnet ipv4"), Fields::SingleReference, :key => :subnet
+          field nil, _("Subnet ipv6"), Fields::SingleReference, :key => :subnet6
+          field nil, _("Realm"), Fields::SingleReference, :key => :realm
+          field nil, _("Domain"), Fields::SingleReference, :key => :domain
+        end
+        label _('Operating system') do
+          field nil, _("Architecture"), Fields::SingleReference, :key => :architecture
+          field nil, _("Operating System"), Fields::SingleReference, :key => :operatingsystem
+          field nil, _("Medium"), Fields::SingleReference, :key => :medium
+          field nil, _("Partition Table"), Fields::SingleReference, :key => :ptable
+        end
         HammerCLIForeman::References.puppetclasses(self)
         HammerCLIForeman::References.parameters(self)
         HammerCLIForeman::References.taxonomies(self)
-        field :ancestry, _("Parent Id")
       end
 
       build_options
@@ -103,6 +112,7 @@ module HammerCLIForeman
 
 
     class UpdateCommand < HammerCLIForeman::UpdateCommand
+
       include HostgroupUpdateCreateCommons
 
       success_message _("Hostgroup updated")

@@ -24,7 +24,7 @@ describe HammerCLIForeman::Hostgroup do
 
       it_should_print_n_records
       it_should_print_columns ["Id", "Name", "Title", "Operating System"]
-      it_should_print_columns ["Environment", "Model"]
+      it_should_print_columns ["Puppet Environment", "Model"]
     end
 
   end
@@ -41,9 +41,11 @@ describe HammerCLIForeman::Hostgroup do
     context "output" do
       with_params ["--id=1"] do
         it_should_print_n_records 1
-        it_should_print_columns ["Id", "Name", "Title", "Operating System", "Subnet"]
-        it_should_print_columns ["Domain", "Environment", "Puppetclasses", "Parent Id"]
+        it_should_print_columns ["Id", "Name", "Title", "Operating System"]
+        it_should_print_columns ["Puppet Environment", "Puppetclasses", "Parent Id", "Parent"]
+        it_should_print_columns ["Puppet CA Proxy", "Puppet Master Proxy"]
         it_should_print_columns ["Parameters", "Description"]
+        it_should_print_columns ["Network", "Operating system"]
       end
     end
 
