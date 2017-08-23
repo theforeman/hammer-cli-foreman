@@ -61,9 +61,9 @@ module HammerCLIForeman
         field nil, _("Host Group"), Fields::SingleReference, :key => :hostgroup, :display_field => 'title'
         field nil, _("Compute Resource"), Fields::SingleReference, :key => :compute_resource
         field nil, _("Compute Profile"), Fields::SingleReference, :key => :compute_profile, :hide_blank => true
-        field nil, _("Environment"), Fields::SingleReference, :key => :environment
-        field :puppet_ca_proxy_id, _("Puppet CA Id")
-        field :puppet_proxy_id, _("Puppet Master Id")
+        field nil, _("Puppet Environment"), Fields::SingleReference, :key => :environment
+        field nil, _("Puppet CA Proxy"), Fields::SingleReference, :key => :puppet_ca_proxy
+        field nil, _("Puppet Master Proxy"), Fields::SingleReference, :key => :puppet_proxy
         field :certname, _("Cert name")
         field :managed, _("Managed"), Fields::Boolean
 
@@ -71,9 +71,11 @@ module HammerCLIForeman
         field :last_report, _("Last report"), Fields::Date
 
         label _("Network") do
-          field :ip, _("IP")
+          field :ip, _("IPv4 address"), Fields::Field, :hide_blank => true
+          field :ip6, _("IPv6 address"), Fields::Field, :hide_blank => true
           field :mac, _("MAC")
-          field nil, _("Subnet"), Fields::SingleReference, :key => :subnet
+          field nil, _("Subnet ipv4"), Fields::SingleReference, :key => :subnet
+          field nil, _("Subnet ipv6"), Fields::SingleReference, :key => :subnet6
           field nil, _("Domain"), Fields::SingleReference, :key => :domain
           field nil, _("Service provider"), Fields::Label, :hide_blank => true do
             field :sp_name, _("SP Name"), Fields::Field, :hide_blank => true
@@ -88,7 +90,8 @@ module HammerCLIForeman
           field :identifier, _('Identifier')
           field :_type, _('Type')
           field :mac, _('MAC address')
-          field :ip, _('IP address')
+          field :ip, _('IPv4 address'), Fields::Field, :hide_blank => true
+          field :ip6, _('IPv6 address'), Fields::Field, :hide_blank => true
           field :fqdn, _('FQDN')
         end
 
@@ -100,6 +103,7 @@ module HammerCLIForeman
           field :build, _("Build"), Fields::Boolean
           field nil, _("Medium"), Fields::SingleReference, :key => :medium
           field nil, _("Partition Table"), Fields::SingleReference, :key => :ptable
+          field :pxe_loader, _("PXE Loader"), Fields::Field, :hide_blank => true
           field :disk, _("Custom partition table"), Fields::LongText
           # image
           # for image based

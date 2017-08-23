@@ -45,8 +45,8 @@ describe HammerCLIForeman::Host do
       with_params ["--id=1"] do
         it_should_print_n_records 1
         it_should_print_columns ["Id", "Name", "Organization", "Location"]
-        it_should_print_columns ["Host Group", "Compute Resource", "Compute Profile", "Environment"]
-        it_should_print_columns ["Puppet CA Id", "Puppet Master Id", "Cert name"]
+        it_should_print_columns ["Host Group", "Compute Resource", "Compute Profile", "Puppet Environment"]
+        it_should_print_columns ["Puppet CA Proxy", "Puppet Master Proxy", "Cert name"]
         it_should_print_columns ["Managed", "Installed at", "Last report"]
         it_should_print_columns ["Network", "Network interfaces", "Operating system", "Parameters", "All parameters", "Additional info"]
       end
