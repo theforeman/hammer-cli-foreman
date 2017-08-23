@@ -113,7 +113,7 @@ module HammerCLIForeman
 
         # additional info
         label _("Additional info") do
-          field :owner_id, _("Owner Id")
+          field nil, _("Owner"), Fields::SingleReference, :key => :owner
           field :owner_type, _("Owner Type")
           field :enabled, _("Enabled"), Fields::Boolean
           field nil, _("Model"), Fields::SingleReference, :key => :model, :hide_blank => true
