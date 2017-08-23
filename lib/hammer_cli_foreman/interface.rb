@@ -9,6 +9,7 @@ module HammerCLIForeman
       flags = []
       flags << _('primary') if nic['primary']
       flags << _('provision') if nic['provision']
+      flags << _('execution') if nic['execution']
 
       type = nic['type']
       if !flags.empty?
@@ -51,6 +52,7 @@ module HammerCLIForeman
         field :managed, _("Managed"), Fields::Boolean
         field :primary, _("Primary"), Fields::Boolean
         field :provision, _("Provision"), Fields::Boolean
+        field :execution, _("Remote Execution"), Fields::Boolean
         field :virtual, _("Virtual"), Fields::Boolean
         field :tag, _("Tag"), nil, :hide_blank => true
         field :attached_to, _("Attached to"), nil, :hide_blank => true
