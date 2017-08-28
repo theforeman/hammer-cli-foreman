@@ -100,6 +100,10 @@ describe HammerCLIForeman::Output::Formatters::ReferenceFormatter do
       options = {:context => {:show_ids => true}, :details => [:url, :desc]}
       formatter.format(reference_sym_keys, options).must_equal 'Server (URL, Description, id: 1)'
     end
+
+    it "handles empty string properly" do
+      formatter.format("", {}).must_equal ""
+    end
   end
 
   context "with string keys" do
