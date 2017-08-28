@@ -136,9 +136,9 @@ module HammerCLIForeman
       end
     end
 
-    class AddOverrideValueCommand < HammerCLIForeman::CreateCommand
+    class AddMatcherCommand < HammerCLIForeman::CreateCommand
       resource :override_values
-      command_name 'add-override-value'
+      command_name 'add-matcher'
 
       success_message _("Override value created")
       failure_message _("Could not create the override value")
@@ -160,9 +160,15 @@ module HammerCLIForeman
       end
     end
 
-    class RemoveOverrideValueCommand < HammerCLIForeman::DeleteCommand
+    HammerCLIForeman::SmartClassParameter.lazy_subcommand('add-override-value', _("Create an override value for a specific smart variable"),
+      'HammerCLIForeman::SmartClassParameter::AddMatcherCommand', 'hammer_cli_foreman/smart_class_parameter',
+      :hidden => true,
+      :warning => _('add-override-value command is deprecated and will be removed in one of the future versions. Please use add-matcher command instead.')
+    )
+
+    class RemoveMatcherCommand < HammerCLIForeman::DeleteCommand
       resource :override_values
-      command_name 'remove-override-value'
+      command_name 'remove-matcher'
 
       success_message _("Override value deleted")
       failure_message _("Could not delete the override value")
@@ -180,10 +186,14 @@ module HammerCLIForeman
       end
     end
 
+    HammerCLIForeman::SmartClassParameter.lazy_subcommand('remove-override-value', _("Remove an override value for a specific smart variable"),
+      'HammerCLIForeman::SmartClassParameter::RemoveMatcherCommand', 'hammer_cli_foreman/smart_class_parameter',
+      :hidden => true,
+      :warning => _('remove-override-value command is deprecated and will be removed in one of the future versions. Please use remove-matcher command instead.')
+    )
+
     autoload_subcommands
 
   end
-
-
 
 end

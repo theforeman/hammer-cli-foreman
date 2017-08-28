@@ -20,8 +20,8 @@ describe 'sc-params update' do
 
 end
 
-describe 'sc-params add-override-value' do
-  let(:cmd) { %w(sc-param add-override-value) }
+describe 'sc-params add-matcher' do
+  let(:cmd) { %w(sc-param add-matcher) }
   let(:override_value) { 'something' }
   let(:match) { 'domain = example.com' }
   let(:puppet_class) { { 'name' => 'motd', 'id' => '1' } }
