@@ -88,9 +88,9 @@ describe HammerCLIForeman::SmartClassParameter do
 
   end
 
-  context "AddOverrideValueCommand" do
+  context "AddMatcherCommand" do
 
-    let(:cmd) { HammerCLIForeman::SmartClassParameter::AddOverrideValueCommand.new("", ctx) }
+    let(:cmd) { HammerCLIForeman::SmartClassParameter::AddMatcherCommand.new("", ctx) }
 
     context "parameters" do
       it_should_accept "smart-class-parametr-id, match, value", ["--smart-class-parameter-id=1", "--match='domain=my.lan'", "--value=1"]
@@ -99,9 +99,9 @@ describe HammerCLIForeman::SmartClassParameter do
     end
   end
 
-  context "RemoveOverrideValueCommand" do
+  context "RemoveMatcherCommand" do
 
-    let(:cmd) { HammerCLIForeman::SmartClassParameter::RemoveOverrideValueCommand.new("", ctx) }
+    let(:cmd) { HammerCLIForeman::SmartClassParameter::RemoveMatcherCommand.new("", ctx) }
 
     context "parameters" do
       it_should_accept "smart-class-parametr-id, id", ["--smart-class-parameter-id=1", "--id=1"]

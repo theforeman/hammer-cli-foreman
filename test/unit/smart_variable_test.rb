@@ -107,7 +107,7 @@ describe HammerCLIForeman::SmartVariable do
 
   context "AddOverrideValueCommand" do
 
-    let(:cmd) { HammerCLIForeman::SmartVariable::AddOverrideValueCommand.new("", ctx) }
+    let(:cmd) { HammerCLIForeman::SmartVariable::AddMatcherCommand.new("", ctx) }
 
     context "parameters" do
       it_should_accept "match, value and smart-variable-id", ["--match='environment=Dev'","--value=5","--smart-variable-id=1"]
@@ -119,7 +119,7 @@ describe HammerCLIForeman::SmartVariable do
 
   context "RemoveOverrideValueCommand" do
 
-    let(:cmd) { HammerCLIForeman::SmartVariable::RemoveOverrideValueCommand.new("", ctx) }
+    let(:cmd) { HammerCLIForeman::SmartVariable::RemoveMatcherCommand.new("", ctx) }
 
     context "parameters" do
       it_should_accept "id and smart-variable-id", ["--id=1","--smart-variable-id=1"]
