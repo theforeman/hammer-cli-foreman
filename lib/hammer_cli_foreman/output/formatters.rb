@@ -35,7 +35,7 @@ module HammerCLIForeman::Output
       end
 
       def format(reference, field_params={})
-        return "" if reference.nil?
+        return "" if reference.nil? || reference == ""
 
         id_key = field_params[:id_key] || :id
         name_key = field_params[:name_key] || :name
