@@ -65,7 +65,7 @@ module HammerCLIForeman
         field nil, _("Model"), Fields::SingleReference, :key => :model
       end
 
-      build_options
+      build_options :without => :include
     end
 
 
