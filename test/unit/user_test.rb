@@ -94,7 +94,6 @@ describe HammerCLIForeman::User do
 
     context "parameters" do
       it_should_accept "password and current password interactively", ["--login=jane", "--ask-password=true"]
-      it_should_fail_with "password change interactively with wrong current password", ["--login=jane","--ask-password=true", "--current-password=wrongpassword" ]
       it_should_accept "id", ["--id=1"]
       it_should_accept "login", ["--login=admin"]
       # it_should_fail_with "no params", [] # TODO: temporarily disabled, parameters are checked in the id resolver
