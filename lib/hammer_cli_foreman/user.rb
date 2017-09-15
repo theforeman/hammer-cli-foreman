@@ -135,10 +135,10 @@ module HammerCLIForeman
     end
 
     HammerCLIForeman::AssociatingCommands::Role.extend_command(self)
-
+    lazy_subcommand('ssh-keys', _("Managing User SSH Keys."),
+      'HammerCLIForeman::SSHKeys', 'hammer_cli_foreman/ssh_keys'
+    )
     autoload_subcommands
   end
 
 end
-
-
