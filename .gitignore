@@ -18,6 +18,7 @@ coverage
 
 # Editors
 tags
+.tramp_history
 
 # Locale files
 locale/*/*.edit.po
