@@ -70,16 +70,28 @@ module HammerCLIForeman
 
     class CreateCommand < HammerCLIForeman::CreateCommand
 
+      VALIDATION_PER_PROVIDER = {
+        'libvirt'   => [:option_url],
+        'ovirt'     => [:option_url, :option_user, :option_password, :option_datacenter],
+        'openstack' => [:option_url, :option_user, :option_password],
+        'racksapce' => [:option_url],
+        'ec2'       => [:option_region, :option_user, :option_password],
+        'vmware'    => [:option_user, :option_password, :option_datacenter, :option_server]
+      }
+
       success_message _("Compute resource created")
       failure_message _("Could not create the compute resource")
 
       build_options
 
       validate_options do
-        all(:option_name, :option_url, :option_provider).required
+        required_options = (VALIDATION_PER_PROVIDER[
+          option(:option_provider).value.to_s.downcase
+        ] || []).unshift(:option_name, :option_provider).uniq
+
+        all(*required_options).required
       end
     end
-
 
     class UpdateCommand < HammerCLIForeman::UpdateCommand
       success_message _("Compute resource updated")
@@ -126,5 +138,3 @@ module HammerCLIForeman
   end
 
 end
-
-
