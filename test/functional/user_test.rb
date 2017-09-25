@@ -7,7 +7,7 @@ describe "user" do
 
   def expect_with_minimal_params(action, message, &block)
     api_expects(:users, action, message).with_params({
-      'user' => {'login' => 'jane', 'mail' => 'jane@test.org', 'password' => 'secret', 'auth_source_id' => '1'}})
+      'user' => {'login' => 'jane', 'mail' => 'jane@test.org', 'password' => 'secret', 'auth_source_id' => 1}})
   end
 
   def expect_with_update_params(action, message, &block)
