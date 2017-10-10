@@ -21,6 +21,7 @@ module HammerCLIForeman
         field :locked, _("Locked"), Fields::Boolean
         HammerCLIForeman::References.operating_systems(self)
         HammerCLIForeman::References.timestamps(self)
+        HammerCLIForeman::References.taxonomies(self)
       end
 
       build_options
@@ -77,5 +78,3 @@ module HammerCLIForeman
   end
 
 end
-
-
