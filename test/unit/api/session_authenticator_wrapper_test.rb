@@ -224,18 +224,18 @@ describe HammerCLIForeman::Api::SessionAuthenticatorWrapper do
         prepare_session_storage do |auth, dir|
           ex = RestClient::Unauthorized.new
 
-          wrapped_auth.expects(:error).with(ex)
-          auth.error(ex)
+          wrapped_auth.expects(:error).with(ex).returns(:new_exception)
+          assert_equal(:new_exception, auth.error(ex))
         end
       end
 
       it 'keeps error message for other exceptions' do
         prepare_session_storage do |auth, dir|
           ex = RuntimeError.new('Some error')
-          wrapped_auth.expects(:error).with(ex)
-          auth.error(ex)
+          wrapped_auth.expects(:error).with(ex).returns(ex)
+          new_ex = auth.error(ex)
 
-          assert_equal 'Some error', ex.message
+          assert_equal 'Some error', new_ex.message
         end
       end
     end
@@ -283,12 +283,13 @@ describe HammerCLIForeman::Api::SessionAuthenticatorWrapper do
 
     it "ignores unauthorized requests" do
       prepare_session_storage do |auth, dir|
-        resp = stub(:cookies => {}, :code => 401)
+        resp = stub(:cookies => {'_session_id' => 'NEW_SESSION_ID'}, :code => 401)
 
         wrapped_auth.expects(:response).with(resp)
         auth.response(resp)
 
         refute File.exist?(session_file(dir))
+        assert_nil auth.session_id
       end
     end
   end
