@@ -71,6 +71,22 @@ describe 'ssh_keys' do
     end
   end
 
+  describe 'info' do
+    let(:cmd) { base_cmd << 'info' }
+
+    it 'shows the public key' do
+      params = ['--id', ssh_key[:id],
+                '--user-id', user[:id]]
+      api_expects(:ssh_keys, :show, :id => ssh_key[:id])
+        .returns(ssh_key)
+
+      expected_result = success_result(/#{ssh_key[:key]}/)
+
+      result = run_cmd(cmd + params)
+      assert_cmd(expected_result, result)
+    end
+  end
+
   describe 'delete' do
     let(:cmd) { base_cmd << 'delete' }
 

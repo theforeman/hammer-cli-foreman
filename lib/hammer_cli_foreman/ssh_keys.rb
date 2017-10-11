@@ -36,6 +36,14 @@ module HammerCLIForeman
       build_options
     end
 
+    class InfoCommand < HammerCLIForeman::InfoCommand
+      output ListCommand.output_definition do
+        field :key, _("Public Key")
+      end
+
+      build_options
+    end
+
     class DeleteCommand < HammerCLIForeman::DeleteCommand
       success_message _("SSH Key deleted")
       failure_message _("Could not delete the SSH Key")
