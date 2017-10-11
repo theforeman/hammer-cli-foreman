@@ -11,10 +11,17 @@ module HammerCLIForeman
       end
 
       def option_template_kind_id
-        kinds = HammerCLIForeman.collection_to_common_format(
-          HammerCLIForeman.foreman_resource!(:template_kinds).call(:index))
         table = kinds.inject({}){ |result, k| result.update(k["name"] => k["id"]) }
-        table[option_type]
+        if option_snippet == false && table[option_type].nil?
+          signal_usage_error "unknown template kind"
+        else
+          table[option_type]
+        end
+      end
+
+      def kinds
+        HammerCLIForeman.collection_to_common_format(
+          HammerCLIForeman.foreman_resource!(:template_kinds).call(:index))
       end
 
     end

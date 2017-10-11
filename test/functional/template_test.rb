@@ -97,4 +97,30 @@ describe 'template' do
       assert_cmd(success_result("Provisioning template updated\n"), result)
     end
   end
+
+  describe 'create' do
+    before do
+      @cmd = %w(template create)
+    end
+
+    it 'should print correct error on providing unknown template kind' do
+      params = ['--name=tpl', '--file=Gemfile', '--type=unknown']
+
+      expected_result = CommandExpectation.new
+      expected_result.expected_err =
+        ['Could not create the provisioning template:',
+         "  Error: unknown template kind",
+         '  ',
+         "  See: 'hammer template create --help'",
+         ''].join("\n")
+      expected_result.expected_exit_code = HammerCLI::EX_USAGE
+
+      HammerCLIForeman::Template::CreateCommand.any_instance.stubs(:kinds).returns(["PXELinux"])
+
+      api_expects_no_call
+      
+      result = run_cmd(@cmd + params)
+      assert_cmd(expected_result, result)
+    end
+  end
 end
