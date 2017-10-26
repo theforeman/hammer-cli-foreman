@@ -35,7 +35,7 @@ module HammerCLIForeman
         field :mac, _("MAC")
       end
 
-      build_options
+      build_options :without => [:include, :thin]
     end
 
 
