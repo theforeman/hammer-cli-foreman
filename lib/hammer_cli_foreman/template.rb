@@ -13,7 +13,7 @@ module HammerCLIForeman
       def option_template_kind_id
         table = kinds.inject({}){ |result, k| result.update(k["name"] => k["id"]) }
         if option_snippet == false && table[option_type].nil?
-          signal_usage_error "unknown template kind"
+          signal_usage_error _("unknown template kind")
         else
           table[option_type]
         end
