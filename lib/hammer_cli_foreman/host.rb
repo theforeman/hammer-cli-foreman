@@ -220,6 +220,17 @@ module HammerCLIForeman
 
       output HammerCLIForeman::Report::ListCommand.output_definition
 
+      def request_params
+        params = super
+        id_param_name = "#{parent_resource.singular_name}_id"
+        params['search'] = "#{parent_resource.singular_name}_id = #{params[id_param_name]}"
+        params.tap { |pars| pars.delete id_param_name }
+      end
+
+      def fetch_missing_identifier
+        false
+      end
+
       build_options
     end
 
