@@ -212,8 +212,12 @@ module HammerCLIForeman
 
       # resolve 'id' parameter if it's defined as an option
       id_option_name = HammerCLI.option_accessor_name('id')
-      params[id_option_name] ||= get_identifier if respond_to?(id_option_name)
+      params[id_option_name] ||= get_identifier if respond_to?(id_option_name) && fetch_missing_identifier
       params
+    end
+
+    def fetch_missing_identifier
+      true
     end
 
     def request_params
