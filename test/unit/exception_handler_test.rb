@@ -145,4 +145,15 @@ describe HammerCLIForeman::ExceptionHandler do
       err_code.must_equal HammerCLI::EX_CONFIG
     end
   end
+
+  it "should gracefully handle bad requests and show message from response" do
+    response = <<-RESPONSE
+      {"error":{"message":"some field is missing"}}
+    RESPONSE
+
+    ex = RestClient::BadRequest.new(response)
+    ex.message = 'Bad Request'
+    output.expects(:print_error).with("Bad Request\n  some field is missing", nil)
+    assert_equal(HammerCLI::EX_DATAERR, handler.handle_exception(ex))
+  end
 end
