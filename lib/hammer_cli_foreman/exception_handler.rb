@@ -11,6 +11,7 @@ module HammerCLIForeman
         [RestClient::Forbidden, :handle_forbidden],
         [RestClient::UnprocessableEntity, :handle_unprocessable_entity],
         [RestClient::MovedPermanently, :handle_moved_permanently],
+        [RestClient::BadRequest, :handle_bad_request],
         [HammerCLIForeman::Api::UnauthorizedError, :handle_foreman_unauthorized],
         [HammerCLIForeman::Api::SessionExpired, :handle_sesion_expired],
         [ArgumentError, :handle_argument_error],
@@ -105,6 +106,12 @@ module HammerCLIForeman
       log_full_error e
     end
 
+    def handle_bad_request(e)
+      print_error "#{e.message}#{response_message(e.response)}"
+      log_full_error e
+      HammerCLI::EX_DATAERR
+    end
+
     def ssl_cert_instructions
       host_url = HammerCLI::Settings.get(:_params, :host) || HammerCLI::Settings.get(:foreman, :host)
       uri = URI.parse(host_url)
@@ -139,6 +146,13 @@ module HammerCLIForeman
     end
 
     private
+
+    def response_message(response)
+      message = JSON.parse(response)["error"]["message"]
+      "\n  #{message}"
+    rescue JSON::ParserError
+      ''
+    end
 
     def strip_protocol(url)
       url.gsub(%r'^http(s)?://','').gsub(%r'//', '/')
