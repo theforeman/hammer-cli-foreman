@@ -133,6 +133,30 @@ describe HammerCLIForeman do
     end
   end
 
+  context "ListSearchCommand" do
+    it "should find correct results" do
+      ResourceMocks.mock_action_calls(
+        [:hosts, :index, [{ "id" => 2, "name" => "random-host",  "ip" => "192.168.100.112", "mac" => "6e:4b:3c:2c:8a:0a" }]],
+      )
+
+      class DomainOuter < HammerCLIForeman::Command
+        resource :domains
+
+        class HostsCommand < HammerCLIForeman::ListSearchCommand
+          command_name 'hosts'
+          search_resource :hosts
+
+          output HammerCLIForeman::Host::ListCommand.output_definition
+
+          build_options
+        end
+      end
+      comm = DomainOuter::HostsCommand.new("", { :adapter => :csv, :interactive => false })
+      out, err = capture_io { comm.run(["--id=5"]) }
+      out.must_equal "Id,Name,Operating System,Host Group,IP,MAC\n2,random-host,\"\",\"\",192.168.100.112,6e:4b:3c:2c:8a:0a\n"
+    end
+  end
+
 end
 
 
