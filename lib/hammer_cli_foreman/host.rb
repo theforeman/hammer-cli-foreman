@@ -209,12 +209,33 @@ module HammerCLIForeman
     end
 
 
-    class ReportsCommand < HammerCLIForeman::AssociatedResourceListCommand
+    class ReportsCommand < HammerCLIForeman::ListCommand
       command_name "reports"
       resource :reports, :index
-      parent_resource :hosts
+
+      option('--id', "ID", _('Host id'), :referenced_resource => 'host')
+      option('--name', "NAME", _('Host name'))
 
       output HammerCLIForeman::Report::ListCommand.output_definition
+     
+      def validate_options
+        validator.any(:option_name, :option_id).required
+      end
+
+      def request_params
+        params = super
+        search = []
+        search << params['search'] if params['search']
+        
+        hostname = get_option_value('name')
+        search << %Q(host="#{hostname}") if hostname
+        
+        host_id = get_option_value('id')
+        search << "host_id=#{host_id}" if host_id
+        
+        params['search'] = search.join(' and ') unless search.empty?
+        params
+      end
 
       build_options
     end
