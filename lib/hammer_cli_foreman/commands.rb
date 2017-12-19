@@ -115,16 +115,17 @@ module HammerCLIForeman
       super(builder_params.to_hash, &nil)
     end
 
-    def get_identifier
-      @identifier ||= get_resource_id(resource)
+    def get_identifier(all_opts=all_options)
+      @identifier ||= get_resource_id(resource, :all_options => all_opts)
       @identifier
     end
 
     def get_resource_id(resource, options={})
+      all_opts = options[:all_options] || all_options
       if options[:scoped]
-        opts = resolver.scoped_options(resource.singular_name, all_options)
+        opts = resolver.scoped_options(resource.singular_name, all_opts, :single)
       else
-        opts = all_options
+        opts = all_opts
       end
       begin
         resolver.send("#{resource.singular_name}_id", opts)
@@ -137,7 +138,8 @@ module HammerCLIForeman
     end
 
     def get_resource_ids(resource, options={})
-      opts = resolver.scoped_options(resource.singular_name, all_options)
+      all_opts = options[:all_options] || all_options
+      opts = resolver.scoped_options(resource.singular_name, all_opts, :multi)
       begin
         resolver.send("#{resource.singular_name}_ids", opts)
       rescue HammerCLIForeman::MissingSearchOptions => e
@@ -164,25 +166,6 @@ module HammerCLIForeman
 
     def send_request
       transform_format(super)
-    rescue HammerCLIForeman::MissingSearchOptions => e
-
-      switches = self.class.find_options(:referenced_resource => e.resource.singular_name).map(&:long_switch)
-
-      if switches.empty?
-        error_message = _("Could not find %{resource}. Some search options were missing, please see --help.")
-      elsif switches.length == 1
-        error_message = _("Could not find %{resource}, please set option %{switches}.")
-      else
-        error_message = _("Could not find %{resource}, please set one of options %{switches}.")
-      end
-
-      raise MissingSearchOptions.new(
-        error_message % {
-          :resource => e.resource.singular_name,
-          :switches => switches.join(", ")
-        },
-        e.resource
-      )
     end
 
     def transform_format(data)
@@ -190,41 +173,27 @@ module HammerCLIForeman
     end
 
     def customized_options
-      params = options
-      # resolve all '<resource_name>_id' parameters if they are defined as options
-      # (they can be skipped using .without or .expand.except)
-      IdParamsFilter.new(:only_required => false).for_action(resource.action(action)).each do |api_param|
-        param_resource = HammerCLIForeman.param_to_resource(api_param.name)
-        if param_resource && respond_to?(HammerCLI.option_accessor_name("#{param_resource.singular_name}_id"))
-          resource_id = get_resource_id(param_resource, :scoped => true, :required => api_param.required?)
-          params[HammerCLI.option_accessor_name(api_param.name)] = resource_id if resource_id
-        end
-      end
-
-      # resolve all '<resource_name>_ids' parameters if they are defined as options
-      IdArrayParamsFilter.new(:only_required => false).for_action(resource.action(action)).each do |api_param|
-        param_resource = HammerCLIForeman.param_to_resource(api_param.name)
-        if param_resource && respond_to?(HammerCLI.option_accessor_name("#{param_resource.singular_name}_ids"))
-          resource_ids = get_resource_ids(param_resource, :scoped => true, :required => api_param.required?)
-          params[HammerCLI.option_accessor_name(api_param.name)] = resource_ids if resource_ids
-        end
-      end
-
-      # resolve 'id' parameter if it's defined as an option
-      id_option_name = HammerCLI.option_accessor_name('id')
-      params[id_option_name] ||= get_identifier if respond_to?(id_option_name)
-      params
+      # this method is deprecated and will be removed in future versions.
+      # Check option_sources for custom tuning of options
+      options
     end
 
     def request_params
       params = customized_options
       params_pruned = method_options(params)
-
       # Options defined manualy in commands are removed in method_options.
       # Manual ids are common so its handling is covered here
       id_option_name = HammerCLI.option_accessor_name('id')
       params_pruned['id'] = params[id_option_name] if params[id_option_name]
       params_pruned
+    end
+
+    def option_sources
+      sources = super
+      sources << HammerCLIForeman::OptionSources::IdParams.new(self)
+      sources << HammerCLIForeman::OptionSources::IdsParams.new(self)
+      sources << HammerCLIForeman::OptionSources::SelfParam.new(self)
+      sources
     end
 
     private
@@ -237,7 +206,6 @@ module HammerCLIForeman
       end
       !(filed_options & searchable_options).empty?
     end
-
   end
 
 

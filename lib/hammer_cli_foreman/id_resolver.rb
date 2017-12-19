@@ -82,15 +82,22 @@ module HammerCLIForeman
       define_id_finders
     end
 
-    def scoped_options(scope, options)
+    # @param mode [Symbol] mode in which ids are searched :single, :multi, nil for old beahvior
+    def scoped_options(scope, options, mode = nil)
       scoped_options = options.dup
 
       resource = HammerCLIForeman.param_to_resource(scope)
       return scoped_options unless resource
 
-      option_names = searchables(resource).map { |s| s.name }
-      option_names += searchables(resource).map { |s| s.plural_name }
-      option_names << "id"
+      option_names = []
+      if (mode.nil? || mode == :single)
+        option_names << "id"
+        option_names += searchables(resource).map { |s| s.name }
+      end
+      if (mode.nil? || mode == :multi)
+        option_names << "ids"
+        option_names += searchables(resource).map { |s| s.plural_name }
+      end
 
       option_names.each do |name|
         option = HammerCLI.option_accessor_name(name)
@@ -104,18 +111,6 @@ module HammerCLIForeman
         end
       end
       scoped_options
-    end
-
-
-    def puppetclass_id(options)
-      if options[HammerCLI.option_accessor_name("id")]
-        return options[HammerCLI.option_accessor_name("id")]
-      else
-        resource = @api.resource(:puppetclasses)
-        results = resolved_call(:puppetclasses, :index, options)[0]
-        results = results.values.flatten
-        return pick_result(results, resource)['id']
-      end
     end
 
     def puppetclass_ids(options)
@@ -140,22 +135,37 @@ module HammerCLIForeman
     end
 
     def get_id(resource_name, options)
-      options[HammerCLI.option_accessor_name("id")] || find_resource(resource_name, options)['id']
+      options[HammerCLI.option_accessor_name("id")] || 
+	      nil_from_searchables(resource_name, options) ||
+        find_resource(resource_name, options)['id']
     end
 
     def get_ids(resource_name, options)
       if (ids = options[HammerCLI.option_accessor_name("ids")])
         ids
-      elsif !options_empty?(@api.resource(resource_name), options)
-        find_resources(resource_name, options).map{|r| r['id']}
-      else
+      elsif (ids = nil_from_searchables(resource_name, options, :plural => true))
+        ids
+      elsif options_nil?(@api.resource(resource_name), options)
+        nil
+      elsif options_empty?(@api.resource(resource_name), options)
         []
+      else
+        find_resources(resource_name, options).map{|r| r['id']}
       end
+    end
+
+    def nil_from_searchables(resource_name, options, plural = false)
+      resource = @api.resource(resource_name)
+      searchables(resource).each do |s|
+        option_name = plural ? s.plural_name.to_s : s.name.to_s
+        return HammerCLI::NilValue if options[HammerCLI.option_accessor_name(option_name)] == HammerCLI::NilValue
+      end
+      nil
     end
 
     def find_resources(resource_name, options)
       resource = @api.resource(resource_name)
-      results = resolved_call(resource_name, :index, options)
+      results = resolved_call(resource_name, :index, options, :multi)
       raise ResolverError.new(_("one of %s not found") % resource.name, resource) if results.count < expected_record_count(options, resource)
       results
     end
@@ -167,7 +177,7 @@ module HammerCLIForeman
       if (ids = options[HammerCLI.option_accessor_name("ids")])
         ids
       elsif !options_empty?(resource, options)
-        results = resolved_call(resource_name, :index, options).first.values.flatten
+        results = resolved_call(resource_name, :index, options, :multi).first.values.flatten
         raise ResolverError.new(_("one of %s not found") % resource.name, resource) if results.count < expected_record_count(options, resource)
         results
       else
@@ -182,17 +192,20 @@ module HammerCLIForeman
     end
 
     def find_resource_raw(resource_name, options)
-      resolved_call(resource_name, :index, options)
+      resolved_call(resource_name, :index, options, :single)
     end
 
 
-    def resolved_call(resource_name, action_name, options)
+    # @param mode [Symbol] mode in which ids are searched :single, :multi, nil for old beahvior
+    def resolved_call(resource_name, action_name, options, mode = nil)
       resource = @api.resource(resource_name)
       action = resource.action(action_name)
 
-      search_options = search_options(options, resource)
+      search_options = search_options(options, resource, mode)
       IdParamsFilter.new(:only_required => true).for_action(action).each do |param|
-        search_options[param.name] ||= send(param.name, scoped_options(param.name.gsub(/_id$/, ""), options))
+        scoped_options_params = [param.name.gsub(/_id$/, ""), options]
+        scoped_options_params << mode if method(:scoped_options).arity == -3
+        search_options[param.name] ||= send(param.name, scoped_options(*scoped_options_params))
       end
       search_options = route_options(options, action).merge(search_options)
 
@@ -223,13 +236,21 @@ module HammerCLIForeman
       results[0]
     end
 
-    def search_options(options, resource)
-      method = "create_#{resource.name}_search_options"
-      search_options = if respond_to?(method, true)
-                         send(method, options)
-                       else
-                         create_search_options(options, resource)
-                       end
+    # @param mode [Symbol] mode in which ids are searched :single, :multi, nil for old beahvior
+    def search_options(options, resource, mode = nil)
+      method_for_single = "create_#{resource.singular_name}_search_options"
+      method_for_all = "create_#{resource.name}_search_options"
+      search_options = if mode == :single && respond_to?(method_for_single, true)
+        send(method_for_single, options)
+      elsif respond_to?(method_for_all, true)
+        create_search_options_params = [method_for_all, options]
+        create_search_options_params << mode if method(method_for_all.to_sym).arity == -2
+        send(*create_search_options_params)
+      else
+        create_search_options_params = [options, resource]
+        create_search_options_params << mode if method(:create_search_options).arity == -3
+        create_search_options(*create_search_options_params)
+      end
       raise MissingSearchOptions.new(_("Missing options to search %s") % resource.singular_name, resource) if search_options.empty?
       search_options
     end
@@ -263,9 +284,16 @@ module HammerCLIForeman
     end
 
     def options_empty?(resource, options)
-      searchables(resource).any? do |s|
+      !searchables(resource).any? do |s|
         values = options[HammerCLI.option_accessor_name(s.plural_name.to_s)]
-        values && values.respond_to?(:empty?) && values.empty?
+        !values.nil? && values.respond_to?(:empty?) && !values.empty?
+      end
+    end
+
+    def options_nil?(resource, options)
+      !searchables(resource).any? do |s|
+        values = options[HammerCLI.option_accessor_name(s.plural_name.to_s)]
+        !values.nil?
       end
     end
 
@@ -288,13 +316,14 @@ module HammerCLIForeman
       search_options
     end
 
-    def create_search_options(options, resource)
+    # @param mode [Symbol] mode in which ids are searched :single, :multi, nil for old beahvior
+    def create_search_options(options, resource, mode = nil)
       searchables(resource).each do |s|
         value = options[HammerCLI.option_accessor_name(s.name.to_s)]
         values = options[HammerCLI.option_accessor_name(s.plural_name.to_s)]
-        if value
+        if value && (mode.nil? || mode == :single)
           return {:search => "#{s.name} = \"#{value}\""}
-        elsif values
+        elsif values && (mode.nil? || mode == :multi)
           query = values.map{|v| "#{s.name} = \"#{v}\"" }.join(" or ")
           return {:search => query}
         end

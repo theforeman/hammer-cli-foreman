@@ -9,7 +9,7 @@ class IdResolverTestProxy
     define_id_finders
   end
 
-  def scoped_options(scope, options)
+  def scoped_options(scope, options, mode = nil)
     @original_resolver.scoped_options(scope, options)
   end
 
