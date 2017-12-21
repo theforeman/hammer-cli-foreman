@@ -52,6 +52,7 @@ module HammerCLIForeman
     end
 
     module CommonUpdateOptions
+
       def self.included(base)
         base.option '--default-organization', 'DEFAULT_ORGANIZATION_NAME', _("Default organization name")
         base.option '--default-location', 'DEFAULT_LOCATION_NAME', _("Default location name")
@@ -59,39 +60,10 @@ module HammerCLIForeman
                     :format => HammerCLI::Options::Normalizers::Bool.new
       end
 
-      def self.ask_password(type)
-        if type == :current
-          prompt = _("Enter user's current password:") + " "
-        elsif type == :new
-          prompt = _("Enter user's new password:") + " "
-        end
-        ask(prompt) {|q| q.echo = false}
-      end
-
-      def current_logged_user
-        HammerCLIForeman.foreman_api_connection.resource(:users).call(:show, :id => HammerCLIForeman.foreman_api_connection.authenticator.user(true))
-      end
-
-      def request_params
-        params = super
-        org_id = organization_id(option_default_organization)
-        params['user']['default_organization_id'] ||= org_id unless org_id.nil?
-        loc_id = location_id(option_default_location)
-        params['user']['default_location_id'] ||= loc_id unless loc_id.nil?
-        params['user']['password'] = option_password unless option_password.nil?
-
-        if option_ask_password
-          params['user']['password'] = HammerCLIForeman::User::CommonUpdateOptions::ask_password(:new)
-        end
-        params
-      end
-
-      def organization_id(name)
-        resolver.organization_id('option_name' => name) if name
-      end
-
-      def location_id(name)
-        resolver.location_id('option_name' => name) if name
+      def option_sources
+        sources = super
+        sources << HammerCLIForeman::OptionSources::UserParams.new(self)
+        sources
       end
     end
 
@@ -100,6 +72,7 @@ module HammerCLIForeman
       failure_message _("Could not create the user")
 
       include CommonUpdateOptions
+
       build_options
     end
 
@@ -109,19 +82,6 @@ module HammerCLIForeman
       failure_message _("Could not update the user")
 
       include CommonUpdateOptions
-
-      def request_params
-        params = super
-
-        if (option_password || option_ask_password)
-          if current_logged_user["id"].to_s == params["id"].to_s
-            if (!option_current_password && (option_password || option_ask_password))
-              params['user']['current_password'] = HammerCLIForeman::User::CommonUpdateOptions::ask_password(:current)
-            end
-          end
-        end
-        params
-      end
 
       build_options
     end
@@ -133,6 +93,7 @@ module HammerCLIForeman
 
       build_options
     end
+
 
     HammerCLIForeman::AssociatingCommands::Role.extend_command(self)
     lazy_subcommand('ssh-keys', _("Managing User SSH Keys."),

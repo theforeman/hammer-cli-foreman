@@ -89,7 +89,7 @@ describe HammerCLIForeman::User do
     let(:cmd) { cmd_module::UpdateCommand.new("", ctx) }
 
     before :each do
-      HammerCLIForeman::User::CommonUpdateOptions.stubs(:ask_password).returns("password")
+      HammerCLIForeman::OptionSources::UserParams.any_instance.stubs(:ask_password).returns("password")
     end
 
     context "parameters" do
