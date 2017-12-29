@@ -3,8 +3,8 @@ require File.join(File.dirname(__FILE__), 'test_helper')
 
 describe "host create" do
   let(:cmd) { ["host", "create"] }
-  let(:minimal_params_without_hosgroup) { ['--location-id=1', '--organization-id=1', '--name=test'] }
-  let(:minimal_params) { ['--hostgroup-id=1'] + minimal_params_without_hosgroup }
+  let(:minimal_params_without_hostgroup) { ['--location-id=1', '--organization-id=1', '--name=test'] }
+  let(:minimal_params) { ['--hostgroup-id=1'] + minimal_params_without_hostgroup }
 
   it "accepts hostgroup title" do
     api_expects_search(:hostgroups, { :title => 'test/hg1' }).returns(index_response([{ 'id' => '83' }]))
@@ -14,7 +14,7 @@ describe "host create" do
 
     expected_result = success_result("Host created\n")
 
-    result = run_cmd(cmd + minimal_params_without_hosgroup + ['--hostgroup-title=test/hg1'])
+    result = run_cmd(cmd + minimal_params_without_hostgroup + ['--hostgroup-title=test/hg1'])
     assert_cmd(expected_result, result)
   end
 
@@ -112,7 +112,7 @@ describe "host create" do
 
     expected_result = success_result("Host created\n")
 
-    result = run_cmd(cmd + minimal_params_without_hosgroup + params)
+    result = run_cmd(cmd + minimal_params_without_hostgroup + params)
     assert_cmd(expected_result, result)
   end
 end
