@@ -145,8 +145,9 @@ module HammerCLIForeman
         ids
       elsif (ids = nil_from_searchables(resource_name, options, :plural => true))
         ids
-      elsif options_nil?(@api.resource(resource_name), options)
-        nil
+      elsif options_not_set?(@api.resource(resource_name), options)
+        resource = @api.resource(resource_name)
+        raise MissingSearchOptions.new(_("Missing options to search %s") % resource.name, resource)
       elsif options_empty?(@api.resource(resource_name), options)
         []
       else
@@ -284,16 +285,16 @@ module HammerCLIForeman
     end
 
     def options_empty?(resource, options)
-      !searchables(resource).any? do |s|
+      searchables(resource).all? do |s|
         values = options[HammerCLI.option_accessor_name(s.plural_name.to_s)]
-        !values.nil? && values.respond_to?(:empty?) && !values.empty?
+        values.nil? || (values.respond_to?(:empty?) && values.empty?)
       end
     end
 
-    def options_nil?(resource, options)
-      !searchables(resource).any? do |s|
+    def options_not_set?(resource, options)
+      searchables(resource).all? do |s|
         values = options[HammerCLI.option_accessor_name(s.plural_name.to_s)]
-        !values.nil?
+        values.nil?
       end
     end
 

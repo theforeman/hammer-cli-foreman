@@ -46,6 +46,38 @@ describe HammerCLIForeman::IdResolver do
       resolver.scoped_options("organization", scoped).must_equal(unscoped)
     end
 
+    let(:scoped_multi) {{
+      "option_id" => 1,
+      "option_organization_id" => 2,
+      "option_organization_ids" => 3,
+      "option_organization_name" => "ACME",
+      "option_organization_names" => "Corp",
+      "option_a" => :value
+    }}
+
+    it "unscopes the right options in single mode" do
+      unscoped = {
+        "option_id" => 2,
+        "option_organization_ids" => 3,
+        "option_organization_names" => "Corp",
+        "option_name" => "ACME",
+        "option_a" => :value
+      }
+      resolver.scoped_options("organization", scoped_multi, :single).must_equal(unscoped)
+    end
+
+    it "unscopes the right options in multi mode" do
+      unscoped = {
+        "option_id" => 1,
+        "option_organization_id" => 2,
+        "option_ids" => 3,
+        "option_organization_name" => "ACME",
+        "option_names" => "Corp",
+        "option_a" => :value
+      }
+      resolver.scoped_options("organization", scoped_multi, :multi).must_equal(unscoped)
+    end
+
     it "does not change the original options" do
       scoped = {
         "option_id" => 1,
@@ -117,6 +149,10 @@ describe HammerCLIForeman::IdResolver do
         ResourceMocks.mock_action_call(:users, :index, [])
 
         resolver.user_id({"option_id" => 83, "option_name" => "John Doe"}).must_equal 83
+      end
+
+      it "returns NIL when the search name is NIL" do
+        resolver.user_id({"option_name" => HammerCLI::NilValue}).must_equal HammerCLI::NilValue
       end
 
       it "returns id of the resource" do
@@ -225,10 +261,22 @@ describe HammerCLIForeman::IdResolver do
         end
       end
 
+      it "raises exception when no search options were set" do
+        ResourceMocks.mock_action_call(:users, :index, [john])
+
+        assert_raises HammerCLIForeman::MissingSearchOptions do
+          resolver.user_ids({})
+        end
+      end
+
       it "returns empty array for empty input" do
         ResourceMocks.mock_action_call(:users, :index, [john, jane])
 
         assert_equal [], resolver.user_ids({"option_names" => []})
+      end
+
+      it "returns NilValue when the search name is NilValue" do
+        resolver.user_ids({"option_names" => HammerCLI::NilValue}).must_equal HammerCLI::NilValue
       end
     end
   end
