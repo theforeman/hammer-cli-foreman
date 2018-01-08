@@ -5,10 +5,6 @@ module HammerCLIForeman
         @command = command
       end
 
-      def option_name(opt_name)
-        HammerCLI.option_accessor_name(opt_name)
-      end
-
       def get_options(defined_options, result)
         org_id = organization_id(result[option_name(:default_organization)])
         result[option_name(:default_organization_id)] ||= org_id unless org_id.nil?
@@ -30,6 +26,12 @@ module HammerCLIForeman
         end
 
         result
+      end
+
+      private
+
+      def option_name(opt_name)
+        HammerCLI.option_accessor_name(opt_name)
       end
 
       def ask_password(type)

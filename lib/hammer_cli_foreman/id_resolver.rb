@@ -135,9 +135,9 @@ module HammerCLIForeman
     end
 
     def get_id(resource_name, options)
-      options[HammerCLI.option_accessor_name("id")] || 
-	      nil_from_searchables(resource_name, options) ||
-        find_resource(resource_name, options)['id']
+      options[HammerCLI.option_accessor_name("id")] ||
+          nil_from_searchables(resource_name, options) ||
+          find_resource(resource_name, options)['id']
     end
 
     def get_ids(resource_name, options)

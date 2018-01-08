@@ -31,11 +31,11 @@ module HammerCLIForeman
         end
 
         raise MissingSearchOptions.new(
-            error_message % {
-                :resource => e.resource.singular_name,
-                :switches => switches.join(", ")
-            },
-            e.resource
+          error_message % {
+            :resource => e.resource.singular_name,
+            :switches => switches.join(", ")
+          },
+          e.resource
         )
       end
     end

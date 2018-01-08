@@ -28,6 +28,7 @@ describe 'filter' do
       params = ['--organization-ids=1,2', '--location-ids=3,4', '--override=false']
 
       api_expects_no_call
+
       result = run_cmd(@cmd + params)
       assert_cmd(taxonomy_usage_error('create', @cmd), result)
     end

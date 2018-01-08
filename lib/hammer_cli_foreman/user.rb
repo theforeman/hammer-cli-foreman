@@ -52,7 +52,6 @@ module HammerCLIForeman
     end
 
     module CommonUpdateOptions
-
       def self.included(base)
         base.option '--default-organization', 'DEFAULT_ORGANIZATION_NAME', _("Default organization name")
         base.option '--default-location', 'DEFAULT_LOCATION_NAME', _("Default location name")
@@ -72,7 +71,6 @@ module HammerCLIForeman
       failure_message _("Could not create the user")
 
       include CommonUpdateOptions
-
       build_options
     end
 
@@ -93,7 +91,6 @@ module HammerCLIForeman
 
       build_options
     end
-
 
     HammerCLIForeman::AssociatingCommands::Role.extend_command(self)
     lazy_subcommand('ssh-keys', _("Managing User SSH Keys."),
