@@ -244,17 +244,22 @@ module HammerCLIForeman
 
     # @param mode [Symbol] mode in which ids are searched :single, :multi, nil for old beahvior
     def search_options(options, resource, mode = nil)
-      method_for_single = "create_#{resource.singular_name}_search_options"
-      method_for_all = "create_#{resource.name}_search_options"
-      search_options = if mode == :single && respond_to?(method_for_single, true)
-        send(method_for_single, options)
-      elsif respond_to?(method_for_all, true)
-        create_search_options_params = [method_for_all, options]
-        create_search_options_params << mode if method(method_for_all.to_sym).arity == -2
+      override_method = "create_#{resource.name}_search_options"
+      search_options = if respond_to?(override_method, true)
+        create_search_options_params = [override_method, options]
+        if method(override_method.to_sym).arity == -2
+          create_search_options_params << mode
+        else
+          warn "create_*_search_options methods (#{override_method}) without 'mode' parameter are deprecated"
+        end
         send(*create_search_options_params)
       else
         create_search_options_params = [options, resource]
-        create_search_options_params << mode if method(:create_search_options).arity == -3
+        if method(:create_search_options).arity == -3
+          create_search_options_params << mode
+        else
+          warn "create_search_options methods without 'mode' parameter are deprecated"
+        end
         create_search_options(*create_search_options_params)
       end
       raise MissingSearchOptions.new(_("Missing options to search %s") % resource.singular_name, resource) if search_options.empty?
@@ -299,7 +304,7 @@ module HammerCLIForeman
       end
     end
 
-    def create_smart_class_parameters_search_options(options)
+    def create_smart_class_parameters_search_options(options, mode = nil)
       search_options = {}
       value = options[HammerCLI.option_accessor_name('name')]
       search_options[:search] = "key = \"#{value}\""
@@ -307,7 +312,7 @@ module HammerCLIForeman
       search_options
     end
 
-    def create_smart_variables_search_options(options)
+    def create_smart_variables_search_options(options, mode = nil)
       search_options = {}
       value = options[HammerCLI.option_accessor_name('variable')]
 
