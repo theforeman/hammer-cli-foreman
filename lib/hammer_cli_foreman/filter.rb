@@ -46,7 +46,10 @@ module HammerCLIForeman
 
       def self.included(base)
         def taxonomy_options?
-          option_location_names || option_location_ids || option_organization_names || option_organization_ids
+          opt_names = ['location_ids', 'organization_ids']
+          opt_names += resolver.searchables(:locations).map { |s| 'location_' + s.plural_name }
+          opt_names += resolver.searchables(:organizations).map { |s| 'organization_' + s.plural_name }
+          opt_names.any? { |opt| send(HammerCLI.option_accessor_name(opt)) }
         end
 
         def signal_override_usage_error

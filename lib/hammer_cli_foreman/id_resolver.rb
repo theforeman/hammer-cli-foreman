@@ -117,6 +117,11 @@ module HammerCLIForeman
       options[HammerCLI.option_accessor_name("ids")] || find_puppetclasses(options).collect { |c| c['id'] }
     end
 
+    def searchables(resource)
+      resource = @api.resource(resource) if resource.is_a? Symbol
+      @searchables.for(resource)
+    end
+
     protected
 
     def define_id_finders
@@ -254,10 +259,6 @@ module HammerCLIForeman
       end
       raise MissingSearchOptions.new(_("Missing options to search %s") % resource.singular_name, resource) if search_options.empty?
       search_options
-    end
-
-    def searchables(resource)
-      @searchables.for(resource)
     end
 
     def expected_record_count(options, resource)

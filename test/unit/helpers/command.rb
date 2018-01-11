@@ -10,7 +10,11 @@ class IdResolverTestProxy
   end
 
   def scoped_options(scope, options, mode = nil)
-    @original_resolver.scoped_options(scope, options)
+    @original_resolver.scoped_options(scope, options, mode)
+  end
+
+  def searchables(resource)
+    @original_resolver.searchables(resource)
   end
 
   protected
