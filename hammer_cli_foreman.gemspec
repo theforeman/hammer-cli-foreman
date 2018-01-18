@@ -26,7 +26,7 @@ EOF
   s.require_paths = ["lib"]
 
   s.add_dependency 'hammer_cli', '>= 0.11.0'
-  s.add_dependency 'apipie-bindings', '>= 0.2.0'
+  s.add_dependency 'apipie-bindings', '>= 0.2.2'
   s.add_dependency 'rest-client', '>= 1.8.0', '< 3.0.0'
 
 end

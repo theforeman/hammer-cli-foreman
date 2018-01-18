@@ -43,17 +43,21 @@ module HammerCLIForeman
 
 
     module TaxonomyCheck
-      def taxonomy_options?
-        option_location_names || option_location_ids || option_organization_names || option_organization_ids
-      end
-
-      def signal_override_usage_error
-        signal_usage_error _('Organizations and locations can be set only for overriding filters')
-      end
 
       def self.included(base)
+        def taxonomy_options?
+          opt_names = ['location_ids', 'organization_ids']
+          opt_names += resolver.searchables(:locations).map { |s| 'location_' + s.plural_name }
+          opt_names += resolver.searchables(:organizations).map { |s| 'organization_' + s.plural_name }
+          opt_names.any? { |opt| send(HammerCLI.option_accessor_name(opt)) }
+        end
+
+        def signal_override_usage_error
+          signal_usage_error _('Organizations and locations can be set only for overriding filters')
+        end
+
         base.extend_help do |h|
-          h.section('Overriding organizations and locations') do
+          h.section(_('Overriding organizations and locations')) do
             override_condition = "--override=true"
             org_opts = '--organization[s|-ids]'
             loc_opts = '--location[s|-ids]'
@@ -76,9 +80,8 @@ module HammerCLIForeman
       success_message _("Permission filter for [%<resource_type>s] created")
       failure_message _("Could not create the permission filter")
 
-      def execute
+      def validate_options
         signal_override_usage_error if !option_override && taxonomy_options?
-        super
       end
 
       build_options
@@ -101,9 +104,8 @@ module HammerCLIForeman
         params
       end
 
-      def execute
+      def validate_options
         signal_override_usage_error if !override? && taxonomy_options?
-        super
       end
 
       def override?
@@ -115,7 +117,7 @@ module HammerCLIForeman
       end
 
       def filter
-        @filter ||= HammerCLIForeman.foreman_resource!(:filters).action(:show).call({ :id => option_id }, request_headers, request_options)
+        @filter ||= HammerCLIForeman.foreman_resource!(:filters).action(:show).call({ :id => get_identifier }, request_headers, request_options)
       end
 
       build_options
@@ -161,7 +163,6 @@ module HammerCLIForeman
 
     autoload_subcommands
   end
-
 end
 
 
