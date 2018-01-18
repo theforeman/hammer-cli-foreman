@@ -44,6 +44,10 @@ module HammerCLIForeman
       'HammerCLIForeman::ComputeResource', 'hammer_cli_foreman/compute_resource'
     )
 
+    HammerCLI::MainCommand.lazy_subcommand('compute-profile', _("Manipulate compute profiles."),
+                                           'HammerCLIForeman::ComputeProfile', 'hammer_cli_foreman/compute_profile'
+    )
+
     HammerCLI::MainCommand.lazy_subcommand('domain', _("Manipulate domains."),
       'HammerCLIForeman::Domain', 'hammer_cli_foreman/domain'
     )

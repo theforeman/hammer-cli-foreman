@@ -112,7 +112,6 @@ module HammerCLIForeman
       end
     end
 
-
     def self.parameters(dsl)
       dsl.build do
         collection :parameters, _("Parameters"), :numbered => false do
