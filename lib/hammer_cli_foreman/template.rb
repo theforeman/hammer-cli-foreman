@@ -76,7 +76,7 @@ module HammerCLIForeman
     class ListKindsCommand < HammerCLIForeman::ListCommand
 
       command_name "kinds"
-      desc _("List available provisioning template kinds.")
+      desc _("List available provisioning template kinds")
 
       output do
         field :name, _("Name")
@@ -95,7 +95,7 @@ module HammerCLIForeman
     class DumpCommand < HammerCLIForeman::InfoCommand
 
       command_name "dump"
-      desc _("View provisioning template content.")
+      desc _("View provisioning template content")
 
       def print_data(template)
         puts template["template"]

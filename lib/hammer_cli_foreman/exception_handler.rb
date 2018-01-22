@@ -43,8 +43,8 @@ module HammerCLIForeman
       error = [_("Redirection of API call detected.")]
       https_message = _("It seems hammer is configured to use HTTP and the server prefers HTTPS.")
       error << https_message if strip_protocol(e.response.headers[:location]) == strip_protocol(e.response.request.url)
-      error << _("Update your server url configuration")
-      error << _("you can set 'follow_redirects' to one of :default or :always to enable redirects following")
+      error << _("Update your server url configuration.")
+      error << _("You can set 'follow_redirects' to one of :default or :always to enable redirects following.")
       print_error error.join("\n")
       log_full_error e
       HammerCLI::EX_CONFIG
@@ -72,7 +72,7 @@ module HammerCLIForeman
           message = error['message'] + "\n" + error['details']
         end
       end
-      message ||= _("Forbidden - server refused to process the request")
+      message ||= _("Forbidden - server refused to process the request.")
 
       print_error message
       log_full_error e
@@ -130,7 +130,7 @@ module HammerCLIForeman
         instructions = _("The following configuration option were used for the SSL connection:" ) + "\n"
         instructions << "  ssl_ca_path = #{ssl_option[:ssl_ca_path]}\n" unless ssl_option[:ssl_ca_path].nil?
         instructions << "  ssl_ca_file = #{ssl_option[:ssl_ca_file]}\n" unless ssl_option[:ssl_ca_file].nil?
-        instructions << "\n" + _("Make sure the location contains an unexpired and valid CA certificate for #{host_url}")
+        instructions << "\n" + _("Make sure the location contains an unexpired and valid CA certificate for %s.") % host_url
       else
         instructions = _("You can use hammer to fetch the CA certificate from the server. Be aware that hammer cannot verify whether the certificate is correct and you should verify its authenticity after downloading it.")
         instructions << "\n\n" + _("Download the certificate as follows:")

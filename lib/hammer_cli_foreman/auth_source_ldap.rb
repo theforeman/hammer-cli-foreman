@@ -2,7 +2,7 @@ module HammerCLIForeman
   class AuthSourceLdap < HammerCLIForeman::Command
     resource :auth_source_ldaps
     command_name 'ldap'
-    desc _('Manage LDAP auth sources.')
+    desc _('Manage LDAP auth sources')
 
     class ListCommand < HammerCLIForeman::ListCommand
       output do

@@ -27,7 +27,7 @@ describe 'role' do
 
       expected_result = usage_error_result(
         @cmd,
-        'Option --new-name is required',
+        'Option --new-name is required.',
         'Could not clone the user role')
 
       api_expects_no_call

@@ -11,7 +11,7 @@ describe 'filter' do
   def taxonomy_usage_error(action, cmd)
     usage_error_result(
       cmd,
-      'Organizations and locations can be set only for overriding filters',
+      'Organizations and locations can be set only for overriding filters.',
       "Could not #{action} the permission filter")
   end
 

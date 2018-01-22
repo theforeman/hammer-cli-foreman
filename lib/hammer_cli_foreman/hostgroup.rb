@@ -145,7 +145,7 @@ module HammerCLIForeman
 
 
     class SetParameterCommand < HammerCLIForeman::Parameter::SetCommand
-      desc _("Create or update parameter for a hostgroup.")
+      desc _("Create or update parameter for a hostgroup")
 
       success_message_for :update, _("Hostgroup parameter updated")
       success_message_for :create, _("New hostgroup parameter created")
@@ -156,7 +156,7 @@ module HammerCLIForeman
 
 
     class DeleteParameterCommand < HammerCLIForeman::Parameter::DeleteCommand
-      desc _("Delete parameter for a hostgroup.")
+      desc _("Delete parameter for a hostgroup")
 
       success_message _("Hostgroup parameter deleted")
 
@@ -185,5 +185,3 @@ module HammerCLIForeman
   end
 
 end
-
-

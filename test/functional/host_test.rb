@@ -144,12 +144,12 @@ describe 'host reports' do
     result = run_cmd(['host', 'reports', '--name=host.example.com'])
     result.exit_code.must_equal HammerCLI::EX_OK
   end
-  
+
   it 'prints error or missing --id and --name' do
       expected_result = CommandExpectation.new
       expected_result.expected_err =
-          ['Error: At least one of options --name, --id is required', '',
-              "See: 'hammer host reports --help'", ''].join("\n")
+          ['Error: At least one of options --name, --id is required.', '',
+              "See: 'hammer host reports --help'.", ''].join("\n")
       expected_result.expected_exit_code = HammerCLI::EX_USAGE
 
       api_expects_no_call
@@ -162,7 +162,7 @@ describe 'host reports' do
     api_expects(:reports, :index, 'Filter the reports') do |params|
       params['search'] == 'reported > "2 hour ago" and host="host.example.com"'
     end.returns(index_response([report15]))
-  
+
     result = run_cmd(['host', 'reports', '--name=host.example.com', %Q(--search=reported > "2 hour ago")])
     result.exit_code.must_equal HammerCLI::EX_OK
   end

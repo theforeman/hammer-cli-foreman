@@ -30,7 +30,7 @@ module HammerCLIForeman
 
     class DumpCommand < HammerCLIForeman::InfoCommand
       command_name "dump"
-      desc _("View partition table content.")
+      desc _("View partition table content")
 
       def print_data(partition_table)
         puts partition_table["layout"]

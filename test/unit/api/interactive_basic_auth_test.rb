@@ -73,7 +73,7 @@ describe HammerCLIForeman::Api::InteractiveBasicAuth do
       ex = RestClient::Unauthorized.new
       new_ex = auth.error(ex)
 
-      assert_equal 'Invalid username or password', new_ex.message
+      assert_equal 'Invalid username or password.', new_ex.message
     end
 
     it 'does not override other exceptions' do

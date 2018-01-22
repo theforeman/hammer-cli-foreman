@@ -2,7 +2,7 @@ module HammerCLIForeman
   class SSHKeys < HammerCLIForeman::Command
     resource :ssh_keys
     command_name "ssh-keys"
-    desc _("Manage SSH Keys sources.")
+    desc _("Manage SSH Keys sources")
 
     class ListCommand < HammerCLIForeman::ListCommand
       output do

@@ -53,7 +53,7 @@ module HammerCLIForeman
         end
 
         def signal_override_usage_error
-          signal_usage_error _('Organizations and locations can be set only for overriding filters')
+          signal_usage_error _('Organizations and locations can be set only for overriding filters.')
         end
 
         base.extend_help do |h|
@@ -62,8 +62,9 @@ module HammerCLIForeman
             org_opts = '--organization[s|-ids]'
             loc_opts = '--location[s|-ids]'
 
-            h.text(_("Filters inherit organizations and locations from its role by default. This behavior can be changed by setting %{condition}\n"+
+            h.text(_("Filters inherit organizations and locations from its role by default. This behavior can be changed by setting %{condition}.%{wsp}" +
               "Therefore options %{org_opts} and %{loc_opts} are applicable only when the override flag is set.") % {
+              :wsp => "\n",
               :org_opts => org_opts,
               :loc_opts => loc_opts,
               :condition => override_condition
@@ -164,6 +165,3 @@ module HammerCLIForeman
     autoload_subcommands
   end
 end
-
-
-

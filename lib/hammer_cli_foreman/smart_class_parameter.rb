@@ -110,14 +110,14 @@ module HammerCLIForeman
         options.without(:parameter_type, :validator_type, :override, :required, :override_value_order)
       end
 
-      option "--override", "OVERRIDE", _("Override this parameter."),
+      option "--override", "OVERRIDE", _("Override this parameter"),
         :format => HammerCLI::Options::Normalizers::Bool.new
-      option "--required", "REQUIRED", _("This parameter is required."),
+      option "--required", "REQUIRED", _("This parameter is required"),
         :format => HammerCLI::Options::Normalizers::Bool.new
-      option "--parameter-type", "PARAMETER_TYPE", _("Type of the parameter."),
+      option "--parameter-type", "PARAMETER_TYPE", _("Type of the parameter"),
         :format => HammerCLI::Options::Normalizers::Enum.new(
             ['string', 'boolean', 'integer', 'real', 'array', 'hash', 'yaml', 'json'])
-      option "--validator-type", "VALIDATOR_TYPE", _("Type of the validator."),
+      option "--validator-type", "VALIDATOR_TYPE", _("Type of the validator"),
         :format => HammerCLI::Options::Normalizers::Enum.new(['regexp', 'list', ''])
       option "--override-value-order", "OVERRIDE_VALUE_ORDER", _("The order in which values are resolved"),
              :format => HammerCLI::Options::Normalizers::List.new
@@ -151,7 +151,7 @@ module HammerCLIForeman
 
       validate_options do
         if option(:option_use_puppet_default).value
-          option(:option_value).rejected(:msg => _('Cannot use --value when --use-puppet-default is true'))
+          option(:option_value).rejected(:msg => _('Cannot use --value when --use-puppet-default is true.'))
         end
 
         if option(:option_smart_class_parameter_name).exist?

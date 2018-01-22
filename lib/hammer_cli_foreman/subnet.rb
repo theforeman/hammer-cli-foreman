@@ -68,7 +68,7 @@ module HammerCLIForeman
     end
 
     class SetParameterCommand < HammerCLIForeman::Parameter::SetCommand
-      desc _("Create or update parameter for a subnet.")
+      desc _("Create or update parameter for a subnet")
 
       success_message_for :update, _("Subnet parameter updated")
       success_message_for :create, _("New subnet parameter created")
@@ -83,7 +83,7 @@ module HammerCLIForeman
     end
 
     class DeleteParameterCommand < HammerCLIForeman::Parameter::DeleteCommand
-      desc _("Delete parameter for a subnet.")
+      desc _("Delete parameter for a subnet")
 
       success_message _("Subnet parameter deleted")
 
@@ -99,6 +99,3 @@ module HammerCLIForeman
   end
 
 end
-
-
-

@@ -221,7 +221,7 @@ module HammerCLIForeman
       option('--name', "NAME", _('Host name'))
 
       output HammerCLIForeman::Report::ListCommand.output_definition
-     
+
       def validate_options
         validator.any(:option_name, :option_id).required
       end
@@ -230,13 +230,13 @@ module HammerCLIForeman
         params = super
         search = []
         search << params['search'] if params['search']
-        
+
         hostname = get_option_value('name')
         search << %Q(host="#{hostname}") if hostname
-        
+
         host_id = get_option_value('id')
         search << "host_id=#{host_id}" if host_id
-        
+
         params['search'] = search.join(' and ') unless search.empty?
         params
       end
@@ -283,7 +283,7 @@ module HammerCLIForeman
 
 
     class SetParameterCommand < HammerCLIForeman::Parameter::SetCommand
-      desc _("Create or update parameter for a host.")
+      desc _("Create or update parameter for a host")
 
       success_message_for :update, _("Host parameter updated")
       success_message_for :create, _("New host parameter created")
@@ -299,7 +299,7 @@ module HammerCLIForeman
 
 
     class DeleteParameterCommand < HammerCLIForeman::Parameter::DeleteCommand
-      desc _("Delete parameter for a host.")
+      desc _("Delete parameter for a host")
 
       success_message _("Host parameter deleted")
 
@@ -317,7 +317,7 @@ module HammerCLIForeman
 
       command_name "start"
       desc _("Power a host on")
-      success_message _("The host is starting.")
+      success_message _("The host is starting")
 
       def option_power_action
         :start
@@ -351,9 +351,9 @@ module HammerCLIForeman
 
       def success_message
         if option_force?
-          _("Power off forced.")
+          _("Power off forced")
         else
-          _("Powering the host off.")
+          _("Powering the host off")
         end
       end
 
@@ -371,7 +371,7 @@ module HammerCLIForeman
 
       command_name "reboot"
       desc _("Reboot a host")
-      success_message _("Host reboot started.")
+      success_message _("Host reboot started")
 
       def option_power_action
         :soft
@@ -408,7 +408,7 @@ module HammerCLIForeman
       action :rebuild_config
       command_name "rebuild-config"
       desc _('Rebuild orchestration related configurations for host')
-      success_message _('Configuration successfully rebuilt.')
+      success_message _('Configuration successfully rebuilt')
 
       build_options
     end

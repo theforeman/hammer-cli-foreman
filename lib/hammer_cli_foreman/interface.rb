@@ -74,8 +74,8 @@ module HammerCLIForeman
     module InterfaceUpdate
 
       def self.included(base)
-        base.option "--primary", :flag, _("Should this interface be used for constructing the FQDN of the host? Each managed hosts needs to have one primary interface.")
-        base.option "--provision", :flag, _("Should this interface be used for TFTP of PXELinux (or SSH for image-based hosts)? Each managed hosts needs to have one provision interface.")
+        base.option "--primary", :flag, _("Should this interface be used for constructing the FQDN of the host? Each managed hosts needs to have one primary interface")
+        base.option "--provision", :flag, _("Should this interface be used for TFTP of PXELinux (or SSH for image-based hosts)? Each managed hosts needs to have one provision interface")
       end
 
       def get_interfaces(host_id)
@@ -161,5 +161,3 @@ module HammerCLIForeman
   end
 
 end
-
-

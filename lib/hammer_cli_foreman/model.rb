@@ -54,6 +54,3 @@ module HammerCLIForeman
   end
 
 end
-
-
-

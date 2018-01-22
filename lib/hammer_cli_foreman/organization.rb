@@ -87,7 +87,7 @@ module HammerCLIForeman
 
 
     class SetParameterCommand < HammerCLIForeman::Parameter::SetCommand
-      desc _("Create or update parameter for an organization.")
+      desc _("Create or update parameter for an organization")
 
       success_message_for :update, _("Parameter [%{name}] updated to value [%{value}]")
       success_message_for :create, _("Parameter [%{name}] created with value [%{value}]")
@@ -98,7 +98,7 @@ module HammerCLIForeman
 
 
     class DeleteParameterCommand < HammerCLIForeman::Parameter::DeleteCommand
-      desc _("Delete parameter for an organization.")
+      desc _("Delete parameter for an organization")
 
       success_message _("Parameter [%{name}] deleted")
       failure_message _("Could not delete organization parameter")
@@ -122,6 +122,3 @@ module HammerCLIForeman
   end
 
 end
-
-
-

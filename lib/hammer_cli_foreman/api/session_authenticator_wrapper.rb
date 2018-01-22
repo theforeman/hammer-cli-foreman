@@ -25,7 +25,7 @@ module HammerCLIForeman
 
       def status
         if load_session
-          _("Session exists, currently logged in as '%s'") % @user
+          _("Session exists, currently logged in as '%s'.") % @user
         else
           _("Using sessions, you are currently not logged in.")
         end
@@ -60,10 +60,10 @@ module HammerCLIForeman
         load_session
         if ex.is_a?(RestClient::Unauthorized) && !@session_id.nil?
           if @user_changed
-            return UnauthorizedError.new(_("Invalid username or password, continuing with session for '%s'") % @user)
+            return UnauthorizedError.new(_("Invalid username or password, continuing with session for '%s'.") % @user)
           else
             destroy_session
-            return SessionExpired.new(_("Session has expired"))
+            return SessionExpired.new(_("Session has expired."))
           end
         else
           return @authenticator.error(ex)
@@ -104,7 +104,7 @@ module HammerCLIForeman
         end
       rescue JSON::ParserError
         destroy_session
-        warn _('Invalid session file format')
+        warn _('Invalid session file format.')
         nil
       end
 
@@ -132,7 +132,7 @@ module HammerCLIForeman
         return true unless File.exist?(file)
         mode = File.stat(file).mode.to_s(8)
         if mode != expected_mode
-          warn _("Invalid permissions for %{file}: %{mode}, expected %{expected_mode}") % {
+          warn _("Invalid permissions for %{file}: %{mode}, expected %{expected_mode}.") % {
             :mode => mode,
             :expected_mode => expected_mode,
             :file => file
@@ -146,4 +146,3 @@ module HammerCLIForeman
     end
   end
 end
-

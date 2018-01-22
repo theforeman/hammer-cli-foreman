@@ -3,10 +3,10 @@ module HammerCLIForeman
   module SmartVariableUpdateCreateCommons
 
     def self.included(base)
-      base.option "--variable-type", "VARIABLE_TYPE", _("Type of the variable."),
+      base.option "--variable-type", "VARIABLE_TYPE", _("Type of the variable"),
                   :format => HammerCLI::Options::Normalizers::Enum.new(
                       ['string', 'boolean', 'integer', 'real', 'array', 'hash', 'yaml', 'json'])
-      base.option "--validator-type", "VALIDATOR_TYPE", _("Type of the validator."),
+      base.option "--validator-type", "VALIDATOR_TYPE", _("Type of the validator"),
                   :format => HammerCLI::Options::Normalizers::Enum.new(['regexp', 'list', ''])
       base.option "--override-value-order", "OVERRIDE_VALUE_ORDER", _("The order in which values are resolved"),
                   :format => HammerCLI::Options::Normalizers::List.new

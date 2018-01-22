@@ -83,7 +83,7 @@ module HammerCLIForeman
 
 
     class SetParameterCommand < HammerCLIForeman::Parameter::SetCommand
-      desc _("Create or update parameter for a domain.")
+      desc _("Create or update parameter for a domain")
 
       success_message_for :update, _("Domain parameter updated")
       success_message_for :create, _("New domain parameter created")
@@ -99,7 +99,7 @@ module HammerCLIForeman
 
 
     class DeleteParameterCommand < HammerCLIForeman::Parameter::DeleteCommand
-      desc _("Delete parameter for a domain.")
+      desc _("Delete parameter for a domain")
 
       success_message _("Domain parameter deleted")
 
@@ -115,5 +115,3 @@ module HammerCLIForeman
   end
 
 end
-
-

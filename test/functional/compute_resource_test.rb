@@ -8,9 +8,9 @@ describe 'compute-resource' do
 
     let :options_missing_error do
       ['Could not create the compute resource:',
-       '  Error: Options --name, --provider are required',
+       '  Error: Options --name, --provider are required.',
        '  ',
-       "  See: 'hammer compute-resource create --help'",
+       "  See: 'hammer compute-resource create --help'.",
        ''
       ].join("\n")
     end
@@ -63,9 +63,9 @@ describe 'compute-resource' do
       expected_result = CommandExpectation.new
       expected_result.expected_err =
         ['Could not create the compute resource:',
-         '  Error: Options --name, --provider, --url are required',
+         '  Error: Options --name, --provider, --url are required.',
          '  ',
-         "  See: 'hammer compute-resource create --help'",
+         "  See: 'hammer compute-resource create --help'.",
          ''
         ].join("\n")
 
