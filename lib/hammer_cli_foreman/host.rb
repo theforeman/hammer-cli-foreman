@@ -489,7 +489,7 @@ module HammerCLIForeman
 
       command_name "disassociate"
       desc _("Disassociate a host")
-      success_message _("The host has been disassociated from VM")
+      success_message _("The host has been disassociated from VM.")
       failure_message _("Failed to disassociated host from VM")
 
       build_options

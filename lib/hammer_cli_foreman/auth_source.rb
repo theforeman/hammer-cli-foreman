@@ -7,7 +7,7 @@ module HammerCLIForeman
     subcommand 'ldap', HammerCLIForeman::AuthSourceLdap.desc, HammerCLIForeman::AuthSourceLdap
 
     class ListCommand < HammerCLIForeman::ListCommand
-      desc _('List all auth sources.')
+      desc _('List all auth sources')
 
       output do
         field :id, _('Id')
