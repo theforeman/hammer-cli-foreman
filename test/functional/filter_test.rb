@@ -16,7 +16,7 @@ describe 'filter' do
   end
 
   def assert_update_success(result)
-    assert_cmd(success_result("Permission filter for [User] updated\n"), result)
+    assert_cmd(success_result("Permission filter for [User] updated.\n"), result)
   end
 
   describe 'create' do

@@ -89,7 +89,7 @@ describe 'compute-resource' do
 
       result = run_cmd(@cmd + params)
 
-      assert_cmd(success_result("Compute resource created\n"), result)
+      assert_cmd(success_result("Compute resource created.\n"), result)
     end
 
     it 'should create a compute-resource ovirt' do
@@ -111,7 +111,7 @@ describe 'compute-resource' do
 
       result = run_cmd(@cmd + params)
 
-      assert_cmd(success_result("Compute resource created\n"), result)
+      assert_cmd(success_result("Compute resource created.\n"), result)
     end
   end
 end

@@ -41,7 +41,7 @@ module HammerCLIForeman
 
 
     class CreateCommand < HammerCLIForeman::CreateCommand
-      success_message _("Operating system created")
+      success_message _("Operating system created.")
       failure_message _("Could not create the operating system")
 
       build_options
@@ -49,7 +49,7 @@ module HammerCLIForeman
 
 
     class UpdateCommand < HammerCLIForeman::UpdateCommand
-      success_message _("Operating system updated")
+      success_message _("Operating system updated.")
       failure_message _("Could not update the operating system")
 
       build_options
@@ -57,7 +57,7 @@ module HammerCLIForeman
 
 
     class DeleteCommand < HammerCLIForeman::DeleteCommand
-      success_message _("Operating system deleted")
+      success_message _("Operating system deleted.")
       failure_message _("Could not delete the operating system")
 
       build_options
@@ -83,7 +83,7 @@ module HammerCLIForeman
     class DeleteParameterCommand < HammerCLIForeman::Parameter::DeleteCommand
       desc _("Delete parameter for an operating system")
 
-      success_message _("operating system parameter deleted")
+      success_message _("operating system parameter deleted.")
 
       def validate_options
         super
@@ -102,7 +102,7 @@ module HammerCLIForeman
       option "--config-template-id", "TPL ID", _("Config template id to be set"), :required => true
 
 
-      success_message _("[%{config_template_name}] was set as default %{template_kind_name} template")
+      success_message _("[%{config_template_name}] was set as default %{template_kind_name} template.")
       failure_message _("Could not set the os default template")
 
       def option_type_name
@@ -167,7 +167,7 @@ module HammerCLIForeman
       option "--id", "OS ID", _("Operatingsystem id"), :required => true, :referenced_resource => 'operatingsystem'
       option "--type", "TPL TYPE", _("Type of the config template"), :required => true
 
-      success_message _("Default template deleted")
+      success_message _("Default template deleted.")
       failure_message _("Could not delete the default template")
 
       def execute

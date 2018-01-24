@@ -29,21 +29,21 @@ module HammerCLIForeman
     end
 
     class CreateCommand < HammerCLIForeman::CreateCommand
-      success_message _("User group [%<name>s] created")
+      success_message _("User group [%<name>s] created.")
       failure_message _("Could not create the user group")
 
       build_options
     end
 
     class UpdateCommand < HammerCLIForeman::UpdateCommand
-      success_message _("User group [%<name>s] updated")
+      success_message _("User group [%<name>s] updated.")
       failure_message _("Could not update the user group")
 
       build_options
     end
 
     class DeleteCommand < HammerCLIForeman::DeleteCommand
-      success_message _("User group [%<name>s] deleted")
+      success_message _("User group [%<name>s] deleted.")
       failure_message _("Could not delete the user group")
 
       build_options

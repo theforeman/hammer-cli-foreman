@@ -44,7 +44,7 @@ describe 'ssh_keys' do
       api_expects(:ssh_keys, :create, params)
         .returns(ssh_key)
 
-      expected_result = success_result("SSH Key #{ssh_key[:name]} added\n")
+      expected_result = success_result("SSH Key #{ssh_key[:name]} added.\n")
 
       result = run_cmd(cmd + params)
       assert_cmd(expected_result, result)
@@ -64,7 +64,7 @@ describe 'ssh_keys' do
         }
       }).returns(ssh_key)
 
-      expected_result = success_result("SSH Key #{ssh_key[:name]} added\n")
+      expected_result = success_result("SSH Key #{ssh_key[:name]} added.\n")
 
       result = run_cmd(cmd + params)
       assert_cmd(expected_result, result)
@@ -96,7 +96,7 @@ describe 'ssh_keys' do
       api_expects(:ssh_keys, :destroy, :id => ssh_key[:id])
         .returns({})
 
-      expected_result = success_result("SSH Key deleted\n")
+      expected_result = success_result("SSH Key deleted.\n")
 
       result = run_cmd(cmd + params)
       assert_cmd(expected_result, result)

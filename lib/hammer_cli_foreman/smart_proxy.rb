@@ -38,7 +38,7 @@ module HammerCLIForeman
 
 
     class CreateCommand < HammerCLIForeman::CreateCommand
-      success_message _("Smart proxy created")
+      success_message _("Smart proxy created.")
       failure_message _("Could not create the proxy")
 
       build_options
@@ -46,7 +46,7 @@ module HammerCLIForeman
 
 
     class UpdateCommand < HammerCLIForeman::UpdateCommand
-      success_message _("Smart proxy updated")
+      success_message _("Smart proxy updated.")
       failure_message _("Could not update the proxy")
 
       build_options
@@ -54,7 +54,7 @@ module HammerCLIForeman
 
 
     class DeleteCommand < HammerCLIForeman::DeleteCommand
-      success_message _("Smart proxy deleted")
+      success_message _("Smart proxy deleted.")
       failure_message _("Could not delete the proxy")
 
       build_options
@@ -66,7 +66,7 @@ module HammerCLIForeman
       action :import_puppetclasses
 
       command_name    "import-classes"
-      success_message _("Puppet classes were imported")
+      success_message _("Puppet classes were imported.")
       failure_message _("Import of puppet classes failed")
 
       option "--dryrun", :flag, _("Do not run the import")
@@ -89,7 +89,7 @@ module HammerCLIForeman
       action :refresh
 
       command_name    "refresh-features"
-      success_message _("Smart proxy features were refreshed")
+      success_message _("Smart proxy features were refreshed.")
       failure_message _("Refresh of smart proxy features failed")
 
       build_options

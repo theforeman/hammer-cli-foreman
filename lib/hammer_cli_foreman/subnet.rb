@@ -43,7 +43,7 @@ module HammerCLIForeman
 
     class CreateCommand < HammerCLIForeman::CreateCommand
 
-      success_message _("Subnet created")
+      success_message _("Subnet created.")
       failure_message _("Could not create the subnet")
 
       build_options :without => [:subnet_parameters_attributes]
@@ -52,7 +52,7 @@ module HammerCLIForeman
 
     class UpdateCommand < HammerCLIForeman::UpdateCommand
 
-      success_message _("Subnet updated")
+      success_message _("Subnet updated.")
       failure_message _("Could not update the subnet")
 
       build_options :without => [:subnet_parameters_attributes]
@@ -61,7 +61,7 @@ module HammerCLIForeman
 
     class DeleteCommand < HammerCLIForeman::DeleteCommand
 
-      success_message _("Subnet deleted")
+      success_message _("Subnet deleted.")
       failure_message _("Could not delete the subnet")
 
       build_options :without => [:subnet_parameters_attributes]
@@ -85,7 +85,7 @@ module HammerCLIForeman
     class DeleteParameterCommand < HammerCLIForeman::Parameter::DeleteCommand
       desc _("Delete parameter for a subnet")
 
-      success_message _("Subnet parameter deleted")
+      success_message _("Subnet parameter deleted.")
 
       def validate_options
         super

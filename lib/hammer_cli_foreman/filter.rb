@@ -78,7 +78,7 @@ module HammerCLIForeman
     class CreateCommand < HammerCLIForeman::CreateCommand
       include TaxonomyCheck
 
-      success_message _("Permission filter for [%<resource_type>s] created")
+      success_message _("Permission filter for [%<resource_type>s] created.")
       failure_message _("Could not create the permission filter")
 
       def validate_options
@@ -92,7 +92,7 @@ module HammerCLIForeman
     class UpdateCommand < HammerCLIForeman::UpdateCommand
       include TaxonomyCheck
 
-      success_message _("Permission filter for [%<resource_type>s] updated")
+      success_message _("Permission filter for [%<resource_type>s] updated.")
       failure_message _("Could not update the permission filter")
 
       def request_params
@@ -126,7 +126,7 @@ module HammerCLIForeman
 
 
     class DeleteCommand < HammerCLIForeman::DeleteCommand
-      success_message _("Permission filter deleted")
+      success_message _("Permission filter deleted.")
       failure_message _("Could not delete the permission filter")
 
       build_options

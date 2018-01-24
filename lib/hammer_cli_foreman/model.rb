@@ -28,14 +28,14 @@ module HammerCLIForeman
 
 
     class CreateCommand < HammerCLIForeman::CreateCommand
-      success_message _("Hardware model created")
+      success_message _("Hardware model created.")
       failure_message _("Could not create the hardware model")
 
       build_options
     end
 
     class DeleteCommand < HammerCLIForeman::DeleteCommand
-      success_message _("Hardware model deleted")
+      success_message _("Hardware model deleted.")
       failure_message _("Could not delete the hardware model")
 
       build_options
@@ -43,7 +43,7 @@ module HammerCLIForeman
 
 
     class UpdateCommand < HammerCLIForeman::UpdateCommand
-      success_message _("Hardware model updated")
+      success_message _("Hardware model updated.")
       failure_message _("Could not update the hardware model")
 
       build_options

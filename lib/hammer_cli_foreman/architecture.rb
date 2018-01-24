@@ -28,7 +28,7 @@ module HammerCLIForeman
 
 
     class CreateCommand < HammerCLIForeman::CreateCommand
-      success_message _("Architecture created")
+      success_message _("Architecture created.")
       failure_message _("Could not create the architecture")
 
       build_options
@@ -36,7 +36,7 @@ module HammerCLIForeman
 
 
     class DeleteCommand < HammerCLIForeman::DeleteCommand
-      success_message _("Architecture deleted")
+      success_message _("Architecture deleted.")
       failure_message _("Could not delete the architecture")
 
       build_options
@@ -44,7 +44,7 @@ module HammerCLIForeman
 
 
     class UpdateCommand < HammerCLIForeman::UpdateCommand
-      success_message _("Architecture updated")
+      success_message _("Architecture updated.")
       failure_message _("Could not update the architecture")
 
       build_options

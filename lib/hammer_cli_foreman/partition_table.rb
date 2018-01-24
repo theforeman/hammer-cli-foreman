@@ -45,7 +45,7 @@ module HammerCLIForeman
       option "--file", "LAYOUT", _("Path to a file that contains the partition layout"), :attribute_name => :option_layout,
         :required => true, :format => HammerCLI::Options::Normalizers::File.new
 
-      success_message _("Partition table created")
+      success_message _("Partition table created.")
       failure_message _("Could not create the partition table")
 
       build_options :without => [:layout]
@@ -56,7 +56,7 @@ module HammerCLIForeman
       option "--file", "LAYOUT", _("Path to a file that contains the partition layout"), :attribute_name => :option_layout,
         :format => HammerCLI::Options::Normalizers::File.new
 
-      success_message _("Partition table updated")
+      success_message _("Partition table updated.")
       failure_message _("Could not update the partition table")
 
       build_options :without => [:layout]
@@ -64,7 +64,7 @@ module HammerCLIForeman
 
 
     class DeleteCommand < HammerCLIForeman::DeleteCommand
-      success_message _("Partition table deleted")
+      success_message _("Partition table deleted.")
       failure_message _("Could not delete the partition table")
 
       build_options

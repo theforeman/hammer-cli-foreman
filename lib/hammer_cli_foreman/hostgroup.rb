@@ -102,7 +102,7 @@ module HammerCLIForeman
     class CreateCommand < HammerCLIForeman::CreateCommand
       include HostgroupUpdateCreateCommons
 
-      success_message _("Hostgroup created")
+      success_message _("Hostgroup created.")
       failure_message _("Could not create the hostgroup")
 
       build_options
@@ -112,7 +112,7 @@ module HammerCLIForeman
     class UpdateCommand < HammerCLIForeman::UpdateCommand
       include HostgroupUpdateCreateCommons
 
-      success_message _("Hostgroup updated")
+      success_message _("Hostgroup updated.")
       failure_message _("Could not update the hostgroup")
 
       build_options
@@ -120,7 +120,7 @@ module HammerCLIForeman
 
 
     class DeleteCommand < HammerCLIForeman::DeleteCommand
-      success_message _("Hostgroup deleted")
+      success_message _("Hostgroup deleted.")
       failure_message _("Could not delete the hostgroup")
 
       build_options
@@ -158,7 +158,7 @@ module HammerCLIForeman
     class DeleteParameterCommand < HammerCLIForeman::Parameter::DeleteCommand
       desc _("Delete parameter for a hostgroup")
 
-      success_message _("Hostgroup parameter deleted")
+      success_message _("Hostgroup parameter deleted.")
 
       build_options
     end

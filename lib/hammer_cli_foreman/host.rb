@@ -245,7 +245,7 @@ module HammerCLIForeman
     end
 
     class CreateCommand < HammerCLIForeman::CreateCommand
-      success_message _("Host created")
+      success_message _("Host created.")
       failure_message _("Could not create the host")
 
       include HammerCLIForeman::Hosts::CommonUpdateOptions
@@ -266,7 +266,7 @@ module HammerCLIForeman
     end
 
     class UpdateCommand < HammerCLIForeman::UpdateCommand
-      success_message _("Host updated")
+      success_message _("Host updated.")
       failure_message _("Could not update the host")
 
       include HammerCLIForeman::Hosts::CommonUpdateOptions
@@ -275,7 +275,7 @@ module HammerCLIForeman
 
 
     class DeleteCommand < HammerCLIForeman::DeleteCommand
-      success_message _("Host deleted")
+      success_message _("Host deleted.")
       failure_message _("Could not delete the host")
 
       build_options
@@ -301,7 +301,7 @@ module HammerCLIForeman
     class DeleteParameterCommand < HammerCLIForeman::Parameter::DeleteCommand
       desc _("Delete parameter for a host")
 
-      success_message _("Host parameter deleted")
+      success_message _("Host parameter deleted.")
 
       def validate_options
         super
@@ -317,7 +317,7 @@ module HammerCLIForeman
 
       command_name "start"
       desc _("Power a host on")
-      success_message _("The host is starting")
+      success_message _("The host is starting.")
 
       def option_power_action
         :start
@@ -371,7 +371,7 @@ module HammerCLIForeman
 
       command_name "reboot"
       desc _("Reboot a host")
-      success_message _("Host reboot started")
+      success_message _("Host reboot started.")
 
       def option_power_action
         :soft
@@ -408,7 +408,7 @@ module HammerCLIForeman
       action :rebuild_config
       command_name "rebuild-config"
       desc _('Rebuild orchestration related configurations for host')
-      success_message _('Configuration successfully rebuilt')
+      success_message _('Configuration successfully rebuilt.')
 
       build_options
     end
