@@ -276,7 +276,7 @@ describe 'disassociate host from vm' do
 
   it 'successful disassociate host' do
     params = ['--id=1']
-    expected_result = success_result("The host has been disassociated from VM\n")
+    expected_result = success_result("The host has been disassociated from VM.\n")
     api_expects(:hosts, :disassociate, 'disassociate hosts') do |params|
       params['id'] == "1"
     end.returns({})
