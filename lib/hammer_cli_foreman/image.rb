@@ -78,7 +78,7 @@ module HammerCLIForeman
 
       include HammerCLIForeman::Image::ComputeResourceOptions
 
-      success_message _("Image created")
+      success_message _("Image created.")
       failure_message _("Could not create the image")
     end
 
@@ -87,7 +87,7 @@ module HammerCLIForeman
 
       include HammerCLIForeman::Image::ComputeResourceOptions
 
-      success_message _("Image updated")
+      success_message _("Image updated.")
       failure_message _("Could not update the image")
     end
 
@@ -96,7 +96,7 @@ module HammerCLIForeman
 
       include HammerCLIForeman::Image::ComputeResourceOptions
 
-      success_message _("Image deleted")
+      success_message _("Image deleted.")
       failure_message _("Could not delete the image")
     end
 

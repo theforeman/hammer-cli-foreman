@@ -111,7 +111,7 @@ module HammerCLIForeman
         :format => HammerCLI::Options::Normalizers::File.new
       option "--type", "TYPE", _("Template type. Eg. snippet, script, provision"), :required => true
 
-      success_message _("Provisioning template created")
+      success_message _("Provisioning template created.")
       failure_message _("Could not create the provisioning template")
 
       include TemplateCreateUpdateCommons
@@ -129,7 +129,7 @@ module HammerCLIForeman
         :format => HammerCLI::Options::Normalizers::File.new
       option "--type", "TYPE", _("Template type. Eg. snippet, script, provision")
 
-      success_message _("Provisioning template updated")
+      success_message _("Provisioning template updated.")
       failure_message _("Could not update the provisioning template")
 
       include TemplateCreateUpdateCommons
@@ -143,7 +143,7 @@ module HammerCLIForeman
 
     class DeleteCommand < HammerCLIForeman::DeleteCommand
 
-      success_message _("Provisioning template deleted")
+      success_message _("Provisioning template deleted.")
       failure_message _("Could not delete the provisioning template")
 
       build_options
@@ -168,7 +168,7 @@ module HammerCLIForeman
       action :clone
       command_name 'clone'
 
-      success_message _('Provisioning template cloned')
+      success_message _('Provisioning template cloned.')
       failure_message _('Could not clone the provisioning template')
 
       validate_options do

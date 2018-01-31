@@ -79,7 +79,7 @@ module HammerCLIForeman
         'vmware'    => [:option_user, :option_password, :option_datacenter, :option_server]
       }
 
-      success_message _("Compute resource created")
+      success_message _("Compute resource created.")
       failure_message _("Could not create the compute resource")
 
       build_options
@@ -94,7 +94,7 @@ module HammerCLIForeman
     end
 
     class UpdateCommand < HammerCLIForeman::UpdateCommand
-      success_message _("Compute resource updated")
+      success_message _("Compute resource updated.")
       failure_message _("Could not update the compute resource")
 
       build_options :without => :name
@@ -102,7 +102,7 @@ module HammerCLIForeman
 
 
     class DeleteCommand < HammerCLIForeman::DeleteCommand
-      success_message _("Compute resource deleted")
+      success_message _("Compute resource deleted.")
       failure_message _("Could not delete the compute resource")
 
       build_options

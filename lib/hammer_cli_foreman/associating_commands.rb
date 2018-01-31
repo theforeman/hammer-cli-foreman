@@ -40,7 +40,7 @@ module HammerCLIForeman
         associated_resource :hostgroups
         desc _("Associate a hostgroup")
 
-        success_message _("The hostgroup has been associated")
+        success_message _("The hostgroup has been associated.")
         failure_message _("Could not associate the hostgroup")
       end
 
@@ -48,7 +48,7 @@ module HammerCLIForeman
         associated_resource :hostgroups
         desc _("Disassociate a hostgroup")
 
-        success_message _("The hostgroup has been disassociated")
+        success_message _("The hostgroup has been disassociated.")
         failure_message _("Could not disassociate the hostgroup")
       end
     end
@@ -60,7 +60,7 @@ module HammerCLIForeman
         associated_resource :environments
         desc _("Associate an environment")
 
-        success_message _("The environment has been associated")
+        success_message _("The environment has been associated.")
         failure_message _("Could not associate the environment")
       end
 
@@ -68,7 +68,7 @@ module HammerCLIForeman
         associated_resource :environments
         desc _("Disassociate an environment")
 
-        success_message _("The environment has been disassociated")
+        success_message _("The environment has been disassociated.")
         failure_message _("Could not disassociate the environment")
       end
     end
@@ -80,7 +80,7 @@ module HammerCLIForeman
         associated_resource :domains
         desc _("Associate a domain")
 
-        success_message _("The domain has been associated")
+        success_message _("The domain has been associated.")
         failure_message _("Could not associate the domain")
       end
 
@@ -88,7 +88,7 @@ module HammerCLIForeman
         associated_resource :domains
         desc _("Disassociate a domain")
 
-        success_message _("The domain has been disassociated")
+        success_message _("The domain has been disassociated.")
         failure_message _("Could not disassociate the domain")
       end
     end
@@ -100,7 +100,7 @@ module HammerCLIForeman
         associated_resource :media
         desc _("Associate a medium")
 
-        success_message _("The medium has been associated")
+        success_message _("The medium has been associated.")
         failure_message _("Could not associate the medium")
       end
 
@@ -108,7 +108,7 @@ module HammerCLIForeman
         associated_resource :media
         desc _("Disassociate a medium")
 
-        success_message _("The medium has been disassociated")
+        success_message _("The medium has been disassociated.")
         failure_message _("Could not disassociate the medium")
       end
     end
@@ -120,7 +120,7 @@ module HammerCLIForeman
         associated_resource :subnets
         desc _("Associate a subnet")
 
-        success_message _("The subnet has been associated")
+        success_message _("The subnet has been associated.")
         failure_message _("Could not associate the subnet")
       end
 
@@ -128,7 +128,7 @@ module HammerCLIForeman
         associated_resource :subnets
         desc _("Disassociate a subnet")
 
-        success_message _("The subnet has been disassociated")
+        success_message _("The subnet has been disassociated.")
         failure_message _("Could not disassociate the subnet")
       end
     end
@@ -140,7 +140,7 @@ module HammerCLIForeman
         associated_resource :compute_resources
         desc _("Associate a compute resource")
 
-        success_message _("The compute resource has been associated")
+        success_message _("The compute resource has been associated.")
         failure_message _("Could not associate the compute resource")
       end
 
@@ -148,7 +148,7 @@ module HammerCLIForeman
         associated_resource :compute_resources
         desc _("Disassociate a compute resource")
 
-        success_message _("The compute resource has been disassociated")
+        success_message _("The compute resource has been disassociated.")
         failure_message _("Could not disassociate the compute resource")
       end
     end
@@ -160,7 +160,7 @@ module HammerCLIForeman
         associated_resource :smart_proxies
         desc _("Associate a smart proxy")
 
-        success_message _("The smart proxy has been associated")
+        success_message _("The smart proxy has been associated.")
         failure_message _("Could not associate the smart proxy")
 
         def associated_resource_name
@@ -172,7 +172,7 @@ module HammerCLIForeman
         associated_resource :smart_proxies
         desc _("Disassociate a smart proxy")
 
-        success_message _("The smart proxy has been disassociated")
+        success_message _("The smart proxy has been disassociated.")
         failure_message _("Could not disassociate the smart proxy")
 
         def associated_resource_name
@@ -188,7 +188,7 @@ module HammerCLIForeman
         associated_resource :users
         desc _("Associate an user")
 
-        success_message _("The user has been associated")
+        success_message _("The user has been associated.")
         failure_message _("Could not associate the user")
       end
 
@@ -196,7 +196,7 @@ module HammerCLIForeman
         associated_resource :users
         desc _("Disassociate an user")
 
-        success_message _("The user has been disassociated")
+        success_message _("The user has been disassociated.")
         failure_message _("Could not disassociate the user")
       end
     end
@@ -210,7 +210,7 @@ module HammerCLIForeman
 
         command_name 'add-user-group'
 
-        success_message _("The user group has been associated")
+        success_message _("The user group has been associated.")
         failure_message _("Could not associate the user group")
       end
 
@@ -220,7 +220,7 @@ module HammerCLIForeman
 
         command_name 'remove-user-group'
 
-        success_message _("The user group has been disassociated")
+        success_message _("The user group has been disassociated.")
         failure_message _("Could not disassociate the user group")
       end
     end
@@ -232,7 +232,7 @@ module HammerCLIForeman
         associated_resource :config_templates
         desc _("Associate a configuration template")
 
-        success_message _("The configuration template has been associated")
+        success_message _("The configuration template has been associated.")
         failure_message _("Could not associate the configuration template")
       end
 
@@ -240,7 +240,7 @@ module HammerCLIForeman
         associated_resource :config_templates
         desc _("Disassociate a configuration template")
 
-        success_message _("The configuration template has been disassociated")
+        success_message _("The configuration template has been disassociated.")
         failure_message _("Could not disassociate the configuration template")
       end
     end
@@ -252,7 +252,7 @@ module HammerCLIForeman
         associated_resource :organizations
         desc _("Associate an organization")
 
-        success_message _("The organization has been associated")
+        success_message _("The organization has been associated.")
         failure_message _("Could not associate the organization")
       end
 
@@ -260,7 +260,7 @@ module HammerCLIForeman
         associated_resource :organizations
         desc _("Disassociate an organization")
 
-        success_message _("The organization has been disassociated")
+        success_message _("The organization has been disassociated.")
         failure_message _("Could not disassociate the organization")
       end
     end
@@ -272,7 +272,7 @@ module HammerCLIForeman
         associated_resource :operatingsystems
         desc _("Associate an operating system")
 
-        success_message _("Operating system has been associated")
+        success_message _("Operating system has been associated.")
         failure_message _("Could not associate the operating system")
       end
 
@@ -281,7 +281,7 @@ module HammerCLIForeman
         associated_resource :operatingsystems
         desc _("Disassociate an operating system")
 
-        success_message _("Operating system has been disassociated")
+        success_message _("Operating system has been disassociated.")
         failure_message _("Could not disassociate the operating system")
       end
     end
@@ -293,7 +293,7 @@ module HammerCLIForeman
         associated_resource :architectures
         desc _("Associate an architecture")
 
-        success_message _("Architecture has been associated")
+        success_message _("Architecture has been associated.")
         failure_message _("Could not associate the architecture")
       end
 
@@ -302,7 +302,7 @@ module HammerCLIForeman
         associated_resource :architectures
         desc _("Disassociate an architecture")
 
-        success_message _("Architecture has been disassociated")
+        success_message _("Architecture has been disassociated.")
         failure_message _("Could not disassociate the architecture")
       end
     end
@@ -314,7 +314,7 @@ module HammerCLIForeman
         associated_resource :ptables
         desc _("Associate a partition table")
 
-        success_message _("Partition table has been associated")
+        success_message _("Partition table has been associated.")
         failure_message _("Could not associate the partition table")
       end
 
@@ -323,7 +323,7 @@ module HammerCLIForeman
         associated_resource :ptables
         desc _("Disassociate a partition table")
 
-        success_message _("Partition table has been disassociated")
+        success_message _("Partition table has been disassociated.")
         failure_message _("Could not disassociate the partition table")
       end
     end
@@ -335,7 +335,7 @@ module HammerCLIForeman
         associated_resource :roles
         desc _("Assign a user role")
 
-        success_message _("User role has been assigned")
+        success_message _("User role has been assigned.")
         failure_message _("Could not assign the user role")
       end
 
@@ -344,7 +344,7 @@ module HammerCLIForeman
         associated_resource :roles
         desc _("Remove a user role")
 
-        success_message _("User role has been removed")
+        success_message _("User role has been removed.")
         failure_message _("Could not remove the user role")
       end
     end
@@ -356,7 +356,7 @@ module HammerCLIForeman
         associated_resource :locations
         desc _("Associate a location")
 
-        success_message _("The location has been associated")
+        success_message _("The location has been associated.")
         failure_message _("Could not associate the location")
       end
 
@@ -364,7 +364,7 @@ module HammerCLIForeman
         associated_resource :locations
         desc _("Disassociate a location")
 
-        success_message _("The location has been disassociated")
+        success_message _("The location has been disassociated.")
         failure_message _("Could not disassociate the location")
       end
     end

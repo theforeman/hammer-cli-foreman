@@ -47,7 +47,7 @@ describe 'template' do
 
       result = run_cmd(@cmd + params)
 
-      assert_cmd(success_result("Provisioning template cloned\n"), result)
+      assert_cmd(success_result("Provisioning template cloned.\n"), result)
     end
 
     it 'should clone a template by name' do
@@ -74,7 +74,7 @@ describe 'template' do
 
       result = run_cmd(@cmd + params)
 
-      assert_cmd(success_result("Provisioning template cloned\n"), result)
+      assert_cmd(success_result("Provisioning template cloned.\n"), result)
     end
   end
 
@@ -94,7 +94,7 @@ describe 'template' do
 
       result = run_cmd(@cmd + params)
 
-      assert_cmd(success_result("Provisioning template updated\n"), result)
+      assert_cmd(success_result("Provisioning template updated.\n"), result)
     end
   end
 

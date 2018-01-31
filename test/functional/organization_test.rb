@@ -130,7 +130,7 @@ describe "parameters" do
       end.returns({:name => 'A', :value => '1'})
 
       expected_result = success_result(
-        "Parameter [A] deleted\n"
+        "Parameter [A] deleted.\n"
       )
 
       result = run_cmd(@cmd + params)
@@ -167,7 +167,7 @@ describe 'associating commands' do
           par['organization']['domain_ids'] == ['1', '5']
       end
       result = run_cmd(@cmd + @params)
-      expected = success_result("The domain has been associated\n")
+      expected = success_result("The domain has been associated.\n")
       assert_cmd(expected, result)
     end
 
@@ -196,7 +196,7 @@ describe 'associating commands' do
           par['organization']['domain_ids'] == ['1']
       end
       result = run_cmd(@cmd + @params)
-      expected = success_result("The domain has been disassociated\n")
+      expected = success_result("The domain has been disassociated.\n")
       assert_cmd(expected, result)
     end
 

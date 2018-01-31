@@ -130,7 +130,7 @@ describe "parameters" do
       end.returns({:name => 'A', :value => '1'})
 
       expected_result = success_result(
-        "Parameter [A] deleted\n"
+        "Parameter [A] deleted.\n"
       )
 
       result = run_cmd(@cmd + params)

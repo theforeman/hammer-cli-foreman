@@ -125,7 +125,7 @@ module HammerCLIForeman
 
 
     class CreateCommand < HammerCLIForeman::CreateCommand
-      success_message _("Interface created")
+      success_message _("Interface created.")
       failure_message _("Could not create the interface")
 
       option "--compute-attributes", "COMPUTE_ATTRS", _("Compute resource specific attributes."),
@@ -138,7 +138,7 @@ module HammerCLIForeman
 
 
     class UpdateCommand < HammerCLIForeman::UpdateCommand
-      success_message _("Interface updated")
+      success_message _("Interface updated.")
       failure_message _("Could not update the interface")
 
       option "--compute-attributes", "COMPUTE_ATTRS", _("Compute resource specific attributes."),
@@ -151,7 +151,7 @@ module HammerCLIForeman
 
 
     class DeleteCommand < HammerCLIForeman::DeleteCommand
-      success_message _("Interface deleted")
+      success_message _("Interface deleted.")
       failure_message _("Could not delete the interface")
 
       build_options

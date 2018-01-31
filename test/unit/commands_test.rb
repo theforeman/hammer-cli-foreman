@@ -93,7 +93,7 @@ describe HammerCLIForeman do
       })
       arch = HammerCLIForeman::Architecture::CreateCommand.new("", { :adapter => :csv, :interactive => false })
       out, err = capture_io { arch.run(["--name='i386'"]) }
-      out.must_match("Message,Id,Name\nArchitecture created,3,i386\n")
+      out.must_match("Message,Id,Name\nArchitecture created.,3,i386\n")
     end
   end
 

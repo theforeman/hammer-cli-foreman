@@ -102,7 +102,7 @@ module HammerCLIForeman
 
     class UpdateCommand < HammerCLIForeman::UpdateCommand
 
-      success_message _("Parameter updated")
+      success_message _("Parameter updated.")
       failure_message _("Could not update the parameter")
 
       build_options do |options|
@@ -140,7 +140,7 @@ module HammerCLIForeman
       resource :override_values
       command_name 'add-matcher'
 
-      success_message _("Override value created")
+      success_message _("Override value created.")
       failure_message _("Could not create the override value")
 
       build_options do |options|
@@ -170,7 +170,7 @@ module HammerCLIForeman
       resource :override_values
       command_name 'remove-matcher'
 
-      success_message _("Override value deleted")
+      success_message _("Override value deleted.")
       failure_message _("Could not delete the override value")
 
       build_options do |options|

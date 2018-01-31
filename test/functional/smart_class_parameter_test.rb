@@ -34,7 +34,7 @@ describe 'sc-params add-matcher' do
 
   it 'allows to set value' do
     params = ['--value', override_value]
-    expected_result = success_result("Override value created\n")
+    expected_result = success_result("Override value created.\n")
 
     prepare_api_expectations = proc do
       expectations = []

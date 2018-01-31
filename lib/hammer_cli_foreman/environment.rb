@@ -31,7 +31,7 @@ module HammerCLIForeman
 
 
     class CreateCommand < HammerCLIForeman::CreateCommand
-      success_message _("Environment created")
+      success_message _("Environment created.")
       failure_message _("Could not create the environment")
 
       build_options
@@ -39,7 +39,7 @@ module HammerCLIForeman
 
 
     class UpdateCommand < HammerCLIForeman::UpdateCommand
-      success_message _("Environment updated")
+      success_message _("Environment updated.")
       failure_message _("Could not update the environment")
 
       build_options
@@ -47,7 +47,7 @@ module HammerCLIForeman
 
 
     class DeleteCommand < HammerCLIForeman::DeleteCommand
-      success_message _("Environment deleted")
+      success_message _("Environment deleted.")
       failure_message _("Could not delete the environment")
 
       build_options

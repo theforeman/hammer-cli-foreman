@@ -104,14 +104,14 @@ module HammerCLIForeman
     class CreateCommand < HammerCLIForeman::CreateCommand
       include SmartVariableUpdateCreateCommons
 
-      success_message _("Smart variable [%{variable}] created")
+      success_message _("Smart variable [%{variable}] created.")
       failure_message _("Could not create the smart variable")
     end
 
     class UpdateCommand < HammerCLIForeman::UpdateCommand
       include SmartVariableUpdateCreateCommons
 
-      success_message _("Smart variable [%{variable}] updated")
+      success_message _("Smart variable [%{variable}] updated.")
       failure_message _("Could not update the smart variable")
     end
 
@@ -119,7 +119,7 @@ module HammerCLIForeman
     class DeleteCommand < HammerCLIForeman::DeleteCommand
       option '--name', 'NAME', _('Smart variable name'), :deprecated => _('Use --variable instead')
 
-      success_message _("Smart variable [%{variable}] deleted")
+      success_message _("Smart variable [%{variable}] deleted.")
       failure_message _("Could not delete the smart variable")
 
       build_options
@@ -129,7 +129,7 @@ module HammerCLIForeman
       resource :override_values
       command_name 'add-matcher'
 
-      success_message _("Override value created")
+      success_message _("Override value created.")
       failure_message _("Could not create the override value")
 
       build_options do |options|
@@ -149,7 +149,7 @@ module HammerCLIForeman
       resource :override_values
       command_name 'remove-matcher'
 
-      success_message _("Override value deleted")
+      success_message _("Override value deleted.")
       failure_message _("Could not delete the override value")
 
       build_options do |options|

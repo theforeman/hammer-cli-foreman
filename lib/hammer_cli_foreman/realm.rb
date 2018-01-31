@@ -26,7 +26,7 @@ module HammerCLIForeman
 
 
     class CreateCommand < HammerCLIForeman::CreateCommand
-      success_message _("Realm [%{name}] created")
+      success_message _("Realm [%{name}] created.")
       failure_message _("Could not create the realm")
 
       build_options
@@ -34,7 +34,7 @@ module HammerCLIForeman
 
 
     class UpdateCommand < HammerCLIForeman::UpdateCommand
-      success_message _("Realm [%{name}] updated")
+      success_message _("Realm [%{name}] updated.")
       failure_message _("Could not update the realm")
 
       build_options
@@ -42,7 +42,7 @@ module HammerCLIForeman
 
 
     class DeleteCommand < HammerCLIForeman::DeleteCommand
-      success_message _("Realm [%{name}] deleted")
+      success_message _("Realm [%{name}] deleted.")
       failure_message _("Could not delete the realm")
 
       build_options
