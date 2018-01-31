@@ -128,7 +128,7 @@ module HammerCLIForeman
       success_message _("Interface created.")
       failure_message _("Could not create the interface")
 
-      option "--compute-attributes", "COMPUTE_ATTRS", _("Compute resource specific attributes."),
+      option "--compute-attributes", "COMPUTE_ATTRS", _("Compute resource specific attributes"),
         :format => HammerCLI::Options::Normalizers::KeyValueList.new
 
       include InterfaceUpdate
@@ -141,7 +141,7 @@ module HammerCLIForeman
       success_message _("Interface updated.")
       failure_message _("Could not update the interface")
 
-      option "--compute-attributes", "COMPUTE_ATTRS", _("Compute resource specific attributes."),
+      option "--compute-attributes", "COMPUTE_ATTRS", _("Compute resource specific attributes"),
         :format => HammerCLI::Options::Normalizers::KeyValueList.new
 
       include InterfaceUpdate

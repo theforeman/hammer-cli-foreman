@@ -19,7 +19,7 @@ module HammerCLIForeman
     class SetCommand < HammerCLIForeman::Command
 
       command_name "set"
-      desc _("Set a global parameter.")
+      desc _("Set a global parameter")
 
       success_message_for :create, _("Created parameter [%{name}] with value [%{value}].")
       success_message_for :update, _("Parameter [%{name}] updated to [%{value}].")
