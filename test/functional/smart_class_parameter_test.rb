@@ -9,7 +9,7 @@ describe 'sc-params update' do
 
     expected_result = usage_error_result(
       cmd,
-      "Unrecognised option '--new-name'",
+      "Unrecognised option '--new-name'.",
       "Could not update the parameter"
     )
 
@@ -34,7 +34,7 @@ describe 'sc-params add-matcher' do
 
   it 'allows to set value' do
     params = ['--value', override_value]
-    expected_result = success_result("Override value created\n")
+    expected_result = success_result("Override value created.\n")
 
     prepare_api_expectations = proc do
       expectations = []
@@ -71,7 +71,7 @@ describe 'sc-params add-matcher' do
 
     expected_result = usage_error_result(
       cmd,
-      "Cannot use --value when --use-puppet-default is true",
+      "Cannot use --value when --use-puppet-default is true.",
       'Could not create the override value'
     )
 

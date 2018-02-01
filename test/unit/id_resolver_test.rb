@@ -114,7 +114,7 @@ describe HammerCLIForeman::IdResolver do
 
       it "builds correct error message" do
         err = resolver_run.must_raise HammerCLIForeman::MissingSearchOptions
-        err.message.must_equal "Missing options to search comment"
+        err.message.must_equal "Missing options to search comment."
       end
     end
 
@@ -125,14 +125,14 @@ describe HammerCLIForeman::IdResolver do
         ResourceMocks.mock_action_call(:users, :index, [])
 
         err = resolver_run.must_raise HammerCLIForeman::ResolverError
-        err.message.must_equal "user not found"
+        err.message.must_equal "user not found."
       end
 
       it "raises exception when multiple resources are found" do
         ResourceMocks.mock_action_call(:users, :index, [john, jane])
 
         err = resolver_run.must_raise HammerCLIForeman::ResolverError
-        err.message.must_equal "found more than one user"
+        err.message.must_equal "Found more than one user."
       end
 
       it "calls index action with appropriate search params" do
@@ -171,7 +171,7 @@ describe HammerCLIForeman::IdResolver do
         ResourceMocks.mock_action_call(:users, :index, [])
 
         err = resolver_run.must_raise HammerCLIForeman::ResolverError
-        err.message.must_equal "user not found"
+        err.message.must_equal "user not found."
       end
 
       it "raises exception when multiple resources are found" do
@@ -179,7 +179,7 @@ describe HammerCLIForeman::IdResolver do
         ResourceMocks.mock_action_call(:users, :index, [john, jane])
 
         err = resolver_run.must_raise HammerCLIForeman::ResolverError
-        err.message.must_equal "found more than one user"
+        err.message.must_equal "Found more than one user."
       end
 
       it "calls index action with appropriate search params" do

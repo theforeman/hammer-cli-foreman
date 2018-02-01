@@ -57,7 +57,7 @@ module HammerCLIForeman
 
 
     class CreateCommand < HammerCLIForeman::CreateCommand
-      success_message _("User role [%<name>s] created")
+      success_message _("User role [%<name>s] created.")
       failure_message _("Could not create the user role")
 
       build_options
@@ -65,7 +65,7 @@ module HammerCLIForeman
 
 
     class UpdateCommand < HammerCLIForeman::UpdateCommand
-      success_message _("User role [%<name>s] updated")
+      success_message _("User role [%<name>s] updated.")
       failure_message _("Could not update the user role")
 
       build_options
@@ -82,7 +82,7 @@ module HammerCLIForeman
         option(:option_new_name).required
       end
 
-      success_message _("User role cloned")
+      success_message _("User role cloned.")
       failure_message _("Could not clone the user role")
 
       build_options
@@ -90,7 +90,7 @@ module HammerCLIForeman
 
 
     class DeleteCommand < HammerCLIForeman::DeleteCommand
-      success_message _("User role [%<name>s] deleted")
+      success_message _("User role [%<name>s] deleted.")
       failure_message _("Could not delete the user roles")
 
       build_options
@@ -100,6 +100,3 @@ module HammerCLIForeman
   end
 
 end
-
-
-

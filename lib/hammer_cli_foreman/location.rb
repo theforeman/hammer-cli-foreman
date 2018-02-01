@@ -52,7 +52,7 @@ module HammerCLIForeman
     class CreateCommand < HammerCLIForeman::CreateCommand
       include HammerCLIForeman::ResourceSupportedTest
 
-      success_message _("Location created")
+      success_message _("Location created.")
       failure_message _("Could not create the location")
 
       build_options
@@ -64,7 +64,7 @@ module HammerCLIForeman
 
       option '--id', 'ID', _("Location numeric id to search by")
 
-      success_message _("Location updated")
+      success_message _("Location updated.")
       failure_message _("Could not update the location")
 
       build_options
@@ -76,7 +76,7 @@ module HammerCLIForeman
 
       option '--id', 'ID', _("Location numeric id to search by")
 
-      success_message _("Location deleted")
+      success_message _("Location deleted.")
       failure_message _("Could not delete the location")
 
       build_options do |o|
@@ -86,7 +86,7 @@ module HammerCLIForeman
 
 
     class SetParameterCommand < HammerCLIForeman::Parameter::SetCommand
-      desc _("Create or update parameter for a location.")
+      desc _("Create or update parameter for a location")
 
       success_message_for :update, _("Parameter [%{name}] updated to value [%{value}]")
       success_message_for :create, _("Parameter [%{name}] created with value [%{value}]")
@@ -97,9 +97,9 @@ module HammerCLIForeman
 
 
     class DeleteParameterCommand < HammerCLIForeman::Parameter::DeleteCommand
-      desc _("Delete parameter for a location.")
+      desc _("Delete parameter for a location")
 
-      success_message _("Parameter [%{name}] deleted")
+      success_message _("Parameter [%{name}] deleted.")
       failure_message _("Could not delete location parameter")
 
       build_options
@@ -120,6 +120,3 @@ module HammerCLIForeman
   end
 
 end
-
-
-

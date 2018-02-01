@@ -26,7 +26,7 @@ describe "user" do
         par['user']['default_organization_id'] == '3'
       end.returns(user)
 
-      expected_result = success_result("User [jane] created\n")
+      expected_result = success_result("User [jane] created.\n")
 
       result = run_cmd(cmd + minimal_params + params)
       assert_cmd(expected_result, result)
@@ -40,7 +40,7 @@ describe "user" do
         par['user']['default_location_id'] == '4'
       end.returns(user)
 
-      expected_result = success_result("User [jane] created\n")
+      expected_result = success_result("User [jane] created.\n")
 
       result = run_cmd(cmd + minimal_params + params)
       assert_cmd(expected_result, result)
@@ -59,7 +59,7 @@ describe "user" do
         par['id'] == '32' &&
         par['user']['default_organization_id'] == '3'
       end.returns(user)
-      expected_result = success_result("User [jane] updated\n")
+      expected_result = success_result("User [jane] updated.\n")
 
       result = run_cmd(cmd + update_params + params)
 
@@ -76,7 +76,7 @@ describe "user" do
         par['user']['default_location_id'] == '4'
       end.returns(user)
 
-      expected_result = success_result("User [jane] updated\n")
+      expected_result = success_result("User [jane] updated.\n")
 
       result = run_cmd(cmd + update_params + params)
       assert_cmd(expected_result, result)

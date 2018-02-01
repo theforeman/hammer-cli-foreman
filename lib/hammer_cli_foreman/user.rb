@@ -67,7 +67,7 @@ module HammerCLIForeman
     end
 
     class CreateCommand < HammerCLIForeman::CreateCommand
-      success_message _("User [%{login}] created")
+      success_message _("User [%{login}] created.")
       failure_message _("Could not create the user")
 
       include CommonUpdateOptions
@@ -76,7 +76,7 @@ module HammerCLIForeman
 
 
     class UpdateCommand < HammerCLIForeman::UpdateCommand
-      success_message _("User [%{login}] updated")
+      success_message _("User [%{login}] updated.")
       failure_message _("Could not update the user")
 
       include CommonUpdateOptions
@@ -86,7 +86,7 @@ module HammerCLIForeman
 
 
     class DeleteCommand < HammerCLIForeman::DeleteCommand
-      success_message _("User [%{login}] deleted")
+      success_message _("User [%{login}] deleted.")
       failure_message _("Could not delete the user")
 
       build_options

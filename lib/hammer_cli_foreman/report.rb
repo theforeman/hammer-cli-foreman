@@ -73,7 +73,7 @@ module HammerCLIForeman
 
 
     class DeleteCommand < HammerCLIForeman::DeleteCommand
-      success_message _("Report has been deleted")
+      success_message _("Report has been deleted.")
       failure_message _("Could not delete the report")
 
       build_options
@@ -84,6 +84,3 @@ module HammerCLIForeman
   end
 
 end
-
-
-

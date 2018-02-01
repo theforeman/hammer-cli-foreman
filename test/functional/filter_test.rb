@@ -11,12 +11,12 @@ describe 'filter' do
   def taxonomy_usage_error(action, cmd)
     usage_error_result(
       cmd,
-      'Organizations and locations can be set only for overriding filters',
+      'Organizations and locations can be set only for overriding filters.',
       "Could not #{action} the permission filter")
   end
 
   def assert_update_success(result)
-    assert_cmd(success_result("Permission filter for [User] updated\n"), result)
+    assert_cmd(success_result("Permission filter for [User] updated.\n"), result)
   end
 
   describe 'create' do

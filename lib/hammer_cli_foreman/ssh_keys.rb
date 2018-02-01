@@ -2,7 +2,7 @@ module HammerCLIForeman
   class SSHKeys < HammerCLIForeman::Command
     resource :ssh_keys
     command_name "ssh-keys"
-    desc _("Manage SSH Keys sources.")
+    desc _("Manage SSH Keys sources")
 
     class ListCommand < HammerCLIForeman::ListCommand
       output do
@@ -30,7 +30,7 @@ module HammerCLIForeman
         params
       end
 
-      success_message _("SSH Key %{name} added")
+      success_message _("SSH Key %{name} added.")
       failure_message _("Could not add SSH Key")
 
       build_options
@@ -45,7 +45,7 @@ module HammerCLIForeman
     end
 
     class DeleteCommand < HammerCLIForeman::DeleteCommand
-      success_message _("SSH Key deleted")
+      success_message _("SSH Key deleted.")
       failure_message _("Could not delete the SSH Key")
 
       build_options

@@ -27,7 +27,7 @@ describe 'role' do
 
       expected_result = usage_error_result(
         @cmd,
-        'Option --new-name is required',
+        'Option --new-name is required.',
         'Could not clone the user role')
 
       api_expects_no_call
@@ -45,7 +45,7 @@ describe 'role' do
       })
 
       result = run_cmd(@cmd + params)
-      assert_cmd(success_result("User role cloned\n"), result)
+      assert_cmd(success_result("User role cloned.\n"), result)
     end
 
     it 'should clone a role by name' do
@@ -63,7 +63,7 @@ describe 'role' do
       })
 
       result = run_cmd(@cmd + params)
-      assert_cmd(success_result("User role cloned\n"), result)
+      assert_cmd(success_result("User role cloned.\n"), result)
     end
   end
 end

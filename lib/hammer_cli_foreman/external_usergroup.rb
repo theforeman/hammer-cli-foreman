@@ -54,7 +54,7 @@ module HammerCLIForeman
 
 
     class CreateCommand < HammerCLIForeman::CreateCommand
-      success_message _("External user group created")
+      success_message _("External user group created.")
       failure_message _("Could not create external user group")
 
       build_options
@@ -62,7 +62,7 @@ module HammerCLIForeman
 
 
     class UpdateCommand < HammerCLIForeman::UpdateCommand
-      success_message _("External user group updated")
+      success_message _("External user group updated.")
       failure_message _("Could not update external user group")
 
       build_options
@@ -70,7 +70,7 @@ module HammerCLIForeman
 
 
     class DeleteCommand < HammerCLIForeman::DeleteCommand
-      success_message _("External user group deleted")
+      success_message _("External user group deleted.")
       failure_message _("Could not delete the external user group")
 
       build_options
@@ -80,4 +80,3 @@ module HammerCLIForeman
   end
 
 end
-

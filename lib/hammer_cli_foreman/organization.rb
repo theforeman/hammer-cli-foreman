@@ -53,7 +53,7 @@ module HammerCLIForeman
     class CreateCommand < HammerCLIForeman::CreateCommand
       include HammerCLIForeman::ResourceSupportedTest
 
-      success_message _("Organization created")
+      success_message _("Organization created.")
       failure_message _("Could not create the organization")
 
       build_options
@@ -65,7 +65,7 @@ module HammerCLIForeman
 
       option "--id", "ID", " ", :referenced_resource => 'organization'
 
-      success_message _("Organization updated")
+      success_message _("Organization updated.")
       failure_message _("Could not update the organization")
 
       build_options
@@ -77,7 +77,7 @@ module HammerCLIForeman
 
       option "--id", "ID", " ", :referenced_resource => 'organization'
 
-      success_message _("Organization deleted")
+      success_message _("Organization deleted.")
       failure_message _("Could not delete the organization")
 
       build_options do |o|
@@ -87,7 +87,7 @@ module HammerCLIForeman
 
 
     class SetParameterCommand < HammerCLIForeman::Parameter::SetCommand
-      desc _("Create or update parameter for an organization.")
+      desc _("Create or update parameter for an organization")
 
       success_message_for :update, _("Parameter [%{name}] updated to value [%{value}]")
       success_message_for :create, _("Parameter [%{name}] created with value [%{value}]")
@@ -98,9 +98,9 @@ module HammerCLIForeman
 
 
     class DeleteParameterCommand < HammerCLIForeman::Parameter::DeleteCommand
-      desc _("Delete parameter for an organization.")
+      desc _("Delete parameter for an organization")
 
-      success_message _("Parameter [%{name}] deleted")
+      success_message _("Parameter [%{name}] deleted.")
       failure_message _("Could not delete organization parameter")
 
       build_options
@@ -122,6 +122,3 @@ module HammerCLIForeman
   end
 
 end
-
-
-

@@ -6,7 +6,7 @@ describe 'smart-variable update' do
   it 'allows to save new name and override value order' do
     params = ['--id=1', '--new-variable=name2', '--override-value-order=\'fqdn\',\'hostgroup\',\'domain\',\'os\'']
 
-    expected_result = success_result("Smart variable [name2] updated\n")
+    expected_result = success_result("Smart variable [name2] updated.\n")
 
     api_expects(:smart_variables, :update, 'Update the variable') do |par|
      (par['smart_variable']['variable'] == 'name2') && (par['smart_variable']['override_value_order'] == "fqdn\nhostgroup\ndomain\nos")

@@ -172,7 +172,7 @@ describe HammerCLIForeman::Api::SessionAuthenticatorWrapper do
           ex = RestClient::Unauthorized.new
           new_ex = auth.error(ex)
 
-          assert_equal 'Session has expired', new_ex.message
+          assert_equal 'Session has expired.', new_ex.message
         end
       end
 
@@ -203,7 +203,7 @@ describe HammerCLIForeman::Api::SessionAuthenticatorWrapper do
             ex = RestClient::Unauthorized.new
             new_ex = auth.error(ex)
 
-            assert_equal "Invalid username or password, continuing with session for 'admin'", new_ex.message
+            assert_equal "Invalid username or password, continuing with session for 'admin'.", new_ex.message
           end
         end
 
@@ -365,7 +365,7 @@ describe HammerCLIForeman::Api::SessionAuthenticatorWrapper do
 
     it "informas about existing session" do
       prepare_session_storage :session_id => 'SOME_SESSION_ID' do |auth, dir|
-        assert_equal "Session exists, currently logged in as 'admin'", auth.status
+        assert_equal "Session exists, currently logged in as 'admin'.", auth.status
       end
     end
   end

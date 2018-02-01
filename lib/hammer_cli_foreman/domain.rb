@@ -54,7 +54,7 @@ module HammerCLIForeman
     class CreateCommand < HammerCLIForeman::CreateCommand
       include DomainUpdateCreateCommons
 
-      success_message _("Domain [%{name}] created")
+      success_message _("Domain [%{name}] created.")
       failure_message _("Could not create the domain")
 
       option "--description", "DESC", _("Full name describing the domain"), :attribute_name => :option_fullname
@@ -65,7 +65,7 @@ module HammerCLIForeman
     class UpdateCommand < HammerCLIForeman::UpdateCommand
       include DomainUpdateCreateCommons
 
-      success_message _("Domain [%{name}] updated")
+      success_message _("Domain [%{name}] updated.")
       failure_message _("Could not update the domain")
 
       option "--description", "DESC", _("Full name describing the domain"), :attribute_name => :option_fullname
@@ -75,7 +75,7 @@ module HammerCLIForeman
 
     class DeleteCommand < HammerCLIForeman::DeleteCommand
 
-      success_message _("Domain [%{name}] deleted")
+      success_message _("Domain [%{name}] deleted.")
       failure_message _("Could not delete the domain")
 
       build_options
@@ -83,7 +83,7 @@ module HammerCLIForeman
 
 
     class SetParameterCommand < HammerCLIForeman::Parameter::SetCommand
-      desc _("Create or update parameter for a domain.")
+      desc _("Create or update parameter for a domain")
 
       success_message_for :update, _("Domain parameter updated")
       success_message_for :create, _("New domain parameter created")
@@ -99,9 +99,9 @@ module HammerCLIForeman
 
 
     class DeleteParameterCommand < HammerCLIForeman::Parameter::DeleteCommand
-      desc _("Delete parameter for a domain.")
+      desc _("Delete parameter for a domain")
 
-      success_message _("Domain parameter deleted")
+      success_message _("Domain parameter deleted.")
 
       def validate_options
         super
@@ -115,5 +115,3 @@ module HammerCLIForeman
   end
 
 end
-
-

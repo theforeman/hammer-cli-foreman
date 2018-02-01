@@ -2,7 +2,7 @@ module HammerCLIForeman
   class AuthSourceLdap < HammerCLIForeman::Command
     resource :auth_source_ldaps
     command_name 'ldap'
-    desc _('Manage LDAP auth sources.')
+    desc _('Manage LDAP auth sources')
 
     class ListCommand < HammerCLIForeman::ListCommand
       output do
@@ -49,21 +49,21 @@ module HammerCLIForeman
     end
 
     class CreateCommand < HammerCLIForeman::CreateCommand
-      success_message _('Auth source [%{name}] created')
+      success_message _('Auth source [%{name}] created.')
       failure_message _('Could not create the Auth Source')
 
       build_options
     end
 
     class DeleteCommand < HammerCLIForeman::DeleteCommand
-      success_message _('Auth source [%{name}] deleted')
+      success_message _('Auth source [%{name}] deleted.')
       failure_message _('Could not delete the Auth Source')
 
       build_options
     end
 
     class UpdateCommand < HammerCLIForeman::UpdateCommand
-      success_message _('Auth source [%{name}] updated')
+      success_message _('Auth source [%{name}] updated.')
       failure_message _('Could not update the Auth Source')
 
       build_options

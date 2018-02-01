@@ -46,9 +46,9 @@ module HammerCLIForeman
 
 
     class SetCommand < AbstractParameterCommand
-      option "--name", "NAME", _("parameter name"), :required => true
-      option "--value", "VALUE", _("parameter value"), :required => true
-      option "--hidden-value", "HIDDEN_VALUE", _("should the value be hidden"), :format => HammerCLI::Options::Normalizers::Bool.new
+      option "--name", "NAME", _("Parameter name"), :required => true
+      option "--value", "VALUE", _("Parameter value"), :required => true
+      option "--hidden-value", "HIDDEN_VALUE", _("Should the value be hidden"), :format => HammerCLI::Options::Normalizers::Bool.new
 
       def self.command_name(name=nil)
         (super(name) || "set-parameter").gsub('_', '-')
@@ -116,5 +116,3 @@ module HammerCLIForeman
 
   end
 end
-
-

@@ -74,8 +74,8 @@ module HammerCLIForeman
     module InterfaceUpdate
 
       def self.included(base)
-        base.option "--primary", :flag, _("Should this interface be used for constructing the FQDN of the host? Each managed hosts needs to have one primary interface.")
-        base.option "--provision", :flag, _("Should this interface be used for TFTP of PXELinux (or SSH for image-based hosts)? Each managed hosts needs to have one provision interface.")
+        base.option "--primary", :flag, _("Should this interface be used for constructing the FQDN of the host? Each managed hosts needs to have one primary interface")
+        base.option "--provision", :flag, _("Should this interface be used for TFTP of PXELinux (or SSH for image-based hosts)? Each managed hosts needs to have one provision interface")
       end
 
       def get_interfaces(host_id)
@@ -125,10 +125,10 @@ module HammerCLIForeman
 
 
     class CreateCommand < HammerCLIForeman::CreateCommand
-      success_message _("Interface created")
+      success_message _("Interface created.")
       failure_message _("Could not create the interface")
 
-      option "--compute-attributes", "COMPUTE_ATTRS", _("Compute resource specific attributes."),
+      option "--compute-attributes", "COMPUTE_ATTRS", _("Compute resource specific attributes"),
         :format => HammerCLI::Options::Normalizers::KeyValueList.new
 
       include InterfaceUpdate
@@ -138,10 +138,10 @@ module HammerCLIForeman
 
 
     class UpdateCommand < HammerCLIForeman::UpdateCommand
-      success_message _("Interface updated")
+      success_message _("Interface updated.")
       failure_message _("Could not update the interface")
 
-      option "--compute-attributes", "COMPUTE_ATTRS", _("Compute resource specific attributes."),
+      option "--compute-attributes", "COMPUTE_ATTRS", _("Compute resource specific attributes"),
         :format => HammerCLI::Options::Normalizers::KeyValueList.new
 
       include InterfaceUpdate
@@ -151,7 +151,7 @@ module HammerCLIForeman
 
 
     class DeleteCommand < HammerCLIForeman::DeleteCommand
-      success_message _("Interface deleted")
+      success_message _("Interface deleted.")
       failure_message _("Could not delete the interface")
 
       build_options
@@ -161,5 +161,3 @@ module HammerCLIForeman
   end
 
 end
-
-

@@ -19,14 +19,14 @@ module HammerCLIForeman
     class SetCommand < HammerCLIForeman::Command
 
       command_name "set"
-      desc _("Set a global parameter.")
+      desc _("Set a global parameter")
 
       success_message_for :create, _("Created parameter [%{name}] with value [%{value}].")
       success_message_for :update, _("Parameter [%{name}] updated to [%{value}].")
 
-      option "--name", "NAME", _("parameter name"), :required => true
-      option "--value", "VALUE", _("parameter value"), :required => true
-      option "--hidden-value", "HIDDEN_VALUE", _("should the value be hidden"), :format => HammerCLI::Options::Normalizers::Bool.new
+      option "--name", "NAME", _("Parameter name"), :required => true
+      option "--value", "VALUE", _("Parameter value"), :required => true
+      option "--hidden-value", "HIDDEN_VALUE", _("Should the value be hidden"), :format => HammerCLI::Options::Normalizers::Bool.new
 
       def action
         @action ||= parameter_exist? ? :update : :create
@@ -65,4 +65,4 @@ module HammerCLIForeman
   end
 end
 
-HammerCLI::MainCommand.subcommand 'global-parameter', _("Manipulate global parameters."), HammerCLIForeman::CommonParameter
+HammerCLI::MainCommand.subcommand 'global-parameter', _("Manipulate global parameters"), HammerCLIForeman::CommonParameter

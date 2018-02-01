@@ -38,7 +38,7 @@ describe HammerCLIForeman::ExceptionHandler do
 
   it "should handle forbidden error" do
     ex = RestClient::Forbidden.new
-    output.expects(:print_error).with('Forbidden - server refused to process the request', nil)
+    output.expects(:print_error).with('Forbidden - server refused to process the request.', nil)
     err_code = handler.handle_exception(ex)
     err_code.must_equal HammerCLI::EX_NOPERM
   end
@@ -131,7 +131,7 @@ describe HammerCLIForeman::ExceptionHandler do
       response.headers[:location] = 'https://foreman.example.com/api/architectures'
       ex = RestClient::MovedPermanently.new(response)
 
-      output.expects(:print_error).with(heading, "Redirection of API call detected.\nIt seems hammer is configured to use HTTP and the server prefers HTTPS.\nUpdate your server url configuration\nyou can set 'follow_redirects' to one of :default or :always to enable redirects following")
+      output.expects(:print_error).with(heading, "Redirection of API call detected.\nIt seems hammer is configured to use HTTP and the server prefers HTTPS.\nUpdate your server url configuration.\nYou can set 'follow_redirects' to one of :default or :always to enable redirects following.")
       err_code = handler.handle_exception(ex, :heading => heading)
       err_code.must_equal HammerCLI::EX_CONFIG
     end
@@ -140,7 +140,7 @@ describe HammerCLIForeman::ExceptionHandler do
       response.headers[:location] = 'http://foreman.example.com/api/other_resource'
       ex = RestClient::MovedPermanently.new(response)
 
-      output.expects(:print_error).with(heading, "Redirection of API call detected.\nUpdate your server url configuration\nyou can set 'follow_redirects' to one of :default or :always to enable redirects following")
+      output.expects(:print_error).with(heading, "Redirection of API call detected.\nUpdate your server url configuration.\nYou can set 'follow_redirects' to one of :default or :always to enable redirects following.")
       err_code = handler.handle_exception(ex, :heading => heading)
       err_code.must_equal HammerCLI::EX_CONFIG
     end

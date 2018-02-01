@@ -14,7 +14,7 @@ module HammerCLIForeman
       def error(ex)
         if ex.is_a?(RestClient::Unauthorized)
           self.clear
-          return UnauthorizedError.new(_("Invalid username or password"))
+          return UnauthorizedError.new(_("Invalid username or password."))
         end
       end
 
@@ -42,11 +42,11 @@ module HammerCLIForeman
       private
 
       def get_user
-        @user ||= ask_user(_("[Foreman] Username: "))
+        @user ||= ask_user(_("[Foreman] Username:%s") % " ")
       end
 
       def get_password
-        @password ||= ask_user(_("[Foreman] Password for %s: ") % @user, true)
+        @password ||= ask_user(_("[Foreman] Password for %{user}:%{wsp}") % {:user => @user, :wsp => " "}, true)
       end
 
       def ask_user(prompt, silent=false)

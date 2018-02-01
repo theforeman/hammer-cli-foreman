@@ -6,8 +6,8 @@ module HammerCLIForeman
       command_name "login"
       desc _("Set credentials")
 
-      option ["-u", "--username"], "USERNAME", _("username to access the remote system")
-      option ["-p", "--password"], "PASSWORD", _("password to access the remote system")
+      option ["-u", "--username"], "USERNAME", _("Username to access the remote system")
+      option ["-p", "--password"], "PASSWORD", _("Password to access the remote system")
 
       def execute
         if !(HammerCLIForeman.foreman_api_connection.authenticator.is_a?(HammerCLIForeman::Api::SessionAuthenticatorWrapper))

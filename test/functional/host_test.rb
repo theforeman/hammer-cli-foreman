@@ -12,7 +12,7 @@ describe "host create" do
       par['host']['hostgroup_id'] == '83'
     end.returns({})
 
-    expected_result = success_result("Host created\n")
+    expected_result = success_result("Host created.\n")
 
     result = run_cmd(cmd + minimal_params_without_hostgroup + ['--hostgroup-title=test/hg1'])
     assert_cmd(expected_result, result)
@@ -29,7 +29,7 @@ describe "host create" do
       ifces[0]['identifier'] == 'eth0'
     end.returns({})
 
-    expected_result = success_result("Host created\n")
+    expected_result = success_result("Host created.\n")
 
     result = run_cmd(cmd + minimal_params + params)
     assert_cmd(expected_result, result)
@@ -43,7 +43,7 @@ describe "host create" do
       par['host']['interfaces_attributes'] == []
     end.returns({})
 
-    expected_result = success_result("Host created\n")
+    expected_result = success_result("Host created.\n")
 
     result = run_cmd(cmd + minimal_params)
     assert_cmd(expected_result, result)
@@ -66,7 +66,7 @@ describe "host create" do
       true
     end.returns({})
 
-    expected_result = success_result("Host created\n")
+    expected_result = success_result("Host created.\n")
 
     result = run_cmd(cmd + minimal_params + params)
     assert_cmd(expected_result, result)
@@ -88,7 +88,7 @@ describe "host create" do
       ifces[0]['domain_id'] == 32
     end.returns({})
 
-    expected_result = success_result("Host created\n")
+    expected_result = success_result("Host created.\n")
 
     result = run_cmd(cmd + minimal_params + params)
     assert_cmd(expected_result, result)
@@ -110,7 +110,7 @@ describe "host create" do
     api_expects_search(:ptables,          { :name => 'default' }).returns(index_response([mock_item]))
     api_expects(:hosts, :create, 'Create host with interfaces params').returns({})
 
-    expected_result = success_result("Host created\n")
+    expected_result = success_result("Host created.\n")
 
     result = run_cmd(cmd + minimal_params_without_hostgroup + params)
     assert_cmd(expected_result, result)
@@ -144,12 +144,12 @@ describe 'host reports' do
     result = run_cmd(['host', 'reports', '--name=host.example.com'])
     result.exit_code.must_equal HammerCLI::EX_OK
   end
-  
+
   it 'prints error or missing --id and --name' do
       expected_result = CommandExpectation.new
       expected_result.expected_err =
-          ['Error: At least one of options --name, --id is required', '',
-              "See: 'hammer host reports --help'", ''].join("\n")
+          ['Error: At least one of options --name, --id is required.', '',
+              "See: 'hammer host reports --help'.", ''].join("\n")
       expected_result.expected_exit_code = HammerCLI::EX_USAGE
 
       api_expects_no_call
@@ -162,7 +162,7 @@ describe 'host reports' do
     api_expects(:reports, :index, 'Filter the reports') do |params|
       params['search'] == 'reported > "2 hour ago" and host="host.example.com"'
     end.returns(index_response([report15]))
-  
+
     result = run_cmd(['host', 'reports', '--name=host.example.com', %Q(--search=reported > "2 hour ago")])
     result.exit_code.must_equal HammerCLI::EX_OK
   end

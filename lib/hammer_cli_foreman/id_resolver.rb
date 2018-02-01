@@ -172,7 +172,7 @@ module HammerCLIForeman
     def find_resources(resource_name, options)
       resource = @api.resource(resource_name)
       results = resolved_call(resource_name, :index, options, :multi)
-      raise ResolverError.new(_("one of %s not found") % resource.name, resource) if results.count < expected_record_count(options, resource)
+      raise ResolverError.new(_("one of %s not found.") % resource.name, resource) if results.count < expected_record_count(options, resource)
       results
     end
 
@@ -184,7 +184,7 @@ module HammerCLIForeman
         ids
       elsif !options_empty?(resource, options)
         results = resolved_call(resource_name, :index, options, :multi).first.values.flatten
-        raise ResolverError.new(_("one of %s not found") % resource.name, resource) if results.count < expected_record_count(options, resource)
+        raise ResolverError.new(_("one of %s not found.") % resource.name, resource) if results.count < expected_record_count(options, resource)
         results
       else
         []
@@ -237,8 +237,8 @@ module HammerCLIForeman
     end
 
     def pick_result(results, resource)
-      raise ResolverError.new(_("%s not found") % resource.singular_name, resource) if results.empty?
-      raise ResolverError.new(_("found more than one %s") % resource.singular_name, resource) if results.count > 1
+      raise ResolverError.new(_("%s not found.") % resource.singular_name, resource) if results.empty?
+      raise ResolverError.new(_("Found more than one %s.") % resource.singular_name, resource) if results.count > 1
       results[0]
     end
 
@@ -262,7 +262,7 @@ module HammerCLIForeman
         end
         create_search_options(*create_search_options_params)
       end
-      raise MissingSearchOptions.new(_("Missing options to search %s") % resource.singular_name, resource) if search_options.empty?
+      raise MissingSearchOptions.new(_("Missing options to search %s.") % resource.singular_name, resource) if search_options.empty?
       search_options
     end
 

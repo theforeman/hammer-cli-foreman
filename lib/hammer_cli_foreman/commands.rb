@@ -53,7 +53,7 @@ module HammerCLIForeman
       # produce [ { 'attr' => 'val' }, ... ]
       col = HammerCLI::Output::RecordCollection.new(data.map { |r| r.keys.length == 1 ? r[r.keys[0]] : r })
     else
-      raise RuntimeError.new(_("Received data of unknown format"))
+      raise RuntimeError.new(_("Received data of unknown format."))
     end
     col
   end
@@ -474,11 +474,11 @@ module HammerCLIForeman
     end
 
     def self.failure_message(msg = nil)
-      super(msg) || default_message(_('Could not associate the %{resource_name}'))
+      super(msg) || default_message(_('Could not associate the %{resource_name}.'))
     end
 
     def self.success_message(msg = nil)
-      super(msg) || default_message(_('The %{resource_name} has been associated'))
+      super(msg) || default_message(_('The %{resource_name} has been associated.'))
     end
 
     def get_new_ids
@@ -512,11 +512,11 @@ module HammerCLIForeman
     end
 
     def self.failure_message(msg = nil)
-      super(msg) || default_message(_('Could not disassociate the %{resource_name}'))
+      super(msg) || default_message(_('Could not disassociate the %{resource_name}.'))
     end
 
     def self.success_message(msg = nil)
-      super(msg) || default_message(_('The %{resource_name} has been disassociated'))
+      super(msg) || default_message(_('The %{resource_name} has been disassociated.'))
     end
   end
 end

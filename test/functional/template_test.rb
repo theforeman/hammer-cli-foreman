@@ -28,7 +28,7 @@ describe 'template' do
 
       expected_result = usage_error_result(
         @cmd,
-        'Option --new-name is required',
+        'Option --new-name is required.',
         'Could not clone the provisioning template')
 
       api_expects_no_call
@@ -47,7 +47,7 @@ describe 'template' do
 
       result = run_cmd(@cmd + params)
 
-      assert_cmd(success_result("Provisioning template cloned\n"), result)
+      assert_cmd(success_result("Provisioning template cloned.\n"), result)
     end
 
     it 'should clone a template by name' do
@@ -74,7 +74,7 @@ describe 'template' do
 
       result = run_cmd(@cmd + params)
 
-      assert_cmd(success_result("Provisioning template cloned\n"), result)
+      assert_cmd(success_result("Provisioning template cloned.\n"), result)
     end
   end
 
@@ -94,7 +94,7 @@ describe 'template' do
 
       result = run_cmd(@cmd + params)
 
-      assert_cmd(success_result("Provisioning template updated\n"), result)
+      assert_cmd(success_result("Provisioning template updated.\n"), result)
     end
   end
 
@@ -111,14 +111,14 @@ describe 'template' do
         ['Could not create the provisioning template:',
          "  Error: unknown template kind",
          '  ',
-         "  See: 'hammer template create --help'",
+         "  See: 'hammer template create --help'.",
          ''].join("\n")
       expected_result.expected_exit_code = HammerCLI::EX_USAGE
 
       HammerCLIForeman::Template::CreateCommand.any_instance.stubs(:kinds).returns(["PXELinux"])
 
       api_expects_no_call
-      
+
       result = run_cmd(@cmd + params)
       assert_cmd(expected_result, result)
     end

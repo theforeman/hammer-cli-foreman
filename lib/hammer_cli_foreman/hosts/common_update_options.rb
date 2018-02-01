@@ -35,13 +35,13 @@ module HammerCLIForeman
         bme_options[:format] = HammerCLI::Options::Normalizers::Bool.new
         base.option "--overwrite", "OVERWRITE", " ",  bme_options
 
-        base.option "--parameters", "PARAMS", _("Host parameters."),
+        base.option "--parameters", "PARAMS", _("Host parameters"),
           :format => HammerCLI::Options::Normalizers::KeyValueList.new
-        base.option "--compute-attributes", "COMPUTE_ATTRS", _("Compute resource attributes."),
+        base.option "--compute-attributes", "COMPUTE_ATTRS", _("Compute resource attributes"),
           :format => HammerCLI::Options::Normalizers::KeyValueList.new
         base.option "--volume", "VOLUME", _("Volume parameters"), :multivalued => true,
           :format => HammerCLI::Options::Normalizers::KeyValueList.new
-        base.option "--interface", "INTERFACE", _("Interface parameters."), :multivalued => true,
+        base.option "--interface", "INTERFACE", _("Interface parameters"), :multivalued => true,
           :format => HammerCLI::Options::Normalizers::KeyValueList.new
         base.option "--provision-method", "METHOD", " ",
           :format => HammerCLI::Options::Normalizers::Enum.new(['build', 'image'])

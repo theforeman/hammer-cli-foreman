@@ -25,7 +25,7 @@ module HammerCLIForeman
     class UpdateCommand < HammerCLIForeman::UpdateCommand
       command_name 'set'
 
-      success_message _("Setting [%{name}] updated to [%{value}]")
+      success_message _("Setting [%{name}] updated to [%{value}].")
       failure_message _("Could not update the setting")
 
       build_options

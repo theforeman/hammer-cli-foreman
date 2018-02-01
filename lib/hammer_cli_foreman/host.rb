@@ -221,7 +221,7 @@ module HammerCLIForeman
       option('--name', "NAME", _('Host name'))
 
       output HammerCLIForeman::Report::ListCommand.output_definition
-     
+
       def validate_options
         validator.any(:option_name, :option_id).required
       end
@@ -230,13 +230,13 @@ module HammerCLIForeman
         params = super
         search = []
         search << params['search'] if params['search']
-        
+
         hostname = get_option_value('name')
         search << %Q(host="#{hostname}") if hostname
-        
+
         host_id = get_option_value('id')
         search << "host_id=#{host_id}" if host_id
-        
+
         params['search'] = search.join(' and ') unless search.empty?
         params
       end
@@ -245,7 +245,7 @@ module HammerCLIForeman
     end
 
     class CreateCommand < HammerCLIForeman::CreateCommand
-      success_message _("Host created")
+      success_message _("Host created.")
       failure_message _("Could not create the host")
 
       include HammerCLIForeman::Hosts::CommonUpdateOptions
@@ -266,7 +266,7 @@ module HammerCLIForeman
     end
 
     class UpdateCommand < HammerCLIForeman::UpdateCommand
-      success_message _("Host updated")
+      success_message _("Host updated.")
       failure_message _("Could not update the host")
 
       include HammerCLIForeman::Hosts::CommonUpdateOptions
@@ -275,7 +275,7 @@ module HammerCLIForeman
 
 
     class DeleteCommand < HammerCLIForeman::DeleteCommand
-      success_message _("Host deleted")
+      success_message _("Host deleted.")
       failure_message _("Could not delete the host")
 
       build_options
@@ -283,7 +283,7 @@ module HammerCLIForeman
 
 
     class SetParameterCommand < HammerCLIForeman::Parameter::SetCommand
-      desc _("Create or update parameter for a host.")
+      desc _("Create or update parameter for a host")
 
       success_message_for :update, _("Host parameter updated")
       success_message_for :create, _("New host parameter created")
@@ -299,9 +299,9 @@ module HammerCLIForeman
 
 
     class DeleteParameterCommand < HammerCLIForeman::Parameter::DeleteCommand
-      desc _("Delete parameter for a host.")
+      desc _("Delete parameter for a host")
 
-      success_message _("Host parameter deleted")
+      success_message _("Host parameter deleted.")
 
       def validate_options
         super
@@ -351,9 +351,9 @@ module HammerCLIForeman
 
       def success_message
         if option_force?
-          _("Power off forced.")
+          _("Power off forced")
         else
-          _("Powering the host off.")
+          _("Powering the host off")
         end
       end
 

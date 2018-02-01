@@ -29,7 +29,7 @@ module HammerCLIForeman
 
     class CreateCommand < HammerCLIForeman::CreateCommand
 
-      success_message _("Installation medium created")
+      success_message _("Installation medium created.")
       failure_message _("Could not create the installation medium")
 
       build_options
@@ -38,7 +38,7 @@ module HammerCLIForeman
 
 
     class UpdateCommand < HammerCLIForeman::UpdateCommand
-      success_message _("Installation medium updated")
+      success_message _("Installation medium updated.")
       failure_message _("Could not update the installation media")
 
       build_options
@@ -47,7 +47,7 @@ module HammerCLIForeman
 
 
     class DeleteCommand < HammerCLIForeman::DeleteCommand
-      success_message _("Installation medium deleted")
+      success_message _("Installation medium deleted.")
       failure_message _("Could not delete the installation media")
 
       build_options
@@ -60,6 +60,3 @@ module HammerCLIForeman
   end
 
 end
-
-
-

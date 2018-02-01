@@ -25,7 +25,7 @@ describe "parameters" do
 
       expected_result = usage_error_result(
         @cmd,
-        "option '--name' is required",
+        "Option '--name' is required.",
         "Could not set organization parameter"
       )
 
@@ -39,7 +39,7 @@ describe "parameters" do
 
       expected_result = usage_error_result(
         @cmd,
-        "option '--value' is required",
+        "Option '--value' is required.",
         "Could not set organization parameter"
       )
 
@@ -93,7 +93,7 @@ describe "parameters" do
 
       expected_result = usage_error_result(
         @cmd,
-        "option '--name' is required",
+        "Option '--name' is required.",
         "Could not delete organization parameter"
       )
 
@@ -111,7 +111,7 @@ describe "parameters" do
 
       expected_result = common_error_result(
         @cmd,
-        "parameter not found",
+        "parameter not found.",
         "Could not delete organization parameter"
       )
 
@@ -130,7 +130,7 @@ describe "parameters" do
       end.returns({:name => 'A', :value => '1'})
 
       expected_result = success_result(
-        "Parameter [A] deleted\n"
+        "Parameter [A] deleted.\n"
       )
 
       result = run_cmd(@cmd + params)
@@ -167,7 +167,7 @@ describe 'associating commands' do
           par['organization']['domain_ids'] == ['1', '5']
       end
       result = run_cmd(@cmd + @params)
-      expected = success_result("The domain has been associated\n")
+      expected = success_result("The domain has been associated.\n")
       assert_cmd(expected, result)
     end
 
@@ -196,7 +196,7 @@ describe 'associating commands' do
           par['organization']['domain_ids'] == ['1']
       end
       result = run_cmd(@cmd + @params)
-      expected = success_result("The domain has been disassociated\n")
+      expected = success_result("The domain has been disassociated.\n")
       assert_cmd(expected, result)
     end
 

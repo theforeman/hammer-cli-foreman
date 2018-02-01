@@ -25,7 +25,7 @@ describe "parameters" do
 
       expected_result = usage_error_result(
         @cmd,
-        "option '--name' is required",
+        "Option '--name' is required.",
         "Could not set location parameter"
       )
 
@@ -39,7 +39,7 @@ describe "parameters" do
 
       expected_result = usage_error_result(
         @cmd,
-        "option '--value' is required",
+        "Option '--value' is required.",
         "Could not set location parameter"
       )
 
@@ -93,7 +93,7 @@ describe "parameters" do
 
       expected_result = usage_error_result(
         @cmd,
-        "option '--name' is required",
+        "Option '--name' is required.",
         "Could not delete location parameter"
       )
 
@@ -111,7 +111,7 @@ describe "parameters" do
 
       expected_result = common_error_result(
         @cmd,
-        "parameter not found",
+        "parameter not found.",
         "Could not delete location parameter"
       )
 
@@ -130,7 +130,7 @@ describe "parameters" do
       end.returns({:name => 'A', :value => '1'})
 
       expected_result = success_result(
-        "Parameter [A] deleted\n"
+        "Parameter [A] deleted.\n"
       )
 
       result = run_cmd(@cmd + params)
