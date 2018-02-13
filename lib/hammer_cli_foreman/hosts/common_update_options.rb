@@ -8,9 +8,8 @@ module HammerCLIForeman
         base.option "--owner-id", "OWNER_ID", _("ID of the owner"),
           :attribute_name => :option_user_id
 
-        base.option ["--root-password", "--root-pass"], "ROOT_PW",
-          _("Required if host is managed and value is not inherited from host group or default password in settings"),
-          :deprecated => { '--root-pass' => _("Use --root-password instead") }
+        base.option "--root-password", "ROOT_PW",
+          _("Required if host is managed and value is not inherited from host group or default password in settings")
 
         base.option "--ask-root-password", "ASK_ROOT_PW", " ",
           :format => HammerCLI::Options::Normalizers::Bool.new

@@ -73,8 +73,7 @@ Options:
  --puppet-proxy-id PUPPET_PROXY_ID
  --realm REALM_NAME                        Name to search by
  --realm-id REALM_ID                       Numerical ID or realm name
- --root-pass ROOT_PASS                     required if host is managed and value is not inherited from host group or default password in settings
- --root-password ROOT_PW
+ --root-password ROOT_PW                   required if host is managed and value is not inherited from host group or default password in settings
  --subnet SUBNET_NAME                      Subnet name
  --subnet-id SUBNET_ID
  --volume VOLUME                           Volume parameters
