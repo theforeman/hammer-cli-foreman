@@ -106,6 +106,7 @@ describe HammerCLIForeman::ListCommand do
     let(:output_without_pagination) { IndexMatcher.new([header, row_data]) }
     let(:output_with_pagination) { IndexMatcher.new([header, row_data, pagination]) }
     let(:pagination_line_re) { /Page [1-9] of [0-9]/ }
+    let(:context) {{ :verbosity => 2 }}
 
     it 'prints all rows by default' do
       expected_result = success_result(output_without_pagination)
@@ -120,7 +121,7 @@ describe HammerCLIForeman::ListCommand do
       expected_result = success_result(output_with_pagination)
       expect_paged_call(1, 1, 1, :total => 2, :subtotal => 2, :per_page => 1, :page => 1)
 
-      result = run_cmd(['--per-page=1'], {}, TestListWithOutput)
+      result = run_cmd(['--per-page=1'], context, TestListWithOutput)
       assert_cmd(expected_result, result)
     end
 
@@ -133,7 +134,7 @@ describe HammerCLIForeman::ListCommand do
         expected_result = success_result(output_with_pagination)
         expect_paged_call(1, 1, 1, :total => 2, :subtotal => 2, :per_page => 1, :page => 1)
 
-        result = run_cmd([], {}, TestListWithOutput)
+        result = run_cmd([], context, TestListWithOutput)
         assert_cmd(expected_result, result)
       end
     end

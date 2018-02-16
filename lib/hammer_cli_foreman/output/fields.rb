@@ -5,6 +5,7 @@ module Fields
   class SingleReference < Field
 
     def display?(value)
+      return false unless appropriate_verbosity?
       id_key = "#{parameters[:key]}_id"
       display_field = parameters[:display_field] || 'name'
       display_key = "#{parameters[:key]}_#{display_field}"
