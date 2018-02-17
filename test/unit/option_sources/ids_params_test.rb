@@ -11,7 +11,7 @@ describe HammerCLIForeman::OptionSources::IdsParams do
     let(:ids_params_source) { HammerCLIForeman::OptionSources::IdsParams.new(cmd) }
 
     it "skips param when set" do
-      cmd.expects(:get_resource_ids).with { |res| res.name != :locations }.at_least(0).returns(nil)
+      cmd.stubs(:get_resource_ids).returns(nil)
       cmd.expects(:get_resource_ids).with { |res| res.name == :locations }.never
       option_data = { 'option_location_ids' => [3], 'option_location_names' => 'test' }
       params = ids_params_source.get_options([], option_data)
@@ -19,7 +19,7 @@ describe HammerCLIForeman::OptionSources::IdsParams do
     end
 
     it "resolves param when unset" do
-      cmd.expects(:get_resource_ids).with { |res| res.name != :locations }.returns(nil)
+      cmd.stubs(:get_resource_ids).returns(nil)
       cmd.expects(:get_resource_ids).with { |res| res.name == :locations }.returns([1])
       option_data = { 'option_location_ids' => nil, 'option_location_names' => 'test' }
       expected_data = { 'option_location_ids' => [1], 'option_location_names' => 'test' }
