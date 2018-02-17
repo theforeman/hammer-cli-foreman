@@ -12,7 +12,7 @@ describe HammerCLIForeman::OptionSources::IdParams do
 
     it "skips param when set" do
       hg_cmd.expects(:get_resource_id).with { |res| res.name != :domains }.at_least(0).returns(nil)
-      hg_cmd.expects(:get_resource_id).with { |res| res.name == :domains }.never.returns(1)
+      hg_cmd.expects(:get_resource_id).with { |res| res.name == :domains }.never
       option_data = { 'option_domain_id' => 3, 'option_domain_name' => 'test' }
       params = id_params_source.get_options([], option_data)
       params.must_equal option_data
