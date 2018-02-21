@@ -1,5 +1,57 @@
 require File.join(File.dirname(__FILE__), 'test_helper')
 
+describe 'host enc-dump' do
+  let(:cmd) { ['host', 'enc-dump'] }
+  let(:params) { ['--id=1'] }
+  let(:context) { { :adapter => :table } }
+  let(:json_dump) do
+    JSON.dump(
+      {
+        :parameters => {
+          :foreman_subnets => [],
+          :location => 'Default Location',
+          :location_title => 'Default Location',
+          :organization => 'Default Organization',
+          :organization_title => 'Default Organization',
+          :domainname => 'testdomain.com',
+        },
+        :classes => []
+      }
+    )
+  end
+
+  it "prints error or missing --id" do
+    expected_result = CommandExpectation.new
+    expected_result.expected_err =
+      ['Could not retrieve ENC values of the host:',
+       "  Missing arguments for 'id'",
+       ''].join("\n")
+    expected_result.expected_exit_code = HammerCLI::EX_USAGE
+
+    api_expects_no_call
+
+    result = run_cmd(cmd)
+    assert_cmd(expected_result, result)
+  end
+
+  it "prints ENC YAML to stdout" do
+    expected_result = success_result(YAML.dump(json_dump))
+
+    api_expects(:hosts, :enc, "Dump host's ENC YAML").with_params('id' => '1').returns(json_dump)
+
+    result = run_cmd(cmd + params)
+    assert_cmd(expected_result, result)
+  end
+
+  it "prints ENC YAML even with other adapter" do
+    expected_result = success_result(YAML.dump(json_dump))
+
+    api_expects(:hosts, :enc, "Dump host's ENC YAML").with_params('id' => '1').returns(json_dump)
+
+    result = run_cmd(cmd + params, context)
+    assert_cmd(expected_result, result)
+  end
+end
 
 describe "host create" do
   let(:cmd) { ["host", "create"] }

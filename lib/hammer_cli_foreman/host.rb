@@ -413,6 +413,20 @@ module HammerCLIForeman
       build_options
     end
 
+    class ENCDump < HammerCLIForeman::SingleResourceCommand
+      action :enc
+
+      command_name "enc-dump"
+      desc _("Dump host's ENC YAML")
+      failure_message _("Could not retrieve ENC values of the host")
+
+      def print_data(data)
+        puts YAML.dump(data)
+      end
+
+      build_options
+    end
+
     autoload_subcommands
 
     subcommand 'interface', HammerCLIForeman::Interface.desc, HammerCLIForeman::Interface
