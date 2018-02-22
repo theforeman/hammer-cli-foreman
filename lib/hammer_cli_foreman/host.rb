@@ -168,6 +168,7 @@ module HammerCLIForeman
 
     class PuppetRunCommand < HammerCLIForeman::SingleResourceCommand
       command_name "puppetrun"
+      resource :puppet_hosts
       action :puppetrun
 
       def print_data(records)
