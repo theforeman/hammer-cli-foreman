@@ -33,7 +33,7 @@ module HammerCLIForeman
 
         protected
         def assert_params(params)
-          params == deep_merge_hash(params, @expected_params)
+          stringify_keys(params) == deep_merge_hash(stringify_keys(params), stringify_keys(@expected_params))
         end
 
         def deep_merge_hash(h, other_h)
@@ -44,6 +44,15 @@ module HammerCLIForeman
             else
               new_val
             end
+          end
+        end
+
+        def stringify_keys(hash)
+          hash.inject({}) do |stringified, (key, value)|
+            if value.is_a?(Hash)
+              value = stringify_keys(value)
+            end
+            stringified.update(key.to_s => value)
           end
         end
       end

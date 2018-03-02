@@ -10,6 +10,7 @@ module HammerCLIForeman
                   :format => HammerCLI::Options::Normalizers::Enum.new(['regexp', 'list', ''])
       base.option "--override-value-order", "OVERRIDE_VALUE_ORDER", _("The order in which values are resolved"),
                   :format => HammerCLI::Options::Normalizers::List.new
+      base.option '--default-value', 'VALUE', _('Value to use when there is no match')
 
       base.build_options :without => [:variable_type, :validator_type, :override_value_order]
     end
@@ -128,6 +129,8 @@ module HammerCLIForeman
     class AddMatcherCommand < HammerCLIForeman::CreateCommand
       resource :override_values
       command_name 'add-matcher'
+
+      option '--value', 'VALUE', _('Override value, required if omit is false')
 
       success_message _("Override value created.")
       failure_message _("Could not create the override value")
