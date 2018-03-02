@@ -105,6 +105,8 @@ module HammerCLIForeman
       success_message _("Parameter updated.")
       failure_message _("Could not update the parameter")
 
+      option '--default-value', 'VALUE', _('Value to use when there is no match')
+
       build_options do |options|
         options.expand.including(:puppetclasses)
         options.without(:parameter_type, :validator_type, :override, :required, :override_value_order)
@@ -139,6 +141,8 @@ module HammerCLIForeman
     class AddMatcherCommand < HammerCLIForeman::CreateCommand
       resource :override_values
       command_name 'add-matcher'
+
+      option '--value', 'VALUE', _('Override value, required if omit is false')
 
       success_message _("Override value created.")
       failure_message _("Could not create the override value")
