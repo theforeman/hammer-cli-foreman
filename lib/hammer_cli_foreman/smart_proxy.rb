@@ -62,14 +62,30 @@ module HammerCLIForeman
 
 
     class ImportPuppetClassesCommand < HammerCLIForeman::Command
-
       action :import_puppetclasses
 
       command_name    "import-classes"
-      success_message _("Puppet classes were imported.")
-      failure_message _("Import of puppet classes failed")
 
       option "--dryrun", :flag, _("Do not run the import")
+
+      output do
+        field :message, _("Result"), Fields::LongText
+        collection :results, _("Changed environments"), :hide_blank => true do
+          field :name, nil
+          collection :new_puppetclasses, _("New classes"), :hide_blank => true, :numbered => false do
+            field nil, nil
+          end
+          collection :updated_puppetclasses, _("Updated classes"), :hide_blank => true, :numbered => false do
+            field nil, nil
+          end
+          collection :obsolete_puppetclasses, _("Removed classes"), :hide_blank => true, :numbered => false do
+            field nil, nil
+          end
+          collection :ignored_puppetclasses, _("Ignored classes"), :hide_blank => true, :numbered => false do
+            field nil, nil
+          end
+        end
+      end
 
       build_options do |o|
         o.without(:smart_proxy_id, :dryrun)
@@ -80,6 +96,16 @@ module HammerCLIForeman
         opts = super
         opts['dryrun'] = option_dryrun? || false
         opts
+      end
+
+      def transform_format(data)
+        # Overriding the default behavior that tries to remove nesting
+        # when there's only {"message": "..."}
+        data
+      end
+
+      def print_data(record)
+        print_record(output_definition, record)
       end
     end
 
