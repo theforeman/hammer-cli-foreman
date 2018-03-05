@@ -253,6 +253,14 @@ describe HammerCLIForeman::IdResolver do
         assert_equal [john_id, jane_id], resolver.user_ids({"option_names" => ["John Doe", "Jane Doe"]})
       end
 
+      it "raises exception when wrong number of resources is found even with conflicting options" do
+        ResourceMocks.mock_action_call(:users, :index, [john])
+
+        assert_raises HammerCLIForeman::ResolverError do
+          resolver.user_ids({"option_names" => ["John Doe", "Jane Doe"], "option_name" => "group1"})
+        end
+      end
+
       it "raises exception when wrong number of resources is found" do
         ResourceMocks.mock_action_call(:users, :index, [john])
 

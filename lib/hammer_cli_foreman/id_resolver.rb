@@ -172,7 +172,7 @@ module HammerCLIForeman
     def find_resources(resource_name, options)
       resource = @api.resource(resource_name)
       results = resolved_call(resource_name, :index, options, :multi)
-      raise ResolverError.new(_("one of %s not found.") % resource.name, resource) if results.count < expected_record_count(options, resource)
+      raise ResolverError.new(_("one of %s not found.") % resource.name, resource) if results.count < expected_record_count(options, resource, :multi)
       results
     end
 
@@ -184,7 +184,7 @@ module HammerCLIForeman
         ids
       elsif !options_empty?(resource, options)
         results = resolved_call(resource_name, :index, options, :multi).first.values.flatten
-        raise ResolverError.new(_("one of %s not found.") % resource.name, resource) if results.count < expected_record_count(options, resource)
+        raise ResolverError.new(_("one of %s not found.") % resource.name, resource) if results.count < expected_record_count(options, resource, :multi)
         results
       else
         []
@@ -266,10 +266,11 @@ module HammerCLIForeman
       search_options
     end
 
-    def expected_record_count(options, resource)
+    # @param mode [Symbol] mode in which ids are searched :single, :multi, nil for old beahvior
+    def expected_record_count(options, resource, mode = nil)
       searchables(resource).each do |s|
-        value = options[HammerCLI.option_accessor_name(s.name.to_s)]
-        values = options[HammerCLI.option_accessor_name(s.plural_name.to_s)]
+        value = options[HammerCLI.option_accessor_name(s.name.to_s)] unless mode == :multi
+        values = options[HammerCLI.option_accessor_name(s.plural_name.to_s)] unless mode == :single
         if value
           return 1
         elsif values
