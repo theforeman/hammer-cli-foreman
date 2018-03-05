@@ -6,9 +6,9 @@
 # Dominic Cleal <dominic@cleal.org>, 2014
 msgid ""
 msgstr ""
-"Project-Id-Version: hammer-cli-foreman 0.11.pre.develop\n"
+"Project-Id-Version: hammer-cli-foreman 0.12.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-08-01 13:02+0200\n"
+"POT-Creation-Date: 2018-03-05 23:09+0100\n"
 "PO-Revision-Date: 2017-03-29 08:19+0000\n"
 "Last-Translator: Lukáš Zapletal\n"
 "Language-Team: Korean (http://www.transifex.com/foreman/foreman/language/"
@@ -19,95 +19,98 @@ msgstr ""
 "Language: ko\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
-msgid "Foreman connection login/logout."
-msgstr "Foreman 연결 로그인/로그아웃."
-
-msgid "Manipulate architectures."
-msgstr "아키텍처를 조정합니다."
-
-msgid "Manipulate auth sources."
-msgstr "인증 소스를 조정합니다."
-
-msgid "Manipulate compute resources."
-msgstr "컴퓨터 리소스를 조정합니다. "
-
-msgid "Manipulate domains."
-msgstr "도메인을 조정합니다. "
-
-msgid "Manipulate environments."
-msgstr "환경을 조정합니다."
-
-msgid "Search facts."
-msgstr "팩트를 검색합니다. "
-
-msgid "Manage permission filters."
-msgstr "권한 필터를 관리합니다. "
-
-msgid "Manipulate hosts."
-msgstr "호스트를 조정합니다."
-
-msgid "Manipulate hostgroups."
-msgstr "호스트 그룹을 조정합니다."
-
-msgid "Manipulate locations."
-msgstr "위치를 조정합니다. "
-
-msgid "Manipulate installation media."
-msgstr "설치 미디어를 조정합니다. "
-
-msgid "Manipulate hardware models."
-msgstr "하드웨어 모델을 조정합니다. "
-
-msgid "Manipulate operating system."
-msgstr "운영 체제를 조정합니다."
-
-msgid "Manipulate organizations."
-msgstr "조직을 조정합니다. "
-
-msgid "Manipulate partition tables."
-msgstr "파티션 테이블을 조정합니다. "
-
-msgid "Search puppet modules."
-msgstr "puppet 모듈을 검색합니다. "
-
-msgid "Browse and read reports."
-msgstr "보고서 검색 및 확인 "
-
-msgid "Manage user roles."
-msgstr "사용자 역할을 관리합니다."
-
-msgid "Manipulate smart class parameters."
-msgstr "스마트 클래스 매개 변수를 조정합니다. "
-
-msgid "Manipulate smart variables."
-msgstr "스마트 변수를 조정합니다."
-
-msgid "Manipulate smart proxies."
-msgstr "스마트 프록시를 조정합니다."
-
-msgid "Manipulate realms."
+msgid "Foreman connection login/logout"
 msgstr ""
 
-msgid "Change server settings."
-msgstr "서버 설정을 변경합니다."
-
-msgid "Manipulate subnets."
-msgstr "서브넷을 조정합니다."
-
-msgid "Manipulate config templates."
-msgstr "설정 템플릿을 조정합니다. "
-
-msgid "Manipulate users."
-msgstr "사용자를 조정합니다. "
-
-msgid "Manage user groups."
-msgstr "사용자 그룹을 관리합니다."
-
-msgid "Manipulate config groups."
+msgid "Manipulate architectures"
 msgstr ""
 
-msgid "Invalid username or password"
-msgstr "잘못된 사용자 이름 또는 비밀번호"
+msgid "Manipulate auth sources"
+msgstr ""
+
+msgid "Manipulate compute resources"
+msgstr ""
+
+msgid "Manipulate domains"
+msgstr ""
+
+msgid "Manipulate environments"
+msgstr ""
+
+msgid "Search facts"
+msgstr ""
+
+msgid "Manage permission filters"
+msgstr ""
+
+msgid "Manipulate hosts"
+msgstr ""
+
+msgid "Manipulate hostgroups"
+msgstr ""
+
+msgid "Manipulate locations"
+msgstr ""
+
+msgid "Manipulate installation media"
+msgstr ""
+
+msgid "Manipulate hardware models"
+msgstr ""
+
+msgid "Manipulate operating system"
+msgstr ""
+
+msgid "Manipulate organizations"
+msgstr ""
+
+msgid "Manipulate partition tables"
+msgstr ""
+
+msgid "Search puppet modules"
+msgstr ""
+
+msgid "Browse and read reports"
+msgstr ""
+
+msgid "Manage user roles"
+msgstr ""
+
+msgid "Manipulate smart class parameters"
+msgstr ""
+
+msgid "Manipulate smart variables"
+msgstr ""
+
+msgid "Manipulate smart proxies"
+msgstr ""
+
+msgid "Manipulate realms"
+msgstr ""
+
+msgid "Change server settings"
+msgstr ""
+
+msgid "Manipulate subnets"
+msgstr ""
+
+msgid "Manipulate config templates"
+msgstr ""
+
+msgid "Manipulate users"
+msgstr ""
+
+msgid "Manage user groups"
+msgstr ""
+
+msgid "Manipulate config groups"
+msgstr ""
+
+msgid "Using certificate authentication."
+msgstr ""
+
+msgid "Invalid username or password."
+msgstr ""
 
 msgid "Using configured credentials for user '%s'."
 msgstr ""
@@ -115,31 +118,31 @@ msgstr ""
 msgid "Credentials are not configured."
 msgstr ""
 
-msgid "[Foreman] Username: "
-msgstr "[Foreman] 사용자 이름: "
+msgid "[Foreman] Username:%s"
+msgstr ""
 
-msgid "[Foreman] Password for %s: "
-msgstr "%s의 [Foreman] 암호: "
+msgid "[Foreman] Password for %{user}:%{wsp}"
+msgstr ""
 
 msgid "Can't use session auth due to invalid permissions on session files."
 msgstr ""
 
-msgid "Session exists, currently logged in as '%s'"
+msgid "Session exists, currently logged in as '%s'."
 msgstr ""
 
 msgid "Using sessions, you are currently not logged in."
 msgstr ""
 
-msgid "Invalid username or password, continuing with session for '%s'"
+msgid "Invalid username or password, continuing with session for '%s'."
 msgstr ""
 
-msgid "Session has expired"
+msgid "Session has expired."
 msgstr ""
 
-msgid "Invalid session file format"
+msgid "Invalid session file format."
 msgstr ""
 
-msgid "Invalid permissions for %{file}: %{mode}, expected %{expected_mode}"
+msgid "Invalid permissions for %{file}: %{mode}, expected %{expected_mode}."
 msgstr ""
 
 msgid "Id"
@@ -148,20 +151,20 @@ msgstr "ID "
 msgid "Name"
 msgstr "이름 "
 
-msgid "Architecture created"
-msgstr "아키텍처가 생성되었습니다 "
+msgid "Architecture created."
+msgstr ""
 
 msgid "Could not create the architecture"
 msgstr "아키텍처를 생성할 수 없습니다 "
 
-msgid "Architecture deleted"
-msgstr "아키텍처가 삭제되었습니다 "
+msgid "Architecture deleted."
+msgstr ""
 
 msgid "Could not delete the architecture"
 msgstr "아키텍처를 삭제할 수 없습니다 "
 
-msgid "Architecture updated"
-msgstr "아키텍처가 업데이트되었습니다 "
+msgid "Architecture updated."
+msgstr ""
 
 msgid "Could not update the architecture"
 msgstr "아키텍처를 업데이트할 수 없습니다 "
@@ -169,7 +172,7 @@ msgstr "아키텍처를 업데이트할 수 없습니다 "
 msgid "Associate a hostgroup"
 msgstr "호스트 그룹 연결 "
 
-msgid "The hostgroup has been associated"
+msgid "The hostgroup has been associated."
 msgstr ""
 
 msgid "Could not associate the hostgroup"
@@ -178,7 +181,7 @@ msgstr ""
 msgid "Disassociate a hostgroup"
 msgstr "호스트 그룹 연결 해제 "
 
-msgid "The hostgroup has been disassociated"
+msgid "The hostgroup has been disassociated."
 msgstr ""
 
 msgid "Could not disassociate the hostgroup"
@@ -187,7 +190,7 @@ msgstr ""
 msgid "Associate an environment"
 msgstr "환경 연결 "
 
-msgid "The environment has been associated"
+msgid "The environment has been associated."
 msgstr ""
 
 msgid "Could not associate the environment"
@@ -196,7 +199,7 @@ msgstr ""
 msgid "Disassociate an environment"
 msgstr "환경 연결 해제 "
 
-msgid "The environment has been disassociated"
+msgid "The environment has been disassociated."
 msgstr ""
 
 msgid "Could not disassociate the environment"
@@ -205,7 +208,7 @@ msgstr ""
 msgid "Associate a domain"
 msgstr "도메인 연결 "
 
-msgid "The domain has been associated"
+msgid "The domain has been associated."
 msgstr ""
 
 msgid "Could not associate the domain"
@@ -214,7 +217,7 @@ msgstr ""
 msgid "Disassociate a domain"
 msgstr "도메인 연결 해제 "
 
-msgid "The domain has been disassociated"
+msgid "The domain has been disassociated."
 msgstr ""
 
 msgid "Could not disassociate the domain"
@@ -223,7 +226,7 @@ msgstr ""
 msgid "Associate a medium"
 msgstr "미디어 연결 "
 
-msgid "The medium has been associated"
+msgid "The medium has been associated."
 msgstr ""
 
 msgid "Could not associate the medium"
@@ -232,7 +235,7 @@ msgstr ""
 msgid "Disassociate a medium"
 msgstr "미디어 연결 해제 "
 
-msgid "The medium has been disassociated"
+msgid "The medium has been disassociated."
 msgstr ""
 
 msgid "Could not disassociate the medium"
@@ -241,7 +244,7 @@ msgstr ""
 msgid "Associate a subnet"
 msgstr "서브넷 연결 "
 
-msgid "The subnet has been associated"
+msgid "The subnet has been associated."
 msgstr ""
 
 msgid "Could not associate the subnet"
@@ -250,7 +253,7 @@ msgstr ""
 msgid "Disassociate a subnet"
 msgstr "서브넷 연결 해제 "
 
-msgid "The subnet has been disassociated"
+msgid "The subnet has been disassociated."
 msgstr ""
 
 msgid "Could not disassociate the subnet"
@@ -259,7 +262,7 @@ msgstr ""
 msgid "Associate a compute resource"
 msgstr "컴퓨터 리소스 연결 "
 
-msgid "The compute resource has been associated"
+msgid "The compute resource has been associated."
 msgstr ""
 
 msgid "Could not associate the compute resource"
@@ -268,7 +271,7 @@ msgstr ""
 msgid "Disassociate a compute resource"
 msgstr "컴퓨터 리소스 연결 해제 "
 
-msgid "The compute resource has been disassociated"
+msgid "The compute resource has been disassociated."
 msgstr ""
 
 msgid "Could not disassociate the compute resource"
@@ -277,7 +280,7 @@ msgstr ""
 msgid "Associate a smart proxy"
 msgstr "스마트 프록시 연결 "
 
-msgid "The smart proxy has been associated"
+msgid "The smart proxy has been associated."
 msgstr ""
 
 msgid "Could not associate the smart proxy"
@@ -286,7 +289,7 @@ msgstr ""
 msgid "Disassociate a smart proxy"
 msgstr "스마트 프록시 연결 해제 "
 
-msgid "The smart proxy has been disassociated"
+msgid "The smart proxy has been disassociated."
 msgstr ""
 
 msgid "Could not disassociate the smart proxy"
@@ -295,8 +298,8 @@ msgstr ""
 msgid "Associate an user"
 msgstr "사용자 연결 "
 
-msgid "The user has been associated"
-msgstr "사용자가 연결되어 있습니다."
+msgid "The user has been associated."
+msgstr ""
 
 msgid "Could not associate the user"
 msgstr "사용자를 연결할 수 없습니다."
@@ -304,8 +307,8 @@ msgstr "사용자를 연결할 수 없습니다."
 msgid "Disassociate an user"
 msgstr "사용자 연결 해제 "
 
-msgid "The user has been disassociated"
-msgstr "사용자가 연결 해제되었습니다"
+msgid "The user has been disassociated."
+msgstr ""
 
 msgid "Could not disassociate the user"
 msgstr "사용자를 연결 해제할 수 없습니다"
@@ -313,8 +316,8 @@ msgstr "사용자를 연결 해제할 수 없습니다"
 msgid "Associate an user group"
 msgstr "사용자 그룹 연결 "
 
-msgid "The user group has been associated"
-msgstr "사용자 그룹이 연결되어 있습니다"
+msgid "The user group has been associated."
+msgstr ""
 
 msgid "Could not associate the user group"
 msgstr "사용자 그룹을 연결할 수 없습니다"
@@ -322,8 +325,8 @@ msgstr "사용자 그룹을 연결할 수 없습니다"
 msgid "Disassociate an user group"
 msgstr "사용자 그룹 연결 해제 "
 
-msgid "The user group has been disassociated"
-msgstr "사용자 그룹이 연결 해제되었습니다"
+msgid "The user group has been disassociated."
+msgstr ""
 
 msgid "Could not disassociate the user group"
 msgstr "사용자 그룹을 연결 해제할 수 없습니다"
@@ -331,7 +334,7 @@ msgstr "사용자 그룹을 연결 해제할 수 없습니다"
 msgid "Associate a configuration template"
 msgstr "설정 템플릿 연결 "
 
-msgid "The configuration template has been associated"
+msgid "The configuration template has been associated."
 msgstr ""
 
 msgid "Could not associate the configuration template"
@@ -340,7 +343,7 @@ msgstr ""
 msgid "Disassociate a configuration template"
 msgstr "설정 템플릿 연결 해제 "
 
-msgid "The configuration template has been disassociated"
+msgid "The configuration template has been disassociated."
 msgstr ""
 
 msgid "Could not disassociate the configuration template"
@@ -349,7 +352,7 @@ msgstr ""
 msgid "Associate an organization"
 msgstr "조직 연결 "
 
-msgid "The organization has been associated"
+msgid "The organization has been associated."
 msgstr ""
 
 msgid "Could not associate the organization"
@@ -358,7 +361,7 @@ msgstr ""
 msgid "Disassociate an organization"
 msgstr "조직 연결 해제 "
 
-msgid "The organization has been disassociated"
+msgid "The organization has been disassociated."
 msgstr ""
 
 msgid "Could not disassociate the organization"
@@ -367,8 +370,8 @@ msgstr ""
 msgid "Associate an operating system"
 msgstr "운영 체제 연결 "
 
-msgid "Operating system has been associated"
-msgstr "운영 체제가 연결되었습니다 "
+msgid "Operating system has been associated."
+msgstr ""
 
 msgid "Could not associate the operating system"
 msgstr "운영 체제를 연결할 수 없습니다 "
@@ -376,8 +379,8 @@ msgstr "운영 체제를 연결할 수 없습니다 "
 msgid "Disassociate an operating system"
 msgstr "운영 체제 연결 해제 "
 
-msgid "Operating system has been disassociated"
-msgstr "운영 체제가 연결 해제되었습니다 "
+msgid "Operating system has been disassociated."
+msgstr ""
 
 msgid "Could not disassociate the operating system"
 msgstr "운영 체제를 연결 해제할 수 없습니다 "
@@ -385,8 +388,8 @@ msgstr "운영 체제를 연결 해제할 수 없습니다 "
 msgid "Associate an architecture"
 msgstr "아키텍처 연결 "
 
-msgid "Architecture has been associated"
-msgstr "아키텍처가 연결되었습니다 "
+msgid "Architecture has been associated."
+msgstr ""
 
 msgid "Could not associate the architecture"
 msgstr "아키텍처를 연결할 수 없습니다 "
@@ -394,8 +397,8 @@ msgstr "아키텍처를 연결할 수 없습니다 "
 msgid "Disassociate an architecture"
 msgstr "아키텍처 연결 해제 "
 
-msgid "Architecture has been disassociated"
-msgstr "아키텍처가 연결 해제되었습니다 "
+msgid "Architecture has been disassociated."
+msgstr ""
 
 msgid "Could not disassociate the architecture"
 msgstr "아키텍처를 연결 해제할 수 없습니다 "
@@ -403,8 +406,8 @@ msgstr "아키텍처를 연결 해제할 수 없습니다 "
 msgid "Associate a partition table"
 msgstr "파티션 테이블 연결 "
 
-msgid "Partition table has been associated"
-msgstr "파티션 테이블이 연결되었습니다 "
+msgid "Partition table has been associated."
+msgstr ""
 
 msgid "Could not associate the partition table"
 msgstr "파티션 테이블을 연결할 수 없습니다 "
@@ -412,8 +415,8 @@ msgstr "파티션 테이블을 연결할 수 없습니다 "
 msgid "Disassociate a partition table"
 msgstr "파티션 테이블 연결 해제 "
 
-msgid "Partition table has been disassociated"
-msgstr "파티션 테이블이 연결 해제되었습니다 "
+msgid "Partition table has been disassociated."
+msgstr ""
 
 msgid "Could not disassociate the partition table"
 msgstr "파티션 테이블을 연결 해제할 수 없습니다 "
@@ -421,8 +424,8 @@ msgstr "파티션 테이블을 연결 해제할 수 없습니다 "
 msgid "Assign a user role"
 msgstr "사용자 역할 할당 "
 
-msgid "User role has been assigned"
-msgstr "사용자 역할이 할당되었습니다 "
+msgid "User role has been assigned."
+msgstr ""
 
 msgid "Could not assign the user role"
 msgstr "사용자 역할을 할당할 수 없습니다 "
@@ -430,8 +433,8 @@ msgstr "사용자 역할을 할당할 수 없습니다 "
 msgid "Remove a user role"
 msgstr "사용자 역할 삭제 "
 
-msgid "User role has been removed"
-msgstr "사용자 역할이 삭제되었습니다 "
+msgid "User role has been removed."
+msgstr ""
 
 msgid "Could not remove the user role"
 msgstr "사용자 역할을 삭제할 수 없습니다 "
@@ -439,7 +442,7 @@ msgstr "사용자 역할을 삭제할 수 없습니다 "
 msgid "Associate a location"
 msgstr ""
 
-msgid "The location has been associated"
+msgid "The location has been associated."
 msgstr ""
 
 msgid "Could not associate the location"
@@ -448,7 +451,7 @@ msgstr ""
 msgid "Disassociate a location"
 msgstr ""
 
-msgid "The location has been disassociated"
+msgid "The location has been disassociated."
 msgstr ""
 
 msgid "Could not disassociate the location"
@@ -457,11 +460,11 @@ msgstr ""
 msgid "Set credentials"
 msgstr "인증 정보 설정 "
 
-msgid "username to access the remote system"
-msgstr "원격 시스템에 액세스하기 위한 사용자 이름 "
+msgid "Username to access the remote system"
+msgstr ""
 
-msgid "password to access the remote system"
-msgstr "원격 시스템에 액세스하기 위한 암호 "
+msgid "Password to access the remote system"
+msgstr ""
 
 msgid ""
 "Can't perform login. Make sure sessions are enabled in hammer configuration "
@@ -480,8 +483,8 @@ msgstr ""
 msgid "Information about current connections"
 msgstr "현재 연결에 대한 정보 "
 
-msgid "Manage LDAP auth sources."
-msgstr "LDAP 인증 소스를 관리합니다. "
+msgid "Manage LDAP auth sources"
+msgstr ""
 
 msgid "Server"
 msgstr "서버 "
@@ -540,64 +543,50 @@ msgstr "이메일 주소 속성 "
 msgid "Photo Attribute"
 msgstr "사진 속성 "
 
-msgid "Auth source [%{name}] created"
+msgid "Auth source [%{name}] created."
 msgstr ""
 
 msgid "Could not create the Auth Source"
 msgstr "인증 소스를 생성할 수 없습니다 "
 
-msgid "Auth source [%{name}] deleted"
+msgid "Auth source [%{name}] deleted."
 msgstr ""
 
 msgid "Could not delete the Auth Source"
 msgstr "인증 소스를 삭제할 수 없습니다 "
 
-msgid "Auth source [%{name}] updated"
+msgid "Auth source [%{name}] updated."
 msgstr ""
 
 msgid "Could not update the Auth Source"
 msgstr "인증 소스를 업데이트할 수 없습니다 "
 
-msgid "Received data of unknown format"
-msgstr "알 수 없는 형식의 데이터를 수신했습니다 "
-
-msgid ""
-"Could not find %{resource}. Some search options were missing, please see --"
-"help."
+msgid "Received data of unknown format."
 msgstr ""
-"%{resource}를 찾을 수 없습니다. 일부 검색 옵션이 누락되어 있습니다. --help를 "
-"참조하십시오. "
-
-msgid "Could not find %{resource}, please set option %{switches}."
-msgstr "%{resource}를 찾을 수 없습니다. 옵션 %{switches}을 설정하십시오. "
-
-msgid "Could not find %{resource}, please set one of options %{switches}."
-msgstr ""
-"%{resource}를 찾을 수 없습니다. 옵션 %{switches} 중 하나를 설정하십시오. "
 
 msgid "Associate a resource"
 msgstr "리소스 연결 "
 
-msgid "Could not associate the %{resource_name}"
+msgid "Could not associate the %{resource_name}."
 msgstr ""
 
-msgid "The %{resource_name} has been associated"
+msgid "The %{resource_name} has been associated."
 msgstr ""
 
 msgid "Disassociate a resource"
 msgstr "리소스 연결 해제 "
 
-msgid "Could not disassociate the %{resource_name}"
+msgid "Could not disassociate the %{resource_name}."
 msgstr ""
 
-msgid "The %{resource_name} has been disassociated"
+msgid "The %{resource_name} has been disassociated."
 msgstr ""
 
 msgid "Value"
 msgstr "값"
 
-msgid "Set a global parameter."
-msgstr "글로벌 매개 변수를 설정합니다."
+msgid "Set a global parameter"
+msgstr ""
 
 msgid "Created parameter [%{name}] with value [%{value}]."
 msgstr "값 [%{value}]으로 매개 변수 [%{name}] 을(를) 생성했습니다. "
@@ -605,13 +594,13 @@ msgstr "값 [%{value}]으로 매개 변수 [%{name}] 을(를) 생성했습니다
 msgid "Parameter [%{name}] updated to [%{value}]."
 msgstr "매개 변수 [%{name}] 이(가) [%{value}]로 업데이트되었습니다. "
 
-msgid "parameter name"
-msgstr "매개 변수 이름 "
+msgid "Parameter name"
+msgstr ""
 
-msgid "parameter value"
-msgstr "매개 변수 값 "
+msgid "Parameter value"
+msgstr ""
 
-msgid "should the value be hidden"
+msgid "Should the value be hidden"
 msgstr ""
 
 msgid "Global parameter [%{name}] deleted."
@@ -620,8 +609,8 @@ msgstr "글로벌 매개 변수 [%{name}]이(가) 삭제되었습니다. "
 msgid "Could not delete the global parameter [%{name}]"
 msgstr "글로벌 매개 변수 [%{name}]을(를) 삭제할 수 없습니다 "
 
-msgid "Manipulate global parameters."
-msgstr "글로벌 매개 변수를 조정합니다. "
+msgid "Manipulate global parameters"
+msgstr ""
 
 msgid "Provider"
 msgstr "공급자 "
@@ -644,20 +633,20 @@ msgstr "설명 "
 msgid "User"
 msgstr "사용자 "
 
-msgid "Compute resource created"
-msgstr "컴퓨터 리소스가 생성되었습니다 "
+msgid "Compute resource created."
+msgstr ""
 
 msgid "Could not create the compute resource"
 msgstr "컴퓨터 리소스를 생성할 수 없습니다 "
 
-msgid "Compute resource updated"
-msgstr "컴퓨터 리소스가 업데이트되었습니다 "
+msgid "Compute resource updated."
+msgstr ""
 
 msgid "Could not update the compute resource"
 msgstr "컴퓨터 리소스를 업데이트할 수 없습니다 "
 
-msgid "Compute resource deleted"
-msgstr "컴퓨터 리소스가 삭제되었습니다 "
+msgid "Compute resource deleted."
+msgstr ""
 
 msgid "Could not delete the compute resource"
 msgstr "컴퓨터 리소스를 삭제할 수 없습니다 "
@@ -778,19 +767,19 @@ msgstr ""
 msgid "ID"
 msgstr ""
 
-msgid "Config group created"
+msgid "Config group created."
 msgstr ""
 
 msgid "Could not create the config group"
 msgstr ""
 
-msgid "Config group updated"
+msgid "Config group updated."
 msgstr ""
 
 msgid "Could not update the config group"
 msgstr ""
 
-msgid "Config group has been deleted"
+msgid "Config group has been deleted."
 msgstr ""
 
 msgid "Could not delete the config group"
@@ -808,8 +797,8 @@ msgstr "이 도메인에서 사용할 DNS 프록시 이름 "
 msgid "DNS Id"
 msgstr "DNS Id"
 
-msgid "Domain [%{name}] created"
-msgstr "도메인 [%{name}] 이(가) 생성되었습니다 "
+msgid "Domain [%{name}] created."
+msgstr ""
 
 msgid "Could not create the domain"
 msgstr "도메인을 생성할 수 없습니다 "
@@ -817,20 +806,20 @@ msgstr "도메인을 생성할 수 없습니다 "
 msgid "Full name describing the domain"
 msgstr "도메인을 나타내는 전체 이름 "
 
-msgid "Domain [%{name}] updated"
-msgstr "도메인 [%{name}] 이 업데이트되었습니다 "
+msgid "Domain [%{name}] updated."
+msgstr ""
 
 msgid "Could not update the domain"
 msgstr "도메인을 업데이트할 수 없습니다 "
 
-msgid "Domain [%{name}] deleted"
-msgstr "도메인 [%{name}]이(가) 삭제되었습니다 "
+msgid "Domain [%{name}] deleted."
+msgstr ""
 
 msgid "Could not delete the domain"
 msgstr "도메인을 삭제할 수 없습니다 "
 
-msgid "Create or update parameter for a domain."
-msgstr "도메인의 매개 변수를 생성 또는 업데이트합니다. "
+msgid "Create or update parameter for a domain"
+msgstr ""
 
 msgid "Domain parameter updated"
 msgstr "도메인 매개 변수가 업데이트되었습니다 "
@@ -841,26 +830,26 @@ msgstr "새 도메인 매개 변수가 생성되었습니다 "
 msgid "Could not set domain parameter"
 msgstr "도메인 매개 변수를 설정할 수 없습니다 "
 
-msgid "Delete parameter for a domain."
-msgstr "도메인의 매개 변수를 삭제합니다. "
+msgid "Delete parameter for a domain"
+msgstr ""
 
-msgid "Domain parameter deleted"
-msgstr "도메인 매개 변수가 삭제되었습니다 "
+msgid "Domain parameter deleted."
+msgstr ""
 
-msgid "Environment created"
-msgstr "환경이 생성되었습니다 "
+msgid "Environment created."
+msgstr ""
 
 msgid "Could not create the environment"
 msgstr "환경을 생성할 수 없습니다 "
 
-msgid "Environment updated"
-msgstr "환경이 업데이트되었습니다 "
+msgid "Environment updated."
+msgstr ""
 
 msgid "Could not update the environment"
 msgstr "환경을 업데이트할 수 없습니다 "
 
-msgid "Environment deleted"
-msgstr "환경이 삭제되었습니다 "
+msgid "Environment deleted."
+msgstr ""
 
 msgid "Could not delete the environment"
 msgstr "환경을 삭제할 수 없습니다 "
@@ -871,23 +860,22 @@ msgstr ""
 msgid "It seems hammer is configured to use HTTP and the server prefers HTTPS."
 msgstr ""
 
-msgid "Update your server url configuration"
+msgid "Update your server url configuration."
 msgstr ""
 
 msgid ""
-"you can set 'follow_redirects' to one of :default or :always to enable "
-"redirects following"
+"You can set 'follow_redirects' to one of :default or :always to enable "
+"redirects following."
 msgstr ""
 
-msgid "Forbidden - server refused to process the request"
-msgstr "거부 - 서버가 요청 처리를 거부했습니다 "
+msgid "Forbidden - server refused to process the request."
+msgstr ""
 
 msgid "The following configuration option were used for the SSL connection:"
 msgstr ""
 
 msgid ""
-"\"Make sure the location contains an unexpired and valid CA certificate for "
-"#{host_url}\""
+"Make sure the location contains an unexpired and valid CA certificate for %s."
 msgstr ""
 
 msgid ""
@@ -913,20 +901,20 @@ msgstr "인증 소스 "
 msgid "Refresh external user group"
 msgstr "외부 사용자 그룹 새로고침 "
 
-msgid "External user group created"
-msgstr "외부 사용자 그룹이 생성되었습니다 "
+msgid "External user group created."
+msgstr ""
 
 msgid "Could not create external user group"
 msgstr "외부 사용자 그룹을 생성할 수 없습니다 "
 
-msgid "External user group updated"
-msgstr "외부 사용자 그룹이 업데이트되었습니다 "
+msgid "External user group updated."
+msgstr ""
 
 msgid "Could not update external user group"
 msgstr "외부 사용자 그룹을 업데이트할 수 없습니다 "
 
-msgid "External user group deleted"
-msgstr "외부 사용자 그룹이 삭제되었습니다 "
+msgid "External user group deleted."
+msgstr ""
 
 msgid "Could not delete the external user group"
 msgstr "외부 사용자 그룹을 삭제할 수 없습니다 "
@@ -961,30 +949,33 @@ msgstr "(기타)"
 msgid "none"
 msgstr "없음 "
 
-msgid "Organizations and locations can be set only for overriding filters"
+msgid "Organizations and locations can be set only for overriding filters."
+msgstr ""
+
+msgid "Overriding organizations and locations"
 msgstr ""
 
 msgid ""
 "Filters inherit organizations and locations from its role by default. This "
-"behavior can be changed by setting %{condition}\n"
-"Therefore options %{org_opts} and %{loc_opts} are applicable only when the "
-"override flag is set."
+"behavior can be changed by setting %{condition}.%{wsp}Therefore options "
+"%{org_opts} and %{loc_opts} are applicable only when the override flag is "
+"set."
 msgstr ""
 
-msgid "Permission filter for [%<resource_type>s] created"
-msgstr "[%<resource_type>s] 의 권한 필터가 생성되었습니다 "
+msgid "Permission filter for [%<resource_type>s] created."
+msgstr ""
 
 msgid "Could not create the permission filter"
 msgstr "권한 필터를 생성할 수 없습니다 "
 
-msgid "Permission filter for [%<resource_type>s] updated"
-msgstr "[%<resource_type>s] 의 권한 필터가 업데이트되었습니다 "
+msgid "Permission filter for [%<resource_type>s] updated."
+msgstr ""
 
 msgid "Could not update the permission filter"
 msgstr "권한 필터를 업데이트할 수 없습니다 "
 
-msgid "Permission filter deleted"
-msgstr "권한 필터가 삭제되었습니다 "
+msgid "Permission filter deleted."
+msgstr ""
 
 msgid "Could not delete the permission filter"
 msgstr "권한 필터를 삭제할 수 없습니다 "
@@ -1022,14 +1013,14 @@ msgstr "컴퓨터 리소스 "
 msgid "Compute Profile"
 msgstr "컴퓨팅 프로파일 (Compute Profile)"
 
-msgid "Environment"
-msgstr "환경 "
+msgid "Puppet Environment"
+msgstr ""
 
-msgid "Puppet CA Id"
-msgstr "Puppet CA ID"
+msgid "Puppet CA Proxy"
+msgstr ""
 
-msgid "Puppet Master Id"
-msgstr "Puppet 마스터 ID"
+msgid "Puppet Master Proxy"
+msgstr ""
 
 msgid "Cert name"
 msgstr "인증서 이름 "
@@ -1046,8 +1037,17 @@ msgstr "마지막 보고 "
 msgid "Network"
 msgstr "네트워크"
 
-msgid "Subnet"
-msgstr "서브넷"
+msgid "IPv4 address"
+msgstr ""
+
+msgid "IPv6 address"
+msgstr ""
+
+msgid "Subnet ipv4"
+msgstr ""
+
+msgid "Subnet ipv6"
+msgstr ""
 
 msgid "Domain"
 msgstr "도메인 "
@@ -1079,9 +1079,6 @@ msgstr "유형"
 msgid "MAC address"
 msgstr "MAC 주소"
 
-msgid "IP address"
-msgstr "IP 주소 "
-
 msgid "FQDN"
 msgstr "FQDN"
 
@@ -1100,6 +1097,9 @@ msgstr "미디어 "
 msgid "Partition Table"
 msgstr "파티션 테이블 "
 
+msgid "PXE Loader"
+msgstr ""
+
 msgid "Custom partition table"
 msgstr "사용자 정의 파티션 테이블"
 
@@ -1115,8 +1115,8 @@ msgstr "이미지 사용 "
 msgid "Additional info"
 msgstr "추가 정보 "
 
-msgid "Owner Id"
-msgstr "소유자 Id"
+msgid "Owner"
+msgstr ""
 
 msgid "Owner Type"
 msgstr "소유자 유형 "
@@ -1139,26 +1139,32 @@ msgstr "전원"
 msgid "Puppet run triggered"
 msgstr "Puppet run이 실행되었습니다 "
 
-msgid "Host created"
-msgstr "호스트가 생성되었습니다 "
+msgid "Host id"
+msgstr ""
+
+msgid "Host name"
+msgstr "호스트 이름 "
+
+msgid "Host created."
+msgstr ""
 
 msgid "Could not create the host"
 msgstr "호스트를 생성할 수 없습니다 "
 
-msgid "Host updated"
-msgstr "호스트가 업데이트되었습니다 "
+msgid "Host updated."
+msgstr ""
 
 msgid "Could not update the host"
 msgstr "호스트를 업데이트할 수 없습니다 "
 
-msgid "Host deleted"
-msgstr "호스트가 삭제되었습니다 "
+msgid "Host deleted."
+msgstr ""
 
 msgid "Could not delete the host"
 msgstr "호스트를 삭제할 수 없습니다 "
 
-msgid "Create or update parameter for a host."
-msgstr "호스트의 매개 변수를 생성 또는 업데이트합니다. "
+msgid "Create or update parameter for a host"
+msgstr ""
 
 msgid "Host parameter updated"
 msgstr "호스트 매개 변수가 업데이트되었습니다 "
@@ -1169,11 +1175,11 @@ msgstr "새 호스트 매개 변수가 생성되었습니다 "
 msgid "Could not set host parameter"
 msgstr "호스트 매개 변수를 설정할 수 없습니다 "
 
-msgid "Delete parameter for a host."
-msgstr "호스트의 매개 변수를 삭제합니다. "
+msgid "Delete parameter for a host"
+msgstr ""
 
-msgid "Host parameter deleted"
-msgstr "호스트 매개 변수가 삭제되었습니다 "
+msgid "Host parameter deleted."
+msgstr ""
 
 msgid "Power a host on"
 msgstr "호스트 전원 켜기 "
@@ -1187,11 +1193,11 @@ msgstr "강제로 호스트 전원 끄기 "
 msgid "Power a host off"
 msgstr "호스트 전원 끄기 "
 
-msgid "Power off forced."
-msgstr "강제로 전원을 끕니다. "
+msgid "Power off forced"
+msgstr ""
 
-msgid "Powering the host off."
-msgstr "호스트 전원을 끄고 있습니다. "
+msgid "Powering the host off"
+msgstr ""
 
 msgid "Reboot a host"
 msgstr "호스트 재부팅 "
@@ -1226,38 +1232,35 @@ msgstr "호스트 그룹의 root 암호를 입력하십시오:"
 msgid "Title"
 msgstr "직위"
 
-msgid "Puppet CA Proxy Id"
-msgstr "Puppet CA 프록시 Id"
-
-msgid "Puppet Master Proxy Id"
-msgstr "Puppet 마스터 프록시 Id"
+msgid "Parent"
+msgstr "부모 "
 
 msgid "ComputeProfile"
 msgstr "컴퓨터 프로파일 "
 
-msgid "Parent Id"
-msgstr "부모 ID"
+msgid "Realm"
+msgstr ""
 
-msgid "Hostgroup created"
-msgstr "호스트 그룹이 생성되었습니다 "
+msgid "Hostgroup created."
+msgstr ""
 
 msgid "Could not create the hostgroup"
 msgstr "호스트 그룹을 생성할 수 없습니다 "
 
-msgid "Hostgroup updated"
-msgstr "호스트 그룹이 업데이트되었습니다 "
+msgid "Hostgroup updated."
+msgstr ""
 
 msgid "Could not update the hostgroup"
 msgstr "호스트 그룹을 업데이트할 수 없습니다 "
 
-msgid "Hostgroup deleted"
-msgstr "호스트 그룹이 삭제되었습니다 "
+msgid "Hostgroup deleted."
+msgstr ""
 
 msgid "Could not delete the hostgroup"
 msgstr "호스트 그룹을 삭제할 수 없습니다 "
 
-msgid "Create or update parameter for a hostgroup."
-msgstr "호스트 그룹의 매개 변수가 생성 또는 업데이트합니다."
+msgid "Create or update parameter for a hostgroup"
+msgstr ""
 
 msgid "Hostgroup parameter updated"
 msgstr "호스트 그룹 매개 변수가 업데이트되었습니다 "
@@ -1268,11 +1271,11 @@ msgstr "새 호스트 그룹 매개 변수가 생성되었습니다 "
 msgid "Could not set hostgroup parameter"
 msgstr "호스트 그룹 매개 변수를 설정할 수 없습니다 "
 
-msgid "Delete parameter for a hostgroup."
-msgstr "호스트 그룹의 매개 변수를 삭제합니다."
+msgid "Delete parameter for a hostgroup"
+msgstr ""
 
-msgid "Hostgroup parameter deleted"
-msgstr "호스트 그룹 매개 변수가 삭제되었습니다 "
+msgid "Hostgroup parameter deleted."
+msgstr ""
 
 msgid "Available keys for %{option}"
 msgstr ""
@@ -1316,17 +1319,17 @@ msgstr ""
 msgid "Use --root-password instead"
 msgstr ""
 
-msgid "Host parameters."
-msgstr "호스트 매개 변수 "
+msgid "Host parameters"
+msgstr ""
 
-msgid "Compute resource attributes."
-msgstr "컴퓨터 리소스 속성 "
+msgid "Compute resource attributes"
+msgstr ""
 
 msgid "Volume parameters"
 msgstr "볼륨 매개 변수 "
 
-msgid "Interface parameters."
-msgstr "인터페이스 매개 변수 "
+msgid "Interface parameters"
+msgstr ""
 
 msgid "Enter the root password for the host:"
 msgstr "호스트의 root 암호를 입력하십시오: "
@@ -1342,9 +1345,6 @@ msgstr "도메인 이름 "
 
 msgid "Environment name"
 msgstr "환경 이름 "
-
-msgid "Host name"
-msgstr "호스트 이름 "
 
 msgid "Hostgroup name"
 msgstr "호스트 그룹 이름 "
@@ -1382,9 +1382,6 @@ msgstr "프록시 이름 "
 msgid "Puppet class name"
 msgstr "Puppet 클래스 이름 "
 
-msgid "Report name"
-msgstr "보고서 이름 "
-
 msgid "User role name"
 msgstr "사용자 역할 이름 "
 
@@ -1409,17 +1406,20 @@ msgstr "스마트 변수 이름"
 msgid "Name to search by"
 msgstr "검색할 이름 "
 
-msgid "one of %s not found"
-msgstr "%s 중 하나를 찾을 수 없습니다 "
-
-msgid "%s not found"
-msgstr "%s을(를) 찾을 수 없음 "
-
-msgid "found more than one %s"
-msgstr "%s이(가) 둘 이상 있습니다"
-
 msgid "Missing options to search %s"
 msgstr "%s의 검색에 누락된 옵션 "
+
+msgid "one of %s not found."
+msgstr ""
+
+msgid "%s not found."
+msgstr ""
+
+msgid "Found more than one %s."
+msgstr ""
+
+msgid "Missing options to search %s."
+msgstr ""
 
 msgid "View and manage compute resource's images"
 msgstr "컴퓨터 리소스의 이미지 보기 및 관리 "
@@ -1433,20 +1433,20 @@ msgstr "IAM 역할 "
 msgid "Show images available for addition"
 msgstr "추가할 수 있는 이미지 표시 "
 
-msgid "Image created"
-msgstr "이미지가 생성되었습니다 "
+msgid "Image created."
+msgstr ""
 
 msgid "Could not create the image"
 msgstr "이미지를 생성할 수 없습니다 "
 
-msgid "Image updated"
-msgstr "이미지가 업데이트되었습니다 "
+msgid "Image updated."
+msgstr ""
 
 msgid "Could not update the image"
 msgstr "이미지를 업데이트할 수 없습니다 "
 
-msgid "Image deleted"
-msgstr "이미지가 삭제되었습니다 "
+msgid "Image deleted."
+msgstr ""
 
 msgid "Could not delete the image"
 msgstr "이미지를 삭제할 수 없습니다 "
@@ -1460,8 +1460,14 @@ msgstr "주요"
 msgid "provision"
 msgstr "프로비저닝 "
 
+msgid "IP address"
+msgstr "IP 주소 "
+
 msgid "DNS name"
 msgstr "DNS 이름 "
+
+msgid "Subnet"
+msgstr "서브넷"
 
 msgid "Primary"
 msgstr "주요"
@@ -1495,35 +1501,31 @@ msgstr "본드 옵션"
 
 msgid ""
 "Should this interface be used for constructing the FQDN of the host? Each "
-"managed hosts needs to have one primary interface."
+"managed hosts needs to have one primary interface"
 msgstr ""
-"호스트의 FQDN을 구성하는 데 이 인터페이스를 사용하시겠습니까? 관리형 호스트마"
-"다 기본 인터페이스가 하나씩 필요합니다."
 
 msgid ""
 "Should this interface be used for TFTP of PXELinux (or SSH for image-based "
-"hosts)? Each managed hosts needs to have one provision interface."
+"hosts)? Each managed hosts needs to have one provision interface"
 msgstr ""
-"이 인터페이스를 PXELinux의 TFTP(또는 이미지 기반 호스트의 SSH)에 사용하시겠습"
-"니까? 관리형 호스트마다 프로비저닝 인터페이스가 하나씩 필요합니다."
 
-msgid "Interface created"
-msgstr "인터페이스가 생성되었습니다"
+msgid "Interface created."
+msgstr ""
 
 msgid "Could not create the interface"
 msgstr "인터페이스를 생성할 수 없습니다"
 
-msgid "Compute resource specific attributes."
-msgstr "컴퓨팅 리소스별 속성입니다."
+msgid "Compute resource specific attributes"
+msgstr ""
 
-msgid "Interface updated"
-msgstr "인터페이스가 업데이트되었습니다"
+msgid "Interface updated."
+msgstr ""
 
 msgid "Could not update the interface"
 msgstr "인터페이스를 업데이트할 수 없습니다"
 
-msgid "Interface deleted"
-msgstr "인터페이스가 삭제되었습니다"
+msgid "Interface deleted."
+msgstr ""
 
 msgid "Could not delete the interface"
 msgstr "인터페이스를 삭제할 수 없습니다"
@@ -1531,32 +1533,29 @@ msgstr "인터페이스를 삭제할 수 없습니다"
 msgid "Location numeric id to search by"
 msgstr "검색 대상 위치의 숫자로된 ID "
 
-msgid "Parent"
-msgstr "부모 "
-
 msgid "Organizations"
 msgstr "조직 "
 
-msgid "Location created"
-msgstr "위치가 생성되었습니다 "
+msgid "Location created."
+msgstr ""
 
 msgid "Could not create the location"
 msgstr "위치를 생성할 수 없습니다 "
 
-msgid "Location updated"
-msgstr "위치가 업데이트되었습니다 "
+msgid "Location updated."
+msgstr ""
 
 msgid "Could not update the location"
 msgstr "위치를 업데이트할 수 없습니다 "
 
-msgid "Location deleted"
-msgstr "위치가 삭제되었습니다 "
+msgid "Location deleted."
+msgstr ""
 
 msgid "Could not delete the location"
 msgstr "위치를 삭제할 수 없습니다 "
 
-msgid "Create or update parameter for a location."
-msgstr "위치의 매개 변수를 생성 또는 업데이트합니다."
+msgid "Create or update parameter for a location"
+msgstr ""
 
 msgid "Parameter [%{name}] updated to value [%{value}]"
 msgstr "매개 변수 [%{name}]이(가) 값 [%{value}](으)로 업데이트되었습니다"
@@ -1567,11 +1566,11 @@ msgstr "매개 변수 [%{name}]이(가) 값 [%{value}](으)로 생성되었습�
 msgid "Could not set location parameter"
 msgstr "위치 매개 변수를 설정할 수 없습니다"
 
-msgid "Delete parameter for a location."
-msgstr "위치의 매개 변수를 삭제합니다."
+msgid "Delete parameter for a location"
+msgstr ""
 
-msgid "Parameter [%{name}] deleted"
-msgstr "매개 변수 [%{name}]이(가) 삭제되었습니다"
+msgid "Parameter [%{name}] deleted."
+msgstr ""
 
 msgid "Could not delete location parameter"
 msgstr "위치 매개 변수를 삭제할 수 없습니다"
@@ -1582,20 +1581,20 @@ msgstr "경로"
 msgid "OS Family"
 msgstr "OS 제품군 "
 
-msgid "Installation medium created"
-msgstr "설치 미디어가 생성되었습니다 "
+msgid "Installation medium created."
+msgstr ""
 
 msgid "Could not create the installation medium"
 msgstr "설치 미디어를 생성할 수 없습니다 "
 
-msgid "Installation medium updated"
-msgstr "설치 미디어가 업데이트되었습니다 "
+msgid "Installation medium updated."
+msgstr ""
 
 msgid "Could not update the installation media"
 msgstr "설치 미디어를 업데이트할 수 없습니다 "
 
-msgid "Installation medium deleted"
-msgstr "설치 미디어가 삭제되었습니다 "
+msgid "Installation medium deleted."
+msgstr ""
 
 msgid "Could not delete the installation media"
 msgstr "설치 미디어를 삭제할 수 없습니다 "
@@ -1609,20 +1608,20 @@ msgstr "HW 모델 "
 msgid "Info"
 msgstr "정보 "
 
-msgid "Hardware model created"
-msgstr "하드웨어 모델이 생성되었습니다 "
+msgid "Hardware model created."
+msgstr ""
 
 msgid "Could not create the hardware model"
 msgstr "하드웨어 모델을 생성할 수 없습니다 "
 
-msgid "Hardware model deleted"
-msgstr "하드웨어 모델이 삭제되었습니다 "
+msgid "Hardware model deleted."
+msgstr ""
 
 msgid "Could not delete the hardware model"
 msgstr "하드웨어 모델을 삭제할 수 없습니다 "
 
-msgid "Hardware model updated"
-msgstr "하드웨어 모델이 업데이트되었습니다 "
+msgid "Hardware model updated."
+msgstr ""
 
 msgid "Could not update the hardware model"
 msgstr "하드웨어 모델을 업데이트할 수 없습니다 "
@@ -1648,26 +1647,26 @@ msgstr "기본값 템플릿 "
 msgid "Architectures"
 msgstr "아키텍처 "
 
-msgid "Operating system created"
-msgstr "운영 체제가 생성되었습니다 "
+msgid "Operating system created."
+msgstr ""
 
 msgid "Could not create the operating system"
 msgstr "운영 체제를 생성할 수 없습니다 "
 
-msgid "Operating system updated"
-msgstr "운영 체제가 업데이트되었습니다 "
+msgid "Operating system updated."
+msgstr ""
 
 msgid "Could not update the operating system"
 msgstr "운영 체제를 업데이트할 수 없습니다 "
 
-msgid "Operating system deleted"
-msgstr "운영 체제가 삭제되었습니다 "
+msgid "Operating system deleted."
+msgstr ""
 
 msgid "Could not delete the operating system"
 msgstr "운영 체제를 삭제할 수 없습니다 "
 
-msgid "Create or update parameter for an operating system."
-msgstr "운영 체제의 매개 변수를 생성 또는 업데이트합니다. "
+msgid "Create or update parameter for an operating system"
+msgstr ""
 
 msgid "Operating system parameter updated"
 msgstr "운영 체제 매개 변수가 업데이트되었습니다 "
@@ -1678,23 +1677,21 @@ msgstr "새 운영 체제 매개 변수가 생성되었습니다 "
 msgid "Could not set operating system parameter"
 msgstr "운영 체제 매개 변수를 설정할 수 없습니다 "
 
-msgid "Delete parameter for an operating system."
-msgstr "운영 체제의 매개변수를 삭제합니다. "
+msgid "Delete parameter for an operating system"
+msgstr ""
 
-msgid "operating system parameter deleted"
-msgstr "운영 체제 매개 변수가 삭제되었습니다 "
+msgid "operating system parameter deleted."
+msgstr ""
 
-msgid "operatingsystem id"
-msgstr "운영 체제 ID "
+msgid "Operatingsystem id"
+msgstr ""
 
-msgid "config template id to be set"
-msgstr "설정할 설정 템플릿 ID "
+msgid "Config template id to be set"
+msgstr ""
 
 msgid ""
-"[%{config_template_name}] was set as default %{template_kind_name} template"
+"[%{config_template_name}] was set as default %{template_kind_name} template."
 msgstr ""
-"[%{config_template_name}]이(가) 기본값 %{template_kind_name}  템플릿으로 설정"
-"되었습니다 "
 
 msgid "Could not set the os default template"
 msgstr "os 기본값 템플릿을 설정할 수 없습니다 "
@@ -1702,8 +1699,8 @@ msgstr "os 기본값 템플릿을 설정할 수 없습니다 "
 msgid "Type of the config template"
 msgstr "설정 템플릿 유형 "
 
-msgid "Default template deleted"
-msgstr "기본값 템플릿이 삭제되었습니다 "
+msgid "Default template deleted."
+msgstr ""
 
 msgid "Could not delete the default template"
 msgstr "기본값 템플릿을 삭제할 수 없습니다 "
@@ -1711,62 +1708,85 @@ msgstr "기본값 템플릿을 삭제할 수 없습니다 "
 msgid "Default template of type %s not found"
 msgstr "유형 %s의 기본 템플릿을 찾을 수 없습니다 "
 
+msgid ""
+"Could not find %{resource}. Some search options were missing, please see --"
+"help."
+msgstr ""
+"%{resource}를 찾을 수 없습니다. 일부 검색 옵션이 누락되어 있습니다. --help를 "
+"참조하십시오. "
+
+msgid "Could not find %{resource}, please set option %{switches}."
+msgstr "%{resource}를 찾을 수 없습니다. 옵션 %{switches}을 설정하십시오. "
+
+msgid "Could not find %{resource}, please set one of options %{switches}."
+msgstr ""
+"%{resource}를 찾을 수 없습니다. 옵션 %{switches} 중 하나를 설정하십시오. "
+
+msgid "Enter user's current password:"
+msgstr ""
+
+msgid "Enter user's new password:"
+msgstr ""
+
 msgid "Locations"
 msgstr "위치 "
 
-msgid "Organization created"
-msgstr "조직이 생성되었습니다 "
+msgid "Organization created."
+msgstr ""
 
 msgid "Could not create the organization"
 msgstr "조직을 생성할 수 없습니다 "
 
-msgid "Organization updated"
-msgstr "조직이 업데이트되었습니다 "
+msgid "Organization updated."
+msgstr ""
 
 msgid "Could not update the organization"
 msgstr "조직을 업데이트할 수 없습니다 "
 
-msgid "Organization deleted"
-msgstr "조직이 삭제되었습니다 "
+msgid "Organization deleted."
+msgstr ""
 
 msgid "Could not delete the organization"
 msgstr "조직을 삭제할 수 없습니다 "
 
-msgid "Create or update parameter for an organization."
-msgstr "조직의 매개 변수를 생성하거나 업데이트합니다."
+msgid "Create or update parameter for an organization"
+msgstr ""
 
 msgid "Could not set organization parameter"
 msgstr "조직 매개 변수를 설정할 수 없습니다"
 
-msgid "Delete parameter for an organization."
-msgstr "조직의 매개 변수를 삭제합니다."
+msgid "Delete parameter for an organization"
+msgstr ""
 
 msgid "Could not delete organization parameter"
 msgstr "조직 매개 변수를 삭제할 수 없습니다"
 
+msgid "parameter name"
+msgstr "매개 변수 이름 "
+
 msgid "Locked"
 msgstr "잠금 (Locked) "
 
-msgid "View partition table content."
-msgstr "파티션 테이블 내용을 표시합니다. "
+msgid "View partition table content"
+msgstr ""
 
 msgid "Path to a file that contains the partition layout"
 msgstr "파티션 레이아웃이 들어 있는 파일로의 경로 "
 
-msgid "Partition table created"
-msgstr "파티션 테이블이 생성되었습니다 "
+msgid "Partition table created."
+msgstr ""
 
 msgid "Could not create the partition table"
 msgstr "파티션 테이블을 생성할 수 없습니다 "
 
-msgid "Partition table updated"
-msgstr "파티션 테이블이 업데이트되었습니다 "
+msgid "Partition table updated."
+msgstr ""
 
 msgid "Could not update the partition table"
 msgstr "파티션 테이블을 업데이트할 수 없습니다 "
 
-msgid "Partition table deleted"
-msgstr "파티션 테이블이 삭제되었습니다 "
+msgid "Partition table deleted."
+msgstr ""
 
 msgid "Could not delete the partition table"
 msgstr "파티션 테이블을 삭제할 수 없습니다 "
@@ -1789,19 +1809,19 @@ msgstr ""
 msgid "Realm type"
 msgstr "영역 유형 "
 
-msgid "Realm [%{name}] created"
+msgid "Realm [%{name}] created."
 msgstr ""
 
 msgid "Could not create the realm"
 msgstr ""
 
-msgid "Realm [%{name}] updated"
+msgid "Realm [%{name}] updated."
 msgstr ""
 
 msgid "Could not update the realm"
 msgstr ""
 
-msgid "Realm [%{name}] deleted"
+msgid "Realm [%{name}] deleted."
 msgstr ""
 
 msgid "Could not delete the realm"
@@ -1930,8 +1950,8 @@ msgstr "로그"
 msgid "Message"
 msgstr "메세지 "
 
-msgid "Report has been deleted"
-msgstr "보고서가 삭제되었습니다 "
+msgid "Report has been deleted."
+msgstr ""
 
 msgid "Could not delete the report"
 msgstr "보고서를 삭제할 수 없습니다 "
@@ -1945,32 +1965,32 @@ msgstr "내장됨"
 msgid "User role id"
 msgstr "사용자 역할 ID"
 
-msgid "User role [%<name>s] created"
-msgstr "사용자 역할 [%<name>s]이(가) 생성되었습니다 "
+msgid "User role [%<name>s] created."
+msgstr ""
 
 msgid "Could not create the user role"
 msgstr "사용자 역할을 생성할 수 없습니다 "
 
-msgid "User role [%<name>s] updated"
-msgstr "사용자 역할 [%<name>s]이(가) 업데이트되었습니다 "
+msgid "User role [%<name>s] updated."
+msgstr ""
 
 msgid "Could not update the user role"
 msgstr "사용자 역할을 업데이트할 수 없습니다 "
 
-msgid "User role cloned"
+msgid "User role cloned."
 msgstr ""
 
 msgid "Could not clone the user role"
 msgstr ""
 
-msgid "User role [%<name>s] deleted"
-msgstr "사용자 역할 [%<name>s]이(가) 삭제되었습니다 "
+msgid "User role [%<name>s] deleted."
+msgstr ""
 
 msgid "Could not delete the user roles"
 msgstr "사용자 역할을 삭제할 수 없습니다 "
 
-msgid "Setting [%{name}] updated to [%{value}]"
-msgstr "설정 [%{name}]이(가) [%{value}](으)로 업데이트되었습니다"
+msgid "Setting [%{name}] updated to [%{value}]."
+msgstr ""
 
 msgid "Could not update the setting"
 msgstr "설정을 업데이트할 수 없습니다"
@@ -2023,41 +2043,63 @@ msgstr "값"
 msgid "Match"
 msgstr "일치 "
 
-msgid "Parameter updated"
-msgstr "매개 변수가 업데이트되었습니다 "
+msgid "Parameter updated."
+msgstr ""
 
 msgid "Could not update the parameter"
 msgstr "매개 변수를 업데이트할 수 없습니다 "
 
-msgid "Override this parameter."
-msgstr "매개 변수를 덮어쓰기합니다."
+msgid "Value to use when there is no match"
+msgstr ""
 
-msgid "This parameter is required."
-msgstr "매개 변수가 필요합니다. "
+msgid "Override this parameter"
+msgstr ""
 
-msgid "Type of the parameter."
-msgstr "매개 변수 유형 "
+msgid "This parameter is required"
+msgstr ""
 
-msgid "Type of the validator."
-msgstr "유효성 검사 유형 "
+msgid "Type of the parameter"
+msgstr ""
+
+msgid "Type of the validator"
+msgstr ""
 
 msgid "The order in which values are resolved"
 msgstr ""
 
-msgid "Override value created"
-msgstr "덮어쓰기 값이 생성되었습니다"
+msgid "Override value, required if omit is false"
+msgstr ""
+
+msgid "Override value created."
+msgstr ""
 
 msgid "Could not create the override value"
 msgstr ""
 
-msgid "Cannot use --value when --use-puppet-default is true"
+msgid "Cannot use --value when --use-puppet-default is true."
 msgstr ""
 
-msgid "Override value deleted"
-msgstr "덮어쓰기 값이 삭제되었습니다"
+msgid "Create an override value for a specific smart variable"
+msgstr ""
+
+msgid ""
+"add-override-value command is deprecated and will be removed in one of the "
+"future versions. Please use add-matcher command instead."
+msgstr ""
+
+msgid "Override value deleted."
+msgstr ""
 
 msgid "Could not delete the override value"
 msgstr "덮어쓰기 값을 삭제할 수 없습니다"
+
+msgid "Remove an override value for a specific smart variable"
+msgstr ""
+
+msgid ""
+"remove-override-value command is deprecated and will be removed in one of "
+"the future versions. Please use remove-matcher command instead."
+msgstr ""
 
 msgid "URL"
 msgstr "URL"
@@ -2065,26 +2107,26 @@ msgstr "URL"
 msgid "Features"
 msgstr "기능 "
 
-msgid "Smart proxy created"
-msgstr "스마트 프록시가 생성되었습니다 "
+msgid "Smart proxy created."
+msgstr ""
 
 msgid "Could not create the proxy"
 msgstr "프록시를 생성할 수 없습니다 "
 
-msgid "Smart proxy updated"
-msgstr "스마트 프록시가 업데이트되었습니다 "
+msgid "Smart proxy updated."
+msgstr ""
 
 msgid "Could not update the proxy"
 msgstr "프록시를 업데이트할 수 없습니다 "
 
-msgid "Smart proxy deleted"
-msgstr "스마트 프록시가 삭제되었습니다 "
+msgid "Smart proxy deleted."
+msgstr ""
 
 msgid "Could not delete the proxy"
 msgstr "프록시를 삭제할 수 없습니다 "
 
-msgid "Puppet classes were imported"
-msgstr "Puppet 클래스를 가져오기했습니다 "
+msgid "Puppet classes were imported."
+msgstr ""
 
 msgid "Import of puppet classes failed"
 msgstr "Puppet 클래스 가져오기를 실패했습니다 "
@@ -2092,14 +2134,14 @@ msgstr "Puppet 클래스 가져오기를 실패했습니다 "
 msgid "Do not run the import"
 msgstr "가져오기를 실행하지 않습니다 "
 
-msgid "Smart proxy features were refreshed"
-msgstr "스마트 프록시 기능을 새로고침했습니다 "
+msgid "Smart proxy features were refreshed."
+msgstr ""
 
 msgid "Refresh of smart proxy features failed"
 msgstr "스마트 프록시 기능 새로 고침을 실패했습니다 "
 
-msgid "Type of the variable."
-msgstr "변수의 유형입니다."
+msgid "Type of the variable"
+msgstr ""
 
 msgid "Variable"
 msgstr "가변"
@@ -2107,23 +2149,50 @@ msgstr "가변"
 msgid "Use --variable instead"
 msgstr ""
 
-msgid "Smart variable [%{variable}] created"
-msgstr "스마트 변수 [%{variable}]이(가) 생성되었습니다"
+msgid "Smart variable [%{variable}] created."
+msgstr ""
 
 msgid "Could not create the smart variable"
 msgstr "스마트 변수를 생성할 수 없습니다"
 
-msgid "Smart variable [%{variable}] updated"
-msgstr "스마트 변수 [%{variable}]이(가) 업데이트되었습니다"
+msgid "Smart variable [%{variable}] updated."
+msgstr ""
 
 msgid "Could not update the smart variable"
 msgstr "스마트 변수를 업데이트할 수 없습니다"
 
-msgid "Smart variable [%{variable}] deleted"
-msgstr "스마트 변수 [%{variable}]이(가) 삭제되었습니다"
+msgid "Smart variable [%{variable}] deleted."
+msgstr ""
 
 msgid "Could not delete the smart variable"
 msgstr "스마트 변수를 삭제할 수 없습니다"
+
+msgid "Manage SSH Keys sources"
+msgstr ""
+
+msgid "Fingerprint"
+msgstr ""
+
+msgid "Length"
+msgstr ""
+
+msgid "Path to a SSH public key"
+msgstr ""
+
+msgid "SSH Key %{name} added."
+msgstr ""
+
+msgid "Could not add SSH Key"
+msgstr ""
+
+msgid "Public Key"
+msgstr ""
+
+msgid "SSH Key deleted."
+msgstr ""
+
+msgid "Could not delete the SSH Key"
+msgstr ""
 
 msgid "Mask"
 msgstr "마스크 "
@@ -2161,27 +2230,26 @@ msgstr "부터 "
 msgid "To"
 msgstr "까지 "
 
-msgid "Subnet created"
-msgstr "서브넷이 생성되었습니다 "
+msgid "Subnet created."
+msgstr ""
 
 msgid "Could not create the subnet"
 msgstr "서브넷을 생성할 수 없습니다 "
 
-msgid "Subnet updated"
-msgstr "서브넷이 업데이트되었습니다 "
+msgid "Subnet updated."
+msgstr ""
 
 msgid "Could not update the subnet"
 msgstr "서브넷을 업데이트할 수 없습니다 "
 
-msgid "Subnet deleted"
-msgstr "서브넷이 삭제되었습니다 "
+msgid "Subnet deleted."
+msgstr ""
 
 msgid "Could not delete the subnet"
 msgstr "서브넷을 삭제할 수 없습니다 "
 
-#, fuzzy
-msgid "Create or update parameter for a subnet."
-msgstr "호스트의 매개 변수를 생성 또는 업데이트합니다. "
+msgid "Create or update parameter for a subnet"
+msgstr ""
 
 #, fuzzy
 msgid "Subnet parameter updated"
@@ -2195,18 +2263,19 @@ msgstr "새 호스트 매개 변수가 생성되었습니다 "
 msgid "Could not set subnet parameter"
 msgstr "호스트 매개 변수를 설정할 수 없습니다 "
 
-#, fuzzy
-msgid "Delete parameter for a subnet."
-msgstr "호스트의 매개 변수를 삭제합니다. "
-
-#, fuzzy
-msgid "Subnet parameter deleted"
-msgstr "호스트 매개 변수가 삭제되었습니다 "
-
-msgid "List available provisioning template kinds."
+msgid "Delete parameter for a subnet"
 msgstr ""
 
-msgid "View provisioning template content."
+msgid "Subnet parameter deleted."
+msgstr ""
+
+msgid "unknown template kind"
+msgstr ""
+
+msgid "List available provisioning template kinds"
+msgstr ""
+
+msgid "View provisioning template content"
 msgstr ""
 
 msgid "Path to a file that contains the template"
@@ -2215,19 +2284,19 @@ msgstr "템플릿이 들어있는 파일로의 경로 "
 msgid "Template type. Eg. snippet, script, provision"
 msgstr "템플릿 유형. 예: 조각 모음, 스트립트, 프로비저닝 "
 
-msgid "Provisioning template created"
+msgid "Provisioning template created."
 msgstr ""
 
 msgid "Could not create the provisioning template"
 msgstr ""
 
-msgid "Provisioning template updated"
+msgid "Provisioning template updated."
 msgstr ""
 
 msgid "Could not update the provisioning template"
 msgstr ""
 
-msgid "Provisioning template deleted"
+msgid "Provisioning template deleted."
 msgstr ""
 
 msgid "Could not delete the provisioning template"
@@ -2236,7 +2305,7 @@ msgstr ""
 msgid "Update the default PXE menu on all configured TFTP servers"
 msgstr "설정된 모든 TFTP 서버에 있는 기본 PXE 메뉴 업데이트 "
 
-msgid "Provisioning template cloned"
+msgid "Provisioning template cloned."
 msgstr ""
 
 msgid "Could not clone the provisioning template"
@@ -2281,47 +2350,575 @@ msgstr ""
 msgid "Default location name"
 msgstr ""
 
-msgid "Enter user's current password:"
+msgid "User [%{login}] created."
 msgstr ""
-
-msgid "Enter user's new password:"
-msgstr ""
-
-msgid "User [%{login}] created"
-msgstr "[%{login}] 사용자가 생성되었습니다"
 
 msgid "Could not create the user"
 msgstr "사용자를 생성할 수 없습니다 "
 
-msgid "User [%{login}] updated"
-msgstr "[%{login}] 사용자가 업데이트되었습니다"
+msgid "User [%{login}] updated."
+msgstr ""
 
 msgid "Could not update the user"
 msgstr "사용자를 업데이트할 수 없습니다 "
 
-msgid "User [%{login}] deleted"
-msgstr "[%{login}] 사용자가 삭제되었습니다"
+msgid "User [%{login}] deleted."
+msgstr ""
 
 msgid "Could not delete the user"
 msgstr "사용자를 삭제할 수 없습니다 "
 
-msgid "User group [%<name>s] created"
-msgstr "사용자 그룹 [%<name>s]이(가) 생성되었습니다 "
+msgid "Managing User SSH Keys."
+msgstr ""
+
+msgid "User group [%<name>s] created."
+msgstr ""
 
 msgid "Could not create the user group"
 msgstr "사용자 그룹을 생성할 수 없습니다 "
 
-msgid "User group [%<name>s] updated"
-msgstr "사용자 그룹 [%<name>s]이(가) 업데이트되었습니다 "
+msgid "User group [%<name>s] updated."
+msgstr ""
 
 msgid "Could not update the user group"
 msgstr "사용자 그룹을 업데이트할 수 없습니다 "
 
-msgid "User group [%<name>s] deleted"
-msgstr "사용자 그룹 [%<name>s]이(가) 삭제되었습니다 "
+msgid "User group [%<name>s] deleted."
+msgstr ""
 
 msgid "Could not delete the user group"
 msgstr "사용자 그룹을 삭제할 수 없습니다 "
+
+#~ msgid "Foreman connection login/logout."
+#~ msgstr "Foreman 연결 로그인/로그아웃."
+
+#~ msgid "Manipulate architectures."
+#~ msgstr "아키텍처를 조정합니다."
+
+#~ msgid "Manipulate auth sources."
+#~ msgstr "인증 소스를 조정합니다."
+
+#~ msgid "Manipulate compute resources."
+#~ msgstr "컴퓨터 리소스를 조정합니다. "
+
+#~ msgid "Manipulate domains."
+#~ msgstr "도메인을 조정합니다. "
+
+#~ msgid "Manipulate environments."
+#~ msgstr "환경을 조정합니다."
+
+#~ msgid "Search facts."
+#~ msgstr "팩트를 검색합니다. "
+
+#~ msgid "Manage permission filters."
+#~ msgstr "권한 필터를 관리합니다. "
+
+#~ msgid "Manipulate hosts."
+#~ msgstr "호스트를 조정합니다."
+
+#~ msgid "Manipulate hostgroups."
+#~ msgstr "호스트 그룹을 조정합니다."
+
+#~ msgid "Manipulate locations."
+#~ msgstr "위치를 조정합니다. "
+
+#~ msgid "Manipulate installation media."
+#~ msgstr "설치 미디어를 조정합니다. "
+
+#~ msgid "Manipulate hardware models."
+#~ msgstr "하드웨어 모델을 조정합니다. "
+
+#~ msgid "Manipulate operating system."
+#~ msgstr "운영 체제를 조정합니다."
+
+#~ msgid "Manipulate organizations."
+#~ msgstr "조직을 조정합니다. "
+
+#~ msgid "Manipulate partition tables."
+#~ msgstr "파티션 테이블을 조정합니다. "
+
+#~ msgid "Search puppet modules."
+#~ msgstr "puppet 모듈을 검색합니다. "
+
+#~ msgid "Browse and read reports."
+#~ msgstr "보고서 검색 및 확인 "
+
+#~ msgid "Manage user roles."
+#~ msgstr "사용자 역할을 관리합니다."
+
+#~ msgid "Manipulate smart class parameters."
+#~ msgstr "스마트 클래스 매개 변수를 조정합니다. "
+
+#~ msgid "Manipulate smart variables."
+#~ msgstr "스마트 변수를 조정합니다."
+
+#~ msgid "Manipulate smart proxies."
+#~ msgstr "스마트 프록시를 조정합니다."
+
+#~ msgid "Change server settings."
+#~ msgstr "서버 설정을 변경합니다."
+
+#~ msgid "Manipulate subnets."
+#~ msgstr "서브넷을 조정합니다."
+
+#~ msgid "Manipulate config templates."
+#~ msgstr "설정 템플릿을 조정합니다. "
+
+#~ msgid "Manipulate users."
+#~ msgstr "사용자를 조정합니다. "
+
+#~ msgid "Manage user groups."
+#~ msgstr "사용자 그룹을 관리합니다."
+
+#~ msgid "Invalid username or password"
+#~ msgstr "잘못된 사용자 이름 또는 비밀번호"
+
+#~ msgid "[Foreman] Username: "
+#~ msgstr "[Foreman] 사용자 이름: "
+
+#~ msgid "[Foreman] Password for %s: "
+#~ msgstr "%s의 [Foreman] 암호: "
+
+#~ msgid "Architecture created"
+#~ msgstr "아키텍처가 생성되었습니다 "
+
+#~ msgid "Architecture deleted"
+#~ msgstr "아키텍처가 삭제되었습니다 "
+
+#~ msgid "Architecture updated"
+#~ msgstr "아키텍처가 업데이트되었습니다 "
+
+#~ msgid "The user has been associated"
+#~ msgstr "사용자가 연결되어 있습니다."
+
+#~ msgid "The user has been disassociated"
+#~ msgstr "사용자가 연결 해제되었습니다"
+
+#~ msgid "The user group has been associated"
+#~ msgstr "사용자 그룹이 연결되어 있습니다"
+
+#~ msgid "The user group has been disassociated"
+#~ msgstr "사용자 그룹이 연결 해제되었습니다"
+
+#~ msgid "Operating system has been associated"
+#~ msgstr "운영 체제가 연결되었습니다 "
+
+#~ msgid "Operating system has been disassociated"
+#~ msgstr "운영 체제가 연결 해제되었습니다 "
+
+#~ msgid "Architecture has been associated"
+#~ msgstr "아키텍처가 연결되었습니다 "
+
+#~ msgid "Architecture has been disassociated"
+#~ msgstr "아키텍처가 연결 해제되었습니다 "
+
+#~ msgid "Partition table has been associated"
+#~ msgstr "파티션 테이블이 연결되었습니다 "
+
+#~ msgid "Partition table has been disassociated"
+#~ msgstr "파티션 테이블이 연결 해제되었습니다 "
+
+#~ msgid "User role has been assigned"
+#~ msgstr "사용자 역할이 할당되었습니다 "
+
+#~ msgid "User role has been removed"
+#~ msgstr "사용자 역할이 삭제되었습니다 "
+
+#~ msgid "username to access the remote system"
+#~ msgstr "원격 시스템에 액세스하기 위한 사용자 이름 "
+
+#~ msgid "password to access the remote system"
+#~ msgstr "원격 시스템에 액세스하기 위한 암호 "
+
+#~ msgid "Manage LDAP auth sources."
+#~ msgstr "LDAP 인증 소스를 관리합니다. "
+
+#~ msgid "Received data of unknown format"
+#~ msgstr "알 수 없는 형식의 데이터를 수신했습니다 "
+
+#~ msgid "Set a global parameter."
+#~ msgstr "글로벌 매개 변수를 설정합니다."
+
+#~ msgid "parameter value"
+#~ msgstr "매개 변수 값 "
+
+#~ msgid "Manipulate global parameters."
+#~ msgstr "글로벌 매개 변수를 조정합니다. "
+
+#~ msgid "Compute resource created"
+#~ msgstr "컴퓨터 리소스가 생성되었습니다 "
+
+#~ msgid "Compute resource updated"
+#~ msgstr "컴퓨터 리소스가 업데이트되었습니다 "
+
+#~ msgid "Compute resource deleted"
+#~ msgstr "컴퓨터 리소스가 삭제되었습니다 "
+
+#~ msgid "Domain [%{name}] created"
+#~ msgstr "도메인 [%{name}] 이(가) 생성되었습니다 "
+
+#~ msgid "Domain [%{name}] updated"
+#~ msgstr "도메인 [%{name}] 이 업데이트되었습니다 "
+
+#~ msgid "Domain [%{name}] deleted"
+#~ msgstr "도메인 [%{name}]이(가) 삭제되었습니다 "
+
+#~ msgid "Create or update parameter for a domain."
+#~ msgstr "도메인의 매개 변수를 생성 또는 업데이트합니다. "
+
+#~ msgid "Delete parameter for a domain."
+#~ msgstr "도메인의 매개 변수를 삭제합니다. "
+
+#~ msgid "Domain parameter deleted"
+#~ msgstr "도메인 매개 변수가 삭제되었습니다 "
+
+#~ msgid "Environment created"
+#~ msgstr "환경이 생성되었습니다 "
+
+#~ msgid "Environment updated"
+#~ msgstr "환경이 업데이트되었습니다 "
+
+#~ msgid "Environment deleted"
+#~ msgstr "환경이 삭제되었습니다 "
+
+#~ msgid "Forbidden - server refused to process the request"
+#~ msgstr "거부 - 서버가 요청 처리를 거부했습니다 "
+
+#~ msgid "External user group created"
+#~ msgstr "외부 사용자 그룹이 생성되었습니다 "
+
+#~ msgid "External user group updated"
+#~ msgstr "외부 사용자 그룹이 업데이트되었습니다 "
+
+#~ msgid "External user group deleted"
+#~ msgstr "외부 사용자 그룹이 삭제되었습니다 "
+
+#~ msgid "Permission filter for [%<resource_type>s] created"
+#~ msgstr "[%<resource_type>s] 의 권한 필터가 생성되었습니다 "
+
+#~ msgid "Permission filter for [%<resource_type>s] updated"
+#~ msgstr "[%<resource_type>s] 의 권한 필터가 업데이트되었습니다 "
+
+#~ msgid "Permission filter deleted"
+#~ msgstr "권한 필터가 삭제되었습니다 "
+
+#~ msgid "Environment"
+#~ msgstr "환경 "
+
+#~ msgid "Puppet CA Id"
+#~ msgstr "Puppet CA ID"
+
+#~ msgid "Puppet Master Id"
+#~ msgstr "Puppet 마스터 ID"
+
+#~ msgid "Owner Id"
+#~ msgstr "소유자 Id"
+
+#~ msgid "Host created"
+#~ msgstr "호스트가 생성되었습니다 "
+
+#~ msgid "Host updated"
+#~ msgstr "호스트가 업데이트되었습니다 "
+
+#~ msgid "Host deleted"
+#~ msgstr "호스트가 삭제되었습니다 "
+
+#~ msgid "Create or update parameter for a host."
+#~ msgstr "호스트의 매개 변수를 생성 또는 업데이트합니다. "
+
+#~ msgid "Delete parameter for a host."
+#~ msgstr "호스트의 매개 변수를 삭제합니다. "
+
+#~ msgid "Host parameter deleted"
+#~ msgstr "호스트 매개 변수가 삭제되었습니다 "
+
+#~ msgid "Power off forced."
+#~ msgstr "강제로 전원을 끕니다. "
+
+#~ msgid "Powering the host off."
+#~ msgstr "호스트 전원을 끄고 있습니다. "
+
+#~ msgid "Puppet CA Proxy Id"
+#~ msgstr "Puppet CA 프록시 Id"
+
+#~ msgid "Puppet Master Proxy Id"
+#~ msgstr "Puppet 마스터 프록시 Id"
+
+#~ msgid "Parent Id"
+#~ msgstr "부모 ID"
+
+#~ msgid "Hostgroup created"
+#~ msgstr "호스트 그룹이 생성되었습니다 "
+
+#~ msgid "Hostgroup updated"
+#~ msgstr "호스트 그룹이 업데이트되었습니다 "
+
+#~ msgid "Hostgroup deleted"
+#~ msgstr "호스트 그룹이 삭제되었습니다 "
+
+#~ msgid "Create or update parameter for a hostgroup."
+#~ msgstr "호스트 그룹의 매개 변수가 생성 또는 업데이트합니다."
+
+#~ msgid "Delete parameter for a hostgroup."
+#~ msgstr "호스트 그룹의 매개 변수를 삭제합니다."
+
+#~ msgid "Hostgroup parameter deleted"
+#~ msgstr "호스트 그룹 매개 변수가 삭제되었습니다 "
+
+#~ msgid "Host parameters."
+#~ msgstr "호스트 매개 변수 "
+
+#~ msgid "Compute resource attributes."
+#~ msgstr "컴퓨터 리소스 속성 "
+
+#~ msgid "Interface parameters."
+#~ msgstr "인터페이스 매개 변수 "
+
+#~ msgid "Report name"
+#~ msgstr "보고서 이름 "
+
+#~ msgid "one of %s not found"
+#~ msgstr "%s 중 하나를 찾을 수 없습니다 "
+
+#~ msgid "%s not found"
+#~ msgstr "%s을(를) 찾을 수 없음 "
+
+#~ msgid "found more than one %s"
+#~ msgstr "%s이(가) 둘 이상 있습니다"
+
+#~ msgid "Image created"
+#~ msgstr "이미지가 생성되었습니다 "
+
+#~ msgid "Image updated"
+#~ msgstr "이미지가 업데이트되었습니다 "
+
+#~ msgid "Image deleted"
+#~ msgstr "이미지가 삭제되었습니다 "
+
+#~ msgid ""
+#~ "Should this interface be used for constructing the FQDN of the host? Each "
+#~ "managed hosts needs to have one primary interface."
+#~ msgstr ""
+#~ "호스트의 FQDN을 구성하는 데 이 인터페이스를 사용하시겠습니까? 관리형 호스"
+#~ "트마다 기본 인터페이스가 하나씩 필요합니다."
+
+#~ msgid ""
+#~ "Should this interface be used for TFTP of PXELinux (or SSH for image-"
+#~ "based hosts)? Each managed hosts needs to have one provision interface."
+#~ msgstr ""
+#~ "이 인터페이스를 PXELinux의 TFTP(또는 이미지 기반 호스트의 SSH)에 사용하시"
+#~ "겠습니까? 관리형 호스트마다 프로비저닝 인터페이스가 하나씩 필요합니다."
+
+#~ msgid "Interface created"
+#~ msgstr "인터페이스가 생성되었습니다"
+
+#~ msgid "Compute resource specific attributes."
+#~ msgstr "컴퓨팅 리소스별 속성입니다."
+
+#~ msgid "Interface updated"
+#~ msgstr "인터페이스가 업데이트되었습니다"
+
+#~ msgid "Interface deleted"
+#~ msgstr "인터페이스가 삭제되었습니다"
+
+#~ msgid "Location created"
+#~ msgstr "위치가 생성되었습니다 "
+
+#~ msgid "Location updated"
+#~ msgstr "위치가 업데이트되었습니다 "
+
+#~ msgid "Location deleted"
+#~ msgstr "위치가 삭제되었습니다 "
+
+#~ msgid "Create or update parameter for a location."
+#~ msgstr "위치의 매개 변수를 생성 또는 업데이트합니다."
+
+#~ msgid "Delete parameter for a location."
+#~ msgstr "위치의 매개 변수를 삭제합니다."
+
+#~ msgid "Parameter [%{name}] deleted"
+#~ msgstr "매개 변수 [%{name}]이(가) 삭제되었습니다"
+
+#~ msgid "Installation medium created"
+#~ msgstr "설치 미디어가 생성되었습니다 "
+
+#~ msgid "Installation medium updated"
+#~ msgstr "설치 미디어가 업데이트되었습니다 "
+
+#~ msgid "Installation medium deleted"
+#~ msgstr "설치 미디어가 삭제되었습니다 "
+
+#~ msgid "Hardware model created"
+#~ msgstr "하드웨어 모델이 생성되었습니다 "
+
+#~ msgid "Hardware model deleted"
+#~ msgstr "하드웨어 모델이 삭제되었습니다 "
+
+#~ msgid "Hardware model updated"
+#~ msgstr "하드웨어 모델이 업데이트되었습니다 "
+
+#~ msgid "Operating system created"
+#~ msgstr "운영 체제가 생성되었습니다 "
+
+#~ msgid "Operating system updated"
+#~ msgstr "운영 체제가 업데이트되었습니다 "
+
+#~ msgid "Operating system deleted"
+#~ msgstr "운영 체제가 삭제되었습니다 "
+
+#~ msgid "Create or update parameter for an operating system."
+#~ msgstr "운영 체제의 매개 변수를 생성 또는 업데이트합니다. "
+
+#~ msgid "Delete parameter for an operating system."
+#~ msgstr "운영 체제의 매개변수를 삭제합니다. "
+
+#~ msgid "operating system parameter deleted"
+#~ msgstr "운영 체제 매개 변수가 삭제되었습니다 "
+
+#~ msgid "operatingsystem id"
+#~ msgstr "운영 체제 ID "
+
+#~ msgid "config template id to be set"
+#~ msgstr "설정할 설정 템플릿 ID "
+
+#~ msgid ""
+#~ "[%{config_template_name}] was set as default %{template_kind_name} "
+#~ "template"
+#~ msgstr ""
+#~ "[%{config_template_name}]이(가) 기본값 %{template_kind_name}  템플릿으로 "
+#~ "설정되었습니다 "
+
+#~ msgid "Default template deleted"
+#~ msgstr "기본값 템플릿이 삭제되었습니다 "
+
+#~ msgid "Organization created"
+#~ msgstr "조직이 생성되었습니다 "
+
+#~ msgid "Organization updated"
+#~ msgstr "조직이 업데이트되었습니다 "
+
+#~ msgid "Organization deleted"
+#~ msgstr "조직이 삭제되었습니다 "
+
+#~ msgid "Create or update parameter for an organization."
+#~ msgstr "조직의 매개 변수를 생성하거나 업데이트합니다."
+
+#~ msgid "Delete parameter for an organization."
+#~ msgstr "조직의 매개 변수를 삭제합니다."
+
+#~ msgid "View partition table content."
+#~ msgstr "파티션 테이블 내용을 표시합니다. "
+
+#~ msgid "Partition table created"
+#~ msgstr "파티션 테이블이 생성되었습니다 "
+
+#~ msgid "Partition table updated"
+#~ msgstr "파티션 테이블이 업데이트되었습니다 "
+
+#~ msgid "Partition table deleted"
+#~ msgstr "파티션 테이블이 삭제되었습니다 "
+
+#~ msgid "Report has been deleted"
+#~ msgstr "보고서가 삭제되었습니다 "
+
+#~ msgid "User role [%<name>s] created"
+#~ msgstr "사용자 역할 [%<name>s]이(가) 생성되었습니다 "
+
+#~ msgid "User role [%<name>s] updated"
+#~ msgstr "사용자 역할 [%<name>s]이(가) 업데이트되었습니다 "
+
+#~ msgid "User role [%<name>s] deleted"
+#~ msgstr "사용자 역할 [%<name>s]이(가) 삭제되었습니다 "
+
+#~ msgid "Setting [%{name}] updated to [%{value}]"
+#~ msgstr "설정 [%{name}]이(가) [%{value}](으)로 업데이트되었습니다"
+
+#~ msgid "Parameter updated"
+#~ msgstr "매개 변수가 업데이트되었습니다 "
+
+#~ msgid "Override this parameter."
+#~ msgstr "매개 변수를 덮어쓰기합니다."
+
+#~ msgid "This parameter is required."
+#~ msgstr "매개 변수가 필요합니다. "
+
+#~ msgid "Type of the parameter."
+#~ msgstr "매개 변수 유형 "
+
+#~ msgid "Type of the validator."
+#~ msgstr "유효성 검사 유형 "
+
+#~ msgid "Override value created"
+#~ msgstr "덮어쓰기 값이 생성되었습니다"
+
+#~ msgid "Override value deleted"
+#~ msgstr "덮어쓰기 값이 삭제되었습니다"
+
+#~ msgid "Smart proxy created"
+#~ msgstr "스마트 프록시가 생성되었습니다 "
+
+#~ msgid "Smart proxy updated"
+#~ msgstr "스마트 프록시가 업데이트되었습니다 "
+
+#~ msgid "Smart proxy deleted"
+#~ msgstr "스마트 프록시가 삭제되었습니다 "
+
+#~ msgid "Puppet classes were imported"
+#~ msgstr "Puppet 클래스를 가져오기했습니다 "
+
+#~ msgid "Smart proxy features were refreshed"
+#~ msgstr "스마트 프록시 기능을 새로고침했습니다 "
+
+#~ msgid "Type of the variable."
+#~ msgstr "변수의 유형입니다."
+
+#~ msgid "Smart variable [%{variable}] created"
+#~ msgstr "스마트 변수 [%{variable}]이(가) 생성되었습니다"
+
+#~ msgid "Smart variable [%{variable}] updated"
+#~ msgstr "스마트 변수 [%{variable}]이(가) 업데이트되었습니다"
+
+#~ msgid "Smart variable [%{variable}] deleted"
+#~ msgstr "스마트 변수 [%{variable}]이(가) 삭제되었습니다"
+
+#~ msgid "Subnet created"
+#~ msgstr "서브넷이 생성되었습니다 "
+
+#~ msgid "Subnet updated"
+#~ msgstr "서브넷이 업데이트되었습니다 "
+
+#~ msgid "Subnet deleted"
+#~ msgstr "서브넷이 삭제되었습니다 "
+
+#, fuzzy
+#~ msgid "Create or update parameter for a subnet."
+#~ msgstr "호스트의 매개 변수를 생성 또는 업데이트합니다. "
+
+#, fuzzy
+#~ msgid "Delete parameter for a subnet."
+#~ msgstr "호스트의 매개 변수를 삭제합니다. "
+
+#, fuzzy
+#~ msgid "Subnet parameter deleted"
+#~ msgstr "호스트 매개 변수가 삭제되었습니다 "
+
+#~ msgid "User [%{login}] created"
+#~ msgstr "[%{login}] 사용자가 생성되었습니다"
+
+#~ msgid "User [%{login}] updated"
+#~ msgstr "[%{login}] 사용자가 업데이트되었습니다"
+
+#~ msgid "User [%{login}] deleted"
+#~ msgstr "[%{login}] 사용자가 삭제되었습니다"
+
+#~ msgid "User group [%<name>s] created"
+#~ msgstr "사용자 그룹 [%<name>s]이(가) 생성되었습니다 "
+
+#~ msgid "User group [%<name>s] updated"
+#~ msgstr "사용자 그룹 [%<name>s]이(가) 업데이트되었습니다 "
+
+#~ msgid "User group [%<name>s] deleted"
+#~ msgstr "사용자 그룹 [%<name>s]이(가) 삭제되었습니다 "
 
 #~ msgid "You are logged in as '%s'"
 #~ msgstr "'%s'로 로그인되었습니다 "

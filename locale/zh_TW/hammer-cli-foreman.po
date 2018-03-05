@@ -5,9 +5,9 @@
 # Translators:
 msgid ""
 msgstr ""
-"Project-Id-Version: hammer-cli-foreman 0.11.pre.develop\n"
+"Project-Id-Version: hammer-cli-foreman 0.12.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-08-01 13:02+0200\n"
+"POT-Creation-Date: 2018-03-05 23:09+0100\n"
 "PO-Revision-Date: 2017-03-29 08:19+0000\n"
 "Last-Translator: Lukáš Zapletal\n"
 "Language-Team: Chinese (Taiwan) (http://www.transifex.com/foreman/foreman/"
@@ -18,95 +18,98 @@ msgstr ""
 "Language: zh_TW\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
-msgid "Foreman connection login/logout."
-msgstr "Foreman 連線登錄/登出。"
-
-msgid "Manipulate architectures."
-msgstr "操作架構。"
-
-msgid "Manipulate auth sources."
-msgstr "操作 auth 來源。"
-
-msgid "Manipulate compute resources."
-msgstr "操作運算資源。"
-
-msgid "Manipulate domains."
-msgstr "操作網域。"
-
-msgid "Manipulate environments."
-msgstr "操作環境"
-
-msgid "Search facts."
-msgstr "搜尋詳情。"
-
-msgid "Manage permission filters."
-msgstr "管理權限篩選器。"
-
-msgid "Manipulate hosts."
-msgstr "操作主機。"
-
-msgid "Manipulate hostgroups."
-msgstr "操作主機群組。"
-
-msgid "Manipulate locations."
-msgstr "操作位置。"
-
-msgid "Manipulate installation media."
-msgstr "操作安裝媒介。"
-
-msgid "Manipulate hardware models."
-msgstr "操作硬體型號。"
-
-msgid "Manipulate operating system."
-msgstr "操作作業系統。"
-
-msgid "Manipulate organizations."
-msgstr "操作組織。"
-
-msgid "Manipulate partition tables."
-msgstr "操作分割表。"
-
-msgid "Search puppet modules."
-msgstr "搜尋 puppet 模組。"
-
-msgid "Browse and read reports."
-msgstr "瀏覽和閱讀報告。"
-
-msgid "Manage user roles."
-msgstr "管理使用者角色。"
-
-msgid "Manipulate smart class parameters."
-msgstr "操作智慧類別的參數。"
-
-msgid "Manipulate smart variables."
-msgstr "操作智慧變數。"
-
-msgid "Manipulate smart proxies."
-msgstr "操作智慧協定。"
-
-msgid "Manipulate realms."
+msgid "Foreman connection login/logout"
 msgstr ""
 
-msgid "Change server settings."
-msgstr "修改伺服器設定。"
-
-msgid "Manipulate subnets."
-msgstr "操作子網路。"
-
-msgid "Manipulate config templates."
-msgstr "操作配置範本。"
-
-msgid "Manipulate users."
-msgstr "操作使用者。"
-
-msgid "Manage user groups."
-msgstr "管理使用者群組。"
-
-msgid "Manipulate config groups."
+msgid "Manipulate architectures"
 msgstr ""
 
-msgid "Invalid username or password"
-msgstr "無效的帳號或密碼"
+msgid "Manipulate auth sources"
+msgstr ""
+
+msgid "Manipulate compute resources"
+msgstr ""
+
+msgid "Manipulate domains"
+msgstr ""
+
+msgid "Manipulate environments"
+msgstr ""
+
+msgid "Search facts"
+msgstr ""
+
+msgid "Manage permission filters"
+msgstr ""
+
+msgid "Manipulate hosts"
+msgstr ""
+
+msgid "Manipulate hostgroups"
+msgstr ""
+
+msgid "Manipulate locations"
+msgstr ""
+
+msgid "Manipulate installation media"
+msgstr ""
+
+msgid "Manipulate hardware models"
+msgstr ""
+
+msgid "Manipulate operating system"
+msgstr ""
+
+msgid "Manipulate organizations"
+msgstr ""
+
+msgid "Manipulate partition tables"
+msgstr ""
+
+msgid "Search puppet modules"
+msgstr ""
+
+msgid "Browse and read reports"
+msgstr ""
+
+msgid "Manage user roles"
+msgstr ""
+
+msgid "Manipulate smart class parameters"
+msgstr ""
+
+msgid "Manipulate smart variables"
+msgstr ""
+
+msgid "Manipulate smart proxies"
+msgstr ""
+
+msgid "Manipulate realms"
+msgstr ""
+
+msgid "Change server settings"
+msgstr ""
+
+msgid "Manipulate subnets"
+msgstr ""
+
+msgid "Manipulate config templates"
+msgstr ""
+
+msgid "Manipulate users"
+msgstr ""
+
+msgid "Manage user groups"
+msgstr ""
+
+msgid "Manipulate config groups"
+msgstr ""
+
+msgid "Using certificate authentication."
+msgstr ""
+
+msgid "Invalid username or password."
+msgstr ""
 
 msgid "Using configured credentials for user '%s'."
 msgstr ""
@@ -114,31 +117,31 @@ msgstr ""
 msgid "Credentials are not configured."
 msgstr ""
 
-msgid "[Foreman] Username: "
-msgstr "[Foreman] 使用者名稱："
+msgid "[Foreman] Username:%s"
+msgstr ""
 
-msgid "[Foreman] Password for %s: "
-msgstr "[Foreman] %s 的密碼："
+msgid "[Foreman] Password for %{user}:%{wsp}"
+msgstr ""
 
 msgid "Can't use session auth due to invalid permissions on session files."
 msgstr ""
 
-msgid "Session exists, currently logged in as '%s'"
+msgid "Session exists, currently logged in as '%s'."
 msgstr ""
 
 msgid "Using sessions, you are currently not logged in."
 msgstr ""
 
-msgid "Invalid username or password, continuing with session for '%s'"
+msgid "Invalid username or password, continuing with session for '%s'."
 msgstr ""
 
-msgid "Session has expired"
+msgid "Session has expired."
 msgstr ""
 
-msgid "Invalid session file format"
+msgid "Invalid session file format."
 msgstr ""
 
-msgid "Invalid permissions for %{file}: %{mode}, expected %{expected_mode}"
+msgid "Invalid permissions for %{file}: %{mode}, expected %{expected_mode}."
 msgstr ""
 
 msgid "Id"
@@ -147,20 +150,20 @@ msgstr "ID"
 msgid "Name"
 msgstr "名稱"
 
-msgid "Architecture created"
-msgstr "已建立架構"
+msgid "Architecture created."
+msgstr ""
 
 msgid "Could not create the architecture"
 msgstr "無法建立架構"
 
-msgid "Architecture deleted"
-msgstr "已刪除架構"
+msgid "Architecture deleted."
+msgstr ""
 
 msgid "Could not delete the architecture"
 msgstr "無法刪除架構"
 
-msgid "Architecture updated"
-msgstr "已更新架構"
+msgid "Architecture updated."
+msgstr ""
 
 msgid "Could not update the architecture"
 msgstr "無法更新架構"
@@ -168,7 +171,7 @@ msgstr "無法更新架構"
 msgid "Associate a hostgroup"
 msgstr "為主機群組建立相聯性"
 
-msgid "The hostgroup has been associated"
+msgid "The hostgroup has been associated."
 msgstr ""
 
 msgid "Could not associate the hostgroup"
@@ -177,7 +180,7 @@ msgstr ""
 msgid "Disassociate a hostgroup"
 msgstr "解除主機群組的相聯性"
 
-msgid "The hostgroup has been disassociated"
+msgid "The hostgroup has been disassociated."
 msgstr ""
 
 msgid "Could not disassociate the hostgroup"
@@ -186,7 +189,7 @@ msgstr ""
 msgid "Associate an environment"
 msgstr "為環境建立相聯性"
 
-msgid "The environment has been associated"
+msgid "The environment has been associated."
 msgstr ""
 
 msgid "Could not associate the environment"
@@ -195,7 +198,7 @@ msgstr ""
 msgid "Disassociate an environment"
 msgstr "解除環境的相聯性"
 
-msgid "The environment has been disassociated"
+msgid "The environment has been disassociated."
 msgstr ""
 
 msgid "Could not disassociate the environment"
@@ -204,7 +207,7 @@ msgstr ""
 msgid "Associate a domain"
 msgstr "為網域建立相聯性"
 
-msgid "The domain has been associated"
+msgid "The domain has been associated."
 msgstr ""
 
 msgid "Could not associate the domain"
@@ -213,7 +216,7 @@ msgstr ""
 msgid "Disassociate a domain"
 msgstr "解除網域的相聯性"
 
-msgid "The domain has been disassociated"
+msgid "The domain has been disassociated."
 msgstr ""
 
 msgid "Could not disassociate the domain"
@@ -222,7 +225,7 @@ msgstr ""
 msgid "Associate a medium"
 msgstr "為媒介建立相聯性"
 
-msgid "The medium has been associated"
+msgid "The medium has been associated."
 msgstr ""
 
 msgid "Could not associate the medium"
@@ -231,7 +234,7 @@ msgstr ""
 msgid "Disassociate a medium"
 msgstr "解除媒介的相聯性"
 
-msgid "The medium has been disassociated"
+msgid "The medium has been disassociated."
 msgstr ""
 
 msgid "Could not disassociate the medium"
@@ -240,7 +243,7 @@ msgstr ""
 msgid "Associate a subnet"
 msgstr "為子網路建立相聯性"
 
-msgid "The subnet has been associated"
+msgid "The subnet has been associated."
 msgstr ""
 
 msgid "Could not associate the subnet"
@@ -249,7 +252,7 @@ msgstr ""
 msgid "Disassociate a subnet"
 msgstr "解除子網路的相聯性"
 
-msgid "The subnet has been disassociated"
+msgid "The subnet has been disassociated."
 msgstr ""
 
 msgid "Could not disassociate the subnet"
@@ -258,7 +261,7 @@ msgstr ""
 msgid "Associate a compute resource"
 msgstr "為運算資源建立相聯性"
 
-msgid "The compute resource has been associated"
+msgid "The compute resource has been associated."
 msgstr ""
 
 msgid "Could not associate the compute resource"
@@ -267,7 +270,7 @@ msgstr ""
 msgid "Disassociate a compute resource"
 msgstr "解除運算資源的相聯性"
 
-msgid "The compute resource has been disassociated"
+msgid "The compute resource has been disassociated."
 msgstr ""
 
 msgid "Could not disassociate the compute resource"
@@ -276,7 +279,7 @@ msgstr ""
 msgid "Associate a smart proxy"
 msgstr "為智慧協定建立相聯性"
 
-msgid "The smart proxy has been associated"
+msgid "The smart proxy has been associated."
 msgstr ""
 
 msgid "Could not associate the smart proxy"
@@ -285,7 +288,7 @@ msgstr ""
 msgid "Disassociate a smart proxy"
 msgstr "解除智慧協定的相聯性"
 
-msgid "The smart proxy has been disassociated"
+msgid "The smart proxy has been disassociated."
 msgstr ""
 
 msgid "Could not disassociate the smart proxy"
@@ -294,8 +297,8 @@ msgstr ""
 msgid "Associate an user"
 msgstr "為使用者建立相聯性"
 
-msgid "The user has been associated"
-msgstr "使用者的相聯性已建立"
+msgid "The user has been associated."
+msgstr ""
 
 msgid "Could not associate the user"
 msgstr "無法為使用者建立相聯性"
@@ -303,8 +306,8 @@ msgstr "無法為使用者建立相聯性"
 msgid "Disassociate an user"
 msgstr "解除使用者的相聯性"
 
-msgid "The user has been disassociated"
-msgstr "使用者的相聯性已移除"
+msgid "The user has been disassociated."
+msgstr ""
 
 msgid "Could not disassociate the user"
 msgstr "無法解除使用者的相聯性"
@@ -312,8 +315,8 @@ msgstr "無法解除使用者的相聯性"
 msgid "Associate an user group"
 msgstr "為使用者群組建立相聯性"
 
-msgid "The user group has been associated"
-msgstr "使用者群組的相聯性已建立"
+msgid "The user group has been associated."
+msgstr ""
 
 msgid "Could not associate the user group"
 msgstr "無法建立使用者群組的相聯性"
@@ -321,8 +324,8 @@ msgstr "無法建立使用者群組的相聯性"
 msgid "Disassociate an user group"
 msgstr "解除使用者群組的相聯性"
 
-msgid "The user group has been disassociated"
-msgstr "使用者群組的相聯性已移除"
+msgid "The user group has been disassociated."
+msgstr ""
 
 msgid "Could not disassociate the user group"
 msgstr "無法解除使用者群組的相聯性"
@@ -330,7 +333,7 @@ msgstr "無法解除使用者群組的相聯性"
 msgid "Associate a configuration template"
 msgstr "為配置範本建立相聯性"
 
-msgid "The configuration template has been associated"
+msgid "The configuration template has been associated."
 msgstr ""
 
 msgid "Could not associate the configuration template"
@@ -339,7 +342,7 @@ msgstr ""
 msgid "Disassociate a configuration template"
 msgstr "解除配置範本的相聯性"
 
-msgid "The configuration template has been disassociated"
+msgid "The configuration template has been disassociated."
 msgstr ""
 
 msgid "Could not disassociate the configuration template"
@@ -348,7 +351,7 @@ msgstr ""
 msgid "Associate an organization"
 msgstr "為組織建立相聯性"
 
-msgid "The organization has been associated"
+msgid "The organization has been associated."
 msgstr ""
 
 msgid "Could not associate the organization"
@@ -357,7 +360,7 @@ msgstr ""
 msgid "Disassociate an organization"
 msgstr "解除組織的相聯性"
 
-msgid "The organization has been disassociated"
+msgid "The organization has been disassociated."
 msgstr ""
 
 msgid "Could not disassociate the organization"
@@ -366,8 +369,8 @@ msgstr ""
 msgid "Associate an operating system"
 msgstr "為作業系統建立相聯性"
 
-msgid "Operating system has been associated"
-msgstr "作業系統的相聯性已建立"
+msgid "Operating system has been associated."
+msgstr ""
 
 msgid "Could not associate the operating system"
 msgstr "無法為作業系統建立相聯性"
@@ -375,8 +378,8 @@ msgstr "無法為作業系統建立相聯性"
 msgid "Disassociate an operating system"
 msgstr "解除作業系統的相聯性"
 
-msgid "Operating system has been disassociated"
-msgstr "作業系統的相聯性已解除"
+msgid "Operating system has been disassociated."
+msgstr ""
 
 msgid "Could not disassociate the operating system"
 msgstr "無法解除作業系統的相聯性"
@@ -384,8 +387,8 @@ msgstr "無法解除作業系統的相聯性"
 msgid "Associate an architecture"
 msgstr "為架構建立相聯性"
 
-msgid "Architecture has been associated"
-msgstr "架構的相聯性已建立"
+msgid "Architecture has been associated."
+msgstr ""
 
 msgid "Could not associate the architecture"
 msgstr "無法為架構建立相聯性"
@@ -393,8 +396,8 @@ msgstr "無法為架構建立相聯性"
 msgid "Disassociate an architecture"
 msgstr "解除架構的相聯性"
 
-msgid "Architecture has been disassociated"
-msgstr "架構的相聯性已解除"
+msgid "Architecture has been disassociated."
+msgstr ""
 
 msgid "Could not disassociate the architecture"
 msgstr "無法解除架構的相聯性"
@@ -402,8 +405,8 @@ msgstr "無法解除架構的相聯性"
 msgid "Associate a partition table"
 msgstr "為分割表建立相聯性"
 
-msgid "Partition table has been associated"
-msgstr "分割表的相聯性已建立"
+msgid "Partition table has been associated."
+msgstr ""
 
 msgid "Could not associate the partition table"
 msgstr "無法為分割表建立相聯性"
@@ -411,8 +414,8 @@ msgstr "無法為分割表建立相聯性"
 msgid "Disassociate a partition table"
 msgstr "解除分割表的相聯性"
 
-msgid "Partition table has been disassociated"
-msgstr "已解除分割表的相聯性"
+msgid "Partition table has been disassociated."
+msgstr ""
 
 msgid "Could not disassociate the partition table"
 msgstr "無法解除分割表的相聯性"
@@ -420,8 +423,8 @@ msgstr "無法解除分割表的相聯性"
 msgid "Assign a user role"
 msgstr "指定使用者角色"
 
-msgid "User role has been assigned"
-msgstr "已指定使用者角色"
+msgid "User role has been assigned."
+msgstr ""
 
 msgid "Could not assign the user role"
 msgstr "無法指定使用者角色"
@@ -429,8 +432,8 @@ msgstr "無法指定使用者角色"
 msgid "Remove a user role"
 msgstr "移除使用者角色"
 
-msgid "User role has been removed"
-msgstr "已移除使用者角色"
+msgid "User role has been removed."
+msgstr ""
 
 msgid "Could not remove the user role"
 msgstr "無法移除使用者角色"
@@ -438,7 +441,7 @@ msgstr "無法移除使用者角色"
 msgid "Associate a location"
 msgstr ""
 
-msgid "The location has been associated"
+msgid "The location has been associated."
 msgstr ""
 
 msgid "Could not associate the location"
@@ -447,7 +450,7 @@ msgstr ""
 msgid "Disassociate a location"
 msgstr ""
 
-msgid "The location has been disassociated"
+msgid "The location has been disassociated."
 msgstr ""
 
 msgid "Could not disassociate the location"
@@ -456,11 +459,11 @@ msgstr ""
 msgid "Set credentials"
 msgstr "設定認證"
 
-msgid "username to access the remote system"
-msgstr "用來存取遠端系統的使用者名稱"
+msgid "Username to access the remote system"
+msgstr ""
 
-msgid "password to access the remote system"
-msgstr "用來存取遠端系統的密碼"
+msgid "Password to access the remote system"
+msgstr ""
 
 msgid ""
 "Can't perform login. Make sure sessions are enabled in hammer configuration "
@@ -479,8 +482,8 @@ msgstr ""
 msgid "Information about current connections"
 msgstr "有關於目前連線的資訊"
 
-msgid "Manage LDAP auth sources."
-msgstr "管理 LDAP auth 來源。"
+msgid "Manage LDAP auth sources"
+msgstr ""
 
 msgid "Server"
 msgstr "伺服器"
@@ -539,61 +542,50 @@ msgstr "電子郵件屬性"
 msgid "Photo Attribute"
 msgstr "照片屬性"
 
-msgid "Auth source [%{name}] created"
+msgid "Auth source [%{name}] created."
 msgstr ""
 
 msgid "Could not create the Auth Source"
 msgstr "無法建立 Auth 來源"
 
-msgid "Auth source [%{name}] deleted"
+msgid "Auth source [%{name}] deleted."
 msgstr ""
 
 msgid "Could not delete the Auth Source"
 msgstr "無法刪除 Auth 來源"
 
-msgid "Auth source [%{name}] updated"
+msgid "Auth source [%{name}] updated."
 msgstr ""
 
 msgid "Could not update the Auth Source"
 msgstr "無法更新 Auth 來源"
 
-msgid "Received data of unknown format"
-msgstr "收到了不明格式的資料"
-
-msgid ""
-"Could not find %{resource}. Some search options were missing, please see --"
-"help."
-msgstr "找不到 %{resource}。部分搜尋選項遺失，請查看 --help。"
-
-msgid "Could not find %{resource}, please set option %{switches}."
-msgstr "找不到 %{resource}，請設置選項 %{switches}。"
-
-msgid "Could not find %{resource}, please set one of options %{switches}."
-msgstr "找不到 %{resource}，請設置 %{switches} 選項之一。"
+msgid "Received data of unknown format."
+msgstr ""
 
 msgid "Associate a resource"
 msgstr "使資源相聯"
 
-msgid "Could not associate the %{resource_name}"
+msgid "Could not associate the %{resource_name}."
 msgstr ""
 
-msgid "The %{resource_name} has been associated"
+msgid "The %{resource_name} has been associated."
 msgstr ""
 
 msgid "Disassociate a resource"
 msgstr "解除資源的相聯"
 
-msgid "Could not disassociate the %{resource_name}"
+msgid "Could not disassociate the %{resource_name}."
 msgstr ""
 
-msgid "The %{resource_name} has been disassociated"
+msgid "The %{resource_name} has been disassociated."
 msgstr ""
 
 msgid "Value"
 msgstr "值"
 
-msgid "Set a global parameter."
-msgstr "設置全域參數。"
+msgid "Set a global parameter"
+msgstr ""
 
 msgid "Created parameter [%{name}] with value [%{value}]."
 msgstr "已建立 [%{name}] 參數，並且值為 [%{value}]。"
@@ -601,13 +593,13 @@ msgstr "已建立 [%{name}] 參數，並且值為 [%{value}]。"
 msgid "Parameter [%{name}] updated to [%{value}]."
 msgstr "參數 [%{name}] 已更新為 [%{value}]。"
 
-msgid "parameter name"
-msgstr "參數名稱"
+msgid "Parameter name"
+msgstr ""
 
-msgid "parameter value"
-msgstr "參數值"
+msgid "Parameter value"
+msgstr ""
 
-msgid "should the value be hidden"
+msgid "Should the value be hidden"
 msgstr ""
 
 msgid "Global parameter [%{name}] deleted."
@@ -616,8 +608,8 @@ msgstr "已刪除全域參數 [%{name}]。"
 msgid "Could not delete the global parameter [%{name}]"
 msgstr "無法刪除全域參數 [%{name}]"
 
-msgid "Manipulate global parameters."
-msgstr "操作全域參數。"
+msgid "Manipulate global parameters"
+msgstr ""
 
 msgid "Provider"
 msgstr "供應方"
@@ -640,20 +632,20 @@ msgstr "描述"
 msgid "User"
 msgstr "使用者"
 
-msgid "Compute resource created"
-msgstr "已建立運算資源"
+msgid "Compute resource created."
+msgstr ""
 
 msgid "Could not create the compute resource"
 msgstr "無法建立運算資源"
 
-msgid "Compute resource updated"
-msgstr "運算資源已更新"
+msgid "Compute resource updated."
+msgstr ""
 
 msgid "Could not update the compute resource"
 msgstr "無法更新運算資源"
 
-msgid "Compute resource deleted"
-msgstr "已刪除運算資源"
+msgid "Compute resource deleted."
+msgstr ""
 
 msgid "Could not delete the compute resource"
 msgstr "無法刪除運算資源"
@@ -774,19 +766,19 @@ msgstr ""
 msgid "ID"
 msgstr ""
 
-msgid "Config group created"
+msgid "Config group created."
 msgstr ""
 
 msgid "Could not create the config group"
 msgstr ""
 
-msgid "Config group updated"
+msgid "Config group updated."
 msgstr ""
 
 msgid "Could not update the config group"
 msgstr ""
 
-msgid "Config group has been deleted"
+msgid "Config group has been deleted."
 msgstr ""
 
 msgid "Could not delete the config group"
@@ -804,8 +796,8 @@ msgstr "在此區域中使用的 DNS 協定的名稱"
 msgid "DNS Id"
 msgstr "DNS ID"
 
-msgid "Domain [%{name}] created"
-msgstr "已建立 [%{name}] 網域"
+msgid "Domain [%{name}] created."
+msgstr ""
 
 msgid "Could not create the domain"
 msgstr "無法建立網域"
@@ -813,20 +805,20 @@ msgstr "無法建立網域"
 msgid "Full name describing the domain"
 msgstr "描述區域的完整名稱"
 
-msgid "Domain [%{name}] updated"
-msgstr "已更新 [%{name}] 網域"
+msgid "Domain [%{name}] updated."
+msgstr ""
 
 msgid "Could not update the domain"
 msgstr "無法更新網域"
 
-msgid "Domain [%{name}] deleted"
-msgstr "已刪除 [%{name}] 網域"
+msgid "Domain [%{name}] deleted."
+msgstr ""
 
 msgid "Could not delete the domain"
 msgstr "無法刪除網域"
 
-msgid "Create or update parameter for a domain."
-msgstr "建立或更新網域的參數。"
+msgid "Create or update parameter for a domain"
+msgstr ""
 
 msgid "Domain parameter updated"
 msgstr "已更新網域參數"
@@ -837,26 +829,26 @@ msgstr "已建立新的網域參數"
 msgid "Could not set domain parameter"
 msgstr "無法設置網域參數"
 
-msgid "Delete parameter for a domain."
-msgstr "刪除網域的參數。"
+msgid "Delete parameter for a domain"
+msgstr ""
 
-msgid "Domain parameter deleted"
-msgstr "已刪除網域參數"
+msgid "Domain parameter deleted."
+msgstr ""
 
-msgid "Environment created"
-msgstr "環境已建立"
+msgid "Environment created."
+msgstr ""
 
 msgid "Could not create the environment"
 msgstr "無法建立環境"
 
-msgid "Environment updated"
-msgstr "環境已更新"
+msgid "Environment updated."
+msgstr ""
 
 msgid "Could not update the environment"
 msgstr "無法更新環境"
 
-msgid "Environment deleted"
-msgstr "環境已刪除"
+msgid "Environment deleted."
+msgstr ""
 
 msgid "Could not delete the environment"
 msgstr "無法刪除環境"
@@ -867,23 +859,22 @@ msgstr ""
 msgid "It seems hammer is configured to use HTTP and the server prefers HTTPS."
 msgstr ""
 
-msgid "Update your server url configuration"
+msgid "Update your server url configuration."
 msgstr ""
 
 msgid ""
-"you can set 'follow_redirects' to one of :default or :always to enable "
-"redirects following"
+"You can set 'follow_redirects' to one of :default or :always to enable "
+"redirects following."
 msgstr ""
 
-msgid "Forbidden - server refused to process the request"
-msgstr "禁止 - 伺服器拒絕處理請求"
+msgid "Forbidden - server refused to process the request."
+msgstr ""
 
 msgid "The following configuration option were used for the SSL connection:"
 msgstr ""
 
 msgid ""
-"\"Make sure the location contains an unexpired and valid CA certificate for "
-"#{host_url}\""
+"Make sure the location contains an unexpired and valid CA certificate for %s."
 msgstr ""
 
 msgid ""
@@ -909,20 +900,20 @@ msgstr "驗證來源"
 msgid "Refresh external user group"
 msgstr "刷新外部使用者群組"
 
-msgid "External user group created"
-msgstr "已建立外部使用者群組"
+msgid "External user group created."
+msgstr ""
 
 msgid "Could not create external user group"
 msgstr "無法建立外部使用者群組"
 
-msgid "External user group updated"
-msgstr "已更新外部使用者群組"
+msgid "External user group updated."
+msgstr ""
 
 msgid "Could not update external user group"
 msgstr "無法更新外部使用者群組"
 
-msgid "External user group deleted"
-msgstr "已刪除外部使用者群組"
+msgid "External user group deleted."
+msgstr ""
 
 msgid "Could not delete the external user group"
 msgstr "無法刪除外部使用者群組"
@@ -957,30 +948,33 @@ msgstr "（雜項）"
 msgid "none"
 msgstr "無"
 
-msgid "Organizations and locations can be set only for overriding filters"
+msgid "Organizations and locations can be set only for overriding filters."
+msgstr ""
+
+msgid "Overriding organizations and locations"
 msgstr ""
 
 msgid ""
 "Filters inherit organizations and locations from its role by default. This "
-"behavior can be changed by setting %{condition}\n"
-"Therefore options %{org_opts} and %{loc_opts} are applicable only when the "
-"override flag is set."
+"behavior can be changed by setting %{condition}.%{wsp}Therefore options "
+"%{org_opts} and %{loc_opts} are applicable only when the override flag is "
+"set."
 msgstr ""
 
-msgid "Permission filter for [%<resource_type>s] created"
-msgstr "已建立 [%<resource_type>s] 的權限篩選器"
+msgid "Permission filter for [%<resource_type>s] created."
+msgstr ""
 
 msgid "Could not create the permission filter"
 msgstr "無法建立權限篩選器"
 
-msgid "Permission filter for [%<resource_type>s] updated"
-msgstr "已更新 [%<resource_type>s] 的權限篩選器"
+msgid "Permission filter for [%<resource_type>s] updated."
+msgstr ""
 
 msgid "Could not update the permission filter"
 msgstr "無法更新權限篩選器"
 
-msgid "Permission filter deleted"
-msgstr "已刪除權限篩選器"
+msgid "Permission filter deleted."
+msgstr ""
 
 msgid "Could not delete the permission filter"
 msgstr "無法刪除權限篩選器"
@@ -1018,14 +1012,14 @@ msgstr "運算資源"
 msgid "Compute Profile"
 msgstr "運算設定檔"
 
-msgid "Environment"
-msgstr "環境"
+msgid "Puppet Environment"
+msgstr ""
 
-msgid "Puppet CA Id"
-msgstr "Puppet CA  ID"
+msgid "Puppet CA Proxy"
+msgstr ""
 
-msgid "Puppet Master Id"
-msgstr "Puppet 主 ID"
+msgid "Puppet Master Proxy"
+msgstr ""
 
 msgid "Cert name"
 msgstr "憑證名稱"
@@ -1042,8 +1036,17 @@ msgstr "最後一份報告"
 msgid "Network"
 msgstr "網路"
 
-msgid "Subnet"
-msgstr "子網路"
+msgid "IPv4 address"
+msgstr ""
+
+msgid "IPv6 address"
+msgstr ""
+
+msgid "Subnet ipv4"
+msgstr ""
+
+msgid "Subnet ipv6"
+msgstr ""
 
 msgid "Domain"
 msgstr "網域"
@@ -1075,9 +1078,6 @@ msgstr "類型"
 msgid "MAC address"
 msgstr "MAC 位址"
 
-msgid "IP address"
-msgstr "IP 位址"
-
 msgid "FQDN"
 msgstr "FQDN"
 
@@ -1096,6 +1096,9 @@ msgstr "媒介"
 msgid "Partition Table"
 msgstr "分割表"
 
+msgid "PXE Loader"
+msgstr ""
+
 msgid "Custom partition table"
 msgstr "自訂分割表"
 
@@ -1111,8 +1114,8 @@ msgstr "使用映像檔"
 msgid "Additional info"
 msgstr "額外資訊"
 
-msgid "Owner Id"
-msgstr "擁有者 ID"
+msgid "Owner"
+msgstr ""
 
 msgid "Owner Type"
 msgstr "擁有者類型"
@@ -1135,26 +1138,32 @@ msgstr "電源"
 msgid "Puppet run triggered"
 msgstr "已啟動 Puppet run"
 
-msgid "Host created"
-msgstr "已建立主機"
+msgid "Host id"
+msgstr ""
+
+msgid "Host name"
+msgstr "主機名稱"
+
+msgid "Host created."
+msgstr ""
 
 msgid "Could not create the host"
 msgstr "無法建立主機"
 
-msgid "Host updated"
-msgstr "已更新主機"
+msgid "Host updated."
+msgstr ""
 
 msgid "Could not update the host"
 msgstr "無法更新主機"
 
-msgid "Host deleted"
-msgstr "已刪除主機"
+msgid "Host deleted."
+msgstr ""
 
 msgid "Could not delete the host"
 msgstr "無法刪除主機"
 
-msgid "Create or update parameter for a host."
-msgstr "建立或更新主機參數。"
+msgid "Create or update parameter for a host"
+msgstr ""
 
 msgid "Host parameter updated"
 msgstr "已更新主機參數"
@@ -1165,11 +1174,11 @@ msgstr "已建立新的主機參數"
 msgid "Could not set host parameter"
 msgstr "無法設置主機參數"
 
-msgid "Delete parameter for a host."
-msgstr "刪除主機的參數。"
+msgid "Delete parameter for a host"
+msgstr ""
 
-msgid "Host parameter deleted"
-msgstr "已刪除主機參數"
+msgid "Host parameter deleted."
+msgstr ""
 
 msgid "Power a host on"
 msgstr "啟動主機電源"
@@ -1183,11 +1192,11 @@ msgstr "強制關閉主機"
 msgid "Power a host off"
 msgstr "關閉主機電源"
 
-msgid "Power off forced."
-msgstr "強制關閉電源。"
+msgid "Power off forced"
+msgstr ""
 
-msgid "Powering the host off."
-msgstr "關閉主機電源。"
+msgid "Powering the host off"
+msgstr ""
 
 msgid "Reboot a host"
 msgstr "重新啟動主機"
@@ -1222,38 +1231,35 @@ msgstr "輸入主機群組的 root 密碼："
 msgid "Title"
 msgstr "標題"
 
-msgid "Puppet CA Proxy Id"
-msgstr "Puppet CA 協定 ID"
-
-msgid "Puppet Master Proxy Id"
-msgstr "Puppet Master 協定 ID"
+msgid "Parent"
+msgstr "父"
 
 msgid "ComputeProfile"
 msgstr "ComputeProfile"
 
-msgid "Parent Id"
-msgstr "父 ID"
+msgid "Realm"
+msgstr ""
 
-msgid "Hostgroup created"
-msgstr "已建立主機群組"
+msgid "Hostgroup created."
+msgstr ""
 
 msgid "Could not create the hostgroup"
 msgstr "無法建立主機群組"
 
-msgid "Hostgroup updated"
-msgstr "已更新主機群組"
+msgid "Hostgroup updated."
+msgstr ""
 
 msgid "Could not update the hostgroup"
 msgstr "無法更新主機群組"
 
-msgid "Hostgroup deleted"
-msgstr "已刪除主機群組"
+msgid "Hostgroup deleted."
+msgstr ""
 
 msgid "Could not delete the hostgroup"
 msgstr "無法刪除主機群組"
 
-msgid "Create or update parameter for a hostgroup."
-msgstr "建立或更新主機群組的參數"
+msgid "Create or update parameter for a hostgroup"
+msgstr ""
 
 msgid "Hostgroup parameter updated"
 msgstr "已更新主機群組的參數"
@@ -1264,11 +1270,11 @@ msgstr "已建立新的主機群組參數"
 msgid "Could not set hostgroup parameter"
 msgstr "無法設定主機群組參數"
 
-msgid "Delete parameter for a hostgroup."
-msgstr "刪除主機群組的參數。"
+msgid "Delete parameter for a hostgroup"
+msgstr ""
 
-msgid "Hostgroup parameter deleted"
-msgstr "已刪除主機群組參數"
+msgid "Hostgroup parameter deleted."
+msgstr ""
 
 msgid "Available keys for %{option}"
 msgstr ""
@@ -1311,17 +1317,17 @@ msgstr ""
 msgid "Use --root-password instead"
 msgstr ""
 
-msgid "Host parameters."
-msgstr "主機參數。"
+msgid "Host parameters"
+msgstr ""
 
-msgid "Compute resource attributes."
-msgstr "運算資源屬性。"
+msgid "Compute resource attributes"
+msgstr ""
 
 msgid "Volume parameters"
 msgstr "卷冊參數"
 
-msgid "Interface parameters."
-msgstr "介面參數。"
+msgid "Interface parameters"
+msgstr ""
 
 msgid "Enter the root password for the host:"
 msgstr "輸入主機的 root 密碼："
@@ -1337,9 +1343,6 @@ msgstr "網域名稱"
 
 msgid "Environment name"
 msgstr "環境名稱"
-
-msgid "Host name"
-msgstr "主機名稱"
 
 msgid "Hostgroup name"
 msgstr "主機群組名稱"
@@ -1377,9 +1380,6 @@ msgstr "協定名稱"
 msgid "Puppet class name"
 msgstr "Puppet class 名稱"
 
-msgid "Report name"
-msgstr "報告名稱"
-
 msgid "User role name"
 msgstr "使用者角色名稱"
 
@@ -1404,17 +1404,20 @@ msgstr "智慧變數名稱"
 msgid "Name to search by"
 msgstr "欲使用來進行搜尋的名稱"
 
-msgid "one of %s not found"
-msgstr "找不到其中一個 %s"
-
-msgid "%s not found"
-msgstr "找不到 %s"
-
-msgid "found more than one %s"
-msgstr "找到超過一組 %s"
-
 msgid "Missing options to search %s"
 msgstr "缺少了搜尋 %s 的選項"
+
+msgid "one of %s not found."
+msgstr ""
+
+msgid "%s not found."
+msgstr ""
+
+msgid "Found more than one %s."
+msgstr ""
+
+msgid "Missing options to search %s."
+msgstr ""
 
 msgid "View and manage compute resource's images"
 msgstr "檢視和管理運算資源的映像檔"
@@ -1428,20 +1431,20 @@ msgstr "IAM 角色"
 msgid "Show images available for addition"
 msgstr "顯示能使用的額外映像檔"
 
-msgid "Image created"
-msgstr "已建立映像檔"
+msgid "Image created."
+msgstr ""
 
 msgid "Could not create the image"
 msgstr "無法建立映像檔"
 
-msgid "Image updated"
-msgstr "已更新映像檔"
+msgid "Image updated."
+msgstr ""
 
 msgid "Could not update the image"
 msgstr "無法更新映像檔"
 
-msgid "Image deleted"
-msgstr "已刪除映像檔"
+msgid "Image deleted."
+msgstr ""
 
 msgid "Could not delete the image"
 msgstr "無法刪除映像檔"
@@ -1455,8 +1458,14 @@ msgstr "主要"
 msgid "provision"
 msgstr "佈建"
 
+msgid "IP address"
+msgstr "IP 位址"
+
 msgid "DNS name"
 msgstr "DNS 名稱"
+
+msgid "Subnet"
+msgstr "子網路"
 
 msgid "Primary"
 msgstr "主要"
@@ -1490,33 +1499,31 @@ msgstr "Bond 選項"
 
 msgid ""
 "Should this interface be used for constructing the FQDN of the host? Each "
-"managed hosts needs to have one primary interface."
-msgstr "這介面是否要用來建立主機的 FQDN？每個受管理的主機需要有一組主介面。"
+"managed hosts needs to have one primary interface"
+msgstr ""
 
 msgid ""
 "Should this interface be used for TFTP of PXELinux (or SSH for image-based "
-"hosts)? Each managed hosts needs to have one provision interface."
+"hosts)? Each managed hosts needs to have one provision interface"
 msgstr ""
-"這介面是否要給 PXELinux 的 TFTP（或映像檔為主的 SSH）使用？每個受管理的主機需"
-"要有一個佈建介面。"
 
-msgid "Interface created"
-msgstr "介面已建立"
+msgid "Interface created."
+msgstr ""
 
 msgid "Could not create the interface"
 msgstr "無法建立介面"
 
-msgid "Compute resource specific attributes."
-msgstr "運算資源特定的屬性。"
+msgid "Compute resource specific attributes"
+msgstr ""
 
-msgid "Interface updated"
-msgstr "介面已更新"
+msgid "Interface updated."
+msgstr ""
 
 msgid "Could not update the interface"
 msgstr "無法更新介面"
 
-msgid "Interface deleted"
-msgstr "介面已刪除"
+msgid "Interface deleted."
+msgstr ""
 
 msgid "Could not delete the interface"
 msgstr "無法刪除介面"
@@ -1524,32 +1531,29 @@ msgstr "無法刪除介面"
 msgid "Location numeric id to search by"
 msgstr "欲使用來進行搜尋的位置數字 ID"
 
-msgid "Parent"
-msgstr "父"
-
 msgid "Organizations"
 msgstr "組織"
 
-msgid "Location created"
-msgstr "位置已建立"
+msgid "Location created."
+msgstr ""
 
 msgid "Could not create the location"
 msgstr "無法建立位置"
 
-msgid "Location updated"
-msgstr "位置已更新"
+msgid "Location updated."
+msgstr ""
 
 msgid "Could not update the location"
 msgstr "無法更新位置"
 
-msgid "Location deleted"
-msgstr "位置已刪除"
+msgid "Location deleted."
+msgstr ""
 
 msgid "Could not delete the location"
 msgstr "無法刪除位置"
 
-msgid "Create or update parameter for a location."
-msgstr "建立或更新位置的參數"
+msgid "Create or update parameter for a location"
+msgstr ""
 
 msgid "Parameter [%{name}] updated to value [%{value}]"
 msgstr "參數 [%{name}] 已更新為值 [%{value}]"
@@ -1560,11 +1564,11 @@ msgstr "參數 [%{name}] 已建立，值為 [%{value}]"
 msgid "Could not set location parameter"
 msgstr "無法設定位置參數"
 
-msgid "Delete parameter for a location."
-msgstr "刪除位置參數。"
+msgid "Delete parameter for a location"
+msgstr ""
 
-msgid "Parameter [%{name}] deleted"
-msgstr "參數 [%{name}] 已刪除"
+msgid "Parameter [%{name}] deleted."
+msgstr ""
 
 msgid "Could not delete location parameter"
 msgstr "無法刪除位置參數"
@@ -1575,20 +1579,20 @@ msgstr "路徑"
 msgid "OS Family"
 msgstr "OS 家族"
 
-msgid "Installation medium created"
-msgstr "安裝媒介已建立"
+msgid "Installation medium created."
+msgstr ""
 
 msgid "Could not create the installation medium"
 msgstr "無法建立安裝媒介"
 
-msgid "Installation medium updated"
-msgstr "安裝媒介已更新"
+msgid "Installation medium updated."
+msgstr ""
 
 msgid "Could not update the installation media"
 msgstr "無法更新安裝媒介"
 
-msgid "Installation medium deleted"
-msgstr "已刪除安裝媒介"
+msgid "Installation medium deleted."
+msgstr ""
 
 msgid "Could not delete the installation media"
 msgstr "無法刪除安裝媒介"
@@ -1602,20 +1606,20 @@ msgstr "HW 型號"
 msgid "Info"
 msgstr "資訊"
 
-msgid "Hardware model created"
-msgstr "已建立硬體型號"
+msgid "Hardware model created."
+msgstr ""
 
 msgid "Could not create the hardware model"
 msgstr "無法建立硬體型號"
 
-msgid "Hardware model deleted"
-msgstr "已刪除硬體型號"
+msgid "Hardware model deleted."
+msgstr ""
 
 msgid "Could not delete the hardware model"
 msgstr "無法刪除硬體型號"
 
-msgid "Hardware model updated"
-msgstr "已更新硬體型號"
+msgid "Hardware model updated."
+msgstr ""
 
 msgid "Could not update the hardware model"
 msgstr "無法更新硬體型號"
@@ -1641,26 +1645,26 @@ msgstr "預設範本"
 msgid "Architectures"
 msgstr "架構"
 
-msgid "Operating system created"
-msgstr "已建立作業系統"
+msgid "Operating system created."
+msgstr ""
 
 msgid "Could not create the operating system"
 msgstr "無法建立作業系統"
 
-msgid "Operating system updated"
-msgstr "已更新作業系統"
+msgid "Operating system updated."
+msgstr ""
 
 msgid "Could not update the operating system"
 msgstr "無法更新作業系統"
 
-msgid "Operating system deleted"
-msgstr "已刪除作業系統"
+msgid "Operating system deleted."
+msgstr ""
 
 msgid "Could not delete the operating system"
 msgstr "無法刪除作業系統"
 
-msgid "Create or update parameter for an operating system."
-msgstr "建立或更新作業系統的參數。"
+msgid "Create or update parameter for an operating system"
+msgstr ""
 
 msgid "Operating system parameter updated"
 msgstr "已更新作業系統參數"
@@ -1671,21 +1675,21 @@ msgstr "已建立新作業系統參數"
 msgid "Could not set operating system parameter"
 msgstr "無法設置作業系統參數"
 
-msgid "Delete parameter for an operating system."
-msgstr "刪除作業系統的參數。"
+msgid "Delete parameter for an operating system"
+msgstr ""
 
-msgid "operating system parameter deleted"
-msgstr "已刪除作業系統參數"
+msgid "operating system parameter deleted."
+msgstr ""
 
-msgid "operatingsystem id"
-msgstr "operatingsystem id"
+msgid "Operatingsystem id"
+msgstr ""
 
-msgid "config template id to be set"
-msgstr "欲設置的配置範本 ID"
+msgid "Config template id to be set"
+msgstr ""
 
 msgid ""
-"[%{config_template_name}] was set as default %{template_kind_name} template"
-msgstr "[%{config_template_name}] 已設為預設的 %{template_kind_name} 範本"
+"[%{config_template_name}] was set as default %{template_kind_name} template."
+msgstr ""
 
 msgid "Could not set the os default template"
 msgstr "無法設置 OS 預設範本"
@@ -1693,8 +1697,8 @@ msgstr "無法設置 OS 預設範本"
 msgid "Type of the config template"
 msgstr "配置範本的類型"
 
-msgid "Default template deleted"
-msgstr "已刪除預設範本"
+msgid "Default template deleted."
+msgstr ""
 
 msgid "Could not delete the default template"
 msgstr "無法刪除預設範本"
@@ -1702,62 +1706,82 @@ msgstr "無法刪除預設範本"
 msgid "Default template of type %s not found"
 msgstr "找不到類型為 %s 的預設範本"
 
+msgid ""
+"Could not find %{resource}. Some search options were missing, please see --"
+"help."
+msgstr "找不到 %{resource}。部分搜尋選項遺失，請查看 --help。"
+
+msgid "Could not find %{resource}, please set option %{switches}."
+msgstr "找不到 %{resource}，請設置選項 %{switches}。"
+
+msgid "Could not find %{resource}, please set one of options %{switches}."
+msgstr "找不到 %{resource}，請設置 %{switches} 選項之一。"
+
+msgid "Enter user's current password:"
+msgstr ""
+
+msgid "Enter user's new password:"
+msgstr ""
+
 msgid "Locations"
 msgstr "位置"
 
-msgid "Organization created"
-msgstr "已建立組織"
+msgid "Organization created."
+msgstr ""
 
 msgid "Could not create the organization"
 msgstr "無法建立組織"
 
-msgid "Organization updated"
-msgstr "組織已更新"
+msgid "Organization updated."
+msgstr ""
 
 msgid "Could not update the organization"
 msgstr "無法更新組織"
 
-msgid "Organization deleted"
-msgstr "已刪除組織"
+msgid "Organization deleted."
+msgstr ""
 
 msgid "Could not delete the organization"
 msgstr "無法刪除組織"
 
-msgid "Create or update parameter for an organization."
-msgstr "建立或更新組織的參數。"
+msgid "Create or update parameter for an organization"
+msgstr ""
 
 msgid "Could not set organization parameter"
 msgstr "無法設定組織參數"
 
-msgid "Delete parameter for an organization."
-msgstr "刪除組織參數。"
+msgid "Delete parameter for an organization"
+msgstr ""
 
 msgid "Could not delete organization parameter"
 msgstr "無法刪除組織參數"
 
+msgid "parameter name"
+msgstr "參數名稱"
+
 msgid "Locked"
 msgstr "已鎖定"
 
-msgid "View partition table content."
-msgstr "檢視分割表內容。"
+msgid "View partition table content"
+msgstr ""
 
 msgid "Path to a file that contains the partition layout"
 msgstr "包含分割區配置的檔案之路徑"
 
-msgid "Partition table created"
-msgstr "分割表已建立"
+msgid "Partition table created."
+msgstr ""
 
 msgid "Could not create the partition table"
 msgstr "無法建立分割表"
 
-msgid "Partition table updated"
-msgstr "分割表已更新"
+msgid "Partition table updated."
+msgstr ""
 
 msgid "Could not update the partition table"
 msgstr "無法更新分割表"
 
-msgid "Partition table deleted"
-msgstr "已刪除分割表"
+msgid "Partition table deleted."
+msgstr ""
 
 msgid "Could not delete the partition table"
 msgstr "無法刪除分割表"
@@ -1780,19 +1804,19 @@ msgstr ""
 msgid "Realm type"
 msgstr "領域類型"
 
-msgid "Realm [%{name}] created"
+msgid "Realm [%{name}] created."
 msgstr ""
 
 msgid "Could not create the realm"
 msgstr ""
 
-msgid "Realm [%{name}] updated"
+msgid "Realm [%{name}] updated."
 msgstr ""
 
 msgid "Could not update the realm"
 msgstr ""
 
-msgid "Realm [%{name}] deleted"
+msgid "Realm [%{name}] deleted."
 msgstr ""
 
 msgid "Could not delete the realm"
@@ -1921,8 +1945,8 @@ msgstr "日誌"
 msgid "Message"
 msgstr "訊息"
 
-msgid "Report has been deleted"
-msgstr "報告已刪除"
+msgid "Report has been deleted."
+msgstr ""
 
 msgid "Could not delete the report"
 msgstr "無法刪除報告"
@@ -1936,32 +1960,32 @@ msgstr "內建"
 msgid "User role id"
 msgstr "使用者角色 ID"
 
-msgid "User role [%<name>s] created"
-msgstr "使用者角色 [%<name>s] 已建立"
+msgid "User role [%<name>s] created."
+msgstr ""
 
 msgid "Could not create the user role"
 msgstr "無法建立使用者角色"
 
-msgid "User role [%<name>s] updated"
-msgstr "使用者角色 [%<name>s] 已更新"
+msgid "User role [%<name>s] updated."
+msgstr ""
 
 msgid "Could not update the user role"
 msgstr "無法更新使用者角色"
 
-msgid "User role cloned"
+msgid "User role cloned."
 msgstr ""
 
 msgid "Could not clone the user role"
 msgstr ""
 
-msgid "User role [%<name>s] deleted"
-msgstr "使用者角色 [%<name>s] 已刪除"
+msgid "User role [%<name>s] deleted."
+msgstr ""
 
 msgid "Could not delete the user roles"
 msgstr "無法刪除使用者角色"
 
-msgid "Setting [%{name}] updated to [%{value}]"
-msgstr "設定 [%{name}] 已更新至 [%{value}]"
+msgid "Setting [%{name}] updated to [%{value}]."
+msgstr ""
 
 msgid "Could not update the setting"
 msgstr "無法更新設定"
@@ -2014,41 +2038,63 @@ msgstr "數值"
 msgid "Match"
 msgstr "比對"
 
-msgid "Parameter updated"
-msgstr "已更新參數"
+msgid "Parameter updated."
+msgstr ""
 
 msgid "Could not update the parameter"
 msgstr "無法更新參數"
 
-msgid "Override this parameter."
-msgstr "覆寫此參數。"
+msgid "Value to use when there is no match"
+msgstr ""
 
-msgid "This parameter is required."
-msgstr "此參數乃必要的。"
+msgid "Override this parameter"
+msgstr ""
 
-msgid "Type of the parameter."
-msgstr "參數的類型。"
+msgid "This parameter is required"
+msgstr ""
 
-msgid "Type of the validator."
-msgstr "驗證程式的類型。"
+msgid "Type of the parameter"
+msgstr ""
+
+msgid "Type of the validator"
+msgstr ""
 
 msgid "The order in which values are resolved"
 msgstr ""
 
-msgid "Override value created"
-msgstr "置換值已建立"
+msgid "Override value, required if omit is false"
+msgstr ""
+
+msgid "Override value created."
+msgstr ""
 
 msgid "Could not create the override value"
 msgstr ""
 
-msgid "Cannot use --value when --use-puppet-default is true"
+msgid "Cannot use --value when --use-puppet-default is true."
 msgstr ""
 
-msgid "Override value deleted"
-msgstr "置換值已刪除"
+msgid "Create an override value for a specific smart variable"
+msgstr ""
+
+msgid ""
+"add-override-value command is deprecated and will be removed in one of the "
+"future versions. Please use add-matcher command instead."
+msgstr ""
+
+msgid "Override value deleted."
+msgstr ""
 
 msgid "Could not delete the override value"
 msgstr "無法刪除置換值"
+
+msgid "Remove an override value for a specific smart variable"
+msgstr ""
+
+msgid ""
+"remove-override-value command is deprecated and will be removed in one of "
+"the future versions. Please use remove-matcher command instead."
+msgstr ""
 
 msgid "URL"
 msgstr "網址"
@@ -2056,26 +2102,26 @@ msgstr "網址"
 msgid "Features"
 msgstr "功能"
 
-msgid "Smart proxy created"
-msgstr "已建立智慧協定"
+msgid "Smart proxy created."
+msgstr ""
 
 msgid "Could not create the proxy"
 msgstr "無法建立協定"
 
-msgid "Smart proxy updated"
-msgstr "已更新智慧協定"
+msgid "Smart proxy updated."
+msgstr ""
 
 msgid "Could not update the proxy"
 msgstr "無法更新協定"
 
-msgid "Smart proxy deleted"
-msgstr "已刪除智慧協定"
+msgid "Smart proxy deleted."
+msgstr ""
 
 msgid "Could not delete the proxy"
 msgstr "無法刪除協定"
 
-msgid "Puppet classes were imported"
-msgstr "Puppet 類別已匯入"
+msgid "Puppet classes were imported."
+msgstr ""
 
 msgid "Import of puppet classes failed"
 msgstr "Puppet 類別匯入失敗"
@@ -2083,14 +2129,14 @@ msgstr "Puppet 類別匯入失敗"
 msgid "Do not run the import"
 msgstr "不執行匯入"
 
-msgid "Smart proxy features were refreshed"
-msgstr "已更新智慧協定功能"
+msgid "Smart proxy features were refreshed."
+msgstr ""
 
 msgid "Refresh of smart proxy features failed"
 msgstr "更新智慧協定功能失敗"
 
-msgid "Type of the variable."
-msgstr "變數類型。"
+msgid "Type of the variable"
+msgstr ""
 
 msgid "Variable"
 msgstr "無定向"
@@ -2098,23 +2144,50 @@ msgstr "無定向"
 msgid "Use --variable instead"
 msgstr ""
 
-msgid "Smart variable [%{variable}] created"
-msgstr "智慧變數 [%{variable}] 已建立"
+msgid "Smart variable [%{variable}] created."
+msgstr ""
 
 msgid "Could not create the smart variable"
 msgstr "無法建立智慧型變數"
 
-msgid "Smart variable [%{variable}] updated"
-msgstr "智慧變數 [%{variable}] 已更新"
+msgid "Smart variable [%{variable}] updated."
+msgstr ""
 
 msgid "Could not update the smart variable"
 msgstr "無法更新智慧型變數"
 
-msgid "Smart variable [%{variable}] deleted"
-msgstr "智慧變數 [%{variable}] 已刪除"
+msgid "Smart variable [%{variable}] deleted."
+msgstr ""
 
 msgid "Could not delete the smart variable"
 msgstr "無法刪除智慧型變數"
+
+msgid "Manage SSH Keys sources"
+msgstr ""
+
+msgid "Fingerprint"
+msgstr ""
+
+msgid "Length"
+msgstr ""
+
+msgid "Path to a SSH public key"
+msgstr ""
+
+msgid "SSH Key %{name} added."
+msgstr ""
+
+msgid "Could not add SSH Key"
+msgstr ""
+
+msgid "Public Key"
+msgstr ""
+
+msgid "SSH Key deleted."
+msgstr ""
+
+msgid "Could not delete the SSH Key"
+msgstr ""
 
 msgid "Mask"
 msgstr "遮罩"
@@ -2152,27 +2225,26 @@ msgstr "由"
 msgid "To"
 msgstr "至"
 
-msgid "Subnet created"
-msgstr "已建立子網路"
+msgid "Subnet created."
+msgstr ""
 
 msgid "Could not create the subnet"
 msgstr "無法建立子網路"
 
-msgid "Subnet updated"
-msgstr "已更新子網路"
+msgid "Subnet updated."
+msgstr ""
 
 msgid "Could not update the subnet"
 msgstr "無法更新子網路"
 
-msgid "Subnet deleted"
-msgstr "已刪除子網路"
+msgid "Subnet deleted."
+msgstr ""
 
 msgid "Could not delete the subnet"
 msgstr "無法刪除子網路"
 
-#, fuzzy
-msgid "Create or update parameter for a subnet."
-msgstr "建立或更新主機參數。"
+msgid "Create or update parameter for a subnet"
+msgstr ""
 
 #, fuzzy
 msgid "Subnet parameter updated"
@@ -2186,18 +2258,19 @@ msgstr "已建立新的主機參數"
 msgid "Could not set subnet parameter"
 msgstr "無法設置主機參數"
 
-#, fuzzy
-msgid "Delete parameter for a subnet."
-msgstr "刪除主機的參數。"
-
-#, fuzzy
-msgid "Subnet parameter deleted"
-msgstr "已刪除主機參數"
-
-msgid "List available provisioning template kinds."
+msgid "Delete parameter for a subnet"
 msgstr ""
 
-msgid "View provisioning template content."
+msgid "Subnet parameter deleted."
+msgstr ""
+
+msgid "unknown template kind"
+msgstr ""
+
+msgid "List available provisioning template kinds"
+msgstr ""
+
+msgid "View provisioning template content"
 msgstr ""
 
 msgid "Path to a file that contains the template"
@@ -2206,19 +2279,19 @@ msgstr "包含範本的檔案之路徑"
 msgid "Template type. Eg. snippet, script, provision"
 msgstr "範本類型。例如程式碼片段、script、佈建"
 
-msgid "Provisioning template created"
+msgid "Provisioning template created."
 msgstr ""
 
 msgid "Could not create the provisioning template"
 msgstr ""
 
-msgid "Provisioning template updated"
+msgid "Provisioning template updated."
 msgstr ""
 
 msgid "Could not update the provisioning template"
 msgstr ""
 
-msgid "Provisioning template deleted"
+msgid "Provisioning template deleted."
 msgstr ""
 
 msgid "Could not delete the provisioning template"
@@ -2227,7 +2300,7 @@ msgstr ""
 msgid "Update the default PXE menu on all configured TFTP servers"
 msgstr "更新所有經過配置的 TFTP 伺服器上的預設 PXE 選單"
 
-msgid "Provisioning template cloned"
+msgid "Provisioning template cloned."
 msgstr ""
 
 msgid "Could not clone the provisioning template"
@@ -2272,47 +2345,571 @@ msgstr ""
 msgid "Default location name"
 msgstr ""
 
-msgid "Enter user's current password:"
+msgid "User [%{login}] created."
 msgstr ""
-
-msgid "Enter user's new password:"
-msgstr ""
-
-msgid "User [%{login}] created"
-msgstr "使用者 [%{login}] 已建立"
 
 msgid "Could not create the user"
 msgstr "無法建立使用者"
 
-msgid "User [%{login}] updated"
-msgstr "使用者 [%{login}] 已更新"
+msgid "User [%{login}] updated."
+msgstr ""
 
 msgid "Could not update the user"
 msgstr "無法更新使用者"
 
-msgid "User [%{login}] deleted"
-msgstr "使用者 [%{login}] 已刪除"
+msgid "User [%{login}] deleted."
+msgstr ""
 
 msgid "Could not delete the user"
 msgstr "無法刪除使用者"
 
-msgid "User group [%<name>s] created"
-msgstr "已建立使用者群組 [%<name>s]"
+msgid "Managing User SSH Keys."
+msgstr ""
+
+msgid "User group [%<name>s] created."
+msgstr ""
 
 msgid "Could not create the user group"
 msgstr "無法建立使用者群組"
 
-msgid "User group [%<name>s] updated"
-msgstr "已更新使用者群組 [%<name>s]"
+msgid "User group [%<name>s] updated."
+msgstr ""
 
 msgid "Could not update the user group"
 msgstr "無法更新使用者群組"
 
-msgid "User group [%<name>s] deleted"
-msgstr "已刪除使用者群組 [%<name>s]"
+msgid "User group [%<name>s] deleted."
+msgstr ""
 
 msgid "Could not delete the user group"
 msgstr "無法刪除使用者群組"
+
+#~ msgid "Foreman connection login/logout."
+#~ msgstr "Foreman 連線登錄/登出。"
+
+#~ msgid "Manipulate architectures."
+#~ msgstr "操作架構。"
+
+#~ msgid "Manipulate auth sources."
+#~ msgstr "操作 auth 來源。"
+
+#~ msgid "Manipulate compute resources."
+#~ msgstr "操作運算資源。"
+
+#~ msgid "Manipulate domains."
+#~ msgstr "操作網域。"
+
+#~ msgid "Manipulate environments."
+#~ msgstr "操作環境"
+
+#~ msgid "Search facts."
+#~ msgstr "搜尋詳情。"
+
+#~ msgid "Manage permission filters."
+#~ msgstr "管理權限篩選器。"
+
+#~ msgid "Manipulate hosts."
+#~ msgstr "操作主機。"
+
+#~ msgid "Manipulate hostgroups."
+#~ msgstr "操作主機群組。"
+
+#~ msgid "Manipulate locations."
+#~ msgstr "操作位置。"
+
+#~ msgid "Manipulate installation media."
+#~ msgstr "操作安裝媒介。"
+
+#~ msgid "Manipulate hardware models."
+#~ msgstr "操作硬體型號。"
+
+#~ msgid "Manipulate operating system."
+#~ msgstr "操作作業系統。"
+
+#~ msgid "Manipulate organizations."
+#~ msgstr "操作組織。"
+
+#~ msgid "Manipulate partition tables."
+#~ msgstr "操作分割表。"
+
+#~ msgid "Search puppet modules."
+#~ msgstr "搜尋 puppet 模組。"
+
+#~ msgid "Browse and read reports."
+#~ msgstr "瀏覽和閱讀報告。"
+
+#~ msgid "Manage user roles."
+#~ msgstr "管理使用者角色。"
+
+#~ msgid "Manipulate smart class parameters."
+#~ msgstr "操作智慧類別的參數。"
+
+#~ msgid "Manipulate smart variables."
+#~ msgstr "操作智慧變數。"
+
+#~ msgid "Manipulate smart proxies."
+#~ msgstr "操作智慧協定。"
+
+#~ msgid "Change server settings."
+#~ msgstr "修改伺服器設定。"
+
+#~ msgid "Manipulate subnets."
+#~ msgstr "操作子網路。"
+
+#~ msgid "Manipulate config templates."
+#~ msgstr "操作配置範本。"
+
+#~ msgid "Manipulate users."
+#~ msgstr "操作使用者。"
+
+#~ msgid "Manage user groups."
+#~ msgstr "管理使用者群組。"
+
+#~ msgid "Invalid username or password"
+#~ msgstr "無效的帳號或密碼"
+
+#~ msgid "[Foreman] Username: "
+#~ msgstr "[Foreman] 使用者名稱："
+
+#~ msgid "[Foreman] Password for %s: "
+#~ msgstr "[Foreman] %s 的密碼："
+
+#~ msgid "Architecture created"
+#~ msgstr "已建立架構"
+
+#~ msgid "Architecture deleted"
+#~ msgstr "已刪除架構"
+
+#~ msgid "Architecture updated"
+#~ msgstr "已更新架構"
+
+#~ msgid "The user has been associated"
+#~ msgstr "使用者的相聯性已建立"
+
+#~ msgid "The user has been disassociated"
+#~ msgstr "使用者的相聯性已移除"
+
+#~ msgid "The user group has been associated"
+#~ msgstr "使用者群組的相聯性已建立"
+
+#~ msgid "The user group has been disassociated"
+#~ msgstr "使用者群組的相聯性已移除"
+
+#~ msgid "Operating system has been associated"
+#~ msgstr "作業系統的相聯性已建立"
+
+#~ msgid "Operating system has been disassociated"
+#~ msgstr "作業系統的相聯性已解除"
+
+#~ msgid "Architecture has been associated"
+#~ msgstr "架構的相聯性已建立"
+
+#~ msgid "Architecture has been disassociated"
+#~ msgstr "架構的相聯性已解除"
+
+#~ msgid "Partition table has been associated"
+#~ msgstr "分割表的相聯性已建立"
+
+#~ msgid "Partition table has been disassociated"
+#~ msgstr "已解除分割表的相聯性"
+
+#~ msgid "User role has been assigned"
+#~ msgstr "已指定使用者角色"
+
+#~ msgid "User role has been removed"
+#~ msgstr "已移除使用者角色"
+
+#~ msgid "username to access the remote system"
+#~ msgstr "用來存取遠端系統的使用者名稱"
+
+#~ msgid "password to access the remote system"
+#~ msgstr "用來存取遠端系統的密碼"
+
+#~ msgid "Manage LDAP auth sources."
+#~ msgstr "管理 LDAP auth 來源。"
+
+#~ msgid "Received data of unknown format"
+#~ msgstr "收到了不明格式的資料"
+
+#~ msgid "Set a global parameter."
+#~ msgstr "設置全域參數。"
+
+#~ msgid "parameter value"
+#~ msgstr "參數值"
+
+#~ msgid "Manipulate global parameters."
+#~ msgstr "操作全域參數。"
+
+#~ msgid "Compute resource created"
+#~ msgstr "已建立運算資源"
+
+#~ msgid "Compute resource updated"
+#~ msgstr "運算資源已更新"
+
+#~ msgid "Compute resource deleted"
+#~ msgstr "已刪除運算資源"
+
+#~ msgid "Domain [%{name}] created"
+#~ msgstr "已建立 [%{name}] 網域"
+
+#~ msgid "Domain [%{name}] updated"
+#~ msgstr "已更新 [%{name}] 網域"
+
+#~ msgid "Domain [%{name}] deleted"
+#~ msgstr "已刪除 [%{name}] 網域"
+
+#~ msgid "Create or update parameter for a domain."
+#~ msgstr "建立或更新網域的參數。"
+
+#~ msgid "Delete parameter for a domain."
+#~ msgstr "刪除網域的參數。"
+
+#~ msgid "Domain parameter deleted"
+#~ msgstr "已刪除網域參數"
+
+#~ msgid "Environment created"
+#~ msgstr "環境已建立"
+
+#~ msgid "Environment updated"
+#~ msgstr "環境已更新"
+
+#~ msgid "Environment deleted"
+#~ msgstr "環境已刪除"
+
+#~ msgid "Forbidden - server refused to process the request"
+#~ msgstr "禁止 - 伺服器拒絕處理請求"
+
+#~ msgid "External user group created"
+#~ msgstr "已建立外部使用者群組"
+
+#~ msgid "External user group updated"
+#~ msgstr "已更新外部使用者群組"
+
+#~ msgid "External user group deleted"
+#~ msgstr "已刪除外部使用者群組"
+
+#~ msgid "Permission filter for [%<resource_type>s] created"
+#~ msgstr "已建立 [%<resource_type>s] 的權限篩選器"
+
+#~ msgid "Permission filter for [%<resource_type>s] updated"
+#~ msgstr "已更新 [%<resource_type>s] 的權限篩選器"
+
+#~ msgid "Permission filter deleted"
+#~ msgstr "已刪除權限篩選器"
+
+#~ msgid "Environment"
+#~ msgstr "環境"
+
+#~ msgid "Puppet CA Id"
+#~ msgstr "Puppet CA  ID"
+
+#~ msgid "Puppet Master Id"
+#~ msgstr "Puppet 主 ID"
+
+#~ msgid "Owner Id"
+#~ msgstr "擁有者 ID"
+
+#~ msgid "Host created"
+#~ msgstr "已建立主機"
+
+#~ msgid "Host updated"
+#~ msgstr "已更新主機"
+
+#~ msgid "Host deleted"
+#~ msgstr "已刪除主機"
+
+#~ msgid "Create or update parameter for a host."
+#~ msgstr "建立或更新主機參數。"
+
+#~ msgid "Delete parameter for a host."
+#~ msgstr "刪除主機的參數。"
+
+#~ msgid "Host parameter deleted"
+#~ msgstr "已刪除主機參數"
+
+#~ msgid "Power off forced."
+#~ msgstr "強制關閉電源。"
+
+#~ msgid "Powering the host off."
+#~ msgstr "關閉主機電源。"
+
+#~ msgid "Puppet CA Proxy Id"
+#~ msgstr "Puppet CA 協定 ID"
+
+#~ msgid "Puppet Master Proxy Id"
+#~ msgstr "Puppet Master 協定 ID"
+
+#~ msgid "Parent Id"
+#~ msgstr "父 ID"
+
+#~ msgid "Hostgroup created"
+#~ msgstr "已建立主機群組"
+
+#~ msgid "Hostgroup updated"
+#~ msgstr "已更新主機群組"
+
+#~ msgid "Hostgroup deleted"
+#~ msgstr "已刪除主機群組"
+
+#~ msgid "Create or update parameter for a hostgroup."
+#~ msgstr "建立或更新主機群組的參數"
+
+#~ msgid "Delete parameter for a hostgroup."
+#~ msgstr "刪除主機群組的參數。"
+
+#~ msgid "Hostgroup parameter deleted"
+#~ msgstr "已刪除主機群組參數"
+
+#~ msgid "Host parameters."
+#~ msgstr "主機參數。"
+
+#~ msgid "Compute resource attributes."
+#~ msgstr "運算資源屬性。"
+
+#~ msgid "Interface parameters."
+#~ msgstr "介面參數。"
+
+#~ msgid "Report name"
+#~ msgstr "報告名稱"
+
+#~ msgid "one of %s not found"
+#~ msgstr "找不到其中一個 %s"
+
+#~ msgid "%s not found"
+#~ msgstr "找不到 %s"
+
+#~ msgid "found more than one %s"
+#~ msgstr "找到超過一組 %s"
+
+#~ msgid "Image created"
+#~ msgstr "已建立映像檔"
+
+#~ msgid "Image updated"
+#~ msgstr "已更新映像檔"
+
+#~ msgid "Image deleted"
+#~ msgstr "已刪除映像檔"
+
+#~ msgid ""
+#~ "Should this interface be used for constructing the FQDN of the host? Each "
+#~ "managed hosts needs to have one primary interface."
+#~ msgstr "這介面是否要用來建立主機的 FQDN？每個受管理的主機需要有一組主介面。"
+
+#~ msgid ""
+#~ "Should this interface be used for TFTP of PXELinux (or SSH for image-"
+#~ "based hosts)? Each managed hosts needs to have one provision interface."
+#~ msgstr ""
+#~ "這介面是否要給 PXELinux 的 TFTP（或映像檔為主的 SSH）使用？每個受管理的主"
+#~ "機需要有一個佈建介面。"
+
+#~ msgid "Interface created"
+#~ msgstr "介面已建立"
+
+#~ msgid "Compute resource specific attributes."
+#~ msgstr "運算資源特定的屬性。"
+
+#~ msgid "Interface updated"
+#~ msgstr "介面已更新"
+
+#~ msgid "Interface deleted"
+#~ msgstr "介面已刪除"
+
+#~ msgid "Location created"
+#~ msgstr "位置已建立"
+
+#~ msgid "Location updated"
+#~ msgstr "位置已更新"
+
+#~ msgid "Location deleted"
+#~ msgstr "位置已刪除"
+
+#~ msgid "Create or update parameter for a location."
+#~ msgstr "建立或更新位置的參數"
+
+#~ msgid "Delete parameter for a location."
+#~ msgstr "刪除位置參數。"
+
+#~ msgid "Parameter [%{name}] deleted"
+#~ msgstr "參數 [%{name}] 已刪除"
+
+#~ msgid "Installation medium created"
+#~ msgstr "安裝媒介已建立"
+
+#~ msgid "Installation medium updated"
+#~ msgstr "安裝媒介已更新"
+
+#~ msgid "Installation medium deleted"
+#~ msgstr "已刪除安裝媒介"
+
+#~ msgid "Hardware model created"
+#~ msgstr "已建立硬體型號"
+
+#~ msgid "Hardware model deleted"
+#~ msgstr "已刪除硬體型號"
+
+#~ msgid "Hardware model updated"
+#~ msgstr "已更新硬體型號"
+
+#~ msgid "Operating system created"
+#~ msgstr "已建立作業系統"
+
+#~ msgid "Operating system updated"
+#~ msgstr "已更新作業系統"
+
+#~ msgid "Operating system deleted"
+#~ msgstr "已刪除作業系統"
+
+#~ msgid "Create or update parameter for an operating system."
+#~ msgstr "建立或更新作業系統的參數。"
+
+#~ msgid "Delete parameter for an operating system."
+#~ msgstr "刪除作業系統的參數。"
+
+#~ msgid "operating system parameter deleted"
+#~ msgstr "已刪除作業系統參數"
+
+#~ msgid "operatingsystem id"
+#~ msgstr "operatingsystem id"
+
+#~ msgid "config template id to be set"
+#~ msgstr "欲設置的配置範本 ID"
+
+#~ msgid ""
+#~ "[%{config_template_name}] was set as default %{template_kind_name} "
+#~ "template"
+#~ msgstr "[%{config_template_name}] 已設為預設的 %{template_kind_name} 範本"
+
+#~ msgid "Default template deleted"
+#~ msgstr "已刪除預設範本"
+
+#~ msgid "Organization created"
+#~ msgstr "已建立組織"
+
+#~ msgid "Organization updated"
+#~ msgstr "組織已更新"
+
+#~ msgid "Organization deleted"
+#~ msgstr "已刪除組織"
+
+#~ msgid "Create or update parameter for an organization."
+#~ msgstr "建立或更新組織的參數。"
+
+#~ msgid "Delete parameter for an organization."
+#~ msgstr "刪除組織參數。"
+
+#~ msgid "View partition table content."
+#~ msgstr "檢視分割表內容。"
+
+#~ msgid "Partition table created"
+#~ msgstr "分割表已建立"
+
+#~ msgid "Partition table updated"
+#~ msgstr "分割表已更新"
+
+#~ msgid "Partition table deleted"
+#~ msgstr "已刪除分割表"
+
+#~ msgid "Report has been deleted"
+#~ msgstr "報告已刪除"
+
+#~ msgid "User role [%<name>s] created"
+#~ msgstr "使用者角色 [%<name>s] 已建立"
+
+#~ msgid "User role [%<name>s] updated"
+#~ msgstr "使用者角色 [%<name>s] 已更新"
+
+#~ msgid "User role [%<name>s] deleted"
+#~ msgstr "使用者角色 [%<name>s] 已刪除"
+
+#~ msgid "Setting [%{name}] updated to [%{value}]"
+#~ msgstr "設定 [%{name}] 已更新至 [%{value}]"
+
+#~ msgid "Parameter updated"
+#~ msgstr "已更新參數"
+
+#~ msgid "Override this parameter."
+#~ msgstr "覆寫此參數。"
+
+#~ msgid "This parameter is required."
+#~ msgstr "此參數乃必要的。"
+
+#~ msgid "Type of the parameter."
+#~ msgstr "參數的類型。"
+
+#~ msgid "Type of the validator."
+#~ msgstr "驗證程式的類型。"
+
+#~ msgid "Override value created"
+#~ msgstr "置換值已建立"
+
+#~ msgid "Override value deleted"
+#~ msgstr "置換值已刪除"
+
+#~ msgid "Smart proxy created"
+#~ msgstr "已建立智慧協定"
+
+#~ msgid "Smart proxy updated"
+#~ msgstr "已更新智慧協定"
+
+#~ msgid "Smart proxy deleted"
+#~ msgstr "已刪除智慧協定"
+
+#~ msgid "Puppet classes were imported"
+#~ msgstr "Puppet 類別已匯入"
+
+#~ msgid "Smart proxy features were refreshed"
+#~ msgstr "已更新智慧協定功能"
+
+#~ msgid "Type of the variable."
+#~ msgstr "變數類型。"
+
+#~ msgid "Smart variable [%{variable}] created"
+#~ msgstr "智慧變數 [%{variable}] 已建立"
+
+#~ msgid "Smart variable [%{variable}] updated"
+#~ msgstr "智慧變數 [%{variable}] 已更新"
+
+#~ msgid "Smart variable [%{variable}] deleted"
+#~ msgstr "智慧變數 [%{variable}] 已刪除"
+
+#~ msgid "Subnet created"
+#~ msgstr "已建立子網路"
+
+#~ msgid "Subnet updated"
+#~ msgstr "已更新子網路"
+
+#~ msgid "Subnet deleted"
+#~ msgstr "已刪除子網路"
+
+#, fuzzy
+#~ msgid "Create or update parameter for a subnet."
+#~ msgstr "建立或更新主機參數。"
+
+#, fuzzy
+#~ msgid "Delete parameter for a subnet."
+#~ msgstr "刪除主機的參數。"
+
+#, fuzzy
+#~ msgid "Subnet parameter deleted"
+#~ msgstr "已刪除主機參數"
+
+#~ msgid "User [%{login}] created"
+#~ msgstr "使用者 [%{login}] 已建立"
+
+#~ msgid "User [%{login}] updated"
+#~ msgstr "使用者 [%{login}] 已更新"
+
+#~ msgid "User [%{login}] deleted"
+#~ msgstr "使用者 [%{login}] 已刪除"
+
+#~ msgid "User group [%<name>s] created"
+#~ msgstr "已建立使用者群組 [%<name>s]"
+
+#~ msgid "User group [%<name>s] updated"
+#~ msgstr "已更新使用者群組 [%<name>s]"
+
+#~ msgid "User group [%<name>s] deleted"
+#~ msgstr "已刪除使用者群組 [%<name>s]"
 
 #~ msgid "You are logged in as '%s'"
 #~ msgstr "您目前已經以「%s」身份登入"
