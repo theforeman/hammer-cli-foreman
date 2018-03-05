@@ -1,5 +1,9 @@
 Release notes
 =============
+### 0.12.1 (2018-03-05)
+* temporary fix for override values ([#22751](http://projects.theforeman.org/issues/22751))
+* raise error when wrong number of ids is resolved ([#22718](http://projects.theforeman.org/issues/22718))
+* Puppetrun command is moved from hosts to puppet hosts ([#22658](http://projects.theforeman.org/issues/22658))
 
 ### 0.12.0 (2018-02-19)
 * Do not resolve already resolved id params ([#22517](http://projects.theforeman.org/issues/22517))
