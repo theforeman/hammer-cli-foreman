@@ -16,12 +16,8 @@ module HammerCLIForeman
     end
 
     class CreateCommand < HammerCLIForeman::CreateCommand
-      success_message _("Personal access token [%{name}] created.")
-      failure_message _("Could not create personal access token [%{name}]")
-
-      output do
-        field :token_value, _("Token value")
-      end
+      success_message _("Personal access token [%{name}] created:\n%{token_value}")
+      failure_message _("Could not create personal access token")
 
       build_options
     end
@@ -29,16 +25,17 @@ module HammerCLIForeman
     class InfoCommand < HammerCLIForeman::InfoCommand
       output ListCommand.output_definition do
         field :created_at, _("Created at"), Fields::Date
-        field :updated_at, _("Updated at"), Fields::Date
         field :last_used_at, _("Last used at"), Fields::Date
       end
 
       build_options
     end
 
-    class DeleteCommand < HammerCLIForeman::DeleteCommand
-      success_message _("Personal access token [%{name}] deleted.")
-      failure_message _("Could not delete personal access token [%{name}]")
+    class RevokeCommand < HammerCLIForeman::DeleteCommand
+      command_name 'revoke'
+
+      success_message _("Personal access token [%{name}] revoked.")
+      failure_message _("Could not revoke personal access token")
 
       build_options
     end
