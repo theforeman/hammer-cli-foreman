@@ -164,10 +164,10 @@ module HammerCLIForeman
       end
 
       it 'allows parent hostgroup id' do
-        api_expects(:hostgroups, :update) do |p|
-          p['hostgroup']['parent_id'] == 1 &&
-            p['id'] == '1'
-        end
+        api_expects(:hostgroups, :update).with_params({
+          :id => '1',
+          :hostgroup => { :parent_id => '1' }
+        })
         run_cmd(%w(hostgroup update --id 1 --parent-id 1))
       end
 
@@ -202,10 +202,10 @@ module HammerCLIForeman
       end
 
       it 'allows puppet ca proxy id' do
-        api_expects(:hostgroups, :update) do |p|
-          p['hostgroup']['puppet_ca_proxy_id'] == 1 &&
-            p['id'] == '1'
-        end
+        api_expects(:hostgroups, :update).with_params({
+          :id => '1',
+          :hostgroup => { :puppet_ca_proxy_id => '1' }
+        })
         run_cmd(%w(hostgroup update --id 1 --puppet-ca-proxy-id 1))
       end
 
@@ -243,10 +243,10 @@ module HammerCLIForeman
       end
 
       it 'allows puppet proxy id' do
-        api_expects(:hostgroups, :update) do |p|
-          p['hostgroup']['puppet_proxy_id'] == 1 &&
-            p['id'] == '1'
-        end
+        api_expects(:hostgroups, :update).with_params({
+          :id => '1',
+          :hostgroup => { :puppet_proxy_id => '1' }
+        })
         run_cmd(%w(hostgroup update --id 1 --puppet-proxy-id 1))
       end
 
