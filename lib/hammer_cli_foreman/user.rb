@@ -96,6 +96,9 @@ module HammerCLIForeman
     lazy_subcommand('ssh-keys', _("Managing User SSH Keys."),
       'HammerCLIForeman::SSHKeys', 'hammer_cli_foreman/ssh_keys'
     )
+    lazy_subcommand('access-token', _("Managing personal access tokens"),
+      'HammerCLIForeman::PersonalAccessToken', 'hammer_cli_foreman/personal_access_token'
+    )
     autoload_subcommands
   end
 
