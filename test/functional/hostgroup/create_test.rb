@@ -164,10 +164,12 @@ module HammerCLIForeman
       end
 
       it 'allows parent hostgroup id' do
-        api_expects(:hostgroups, :create) do |p|
-          p['hostgroup']['parent_id'] == 1 &&
-            p['hostgroup']['name'] == 'hg1'
-        end
+        api_expects(:hostgroups, :create).with_params({
+          :hostgroup => {
+            :name => 'hg1',
+            :parent_id => '1'
+          }
+        })
         run_cmd(%w(hostgroup create --name hg1 --parent-id 1))
       end
 
@@ -202,10 +204,12 @@ module HammerCLIForeman
       end
 
       it 'allows puppet ca proxy id' do
-        api_expects(:hostgroups, :create) do |p|
-          p['hostgroup']['puppet_ca_proxy_id'] == 1 &&
-            p['hostgroup']['name'] == 'hg1'
-        end
+        api_expects(:hostgroups, :create).with_params({
+          :hostgroup => {
+            :name => 'hg1',
+            :puppet_ca_proxy_id => '1'
+          }
+        })
         run_cmd(%w(hostgroup create --name hg1 --puppet-ca-proxy-id 1))
       end
 
@@ -243,10 +247,12 @@ module HammerCLIForeman
       end
 
       it 'allows puppet proxy id' do
-        api_expects(:hostgroups, :create) do |p|
-          p['hostgroup']['puppet_proxy_id'] == 1 &&
-            p['hostgroup']['name'] == 'hg1'
-        end
+        api_expects(:hostgroups, :create).with_params({
+          :hostgroup => {
+            :name => 'hg1',
+            :puppet_proxy_id => '1'
+          }
+        })
         run_cmd(%w(hostgroup create --name hg1 --puppet-proxy-id 1))
       end
 
