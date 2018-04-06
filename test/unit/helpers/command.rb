@@ -23,7 +23,14 @@ class IdResolverTestProxy
     @original_resolver.api.resources.each do |resource|
       method_name = "#{resource.singular_name}_id"
       self.class.send(:define_method, method_name) do |options|
-        1
+        value = options[HammerCLI.option_accessor_name("id")]
+        value ||= HammerCLI::NilValue if searchables(resource).any? do |s|
+          options[HammerCLI.option_accessor_name(s.name)] == HammerCLI::NilValue
+        end
+        value ||= 1 if searchables(resource).any? do |s|
+          !options[HammerCLI.option_accessor_name(s.name)].nil?
+        end
+        value
       end
 
       method_name = "#{resource.singular_name}_ids"
