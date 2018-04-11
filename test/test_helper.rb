@@ -17,7 +17,7 @@ require "mocha/setup"
 require 'hammer_cli'
 require 'hammer_cli_foreman/testing/api_expectations'
 
-FOREMAN_VERSION = Gem::Version.new(ENV['TEST_API_VERSION'] || '1.17')
+FOREMAN_VERSION = Gem::Version.new(ENV['TEST_API_VERSION'] || '1.18')
 
 include HammerCLIForeman::Testing::APIExpectations
 HammerCLI.context[:api_connection].create('foreman') do

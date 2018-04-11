@@ -55,24 +55,18 @@ module HammerCLIForeman
       command_name 'available'
       desc _("Show images available for addition")
 
-      option "--compute-resource-id", "ID", " "
-      option "--compute-resource", "NAME", " ", :attribute_name => :option_compute_resource_name
-
-      include HammerCLIForeman::Image::ComputeResourceOptions
-
-      def request_params
-        params = super
-        params['id'] ||= get_identifier
-        params
-      end
+      option '--compute-resource-id', 'ID', '',
+        :attribute_name => HammerCLI.option_accessor_name('id')
+      option '--compute-resource', 'NAME', _('Compute resource name'),
+        :attribute_name => HammerCLI.option_accessor_name('name')
 
       output do
         field :name, _("Name")
         field :uuid, _("UUID")
       end
 
+      build_options :expand => { :primary => false }, :without => :id
     end
-
 
     class CreateCommand < HammerCLIForeman::CreateCommand
 

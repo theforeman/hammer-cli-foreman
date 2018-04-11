@@ -208,11 +208,12 @@ describe HammerCLIForeman::Host do
     end
 
     context "parameters" do
+      taxonomies = ["--organization-id=1", "--location-id=1"]
       it_should_accept "name, environment_id, architecture_id, domain_id, puppet_proxy_id, operatingsystem_id and more",
           ["--name=host", "--environment-id=1", "--architecture-id=1", "--domain-id=1", "--puppet-proxy-id=1", "--operatingsystem-id=1",
             "--ip=1.2.3.4", "--mac=11:22:33:44:55:66", "--medium-id=1", "--partition-table-id=1", "--subnet-id=1",
             "--model-id=1", "--hostgroup-id=1", "--owner-id=1", '--puppet-ca-proxy-id=1', '--puppet-class-ids',
-            "--root-password=pwd", "--ask-root-password=true", "--provision-method=build", "--interface=primary=true,provision=true"]
+            "--root-password=pwd", "--ask-root-password=true", "--provision-method=build", "--interface=primary=true,provision=true"] + taxonomies
       it_should_fail_with "name or id missing",
           ["--environment-id=1", "--architecture-id=1", "--domain-id=1", "--puppet-proxy-id=1", "--operatingsystem-id=1", "--interface=primary=true,provision=true"]
       it_should_fail_with "environment_id missing",
@@ -225,8 +226,8 @@ describe HammerCLIForeman::Host do
           ["--name=host", "--environment-id=1", "--architecture-id=1", "--domain-id=1", "--operatingsystem-id=1", "--interface=primary=true,provision=true"]
       it_should_fail_with "operatingsystem_id missing",
           ["--name=host", "--environment-id=1", "--architecture-id=1", "--domain-id=1", "--puppet-proxy-id=1", "--interface=primary=true,provision=true"]
-      it_should_accept "only hostgroup name", ["--hostgroup=example", "--name=host", "--interface=primary=true,provision=true"]
-      it_should_accept "only hostgroup ID", ["--hostgroup-id=1", "--name=host", "--interface=primary=true,provision=true"]
+      it_should_accept "only hostgroup name", ["--hostgroup=example", "--name=host", "--interface=primary=true,provision=true"] + taxonomies
+      it_should_accept "only hostgroup ID", ["--hostgroup-id=1", "--name=host", "--interface=primary=true,provision=true"] + taxonomies
 
       with_params ["--name=host", "--environment-id=1", "--architecture-id=1", "--domain-id=1", "--puppet-proxy-id=1", "--operatingsystem-id=1",
             "--ip=1.2.3.4", "--mac=11:22:33:44:55:66", "--medium-id=1", "--partition-table-id=1", "--subnet-id=1",
