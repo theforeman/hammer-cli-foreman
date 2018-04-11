@@ -34,6 +34,7 @@ Developer Docs
 If you're planning to contribute,
 look at [the development documentation](doc/developer_docs.md#hammer-development-docs).
 
+If you'd like to contribute and you're looking for an easy to start with issue, there's a list of such bugs in [the Foreman's Redmine](http://projects.theforeman.org/projects/hammer-cli/issues?utf8=%E2%9C%93&set_filter=1&f[]=cf_3&op[cf_3]=%3D&v[cf_3][]=trivial&v[cf_3][]=easy&f[]=status_id&op[status_id]=o).
 
 How to test
 ------------
