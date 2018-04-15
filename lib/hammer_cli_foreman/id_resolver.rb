@@ -36,6 +36,7 @@ module HammerCLIForeman
       :architecture =>     [ s_name(_("Architecture name")) ],
       :audit =>            [],
       :compute_resource => [ s_name(_("Compute resource name")) ],
+      :compute_profile => [ s_name(_("Compute profile name")) ],
       :domain =>           [ s_name(_("Domain name")) ],
       :environment =>      [ s_name(_("Environment name")) ],
       :fact_value =>       [],
@@ -62,7 +63,8 @@ module HammerCLIForeman
       :common_parameter =>      [ s_name(_("Common parameter name")) ],
       :smart_class_parameter => [ s_name(_("Smart class parameter name"), :editable => false) ],
       :smart_variable => [ s("variable", _("Smart variable name")) ],
-      :template_combination => []
+      :template_combination => [],
+      :compute_attribute => []
     }
     DEFAULT_SEARCHABLES = [ s_name(_("Name to search by")) ]
 

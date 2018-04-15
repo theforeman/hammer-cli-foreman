@@ -1,7 +1,7 @@
 module HammerCLIForeman
   module ComputeResources
     module Rackspace
-      class HostHelpExtenstion
+      class ComputeResourceHelpExtenstion
         def name
           _('Rackspace')
         end

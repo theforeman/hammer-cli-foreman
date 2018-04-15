@@ -1,7 +1,7 @@
 module HammerCLIForeman
   module ComputeResources
     module EC2
-      class HostHelpExtenstion
+      class ComputeResourceHelpExtenstion
         def name
           _('EC2')
         end

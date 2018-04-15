@@ -1,7 +1,7 @@
 module HammerCLIForeman
   module ComputeResources
     module GCE
-      class HostHelpExtenstion
+      class ComputeResourceHelpExtenstion
         def name
           _('GCE')
         end

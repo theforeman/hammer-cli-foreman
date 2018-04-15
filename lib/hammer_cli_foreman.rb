@@ -45,6 +45,10 @@ module HammerCLIForeman
       'HammerCLIForeman::Audit', 'hammer_cli_foreman/audit'
     )
 
+    HammerCLI::MainCommand.lazy_subcommand('compute-profile', _("Manipulate compute profiles"),
+      'HammerCLIForeman::ComputeProfile', 'hammer_cli_foreman/compute_profile'
+    )
+
     HammerCLI::MainCommand.lazy_subcommand('compute-resource', _("Manipulate compute resources"),
       'HammerCLIForeman::ComputeResource', 'hammer_cli_foreman/compute_resource'
     )
