@@ -39,13 +39,8 @@ module HammerCLIForeman
             end
           end
 
-          h.section _('Provider specific options') do |h|
-            HammerCLIForeman::Host.cr_help_extensions.each do |name, help|
-              h.section name do |h|
-                help.call(h)
-              end
-            end
-          end
+          ::HammerCLIForeman::ComputeResources.extend_help(h, :all)
+
         end
       end
     end

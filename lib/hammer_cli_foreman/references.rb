@@ -56,6 +56,14 @@ module HammerCLIForeman
       end
     end
 
+    def self.compute_profiles(dsl)
+      dsl.build do
+        collection :compute_profiles, _("Compute profiles"), :numbered => false do
+          custom_field Fields::Reference
+        end
+      end
+    end
+
     def self.compute_resources(dsl)
       dsl.build do
         collection :compute_resources, _("Compute resources"), :numbered => false do
