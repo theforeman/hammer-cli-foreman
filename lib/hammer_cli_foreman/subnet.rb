@@ -32,6 +32,7 @@ module HammerCLIForeman
         field :gateway, _("Gateway")
         field :from, _("From")
         field :to, _("To")
+        field :mtu, _("MTU")
         HammerCLIForeman::References.domains(self)
         HammerCLIForeman::References.taxonomies(self)
         HammerCLIForeman::References.parameters(self)
