@@ -9,9 +9,9 @@
 # Valeria S Silva <valeriassilva@live.com>, 2015
 msgid ""
 msgstr ""
-"Project-Id-Version: hammer-cli-foreman 0.11.pre.develop\n"
+"Project-Id-Version: hammer-cli-foreman 0.13.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-08-01 13:02+0200\n"
+"POT-Creation-Date: 2018-05-10 00:52+0200\n"
 "PO-Revision-Date: 2017-03-29 08:19+0000\n"
 "Last-Translator: Lukáš Zapletal\n"
 "Language-Team: Portuguese (Brazil) (http://www.transifex.com/foreman/foreman/"
@@ -22,95 +22,101 @@ msgstr ""
 "Language: pt_BR\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 
-msgid "Foreman connection login/logout."
-msgstr "A conexão de login/logout do Foreman"
-
-msgid "Manipulate architectures."
-msgstr "Manipular Arquiteturas"
-
-msgid "Manipulate auth sources."
-msgstr "Manipular fontes do auth."
-
-msgid "Manipulate compute resources."
-msgstr "Manipular recursos de computação"
-
-msgid "Manipulate domains."
-msgstr "Manipular domínios."
-
-msgid "Manipulate environments."
-msgstr "Manipular ambientes."
-
-msgid "Search facts."
-msgstr "Pesquisar fatos."
-
-msgid "Manage permission filters."
-msgstr "Gerenciar filtros de permissão."
-
-msgid "Manipulate hosts."
-msgstr "Manipular hosts."
-
-msgid "Manipulate hostgroups."
-msgstr "Manipular hostgroups"
-
-msgid "Manipulate locations."
-msgstr "Manipular locais."
-
-msgid "Manipulate installation media."
-msgstr "Manipular mídia de instalação"
-
-msgid "Manipulate hardware models."
-msgstr "Manipular os modelos de hardware."
-
-msgid "Manipulate operating system."
-msgstr "Manipular Sistema Operacional:"
-
-msgid "Manipulate organizations."
-msgstr "Manipular as organizações."
-
-msgid "Manipulate partition tables."
-msgstr "Manipular as tabelas de partição."
-
-msgid "Search puppet modules."
-msgstr "Pesquisar módulos puppet."
-
-msgid "Browse and read reports."
-msgstr "Navegar e ler relatórios."
-
-msgid "Manage user roles."
-msgstr "Gerenciar funções de usuários"
-
-msgid "Manipulate smart class parameters."
-msgstr "Manipular os parâmetros de classe inteligentes."
-
-msgid "Manipulate smart variables."
-msgstr "Manipular variáveis inteligentes."
-
-msgid "Manipulate smart proxies."
-msgstr "Manipular proxies inteligentes."
-
-msgid "Manipulate realms."
+msgid "Foreman connection login/logout"
 msgstr ""
 
-msgid "Change server settings."
-msgstr "Modifique as configurações do servidor"
-
-msgid "Manipulate subnets."
-msgstr "Manipular subredes."
-
-msgid "Manipulate config templates."
-msgstr "Manipular modelos de config."
-
-msgid "Manipulate users."
-msgstr "Manipular usuários."
-
-msgid "Manage user groups."
-msgstr "Gerenciar grupos de usuário"
-
-msgid "Manipulate config groups."
+msgid "Manipulate architectures"
 msgstr ""
 
-msgid "Invalid username or password"
-msgstr "Nome de usuário ou senha inválido(a)"
+msgid "Manipulate auth sources"
+msgstr ""
+
+msgid "Search audit trails."
+msgstr ""
+
+msgid "Manipulate compute resources"
+msgstr ""
+
+msgid "Manipulate domains"
+msgstr ""
+
+msgid "Manipulate environments"
+msgstr ""
+
+msgid "Search facts"
+msgstr ""
+
+msgid "Manage permission filters"
+msgstr ""
+
+msgid "Manipulate hosts"
+msgstr ""
+
+msgid "Manipulate hostgroups"
+msgstr ""
+
+msgid "Manipulate locations"
+msgstr ""
+
+msgid "Manipulate installation media"
+msgstr ""
+
+msgid "Manipulate hardware models"
+msgstr ""
+
+msgid "Manipulate operating system"
+msgstr ""
+
+msgid "Manipulate organizations"
+msgstr ""
+
+msgid "Manipulate partition tables"
+msgstr ""
+
+msgid "Search puppet modules"
+msgstr ""
+
+msgid "Browse and read reports"
+msgstr ""
+
+msgid "Manage user roles"
+msgstr ""
+
+msgid "Manipulate smart class parameters"
+msgstr ""
+
+msgid "Manipulate smart variables"
+msgstr ""
+
+msgid "Manipulate smart proxies"
+msgstr ""
+
+msgid "Manipulate realms"
+msgstr ""
+
+msgid "Change server settings"
+msgstr ""
+
+msgid "Manipulate subnets"
+msgstr ""
+
+msgid "Manipulate config templates"
+msgstr ""
+
+msgid "Manipulate users"
+msgstr ""
+
+msgid "Manage user groups"
+msgstr ""
+
+msgid "Manipulate config groups"
+msgstr ""
+
+msgid "Using certificate authentication."
+msgstr ""
+
+msgid "Invalid username or password."
+msgstr ""
 
 msgid "Using configured credentials for user '%s'."
 msgstr ""
@@ -118,31 +124,31 @@ msgstr ""
 msgid "Credentials are not configured."
 msgstr ""
 
-msgid "[Foreman] Username: "
-msgstr "[Foreman] Nome de usuário:  "
+msgid "[Foreman] Username:%s"
+msgstr ""
 
-msgid "[Foreman] Password for %s: "
-msgstr "[Foreman] senha para %s:  "
+msgid "[Foreman] Password for %{user}:%{wsp}"
+msgstr ""
 
 msgid "Can't use session auth due to invalid permissions on session files."
 msgstr ""
 
-msgid "Session exists, currently logged in as '%s'"
+msgid "Session exists, currently logged in as '%s'."
 msgstr ""
 
 msgid "Using sessions, you are currently not logged in."
 msgstr ""
 
-msgid "Invalid username or password, continuing with session for '%s'"
+msgid "Invalid username or password, continuing with session for '%s'."
 msgstr ""
 
-msgid "Session has expired"
+msgid "Session has expired."
 msgstr ""
 
-msgid "Invalid session file format"
+msgid "Invalid session file format."
 msgstr ""
 
-msgid "Invalid permissions for %{file}: %{mode}, expected %{expected_mode}"
+msgid "Invalid permissions for %{file}: %{mode}, expected %{expected_mode}."
 msgstr ""
 
 msgid "Id"
@@ -151,20 +157,20 @@ msgstr "Id"
 msgid "Name"
 msgstr "Nome"
 
-msgid "Architecture created"
-msgstr "Arquitetura criada"
+msgid "Architecture created."
+msgstr ""
 
 msgid "Could not create the architecture"
 msgstr "Não foi possível criar a arquitetura"
 
-msgid "Architecture deleted"
-msgstr "Arquitetura removida"
+msgid "Architecture deleted."
+msgstr ""
 
 msgid "Could not delete the architecture"
 msgstr "Não foi possível remover a arquitetura"
 
-msgid "Architecture updated"
-msgstr "Arquitetura atualizada"
+msgid "Architecture updated."
+msgstr ""
 
 msgid "Could not update the architecture"
 msgstr "Não foi possível atualizar a arquitetura"
@@ -172,7 +178,7 @@ msgstr "Não foi possível atualizar a arquitetura"
 msgid "Associate a hostgroup"
 msgstr "Associar um hostgroup"
 
-msgid "The hostgroup has been associated"
+msgid "The hostgroup has been associated."
 msgstr ""
 
 msgid "Could not associate the hostgroup"
@@ -181,7 +187,7 @@ msgstr ""
 msgid "Disassociate a hostgroup"
 msgstr "Desassociar um hostgroup"
 
-msgid "The hostgroup has been disassociated"
+msgid "The hostgroup has been disassociated."
 msgstr ""
 
 msgid "Could not disassociate the hostgroup"
@@ -190,7 +196,7 @@ msgstr ""
 msgid "Associate an environment"
 msgstr "Associar um ambiente"
 
-msgid "The environment has been associated"
+msgid "The environment has been associated."
 msgstr ""
 
 msgid "Could not associate the environment"
@@ -199,7 +205,7 @@ msgstr ""
 msgid "Disassociate an environment"
 msgstr "Desassociar um ambiente"
 
-msgid "The environment has been disassociated"
+msgid "The environment has been disassociated."
 msgstr ""
 
 msgid "Could not disassociate the environment"
@@ -208,7 +214,7 @@ msgstr ""
 msgid "Associate a domain"
 msgstr "Associar um domínio"
 
-msgid "The domain has been associated"
+msgid "The domain has been associated."
 msgstr ""
 
 msgid "Could not associate the domain"
@@ -217,7 +223,7 @@ msgstr ""
 msgid "Disassociate a domain"
 msgstr "Desassociar um domínio"
 
-msgid "The domain has been disassociated"
+msgid "The domain has been disassociated."
 msgstr ""
 
 msgid "Could not disassociate the domain"
@@ -226,7 +232,7 @@ msgstr ""
 msgid "Associate a medium"
 msgstr "Associar um meio"
 
-msgid "The medium has been associated"
+msgid "The medium has been associated."
 msgstr ""
 
 msgid "Could not associate the medium"
@@ -235,7 +241,7 @@ msgstr ""
 msgid "Disassociate a medium"
 msgstr "Desassociar um meio"
 
-msgid "The medium has been disassociated"
+msgid "The medium has been disassociated."
 msgstr ""
 
 msgid "Could not disassociate the medium"
@@ -244,7 +250,7 @@ msgstr ""
 msgid "Associate a subnet"
 msgstr "Associar uma subrede"
 
-msgid "The subnet has been associated"
+msgid "The subnet has been associated."
 msgstr ""
 
 msgid "Could not associate the subnet"
@@ -253,7 +259,7 @@ msgstr ""
 msgid "Disassociate a subnet"
 msgstr "Desassociar uma subrede"
 
-msgid "The subnet has been disassociated"
+msgid "The subnet has been disassociated."
 msgstr ""
 
 msgid "Could not disassociate the subnet"
@@ -262,7 +268,7 @@ msgstr ""
 msgid "Associate a compute resource"
 msgstr "Associar um recurso de computação"
 
-msgid "The compute resource has been associated"
+msgid "The compute resource has been associated."
 msgstr ""
 
 msgid "Could not associate the compute resource"
@@ -271,7 +277,7 @@ msgstr ""
 msgid "Disassociate a compute resource"
 msgstr "Desassociar um recurso de computação"
 
-msgid "The compute resource has been disassociated"
+msgid "The compute resource has been disassociated."
 msgstr ""
 
 msgid "Could not disassociate the compute resource"
@@ -280,7 +286,7 @@ msgstr ""
 msgid "Associate a smart proxy"
 msgstr "Associar um proxy inteligente"
 
-msgid "The smart proxy has been associated"
+msgid "The smart proxy has been associated."
 msgstr ""
 
 msgid "Could not associate the smart proxy"
@@ -289,7 +295,7 @@ msgstr ""
 msgid "Disassociate a smart proxy"
 msgstr "Desassociar um proxy inteligente"
 
-msgid "The smart proxy has been disassociated"
+msgid "The smart proxy has been disassociated."
 msgstr ""
 
 msgid "Could not disassociate the smart proxy"
@@ -298,8 +304,8 @@ msgstr ""
 msgid "Associate an user"
 msgstr "Associar um usuário"
 
-msgid "The user has been associated"
-msgstr "O usuario esta associado"
+msgid "The user has been associated."
+msgstr ""
 
 msgid "Could not associate the user"
 msgstr "Não pode associar o usuário"
@@ -307,8 +313,8 @@ msgstr "Não pode associar o usuário"
 msgid "Disassociate an user"
 msgstr "Desassociar um usuário"
 
-msgid "The user has been disassociated"
-msgstr "Usuário desassociado"
+msgid "The user has been disassociated."
+msgstr ""
 
 msgid "Could not disassociate the user"
 msgstr "Não pode desassociar o usuário"
@@ -316,8 +322,8 @@ msgstr "Não pode desassociar o usuário"
 msgid "Associate an user group"
 msgstr "Associar um grupo de usuário"
 
-msgid "The user group has been associated"
-msgstr "Grupo de usuário associado"
+msgid "The user group has been associated."
+msgstr ""
 
 msgid "Could not associate the user group"
 msgstr "Não pode associar o grupo de usuário"
@@ -325,8 +331,8 @@ msgstr "Não pode associar o grupo de usuário"
 msgid "Disassociate an user group"
 msgstr "Desassociar um grupo de usuário"
 
-msgid "The user group has been disassociated"
-msgstr "o grupo de usuários foi desassociados"
+msgid "The user group has been disassociated."
+msgstr ""
 
 msgid "Could not disassociate the user group"
 msgstr "Não pode desassociar o grupo de usuários"
@@ -334,7 +340,7 @@ msgstr "Não pode desassociar o grupo de usuários"
 msgid "Associate a configuration template"
 msgstr "Associar um modelo de configuração"
 
-msgid "The configuration template has been associated"
+msgid "The configuration template has been associated."
 msgstr ""
 
 msgid "Could not associate the configuration template"
@@ -343,7 +349,7 @@ msgstr ""
 msgid "Disassociate a configuration template"
 msgstr "Desassociar um modelo de configuração"
 
-msgid "The configuration template has been disassociated"
+msgid "The configuration template has been disassociated."
 msgstr ""
 
 msgid "Could not disassociate the configuration template"
@@ -352,7 +358,7 @@ msgstr ""
 msgid "Associate an organization"
 msgstr "Associar uma empresa"
 
-msgid "The organization has been associated"
+msgid "The organization has been associated."
 msgstr ""
 
 msgid "Could not associate the organization"
@@ -361,7 +367,7 @@ msgstr ""
 msgid "Disassociate an organization"
 msgstr "Desassociar uma empresa"
 
-msgid "The organization has been disassociated"
+msgid "The organization has been disassociated."
 msgstr ""
 
 msgid "Could not disassociate the organization"
@@ -370,8 +376,8 @@ msgstr ""
 msgid "Associate an operating system"
 msgstr "Associar um Sistema Operacional"
 
-msgid "Operating system has been associated"
-msgstr "O Sistema Operacional foi associado"
+msgid "Operating system has been associated."
+msgstr ""
 
 msgid "Could not associate the operating system"
 msgstr "Não foi possível associar o sistema operacional"
@@ -379,8 +385,8 @@ msgstr "Não foi possível associar o sistema operacional"
 msgid "Disassociate an operating system"
 msgstr "Desassociar um sistema operacional"
 
-msgid "Operating system has been disassociated"
-msgstr "Sistema operacional foi desassociado"
+msgid "Operating system has been disassociated."
+msgstr ""
 
 msgid "Could not disassociate the operating system"
 msgstr "Não foi possível desassociar o sistema operacional"
@@ -388,8 +394,8 @@ msgstr "Não foi possível desassociar o sistema operacional"
 msgid "Associate an architecture"
 msgstr "Associar uma arquitetura"
 
-msgid "Architecture has been associated"
-msgstr "Arquitetura foi associada"
+msgid "Architecture has been associated."
+msgstr ""
 
 msgid "Could not associate the architecture"
 msgstr "Não foi possível associar a arquitetura"
@@ -397,8 +403,8 @@ msgstr "Não foi possível associar a arquitetura"
 msgid "Disassociate an architecture"
 msgstr "Desassociar uma arquitetura"
 
-msgid "Architecture has been disassociated"
-msgstr "Arquitetura foi desassociada"
+msgid "Architecture has been disassociated."
+msgstr ""
 
 msgid "Could not disassociate the architecture"
 msgstr "Não foi possível desassociar a arquitetura"
@@ -406,8 +412,8 @@ msgstr "Não foi possível desassociar a arquitetura"
 msgid "Associate a partition table"
 msgstr "Associar uma tabela de partição"
 
-msgid "Partition table has been associated"
-msgstr "Tabela de partição foi associada"
+msgid "Partition table has been associated."
+msgstr ""
 
 msgid "Could not associate the partition table"
 msgstr "Não foi possível associar a tabela de partição"
@@ -415,8 +421,8 @@ msgstr "Não foi possível associar a tabela de partição"
 msgid "Disassociate a partition table"
 msgstr "Desassociar a tabela de partição"
 
-msgid "Partition table has been disassociated"
-msgstr "Tabela de partição foi desassociada"
+msgid "Partition table has been disassociated."
+msgstr ""
 
 msgid "Could not disassociate the partition table"
 msgstr "Não foi possível desassociar a tabela de partição"
@@ -424,8 +430,8 @@ msgstr "Não foi possível desassociar a tabela de partição"
 msgid "Assign a user role"
 msgstr "Atribuir uma função de usuário"
 
-msgid "User role has been assigned"
-msgstr "Função de usuário foi atribuída"
+msgid "User role has been assigned."
+msgstr ""
 
 msgid "Could not assign the user role"
 msgstr "Não foi possível atribuir a função de usuário"
@@ -433,8 +439,8 @@ msgstr "Não foi possível atribuir a função de usuário"
 msgid "Remove a user role"
 msgstr "Remover uma função de usuário"
 
-msgid "User role has been removed"
-msgstr "Função de usuário foi removida"
+msgid "User role has been removed."
+msgstr ""
 
 msgid "Could not remove the user role"
 msgstr "Não foi possível remover a função de usuário"
@@ -442,7 +448,7 @@ msgstr "Não foi possível remover a função de usuário"
 msgid "Associate a location"
 msgstr ""
 
-msgid "The location has been associated"
+msgid "The location has been associated."
 msgstr ""
 
 msgid "Could not associate the location"
@@ -451,20 +457,61 @@ msgstr ""
 msgid "Disassociate a location"
 msgstr ""
 
-msgid "The location has been disassociated"
+msgid "The location has been disassociated."
 msgstr ""
 
 msgid "Could not disassociate the location"
 msgstr ""
 
+msgid "Override audit record pagination"
+msgstr ""
+
+msgid ""
+"Audit records for past one month are returned by default. This behavior can "
+"be changed by passing --search option."
+msgstr ""
+
+msgid "At"
+msgstr ""
+
+msgid "IP"
+msgstr "IP"
+
+msgid "User"
+msgstr "Usuário"
+
+msgid "Action"
+msgstr ""
+
+msgid "Audit type"
+msgstr ""
+
+msgid "Audit record"
+msgstr ""
+
+msgid "Audited changes"
+msgstr ""
+
+msgid "Attribute"
+msgstr ""
+
+msgid "Value"
+msgstr "Valor"
+
+msgid "Old"
+msgstr ""
+
+msgid "New"
+msgstr ""
+
 msgid "Set credentials"
 msgstr "Definir credenciais"
 
-msgid "username to access the remote system"
-msgstr "nome de usuário para acessar o sistema remoto"
+msgid "Username to access the remote system"
+msgstr ""
 
-msgid "password to access the remote system"
-msgstr "senha para acessar sistema remoto"
+msgid "Password to access the remote system"
+msgstr ""
 
 msgid ""
 "Can't perform login. Make sure sessions are enabled in hammer configuration "
@@ -483,8 +530,14 @@ msgstr ""
 msgid "Information about current connections"
 msgstr "Informações sobre as conexões atuais"
 
-msgid "Manage LDAP auth sources."
-msgstr "Gerenciar fontes de autenticação LDAP"
+msgid "List all auth sources."
+msgstr ""
+
+msgid "Type of auth source"
+msgstr ""
+
+msgid "Manage LDAP auth sources"
+msgstr ""
 
 msgid "Server"
 msgstr "Servidor"
@@ -543,66 +596,47 @@ msgstr "Atributo de endereço de email"
 msgid "Photo Attribute"
 msgstr "Atributo de foto"
 
-msgid "Auth source [%{name}] created"
+msgid "Auth source [%{name}] created."
 msgstr ""
 
 msgid "Could not create the Auth Source"
 msgstr "Não foi possível criar a Fonte de Autenticação"
 
-msgid "Auth source [%{name}] deleted"
+msgid "Auth source [%{name}] deleted."
 msgstr ""
 
 msgid "Could not delete the Auth Source"
 msgstr "Não foi possível remover a Fonte de Autenticação"
 
-msgid "Auth source [%{name}] updated"
+msgid "Auth source [%{name}] updated."
 msgstr ""
 
 msgid "Could not update the Auth Source"
 msgstr "Não foi possível atualizar a Fonte de Autenticação"
 
-msgid "Received data of unknown format"
-msgstr "Dados recebidos de formato desconhecido"
-
-msgid ""
-"Could not find %{resource}. Some search options were missing, please see --"
-"help."
+msgid "Received data of unknown format."
 msgstr ""
-"Não foi possível encontrar %{resource}. Algumas opções de pesquisa estavam "
-"ausentes, por favor consulte --help."
-
-msgid "Could not find %{resource}, please set option %{switches}."
-msgstr ""
-"Não foi possível encontrar %{resource}, por favor defina a opção %{switches}."
-
-msgid "Could not find %{resource}, please set one of options %{switches}."
-msgstr ""
-"Não foi possível encontrar %{resource}, por favor defina uma das opções "
-"%{switches}."
 
 msgid "Associate a resource"
 msgstr "Associar um recurso"
 
-msgid "Could not associate the %{resource_name}"
+msgid "Could not associate the %{resource_name}."
 msgstr ""
 
-msgid "The %{resource_name} has been associated"
+msgid "The %{resource_name} has been associated."
 msgstr ""
 
 msgid "Disassociate a resource"
 msgstr "Desassociar um recurso"
 
-msgid "Could not disassociate the %{resource_name}"
+msgid "Could not disassociate the %{resource_name}."
 msgstr ""
 
-msgid "The %{resource_name} has been disassociated"
+msgid "The %{resource_name} has been disassociated."
 msgstr ""
 
-msgid "Value"
-msgstr "Valor"
-
-msgid "Set a global parameter."
-msgstr "Definir um parâmetro global"
+msgid "Set a global parameter"
+msgstr ""
 
 msgid "Created parameter [%{name}] with value [%{value}]."
 msgstr "Parâmetro criado [%{name}] com valor [%{value}]."
@@ -610,13 +644,13 @@ msgstr "Parâmetro criado [%{name}] com valor [%{value}]."
 msgid "Parameter [%{name}] updated to [%{value}]."
 msgstr "Parâmetro [%{name}] atualizado para [%{value}]."
 
-msgid "parameter name"
-msgstr "nome do parâmetro"
+msgid "Parameter name"
+msgstr ""
 
-msgid "parameter value"
-msgstr "valor de parâmetro"
+msgid "Parameter value"
+msgstr ""
 
-msgid "should the value be hidden"
+msgid "Should the value be hidden"
 msgstr ""
 
 msgid "Global parameter [%{name}] deleted."
@@ -625,8 +659,8 @@ msgstr "Parâmetro global [%{name}] removido."
 msgid "Could not delete the global parameter [%{name}]"
 msgstr "Não foi possível remover o parâmetro global  [%{name}]"
 
-msgid "Manipulate global parameters."
-msgstr "Manipular parâmetros globais."
+msgid "Manipulate global parameters"
+msgstr ""
 
 msgid "Provider"
 msgstr "Provedor"
@@ -646,23 +680,20 @@ msgstr "Url"
 msgid "Description"
 msgstr "Descrição"
 
-msgid "User"
-msgstr "Usuário"
-
-msgid "Compute resource created"
-msgstr "Recurso de computação criado"
+msgid "Compute resource created."
+msgstr ""
 
 msgid "Could not create the compute resource"
 msgstr "Não foi possível criar o recurso de computação"
 
-msgid "Compute resource updated"
-msgstr "Recurso de computação atualizado"
+msgid "Compute resource updated."
+msgstr ""
 
 msgid "Could not update the compute resource"
 msgstr "Não foi possível atualizar o recurso de computação"
 
-msgid "Compute resource deleted"
-msgstr "Recurso de computação removido"
+msgid "Compute resource deleted."
+msgstr ""
 
 msgid "Could not delete the compute resource"
 msgstr "Não foi possível remover o recurso de computação"
@@ -783,19 +814,19 @@ msgstr ""
 msgid "ID"
 msgstr ""
 
-msgid "Config group created"
+msgid "Config group created."
 msgstr ""
 
 msgid "Could not create the config group"
 msgstr ""
 
-msgid "Config group updated"
+msgid "Config group updated."
 msgstr ""
 
 msgid "Could not update the config group"
 msgstr ""
 
-msgid "Config group has been deleted"
+msgid "Config group has been deleted."
 msgstr ""
 
 msgid "Could not delete the config group"
@@ -813,8 +844,8 @@ msgstr "Nome do Proxy DNS para usar dentro deste domínio"
 msgid "DNS Id"
 msgstr "ID de DNS "
 
-msgid "Domain [%{name}] created"
-msgstr "Domínio [%{name}] criado"
+msgid "Domain [%{name}] created."
+msgstr ""
 
 msgid "Could not create the domain"
 msgstr "Não foi possível criar o domínio"
@@ -822,20 +853,20 @@ msgstr "Não foi possível criar o domínio"
 msgid "Full name describing the domain"
 msgstr "Nome completo descrevendo o domínio"
 
-msgid "Domain [%{name}] updated"
-msgstr "Domínio [%{name}] atualizado"
+msgid "Domain [%{name}] updated."
+msgstr ""
 
 msgid "Could not update the domain"
 msgstr "Não foi possível atualizar o domínio"
 
-msgid "Domain [%{name}] deleted"
-msgstr "Domínio [%{name}] removido"
+msgid "Domain [%{name}] deleted."
+msgstr ""
 
 msgid "Could not delete the domain"
 msgstr "Não foi possível remover o domínio"
 
-msgid "Create or update parameter for a domain."
-msgstr "Criar ou atualizar o parâmetro para um domínio."
+msgid "Create or update parameter for a domain"
+msgstr ""
 
 msgid "Domain parameter updated"
 msgstr "Parâmetro do domínio atualizado"
@@ -846,26 +877,26 @@ msgstr "Novo parâmetro de domínio criado."
 msgid "Could not set domain parameter"
 msgstr "Não foi possível definir parâmetro de domínio"
 
-msgid "Delete parameter for a domain."
-msgstr "Remover o parâmetro para um domínio"
+msgid "Delete parameter for a domain"
+msgstr ""
 
-msgid "Domain parameter deleted"
-msgstr "Parâmetro de domínio removido"
+msgid "Domain parameter deleted."
+msgstr ""
 
-msgid "Environment created"
-msgstr "Ambiente criado"
+msgid "Environment created."
+msgstr ""
 
 msgid "Could not create the environment"
 msgstr "Não foi possível criar o ambiente"
 
-msgid "Environment updated"
-msgstr "Ambiente atualizada"
+msgid "Environment updated."
+msgstr ""
 
 msgid "Could not update the environment"
 msgstr "Não foi possível atualizar o ambiente"
 
-msgid "Environment deleted"
-msgstr "Ambiente removido"
+msgid "Environment deleted."
+msgstr ""
 
 msgid "Could not delete the environment"
 msgstr "Não foi possivel remover o ambiente"
@@ -876,23 +907,22 @@ msgstr ""
 msgid "It seems hammer is configured to use HTTP and the server prefers HTTPS."
 msgstr ""
 
-msgid "Update your server url configuration"
+msgid "Update your server url configuration."
 msgstr ""
 
 msgid ""
-"you can set 'follow_redirects' to one of :default or :always to enable "
-"redirects following"
+"You can set 'follow_redirects' to one of :default or :always to enable "
+"redirects following."
 msgstr ""
 
-msgid "Forbidden - server refused to process the request"
-msgstr "Proibído - servidor recusou o processamento da requisição"
+msgid "Forbidden - server refused to process the request."
+msgstr ""
 
 msgid "The following configuration option were used for the SSL connection:"
 msgstr ""
 
 msgid ""
-"\"Make sure the location contains an unexpired and valid CA certificate for "
-"#{host_url}\""
+"Make sure the location contains an unexpired and valid CA certificate for %s."
 msgstr ""
 
 msgid ""
@@ -918,20 +948,20 @@ msgstr "Fonte de autenticação"
 msgid "Refresh external user group"
 msgstr "Atualizar grupo de usuário externo"
 
-msgid "External user group created"
-msgstr "Grupo de usuários externo criado"
+msgid "External user group created."
+msgstr ""
 
 msgid "Could not create external user group"
 msgstr "Não foi possível criar grupo de usuário externo"
 
-msgid "External user group updated"
-msgstr "Atualização grupo de usuário externo"
+msgid "External user group updated."
+msgstr ""
 
 msgid "Could not update external user group"
 msgstr "Não foi possível atualizar grupo de usuário externo"
 
-msgid "External user group deleted"
-msgstr "Grupo de usuários externos apagados"
+msgid "External user group deleted."
+msgstr ""
 
 msgid "Could not delete the external user group"
 msgstr "Não foi possível excluir o grupo de usuário externo"
@@ -966,30 +996,33 @@ msgstr "(Diversos)"
 msgid "none"
 msgstr "nenhum"
 
-msgid "Organizations and locations can be set only for overriding filters"
+msgid "Organizations and locations can be set only for overriding filters."
+msgstr ""
+
+msgid "Overriding organizations and locations"
 msgstr ""
 
 msgid ""
 "Filters inherit organizations and locations from its role by default. This "
-"behavior can be changed by setting %{condition}\n"
-"Therefore options %{org_opts} and %{loc_opts} are applicable only when the "
-"override flag is set."
+"behavior can be changed by setting %{condition}.%{wsp}Therefore options "
+"%{org_opts} and %{loc_opts} are applicable only when the override flag is "
+"set."
 msgstr ""
 
-msgid "Permission filter for [%<resource_type>s] created"
-msgstr "Filtro de permissão para [%<resource_type>s] criado"
+msgid "Permission filter for [%<resource_type>s] created."
+msgstr ""
 
 msgid "Could not create the permission filter"
 msgstr "Não foi possível criar o filtro de permissão"
 
-msgid "Permission filter for [%<resource_type>s] updated"
-msgstr "Filtro de permissão para [%<resource_type>s] atualizado"
+msgid "Permission filter for [%<resource_type>s] updated."
+msgstr ""
 
 msgid "Could not update the permission filter"
 msgstr "Não foi possível atualizar o filtro de permissão"
 
-msgid "Permission filter deleted"
-msgstr "Filtro de permissão removido"
+msgid "Permission filter deleted."
+msgstr ""
 
 msgid "Could not delete the permission filter"
 msgstr "Não foi possível remover o filtro de permissão"
@@ -1002,9 +1035,6 @@ msgstr "Sistema Operacional"
 
 msgid "Host Group"
 msgstr "Grupo de Host"
-
-msgid "IP"
-msgstr "IP"
 
 msgid "MAC"
 msgstr "MAC"
@@ -1027,14 +1057,14 @@ msgstr "Recurso de computação"
 msgid "Compute Profile"
 msgstr "Perfil Computacional"
 
-msgid "Environment"
-msgstr "Ambiente"
+msgid "Puppet Environment"
+msgstr ""
 
-msgid "Puppet CA Id"
-msgstr "Id do Puppet CA"
+msgid "Puppet CA Proxy"
+msgstr ""
 
-msgid "Puppet Master Id"
-msgstr "Id do Puppet Master"
+msgid "Puppet Master Proxy"
+msgstr ""
 
 msgid "Cert name"
 msgstr "Nome do Certificado"
@@ -1051,8 +1081,17 @@ msgstr "Último relatório"
 msgid "Network"
 msgstr "Rede"
 
-msgid "Subnet"
-msgstr "Subrede"
+msgid "IPv4 address"
+msgstr ""
+
+msgid "IPv6 address"
+msgstr ""
+
+msgid "Subnet ipv4"
+msgstr ""
+
+msgid "Subnet ipv6"
+msgstr ""
 
 msgid "Domain"
 msgstr "Domínio"
@@ -1084,9 +1123,6 @@ msgstr "Tipo"
 msgid "MAC address"
 msgstr "Endereço MAC "
 
-msgid "IP address"
-msgstr "Endereco de IP"
-
 msgid "FQDN"
 msgstr "FQDN"
 
@@ -1105,6 +1141,9 @@ msgstr "Meio"
 msgid "Partition Table"
 msgstr "Tabela de Partição"
 
+msgid "PXE Loader"
+msgstr ""
+
 msgid "Custom partition table"
 msgstr "Tabela de partição personalizada "
 
@@ -1120,8 +1159,8 @@ msgstr "Usar imagem"
 msgid "Additional info"
 msgstr "Informação adicional "
 
-msgid "Owner Id"
-msgstr "ID de Proprietário"
+msgid "Owner"
+msgstr ""
 
 msgid "Owner Type"
 msgstr "Tipo de Proprietário"
@@ -1144,26 +1183,32 @@ msgstr "Energia"
 msgid "Puppet run triggered"
 msgstr "Execução de Puppet foi disparada"
 
-msgid "Host created"
-msgstr "Host foi criado"
+msgid "Host id"
+msgstr ""
+
+msgid "Host name"
+msgstr "Nome do Host"
+
+msgid "Host created."
+msgstr ""
 
 msgid "Could not create the host"
 msgstr "Não foi possível criar o host"
 
-msgid "Host updated"
-msgstr "Host atualizado"
+msgid "Host updated."
+msgstr ""
 
 msgid "Could not update the host"
 msgstr "Não foi possível atualizar o host"
 
-msgid "Host deleted"
-msgstr "Host removido"
+msgid "Host deleted."
+msgstr ""
 
 msgid "Could not delete the host"
 msgstr "Não foi possível remover o host"
 
-msgid "Create or update parameter for a host."
-msgstr "Criar ou atualizar o parâmetro para um hos."
+msgid "Create or update parameter for a host"
+msgstr ""
 
 msgid "Host parameter updated"
 msgstr "Host do parâmetro atualizado"
@@ -1174,11 +1219,11 @@ msgstr "Novo parâmetro do host criado"
 msgid "Could not set host parameter"
 msgstr "Não foi possível definir parâmetro do host"
 
-msgid "Delete parameter for a host."
-msgstr "Remover parâmetro para um host."
+msgid "Delete parameter for a host"
+msgstr ""
 
-msgid "Host parameter deleted"
-msgstr "Parâmetro do host removido"
+msgid "Host parameter deleted."
+msgstr ""
 
 msgid "Power a host on"
 msgstr "Ligar um host"
@@ -1192,11 +1237,11 @@ msgstr "Forçar desligar um host"
 msgid "Power a host off"
 msgstr "Desligar um host"
 
-msgid "Power off forced."
-msgstr "Desligar forçado"
+msgid "Power off forced"
+msgstr ""
 
-msgid "Powering the host off."
-msgstr "Desligando o host."
+msgid "Powering the host off"
+msgstr ""
 
 msgid "Reboot a host"
 msgstr "Reinicializar o host"
@@ -1209,6 +1254,12 @@ msgstr ""
 
 msgid "Configuration successfully rebuilt."
 msgstr "Configuração reconstruído com êxito."
+
+msgid "Dump host's ENC YAML"
+msgstr ""
+
+msgid "Could not retrieve ENC values of the host"
+msgstr ""
 
 msgid "List of puppetclass ids"
 msgstr "Lista de ids de  puppetclass"
@@ -1231,38 +1282,35 @@ msgstr "Insira a senha do root para o grupo host"
 msgid "Title"
 msgstr "Tratamento"
 
-msgid "Puppet CA Proxy Id"
-msgstr "Puppet CA Proxy Id"
-
-msgid "Puppet Master Proxy Id"
-msgstr "ID do Puppet Master Proxy"
+msgid "Parent"
+msgstr "Pai"
 
 msgid "ComputeProfile"
 msgstr "Perfil Computacional"
 
-msgid "Parent Id"
-msgstr "ID de Pais"
+msgid "Realm"
+msgstr ""
 
-msgid "Hostgroup created"
-msgstr "Hostgroup criado"
+msgid "Hostgroup created."
+msgstr ""
 
 msgid "Could not create the hostgroup"
 msgstr "Não foi possível criar um hostgroup"
 
-msgid "Hostgroup updated"
-msgstr "Hostgroup atualizado"
+msgid "Hostgroup updated."
+msgstr ""
 
 msgid "Could not update the hostgroup"
 msgstr "Não foi possível atualizar o hostgroup"
 
-msgid "Hostgroup deleted"
-msgstr "Hostgroup removido"
+msgid "Hostgroup deleted."
+msgstr ""
 
 msgid "Could not delete the hostgroup"
 msgstr "Não foi possível remover o hostgroup"
 
-msgid "Create or update parameter for a hostgroup."
-msgstr "Criar ou atualizar o parâmetro para um hostgroup."
+msgid "Create or update parameter for a hostgroup"
+msgstr ""
 
 msgid "Hostgroup parameter updated"
 msgstr "Parâmetro do hostgroup atualizado"
@@ -1273,11 +1321,11 @@ msgstr "Novo parâmetro do hostgroup criado"
 msgid "Could not set hostgroup parameter"
 msgstr "Não foi possível definir parâmetro do hostgroup"
 
-msgid "Delete parameter for a hostgroup."
-msgstr "Remover parâmetro para um hostgroup"
+msgid "Delete parameter for a hostgroup"
+msgstr ""
 
-msgid "Hostgroup parameter deleted"
-msgstr "Parâmetro do hostgroup removido"
+msgid "Hostgroup parameter deleted."
+msgstr ""
 
 msgid "Available keys for %{option}"
 msgstr ""
@@ -1318,20 +1366,17 @@ msgid ""
 "default password in settings"
 msgstr ""
 
-msgid "Use --root-password instead"
+msgid "Host parameters"
 msgstr ""
 
-msgid "Host parameters."
-msgstr "Parâmetros de host."
-
-msgid "Compute resource attributes."
-msgstr "Atributos de recurso de computação."
+msgid "Compute resource attributes"
+msgstr ""
 
 msgid "Volume parameters"
 msgstr "Parâmetros de volume"
 
-msgid "Interface parameters."
-msgstr "Parâmetros de interface"
+msgid "Interface parameters"
+msgstr ""
 
 msgid "Enter the root password for the host:"
 msgstr "Entre a senha original para o host"
@@ -1347,9 +1392,6 @@ msgstr "Nome do domínio"
 
 msgid "Environment name"
 msgstr "Nome do ambiente"
-
-msgid "Host name"
-msgstr "Nome do Host"
 
 msgid "Hostgroup name"
 msgstr "Nome do hostgroup"
@@ -1387,9 +1429,6 @@ msgstr "Nome do Proxy"
 msgid "Puppet class name"
 msgstr "Nome da classe do puppet"
 
-msgid "Report name"
-msgstr "Nome do relatório"
-
 msgid "User role name"
 msgstr "Nome da função de usuário"
 
@@ -1414,17 +1453,20 @@ msgstr "Nome da variável inteligente"
 msgid "Name to search by"
 msgstr "Nome a pesquisar"
 
-msgid "one of %s not found"
-msgstr "um dos %s não foi encontrado"
-
-msgid "%s not found"
-msgstr "%s não foi encontrado"
-
-msgid "found more than one %s"
-msgstr "foi localizado mais de um %s"
-
 msgid "Missing options to search %s"
 msgstr "Opções ausentes para pesquisar %s "
+
+msgid "one of %s not found."
+msgstr ""
+
+msgid "%s not found."
+msgstr ""
+
+msgid "Found more than one %s."
+msgstr ""
+
+msgid "Missing options to search %s."
+msgstr ""
 
 msgid "View and manage compute resource's images"
 msgstr "Visualizar e gerenciar as imagens de recurso de computação"
@@ -1438,20 +1480,20 @@ msgstr "Função IAM"
 msgid "Show images available for addition"
 msgstr "Exibir imagens disponíveis para a adição"
 
-msgid "Image created"
-msgstr "Imagem criada"
+msgid "Image created."
+msgstr ""
 
 msgid "Could not create the image"
 msgstr "Não foi possível criar imagem"
 
-msgid "Image updated"
-msgstr "Imagem atualizada"
+msgid "Image updated."
+msgstr ""
 
 msgid "Could not update the image"
 msgstr "Não foi possível atualizar a imagem"
 
-msgid "Image deleted"
-msgstr "Imagem removida"
+msgid "Image deleted."
+msgstr ""
 
 msgid "Could not delete the image"
 msgstr "Não foi possível remover a imagem"
@@ -1465,8 +1507,14 @@ msgstr "Primário"
 msgid "provision"
 msgstr "provisao "
 
+msgid "IP address"
+msgstr "Endereco de IP"
+
 msgid "DNS name"
 msgstr "Nome do DNS"
+
+msgid "Subnet"
+msgstr "Subrede"
 
 msgid "Primary"
 msgstr "Primário"
@@ -1500,36 +1548,31 @@ msgstr "Opcoes de Bond"
 
 msgid ""
 "Should this interface be used for constructing the FQDN of the host? Each "
-"managed hosts needs to have one primary interface."
+"managed hosts needs to have one primary interface"
 msgstr ""
-"Está interface deverá ser usada para a construção do FQDN do host? Cada "
-"gerenciamento de host precisa ter uma interface primária."
 
 msgid ""
 "Should this interface be used for TFTP of PXELinux (or SSH for image-based "
-"hosts)? Each managed hosts needs to have one provision interface."
+"hosts)? Each managed hosts needs to have one provision interface"
 msgstr ""
-"Esta interface deverá ser usada para TFTP do PXELinux (ou SSH para a base de "
-"imagem host)? Cada gerenciamento de host precisa ter uma interface de "
-"provisão."
 
-msgid "Interface created"
-msgstr "Interface criada"
+msgid "Interface created."
+msgstr ""
 
 msgid "Could not create the interface"
 msgstr "Nao foi possível criar a interface"
 
-msgid "Compute resource specific attributes."
-msgstr "Atributos específicos de recursos de computação"
+msgid "Compute resource specific attributes"
+msgstr ""
 
-msgid "Interface updated"
-msgstr "Interface atualizada"
+msgid "Interface updated."
+msgstr ""
 
 msgid "Could not update the interface"
 msgstr "Não foi possível atualizar a interface"
 
-msgid "Interface deleted"
-msgstr "Interface excluída"
+msgid "Interface deleted."
+msgstr ""
 
 msgid "Could not delete the interface"
 msgstr "Não foi possível excluir a interface"
@@ -1537,32 +1580,29 @@ msgstr "Não foi possível excluir a interface"
 msgid "Location numeric id to search by"
 msgstr "ID númerica da localização a pesquisar"
 
-msgid "Parent"
-msgstr "Pai"
-
 msgid "Organizations"
 msgstr "Organizações"
 
-msgid "Location created"
-msgstr "Localização criada"
+msgid "Location created."
+msgstr ""
 
 msgid "Could not create the location"
 msgstr "Não foi possível criar a localização"
 
-msgid "Location updated"
-msgstr "Localização atualizada"
+msgid "Location updated."
+msgstr ""
 
 msgid "Could not update the location"
 msgstr "Não foi possível atualizar a localização"
 
-msgid "Location deleted"
-msgstr "Localização removida"
+msgid "Location deleted."
+msgstr ""
 
 msgid "Could not delete the location"
 msgstr "Não foi possível remover a localização"
 
-msgid "Create or update parameter for a location."
-msgstr "Criar ou atualizar parâmetros para uma localização. "
+msgid "Create or update parameter for a location"
+msgstr ""
 
 msgid "Parameter [%{name}] updated to value [%{value}]"
 msgstr "Parâmetro [%{name}] atualizado para o valor [%{value}]"
@@ -1573,11 +1613,11 @@ msgstr "Parâmetro [%{name}] criado com o valor [%{value}]"
 msgid "Could not set location parameter"
 msgstr "Não foi possível definir parâmetro de localização"
 
-msgid "Delete parameter for a location."
-msgstr "Remover parâmetro para uma localização. "
+msgid "Delete parameter for a location"
+msgstr ""
 
-msgid "Parameter [%{name}] deleted"
-msgstr "Parâmetro [%{name}] removido"
+msgid "Parameter [%{name}] deleted."
+msgstr ""
 
 msgid "Could not delete location parameter"
 msgstr "Não foi possível remover os parâmetros da localização "
@@ -1588,20 +1628,20 @@ msgstr "Caminho"
 msgid "OS Family"
 msgstr "Família SO"
 
-msgid "Installation medium created"
-msgstr "Meio de instalação criado"
+msgid "Installation medium created."
+msgstr ""
 
 msgid "Could not create the installation medium"
 msgstr "Não foi possível criar um meio de instalação"
 
-msgid "Installation medium updated"
-msgstr "Mídia de instalação atualizada"
+msgid "Installation medium updated."
+msgstr ""
 
 msgid "Could not update the installation media"
 msgstr "Não foi possível atualizar a mídia de instalação"
 
-msgid "Installation medium deleted"
-msgstr "Mídia de instalação removida"
+msgid "Installation medium deleted."
+msgstr ""
 
 msgid "Could not delete the installation media"
 msgstr "Não foi possível remover a mídia de instalação"
@@ -1615,20 +1655,20 @@ msgstr "Modelo do HW"
 msgid "Info"
 msgstr "Info"
 
-msgid "Hardware model created"
-msgstr "Modelo de Hardware criado"
+msgid "Hardware model created."
+msgstr ""
 
 msgid "Could not create the hardware model"
 msgstr "Não foi possível criar o modelo de hardware"
 
-msgid "Hardware model deleted"
-msgstr "Modelo de hardware removido"
+msgid "Hardware model deleted."
+msgstr ""
 
 msgid "Could not delete the hardware model"
 msgstr "Não foi possível remover o modelo de hardware"
 
-msgid "Hardware model updated"
-msgstr "Modelo de hardware atualizado"
+msgid "Hardware model updated."
+msgstr ""
 
 msgid "Could not update the hardware model"
 msgstr "Não foi possível atualizar o modelo de hardware"
@@ -1654,26 +1694,26 @@ msgstr "Modelos padrão"
 msgid "Architectures"
 msgstr "Arquiteturas"
 
-msgid "Operating system created"
-msgstr "Sistema operacional criado"
+msgid "Operating system created."
+msgstr ""
 
 msgid "Could not create the operating system"
 msgstr "Não foi possível criar o sistema operacional"
 
-msgid "Operating system updated"
-msgstr "Sistema Operacional atualizado"
+msgid "Operating system updated."
+msgstr ""
 
 msgid "Could not update the operating system"
 msgstr "Não foi possível atualizar o sistema operacional"
 
-msgid "Operating system deleted"
-msgstr "Sistema Operacional removido"
+msgid "Operating system deleted."
+msgstr ""
 
 msgid "Could not delete the operating system"
 msgstr "Não foi possível remover o sistema operacional"
 
-msgid "Create or update parameter for an operating system."
-msgstr "Criar ou atualizar o parâmetro para um sistema operacional."
+msgid "Create or update parameter for an operating system"
+msgstr ""
 
 msgid "Operating system parameter updated"
 msgstr "Parâmetro de Sistema Operacional atualizado"
@@ -1684,23 +1724,21 @@ msgstr "Novo parâmetro de sistema operacional criado"
 msgid "Could not set operating system parameter"
 msgstr "Não foi possível definir o sistema operacional"
 
-msgid "Delete parameter for an operating system."
-msgstr "Remover parâmetro para um sistema operacional."
+msgid "Delete parameter for an operating system"
+msgstr ""
 
-msgid "operating system parameter deleted"
-msgstr "parâmetro de sistema operacional removido"
+msgid "operating system parameter deleted."
+msgstr ""
 
-msgid "operatingsystem id"
-msgstr "operatingsystem id"
+msgid "Operatingsystem id"
+msgstr ""
 
-msgid "config template id to be set"
-msgstr "id de modelo de config a ser definido"
+msgid "Config template id to be set"
+msgstr ""
 
 msgid ""
-"[%{config_template_name}] was set as default %{template_kind_name} template"
+"[%{config_template_name}] was set as default %{template_kind_name} template."
 msgstr ""
-"[%{config_template_name}] era definido como modelo padrão "
-"%{template_kind_name}"
 
 msgid "Could not set the os default template"
 msgstr "Não foi possível definir os modelos padrão"
@@ -1708,8 +1746,8 @@ msgstr "Não foi possível definir os modelos padrão"
 msgid "Type of the config template"
 msgstr "Tipo de modelo config"
 
-msgid "Default template deleted"
-msgstr "Modelo padrão removido"
+msgid "Default template deleted."
+msgstr ""
 
 msgid "Could not delete the default template"
 msgstr "Não foi possível remover o modelo padrão"
@@ -1717,65 +1755,119 @@ msgstr "Não foi possível remover o modelo padrão"
 msgid "Default template of type %s not found"
 msgstr "Modelo padrão do tipo %s não foi encontrado"
 
+msgid ""
+"Could not find %{resource}. Some search options were missing, please see --"
+"help."
+msgstr ""
+"Não foi possível encontrar %{resource}. Algumas opções de pesquisa estavam "
+"ausentes, por favor consulte --help."
+
+msgid "Could not find %{resource}, please set option %{switches}."
+msgstr ""
+"Não foi possível encontrar %{resource}, por favor defina a opção %{switches}."
+
+msgid "Could not find %{resource}, please set one of options %{switches}."
+msgstr ""
+"Não foi possível encontrar %{resource}, por favor defina uma das opções "
+"%{switches}."
+
+msgid "Enter user's current password:"
+msgstr ""
+
+msgid "Enter user's new password:"
+msgstr ""
+
 msgid "Locations"
 msgstr "Localizações"
 
-msgid "Organization created"
-msgstr "Organização criada"
+msgid "Organization created."
+msgstr ""
 
 msgid "Could not create the organization"
 msgstr "Não foi possível criar a organização"
 
-msgid "Organization updated"
-msgstr "Organização atualizada"
+msgid "Organization updated."
+msgstr ""
 
 msgid "Could not update the organization"
 msgstr "Não foi possível atualizar a organização"
 
-msgid "Organization deleted"
-msgstr "Organização removida"
+msgid "Organization deleted."
+msgstr ""
 
 msgid "Could not delete the organization"
 msgstr "Não foi possível remover a organização"
 
-msgid "Create or update parameter for an organization."
-msgstr "Criar ou atualizar parâmetros para uma organização."
+msgid "Create or update parameter for an organization"
+msgstr ""
 
 msgid "Could not set organization parameter"
 msgstr "Não foi possível definir os parâmetros da organização "
 
-msgid "Delete parameter for an organization."
-msgstr "Remover parâmetros para uma organização."
+msgid "Delete parameter for an organization"
+msgstr ""
 
 msgid "Could not delete organization parameter"
 msgstr "Não foi possível remover os parâmetros da organização "
 
+msgid "parameter name"
+msgstr "nome do parâmetro"
+
 msgid "Locked"
 msgstr "Bloqueado"
 
-msgid "View partition table content."
-msgstr "Visualizar conteúdo de tabela de partição"
+msgid "View partition table content"
+msgstr ""
 
 msgid "Path to a file that contains the partition layout"
 msgstr "Caminho para um arquivo que contenha o layout de partição"
 
-msgid "Partition table created"
-msgstr "Tabela de partição criada"
+msgid "Partition table created."
+msgstr ""
 
 msgid "Could not create the partition table"
 msgstr "Não foi possível criar a tabela de partição"
 
-msgid "Partition table updated"
-msgstr "Tabela de partição atualizada"
+msgid "Partition table updated."
+msgstr ""
 
 msgid "Could not update the partition table"
 msgstr "Não foi possível atualizar tabela de partição"
 
-msgid "Partition table deleted"
-msgstr "Tabela de partição removida"
+msgid "Partition table deleted."
+msgstr ""
 
 msgid "Could not delete the partition table"
 msgstr "Não foi possível remover tabela de partição"
+
+msgid "Manage personal access tokens"
+msgstr ""
+
+msgid "Active"
+msgstr ""
+
+msgid "Expires at"
+msgstr ""
+
+msgid ""
+"Personal access token [%{name}] created:\n"
+"%{token_value}"
+msgstr ""
+
+msgid "Could not create personal access token"
+msgstr ""
+
+msgid "Created at"
+msgstr "criado em"
+
+msgid "Last used at"
+msgstr ""
+
+msgid "Personal access token [%{name}] revoked."
+msgstr ""
+
+msgid "Could not revoke personal access token"
+msgstr ""
 
 msgid "Smart variables"
 msgstr "Variáveis inteligentes"
@@ -1795,26 +1887,23 @@ msgstr ""
 msgid "Realm type"
 msgstr "Tipo de realm"
 
-msgid "Realm [%{name}] created"
+msgid "Realm [%{name}] created."
 msgstr ""
 
 msgid "Could not create the realm"
 msgstr ""
 
-msgid "Realm [%{name}] updated"
+msgid "Realm [%{name}] updated."
 msgstr ""
 
 msgid "Could not update the realm"
 msgstr ""
 
-msgid "Realm [%{name}] deleted"
+msgid "Realm [%{name}] deleted."
 msgstr ""
 
 msgid "Could not delete the realm"
 msgstr ""
-
-msgid "Created at"
-msgstr "criado em"
 
 msgid "Updated at"
 msgstr "Atualizado em"
@@ -1936,8 +2025,8 @@ msgstr "Logs"
 msgid "Message"
 msgstr "Mensagem"
 
-msgid "Report has been deleted"
-msgstr "Relatório foi removido"
+msgid "Report has been deleted."
+msgstr ""
 
 msgid "Could not delete the report"
 msgstr "Não foi possível remover o relatório"
@@ -1951,32 +2040,32 @@ msgstr "Embutido"
 msgid "User role id"
 msgstr "ID da função de usuário"
 
-msgid "User role [%<name>s] created"
-msgstr "Função de usuário [%<name>s] criada"
+msgid "User role [%<name>s] created."
+msgstr ""
 
 msgid "Could not create the user role"
 msgstr "Não foi possível criar função de usuário"
 
-msgid "User role [%<name>s] updated"
-msgstr "Função de usuário [%<name>s] atualizada"
+msgid "User role [%<name>s] updated."
+msgstr ""
 
 msgid "Could not update the user role"
 msgstr "Não foi possível atualizar a função de usuário"
 
-msgid "User role cloned"
+msgid "User role cloned."
 msgstr ""
 
 msgid "Could not clone the user role"
 msgstr ""
 
-msgid "User role [%<name>s] deleted"
-msgstr "Função de usuário [%<name>s] removida"
+msgid "User role [%<name>s] deleted."
+msgstr ""
 
 msgid "Could not delete the user roles"
 msgstr "Não foi possível remover funções de usuário"
 
-msgid "Setting [%{name}] updated to [%{value}]"
-msgstr "Configuração [%[nome]] atualizada para [%{valor}]"
+msgid "Setting [%{name}] updated to [%{value}]."
+msgstr ""
 
 msgid "Could not update the setting"
 msgstr "Não foi possível atualizar a configuração"
@@ -2029,41 +2118,63 @@ msgstr "Valores"
 msgid "Match"
 msgstr "Combinar"
 
-msgid "Parameter updated"
-msgstr "Parâmetro atualizado"
+msgid "Parameter updated."
+msgstr ""
 
 msgid "Could not update the parameter"
 msgstr "Não foi possível atualizar o parâmetro"
 
-msgid "Override this parameter."
-msgstr "Sobrescrever este parâmetro"
+msgid "Value to use when there is no match"
+msgstr ""
 
-msgid "This parameter is required."
-msgstr "Este parâmetro é necessário"
+msgid "Override this parameter"
+msgstr ""
 
-msgid "Type of the parameter."
-msgstr "Tipo de parâmetro"
+msgid "This parameter is required"
+msgstr ""
 
-msgid "Type of the validator."
-msgstr "Tipo de validador."
+msgid "Type of the parameter"
+msgstr ""
+
+msgid "Type of the validator"
+msgstr ""
 
 msgid "The order in which values are resolved"
 msgstr ""
 
-msgid "Override value created"
-msgstr "Substituir valor criado"
+msgid "Override value, required if omit is false"
+msgstr ""
+
+msgid "Override value created."
+msgstr ""
 
 msgid "Could not create the override value"
 msgstr ""
 
-msgid "Cannot use --value when --use-puppet-default is true"
+msgid "Cannot use --value when --use-puppet-default is true."
 msgstr ""
 
-msgid "Override value deleted"
-msgstr "Valor substituto excluído"
+msgid "Create an override value for a specific smart variable"
+msgstr ""
+
+msgid ""
+"add-override-value command is deprecated and will be removed in one of the "
+"future versions. Please use add-matcher command instead."
+msgstr ""
+
+msgid "Override value deleted."
+msgstr ""
 
 msgid "Could not delete the override value"
 msgstr "Não foi possível excluir o valor substituto"
+
+msgid "Remove an override value for a specific smart variable"
+msgstr ""
+
+msgid ""
+"remove-override-value command is deprecated and will be removed in one of "
+"the future versions. Please use remove-matcher command instead."
+msgstr ""
 
 msgid "URL"
 msgstr "URL"
@@ -2071,41 +2182,53 @@ msgstr "URL"
 msgid "Features"
 msgstr "Recursos"
 
-msgid "Smart proxy created"
-msgstr "Proxy inteligente criado"
+msgid "Smart proxy created."
+msgstr ""
 
 msgid "Could not create the proxy"
 msgstr "Não foi possível criar um proxy"
 
-msgid "Smart proxy updated"
-msgstr "Proxy inteligente atualizado"
+msgid "Smart proxy updated."
+msgstr ""
 
 msgid "Could not update the proxy"
 msgstr "Não foi possível atualizar o proxy"
 
-msgid "Smart proxy deleted"
-msgstr "Proxy Inteligente removido"
+msgid "Smart proxy deleted."
+msgstr ""
 
 msgid "Could not delete the proxy"
 msgstr "Não foi possível remover o proxy"
 
-msgid "Puppet classes were imported"
-msgstr "Classes de puppet foram importadas"
-
-msgid "Import of puppet classes failed"
-msgstr "Importação de classes de puppet falhou"
-
 msgid "Do not run the import"
 msgstr "Não execute a importação"
 
-msgid "Smart proxy features were refreshed"
-msgstr "Recursos de proxy inteligente atualizados"
+msgid "Result"
+msgstr ""
+
+msgid "Changed environments"
+msgstr ""
+
+msgid "New classes"
+msgstr ""
+
+msgid "Updated classes"
+msgstr ""
+
+msgid "Removed classes"
+msgstr ""
+
+msgid "Ignored classes"
+msgstr ""
+
+msgid "Smart proxy features were refreshed."
+msgstr ""
 
 msgid "Refresh of smart proxy features failed"
 msgstr "Falha ao atualizar os recursos do proxy inteligente "
 
-msgid "Type of the variable."
-msgstr "Tipo de variável"
+msgid "Type of the variable"
+msgstr ""
 
 msgid "Variable"
 msgstr "Variável"
@@ -2113,23 +2236,50 @@ msgstr "Variável"
 msgid "Use --variable instead"
 msgstr ""
 
-msgid "Smart variable [%{variable}] created"
-msgstr "Variável inteligente [%{variable}] criada"
+msgid "Smart variable [%{variable}] created."
+msgstr ""
 
 msgid "Could not create the smart variable"
 msgstr "Não foi possível criar uma variável inteligente"
 
-msgid "Smart variable [%{variable}] updated"
-msgstr "Variável inteligente [%{variable}] atualizada"
+msgid "Smart variable [%{variable}] updated."
+msgstr ""
 
 msgid "Could not update the smart variable"
 msgstr "Não foi possível atualizar a variável inteligente"
 
-msgid "Smart variable [%{variable}] deleted"
-msgstr "Variável inteligente [%{variable}] removida"
+msgid "Smart variable [%{variable}] deleted."
+msgstr ""
 
 msgid "Could not delete the smart variable"
 msgstr "Não foi possível remover a variável inteligente"
+
+msgid "Manage SSH Keys sources"
+msgstr ""
+
+msgid "Fingerprint"
+msgstr ""
+
+msgid "Length"
+msgstr ""
+
+msgid "Path to a SSH public key"
+msgstr ""
+
+msgid "SSH Key %{name} added."
+msgstr ""
+
+msgid "Could not add SSH Key"
+msgstr ""
+
+msgid "Public Key"
+msgstr ""
+
+msgid "SSH Key deleted."
+msgstr ""
+
+msgid "Could not delete the SSH Key"
+msgstr ""
 
 msgid "Mask"
 msgstr "Máscara"
@@ -2167,27 +2317,26 @@ msgstr "A partir de"
 msgid "To"
 msgstr "Até"
 
-msgid "Subnet created"
-msgstr "Subnet criada"
+msgid "Subnet created."
+msgstr ""
 
 msgid "Could not create the subnet"
 msgstr "Não foi possível criar subrede"
 
-msgid "Subnet updated"
-msgstr "Subrede atualizada"
+msgid "Subnet updated."
+msgstr ""
 
 msgid "Could not update the subnet"
 msgstr "Não foi possível atualizar a subrede"
 
-msgid "Subnet deleted"
-msgstr "Subrede removida"
+msgid "Subnet deleted."
+msgstr ""
 
 msgid "Could not delete the subnet"
 msgstr "Não foi possível remover a subrede"
 
-#, fuzzy
-msgid "Create or update parameter for a subnet."
-msgstr "Criar ou atualizar o parâmetro para um hos."
+msgid "Create or update parameter for a subnet"
+msgstr ""
 
 #, fuzzy
 msgid "Subnet parameter updated"
@@ -2201,18 +2350,19 @@ msgstr "Novo parâmetro do host criado"
 msgid "Could not set subnet parameter"
 msgstr "Não foi possível definir parâmetro do host"
 
-#, fuzzy
-msgid "Delete parameter for a subnet."
-msgstr "Remover parâmetro para um host."
-
-#, fuzzy
-msgid "Subnet parameter deleted"
-msgstr "Parâmetro do host removido"
-
-msgid "List available provisioning template kinds."
+msgid "Delete parameter for a subnet"
 msgstr ""
 
-msgid "View provisioning template content."
+msgid "Subnet parameter deleted."
+msgstr ""
+
+msgid "unknown template kind"
+msgstr ""
+
+msgid "List available provisioning template kinds"
+msgstr ""
+
+msgid "View provisioning template content"
 msgstr ""
 
 msgid "Path to a file that contains the template"
@@ -2221,19 +2371,19 @@ msgstr "Caminho para um arquivo que contenha o modelo"
 msgid "Template type. Eg. snippet, script, provision"
 msgstr "Tipo de modelo. Ex.: snippet, script, provisão"
 
-msgid "Provisioning template created"
+msgid "Provisioning template created."
 msgstr ""
 
 msgid "Could not create the provisioning template"
 msgstr ""
 
-msgid "Provisioning template updated"
+msgid "Provisioning template updated."
 msgstr ""
 
 msgid "Could not update the provisioning template"
 msgstr ""
 
-msgid "Provisioning template deleted"
+msgid "Provisioning template deleted."
 msgstr ""
 
 msgid "Could not delete the provisioning template"
@@ -2243,7 +2393,7 @@ msgid "Update the default PXE menu on all configured TFTP servers"
 msgstr ""
 "Atualizado o menu padrão PXE  e todas as configurações TFTP dos servidores"
 
-msgid "Provisioning template cloned"
+msgid "Provisioning template cloned."
 msgstr ""
 
 msgid "Could not clone the provisioning template"
@@ -2288,47 +2438,582 @@ msgstr ""
 msgid "Default location name"
 msgstr ""
 
-msgid "Enter user's current password:"
+msgid "User [%{login}] created."
 msgstr ""
-
-msgid "Enter user's new password:"
-msgstr ""
-
-msgid "User [%{login}] created"
-msgstr "Usuário [%{login}] criado"
 
 msgid "Could not create the user"
 msgstr "Não foi possível criar usuário"
 
-msgid "User [%{login}] updated"
-msgstr "Usuário [%{login}] atualizado"
+msgid "User [%{login}] updated."
+msgstr ""
 
 msgid "Could not update the user"
 msgstr "Não foi possível atualizar usuário"
 
-msgid "User [%{login}] deleted"
-msgstr "Usuário [%{login}] excluido"
+msgid "User [%{login}] deleted."
+msgstr ""
 
 msgid "Could not delete the user"
 msgstr "Não foi possível remover usuário"
 
-msgid "User group [%<name>s] created"
-msgstr "Grupo de usuário [%<name>s] criado"
+msgid "Managing User SSH Keys."
+msgstr ""
+
+msgid "Managing personal access tokens"
+msgstr ""
+
+msgid "User group [%<name>s] created."
+msgstr ""
 
 msgid "Could not create the user group"
 msgstr "Não foi possível criar o grupo de usuário"
 
-msgid "User group [%<name>s] updated"
-msgstr "Grupo de usuário [%<name>s] atualizado"
+msgid "User group [%<name>s] updated."
+msgstr ""
 
 msgid "Could not update the user group"
 msgstr "Não foi possível atualizar o grupo de usuário"
 
-msgid "User group [%<name>s] deleted"
-msgstr "Grupo de usuário [%<name>s] removido"
+msgid "User group [%<name>s] deleted."
+msgstr ""
 
 msgid "Could not delete the user group"
 msgstr "Não foi possível remover o grupo de usuário"
+
+#~ msgid "Foreman connection login/logout."
+#~ msgstr "A conexão de login/logout do Foreman"
+
+#~ msgid "Manipulate architectures."
+#~ msgstr "Manipular Arquiteturas"
+
+#~ msgid "Manipulate auth sources."
+#~ msgstr "Manipular fontes do auth."
+
+#~ msgid "Manipulate compute resources."
+#~ msgstr "Manipular recursos de computação"
+
+#~ msgid "Manipulate domains."
+#~ msgstr "Manipular domínios."
+
+#~ msgid "Manipulate environments."
+#~ msgstr "Manipular ambientes."
+
+#~ msgid "Search facts."
+#~ msgstr "Pesquisar fatos."
+
+#~ msgid "Manage permission filters."
+#~ msgstr "Gerenciar filtros de permissão."
+
+#~ msgid "Manipulate hosts."
+#~ msgstr "Manipular hosts."
+
+#~ msgid "Manipulate hostgroups."
+#~ msgstr "Manipular hostgroups"
+
+#~ msgid "Manipulate locations."
+#~ msgstr "Manipular locais."
+
+#~ msgid "Manipulate installation media."
+#~ msgstr "Manipular mídia de instalação"
+
+#~ msgid "Manipulate hardware models."
+#~ msgstr "Manipular os modelos de hardware."
+
+#~ msgid "Manipulate operating system."
+#~ msgstr "Manipular Sistema Operacional:"
+
+#~ msgid "Manipulate organizations."
+#~ msgstr "Manipular as organizações."
+
+#~ msgid "Manipulate partition tables."
+#~ msgstr "Manipular as tabelas de partição."
+
+#~ msgid "Search puppet modules."
+#~ msgstr "Pesquisar módulos puppet."
+
+#~ msgid "Browse and read reports."
+#~ msgstr "Navegar e ler relatórios."
+
+#~ msgid "Manage user roles."
+#~ msgstr "Gerenciar funções de usuários"
+
+#~ msgid "Manipulate smart class parameters."
+#~ msgstr "Manipular os parâmetros de classe inteligentes."
+
+#~ msgid "Manipulate smart variables."
+#~ msgstr "Manipular variáveis inteligentes."
+
+#~ msgid "Manipulate smart proxies."
+#~ msgstr "Manipular proxies inteligentes."
+
+#~ msgid "Change server settings."
+#~ msgstr "Modifique as configurações do servidor"
+
+#~ msgid "Manipulate subnets."
+#~ msgstr "Manipular subredes."
+
+#~ msgid "Manipulate config templates."
+#~ msgstr "Manipular modelos de config."
+
+#~ msgid "Manipulate users."
+#~ msgstr "Manipular usuários."
+
+#~ msgid "Manage user groups."
+#~ msgstr "Gerenciar grupos de usuário"
+
+#~ msgid "Invalid username or password"
+#~ msgstr "Nome de usuário ou senha inválido(a)"
+
+#~ msgid "[Foreman] Username: "
+#~ msgstr "[Foreman] Nome de usuário:  "
+
+#~ msgid "[Foreman] Password for %s: "
+#~ msgstr "[Foreman] senha para %s:  "
+
+#~ msgid "Architecture created"
+#~ msgstr "Arquitetura criada"
+
+#~ msgid "Architecture deleted"
+#~ msgstr "Arquitetura removida"
+
+#~ msgid "Architecture updated"
+#~ msgstr "Arquitetura atualizada"
+
+#~ msgid "The user has been associated"
+#~ msgstr "O usuario esta associado"
+
+#~ msgid "The user has been disassociated"
+#~ msgstr "Usuário desassociado"
+
+#~ msgid "The user group has been associated"
+#~ msgstr "Grupo de usuário associado"
+
+#~ msgid "The user group has been disassociated"
+#~ msgstr "o grupo de usuários foi desassociados"
+
+#~ msgid "Operating system has been associated"
+#~ msgstr "O Sistema Operacional foi associado"
+
+#~ msgid "Operating system has been disassociated"
+#~ msgstr "Sistema operacional foi desassociado"
+
+#~ msgid "Architecture has been associated"
+#~ msgstr "Arquitetura foi associada"
+
+#~ msgid "Architecture has been disassociated"
+#~ msgstr "Arquitetura foi desassociada"
+
+#~ msgid "Partition table has been associated"
+#~ msgstr "Tabela de partição foi associada"
+
+#~ msgid "Partition table has been disassociated"
+#~ msgstr "Tabela de partição foi desassociada"
+
+#~ msgid "User role has been assigned"
+#~ msgstr "Função de usuário foi atribuída"
+
+#~ msgid "User role has been removed"
+#~ msgstr "Função de usuário foi removida"
+
+#~ msgid "username to access the remote system"
+#~ msgstr "nome de usuário para acessar o sistema remoto"
+
+#~ msgid "password to access the remote system"
+#~ msgstr "senha para acessar sistema remoto"
+
+#~ msgid "Manage LDAP auth sources."
+#~ msgstr "Gerenciar fontes de autenticação LDAP"
+
+#~ msgid "Received data of unknown format"
+#~ msgstr "Dados recebidos de formato desconhecido"
+
+#~ msgid "Set a global parameter."
+#~ msgstr "Definir um parâmetro global"
+
+#~ msgid "parameter value"
+#~ msgstr "valor de parâmetro"
+
+#~ msgid "Manipulate global parameters."
+#~ msgstr "Manipular parâmetros globais."
+
+#~ msgid "Compute resource created"
+#~ msgstr "Recurso de computação criado"
+
+#~ msgid "Compute resource updated"
+#~ msgstr "Recurso de computação atualizado"
+
+#~ msgid "Compute resource deleted"
+#~ msgstr "Recurso de computação removido"
+
+#~ msgid "Domain [%{name}] created"
+#~ msgstr "Domínio [%{name}] criado"
+
+#~ msgid "Domain [%{name}] updated"
+#~ msgstr "Domínio [%{name}] atualizado"
+
+#~ msgid "Domain [%{name}] deleted"
+#~ msgstr "Domínio [%{name}] removido"
+
+#~ msgid "Create or update parameter for a domain."
+#~ msgstr "Criar ou atualizar o parâmetro para um domínio."
+
+#~ msgid "Delete parameter for a domain."
+#~ msgstr "Remover o parâmetro para um domínio"
+
+#~ msgid "Domain parameter deleted"
+#~ msgstr "Parâmetro de domínio removido"
+
+#~ msgid "Environment created"
+#~ msgstr "Ambiente criado"
+
+#~ msgid "Environment updated"
+#~ msgstr "Ambiente atualizada"
+
+#~ msgid "Environment deleted"
+#~ msgstr "Ambiente removido"
+
+#~ msgid "Forbidden - server refused to process the request"
+#~ msgstr "Proibído - servidor recusou o processamento da requisição"
+
+#~ msgid "External user group created"
+#~ msgstr "Grupo de usuários externo criado"
+
+#~ msgid "External user group updated"
+#~ msgstr "Atualização grupo de usuário externo"
+
+#~ msgid "External user group deleted"
+#~ msgstr "Grupo de usuários externos apagados"
+
+#~ msgid "Permission filter for [%<resource_type>s] created"
+#~ msgstr "Filtro de permissão para [%<resource_type>s] criado"
+
+#~ msgid "Permission filter for [%<resource_type>s] updated"
+#~ msgstr "Filtro de permissão para [%<resource_type>s] atualizado"
+
+#~ msgid "Permission filter deleted"
+#~ msgstr "Filtro de permissão removido"
+
+#~ msgid "Environment"
+#~ msgstr "Ambiente"
+
+#~ msgid "Puppet CA Id"
+#~ msgstr "Id do Puppet CA"
+
+#~ msgid "Puppet Master Id"
+#~ msgstr "Id do Puppet Master"
+
+#~ msgid "Owner Id"
+#~ msgstr "ID de Proprietário"
+
+#~ msgid "Host created"
+#~ msgstr "Host foi criado"
+
+#~ msgid "Host updated"
+#~ msgstr "Host atualizado"
+
+#~ msgid "Host deleted"
+#~ msgstr "Host removido"
+
+#~ msgid "Create or update parameter for a host."
+#~ msgstr "Criar ou atualizar o parâmetro para um hos."
+
+#~ msgid "Delete parameter for a host."
+#~ msgstr "Remover parâmetro para um host."
+
+#~ msgid "Host parameter deleted"
+#~ msgstr "Parâmetro do host removido"
+
+#~ msgid "Power off forced."
+#~ msgstr "Desligar forçado"
+
+#~ msgid "Powering the host off."
+#~ msgstr "Desligando o host."
+
+#~ msgid "Puppet CA Proxy Id"
+#~ msgstr "Puppet CA Proxy Id"
+
+#~ msgid "Puppet Master Proxy Id"
+#~ msgstr "ID do Puppet Master Proxy"
+
+#~ msgid "Parent Id"
+#~ msgstr "ID de Pais"
+
+#~ msgid "Hostgroup created"
+#~ msgstr "Hostgroup criado"
+
+#~ msgid "Hostgroup updated"
+#~ msgstr "Hostgroup atualizado"
+
+#~ msgid "Hostgroup deleted"
+#~ msgstr "Hostgroup removido"
+
+#~ msgid "Create or update parameter for a hostgroup."
+#~ msgstr "Criar ou atualizar o parâmetro para um hostgroup."
+
+#~ msgid "Delete parameter for a hostgroup."
+#~ msgstr "Remover parâmetro para um hostgroup"
+
+#~ msgid "Hostgroup parameter deleted"
+#~ msgstr "Parâmetro do hostgroup removido"
+
+#~ msgid "Host parameters."
+#~ msgstr "Parâmetros de host."
+
+#~ msgid "Compute resource attributes."
+#~ msgstr "Atributos de recurso de computação."
+
+#~ msgid "Interface parameters."
+#~ msgstr "Parâmetros de interface"
+
+#~ msgid "Report name"
+#~ msgstr "Nome do relatório"
+
+#~ msgid "one of %s not found"
+#~ msgstr "um dos %s não foi encontrado"
+
+#~ msgid "%s not found"
+#~ msgstr "%s não foi encontrado"
+
+#~ msgid "found more than one %s"
+#~ msgstr "foi localizado mais de um %s"
+
+#~ msgid "Image created"
+#~ msgstr "Imagem criada"
+
+#~ msgid "Image updated"
+#~ msgstr "Imagem atualizada"
+
+#~ msgid "Image deleted"
+#~ msgstr "Imagem removida"
+
+#~ msgid ""
+#~ "Should this interface be used for constructing the FQDN of the host? Each "
+#~ "managed hosts needs to have one primary interface."
+#~ msgstr ""
+#~ "Está interface deverá ser usada para a construção do FQDN do host? Cada "
+#~ "gerenciamento de host precisa ter uma interface primária."
+
+#~ msgid ""
+#~ "Should this interface be used for TFTP of PXELinux (or SSH for image-"
+#~ "based hosts)? Each managed hosts needs to have one provision interface."
+#~ msgstr ""
+#~ "Esta interface deverá ser usada para TFTP do PXELinux (ou SSH para a base "
+#~ "de imagem host)? Cada gerenciamento de host precisa ter uma interface de "
+#~ "provisão."
+
+#~ msgid "Interface created"
+#~ msgstr "Interface criada"
+
+#~ msgid "Compute resource specific attributes."
+#~ msgstr "Atributos específicos de recursos de computação"
+
+#~ msgid "Interface updated"
+#~ msgstr "Interface atualizada"
+
+#~ msgid "Interface deleted"
+#~ msgstr "Interface excluída"
+
+#~ msgid "Location created"
+#~ msgstr "Localização criada"
+
+#~ msgid "Location updated"
+#~ msgstr "Localização atualizada"
+
+#~ msgid "Location deleted"
+#~ msgstr "Localização removida"
+
+#~ msgid "Create or update parameter for a location."
+#~ msgstr "Criar ou atualizar parâmetros para uma localização. "
+
+#~ msgid "Delete parameter for a location."
+#~ msgstr "Remover parâmetro para uma localização. "
+
+#~ msgid "Parameter [%{name}] deleted"
+#~ msgstr "Parâmetro [%{name}] removido"
+
+#~ msgid "Installation medium created"
+#~ msgstr "Meio de instalação criado"
+
+#~ msgid "Installation medium updated"
+#~ msgstr "Mídia de instalação atualizada"
+
+#~ msgid "Installation medium deleted"
+#~ msgstr "Mídia de instalação removida"
+
+#~ msgid "Hardware model created"
+#~ msgstr "Modelo de Hardware criado"
+
+#~ msgid "Hardware model deleted"
+#~ msgstr "Modelo de hardware removido"
+
+#~ msgid "Hardware model updated"
+#~ msgstr "Modelo de hardware atualizado"
+
+#~ msgid "Operating system created"
+#~ msgstr "Sistema operacional criado"
+
+#~ msgid "Operating system updated"
+#~ msgstr "Sistema Operacional atualizado"
+
+#~ msgid "Operating system deleted"
+#~ msgstr "Sistema Operacional removido"
+
+#~ msgid "Create or update parameter for an operating system."
+#~ msgstr "Criar ou atualizar o parâmetro para um sistema operacional."
+
+#~ msgid "Delete parameter for an operating system."
+#~ msgstr "Remover parâmetro para um sistema operacional."
+
+#~ msgid "operating system parameter deleted"
+#~ msgstr "parâmetro de sistema operacional removido"
+
+#~ msgid "operatingsystem id"
+#~ msgstr "operatingsystem id"
+
+#~ msgid "config template id to be set"
+#~ msgstr "id de modelo de config a ser definido"
+
+#~ msgid ""
+#~ "[%{config_template_name}] was set as default %{template_kind_name} "
+#~ "template"
+#~ msgstr ""
+#~ "[%{config_template_name}] era definido como modelo padrão "
+#~ "%{template_kind_name}"
+
+#~ msgid "Default template deleted"
+#~ msgstr "Modelo padrão removido"
+
+#~ msgid "Organization created"
+#~ msgstr "Organização criada"
+
+#~ msgid "Organization updated"
+#~ msgstr "Organização atualizada"
+
+#~ msgid "Organization deleted"
+#~ msgstr "Organização removida"
+
+#~ msgid "Create or update parameter for an organization."
+#~ msgstr "Criar ou atualizar parâmetros para uma organização."
+
+#~ msgid "Delete parameter for an organization."
+#~ msgstr "Remover parâmetros para uma organização."
+
+#~ msgid "View partition table content."
+#~ msgstr "Visualizar conteúdo de tabela de partição"
+
+#~ msgid "Partition table created"
+#~ msgstr "Tabela de partição criada"
+
+#~ msgid "Partition table updated"
+#~ msgstr "Tabela de partição atualizada"
+
+#~ msgid "Partition table deleted"
+#~ msgstr "Tabela de partição removida"
+
+#~ msgid "Report has been deleted"
+#~ msgstr "Relatório foi removido"
+
+#~ msgid "User role [%<name>s] created"
+#~ msgstr "Função de usuário [%<name>s] criada"
+
+#~ msgid "User role [%<name>s] updated"
+#~ msgstr "Função de usuário [%<name>s] atualizada"
+
+#~ msgid "User role [%<name>s] deleted"
+#~ msgstr "Função de usuário [%<name>s] removida"
+
+#~ msgid "Setting [%{name}] updated to [%{value}]"
+#~ msgstr "Configuração [%[nome]] atualizada para [%{valor}]"
+
+#~ msgid "Parameter updated"
+#~ msgstr "Parâmetro atualizado"
+
+#~ msgid "Override this parameter."
+#~ msgstr "Sobrescrever este parâmetro"
+
+#~ msgid "This parameter is required."
+#~ msgstr "Este parâmetro é necessário"
+
+#~ msgid "Type of the parameter."
+#~ msgstr "Tipo de parâmetro"
+
+#~ msgid "Type of the validator."
+#~ msgstr "Tipo de validador."
+
+#~ msgid "Override value created"
+#~ msgstr "Substituir valor criado"
+
+#~ msgid "Override value deleted"
+#~ msgstr "Valor substituto excluído"
+
+#~ msgid "Smart proxy created"
+#~ msgstr "Proxy inteligente criado"
+
+#~ msgid "Smart proxy updated"
+#~ msgstr "Proxy inteligente atualizado"
+
+#~ msgid "Smart proxy deleted"
+#~ msgstr "Proxy Inteligente removido"
+
+#~ msgid "Puppet classes were imported"
+#~ msgstr "Classes de puppet foram importadas"
+
+#~ msgid "Import of puppet classes failed"
+#~ msgstr "Importação de classes de puppet falhou"
+
+#~ msgid "Smart proxy features were refreshed"
+#~ msgstr "Recursos de proxy inteligente atualizados"
+
+#~ msgid "Type of the variable."
+#~ msgstr "Tipo de variável"
+
+#~ msgid "Smart variable [%{variable}] created"
+#~ msgstr "Variável inteligente [%{variable}] criada"
+
+#~ msgid "Smart variable [%{variable}] updated"
+#~ msgstr "Variável inteligente [%{variable}] atualizada"
+
+#~ msgid "Smart variable [%{variable}] deleted"
+#~ msgstr "Variável inteligente [%{variable}] removida"
+
+#~ msgid "Subnet created"
+#~ msgstr "Subnet criada"
+
+#~ msgid "Subnet updated"
+#~ msgstr "Subrede atualizada"
+
+#~ msgid "Subnet deleted"
+#~ msgstr "Subrede removida"
+
+#, fuzzy
+#~ msgid "Create or update parameter for a subnet."
+#~ msgstr "Criar ou atualizar o parâmetro para um hos."
+
+#, fuzzy
+#~ msgid "Delete parameter for a subnet."
+#~ msgstr "Remover parâmetro para um host."
+
+#, fuzzy
+#~ msgid "Subnet parameter deleted"
+#~ msgstr "Parâmetro do host removido"
+
+#~ msgid "User [%{login}] created"
+#~ msgstr "Usuário [%{login}] criado"
+
+#~ msgid "User [%{login}] updated"
+#~ msgstr "Usuário [%{login}] atualizado"
+
+#~ msgid "User [%{login}] deleted"
+#~ msgstr "Usuário [%{login}] excluido"
+
+#~ msgid "User group [%<name>s] created"
+#~ msgstr "Grupo de usuário [%<name>s] criado"
+
+#~ msgid "User group [%<name>s] updated"
+#~ msgstr "Grupo de usuário [%<name>s] atualizado"
+
+#~ msgid "User group [%<name>s] deleted"
+#~ msgstr "Grupo de usuário [%<name>s] removido"
 
 #~ msgid "You are logged in as '%s'"
 #~ msgstr "Você está autenticado como '%s'"
