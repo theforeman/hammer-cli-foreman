@@ -1,5 +1,20 @@
 Release notes
 =============
+### 0.13.0 (2018-05-09)
+* Listing all auth sources ([#19651](http://projects.theforeman.org/issues/19651))
+* Tests are green with 1.18 API docs ([#23219](http://projects.theforeman.org/issues/23219))
+* Add commands for Audits ([#2921](http://projects.theforeman.org/issues/2921))
+* fix logging by requiring logger ([PR #364](https://github.com/theforeman/hammer-cli-foreman/pull/364)) ([#23108](http://projects.theforeman.org/issues/23108))
+* Add personal access token cli support ([#21514](http://projects.theforeman.org/issues/21514))
+* Update to API doc form 1.17 ([PR #362](https://github.com/theforeman/hammer-cli-foreman/pull/362)) ([#22989](http://projects.theforeman.org/issues/22989))
+* Improve class import output ([#4609](http://projects.theforeman.org/issues/4609))
+* Some numeric options are no longer recognized as numeric ([#22964](http://projects.theforeman.org/issues/22964))
+* Pull in the latest strings from Dev ([#22866](http://projects.theforeman.org/issues/22866))
+* Temporary fix for override values ([#22751](http://projects.theforeman.org/issues/22751))
+* Raise error when wrong number of ids is resolved ([#22718](http://projects.theforeman.org/issues/22718))
+* Puppetrun command is moved from hosts to puppet hosts ([#22658](http://projects.theforeman.org/issues/22658))
+* Hammer should provide commands for showing host's ENC YAML ([#16423](http://projects.theforeman.org/issues/16423))
+* Remove deprecation warning from --root-password in host create/update ([#18636](http://projects.theforeman.org/issues/18636))
 
 ### 0.12.0 (2018-02-19)
 * Do not resolve already resolved id params ([#22517](http://projects.theforeman.org/issues/22517))
