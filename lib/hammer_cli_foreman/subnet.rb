@@ -10,8 +10,10 @@ module HammerCLIForeman
         field :id, _("Id")
         field :name, _("Name")
         field :network, _("Network")
+        field :cidr, _("CIDR")
         field :mask, _("Mask")
         field :vlanid, _("VLAN ID")
+        field :boot_mode, _("Boot Mode")
       end
 
       build_options
