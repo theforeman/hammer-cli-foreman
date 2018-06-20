@@ -13,7 +13,17 @@ class TestAdapter < HammerCLI::Output::Adapter::Abstract
     puts @separator+fields.collect{|f| f.label.to_s}.join(@separator)+@separator
 
     data.collect do |d|
-      puts @separator+fields.collect{ |f| data_for_field(f, d).to_s }.join(@separator)+@separator
+      fields_data = fields.collect do |f|
+        begin
+          data_for_field(f, d).to_s
+        rescue HammerCLI::MissingAPIError
+          # This is a workaround for current testing, which makes impossible to
+          # test http://projects.theforeman.org/issues/20607 feature becouse of
+          # simplified adapter.
+          nil.to_s
+        end
+      end.join(@separator)
+      puts "#{@separator}#{fields_data}#{@separator}"
     end
   end
 
