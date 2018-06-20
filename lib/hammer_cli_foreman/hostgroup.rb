@@ -71,7 +71,13 @@ module HammerCLIForeman
 
     class InfoCommand < HammerCLIForeman::InfoCommand
 
-      output ListCommand.output_definition do
+      output do
+        field :id, _("Id")
+        field :name, _("Name")
+        field :title, _("Title")
+        field nil, _("Puppet Environment"), Fields::SingleReference, :key => :environment
+        field nil, _("Model"), Fields::SingleReference, :key => :model
+
         field :description, _("Description"), Fields::LongText, :hide_blank => true
         field nil, _("Parent"), Fields::SingleReference, :key => :parent, :hide_blank => true
         field nil, _("Puppet CA Proxy"), Fields::SingleReference, :key => :puppet_ca_proxy
