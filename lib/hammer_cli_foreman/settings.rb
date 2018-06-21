@@ -10,6 +10,7 @@ module HammerCLIForeman
       output do
         field :id, _('Id'), Fields::Id
         field :name, _('Name')
+        field :full_name, _('Full name')
         field :value, _('Value')
         field :description, _('Description')
       end
