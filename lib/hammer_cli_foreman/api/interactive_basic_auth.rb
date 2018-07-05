@@ -35,6 +35,10 @@ module HammerCLIForeman
         @user ||= ask && get_user
       end
 
+      def password(ask=nil)
+        @password ||= ask && get_password
+      end
+
       def set_credentials(user, password)
         @user = user
         @password = password
