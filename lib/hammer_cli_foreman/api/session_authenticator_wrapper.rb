@@ -82,6 +82,10 @@ module HammerCLIForeman
         @authenticator.user(ask) if @authenticator.respond_to?(:user)
       end
 
+      def password(ask=nil)
+        @authenticator.password(ask) if @authenticator.respond_to?(:password)
+      end
+
       def set_credentials(*args)
         @authenticator.set_credentials(*args) if @authenticator.respond_to?(:set_credentials)
       end

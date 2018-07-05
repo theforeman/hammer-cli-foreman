@@ -66,6 +66,20 @@ describe HammerCLIForeman::Api::InteractiveBasicAuth do
     end
   end
 
+  describe '#password' do
+    it "returns nil when password wasn't provided" do
+      auth = HammerCLIForeman::Api::InteractiveBasicAuth.new(nil, nil)
+
+      assert_nil auth.password
+    end
+
+    it "returns the password" do
+      auth = HammerCLIForeman::Api::InteractiveBasicAuth.new(nil, 'testpswd')
+
+      assert_equal 'testpswd', auth.password
+    end
+  end
+
   describe '#error' do
     let(:auth) { HammerCLIForeman::Api::InteractiveBasicAuth.new(nil, nil) }
 
