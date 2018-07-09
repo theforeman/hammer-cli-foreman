@@ -416,4 +416,13 @@ describe HammerCLIForeman::Host do
 
     end
   end
+
+
+  context "DisassociateCommand" do
+    let(:cmd) { HammerCLIForeman::Host::DisassociateCommand.new("", ctx) }
+    context "parameters" do
+      it_should_accept "name", ["--name=host"]
+      it_should_accept "id", ["--id=1"]
+    end
+  end
 end
