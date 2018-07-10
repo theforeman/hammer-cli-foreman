@@ -57,13 +57,11 @@ module HammerCLIForeman
           end
         end
         field :logs, _("Logs"), Fields::Collection do
-          from :log do
-            from :source do
-              field :source, _("Resource")
-            end
-            from :message do
-              field :message, _("Message")
-            end
+          from "source" do
+            field :source, _("Resource")
+          end
+          from "message" do
+            field :message, _("Message")
           end
         end
       end
