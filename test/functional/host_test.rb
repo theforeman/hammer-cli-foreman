@@ -169,7 +169,7 @@ describe "host create" do
   end
 end
 
-describe 'host reports' do
+describe 'host config reports' do
   let(:report15) do
     {
         "id" => 15,
@@ -180,42 +180,45 @@ describe 'host reports' do
   end
 
   it 'filters reports by --id' do
-    api_expects(:reports, :index, 'Filter the reports') do |params|
+    api_expects(:config_reports, :index, 'Filter the reports') do |params|
       params['search'] == 'host_id=1'
     end.returns(index_response([report15]))
 
-    result = run_cmd(['host', 'reports', '--id=1'])
+    result = run_cmd(['host', 'config-reports', '--id=1'])
     result.exit_code.must_equal HammerCLI::EX_OK
   end
 
   it 'filters reports by --name' do
-    api_expects(:reports, :index, 'Filter the reports') do |params|
+    api_expects(:config_reports, :index, 'Filter the reports') do |params|
       params['search'] == 'host="host.example.com"'
     end.returns(index_response([report15]))
 
-    result = run_cmd(['host', 'reports', '--name=host.example.com'])
+    result = run_cmd(['host', 'config-reports', '--name=host.example.com'])
     result.exit_code.must_equal HammerCLI::EX_OK
   end
 
   it 'prints error or missing --id and --name' do
-      expected_result = CommandExpectation.new
-      expected_result.expected_err =
-          ['Error: At least one of options --name, --id is required.', '',
-              "See: 'hammer host reports --help'.", ''].join("\n")
-      expected_result.expected_exit_code = HammerCLI::EX_USAGE
+    expected_result = CommandExpectation.new
+    expected_result.expected_err = [
+      'Error: At least one of options --name, --id is required.',
+      '',
+      "See: 'hammer host config-reports --help'.",
+      ''
+    ].join("\n")
+    expected_result.expected_exit_code = HammerCLI::EX_USAGE
 
-      api_expects_no_call
+    api_expects_no_call
 
-      result = run_cmd(['host', 'reports'])
-      assert_cmd(expected_result, result)
+    result = run_cmd(['host', 'config-reports'])
+    assert_cmd(expected_result, result)
   end
 
   it 'filters reports by --name together with search' do
-    api_expects(:reports, :index, 'Filter the reports') do |params|
+    api_expects(:config_reports, :index, 'Filter the reports') do |params|
       params['search'] == 'reported > "2 hour ago" and host="host.example.com"'
     end.returns(index_response([report15]))
 
-    result = run_cmd(['host', 'reports', '--name=host.example.com', %Q(--search=reported > "2 hour ago")])
+    result = run_cmd(['host', 'config-reports', '--name=host.example.com', '--search=reported > "2 hour ago"'])
     result.exit_code.must_equal HammerCLI::EX_OK
   end
 end
