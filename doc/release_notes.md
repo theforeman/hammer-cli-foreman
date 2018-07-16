@@ -1,5 +1,8 @@
 Release notes
 =============
+### 0.13.1 (2018-07-18)
+* removed redundant info about OS from hostgroup ([#23722](http://projects.theforeman.org/issues/23722))
+
 ### 0.13.0 (2018-05-09)
 * Listing all auth sources ([#19651](http://projects.theforeman.org/issues/19651))
 * Tests are green with 1.18 API docs ([#23219](http://projects.theforeman.org/issues/23219))
