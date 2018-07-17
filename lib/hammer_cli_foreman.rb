@@ -102,7 +102,12 @@ module HammerCLIForeman
     )
 
     HammerCLI::MainCommand.lazy_subcommand('report', _("Browse and read reports"),
-      'HammerCLIForeman::Report', 'hammer_cli_foreman/report'
+      'HammerCLIForeman::ConfigReport', 'hammer_cli_foreman/config_report',
+      :warning => _('%{report} command is deprecated and will be removed in one of the future versions. Please use %{config_report} command instead.') % {:report => 'report', :config_report => 'config-report'}
+    )
+
+    HammerCLI::MainCommand.lazy_subcommand('config-report', _("Browse and read reports"),
+      'HammerCLIForeman::ConfigReport', 'hammer_cli_foreman/config_report'
     )
 
     HammerCLI::MainCommand.lazy_subcommand('role', _("Manage user roles"),
@@ -156,4 +161,3 @@ module HammerCLIForeman
   end
 
 end
-

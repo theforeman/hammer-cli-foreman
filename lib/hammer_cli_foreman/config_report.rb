@@ -1,8 +1,8 @@
 module HammerCLIForeman
 
-  class Report < HammerCLIForeman::Command
+  class ConfigReport < HammerCLIForeman::Command
 
-    resource :reports
+    resource :config_reports
 
     class ListCommand < HammerCLIForeman::ListCommand
 

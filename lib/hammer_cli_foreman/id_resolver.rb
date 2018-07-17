@@ -53,7 +53,7 @@ module HammerCLIForeman
       :ptable =>           [ s_name(_("Partition table name")) ],
       :proxy =>            [ s_name(_("Proxy name")) ],
       :puppetclass =>      [ s_name(_("Puppet class name")) ],
-      :report =>           [],
+      :config_report =>    [],
       :role =>             [ s_name(_("User role name")) ],
       :setting =>          [ s_name(_("Setting name"), :editable => false) ],
       :subnet =>           [ s_name(_("Subnet name")) ],

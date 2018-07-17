@@ -155,12 +155,12 @@ describe HammerCLIForeman::Host do
   end
 
 
-  context "ReportsCommand" do
+  context "ConfigReportsCommand" do
     before do
-      ResourceMocks.mock_action_call(:reports, :index, [])
+      ResourceMocks.mock_action_call(:config_reports, :index, [])
     end
 
-    let(:cmd) { HammerCLIForeman::Host::ReportsCommand.new("", ctx) }
+    let(:cmd) { HammerCLIForeman::Host::ConfigReportsCommand.new("", ctx) }
 
     context "parameters" do
       it_should_accept "id", ["--id=1"]

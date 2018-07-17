@@ -1,18 +1,18 @@
 require File.join(File.dirname(__FILE__), 'test_helper')
 require File.join(File.dirname(__FILE__), 'apipie_resource_mock')
 
-require 'hammer_cli_foreman/report'
+require 'hammer_cli_foreman/config_report'
 
-describe HammerCLIForeman::Report do
+describe HammerCLIForeman::ConfigReport do
 
   include CommandTestHelper
 
   context "ListCommand" do
     before do
-      ResourceMocks.mock_action_call(:reports, :index, [])
+      ResourceMocks.mock_action_call(:config_reports, :index, [])
     end
 
-    let(:cmd) { HammerCLIForeman::Report::ListCommand.new("", ctx) }
+    let(:cmd) { HammerCLIForeman::ConfigReport::ListCommand.new("", ctx) }
 
     context "parameters" do
       it_should_accept "no arguments"
@@ -39,7 +39,7 @@ describe HammerCLIForeman::Report do
 
   context "InfoCommand" do
 
-    let(:cmd) { HammerCLIForeman::Report::InfoCommand.new("", ctx) }
+    let(:cmd) { HammerCLIForeman::ConfigReport::InfoCommand.new("", ctx) }
 
     context "parameters" do
       it_should_accept "id", ["--id=1"]
@@ -51,7 +51,7 @@ describe HammerCLIForeman::Report do
 
   context "DeleteCommand" do
 
-    let(:cmd) { HammerCLIForeman::Report::DeleteCommand.new("", ctx) }
+    let(:cmd) { HammerCLIForeman::ConfigReport::DeleteCommand.new("", ctx) }
 
     context "parameters" do
       it_should_accept "id", ["--id=1"]
