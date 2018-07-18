@@ -14,7 +14,12 @@ module HammerCLIForeman
       def error(ex)
         if ex.is_a?(RestClient::Unauthorized)
           self.clear
-          return UnauthorizedError.new(_("Invalid username or password."))
+          message = _("Invalid username or password.")
+          begin
+            message = JSON.parse(ex.response.body)['error']['message'] 
+          rescue
+          end
+          return UnauthorizedError.new(message)
         end
       end
 
