@@ -82,6 +82,16 @@ describe HammerCLIForeman::Api::InteractiveBasicAuth do
 
       assert_nil new_ex
     end
+
+    it 'respect server error' do
+      ex = RestClient::Unauthorized.new
+      response = mock()
+      response.stubs(:body).returns('{"error": {"message": "Unable to authenticate user admin"}}')
+      ex.response = response
+      new_ex = auth.error(ex)
+
+      assert_equal 'Unable to authenticate user admin', new_ex.message
+    end
   end
 
   describe '#set_credentials' do
