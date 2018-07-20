@@ -9,9 +9,9 @@ module HammerCLIForeman
       output do
         field :id, _("Id")
         field :name, _("Name")
-        field :network, _("Network")
-        field :cidr, _("CIDR")
-        field :mask, _("Mask")
+        field :network, _("Network Addr")
+        field :cidr, _("Network Prefix")
+        field :mask, _("Network Mask")
         field :vlanid, _("VLAN ID")
         field :boot_mode, _("Boot Mode")
       end
@@ -22,19 +22,29 @@ module HammerCLIForeman
 
     class InfoCommand < HammerCLIForeman::InfoCommand
 
-      output ListCommand.output_definition do
+      output do
+        field :id, _("Id")
+        field :name, _("Name")
         field :description, _("Description"), Fields::LongText, :hide_blank => true
+        field :network_type, _("Protocol")
         field :priority, _("Priority")
-        field :dns, _("DNS"), Fields::Reference, :details => :url
+        field :network, _("Network Addr")
+        field :cidr, _("Network Prefix")
+        field :mask, _("Network Mask")
+        field :gateway, _("Gateway Addr")
         field :dns_primary, _("Primary DNS")
         field :dns_secondary, _("Secondary DNS")
-        field :tftp, _("TFTP"), Fields::Reference, :details => :url
-        field :dhcp, _("DHCP"), Fields::Reference, :details => :url
+        label _("Smart Proxies") do
+          field :dns, _("DNS"), Fields::Reference, :details => :url
+          field :tftp, _("TFTP"), Fields::Reference, :details => :url
+          field :dhcp, _("DHCP"), Fields::Reference, :details => :url
+        end
         field :ipam, _("IPAM")
-        field :gateway, _("Gateway")
-        field :from, _("From")
-        field :to, _("To")
+        field :from, _("Start of IP Range")
+        field :to, _("End of IP Range")
+        field :vlanid, _("VLAN ID")
         field :mtu, _("MTU")
+        field :boot_mode, _("Boot Mode")
         HammerCLIForeman::References.domains(self)
         HammerCLIForeman::References.taxonomies(self)
         HammerCLIForeman::References.parameters(self)
