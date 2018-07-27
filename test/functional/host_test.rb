@@ -222,3 +222,29 @@ describe 'host config reports' do
     result.exit_code.must_equal HammerCLI::EX_OK
   end
 end
+describe 'disassociate host from vm' do
+  let(:cmd) { ["host", "disassociate"] }
+
+  it 'successful disassociate host' do
+    params = ['--id=1']
+    expected_result = success_result("The host has been disassociated from VM\n")
+    api_expects(:hosts, :disassociate, 'disassociate hosts') do |params|
+      params['id'] == "1"
+    end.returns({})
+
+    result = run_cmd(cmd + params)
+    assert_cmd(expected_result, result)
+  end
+
+  it 'prints error on missing host id' do
+    expected_result = CommandExpectation.new
+    expected_result.expected_err = [
+      "Failed to disassociated host from VM:",
+      "  Missing arguments for 'id'",
+      ''].join("\n")
+    expected_result.expected_exit_code = HammerCLI::EX_USAGE
+
+    result = run_cmd(cmd)
+    assert_cmd(expected_result, result)
+  end
+end
