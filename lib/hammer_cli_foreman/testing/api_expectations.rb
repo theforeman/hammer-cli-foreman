@@ -63,11 +63,18 @@ module HammerCLIForeman
           if @api_call_matcher && !@api_call_matcher.expected_params.empty?
             signature += "\n  expected params to include: " + params_signature(@api_call_matcher.expected_params)
           end
+          if @api_call_matcher && !@api_call_matcher.block.nil?
+            signature += "\n  expected params to match block at: " + block_signature(@api_call_matcher.block)
+          end
           signature
         end
 
         def params_signature(hash)
           JSON.pretty_generate(hash).split("\n").join("\n  ")
+        end
+
+        def block_signature(block)
+          block.source_location.join(':')
         end
 
         def set_note(note)
@@ -127,6 +134,10 @@ module HammerCLIForeman
       class TestAuthenticator < ApipieBindings::Authenticators::BasicAuth
         def user(ask=nil)
           @user
+        end
+
+        def password(ask=nil)
+          @password
         end
       end
 
