@@ -77,7 +77,7 @@ module HammerCLIForeman
       dependent_resources += @dependency_resolver.action_dependencies(action, :only_required => false, :recursive => false)
       dependent_resources += @dependency_resolver.action_dependencies(action, :only_required => true, :recursive => true)
 
-      unique(dependent_resources).each do |dep_resource|
+      dependent_resources.uniq(&:name).each do |dep_resource|
         builders << DependentSearchablesOptionBuilder.new(dep_resource, @searchables)
       end
 
@@ -88,16 +88,6 @@ module HammerCLIForeman
 
       builders
     end
-
-    protected
-
-    def unique(resources)
-      # ruby 1.8 hack - it does not support passing blocks to Array#uniq
-      resources.inject({}) do |h, r|
-        h.update(r.name => r)
-      end.values
-    end
-
   end
 
   class ForemanOptionBuilder < HammerCLI::OptionBuilderContainer
