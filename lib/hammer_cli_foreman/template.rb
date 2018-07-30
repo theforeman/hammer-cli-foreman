@@ -55,6 +55,10 @@ module HammerCLIForeman
         field :locked, _("Locked"), Fields::Boolean
         HammerCLIForeman::References.operating_systems(self)
         HammerCLIForeman::References.taxonomies(self)
+        collection :template_combinations, 'Template Combinations' do
+          field :hostgroup_name, _('Hostgroup name')
+          field :environment_name, _('Environment name')
+        end
       end
 
       def extend_data(tpl)
@@ -193,6 +197,10 @@ module HammerCLIForeman
 
       build_options
     end
+
+    lazy_subcommand('combination', _("Manage template combinations"),
+                    'HammerCLIForeman::Combination', 'hammer_cli_foreman/combination'
+    )
 
     HammerCLIForeman::AssociatingCommands::OperatingSystem.extend_command(self)
 

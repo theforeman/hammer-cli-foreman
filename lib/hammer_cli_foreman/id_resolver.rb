@@ -61,7 +61,8 @@ module HammerCLIForeman
       :user =>             [ s("login", _("User's login to search by")) ],
       :common_parameter =>      [ s_name(_("Common parameter name")) ],
       :smart_class_parameter => [ s_name(_("Smart class parameter name"), :editable => false) ],
-      :smart_variable => [ s("variable", _("Smart variable name")) ]
+      :smart_variable => [ s("variable", _("Smart variable name")) ],
+      :template_combination => []
     }
     DEFAULT_SEARCHABLES = [ s_name(_("Name to search by")) ]
 
