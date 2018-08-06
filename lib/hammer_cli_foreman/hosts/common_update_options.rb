@@ -26,12 +26,6 @@ module HammerCLIForeman
         bme_options[:default] = 'true' if base.action.to_sym == :create
 
         bme_options[:format] = HammerCLI::Options::Normalizers::Bool.new
-        base.option "--managed", "MANAGED", " ", bme_options
-        bme_options[:format] = HammerCLI::Options::Normalizers::Bool.new
-        base.option "--build", "BUILD", " ", bme_options
-        bme_options[:format] = HammerCLI::Options::Normalizers::Bool.new
-        base.option "--enabled", "ENABLED", " ",  bme_options
-        bme_options[:format] = HammerCLI::Options::Normalizers::Bool.new
         base.option "--overwrite", "OVERWRITE", " ",  bme_options
 
         base.option "--parameters", "PARAMS", _("Host parameters"),
@@ -71,9 +65,11 @@ module HammerCLIForeman
         puppetclass_ids = option_puppetclass_ids || puppet_class_ids(option_puppet_classes)
         params['host']['puppetclass_ids'] = puppetclass_ids unless puppetclass_ids.nil?
 
-        params['host']['build'] = option_build unless option_build.nil?
-        params['host']['managed'] = option_managed unless option_managed.nil?
-        params['host']['enabled'] = option_enabled unless option_enabled.nil?
+        if action == :create
+          params['host']['build'] = true if option_build.nil?
+          params['host']['managed'] = true if option_managed.nil?
+          params['host']['enabled'] = true if option_enabled.nil?
+        end
         params['host']['overwrite'] = option_overwrite unless option_overwrite.nil?
 
         params['host']['host_parameters_attributes'] = parameter_attributes
