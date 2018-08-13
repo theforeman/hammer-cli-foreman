@@ -309,6 +309,21 @@ module HammerCLIForeman
       include HammerCLIForeman::Hosts::CommonUpdateHelp
     end
 
+    class CloneCommand < HammerCLIForeman::CreateCommand
+      action :clone
+
+      command_name 'clone'
+      option "--id", "ID", _("ID of host to be cloned"), :required => true
+      option "--ip", "IP", _("IP of the new cloned host"), :required => true
+      option "--mac", "MAC", _("MAC address of the new cloned host"), :required => false
+      option "--name", "NAME", _("Name of the new cloned host"), :required => true
+
+      success_message _("Host cloned.")
+      failure_message _("Could not clone the host")
+
+      include HammerCLIForeman::Hosts::CommonUpdateOptions
+      include HammerCLIForeman::Hosts::CommonUpdateHelp
+    end
 
     class DeleteCommand < HammerCLIForeman::DeleteCommand
       success_message _("Host deleted.")

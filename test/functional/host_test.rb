@@ -169,6 +169,52 @@ describe "host create" do
   end
 end
 
+describe "host clone" do
+  let(:cmd) { ["host", "clone"] }
+  let(:minimal_params) { ['--id=1','--mac=52:54:00:8c:4c:f1','--ip=172.17.0.25', '--name=test'] }
+
+  it 'should print error on missing --id' do
+    params = ['--name=new', '--mac=52:54:00:8c:4c:f1', '--ip=172.17.0.25']
+    expected_result = CommandExpectation.new
+    expected_result.expected_err =
+        "Could not clone the host:\n" +
+        "  Error: Option '--id' is required.\n  \n" +
+        "  See: 'hammer host clone --help'.\n"
+    expected_result.expected_exit_code = HammerCLI::EX_USAGE
+
+    api_expects_no_call
+
+    result = run_cmd(cmd + params)
+    assert_cmd(expected_result, result)
+  end
+
+  it 'should print error on missing --name' do
+    params = ['--id=1', '--mac=52:54:00:8c:4c:f1', '--ip=172.17.0.25']
+
+    expected_result = CommandExpectation.new
+    expected_result.expected_err =
+        "Could not clone the host:\n" +
+            "  Error: Option '--name' is required.\n  \n" +
+            "  See: 'hammer host clone --help'.\n"
+    expected_result.expected_exit_code = HammerCLI::EX_USAGE
+
+    api_expects_no_call
+
+    result = run_cmd(cmd + params)
+
+    assert_cmd(expected_result, result)
+  end
+
+  it 'should clone a host by id' do
+    api_expects(:hosts, :clone, 'Clone host').with_params({'id' => '1',
+                                                           'name' => 'test',
+                                                           'ip' => '172.17.0.25',
+                                                           'mac' => '52:54:00:8c:4c:f1' })
+    result = run_cmd(cmd + minimal_params)
+    assert_cmd(success_result("Host cloned.\n"), result)
+  end
+end
+
 describe 'host config reports' do
   let(:report15) do
     {
@@ -222,6 +268,7 @@ describe 'host config reports' do
     result.exit_code.must_equal HammerCLI::EX_OK
   end
 end
+
 describe 'disassociate host from vm' do
   let(:cmd) { ["host", "disassociate"] }
 
