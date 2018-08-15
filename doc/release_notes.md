@@ -1,5 +1,9 @@
 Release notes
 =============
+### 0.13.2 (2018-08-15)
+* Stop overriding apipie help for host flags ([#24490](http://projects.theforeman.org/issues/24490))
+* Hammer asks for user password though -p option provided ([#23996](http://projects.theforeman.org/issues/23996))
+
 ### 0.13.1 (2018-07-18)
 * removed redundant info about OS from hostgroup ([#23722](http://projects.theforeman.org/issues/23722))
 
