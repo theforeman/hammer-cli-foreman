@@ -1,5 +1,28 @@
 module HammerCLIForeman
 
+   module SubnetUpdateCreateCommons
+
+    def self.included(base)
+      base.option "--dns", "DNS_NAME", _("DNS Proxy to use within this subnet")
+      base.option "--dhcp", "DHCP_NAME", _("DHCP Proxy to use within this subnet")
+      base.option "--tftp", "TFTP_NAME", _("TFTP Proxy to use within this subnet")
+    end
+
+    def request_params
+      params = super
+      params['subnet']["dns_id"] ||= proxy_feature_id(option_dns) if option_dns
+      params['subnet']["dhcp_id"] ||= proxy_feature_id(option_dhcp) if option_dhcp
+      params['subnet']["tftp_id"] ||= proxy_feature_id(option_tftp) if option_tftp
+      params
+    end
+
+    private
+
+    def proxy_feature_id(name)
+      resolver.smart_proxy_id('option_name' => name) if name
+    end
+  end
+
   class Subnet < HammerCLIForeman::Command
 
     resource :subnets
@@ -55,6 +78,7 @@ module HammerCLIForeman
 
 
     class CreateCommand < HammerCLIForeman::CreateCommand
+      include SubnetUpdateCreateCommons
 
       success_message _("Subnet created.")
       failure_message _("Could not create the subnet")
@@ -64,6 +88,7 @@ module HammerCLIForeman
 
 
     class UpdateCommand < HammerCLIForeman::UpdateCommand
+      include SubnetUpdateCreateCommons
 
       success_message _("Subnet updated.")
       failure_message _("Could not update the subnet")
