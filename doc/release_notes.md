@@ -1,5 +1,21 @@
 Release notes
 =============
+### 0.14.0 (2018-08-27)
+* Add template combinations commands ([#3969](http://projects.theforeman.org/issues/3969))
+* Fix and extend tests for user update ([#23996](http://projects.theforeman.org/issues/23996))
+* Hammer asks for user password though -p option provided ([#23996](http://projects.theforeman.org/issues/23996))
+* Stop overriding apipie help for host flags ([PR #380](https://github.com/theforeman/hammer-cli-foreman/pull/380)) ([#24490](http://projects.theforeman.org/issues/24490))
+* Hammer report info doesn't show logs resources and messages ([PR #375](https://github.com/theforeman/hammer-cli-foreman/pull/375)) ([#12189](http://projects.theforeman.org/issues/12189))
+* Remove legacy code for Ruby < 2.0 ([#21360](http://projects.theforeman.org/issues/21360))
+* Add disassociate command to host ([#15674](http://projects.theforeman.org/issues/15674))
+* Align subnet translations in hammer with UI ([#9906](http://projects.theforeman.org/issues/9906))
+* Propagate the error message from core ([#24285](http://projects.theforeman.org/issues/24285))
+* Hammer uses /config_reports rather than /reports ([PR #374](https://github.com/theforeman/hammer-cli-foreman/pull/374)) ([#14510](http://projects.theforeman.org/issues/14510))
+* Setting list should show full names ([#20360](http://projects.theforeman.org/issues/20360))
+* Show cidr notation ([#22988](http://projects.theforeman.org/issues/22988))
+* Removed redundant info about OS from hostgroup ([#23722](http://projects.theforeman.org/issues/23722))
+* Add MTU to subnet info ([#23401](http://projects.theforeman.org/issues/23401))
+
 ### 0.13.0 (2018-05-09)
 * Listing all auth sources ([#19651](http://projects.theforeman.org/issues/19651))
 * Tests are green with 1.18 API docs ([#23219](http://projects.theforeman.org/issues/23219))
