@@ -5,7 +5,7 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: hammer-cli-foreman 0.14.pre.develop\n"
+"Project-Id-Version: hammer-cli-foreman 0.14.0\n"
 "Report-Msgid-Bugs-To: \n"
 "PO-Revision-Date: 2014-03-04 16:47+0000\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
@@ -71,6 +71,11 @@ msgid "Search puppet modules"
 msgstr ""
 
 msgid "Browse and read reports"
+msgstr ""
+
+msgid ""
+"%{report} command is deprecated and will be removed in one of the future "
+"versions. Please use %{config_report} command instead."
 msgstr ""
 
 msgid "Manage user roles"
@@ -608,6 +613,57 @@ msgstr ""
 msgid "Could not update the Auth Source"
 msgstr ""
 
+msgid "Manage template combinations"
+msgstr ""
+
+msgid "ID"
+msgstr ""
+
+msgid "Provisioning template ID"
+msgstr ""
+
+msgid "Provisioning template name"
+msgstr ""
+
+msgid "Hostgroup ID"
+msgstr ""
+
+msgid "Hostgroup name"
+msgstr ""
+
+msgid "Environment ID"
+msgstr ""
+
+msgid "Environment name"
+msgstr ""
+
+msgid "Provisioning Template"
+msgstr ""
+
+msgid "Hostgroup"
+msgstr ""
+
+msgid "Environment"
+msgstr ""
+
+msgid "Template combination updated."
+msgstr ""
+
+msgid "Could not update the template combination"
+msgstr ""
+
+msgid "Template combination created."
+msgstr ""
+
+msgid "Could not create the template combination"
+msgstr ""
+
+msgid "Template combination Deleted."
+msgstr ""
+
+msgid "Could not delete the template combination"
+msgstr ""
+
 msgid "Received data of unknown format."
 msgstr ""
 
@@ -805,9 +861,6 @@ msgid ""
 "about available adapter types:"
 msgstr ""
 
-msgid "ID"
-msgstr ""
-
 msgid "Config group created."
 msgstr ""
 
@@ -824,6 +877,84 @@ msgid "Config group has been deleted."
 msgstr ""
 
 msgid "Could not delete the config group"
+msgstr ""
+
+msgid "Host"
+msgstr ""
+
+msgid "Last report"
+msgstr ""
+
+msgid "Applied"
+msgstr ""
+
+msgid "Restarted"
+msgstr ""
+
+msgid "Failed"
+msgstr ""
+
+msgid "Restart Failures"
+msgstr ""
+
+msgid "Skipped"
+msgstr ""
+
+msgid "Pending"
+msgstr ""
+
+msgid "Reported at"
+msgstr ""
+
+msgid "Report status"
+msgstr ""
+
+msgid "Report metrics"
+msgstr ""
+
+msgid "config_retrieval"
+msgstr ""
+
+msgid "exec"
+msgstr ""
+
+msgid "file"
+msgstr ""
+
+msgid "package"
+msgstr ""
+
+msgid "service"
+msgstr ""
+
+msgid "user"
+msgstr ""
+
+msgid "yumrepo"
+msgstr ""
+
+msgid "filebucket"
+msgstr ""
+
+msgid "cron"
+msgstr ""
+
+msgid "total"
+msgstr ""
+
+msgid "Logs"
+msgstr ""
+
+msgid "Resource"
+msgstr ""
+
+msgid "Message"
+msgstr ""
+
+msgid "Report has been deleted."
+msgstr ""
+
+msgid "Could not delete the report"
 msgstr ""
 
 msgid "Use the default organization and/or location from the server"
@@ -960,9 +1091,6 @@ msgstr ""
 msgid "Could not delete the external user group"
 msgstr ""
 
-msgid "Host"
-msgstr ""
-
 msgid "Fact"
 msgstr ""
 
@@ -1021,9 +1149,6 @@ msgstr ""
 msgid "Could not delete the permission filter"
 msgstr ""
 
-msgid "Resource"
-msgstr ""
-
 msgid "Operating System"
 msgstr ""
 
@@ -1067,9 +1192,6 @@ msgid "Managed"
 msgstr ""
 
 msgid "Installed at"
-msgstr ""
-
-msgid "Last report"
 msgstr ""
 
 msgid "Network"
@@ -1183,6 +1305,11 @@ msgstr ""
 msgid "Host name"
 msgstr ""
 
+msgid ""
+"%{reports} command is deprecated and will be removed in one of the future "
+"versions. Please use %{config_reports} command instead."
+msgstr ""
+
 msgid "Host created."
 msgstr ""
 
@@ -1253,6 +1380,15 @@ msgid "Dump host's ENC YAML"
 msgstr ""
 
 msgid "Could not retrieve ENC values of the host"
+msgstr ""
+
+msgid "Disassociate a host"
+msgstr ""
+
+msgid "The host has been disassociated from VM"
+msgstr ""
+
+msgid "Failed to disassociated host from VM"
 msgstr ""
 
 msgid "List of puppetclass ids"
@@ -1380,12 +1516,6 @@ msgid "Compute resource name"
 msgstr ""
 
 msgid "Domain name"
-msgstr ""
-
-msgid "Environment name"
-msgstr ""
-
-msgid "Hostgroup name"
 msgstr ""
 
 msgid "Hostgroup title"
@@ -1949,75 +2079,6 @@ msgstr ""
 msgid "External user groups"
 msgstr ""
 
-msgid "Applied"
-msgstr ""
-
-msgid "Restarted"
-msgstr ""
-
-msgid "Failed"
-msgstr ""
-
-msgid "Restart Failures"
-msgstr ""
-
-msgid "Skipped"
-msgstr ""
-
-msgid "Pending"
-msgstr ""
-
-msgid "Reported at"
-msgstr ""
-
-msgid "Report status"
-msgstr ""
-
-msgid "Report metrics"
-msgstr ""
-
-msgid "config_retrieval"
-msgstr ""
-
-msgid "exec"
-msgstr ""
-
-msgid "file"
-msgstr ""
-
-msgid "package"
-msgstr ""
-
-msgid "service"
-msgstr ""
-
-msgid "user"
-msgstr ""
-
-msgid "yumrepo"
-msgstr ""
-
-msgid "filebucket"
-msgstr ""
-
-msgid "cron"
-msgstr ""
-
-msgid "total"
-msgstr ""
-
-msgid "Logs"
-msgstr ""
-
-msgid "Message"
-msgstr ""
-
-msgid "Report has been deleted."
-msgstr ""
-
-msgid "Could not delete the report"
-msgstr ""
-
 msgid "The server does not support such operation."
 msgstr ""
 
@@ -2049,6 +2110,9 @@ msgid "User role [%<name>s] deleted."
 msgstr ""
 
 msgid "Could not delete the user roles"
+msgstr ""
+
+msgid "Full name"
 msgstr ""
 
 msgid "Setting [%{name}] updated to [%{value}]."
@@ -2268,22 +2332,40 @@ msgstr ""
 msgid "Could not delete the SSH Key"
 msgstr ""
 
-msgid "Mask"
+msgid "Network Addr"
+msgstr ""
+
+msgid "Network Prefix"
+msgstr ""
+
+msgid "Network Mask"
 msgstr ""
 
 msgid "VLAN ID"
 msgstr ""
 
+msgid "Boot Mode"
+msgstr ""
+
+msgid "Protocol"
+msgstr ""
+
 msgid "Priority"
 msgstr ""
 
-msgid "DNS"
+msgid "Gateway Addr"
 msgstr ""
 
 msgid "Primary DNS"
 msgstr ""
 
 msgid "Secondary DNS"
+msgstr ""
+
+msgid "Smart Proxies"
+msgstr ""
+
+msgid "DNS"
 msgstr ""
 
 msgid "TFTP"
@@ -2295,13 +2377,13 @@ msgstr ""
 msgid "IPAM"
 msgstr ""
 
-msgid "Gateway"
+msgid "Start of IP Range"
 msgstr ""
 
-msgid "From"
+msgid "End of IP Range"
 msgstr ""
 
-msgid "To"
+msgid "MTU"
 msgstr ""
 
 msgid "Subnet created."
