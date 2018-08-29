@@ -108,6 +108,30 @@ module HammerCLIForeman
       build_options
     end
 
+    class AvailableClustersCommand < HammerCLIForeman::ListCommand
+
+      resource :compute_resources, :available_clusters
+      command_name 'clusters'
+      desc _("Show available clusters")
+
+      build_options
+
+      validate_options do
+        any(:option_id, :option_name).required
+      end
+
+      def request_params
+        params = super
+        params['id'] ||= get_identifier
+        params
+      end
+
+      output do
+        field :name, _('Name')
+        field :id,   _('Id')
+      end
+    end
+
     class AvailableNetworksCommand < HammerCLIForeman::ListCommand
 
       resource :compute_resources, :available_networks
