@@ -72,10 +72,16 @@ module HammerCLIForeman
         end
         params['host']['overwrite'] = option_overwrite unless option_overwrite.nil?
 
-        params['host']['host_parameters_attributes'] = parameter_attributes
+        params['host']['host_parameters_attributes'] = parameter_attributes unless option_parameters.nil?
         params['host']['compute_attributes'] = option_compute_attributes || {}
-        params['host']['compute_attributes']['volumes_attributes'] = nested_attributes(option_volume_list)
-        params['host']['interfaces_attributes'] = interfaces_attributes
+
+        if action == :update
+          params['host']['compute_attributes']['volumes_attributes'] = nested_attributes(option_volume_list) unless option_volume_list.empty?
+          params['host']['interfaces_attributes'] = interfaces_attributes unless option_interface_list.empty?
+        else
+          params['host']['compute_attributes']['volumes_attributes'] = nested_attributes(option_volume_list)
+          params['host']['interfaces_attributes'] = interfaces_attributes
+        end
 
         params['host']['root_pass'] = option_root_password unless option_root_password.nil?
 
