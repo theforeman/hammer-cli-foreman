@@ -94,6 +94,28 @@ describe HammerCLIForeman::ComputeResource do
 
   end
 
+  context "AvailableClustersCommand" do
+    before do
+      ResourceMocks.compute_resources_available_clusters
+    end
+
+    let(:cmd) { HammerCLIForeman::ComputeResource::AvailableClustersCommand.new("", ctx) }
+
+    context "parameters" do
+      it_should_accept "id", ["--id=1"]
+      it_should_accept "name", ["--name=domain-c7"]
+    end
+
+    context "output" do
+      let(:expected_record_count) { count_records(cmd.resource.call(:available_clusters)) }
+
+      with_params ["--name=testcr"] do
+        it_should_print_n_records
+        it_should_print_columns ["Name", "Id"]
+      end
+    end
+  end
+
   context "AvailableNetworksCommand" do
     before do
       ResourceMocks.compute_resources_available_networks
