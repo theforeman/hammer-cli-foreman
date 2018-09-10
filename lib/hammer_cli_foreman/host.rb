@@ -33,6 +33,7 @@ module HammerCLIForeman
         field nil, _("Host Group"), Fields::SingleReference, :key => :hostgroup, :display_field => 'title'
         field :ip, _("IP")
         field :mac, _("MAC")
+        field :global_status_label, _("Global Status")
       end
 
       build_options :without => [:include, :thin]
@@ -69,6 +70,11 @@ module HammerCLIForeman
 
         field :installed_at, _("Installed at"), Fields::Date
         field :last_report, _("Last report"), Fields::Date
+
+        label _("Status") do
+          field :global_status_label, _("Global Status")
+          field :build_status_label, _("Build Status")
+        end
 
         label _("Network") do
           field :ip, _("IPv4 address"), Fields::Field, :hide_blank => true

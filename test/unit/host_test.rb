@@ -23,7 +23,7 @@ describe HammerCLIForeman::Host do
       let(:expected_record_count) { count_records(cmd.resource.call(:index)) }
 
       it_should_print_n_records
-      it_should_print_columns ["Id", "Name", "Operating System", "Host Group", "IP", "MAC"]
+      it_should_print_columns ["Id", "Name", "Operating System", "Host Group", "IP", "MAC", "Global Status"]
     end
 
   end
@@ -47,7 +47,7 @@ describe HammerCLIForeman::Host do
         it_should_print_columns ["Id", "Name", "Organization", "Location"]
         it_should_print_columns ["Host Group", "Compute Resource", "Compute Profile", "Puppet Environment"]
         it_should_print_columns ["Puppet CA Proxy", "Puppet Master Proxy", "Cert name"]
-        it_should_print_columns ["Managed", "Installed at", "Last report"]
+        it_should_print_columns ["Managed", "Status", "Installed at", "Last report"]
         it_should_print_columns ["Network", "Network interfaces", "Operating system", "Parameters", "All parameters", "Additional info"]
       end
     end
