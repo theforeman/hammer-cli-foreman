@@ -9,8 +9,8 @@ Gem::Specification.new do |s|
   s.platform      = Gem::Platform::RUBY
   s.authors       = ["Tomáš Strachota", "Martin Bačovský"]
   s.email         = "tstracho@redhat.com"
-  s.homepage      = "http://github.com/theforeman/hammer-cli-foreman"
-  s.license       = "GPL v3+"
+  s.homepage      = "https://github.com/theforeman/hammer-cli-foreman"
+  s.license       = "GPL-3.0-or-later"
 
   s.summary       = %q{Foreman commands for Hammer}
   s.description   = <<EOF
