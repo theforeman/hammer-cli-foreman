@@ -428,6 +428,21 @@ module HammerCLIForeman
       build_options :without => :power_action
     end
 
+    class ResetCommand < HammerCLIForeman::SingleResourceCommand
+      action :power
+
+      command_name 'reset'
+      desc _('Reset a host')
+      success_message _('Host reset started.')
+      failure_message _('Failed to reset the host')
+
+      def option_power_action
+        :cycle
+      end
+
+      build_options without: [:power_action]
+    end
+
     class SCParamsCommand < HammerCLIForeman::SmartClassParametersList
       build_options_for :hosts
 
@@ -480,11 +495,31 @@ module HammerCLIForeman
       build_options
     end
 
+    class BootCommand < HammerCLIForeman::SingleResourceCommand
+      action :boot
+
+      command_name 'boot'
+      success_message _('The host is booting.')
+      failure_message _('Failed to boot the host from device')
+
+      def execute
+        response = send_request
+        if response['result']
+          output.print_message(success_message)
+          HammerCLI::EX_OK
+        else
+          output.print_error(failure_message)
+          HammerCLI::EX_DATAERR
+        end
+      end
+
+      build_options
+    end
+
     autoload_subcommands
 
     subcommand 'interface', HammerCLIForeman::Interface.desc, HammerCLIForeman::Interface
   end
-
 end
 
 require 'hammer_cli_foreman/compute_resources/all'
