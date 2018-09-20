@@ -53,6 +53,42 @@ describe 'host enc-dump' do
   end
 end
 
+describe 'host boot' do
+  let(:cmd) { ['host', 'boot'] }
+  let(:params) { ['--id=1', '--device=pxe'] }
+  let(:success_boot) do
+    JSON.dump(:action => 'pxe', :result => true)
+  end
+
+  it 'boots the host' do
+    expected_result = success_result("The host is booting.\n")
+    api_expects(:hosts, :boot, 'Interface boots from specified device')
+      .with_params('id' => '1', 'device' => 'pxe')
+      .returns(success_boot)
+
+    result = run_cmd(cmd + params)
+    assert_cmd(expected_result, result)
+  end
+end
+
+describe 'host reset' do
+  let(:cmd) { ['host', 'reset'] }
+  let(:params) { ['--id=1'] }
+  let(:success_cycle) do
+    JSON.dump(:power => true)
+  end
+
+  it 'boots the host' do
+    expected_result = success_result("Host reset started.\n")
+    api_expects(:hosts, :power, 'Run power operation on interface.')
+      .with_params('id' => '1', 'power_action' => :cycle)
+      .returns(success_cycle)
+
+    result = run_cmd(cmd + params)
+    assert_cmd(expected_result, result)
+  end
+end
+
 describe "host create" do
   let(:cmd) { ["host", "create"] }
   let(:minimal_params_without_hostgroup) { ['--location-id=1', '--organization-id=1', '--name=test'] }
