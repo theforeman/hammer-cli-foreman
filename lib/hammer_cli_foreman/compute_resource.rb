@@ -109,52 +109,123 @@ module HammerCLIForeman
     end
 
     class AvailableClustersCommand < HammerCLIForeman::ListCommand
-
-      resource :compute_resources, :available_clusters
+      action :available_clusters
       command_name 'clusters'
-      desc _("Show available clusters")
-
-      build_options
-
-      validate_options do
-        any(:option_id, :option_name).required
-      end
-
-      def request_params
-        params = super
-        params['id'] ||= get_identifier
-        params
-      end
 
       output do
+        field :id, _('Id')
         field :name, _('Name')
-        field :id,   _('Id')
       end
+
+      build_options
     end
 
     class AvailableNetworksCommand < HammerCLIForeman::ListCommand
-
-      resource :compute_resources, :available_networks
+      action :available_networks
       command_name 'networks'
-      desc _("Show available networks")
-
-      build_options
-
-      validate_options do
-        any(:option_id, :option_name).required
-      end
-
-      def request_params
-        params = super
-        params['id'] ||= get_identifier
-        params
-      end
 
       output do
-        field :name, _("Name")
-        field :id, _("Id")
+        field :id, _('Id')
+        field :name, _('Name')
       end
 
+      build_options
+    end
+
+    class AvailableImagesCommand < HammerCLIForeman::ListCommand
+      action :available_images
+      command_name 'images'
+
+      output do
+        field :id, _('Id')
+        field :name, _('Name')
+      end
+
+      build_options
+    end
+
+    class AvailableFlavorsCommand < HammerCLIForeman::ListCommand
+      action :available_flavors
+      command_name 'flavors'
+
+      output do
+        field :id, _('Id')
+        field :name, _('Name')
+      end
+
+      build_options
+    end
+
+    class AvailableFoldersCommand < HammerCLIForeman::ListCommand
+      action :available_folders
+      command_name 'folders'
+
+      output do
+        field :id, _('Id')
+        field :name, _('Name')
+      end
+
+      build_options
+    end
+
+    class AvailableZonesCommand < HammerCLIForeman::ListCommand
+      action :available_zones
+      command_name 'zones'
+
+      output do
+        field :id, _('Id')
+        field :name, _('Name')
+      end
+
+      build_options
+    end
+
+    class AvailableResourcePoolsCommand < HammerCLIForeman::ListCommand
+      action :available_resource_pools
+      command_name 'resource-pools'
+
+      output do
+        field :id, _('Id')
+        field :name, _('Name')
+      end
+
+      build_options
+    end
+
+    class AvailableStorageDomainsCommand < HammerCLIForeman::ListCommand
+      action :available_storage_domains
+      command_name 'storage-domains'
+
+      output do
+        field :id, _('Id')
+        field :name, _('Name')
+      end
+
+      build_options
+    end
+
+    class AvailableStoragePodsCommand < HammerCLIForeman::ListCommand
+      action :available_storage_pods
+      command_name 'storage-pods'
+
+      output do
+        field :id, _('Id')
+        field :name, _('Name')
+      end
+
+      build_options
+    end
+
+    class AvailableSecurityGroupsCommand < HammerCLIForeman::ListCommand
+      action :available_security_groups
+      command_name 'security-groups'
+
+      output do
+        field :id, _('Id')
+        field :name, _('Name')
+      end
+
+      build_options
     end
 
     autoload_subcommands
