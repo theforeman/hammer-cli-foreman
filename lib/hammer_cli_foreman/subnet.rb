@@ -58,9 +58,9 @@ module HammerCLIForeman
         field :dns_primary, _("Primary DNS")
         field :dns_secondary, _("Secondary DNS")
         label _("Smart Proxies") do
-          field :dns, _("DNS"), Fields::Reference, :details => :url
-          field :tftp, _("TFTP"), Fields::Reference, :details => :url
-          field :dhcp, _("DHCP"), Fields::Reference, :details => :url
+          field :dns, _("DNS"), Fields::Reference, :details => [{ :structured_label => _('Url'), :key => :url }]
+          field :tftp, _("TFTP"), Fields::Reference, :details => [{ :structured_label => _('Url'), :key => :url }]
+          field :dhcp, _("DHCP"), Fields::Reference, :details => [{ :structured_label => _('Url'), :key => :url }]
         end
         field :ipam, _("IPAM")
         field :from, _("Start of IP Range")

@@ -107,7 +107,7 @@ module HammerCLIForeman
     def self.subnets(dsl)
       dsl.build do
         collection :subnets, _("Subnets"), :numbered => false do
-          custom_field Fields::Reference, :details => :network_address
+          custom_field Fields::Reference, :details => [{ :structured_label => _('Network addr'), :key => :network_address }]
         end
       end
     end
