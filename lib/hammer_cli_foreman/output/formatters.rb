@@ -1,69 +1,106 @@
 module HammerCLIForeman::Output
   module Formatters
-
-    class SingleReferenceFormatter < HammerCLI::Output::Formatters::FieldFormatter
-
-      def tags
-        [:flat]
-      end
-
-      def format(resource, field_params={})
-        return "" if resource.nil?
-
-        key = field_params[:key]
-        display_field = field_params[:display_field] || 'name'
-
-        id_key = "#{key}_id"
-        display_key = "#{key}_#{display_field}"
-
-        name = resource[display_key.to_sym] || resource[display_key]
-        id = resource[id_key.to_sym] || resource[id_key]
-
-        context = field_params[:context] || {}
-
-        out = "#{name}"
-        out += " (id: #{id})" if context[:show_ids] && id
-        out
-      end
-
-    end
-
     class ReferenceFormatter < HammerCLI::Output::Formatters::FieldFormatter
-
       def tags
         [:flat]
       end
 
-      def format(reference, field_params={})
-        return "" if reference.nil? || reference == ""
+      # Parameters:
+      # :display_field_key - key where the formmatter will look for the main field to display, default is :name
+      # :details - detail fields to be displayed
+      #  example format:
+      #  :details => [
+      #    { :label => _('Type'), :key => :provider_friendly_name, :structured_label => _('Type') },
+      #    { :label => _('Id'), :key => :id }
+      #  ]
+      def format(data, field_params={})
+        return "" if data.nil?
 
-        id_key = field_params[:id_key] || :id
-        name_key = field_params[:name_key] || :name
-
-        name = reference[name_key] || reference[name_key.to_s]
-        id = reference[id_key] || reference[id_key.to_s]
-
+        name = get_value(data, field_params[:display_field_key] || :name)
         context = field_params[:context] || {}
 
-        details = field_params[:details] || []
-        details = [details] unless details.is_a? Array
-        values = details.collect do |key|
-          reference[key] || reference[key.to_s]
-        end
-        values << "id: #{id}" if context[:show_ids]
-
-        if values.empty?
+        details = format_details(data, field_params[:details] || [], context[:show_ids])
+        if details.empty?
           "#{name}" if name
         else
-          "#{name} (#{values.join(', ')})" if name && !values.empty?
+          "#{name} (#{details.join(', ')})" if name
         end
       end
 
+      protected
+      def format_details(data, details, show_ids)
+        details = [details] unless details.is_a?(Array)
+
+        details.map do |detail|
+          if detail.is_a?(Hash)
+            next if detail[:id] && !show_ids
+            if detail[:label]
+              "#{detail[:label]}: #{get_value(data, detail[:key])}"
+            else
+              get_value(data, detail[:key])
+            end
+          else
+            get_value(data, detail)
+          end
+        end.compact
+      end
+
+      def get_value(data, key)
+        data[key] || data[key.to_s]
+      end
     end
 
-    HammerCLI::Output::Output.register_formatter(SingleReferenceFormatter.new, :SingleReference)
-    HammerCLI::Output::Output.register_formatter(ReferenceFormatter.new, :Reference)
-    HammerCLI::Output::Output.register_formatter(ReferenceFormatter.new, :Template)
+    class StructuredReferenceFormatter < HammerCLI::Output::Formatters::FieldFormatter
+      def tags
+        [:data]
+      end
 
+      # Parameters:
+      # :display_field_key - key where the formmatter will look for the main field to display, default is :name
+      # :details - detail fields to be displayed
+      #  example format:
+      #  :details => [
+      #    { :label => _('Type'), :key => :provider_friendly_name, :structured_label => _('Type') },
+      #    { :label => _('Id'), :key => :id }
+      #  ]
+      def format(data, field_params={})
+        return  {} if data.nil? || data == ""
+
+        display_field_key = field_params[:display_field_key] || :name
+
+        # TODO: hardcoded name
+        formatted = {
+          _('Name') => get_value(data, display_field_key)
+        }
+
+        details = field_params[:details]
+        details = [details] unless details.is_a?(Array)
+
+        details.map do |detail|
+          if detail.is_a?(Hash)
+            label = detail[:structured_label]
+            label = detail[:label].capitalize if !label && detail[:label]
+            if label
+              formatted[label] = get_value(data, detail[:key])
+            end
+          end
+        end
+        formatted
+      end
+
+      protected
+      def get_value(data, key)
+        data[key] || data[key.to_s]
+      end
+    end
+
+    HammerCLI::Output::Output.register_formatter(ReferenceFormatter.new, :SingleReference)
+    HammerCLI::Output::Output.register_formatter(StructuredReferenceFormatter.new, :SingleReference)
+
+    HammerCLI::Output::Output.register_formatter(ReferenceFormatter.new, :Reference)
+    HammerCLI::Output::Output.register_formatter(StructuredReferenceFormatter.new, :Reference)
+    HammerCLI::Output::Output.register_formatter(ReferenceFormatter.new, :Template)
+    HammerCLI::Output::Output.register_formatter(StructuredReferenceFormatter.new, :Template)
   end
 end
+
