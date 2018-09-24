@@ -23,7 +23,7 @@ describe HammerCLIForeman::Host do
       let(:expected_record_count) { count_records(cmd.resource.call(:index)) }
 
       it_should_print_n_records
-      it_should_print_columns ["Id", "Name", "Operating System", "Host Group", "IP", "MAC", "Global Status"]
+      it_should_print_columns ["Id", "Name", "Operating System", "Host Group", "IP", "MAC", "Global Status", "Location"]
     end
 
   end

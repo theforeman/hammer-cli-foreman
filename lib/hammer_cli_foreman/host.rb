@@ -34,6 +34,8 @@ module HammerCLIForeman
         field :ip, _("IP")
         field :mac, _("MAC")
         field :global_status_label, _("Global Status")
+        field nil, _("Location"), Fields::SingleReference, :key => :location, :hide_blank => true
+        field :comment, _("Additional Information")
       end
 
       build_options :without => [:include, :thin]
