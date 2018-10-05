@@ -7,7 +7,7 @@ is obvious but there are some that need further explanation as their values diff
 **Warning:**
 Output of `hammer host create -h` may vary with the Foreman server used and plugins installed.
 
-Sample help output for `hammer-cli-foreman 0.2.0` and `Foreman 1.8` follows:
+Sample help output for `hammer-cli-foreman 0.15.0` and `Foreman 1.20` follows:
 
 ```
 $ hammer host create -h
@@ -15,71 +15,103 @@ Usage:
     hammer host create [OPTIONS]
 
 Options:
- --architecture ARCHITECTURE_NAME          Architecture name
- --architecture-id ARCHITECTURE_ID
- --ask-root-password ASK_ROOT_PW           One of true/false, yes/no, 1/0.
- --build BUILD                             One of true/false, yes/no, 1/0.
-                                           Default: "true"
- --comment COMMENT                         Additional information about this host
- --compute-attributes COMPUTE_ATTRS        Compute resource attributes.
-                                           Comma-separated list of key=value.
- --compute-profile COMPUTE_PROFILE_NAME    Name to search by
- --compute-profile-id COMPUTE_PROFILE_ID
- --compute-resource COMPUTE_RESOURCE_NAME  Compute resource name
- --compute-resource-id COMPUTE_RESOURCE_ID
- --domain DOMAIN_NAME                      Domain name
- --domain-id DOMAIN_ID                     Numerical ID or domain name
- --enabled ENABLED                         One of true/false, yes/no, 1/0.
-                                           Default: "true"
- --environment ENVIRONMENT_NAME            Environment name
- --environment-id ENVIRONMENT_ID
- --hostgroup HOSTGROUP_NAME                Hostgroup name
- --hostgroup-id HOSTGROUP_ID
- --hostgroup-title HOSTGROUP_TITLE         Hostgroup title
- --image IMAGE_NAME                        Name to search by
- --image-id IMAGE_ID
- --interface INTERFACE                     Interface parameters.
-                                           Comma-separated list of key=value.
-                                           Can be specified multiple times.
- --ip IP                                   not required if using a subnet with DHCP proxy
- --location LOCATION_NAME                  Location name
- --location-id LOCATION_ID
- --mac MAC                                 required for managed host that is bare metal, not required if it’s a virtual machine
- --managed MANAGED                         One of true/false, yes/no, 1/0.
-                                           Default: "true"
- --medium MEDIUM_NAME                      Medium name
- --medium-id MEDIUM_ID
- --model MODEL_NAME                        Model name
- --model-id MODEL_ID
- --name NAME
- --operatingsystem OPERATINGSYSTEM_TITLE   Operating system title
- --operatingsystem-id OPERATINGSYSTEM_ID
- --organization ORGANIZATION_NAME          Organization name
- --organization-id ORGANIZATION_ID
- --owner OWNER_LOGIN                       Login of the owner
- --owner-id OWNER_ID                       ID of the owner
- --owner-type OWNER_TYPE                   Host’s owner type
- --parameters PARAMS                       Host parameters.
-                                           Comma-separated list of key=value.
- --partition-table PARTITION_TABLE_NAME    Partition table name
- --partition-table-id PARTITION_TABLE_ID
- --progress-report-id PROGRESS_REPORT_ID   UUID to track orchestration tasks status, GET /api/orchestration/:UUID/tasks
- --provision-method METHOD                 One of 'build', 'image'
- --puppet-ca-proxy PUPPET_CA_PROXY_NAME
- --puppet-ca-proxy-id PUPPET_CA_PROXY_ID
- --puppet-class-ids PUPPET_CLASS_IDS       Comma separated list of values.
- --puppet-classes PUPPET_CLASS_NAMES       Comma separated list of values.
- --puppet-proxy PUPPET_PROXY_NAME
- --puppet-proxy-id PUPPET_PROXY_ID
- --realm REALM_NAME                        Name to search by
- --realm-id REALM_ID                       Numerical ID or realm name
- --root-password ROOT_PW                   required if host is managed and value is not inherited from host group or default password in settings
- --subnet SUBNET_NAME                      Subnet name
- --subnet-id SUBNET_ID
- --volume VOLUME                           Volume parameters
-                                           Comma-separated list of key=value.
-                                           Can be specified multiple times.
- -h, --help                                print help
+ --architecture ARCHITECTURE_NAME                              Architecture name
+ --architecture-id ARCHITECTURE_ID                              
+ --ask-root-password ASK_ROOT_PW                               One of true/false, yes/no, 1/0.
+ --autoheal AUTOHEAL                                           Sets whether the Host will autoheal subscriptions upon checkin
+                                                               One of true/false, yes/no, 1/0.
+ --build BUILD                                                 One of true/false, yes/no, 1/0.
+ --comment COMMENT                                             Additional information about this host
+ --compute-attributes COMPUTE_ATTRS                            Compute resource attributes
+                                                               Comma-separated list of key=value
+ --compute-profile COMPUTE_PROFILE_NAME                        Name to search by
+ --compute-profile-id COMPUTE_PROFILE_ID                        
+ --compute-resource COMPUTE_RESOURCE_NAME                      Compute resource name
+ --compute-resource-id COMPUTE_RESOURCE_ID                      
+ --config-group-ids CONFIG_GROUP_IDS                           IDs of associated config groups
+                                                               Comma separated list of values. Values containing comma should be quoted or escaped with backslash
+ --config-groups CONFIG_GROUP_NAMES                            Comma separated list of values. Values containing comma should be quoted or escaped with backslash
+ --content-source CONTENT_SOURCE_NAME                          Content Source name
+ --content-source-id CONTENT_SOURCE_ID                          
+ --content-view CONTENT_VIEW_NAME                              Name to search by
+ --content-view-id CONTENT_VIEW_ID                             Content view numeric identifier
+ --domain DOMAIN_NAME                                          Domain name
+ --domain-id DOMAIN_ID                                         Numerical ID or domain name
+ --enabled ENABLED                                             Include this host within Foreman reporting
+                                                               One of true/false, yes/no, 1/0.
+ --environment ENVIRONMENT_NAME                                Environment name
+ --environment-id ENVIRONMENT_ID                                
+ --hostgroup HOSTGROUP_NAME                                    Hostgroup name
+ --hostgroup-id HOSTGROUP_ID                                    
+ --hostgroup-title HOSTGROUP_TITLE                             Hostgroup title
+ --hypervisor-guest-uuids HYPERVISOR_GUEST_UUIDS               List of hypervisor guest uuids
+                                                               Comma separated list of values. Values containing comma should be quoted or escaped with backslash
+ --image IMAGE_NAME                                            Name to search by
+ --image-id IMAGE_ID                                            
+ --installed-products-attributes INSTALLED_PRODUCTS_ATTRIBUTES List of products installed on the host
+                                                               Comma separated list of values. Values containing comma should be quoted or escaped with backslash
+ --interface INTERFACE                                         Interface parameters
+                                                               Comma-separated list of key=value
+                                                               Can be specified multiple times.
+ --ip IP                                                       Not required if using a subnet with DHCP proxy
+ --kickstart-repository REPOSITORY_NAME                        Kickstart repository name
+ --kickstart-repository-id KICKSTART_REPOSITORY_ID             Repository Id associated with the kickstart repo used for provisioning
+ --lifecycle-environment LIFECYCLE_ENVIRONMENT_NAME            Name to search by
+ --lifecycle-environment-id LIFECYCLE_ENVIRONMENT_ID           ID of the environment
+ --location LOCATION_NAME                                      Location name
+ --location-id LOCATION_ID                                      
+ --location-title LOCATION_TITLE                               Location title
+ --mac MAC                                                     Required for managed host that is bare metal, not required if it's a
+                                                               Virtual machine
+ --managed MANAGED                                             True/False flag whether a host is managed or unmanaged. Note: this value
+                                                               Also determines whether several parameters are required or not
+                                                               One of true/false, yes/no, 1/0.
+ --medium MEDIUM_NAME                                          Medium name
+ --medium-id MEDIUM_ID                                          
+ --model MODEL_NAME                                            Model name
+ --model-id MODEL_ID                                            
+ --name NAME                                                    
+ --operatingsystem OPERATINGSYSTEM_TITLE                       Operating system title
+ --operatingsystem-id OPERATINGSYSTEM_ID                        
+ --organization ORGANIZATION_NAME                              Organization name
+ --organization-id ORGANIZATION_ID                             Organization ID
+ --organization-title ORGANIZATION_TITLE                       Organization title
+ --overwrite OVERWRITE                                         One of true/false, yes/no, 1/0.
+                                                               Default: "true"
+ --owner OWNER_LOGIN                                           Login of the owner
+ --owner-id OWNER_ID                                           ID of the owner
+ --owner-type OWNER_TYPE                                       Host's owner type
+                                                               Possible value(s): 'User', 'Usergroup'
+ --parameters PARAMS                                           Host parameters
+                                                               Comma-separated list of key=value
+ --partition-table PARTITION_TABLE_NAME                        Partition table name
+ --partition-table-id PARTITION_TABLE_ID                        
+ --product PRODUCT_NAME                                        Name to search by
+ --product-id PRODUCT_ID                                       Product numeric identifier
+ --progress-report-id PROGRESS_REPORT_ID                       UUID to track orchestration tasks status, GET
+                                                               /api/orchestration/:UUID/tasks
+ --provision-method PROVISION_METHOD                           The method used to provision the host.
+                                                               Possible value(s): 'build', 'image'
+ --puppet-ca-proxy PUPPET_CA_PROXY_NAME                         
+ --puppet-ca-proxy-id PUPPET_CA_PROXY_ID                       Puppet CA proxy ID
+ --puppet-class-ids PUPPET_CLASS_IDS                           Comma separated list of values. Values containing comma should be quoted or escaped with backslash
+ --puppet-classes PUPPET_CLASS_NAMES                           Comma separated list of values. Values containing comma should be quoted or escaped with backslash
+ --puppet-proxy PUPPET_PROXY_NAME                               
+ --puppet-proxy-id PUPPET_PROXY_ID                             Puppet proxy ID
+ --pxe-loader PXE_LOADER                                       DHCP filename option (Grub2/PXELinux by default)
+                                                               Possible value(s): 'None', 'PXELinux BIOS', 'PXELinux UEFI', 'Grub UEFI', 'Grub2 UEFI', 'Grub2 UEFI SecureBoot', 'Grub2 UEFI HTTP', 'Grub2 UEFI HTTPS', 'Grub2 UEFI HTTPS SecureBoot', 'iPXE Embedded', 'iPXE UEFI HTTP', 'iPXE Chain BIOS', 'iPXE Chain UEFI'
+ --realm REALM_NAME                                            Name to search by
+ --realm-id REALM_ID                                           Numerical ID or realm name
+ --release-version RELEASE_VERSION                             Release version for this Host to use (7Server, 7.1, etc)
+ --root-password ROOT_PW                                       Required if host is managed and value is not inherited from host group or default password in settings
+ --service-level SERVICE_LEVEL                                 Service level to be used for autoheal
+ --subnet SUBNET_NAME                                          Subnet name
+ --subnet-id SUBNET_ID                                          
+ --volume VOLUME                                               Volume parameters
+                                                               Comma-separated list of key=value
+                                                               Can be specified multiple times.
+ -h, --help                                                    Print help
+
 ```
 
 Example
@@ -223,38 +255,41 @@ image_id
 ## VMware
 Available keys for `--compute-attributes`:
 ```
-cpus                 # cpu count
-corespersocket       # number of cores per socket
-                     # (applicable to hardware versions < 10 only)
-memory_mb            # integer number
-cluster              # cluster id from VMware
-path                 # path to folder
-guest_id             # guest OS id form VMware
-scsi_controller_type # id of the controller from VMware
-hardware_version     # hardware version id from VMware
-start                # Boolean, expressed as 0 or 1, whether to start the machine or not
+cpus                  CPU count
+corespersocket        Number of cores per socket (applicable to hardware versions < 10 only)
+memory_mb             Integer number, amount of memory in MB
+firmware              automatic/bios/efi
+cluster               Cluster ID from VMware
+resource_pool         Resource Pool ID from VMware
+path                  Path to folder
+guest_id              Guest OS ID form VMware
+scsi_controller_type  ID of the controller from VMware
+hardware_version      Hardware version ID from VMware
+add_cdrom             Must be a 1 or 0, Add a CD-ROM drive to the virtual machine
+cpuHotAddEnabled      Must be a 1 or 0, lets you add memory resources while the machine is on
+memoryHotAddEnabled   Must be a 1 or 0, lets you add CPU resources while the machine is on
+start                 Must be a 1 or 0, whether to start the machine or not
+annotation            Annotation Notes
 ```
 
 Available keys for `--interface`:
 ```
 compute_type      # Type of the network adapter, for example one of:
-                  #   VirtualVmxnet
-                  #   VirtualVmxnet2
                   #   VirtualVmxnet3
                   #   VirtualE1000
-                  #   VirtualE1000e
-                  #   VirtualPCNet32
                   # See documentation center for your version of vSphere to find
                   # more details about available adapter types:
                   # https://www.vmware.com/support/pubs/
-compute_network   # network id from VMware
+compute_network   # network ID from VMware
 ```
 
 Available keys for `--volume`:
 ```
-datastore  # datastore id from VMware
 name
-size_gb    # integer number
-thin       # true/false
-eager_zero # true/false
+storage_pod         Storage Pod ID from VMware
+datastore           Datastore ID from VMware
+size_gb             Integer number, volume size in GB
+thin                true/false
+eager_zero          true/false
+mode                persistent/independent_persistent/independent_nonpersistent
 ```
