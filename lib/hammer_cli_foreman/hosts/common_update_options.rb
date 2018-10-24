@@ -47,7 +47,7 @@ module HammerCLIForeman
 
       def self.ask_password
         prompt = _("Enter the root password for the host:") + " "
-        ask(prompt) {|q| q.echo = false}
+        HammerCLI.interactive_output.ask(prompt) { |q| q.echo = false }
       end
 
       def request_params

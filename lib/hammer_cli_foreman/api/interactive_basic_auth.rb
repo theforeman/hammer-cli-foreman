@@ -1,5 +1,3 @@
-require 'highline/import'
-
 module HammerCLIForeman
   module Api
     class InteractiveBasicAuth < ApipieBindings::Authenticators::BasicAuth
@@ -16,7 +14,7 @@ module HammerCLIForeman
           self.clear
           message = _("Invalid username or password.")
           begin
-            message = JSON.parse(ex.response.body)['error']['message'] 
+            message = JSON.parse(ex.response.body)['error']['message']
           rescue
           end
           return UnauthorizedError.new(message)
@@ -60,9 +58,9 @@ module HammerCLIForeman
 
       def ask_user(prompt, silent=false)
         if silent
-          ask(prompt) {|q| q.echo = false}
+          HammerCLI.interactive_output.ask(prompt) { |q| q.echo = false }
         else
-          ask(prompt)
+          HammerCLI.interactive_output.ask(prompt)
         end
       end
     end
