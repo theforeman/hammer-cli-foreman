@@ -8,9 +8,9 @@
 # Dominic Cleal <dominic@cleal.org>, 2016
 msgid ""
 msgstr ""
-"Project-Id-Version: hammer-cli-foreman 0.14.0\n"
+"Project-Id-Version: hammer-cli-foreman 0.15.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-08-27 17:13+0200\n"
+"POT-Creation-Date: 2018-10-24 10:54+0200\n"
 "PO-Revision-Date: 2017-03-29 08:19+0000\n"
 "Last-Translator: Lukáš Zapletal\n"
 "Language-Team: English (United Kingdom) (http://www.transifex.com/foreman/"
@@ -753,9 +753,6 @@ msgstr ""
 msgid "Could not delete the compute resource"
 msgstr ""
 
-msgid "Show available networks"
-msgstr ""
-
 msgid "EC2"
 msgstr ""
 
@@ -819,10 +816,10 @@ msgstr ""
 msgid "Rackspace"
 msgstr ""
 
-msgid "VMWare"
+msgid "VMware"
 msgstr ""
 
-msgid "Cpu count"
+msgid "CPU count"
 msgstr ""
 
 msgid "Number of cores per socket (applicable to hardware versions < 10 only)"
@@ -831,28 +828,46 @@ msgstr ""
 msgid "Integer number, amount of memory in MB"
 msgstr ""
 
-msgid "Cluster id from VMware"
+msgid "Cluster ID from VMware"
+msgstr ""
+
+msgid "Resource Pool ID from VMware"
 msgstr ""
 
 msgid "Path to folder"
 msgstr ""
 
-msgid "Guest OS id form VMware"
+msgid "Guest OS ID form VMware"
 msgstr ""
 
-msgid "Id of the controller from VMware"
+msgid "ID of the controller from VMware"
 msgstr ""
 
-msgid "Hardware version id from VMware"
+msgid "Hardware version ID from VMware"
+msgstr ""
+
+msgid "Must be a 1 or 0, Add a CD-ROM drive to the virtual machine"
+msgstr ""
+
+msgid "Must be a 1 or 0, lets you add memory resources while the machine is on"
+msgstr ""
+
+msgid "Must be a 1 or 0, lets you add CPU resources while the machine is on"
 msgstr ""
 
 msgid "Must be a 1 or 0, whether to start the machine or not"
 msgstr ""
 
-msgid "Network id from VMware"
+msgid "Annotation Notes"
 msgstr ""
 
-msgid "Datastore id from VMware"
+msgid "Network ID from VMware"
+msgstr ""
+
+msgid "Storage Pod ID from VMware"
+msgstr ""
+
+msgid "Datastore ID from VMware"
 msgstr ""
 
 msgid "Integer number, volume size in GB"
@@ -1163,6 +1178,9 @@ msgstr "Host Group"
 msgid "MAC"
 msgstr "MAC"
 
+msgid "Global Status"
+msgstr ""
+
 msgid "Bare Metal"
 msgstr ""
 
@@ -1197,6 +1215,12 @@ msgid "Managed"
 msgstr ""
 
 msgid "Installed at"
+msgstr ""
+
+msgid "Status"
+msgstr ""
+
+msgid "Build Status"
 msgstr ""
 
 msgid "Network"
@@ -1295,9 +1319,6 @@ msgstr "Model"
 msgid "Comment"
 msgstr ""
 
-msgid "Status"
-msgstr ""
-
 msgid "Power"
 msgstr ""
 
@@ -1375,6 +1396,15 @@ msgstr "Reboot a host"
 msgid "Host reboot started."
 msgstr ""
 
+msgid "Reset a host"
+msgstr ""
+
+msgid "Host reset started."
+msgstr ""
+
+msgid "Failed to reset the host"
+msgstr ""
+
 msgid "Rebuild orchestration related configurations for host"
 msgstr ""
 
@@ -1394,6 +1424,12 @@ msgid "The host has been disassociated from VM"
 msgstr ""
 
 msgid "Failed to disassociated host from VM"
+msgstr ""
+
+msgid "The host is booting."
+msgstr ""
+
+msgid "Failed to boot the host from device"
 msgstr ""
 
 msgid "List of puppetclass ids"
@@ -1932,6 +1968,12 @@ msgstr ""
 msgid "Could not delete organization parameter"
 msgstr "Could not delete organisation parameter"
 
+msgid "id"
+msgstr ""
+
+msgid "Kind"
+msgstr ""
+
 msgid "parameter name"
 msgstr ""
 
@@ -2335,6 +2377,15 @@ msgid "SSH Key deleted."
 msgstr ""
 
 msgid "Could not delete the SSH Key"
+msgstr ""
+
+msgid "DNS Proxy to use within this subnet"
+msgstr ""
+
+msgid "DHCP Proxy to use within this subnet"
+msgstr ""
+
+msgid "TFTP Proxy to use within this subnet"
 msgstr ""
 
 msgid "Network Addr"

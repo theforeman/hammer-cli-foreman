@@ -1,0 +1,2599 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the hammer-cli-foreman package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: hammer-cli-foreman 0.15.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-10-24 10:54+0200\n"
+"PO-Revision-Date: 2018-10-24 10:54+0200\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
+
+msgid "Foreman connection login/logout"
+msgstr ""
+
+msgid "Manipulate architectures"
+msgstr ""
+
+msgid "Manipulate auth sources"
+msgstr ""
+
+msgid "Search audit trails."
+msgstr ""
+
+msgid "Manipulate compute resources"
+msgstr ""
+
+msgid "Manipulate domains"
+msgstr ""
+
+msgid "Manipulate environments"
+msgstr ""
+
+msgid "Search facts"
+msgstr ""
+
+msgid "Manage permission filters"
+msgstr ""
+
+msgid "Manipulate hosts"
+msgstr ""
+
+msgid "Manipulate hostgroups"
+msgstr ""
+
+msgid "Manipulate locations"
+msgstr ""
+
+msgid "Manipulate installation media"
+msgstr ""
+
+msgid "Manipulate hardware models"
+msgstr ""
+
+msgid "Manipulate operating system"
+msgstr ""
+
+msgid "Manipulate organizations"
+msgstr ""
+
+msgid "Manipulate partition tables"
+msgstr ""
+
+msgid "Search puppet modules"
+msgstr ""
+
+msgid "Browse and read reports"
+msgstr ""
+
+msgid ""
+"%{report} command is deprecated and will be removed in one of the future "
+"versions. Please use %{config_report} command instead."
+msgstr ""
+
+msgid "Manage user roles"
+msgstr ""
+
+msgid "Manipulate smart class parameters"
+msgstr ""
+
+msgid "Manipulate smart variables"
+msgstr ""
+
+msgid "Manipulate smart proxies"
+msgstr ""
+
+msgid "Manipulate realms"
+msgstr ""
+
+msgid "Change server settings"
+msgstr ""
+
+msgid "Manipulate subnets"
+msgstr ""
+
+msgid "Manipulate config templates"
+msgstr ""
+
+msgid "Manipulate users"
+msgstr ""
+
+msgid "Manage user groups"
+msgstr ""
+
+msgid "Manipulate config groups"
+msgstr ""
+
+msgid "Using certificate authentication."
+msgstr ""
+
+msgid "Invalid username or password."
+msgstr ""
+
+msgid "Using configured credentials for user '%s'."
+msgstr ""
+
+msgid "Credentials are not configured."
+msgstr ""
+
+msgid "[Foreman] Username:%s"
+msgstr ""
+
+msgid "[Foreman] Password for %{user}:%{wsp}"
+msgstr ""
+
+msgid "Can't use session auth due to invalid permissions on session files."
+msgstr ""
+
+msgid "Session exists, currently logged in as '%s'."
+msgstr ""
+
+msgid "Using sessions, you are currently not logged in."
+msgstr ""
+
+msgid "Invalid username or password, continuing with session for '%s'."
+msgstr ""
+
+msgid "Session has expired."
+msgstr ""
+
+msgid "Invalid session file format."
+msgstr ""
+
+msgid "Invalid permissions for %{file}: %{mode}, expected %{expected_mode}."
+msgstr ""
+
+msgid "Id"
+msgstr ""
+
+msgid "Name"
+msgstr ""
+
+msgid "Architecture created."
+msgstr ""
+
+msgid "Could not create the architecture"
+msgstr ""
+
+msgid "Architecture deleted."
+msgstr ""
+
+msgid "Could not delete the architecture"
+msgstr ""
+
+msgid "Architecture updated."
+msgstr ""
+
+msgid "Could not update the architecture"
+msgstr ""
+
+msgid "Associate a hostgroup"
+msgstr ""
+
+msgid "The hostgroup has been associated."
+msgstr ""
+
+msgid "Could not associate the hostgroup"
+msgstr ""
+
+msgid "Disassociate a hostgroup"
+msgstr ""
+
+msgid "The hostgroup has been disassociated."
+msgstr ""
+
+msgid "Could not disassociate the hostgroup"
+msgstr ""
+
+msgid "Associate an environment"
+msgstr ""
+
+msgid "The environment has been associated."
+msgstr ""
+
+msgid "Could not associate the environment"
+msgstr ""
+
+msgid "Disassociate an environment"
+msgstr ""
+
+msgid "The environment has been disassociated."
+msgstr ""
+
+msgid "Could not disassociate the environment"
+msgstr ""
+
+msgid "Associate a domain"
+msgstr ""
+
+msgid "The domain has been associated."
+msgstr ""
+
+msgid "Could not associate the domain"
+msgstr ""
+
+msgid "Disassociate a domain"
+msgstr ""
+
+msgid "The domain has been disassociated."
+msgstr ""
+
+msgid "Could not disassociate the domain"
+msgstr ""
+
+msgid "Associate a medium"
+msgstr ""
+
+msgid "The medium has been associated."
+msgstr ""
+
+msgid "Could not associate the medium"
+msgstr ""
+
+msgid "Disassociate a medium"
+msgstr ""
+
+msgid "The medium has been disassociated."
+msgstr ""
+
+msgid "Could not disassociate the medium"
+msgstr ""
+
+msgid "Associate a subnet"
+msgstr ""
+
+msgid "The subnet has been associated."
+msgstr ""
+
+msgid "Could not associate the subnet"
+msgstr ""
+
+msgid "Disassociate a subnet"
+msgstr ""
+
+msgid "The subnet has been disassociated."
+msgstr ""
+
+msgid "Could not disassociate the subnet"
+msgstr ""
+
+msgid "Associate a compute resource"
+msgstr ""
+
+msgid "The compute resource has been associated."
+msgstr ""
+
+msgid "Could not associate the compute resource"
+msgstr ""
+
+msgid "Disassociate a compute resource"
+msgstr ""
+
+msgid "The compute resource has been disassociated."
+msgstr ""
+
+msgid "Could not disassociate the compute resource"
+msgstr ""
+
+msgid "Associate a smart proxy"
+msgstr ""
+
+msgid "The smart proxy has been associated."
+msgstr ""
+
+msgid "Could not associate the smart proxy"
+msgstr ""
+
+msgid "Disassociate a smart proxy"
+msgstr ""
+
+msgid "The smart proxy has been disassociated."
+msgstr ""
+
+msgid "Could not disassociate the smart proxy"
+msgstr ""
+
+msgid "Associate an user"
+msgstr ""
+
+msgid "The user has been associated."
+msgstr ""
+
+msgid "Could not associate the user"
+msgstr ""
+
+msgid "Disassociate an user"
+msgstr ""
+
+msgid "The user has been disassociated."
+msgstr ""
+
+msgid "Could not disassociate the user"
+msgstr ""
+
+msgid "Associate an user group"
+msgstr ""
+
+msgid "The user group has been associated."
+msgstr ""
+
+msgid "Could not associate the user group"
+msgstr ""
+
+msgid "Disassociate an user group"
+msgstr ""
+
+msgid "The user group has been disassociated."
+msgstr ""
+
+msgid "Could not disassociate the user group"
+msgstr ""
+
+msgid "Associate a configuration template"
+msgstr ""
+
+msgid "The configuration template has been associated."
+msgstr ""
+
+msgid "Could not associate the configuration template"
+msgstr ""
+
+msgid "Disassociate a configuration template"
+msgstr ""
+
+msgid "The configuration template has been disassociated."
+msgstr ""
+
+msgid "Could not disassociate the configuration template"
+msgstr ""
+
+msgid "Associate an organization"
+msgstr ""
+
+msgid "The organization has been associated."
+msgstr ""
+
+msgid "Could not associate the organization"
+msgstr ""
+
+msgid "Disassociate an organization"
+msgstr ""
+
+msgid "The organization has been disassociated."
+msgstr ""
+
+msgid "Could not disassociate the organization"
+msgstr ""
+
+msgid "Associate an operating system"
+msgstr ""
+
+msgid "Operating system has been associated."
+msgstr ""
+
+msgid "Could not associate the operating system"
+msgstr ""
+
+msgid "Disassociate an operating system"
+msgstr ""
+
+msgid "Operating system has been disassociated."
+msgstr ""
+
+msgid "Could not disassociate the operating system"
+msgstr ""
+
+msgid "Associate an architecture"
+msgstr ""
+
+msgid "Architecture has been associated."
+msgstr ""
+
+msgid "Could not associate the architecture"
+msgstr ""
+
+msgid "Disassociate an architecture"
+msgstr ""
+
+msgid "Architecture has been disassociated."
+msgstr ""
+
+msgid "Could not disassociate the architecture"
+msgstr ""
+
+msgid "Associate a partition table"
+msgstr ""
+
+msgid "Partition table has been associated."
+msgstr ""
+
+msgid "Could not associate the partition table"
+msgstr ""
+
+msgid "Disassociate a partition table"
+msgstr ""
+
+msgid "Partition table has been disassociated."
+msgstr ""
+
+msgid "Could not disassociate the partition table"
+msgstr ""
+
+msgid "Assign a user role"
+msgstr ""
+
+msgid "User role has been assigned."
+msgstr ""
+
+msgid "Could not assign the user role"
+msgstr ""
+
+msgid "Remove a user role"
+msgstr ""
+
+msgid "User role has been removed."
+msgstr ""
+
+msgid "Could not remove the user role"
+msgstr ""
+
+msgid "Associate a location"
+msgstr ""
+
+msgid "The location has been associated."
+msgstr ""
+
+msgid "Could not associate the location"
+msgstr ""
+
+msgid "Disassociate a location"
+msgstr ""
+
+msgid "The location has been disassociated."
+msgstr ""
+
+msgid "Could not disassociate the location"
+msgstr ""
+
+msgid "Override audit record pagination"
+msgstr ""
+
+msgid ""
+"Audit records for past one month are returned by default. This behavior can "
+"be changed by passing --search option."
+msgstr ""
+
+msgid "At"
+msgstr ""
+
+msgid "IP"
+msgstr ""
+
+msgid "User"
+msgstr ""
+
+msgid "Action"
+msgstr ""
+
+msgid "Audit type"
+msgstr ""
+
+msgid "Audit record"
+msgstr ""
+
+msgid "Audited changes"
+msgstr ""
+
+msgid "Attribute"
+msgstr ""
+
+msgid "Value"
+msgstr ""
+
+msgid "Old"
+msgstr ""
+
+msgid "New"
+msgstr ""
+
+msgid "Set credentials"
+msgstr ""
+
+msgid "Username to access the remote system"
+msgstr ""
+
+msgid "Password to access the remote system"
+msgstr ""
+
+msgid ""
+"Can't perform login. Make sure sessions are enabled in hammer configuration "
+"file."
+msgstr ""
+
+msgid "Successfully logged in as '%s'."
+msgstr ""
+
+msgid "Wipe your credentials"
+msgstr ""
+
+msgid "Logged out."
+msgstr ""
+
+msgid "Information about current connections"
+msgstr ""
+
+msgid "List all auth sources."
+msgstr ""
+
+msgid "Type of auth source"
+msgstr ""
+
+msgid "Manage LDAP auth sources"
+msgstr ""
+
+msgid "Server"
+msgstr ""
+
+msgid "Port"
+msgstr ""
+
+msgid "LDAPS?"
+msgstr ""
+
+msgid "LDAPS"
+msgstr ""
+
+msgid "Server Type"
+msgstr ""
+
+msgid "Account"
+msgstr ""
+
+msgid "Account Username"
+msgstr ""
+
+msgid "Base DN"
+msgstr ""
+
+msgid "Groups base DN"
+msgstr ""
+
+msgid "Use Netgroups"
+msgstr ""
+
+msgid "LDAP filter"
+msgstr ""
+
+msgid "Automatically Create Accounts?"
+msgstr ""
+
+msgid "Usergroup sync"
+msgstr ""
+
+msgid "Attribute mappings"
+msgstr ""
+
+msgid "Login Name Attribute"
+msgstr ""
+
+msgid "First Name Attribute"
+msgstr ""
+
+msgid "Last Name Attribute"
+msgstr ""
+
+msgid "Email Address Attribute"
+msgstr ""
+
+msgid "Photo Attribute"
+msgstr ""
+
+msgid "Auth source [%{name}] created."
+msgstr ""
+
+msgid "Could not create the Auth Source"
+msgstr ""
+
+msgid "Auth source [%{name}] deleted."
+msgstr ""
+
+msgid "Could not delete the Auth Source"
+msgstr ""
+
+msgid "Auth source [%{name}] updated."
+msgstr ""
+
+msgid "Could not update the Auth Source"
+msgstr ""
+
+msgid "Manage template combinations"
+msgstr ""
+
+msgid "ID"
+msgstr ""
+
+msgid "Provisioning template ID"
+msgstr ""
+
+msgid "Provisioning template name"
+msgstr ""
+
+msgid "Hostgroup ID"
+msgstr ""
+
+msgid "Hostgroup name"
+msgstr ""
+
+msgid "Environment ID"
+msgstr ""
+
+msgid "Environment name"
+msgstr ""
+
+msgid "Provisioning Template"
+msgstr ""
+
+msgid "Hostgroup"
+msgstr ""
+
+msgid "Environment"
+msgstr ""
+
+msgid "Template combination updated."
+msgstr ""
+
+msgid "Could not update the template combination"
+msgstr ""
+
+msgid "Template combination created."
+msgstr ""
+
+msgid "Could not create the template combination"
+msgstr ""
+
+msgid "Template combination Deleted."
+msgstr ""
+
+msgid "Could not delete the template combination"
+msgstr ""
+
+msgid "Received data of unknown format."
+msgstr ""
+
+msgid "Associate a resource"
+msgstr ""
+
+msgid "Could not associate the %{resource_name}."
+msgstr ""
+
+msgid "The %{resource_name} has been associated."
+msgstr ""
+
+msgid "Disassociate a resource"
+msgstr ""
+
+msgid "Could not disassociate the %{resource_name}."
+msgstr ""
+
+msgid "The %{resource_name} has been disassociated."
+msgstr ""
+
+msgid "Set a global parameter"
+msgstr ""
+
+msgid "Created parameter [%{name}] with value [%{value}]."
+msgstr ""
+
+msgid "Parameter [%{name}] updated to [%{value}]."
+msgstr ""
+
+msgid "Parameter name"
+msgstr ""
+
+msgid "Parameter value"
+msgstr ""
+
+msgid "Should the value be hidden"
+msgstr ""
+
+msgid "Global parameter [%{name}] deleted."
+msgstr ""
+
+msgid "Could not delete the global parameter [%{name}]"
+msgstr ""
+
+msgid "Manipulate global parameters"
+msgstr ""
+
+msgid "Provider"
+msgstr ""
+
+msgid "Datacenter"
+msgstr ""
+
+msgid "Region"
+msgstr ""
+
+msgid "Tenant"
+msgstr ""
+
+msgid "Url"
+msgstr ""
+
+msgid "Description"
+msgstr ""
+
+msgid "Compute resource created."
+msgstr ""
+
+msgid "Could not create the compute resource"
+msgstr ""
+
+msgid "Compute resource updated."
+msgstr ""
+
+msgid "Could not update the compute resource"
+msgstr ""
+
+msgid "Compute resource deleted."
+msgstr ""
+
+msgid "Could not delete the compute resource"
+msgstr ""
+
+msgid "EC2"
+msgstr ""
+
+msgid "GCE"
+msgstr ""
+
+msgid "Libvirt"
+msgstr ""
+
+msgid "Number of CPUs"
+msgstr ""
+
+msgid "String, amount of memory, value in bytes"
+msgstr ""
+
+msgid "Boolean (expressed as 0 or 1), whether to start the machine or not"
+msgstr ""
+
+msgid "Possible values: %s"
+msgstr ""
+
+msgid "Name of interface according to type"
+msgstr ""
+
+msgid "One of available storage pools"
+msgstr ""
+
+msgid "String value, eg. 10G"
+msgstr ""
+
+msgid "OpenStack"
+msgstr ""
+
+msgid "oVirt"
+msgstr ""
+
+msgid "Hardware profile to use"
+msgstr ""
+
+msgid "Integer value, number of cores"
+msgstr ""
+
+msgid "Amount of memory, integer value in bytes"
+msgstr ""
+
+msgid "Eg. eth0"
+msgstr ""
+
+msgid "Select one of available networks for a cluster"
+msgstr ""
+
+msgid "Volume size in GB, integer value"
+msgstr ""
+
+msgid "Select one of available storage domains"
+msgstr ""
+
+msgid "Boolean, only one volume can be bootable"
+msgstr ""
+
+msgid "Rackspace"
+msgstr ""
+
+msgid "VMware"
+msgstr ""
+
+msgid "CPU count"
+msgstr ""
+
+msgid "Number of cores per socket (applicable to hardware versions < 10 only)"
+msgstr ""
+
+msgid "Integer number, amount of memory in MB"
+msgstr ""
+
+msgid "Cluster ID from VMware"
+msgstr ""
+
+msgid "Resource Pool ID from VMware"
+msgstr ""
+
+msgid "Path to folder"
+msgstr ""
+
+msgid "Guest OS ID form VMware"
+msgstr ""
+
+msgid "ID of the controller from VMware"
+msgstr ""
+
+msgid "Hardware version ID from VMware"
+msgstr ""
+
+msgid "Must be a 1 or 0, Add a CD-ROM drive to the virtual machine"
+msgstr ""
+
+msgid "Must be a 1 or 0, lets you add memory resources while the machine is on"
+msgstr ""
+
+msgid "Must be a 1 or 0, lets you add CPU resources while the machine is on"
+msgstr ""
+
+msgid "Must be a 1 or 0, whether to start the machine or not"
+msgstr ""
+
+msgid "Annotation Notes"
+msgstr ""
+
+msgid "Network ID from VMware"
+msgstr ""
+
+msgid "Storage Pod ID from VMware"
+msgstr ""
+
+msgid "Datastore ID from VMware"
+msgstr ""
+
+msgid "Integer number, volume size in GB"
+msgstr ""
+
+msgid "Type of the network adapter, for example one of:"
+msgstr ""
+
+msgid ""
+"See documentation center for your version of vSphere to find more details "
+"about available adapter types:"
+msgstr ""
+
+msgid "Config group created."
+msgstr ""
+
+msgid "Could not create the config group"
+msgstr ""
+
+msgid "Config group updated."
+msgstr ""
+
+msgid "Could not update the config group"
+msgstr ""
+
+msgid "Config group has been deleted."
+msgstr ""
+
+msgid "Could not delete the config group"
+msgstr ""
+
+msgid "Host"
+msgstr ""
+
+msgid "Last report"
+msgstr ""
+
+msgid "Applied"
+msgstr ""
+
+msgid "Restarted"
+msgstr ""
+
+msgid "Failed"
+msgstr ""
+
+msgid "Restart Failures"
+msgstr ""
+
+msgid "Skipped"
+msgstr ""
+
+msgid "Pending"
+msgstr ""
+
+msgid "Reported at"
+msgstr ""
+
+msgid "Report status"
+msgstr ""
+
+msgid "Report metrics"
+msgstr ""
+
+msgid "config_retrieval"
+msgstr ""
+
+msgid "exec"
+msgstr ""
+
+msgid "file"
+msgstr ""
+
+msgid "package"
+msgstr ""
+
+msgid "service"
+msgstr ""
+
+msgid "user"
+msgstr ""
+
+msgid "yumrepo"
+msgstr ""
+
+msgid "filebucket"
+msgstr ""
+
+msgid "cron"
+msgstr ""
+
+msgid "total"
+msgstr ""
+
+msgid "Logs"
+msgstr ""
+
+msgid "Resource"
+msgstr ""
+
+msgid "Message"
+msgstr ""
+
+msgid "Report has been deleted."
+msgstr ""
+
+msgid "Could not delete the report"
+msgstr ""
+
+msgid "Use the default organization and/or location from the server"
+msgstr ""
+
+msgid "ID of DNS proxy to use within this domain"
+msgstr ""
+
+msgid "Name of DNS proxy to use within this domain"
+msgstr ""
+
+msgid "DNS Id"
+msgstr ""
+
+msgid "Domain [%{name}] created."
+msgstr ""
+
+msgid "Could not create the domain"
+msgstr ""
+
+msgid "Full name describing the domain"
+msgstr ""
+
+msgid "Domain [%{name}] updated."
+msgstr ""
+
+msgid "Could not update the domain"
+msgstr ""
+
+msgid "Domain [%{name}] deleted."
+msgstr ""
+
+msgid "Could not delete the domain"
+msgstr ""
+
+msgid "Create or update parameter for a domain"
+msgstr ""
+
+msgid "Domain parameter updated"
+msgstr ""
+
+msgid "New domain parameter created"
+msgstr ""
+
+msgid "Could not set domain parameter"
+msgstr ""
+
+msgid "Delete parameter for a domain"
+msgstr ""
+
+msgid "Domain parameter deleted."
+msgstr ""
+
+msgid "Environment created."
+msgstr ""
+
+msgid "Could not create the environment"
+msgstr ""
+
+msgid "Environment updated."
+msgstr ""
+
+msgid "Could not update the environment"
+msgstr ""
+
+msgid "Environment deleted."
+msgstr ""
+
+msgid "Could not delete the environment"
+msgstr ""
+
+msgid "Redirection of API call detected."
+msgstr ""
+
+msgid "It seems hammer is configured to use HTTP and the server prefers HTTPS."
+msgstr ""
+
+msgid "Update your server url configuration."
+msgstr ""
+
+msgid ""
+"You can set 'follow_redirects' to one of :default or :always to enable "
+"redirects following."
+msgstr ""
+
+msgid "Forbidden - server refused to process the request."
+msgstr ""
+
+msgid "The following configuration option were used for the SSL connection:"
+msgstr ""
+
+msgid ""
+"Make sure the location contains an unexpired and valid CA certificate for %s."
+msgstr ""
+
+msgid ""
+"You can use hammer to fetch the CA certificate from the server. Be aware "
+"that hammer cannot verify whether the certificate is correct and you should "
+"verify its authenticity after downloading it."
+msgstr ""
+
+msgid "Download the certificate as follows:"
+msgstr ""
+
+msgid ""
+"Make sure you configured the correct URL and have the server's CA "
+"certificate installed on your system."
+msgstr ""
+
+msgid "View and manage user group's external user groups"
+msgstr ""
+
+msgid "Auth source"
+msgstr ""
+
+msgid "Refresh external user group"
+msgstr ""
+
+msgid "External user group created."
+msgstr ""
+
+msgid "Could not create external user group"
+msgstr ""
+
+msgid "External user group updated."
+msgstr ""
+
+msgid "Could not update external user group"
+msgstr ""
+
+msgid "External user group deleted."
+msgstr ""
+
+msgid "Could not delete the external user group"
+msgstr ""
+
+msgid "Fact"
+msgstr ""
+
+msgid "Resource type"
+msgstr ""
+
+msgid "Search"
+msgstr ""
+
+msgid "Unlimited?"
+msgstr ""
+
+msgid "Override?"
+msgstr ""
+
+msgid "Role"
+msgstr ""
+
+msgid "Permissions"
+msgstr ""
+
+msgid "(Miscellaneous)"
+msgstr ""
+
+msgid "none"
+msgstr ""
+
+msgid "Organizations and locations can be set only for overriding filters."
+msgstr ""
+
+msgid "Overriding organizations and locations"
+msgstr ""
+
+msgid ""
+"Filters inherit organizations and locations from its role by default. This "
+"behavior can be changed by setting %{condition}.%{wsp}Therefore options "
+"%{org_opts} and %{loc_opts} are applicable only when the override flag is "
+"set."
+msgstr ""
+
+msgid "Permission filter for [%<resource_type>s] created."
+msgstr ""
+
+msgid "Could not create the permission filter"
+msgstr ""
+
+msgid "Permission filter for [%<resource_type>s] updated."
+msgstr ""
+
+msgid "Could not update the permission filter"
+msgstr ""
+
+msgid "Permission filter deleted."
+msgstr ""
+
+msgid "Could not delete the permission filter"
+msgstr ""
+
+msgid "Operating System"
+msgstr ""
+
+msgid "Host Group"
+msgstr ""
+
+msgid "MAC"
+msgstr ""
+
+msgid "Global Status"
+msgstr ""
+
+msgid "Bare Metal"
+msgstr ""
+
+msgid "UUID"
+msgstr ""
+
+msgid "Organization"
+msgstr ""
+
+msgid "Location"
+msgstr ""
+
+msgid "Compute Resource"
+msgstr ""
+
+msgid "Compute Profile"
+msgstr ""
+
+msgid "Puppet Environment"
+msgstr ""
+
+msgid "Puppet CA Proxy"
+msgstr ""
+
+msgid "Puppet Master Proxy"
+msgstr ""
+
+msgid "Cert name"
+msgstr ""
+
+msgid "Managed"
+msgstr ""
+
+msgid "Installed at"
+msgstr ""
+
+msgid "Status"
+msgstr ""
+
+msgid "Build Status"
+msgstr ""
+
+msgid "Network"
+msgstr ""
+
+msgid "IPv4 address"
+msgstr ""
+
+msgid "IPv6 address"
+msgstr ""
+
+msgid "Subnet ipv4"
+msgstr ""
+
+msgid "Subnet ipv6"
+msgstr ""
+
+msgid "Domain"
+msgstr ""
+
+msgid "Service provider"
+msgstr ""
+
+msgid "SP Name"
+msgstr ""
+
+msgid "SP IP"
+msgstr ""
+
+msgid "SP MAC"
+msgstr ""
+
+msgid "SP Subnet"
+msgstr ""
+
+msgid "Network interfaces"
+msgstr ""
+
+msgid "Identifier"
+msgstr ""
+
+msgid "Type"
+msgstr ""
+
+msgid "MAC address"
+msgstr ""
+
+msgid "FQDN"
+msgstr ""
+
+msgid "Operating system"
+msgstr ""
+
+msgid "Architecture"
+msgstr ""
+
+msgid "Build"
+msgstr ""
+
+msgid "Medium"
+msgstr ""
+
+msgid "Partition Table"
+msgstr ""
+
+msgid "PXE Loader"
+msgstr ""
+
+msgid "Custom partition table"
+msgstr ""
+
+msgid "Image"
+msgstr ""
+
+msgid "Image file"
+msgstr ""
+
+msgid "Use image"
+msgstr ""
+
+msgid "Additional info"
+msgstr ""
+
+msgid "Owner"
+msgstr ""
+
+msgid "Owner Type"
+msgstr ""
+
+msgid "Enabled"
+msgstr ""
+
+msgid "Model"
+msgstr ""
+
+msgid "Comment"
+msgstr ""
+
+msgid "Power"
+msgstr ""
+
+msgid "Puppet run triggered"
+msgstr ""
+
+msgid "Host id"
+msgstr ""
+
+msgid "Host name"
+msgstr ""
+
+msgid ""
+"%{reports} command is deprecated and will be removed in one of the future "
+"versions. Please use %{config_reports} command instead."
+msgstr ""
+
+msgid "Host created."
+msgstr ""
+
+msgid "Could not create the host"
+msgstr ""
+
+msgid "Host updated."
+msgstr ""
+
+msgid "Could not update the host"
+msgstr ""
+
+msgid "Host deleted."
+msgstr ""
+
+msgid "Could not delete the host"
+msgstr ""
+
+msgid "Create or update parameter for a host"
+msgstr ""
+
+msgid "Host parameter updated"
+msgstr ""
+
+msgid "New host parameter created"
+msgstr ""
+
+msgid "Could not set host parameter"
+msgstr ""
+
+msgid "Delete parameter for a host"
+msgstr ""
+
+msgid "Host parameter deleted."
+msgstr ""
+
+msgid "Power a host on"
+msgstr ""
+
+msgid "The host is starting."
+msgstr ""
+
+msgid "Force turning off a host"
+msgstr ""
+
+msgid "Power a host off"
+msgstr ""
+
+msgid "Power off forced"
+msgstr ""
+
+msgid "Powering the host off"
+msgstr ""
+
+msgid "Reboot a host"
+msgstr ""
+
+msgid "Host reboot started."
+msgstr ""
+
+msgid "Reset a host"
+msgstr ""
+
+msgid "Host reset started."
+msgstr ""
+
+msgid "Failed to reset the host"
+msgstr ""
+
+msgid "Rebuild orchestration related configurations for host"
+msgstr ""
+
+msgid "Configuration successfully rebuilt."
+msgstr ""
+
+msgid "Dump host's ENC YAML"
+msgstr ""
+
+msgid "Could not retrieve ENC values of the host"
+msgstr ""
+
+msgid "Disassociate a host"
+msgstr ""
+
+msgid "The host has been disassociated from VM"
+msgstr ""
+
+msgid "Failed to disassociated host from VM"
+msgstr ""
+
+msgid "The host is booting."
+msgstr ""
+
+msgid "Failed to boot the host from device"
+msgstr ""
+
+msgid "List of puppetclass ids"
+msgstr ""
+
+msgid "Name of puppet CA proxy"
+msgstr ""
+
+msgid "Name of puppet proxy"
+msgstr ""
+
+msgid "Name of parent hostgroup"
+msgstr ""
+
+msgid "Root password"
+msgstr ""
+
+msgid "Enter the root password for the host group:"
+msgstr ""
+
+msgid "Title"
+msgstr ""
+
+msgid "Parent"
+msgstr ""
+
+msgid "ComputeProfile"
+msgstr ""
+
+msgid "Realm"
+msgstr ""
+
+msgid "Hostgroup created."
+msgstr ""
+
+msgid "Could not create the hostgroup"
+msgstr ""
+
+msgid "Hostgroup updated."
+msgstr ""
+
+msgid "Could not update the hostgroup"
+msgstr ""
+
+msgid "Hostgroup deleted."
+msgstr ""
+
+msgid "Could not delete the hostgroup"
+msgstr ""
+
+msgid "Create or update parameter for a hostgroup"
+msgstr ""
+
+msgid "Hostgroup parameter updated"
+msgstr ""
+
+msgid "New hostgroup parameter created"
+msgstr ""
+
+msgid "Could not set hostgroup parameter"
+msgstr ""
+
+msgid "Delete parameter for a hostgroup"
+msgstr ""
+
+msgid "Hostgroup parameter deleted."
+msgstr ""
+
+msgid "Available keys for %{option}"
+msgstr ""
+
+msgid "%{value}, each managed hosts needs to have one primary interface."
+msgstr ""
+
+msgid "For %{condition}"
+msgstr ""
+
+msgid ""
+"VLAN tag, this attribute has precedence over the subnet VLAN ID. Only for "
+"virtual interfaces."
+msgstr ""
+
+msgid "Identifier of the interface to which this interface belongs, e.g. eth1."
+msgstr ""
+
+msgid "Identifiers of slave interfaces, e.g. [eth1,eth2]"
+msgstr ""
+
+msgid "always IPMI"
+msgstr ""
+
+msgid "Provider specific options"
+msgstr ""
+
+msgid "Login of the owner"
+msgstr ""
+
+msgid "ID of the owner"
+msgstr ""
+
+msgid ""
+"Required if host is managed and value is not inherited from host group or "
+"default password in settings"
+msgstr ""
+
+msgid "Host parameters"
+msgstr ""
+
+msgid "Compute resource attributes"
+msgstr ""
+
+msgid "Volume parameters"
+msgstr ""
+
+msgid "Interface parameters"
+msgstr ""
+
+msgid "Enter the root password for the host:"
+msgstr ""
+
+msgid "Architecture name"
+msgstr ""
+
+msgid "Compute resource name"
+msgstr ""
+
+msgid "Domain name"
+msgstr ""
+
+msgid "Hostgroup title"
+msgstr ""
+
+msgid "Location name"
+msgstr ""
+
+msgid "Location title"
+msgstr ""
+
+msgid "Medium name"
+msgstr ""
+
+msgid "Model name"
+msgstr ""
+
+msgid "Organization name"
+msgstr ""
+
+msgid "Organization title"
+msgstr ""
+
+msgid "Operating system title"
+msgstr ""
+
+msgid "Partition table name"
+msgstr ""
+
+msgid "Proxy name"
+msgstr ""
+
+msgid "Puppet class name"
+msgstr ""
+
+msgid "User role name"
+msgstr ""
+
+msgid "Setting name"
+msgstr ""
+
+msgid "Subnet name"
+msgstr ""
+
+msgid "User's login to search by"
+msgstr ""
+
+msgid "Common parameter name"
+msgstr ""
+
+msgid "Smart class parameter name"
+msgstr ""
+
+msgid "Smart variable name"
+msgstr ""
+
+msgid "Name to search by"
+msgstr ""
+
+msgid "Missing options to search %s"
+msgstr ""
+
+msgid "one of %s not found."
+msgstr ""
+
+msgid "%s not found."
+msgstr ""
+
+msgid "Found more than one %s."
+msgstr ""
+
+msgid "Missing options to search %s."
+msgstr ""
+
+msgid "View and manage compute resource's images"
+msgstr ""
+
+msgid "Username"
+msgstr ""
+
+msgid "IAM role"
+msgstr ""
+
+msgid "Show images available for addition"
+msgstr ""
+
+msgid "Image created."
+msgstr ""
+
+msgid "Could not create the image"
+msgstr ""
+
+msgid "Image updated."
+msgstr ""
+
+msgid "Could not update the image"
+msgstr ""
+
+msgid "Image deleted."
+msgstr ""
+
+msgid "Could not delete the image"
+msgstr ""
+
+msgid "View and manage host's network interfaces"
+msgstr ""
+
+msgid "primary"
+msgstr ""
+
+msgid "provision"
+msgstr ""
+
+msgid "IP address"
+msgstr ""
+
+msgid "DNS name"
+msgstr ""
+
+msgid "Subnet"
+msgstr ""
+
+msgid "Primary"
+msgstr ""
+
+msgid "Provision"
+msgstr ""
+
+msgid "Virtual"
+msgstr ""
+
+msgid "Tag"
+msgstr ""
+
+msgid "Attached to"
+msgstr ""
+
+msgid "BMC"
+msgstr ""
+
+msgid "Bond"
+msgstr ""
+
+msgid "Mode"
+msgstr ""
+
+msgid "Attached devices"
+msgstr ""
+
+msgid "Bond options"
+msgstr ""
+
+msgid ""
+"Should this interface be used for constructing the FQDN of the host? Each "
+"managed hosts needs to have one primary interface"
+msgstr ""
+
+msgid ""
+"Should this interface be used for TFTP of PXELinux (or SSH for image-based "
+"hosts)? Each managed hosts needs to have one provision interface"
+msgstr ""
+
+msgid "Interface created."
+msgstr ""
+
+msgid "Could not create the interface"
+msgstr ""
+
+msgid "Compute resource specific attributes"
+msgstr ""
+
+msgid "Interface updated."
+msgstr ""
+
+msgid "Could not update the interface"
+msgstr ""
+
+msgid "Interface deleted."
+msgstr ""
+
+msgid "Could not delete the interface"
+msgstr ""
+
+msgid "Location numeric id to search by"
+msgstr ""
+
+msgid "Organizations"
+msgstr ""
+
+msgid "Location created."
+msgstr ""
+
+msgid "Could not create the location"
+msgstr ""
+
+msgid "Location updated."
+msgstr ""
+
+msgid "Could not update the location"
+msgstr ""
+
+msgid "Location deleted."
+msgstr ""
+
+msgid "Could not delete the location"
+msgstr ""
+
+msgid "Create or update parameter for a location"
+msgstr ""
+
+msgid "Parameter [%{name}] updated to value [%{value}]"
+msgstr ""
+
+msgid "Parameter [%{name}] created with value [%{value}]"
+msgstr ""
+
+msgid "Could not set location parameter"
+msgstr ""
+
+msgid "Delete parameter for a location"
+msgstr ""
+
+msgid "Parameter [%{name}] deleted."
+msgstr ""
+
+msgid "Could not delete location parameter"
+msgstr ""
+
+msgid "Path"
+msgstr ""
+
+msgid "OS Family"
+msgstr ""
+
+msgid "Installation medium created."
+msgstr ""
+
+msgid "Could not create the installation medium"
+msgstr ""
+
+msgid "Installation medium updated."
+msgstr ""
+
+msgid "Could not update the installation media"
+msgstr ""
+
+msgid "Installation medium deleted."
+msgstr ""
+
+msgid "Could not delete the installation media"
+msgstr ""
+
+msgid "Vendor class"
+msgstr ""
+
+msgid "HW model"
+msgstr ""
+
+msgid "Info"
+msgstr ""
+
+msgid "Hardware model created."
+msgstr ""
+
+msgid "Could not create the hardware model"
+msgstr ""
+
+msgid "Hardware model deleted."
+msgstr ""
+
+msgid "Could not delete the hardware model"
+msgstr ""
+
+msgid "Hardware model updated."
+msgstr ""
+
+msgid "Could not update the hardware model"
+msgstr ""
+
+msgid "Release name"
+msgstr ""
+
+msgid "Family"
+msgstr ""
+
+msgid "Major version"
+msgstr ""
+
+msgid "Minor version"
+msgstr ""
+
+msgid "Partition tables"
+msgstr ""
+
+msgid "Default templates"
+msgstr ""
+
+msgid "Architectures"
+msgstr ""
+
+msgid "Operating system created."
+msgstr ""
+
+msgid "Could not create the operating system"
+msgstr ""
+
+msgid "Operating system updated."
+msgstr ""
+
+msgid "Could not update the operating system"
+msgstr ""
+
+msgid "Operating system deleted."
+msgstr ""
+
+msgid "Could not delete the operating system"
+msgstr ""
+
+msgid "Create or update parameter for an operating system"
+msgstr ""
+
+msgid "Operating system parameter updated"
+msgstr ""
+
+msgid "New operating system parameter created"
+msgstr ""
+
+msgid "Could not set operating system parameter"
+msgstr ""
+
+msgid "Delete parameter for an operating system"
+msgstr ""
+
+msgid "operating system parameter deleted."
+msgstr ""
+
+msgid "Operatingsystem id"
+msgstr ""
+
+msgid "Config template id to be set"
+msgstr ""
+
+msgid ""
+"[%{config_template_name}] was set as default %{template_kind_name} template."
+msgstr ""
+
+msgid "Could not set the os default template"
+msgstr ""
+
+msgid "Type of the config template"
+msgstr ""
+
+msgid "Default template deleted."
+msgstr ""
+
+msgid "Could not delete the default template"
+msgstr ""
+
+msgid "Default template of type %s not found"
+msgstr ""
+
+msgid ""
+"Could not find %{resource}. Some search options were missing, please see --"
+"help."
+msgstr ""
+
+msgid "Could not find %{resource}, please set option %{switches}."
+msgstr ""
+
+msgid "Could not find %{resource}, please set one of options %{switches}."
+msgstr ""
+
+msgid "Enter user's current password:"
+msgstr ""
+
+msgid "Enter user's new password:"
+msgstr ""
+
+msgid "Locations"
+msgstr ""
+
+msgid "Organization created."
+msgstr ""
+
+msgid "Could not create the organization"
+msgstr ""
+
+msgid "Organization updated."
+msgstr ""
+
+msgid "Could not update the organization"
+msgstr ""
+
+msgid "Organization deleted."
+msgstr ""
+
+msgid "Could not delete the organization"
+msgstr ""
+
+msgid "Create or update parameter for an organization"
+msgstr ""
+
+msgid "Could not set organization parameter"
+msgstr ""
+
+msgid "Delete parameter for an organization"
+msgstr ""
+
+msgid "Could not delete organization parameter"
+msgstr ""
+
+msgid "id"
+msgstr ""
+
+msgid "Kind"
+msgstr ""
+
+msgid "parameter name"
+msgstr ""
+
+msgid "Locked"
+msgstr ""
+
+msgid "View partition table content"
+msgstr ""
+
+msgid "Path to a file that contains the partition layout"
+msgstr ""
+
+msgid "Partition table created."
+msgstr ""
+
+msgid "Could not create the partition table"
+msgstr ""
+
+msgid "Partition table updated."
+msgstr ""
+
+msgid "Could not update the partition table"
+msgstr ""
+
+msgid "Partition table deleted."
+msgstr ""
+
+msgid "Could not delete the partition table"
+msgstr ""
+
+msgid "Manage personal access tokens"
+msgstr ""
+
+msgid "Active"
+msgstr ""
+
+msgid "Expires at"
+msgstr ""
+
+msgid ""
+"Personal access token [%{name}] created:\n"
+"%{token_value}"
+msgstr ""
+
+msgid "Could not create personal access token"
+msgstr ""
+
+msgid "Created at"
+msgstr ""
+
+msgid "Last used at"
+msgstr ""
+
+msgid "Personal access token [%{name}] revoked."
+msgstr ""
+
+msgid "Could not revoke personal access token"
+msgstr ""
+
+msgid "Smart variables"
+msgstr ""
+
+msgid "Parameter"
+msgstr ""
+
+msgid "Default value"
+msgstr ""
+
+msgid "Smart class parameters"
+msgstr ""
+
+msgid "Realm proxy id"
+msgstr ""
+
+msgid "Realm type"
+msgstr ""
+
+msgid "Realm [%{name}] created."
+msgstr ""
+
+msgid "Could not create the realm"
+msgstr ""
+
+msgid "Realm [%{name}] updated."
+msgstr ""
+
+msgid "Could not update the realm"
+msgstr ""
+
+msgid "Realm [%{name}] deleted."
+msgstr ""
+
+msgid "Could not delete the realm"
+msgstr ""
+
+msgid "Updated at"
+msgstr ""
+
+msgid "Users"
+msgstr ""
+
+msgid "User groups"
+msgstr ""
+
+msgid "Usergroup"
+msgstr ""
+
+msgid "Roles"
+msgstr ""
+
+msgid "Inherited User groups"
+msgstr ""
+
+msgid "Smart proxies"
+msgstr ""
+
+msgid "Compute resources"
+msgstr ""
+
+msgid "Installation media"
+msgstr ""
+
+msgid "Templates"
+msgstr ""
+
+msgid "Domains"
+msgstr ""
+
+msgid "Environments"
+msgstr ""
+
+msgid "Hostgroups"
+msgstr ""
+
+msgid "Subnets"
+msgstr ""
+
+msgid "Parameters"
+msgstr ""
+
+msgid "All parameters"
+msgstr ""
+
+msgid "Puppetclasses"
+msgstr ""
+
+msgid "Operating systems"
+msgstr ""
+
+msgid "External user groups"
+msgstr ""
+
+msgid "The server does not support such operation."
+msgstr ""
+
+msgid "Builtin"
+msgstr ""
+
+msgid "User role id"
+msgstr ""
+
+msgid "User role [%<name>s] created."
+msgstr ""
+
+msgid "Could not create the user role"
+msgstr ""
+
+msgid "User role [%<name>s] updated."
+msgstr ""
+
+msgid "Could not update the user role"
+msgstr ""
+
+msgid "User role cloned."
+msgstr ""
+
+msgid "Could not clone the user role"
+msgstr ""
+
+msgid "User role [%<name>s] deleted."
+msgstr ""
+
+msgid "Could not delete the user roles"
+msgstr ""
+
+msgid "Full name"
+msgstr ""
+
+msgid "Setting [%{name}] updated to [%{value}]."
+msgstr ""
+
+msgid "Could not update the setting"
+msgstr ""
+
+msgid "Default Value"
+msgstr ""
+
+msgid "Override"
+msgstr ""
+
+msgid "Puppet class"
+msgstr ""
+
+msgid "Class Id"
+msgstr ""
+
+msgid "Hidden Value?"
+msgstr ""
+
+msgid "Use puppet default"
+msgstr ""
+
+msgid "Required"
+msgstr ""
+
+msgid "Validator"
+msgstr ""
+
+msgid "Rule"
+msgstr ""
+
+msgid "Override values"
+msgstr ""
+
+msgid "Merge overrides"
+msgstr ""
+
+msgid "Merge default value"
+msgstr ""
+
+msgid "Avoid duplicates"
+msgstr ""
+
+msgid "Order"
+msgstr ""
+
+msgid "Values"
+msgstr ""
+
+msgid "Match"
+msgstr ""
+
+msgid "Parameter updated."
+msgstr ""
+
+msgid "Could not update the parameter"
+msgstr ""
+
+msgid "Value to use when there is no match"
+msgstr ""
+
+msgid "Override this parameter"
+msgstr ""
+
+msgid "This parameter is required"
+msgstr ""
+
+msgid "Type of the parameter"
+msgstr ""
+
+msgid "Type of the validator"
+msgstr ""
+
+msgid "The order in which values are resolved"
+msgstr ""
+
+msgid "Override value, required if omit is false"
+msgstr ""
+
+msgid "Override value created."
+msgstr ""
+
+msgid "Could not create the override value"
+msgstr ""
+
+msgid "Cannot use --value when --use-puppet-default is true."
+msgstr ""
+
+msgid "Create an override value for a specific smart variable"
+msgstr ""
+
+msgid ""
+"add-override-value command is deprecated and will be removed in one of the "
+"future versions. Please use add-matcher command instead."
+msgstr ""
+
+msgid "Override value deleted."
+msgstr ""
+
+msgid "Could not delete the override value"
+msgstr ""
+
+msgid "Remove an override value for a specific smart variable"
+msgstr ""
+
+msgid ""
+"remove-override-value command is deprecated and will be removed in one of "
+"the future versions. Please use remove-matcher command instead."
+msgstr ""
+
+msgid "URL"
+msgstr ""
+
+msgid "Features"
+msgstr ""
+
+msgid "Smart proxy created."
+msgstr ""
+
+msgid "Could not create the proxy"
+msgstr ""
+
+msgid "Smart proxy updated."
+msgstr ""
+
+msgid "Could not update the proxy"
+msgstr ""
+
+msgid "Smart proxy deleted."
+msgstr ""
+
+msgid "Could not delete the proxy"
+msgstr ""
+
+msgid "Do not run the import"
+msgstr ""
+
+msgid "Result"
+msgstr ""
+
+msgid "Changed environments"
+msgstr ""
+
+msgid "New classes"
+msgstr ""
+
+msgid "Updated classes"
+msgstr ""
+
+msgid "Removed classes"
+msgstr ""
+
+msgid "Ignored classes"
+msgstr ""
+
+msgid "Smart proxy features were refreshed."
+msgstr ""
+
+msgid "Refresh of smart proxy features failed"
+msgstr ""
+
+msgid "Type of the variable"
+msgstr ""
+
+msgid "Variable"
+msgstr ""
+
+msgid "Use --variable instead"
+msgstr ""
+
+msgid "Smart variable [%{variable}] created."
+msgstr ""
+
+msgid "Could not create the smart variable"
+msgstr ""
+
+msgid "Smart variable [%{variable}] updated."
+msgstr ""
+
+msgid "Could not update the smart variable"
+msgstr ""
+
+msgid "Smart variable [%{variable}] deleted."
+msgstr ""
+
+msgid "Could not delete the smart variable"
+msgstr ""
+
+msgid "Manage SSH Keys sources"
+msgstr ""
+
+msgid "Fingerprint"
+msgstr ""
+
+msgid "Length"
+msgstr ""
+
+msgid "Path to a SSH public key"
+msgstr ""
+
+msgid "SSH Key %{name} added."
+msgstr ""
+
+msgid "Could not add SSH Key"
+msgstr ""
+
+msgid "Public Key"
+msgstr ""
+
+msgid "SSH Key deleted."
+msgstr ""
+
+msgid "Could not delete the SSH Key"
+msgstr ""
+
+msgid "DNS Proxy to use within this subnet"
+msgstr ""
+
+msgid "DHCP Proxy to use within this subnet"
+msgstr ""
+
+msgid "TFTP Proxy to use within this subnet"
+msgstr ""
+
+msgid "Network Addr"
+msgstr ""
+
+msgid "Network Prefix"
+msgstr ""
+
+msgid "Network Mask"
+msgstr ""
+
+msgid "VLAN ID"
+msgstr ""
+
+msgid "Boot Mode"
+msgstr ""
+
+msgid "Protocol"
+msgstr ""
+
+msgid "Priority"
+msgstr ""
+
+msgid "Gateway Addr"
+msgstr ""
+
+msgid "Primary DNS"
+msgstr ""
+
+msgid "Secondary DNS"
+msgstr ""
+
+msgid "Smart Proxies"
+msgstr ""
+
+msgid "DNS"
+msgstr ""
+
+msgid "TFTP"
+msgstr ""
+
+msgid "DHCP"
+msgstr ""
+
+msgid "IPAM"
+msgstr ""
+
+msgid "Start of IP Range"
+msgstr ""
+
+msgid "End of IP Range"
+msgstr ""
+
+msgid "MTU"
+msgstr ""
+
+msgid "Subnet created."
+msgstr ""
+
+msgid "Could not create the subnet"
+msgstr ""
+
+msgid "Subnet updated."
+msgstr ""
+
+msgid "Could not update the subnet"
+msgstr ""
+
+msgid "Subnet deleted."
+msgstr ""
+
+msgid "Could not delete the subnet"
+msgstr ""
+
+msgid "Create or update parameter for a subnet"
+msgstr ""
+
+msgid "Subnet parameter updated"
+msgstr ""
+
+msgid "New subnet parameter created"
+msgstr ""
+
+msgid "Could not set subnet parameter"
+msgstr ""
+
+msgid "Delete parameter for a subnet"
+msgstr ""
+
+msgid "Subnet parameter deleted."
+msgstr ""
+
+msgid "unknown template kind"
+msgstr ""
+
+msgid "List available provisioning template kinds"
+msgstr ""
+
+msgid "View provisioning template content"
+msgstr ""
+
+msgid "Path to a file that contains the template"
+msgstr ""
+
+msgid "Template type. Eg. snippet, script, provision"
+msgstr ""
+
+msgid "Provisioning template created."
+msgstr ""
+
+msgid "Could not create the provisioning template"
+msgstr ""
+
+msgid "Provisioning template updated."
+msgstr ""
+
+msgid "Could not update the provisioning template"
+msgstr ""
+
+msgid "Provisioning template deleted."
+msgstr ""
+
+msgid "Could not delete the provisioning template"
+msgstr ""
+
+msgid "Update the default PXE menu on all configured TFTP servers"
+msgstr ""
+
+msgid "Provisioning template cloned."
+msgstr ""
+
+msgid "Could not clone the provisioning template"
+msgstr ""
+
+msgid "Login"
+msgstr ""
+
+msgid "Email"
+msgstr ""
+
+msgid "Admin"
+msgstr ""
+
+msgid "Last login"
+msgstr ""
+
+msgid "Authorized by"
+msgstr ""
+
+msgid "Effective admin"
+msgstr ""
+
+msgid "Locale"
+msgstr ""
+
+msgid "Timezone"
+msgstr ""
+
+msgid "Default organization"
+msgstr ""
+
+msgid "Default location"
+msgstr ""
+
+msgid "default"
+msgstr ""
+
+msgid "Default organization name"
+msgstr ""
+
+msgid "Default location name"
+msgstr ""
+
+msgid "User [%{login}] created."
+msgstr ""
+
+msgid "Could not create the user"
+msgstr ""
+
+msgid "User [%{login}] updated."
+msgstr ""
+
+msgid "Could not update the user"
+msgstr ""
+
+msgid "User [%{login}] deleted."
+msgstr ""
+
+msgid "Could not delete the user"
+msgstr ""
+
+msgid "Managing User SSH Keys."
+msgstr ""
+
+msgid "Managing personal access tokens"
+msgstr ""
+
+msgid "User group [%<name>s] created."
+msgstr ""
+
+msgid "Could not create the user group"
+msgstr ""
+
+msgid "User group [%<name>s] updated."
+msgstr ""
+
+msgid "Could not update the user group"
+msgstr ""
+
+msgid "User group [%<name>s] deleted."
+msgstr ""
+
+msgid "Could not delete the user group"
+msgstr ""
