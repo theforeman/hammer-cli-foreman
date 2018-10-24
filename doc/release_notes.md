@@ -1,5 +1,17 @@
 Release notes
 =============
+### 0.15.0 (2018-10-24)
+* Use SPDX 2.0 codes
+* Provides a way of listing compute attribute values ([#3651](http://projects.theforeman.org/issues/3651))
+* Foreman CLI command for BMC boot commands ([#24099](http://projects.theforeman.org/issues/24099))
+* Update VMware helpers and host create page ([#25192](http://projects.theforeman.org/issues/25192))
+* Enable structured formatters for refernces. ([#24980](http://projects.theforeman.org/issues/24980))
+* Correct homepage and license in the gemspec
+* Display Host Status in Hammer ([#20187](http://projects.theforeman.org/issues/20187))
+* Subnet create/update should accept proxy names ([#20609](http://projects.theforeman.org/issues/20609))
+* Add Cluster option to Hammer CR. ([#24748](http://projects.theforeman.org/issues/24748))
+* Retain data while host update in hammer ([#20725](http://projects.theforeman.org/issues/20725))
+
 ### 0.14.0 (2018-08-27)
 * Add template combinations commands ([#3969](http://projects.theforeman.org/issues/3969))
 * Fix and extend tests for user update ([#23996](http://projects.theforeman.org/issues/23996))
