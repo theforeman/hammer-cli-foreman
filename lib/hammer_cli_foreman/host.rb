@@ -36,7 +36,7 @@ module HammerCLIForeman
         field :global_status_label, _("Global Status")
       end
 
-      build_options :without => [:include, :thin]
+      build_options :without => [:include]
     end
 
 
