@@ -531,31 +531,37 @@ module HammerCLIForeman
       { :response => :raw }
     end
 
-    def validate_options
-      super
-      validator.option(:option_path).required
-    end
-
-    def success_message
-      super || _('The report has been saved to %s.') % @filepath
-    end
-
-    option "--path", "PATH", _("Path to directory where downloaded file will be saved"),
+    option "--path", "PATH", _("Path to directory where downloaded content will be saved"),
         :attribute_name => :option_path
 
-    def print_data(response)
-      if response.body.empty?
-        print_message "Response success but empty body was returned - file was not saved"
-        return
+    def execute
+      response = send_request
+      if option_path
+        filepath = store_response(response)
+        print_message(_('The response has been saved to %{path}s.'), {:path => filepath})
+      else
+        puts response.body
       end
-      # get file name from header, remove leading and trailing quotes
-      filename = response.headers[:content_disposition].match(/filename=(.*)/)[1].chop.reverse.chop.reverse
+      return HammerCLI::EX_OK
+    end
+
+    def default_filename
+      "Downloaded-#{Time.new.strftime("%Y-%m-%d")}.txt"
+    end
+
+    private
+
+    def store_response(response)
+      if response.headers.key?(:content_disposition)
+        suggested_filename = response.headers[:content_disposition].match(/filename="(.*)"/)
+      end
+      filename = suggested_filename ? suggested_filename[1] : default_filename
       path = option_path.dup
       path << '/' unless path.end_with? '/'
-      raise "Cannot save file: #{path} does not exist" unless File.directory?(path)
-      @filepath = path + filename
-      File.write(@filepath, response.body)
-      print_success_message(response)
+      raise _("Cannot save file: %s does not exist") % path unless File.directory?(path)
+      filepath = path + filename
+      File.write(filepath, response.body)
+      filepath
     end
   end
 end
