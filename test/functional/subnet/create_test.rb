@@ -22,7 +22,7 @@ module HammerCLIForeman
       end
 
       it 'allows dhcp id' do
-        api_expects(:subnets, :create).with_params(subnet_params(:dhcp_id => '1'))
+        api_expects(:subnets, :create).with_params(subnet_params(:dhcp_id => 1))
         run_cmd(%w(subnet create --name net1 --network=192.168.122.0 --mask=255.255.255.0 --dhcp-id 1))
       end
 
@@ -34,7 +34,7 @@ module HammerCLIForeman
       end
 
       it 'allows dns id' do
-        api_expects(:subnets, :create).with_params(subnet_params(:dns_id => '1'))
+        api_expects(:subnets, :create).with_params(subnet_params(:dns_id => 1))
         run_cmd(%w(subnet create --name net1 --network=192.168.122.0 --mask=255.255.255.0 --dns-id 1))
       end
 
@@ -46,7 +46,7 @@ module HammerCLIForeman
       end
 
       it 'allows tftp id' do
-        api_expects(:subnets, :create).with_params(subnet_params(:tftp_id => '1'))
+        api_expects(:subnets, :create).with_params(subnet_params(:tftp_id => 1))
         run_cmd(%w(subnet create --name net1 --network=192.168.122.0 --mask=255.255.255.0 --tftp-id 1))
       end
 

@@ -167,7 +167,7 @@ module HammerCLIForeman
         api_expects(:hostgroups, :create).with_params({
           :hostgroup => {
             :name => 'hg1',
-            :parent_id => '1'
+            :parent_id => 1
           }
         })
         run_cmd(%w(hostgroup create --name hg1 --parent-id 1))
@@ -207,7 +207,7 @@ module HammerCLIForeman
         api_expects(:hostgroups, :create).with_params({
           :hostgroup => {
             :name => 'hg1',
-            :puppet_ca_proxy_id => '1'
+            :puppet_ca_proxy_id => 1
           }
         })
         run_cmd(%w(hostgroup create --name hg1 --puppet-ca-proxy-id 1))
@@ -250,7 +250,7 @@ module HammerCLIForeman
         api_expects(:hostgroups, :create).with_params({
           :hostgroup => {
             :name => 'hg1',
-            :puppet_proxy_id => '1'
+            :puppet_proxy_id => 1
           }
         })
         run_cmd(%w(hostgroup create --name hg1 --puppet-proxy-id 1))
