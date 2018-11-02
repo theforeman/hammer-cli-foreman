@@ -6,7 +6,7 @@ module HammerCLIForeman
     describe UpdateCommand do
       def subnet_params(additional_params = {})
         params = {
-          :id => '1',
+          :id => 1,
           :subnet => {}
         }
         params[:subnet].merge!(additional_params)
@@ -15,13 +15,13 @@ module HammerCLIForeman
 
       it 'allows minimal options' do
         api_expects(:subnets, :update) do |par|
-          par['id'] == '1'
+          par['id'] == 1
         end
         run_cmd(%w(subnet update --id 1))
       end
 
       it 'allows dhcp id' do
-        api_expects(:subnets, :update).with_params(subnet_params(:dhcp_id => '1'))
+        api_expects(:subnets, :update).with_params(subnet_params(:dhcp_id => 1))
         run_cmd(%w(subnet update --id 1 --dhcp-id 1))
       end
 
@@ -33,7 +33,7 @@ module HammerCLIForeman
       end
 
       it 'allows dns id' do
-        api_expects(:subnets, :update).with_params(subnet_params(:dns_id => '1'))
+        api_expects(:subnets, :update).with_params(subnet_params(:dns_id => 1))
         run_cmd(%w(subnet update --id 1 --dns-id 1))
       end
 
@@ -45,7 +45,7 @@ module HammerCLIForeman
       end
 
       it 'allows tftp id' do
-        api_expects(:subnets, :update).with_params(subnet_params(:tftp_id => '1'))
+        api_expects(:subnets, :update).with_params(subnet_params(:tftp_id => 1))
         run_cmd(%w(subnet update --id 1 --tftp-id 1))
       end
 
