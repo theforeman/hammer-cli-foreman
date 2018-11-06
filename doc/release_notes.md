@@ -1,5 +1,12 @@
 Release notes
 =============
+### 0.15.1 (2018-11-07)
+* Report templates - inputs, clone, interactive updates ([#24489](http://projects.theforeman.org/issues/24489))
+* Update API doc in tests to match Foreman 1.20 ([#25376](http://projects.theforeman.org/issues/25376))
+* Add a command for report templates ([#24489](http://projects.theforeman.org/issues/24489))
+* Request password regardless of redirection ([#14832](http://projects.theforeman.org/issues/14832))
+* Re-add --thin into host list ([PR #395](https://github.com/theforeman/hammer-cli-foreman/pull/395)) ([#25349](http://projects.theforeman.org/issues/25349))
+
 ### 0.15.0 (2018-10-24)
 * Use SPDX 2.0 codes
 * Provides a way of listing compute attribute values ([#3651](http://projects.theforeman.org/issues/3651))
