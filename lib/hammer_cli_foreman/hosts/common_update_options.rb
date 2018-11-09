@@ -36,10 +36,12 @@ module HammerCLIForeman
           :format => HammerCLI::Options::Normalizers::KeyValueList.new
         base.option "--interface", "INTERFACE", _("Interface parameters"), :multivalued => true,
           :format => HammerCLI::Options::Normalizers::KeyValueList.new
+        base.option "--provision-method", "METHOD", " ",
+          :format => HammerCLI::Options::Normalizers::Enum.new(['build', 'image', 'bootdisk'])
 
         base.build_options :without => [
               # - temporarily disabled params that will be removed from the api ------------------
-              :capabilities, :flavour_ref, :image_ref, :start,
+              :provision_method, :capabilities, :flavour_ref, :image_ref, :start,
               :network, :cpus, :memory, :provider, :type, :tenant_id, :image_id,
               # ----------------------------------------------------------------------------------
               :puppet_class_ids, :host_parameters_attributes, :interfaces_attributes, :root_pass]
