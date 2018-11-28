@@ -17,6 +17,7 @@ module HammerCLIForeman
       base.option "--root-pass", "ROOT_PASSWORD",  _("Root password")
       base.option "--ask-root-pass", "ASK_ROOT_PW", "",
         :format => HammerCLI::Options::Normalizers::Bool.new
+      base.option "--subnet6", "SUBNET6_NAME", _("Subnet IPv6 name")
     end
 
     def self.ask_password
@@ -35,6 +36,8 @@ module HammerCLIForeman
 
       params['hostgroup']['root_pass'] = option_root_pass if option_root_pass
       params['hostgroup']['root_pass'] = HammerCLIForeman::HostgroupUpdateCreateCommons::ask_password if option_ask_root_pass
+
+      params['hostgroup']['subnet6_id'] = resolver.subnet_id('option_name' => option_subnet6) if option_subnet6
       params
     end
 
