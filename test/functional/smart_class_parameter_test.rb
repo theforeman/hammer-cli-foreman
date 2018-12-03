@@ -89,7 +89,8 @@ describe 'sc-params add-matcher' do
       'Could not create the override value'
     )
 
-    api_expects_no_call
+    api_expects_parameter_search(puppet_class, parameter)
+
     result = run_cmd(cmd + base + params)
     assert_cmd(expected_result, result)
   end

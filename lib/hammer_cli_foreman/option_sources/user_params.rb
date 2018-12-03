@@ -1,6 +1,6 @@
 module HammerCLIForeman
   module OptionSources
-    class UserParams
+    class UserParams < HammerCLI::Options::Sources::Base
       def initialize(command)
         @command = command
       end

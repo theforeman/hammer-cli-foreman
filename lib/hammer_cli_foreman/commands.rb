@@ -190,10 +190,13 @@ module HammerCLIForeman
 
     def option_sources
       sources = super
-      sources << HammerCLIForeman::OptionSources::IdParams.new(self)
-      sources << HammerCLIForeman::OptionSources::IdsParams.new(self)
-      sources << HammerCLIForeman::OptionSources::SelfParam.new(self)
-      sources
+
+      id_resolution = HammerCLI::Options::ProcessorList.new(name: 'IdResolution')
+      id_resolution << HammerCLIForeman::OptionSources::IdParams.new(self)
+      id_resolution << HammerCLIForeman::OptionSources::IdsParams.new(self)
+      id_resolution << HammerCLIForeman::OptionSources::SelfParam.new(self)
+
+      sources << id_resolution
     end
 
     private
