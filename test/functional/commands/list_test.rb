@@ -33,6 +33,16 @@ describe HammerCLIForeman::ListCommand do
     HammerCLI::Settings.clear
   end
 
+  context 'help' do
+    let(:cmd) { ['host', 'list'] }
+    let(:params) { ['--help'] }
+
+    it 'shows search fields in help' do
+      result = run_cmd(cmd + params)
+      result.out.must_match(/.*Search fields:\s+(\S+\s+\S+)*\s+name\s+string/)
+    end
+  end
+
   describe "api interaction" do
     context "without per_page in settings" do
       it "fetches only first page when there's not enough records" do
