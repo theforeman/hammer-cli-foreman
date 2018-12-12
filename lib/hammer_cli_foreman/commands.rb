@@ -254,7 +254,7 @@ module HammerCLIForeman
       meta = resource.action(action).apidoc[:metadata]
       return super if meta.nil?
 
-      if meta[:search]
+      if meta && meta[:search] && respond_to?(:option_search)
         self.class.extend_help do |h|
           h.section(_('Search fields'), id: :search_fields_section) do |h|
             h.list(search_fields_help(meta[:search]))
@@ -296,8 +296,16 @@ module HammerCLIForeman
 
       search_fields.each_with_object([]) do |field, help_list|
         help_list << [
-          field[:name], field[:type] || field[:values]
+          field[:name], search_field_help_value(field)
         ]
+      end
+    end
+   
+    def search_field_help_value(field)
+      if field[:values] && field[:values].is_a?(Array)
+        _('Values') + ': ' + field[:values].join(', ')
+      else
+        field[:type] || field[:values]
       end
     end
   end
