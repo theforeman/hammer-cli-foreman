@@ -196,3 +196,15 @@ describe HammerCLIForeman::Command do
   end
 
 end
+
+describe HammerCLIForeman::ListCommand do
+  class OpenListCommand < HammerCLIForeman::ListCommand
+    public :search_field_help_value
+  end
+
+  it 'formats enum values in search fields help' do
+    search_field = { name: 'managed', values: [true, false] }
+    expected_output = 'Values: true, false'
+    OpenListCommand.new({}).search_field_help_value(search_field).must_equal(expected_output)
+  end
+end

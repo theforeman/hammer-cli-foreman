@@ -41,6 +41,11 @@ describe HammerCLIForeman::ListCommand do
       result = run_cmd(cmd + params)
       result.out.must_match(/.*Search fields:\s+(\S+\s+\S+)*\s+name\s+string/)
     end
+
+    it 'formats enum values' do
+      result = run_cmd(cmd + params)
+      result.out.must_match(/.*Search fields:\s+(\S+\s+\S+)*\s+managed\s+Values: true, false/)
+    end
   end
 
   describe "api interaction" do
