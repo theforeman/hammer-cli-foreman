@@ -10,6 +10,18 @@ The ID resolution process consists of two parts:
 - building correct parameters (option builders are described [here](https://github.com/theforeman/hammer-cli-foreman/blob/master/doc/option_builder.md#option-builders))
 - the translation process itself ([IdResolver](https://github.com/theforeman/hammer-cli-foreman/blob/master/lib/hammer_cli_foreman/id_resolver.rb) takes care of that)
 
+The latter part is implemented three option sources wrapped in `IdResolution` for easier addressing.
+With this extension the whole structure of option processors in `hammer-cli-foreman` is:
+```
+- DefaultInputs
+    - CommandLine
+    - SavedDefaults
+- IdResolution
+    - IdParams
+    - IdsParams
+    - SelfParam
+```
+
 ID resolution step by step
 --------------------------
 
@@ -31,7 +43,7 @@ Differences in resolution of list of id's
 
 the lookup method is called `<resource_name>_ids` and in addition:
 - returns `cli_options['option_ids']` if it's not nil
-- returns empty list (`[]`) when the search option is set to empty string or empty list 
+- returns empty list (`[]`) when the search option is set to empty string or empty list
 
 It also ends up with exception when any of the ids was not resolved.
 
@@ -58,15 +70,15 @@ Behaviour tuning
 
 The resolution can be tuned at various levels.
 
-Most of the resources are searchable by name. However there are exceptions that either don't have a name 
-or offer more searchable fields. In such cases you have to update the definition 
+Most of the resources are searchable by name. However there are exceptions that either don't have a name
+or offer more searchable fields. In such cases you have to update the definition
 of searchable fields (SEARCHABLES) in [id_resolver](https://github.com/theforeman/hammer-cli-foreman/blob/master/lib/hammer_cli_foreman/id_resolver.rb).
 
-If you need to modify the lookup query (the `search` field) you can override the default one by adding a method 
+If you need to modify the lookup query (the `search` field) you can override the default one by adding a method
 returning the correct lookup options to the resolver class.
-The method should be called according to the following schema: 
-- `create_<resource_name>_search_options(options)` for single id lookup (takes precedence over the next one for single id lookups) 
-- `create_<resource_plural_name>_search_options(options)` combine for single and/or multiple ids lookup 
+The method should be called according to the following schema:
+- `create_<resource_name>_search_options(options)` for single id lookup (takes precedence over the next one for single id lookups)
+- `create_<resource_plural_name>_search_options(options)` combine for single and/or multiple ids lookup
 - `create_<resource_plural_name>_search_options(options, mode)` combined with extra parameter suggesting the lookup mode and being set to `:single`, `:multi` or `nil`
 
 For examples check the `id_resolver`.
