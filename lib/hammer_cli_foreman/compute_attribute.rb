@@ -1,6 +1,6 @@
 require 'hammer_cli_foreman/image'
 require 'hammer_cli_foreman/compute_resource/register_compute_resources'
-require 'hammer_cli_foreman/compute_resource/help_utils'
+require 'hammer_cli_foreman/compute_resource/utils'
 
 module HammerCLIForeman
   class ComputeAttribute < HammerCLIForeman::Command
