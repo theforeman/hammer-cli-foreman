@@ -52,7 +52,6 @@ module HammerCLIForeman
 
       def request_params
         params = super
-
         owner_id = get_resource_id(HammerCLIForeman.foreman_resource(:users), :required => false, :scoped => true)
         params['host']['owner_id'] ||= owner_id unless owner_id.nil?
 
@@ -83,6 +82,12 @@ module HammerCLIForeman
           params['host']['interfaces_attributes'] = interfaces_attributes
         end
 
+        if options["option_image_id"]
+          compute_resource_id = params['host']['compute_resource_id'] || ::HammerCLIForeman::ComputeResources.get_host_compute_resource_id(params['id'])
+          raise ArgumentError, "Missing argument for 'compute_resource'" if compute_resource_id.nil?
+          image_uuid =  ::HammerCLIForeman::ComputeResources.get_image_uuid(compute_resource_id, options["option_image_id"])
+          params['host']['compute_attributes']['image_id'] = image_uuid
+        end
         params['host']['root_pass'] = option_root_password unless option_root_password.nil?
 
         if option_ask_root_password

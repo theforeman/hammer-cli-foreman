@@ -7,8 +7,7 @@ require 'hammer_cli_foreman/interface'
 require 'hammer_cli_foreman/hosts/common_update_options'
 require 'hammer_cli_foreman/hosts/common_update_help'
 require 'hammer_cli_foreman/compute_resource/register_compute_resources'
-require 'hammer_cli_foreman/compute_resource/help_utils'
-
+require 'hammer_cli_foreman/compute_resource/utils'
 require 'highline/import'
 
 module HammerCLIForeman
@@ -299,13 +298,11 @@ module HammerCLIForeman
           end
         end
       end
-
     end
 
     class UpdateCommand < HammerCLIForeman::UpdateCommand
       success_message _("Host updated.")
       failure_message _("Could not update the host")
-
       include HammerCLIForeman::Hosts::CommonUpdateOptions
       include HammerCLIForeman::Hosts::CommonUpdateHelp
     end
