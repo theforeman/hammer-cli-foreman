@@ -5,7 +5,7 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: hammer-cli-foreman 0.15.0\n"
+"Project-Id-Version: hammer-cli-foreman 0.16.0\n"
 "Report-Msgid-Bugs-To: \n"
 "PO-Revision-Date: 2014-03-04 16:47+0000\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
@@ -76,6 +76,9 @@ msgstr ""
 msgid ""
 "%{report} command is deprecated and will be removed in one of the future "
 "versions. Please use %{config_report} command instead."
+msgstr ""
+
+msgid "Manipulate report templates"
 msgstr ""
 
 msgid "Manage user roles"
@@ -529,7 +532,7 @@ msgstr ""
 msgid "Information about current connections"
 msgstr ""
 
-msgid "List all auth sources."
+msgid "List all auth sources"
 msgstr ""
 
 msgid "Type of auth source"
@@ -667,6 +670,12 @@ msgstr ""
 msgid "Received data of unknown format."
 msgstr ""
 
+msgid "Search fields"
+msgstr ""
+
+msgid "Values"
+msgstr ""
+
 msgid "Associate a resource"
 msgstr ""
 
@@ -683,6 +692,15 @@ msgid "Could not disassociate the %{resource_name}."
 msgstr ""
 
 msgid "The %{resource_name} has been disassociated."
+msgstr ""
+
+msgid "Path to directory where downloaded content will be saved"
+msgstr ""
+
+msgid "The response has been saved to %{path}s."
+msgstr ""
+
+msgid "Cannot save file: %s does not exist"
 msgstr ""
 
 msgid "Set a global parameter"
@@ -1415,7 +1433,7 @@ msgstr ""
 msgid "Disassociate a host"
 msgstr ""
 
-msgid "The host has been disassociated from VM"
+msgid "The host has been disassociated from VM."
 msgstr ""
 
 msgid "Failed to disassociated host from VM"
@@ -1440,6 +1458,9 @@ msgid "Name of parent hostgroup"
 msgstr ""
 
 msgid "Root password"
+msgstr ""
+
+msgid "Subnet IPv6 name"
 msgstr ""
 
 msgid "Enter the root password for the host group:"
@@ -2121,6 +2142,61 @@ msgstr ""
 msgid "External user groups"
 msgstr ""
 
+msgid "Default"
+msgstr ""
+
+msgid "Template inputs"
+msgstr ""
+
+msgid "Required"
+msgstr ""
+
+msgid "Options"
+msgstr ""
+
+msgid "View report content"
+msgstr ""
+
+msgid "Generate report"
+msgstr ""
+
+msgid "Specify inputs"
+msgstr ""
+
+msgid "Open empty template in an $EDITOR. Upload the result"
+msgstr ""
+
+msgid "Path to a file that contains the report template content"
+msgstr ""
+
+msgid "Report template created."
+msgstr ""
+
+msgid "Could not create the report template"
+msgstr ""
+
+msgid ""
+"Dump existing template and open it in an $EDITOR. Update with the result"
+msgstr ""
+
+msgid "Report template updated."
+msgstr ""
+
+msgid "Could not update the report template"
+msgstr ""
+
+msgid "Report template cloned."
+msgstr ""
+
+msgid "Could not clone the report template"
+msgstr ""
+
+msgid "Report template deleted."
+msgstr ""
+
+msgid "Could not delete the report template"
+msgstr ""
+
 msgid "The server does not support such operation."
 msgstr ""
 
@@ -2181,9 +2257,6 @@ msgstr ""
 msgid "Use puppet default"
 msgstr ""
 
-msgid "Required"
-msgstr ""
-
 msgid "Validator"
 msgstr ""
 
@@ -2203,9 +2276,6 @@ msgid "Avoid duplicates"
 msgstr ""
 
 msgid "Order"
-msgstr ""
-
-msgid "Values"
 msgstr ""
 
 msgid "Match"
