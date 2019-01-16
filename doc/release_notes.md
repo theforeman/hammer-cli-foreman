@@ -1,5 +1,17 @@
 Release notes
 =============
+### 0.16.0 (2019-01-16)
+* Use make targets for translations from core ([#25724](http://projects.theforeman.org/issues/25724))
+* Allow mixing option sources and validations ([PR #402](https://github.com/theforeman/hammer-cli-foreman/pull/402)) ([#22253](http://projects.theforeman.org/issues/22253))
+* Include information about search fields ([#11431](http://projects.theforeman.org/issues/11431))
+* IPv6 subnet option in hostgroup create/update ([#18752](http://projects.theforeman.org/issues/18752))
+* Tests for message formats ([#7451](http://projects.theforeman.org/issues/7451))
+* Report templates - inputs, clone, interactive updates ([#24489](http://projects.theforeman.org/issues/24489))
+* Update API doc in tests to match Foreman 1.20 ([#25376](http://projects.theforeman.org/issues/25376))
+* Add a command for report templates ([#24489](http://projects.theforeman.org/issues/24489))
+* Re-add --thin into host list ([PR #395](https://github.com/theforeman/hammer-cli-foreman/pull/395)) ([#25349](http://projects.theforeman.org/issues/25349))
+* Request password regardless of redirection ([#14832](http://projects.theforeman.org/issues/14832))
+
 ### 0.15.0 (2018-10-24)
 * Use SPDX 2.0 codes
 * Provides a way of listing compute attribute values ([#3651](http://projects.theforeman.org/issues/3651))
