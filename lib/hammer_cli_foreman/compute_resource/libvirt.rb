@@ -29,5 +29,6 @@ module HammerCLIForeman
         ]
       end
     end
+    HammerCLIForeman.register_compute_resource('libvirt', Libvirt.new)
   end
 end

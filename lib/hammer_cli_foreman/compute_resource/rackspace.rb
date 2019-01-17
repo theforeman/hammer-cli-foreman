@@ -12,5 +12,6 @@ module HammerCLIForeman
         ]
       end
     end
+    HammerCLIForeman.register_compute_resource('rackspace', Rackspace.new)
   end
 end

@@ -15,5 +15,6 @@ module HammerCLIForeman
         ]
       end
     end
+    HammerCLIForeman.register_compute_resource('ec2', EC2.new)
   end
 end

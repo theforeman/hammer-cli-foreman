@@ -14,5 +14,6 @@ module HammerCLIForeman
         ]
       end
     end
+    HammerCLIForeman.register_compute_resource('gce', GCE.new)
   end
 end

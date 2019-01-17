@@ -53,5 +53,6 @@ module HammerCLIForeman
         ]
       end
     end
+    HammerCLIForeman.register_compute_resource('vmware', VMware.new)
   end
 end

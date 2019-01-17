@@ -17,8 +17,9 @@ module HammerCLIForeman
 
       def interface_attributes
         [
-            ['compute_name',    _('Eg. eth0')],
-            ['compute_network', _('Select one of available networks for a cluster')]
+            ['name',    _('compute name, Eg. eth0')],
+            ['network', _('Select one of available networks for a cluster')],
+            ['interface', ('interface type')]
         ]
       end
 
@@ -30,5 +31,6 @@ module HammerCLIForeman
         ]
       end
     end
+    HammerCLIForeman.register_compute_resource('ovirt', Ovirt.new)
   end
 end
