@@ -28,7 +28,7 @@ module HammerCLIForeman
         bme_options[:format] = HammerCLI::Options::Normalizers::Bool.new
         base.option "--overwrite", "OVERWRITE", " ",  bme_options
 
-        base.option "--parameters", "PARAMS", _("Host parameters"),
+        base.option "--parameters", "PARAMS", _("Replaces with new host parameters"),
           :format => HammerCLI::Options::Normalizers::KeyValueList.new
         base.option "--compute-attributes", "COMPUTE_ATTRS", _("Compute resource attributes"),
           :format => HammerCLI::Options::Normalizers::KeyValueList.new

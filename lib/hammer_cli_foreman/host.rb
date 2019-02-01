@@ -325,7 +325,7 @@ module HammerCLIForeman
 
 
     class SetParameterCommand < HammerCLIForeman::Parameter::SetCommand
-      desc _("Create or update parameter for a host")
+      desc _("Create or append a parameter for a host")
 
       success_message_for :update, _("Host parameter updated")
       success_message_for :create, _("New host parameter created")
