@@ -4,12 +4,17 @@ describe "parameters" do
   describe "create values" do
     before do
       @cmd = ["compute-profile", "values", "create"]
+      @compute_profile =
+          {
+              "id" => 1,
+              "name" => "profile2",
+          }
     end
 
     it "should print error on missing --compute-profile-id or --compute-profile" do
-      expected_result = usage_error_result(
+      expected_result = common_error_result(
         @cmd,
-        "At least one of options --compute-profile-id, --compute-profile is required.",
+        "Could not find compute_profile, please set one of options --compute-profile, --compute-profile-id.",
         "Could not set the compute profile attributes"
       )
 
@@ -20,9 +25,9 @@ describe "parameters" do
 
     it "should print error on missing --compute-resource-id or --compute-resource" do
       params = ['--compute-profile-id=1']
-      expected_result = usage_error_result(
+      expected_result = common_error_result(
         @cmd,
-        "At least one of options --compute-resource-id, --compute-resource is required.",
+        "Could not find compute_resource, please set one of options --compute-resource, --compute-resource-id.",
         "Could not set the compute profile attributes"
       )
 
@@ -141,7 +146,7 @@ describe "parameters" do
     end
 
     it "should print error on missing --compute-resource-id or --compute-resource" do
-      params = ['--compute-profile=A', '--volume', 'size_gb=1']
+      params = ['--compute-profile-id=1', '--volume', 'size_gb=1']
       expected_result = usage_error_result(
         @cmd,
         "At least one of options --compute-resource-id, --compute-resource is required.",
@@ -168,23 +173,6 @@ describe "parameters" do
       assert_cmd(expected_result, result)
     end
 
-    it "should print error on unknown compute profile" do
-      params = ['--compute-profile-id=200', '--compute-resource-id=1', '--volume', 'size_gb=1']
-      expected_result = not_found_error_result(
-        @cmd,
-        "Resource compute_profile not found by id '200'",
-        "Could not create volume"
-      )
-      expected_message = "{ \"error\": {\"message\": \"Error: Resource compute_profile not found by id '200'\" }}"
-      response = HammerCLIForeman.foreman_api.api.send(:create_fake_response, 404,
-                                                       expected_message, "GET", "http://example.com/", {})
-      api_expects(:compute_profiles, :show) do |par|
-        par['id'] == 200
-      end.raises(RestClient::NotFound, response)
-
-      result = run_cmd(@cmd + params)
-      assert_cmd(expected_result, result)
-    end
 
     it "should add volume" do
       params = ['--compute-profile-id=1', '--compute-resource-id=1', '--volume', 'size_gb=1']
@@ -311,7 +299,7 @@ describe "parameters" do
     end
 
     it "should print error on missing --compute-resource-id or --compute-resource" do
-      params = ['--compute-profile=A', '--volume-id=1']
+      params = ['--compute-profile-id=1', '--volume-id=1']
       expected_result = usage_error_result(
         @cmd,
         "At least one of options --compute-resource-id, --compute-resource is required.",
@@ -399,7 +387,7 @@ describe "parameters" do
     end
 
     it "should print error on missing --compute-resource-id or --compute-resource." do
-      params = ['--compute-profile=A', '--interface', 'name=eth0']
+      params = ['--compute-profile-id=1', '--interface', 'name=eth0']
       expected_result = usage_error_result(
         @cmd,
         "At least one of options --compute-resource-id, --compute-resource is required.",
@@ -580,7 +568,7 @@ describe "parameters" do
     end
 
     it "should print error on missing --compute-resource-id or --compute-resource" do
-      params = ['--compute-profile=A', '--interface-id=1']
+      params = ['--compute-profile-id=1', '--interface-id=1']
       expected_result = usage_error_result(
         @cmd,
         "At least one of options --compute-resource-id, --compute-resource is required.",

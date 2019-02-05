@@ -107,7 +107,7 @@ module HammerCLIForeman
              :format => HammerCLI::Options::Normalizers::KeyValueList.new, :required => true
 
       extend_help do |h|
-        ::HammerCLIForeman::ComputeResources.extend_help(h, :inteface)
+        ::HammerCLIForeman::ComputeResources.extend_help(h, :interface)
       end
 
       def validate_options
