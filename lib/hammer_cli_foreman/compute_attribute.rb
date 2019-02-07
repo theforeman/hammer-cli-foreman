@@ -1,9 +1,9 @@
 require 'hammer_cli_foreman/image'
-require '../hammer-cli-foreman/lib/hammer_cli_foreman/compute_resource/register_compute_resources'
-require '../hammer-cli-foreman/lib/hammer_cli_foreman/compute_resource/help_utils'
+require 'hammer_cli_foreman/compute_resource/register_compute_resources'
+require 'hammer_cli_foreman/compute_resource/help_utils'
 
 module HammerCLIForeman
-  class Attribute < HammerCLIForeman::Command
+  class ComputeAttribute < HammerCLIForeman::Command
     resource :compute_attributes
 
     def self.get_params(options)
@@ -22,7 +22,7 @@ module HammerCLIForeman
     end
 
     class Create < HammerCLIForeman::CreateCommand
-        desc _('Create compute profile set of values.')
+        desc _('Create compute profile set of values')
 
       option '--compute-attributes', 'COMPUTE_ATTRS', _('Compute resource attributes'),
              :format => HammerCLI::Options::Normalizers::KeyValueList.new
@@ -42,8 +42,14 @@ module HammerCLIForeman
 
       def request_params
         params = super
+        compute_resource_name = HammerCLIForeman.record_to_common_format(
+            HammerCLIForeman.foreman_resource(:compute_resources).call(:show, 'id' => option_compute_resource_id )
+        )["name"]
+        interfaces_attrs_name_list = {"libvirt" => "nics_attributes","gce" => "network_interfaces_nics_attributes"}
+        interfaces_attrs_name =  interfaces_attrs_name_list.key?(compute_resource_name) ? interfaces_attrs_name_list[compute_resource_name] : "interfaces_attributes"
+
         params['compute_attribute']['vm_attrs'] = option_compute_attributes || {}
-        params['compute_attribute']['vm_attrs']['interfaces_attributes']= HammerCLIForeman::Attribute.attribute_hash(option_interface_list) unless option_interface_list.empty?
+        params['compute_attribute']['vm_attrs'][interfaces_attrs_name]= HammerCLIForeman::Attribute.attribute_hash(option_interface_list) unless option_interface_list.empty?
         params['compute_attribute']['vm_attrs']['volumes_attributes'] = HammerCLIForeman::Attribute.attribute_hash(option_volume_list) unless option_volume_list.empty?
         params
       end
@@ -54,7 +60,7 @@ module HammerCLIForeman
     end
 
     class Update < HammerCLIForeman::UpdateCommand
-      desc _('Update compute profile values.')
+      desc _('Update compute profile values')
 
       option '--compute-attributes', 'COMPUTE_ATTRS', _('Compute resource attributes, should be comma separated list of values'),
              :format => HammerCLI::Options::Normalizers::KeyValueList.new
@@ -102,7 +108,7 @@ module HammerCLIForeman
     # Using the Update command because adding a new interface is done by modifying existing compute_attribute
     class AddInterface < HammerCLIForeman::UpdateCommand
       command_name 'add-interface'
-      desc _('Add interface for Compute Profile.')
+      desc _('Add interface for Compute Profile')
       option '--interface', 'SET_VALUES', _('Interface parameters, should be comma separated list of values'),
              :format => HammerCLI::Options::Normalizers::KeyValueList.new, :required => true
 
@@ -137,7 +143,7 @@ module HammerCLIForeman
     class UpdateInterface < HammerCLIForeman::UpdateCommand
       command_name 'update-interface'
 
-      desc _('Update compute profile interface.')
+      desc _('Update compute profile interface')
 
       option '--interface', 'SET_VALUES', _('Interface parameters, should be comma separated list of values'),
              :required => true,
@@ -172,7 +178,7 @@ module HammerCLIForeman
     # Using the Update command because removing an interface is done by modifying existing compute_attribute
     class RemoveInterface < HammerCLIForeman::UpdateCommand
       command_name 'remove-interface'
-      desc _('Remove compute profile interface.')
+      desc _('Remove compute profile interface')
       option '--interface-id', 'INTERFACE ID', _('Interface id'),
              :format => HammerCLI::Options::Normalizers::Number.new , :required => true
 
@@ -201,7 +207,7 @@ module HammerCLIForeman
     # Using the Update command because adding a new volume is done by modifying existing compute_attribute
     class AddVolume < HammerCLIForeman::UpdateCommand
       command_name 'add-volume'
-      desc _('Add volume for Compute Profile.')
+      desc _('Add volume for Compute Profile')
 
       option '--volume', 'VOLUME', _('Volume parameters, should be comma separated list of values'),
              :format => HammerCLI::Options::Normalizers::KeyValueList.new, :required => true
@@ -235,7 +241,7 @@ module HammerCLIForeman
 
     class UpdateVolume < HammerCLIForeman::UpdateCommand
       command_name 'update-volume'
-      desc _('Update compute profile volume.')
+      desc _('Update compute profile volume')
 
       option '--volume', 'VOLUME', _('Volume parameters, should be comma separated list of values'),
              :required => true,
@@ -272,7 +278,7 @@ module HammerCLIForeman
     class RemoveVolume < HammerCLIForeman::UpdateCommand
       command_name 'remove-volume'
       resource :compute_attributes
-      desc _('Remove compute profile volume.')
+      desc _('Remove compute profile volume')
       option '--volume-id', 'VOLUME_ID', _('Volume id'),
              :format => HammerCLI::Options::Normalizers::Number.new, :required=> true
 

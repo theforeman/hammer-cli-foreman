@@ -25,8 +25,13 @@ module HammerCLIForeman
             ['add_cdrom',            _('Must be a 1 or 0, Add a CD-ROM drive to the virtual machine')],
             ['cpuHotAddEnabled',     _('Must be a 1 or 0, lets you add memory resources while the machine is on')],
             ['memoryHotAddEnabled',  _('Must be a 1 or 0, lets you add CPU resources while the machine is on')],
-            ['start',                _("Must be a 1 or 0, whether to start the machine or not")],
             ['annotation',           _("Annotation Notes")]
+        ]
+      end
+
+      def host_attributes
+        [
+            ['start',                _("Must be a 1 or 0, whether to start the machine or not")],
         ]
       end
 

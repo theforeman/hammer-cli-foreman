@@ -53,7 +53,7 @@ module HammerCLIForeman
     end
 
     lazy_subcommand('values', _("Create update and delete Compute profile values"),
-                    'HammerCLIForeman::Attribute', 'hammer_cli_foreman/attribute'
+                    'HammerCLIForeman::ComputeAttribute', 'hammer_cli_foreman/compute_attribute'
     )
 
     autoload_subcommands

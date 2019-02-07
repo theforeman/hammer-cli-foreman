@@ -39,7 +39,7 @@ module HammerCLIForeman
             end
           end
 
-          ::HammerCLIForeman::ComputeResources.extend_help(h, :all)
+          ::HammerCLIForeman::ComputeResources.extend_help(h, :all, true )
 
         end
       end
