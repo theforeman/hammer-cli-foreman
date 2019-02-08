@@ -70,6 +70,7 @@ module HammerCLIForeman
 
         field :installed_at, _("Installed at"), Fields::Date
         field :last_report, _("Last report"), Fields::Date
+        field :uptime_seconds, _("Uptime (seconds)"), Fields::Field, :hide_blank => true
 
         label _("Status") do
           field :global_status_label, _("Global Status")
