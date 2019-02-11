@@ -11,6 +11,7 @@ module HammerCLIForeman
       output do
         field :name, _("Name")
         field :value, _("Value")
+        field :parameter_type, _("Type")
       end
 
       build_options
@@ -27,6 +28,10 @@ module HammerCLIForeman
       option "--name", "NAME", _("Parameter name"), :required => true
       option "--value", "VALUE", _("Parameter value"), :required => true
       option "--hidden-value", "HIDDEN_VALUE", _("Should the value be hidden"), :format => HammerCLI::Options::Normalizers::Bool.new
+      option "--parameter-type", "PARAMETER_TYPE", _("Type of the parameter"),
+        :default => 'string',
+        :format => HammerCLI::Options::Normalizers::Enum.new(
+            ['string', 'boolean', 'integer', 'real', 'array', 'hash', 'yaml', 'json'])
 
       def action
         @action ||= parameter_exist? ? :update : :create
