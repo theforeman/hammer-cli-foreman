@@ -23,7 +23,7 @@ describe HammerCLIForeman::CommonParameter do
       let(:expected_record_count) { count_records(cmd.resource.call(:index)) }
 
       it_should_print_n_records
-      it_should_print_columns  ["Name", "Value"]
+      it_should_print_columns  ["Name", "Value", "Type"]
     end
 
   end
@@ -49,7 +49,7 @@ describe HammerCLIForeman::CommonParameter do
           [:common_parameters, :index, []],
           [:common_parameters, :create,
             {"id" => 1, "name" => "param", "value" => "val", "hidden-value" => false},
-            {'common_parameter' => {'name' => 'param', 'value' => 'val', 'hidden_value' => false}, 'id' => 'param'}])
+            {'common_parameter' => {'name' => 'param', 'value' => 'val', 'parameter_type' => 'string', 'hidden_value' => false}, 'id' => 'param'}])
       end
       with_params ["--name=param", "--value=val", "--hidden-value=false"] do
         it_should_output "Created parameter [param] with value [val].,1,param", :csv
@@ -62,7 +62,7 @@ describe HammerCLIForeman::CommonParameter do
           [:common_parameters, :index, [{'name' => 'param', 'value' => 'test'}]],
           [:common_parameters, :update,
             {"id" => 1, "name" => "param", "value" => "val", "hidden-value" => false},
-            {'common_parameter' => {'name' => 'param', 'value' => 'val', 'hidden_value' => false}, 'id' => 'param'}])
+            {'common_parameter' => {'name' => 'param', 'value' => 'val', 'parameter_type' => 'string', 'hidden_value' => false}, 'id' => 'param'}])
       end
 
       with_params ["--name=param", "--value=val", "--hidden-value=false"] do
@@ -70,6 +70,18 @@ describe HammerCLIForeman::CommonParameter do
       end
     end
 
+    context "adding params with parameter type" do
+      before :each do
+        ResourceMocks.mock_action_calls(
+          [:common_parameters, :index, []],
+          [:common_parameters, :create,
+            {"id" => 2, "name" => "xyz", "value" => "who", "parameter-type" => "string", "hidden-value" => false},
+            {'common_parameter' => {'name' => 'xyz', 'value' => 'who', 'parameter_type' => 'string', 'hidden_value' => false}, 'id' => 'xyz'}])
+      end
+      with_params ["--name=xyz", "--value=who", "--parameter-type=string", "--hidden-value=false"] do
+        it_should_output "Created parameter [xyz] with value [who].,2,xyz", :csv
+      end
+    end
   end
 
 

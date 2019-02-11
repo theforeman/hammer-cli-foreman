@@ -102,6 +102,8 @@ describe HammerCLIForeman::Domain do
     context "parameters" do
       it_should_accept "name, value and domain name", ["--name=name", "--value=val", "--domain=name"]
       it_should_accept "name, value and domain id", ["--name=name", "--value=val", "--domain-id=1"]
+      it_should_accept "name, value, parameter type and domain name",
+                       ["--name=name", "--value=val", "--parameter-type=integer", "--domain=name"]
       # it_should_fail_with "name missing", ["--value=val", "--domain=name"]
       # it_should_fail_with "value missing", ["--name=name", "--domain=name"]
       # it_should_fail_with "domain name or id missing", ["--name=name", "--value=val"]
