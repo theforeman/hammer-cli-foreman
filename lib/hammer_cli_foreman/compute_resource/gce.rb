@@ -13,7 +13,11 @@ module HammerCLIForeman
             'external_ip'
         ]
       end
+
+      def interfaces_attrs_name
+        "network_interfaces_nics_attributes"
+      end
     end
-    HammerCLIForeman.register_compute_resource('gce', GCE.new)
+    HammerCLIForeman.register_compute_resource('GCE', GCE.new)
   end
 end

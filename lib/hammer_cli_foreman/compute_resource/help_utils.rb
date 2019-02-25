@@ -1,6 +1,6 @@
 module HammerCLIForeman
   module ComputeResources
-    def self.extend_help(h, attributes, add_host_specific_attrs = false )
+    def self.extend_help(h, attributes, add_host_specific_attrs: false )
       h.section _('Provider specific options') do |h|
         ::HammerCLIForeman.compute_resources.each do |name, provider|
           h.section name do |h|

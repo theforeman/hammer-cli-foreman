@@ -15,6 +15,6 @@ module HammerCLIForeman
         ]
       end
     end
-    HammerCLIForeman.register_compute_resource('openstack', OpenStack.new)
+    HammerCLIForeman.register_compute_resource('OpenStack', OpenStack.new)
   end
 end

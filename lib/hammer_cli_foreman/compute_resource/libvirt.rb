@@ -27,14 +27,18 @@ module HammerCLIForeman
         ]
       end
 
-      def volume_attributes;
+      def volume_attributes
         [
             ['pool_name',   _('One of available storage pools')],
             ['capacity',    _('String value, eg. 10G')],
             ['format_type', _('Possible values: %s') % 'raw, qcow2']
         ]
       end
+
+      def interfaces_attrs_name
+        "nics_attributes"
+      end
     end
-    HammerCLIForeman.register_compute_resource('libvirt', Libvirt.new)
+    HammerCLIForeman.register_compute_resource('Libvirt', Libvirt.new)
   end
 end

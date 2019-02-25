@@ -63,6 +63,13 @@ describe "parameters" do
               "compute_profile_name" => "profile2", "vm_attrs" => {"cores" => "1"}
             }
         }
+
+      @compute_resource = {
+          "id" => 1,
+          "name" => "ovirt_compute_resource",
+          "provider" => "Ovirt",
+          "provider_friendly_name" => "oVirt",
+      }
     end
 
     it "values update - should print error on missing --compute-profile-id or --compute-profile" do
@@ -98,6 +105,10 @@ describe "parameters" do
       api_expects(:compute_profiles, :show) do |par|
         par['id'] == 1
       end.returns(@compute_profile)
+
+      api_expects(:compute_resources, :show) do |par|
+        par['id'] == 1
+      end.returns(@compute_resource)
 
       api_expects(:compute_attributes, :update) do |par|
         par['id'] == 2
@@ -371,6 +382,14 @@ describe "parameters" do
                                      "vm_attrs" => {}
                                    }]
         }
+
+      @compute_resource = {
+          "id" => 1,
+          "name" => "ovirt_compute_resource",
+          "provider" => "Ovirt",
+          "provider_friendly_name" => "oVirt",
+      }
+
     end
 
     it "should print error on missing --compute-profile-id or --compute-profile" do
@@ -449,6 +468,10 @@ describe "parameters" do
         par['id'] == 1
       end.returns(@compute_profile)
 
+      api_expects(:compute_resources, :show) do |par|
+        par['id'] == 1
+      end.returns(@compute_resource)
+
       api_expects(:compute_attributes, :update) do |par|
         par['id'] == 2
       end.returns(@compute_attribute)
@@ -474,6 +497,13 @@ describe "parameters" do
                                      "vm_attrs" => {}
                                    }]
         }
+
+      @compute_resource = {
+          "id" => 1,
+          "name" => "ovirt_compute_resource",
+          "provider" => "Ovirt",
+          "provider_friendly_name" => "oVirt",
+      }
     end
 
     it "should print error on missing --interface" do
@@ -521,6 +551,10 @@ describe "parameters" do
         par['id'] == 1
       end.returns(@compute_profile)
 
+      api_expects(:compute_resources, :show) do |par|
+        par['id'] == 1
+      end.returns(@compute_resource)
+
       api_expects(:compute_attributes, :update) do |par|
         par['id'] == 2
       end.returns(@compute_attribute)
@@ -550,6 +584,13 @@ describe "parameters" do
         "id" => 2, "compute_resource_id" => 1, "compute_resource_name" => "bla",
         "provider_friendly_name" => "oVirt", "compute_profile_id" => 1,
         "compute_profile_name" => "profile2", "vm_attrs" => {"interfaces_attributes" => {}}
+      }
+
+      @compute_resource = {
+          "id" => 1,
+          "name" => "ovirt_compute_resource",
+          "provider" => "Ovirt",
+          "provider_friendly_name" => "oVirt",
       }
 
     end
@@ -598,6 +639,10 @@ describe "parameters" do
       api_expects(:compute_profiles, :show) do |par|
         par['id'] == 1
       end.returns(@compute_profile)
+
+      api_expects(:compute_resources, :show) do |par|
+        par['id'] == 1
+      end.returns(@compute_resource)
 
       api_expects(:compute_attributes, :update) do |par|
         par['id'] == 2

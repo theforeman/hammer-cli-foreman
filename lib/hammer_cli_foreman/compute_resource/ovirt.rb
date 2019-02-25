@@ -37,6 +37,6 @@ module HammerCLIForeman
         ]
       end
     end
-    HammerCLIForeman.register_compute_resource('ovirt', Ovirt.new)
+    HammerCLIForeman.register_compute_resource('oVirt', Ovirt.new)
   end
 end
