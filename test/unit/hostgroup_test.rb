@@ -156,4 +156,17 @@ describe HammerCLIForeman::Hostgroup do
 
   end
 
+  context "RebuildConfigCommand" do
+
+    let(:cmd) { HammerCLIForeman::Hostgroup::RebuildConfigCommand.new("", ctx) }
+
+    context "parameters" do
+      it_should_accept "name", ["--name=host"]
+      it_should_accept "id", ["--id=1"]
+      # it_should_fail_with "no arguments"
+      # TODO: temporarily disabled, parameters are checked in the id resolver
+
+    end
+  end
+
 end
