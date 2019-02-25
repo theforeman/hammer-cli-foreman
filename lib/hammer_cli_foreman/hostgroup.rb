@@ -190,6 +190,15 @@ module HammerCLIForeman
       end
     end
 
+    class RebuildConfigCommand < HammerCLIForeman::SingleResourceCommand
+      action :rebuild_config
+      command_name "rebuild-config"
+      success_message _('Configuration successfully rebuilt.')
+      failure_message _('Could not rebuild configuration')
+
+      build_options
+    end
+
     autoload_subcommands
   end
 
