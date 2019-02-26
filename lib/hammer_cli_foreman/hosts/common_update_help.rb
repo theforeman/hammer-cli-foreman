@@ -39,8 +39,7 @@ module HammerCLIForeman
             end
           end
 
-          ::HammerCLIForeman::ComputeResources.extend_help(h, :all, true )
-
+          ::HammerCLIForeman::ComputeResources.extend_help(h, :all, add_host_specific_attrs: true )
         end
       end
     end
