@@ -6,6 +6,8 @@ require 'hammer_cli_foreman/smart_variable'
 require 'hammer_cli_foreman/interface'
 require 'hammer_cli_foreman/hosts/common_update_options'
 require 'hammer_cli_foreman/hosts/common_update_help'
+require 'hammer_cli_foreman/compute_resource/register_compute_resources'
+require 'hammer_cli_foreman/compute_resource/help_utils'
 
 require 'highline/import'
 
@@ -15,14 +17,6 @@ module HammerCLIForeman
   class Host < HammerCLIForeman::Command
 
     resource :hosts
-
-    def self.extend_cr_help(cr)
-      cr_help_extensions[cr.name] = cr.method(:host_create_help)
-    end
-
-    def self.cr_help_extensions
-      @cr_help_extensions ||= {}
-    end
 
     class ListCommand < HammerCLIForeman::ListCommand
       # FIXME: list compute resource (model)
@@ -522,5 +516,3 @@ module HammerCLIForeman
     subcommand 'interface', HammerCLIForeman::Interface.desc, HammerCLIForeman::Interface
   end
 end
-
-require 'hammer_cli_foreman/compute_resources/all'
