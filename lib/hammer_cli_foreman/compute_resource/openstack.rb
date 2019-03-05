@@ -14,7 +14,12 @@ module HammerCLIForeman
             'network'
         ]
       end
+
+      def mandatory_resource_options
+        super + [:url, :user, :password]
+      end
+
     end
-    HammerCLIForeman.register_compute_resource('OpenStack', OpenStack.new)
+    HammerCLIForeman.register_compute_resource('openstack', OpenStack.new)
   end
 end

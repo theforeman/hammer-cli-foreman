@@ -57,7 +57,12 @@ module HammerCLIForeman
             ['mode',        'persistent/independent_persistent/independent_nonpersistent']
         ]
       end
+
+      def mandatory_resource_options
+          super + [:user, :password, :datacenter, :server]
+
+      end
     end
-    HammerCLIForeman.register_compute_resource('VMware', VMware.new)
+    HammerCLIForeman.register_compute_resource('vmware', VMware.new)
   end
 end

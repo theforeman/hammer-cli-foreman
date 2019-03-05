@@ -1,4 +1,6 @@
 require 'hammer_cli_foreman/image'
+require 'hammer_cli_foreman/compute_resource/register_compute_resources'
+
 
 module HammerCLIForeman
 
@@ -70,26 +72,23 @@ module HammerCLIForeman
 
     class CreateCommand < HammerCLIForeman::CreateCommand
 
-      VALIDATION_PER_PROVIDER = {
-        'libvirt'   => [:option_url],
-        'ovirt'     => [:option_url, :option_user, :option_password, :option_datacenter],
-        'openstack' => [:option_url, :option_user, :option_password],
-        'racksapce' => [:option_url],
-        'ec2'       => [:option_region, :option_user, :option_password],
-        'vmware'    => [:option_user, :option_password, :option_datacenter, :option_server]
-      }
-
       success_message _("Compute resource created.")
       failure_message _("Could not create the compute resource")
 
       build_options
 
       validate_options do
-        required_options = (VALIDATION_PER_PROVIDER[
-          option(:option_provider).value.to_s.downcase
-        ] || []).unshift(:option_name, :option_provider).uniq
-
-        all(*required_options).required
+        if option(:option_provider).value.nil? || option(:option_name).value.nil?
+          all(:option_name, :option_provider).required
+        else
+          provider = ::HammerCLIForeman.compute_resources[option(:option_provider).value.to_s.downcase]
+          if provider
+            required_options = provider.mandatory_resource_options.map { |attr| "option_#{attr}".to_sym }
+            all(*required_options).required
+          else
+            raise ArgumentError, "incorrect/invalid --provider option"
+          end
+        end
       end
     end
 

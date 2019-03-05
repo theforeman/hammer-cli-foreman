@@ -36,7 +36,12 @@ module HammerCLIForeman
             ['bootable',       _('Boolean, only one volume can be bootable')]
         ]
       end
+
+      def mandatory_resource_options
+        super + [:url, :user, :password, :datacenter]
+      end
+
     end
-    HammerCLIForeman.register_compute_resource('oVirt', Ovirt.new)
+    HammerCLIForeman.register_compute_resource('ovirt', Ovirt.new)
   end
 end

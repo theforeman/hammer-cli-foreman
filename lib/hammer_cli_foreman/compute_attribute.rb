@@ -42,11 +42,10 @@ module HammerCLIForeman
 
       def request_params
         params = super
-        compute_resource_name = HammerCLIForeman.record_to_common_format(HammerCLIForeman.foreman_resource(:compute_resources).call(:show, 'id' => options["option_compute_resource_id"] ))["provider_friendly_name"]
-        interfaces_attrs_name_list =  ::HammerCLIForeman.get_interfaces_list_name
-
+        compute_resource_name = HammerCLIForeman.record_to_common_format(HammerCLIForeman.foreman_resource(:compute_resources).call(:show, 'id' => options["option_compute_resource_id"] ))["provider_friendly_name"].downcase
+        interfaces_attr_name = ::HammerCLIForeman.compute_resources[compute_resource_name].interfaces_attrs_name
         params['compute_attribute']['vm_attrs'] = option_compute_attributes || {}
-        params['compute_attribute']['vm_attrs'][interfaces_attrs_name_list[compute_resource_name]]= HammerCLIForeman::ComputeAttribute.attribute_hash(option_interface_list) unless option_interface_list.empty?
+        params['compute_attribute']['vm_attrs'][interfaces_attr_name]= HammerCLIForeman::ComputeAttribute.attribute_hash(option_interface_list) unless option_interface_list.empty?
         params['compute_attribute']['vm_attrs']['volumes_attributes'] = HammerCLIForeman::ComputeAttribute.attribute_hash(option_volume_list) unless option_volume_list.empty?
         params
       end
@@ -79,21 +78,21 @@ module HammerCLIForeman
       def request_params
 
         params = HammerCLIForeman::ComputeAttribute.get_params(options)
-        compute_resource_name = HammerCLIForeman.record_to_common_format(HammerCLIForeman.foreman_resource(:compute_resources).call(:show, 'id' => options["option_compute_resource_id"] ))["provider_friendly_name"]
-        interfaces_attrs_name_list =  ::HammerCLIForeman.get_interfaces_list_name
+        compute_resource_name = HammerCLIForeman.record_to_common_format(HammerCLIForeman.foreman_resource(:compute_resources).call(:show, 'id' => options["option_compute_resource_id"] ))["provider_friendly_name"].downcase
+        interfaces_attr_name = ::HammerCLIForeman.compute_resources[compute_resource_name].interfaces_attrs_name
 
         raise ArgumentError, "Compute profile value to update does not exist yet; it needs to be created first" if !params['compute_attribute'].key?('id')
         params['id'] =  params['compute_attribute']['id']
         vm_attrs = params['compute_attribute']['vm_attrs']
         original_volumes = vm_attrs['volumes_attributes'] || {}
-        original_interfaces = vm_attrs[interfaces_attrs_name_list[compute_resource_name]] || {}
+        original_interfaces = vm_attrs[interfaces_attr_name] || {}
 
         if options['option_compute_attributes']
           vm_attrs = options['option_compute_attributes']
           vm_attrs['volumes_attributes'] ||= original_volumes
-          vm_attrs[interfaces_attrs_name_list[compute_resource_name]] ||= original_interfaces
+          vm_attrs[interfaces_attr_name] ||= original_interfaces
         end
-        vm_attrs[interfaces_attrs_name_list[compute_resource_name]] = HammerCLIForeman::ComputeAttribute.attribute_hash(options['option_interface_list']) unless options['option_interface_list'].empty?
+        vm_attrs[interfaces_attr_name] = HammerCLIForeman::ComputeAttribute.attribute_hash(options['option_interface_list']) unless options['option_interface_list'].empty?
         vm_attrs['volumes_attributes'] = HammerCLIForeman::ComputeAttribute.attribute_hash(options['option_volume_list']) unless options['option_volume_list'].empty?
         params['compute_attribute']['vm_attrs'] = vm_attrs
         params
@@ -126,17 +125,17 @@ module HammerCLIForeman
         params = HammerCLIForeman::ComputeAttribute.get_params(options)
 
         raise ArgumentError, "Compute profile value to update does not exist yet; it needs to be created first" if !params['compute_attribute'].key?('id')
-        compute_resource_name = HammerCLIForeman.record_to_common_format(HammerCLIForeman.foreman_resource(:compute_resources).call(:show, 'id' => options["option_compute_resource_id"] ))["provider_friendly_name"]
+        compute_resource_name = HammerCLIForeman.record_to_common_format(HammerCLIForeman.foreman_resource(:compute_resources).call(:show, 'id' => options["option_compute_resource_id"] ))["provider_friendly_name"].downcase
 
-        interfaces_attrs_name_list =  ::HammerCLIForeman.get_interfaces_list_name
 
-        interface_attr =  params['compute_attribute']['vm_attrs'][interfaces_attrs_name_list[compute_resource_name]] || {}
+        interfaces_attr_name = ::HammerCLIForeman.compute_resources[compute_resource_name].interfaces_attrs_name
+        interface_attr =  params['compute_attribute']['vm_attrs'][interfaces_attr_name] || {}
         new_interface_id = (interface_attr.keys.max.to_i + 1 ).to_s if interface_attr.any?
         new_interface_id ||= "0"
         params['id'] = params['compute_attribute']['id']
 
-        params['compute_attribute']['vm_attrs'][interfaces_attrs_name_list[compute_resource_name]] ||= {}
-        params['compute_attribute']['vm_attrs'][interfaces_attrs_name_list[compute_resource_name]][new_interface_id] = option_interface
+        params['compute_attribute']['vm_attrs'][interfaces_attr_name] ||= {}
+        params['compute_attribute']['vm_attrs'][interfaces_attr_name][new_interface_id] = option_interface
         params
       end
 
@@ -171,11 +170,11 @@ module HammerCLIForeman
       def request_params
         params = HammerCLIForeman::ComputeAttribute.get_params(options)
         raise ArgumentError, "Compute profile value to update does not exist yet; it needs to be created first" if !params['compute_attribute'].key?('id')
-        compute_resource_name = HammerCLIForeman.record_to_common_format(HammerCLIForeman.foreman_resource(:compute_resources).call(:show, 'id' => options["option_compute_resource_id"] ))["provider_friendly_name"]
-        interfaces_attrs_name_list =  ::HammerCLIForeman.get_interfaces_list_name
+        compute_resource_name = HammerCLIForeman.record_to_common_format(HammerCLIForeman.foreman_resource(:compute_resources).call(:show, 'id' => options["option_compute_resource_id"] ))["provider_friendly_name"].downcase
+        interfaces_attr_name = ::HammerCLIForeman.compute_resources[compute_resource_name].interfaces_attrs_name
         params['id'] = params['compute_attribute']['id']
-        params['compute_attribute']['vm_attrs'][interfaces_attrs_name_list[compute_resource_name]] ||= {}
-        params['compute_attribute']['vm_attrs'][interfaces_attrs_name_list[compute_resource_name]][option_interface_id] = option_interface
+        params['compute_attribute']['vm_attrs'][interfaces_attr_name] ||= {}
+        params['compute_attribute']['vm_attrs'][interfaces_attr_name][option_interface_id] = option_interface
         params
       end
       success_message _('Interface was updated.')
@@ -199,11 +198,11 @@ module HammerCLIForeman
       def request_params
         params = HammerCLIForeman::ComputeAttribute.get_params(options)
         raise ArgumentError, "Compute profile value to update does not exist yet; it needs to be created first" if !params['compute_attribute'].key?('id')
-        compute_resource_name = HammerCLIForeman.record_to_common_format(HammerCLIForeman.foreman_resource(:compute_resources).call(:show, 'id' => options["option_compute_resource_id"] ))["provider_friendly_name"]
-        interfaces_attrs_name_list =  ::HammerCLIForeman.get_interfaces_list_name
+        compute_resource_name = HammerCLIForeman.record_to_common_format(HammerCLIForeman.foreman_resource(:compute_resources).call(:show, 'id' => options["option_compute_resource_id"] ))["provider_friendly_name"].downcase
+        interfaces_attr_name = ::HammerCLIForeman.compute_resources[compute_resource_name].interfaces_attrs_name
         params['id'] = params['compute_attribute']['id']
-        if params['compute_attribute']['vm_attrs'][interfaces_attrs_name_list[compute_resource_name]].has_key?(option_interface_id.to_s)
-          params['compute_attribute']['vm_attrs'][interfaces_attrs_name_list[compute_resource_name]].delete(option_interface_id.to_s)
+        if params['compute_attribute']['vm_attrs'][interfaces_attr_name].has_key?(option_interface_id.to_s)
+          params['compute_attribute']['vm_attrs'][interfaces_attr_name].delete(option_interface_id.to_s)
         else
           signal_usage_error _('unknown interface id')
         end
