@@ -39,10 +39,9 @@ describe 'compute-resource' do
     end
 
     it 'should print error for incorrect/invalid --provider option' do
-      params = %w(--provider=unknown)
-
+      params = %w(--provider=unknown --name=new)
       expected_result = CommandExpectation.new
-      expected_result.expected_err = options_missing_error
+      expected_result.expected_err = "Could not create the compute resource:\n  incorrect/invalid --provider option\n"
       expected_result.expected_exit_code = HammerCLI::EX_USAGE
 
       api_expects_no_call
@@ -53,12 +52,10 @@ describe 'compute-resource' do
     end
 
     it 'should print error for blank --provider option' do
-      params = %w(--provider='')
-
+      params = %w(--provider= --name=new'')
       expected_result = CommandExpectation.new
-      expected_result.expected_err = options_missing_error
+      expected_result.expected_err = "Could not create the compute resource:\n  incorrect/invalid --provider option\n"
       expected_result.expected_exit_code = HammerCLI::EX_USAGE
-
       api_expects_no_call
 
       result = run_cmd(@cmd + params)

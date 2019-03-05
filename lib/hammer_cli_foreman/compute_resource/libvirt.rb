@@ -38,7 +38,12 @@ module HammerCLIForeman
       def interfaces_attrs_name
         "nics_attributes"
       end
+
+      def mandatory_resource_options
+        super + [:url]
+      end
+
     end
-    HammerCLIForeman.register_compute_resource('Libvirt', Libvirt.new)
+    HammerCLIForeman.register_compute_resource('libvirt', Libvirt.new)
   end
 end

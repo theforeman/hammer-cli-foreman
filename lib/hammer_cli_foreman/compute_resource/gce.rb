@@ -18,6 +18,6 @@ module HammerCLIForeman
         "network_interfaces_nics_attributes"
       end
     end
-    HammerCLIForeman.register_compute_resource('GCE', GCE.new)
+    HammerCLIForeman.register_compute_resource('gce', GCE.new)
   end
 end
