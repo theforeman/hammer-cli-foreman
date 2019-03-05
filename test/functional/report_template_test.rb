@@ -219,17 +219,21 @@ describe 'report-template' do
     end
   end
 
+  let(:generated_report_response) do
+    response = mock()
+    response.stubs(:body).returns('Report')
+    response.stubs(:headers).returns({:content_disposition => "filename=\"#{File.basename(tempfile.path)}\""})
+    response
+  end
+
   describe 'generate' do
     let(:cmd) { %w(report-template generate) }
     let(:tempfile) { Tempfile.new('template', '/tmp') }
 
     it 'generates the report to the file' do
       params = ['--id=3', '--path=/tmp', '--inputs=Host filter=filter']
-      response = mock()
-      response.stubs(:body).returns('Report')
-      response.stubs(:headers).returns({:content_disposition => "filename=\"#{File.basename(tempfile.path)}\""})
       api_expects(:report_templates, :generate, 'Generate').with_params(
-        'id' => '3', "input_values" => {"Host filter" => "filter"}).returns(response)
+        'id' => '3', "input_values" => {"Host filter" => "filter"}).returns(generated_report_response)
 
       output = OutputMatcher.new("The response has been saved to #{tempfile.path}")
       expected_result = success_result(output)
@@ -240,15 +244,65 @@ describe 'report-template' do
 
     it 'generates the report to stdout' do
       params = ['--id=3', '--inputs=Host filter=filter']
-      response = mock()
-      response.stubs(:body).returns('Report')
       api_expects(:report_templates, :generate, 'Generate').with_params(
-        'id' => '3', "input_values" => {"Host filter" => "filter"}).returns(response)
+        'id' => '3', "input_values" => {"Host filter" => "filter"}).returns(generated_report_response)
 
       output = OutputMatcher.new('Report')
       expected_result = success_result(output)
       result = run_cmd(cmd + params)
       assert_cmd(expected_result, result)
+    end
+  end
+
+  describe 'schedule' do
+    let(:cmd) { %w(report-template schedule) }
+    let(:tempfile) { Tempfile.new('template', '/tmp') }
+
+    let(:schedule_response) do
+      job_id = 'JOB-UNIQUE-ID'
+      { 'job_id' => job_id, 'data_url' => "/report_data/#{job_id}" }
+    end
+
+    context 'without --wait' do
+      it 'schedule report and prints out data for getting the result' do
+        params = ['--id=3', '--inputs=Host filter=filter']
+        api_expects(:report_templates, :schedule_report, 'Schedule').with_params(
+          'id' => '3', "input_values" => {"Host filter" => "filter"}).returns(schedule_response)
+
+        output = OutputMatcher.new(schedule_response['job_id'])
+        expected_result = success_result(output)
+        result = run_cmd(cmd + params)
+        assert_cmd(expected_result, result)
+      end
+    end
+
+    context 'with --wait' do
+      it 'generates the report to the file' do
+        params = ['--id=3', '--inputs=Host filter=filter', '--wait', '--path=/tmp']
+        api_expects(:report_templates, :schedule_report, 'Schedule').with_params(
+          'id' => '3', "input_values" => {"Host filter" => "filter"}).returns(schedule_response)
+        api_expects(:report_templates, :report_data, 'Download report').with_params(
+          'id' => '3', 'job_id' => 'JOB-UNIQUE-ID').returns(generated_report_response)
+
+        output = OutputMatcher.new("The response has been saved to #{tempfile.path}")
+        expected_result = success_result(output)
+        result = run_cmd(cmd + params)
+        assert_cmd(expected_result, result)
+        assert_equal('Report', tempfile.read)
+      end
+
+      it 'generates the report to stdout' do
+        params = ['--id=3', '--inputs=Host filter=filter', '--wait']
+        api_expects(:report_templates, :schedule_report, 'Schedule').with_params(
+          'id' => '3', "input_values" => {"Host filter" => "filter"}).returns(schedule_response)
+        api_expects(:report_templates, :report_data, 'Download report').with_params(
+          'id' => '3', 'job_id' => 'JOB-UNIQUE-ID').returns(generated_report_response)
+
+        output = OutputMatcher.new('Report')
+        expected_result = success_result(output)
+        result = run_cmd(cmd + params)
+        assert_cmd(expected_result, result)
+      end
     end
   end
 end

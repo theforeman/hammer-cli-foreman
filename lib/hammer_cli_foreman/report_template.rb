@@ -77,6 +77,62 @@ module HammerCLIForeman
       build_options
     end
 
+    class ScheduleCommand < HammerCLIForeman::CreateCommand
+      command_name "schedule"
+      action :schedule_report
+      desc _("Schedule report generation")
+
+      option '--inputs', 'INPUTS', N_('Specify inputs'),
+        :format => HammerCLI::Options::Normalizers::KeyValueList.new
+      option '--wait', :flag, _('Turns a command to be active, wait for the result and download it right away')
+      option '--path', "PATH", _("Path to directory where downloaded content will be saved. Only usable if wait is specified"),
+        :attribute_name => :option_path
+
+      def request_params
+        params = super
+        params['input_values'] = option_inputs || {}
+        params
+      end
+
+      def execute
+        api =  resource.instance_variable_get(:@api)
+        resource = api.resource(:report_templates)
+        data = send_request
+        if option_wait?
+          report_data_args = build_report_data_args(data)
+          ReportDataCommand.new(invocation_path, context).run(report_data_args)
+        else
+          puts data['job_id']
+          HammerCLI::EX_OK
+        end
+      end
+
+      build_options
+
+      private
+
+      def build_report_data_args(data)
+        [
+          '--id', option_id,
+          '--job-id', data['job_id'],
+          '--path', option_path
+        ]
+      end
+    end
+
+    class ReportDataCommand < HammerCLIForeman::DownloadCommand
+      command_name "report_data"
+      action :report_data
+      desc _("Download generated report")
+
+      option ['--job-id', '-j'], 'JOB', N_('ID assigned to generation job by the schedule command')
+
+      def default_filename
+        "Report-#{Time.new.strftime("%Y-%m-%d")}.txt"
+      end
+
+      build_options
+    end
 
     class CreateCommand < HammerCLIForeman::CreateCommand
       option ['--interactive', '-i'], :flag, _('Open empty template in an $EDITOR. Upload the result')
