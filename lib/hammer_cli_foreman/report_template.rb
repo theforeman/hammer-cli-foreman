@@ -80,7 +80,6 @@ module HammerCLIForeman
     class ScheduleCommand < HammerCLIForeman::CreateCommand
       command_name "schedule"
       action :schedule_report
-      desc _("Schedule report generation")
 
       option '--inputs', 'INPUTS', N_('Specify inputs'),
         :format => HammerCLI::Options::Normalizers::KeyValueList.new
@@ -95,12 +94,9 @@ module HammerCLIForeman
       end
 
       def execute
-        api =  resource.instance_variable_get(:@api)
-        resource = api.resource(:report_templates)
         data = send_request
         if option_wait?
-          report_data_args = build_report_data_args(data)
-          ReportDataCommand.new(invocation_path, context).run(report_data_args)
+          poll_for_report(data)
         else
           puts data['job_id']
           HammerCLI::EX_OK
@@ -111,27 +107,54 @@ module HammerCLIForeman
 
       private
 
-      def build_report_data_args(data)
+      def poll_for_report(schedule_data)
+        report_data_args = build_report_data_args(schedule_data)
+        report_command = ReportDataCommand.new(invocation_path, context)
+        report_command.parse(report_data_args)
+        begin
+          response = report_command.send_request
+        end while response && response.code == 204
+        report_command.handle_success(response)
+      end
+
+      def build_report_data_args(schedule_data)
         [
           '--id', option_id,
-          '--job-id', data['job_id'],
+          '--job-id', schedule_data['job_id'],
           '--path', option_path
         ]
       end
     end
 
     class ReportDataCommand < HammerCLIForeman::DownloadCommand
-      command_name "report_data"
+      command_name "report-data"
       action :report_data
-      desc _("Download generated report")
-
-      option ['--job-id', '-j'], 'JOB', N_('ID assigned to generation job by the schedule command')
 
       def default_filename
         "Report-#{Time.new.strftime("%Y-%m-%d")}.txt"
       end
 
       build_options
+
+      def execute
+        response = send_request
+        if response.code == 204
+          print_message(_('The report is not ready yet.'))
+          return HammerCLI::EX_OK
+        else
+          handle_success(response)
+        end
+      end
+
+      def handle_success(response)
+        if option_path
+          filepath = store_response(response)
+          print_message(_('The response has been saved to %{path}s.'), {:path => filepath})
+        else
+          puts response.body
+        end
+        return HammerCLI::EX_OK
+      end
     end
 
     class CreateCommand < HammerCLIForeman::CreateCommand

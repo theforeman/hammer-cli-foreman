@@ -220,10 +220,14 @@ describe 'report-template' do
   end
 
   let(:generated_report_response) do
-    response = mock()
+    response = mock('ReportResponse')
+    response.stubs(:code).returns(200)
     response.stubs(:body).returns('Report')
     response.stubs(:headers).returns({:content_disposition => "filename=\"#{File.basename(tempfile.path)}\""})
     response
+  end
+  let(:report_not_ready_response) do
+    mock('NoDataResponse', code: 204)
   end
 
   describe 'generate' do
@@ -303,6 +307,48 @@ describe 'report-template' do
         result = run_cmd(cmd + params)
         assert_cmd(expected_result, result)
       end
+
+      it 'polls for report while not ready' do
+        params = ['--id=3', '--inputs=Host filter=filter', '--wait']
+        api_expects(:report_templates, :schedule_report, 'Schedule').with_params(
+          'id' => '3', "input_values" => {"Host filter" => "filter"}).returns(schedule_response)
+        api_expects(:report_templates, :report_data, 'No data first, download second call')
+          .twice.with_params('id' => '3', 'job_id' => 'JOB-UNIQUE-ID')
+          .returns(report_not_ready_response)
+          .then.returns(generated_report_response)
+
+        output = OutputMatcher.new('Report')
+        expected_result = success_result(output)
+        result = run_cmd(cmd + params)
+        assert_cmd(expected_result, result)
+      end
+    end
+  end
+
+  describe 'report-data' do
+    let(:cmd) { %w(report-template report-data) }
+    let(:tempfile) { Tempfile.new('template', '/tmp') }
+    let(:params) { ['--id=3', '--path=/tmp', '--job-id=JOB-UNIQUE-ID'] }
+
+    it 'download data if ready' do
+      api_expects(:report_templates, :report_data, 'Download report').with_params(
+        'id' => '3', 'job_id' => 'JOB-UNIQUE-ID').returns(generated_report_response)
+
+      output = OutputMatcher.new("The response has been saved to #{tempfile.path}")
+      expected_result = success_result(output)
+      result = run_cmd(cmd + params)
+      assert_cmd(expected_result, result)
+      assert_equal('Report', tempfile.read)
+    end
+
+    it 'let user know data are not ready' do
+      api_expects(:report_templates, :report_data, 'Download report').with_params(
+        'id' => '3', 'job_id' => 'JOB-UNIQUE-ID').returns(report_not_ready_response)
+
+      output = OutputMatcher.new("The report is not ready yet.")
+      expected_result = success_result(output)
+      result = run_cmd(cmd + params)
+      assert_cmd(expected_result, result)
     end
   end
 end
