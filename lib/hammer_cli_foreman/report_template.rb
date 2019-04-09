@@ -98,9 +98,9 @@ module HammerCLIForeman
         if option_wait?
           poll_for_report(data)
         else
-          puts data['job_id']
-          HammerCLI::EX_OK
+          print_message(_('The report has been scheduled. Job ID: %{job_id}') % { job_id: data['job_id'] })
         end
+        HammerCLI::EX_OK
       end
 
       build_options
@@ -140,20 +140,19 @@ module HammerCLIForeman
         response = send_request
         if response.code == 204
           print_message(_('The report is not ready yet.'))
-          return HammerCLI::EX_OK
         else
           handle_success(response)
         end
+        HammerCLI::EX_OK
       end
 
       def handle_success(response)
         if option_path
           filepath = store_response(response)
-          print_message(_('The response has been saved to %{path}s.'), {:path => filepath})
+          print_message(_('The response has been saved to %{path}.'), {:path => filepath})
         else
           puts response.body
         end
-        return HammerCLI::EX_OK
       end
     end
 
