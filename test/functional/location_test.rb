@@ -48,16 +48,16 @@ describe "parameters" do
       assert_cmd(expected_result, result)
     end
 
-
     it "should create new parameter" do
-      params = ['--name=A', '--value=1', '--location-id=3']
+      params = ['--name=A', '--value=1', '--parameter-type=integer', '--location-id=3']
 
       api_expects(:parameters, :index, 'Attempt find parameters') do |par|
         par['location_id'].to_i == 3
       end.returns(index_response([]))
       api_expects(:parameters, :create, 'Create parameter') do |par|
         par['parameter']['name'] == 'A' &&
-        par['parameter']['value'] == '1'
+        par['parameter']['value'] == '1' &&
+        par['parameter']['parameter_type'] == 'integer'
       end.returns({:name => 'A', :value => '1'})
 
       result = run_cmd(@cmd + params)
@@ -66,7 +66,7 @@ describe "parameters" do
 
 
     it "should update existing parameter" do
-      params = ['--name=A', '--value=1', '--location-id=3']
+      params = ['--name=A', '--value=1', '--parameter-type=integer', '--location-id=3']
 
       api_expects(:parameters, :index, 'Find parameter') do |par|
         par['location_id'].to_i == 3
@@ -74,7 +74,8 @@ describe "parameters" do
       api_expects(:parameters, :update, 'Update parameter') do |par|
         par['id'].to_i == 15 &&
         par['location_id'].to_i == 3 &&
-        par['parameter']['value'] == '1'
+        par['parameter']['value'] == '1' &&
+        par['parameter']['parameter_type'] == 'integer'
       end.returns({:name => 'A', :value => '1'})
 
       result = run_cmd(@cmd + params)

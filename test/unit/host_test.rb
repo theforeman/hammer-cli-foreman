@@ -318,6 +318,7 @@ describe HammerCLIForeman::Host do
     context "parameters" do
       it_should_accept "name, value and host name", ["--name=name", "--value=val", "--host=name"]
       it_should_accept "name, value and host id", ["--name=name", "--value=val", "--host-id=1"]
+      it_should_accept "name, value, type and host id", ["--name=name", "--parameter-type=integer", "--value=1", "--host-id=1"]
       it_should_fail_with "name missing", ["--value=val", "--host=name"]
       it_should_fail_with "value missing", ["--name=name", "--host=name"]
       # it_should_fail_with "host name or id missing", ["--name=name", "--value=val"]
