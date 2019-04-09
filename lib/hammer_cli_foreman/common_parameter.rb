@@ -30,8 +30,7 @@ module HammerCLIForeman
       option "--hidden-value", "HIDDEN_VALUE", _("Should the value be hidden"), :format => HammerCLI::Options::Normalizers::Bool.new
       option "--parameter-type", "PARAMETER_TYPE", _("Type of the parameter"),
         :default => 'string',
-        :format => HammerCLI::Options::Normalizers::Enum.new(
-            ['string', 'boolean', 'integer', 'real', 'array', 'hash', 'yaml', 'json'])
+        :format => HammerCLI::Options::Normalizers::Enum.new(Parameter::KEY_TYPES)
 
       def action
         @action ||= parameter_exist? ? :update : :create

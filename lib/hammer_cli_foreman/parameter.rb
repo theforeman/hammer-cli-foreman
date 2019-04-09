@@ -4,6 +4,8 @@ module HammerCLIForeman
 
   module Parameter
 
+    KEY_TYPES = ['string', 'boolean', 'integer', 'real', 'array', 'hash', 'yaml', 'json']
+
     class AbstractParameterCommand < HammerCLIForeman::Command
 
       def self.parameter_resource
@@ -50,8 +52,7 @@ module HammerCLIForeman
       option "--value", "VALUE", _("Parameter value"), :required => true
       option "--parameter-type", "PARAMETER_TYPE", _("Type of the parameter"),
         :default => 'string',
-        :format => HammerCLI::Options::Normalizers::Enum.new(
-            ['string', 'boolean', 'integer', 'real', 'array', 'hash', 'yaml', 'json'])
+        :format => HammerCLI::Options::Normalizers::Enum.new(Parameter::KEY_TYPES)
       option "--hidden-value", "HIDDEN_VALUE", _("Should the value be hidden"), :format => HammerCLI::Options::Normalizers::Bool.new
 
       def self.command_name(name=nil)

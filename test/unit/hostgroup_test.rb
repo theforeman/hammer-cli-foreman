@@ -101,7 +101,7 @@ describe HammerCLIForeman::Hostgroup do
     let(:cmd) { HammerCLIForeman::Hostgroup::SetParameterCommand.new("", ctx) }
 
     context "parameters" do
-      it_should_accept "name, value and hostgroup id", ["--name=name", "--value=val", "--hostgroup-id=1"]
+      it_should_accept "name, value, parameter-type and hostgroup id", ["--name=name", "--parameter-type=string", "--value=val", "--hostgroup-id=1"]
       it_should_fail_with "name missing", ["--value=val", "--hostgroup-id=1"]
       it_should_fail_with "value missing", ["--name=name", "--hostgroup-id=1"]
       # it_should_fail_with "hostgroup id missing", ["--name=name", "--value=val"] # TODO: temporarily disabled, parameters are checked in the id resolver

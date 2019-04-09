@@ -125,6 +125,7 @@ describe HammerCLIForeman::OperatingSystem do
     context "parameters" do
       it_should_accept "name, value and os id", ["--name=domain", "--value=val", "--operatingsystem-id=1"]
       it_should_accept "name, value and os title", ["--name=domain", "--value=val", "--operatingsystem=Rhel 6.5"]
+      it_should_accept "name, value, type and os id", ["--name=domain", "--value=val", "--parameter-type=string", "--operatingsystem-id=1"]
       # it_should_fail_with "name missing", ["--value=val", "--operatingsystem-id=id"]
       # it_should_fail_with "value missing", ["--name=name", "--operatingsystem-id=id"]
       # it_should_fail_with "os id missing", ["--name=name", "--value=val"]

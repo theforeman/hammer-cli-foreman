@@ -37,7 +37,7 @@ describe HammerCLIForeman::CommonParameter do
     let(:cmd) { HammerCLIForeman::CommonParameter::SetCommand.new("", ctx) }
 
     context "parameters" do
-      it_should_accept "name, value and hidden-value", ["--name=param", "--value=val", "--hidden-value=true"]
+      it_should_accept "name, value, parameter-type and hidden-value", ["--name=param", "--value=val", "--parameter-type=string", "--hidden-value=true"]
       # it_should_fail_with "name missing", ["--value=val"]
       # it_should_fail_with "value missing", ["--name=param"]
       # TODO: temporarily disabled, parameters are checked by the api
@@ -48,7 +48,7 @@ describe HammerCLIForeman::CommonParameter do
         ResourceMocks.mock_action_calls(
           [:common_parameters, :index, []],
           [:common_parameters, :create,
-            {"id" => 1, "name" => "param", "value" => "val", "hidden-value" => false},
+            {"id" => 1, "name" => "param", "value" => "val", "parameter-type" => "string", "hidden-value" => false},
             {'common_parameter' => {'name' => 'param', 'value' => 'val', 'parameter_type' => 'string', 'hidden_value' => false}, 'id' => 'param'}])
       end
       with_params ["--name=param", "--value=val", "--hidden-value=false"] do
@@ -75,11 +75,11 @@ describe HammerCLIForeman::CommonParameter do
         ResourceMocks.mock_action_calls(
           [:common_parameters, :index, []],
           [:common_parameters, :create,
-            {"id" => 2, "name" => "xyz", "value" => "who", "parameter-type" => "string", "hidden-value" => false},
-            {'common_parameter' => {'name' => 'xyz', 'value' => 'who', 'parameter_type' => 'string', 'hidden_value' => false}, 'id' => 'xyz'}])
+            {"id" => 2, "name" => "xyz", "value" => "1", "parameter-type" => "integer", "hidden-value" => false},
+            {'common_parameter' => {'name' => 'xyz', 'value' => '1', 'parameter_type' => 'integer', 'hidden_value' => false}, 'id' => 'xyz'}])
       end
-      with_params ["--name=xyz", "--value=who", "--parameter-type=string", "--hidden-value=false"] do
-        it_should_output "Created parameter [xyz] with value [who].,2,xyz", :csv
+      with_params ["--name=xyz", "--value=1", "--parameter-type=integer", "--hidden-value=false"] do
+        it_should_output "Created parameter [xyz] with value [1].,2,xyz", :csv
       end
     end
   end

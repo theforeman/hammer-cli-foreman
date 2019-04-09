@@ -4,8 +4,7 @@ module HammerCLIForeman
 
     def self.included(base)
       base.option "--variable-type", "VARIABLE_TYPE", _("Type of the variable"),
-                  :format => HammerCLI::Options::Normalizers::Enum.new(
-                      ['string', 'boolean', 'integer', 'real', 'array', 'hash', 'yaml', 'json'])
+                  :format => HammerCLI::Options::Normalizers::Enum.new(Parameter::KEY_TYPES)
       base.option "--validator-type", "VALIDATOR_TYPE", _("Type of the validator"),
                   :format => HammerCLI::Options::Normalizers::Enum.new(['regexp', 'list', ''])
       base.option "--override-value-order", "OVERRIDE_VALUE_ORDER", _("The order in which values are resolved"),
