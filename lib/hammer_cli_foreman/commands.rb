@@ -315,24 +315,25 @@ module HammerCLIForeman
 
   class AssociatedListSearchCommand < ListCommand
     def self.search_resource(res, action = :index)
-      resource res, action
+      resource(res, action)
       default_search_options
     end
 
     def self.default_search_options
-      option("--id", "ID", _("%s Id") % module_resource.singular_name)
-      option("--name", "NAME", _("%s name") % module_resource.singular_name)
+      option("--#{module_resource.singular_name}-id", "ID", _("%s Id") % module_resource.singular_name)
+      option("--#{module_resource.singular_name}-name", "NAME", _("%s name") % module_resource.singular_name)
     end
 
     def self.search_options_mapping(mapping = {})
-      { "name" => module_resource.singular_name,
-        "id" => "#{module_resource.singular_name}_id"
+      {
+        module_resource.singular_name => module_resource.singular_name,
+        "#{module_resource.singular_name}_id" => "#{module_resource.singular_name}_id"
       }.merge mapping
     end
 
     def validate_options
       super
-      validator.any("option_name".to_sym, "option_id".to_sym).required
+      validator.any("option_#{parent_resource_name}_name".to_sym, "option_#{parent_resource_name}_id".to_sym).required
     end
 
     def parent_resource_name
@@ -344,11 +345,11 @@ module HammerCLIForeman
     end
 
     def parent_resource_name_attr
-      "name"
+      name_attr parent_resource_name
     end
 
     def parent_resource_id_attr
-      "id"
+      id_attr parent_resource_name
     end
 
     def name_attr(resource_name)
