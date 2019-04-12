@@ -346,7 +346,7 @@ describe 'report-template' do
         'id' => '3', 'job_id' => 'JOB-UNIQUE-ID').returns(report_not_ready_response)
 
       output = OutputMatcher.new("The report is not ready yet.")
-      expected_result = success_result(output)
+      expected_result = CommandExpectation.new(output, '', HammerCLI::EX_TEMPFAIL)
       result = run_cmd(cmd + params)
       assert_cmd(expected_result, result)
     end

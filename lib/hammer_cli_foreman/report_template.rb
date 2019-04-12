@@ -140,10 +140,11 @@ module HammerCLIForeman
         response = send_request
         if response.code == 204
           print_message(_('The report is not ready yet.'))
+          HammerCLI::EX_TEMPFAIL
         else
           handle_success(response)
+          HammerCLI::EX_OK
         end
-        HammerCLI::EX_OK
       end
 
       def handle_success(response)
