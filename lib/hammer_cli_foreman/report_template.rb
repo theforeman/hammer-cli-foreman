@@ -77,6 +77,85 @@ module HammerCLIForeman
       build_options
     end
 
+    class ScheduleCommand < HammerCLIForeman::CreateCommand
+      command_name "schedule"
+      action :schedule_report
+
+      option '--inputs', 'INPUTS', N_('Specify inputs'),
+        :format => HammerCLI::Options::Normalizers::KeyValueList.new
+      option '--wait', :flag, _('Turns a command to be active, wait for the result and download it right away')
+      option '--path', "PATH", _("Path to directory where downloaded content will be saved. Only usable if wait is specified"),
+        :attribute_name => :option_path
+
+      def request_params
+        params = super
+        params['input_values'] = option_inputs || {}
+        params
+      end
+
+      def execute
+        data = send_request
+        if option_wait?
+          poll_for_report(data)
+        else
+          print_message(_('The report has been scheduled. Job ID: %{job_id}') % { job_id: data['job_id'] })
+        end
+        HammerCLI::EX_OK
+      end
+
+      build_options
+
+      private
+
+      def poll_for_report(schedule_data)
+        report_data_args = build_report_data_args(schedule_data)
+        report_command = ReportDataCommand.new(invocation_path, context)
+        report_command.parse(report_data_args)
+        begin
+          response = report_command.send_request
+        end while response && response.code == 204
+        report_command.handle_success(response)
+      end
+
+      def build_report_data_args(schedule_data)
+        [
+          '--id', option_id,
+          '--job-id', schedule_data['job_id'],
+          '--path', option_path
+        ]
+      end
+    end
+
+    class ReportDataCommand < HammerCLIForeman::DownloadCommand
+      command_name "report-data"
+      action :report_data
+
+      def default_filename
+        "Report-#{Time.new.strftime("%Y-%m-%d")}.txt"
+      end
+
+      build_options
+
+      def execute
+        response = send_request
+        if response.code == 204
+          print_message(_('The report is not ready yet.'))
+          HammerCLI::EX_TEMPFAIL
+        else
+          handle_success(response)
+          HammerCLI::EX_OK
+        end
+      end
+
+      def handle_success(response)
+        if option_path
+          filepath = store_response(response)
+          print_message(_('The response has been saved to %{path}.'), {:path => filepath})
+        else
+          puts response.body
+        end
+      end
+    end
 
     class CreateCommand < HammerCLIForeman::CreateCommand
       option ['--interactive', '-i'], :flag, _('Open empty template in an $EDITOR. Upload the result')
