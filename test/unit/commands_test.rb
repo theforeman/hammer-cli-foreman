@@ -142,7 +142,7 @@ describe HammerCLIForeman do
       class DomainOuter < HammerCLIForeman::Command
         resource :domains
 
-        class HostsCommand < HammerCLIForeman::ListSearchCommand
+        class HostsCommand < HammerCLIForeman::AssociatedListSearchCommand
           command_name 'hosts'
           search_resource :hosts
 
@@ -152,7 +152,7 @@ describe HammerCLIForeman do
         end
       end
       comm = DomainOuter::HostsCommand.new("", { :adapter => :csv, :interactive => false })
-      out, err = capture_io { comm.run(["--id=5"]) }
+      out, err = capture_io { comm.run(["--host-id=5"]) }
       out.must_equal "Id,Name,Operating System,Host Group,IP,MAC\n2,random-host,\"\",\"\",192.168.100.112,6e:4b:3c:2c:8a:0a\n"
     end
   end
