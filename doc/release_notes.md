@@ -1,5 +1,18 @@
 Release notes
 =============
+### 0.17.0 (2019-04-24)
+* Add public key option in create compute resource CLI ([#25491](http://projects.theforeman.org/issues/25491))
+* Background template rendering ([PR #414](https://github.com/theforeman/hammer-cli-foreman/pull/414)) ([#26355](http://projects.theforeman.org/issues/26355))
+* Parameter type to parameter commands ([#26008](http://projects.theforeman.org/issues/26008))
+* New API data that needed for parameter_type fix ([#26008](http://projects.theforeman.org/issues/26008))
+* parameter_type option to parameter commands ([#26008](http://projects.theforeman.org/issues/26008))
+* Move compute resource validation to their class ([#26234](http://projects.theforeman.org/issues/26234))
+* Improve documentation of id fields in ovirt ([#26334](http://projects.theforeman.org/issues/26334))
+* Add rebuild-config subcommand for hostgroups ([#26129](http://projects.theforeman.org/issues/26129))
+* Add compute profile commands ([PR #398](https://github.com/theforeman/hammer-cli-foreman/pull/398)) ([#20538](http://projects.theforeman.org/issues/20538))
+* Display uptime ([#26019](http://projects.theforeman.org/issues/26019))
+* Hammer host update and set-parameters need clarification ([#25964](http://projects.theforeman.org/issues/25964))
+
 ### 0.16.0 (2019-01-16)
 * Use make targets for translations from core ([#25724](http://projects.theforeman.org/issues/25724))
 * Allow mixing option sources and validations ([PR #402](https://github.com/theforeman/hammer-cli-foreman/pull/402)) ([#22253](http://projects.theforeman.org/issues/22253))
