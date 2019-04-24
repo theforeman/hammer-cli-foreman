@@ -5,9 +5,9 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: hammer-cli-foreman 0.16.0\n"
+"Project-Id-Version: hammer-cli-foreman 0.17.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-01-17 00:18+0100\n"
+"POT-Creation-Date: 2019-04-24 12:43+0200\n"
 "PO-Revision-Date: 2018-10-24 10:54+0200\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -27,6 +27,9 @@ msgid "Manipulate auth sources"
 msgstr ""
 
 msgid "Search audit trails."
+msgstr ""
+
+msgid "Manipulate compute profiles"
 msgstr ""
 
 msgid "Manipulate compute resources"
@@ -704,6 +707,9 @@ msgstr ""
 msgid "Cannot save file: %s does not exist"
 msgstr ""
 
+msgid "Type"
+msgstr ""
+
 msgid "Set a global parameter"
 msgstr ""
 
@@ -722,6 +728,9 @@ msgstr ""
 msgid "Should the value be hidden"
 msgstr ""
 
+msgid "Type of the parameter"
+msgstr ""
+
 msgid "Global parameter [%{name}] deleted."
 msgstr ""
 
@@ -729,6 +738,132 @@ msgid "Could not delete the global parameter [%{name}]"
 msgstr ""
 
 msgid "Manipulate global parameters"
+msgstr ""
+
+msgid "Create compute profile set of values"
+msgstr ""
+
+msgid "Compute resource attributes"
+msgstr ""
+
+msgid "Interface parameters, should be comma separated list of values"
+msgstr ""
+
+msgid "Volume parameters, should be comma separated list of values"
+msgstr ""
+
+msgid "Compute profile attributes are set."
+msgstr ""
+
+msgid "Could not set the compute profile attributes"
+msgstr ""
+
+msgid "Update compute profile values"
+msgstr ""
+
+msgid "Compute resource attributes, should be comma separated list of values"
+msgstr ""
+
+msgid "Compute profile attributes updated."
+msgstr ""
+
+msgid "Could not update the compute profile attributes"
+msgstr ""
+
+msgid "Add interface for Compute Profile"
+msgstr ""
+
+msgid "Interface was created."
+msgstr ""
+
+msgid "Could not create interface"
+msgstr ""
+
+msgid "Update compute profile interface"
+msgstr ""
+
+msgid "Interface id"
+msgstr ""
+
+msgid "Interface was updated."
+msgstr ""
+
+msgid "Could not update interface"
+msgstr ""
+
+msgid "Remove compute profile interface"
+msgstr ""
+
+msgid "unknown interface id"
+msgstr ""
+
+msgid "Interface was removed."
+msgstr ""
+
+msgid "Could not remove interface"
+msgstr ""
+
+msgid "Add volume for Compute Profile"
+msgstr ""
+
+msgid "Volume was created."
+msgstr ""
+
+msgid "Could not create volume"
+msgstr ""
+
+msgid "Update compute profile volume"
+msgstr ""
+
+msgid "Volume id"
+msgstr ""
+
+msgid "Volume was updated."
+msgstr ""
+
+msgid "Could not update volume"
+msgstr ""
+
+msgid "Remove compute profile volume"
+msgstr ""
+
+msgid "unknown volume id"
+msgstr ""
+
+msgid "Volume was removed."
+msgstr ""
+
+msgid "Could not remove volume"
+msgstr ""
+
+msgid "Compute attributes"
+msgstr ""
+
+msgid "Compute Resource"
+msgstr ""
+
+msgid "VM attributes"
+msgstr ""
+
+msgid "Compute profile created."
+msgstr ""
+
+msgid "Could not create a compute profile"
+msgstr ""
+
+msgid "Compute profile updated."
+msgstr ""
+
+msgid "Could not update the compute profile"
+msgstr ""
+
+msgid "Compute profile deleted."
+msgstr ""
+
+msgid "Could not delete the Compute profile"
+msgstr ""
+
+msgid "Create update and delete Compute profile values"
 msgstr ""
 
 msgid "Provider"
@@ -747,6 +882,9 @@ msgid "Url"
 msgstr ""
 
 msgid "Description"
+msgstr ""
+
+msgid "Path to a file that contains oVirt public key (For oVirt only)"
 msgstr ""
 
 msgid "Compute resource created."
@@ -771,6 +909,9 @@ msgid "EC2"
 msgstr ""
 
 msgid "GCE"
+msgstr ""
+
+msgid "Provider specific options"
 msgstr ""
 
 msgid "Libvirt"
@@ -803,6 +944,9 @@ msgstr ""
 msgid "oVirt"
 msgstr ""
 
+msgid "ID of cluster to use"
+msgstr ""
+
 msgid "Hardware profile to use"
 msgstr ""
 
@@ -812,16 +956,16 @@ msgstr ""
 msgid "Amount of memory, integer value in bytes"
 msgstr ""
 
-msgid "Eg. eth0"
+msgid "compute name, Eg. eth0"
 msgstr ""
 
-msgid "Select one of available networks for a cluster"
+msgid "Select one of available networks for a cluster, must be an ID"
 msgstr ""
 
 msgid "Volume size in GB, integer value"
 msgstr ""
 
-msgid "Select one of available storage domains"
+msgid "ID of storage domain"
 msgstr ""
 
 msgid "Boolean, only one volume can be bootable"
@@ -869,10 +1013,18 @@ msgstr ""
 msgid "Must be a 1 or 0, lets you add CPU resources while the machine is on"
 msgstr ""
 
+msgid "Annotation Notes"
+msgstr ""
+
 msgid "Must be a 1 or 0, whether to start the machine or not"
 msgstr ""
 
-msgid "Annotation Notes"
+msgid "Type of the network adapter, for example one of:"
+msgstr ""
+
+msgid ""
+"See documentation center for your version of vSphere to find more details "
+"about available adapter types:"
 msgstr ""
 
 msgid "Network ID from VMware"
@@ -885,14 +1037,6 @@ msgid "Datastore ID from VMware"
 msgstr ""
 
 msgid "Integer number, volume size in GB"
-msgstr ""
-
-msgid "Type of the network adapter, for example one of:"
-msgstr ""
-
-msgid ""
-"See documentation center for your version of vSphere to find more details "
-"about available adapter types:"
 msgstr ""
 
 msgid "Config group created."
@@ -1207,9 +1351,6 @@ msgstr ""
 msgid "Location"
 msgstr ""
 
-msgid "Compute Resource"
-msgstr ""
-
 msgid "Compute Profile"
 msgstr ""
 
@@ -1229,6 +1370,9 @@ msgid "Managed"
 msgstr ""
 
 msgid "Installed at"
+msgstr ""
+
+msgid "Uptime (seconds)"
 msgstr ""
 
 msgid "Status"
@@ -1274,9 +1418,6 @@ msgid "Network interfaces"
 msgstr ""
 
 msgid "Identifier"
-msgstr ""
-
-msgid "Type"
 msgstr ""
 
 msgid "MAC address"
@@ -1368,7 +1509,7 @@ msgstr ""
 msgid "Could not delete the host"
 msgstr ""
 
-msgid "Create or update parameter for a host"
+msgid "Create or append a parameter for a host"
 msgstr ""
 
 msgid "Host parameter updated"
@@ -1515,6 +1656,9 @@ msgstr ""
 msgid "Hostgroup parameter deleted."
 msgstr ""
 
+msgid "Could not rebuild configuration"
+msgstr ""
+
 msgid "Available keys for %{option}"
 msgstr ""
 
@@ -1538,9 +1682,6 @@ msgstr ""
 msgid "always IPMI"
 msgstr ""
 
-msgid "Provider specific options"
-msgstr ""
-
 msgid "Login of the owner"
 msgstr ""
 
@@ -1552,10 +1693,7 @@ msgid ""
 "default password in settings"
 msgstr ""
 
-msgid "Host parameters"
-msgstr ""
-
-msgid "Compute resource attributes"
+msgid "Replaces with new host parameters"
 msgstr ""
 
 msgid "Volume parameters"
@@ -1571,6 +1709,9 @@ msgid "Architecture name"
 msgstr ""
 
 msgid "Compute resource name"
+msgstr ""
+
+msgid "Compute profile name"
 msgstr ""
 
 msgid "Domain name"
@@ -2107,6 +2248,9 @@ msgstr ""
 msgid "Smart proxies"
 msgstr ""
 
+msgid "Compute profiles"
+msgstr ""
+
 msgid "Compute resources"
 msgstr ""
 
@@ -2162,6 +2306,24 @@ msgid "Generate report"
 msgstr ""
 
 msgid "Specify inputs"
+msgstr ""
+
+msgid ""
+"Turns a command to be active, wait for the result and download it right away"
+msgstr ""
+
+msgid ""
+"Path to directory where downloaded content will be saved. Only usable if "
+"wait is specified"
+msgstr ""
+
+msgid "The report has been scheduled. Job ID: %{job_id}"
+msgstr ""
+
+msgid "The report is not ready yet."
+msgstr ""
+
+msgid "The response has been saved to %{path}."
 msgstr ""
 
 msgid "Open empty template in an $EDITOR. Upload the result"
@@ -2295,9 +2457,6 @@ msgid "Override this parameter"
 msgstr ""
 
 msgid "This parameter is required"
-msgstr ""
-
-msgid "Type of the parameter"
 msgstr ""
 
 msgid "Type of the validator"
