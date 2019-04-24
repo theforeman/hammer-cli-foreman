@@ -43,7 +43,9 @@ module HammerCLIForeman
           Fields::Field.new(:label => _('Server'), :path => [:server])
         ],
         'openstack' => [
-          Fields::Field.new(:label => _('Tenant'), :path => [:tenant])
+          Fields::Field.new(:label => _('Tenant'), :path => [:tenant]),
+          Fields::Field.new(:label => _('Project domain name'), :path => [:project_domain_name]),
+          Fields::Field.new(:label => _('Project domain ID'), :path => [:project_domain_id])
         ],
         'rackspace' => [
           Fields::Field.new(:label => _('Region'), :path => [:region])
