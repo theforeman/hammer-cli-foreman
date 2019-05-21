@@ -13,7 +13,7 @@ module HammerCLIForeman
         field :id, _("Id")
         field :title, _("Title")
         field :name, _("Name")
-        field :description, _("Description")
+        field :description, _("Description"), Fields::Text
       end
 
       build_options

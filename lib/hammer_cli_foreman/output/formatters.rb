@@ -1,8 +1,8 @@
 module HammerCLIForeman::Output
   module Formatters
     class ReferenceFormatter < HammerCLI::Output::Formatters::FieldFormatter
-      def tags
-        [:flat]
+      def required_features
+        %i[serialized]
       end
 
       # Parameters:
@@ -51,8 +51,8 @@ module HammerCLIForeman::Output
     end
 
     class StructuredReferenceFormatter < HammerCLI::Output::Formatters::FieldFormatter
-      def tags
-        [:data]
+      def required_features
+        %i[structured]
       end
 
       # Parameters:
@@ -103,4 +103,3 @@ module HammerCLIForeman::Output
     HammerCLI::Output::Output.register_formatter(StructuredReferenceFormatter.new, :Template)
   end
 end
-
