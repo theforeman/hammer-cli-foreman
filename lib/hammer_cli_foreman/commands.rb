@@ -219,6 +219,15 @@ module HammerCLIForeman
     RETRIEVE_ALL_PER_PAGE = 1000
     DEFAULT_PER_PAGE = 20
 
+    def self.output(definition = nil, &block)
+      super
+      begin
+        output_definition.update_field_sets('THIN', %i[id name])
+      rescue ArgumentError => e
+        # Some subcommands may not have such fields
+      end
+    end
+
     def adapter
       @context[:adapter] || :table
     end
@@ -267,6 +276,8 @@ module HammerCLIForeman
       super
     end
 
+    extend_with(HammerCLIForeman::CommandExtensions::Fields.new)
+
     protected
 
     def retrieve_all
@@ -303,7 +314,7 @@ module HammerCLIForeman
         ]
       end
     end
-   
+
     def search_field_help_value(field)
       if field[:values] && field[:values].is_a?(Array)
         _('Values') + ': ' + field[:values].join(', ')
@@ -353,6 +364,15 @@ module HammerCLIForeman
 
     action :show
 
+    def self.output(definition = nil, &block)
+      super
+      begin
+        output_definition.update_field_sets('THIN', %i[id name])
+      rescue ArgumentError => e
+        # Some subcommands may not have such fields
+      end
+    end
+
     def self.command_name(name=nil)
       super(name) || "info"
     end
@@ -370,6 +390,7 @@ module HammerCLIForeman
       print_record(output_definition, record)
     end
 
+    extend_with(HammerCLIForeman::CommandExtensions::Fields.new)
   end
 
 
