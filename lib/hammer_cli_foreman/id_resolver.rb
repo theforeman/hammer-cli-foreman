@@ -77,6 +77,7 @@ module HammerCLIForeman
   end
 
   class IdResolver
+    ALL_PER_PAGE = 1000
 
     attr_reader :api
 
@@ -218,10 +219,26 @@ module HammerCLIForeman
         search_options[param.name] ||= send(param.name, scoped_options(*scoped_options_params))
       end
       search_options = route_options(options, action).merge(search_options)
-
-      results = resource.call(action_name, search_options)
+      expected_count = expected_record_count(options, resource, :multi)
+      results = retrieve_all(resource, action_name, search_options, expected_count)
       results = HammerCLIForeman.collection_to_common_format(results)
       results
+    end
+
+    def retrieve_all(resource, action, search_options, expected_count = 1)
+      return resource.call(action, search_options) unless action == :index
+
+      search_options[:per_page] = ALL_PER_PAGE
+      search_options[:page] = 1
+      data = resource.call(action, search_options)
+      last_page = ([expected_count, 1].max.to_f / ALL_PER_PAGE).ceil
+      all = data
+      while search_options[:page] != last_page
+        search_options[:page] += 1
+        data = resource.call(action, search_options)
+        all = deep_merge(all, data)
+      end
+      all
     end
 
     def route_options(options, action)
@@ -341,6 +358,21 @@ module HammerCLIForeman
         end
       end
       {}
+    end
+
+    private
+
+    def deep_merge(dest, src)
+      dest = dest.clone
+      dest.merge!(src) do |_key, old_val, new_val|
+        if old_val.is_a?(Hash) && new_val.is_a?(Hash)
+          deep_merge(old_val, new_val)
+        elsif old_val.is_a?(Array) && new_val.is_a?(Array)
+          old_val += new_val
+        else
+          new_val
+        end
+      end
     end
 
   end
