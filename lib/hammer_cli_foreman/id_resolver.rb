@@ -38,7 +38,8 @@ module HammerCLIForeman
       :compute_resource => [ s_name(_("Compute resource name")) ],
       :compute_profile => [ s_name(_("Compute profile name")) ],
       :domain =>           [ s_name(_("Domain name")) ],
-      :environment =>      [ s_name(_("Environment name")) ],
+      :environment =>        [s_name(_('Puppet environment name'))],
+      :puppet_environment => [s_name(_('Puppet environment name'))],
       :fact_value =>       [],
       :filter =>           [],
       :host =>             [ s_name(_("Host name")) ],
@@ -119,6 +120,22 @@ module HammerCLIForeman
 
     def puppetclass_ids(options)
       options[HammerCLI.option_accessor_name("ids")] || find_puppetclasses(options).collect { |c| c['id'] }
+    end
+
+    def environment_id(options)
+      puppet_environment_id(options)
+    end
+
+    def puppet_environment_id(options)
+      get_id(:environments, options)
+    end
+
+    def environment_ids(options)
+      puppet_environment_ids(options)
+    end
+
+    def puppet_environment_ids(options)
+      get_ids(:environments, options)
     end
 
     def searchables(resource)

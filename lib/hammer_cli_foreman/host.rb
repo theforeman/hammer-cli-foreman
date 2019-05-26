@@ -298,6 +298,8 @@ module HammerCLIForeman
           end
         end
       end
+
+      extend_with(HammerCLIForeman::CommandExtensions::PuppetEnvironment.new)
     end
 
     class UpdateCommand < HammerCLIForeman::UpdateCommand
@@ -305,6 +307,8 @@ module HammerCLIForeman
       failure_message _("Could not update the host")
       include HammerCLIForeman::Hosts::CommonUpdateOptions
       include HammerCLIForeman::Hosts::CommonUpdateHelp
+
+      extend_with(HammerCLIForeman::CommandExtensions::PuppetEnvironment.new)
     end
 
 

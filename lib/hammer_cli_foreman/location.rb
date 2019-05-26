@@ -106,7 +106,7 @@ module HammerCLIForeman
     end
 
     HammerCLIForeman::AssociatingCommands::Hostgroup.extend_command(self)
-    HammerCLIForeman::AssociatingCommands::Environment.extend_command(self)
+    HammerCLIForeman::AssociatingCommands::PuppetEnvironment.extend_command(self)
     HammerCLIForeman::AssociatingCommands::Domain.extend_command(self)
     HammerCLIForeman::AssociatingCommands::Medium.extend_command(self)
     HammerCLIForeman::AssociatingCommands::Subnet.extend_command(self)
