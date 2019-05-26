@@ -1,9 +1,9 @@
 require File.join(File.dirname(__FILE__), 'test_helper')
 require File.join(File.dirname(__FILE__), 'apipie_resource_mock')
 
-require 'hammer_cli_foreman/environment'
+require 'hammer_cli_foreman/puppet_environment'
 
-describe HammerCLIForeman::Environment do
+describe HammerCLIForeman::PuppetEnvironment do
 
   include CommandTestHelper
 
@@ -12,7 +12,7 @@ describe HammerCLIForeman::Environment do
       ResourceMocks.mock_action_call(:environments, :index, [])
     end
 
-    let(:cmd) { HammerCLIForeman::Environment::ListCommand.new("", ctx) }
+    let(:cmd) { HammerCLIForeman::PuppetEnvironment::ListCommand.new("", ctx) }
 
     context "parameters" do
       it_should_accept "no arguments"
@@ -32,7 +32,7 @@ describe HammerCLIForeman::Environment do
 
   context "InfoCommand" do
 
-    let(:cmd) { HammerCLIForeman::Environment::InfoCommand.new("", ctx) }
+    let(:cmd) { HammerCLIForeman::PuppetEnvironment::InfoCommand.new("", ctx) }
 
     context "parameters" do
       it_should_accept "id", ["--id=1"]
@@ -56,7 +56,7 @@ describe HammerCLIForeman::Environment do
 
   context "CreateCommand" do
 
-    let(:cmd) { HammerCLIForeman::Environment::CreateCommand.new("", ctx) }
+    let(:cmd) { HammerCLIForeman::PuppetEnvironment::CreateCommand.new("", ctx) }
 
     context "parameters" do
       it_should_accept "name", ["--name=env"]
@@ -69,7 +69,7 @@ describe HammerCLIForeman::Environment do
 
   context "DeleteCommand" do
 
-    let(:cmd) { HammerCLIForeman::Environment::DeleteCommand.new("", ctx) }
+    let(:cmd) { HammerCLIForeman::PuppetEnvironment::DeleteCommand.new("", ctx) }
 
     context "parameters" do
       it_should_accept "name", ["--name=env"]
@@ -82,7 +82,7 @@ describe HammerCLIForeman::Environment do
 
   context "UpdateCommand" do
 
-    let(:cmd) { HammerCLIForeman::Environment::UpdateCommand.new("", ctx) }
+    let(:cmd) { HammerCLIForeman::PuppetEnvironment::UpdateCommand.new("", ctx) }
 
     context "parameters" do
       it_should_accept "name", ["--name=env", "--new-name=env2"]
@@ -99,11 +99,13 @@ describe HammerCLIForeman::Environment do
       ResourceMocks.smart_class_parameters_index
     end
 
-    let(:cmd) { HammerCLIForeman::Environment::SCParamsCommand.new("", ctx) }
+    let(:cmd) { HammerCLIForeman::PuppetEnvironment::SCParamsCommand.new("", ctx) }
 
     context "parameters" do
       it_should_accept "environment", ["--environment=env"]
       it_should_accept "environment-id", ["--environment-id=1"]
+      it_should_accept "puppet-environment", ["--puppet-environment=env"]
+      it_should_accept "puppet-environment-id", ["--puppet-environment-id=1"]
       # it_should_fail_with "name or id missing", [] # TODO: temporarily disabled, parameters are checked in the id resolver
     end
 
