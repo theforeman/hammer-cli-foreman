@@ -1,10 +1,9 @@
 require 'hammer_cli'
 require 'hammer_cli_foreman/smart_class_parameter'
 
-
 module HammerCLIForeman
 
-  class Environment < HammerCLIForeman::Command
+  class PuppetEnvironment < HammerCLIForeman::Command
 
     resource :environments
 
@@ -55,6 +54,8 @@ module HammerCLIForeman
 
     class SCParamsCommand < HammerCLIForeman::SmartClassParametersList
       build_options_for :environments
+
+      extend_with(HammerCLIForeman::CommandExtensions::PuppetEnvironment.new)
     end
 
 
