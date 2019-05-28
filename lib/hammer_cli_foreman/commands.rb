@@ -254,9 +254,9 @@ module HammerCLIForeman
     end
 
     def help
-      meta = resource.action(action).apidoc[:metadata]
-      return super if meta.nil?
+      return super unless resource
 
+      meta = resource.action(action).apidoc[:metadata]
       if meta && meta[:search] && respond_to?(:option_search)
         self.class.extend_help do |h|
           h.section(_('Search fields'), id: :search_fields_section) do |h|
@@ -303,7 +303,7 @@ module HammerCLIForeman
         ]
       end
     end
-   
+
     def search_field_help_value(field)
       if field[:values] && field[:values].is_a?(Array)
         _('Values') + ': ' + field[:values].join(', ')
