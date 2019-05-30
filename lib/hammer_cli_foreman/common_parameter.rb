@@ -32,9 +32,11 @@ module HammerCLIForeman
         :default => 'string',
         :format => HammerCLI::Options::Normalizers::Enum.new(Parameter::KEY_TYPES)
 
-      def action
+      attr_reader :action
+
+      def execute
         @action ||= parameter_exist? ? :update : :create
-        @action
+        super
       end
 
       def success_message
