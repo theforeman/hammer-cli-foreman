@@ -330,6 +330,16 @@ module HammerCLIForeman
       }.merge mapping
     end
 
+    def option_sources
+      sources = super
+      sources.find_by_name('IdResolution').insert_relative(
+        :replace,
+        'SelfParam',
+         HammerCLI::Options::Sources::Base.new
+      )
+      sources
+    end
+
     def validate_options
       super
       validator.any("option_name".to_sym, "option_id".to_sym).required
