@@ -222,9 +222,9 @@ module HammerCLIForeman
     def self.output(definition = nil, &block)
       super
       begin
-        output_definition.update_field_sets('THIN', %i[id name])
-      rescue ArgumentError => e
-        # Some subcommands may not have such fields
+        output_definition.update_field_sets('THIN', (searchables.for(resource).map(&:name) + ['id']).map(&:to_sym))
+      rescue StandardError => e
+        # Some subcommands may not have such fields or defined resource
       end
     end
 
@@ -367,9 +367,9 @@ module HammerCLIForeman
     def self.output(definition = nil, &block)
       super
       begin
-        output_definition.update_field_sets('THIN', %i[id name])
-      rescue ArgumentError => e
-        # Some subcommands may not have such fields
+        output_definition.update_field_sets('THIN', (searchables.for(resource).map(&:name) + ['id']).map(&:to_sym))
+      rescue StandardError => e
+        # Some subcommands may not have such fields or defined resource
       end
     end
 
