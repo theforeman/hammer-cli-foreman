@@ -1,7 +1,6 @@
 require File.join(File.dirname(__FILE__), 'test_helper')
 require 'hammer_cli'
 
-
 describe HammerCLIForeman do
 
   before :each do
@@ -152,8 +151,8 @@ describe HammerCLIForeman do
         end
       end
       comm = DomainOuter::HostsCommand.new("", { :adapter => :csv, :interactive => false })
-      out, err = capture_io { comm.run(["--host-id=5"]) }
-      out.must_equal "Id,Name,Operating System,Host Group,IP,MAC\n2,random-host,\"\",\"\",192.168.100.112,6e:4b:3c:2c:8a:0a\n"
+      out, err = capture_io { comm.run(["--id=5"]) }
+      out.must_equal "Id,Name,Operating System,Host Group,IP,MAC\n2,random-host,,,192.168.100.112,6e:4b:3c:2c:8a:0a\n"
     end
   end
 
