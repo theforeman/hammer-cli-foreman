@@ -22,6 +22,7 @@ module HammerCLIForeman
   require 'hammer_cli_foreman/logger'
 
   begin
+    require 'hammer_cli_foreman/command_extensions'
     require 'hammer_cli_foreman/commands'
     require 'hammer_cli_foreman/associating_commands'
     require 'hammer_cli_foreman/references'

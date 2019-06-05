@@ -219,6 +219,15 @@ module HammerCLIForeman
     RETRIEVE_ALL_PER_PAGE = 1000
     DEFAULT_PER_PAGE = 20
 
+    def self.output(definition = nil, &block)
+      super
+      begin
+        output_definition.update_field_sets('THIN', (searchables.for(resource).map(&:name) + ['id']).map(&:to_sym))
+      rescue StandardError => e
+        # Some subcommands may not have such fields or defined resource
+      end
+    end
+
     def adapter
       @context[:adapter] || :table
     end
@@ -266,6 +275,8 @@ module HammerCLIForeman
       end
       super
     end
+
+    extend_with(HammerCLIForeman::CommandExtensions::Fields.new)
 
     protected
 
@@ -353,6 +364,15 @@ module HammerCLIForeman
 
     action :show
 
+    def self.output(definition = nil, &block)
+      super
+      begin
+        output_definition.update_field_sets('THIN', (searchables.for(resource).map(&:name) + ['id']).map(&:to_sym))
+      rescue StandardError => e
+        # Some subcommands may not have such fields or defined resource
+      end
+    end
+
     def self.command_name(name=nil)
       super(name) || "info"
     end
@@ -370,6 +390,7 @@ module HammerCLIForeman
       print_record(output_definition, record)
     end
 
+    extend_with(HammerCLIForeman::CommandExtensions::Fields.new)
   end
 
 
