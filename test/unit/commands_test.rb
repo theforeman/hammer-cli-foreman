@@ -1,7 +1,6 @@
 require File.join(File.dirname(__FILE__), 'test_helper')
 require 'hammer_cli'
 
-
 describe HammerCLIForeman do
 
   before :each do
@@ -130,6 +129,30 @@ describe HammerCLIForeman do
       res.stubs(:get_associated_identifier).returns(1)
 
       res.get_new_ids.sort.must_equal ['1', '2']
+    end
+  end
+
+  context "ListSearchCommand" do
+    it "should find correct results" do
+      ResourceMocks.mock_action_calls(
+        [:hosts, :index, [{ "id" => 2, "name" => "random-host",  "ip" => "192.168.100.112", "mac" => "6e:4b:3c:2c:8a:0a" }]],
+      )
+
+      class DomainOuter < HammerCLIForeman::Command
+        resource :domains
+
+        class HostsCommand < HammerCLIForeman::AssociatedListSearchCommand
+          command_name 'hosts'
+          search_resource :hosts
+
+          output HammerCLIForeman::Host::ListCommand.output_definition
+
+          build_options
+        end
+      end
+      comm = DomainOuter::HostsCommand.new("", { :adapter => :csv, :interactive => false })
+      out, err = capture_io { comm.run(["--id=5"]) }
+      out.must_equal "Id,Name,Operating System,Host Group,IP,MAC\n2,random-host,,,192.168.100.112,6e:4b:3c:2c:8a:0a\n"
     end
   end
 

@@ -324,6 +324,96 @@ module HammerCLIForeman
     end
   end
 
+  class AssociatedListSearchCommand < ListCommand
+    def self.search_resource(res, action = :index)
+      resource res, action
+      default_search_options
+    end
+
+    def self.default_search_options
+      option("--id", "ID", _("%s Id") % module_resource.singular_name)
+      option("--name", "NAME", _("%s name") % module_resource.singular_name)
+    end
+
+    def self.search_options_mapping(mapping = {})
+      { "name" => module_resource.singular_name,
+        "id" => "#{module_resource.singular_name}_id"
+      }.merge mapping
+    end
+
+    def option_sources
+      sources = super
+      sources.find_by_name('IdResolution').insert_relative(
+        :replace,
+        'SelfParam',
+         HammerCLI::Options::Sources::Base.new
+      )
+      sources
+    end
+
+    def validate_options
+      super
+      validator.any("option_name".to_sym, "option_id".to_sym).required
+    end
+
+    def parent_resource_name
+      self.class.module_resource.singular_name
+    end
+
+    def search_mapping(key)
+      self.class.search_options_mapping[key]
+    end
+
+    def parent_resource_name_attr
+      "name"
+    end
+
+    def parent_resource_id_attr
+      "id"
+    end
+
+    def name_attr(resource_name)
+      "#{resource_name}_name"
+    end
+
+    def id_attr(resource_name)
+      "#{resource_name}_id"
+    end
+
+    def request_params
+      params = super
+      search = []
+      search << params['search'] if params['search']
+
+      resource_name = get_option_value(parent_resource_name_attr)
+      search << %Q(#{search_mapping parent_resource_name_attr}="#{resource_name}") if resource_name
+
+      resource_id = get_option_value(parent_resource_id_attr)
+      search << "#{search_mapping parent_resource_id_attr}=#{resource_id}" if resource_id
+
+      search += taxonomy_request_params('organization', params)
+      search += taxonomy_request_params('location', params)
+
+      params['search'] = search.join(' and ') unless search.empty?
+      params
+    end
+
+    def taxonomy_request_params(taxonomy, params)
+      res = []
+      tax_name = get_option_value(name_attr taxonomy)
+      if tax_name
+        res << "#{name_attr taxonomy}=#{tax_name}"
+        params.delete(name_attr taxonomy)
+      end
+
+      tax_id = get_option_value(id_attr taxonomy)
+      if tax_id
+        res << "#{id_attr taxonomy}=#{tax_id}"
+        params.delete(id_attr taxonomy)
+      end
+      res
+    end
+  end
 
   class SingleResourceCommand < Command
 
