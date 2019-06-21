@@ -29,6 +29,17 @@ module HammerCLIForeman
         field :global_status_label, _("Global Status")
         field nil, _("Organization"), Fields::SingleReference, :key => :organization, :hide_blank => true, :sets => ['ALL']
         field nil, _("Location"), Fields::SingleReference, :key => :location, :hide_blank => true, :sets => ['ALL']
+        from :content_facet_attributes do
+          from :errata_counts do
+            field :security, _("Security")
+          end
+          from :errata_counts do
+            field :bugfix, _("Bugfix")
+          end
+          from :errata_counts do
+            field :enhancement, _("Enhancement")
+          end
+        end
         field :comment, _("Additional Information"), nil, :sets => ['ALL']
       end
 
