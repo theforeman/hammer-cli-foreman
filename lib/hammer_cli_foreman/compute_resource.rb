@@ -50,7 +50,12 @@ module HammerCLIForeman
           Fields::Field.new(:label => _('Region'), :path => [:region])
         ],
         'libvirt' => [
-        ]
+        ],
+        'gce' => [
+          Fields::Field.new(:label => _('Project'), :path => [:project]),
+          Fields::Field.new(:label => _('Email'), :path => [:email]),
+          Fields::Field.new(:label => _('Key Path'), :path => [:key_path]),
+        ],
       }
 
       output ListCommand.output_definition do

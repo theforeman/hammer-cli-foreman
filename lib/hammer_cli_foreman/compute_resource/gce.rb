@@ -6,11 +6,15 @@ module HammerCLIForeman
       end
 
       def compute_attributes
-        %w[machine_type image_id network external_ip]
+        %w[machine_type image_id network associate_external_ip]
       end
 
       def interfaces_attrs_name
         'network_interfaces_nics_attributes'
+      end
+
+      def mandatory_resource_options
+        super + [:project, :key_path, :zone]
       end
     end
 
