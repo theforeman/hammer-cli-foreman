@@ -8,7 +8,14 @@ module HammerCLIForeman
     :ptable => :partition_table,
     :ptables => :partition_tables,
     :puppetclass => :puppet_class,
-    :puppetclasses => :puppet_classes
+    :puppetclasses => :puppet_classes,
+    :environment => :puppet_environment,
+    :environments => :puppet_environments
+  }
+
+  RESOURCE_ALIAS_NAME_MAPPING = {
+    environment: :puppet_environment,
+    environments: :puppet_environments
   }
 
   def self.foreman_api
@@ -107,6 +114,17 @@ module HammerCLIForeman
       HammerCLIForeman::RESOURCE_NAME_MAPPING
     end
 
+    def self.resource_alias_name_mapping
+      HammerCLIForeman::RESOURCE_ALIAS_NAME_MAPPING
+    end
+
+    def self.alias_name_for_resource(resource, singular: true)
+      return nil if resource.nil?
+      return resource_alias_name_mapping[resource.name.to_sym] unless singular
+
+      resource_alias_name_mapping[resource.singular_name.to_sym]
+    end
+
     def self.build_options(builder_params={})
       builder_params[:resource_mapping] ||= resource_name_mapping
       builder_params = HammerCLIForeman::BuildParams.new(builder_params)
@@ -121,6 +139,7 @@ module HammerCLIForeman
     end
 
     def get_resource_id(resource, options={})
+      resource_alias = self.class.alias_name_for_resource(resource)
       all_opts = options[:all_options] || all_options
       if options[:scoped]
         opts = resolver.scoped_options(resource.singular_name, all_opts, :single)
@@ -128,7 +147,7 @@ module HammerCLIForeman
         opts = all_opts
       end
       begin
-        resolver.send("#{resource.singular_name}_id", opts)
+        resolver.send("#{resource_alias || resource.singular_name}_id", opts)
       rescue HammerCLIForeman::MissingSearchOptions => e
         if (options[:required] == true || resource_search_requested(resource, opts))
           logger.info "Error occured while searching for #{resource.singular_name}"
@@ -138,10 +157,11 @@ module HammerCLIForeman
     end
 
     def get_resource_ids(resource, options={})
+      resource_alias = self.class.alias_name_for_resource(resource)
       all_opts = options[:all_options] || all_options
       opts = resolver.scoped_options(resource.singular_name, all_opts, :multi)
       begin
-        resolver.send("#{resource.singular_name}_ids", opts)
+        resolver.send("#{resource_alias || resource.singular_name}_ids", opts)
       rescue HammerCLIForeman::MissingSearchOptions => e
         if (options[:required] == true || resource_search_requested(resource, opts, true))
           logger.info "Error occured while searching for #{resource.name}"
@@ -188,16 +208,7 @@ module HammerCLIForeman
       params_pruned
     end
 
-    def option_sources
-      sources = super
-
-      id_resolution = HammerCLI::Options::ProcessorList.new(name: 'IdResolution')
-      id_resolution << HammerCLIForeman::OptionSources::IdParams.new(self)
-      id_resolution << HammerCLIForeman::OptionSources::IdsParams.new(self)
-      id_resolution << HammerCLIForeman::OptionSources::SelfParam.new(self)
-
-      sources << id_resolution
-    end
+    extend_with(HammerCLIForeman::CommandExtensions::OptionSources.new)
 
     private
 

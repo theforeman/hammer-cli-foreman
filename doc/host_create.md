@@ -39,8 +39,6 @@ Options:
  --domain-id DOMAIN_ID                                         Numerical ID or domain name
  --enabled ENABLED                                             Include this host within Foreman reporting
                                                                One of true/false, yes/no, 1/0.
- --environment ENVIRONMENT_NAME                                Environment name
- --environment-id ENVIRONMENT_ID                                
  --hostgroup HOSTGROUP_NAME                                    Hostgroup name
  --hostgroup-id HOSTGROUP_ID                                    
  --hostgroup-title HOSTGROUP_TITLE                             Hostgroup title
@@ -96,6 +94,8 @@ Options:
  --puppet-ca-proxy-id PUPPET_CA_PROXY_ID                       Puppet CA proxy ID
  --puppet-class-ids PUPPET_CLASS_IDS                           Comma separated list of values. Values containing comma should be quoted or escaped with backslash
  --puppet-classes PUPPET_CLASS_NAMES                           Comma separated list of values. Values containing comma should be quoted or escaped with backslash
+ --puppet-environment PUPPET_ENVIRONMENT_NAME                  Puppet Environment name
+ --puppet-environment-id PUPPET_ENVIRONMENT_ID                                
  --puppet-proxy PUPPET_PROXY_NAME                               
  --puppet-proxy-id PUPPET_PROXY_ID                             Puppet proxy ID
  --pxe-loader PXE_LOADER                                       DHCP filename option (Grub2/PXELinux by default)

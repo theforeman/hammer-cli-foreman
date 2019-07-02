@@ -57,6 +57,8 @@ module HammerCLIForeman
       failure_message _("Could not create the organization")
 
       build_options
+
+      extend_with(HammerCLIForeman::CommandExtensions::PuppetEnvironments.new)
     end
 
 
@@ -69,6 +71,8 @@ module HammerCLIForeman
       failure_message _("Could not update the organization")
 
       build_options
+
+      extend_with(HammerCLIForeman::CommandExtensions::PuppetEnvironments.new)
     end
 
 
@@ -108,7 +112,7 @@ module HammerCLIForeman
 
 
     HammerCLIForeman::AssociatingCommands::Hostgroup.extend_command(self)
-    HammerCLIForeman::AssociatingCommands::Environment.extend_command(self)
+    HammerCLIForeman::AssociatingCommands::PuppetEnvironment.extend_command(self)
     HammerCLIForeman::AssociatingCommands::Domain.extend_command(self)
     HammerCLIForeman::AssociatingCommands::Medium.extend_command(self)
     HammerCLIForeman::AssociatingCommands::Subnet.extend_command(self)
