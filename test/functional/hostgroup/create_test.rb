@@ -246,6 +246,40 @@ module HammerCLIForeman
         run_cmd(%w(hostgroup create --name hg1 --puppet-classes pc1,pc2))
       end
 
+      it 'allows puppet class names that exceeds entries_per_page' do
+        search_objects = []
+        response_objects = []
+        ids = []
+        names = []
+        1100.times.with_object('pc').each do |id, name|
+          next_name = "\"#{name}#{id}\""
+          search_objects << "name = #{next_name}"
+          response_objects << { 'id' => id, 'name' => next_name }
+          ids << id
+          names << next_name
+        end
+
+        api_expects(:puppetclasses, :index) do |p|
+          p[:search] == search_objects.join(' or ') &&
+            p[:page].to_i == 1 &&
+            p[:per_page].to_i == HammerCLIForeman::IdResolver::ALL_PER_PAGE
+        end.returns(
+          index_response('puppetclasses' => response_objects[0...1000]))
+
+        api_expects(:puppetclasses, :index) do |p|
+          p[:search] == search_objects.join(' or ') &&
+            p[:page].to_i == 2 &&
+            p[:per_page].to_i == HammerCLIForeman::IdResolver::ALL_PER_PAGE
+        end.returns(index_response('puppetclasses' => response_objects[1000...1100]))
+
+        api_expects(:hostgroups, :create) do |p|
+          p['hostgroup']['name'] == 'hg1' &&
+            p['hostgroup']['puppetclass_ids'] == ids
+        end
+
+        run_cmd(%w[hostgroup create --name hg1 --puppet-classes] << names.join(',').tr('"', ''))
+      end
+
       it 'allows puppet proxy id' do
         api_expects(:hostgroups, :create).with_params({
           :hostgroup => {

@@ -173,7 +173,11 @@ module HammerCLIForeman
       end
 
       def index_response(items, options={})
-        cnt = items.length
+        cnt = if items.is_a?(Hash)
+                items.keys.count
+              else
+                items.length
+              end
         {
           "total" => options.fetch(:total, cnt),
           "subtotal" => options.fetch(:subtotal, cnt),

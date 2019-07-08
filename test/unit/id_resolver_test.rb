@@ -122,14 +122,14 @@ describe HammerCLIForeman::IdResolver do
       let(:resolver_run) { proc { resolver.user_id({"option_name" => "John Doe"}) } }
 
       it "raises exception when no resource is found" do
-        ResourceMocks.mock_action_call(:users, :index, [])
+        ResourceMocks.mock_action_call(:users, :index, index_response([]))
 
         err = resolver_run.must_raise HammerCLIForeman::ResolverError
         err.message.must_equal "user not found."
       end
 
       it "raises exception when multiple resources are found" do
-        ResourceMocks.mock_action_call(:users, :index, [john, jane])
+        ResourceMocks.mock_action_call(:users, :index, index_response([john, jane]))
 
         err = resolver_run.must_raise HammerCLIForeman::ResolverError
         err.message.must_equal "Found more than one user."
@@ -156,7 +156,7 @@ describe HammerCLIForeman::IdResolver do
       end
 
       it "returns id of the resource" do
-        ResourceMocks.mock_action_call(:users, :index, [john])
+        ResourceMocks.mock_action_call(:users, :index, index_response([john]))
 
         resolver_run.call.must_equal john_id
       end
@@ -167,16 +167,16 @@ describe HammerCLIForeman::IdResolver do
       let(:resolver_run) { proc { resolver.post_id({"option_name" => "Post 11", "option_user_name" => "John Doe"}) } }
 
       it "raises exception when no resource is found" do
-        ResourceMocks.mock_action_call(:posts, :index, [])
-        ResourceMocks.mock_action_call(:users, :index, [])
+        ResourceMocks.mock_action_call(:posts, :index, index_response([]))
+        ResourceMocks.mock_action_call(:users, :index, index_response([]))
 
         err = resolver_run.must_raise HammerCLIForeman::ResolverError
         err.message.must_equal "user not found."
       end
 
       it "raises exception when multiple resources are found" do
-        ResourceMocks.mock_action_call(:posts, :index, [])
-        ResourceMocks.mock_action_call(:users, :index, [john, jane])
+        ResourceMocks.mock_action_call(:posts, :index, index_response([]))
+        ResourceMocks.mock_action_call(:users, :index, index_response([john, jane]))
 
         err = resolver_run.must_raise HammerCLIForeman::ResolverError
         err.message.must_equal "Found more than one user."
@@ -199,12 +199,16 @@ describe HammerCLIForeman::IdResolver do
       end
 
       it "returns id of the resource" do
-        ResourceMocks.mock_action_call(:posts, :index, [
-          {"id" => 11, "name" => "Post 11"}
-        ])
-        ResourceMocks.mock_action_call(:users, :index, [
-          {"id" => 22, "name" => "User 22"}
-        ])
+        ResourceMocks.mock_action_call(:posts, :index, index_response(
+          [
+            {"id" => 11, "name" => "Post 11"}
+          ]
+        ))
+        ResourceMocks.mock_action_call(:users, :index, index_response(
+          [
+            {"id" => 22, "name" => "User 22"}
+          ]
+        ))
         resolver_run.call.must_equal 11
       end
     end
@@ -248,13 +252,13 @@ describe HammerCLIForeman::IdResolver do
           ( resource == :users &&
             action == :index &&
             params[:search] == "name = \"John Doe\" or name = \"Jane Doe\"")
-        end.returns([john, jane])
+        end.returns(index_response([john, jane]))
 
         assert_equal [john_id, jane_id], resolver.user_ids({"option_names" => ["John Doe", "Jane Doe"]})
       end
 
       it "raises exception when wrong number of resources is found even with conflicting options" do
-        ResourceMocks.mock_action_call(:users, :index, [john])
+        ResourceMocks.mock_action_call(:users, :index, index_response([john]))
 
         assert_raises HammerCLIForeman::ResolverError do
           resolver.user_ids({"option_names" => ["John Doe", "Jane Doe"], "option_name" => "group1"})
@@ -262,7 +266,7 @@ describe HammerCLIForeman::IdResolver do
       end
 
       it "raises exception when wrong number of resources is found" do
-        ResourceMocks.mock_action_call(:users, :index, [john])
+        ResourceMocks.mock_action_call(:users, :index, index_response([john]))
 
         assert_raises HammerCLIForeman::ResolverError do
           resolver.user_ids({"option_names" => ["John Doe", "Jane Doe"]})
@@ -270,7 +274,7 @@ describe HammerCLIForeman::IdResolver do
       end
 
       it "raises exception when no search options were set" do
-        ResourceMocks.mock_action_call(:users, :index, [john])
+        ResourceMocks.mock_action_call(:users, :index, index_response([john]))
 
         assert_raises HammerCLIForeman::MissingSearchOptions do
           resolver.user_ids({})
@@ -278,7 +282,7 @@ describe HammerCLIForeman::IdResolver do
       end
 
       it "returns empty array for empty input" do
-        ResourceMocks.mock_action_call(:users, :index, [john, jane])
+        ResourceMocks.mock_action_call(:users, :index, index_response([john, jane]))
 
         assert_equal [], resolver.user_ids({"option_names" => []})
       end
