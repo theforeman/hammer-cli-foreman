@@ -22,6 +22,7 @@ module HammerCLIForeman
   require 'hammer_cli_foreman/logger'
 
   begin
+    require 'hammer_cli_foreman/command_extensions'
     require 'hammer_cli_foreman/commands'
     require 'hammer_cli_foreman/associating_commands'
     require 'hammer_cli_foreman/references'
@@ -58,7 +59,12 @@ module HammerCLIForeman
     )
 
     HammerCLI::MainCommand.lazy_subcommand('environment', _("Manipulate environments"),
-      'HammerCLIForeman::Environment', 'hammer_cli_foreman/environment'
+      'HammerCLIForeman::PuppetEnvironment', 'hammer_cli_foreman/puppet_environment',
+      :warning => _('%{env} command is deprecated and will be removed in one of the future versions. Please use %{puppet_env} command instead.') % {:env => 'environment', :puppet_env => 'puppet-environment'}
+    )
+
+    HammerCLI::MainCommand.lazy_subcommand('puppet-environment', _("Manipulate Puppet environments"),
+      'HammerCLIForeman::PuppetEnvironment', 'hammer_cli_foreman/puppet_environment'
     )
 
     HammerCLI::MainCommand.lazy_subcommand('fact', _("Search facts"),

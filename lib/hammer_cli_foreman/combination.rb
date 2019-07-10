@@ -58,6 +58,8 @@ module HammerCLIForeman
         o.expand(:all).except(:config_templates,)
         o.without(:config_template_id)
       end
+
+      extend_with(HammerCLIForeman::CommandExtensions::PuppetEnvironment.new)
     end
 
     class CreateCombination < HammerCLIForeman::CreateCommand
@@ -70,6 +72,8 @@ module HammerCLIForeman
         o.expand(:all).except(:config_templates,)
         o.without(:config_template_id)
       end
+
+      extend_with(HammerCLIForeman::CommandExtensions::PuppetEnvironment.new)
     end
 
     class DeleteCombination < HammerCLIForeman::DeleteCommand
