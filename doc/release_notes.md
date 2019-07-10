@@ -1,5 +1,10 @@
 Release notes
 =============
+### 0.17.1 (2019-07-10)
+* Consistent puppet environment naming in hammer ([#23204](http://projects.theforeman.org/issues/23204))
+* Create hostgroup with puppet classes ([#24717](http://projects.theforeman.org/issues/24717))
+* Fix help on commands with no resource ([#26865](http://projects.theforeman.org/issues/26865))
+
 ### 0.17.0 (2019-04-24)
 * Add public key option in create compute resource CLI ([#25491](http://projects.theforeman.org/issues/25491))
 * Background template rendering ([PR #414](https://github.com/theforeman/hammer-cli-foreman/pull/414)) ([#26355](http://projects.theforeman.org/issues/26355))
