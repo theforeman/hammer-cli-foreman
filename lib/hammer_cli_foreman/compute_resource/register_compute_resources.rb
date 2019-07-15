@@ -8,7 +8,6 @@ module HammerCLIForeman
     @compute_resources[name] = compute_resource
   end
 
-
   require 'hammer_cli_foreman/compute_resource/base'
   require 'hammer_cli_foreman/compute_resource/ec2.rb'
   require 'hammer_cli_foreman/compute_resource/gce.rb'
