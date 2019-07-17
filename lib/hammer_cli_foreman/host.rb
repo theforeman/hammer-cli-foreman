@@ -31,6 +31,8 @@ module HammerCLIForeman
       end
 
       build_options :without => [:include]
+
+      extend_with(HammerCLIForeman::CommandExtensions::PuppetEnvironment.new)
     end
 
 
