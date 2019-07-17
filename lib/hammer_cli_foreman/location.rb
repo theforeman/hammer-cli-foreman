@@ -56,6 +56,8 @@ module HammerCLIForeman
       failure_message _("Could not create the location")
 
       build_options
+
+      extend_with(HammerCLIForeman::CommandExtensions::PuppetEnvironments.new)
     end
 
 
@@ -68,6 +70,8 @@ module HammerCLIForeman
       failure_message _("Could not update the location")
 
       build_options
+
+      extend_with(HammerCLIForeman::CommandExtensions::PuppetEnvironments.new)
     end
 
 
