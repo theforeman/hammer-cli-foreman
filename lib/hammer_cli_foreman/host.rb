@@ -5,9 +5,7 @@ require 'hammer_cli_foreman/smart_class_parameter'
 require 'hammer_cli_foreman/smart_variable'
 require 'hammer_cli_foreman/interface'
 require 'hammer_cli_foreman/hosts/common_update_options'
-require 'hammer_cli_foreman/hosts/common_update_help'
 require 'hammer_cli_foreman/compute_resource/register_compute_resources'
-require 'hammer_cli_foreman/compute_resource/utils'
 require 'highline/import'
 
 module HammerCLIForeman
@@ -284,11 +282,10 @@ module HammerCLIForeman
     end
 
     class CreateCommand < HammerCLIForeman::CreateCommand
+      include HammerCLIForeman::Hosts::CommonUpdateOptions
+
       success_message _("Host created.")
       failure_message _("Could not create the host")
-
-      include HammerCLIForeman::Hosts::CommonUpdateOptions
-      include HammerCLIForeman::Hosts::CommonUpdateHelp
 
       def validate_options
         super
@@ -303,15 +300,20 @@ module HammerCLIForeman
       end
 
       extend_with(HammerCLIForeman::CommandExtensions::PuppetEnvironment.new)
+      extend_with(HammerCLIForeman::CommandExtensions::Hosts::Help::Interfaces.new)
+      extend_with(HammerCLIForeman::CommandExtensions::Hosts::Help::ComputeResources.custom(add_host_specific_attrs: true).new)
     end
 
     class UpdateCommand < HammerCLIForeman::UpdateCommand
+      include HammerCLIForeman::Hosts::CommonUpdateOptions
+
       success_message _("Host updated.")
       failure_message _("Could not update the host")
       include HammerCLIForeman::Hosts::CommonUpdateOptions
-      include HammerCLIForeman::Hosts::CommonUpdateHelp
 
       extend_with(HammerCLIForeman::CommandExtensions::PuppetEnvironment.new)
+      extend_with(HammerCLIForeman::CommandExtensions::Hosts::Help::Interfaces.new)
+      extend_with(HammerCLIForeman::CommandExtensions::Hosts::Help::ComputeResources.custom(add_host_specific_attrs: true).new)
     end
 
 

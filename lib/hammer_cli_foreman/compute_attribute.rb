@@ -1,6 +1,5 @@
 require 'hammer_cli_foreman/image'
 require 'hammer_cli_foreman/compute_resource/register_compute_resources'
-require 'hammer_cli_foreman/compute_resource/utils'
 
 module HammerCLIForeman
   class ComputeAttribute < HammerCLIForeman::Command
@@ -22,7 +21,7 @@ module HammerCLIForeman
     end
 
     class Create < HammerCLIForeman::CreateCommand
-        desc _('Create compute profile set of values')
+      desc _('Create compute profile set of values')
 
       option '--compute-attributes', 'COMPUTE_ATTRS', _('Compute resource attributes'),
              :format => HammerCLI::Options::Normalizers::KeyValueList.new
@@ -30,10 +29,6 @@ module HammerCLIForeman
              :format => HammerCLI::Options::Normalizers::KeyValueList.new, :multivalued => true
       option '--volume', 'VOLUME', _('Volume parameters, should be comma separated list of values'),
              :format => HammerCLI::Options::Normalizers::KeyValueList.new, :multivalued => true
-
-      extend_help do |h|
-        ::HammerCLIForeman::ComputeResources.extend_help(h, :all)
-      end
 
       validate_options do
         any(:option_compute_profile_id, :option_compute_profile_name ).required
@@ -53,6 +48,8 @@ module HammerCLIForeman
       success_message _('Compute profile attributes are set.')
       failure_message _('Could not set the compute profile attributes')
       build_options
+
+      extend_with(HammerCLIForeman::CommandExtensions::Hosts::Help::ComputeResources.new)
     end
 
     class Update < HammerCLIForeman::UpdateCommand
@@ -65,15 +62,10 @@ module HammerCLIForeman
       option '--volume', 'VOLUME', _('Volume parameters, should be comma separated list of values'),
              :format => HammerCLI::Options::Normalizers::KeyValueList.new, :multivalued => true
 
-      extend_help do |h|
-        ::HammerCLIForeman::ComputeResources.extend_help(h, :all)
-      end
-
       validate_options do
         any(:option_compute_profile_id, :option_compute_profile_name ).required
         any(:option_compute_resource_id, :option_compute_resource_name).required
       end
-
 
       def request_params
 
@@ -102,6 +94,8 @@ module HammerCLIForeman
       failure_message _('Could not update the compute profile attributes')
 
       build_options :without => :id
+
+      extend_with(HammerCLIForeman::CommandExtensions::Hosts::Help::ComputeResources.new)
     end
 
     # Using the Update command because adding a new interface is done by modifying existing compute_attribute
@@ -110,10 +104,6 @@ module HammerCLIForeman
       desc _('Add interface for Compute Profile')
       option '--interface', 'SET_VALUES', _('Interface parameters, should be comma separated list of values'),
              :format => HammerCLI::Options::Normalizers::KeyValueList.new, :required => true
-
-      extend_help do |h|
-        ::HammerCLIForeman::ComputeResources.extend_help(h, :interface)
-      end
 
       def validate_options
         super
@@ -143,6 +133,8 @@ module HammerCLIForeman
       failure_message _('Could not create interface')
 
       build_options :without => :id
+
+      extend_with(HammerCLIForeman::CommandExtensions::Hosts::Help::ComputeResources.custom(attributes: :interface).new)
     end
 
     class UpdateInterface < HammerCLIForeman::UpdateCommand
@@ -156,10 +148,6 @@ module HammerCLIForeman
       option '--interface-id', 'INTERFACE_ID', _('Interface id'),
              :required => true,
              :format => HammerCLI::Options::Normalizers::Number.new
-
-      extend_help do |h|
-        ::HammerCLIForeman::ComputeResources.extend_help(h, :interface)
-      end
 
       def validate_options
         super
@@ -180,6 +168,8 @@ module HammerCLIForeman
       success_message _('Interface was updated.')
       failure_message _('Could not update interface')
       build_options :without => :id
+
+      extend_with(HammerCLIForeman::CommandExtensions::Hosts::Help::ComputeResources.custom(attributes: :interface).new)
     end
 
     # Using the Update command because removing an interface is done by modifying existing compute_attribute
@@ -221,10 +211,6 @@ module HammerCLIForeman
       option '--volume', 'VOLUME', _('Volume parameters, should be comma separated list of values'),
              :format => HammerCLI::Options::Normalizers::KeyValueList.new, :required => true
 
-      extend_help do |h|
-        ::HammerCLIForeman::ComputeResources.extend_help(h, :volume)
-      end
-
       def validate_options
         super
         validator.any(:option_compute_profile_id, :option_compute_profile_name).required
@@ -246,6 +232,8 @@ module HammerCLIForeman
       success_message _('Volume was created.')
       failure_message _('Could not create volume')
       build_options :without => :id
+
+      extend_with(HammerCLIForeman::CommandExtensions::Hosts::Help::ComputeResources.custom(attributes: :volume).new)
     end
 
     class UpdateVolume < HammerCLIForeman::UpdateCommand
@@ -258,11 +246,6 @@ module HammerCLIForeman
       option '--volume-id', 'VOLUME_ID', _('Volume id'),
              :required => true,
              :format => HammerCLI::Options::Normalizers::Number.new
-
-      extend_help do |h|
-        ::HammerCLIForeman::ComputeResources.extend_help(h, :volume)
-      end
-
 
       def validate_options
         super
@@ -281,6 +264,8 @@ module HammerCLIForeman
       success_message _('Volume was updated.')
       failure_message _('Could not update volume')
       build_options :without => :id
+
+      extend_with(HammerCLIForeman::CommandExtensions::Hosts::Help::ComputeResources.custom(attributes: :volume).new)
     end
 
     # Using the Update command because removing a volume is done by modifying existing compute_attribute
