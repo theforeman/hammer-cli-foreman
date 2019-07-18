@@ -77,7 +77,7 @@ module HammerCLIForeman
       build_options
     end
 
-    class ScheduleCommand < HammerCLIForeman::CreateCommand
+    class ScheduleCommand < HammerCLIForeman::Command
       command_name "schedule"
       action :schedule_report
 
@@ -91,6 +91,10 @@ module HammerCLIForeman
         params = super
         params['input_values'] = option_inputs || {}
         params
+      end
+
+      def transform_format(data)
+        data
       end
 
       def execute
