@@ -13,6 +13,12 @@ module HammerCLIForeman
         'network_interfaces_nics_attributes'
       end
 
+      def volume_attributes
+        [
+          ['size_gb', _('Volume size in GB, integer value')]
+        ]
+      end
+
       def mandatory_resource_options
         super + [:project, :key_path, :zone]
       end
