@@ -19,6 +19,14 @@ module HammerCLIForeman
         ]
       end
 
+      def provider_specific_fields
+        [
+          Fields::Field.new(:label => _('Project'), :path => [:project]),
+          Fields::Field.new(:label => _('Email'), :path => [:email]),
+          Fields::Field.new(:label => _('Key Path'), :path => [:key_path]),
+        ]
+      end
+
       def mandatory_resource_options
         super + %I{project key_path zone}
       end
