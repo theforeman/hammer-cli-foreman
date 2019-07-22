@@ -20,7 +20,7 @@ module HammerCLIForeman
       end
 
       def mandatory_resource_options
-        super + [:project, :key_path, :zone]
+        super + %I{project key_path zone}
       end
     end
 
