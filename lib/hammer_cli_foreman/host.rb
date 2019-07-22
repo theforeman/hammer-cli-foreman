@@ -311,7 +311,6 @@ module HammerCLIForeman
 
       success_message _("Host updated.")
       failure_message _("Could not update the host")
-      include HammerCLIForeman::Hosts::CommonUpdateOptions
 
       extend_with(HammerCLIForeman::CommandExtensions::PuppetEnvironment.new)
       extend_with(HammerCLIForeman::CommandExtensions::Hosts::Help::Interfaces.new)
