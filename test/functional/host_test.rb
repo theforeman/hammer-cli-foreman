@@ -218,6 +218,29 @@ describe "host create" do
   end
 end
 
+describe 'host update' do
+  let(:cmd) { %w[host update] }
+  let(:minimal_params) { ['--location-id=1', '--organization-id=1', '--id=1'] }
+
+  it 'ensures helper methods are invoked' do
+    params = ['--image-id=1']
+    expected_result = success_result("Host updated.\n")
+
+    api_expects(:hosts, :show, 'Host').with_params(
+      'id' => '1'
+    ).returns('compute_resource_id' => '1')
+
+    api_expects(:images, :show, 'Image').with_params(
+      'id' => 1, 'compute_resource_id' => '1'
+    ).returns('uuid' => '2')
+
+    api_expects(:hosts, :update, 'Update host with image params').returns({})
+
+    result = run_cmd(cmd + minimal_params + params)
+    assert_cmd(expected_result, result)
+  end
+end
+
 describe 'host config reports' do
   let(:report15) do
     {
