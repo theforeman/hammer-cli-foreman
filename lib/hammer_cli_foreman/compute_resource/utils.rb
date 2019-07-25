@@ -15,5 +15,13 @@ module HammerCLIForeman
         )['compute_resource_id']
       )
     end
+
+    def self.resource_provider(compute_resource_id)
+      HammerCLIForeman.record_to_common_format(
+        HammerCLIForeman.foreman_resource(:compute_resources).call(
+          :show, 'id' => compute_resource_id
+        )
+      )['provider'].downcase
+    end
   end
 end
