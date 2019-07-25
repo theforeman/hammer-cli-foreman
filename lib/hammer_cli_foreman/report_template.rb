@@ -123,7 +123,7 @@ module HammerCLIForeman
 
       def build_report_data_args(schedule_data)
         [
-          '--id', option_id,
+          '--id', options['option_id'],
           '--job-id', schedule_data['job_id'],
           '--path', option_path
         ]
