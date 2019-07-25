@@ -322,6 +322,25 @@ describe 'report-template' do
         result = run_cmd(cmd + params)
         assert_cmd(expected_result, result)
       end
+
+      it 'polls for report while not ready and respects --name option' do
+        params = ['--name=rep3', '--inputs=Host filter=filter', '--wait']
+        api_expects_search(:report_templates, name: 'rep3').returns(
+          index_response([{ 'id' => '3' }])
+        )
+        api_expects(:report_templates, :schedule_report, 'Schedule').with_params(
+          'id' => '3', 'input_values' => { 'Host filter' => 'filter' }
+        ).returns(schedule_response)
+        api_expects(:report_templates, :report_data, 'No data first, download second call')
+          .twice.with_params('id' => '3', 'job_id' => 'JOB-UNIQUE-ID')
+          .returns(report_not_ready_response)
+          .then.returns(generated_report_response)
+
+        output = OutputMatcher.new('Report')
+        expected_result = success_result(output)
+        result = run_cmd(cmd + params)
+        assert_cmd(expected_result, result)
+      end
     end
   end
 
