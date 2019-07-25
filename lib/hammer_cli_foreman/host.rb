@@ -6,6 +6,7 @@ require 'hammer_cli_foreman/smart_variable'
 require 'hammer_cli_foreman/interface'
 require 'hammer_cli_foreman/hosts/common_update_options'
 require 'hammer_cli_foreman/compute_resource/register_compute_resources'
+require 'hammer_cli_foreman/compute_resource/utils'
 require 'highline/import'
 
 module HammerCLIForeman
