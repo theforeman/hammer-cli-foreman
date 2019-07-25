@@ -6,11 +6,29 @@ module HammerCLIForeman
       end
 
       def compute_attributes
-        %w[machine_type image_id network external_ip]
+        %w[machine_type image_id network associate_external_ip]
       end
 
       def interfaces_attrs_name
         'network_interfaces_nics_attributes'
+      end
+
+      def volume_attributes
+        [
+          ['size_gb', _('Volume size in GB, integer value')]
+        ]
+      end
+
+      def provider_specific_fields
+        [
+          Fields::Field.new(:label => _('Project'), :path => [:project]),
+          Fields::Field.new(:label => _('Email'), :path => [:email]),
+          Fields::Field.new(:label => _('Key Path'), :path => [:key_path]),
+        ]
+      end
+
+      def mandatory_resource_options
+        super + %I{project key_path zone}
       end
     end
 

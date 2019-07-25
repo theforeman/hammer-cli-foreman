@@ -30,29 +30,6 @@ module HammerCLIForeman
     class InfoCommand < HammerCLIForeman::InfoCommand
       include ProviderNameLegacy
 
-      PROVIDER_SPECIFIC_FIELDS = {
-        'ovirt' => [
-          Fields::Field.new(:label => _('Datacenter'), :path => [:datacenter])
-        ],
-        'ec2' => [
-          Fields::Field.new(:label => _('Region'), :path => [:region])
-        ],
-        'vmware' => [
-          Fields::Field.new(:label => _('Datacenter'), :path => [:datacenter]),
-          Fields::Field.new(:label => _('Server'), :path => [:server])
-        ],
-        'openstack' => [
-          Fields::Field.new(:label => _('Tenant'), :path => [:tenant]),
-          Fields::Field.new(:label => _('Project domain name'), :path => [:project_domain_name]),
-          Fields::Field.new(:label => _('Project domain ID'), :path => [:project_domain_id])
-        ],
-        'rackspace' => [
-          Fields::Field.new(:label => _('Region'), :path => [:region])
-        ],
-        'libvirt' => [
-        ]
-      }
-
       output ListCommand.output_definition do
         field :url, _("Url")
         field :description, _("Description")
@@ -62,9 +39,11 @@ module HammerCLIForeman
       end
 
       def print_data(data)
-        provider = data["provider"].downcase
-        output_definition.fields.concat(PROVIDER_SPECIFIC_FIELDS[provider] || [])
-        super(data)
+        provider = ::HammerCLIForeman.compute_resources[data['provider'].downcase]
+        if provider
+          output_definition.fields.concat(provider.provider_specific_fields || [])
+          super(data)
+        end
       end
 
       build_options

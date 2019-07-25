@@ -31,6 +31,7 @@ module HammerCLIForeman
         field nil, _("Operating System"), Fields::SingleReference, :key => :operatingsystem
         field :username, _("Username")
         field :uuid, _("UUID")
+        field :user_data,  _("User Data")
       end
 
     end

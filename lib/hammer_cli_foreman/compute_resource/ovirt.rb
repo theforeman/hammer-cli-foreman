@@ -36,6 +36,12 @@ module HammerCLIForeman
         ]
       end
 
+      def provider_specific_fields
+        [
+          Fields::Field.new(:label => _('Datacenter'), :path => [:datacenter])
+        ]
+      end
+
       def mandatory_resource_options
         super + %i[url user password datacenter]
       end

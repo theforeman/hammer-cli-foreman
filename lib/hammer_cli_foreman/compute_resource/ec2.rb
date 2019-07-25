@@ -9,6 +9,12 @@ module HammerCLIForeman
         %w[flavor_id image_id availability_zone security_group_ids managed_ip]
       end
 
+      def provider_specific_fields
+        [
+          Fields::Field.new(:label => _('Region'), :path => [:region])
+        ]
+      end
+
       def mandatory_resource_options
         super + %i[region user password]
       end

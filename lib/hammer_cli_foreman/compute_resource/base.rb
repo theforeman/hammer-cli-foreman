@@ -7,6 +7,7 @@ module HammerCLIForeman
       def volume_attributes; []; end
       def interfaces_attrs_name; 'interfaces_attributes'; end
       def host_attributes; []; end
+      def provider_specific_fields; []; end
       def mandatory_resource_options; %i[name provider]; end
     end
   end
