@@ -1,5 +1,6 @@
-require 'hammer_cli_foreman/image'
 require 'hammer_cli_foreman/compute_resource/register_compute_resources'
+require 'hammer_cli_foreman/compute_resource/utils'
+require 'hammer_cli_foreman/image'
 
 module HammerCLIForeman
   class ComputeAttribute < HammerCLIForeman::Command
@@ -37,7 +38,7 @@ module HammerCLIForeman
 
       def request_params
         params = super
-        compute_resource_name = HammerCLIForeman.record_to_common_format(HammerCLIForeman.foreman_resource(:compute_resources).call(:show, 'id' => options["option_compute_resource_id"] ))["provider_friendly_name"].downcase
+        compute_resource_name = HammerCLIForeman::ComputeResources.resource_provider(options['option_compute_resource_id'])
         interfaces_attr_name = ::HammerCLIForeman.compute_resources[compute_resource_name].interfaces_attrs_name
         params['compute_attribute']['vm_attrs'] = option_compute_attributes || {}
         params['compute_attribute']['vm_attrs'][interfaces_attr_name]= HammerCLIForeman::ComputeAttribute.attribute_hash(option_interface_list) unless option_interface_list.empty?
@@ -70,7 +71,7 @@ module HammerCLIForeman
       def request_params
 
         params = HammerCLIForeman::ComputeAttribute.get_params(options)
-        compute_resource_name = HammerCLIForeman.record_to_common_format(HammerCLIForeman.foreman_resource(:compute_resources).call(:show, 'id' => options["option_compute_resource_id"] ))["provider_friendly_name"].downcase
+        compute_resource_name = HammerCLIForeman::ComputeResources.resource_provider(options['option_compute_resource_id'])
         interfaces_attr_name = ::HammerCLIForeman.compute_resources[compute_resource_name].interfaces_attrs_name
 
         raise ArgumentError, "Compute profile value to update does not exist yet; it needs to be created first" if !params['compute_attribute'].key?('id')
@@ -115,9 +116,7 @@ module HammerCLIForeman
         params = HammerCLIForeman::ComputeAttribute.get_params(options)
 
         raise ArgumentError, "Compute profile value to update does not exist yet; it needs to be created first" if !params['compute_attribute'].key?('id')
-        compute_resource_name = HammerCLIForeman.record_to_common_format(HammerCLIForeman.foreman_resource(:compute_resources).call(:show, 'id' => options["option_compute_resource_id"] ))["provider_friendly_name"].downcase
-
-
+        compute_resource_name = HammerCLIForeman::ComputeResources.resource_provider(options['option_compute_resource_id'])
         interfaces_attr_name = ::HammerCLIForeman.compute_resources[compute_resource_name].interfaces_attrs_name
         interface_attr =  params['compute_attribute']['vm_attrs'][interfaces_attr_name] || {}
         new_interface_id = (interface_attr.keys.max.to_i + 1 ).to_s if interface_attr.any?
@@ -158,7 +157,7 @@ module HammerCLIForeman
       def request_params
         params = HammerCLIForeman::ComputeAttribute.get_params(options)
         raise ArgumentError, "Compute profile value to update does not exist yet; it needs to be created first" if !params['compute_attribute'].key?('id')
-        compute_resource_name = HammerCLIForeman.record_to_common_format(HammerCLIForeman.foreman_resource(:compute_resources).call(:show, 'id' => options["option_compute_resource_id"] ))["provider_friendly_name"].downcase
+        compute_resource_name = HammerCLIForeman::ComputeResources.resource_provider(options['option_compute_resource_id'])
         interfaces_attr_name = ::HammerCLIForeman.compute_resources[compute_resource_name].interfaces_attrs_name
         params['id'] = params['compute_attribute']['id']
         params['compute_attribute']['vm_attrs'][interfaces_attr_name] ||= {}
@@ -188,7 +187,7 @@ module HammerCLIForeman
       def request_params
         params = HammerCLIForeman::ComputeAttribute.get_params(options)
         raise ArgumentError, "Compute profile value to update does not exist yet; it needs to be created first" if !params['compute_attribute'].key?('id')
-        compute_resource_name = HammerCLIForeman.record_to_common_format(HammerCLIForeman.foreman_resource(:compute_resources).call(:show, 'id' => options["option_compute_resource_id"] ))["provider_friendly_name"].downcase
+        compute_resource_name = HammerCLIForeman::ComputeResources.resource_provider(options['option_compute_resource_id'])
         interfaces_attr_name = ::HammerCLIForeman.compute_resources[compute_resource_name].interfaces_attrs_name
         params['id'] = params['compute_attribute']['id']
         if params['compute_attribute']['vm_attrs'][interfaces_attr_name].has_key?(option_interface_id.to_s)
