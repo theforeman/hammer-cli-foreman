@@ -77,6 +77,16 @@ module HammerCLIForeman
         if action == :update
           params['host']['compute_attributes']['volumes_attributes'] = nested_attributes(option_volume_list) unless option_volume_list.empty?
           params['host']['interfaces_attributes'] = interfaces_attributes unless option_interface_list.empty?
+          if options['option_new_location_id']
+            params['host']['location_id'] = options['option_new_location_id']
+          else
+            params['host'].delete('location_id')
+          end
+          if options['option_new_organization_id']
+            params['host']['organization_id'] = options['option_new_organization_id']
+          else
+            params['host'].delete('organization_id')
+          end
         else
           params['host']['compute_attributes']['volumes_attributes'] = nested_attributes(option_volume_list)
           params['host']['interfaces_attributes'] = interfaces_attributes

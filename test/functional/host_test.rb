@@ -221,6 +221,15 @@ end
 describe 'host update' do
   let(:cmd) { %w[host update] }
   let(:minimal_params) { ['--location-id=1', '--organization-id=1', '--id=1'] }
+  let(:updated_host) do
+    {
+      'id' => '1',
+      'organization_id' => '5',
+      'location_id' => '5',
+      'compute_attributes' => {},
+      'puppetclass_ids' => []
+    }
+  end
 
   it 'ensures helper methods are invoked' do
     params = ['--image-id=1']
@@ -237,6 +246,63 @@ describe 'host update' do
     api_expects(:hosts, :update, 'Update host with image params').returns({})
 
     result = run_cmd(cmd + minimal_params + params)
+    assert_cmd(expected_result, result)
+  end
+
+  it 'updates nothing without host related parameters' do
+    api_expects(:hosts, :update, 'Update host with no host params').returns({})
+
+    expected_result = success_result("Host updated.\n")
+
+    result = run_cmd(cmd + minimal_params)
+    assert_cmd(expected_result, result)
+  end
+
+  it 'updates organization with resolving name to id' do
+    params = ['--new-organization', 'Org5']
+
+    api_expects_search(:organizations, name: 'Org5').returns(
+      index_response([{ 'id' => '5' }])
+    )
+    api_expects(:hosts, :update, 'Update host with new org').with_params(
+      'id' => '1', 'location_id' => 1, 'organization_id' => 1, 'host' => {
+        'organization_id' => '5', 'puppetclass_ids' => [], 'compute_attributes' => {}
+      }
+    ) do |par|
+      par['id'] == '1' &&
+        par['host']['organization_id'] == '5' &&
+        par['host']['puppetclass_ids'] == [] &&
+        par['host']['compute_attributes'] == {}
+    end.returns(updated_host)
+
+    expected_result = success_result("Host updated.\n")
+
+    result = run_cmd(cmd + minimal_params + params)
+
+    assert_cmd(expected_result, result)
+  end
+
+  it 'updates location with resolving name to id' do
+    params = ['--new-location', 'Loc5']
+
+    api_expects_search(:locations, name: 'Loc5').returns(
+      index_response([{ 'id' => '5' }])
+    )
+    api_expects(:hosts, :update, 'Update host with new loc').with_params(
+      'id' => '1', 'location_id' => 1, 'organization_id' => 1, 'host' => {
+        'location_id' => '5', 'puppetclass_ids' => [], 'compute_attributes' => {}
+      }
+    ) do |par|
+      par['id'] == '1' &&
+        par['host']['location_id'] == '5' &&
+        par['host']['puppetclass_ids'] == [] &&
+        par['host']['compute_attributes'] == {}
+    end.returns(updated_host)
+
+    expected_result = success_result("Host updated.\n")
+
+    result = run_cmd(cmd + minimal_params + params)
+
     assert_cmd(expected_result, result)
   end
 end
