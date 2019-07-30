@@ -245,7 +245,53 @@ module HammerCLIForeman
 
   end
 
+  class UpdateDependentSearchablesOptionBuilder < DependentSearchablesOptionBuilder
+    protected
 
+    def dependent_options(resource, resource_name_map)
+      options = []
+      searchables = @searchables.for(resource)
+      resource_name = resource.singular_name
+      aliased_name = aliased(resource_name, resource_name_map)
+
+      unless searchables.empty?
+        first = searchables[0]
+        remaining = searchables[1..-1] || []
+
+        # First option is named by the resource
+        # Eg. --new-organization with accessor option_new_organization_name
+        options << option(
+          optionamize("--new-#{aliased_name}"),
+          "new_#{aliased_name}_#{first.name}".upcase,
+          first.description || ' ',
+          attribute_name: HammerCLI.option_accessor_name("new_#{resource_name}_#{first.name}"),
+          referenced_resource: resource.singular_name
+        )
+
+        # Other options are named by the resource plus the searchable name
+        # Eg. --new-organization-label with accessor option_new_organization_label
+        remaining.each do |s|
+          options << option(
+            optionamize("--new-#{aliased_name}-#{s.name}"),
+            "new_#{aliased_name}_#{s.name}".upcase,
+            s.description || ' ',
+            attribute_name: HammerCLI.option_accessor_name("new_#{resource_name}_#{s.name}"),
+            referenced_resource: resource.singular_name
+          )
+        end
+      end
+
+      options << option(
+        optionamize("--new-#{aliased_name}-id"),
+        "new_#{aliased_name}_id".upcase,
+        description('id', :show),
+        attribute_name: HammerCLI.option_accessor_name("new_#{resource_name}_id"),
+        format: HammerCLI::Options::Normalizers::Number.new,
+        referenced_resource: resource.singular_name
+      )
+      options
+    end
+  end
 
   class DependentSearchablesArrayOptionBuilder < DependentSearchablesOptionBuilder
 

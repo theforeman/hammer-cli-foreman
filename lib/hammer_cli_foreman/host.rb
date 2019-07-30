@@ -308,10 +308,30 @@ module HammerCLIForeman
     end
 
     class UpdateCommand < HammerCLIForeman::UpdateCommand
-      include HammerCLIForeman::Hosts::CommonUpdateOptions
-
       success_message _("Host updated.")
       failure_message _("Could not update the host")
+
+      def self.create_option_builder
+        builder = super
+        %i[locations organizations].each do |resource_name|
+          builder.builders << UpdateDependentSearchablesOptionBuilder.new(
+            HammerCLIForeman.foreman_resource(resource_name), searchables
+          )
+        end
+        builder
+      end
+
+      include HammerCLIForeman::Hosts::CommonUpdateOptions
+
+      def option_sources
+        sources = super
+        sources.find_by_name('IdResolution').insert_relative(
+          :after,
+          'SelfParam',
+          HammerCLIForeman::OptionSources::NewParams.new(self)
+        )
+        sources
+      end
 
       extend_with(HammerCLIForeman::CommandExtensions::PuppetEnvironment.new)
       extend_with(HammerCLIForeman::CommandExtensions::Hosts::Help::Interfaces.new)
