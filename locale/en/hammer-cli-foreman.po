@@ -5,7 +5,7 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: hammer-cli-foreman 0.17.0\n"
+"Project-Id-Version: hammer-cli-foreman 0.18.0\n"
 "Report-Msgid-Bugs-To: \n"
 "PO-Revision-Date: 2014-03-04 16:47+0000\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
@@ -38,6 +38,14 @@ msgid "Manipulate domains"
 msgstr ""
 
 msgid "Manipulate environments"
+msgstr ""
+
+msgid ""
+"%{env} command is deprecated and will be removed in one of the future "
+"versions. Please use %{puppet_env} command instead."
+msgstr ""
+
+msgid "Manipulate Puppet environments"
 msgstr ""
 
 msgid "Search facts"
@@ -198,7 +206,7 @@ msgstr ""
 msgid "Could not disassociate the hostgroup"
 msgstr ""
 
-msgid "Associate an environment"
+msgid "Associate a Puppet environment"
 msgstr ""
 
 msgid "The environment has been associated."
@@ -207,7 +215,7 @@ msgstr ""
 msgid "Could not associate the environment"
 msgstr ""
 
-msgid "Disassociate an environment"
+msgid "Disassociate a Puppet environment"
 msgstr ""
 
 msgid "The environment has been disassociated."
@@ -670,6 +678,50 @@ msgstr ""
 msgid "Could not delete the template combination"
 msgstr ""
 
+msgid "Provider specific options"
+msgstr ""
+
+msgid "Available keys for %{option}"
+msgstr ""
+
+msgid "Possible values: %s"
+msgstr ""
+
+msgid "%{value}, each managed hosts needs to have one primary interface."
+msgstr ""
+
+msgid "For %{condition}"
+msgstr ""
+
+msgid ""
+"VLAN tag, this attribute has precedence over the subnet VLAN ID. Only for "
+"virtual interfaces."
+msgstr ""
+
+msgid "Identifier of the interface to which this interface belongs, e.g. eth1."
+msgstr ""
+
+msgid "Identifiers of slave interfaces, e.g. [eth1,eth2]"
+msgstr ""
+
+msgid "always IPMI"
+msgstr ""
+
+msgid "Use --puppet-environment instead"
+msgstr ""
+
+msgid "Use --puppet-environment-id instead"
+msgstr ""
+
+msgid "Use --puppet-environments instead"
+msgstr ""
+
+msgid "Environment IDs"
+msgstr ""
+
+msgid "Use --puppet-environment-ids instead"
+msgstr ""
+
 msgid "Received data of unknown format."
 msgstr ""
 
@@ -677,6 +729,12 @@ msgid "Search fields"
 msgstr ""
 
 msgid "Values"
+msgstr ""
+
+msgid "%s Id"
+msgstr ""
+
+msgid "%s name"
 msgstr ""
 
 msgid "Associate a resource"
@@ -868,15 +926,6 @@ msgstr ""
 msgid "Provider"
 msgstr ""
 
-msgid "Datacenter"
-msgstr ""
-
-msgid "Region"
-msgstr ""
-
-msgid "Tenant"
-msgstr ""
-
 msgid "Url"
 msgstr ""
 
@@ -904,16 +953,19 @@ msgstr ""
 msgid "Could not delete the compute resource"
 msgstr ""
 
-msgid "EC2"
+msgid "Region"
 msgstr ""
 
-msgid "GCE"
+msgid "Volume size in GB, integer value"
 msgstr ""
 
-msgid "Provider specific options"
+msgid "Project"
 msgstr ""
 
-msgid "Libvirt"
+msgid "Email"
+msgstr ""
+
+msgid "Key Path"
 msgstr ""
 
 msgid "Number of CPUs"
@@ -925,9 +977,6 @@ msgstr ""
 msgid "Boolean (expressed as 0 or 1), whether to start the machine or not"
 msgstr ""
 
-msgid "Possible values: %s"
-msgstr ""
-
 msgid "Name of interface according to type"
 msgstr ""
 
@@ -937,10 +986,13 @@ msgstr ""
 msgid "String value, eg. 10G"
 msgstr ""
 
-msgid "OpenStack"
+msgid "Tenant"
 msgstr ""
 
-msgid "oVirt"
+msgid "Project domain name"
+msgstr ""
+
+msgid "Project domain ID"
 msgstr ""
 
 msgid "ID of cluster to use"
@@ -955,13 +1007,13 @@ msgstr ""
 msgid "Amount of memory, integer value in bytes"
 msgstr ""
 
-msgid "compute name, Eg. eth0"
+msgid "Compute name, e.g. eth0"
 msgstr ""
 
 msgid "Select one of available networks for a cluster, must be an ID"
 msgstr ""
 
-msgid "Volume size in GB, integer value"
+msgid "Interface type"
 msgstr ""
 
 msgid "ID of storage domain"
@@ -970,10 +1022,7 @@ msgstr ""
 msgid "Boolean, only one volume can be bootable"
 msgstr ""
 
-msgid "Rackspace"
-msgstr ""
-
-msgid "VMware"
+msgid "Datacenter"
 msgstr ""
 
 msgid "CPU count"
@@ -997,25 +1046,40 @@ msgstr ""
 msgid "Guest OS ID form VMware"
 msgstr ""
 
-msgid "ID of the controller from VMware"
-msgstr ""
-
 msgid "Hardware version ID from VMware"
-msgstr ""
-
-msgid "Must be a 1 or 0, Add a CD-ROM drive to the virtual machine"
-msgstr ""
-
-msgid "Must be a 1 or 0, lets you add memory resources while the machine is on"
 msgstr ""
 
 msgid "Must be a 1 or 0, lets you add CPU resources while the machine is on"
 msgstr ""
 
+msgid "Must be a 1 or 0, lets you add memory resources while the machine is on"
+msgstr ""
+
+msgid "Must be a 1 or 0, Add a CD-ROM drive to the virtual machine"
+msgstr ""
+
 msgid "Annotation Notes"
 msgstr ""
 
+msgid "List with SCSI controllers definitions"
+msgstr ""
+
+msgid "ID of the controller from VMware"
+msgstr ""
+
+msgid "Key of the controller (e.g. 1000)"
+msgstr ""
+
 msgid "Must be a 1 or 0, whether to start the machine or not"
+msgstr ""
+
+msgid "Storage Pod ID from VMware"
+msgstr ""
+
+msgid "Datastore ID from VMware"
+msgstr ""
+
+msgid "Integer number, volume size in GB"
 msgstr ""
 
 msgid "Type of the network adapter, for example one of:"
@@ -1027,15 +1091,6 @@ msgid ""
 msgstr ""
 
 msgid "Network ID from VMware"
-msgstr ""
-
-msgid "Storage Pod ID from VMware"
-msgstr ""
-
-msgid "Datastore ID from VMware"
-msgstr ""
-
-msgid "Integer number, volume size in GB"
 msgstr ""
 
 msgid "Config group created."
@@ -1185,24 +1240,6 @@ msgstr ""
 msgid "Domain parameter deleted."
 msgstr ""
 
-msgid "Environment created."
-msgstr ""
-
-msgid "Could not create the environment"
-msgstr ""
-
-msgid "Environment updated."
-msgstr ""
-
-msgid "Could not update the environment"
-msgstr ""
-
-msgid "Environment deleted."
-msgstr ""
-
-msgid "Could not delete the environment"
-msgstr ""
-
 msgid "Redirection of API call detected."
 msgstr ""
 
@@ -1338,16 +1375,19 @@ msgstr ""
 msgid "Global Status"
 msgstr ""
 
-msgid "Bare Metal"
-msgstr ""
-
-msgid "UUID"
-msgstr ""
-
 msgid "Organization"
 msgstr ""
 
 msgid "Location"
+msgstr ""
+
+msgid "Additional Information"
+msgstr ""
+
+msgid "Bare Metal"
+msgstr ""
+
+msgid "UUID"
 msgstr ""
 
 msgid "Compute Profile"
@@ -1658,29 +1698,6 @@ msgstr ""
 msgid "Could not rebuild configuration"
 msgstr ""
 
-msgid "Available keys for %{option}"
-msgstr ""
-
-msgid "%{value}, each managed hosts needs to have one primary interface."
-msgstr ""
-
-msgid "For %{condition}"
-msgstr ""
-
-msgid ""
-"VLAN tag, this attribute has precedence over the subnet VLAN ID. Only for "
-"virtual interfaces."
-msgstr ""
-
-msgid "Identifier of the interface to which this interface belongs, e.g. eth1."
-msgstr ""
-
-msgid "Identifiers of slave interfaces, e.g. [eth1,eth2]"
-msgstr ""
-
-msgid "always IPMI"
-msgstr ""
-
 msgid "Login of the owner"
 msgstr ""
 
@@ -1714,6 +1731,9 @@ msgid "Compute profile name"
 msgstr ""
 
 msgid "Domain name"
+msgstr ""
+
+msgid "Puppet environment name"
 msgstr ""
 
 msgid "Hostgroup title"
@@ -1792,6 +1812,9 @@ msgid "View and manage compute resource's images"
 msgstr ""
 
 msgid "Username"
+msgstr ""
+
+msgid "User Data"
 msgstr ""
 
 msgid "IAM role"
@@ -2200,6 +2223,24 @@ msgid "Default value"
 msgstr ""
 
 msgid "Smart class parameters"
+msgstr ""
+
+msgid "Environment created."
+msgstr ""
+
+msgid "Could not create the environment"
+msgstr ""
+
+msgid "Environment updated."
+msgstr ""
+
+msgid "Could not update the environment"
+msgstr ""
+
+msgid "Environment deleted."
+msgstr ""
+
+msgid "Could not delete the environment"
 msgstr ""
 
 msgid "Realm proxy id"
@@ -2745,9 +2786,6 @@ msgid "Could not clone the provisioning template"
 msgstr ""
 
 msgid "Login"
-msgstr ""
-
-msgid "Email"
 msgstr ""
 
 msgid "Admin"
