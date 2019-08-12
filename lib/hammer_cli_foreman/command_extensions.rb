@@ -1,3 +1,6 @@
 require 'hammer_cli_foreman/command_extensions/puppet_environment'
+require 'hammer_cli_foreman/command_extensions/puppet_environment'
+require 'hammer_cli_foreman/command_extensions/puppet_environments'
+require 'hammer_cli_foreman/command_extensions/option_sources'
 require 'hammer_cli_foreman/command_extensions/puppet_environments'
 require 'hammer_cli_foreman/command_extensions/option_sources'
