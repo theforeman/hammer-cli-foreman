@@ -1,5 +1,9 @@
 Release notes
 =============
+### 0.17.2 (2019-08-13)
+* Update environments options for puppet context ([#27323](http://projects.theforeman.org/issues/27323))
+* Consistent puppet environment naming in hammer ([#23204](http://projects.theforeman.org/issues/23204))
+
 ### 0.17.1 (2019-07-10)
 * Consistent puppet environment naming in hammer ([#23204](http://projects.theforeman.org/issues/23204))
 * Create hostgroup with puppet classes ([#24717](http://projects.theforeman.org/issues/24717))
