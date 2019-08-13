@@ -39,12 +39,12 @@ describe HammerCLIForeman::ListCommand do
 
     it 'shows search fields in help' do
       result = run_cmd(cmd + params)
-      result.out.must_match(/.*Search fields:\s+(\S+\s+\S+)*\s+name\s+string/)
+      result.out.must_match(/.*Search \/ Order fields:\s+(\S+\s+\S+)*\s+name\s+string/)
     end
 
     it 'formats enum values' do
       result = run_cmd(cmd + params)
-      result.out.must_match(/.*Search fields:\s+(\S+\s+\S+)*\s+managed\s+Values: true, false/)
+      result.out.must_match(/.*Search \/ Order fields:\s+(\S+\s+\S+)*\s+managed\s+Values: true, false/)
     end
   end
 
