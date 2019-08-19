@@ -20,9 +20,9 @@ module HammerCLIForeman
 
       def interface_attributes
         [
-          ['type',   _('Possible values: %s') % 'bridge, network'],
-          ['bridge', _('Name of interface according to type')],
-          ['model',  _('Possible values: %s') % 'virtio, rtl8139, ne2k_pci, pcnet, e1000']
+          ['compute_type',   _('Possible values: %s') % 'bridge, network'],
+          ['compute_bridge', _('Name of interface according to type')],
+          ['compute_model',  _('Possible values: %s') % 'virtio, rtl8139, ne2k_pci, pcnet, e1000']
         ]
       end
 
