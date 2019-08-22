@@ -32,7 +32,9 @@ module HammerCLIForeman
         [
           ['size_gb',        _('Volume size in GB, integer value')],
           ['storage_domain', _('ID of storage domain')],
-          ['bootable',       _('Boolean, only one volume can be bootable')]
+          ['bootable',       _('Boolean, only one volume can be bootable')],
+          ['preallocate',    _('Boolean, set %s to preallocate') % 'true'],
+          ['wipe_after_delete', _('Boolean, set %s to wipe disk after delete') % 'true']
         ]
       end
 

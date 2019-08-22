@@ -240,9 +240,11 @@ compute_network      # select one of available networks for a cluster
 
 Available keys for `--volume`:
 ```
-size_gb          # volume size in GB, integer value
-storage_domain   # select one of available storage domains
-bootable         # boolean, only one volume can be bootable
+size_gb            # volume size in GB, integer value
+storage_domain     # select one of available storage domains
+bootable           # boolean, only one volume can be bootable
+preallocate        # boolean, set true to preallocate
+wipe_after_delete  # boolean, set true to wipe disk after delete
 ```
 
 ## Rackspace
