@@ -6,7 +6,7 @@ module HammerCLIForeman
       end
 
       def compute_attributes
-        %w[machine_type image_id network associate_external_ip]
+        %w[machine_type network associate_external_ip]
       end
 
       def interfaces_attrs_name

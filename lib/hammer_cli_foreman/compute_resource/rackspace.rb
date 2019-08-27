@@ -6,7 +6,7 @@ module HammerCLIForeman
       end
 
       def compute_attributes
-        %w[flavor_id image_id]
+        %w[flavor_id]
       end
 
       def provider_specific_fields

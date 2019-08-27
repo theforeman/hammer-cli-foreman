@@ -44,6 +44,7 @@ module HammerCLIForeman
               @help_block ||= Proc.new do
                 help do |h|
                   h.section(_('Provider specific options')) do |h|
+                    h.note(_('Bold attributes are required.'), richtext: true)
                     HammerCLIForeman.compute_resources.each do |name, provider|
                       next unless current_providers.include?(name)
 

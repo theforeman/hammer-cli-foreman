@@ -10,6 +10,7 @@ module HammerCLIForeman
           ['cluster',  _('ID of cluster to use')],
           ['template', _('Hardware profile to use')],
           ['cores',    _('Integer value, number of cores')],
+          ['sockets',  _('Integer value, number of sockets')],
           ['memory',   _('Amount of memory, integer value in bytes')]
         ]
       end

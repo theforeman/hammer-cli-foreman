@@ -6,7 +6,7 @@ module HammerCLIForeman
       end
 
       def compute_attributes
-        %w[flavor_ref image_ref tenant_id security_groups network]
+        %w[availability_zone boot_from_volume flavor_ref image_ref tenant_id security_groups network]
       end
 
       def provider_specific_fields

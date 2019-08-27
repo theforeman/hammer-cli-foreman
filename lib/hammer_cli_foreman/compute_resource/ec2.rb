@@ -6,7 +6,7 @@ module HammerCLIForeman
       end
 
       def compute_attributes
-        %w[flavor_id image_id availability_zone security_group_ids managed_ip]
+        %w[availability_zone flavor_id groups security_group_ids managed_ip]
       end
 
       def provider_specific_fields
