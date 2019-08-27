@@ -175,17 +175,16 @@ Provider specific options
 Available keys for `--compute-attributes`:
 ```
 flavor_id          # select one of available flavours
-image_id           # select one of available images
 availability_zone
 security_group_ids
 managed_ip
+groups
 ```
 
 ## GCE
 Available keys for `--compute-attributes`:
 ```
 machine_type # one of available flavors
-image_id
 network
 associate_external_ip
 ```
@@ -195,6 +194,7 @@ Available keys for `--compute-attributes`:
 ```
 cpus          # number of CPUs
 memory        # string, amount of memory, value in bytes
+cpu_mode      # possible values: default, host-model, host-passthrough
 start         # Must be a 1 or 0, whether to start the machine or not
 ```
 
@@ -208,13 +208,16 @@ compute_model                     # one of [virtio, rtl8139, ne2k_pci, pcnet, e1
 Available keys for `--volume`:
 ```
 pool_name   # list of available storage pools
-capacity    # string value, eg. 10G
+capacity    # string value, e.g. 10G
 format_type # one of [raw, qcow2]
+allocation  # initial allocation, e.g. 0G
 ```
 
 ## OpenStack
 Available keys for `--compute-attributes`:
 ```
+availability_zone
+boot_from_volume
 flavor_ref
 image_ref
 tenant_id
@@ -228,6 +231,7 @@ Available keys for `--compute-attributes`:
 cluster
 template   # hardware profile to use
 cores      # int value, number of cores
+sockets    # int value, number of sockets
 memory     # amount of memory, int value in bytes
 start      # Must be a 1 or 0, whether to start the machine or not
 ```
@@ -236,6 +240,7 @@ Available keys for `--interface`:
 ```
 compute_name         # eg. eth0
 compute_network      # select one of available networks for a cluster
+compute_interface    # interface type
 ```
 
 Available keys for `--volume`:
@@ -251,7 +256,6 @@ wipe_after_delete  # boolean, set true to wipe disk after delete
 Available keys for `--compute-attributes`:
 ```
 flavor_id
-image_id
 ```
 
 ## VMware
@@ -265,13 +269,15 @@ cluster               Cluster ID from VMware
 resource_pool         Resource Pool ID from VMware
 path                  Path to folder
 guest_id              Guest OS ID form VMware
-scsi_controller_type  ID of the controller from VMware
 hardware_version      Hardware version ID from VMware
 add_cdrom             Must be a 1 or 0, Add a CD-ROM drive to the virtual machine
 cpuHotAddEnabled      Must be a 1 or 0, lets you add memory resources while the machine is on
-memoryHotAddEnabled   Must be a 1 or 0, lets you add CPU resources while the machine is on
-start                 Must be a 1 or 0, whether to start the machine or not
+memoryHotAddEnabled   Must be a 1 or 0, lets you add CPU resources while the machine is on the machine or not
 annotation            Annotation Notes
+scsi_controllers      List with SCSI controllers definitions
+                        type - ID of the controller from VMware
+                        key  - Key of the controller (e.g. 1000)
+start         # Must be a 1 or 0, whether to start the machine or not
 ```
 
 Available keys for `--interface`:
@@ -294,4 +300,5 @@ size_gb             Integer number, volume size in GB
 thin                true/false
 eager_zero          true/false
 mode                persistent/independent_persistent/independent_nonpersistent
+controller_key      Associated SCSI controller key
 ```

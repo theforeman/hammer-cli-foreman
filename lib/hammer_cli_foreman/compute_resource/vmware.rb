@@ -9,13 +9,13 @@ module HammerCLIForeman
 
       def compute_attributes
         [
-          ['cpus',                 _('CPU count')],
-          ['corespersocket',       _('Number of cores per socket (applicable to hardware versions < 10 only)')],
-          ['memory_mb',            _('Integer number, amount of memory in MB')],
+          ['cluster',              _('Cluster ID from VMware'), { bold: true }],
+          ['corespersocket',       _('Number of cores per socket (applicable to hardware versions < 10 only)'), { bold: true }],
+          ['cpus',                 _('CPU count'), { bold: true }],
+          ['memory_mb',            _('Integer number, amount of memory in MB'), { bold: true }],
+          ['path',                 _('Path to folder'), { bold: true }],
+          ['resource_pool',        _('Resource Pool ID from VMware'), { bold: true }],
           ['firmware',             'automatic/bios/efi'],
-          ['cluster',              _('Cluster ID from VMware')],
-          ['resource_pool',        _('Resource Pool ID from VMware')],
-          ['path',                 _('Path to folder')],
           ['guest_id',             _('Guest OS ID form VMware')],
           ['hardware_version',     _('Hardware version ID from VMware')],
           ['memoryHotAddEnabled',  _('Must be a 1 or 0, lets you add CPU resources while the machine is on')],
