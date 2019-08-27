@@ -21,6 +21,22 @@ module HammerCLIForeman
       attribute_list.size.times.map { |idx| idx.to_s }.zip(attribute_list).to_h
     end
 
+    def self.alter_interface(interface)
+      # move each attribute starting with "compute_" to compute_attributes
+        interface.keys.each do |key|
+          if key.start_with? 'compute_'
+            interface[key.gsub('compute_', '')] = interface.delete(key)
+          end
+        end
+        interface
+    end
+
+    def self.alter_interfaces_list(interfaces_list)
+      interfaces_list.collect do |nic|
+        alter_interface(nic)
+      end
+    end
+
     class Create < HammerCLIForeman::CreateCommand
       desc _('Create compute profile set of values')
 
@@ -41,7 +57,8 @@ module HammerCLIForeman
         compute_resource_name = HammerCLIForeman::ComputeResources.resource_provider(options['option_compute_resource_id'])
         interfaces_attr_name = ::HammerCLIForeman.compute_resources[compute_resource_name].interfaces_attrs_name
         params['compute_attribute']['vm_attrs'] = option_compute_attributes || {}
-        params['compute_attribute']['vm_attrs'][interfaces_attr_name]= HammerCLIForeman::ComputeAttribute.attribute_hash(option_interface_list) unless option_interface_list.empty?
+        interfaces_list = HammerCLIForeman::ComputeAttribute.alter_interfaces_list(options['option_interface_list']) unless options['option_interface_list'].empty?
+        params['compute_attribute']['vm_attrs'][interfaces_attr_name]= HammerCLIForeman::ComputeAttribute.attribute_hash(interfaces_list) if interfaces_list
         params['compute_attribute']['vm_attrs']['volumes_attributes'] = HammerCLIForeman::ComputeAttribute.attribute_hash(option_volume_list) unless option_volume_list.empty?
         params
       end
@@ -69,7 +86,6 @@ module HammerCLIForeman
       end
 
       def request_params
-
         params = HammerCLIForeman::ComputeAttribute.get_params(options)
         compute_resource_name = HammerCLIForeman::ComputeResources.resource_provider(options['option_compute_resource_id'])
         interfaces_attr_name = ::HammerCLIForeman.compute_resources[compute_resource_name].interfaces_attrs_name
@@ -85,7 +101,8 @@ module HammerCLIForeman
           vm_attrs['volumes_attributes'] ||= original_volumes
           vm_attrs[interfaces_attr_name] ||= original_interfaces
         end
-        vm_attrs[interfaces_attr_name] = HammerCLIForeman::ComputeAttribute.attribute_hash(options['option_interface_list']) unless options['option_interface_list'].empty?
+        interfaces_list = HammerCLIForeman::ComputeAttribute.alter_interfaces_list(options['option_interface_list']) unless options['option_interface_list'].empty?
+        vm_attrs[interfaces_attr_name] = HammerCLIForeman::ComputeAttribute.attribute_hash(interfaces_list) if interfaces_list
         vm_attrs['volumes_attributes'] = HammerCLIForeman::ComputeAttribute.attribute_hash(options['option_volume_list']) unless options['option_volume_list'].empty?
         params['compute_attribute']['vm_attrs'] = vm_attrs
         params
@@ -124,7 +141,7 @@ module HammerCLIForeman
         params['id'] = params['compute_attribute']['id']
 
         params['compute_attribute']['vm_attrs'][interfaces_attr_name] ||= {}
-        params['compute_attribute']['vm_attrs'][interfaces_attr_name][new_interface_id] = option_interface
+        params['compute_attribute']['vm_attrs'][interfaces_attr_name][new_interface_id] = HammerCLIForeman::ComputeAttribute.alter_interface(option_interface)
         params
       end
 
@@ -161,7 +178,7 @@ module HammerCLIForeman
         interfaces_attr_name = ::HammerCLIForeman.compute_resources[compute_resource_name].interfaces_attrs_name
         params['id'] = params['compute_attribute']['id']
         params['compute_attribute']['vm_attrs'][interfaces_attr_name] ||= {}
-        params['compute_attribute']['vm_attrs'][interfaces_attr_name][option_interface_id] = option_interface
+        params['compute_attribute']['vm_attrs'][interfaces_attr_name][option_interface_id] = HammerCLIForeman::ComputeAttribute.alter_interface(option_interface)
         params
       end
       success_message _('Interface was updated.')

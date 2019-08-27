@@ -22,9 +22,9 @@ module HammerCLIForeman
 
       def interface_attributes
         [
-          ['name',      _('Compute name, e.g. eth0')],
-          ['network',   _('Select one of available networks for a cluster, must be an ID')],
-          ['interface', _('Interface type')]
+          ['compute_name',      _('Compute name, e.g. eth0')],
+          ['compute_network',   _('Select one of available networks for a cluster, must be an ID')],
+          ['compute_interface', _('Interface type')]
         ]
       end
 
