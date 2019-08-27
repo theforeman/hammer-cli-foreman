@@ -17,15 +17,14 @@ module HammerCLIForeman
       def host_attributes
         [
             ['start',    _('Boolean (expressed as 0 or 1), whether to start the machine or not')]
-
         ]
       end
 
       def interface_attributes
         [
-            ['name',    _('compute name, Eg. eth0')],
-            ['network', _('Select one of available networks for a cluster, must be an ID')],
-            ['interface', ('interface type')]
+            ['compute_name',      _('Compute name, e.g. eth0')],
+            ['compute_network',   _('Select one of available networks for a cluster, must be an ID')],
+            ['compute_interface', _('Interface type')]
         ]
       end
 
