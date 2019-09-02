@@ -185,7 +185,9 @@ module HammerCLIForeman
     end
 
     def send_request
-      transform_format(super)
+      data = super
+      @meta = retrieve_meta(data)
+      transform_format(data)
     end
 
     def transform_format(data)
@@ -209,6 +211,22 @@ module HammerCLIForeman
     end
 
     extend_with(HammerCLIForeman::CommandExtensions::OptionSources.new)
+
+    protected
+
+    def retrieve_meta(data)
+      return unless data.class <= Hash
+
+      {
+        total: data['total'].to_i,
+        subtotal: data['subtotal'].to_i,
+        page: data['page'].to_i,
+        per_page: data['per_page'].to_i,
+        search: data['search'],
+        sort_by: data['sort_by'],
+        sort_order: data['sort_order']
+      }
+    end
 
     private
 
@@ -263,7 +281,7 @@ module HammerCLIForeman
 
     def execute
       if should_retrieve_all?
-        print_data(retrieve_all)
+        retrieve_all
       else
         self.option_page = (self.option_page || 1).to_i if respond_to?(:option_page)
         self.option_per_page = (self.option_per_page || HammerCLI::Settings.get(:ui, :per_page) || DEFAULT_PER_PAGE).to_i if respond_to?(:option_per_page)
@@ -295,15 +313,13 @@ module HammerCLIForeman
       self.option_per_page = RETRIEVE_ALL_PER_PAGE
       self.option_page = 1
 
-      d = send_request
-      all = d
+      loop do
+        data = send_request
+        print_data(data, current_chunk: current_chunk)
+        break unless data.size == RETRIEVE_ALL_PER_PAGE
 
-      while (d.size == RETRIEVE_ALL_PER_PAGE) do
         self.option_page += 1
-        d = send_request
-        all += d
       end
-      all
     end
 
     def pagination_supported?
@@ -332,6 +348,18 @@ module HammerCLIForeman
       else
         field[:type] || field[:values]
       end
+    end
+
+    def current_chunk
+      return :single unless @meta
+
+      first_chunk = @meta[:page] == 1
+      last_chunk = @meta[:per_page] * @meta[:page] >= @meta[:subtotal]
+      return :single if first_chunk && last_chunk
+      return :first if first_chunk
+      return :last if last_chunk
+
+      :another
     end
   end
 

@@ -8,7 +8,7 @@ class TestAdapter < HammerCLI::Output::Adapter::Abstract
   end
 
 
-  def print_collection(fields, data)
+  def print_collection(fields, data, _options = {})
     @separator = '#'
     puts @separator+fields.collect{|f| f.label.to_s}.join(@separator)+@separator
 
@@ -20,5 +20,3 @@ class TestAdapter < HammerCLI::Output::Adapter::Abstract
 end
 
 HammerCLI::Output::Output.register_adapter(:test, TestAdapter)
-
-
