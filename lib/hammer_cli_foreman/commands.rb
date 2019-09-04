@@ -270,7 +270,7 @@ module HammerCLIForeman
       meta = resource.action(action).apidoc[:metadata]
       if meta && meta[:search] && respond_to?(:option_search)
         self.class.extend_help do |h|
-          h.section(_('Search fields'), id: :search_fields_section) do |h|
+          h.section(_('Search / Order fields'), id: :search_fields_section) do |h|
             h.list(search_fields_help(meta[:search]))
           end
         end
