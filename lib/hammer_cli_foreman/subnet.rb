@@ -37,6 +37,7 @@ module HammerCLIForeman
         field :mask, _("Network Mask")
         field :vlanid, _("VLAN ID")
         field :boot_mode, _("Boot Mode")
+        field :gateway, _("Gateway Address")
       end
 
       build_options
