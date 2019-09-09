@@ -168,6 +168,13 @@ module HammerCLIForeman
       'HammerCLIForeman::ConfigGroup', 'hammer_cli_foreman/config_group'
     )
 
+    HammerCLI::MainCommand.lazy_subcommand('ping', _("Get the status of the server and/or it's subcomponents"),
+      'HammerCLIForeman::PingCommand', 'hammer_cli_foreman/ping'
+    )
+
+    HammerCLI::MainCommand.lazy_subcommand('status', _("Get the complete status of the server and/or it's subcomponents"),
+      'HammerCLIForeman::StatusCommand', 'hammer_cli_foreman/status'
+    )
   rescue => e
     handler = HammerCLIForeman::ExceptionHandler.new(:context => {}, :adapter => :base)
     handler.handle_exception(e)
