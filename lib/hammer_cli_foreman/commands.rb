@@ -262,6 +262,7 @@ module HammerCLIForeman
     end
 
     def execute
+      output.print_output_type
       if should_retrieve_all?
         print_data(retrieve_all)
       else
