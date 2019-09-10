@@ -162,7 +162,7 @@ module HammerCLIForeman
     end
 
     class CreateCommand < HammerCLIForeman::CreateCommand
-      option ['--interactive', '-i'], :flag, _('Open empty template in an $EDITOR. Upload the result')
+      option ['-i', '--interactive'], :flag, _('Open empty template in an $EDITOR. Upload the result')
       option "--file", "LAYOUT", _("Path to a file that contains the report template content"),
         :attribute_name => :option_template, :format => HammerCLI::Options::Normalizers::File.new
 
@@ -187,7 +187,7 @@ module HammerCLIForeman
 
 
     class UpdateCommand < HammerCLIForeman::UpdateCommand
-      option ['--interactive', '-i'], :flag, _('Dump existing template and open it in an $EDITOR. Update with the result')
+      option ['-i', '--interactive'], :flag, _('Dump existing template and open it in an $EDITOR. Update with the result')
       option '--file', 'REPORT', _("Path to a file that contains the report template content"), :attribute_name => :option_template,
         :format => HammerCLI::Options::Normalizers::File.new
 
