@@ -14,6 +14,7 @@ module HammerCLIForeman
 
     class InfoCommand < HammerCLIForeman::InfoCommand
       output ListCommand.output_definition do
+        field :description, _('Description'), Fields::Text
         field :locked, _("Locked"), Fields::Boolean
         field :default, _("Default"), Fields::Boolean
         HammerCLIForeman::References.timestamps(self)
