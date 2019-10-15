@@ -6,10 +6,10 @@
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: hammer-cli-foreman 0.18.0\n"
+"Project-Id-Version: hammer-cli-foreman 0.19.pre.develop\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-08-01 22:50+0200\n"
-"PO-Revision-Date: 2019-08-01 22:50+0200\n"
+"POT-Creation-Date: 2019-10-15 13:56+0200\n"
+"PO-Revision-Date: 2019-10-15 13:56+0200\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: \n"
@@ -267,7 +267,7 @@ msgstr ""
 #: ../lib/hammer_cli_foreman/smart_variable.rb:88
 #: ../lib/hammer_cli_foreman/ssh_keys.rb:9
 #: ../lib/hammer_cli_foreman/subnet.rb:33
-#: ../lib/hammer_cli_foreman/subnet.rb:49
+#: ../lib/hammer_cli_foreman/subnet.rb:50
 #: ../lib/hammer_cli_foreman/template.rb:32
 #: ../lib/hammer_cli_foreman/user.rb:10
 #: ../lib/hammer_cli_foreman/usergroup.rb:11
@@ -319,7 +319,7 @@ msgstr ""
 #: ../lib/hammer_cli_foreman/smart_proxy.rb:12
 #: ../lib/hammer_cli_foreman/ssh_keys.rb:10
 #: ../lib/hammer_cli_foreman/subnet.rb:34
-#: ../lib/hammer_cli_foreman/subnet.rb:50
+#: ../lib/hammer_cli_foreman/subnet.rb:51
 #: ../lib/hammer_cli_foreman/template.rb:33
 #: ../lib/hammer_cli_foreman/template.rb:86
 #: ../lib/hammer_cli_foreman/user.rb:12
@@ -1025,15 +1025,20 @@ msgstr ""
 msgid "Provider specific options"
 msgstr ""
 
+#:
+#: ../lib/hammer_cli_foreman/command_extensions/hosts/help/compute_resources.rb:47
+msgid "Bold attributes are required."
+msgstr ""
+
 #: ../lib/hammer_cli_foreman/command_extensions/hosts/help/interfaces.rb:7
 msgid "Available keys for %{option}"
 msgstr ""
 
 #: ../lib/hammer_cli_foreman/command_extensions/hosts/help/interfaces.rb:12
 #: ../lib/hammer_cli_foreman/command_extensions/hosts/help/interfaces.rb:34
-#: ../lib/hammer_cli_foreman/compute_resource/libvirt.rb:23
-#: ../lib/hammer_cli_foreman/compute_resource/libvirt.rb:25
-#: ../lib/hammer_cli_foreman/compute_resource/libvirt.rb:33
+#: ../lib/hammer_cli_foreman/compute_resource/libvirt.rb:24
+#: ../lib/hammer_cli_foreman/compute_resource/libvirt.rb:26
+#: ../lib/hammer_cli_foreman/compute_resource/libvirt.rb:36
 msgid "Possible values: %s"
 msgstr ""
 
@@ -1090,7 +1095,7 @@ msgid "Received data of unknown format."
 msgstr ""
 
 #: ../lib/hammer_cli_foreman/commands.rb:282
-msgid "Search fields"
+msgid "Search / Order fields"
 msgstr ""
 
 #: ../lib/hammer_cli_foreman/commands.rb:331
@@ -1200,140 +1205,140 @@ msgstr ""
 msgid "Manipulate global parameters"
 msgstr ""
 
-#: ../lib/hammer_cli_foreman/compute_attribute.rb:25
+#: ../lib/hammer_cli_foreman/compute_attribute.rb:41
 msgid "Create compute profile set of values"
 msgstr ""
 
-#: ../lib/hammer_cli_foreman/compute_attribute.rb:27
+#: ../lib/hammer_cli_foreman/compute_attribute.rb:43
 #: ../lib/hammer_cli_foreman/hosts/common_update_options.rb:33
 msgid "Compute resource attributes"
 msgstr ""
 
-#: ../lib/hammer_cli_foreman/compute_attribute.rb:29
-#: ../lib/hammer_cli_foreman/compute_attribute.rb:61
-#: ../lib/hammer_cli_foreman/compute_attribute.rb:106
-#: ../lib/hammer_cli_foreman/compute_attribute.rb:144
+#: ../lib/hammer_cli_foreman/compute_attribute.rb:45
+#: ../lib/hammer_cli_foreman/compute_attribute.rb:78
+#: ../lib/hammer_cli_foreman/compute_attribute.rb:123
+#: ../lib/hammer_cli_foreman/compute_attribute.rb:161
 msgid "Interface parameters, should be comma separated list of values"
 msgstr ""
 
-#: ../lib/hammer_cli_foreman/compute_attribute.rb:31
-#: ../lib/hammer_cli_foreman/compute_attribute.rb:63
-#: ../lib/hammer_cli_foreman/compute_attribute.rb:210
-#: ../lib/hammer_cli_foreman/compute_attribute.rb:242
+#: ../lib/hammer_cli_foreman/compute_attribute.rb:47
+#: ../lib/hammer_cli_foreman/compute_attribute.rb:80
+#: ../lib/hammer_cli_foreman/compute_attribute.rb:227
+#: ../lib/hammer_cli_foreman/compute_attribute.rb:259
 msgid "Volume parameters, should be comma separated list of values"
 msgstr ""
 
-#: ../lib/hammer_cli_foreman/compute_attribute.rb:49
+#: ../lib/hammer_cli_foreman/compute_attribute.rb:66
 msgid "Compute profile attributes are set."
 msgstr ""
 
-#: ../lib/hammer_cli_foreman/compute_attribute.rb:50
+#: ../lib/hammer_cli_foreman/compute_attribute.rb:67
 msgid "Could not set the compute profile attributes"
 msgstr ""
 
-#: ../lib/hammer_cli_foreman/compute_attribute.rb:57
+#: ../lib/hammer_cli_foreman/compute_attribute.rb:74
 msgid "Update compute profile values"
 msgstr ""
 
-#: ../lib/hammer_cli_foreman/compute_attribute.rb:59
+#: ../lib/hammer_cli_foreman/compute_attribute.rb:76
 msgid "Compute resource attributes, should be comma separated list of values"
 msgstr ""
 
-#: ../lib/hammer_cli_foreman/compute_attribute.rb:94
+#: ../lib/hammer_cli_foreman/compute_attribute.rb:111
 msgid "Compute profile attributes updated."
 msgstr ""
 
-#: ../lib/hammer_cli_foreman/compute_attribute.rb:95
+#: ../lib/hammer_cli_foreman/compute_attribute.rb:112
 msgid "Could not update the compute profile attributes"
 msgstr ""
 
-#: ../lib/hammer_cli_foreman/compute_attribute.rb:105
+#: ../lib/hammer_cli_foreman/compute_attribute.rb:122
 msgid "Add interface for Compute Profile"
 msgstr ""
 
-#: ../lib/hammer_cli_foreman/compute_attribute.rb:131
+#: ../lib/hammer_cli_foreman/compute_attribute.rb:148
 msgid "Interface was created."
 msgstr ""
 
-#: ../lib/hammer_cli_foreman/compute_attribute.rb:132
+#: ../lib/hammer_cli_foreman/compute_attribute.rb:149
 msgid "Could not create interface"
 msgstr ""
 
-#: ../lib/hammer_cli_foreman/compute_attribute.rb:142
+#: ../lib/hammer_cli_foreman/compute_attribute.rb:159
 msgid "Update compute profile interface"
 msgstr ""
 
-#: ../lib/hammer_cli_foreman/compute_attribute.rb:147
-#: ../lib/hammer_cli_foreman/compute_attribute.rb:178
+#: ../lib/hammer_cli_foreman/compute_attribute.rb:164
+#: ../lib/hammer_cli_foreman/compute_attribute.rb:195
 msgid "Interface id"
 msgstr ""
 
-#: ../lib/hammer_cli_foreman/compute_attribute.rb:167
+#: ../lib/hammer_cli_foreman/compute_attribute.rb:184
 msgid "Interface was updated."
 msgstr ""
 
-#: ../lib/hammer_cli_foreman/compute_attribute.rb:168
+#: ../lib/hammer_cli_foreman/compute_attribute.rb:185
 msgid "Could not update interface"
 msgstr ""
 
-#: ../lib/hammer_cli_foreman/compute_attribute.rb:177
+#: ../lib/hammer_cli_foreman/compute_attribute.rb:194
 msgid "Remove compute profile interface"
 msgstr ""
 
-#: ../lib/hammer_cli_foreman/compute_attribute.rb:196
+#: ../lib/hammer_cli_foreman/compute_attribute.rb:213
 msgid "unknown interface id"
 msgstr ""
 
-#: ../lib/hammer_cli_foreman/compute_attribute.rb:200
+#: ../lib/hammer_cli_foreman/compute_attribute.rb:217
 msgid "Interface was removed."
 msgstr ""
 
-#: ../lib/hammer_cli_foreman/compute_attribute.rb:201
+#: ../lib/hammer_cli_foreman/compute_attribute.rb:218
 msgid "Could not remove interface"
 msgstr ""
 
-#: ../lib/hammer_cli_foreman/compute_attribute.rb:208
+#: ../lib/hammer_cli_foreman/compute_attribute.rb:225
 msgid "Add volume for Compute Profile"
 msgstr ""
 
-#: ../lib/hammer_cli_foreman/compute_attribute.rb:231
+#: ../lib/hammer_cli_foreman/compute_attribute.rb:248
 msgid "Volume was created."
 msgstr ""
 
-#: ../lib/hammer_cli_foreman/compute_attribute.rb:232
+#: ../lib/hammer_cli_foreman/compute_attribute.rb:249
 msgid "Could not create volume"
 msgstr ""
 
-#: ../lib/hammer_cli_foreman/compute_attribute.rb:240
+#: ../lib/hammer_cli_foreman/compute_attribute.rb:257
 msgid "Update compute profile volume"
 msgstr ""
 
-#: ../lib/hammer_cli_foreman/compute_attribute.rb:245
-#: ../lib/hammer_cli_foreman/compute_attribute.rb:275
+#: ../lib/hammer_cli_foreman/compute_attribute.rb:262
+#: ../lib/hammer_cli_foreman/compute_attribute.rb:292
 msgid "Volume id"
 msgstr ""
 
-#: ../lib/hammer_cli_foreman/compute_attribute.rb:263
+#: ../lib/hammer_cli_foreman/compute_attribute.rb:280
 msgid "Volume was updated."
 msgstr ""
 
-#: ../lib/hammer_cli_foreman/compute_attribute.rb:264
+#: ../lib/hammer_cli_foreman/compute_attribute.rb:281
 msgid "Could not update volume"
 msgstr ""
 
-#: ../lib/hammer_cli_foreman/compute_attribute.rb:274
+#: ../lib/hammer_cli_foreman/compute_attribute.rb:291
 msgid "Remove compute profile volume"
 msgstr ""
 
-#: ../lib/hammer_cli_foreman/compute_attribute.rb:291
+#: ../lib/hammer_cli_foreman/compute_attribute.rb:308
 msgid "unknown volume id"
 msgstr ""
 
-#: ../lib/hammer_cli_foreman/compute_attribute.rb:295
+#: ../lib/hammer_cli_foreman/compute_attribute.rb:312
 msgid "Volume was removed."
 msgstr ""
 
-#: ../lib/hammer_cli_foreman/compute_attribute.rb:296
+#: ../lib/hammer_cli_foreman/compute_attribute.rb:313
 msgid "Could not remove volume"
 msgstr ""
 
@@ -1397,7 +1402,7 @@ msgstr ""
 #: ../lib/hammer_cli_foreman/settings.rb:15
 #: ../lib/hammer_cli_foreman/smart_class_parameter.rb:61
 #: ../lib/hammer_cli_foreman/smart_variable.rb:75
-#: ../lib/hammer_cli_foreman/subnet.rb:51 ../lib/hammer_cli_foreman/user.rb:34
+#: ../lib/hammer_cli_foreman/subnet.rb:52 ../lib/hammer_cli_foreman/user.rb:34
 msgid "Description"
 msgstr ""
 
@@ -1436,7 +1441,7 @@ msgid "Region"
 msgstr ""
 
 #: ../lib/hammer_cli_foreman/compute_resource/gce.rb:18
-#: ../lib/hammer_cli_foreman/compute_resource/ovirt.rb:33
+#: ../lib/hammer_cli_foreman/compute_resource/ovirt.rb:34
 msgid "Volume size in GB, integer value"
 msgstr ""
 
@@ -1461,21 +1466,33 @@ msgstr ""
 msgid "String, amount of memory, value in bytes"
 msgstr ""
 
-#: ../lib/hammer_cli_foreman/compute_resource/libvirt.rb:17
-#: ../lib/hammer_cli_foreman/compute_resource/ovirt.rb:19
+#: ../lib/hammer_cli_foreman/compute_resource/libvirt.rb:12
+msgid "Possible values: %{modes}"
+msgstr ""
+
+#: ../lib/hammer_cli_foreman/compute_resource/libvirt.rb:18
+#: ../lib/hammer_cli_foreman/compute_resource/ovirt.rb:20
 msgid "Boolean (expressed as 0 or 1), whether to start the machine or not"
 msgstr ""
 
-#: ../lib/hammer_cli_foreman/compute_resource/libvirt.rb:24
+#: ../lib/hammer_cli_foreman/compute_resource/libvirt.rb:25
 msgid "Name of interface according to type"
 msgstr ""
 
-#: ../lib/hammer_cli_foreman/compute_resource/libvirt.rb:31
+#: ../lib/hammer_cli_foreman/compute_resource/libvirt.rb:27
+msgid "Libvirt instance network, e.g. default"
+msgstr ""
+
+#: ../lib/hammer_cli_foreman/compute_resource/libvirt.rb:33
 msgid "One of available storage pools"
 msgstr ""
 
-#: ../lib/hammer_cli_foreman/compute_resource/libvirt.rb:32
-msgid "String value, eg. 10G"
+#: ../lib/hammer_cli_foreman/compute_resource/libvirt.rb:34
+msgid "String value, e.g. 10G"
+msgstr ""
+
+#: ../lib/hammer_cli_foreman/compute_resource/libvirt.rb:35
+msgid "Initial allocation, e.g. 0G"
 msgstr ""
 
 #: ../lib/hammer_cli_foreman/compute_resource/openstack.rb:14
@@ -1503,36 +1520,48 @@ msgid "Integer value, number of cores"
 msgstr ""
 
 #: ../lib/hammer_cli_foreman/compute_resource/ovirt.rb:13
+msgid "Integer value, number of sockets"
+msgstr ""
+
+#: ../lib/hammer_cli_foreman/compute_resource/ovirt.rb:14
 msgid "Amount of memory, integer value in bytes"
 msgstr ""
 
-#: ../lib/hammer_cli_foreman/compute_resource/ovirt.rb:25
+#: ../lib/hammer_cli_foreman/compute_resource/ovirt.rb:26
 msgid "Compute name, e.g. eth0"
 msgstr ""
 
-#: ../lib/hammer_cli_foreman/compute_resource/ovirt.rb:26
+#: ../lib/hammer_cli_foreman/compute_resource/ovirt.rb:27
 msgid "Select one of available networks for a cluster, must be an ID"
 msgstr ""
 
-#: ../lib/hammer_cli_foreman/compute_resource/ovirt.rb:27
+#: ../lib/hammer_cli_foreman/compute_resource/ovirt.rb:28
 msgid "Interface type"
 msgstr ""
 
-#: ../lib/hammer_cli_foreman/compute_resource/ovirt.rb:34
+#: ../lib/hammer_cli_foreman/compute_resource/ovirt.rb:35
 msgid "ID of storage domain"
 msgstr ""
 
-#: ../lib/hammer_cli_foreman/compute_resource/ovirt.rb:35
+#: ../lib/hammer_cli_foreman/compute_resource/ovirt.rb:36
 msgid "Boolean, only one volume can be bootable"
 msgstr ""
 
-#: ../lib/hammer_cli_foreman/compute_resource/ovirt.rb:41
+#: ../lib/hammer_cli_foreman/compute_resource/ovirt.rb:37
+msgid "Boolean, set %s to preallocate"
+msgstr ""
+
+#: ../lib/hammer_cli_foreman/compute_resource/ovirt.rb:38
+msgid "Boolean, set %s to wipe disk after delete"
+msgstr ""
+
+#: ../lib/hammer_cli_foreman/compute_resource/ovirt.rb:44
 #: ../lib/hammer_cli_foreman/compute_resource/vmware.rb:65
 msgid "Datacenter"
 msgstr ""
 
 #: ../lib/hammer_cli_foreman/compute_resource/vmware.rb:12
-msgid "CPU count"
+msgid "Cluster ID from VMware"
 msgstr ""
 
 #: ../lib/hammer_cli_foreman/compute_resource/vmware.rb:13
@@ -1540,19 +1569,19 @@ msgid "Number of cores per socket (applicable to hardware versions < 10 only)"
 msgstr ""
 
 #: ../lib/hammer_cli_foreman/compute_resource/vmware.rb:14
+msgid "CPU count"
+msgstr ""
+
+#: ../lib/hammer_cli_foreman/compute_resource/vmware.rb:15
 msgid "Integer number, amount of memory in MB"
 msgstr ""
 
 #: ../lib/hammer_cli_foreman/compute_resource/vmware.rb:16
-msgid "Cluster ID from VMware"
+msgid "Path to folder"
 msgstr ""
 
 #: ../lib/hammer_cli_foreman/compute_resource/vmware.rb:17
 msgid "Resource Pool ID from VMware"
-msgstr ""
-
-#: ../lib/hammer_cli_foreman/compute_resource/vmware.rb:18
-msgid "Path to folder"
 msgstr ""
 
 #: ../lib/hammer_cli_foreman/compute_resource/vmware.rb:19
@@ -3792,127 +3821,131 @@ msgid "TFTP Proxy to use within this subnet"
 msgstr ""
 
 #: ../lib/hammer_cli_foreman/subnet.rb:35
-#: ../lib/hammer_cli_foreman/subnet.rb:54
+#: ../lib/hammer_cli_foreman/subnet.rb:55
 msgid "Network Addr"
 msgstr ""
 
 #: ../lib/hammer_cli_foreman/subnet.rb:36
-#: ../lib/hammer_cli_foreman/subnet.rb:55
+#: ../lib/hammer_cli_foreman/subnet.rb:56
 msgid "Network Prefix"
 msgstr ""
 
 #: ../lib/hammer_cli_foreman/subnet.rb:37
-#: ../lib/hammer_cli_foreman/subnet.rb:56
+#: ../lib/hammer_cli_foreman/subnet.rb:57
 msgid "Network Mask"
 msgstr ""
 
 #: ../lib/hammer_cli_foreman/subnet.rb:38
-#: ../lib/hammer_cli_foreman/subnet.rb:68
+#: ../lib/hammer_cli_foreman/subnet.rb:69
 msgid "VLAN ID"
 msgstr ""
 
 #: ../lib/hammer_cli_foreman/subnet.rb:39
-#: ../lib/hammer_cli_foreman/subnet.rb:70
+#: ../lib/hammer_cli_foreman/subnet.rb:71
 msgid "Boot Mode"
 msgstr ""
 
-#: ../lib/hammer_cli_foreman/subnet.rb:52
-msgid "Protocol"
+#: ../lib/hammer_cli_foreman/subnet.rb:40
+msgid "Gateway Address"
 msgstr ""
 
 #: ../lib/hammer_cli_foreman/subnet.rb:53
+msgid "Protocol"
+msgstr ""
+
+#: ../lib/hammer_cli_foreman/subnet.rb:54
 msgid "Priority"
 msgstr ""
 
-#: ../lib/hammer_cli_foreman/subnet.rb:57
+#: ../lib/hammer_cli_foreman/subnet.rb:58
 msgid "Gateway Addr"
 msgstr ""
 
-#: ../lib/hammer_cli_foreman/subnet.rb:58
+#: ../lib/hammer_cli_foreman/subnet.rb:59
 msgid "Primary DNS"
 msgstr ""
 
-#: ../lib/hammer_cli_foreman/subnet.rb:59
+#: ../lib/hammer_cli_foreman/subnet.rb:60
 msgid "Secondary DNS"
 msgstr ""
 
-#: ../lib/hammer_cli_foreman/subnet.rb:60
+#: ../lib/hammer_cli_foreman/subnet.rb:61
 msgid "Smart Proxies"
 msgstr ""
 
-#: ../lib/hammer_cli_foreman/subnet.rb:61
+#: ../lib/hammer_cli_foreman/subnet.rb:62
 msgid "DNS"
 msgstr ""
 
-#: ../lib/hammer_cli_foreman/subnet.rb:62
+#: ../lib/hammer_cli_foreman/subnet.rb:63
 msgid "TFTP"
 msgstr ""
 
-#: ../lib/hammer_cli_foreman/subnet.rb:63
+#: ../lib/hammer_cli_foreman/subnet.rb:64
 msgid "DHCP"
 msgstr ""
 
-#: ../lib/hammer_cli_foreman/subnet.rb:65
+#: ../lib/hammer_cli_foreman/subnet.rb:66
 msgid "IPAM"
 msgstr ""
 
-#: ../lib/hammer_cli_foreman/subnet.rb:66
+#: ../lib/hammer_cli_foreman/subnet.rb:67
 msgid "Start of IP Range"
 msgstr ""
 
-#: ../lib/hammer_cli_foreman/subnet.rb:67
+#: ../lib/hammer_cli_foreman/subnet.rb:68
 msgid "End of IP Range"
 msgstr ""
 
-#: ../lib/hammer_cli_foreman/subnet.rb:69
+#: ../lib/hammer_cli_foreman/subnet.rb:70
 msgid "MTU"
 msgstr ""
 
-#: ../lib/hammer_cli_foreman/subnet.rb:83
+#: ../lib/hammer_cli_foreman/subnet.rb:84
 msgid "Subnet created."
 msgstr ""
 
-#: ../lib/hammer_cli_foreman/subnet.rb:84
+#: ../lib/hammer_cli_foreman/subnet.rb:85
 msgid "Could not create the subnet"
 msgstr ""
 
-#: ../lib/hammer_cli_foreman/subnet.rb:93
+#: ../lib/hammer_cli_foreman/subnet.rb:94
 msgid "Subnet updated."
 msgstr ""
 
-#: ../lib/hammer_cli_foreman/subnet.rb:94
+#: ../lib/hammer_cli_foreman/subnet.rb:95
 msgid "Could not update the subnet"
 msgstr ""
 
-#: ../lib/hammer_cli_foreman/subnet.rb:102
+#: ../lib/hammer_cli_foreman/subnet.rb:103
 msgid "Subnet deleted."
 msgstr ""
 
-#: ../lib/hammer_cli_foreman/subnet.rb:103
+#: ../lib/hammer_cli_foreman/subnet.rb:104
 msgid "Could not delete the subnet"
 msgstr ""
 
-#: ../lib/hammer_cli_foreman/subnet.rb:109
+#: ../lib/hammer_cli_foreman/subnet.rb:110
 msgid "Create or update parameter for a subnet"
 msgstr ""
 
-#: ../lib/hammer_cli_foreman/subnet.rb:111
+#: ../lib/hammer_cli_foreman/subnet.rb:112
 msgid "Subnet parameter updated"
 msgstr ""
 
-#: ../lib/hammer_cli_foreman/subnet.rb:112
+#: ../lib/hammer_cli_foreman/subnet.rb:113
 msgid "New subnet parameter created"
 msgstr ""
 
-#: ../lib/hammer_cli_foreman/subnet.rb:113
+#: ../lib/hammer_cli_foreman/subnet.rb:114
 msgid "Could not set subnet parameter"
 msgstr ""
 
-#: ../lib/hammer_cli_foreman/subnet.rb:124
+#: ../lib/hammer_cli_foreman/subnet.rb:125
 msgid "Delete parameter for a subnet"
 msgstr ""
 
-#: ../lib/hammer_cli_foreman/subnet.rb:126
+#: ../lib/hammer_cli_foreman/subnet.rb:127
 msgid "Subnet parameter deleted."
 msgstr ""
 

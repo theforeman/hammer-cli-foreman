@@ -5,7 +5,7 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: hammer-cli-foreman 0.18.0\n"
+"Project-Id-Version: hammer-cli-foreman 0.19.pre.develop\n"
 "Report-Msgid-Bugs-To: \n"
 "PO-Revision-Date: 2014-03-04 16:47+0000\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
@@ -681,6 +681,9 @@ msgstr ""
 msgid "Provider specific options"
 msgstr ""
 
+msgid "Bold attributes are required."
+msgstr ""
+
 msgid "Available keys for %{option}"
 msgstr ""
 
@@ -725,7 +728,7 @@ msgstr ""
 msgid "Received data of unknown format."
 msgstr ""
 
-msgid "Search fields"
+msgid "Search / Order fields"
 msgstr ""
 
 msgid "Values"
@@ -974,16 +977,25 @@ msgstr ""
 msgid "String, amount of memory, value in bytes"
 msgstr ""
 
+msgid "Possible values: %{modes}"
+msgstr ""
+
 msgid "Boolean (expressed as 0 or 1), whether to start the machine or not"
 msgstr ""
 
 msgid "Name of interface according to type"
 msgstr ""
 
+msgid "Libvirt instance network, e.g. default"
+msgstr ""
+
 msgid "One of available storage pools"
 msgstr ""
 
-msgid "String value, eg. 10G"
+msgid "String value, e.g. 10G"
+msgstr ""
+
+msgid "Initial allocation, e.g. 0G"
 msgstr ""
 
 msgid "Tenant"
@@ -1004,6 +1016,9 @@ msgstr ""
 msgid "Integer value, number of cores"
 msgstr ""
 
+msgid "Integer value, number of sockets"
+msgstr ""
+
 msgid "Amount of memory, integer value in bytes"
 msgstr ""
 
@@ -1022,25 +1037,31 @@ msgstr ""
 msgid "Boolean, only one volume can be bootable"
 msgstr ""
 
+msgid "Boolean, set %s to preallocate"
+msgstr ""
+
+msgid "Boolean, set %s to wipe disk after delete"
+msgstr ""
+
 msgid "Datacenter"
-msgstr ""
-
-msgid "CPU count"
-msgstr ""
-
-msgid "Number of cores per socket (applicable to hardware versions < 10 only)"
-msgstr ""
-
-msgid "Integer number, amount of memory in MB"
 msgstr ""
 
 msgid "Cluster ID from VMware"
 msgstr ""
 
-msgid "Resource Pool ID from VMware"
+msgid "Number of cores per socket (applicable to hardware versions < 10 only)"
+msgstr ""
+
+msgid "CPU count"
+msgstr ""
+
+msgid "Integer number, amount of memory in MB"
 msgstr ""
 
 msgid "Path to folder"
+msgstr ""
+
+msgid "Resource Pool ID from VMware"
 msgstr ""
 
 msgid "Guest OS ID form VMware"
@@ -2666,6 +2687,9 @@ msgid "VLAN ID"
 msgstr ""
 
 msgid "Boot Mode"
+msgstr ""
+
+msgid "Gateway Address"
 msgstr ""
 
 msgid "Protocol"
