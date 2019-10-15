@@ -18,6 +18,7 @@ module HammerCLIForeman
 
     class InfoCommand < HammerCLIForeman::InfoCommand
       output ListCommand.output_definition do
+        field :description, _('Description'), Fields::Text
         field :locked, _("Locked"), Fields::Boolean
         HammerCLIForeman::References.operating_systems(self)
         HammerCLIForeman::References.timestamps(self)
