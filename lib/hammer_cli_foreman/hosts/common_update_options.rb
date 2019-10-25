@@ -30,6 +30,12 @@ module HammerCLIForeman
 
         base.option "--parameters", "PARAMS", _("Replaces with new host parameters"),
           :format => HammerCLI::Options::Normalizers::KeyValueList.new
+
+        host_params = base.resource.action(base.action).params
+                          .find { |p| p.name == 'host' }.params
+                          .find { |p| p.name == 'host_parameters_attributes' }
+        base.option "--typed-parameters", "TYPED_PARAMS", _("Replaces with new host parameters (with type support)"),
+          :format => HammerCLI::Options::Normalizers::ListNested.new(host_params.params)
         base.option "--compute-attributes", "COMPUTE_ATTRS", _("Compute resource attributes"),
           :format => HammerCLI::Options::Normalizers::KeyValueList.new
         base.option "--volume", "VOLUME", _("Volume parameters"), :multivalued => true,
@@ -72,6 +78,7 @@ module HammerCLIForeman
         params['host']['overwrite'] = option_overwrite unless option_overwrite.nil?
 
         params['host']['host_parameters_attributes'] = parameter_attributes unless option_parameters.nil?
+        params['host']['host_parameters_attributes'] ||= typed_parameter_attributes unless option_typed_parameters.nil?
         params['host']['compute_attributes'] = option_compute_attributes || {}
 
         if action == :update
