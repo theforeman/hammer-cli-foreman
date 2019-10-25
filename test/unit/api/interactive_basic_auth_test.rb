@@ -43,7 +43,7 @@ describe HammerCLIForeman::Api::InteractiveBasicAuth do
   end
 
   context "non-interactive mode" do
-    it "desn't ask for credentials when tye're not provided" do
+    it "doesn't ask for credentials when they're not provided" do
       auth = HammerCLIForeman::Api::InteractiveBasicAuth.new(nil, nil)
       auth.expects(:ask_user).never
 

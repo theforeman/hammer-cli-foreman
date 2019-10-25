@@ -20,6 +20,7 @@ module HammerCLIForeman
   require 'hammer_cli_foreman/dependency_resolver'
   require 'hammer_cli_foreman/option_sources'
   require 'hammer_cli_foreman/logger'
+  require 'hammer_cli_foreman/sessions'
 
   begin
     require 'hammer_cli_foreman/command_extensions'

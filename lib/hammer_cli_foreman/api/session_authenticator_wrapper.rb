@@ -3,31 +3,29 @@ require 'uri'
 module HammerCLIForeman
   module Api
     class SessionAuthenticatorWrapper < ApipieBindings::Authenticators::Base
-      SESSION_STORAGE = '~/.hammer/sessions/'
 
-      attr_reader :session_id
+      attr_reader :session_id, :url, :auth_type
 
-      def initialize(authenticator, url, storage_dir = nil)
+      def initialize(authenticator, url, auth_type)
         @authenticator = authenticator
         @url = url
+        @auth_type = auth_type
+      end
 
-        @session_file = "#{uri.scheme}_#{uri.host}"
-        @storage_dir = storage_dir || File.expand_path(SESSION_STORAGE)
-
-        @permissions_ok = check_storage_permissions
-        warn _("Can't use session auth due to invalid permissions on session files.") unless @permissions_ok
+      def session
+        @session ||= Sessions.get(@url)
       end
 
       def clear
-        destroy_session
+        session.destroy
         @authenticator.clear if @authenticator.respond_to?(:clear)
       end
 
       def status
-        if load_session
-          _("Session exists, currently logged in as '%s'.") % @user
+        if session.valid?
+          _("Session exists, currently logged in as '%s'.") % session.user_name
         else
-          _("Using sessions, you are currently not logged in.")
+          _('Using sessions, you are currently not logged in.')
         end
       end
 
@@ -40,15 +38,13 @@ module HammerCLIForeman
       end
 
       def authenticate(request, args)
-        load_session
-
         user = @authenticator.user
 
-        @user_changed ||= (!user.nil? && user != @user)
+        @user_changed ||= (!user.nil? && user != session.user_name)
 
-        if !@user_changed && @permissions_ok && @session_id
+        if !@user_changed && Sessions.configured?(@url) && session.id
           jar = HTTP::CookieJar.new
-          jar.add(HTTP::Cookie.new('_session_id', @session_id, domain: uri.hostname.downcase, path: '/', for_domain: true))
+          jar.add(HTTP::Cookie.new('_session_id', session.id, domain: uri.hostname.downcase, path: '/', for_domain: true))
           request['Cookie'] = HTTP::Cookie.cookie_value(jar.cookies)
           request
         else
@@ -57,12 +53,11 @@ module HammerCLIForeman
       end
 
       def error(ex)
-        load_session
-        if ex.is_a?(RestClient::Unauthorized) && !@session_id.nil?
+        if ex.is_a?(RestClient::Unauthorized) && session.valid?
           if @user_changed
-            return UnauthorizedError.new(_("Invalid username or password, continuing with session for '%s'.") % @user)
+            return UnauthorizedError.new(_("Invalid username or password, continuing with session for '%s'.") % session.user_name)
           else
-            destroy_session
+            session.destroy
             return SessionExpired.new(_("Session has expired."))
           end
         else
@@ -72,81 +67,40 @@ module HammerCLIForeman
 
       def response(r)
         if (r.cookies['_session_id'] && r.code != 401)
-          @session_id = r.cookies['_session_id']
-          save_session(@session_id, @authenticator.user)
+          session.id = r.cookies['_session_id']
+          session.user_name = @authenticator.user
+          session.auth_type = @auth_type
+          session.store
         end
         @authenticator.response(r)
       end
 
       def user(ask=nil)
-        @authenticator.user(ask) if @authenticator.respond_to?(:user)
+        return unless @authenticator.respond_to?(:user)
+        if @auth_type == AUTH_TYPES[:basic_auth]
+          @authenticator.user(ask)
+        elsif @auth_type == AUTH_TYPES[:oauth_authentication_code_grant] ||
+              @auth_type = AUTH_TYPES[:oauth_password_grant]
+          @authenticator.user
+        end
       end
 
       def password(ask=nil)
         @authenticator.password(ask) if @authenticator.respond_to?(:password)
       end
 
-      def set_credentials(*args)
-        @authenticator.set_credentials(*args) if @authenticator.respond_to?(:set_credentials)
+      def set_auth_params(*args)
+        if @auth_type == AUTH_TYPES[:basic_auth]
+          @authenticator.set_credentials(*args)
+        elsif @auth_type == AUTH_TYPES[:oauth_authentication_code_grant] ||
+              @auth_type == AUTH_TYPES[:oauth_password_grant]
+          @authenticator.set_token(*args)
+        end
       end
-
-      protected
 
       def uri
         @uri ||= URI.parse(@url)
       end
-
-      def session_storage
-        "#{@storage_dir}/#{@session_file}"
-      end
-
-      def load_session
-        if File.exist?(session_storage)
-          session_data = JSON.parse(File.read(session_storage))
-          @user = session_data['user_name']
-          @session_id = session_data['session_id']
-        end
-      rescue JSON::ParserError
-        destroy_session
-        warn _('Invalid session file format.')
-        nil
-      end
-
-      def save_session(session_id, user_name)
-        File.open(session_storage, 'w', 0600) do |f|
-          session = JSON.generate({
-            :session_id => session_id,
-            :user_name => user_name
-          })
-          f.write(session)
-        end
-      end
-
-      def destroy_session
-        @user = @session_id = nil
-        File.delete(session_storage) if File.exist?(session_storage)
-      end
-
-      def check_storage_permissions
-        Dir.mkdir(@storage_dir, 0700) unless File.exist?(@storage_dir)
-        ensure_mode(@storage_dir, '40700') && ensure_mode(session_storage, '100600')
-      end
-
-      def ensure_mode(file, expected_mode)
-        return true unless File.exist?(file)
-        mode = File.stat(file).mode.to_s(8)
-        if mode != expected_mode
-          warn _("Invalid permissions for %{file}: %{mode}, expected %{expected_mode}.") % {
-            :mode => mode,
-            :expected_mode => expected_mode,
-            :file => file
-          }
-          false
-        else
-          true
-        end
-      end
-
     end
   end
 end
