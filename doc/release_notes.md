@@ -1,5 +1,19 @@
 Release notes
 =============
+### 0.19.0 (2019-10-26)
+* Add option to support host's param type ([PR #448](https://github.com/theforeman/hammer-cli-foreman/pull/448)), [#27868](http://projects.theforeman.org/issues/27868)
+* Adding sso func. through cli using openid-connect ([PR #405](https://github.com/theforeman/hammer-cli-foreman/pull/405)), [#25848](http://projects.theforeman.org/issues/25848)
+* Ping command ([PR #394](https://github.com/theforeman/hammer-cli-foreman/pull/394)), [#3036](http://projects.theforeman.org/issues/3036), [#12587](http://projects.theforeman.org/issues/12587), [#3956](http://projects.theforeman.org/issues/3956)
+* Add description field to templates ([PR #449](https://github.com/theforeman/hammer-cli-foreman/pull/449)), [#27997](http://projects.theforeman.org/issues/27997)
+* New lines in text attr dont break output ([PR #415](https://github.com/theforeman/hammer-cli-foreman/pull/415)), [#25878](http://projects.theforeman.org/issues/25878)
+* Fixed inconsistent in output format, [#27597](http://projects.theforeman.org/issues/27597)
+* Added gateway to subnet list, [#27596](http://projects.theforeman.org/issues/27596)
+* Improve help for compute resources, [#25584](http://projects.theforeman.org/issues/25584)
+* Fix interfaces when creating a host ([PR #439](https://github.com/theforeman/hammer-cli-foreman/pull/439)), [#27652](http://projects.theforeman.org/issues/27652)
+* Additional compute resource attrs for ovirt ([PR #440](https://github.com/theforeman/hammer-cli-foreman/pull/440)), [#27554](http://projects.theforeman.org/issues/27554)
+* Change the search fields to search / order fields, [#27602](http://projects.theforeman.org/issues/27602)
+* Update docs for scl ruby to include bundle exec
+
 ### 0.18.0 (2019-08-01)
 * Report template schedule works with --name ([#27339](http://projects.theforeman.org/issues/27339))
 * Possibility to change host loc/org via hammer ([PR #416](https://github.com/theforeman/hammer-cli-foreman/pull/416)) ([#26536](http://projects.theforeman.org/issues/26536))
