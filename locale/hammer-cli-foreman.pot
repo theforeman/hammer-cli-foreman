@@ -6,10 +6,10 @@
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: hammer-cli-foreman 0.18.0\n"
+"Project-Id-Version: hammer-cli-foreman 0.18.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-08-01 22:50+0200\n"
-"PO-Revision-Date: 2019-08-01 22:50+0200\n"
+"POT-Creation-Date: 2019-10-31 17:34+0000\n"
+"PO-Revision-Date: 2019-10-31 17:34+0000\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: \n"
@@ -1205,7 +1205,7 @@ msgid "Create compute profile set of values"
 msgstr ""
 
 #: ../lib/hammer_cli_foreman/compute_attribute.rb:27
-#: ../lib/hammer_cli_foreman/hosts/common_update_options.rb:33
+#: ../lib/hammer_cli_foreman/hosts/common_update_options.rb:39
 msgid "Compute resource attributes"
 msgstr ""
 
@@ -2488,15 +2488,19 @@ msgstr ""
 msgid "Replaces with new host parameters"
 msgstr ""
 
-#: ../lib/hammer_cli_foreman/hosts/common_update_options.rb:35
+#: ../lib/hammer_cli_foreman/hosts/common_update_options.rb:37
+msgid "Replaces with new host parameters (with type support)"
+msgstr ""
+
+#: ../lib/hammer_cli_foreman/hosts/common_update_options.rb:41
 msgid "Volume parameters"
 msgstr ""
 
-#: ../lib/hammer_cli_foreman/hosts/common_update_options.rb:37
+#: ../lib/hammer_cli_foreman/hosts/common_update_options.rb:43
 msgid "Interface parameters"
 msgstr ""
 
-#: ../lib/hammer_cli_foreman/hosts/common_update_options.rb:49
+#: ../lib/hammer_cli_foreman/hosts/common_update_options.rb:55
 msgid "Enter the root password for the host:"
 msgstr ""
 

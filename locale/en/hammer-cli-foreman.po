@@ -5,7 +5,7 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: hammer-cli-foreman 0.18.0\n"
+"Project-Id-Version: hammer-cli-foreman 0.18.1\n"
 "Report-Msgid-Bugs-To: \n"
 "PO-Revision-Date: 2014-03-04 16:47+0000\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
@@ -1710,6 +1710,9 @@ msgid ""
 msgstr ""
 
 msgid "Replaces with new host parameters"
+msgstr ""
+
+msgid "Replaces with new host parameters (with type support)"
 msgstr ""
 
 msgid "Volume parameters"
