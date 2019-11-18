@@ -136,6 +136,26 @@ describe "host create" do
     assert_cmd(expected_result, result)
   end
 
+  it "accepts host typed parameter attributes" do
+    params = [
+      '--typed-parameters',
+      'name=par1\,value=1\,parameter_type=integer,name=par2\,value=par2\,parameter_type=string'
+    ]
+
+    api_expects(:hosts, :create, 'Create host with typed parameters') do |par|
+      par['host']['host_parameters_attributes'][0]['name'] == 'par1' &&
+      par['host']['host_parameters_attributes'][0]['value'] == '1' &&
+      par['host']['host_parameters_attributes'][0]['parameter_type'] == 'integer' &&
+      par['host']['host_parameters_attributes'][1]['name'] == 'par2' &&
+      par['host']['host_parameters_attributes'][1]['value'] == 'par2' &&
+      par['host']['host_parameters_attributes'][1]['parameter_type'] == 'string'
+    end
+
+    expected_result = success_result("Host created.\n")
+    result = run_cmd(cmd + minimal_params + params)
+    assert_cmd(expected_result, result)
+  end
+
   it "sends empty hash for no interfaces" do
     # For some reason the Foreman replaces empty interfaces_attributes to nil,
     # which causes failure in nested attributes assignment in the host model
