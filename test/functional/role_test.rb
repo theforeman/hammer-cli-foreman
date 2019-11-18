@@ -12,7 +12,7 @@ describe 'role' do
       expected_result = CommandExpectation.new
       expected_result.expected_err =
         ['Could not clone the user role:',
-         "  Missing arguments for 'id'",
+         "  Missing arguments for '--id'",
          ''].join("\n")
       expected_result.expected_exit_code = HammerCLI::EX_USAGE
 

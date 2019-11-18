@@ -24,7 +24,7 @@ describe 'host enc-dump' do
     expected_result = CommandExpectation.new
     expected_result.expected_err =
       ['Could not retrieve ENC values of the host:',
-       "  Missing arguments for 'id'",
+       "  Missing arguments for '--id'",
        ''].join("\n")
     expected_result.expected_exit_code = HammerCLI::EX_USAGE
 
@@ -398,7 +398,7 @@ describe 'disassociate host from vm' do
     expected_result = CommandExpectation.new
     expected_result.expected_err = [
       "Failed to disassociated host from VM:",
-      "  Missing arguments for 'id'",
+      "  Missing arguments for '--id'",
       ''].join("\n")
     expected_result.expected_exit_code = HammerCLI::EX_USAGE
 
