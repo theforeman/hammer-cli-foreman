@@ -1,5 +1,8 @@
 Release notes
 =============
+### 0.18.2 (2019-11-18)
+* Fix method typo ([PR #450](https://github.com/theforeman/hammer-cli-foreman/pull/450)), [#27868](http://projects.theforeman.org/issues/27868)
+
 ### 0.18.1 (2019-10-31)
 * Add option to support host's param type ([PR #448](https://github.com/theforeman/hammer-cli-foreman/pull/448)), [#27868](http://projects.theforeman.org/issues/27868)
 
