@@ -78,7 +78,7 @@ module HammerCLIForeman
         params['host']['overwrite'] = option_overwrite unless option_overwrite.nil?
 
         params['host']['host_parameters_attributes'] = parameter_attributes unless option_parameters.nil?
-        params['host']['host_parameters_attributes'] ||= typed_parameter_attributes unless option_typed_parameters.nil?
+        params['host']['host_parameters_attributes'] ||= option_typed_parameters unless option_typed_parameters.nil?
         params['host']['compute_attributes'] = option_compute_attributes || {}
 
         if action == :update
