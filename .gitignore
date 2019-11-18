@@ -23,3 +23,6 @@ tags
 # Locale files
 locale/*/*.edit.po
 locale/*/*.po.time_stamp
+
+# Jupyter
+rel-eng/.ipynb_checkpoints
