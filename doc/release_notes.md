@@ -1,5 +1,8 @@
 Release notes
 =============
+### 0.19.1 (2019-11-18)
+* Fix method typo ([PR #450](https://github.com/theforeman/hammer-cli-foreman/pull/450)), [#27868](http://projects.theforeman.org/issues/27868)
+
 ### 0.19.0 (2019-10-26)
 * Add option to support host's param type ([PR #448](https://github.com/theforeman/hammer-cli-foreman/pull/448)), [#27868](http://projects.theforeman.org/issues/27868)
 * Adding sso func. through cli using openid-connect ([PR #405](https://github.com/theforeman/hammer-cli-foreman/pull/405)), [#25848](http://projects.theforeman.org/issues/25848)
