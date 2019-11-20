@@ -22,6 +22,9 @@ module HammerCLIForeman
             option_username || HammerCLI::Settings.get('_params', 'username'),
             option_password || HammerCLI::Settings.get('_params', 'password')
           )
+          logged_user = HammerCLIForeman.foreman_api_connection.authenticator.user
+          print_message(_("Successfully logged in as '%s'.") % logged_user)
+          HammerCLI::EX_OK
         end
       end
 
@@ -57,6 +60,9 @@ module HammerCLIForeman
               option_password || HammerCLI::Settings.get('_params', 'password')
             )
           end
+          logged_user = HammerCLIForeman.foreman_api_connection.authenticator.user
+          print_message(_("Successfully logged in as '%s'.") % logged_user)
+          HammerCLI::EX_OK
         end
         autoload_subcommands
       end
