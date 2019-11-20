@@ -84,6 +84,10 @@ module HammerCLIForeman
       'HammerCLIForeman::Hostgroup', 'hammer_cli_foreman/hostgroup'
     )
 
+    HammerCLI::MainCommand.lazy_subcommand('http-proxy', _("Manipulate http proxies"),
+      'HammerCLIForeman::HttpProxy', 'hammer_cli_foreman/http_proxy'
+    )
+
     HammerCLI::MainCommand.lazy_subcommand('location', _("Manipulate locations"),
       'HammerCLIForeman::Location', 'hammer_cli_foreman/location'
     )
