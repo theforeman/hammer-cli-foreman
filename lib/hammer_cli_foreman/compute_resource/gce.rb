@@ -24,6 +24,7 @@ module HammerCLIForeman
           Fields::Field.new(:label => _('Project'), :path => [:project]),
           Fields::Field.new(:label => _('Email'), :path => [:email]),
           Fields::Field.new(:label => _('Key Path'), :path => [:key_path]),
+          Fields::Field.new(:label => _('Zone'), :path => [:zone])
         ]
       end
 
