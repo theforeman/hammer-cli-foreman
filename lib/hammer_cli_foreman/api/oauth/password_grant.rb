@@ -30,11 +30,11 @@ module HammerCLIForeman
           @user = input_user
           @password = input_password
           @oidc_client_id = input_oidc_client_id if input_oidc_client_id
-          if @user && @password && @oidc_token_endpoint && @oidc_client_id
+          if @user.to_s.empty? || @password.to_s.empty? || @oidc_token_endpoint.to_s.empty? || @oidc_client_id.to_s.empty?
+            @token = nil
+          else
             @token = HammerCLIForeman::OpenidConnect.new(
               @oidc_token_endpoint, @oidc_client_id).get_token(@user, @password)
-          else
-            @token = nil
           end
         end
 
