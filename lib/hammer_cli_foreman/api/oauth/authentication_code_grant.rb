@@ -32,12 +32,12 @@ module HammerCLIForeman
           @oidc_client_id = input_oidc_client_id if input_oidc_client_id
           @oidc_redirect_uri = input_oidc_redirect_uri if input_oidc_redirect_uri
 
-          if @oidc_client_id && @oidc_authorization_endpoint && @oidc_redirect_uri && @oidc_token_endpoint
+          if @oidc_client_id.to_s.empty? || @oidc_authorization_endpoint.to_s.empty? || @oidc_redirect_uri.to_s.empty? || @oidc_token_endpoint.to_s.empty?
+            @token = nil
+          else
             get_code
             @token = HammerCLIForeman::OpenidConnect.new(
               @oidc_token_endpoint, @oidc_client_id).get_token_via_2fa(@code, @oidc_redirect_uri)
-          else
-            @token = nil
           end
         end
 
