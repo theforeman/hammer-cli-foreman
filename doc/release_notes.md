@@ -1,5 +1,11 @@
 Release notes
 =============
+### 0.19.2 (2019-11-25)
+* Handle empty params for codegrant flow ([PR #456](https://github.com/theforeman/hammer-cli-foreman/pull/456)), [#28196](http://projects.theforeman.org/issues/28196)
+* Add http-proxy to hammer ([PR #454](https://github.com/theforeman/hammer-cli-foreman/pull/454)), [#28176](http://projects.theforeman.org/issues/28176)
+* Handle error when empty parameters are passed ([PR #453](https://github.com/theforeman/hammer-cli-foreman/pull/453)), [#28196](http://projects.theforeman.org/issues/28196)
+* Allow login in tty-less execution ([PR #452](https://github.com/theforeman/hammer-cli-foreman/pull/452)), [#28318](http://projects.theforeman.org/issues/28318)
+
 ### 0.19.1 (2019-11-18)
 * Fix method typo ([PR #450](https://github.com/theforeman/hammer-cli-foreman/pull/450)), [#27868](http://projects.theforeman.org/issues/27868)
 
