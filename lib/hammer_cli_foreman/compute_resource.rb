@@ -133,7 +133,7 @@ module HammerCLIForeman
       command_name 'images'
 
       output do
-        field :id, _('Id')
+        field :uuid, _('Uuid')
         field :name, _('Name')
       end
 

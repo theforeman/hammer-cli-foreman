@@ -200,8 +200,8 @@ end
 
   describe 'images' do
     let(:cmd) { base_cmd << 'images' }
-    let(:image1) { { id: 1, name: 'image1' } }
-    let(:image2) { { id: 2, name: 'image2' } }
+    let(:image1) { { uuid: 1, name: 'image1' } }
+    let(:image2) { { uuid: 2, name: 'image2' } }
     let(:images) { [image1, image2] }
 
     it 'lists available images for a compute resource' do
@@ -211,7 +211,7 @@ end
 
       output = IndexMatcher.new(
         [
-          %w[ID NAME],
+          %w[UUID NAME],
           %w[1 image1],
           %w[2 image2]
         ]
