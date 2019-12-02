@@ -129,6 +129,35 @@ describe 'report-template' do
     end
   end
 
+  describe 'import' do
+    let(:cmd) { %w(report-template import) }
+    let(:tempfile) { Tempfile.new('template') }
+    it 'requires --name and --file' do
+      params = ['--name=test']
+      api_expects_no_call
+      expected_result = usage_error_result(
+          cmd,
+          'Options --name, --file are required.',
+          'Could not import the report template')
+      result = run_cmd(cmd + params)
+      assert_cmd(expected_result, result)
+    end
+
+    it 'import template' do
+      params = ['--name=test', "--file=#{tempfile.path}"]
+      tempfile.write('Template content')
+      tempfile.rewind
+      api_expects(:report_templates, :import, 'Import template').with_params(
+        'report_template' => {
+          'name' => 'test',
+          'template' => 'Template content'
+          }).returns(second_report)
+
+      result = run_cmd(cmd + params)
+      assert_cmd(success_result("Import report template successfully.\n"), result)
+    end
+  end
+
   describe 'update' do
     let(:cmd) { %w(report-template update) }
     let(:tempfile) { Tempfile.new('template') }

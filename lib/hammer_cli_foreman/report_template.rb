@@ -131,6 +131,23 @@ module HammerCLIForeman
       end
     end
 
+    class ImportCommand < HammerCLIForeman::Command
+      command_name "import"
+      action :import
+
+      option '--file', 'PATH', _('Path to a file that contains the report template content including metadata'),
+             :attribute_name => :option_template, :format => HammerCLI::Options::Normalizers::File.new
+
+      validate_options do
+        all(:option_name, :option_template).required
+      end
+
+      success_message _("Import report template successfully.")
+      failure_message _("Could not import the report template")
+
+      build_options :without => [:template]
+    end
+
     class ReportDataCommand < HammerCLIForeman::DownloadCommand
       command_name "report-data"
       action :report_data
