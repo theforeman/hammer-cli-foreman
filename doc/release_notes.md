@@ -1,5 +1,9 @@
 Release notes
 =============
+### 0.19.3 (2019-12-04)
+* Re-add owner-id output in hammer host info ([PR #459](https://github.com/theforeman/hammer-cli-foreman/pull/459)), [#28397](http://projects.theforeman.org/issues/28397)
+* Gce cr info shows zone field ([PR #455](https://github.com/theforeman/hammer-cli-foreman/pull/455)), [#28135](http://projects.theforeman.org/issues/28135)
+
 ### 0.19.2 (2019-11-25)
 * Handle empty params for codegrant flow ([PR #456](https://github.com/theforeman/hammer-cli-foreman/pull/456)), [#28196](http://projects.theforeman.org/issues/28196)
 * Add http-proxy to hammer ([PR #454](https://github.com/theforeman/hammer-cli-foreman/pull/454)), [#28176](http://projects.theforeman.org/issues/28176)
