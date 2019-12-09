@@ -1,5 +1,8 @@
 Release notes
 =============
+### 0.19.4 (2019-12-09)
+* Update taxonomies for auth sources ([PR #461](https://github.com/theforeman/hammer-cli-foreman/pull/461)), [#28451](http://projects.theforeman.org/issues/28451)
+
 ### 0.19.3 (2019-12-04)
 * Re-add owner-id output in hammer host info ([PR #459](https://github.com/theforeman/hammer-cli-foreman/pull/459)), [#28397](http://projects.theforeman.org/issues/28397)
 * Gce cr info shows zone field ([PR #455](https://github.com/theforeman/hammer-cli-foreman/pull/455)), [#28135](http://projects.theforeman.org/issues/28135)
