@@ -7,7 +7,7 @@ module HammerCLIForeman
 
       def compute_attributes
         [
-          ['cluster',  _('ID of cluster to use')],
+          ['cluster',  _('ID or name of cluster to use')],
           ['template', _('Hardware profile to use')],
           ['cores',    _('Integer value, number of cores')],
           ['sockets',  _('Integer value, number of sockets')],
@@ -24,7 +24,7 @@ module HammerCLIForeman
       def interface_attributes
         [
           ['compute_name',      _('Compute name, e.g. eth0')],
-          ['compute_network',   _('Select one of available networks for a cluster, must be an ID')],
+          ['compute_network',   _('Select one of available networks for a cluster, must be an ID or a name')],
           ['compute_interface', _('Interface type')]
         ]
       end
@@ -32,7 +32,7 @@ module HammerCLIForeman
       def volume_attributes
         [
           ['size_gb',        _('Volume size in GB, integer value')],
-          ['storage_domain', _('ID of storage domain')],
+          ['storage_domain', _('ID or name of storage domain')],
           ['bootable',       _('Boolean, only one volume can be bootable')],
           ['preallocate',    _('Boolean, set %s to preallocate') % 'true'],
           ['wipe_after_delete', _('Boolean, set %s to wipe disk after delete') % 'true']
