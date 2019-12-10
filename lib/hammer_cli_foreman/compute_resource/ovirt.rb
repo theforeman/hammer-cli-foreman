@@ -35,7 +35,8 @@ module HammerCLIForeman
           ['storage_domain', _('ID or name of storage domain')],
           ['bootable',       _('Boolean, only one volume can be bootable')],
           ['preallocate',    _('Boolean, set %s to preallocate') % 'true'],
-          ['wipe_after_delete', _('Boolean, set %s to wipe disk after delete') % 'true']
+          ['wipe_after_delete', _('Boolean, set %s to wipe disk after delete') % 'true'],
+          ['interface', _('Disk interface name, must be ide, virto or virto_scsi')]
         ]
       end
 
