@@ -56,7 +56,7 @@ module HammerCLIForeman
             _('See documentation center for your version of vSphere to find more details about available adapter types:'),
             '  https://www.vmware.com/support/pubs/'
           ].flatten(1).join("\n")],
-          ['compute_network', _('Network ID from VMware')]
+          ['compute_network', _('Network ID or Network Name from VMware')]
         ]
       end
 
