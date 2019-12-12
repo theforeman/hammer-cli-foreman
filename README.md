@@ -38,7 +38,7 @@ If you'd like to contribute and you're looking for an easy to start with issue, 
 
 How to test
 ------------
-Please read our [testing documentation](doc/testing.md#testing-hammer-commands) for more information about how to write and run tests.
+Please read our [testing documentation](doc/testing.md#testing-hammer-commands) for more information about how to write and run tests. good test
 
 
 License
