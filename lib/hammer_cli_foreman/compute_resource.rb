@@ -31,7 +31,6 @@ module HammerCLIForeman
       include ProviderNameLegacy
 
       output ListCommand.output_definition do
-        field :url, _("Url")
         field :description, _("Description")
         field :user, _("User")
         HammerCLIForeman::References.taxonomies(self)
