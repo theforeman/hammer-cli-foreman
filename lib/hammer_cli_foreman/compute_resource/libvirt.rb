@@ -41,6 +41,17 @@ module HammerCLIForeman
         'nics_attributes'
       end
 
+      def provider_vm_specific_fields
+        [
+            Fields::Field.new(:label => _('CPUs'), :path => [:cpus]),
+            Fields::Field.new(:label => _('Memory'), :path => [:memory_size]),
+            Fields::Field.new(:label => _('Status'), :path => [:state]),
+            Fields::Field.new(:label => _('OS Type'), :path => [:os_type]),
+            Fields::Field.new(:label => _('Domain Type'), :path => [:domain_type]),
+            Fields::Field.new(:label => _('Persistent'), :path => [:persistent])
+        ]
+      end
+
       def mandatory_resource_options
         super + %i[url]
       end

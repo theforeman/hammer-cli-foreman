@@ -46,6 +46,16 @@ module HammerCLIForeman
         ]
       end
 
+      def provider_vm_specific_fields
+        [
+          Fields::Field.new(:label => _('CPUs'), :path => [:cpu]),
+          Fields::Field.new(:label => _('Memory'), :path => [:memory]),
+          Fields::Field.new(:label => _('Status'), :path => [:status]),
+          Fields::Field.new(:label => _('Cores'), :path => [:cores]),
+          Fields::Field.new(:label => _('Type'), :path => [:type])
+        ]
+      end
+
       def mandatory_resource_options
         super + %i[url user password datacenter]
       end

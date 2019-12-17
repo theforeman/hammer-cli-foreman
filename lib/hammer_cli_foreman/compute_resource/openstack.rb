@@ -20,6 +20,13 @@ module HammerCLIForeman
       def mandatory_resource_options
         super + %i[url user password]
       end
+
+      def provider_vm_specific_fields
+        [
+          Fields::Field.new(:label => _('State'), :path => [:state]),
+          Fields::Field.new(:label => _('Tenant Id'), :path => [:tenant_id])
+        ]
+      end
     end
 
     HammerCLIForeman.register_compute_resource('openstack', OpenStack.new)
