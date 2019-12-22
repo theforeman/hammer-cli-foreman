@@ -10,7 +10,7 @@ module HammerCLIForeman
       end
 
       def provider_specific_fields
-        [
+        super + [
           Fields::Field.new(:label => _('Tenant'), :path => [:tenant]),
           Fields::Field.new(:label => _('Project domain name'), :path => [:project_domain_name]),
           Fields::Field.new(:label => _('Project domain ID'), :path => [:project_domain_id])
