@@ -7,7 +7,11 @@ module HammerCLIForeman
       def volume_attributes; []; end
       def interfaces_attrs_name; 'interfaces_attributes'; end
       def host_attributes; []; end
-      def provider_specific_fields; []; end
+      def provider_specific_fields
+        [
+          Fields::Field.new(label: _('Url'), path: [:url]) 
+        ]
+      end
       def mandatory_resource_options; %i[name provider]; end
     end
   end
