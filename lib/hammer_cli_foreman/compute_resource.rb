@@ -120,7 +120,7 @@ module HammerCLIForeman
       command_name 'networks'
 
       output do
-        field :id, _('Id')
+        field :id, _('Id'), Fields::Field, :max_width => 200, :hide_blank => true
         field :name, _('Name')
       end
 
