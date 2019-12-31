@@ -8,6 +8,22 @@ module HammerCLIForeman
       )
     end
 
+    def self.get_hostgroup_compute_resource_id(hostgroup_id)
+      hostgroup = HammerCLIForeman.record_to_common_format(
+          HammerCLIForeman.foreman_resource(:hostgroups).call(:show, 'id' => hostgroup_id)
+      )
+      compute_resource_id = hostgroup['compute_resource_id']
+       if !hostgroup['compute_resource_name'].to_s.strip.empty? && compute_resource_id.nil?
+         compute_resource= HammerCLIForeman.record_to_common_format(
+            HammerCLIForeman.foreman_resource(:compute_resources).call(
+                :index, :search => "name = \"#{hostgroup['compute_resource_name']}\""
+            )
+         )
+         compute_resource_id = compute_resource['results'][0]['id'] if compute_resource['results'][0]
+      end
+      compute_resource_id
+    end
+
     def self.get_host_compute_resource_id(host_id)
       HammerCLIForeman.record_to_common_format(
         HammerCLIForeman.foreman_resource(:hosts).call(
