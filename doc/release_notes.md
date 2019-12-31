@@ -1,5 +1,9 @@
 Release notes
 =============
+### 0.19.5 (2019-12-31)
+* Restrict mocha to not use version > 1.9.0 ([PR #460](https://github.com/theforeman/hammer-cli-foreman/pull/460)), [#28417](http://projects.theforeman.org/issues/28417)
+* Increase id column width for available networks ([PR #468](https://github.com/theforeman/hammer-cli-foreman/pull/468)), [#28503](http://projects.theforeman.org/issues/28503)
+
 ### 0.19.4 (2019-12-09)
 * Update taxonomies for auth sources ([PR #461](https://github.com/theforeman/hammer-cli-foreman/pull/461)), [#28451](http://projects.theforeman.org/issues/28451)
 
