@@ -18,6 +18,7 @@ module HammerCLIForeman
         output ListCommand.output_definition do
           field :username, _("Username")
           field :url, _("URL")
+          HammerCLIForeman::References.taxonomies(self)
         end
 
         build_options
