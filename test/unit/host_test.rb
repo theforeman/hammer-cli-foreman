@@ -154,38 +154,7 @@ describe HammerCLIForeman::Host do
     end
   end
 
-
-  context "ConfigReportsCommand" do
-    before do
-      ResourceMocks.mock_action_call(:config_reports, :index, [])
-    end
-
-    let(:cmd) { HammerCLIForeman::Host::ConfigReportsCommand.new("", ctx) }
-
-    context "parameters" do
-      it_should_accept "id", ["--id=1"]
-      it_should_accept "name", ["--name=my.test.host.org"]
-    end
-
-    context "output" do
-      with_params ["--id=1"] do
-        let(:expected_record_count) { count_records(cmd.resource.call(:index)) }
-
-        it_should_print_n_records
-        it_should_print_column "Id"
-        it_should_print_column "Host"
-        it_should_print_column "Last report"
-        it_should_print_column "Applied"
-        it_should_print_column "Restarted"
-        it_should_print_column "Failed"
-        it_should_print_column "Restart Failures"
-        it_should_print_column "Skipped"
-        it_should_print_column "Pending"
-      end
-    end
-
-  end
-
+  
   context "DeleteCommand" do
 
     let(:cmd) { HammerCLIForeman::Host::DeleteCommand.new("", ctx) }

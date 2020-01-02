@@ -327,59 +327,6 @@ describe 'host update' do
   end
 end
 
-describe 'host config reports' do
-  let(:report15) do
-    {
-        "id" => 15,
-        "host_id" => 1,
-        "host_name" => "host.example.com",
-        "reported_at" => "2017-11-13 03:04:53 UTC",
-    }
-  end
-
-  it 'filters reports by --id' do
-    api_expects(:config_reports, :index, 'Filter the reports') do |params|
-      params['search'] == 'host_id=1'
-    end.returns(index_response([report15]))
-
-    result = run_cmd(['host', 'config-reports', '--id=1'])
-    result.exit_code.must_equal HammerCLI::EX_OK
-  end
-
-  it 'filters reports by --name' do
-    api_expects(:config_reports, :index, 'Filter the reports') do |params|
-      params['search'] == 'host="host.example.com"'
-    end.returns(index_response([report15]))
-
-    result = run_cmd(['host', 'config-reports', '--name=host.example.com'])
-    result.exit_code.must_equal HammerCLI::EX_OK
-  end
-
-  it 'prints error or missing --id and --name' do
-    expected_result = CommandExpectation.new
-    expected_result.expected_err = [
-      'Error: At least one of options --name, --id is required.',
-      '',
-      "See: 'hammer host config-reports --help'.",
-      ''
-    ].join("\n")
-    expected_result.expected_exit_code = HammerCLI::EX_USAGE
-
-    api_expects_no_call
-
-    result = run_cmd(['host', 'config-reports'])
-    assert_cmd(expected_result, result)
-  end
-
-  it 'filters reports by --name together with search' do
-    api_expects(:config_reports, :index, 'Filter the reports') do |params|
-      params['search'] == 'reported > "2 hour ago" and host="host.example.com"'
-    end.returns(index_response([report15]))
-
-    result = run_cmd(['host', 'config-reports', '--name=host.example.com', '--search=reported > "2 hour ago"'])
-    result.exit_code.must_equal HammerCLI::EX_OK
-  end
-end
 describe 'disassociate host from vm' do
   let(:cmd) { ["host", "disassociate"] }
 

@@ -1,5 +1,4 @@
 require 'hammer_cli_foreman/fact'
-require 'hammer_cli_foreman/config_report'
 require 'hammer_cli_foreman/puppet_class'
 require 'hammer_cli_foreman/smart_class_parameter'
 require 'hammer_cli_foreman/smart_variable'
@@ -218,72 +217,6 @@ module HammerCLIForeman
       end
     end
 
-    class ConfigReportsCommand < HammerCLIForeman::ListCommand
-      command_name 'config-reports'
-      resource :config_reports, :index
-
-      option('--id', 'ID', _('Host id'), :referenced_resource => 'host')
-      option('--name', 'NAME', _('Host name'))
-
-      output HammerCLIForeman::ConfigReport::ListCommand.output_definition
-
-      def validate_options
-        validator.any(:option_name, :option_id).required
-      end
-
-      def request_params
-        params = super
-        search = []
-        search << params['search'] if params['search']
-
-        hostname = get_option_value('name')
-        search << %Q(host="#{hostname}") if hostname
-
-        host_id = get_option_value('id')
-        search << "host_id=#{host_id}" if host_id
-
-        params['search'] = search.join(' and ') unless search.empty?
-        params
-      end
-
-      build_options
-    end
-
-    class ReportsCommand < HammerCLIForeman::ListCommand
-      command_name "reports"
-      resource :config_reports, :index
-
-      option('--id', "ID", _('Host id'), :referenced_resource => 'host')
-      option('--name', "NAME", _('Host name'))
-
-      output HammerCLIForeman::ConfigReport::ListCommand.output_definition
-
-      def execute
-        warn _('%{reports} command is deprecated and will be removed in one of the future versions. Please use %{config_reports} command instead.') % {:reports => 'reports', :config_reports => 'config-reports'}
-        super
-      end
-
-      def validate_options
-        validator.any(:option_name, :option_id).required
-      end
-
-      def request_params
-        params = super
-        search = []
-        search << params['search'] if params['search']
-
-        hostname = get_option_value('name')
-        search << %Q(host="#{hostname}") if hostname
-
-        host_id = get_option_value('id')
-        search << "host_id=#{host_id}" if host_id
-
-        params['search'] = search.join(' and ') unless search.empty?
-        params
-      end
-
-      build_options
-    end
 
     class CreateCommand < HammerCLIForeman::CreateCommand
       include HammerCLIForeman::Hosts::CommonUpdateOptions
