@@ -154,7 +154,7 @@ describe HammerCLIForeman::Host do
     end
   end
 
-  
+
   context "DeleteCommand" do
 
     let(:cmd) { HammerCLIForeman::Host::DeleteCommand.new("", ctx) }

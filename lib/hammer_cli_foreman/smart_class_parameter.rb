@@ -61,7 +61,6 @@ module HammerCLIForeman
         field :description, _("Description")
         field :parameter_type, _("Type")
         field :hidden_value?, _("Hidden Value?")
-        field :use_puppet_default, _("Use puppet default"), Fields::Boolean
         field :required, _("Required")
 
         label _("Validator") do
@@ -78,7 +77,6 @@ module HammerCLIForeman
               field :id, _('Id')
               field :match, _('Match')
               field :value, _('Value')
-              field :use_puppet_default, _('Use puppet default'), Fields::Boolean
           end
         end
         HammerCLIForeman::References.environments(self)
@@ -87,7 +85,6 @@ module HammerCLIForeman
 
       def extend_data(res)
         res['parameter_type'] ||= 'string'
-        res['use_puppet_default'] ||= false
         res
       end
 
