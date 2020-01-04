@@ -10,7 +10,7 @@ group :test do
   gem 'minitest', '4.7.4'
   gem 'minitest-spec-context'
   gem 'simplecov'
-  gem 'mocha', '<=1.9.0'
+  gem 'mocha'
   gem 'ci_reporter', '>= 1.6.3', "< 2.0.0", :require => false
 end
 
