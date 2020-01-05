@@ -26,13 +26,13 @@ module HammerCLIForeman
           custom_field Fields::Reference
         end
         collection :os_default_templates, _("Default templates"), :numbered => false do
-          custom_field Fields::Template, :id_key => :config_template_id, :name_key => :config_template_name
+          custom_field Fields::Template, :id_key => :provisioning_template_id, :name_key => :provisioning_template_name
         end
         collection :architectures, _("Architectures"), :numbered => false do
           custom_field Fields::Reference
         end
         HammerCLIForeman::References.media(self)
-        HammerCLIForeman::References.config_templates(self)
+        HammerCLIForeman::References.provisioning_templates(self)
         HammerCLIForeman::References.parameters(self)
       end
 
@@ -99,15 +99,15 @@ module HammerCLIForeman
       resource :os_default_templates
 
       option "--id", "OS ID", _("Operatingsystem id"), :required => true, :referenced_resource => 'operatingsystem'
-      option "--config-template-id", "TPL ID", _("Config template id to be set"), :required => true
+      option "--provisioning-template-id", "TPL ID", _("Provisioning template id to be set"), :required => true
 
 
-      success_message _("[%{config_template_name}] was set as default %{template_kind_name} template.")
+      success_message _("[%{provisioning_template_name}] was set as default %{template_kind_name} template.")
       failure_message _("Could not set the os default template")
 
       def option_type_name
         tpl = HammerCLIForeman.collection_to_common_format(
-          HammerCLIForeman.foreman_resource!(:config_templates).call(:show, {"id" => option_config_template_id}))
+          HammerCLIForeman.foreman_resource!(:provisioning_templates).call(:show, {"id" => option_provisioning_template_id}))
         tpl[0]["template_kind_name"]
       end
 
@@ -124,7 +124,7 @@ module HammerCLIForeman
         params = {
           "id" => tpl["id"],
           "os_default_template" => {
-            "config_template_id" => option_config_template_id,
+            "provisioning_template_id" => option_provisioning_template_id,
             "template_kind_id" => tpl["template_kind_id"]
           }
         }.merge base_action_params
@@ -135,8 +135,8 @@ module HammerCLIForeman
       def create_default_template(tpl_kind_name)
         params = {
           "os_default_template" => {
-            "config_template_id" => option_config_template_id,
-            "template_kind_name" => tpl_kind_name
+            "provisioning_template_id" => option_provisioning_template_id,
+            "provisioning_kind_name" => tpl_kind_name
           }
         }.merge base_action_params
 
@@ -165,7 +165,7 @@ module HammerCLIForeman
       resource :os_default_templates
 
       option "--id", "OS ID", _("Operatingsystem id"), :required => true, :referenced_resource => 'operatingsystem'
-      option "--type", "TPL TYPE", _("Type of the config template"), :required => true
+      option "--type", "TPL TYPE", _("Type of the provisioning template"), :required => true
 
       success_message _("Default template deleted.")
       failure_message _("Could not delete the default template")
@@ -196,7 +196,7 @@ module HammerCLIForeman
 
 
     HammerCLIForeman::AssociatingCommands::Architecture.extend_command(self)
-    HammerCLIForeman::AssociatingCommands::ConfigTemplate.extend_command(self)
+    HammerCLIForeman::AssociatingCommands::ProvisioningTemplate.extend_command(self)
     HammerCLIForeman::AssociatingCommands::PartitionTable.extend_command(self)
 
 

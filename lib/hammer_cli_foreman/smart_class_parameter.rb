@@ -61,7 +61,7 @@ module HammerCLIForeman
         field :description, _("Description")
         field :parameter_type, _("Type")
         field :hidden_value?, _("Hidden Value?")
-        field :use_puppet_default, _("Use puppet default"), Fields::Boolean
+        field :omit, _("Omit"), Fields::Boolean
         field :required, _("Required")
 
         label _("Validator") do
@@ -78,7 +78,7 @@ module HammerCLIForeman
               field :id, _('Id')
               field :match, _('Match')
               field :value, _('Value')
-              field :use_puppet_default, _('Use puppet default'), Fields::Boolean
+              field :omit, _('Omit'), Fields::Boolean
           end
         end
         HammerCLIForeman::References.environments(self)
@@ -87,7 +87,7 @@ module HammerCLIForeman
 
       def extend_data(res)
         res['parameter_type'] ||= 'string'
-        res['use_puppet_default'] ||= false
+        res['omit'] ||= false
         res
       end
 
@@ -156,8 +156,8 @@ module HammerCLIForeman
       end
 
       validate_options do
-        if option(:option_use_puppet_default).value
-          option(:option_value).rejected(:msg => _('Cannot use --value when --use-puppet-default is true.'))
+        if option(:option_omit).value
+          option(:option_value).rejected(:msg => _('Cannot use --value when --omit is true.'))
         end
 
         if option(:option_smart_class_parameter_name).exist?

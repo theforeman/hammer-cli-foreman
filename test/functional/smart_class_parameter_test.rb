@@ -62,7 +62,7 @@ describe 'sc-params add-matcher' do
   end
 
   it 'allows to set value with disabled puppet default' do
-    params = ['--value', override_value, '--use-puppet-default', false]
+    params = ['--value', override_value, '--omit', false]
     expected_result = success_result("Override value created.\n")
 
     api_expects_parameter_search(puppet_class, parameter)
@@ -72,7 +72,7 @@ describe 'sc-params add-matcher' do
       :override_value => {
         :match => match,
         :value => override_value,
-        :use_puppet_default => false
+        :omit => false
       }
     )
 
@@ -81,11 +81,11 @@ describe 'sc-params add-matcher' do
   end
 
   it 'does not allow to use puppet default and value at the same time' do
-    params = ['--value', 'something', '--use-puppet-default', true]
+    params = ['--value', 'something', '--omit', true]
 
     expected_result = usage_error_result(
       cmd,
-      "Cannot use --value when --use-puppet-default is true.",
+      "Cannot use --value when --omit is true.",
       'Could not create the override value'
     )
 

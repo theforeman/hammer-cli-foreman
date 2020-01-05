@@ -32,7 +32,7 @@ module HammerCLIForeman
         HammerCLIForeman::References.subnets(self)
         HammerCLIForeman::References.compute_resources(self)
         HammerCLIForeman::References.media(self)
-        HammerCLIForeman::References.config_templates(self)
+        HammerCLIForeman::References.provisioning_templates(self)
         HammerCLIForeman::References.domains(self)
         HammerCLIForeman::References.environments(self)
         HammerCLIForeman::References.hostgroups(self)
@@ -117,7 +117,7 @@ module HammerCLIForeman
     HammerCLIForeman::AssociatingCommands::ComputeResource.extend_command(self)
     HammerCLIForeman::AssociatingCommands::SmartProxy.extend_command(self)
     HammerCLIForeman::AssociatingCommands::User.extend_command(self)
-    HammerCLIForeman::AssociatingCommands::ConfigTemplate.extend_command(self)
+    HammerCLIForeman::AssociatingCommands::ProvisioningTemplate.extend_command(self)
     HammerCLIForeman::AssociatingCommands::Organization.extend_command(self)
 
     autoload_subcommands
