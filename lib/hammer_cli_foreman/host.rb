@@ -136,7 +136,7 @@ module HammerCLIForeman
 
     class StatusCommand < HammerCLIForeman::SingleResourceCommand
       command_name "status"
-      action :status
+      action :get_status
 
       output do
         field :status, _("Status")
@@ -153,9 +153,10 @@ module HammerCLIForeman
       def get_status
         params = {
           'id' => get_identifier,
+          'type' => option_type || 'configuration'
         }
-        status = resource.call(:status, params)
-        status["status"]
+        status = resource.call(:get_status, params)
+        status['status_label']
       end
 
       def get_power_status

@@ -80,9 +80,9 @@ module HammerCLIForeman
       end
     end
 
-    def self.config_templates(dsl)
+    def self.provisioning_templates(dsl)
       dsl.build do
-        collection :config_templates, _("Templates"), :numbered => false do
+        collection :provisioning_templates, _("Templates"), :numbered => false do
           custom_field Fields::Template
         end
       end

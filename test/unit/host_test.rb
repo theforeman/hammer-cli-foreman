@@ -60,7 +60,7 @@ describe HammerCLIForeman::Host do
 
     before :each do
       ResourceMocks.mock_action_call(:hosts, :power, { 'power' => 'running' } )
-      ResourceMocks.mock_action_call(:hosts, :status, { 'status' => 'No reports' } )
+      ResourceMocks.mock_action_call(:hosts, :get_status, { 'status_label' => 'No reports' } )
     end
 
     context "parameters" do

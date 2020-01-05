@@ -229,23 +229,23 @@ module HammerCLIForeman
       end
     end
 
-    module ConfigTemplate
+    module ProvisioningTemplate
       extend CommandExtension
 
-      class AddConfigTemplateCommand < HammerCLIForeman::AddAssociatedCommand
-        associated_resource :config_templates
-        desc _("Associate a configuration template")
+      class AddProvisioningTemplateCommand < HammerCLIForeman::AddAssociatedCommand
+        associated_resource :provisioning_templates
+        desc _("Associate a Provisioning template")
 
         success_message _("The configuration template has been associated.")
-        failure_message _("Could not associate the configuration template")
+        failure_message _("Could not associate the Provisioning template")
       end
 
       class RemoveConfigTemplateCommand < HammerCLIForeman::RemoveAssociatedCommand
-        associated_resource :config_templates
+        associated_resource :provisioning_templates
         desc _("Disassociate a configuration template")
 
-        success_message _("The configuration template has been disassociated.")
-        failure_message _("Could not disassociate the configuration template")
+        success_message _("The provisioning template has been disassociated.")
+        failure_message _("Could not disassociate the provisioning template")
       end
     end
 

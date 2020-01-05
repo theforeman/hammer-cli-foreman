@@ -2,7 +2,7 @@ module HammerCLIForeman
 
   class Template < HammerCLIForeman::Command
 
-    resource :config_templates
+    resource :provisioning_templates
 
     module TemplateCreateUpdateCommons
 

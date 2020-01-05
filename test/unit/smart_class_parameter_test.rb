@@ -58,7 +58,7 @@ describe HammerCLIForeman::SmartClassParameter do
     context "output" do
       with_params ["--id=1"] do
         it_should_print_n_records 1
-        it_should_print_columns ["Description", "Type", "Use puppet default", "Required"]
+        it_should_print_columns ["Description", "Type", "Omit", "Required"]
       end
     end
   end
