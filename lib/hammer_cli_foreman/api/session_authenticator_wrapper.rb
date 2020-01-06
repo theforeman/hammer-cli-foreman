@@ -55,7 +55,7 @@ module HammerCLIForeman
       def error(ex)
         if ex.is_a?(RestClient::Unauthorized) && session.valid?
           if @user_changed
-            return UnauthorizedError.new(_("Invalid username or password, continuing with session for '%s'.") % session.user_name)
+            return UnauthorizedError.new(_("Invalid credentials, continuing with session for '%s'.") % session.user_name)
           else
             session.destroy
             return SessionExpired.new(_("Session has expired."))

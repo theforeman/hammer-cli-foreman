@@ -211,7 +211,7 @@ describe HammerCLIForeman::Api::SessionAuthenticatorWrapper do
             ex = RestClient::Unauthorized.new
             new_ex = auth.error(ex)
 
-            assert_equal "Invalid username or password, continuing with session for 'admin'.", new_ex.message
+            assert_equal "Invalid credentials, continuing with session for 'admin'.", new_ex.message
           end
         end
 
