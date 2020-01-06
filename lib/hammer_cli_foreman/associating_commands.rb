@@ -237,7 +237,7 @@ module HammerCLIForeman
         desc _("Associate a provisioning template")
 
         success_message _("The configuration template has been associated.")
-        failure_message _("Could not associate the Provisioning template")
+        failure_message _("Could not associate the provisioning template")
       end
 
       class RemoveConfigTemplateCommand < HammerCLIForeman::RemoveAssociatedCommand
