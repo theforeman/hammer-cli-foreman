@@ -133,7 +133,7 @@ describe 'template' do
       expected_result = success_result("Template combination created.\n")
       expected_result.expected_err = "Warning: Option --environment-id is deprecated. Use --puppet-environment-id instead\n"
       api_expects(:template_combinations, :create, 'Create template combination') do |params|
-        params['provisioning_template_id'] == '10' &&
+        params['provisioning_template_id'] == 10 &&
           params['hostgroup_id'] == 1 &&
           params['environment_id'] == 1 &&
           params['template_combination'] == {'environment_id' => 1, 'hostgroup_id' => 1}
@@ -147,7 +147,7 @@ describe 'template' do
       params = ['create','--provisioning-template-id=10', '--hostgroup-id=1', '--puppet-environment-id=1']
       expected_result = success_result("Template combination created.\n")
       api_expects(:template_combinations, :create, 'Create template combination') do |params|
-        params['provisioning_template_id'] == '10' &&
+        params['provisioning_template_id'] == 10 &&
           params['hostgroup_id'] == 1 &&
           params['environment_id'] == 1 &&
           params['template_combination'] == {'environment_id' => 1, 'hostgroup_id' => 1}
@@ -163,7 +163,7 @@ describe 'template' do
       expected_result.expected_err = "Warning: Option --environment-id is deprecated. Use --puppet-environment-id instead\n"
       api_expects(:template_combinations, :update, 'Update template combination') do |params|
         params['id'] == '3' &&
-          params['provisioning_template_id'] == '10' &&
+          params['provisioning_template_id'] == 10 &&
           params['hostgroup_id'] == 1 &&
           params['environment_id'] == 1 &&
           params['template_combination'] == { 'environment_id' => 1, 'hostgroup_id' => 1 }
@@ -178,7 +178,7 @@ describe 'template' do
       expected_result = success_result("Template combination updated.\n")
       api_expects(:template_combinations, :update, 'Update template combination') do |params|
         params['id'] == '3' &&
-          params['provisioning_template_id'] == '10' &&
+          params['provisioning_template_id'] == 10 &&
           params['hostgroup_id'] == 1 &&
           params['environment_id'] == 1 &&
           params['template_combination'] == { 'environment_id' => 1, 'hostgroup_id' => 1 }

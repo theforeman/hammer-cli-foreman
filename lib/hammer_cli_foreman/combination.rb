@@ -29,8 +29,7 @@ module HammerCLIForeman
 
       end
       build_options do |o|
-        o.expand(:all).except(:provisioning_templates,)
-        o.without(:provisioning_template_id)
+        o.expand(:all)
       end
 
       extend_with(HammerCLIForeman::CommandExtensions::PuppetEnvironment.new)
@@ -45,8 +44,8 @@ module HammerCLIForeman
       end
 
       build_options do |o|
-        o.expand(:all).except(:provisioning_templates, :hostgroups, :environments)
-        o.without(:provisioning_template_id, :hostgroup_id, :environment_id)
+        o.expand(:all).except(:hostgroups, :environments)
+        o.without(:hostgroup_id, :environment_id)
       end
     end
 
@@ -57,7 +56,7 @@ module HammerCLIForeman
       failure_message _("Could not update the template combination")
 
       build_options do |o|
-        o.expand(:all).except(:provisioning_templates,)
+        o.expand(:all)
       end
 
       extend_with(HammerCLIForeman::CommandExtensions::PuppetEnvironment.new)
@@ -70,7 +69,7 @@ module HammerCLIForeman
       failure_message _("Could not create the template combination")
 
       build_options do |o|
-        o.expand(:all).except(:provisioning_templates,)
+        o.expand(:all)
       end
 
       extend_with(HammerCLIForeman::CommandExtensions::PuppetEnvironment.new)
