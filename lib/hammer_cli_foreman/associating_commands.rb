@@ -236,13 +236,13 @@ module HammerCLIForeman
         associated_resource :provisioning_templates
         desc _("Associate a provisioning template")
 
-        success_message _("The configuration template has been associated.")
+        success_message _("The provisioning template has been associated.")
         failure_message _("Could not associate the provisioning template")
       end
 
-      class RemoveConfigTemplateCommand < HammerCLIForeman::RemoveAssociatedCommand
+      class RemoveProvisioningTemplateCommand < HammerCLIForeman::RemoveAssociatedCommand
         associated_resource :provisioning_templates
-        desc _("Disassociate a configuration template")
+        desc _("Disassociate a provisioning template")
 
         success_message _("The provisioning template has been disassociated.")
         failure_message _("Could not disassociate the provisioning template")
