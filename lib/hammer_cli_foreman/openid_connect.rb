@@ -9,6 +9,8 @@ module HammerCLIForeman
 
     def get_token(username, password)
       uri = URI.parse(@url)
+      return nil unless uri.respond_to?(:request_uri)
+
       request = Net::HTTP::Post.new(uri)
       request.content_type = 'application/x-www-form-urlencoded'
       request.set_form_data(
