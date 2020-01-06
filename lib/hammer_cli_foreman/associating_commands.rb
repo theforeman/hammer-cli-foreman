@@ -234,7 +234,7 @@ module HammerCLIForeman
 
       class AddProvisioningTemplateCommand < HammerCLIForeman::AddAssociatedCommand
         associated_resource :provisioning_templates
-        desc _("Associate a Provisioning template")
+        desc _("Associate a provisioning template")
 
         success_message _("The configuration template has been associated.")
         failure_message _("Could not associate the Provisioning template")
