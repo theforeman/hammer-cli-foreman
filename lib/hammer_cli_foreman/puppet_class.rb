@@ -1,5 +1,4 @@
 require 'hammer_cli_foreman/smart_class_parameter'
-require 'hammer_cli_foreman/smart_variable'
 
 module HammerCLIForeman
 
@@ -33,10 +32,6 @@ module HammerCLIForeman
 
     class InfoCommand < HammerCLIForeman::InfoCommand
       output ListCommand.output_definition do
-        collection :smart_variables, _("Smart variables") do
-          field :key, _("Parameter")
-          field :default_value, _("Default value")
-        end
         collection :smart_class_parameters, _("Smart class parameters"), :numbered => false do
           custom_field Fields::Reference, :name_key => :parameter
         end
@@ -59,16 +54,6 @@ module HammerCLIForeman
         validator.any(:option_puppetclass_name, :option_puppetclass_id).required
       end
     end
-
-    class SmartVariablesCommand < HammerCLIForeman::SmartVariablesBriefList
-      build_options_for :puppetclasses
-
-      def validate_options
-        super
-        validator.any(:option_puppetclass_name, :option_puppetclass_id).required
-      end
-    end
-
 
     autoload_subcommands
   end

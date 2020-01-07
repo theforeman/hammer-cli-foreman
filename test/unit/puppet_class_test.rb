@@ -48,7 +48,6 @@ describe HammerCLIForeman::PuppetClass do
         it_should_print_n_records 1
         it_should_print_column "Id"
         it_should_print_column "Name"
-        it_should_print_column "Smart variables"
       end
     end
 
@@ -61,22 +60,6 @@ describe HammerCLIForeman::PuppetClass do
     end
 
     let(:cmd) { HammerCLIForeman::PuppetClass::SCParamsCommand.new("", ctx) }
-
-    context "parameters" do
-      it_should_accept "puppet-class", ["--puppet-class=cls"]
-      it_should_accept "puppet-class-id", ["--puppet-class-id=1"]
-      # it_should_fail_with "name or id missing", [] # TODO: temporarily disabled, parameters are checked in the id resolver
-    end
-
-  end
-
-  context "SmartVariablesCommand" do
-
-    before :each do
-      ResourceMocks.smart_variables_index
-    end
-
-    let(:cmd) { HammerCLIForeman::PuppetClass::SmartVariablesCommand.new("", ctx) }
 
     context "parameters" do
       it_should_accept "puppet-class", ["--puppet-class=cls"]
