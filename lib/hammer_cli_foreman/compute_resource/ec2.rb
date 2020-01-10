@@ -10,7 +10,7 @@ module HammerCLIForeman
       end
 
       def provider_specific_fields
-        [
+        super + [
           Fields::Field.new(:label => _('Region'), :path => [:region])
         ]
       end
