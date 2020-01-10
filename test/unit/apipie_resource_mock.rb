@@ -265,12 +265,33 @@ module ResourceMocks
 
   def self.auth_source_ldap_index
     ResourceMocks.mock_action_call(:auth_source_ldaps, :index, {
-      "results" => [{
-        "name" => "my LDAP",
-        "id" => 1,
-        "tls" => false,
-        "port" => 389,
-        "server_type" => "POSIX"
+      'results' => [{
+        'name' => 'my LDAP',
+        'id' => 1,
+        'tls' => false,
+        'port' => 389,
+        'server_type' => 'POSIX'
+      }]
+    })
+  end
+
+  def self.auth_source_external_index
+    ResourceMocks.mock_action_call(:auth_source_externals, :index, {
+      'results' => [{
+        'id' => 11,
+        'name' => 'External',
+        'locations' => [{
+          'id' => 2,
+          'name' => 'Default Location',
+          'title' => 'Default Location',
+          'description' => nil
+        }],
+        'organizations' => [{
+          'id' => 1,
+          'name' => 'Default Organization',
+          'title' => 'Default Organization',
+          'description' => nil
+        }]
       }]
     })
   end
