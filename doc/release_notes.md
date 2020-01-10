@@ -1,5 +1,13 @@
 Release notes
 =============
+### 0.19.6 (2020-01-10)
+* Add auth source external command ([PR #480](https://github.com/theforeman/hammer-cli-foreman/pull/480)), [#28704](http://projects.theforeman.org/issues/28704)
+* Fix undefined method  on wrong oidc token endpoint ([PR #479](https://github.com/theforeman/hammer-cli-foreman/pull/479)), [#28196](http://projects.theforeman.org/issues/28196)
+* Fix unauthorized user error message ([PR #478](https://github.com/theforeman/hammer-cli-foreman/pull/478)), [#28646](http://projects.theforeman.org/issues/28646)
+* Add specific oidc option information ([PR #475](https://github.com/theforeman/hammer-cli-foreman/pull/475)), [#28628](http://projects.theforeman.org/issues/28628)
+* Remove url field from gce info ([PR #466](https://github.com/theforeman/hammer-cli-foreman/pull/466)) ([PR #481](https://github.com/theforeman/hammer-cli-foreman/pull/481)), [#28135](http://projects.theforeman.org/issues/28135)
+* Add images uuid to cr images ([PR #457](https://github.com/theforeman/hammer-cli-foreman/pull/457)) ([PR #482](https://github.com/theforeman/hammer-cli-foreman/pull/482)), [#28132](http://projects.theforeman.org/issues/28132)
+
 ### 0.19.5 (2019-12-31)
 * Restrict mocha to not use version > 1.9.0 ([PR #460](https://github.com/theforeman/hammer-cli-foreman/pull/460)), [#28417](http://projects.theforeman.org/issues/28417)
 * Increase id column width for available networks ([PR #468](https://github.com/theforeman/hammer-cli-foreman/pull/468)), [#28503](http://projects.theforeman.org/issues/28503)
