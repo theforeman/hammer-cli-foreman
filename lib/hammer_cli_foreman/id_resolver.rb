@@ -63,7 +63,6 @@ module HammerCLIForeman
       :user =>             [ s("login", _("User's login to search by")) ],
       :common_parameter =>      [ s_name(_("Common parameter name")) ],
       :smart_class_parameter => [ s_name(_("Smart class parameter name"), :editable => false) ],
-      :smart_variable => [ s("variable", _("Smart variable name")) ],
       :template_combination => [],
       :compute_attribute => []
     }
@@ -348,17 +347,6 @@ module HammerCLIForeman
       value = options[HammerCLI.option_accessor_name('name')]
       search_options[:search] = "key = \"#{value}\""
       search_options[:puppetclass_id] = puppetclass_id(scoped_options("puppetclass", options))
-      search_options
-    end
-
-    def create_smart_variables_search_options(options, mode = nil)
-      search_options = {}
-      value = options[HammerCLI.option_accessor_name('variable')]
-
-      # handle deprecated --name property
-      value ||= options[HammerCLI.option_accessor_name('name')]
-
-      search_options[:search] = "key = \"#{value}\""
       search_options
     end
 
