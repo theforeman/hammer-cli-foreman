@@ -109,7 +109,6 @@ describe HammerCLIForeman::Filter do
 
     context "parameters" do
       it_should_accept "no arguments"
-      it_should_accept "resource type", ["--resource-type=archtitectures"]
       it_should_accept "pagination options", ["--page=2", "--per-page=10"]
     end
 
