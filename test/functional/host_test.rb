@@ -236,6 +236,67 @@ describe "host create" do
     result = run_cmd(cmd + minimal_params_without_hostgroup + params)
     assert_cmd(expected_result, result)
   end
+
+  it "Creates host in case the image is provided from the hostgroup and hostgroup is not nested" do
+    params = ['--name=test',
+              '--provision-method=image',
+              '--image-id=8' ,
+              '--managed=true',
+              '--hostgroup-id=1',
+              '--organization-id=1',
+              '--location-id=1'
+    ]
+
+    api_expects(:hostgroups, :show).with_params(
+      {}
+    ).returns({'compute_resource_name' => "cr", 'compute_resource_id' => 33 })
+
+    api_expects(:images, :show).with_params(
+      {"compute_resource_id" => 33, "id" => 8}
+    ).returns(results: {'uuid' => '111111'})
+
+    api_expects(:hosts, :create).with_params(
+      {"location_id" => 1, "organization_id" => 1, "host" => {"name" => "test", "location_id" => 1, "organization_id" => 1, "puppetclass_ids" => [], "hostgroup_id" => 1, "image_id" => 8, "provision_method" => "image", "managed" => true, "compute_attributes" => {"volumes_attributes" => {}, "image_id" => nil}, "build" => true, "enabled" => true, "overwrite" => true, "interfaces_attributes" => []}}
+    ).returns(results: {'uuid' => '111111'})
+
+    expected_result = success_result("Host created.\n")
+    result = run_cmd(cmd + params)
+    assert_cmd(expected_result, result)
+  end
+
+  it "Creates host in case the image is provided from the hostgroup and hostgroup is nested" do
+      params = ['--name=test',
+                '--provision-method=image',
+                '--image-id=8' ,
+                '--managed=true',
+                '--hostgroup-id=1',
+                '--organization-id=1',
+                '--location-id=1'
+      ]
+
+      # nested hostgroup will return nil in compute_resource_id
+      api_expects(:hostgroups, :show).with_params(
+        {}
+      ).returns({'compute_resource_name' => "cr", 'compute_resource_id' => nil})
+
+      api_expects(:compute_resources, :index).with_params(
+        {:search => "name = \"cr\""}
+      ).returns(results: {'results' => [{'id' => 33, 'name' => "cr"}]})
+
+      api_expects(:images, :show).with_params(
+        {"compute_resource_id" => 33, "id" => 8}
+      ).returns(results: {'uuid' => '111111'})
+
+      api_expects(:hosts, :create).with_params(
+        {"location_id" => 1, "organization_id" => 1, "host" => {"name" => "test", "location_id" => 1, "organization_id" => 1, "puppetclass_ids" => [], "hostgroup_id" => 1, "image_id" => 8, "provision_method" => "image", "managed" => true, "compute_attributes" => {"volumes_attributes" => {}, "image_id" => nil}, "build" => true, "enabled" => true, "overwrite" => true, "interfaces_attributes" => []}}
+      ).returns(results: {'uuid' => '111111'})
+
+
+      expected_result = success_result("Host created.\n")
+      result = run_cmd(cmd + params)
+      assert_cmd(expected_result, result)
+  end
+
 end
 
 describe 'host update' do
