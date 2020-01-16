@@ -98,9 +98,14 @@ module HammerCLIForeman
           params['host']['compute_attributes']['volumes_attributes'] = nested_attributes(option_volume_list)
           params['host']['interfaces_attributes'] = interfaces_attributes
         end
-
-        if options["option_image_id"]
-          compute_resource_id = params['host']['compute_resource_id'] || ::HammerCLIForeman::ComputeResources.get_host_compute_resource_id(params['id'])
+        if options['option_image_id']
+          if params['host']['compute_resource_id']
+            compute_resource_id = params['host']['compute_resource_id']
+          elsif params['id']
+            compute_resource_id = ::HammerCLIForeman::ComputeResources.get_host_compute_resource_id(params['id'])
+          elsif params['host']['hostgroup_id']
+            compute_resource_id = ::HammerCLIForeman::ComputeResources.get_hostgroup_compute_resource_id(params['host']['hostgroup_id'])
+          end
           raise ArgumentError, "Missing argument for 'compute_resource'" if compute_resource_id.nil?
           image_uuid =  ::HammerCLIForeman::ComputeResources.get_image_uuid(compute_resource_id, options["option_image_id"])
           params['host']['compute_attributes']['image_id'] = image_uuid
