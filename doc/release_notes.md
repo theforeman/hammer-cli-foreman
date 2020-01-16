@@ -1,5 +1,8 @@
 Release notes
 =============
+### 0.19.7 (2020-01-16)
+* Fix host creation from image and hostgroup ([PR #471](https://github.com/theforeman/hammer-cli-foreman/pull/471)), [#28541](http://projects.theforeman.org/issues/28541)
+
 ### 0.19.6 (2020-01-10)
 * Add auth source external command ([PR #480](https://github.com/theforeman/hammer-cli-foreman/pull/480)), [#28704](http://projects.theforeman.org/issues/28704)
 * Fix undefined method  on wrong oidc token endpoint ([PR #479](https://github.com/theforeman/hammer-cli-foreman/pull/479)), [#28196](http://projects.theforeman.org/issues/28196)
