@@ -7,12 +7,14 @@ module HammerCLIForeman
 
     def self.included(base)
       base.option "--puppet-class-ids", "PUPPETCLASS_IDS", _("List of puppetclass ids"),
-        :format => HammerCLI::Options::Normalizers::List.new
+        :format => HammerCLI::Options::Normalizers::List.new,
+        :attribute_name => :option_puppetclass_ids
+      base.option "--puppet-classes", "PUPPET_CLASS_NAMES", "",
+        :format => HammerCLI::Options::Normalizers::List.new,
+        :attribute_name => :option_puppetclass_names
       base.option "--puppet-ca-proxy", "PUPPET_CA_PROXY_NAME", _("Name of puppet CA proxy")
       base.option "--puppet-proxy", "PUPPET_PROXY_NAME",  _("Name of puppet proxy")
       base.option "--parent", "PARENT_NAME",  _("Name of parent hostgroup")
-      base.option "--puppet-classes", "PUPPET_CLASS_NAMES", "",
-        :format => HammerCLI::Options::Normalizers::List.new
       base.option "--root-pass", "ROOT_PASSWORD",  _("Root password")
       base.option "--ask-root-pass", "ASK_ROOT_PW", "",
         :format => HammerCLI::Options::Normalizers::Bool.new
@@ -30,7 +32,8 @@ module HammerCLIForeman
       params['hostgroup']["puppet_proxy_id"] ||= proxy_id(option_puppet_proxy) if option_puppet_proxy
       params['hostgroup']["puppet_ca_proxy_id"] ||= proxy_id(option_puppet_ca_proxy) if option_puppet_ca_proxy
 
-      puppetclass_ids = option_puppet_class_ids || puppet_class_ids(option_puppet_classes)
+      # Remove after API docs are fixed: https://projects.theforeman.org/issues/28923
+      puppetclass_ids = option_puppetclass_ids || puppet_class_ids(option_puppetclass_names)
       params['hostgroup']['puppetclass_ids'] = puppetclass_ids unless puppetclass_ids.nil?
 
       params['hostgroup']['root_pass'] = option_root_pass if option_root_pass

@@ -256,7 +256,7 @@ describe "host create" do
     ).returns(results: {'uuid' => '111111'})
 
     api_expects(:hosts, :create).with_params(
-      {"location_id" => 1, "organization_id" => 1, "host" => {"name" => "test", "location_id" => 1, "organization_id" => 1, "puppetclass_ids" => [], "hostgroup_id" => 1, "image_id" => 8, "provision_method" => "image", "managed" => true, "compute_attributes" => {"volumes_attributes" => {}, "image_id" => nil}, "build" => true, "enabled" => true, "overwrite" => true, "interfaces_attributes" => []}}
+      {"location_id" => 1, "organization_id" => 1, "host" => {"name" => "test", "location_id" => 1, "organization_id" => 1, "hostgroup_id" => 1, "image_id" => 8, "provision_method" => "image", "managed" => true, "compute_attributes" => {"volumes_attributes" => {}, "image_id" => nil}, "build" => true, "enabled" => true, "overwrite" => true, "interfaces_attributes" => []}}
     ).returns(results: {'uuid' => '111111'})
 
     expected_result = success_result("Host created.\n")
@@ -288,7 +288,7 @@ describe "host create" do
       ).returns(results: {'uuid' => '111111'})
 
       api_expects(:hosts, :create).with_params(
-        {"location_id" => 1, "organization_id" => 1, "host" => {"name" => "test", "location_id" => 1, "organization_id" => 1, "puppetclass_ids" => [], "hostgroup_id" => 1, "image_id" => 8, "provision_method" => "image", "managed" => true, "compute_attributes" => {"volumes_attributes" => {}, "image_id" => nil}, "build" => true, "enabled" => true, "overwrite" => true, "interfaces_attributes" => []}}
+        {"location_id" => 1, "organization_id" => 1, "host" => {"name" => "test", "location_id" => 1, "organization_id" => 1, "hostgroup_id" => 1, "image_id" => 8, "provision_method" => "image", "managed" => true, "compute_attributes" => {"volumes_attributes" => {}, "image_id" => nil}, "build" => true, "enabled" => true, "overwrite" => true, "interfaces_attributes" => []}}
       ).returns(results: {'uuid' => '111111'})
 
 
@@ -347,12 +347,11 @@ describe 'host update' do
     )
     api_expects(:hosts, :update, 'Update host with new org').with_params(
       'id' => '1', 'location_id' => 1, 'organization_id' => 1, 'host' => {
-        'organization_id' => '5', 'puppetclass_ids' => [], 'compute_attributes' => {}
+        'organization_id' => '5', 'compute_attributes' => {}
       }
     ) do |par|
       par['id'] == '1' &&
         par['host']['organization_id'] == '5' &&
-        par['host']['puppetclass_ids'] == [] &&
         par['host']['compute_attributes'] == {}
     end.returns(updated_host)
 
@@ -371,12 +370,11 @@ describe 'host update' do
     )
     api_expects(:hosts, :update, 'Update host with new loc').with_params(
       'id' => '1', 'location_id' => 1, 'organization_id' => 1, 'host' => {
-        'location_id' => '5', 'puppetclass_ids' => [], 'compute_attributes' => {}
+        'location_id' => '5', 'compute_attributes' => {}
       }
     ) do |par|
       par['id'] == '1' &&
         par['host']['location_id'] == '5' &&
-        par['host']['puppetclass_ids'] == [] &&
         par['host']['compute_attributes'] == {}
     end.returns(updated_host)
 

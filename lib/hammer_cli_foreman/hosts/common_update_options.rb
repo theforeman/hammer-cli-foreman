@@ -20,7 +20,8 @@ module HammerCLIForeman
           :format => HammerCLI::Options::Normalizers::List.new,
           :attribute_name => :option_puppetclass_ids
         base.option "--puppet-classes", "PUPPET_CLASS_NAMES", "",
-          :format => HammerCLI::Options::Normalizers::List.new
+          :format => HammerCLI::Options::Normalizers::List.new,
+          :attribute_name => :option_puppetclass_names
 
         bme_options = {}
         bme_options[:default] = 'true' if base.action.to_sym == :create
@@ -66,9 +67,6 @@ module HammerCLIForeman
 
         puppet_ca_proxy_id = proxy_id(option_puppet_ca_proxy)
         params['host']['puppet_ca_proxy_id'] ||= puppet_ca_proxy_id unless puppet_ca_proxy_id.nil?
-
-        puppetclass_ids = option_puppetclass_ids || puppet_class_ids(option_puppet_classes)
-        params['host']['puppetclass_ids'] = puppetclass_ids unless puppetclass_ids.nil?
 
         if action == :create
           params['host']['build'] = true if option_build.nil?
@@ -123,10 +121,6 @@ module HammerCLIForeman
 
       def proxy_id(name)
         resolver.smart_proxy_id('option_name' => name) if name
-      end
-
-      def puppet_class_ids(names)
-        resolver.puppetclass_ids('option_names' => names) if names
       end
 
       def subnet_id(name)
