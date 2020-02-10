@@ -317,9 +317,10 @@ module ResourceMocks
 
   def self.config_groups_index
     ResourceMocks.mock_action_call(:config_groups, :index, [{
-      :id => 15,
-      :name => "test config group",
-      :puppetclasses => [ { :name => "My puppetclass" } ]
+      id: 15,
+      name: "test config group",
+      puppetclasses: [ { name: "My puppetclass" } ]
     }])
   end
+
 end

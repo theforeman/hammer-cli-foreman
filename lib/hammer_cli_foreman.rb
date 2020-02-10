@@ -176,6 +176,10 @@ module HammerCLIForeman
     HammerCLI::MainCommand.lazy_subcommand('status', _("Get the complete status of the server and/or it's subcomponents"),
       'HammerCLIForeman::StatusCommand', 'hammer_cli_foreman/status'
     )
+
+    HammerCLI::MainCommand.lazy_subcommand('trend', _("Manage trends"),
+                                           'HammerCLIForeman::Trend', 'hammer_cli_foreman/trend'
+    )
   rescue => e
     handler = HammerCLIForeman::ExceptionHandler.new(:context => {}, :adapter => :base)
     handler.handle_exception(e)
