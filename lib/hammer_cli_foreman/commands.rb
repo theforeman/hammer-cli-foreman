@@ -615,6 +615,10 @@ module HammerCLIForeman
       get_resource_id(associated_resource, :scoped => true)
     end
 
+    def get_associated_identifiers
+      get_resource_ids(associated_resource, :scoped => true)
+    end
+
     def get_new_ids
       []
     end
@@ -667,10 +671,11 @@ module HammerCLIForeman
 
     def get_new_ids
       ids = get_current_ids.map(&:to_s)
-      required_id = get_associated_identifier.to_s
+      required_ids = get_associated_identifiers.nil? ? [] : get_associated_identifiers.map(&:to_s)
+      required_ids << get_associated_identifier.to_s unless get_associated_identifier.nil?
 
-      ids << required_id unless ids.include? required_id
-      ids
+      ids += required_ids
+      ids.uniq
     end
 
   end

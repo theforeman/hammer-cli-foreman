@@ -234,10 +234,37 @@ module HammerCLIForeman
 
       class AddProvisioningTemplateCommand < HammerCLIForeman::AddAssociatedCommand
         associated_resource :provisioning_templates
-        desc _("Associate a provisioning template")
+        desc _("Associate provisioning templates")
 
-        success_message _("The provisioning template has been associated.")
-        failure_message _("Could not associate the provisioning template")
+        option "--provisioning-template-ids", "PROVISIONING_TEMPLATE_IDS", _("List of provisioning template ids"),
+               format: HammerCLI::Options::Normalizers::List.new
+        option "--provisioning-templates", "PROVISIONING_TEMPLATE_NAMES", _("List of provisioning template names"),
+               format: HammerCLI::Options::Normalizers::List.new, attribute_name: :option_provisioning_template_names
+        option "--provisioning-template-search", "PROVISIONING_TEMPLATE_SEARCH", _("Provisioning template name regex to search, all matching templates will be associated")
+
+        def request_params
+          params = super
+
+          if options['option_provisioning_template_search']
+            templates = HammerCLIForeman.collection_to_common_format(
+              associated_resource.call(
+                :index,
+                :search => "name ~ \"#{options['option_provisioning_template_search']}\"")
+            )
+            raise ResolverError.new(_("%s not found.") % associated_resource.singular_name, associated_resource) if templates.empty?
+
+            templates.each do |template|
+              template_id = template['id']
+              params['operatingsystem']['provisioning_template_ids'] << template_id.to_s
+            end
+          end
+          params['operatingsystem']['provisioning_template_ids'] = params['operatingsystem']['provisioning_template_ids'].uniq
+          params
+        end
+
+        success_message _("The provisioning templates were associated.")
+        failure_message _("Could not associate the provisioning templates")
+
       end
 
       class RemoveProvisioningTemplateCommand < HammerCLIForeman::RemoveAssociatedCommand
