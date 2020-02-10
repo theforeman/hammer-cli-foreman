@@ -32,10 +32,6 @@ module HammerCLIForeman
       params['hostgroup']["puppet_proxy_id"] ||= proxy_id(option_puppet_proxy) if option_puppet_proxy
       params['hostgroup']["puppet_ca_proxy_id"] ||= proxy_id(option_puppet_ca_proxy) if option_puppet_ca_proxy
 
-      # Remove after API docs are fixed: https://projects.theforeman.org/issues/28923
-      puppetclass_ids = option_puppetclass_ids || puppet_class_ids(option_puppetclass_names)
-      params['hostgroup']['puppetclass_ids'] = puppetclass_ids unless puppetclass_ids.nil?
-
       params['hostgroup']['root_pass'] = option_root_pass if option_root_pass
       params['hostgroup']['root_pass'] = HammerCLIForeman::HostgroupUpdateCreateCommons::ask_password if option_ask_root_pass
 
@@ -48,11 +44,6 @@ module HammerCLIForeman
     def proxy_id(name)
       resolver.smart_proxy_id('option_name' => name) if name
     end
-
-    def puppet_class_ids(names)
-      resolver.puppetclass_ids('option_names' => names) if names
-    end
-
   end
 
   class Hostgroup < HammerCLIForeman::Command
