@@ -223,7 +223,8 @@ module HammerCLIForeman
             "#{aliased_name}_#{s.name}".upcase,
             s.description || " ",
             :attribute_name => HammerCLI.option_accessor_name("#{resource_name}_#{s.name}"),
-            :referenced_resource => resource.singular_name
+            :referenced_resource => resource.singular_name,
+            :format => s.format
           )
         end
       end

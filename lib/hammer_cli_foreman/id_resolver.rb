@@ -6,6 +6,7 @@ module HammerCLIForeman
       @name = name
       @description = description
       @editable = options[:editable].nil? ? true : options[:editable]
+      @format = options[:format]
     end
 
     attr_reader :name, :description
@@ -16,6 +17,10 @@ module HammerCLIForeman
 
     def editable?
       @editable
+    end
+
+    def format
+      @format
     end
 
   end
@@ -46,10 +51,16 @@ module HammerCLIForeman
       :hostgroup =>        [ s_name(_("Hostgroup name")), s("title", _("Hostgroup title"), :editable => false) ],
       # :image =>            [],
       :interface =>        [],
-      :location =>         [ s_name(_("Location name")), s("title", _("Location title"), :editable => false) ],
+      :location =>         [  s("name", _("Location Name, Set the current location context for the request")),
+                              s("title", _("Location title, Set the current location context for the request" ),:editable => false),
+                              s("id", _("Set the current location context for the request"), :editable => false, :format => HammerCLI::Options::Normalizers::Number.new),
+      ],
       :medium =>           [ s_name(_("Medium name")) ],
       :model =>            [ s_name(_("Model name")) ],
-      :organization =>     [ s_name(_("Organization name")), s("title", _("Organization title"), :editable => false) ],
+      :organization =>     [ s("name", _("Set the current organization context for the request")),
+                             s("title", _("Set the current organization context for the request"),:editable => false),
+                             s("id", _("Set the current organization context for the request"), :editable => false, :format => HammerCLI::Options::Normalizers::Number.new),
+      ],
       :operatingsystem =>  [ s("title", _("Operating system title"), :editable => false) ],
       :override_value =>   [],
       :ptable =>           [ s_name(_("Partition table name")) ],
@@ -96,14 +107,13 @@ module HammerCLIForeman
 
       option_names = []
       if (mode.nil? || mode == :single)
-        option_names << "id"
         option_names += searchables(resource).map { |s| s.name }
+        option_names << "id" unless option_names.include?("id")
       end
       if (mode.nil? || mode == :multi)
         option_names << "ids"
         option_names += searchables(resource).map { |s| s.plural_name }
       end
-
       option_names.each do |name|
         option = HammerCLI.option_accessor_name(name)
         scoped_option = HammerCLI.option_accessor_name("#{scope}_#{name}")
