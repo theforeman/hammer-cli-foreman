@@ -21,6 +21,14 @@ module HammerCLIForeman
       end
     end
 
+    def self.inherited_users(dsl)
+      dsl.build do
+        collection :inherited_users, _("Inherited Users"), :numbered => false do
+          custom_field Fields::Reference, :name_key => :login
+        end
+      end
+    end
+
     def self.users(dsl)
       dsl.build do
         collection :users, _("Users"), :numbered => false do
@@ -56,6 +64,14 @@ module HammerCLIForeman
       end
     end
 
+    def self.inherited_smart_proxies(dsl)
+      dsl.build do
+        collection :inherited_smart_proxies , _("Inherited Smart proxies"), :numbered => false do
+          custom_field Fields::Reference
+        end
+      end
+    end
+
     def self.compute_profiles(dsl)
       dsl.build do
         collection :compute_profiles, _("Compute profiles"), :numbered => false do
@@ -72,9 +88,25 @@ module HammerCLIForeman
       end
     end
 
+    def self.inherited_compute_resources(dsl)
+      dsl.build do
+        collection :inherited_compute_resources, _("Inherited Compute resources"), :numbered => false do
+          custom_field Fields::Reference
+        end
+      end
+    end
+
     def self.media(dsl)
       dsl.build do
         collection :media, _("Installation media"), :numbered => false do
+          custom_field Fields::Reference
+        end
+      end
+    end
+
+    def self.inherited_media(dsl)
+      dsl.build do
+        collection :inherited_media, _("Inherited Installation media"), :numbered => false do
           custom_field Fields::Reference
         end
       end
@@ -88,9 +120,25 @@ module HammerCLIForeman
       end
     end
 
+    def self.inherited_provisioning_templates(dsl)
+      dsl.build do
+        collection :inherited_provisioning_templates, _("Inherited Templates"), :numbered => false do
+          custom_field Fields::Template
+        end
+      end
+    end
+
     def self.domains(dsl)
       dsl.build do
         collection :domains, _("Domains"), :numbered => false do
+          custom_field Fields::Reference
+        end
+      end
+    end
+
+    def self.inherited_domains(dsl)
+      dsl.build do
+        collection :inherited_domains, _("Inherited Domains"), :numbered => false do
           custom_field Fields::Reference
         end
       end
@@ -104,9 +152,25 @@ module HammerCLIForeman
       end
     end
 
+    def self.inherited_environments(dsl)
+      dsl.build do
+        collection :inherited_environments, _("Inherited Environments"), :numbered => false do
+          custom_field Fields::Reference
+        end
+      end
+    end
+
     def self.hostgroups(dsl)
       dsl.build do
         collection :hostgroups, _("Hostgroups"), :numbered => false do
+          custom_field Fields::Reference, :name_key => :title
+        end
+      end
+    end
+
+    def self.inherited_hostgroups(dsl)
+      dsl.build do
+        collection :inherited_hostgroups, _("Inherited Hostgroups"), :numbered => false do
           custom_field Fields::Reference, :name_key => :title
         end
       end
@@ -120,6 +184,13 @@ module HammerCLIForeman
       end
     end
 
+    def self.inherited_subnets(dsl)
+      dsl.build do
+        collection :inherited_subnets, _("Inherited Subnets"), :numbered => false do
+          custom_field Fields::Reference, :details => :network_address
+        end
+      end
+    end
 
     def self.parameters(dsl)
       dsl.build do

@@ -28,14 +28,23 @@ module HammerCLIForeman
       output ListCommand.output_definition do
         field nil, _("Parent"), Fields::SingleReference, :key => :parent
         HammerCLIForeman::References.users(self)
+        HammerCLIForeman::References.inherited_users(self)
         HammerCLIForeman::References.smart_proxies(self)
+        HammerCLIForeman::References.inherited_smart_proxies(self)
         HammerCLIForeman::References.subnets(self)
+        HammerCLIForeman::References.inherited_subnets(self)
         HammerCLIForeman::References.compute_resources(self)
+        HammerCLIForeman::References.inherited_compute_resources(self)
         HammerCLIForeman::References.media(self)
+        HammerCLIForeman::References.inherited_media(self)
         HammerCLIForeman::References.provisioning_templates(self)
+        HammerCLIForeman::References.inherited_provisioning_templates(self)
         HammerCLIForeman::References.domains(self)
+        HammerCLIForeman::References.inherited_domains(self)
         HammerCLIForeman::References.environments(self)
+        HammerCLIForeman::References.inherited_environments(self)
         HammerCLIForeman::References.hostgroups(self)
+        HammerCLIForeman::References.inherited_hostgroups(self)
         HammerCLIForeman::References.parameters(self)
         collection :organizations, _("Organizations"), :numbered => false, :hide_blank => true do
           custom_field Fields::Reference
