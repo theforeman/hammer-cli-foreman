@@ -24,7 +24,7 @@ describe HammerCLIForeman::OperatingSystem do
     end
 
     it "should print error on missing --id" do
-      expected_result = "Could not associate the provisioning templates:\n  Missing arguments for '--id'\n"
+      expected_result = "Could not associate the provisioning templates:\n  Missing arguments for '--id'.\n"
 
       api_expects_no_call
       result = run_cmd(@cmd)
