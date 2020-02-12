@@ -15,10 +15,14 @@ module HammerCLIForeman
       base.option "--puppet-ca-proxy", "PUPPET_CA_PROXY_NAME", _("Name of puppet CA proxy")
       base.option "--puppet-proxy", "PUPPET_PROXY_NAME",  _("Name of puppet proxy")
       base.option "--parent", "PARENT_NAME",  _("Name of parent hostgroup")
-      base.option "--root-pass", "ROOT_PASSWORD",  _("Root password")
-      base.option "--ask-root-pass", "ASK_ROOT_PW", "",
-        :format => HammerCLI::Options::Normalizers::Bool.new
+      base.option ["--root-password", "--root-pass"], "ROOT_PASSWORD",  _("Root password"),
+                  deprecated: { '--root-pass' => _("Use --root-password instead") }
+      base.option ["--ask-root-password", "--ask-root-pass"], "ASK_ROOT_PW", "",
+                  format: HammerCLI::Options::Normalizers::Bool.new,
+                  deprecated: { '--ask-root-pass' => _("Use --ask-root-password instead") }
       base.option "--subnet6", "SUBNET6_NAME", _("Subnet IPv6 name")
+
+      base.build_options without: %i[root_pass]
     end
 
     def self.ask_password
@@ -36,8 +40,8 @@ module HammerCLIForeman
       puppetclass_ids = option_puppetclass_ids || puppet_class_ids(option_puppetclass_names)
       params['hostgroup']['puppetclass_ids'] = puppetclass_ids unless puppetclass_ids.nil?
 
-      params['hostgroup']['root_pass'] = option_root_pass if option_root_pass
-      params['hostgroup']['root_pass'] = HammerCLIForeman::HostgroupUpdateCreateCommons::ask_password if option_ask_root_pass
+      params['hostgroup']['root_pass'] = option_root_password if option_root_password
+      params['hostgroup']['root_pass'] = HammerCLIForeman::HostgroupUpdateCreateCommons::ask_password if option_ask_root_password
 
       params['hostgroup']['subnet6_id'] = resolver.subnet_id('option_name' => option_subnet6) if option_subnet6
       params
@@ -116,8 +120,6 @@ module HammerCLIForeman
       success_message _("Hostgroup created.")
       failure_message _("Could not create the hostgroup")
 
-      build_options
-
       extend_with(HammerCLIForeman::CommandExtensions::PuppetEnvironment.new)
     end
 
@@ -127,8 +129,6 @@ module HammerCLIForeman
 
       success_message _("Hostgroup updated.")
       failure_message _("Could not update the hostgroup")
-
-      build_options
 
       extend_with(HammerCLIForeman::CommandExtensions::PuppetEnvironment.new)
     end
