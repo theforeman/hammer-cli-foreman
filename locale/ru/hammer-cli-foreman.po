@@ -5,9 +5,9 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: hammer-cli-foreman 0.19.0\n"
+"Project-Id-Version: hammer-cli-foreman 2.0.0.pre.develop\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-10-26 23:06+0200\n"
+"POT-Creation-Date: 2020-02-12 15:15+0200\n"
 "PO-Revision-Date: 2018-10-24 10:54+0200\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -61,6 +61,9 @@ msgstr ""
 msgid "Manipulate hostgroups"
 msgstr ""
 
+msgid "Manipulate http proxies"
+msgstr ""
+
 msgid "Manipulate locations"
 msgstr ""
 
@@ -99,9 +102,6 @@ msgstr ""
 msgid "Manipulate smart class parameters"
 msgstr ""
 
-msgid "Manipulate smart variables"
-msgstr ""
-
 msgid "Manipulate smart proxies"
 msgstr ""
 
@@ -130,6 +130,9 @@ msgid "Get the status of the server and/or it's subcomponents"
 msgstr ""
 
 msgid "Get the complete status of the server and/or it's subcomponents"
+msgstr ""
+
+msgid "Manage trends"
 msgstr ""
 
 msgid "Using certificate authentication."
@@ -185,7 +188,7 @@ msgstr ""
 msgid "Using sessions, you are currently not logged in."
 msgstr ""
 
-msgid "Invalid username or password, continuing with session for '%s'."
+msgid "Invalid credentials, continuing with session for '%s'."
 msgstr ""
 
 msgid "Session has expired."
@@ -377,22 +380,36 @@ msgstr ""
 msgid "Could not disassociate the user group"
 msgstr ""
 
-msgid "Associate a configuration template"
+msgid "Associate provisioning templates"
 msgstr ""
 
-msgid "The configuration template has been associated."
+msgid "List of provisioning template ids"
 msgstr ""
 
-msgid "Could not associate the configuration template"
+msgid "List of provisioning template names"
 msgstr ""
 
-msgid "Disassociate a configuration template"
+msgid ""
+"Provisioning template name regex to search, all matching templates will be "
+"associated"
 msgstr ""
 
-msgid "The configuration template has been disassociated."
+msgid "%s not found."
 msgstr ""
 
-msgid "Could not disassociate the configuration template"
+msgid "The provisioning templates were associated."
+msgstr ""
+
+msgid "Could not associate the provisioning templates"
+msgstr ""
+
+msgid "Disassociate a provisioning template"
+msgstr ""
+
+msgid "The provisioning template has been disassociated."
+msgstr ""
+
+msgid "Could not disassociate the provisioning template"
 msgstr ""
 
 msgid "Associate an organization"
@@ -553,10 +570,13 @@ msgstr ""
 msgid "Password to access the remote system"
 msgstr ""
 
+msgid "Successfully logged in as '%s'."
+msgstr ""
+
 msgid "Openidc provider URL which issues access token"
 msgstr ""
 
-msgid "Openidc provider URL which issues authentication code"
+msgid "Openidc provider URL which issues authentication code (two factor only)"
 msgstr ""
 
 msgid "Client id used in the Openidc provider"
@@ -565,7 +585,7 @@ msgstr ""
 msgid "Authenticate with two factor"
 msgstr ""
 
-msgid "Redirect URI for the authencation code grant flow"
+msgid "Redirect URI for the authentication code grant flow"
 msgstr ""
 
 msgid "Wipe your credentials"
@@ -581,6 +601,18 @@ msgid "List all auth sources"
 msgstr ""
 
 msgid "Type of auth source"
+msgstr ""
+
+msgid "Manage external auth sources"
+msgstr ""
+
+msgid "Update organization and location for Auth Source"
+msgstr ""
+
+msgid "Successfully updated the %{name} external auth source."
+msgstr ""
+
+msgid "Failed to update %{name} external auth source"
 msgstr ""
 
 msgid "Manage LDAP auth sources"
@@ -664,9 +696,6 @@ msgstr ""
 msgid ""
 "Can't perform login. Make sure sessions are enabled in hammer configuration "
 "file."
-msgstr ""
-
-msgid "Successfully logged in as '%s'."
 msgstr ""
 
 msgid "Manage template combinations"
@@ -974,9 +1003,6 @@ msgstr ""
 msgid "Provider"
 msgstr ""
 
-msgid "Url"
-msgstr ""
-
 msgid "Description"
 msgstr ""
 
@@ -1001,6 +1027,12 @@ msgstr ""
 msgid "Could not delete the compute resource"
 msgstr ""
 
+msgid "Uuid"
+msgstr ""
+
+msgid "Url"
+msgstr ""
+
 msgid "Region"
 msgstr ""
 
@@ -1014,6 +1046,9 @@ msgid "Email"
 msgstr ""
 
 msgid "Key Path"
+msgstr ""
+
+msgid "Zone"
 msgstr ""
 
 msgid "Number of CPUs"
@@ -1052,7 +1087,7 @@ msgstr ""
 msgid "Project domain ID"
 msgstr ""
 
-msgid "ID of cluster to use"
+msgid "ID or name of cluster to use"
 msgstr ""
 
 msgid "Hardware profile to use"
@@ -1070,13 +1105,13 @@ msgstr ""
 msgid "Compute name, e.g. eth0"
 msgstr ""
 
-msgid "Select one of available networks for a cluster, must be an ID"
+msgid "Select one of available networks for a cluster, must be an ID or a name"
 msgstr ""
 
 msgid "Interface type"
 msgstr ""
 
-msgid "ID of storage domain"
+msgid "ID or name of storage domain"
 msgstr ""
 
 msgid "Boolean, only one volume can be bootable"
@@ -1086,6 +1121,9 @@ msgid "Boolean, set %s to preallocate"
 msgstr ""
 
 msgid "Boolean, set %s to wipe disk after delete"
+msgstr ""
+
+msgid "Disk interface name, must be ide, virto or virto_scsi"
 msgstr ""
 
 msgid "Datacenter"
@@ -1156,7 +1194,7 @@ msgid ""
 "about available adapter types:"
 msgstr ""
 
-msgid "Network ID from VMware"
+msgid "Network ID or Network Name from VMware"
 msgstr ""
 
 msgid "Config group created."
@@ -1567,6 +1605,9 @@ msgstr ""
 msgid "Owner"
 msgstr ""
 
+msgid "Owner Id"
+msgstr ""
+
 msgid "Owner Type"
 msgstr ""
 
@@ -1790,6 +1831,30 @@ msgstr ""
 msgid "Enter the root password for the host:"
 msgstr ""
 
+msgid "Username"
+msgstr ""
+
+msgid "URL"
+msgstr ""
+
+msgid "Http proxy created."
+msgstr ""
+
+msgid "Could not create the http proxy"
+msgstr ""
+
+msgid "Http proxy deleted."
+msgstr ""
+
+msgid "Could not delete the http proxy"
+msgstr ""
+
+msgid "Http proxy updated."
+msgstr ""
+
+msgid "Could not update the http proxy"
+msgstr ""
+
 msgid "Architecture name"
 msgstr ""
 
@@ -1808,10 +1873,13 @@ msgstr ""
 msgid "Hostgroup title"
 msgstr ""
 
-msgid "Location name"
+msgid "Location Name, Set the current location context for the request"
 msgstr ""
 
-msgid "Location title"
+msgid "Location title, Set the current location context for the request"
+msgstr ""
+
+msgid "Set the current location context for the request"
 msgstr ""
 
 msgid "Medium name"
@@ -1820,10 +1888,7 @@ msgstr ""
 msgid "Model name"
 msgstr ""
 
-msgid "Organization name"
-msgstr ""
-
-msgid "Organization title"
+msgid "Set the current organization context for the request"
 msgstr ""
 
 msgid "Operating system title"
@@ -1856,9 +1921,6 @@ msgstr ""
 msgid "Smart class parameter name"
 msgstr ""
 
-msgid "Smart variable name"
-msgstr ""
-
 msgid "Name to search by"
 msgstr ""
 
@@ -1868,9 +1930,6 @@ msgstr ""
 msgid "one of %s not found."
 msgstr ""
 
-msgid "%s not found."
-msgstr ""
-
 msgid "Found more than one %s."
 msgstr ""
 
@@ -1878,9 +1937,6 @@ msgid "Missing options to search %s."
 msgstr ""
 
 msgid "View and manage compute resource's images"
-msgstr ""
-
-msgid "Username"
 msgstr ""
 
 msgid "User Data"
@@ -2156,17 +2212,18 @@ msgstr ""
 msgid "Operatingsystem id"
 msgstr ""
 
-msgid "Config template id to be set"
+msgid "Provisioning template id to be set"
 msgstr ""
 
 msgid ""
-"[%{config_template_name}] was set as default %{template_kind_name} template."
+"[%{provisioning_template_name}] was set as default %{template_kind_name} "
+"template."
 msgstr ""
 
 msgid "Could not set the os default template"
 msgstr ""
 
-msgid "Type of the config template"
+msgid "Type of the provisioning template"
 msgstr ""
 
 msgid "Default template deleted."
@@ -2297,15 +2354,6 @@ msgid "database"
 msgstr ""
 
 msgid "Server Response"
-msgstr ""
-
-msgid "Smart variables"
-msgstr ""
-
-msgid "Parameter"
-msgstr ""
-
-msgid "Default value"
 msgstr ""
 
 msgid "Smart class parameters"
@@ -2446,6 +2494,16 @@ msgstr ""
 msgid "The report has been scheduled. Job ID: %{job_id}"
 msgstr ""
 
+msgid ""
+"Path to a file that contains the report template content including metadata"
+msgstr ""
+
+msgid "Import report template successfully."
+msgstr ""
+
+msgid "Could not import the report template"
+msgstr ""
+
 msgid "The report is not ready yet."
 msgstr ""
 
@@ -2548,6 +2606,9 @@ msgstr ""
 msgid "Could not update the setting"
 msgstr ""
 
+msgid "Parameter"
+msgstr ""
+
 msgid "Default Value"
 msgstr ""
 
@@ -2563,7 +2624,7 @@ msgstr ""
 msgid "Hidden Value?"
 msgstr ""
 
-msgid "Use puppet default"
+msgid "Omit"
 msgstr ""
 
 msgid "Validator"
@@ -2620,32 +2681,13 @@ msgstr ""
 msgid "Could not create the override value"
 msgstr ""
 
-msgid "Cannot use --value when --use-puppet-default is true."
-msgstr ""
-
-msgid "Create an override value for a specific smart variable"
-msgstr ""
-
-msgid ""
-"add-override-value command is deprecated and will be removed in one of the "
-"future versions. Please use add-matcher command instead."
+msgid "Cannot use --value when --omit is true."
 msgstr ""
 
 msgid "Override value deleted."
 msgstr ""
 
 msgid "Could not delete the override value"
-msgstr ""
-
-msgid "Remove an override value for a specific smart variable"
-msgstr ""
-
-msgid ""
-"remove-override-value command is deprecated and will be removed in one of "
-"the future versions. Please use remove-matcher command instead."
-msgstr ""
-
-msgid "URL"
 msgstr ""
 
 msgid "Features"
@@ -2694,33 +2736,6 @@ msgid "Smart proxy features were refreshed."
 msgstr ""
 
 msgid "Refresh of smart proxy features failed"
-msgstr ""
-
-msgid "Type of the variable"
-msgstr ""
-
-msgid "Variable"
-msgstr ""
-
-msgid "Use --variable instead"
-msgstr ""
-
-msgid "Smart variable [%{variable}] created."
-msgstr ""
-
-msgid "Could not create the smart variable"
-msgstr ""
-
-msgid "Smart variable [%{variable}] updated."
-msgstr ""
-
-msgid "Could not update the smart variable"
-msgstr ""
-
-msgid "Smart variable [%{variable}] deleted."
-msgstr ""
-
-msgid "Could not delete the smart variable"
 msgstr ""
 
 msgid "Manage SSH Keys sources"
@@ -2916,6 +2931,21 @@ msgid "Provisioning template cloned."
 msgstr ""
 
 msgid "Could not clone the provisioning template"
+msgstr ""
+
+msgid "Label"
+msgstr ""
+
+msgid "Trend for %<trendable_type>s created."
+msgstr ""
+
+msgid "Could not create the trend"
+msgstr ""
+
+msgid "Trend for %<trendable_type>s deleted."
+msgstr ""
+
+msgid "Could not delete the trend"
 msgstr ""
 
 msgid "Login"
