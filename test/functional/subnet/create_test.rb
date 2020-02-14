@@ -14,11 +14,34 @@ module HammerCLIForeman
         params
       end
 
-      it 'allows minimal options' do
-        api_expects(:subnets, :create) do |par|
-          par['subnet']['name'] == 'net1'
-        end
+      it 'should print error on missing --mask or --prefix' do
+        params = ['--name=net1']
+        cmd = %w[subnet create]
+
+        expected_result = usage_error_result(
+          cmd,
+          'At least one of options --mask, --prefix is required.',
+          'Could not create the subnet'
+        )
+
+        api_expects_no_call
+        result = run_cmd(cmd + params)
+        assert_cmd(expected_result, result)
+      end
+
+      it 'allows minimal options with mask for IPv4' do
+        api_expects(:subnets, :create).with_params(subnet_params(mask: '255.255.255.0'))
         run_cmd(%w(subnet create --name net1 --network=192.168.122.0 --mask=255.255.255.0))
+      end
+
+      it 'allows minimal options with prefix for IPv4' do
+        api_expects(:subnets, :create).with_params(subnet_params(mask: '255.255.255.0'))
+        run_cmd(%w(subnet create --name net1 --network=192.168.122.0 --prefix=24))
+      end
+
+      it 'allows minimal options with prefix for IPv6' do
+        api_expects(:subnets, :create).with_params(subnet_params(cidr: '96'))
+        run_cmd(%w(subnet create --name net1 --network-type=IPv6 --network='::ffff:c0a8:7a00' --prefix=96))
       end
 
       it 'allows dhcp id' do
@@ -91,7 +114,7 @@ module HammerCLIForeman
       it 'allows organization names' do
         api_expects(:organizations, :index) do |p|
           p[:search] == "name = \"org1\" or name = \"org2\""
-        end.returns(index_response([{'id' => 1}, {'id' => 2}])) 
+        end.returns(index_response([{'id' => 1}, {'id' => 2}]))
         api_expects(:subnets, :create).with_params(subnet_params(:organization_ids => [1, 2]))
         run_cmd(%w(subnet create --name net1 --network=192.168.122.0 --mask=255.255.255.0 --organizations org1,org2))
       end
