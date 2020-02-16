@@ -17,7 +17,7 @@ module HammerCLIForeman
 
       def host_attributes
         [
-          ['start', _('Boolean (expressed as 0 or 1), whether to start the machine or not')]
+          ['start', _('Boolean, set 1 to start the vm')]
         ]
       end
 
@@ -33,9 +33,9 @@ module HammerCLIForeman
         [
           ['size_gb',        _('Volume size in GB, integer value')],
           ['storage_domain', _('ID or name of storage domain')],
-          ['bootable',       _('Boolean, only one volume can be bootable')],
-          ['preallocate',    _('Boolean, set %s to preallocate') % 'true'],
-          ['wipe_after_delete', _('Boolean, set %s to wipe disk after delete') % 'true'],
+          ['bootable',       _('Boolean, set 1 for bootable, only one volume can be bootable')],
+          ['preallocate',    _('Boolean, set 1 to preallocate')],
+          ['wipe_after_delete', _('Boolean, set 1 to wipe disk after delete')],
           ['interface', _('Disk interface name, must be ide, virto or virto_scsi')]
         ]
       end
