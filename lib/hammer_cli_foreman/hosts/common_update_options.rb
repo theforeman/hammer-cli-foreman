@@ -59,7 +59,7 @@ module HammerCLIForeman
 
       def request_params
         params = super
-        owner_id = get_resource_id(HammerCLIForeman.foreman_resource(:users), :required => false, :scoped => true)
+        owner_id = owner_id(option_user_login, params['host']['owner_type'])
         params['host']['owner_id'] ||= owner_id unless owner_id.nil?
 
         puppet_proxy_id = proxy_id(option_puppet_proxy)
@@ -118,6 +118,13 @@ module HammerCLIForeman
       end
 
       private
+
+      def owner_id(name, type = 'User')
+        return unless name
+        return resolver.user_id('option_login' => name) if type == 'User'
+
+        resolver.usergroup_id('option_name' => name)
+      end
 
       def proxy_id(name)
         resolver.smart_proxy_id('option_name' => name) if name
