@@ -671,8 +671,12 @@ module HammerCLIForeman
 
     def get_new_ids
       ids = get_current_ids.map(&:to_s)
-      required_ids = get_associated_identifiers.nil? ? [] : get_associated_identifiers.map(&:to_s)
-      required_ids << get_associated_identifier.to_s unless get_associated_identifier.nil?
+
+      associated_identifiers = get_associated_identifiers
+      associated_identifier = get_associated_identifier
+
+      required_ids = associated_identifiers.nil? ? [] : associated_identifiers.map(&:to_s)
+      required_ids << associated_identifier.to_s unless associated_identifier.nil?
 
       ids += required_ids
       ids.uniq
