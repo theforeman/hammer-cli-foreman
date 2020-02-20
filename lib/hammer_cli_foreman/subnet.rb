@@ -3,9 +3,12 @@ module HammerCLIForeman
    module SubnetUpdateCreateCommons
 
     def self.included(base)
-      base.option "--dns", "DNS_NAME", _("DNS Proxy to use within this subnet")
-      base.option "--dhcp", "DHCP_NAME", _("DHCP Proxy to use within this subnet")
-      base.option "--tftp", "TFTP_NAME", _("TFTP Proxy to use within this subnet")
+      base.option "--dns", "DNS_NAME", _("DNS Proxy to use within this subnet"),
+                  aliased_resource: 'dns', referenced_resource: 'dns'
+      base.option "--dhcp", "DHCP_NAME", _("DHCP Proxy to use within this subnet"),
+                  aliased_resource: 'dhcp', referenced_resource: 'dhcp'
+      base.option "--tftp", "TFTP_NAME", _("TFTP Proxy to use within this subnet"),
+                  aliased_resource: 'tftp', referenced_resource: 'tftp'
     end
 
     def request_params
