@@ -308,7 +308,10 @@ describe 'host update' do
       'organization_id' => '5',
       'location_id' => '5',
       'compute_attributes' => {},
-      'puppetclass_ids' => []
+      'puppetclass_ids' => [],
+      'owner_id' => '1',
+      'owner_name' => 'adminGroup',
+      'owner_type' => 'Usergroup'
     }
   end
 
@@ -376,6 +379,29 @@ describe 'host update' do
       par['id'] == '1' &&
         par['host']['location_id'] == '5' &&
         par['host']['compute_attributes'] == {}
+    end.returns(updated_host)
+
+    expected_result = success_result("Host updated.\n")
+
+    result = run_cmd(cmd + minimal_params + params)
+
+    assert_cmd(expected_result, result)
+  end
+
+  it 'should update the host owner' do
+    params = ['--owner-type=Usergroup', '--owner=adminGroup']
+
+    api_expects_search(:usergroups, name: 'adminGroup').returns(
+        index_response([{ 'id' => '1' }])
+    )
+    api_expects(:hosts, :update, 'Update host with new owner').with_params(
+        'id' => '1', 'location_id' => 1, 'organization_id' => 1, 'host' => {
+        'owner_id' => '1', 'compute_attributes' => {}
+    }
+    ) do |par|
+      par['id'] == '1' &&
+          par['host']['owner_id'] == '1' &&
+          par['host']['compute_attributes'] == {}
     end.returns(updated_host)
 
     expected_result = success_result("Host updated.\n")
