@@ -1,5 +1,8 @@
 Release notes
 =============
+### 2.0.1 (2020-02-25)
+* Remove duplicate api requests on addassociatedcommand ([PR #503](https://github.com/theforeman/hammer-cli-foreman/pull/503)) ([PR #504](https://github.com/theforeman/hammer-cli-foreman/pull/504)), [#29096](http://projects.theforeman.org/issues/29096)
+
 ### 2.0.0 (2020-02-12)
 * Change the description of the scoped loc and org ([PR #494](https://github.com/theforeman/hammer-cli-foreman/pull/494)), [#28869](http://projects.theforeman.org/issues/28869)
 * Fixes tests
