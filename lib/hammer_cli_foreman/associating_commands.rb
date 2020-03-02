@@ -245,6 +245,7 @@ module HammerCLIForeman
         def request_params
           params = super
 
+          template_ids = params['operatingsystem']['provisioning_template_ids']
           if options['option_provisioning_template_search']
             templates = HammerCLIForeman.collection_to_common_format(
               associated_resource.call(
@@ -255,10 +256,10 @@ module HammerCLIForeman
 
             templates.each do |template|
               template_id = template['id']
-              params['operatingsystem']['provisioning_template_ids'] << template_id.to_s
+              template_ids << template_id.to_s
             end
           end
-          params['operatingsystem']['provisioning_template_ids'] = params['operatingsystem']['provisioning_template_ids'].uniq
+          params['operatingsystem']['provisioning_template_ids'] = template_ids.uniq
           params
         end
 
@@ -269,10 +270,37 @@ module HammerCLIForeman
 
       class RemoveProvisioningTemplateCommand < HammerCLIForeman::RemoveAssociatedCommand
         associated_resource :provisioning_templates
-        desc _("Disassociate a provisioning template")
+        desc _("Disassociate provisioning templates")
 
-        success_message _("The provisioning template has been disassociated.")
-        failure_message _("Could not disassociate the provisioning template")
+        option "--provisioning-template-ids", "PROVISIONING_TEMPLATE_IDS", _("List of provisioning template ids"),
+               format: HammerCLI::Options::Normalizers::List.new
+        option "--provisioning-templates", "PROVISIONING_TEMPLATE_NAMES", _("List of provisioning template names"),
+               format: HammerCLI::Options::Normalizers::List.new, attribute_name: :option_provisioning_template_names
+        option "--provisioning-template-search", "PROVISIONING_TEMPLATE_SEARCH", _("Provisioning template name regex to search, all matching templates will be disassociated")
+
+        def request_params
+          params = super
+
+          template_ids = params['operatingsystem']['provisioning_template_ids']
+          if options['option_provisioning_template_search']
+            templates = HammerCLIForeman.collection_to_common_format(
+              associated_resource.call(
+                :index,
+                :search => "name ~ \"#{options['option_provisioning_template_search']}\"")
+            )
+            raise ResolverError.new(_("%s not found.") % associated_resource.singular_name, associated_resource) if templates.empty?
+
+            templates.each do |template|
+              template_id = template['id']
+              template_ids.delete(template_id.to_s)
+            end
+          end
+          params['operatingsystem']['provisioning_template_ids'] = template_ids.uniq
+          params
+        end
+
+        success_message _("The provisioning templates were disassociated.")
+        failure_message _("Could not disassociate the provisioning templates")
       end
     end
 
