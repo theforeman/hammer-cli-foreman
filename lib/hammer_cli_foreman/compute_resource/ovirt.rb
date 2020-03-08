@@ -7,11 +7,13 @@ module HammerCLIForeman
 
       def compute_attributes
         [
-          ['cluster',  _('ID or name of cluster to use')],
-          ['template', _('Hardware profile to use')],
-          ['cores',    _('Integer value, number of cores')],
-          ['sockets',  _('Integer value, number of sockets')],
-          ['memory',   _('Amount of memory, integer value in bytes')]
+          ['cluster',         _('ID or name of cluster to use')],
+          ['template',        _('Hardware profile to use')],
+          ['cores',           _('Integer value, number of cores')],
+          ['sockets',         _('Integer value, number of sockets')],
+          ['memory',          _('Amount of memory, integer value in bytes')],
+          ['display_type',    _('Possible values: %s') % 'VNC, SPICE'],
+          ['keyboard_layout', _('Possible values: %s. Not usable if display type is SPICE.') % 'ar, de-ch, es, fo, fr-ca, hu, ja, mk, no, pt-br, sv, da, en-gb, et, fr, fr-ch, is, lt, nl, pl, ru, th, de, en-us, fi, fr-be, hr, it, lv, nl-be, pt, sl, tr']
         ]
       end
 
