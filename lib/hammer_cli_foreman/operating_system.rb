@@ -136,7 +136,7 @@ module HammerCLIForeman
         params = {
           "os_default_template" => {
             "provisioning_template_id" => option_provisioning_template_id,
-            "provisioning_kind_name" => tpl_kind_name
+            "template_kind_name" => tpl_kind_name
           }
         }.merge base_action_params
 
