@@ -79,6 +79,14 @@ module HammerCLIForeman
         params['host']['host_parameters_attributes'] ||= option_typed_parameters unless option_typed_parameters.nil?
         params['host']['compute_attributes'] = option_compute_attributes || {}
 
+        compute_attributes = params['host']['compute_attributes']
+        compute_attributes['display'] = {} unless compute_attributes['display_type'].nil? && compute_attributes['keyboard_layout'].nil?
+        compute_attributes['display']['type'] = compute_attributes['display_type'] unless compute_attributes['display_type'].nil?
+        compute_attributes['display']['keyboard_layout'] = compute_attributes['keyboard_layout'] unless compute_attributes['keyboard_layout'].nil?
+        compute_attributes.delete('display_type')
+        compute_attributes.delete('keyboard_layout')
+        params['host']['compute_attributes'] = compute_attributes
+
         if action == :update
           params['host']['compute_attributes']['volumes_attributes'] = nested_attributes(option_volume_list) unless option_volume_list.empty?
           params['host']['interfaces_attributes'] = interfaces_attributes unless option_interface_list.empty?
