@@ -99,6 +99,9 @@ module HammerCLIForeman
     lazy_subcommand('access-token', _("Managing personal access tokens"),
       'HammerCLIForeman::PersonalAccessToken', 'hammer_cli_foreman/personal_access_token'
     )
+    lazy_subcommand('mail-notification', _("Managing personal mail notifications"),
+                    'HammerCLIForeman::UserMailNotification', 'hammer_cli_foreman/user_mail_notification'
+    )
     autoload_subcommands
   end
 
