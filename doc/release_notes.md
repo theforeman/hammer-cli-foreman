@@ -1,5 +1,8 @@
 Release notes
 =============
+### 2.0.2 (2020-03-24)
+* Use right param for os default template ([PR #508](https://github.com/theforeman/hammer-cli-foreman/pull/508)), [#29274](http://projects.theforeman.org/issues/29274)
+
 ### 2.0.1 (2020-02-25)
 * Remove duplicate api requests on addassociatedcommand ([PR #503](https://github.com/theforeman/hammer-cli-foreman/pull/503)) ([PR #504](https://github.com/theforeman/hammer-cli-foreman/pull/504)), [#29096](http://projects.theforeman.org/issues/29096)
 
