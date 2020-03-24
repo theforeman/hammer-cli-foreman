@@ -10,6 +10,7 @@ Foreman plugin extends the Hammer Core in following areas:
  - [Building options](option_builder.md#option-builders)
  - [Automatic name resolution](name_id_resolution.md#name-to-id-resolution)
  - [Testing commands](testing.md#testing-hammer-commands)
+ - [Writing a plugin](plugin.md#writing-a-plugin)
 
 It's recommended that you set `:refresh_cache: true` in the plugin settings if
 engaging in API development to enable aggressive apidoc cache checking.
