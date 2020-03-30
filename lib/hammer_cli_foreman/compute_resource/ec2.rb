@@ -15,6 +15,17 @@ module HammerCLIForeman
         ]
       end
 
+      def provider_vm_specific_fields
+        [
+          Fields::Field.new(:label => _('DNS'), :path => [:dns_name]),
+          Fields::Field.new(:label => _('Type'), :path => [:flavor_id]),
+          Fields::Field.new(:label => _('State'), :path => [:state]),
+          Fields::Field.new(:label => _('Owner Id'), :path => [:ownerId]),
+          Fields::Field.new(:label => _('DNS Name'), :path => [:dns_name]),
+          Fields::Field.new(:label => _('Virtualization Type'), :path => [:virtualization_type])
+        ]
+      end
+
       def mandatory_resource_options
         super + %i[region user password]
       end

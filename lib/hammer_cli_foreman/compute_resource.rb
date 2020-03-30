@@ -1,4 +1,5 @@
 require 'hammer_cli_foreman/image'
+require 'hammer_cli_foreman/virtual_machine'
 require 'hammer_cli_foreman/compute_resource/register_compute_resources'
 
 module HammerCLIForeman
@@ -223,7 +224,21 @@ module HammerCLIForeman
       build_options
     end
 
+    class AvailableVirtualMachinesCommand < HammerCLIForeman::ListCommand
+      action :available_virtual_machines
+      command_name 'virtual-machines'
+
+      output do
+        field :id, _("Id")
+        field :name, _("Name")
+      end
+
+      build_options
+    end
+
     autoload_subcommands
+    subcommand 'virtual-machine', HammerCLIForeman::VirtualMachine.desc,
+               HammerCLIForeman::VirtualMachine
     subcommand 'image', HammerCLIForeman::Image.desc, HammerCLIForeman::Image
   end
 

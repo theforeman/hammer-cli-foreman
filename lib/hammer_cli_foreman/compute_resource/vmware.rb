@@ -67,6 +67,19 @@ module HammerCLIForeman
         ]
       end
 
+      def provider_vm_specific_fields
+        [
+            Fields::Field.new(:label => _('CPUs'), :path => [:cpus]),
+            Fields::Field.new(:label => _('Memory'), :path => [:memory_mb]),
+            Fields::Field.new(:label => _('Power Status'), :path => [:power_state]),
+            Fields::Field.new(:label => _('Host Name'), :path => [:hostname]),
+            Fields::Field.new(:label => _('Connection Status'), :path => [:connection_status]),
+            Fields::Field.new(:label => _('Hardware Version'), :path => [:hardware_version]),
+            Fields::Field.new(:label => _('Path'), :path => [:path]),
+            Fields::Field.new(:label => _('Operating System'), :path => [:operatingsystem])
+        ]
+      end
+
       def mandatory_resource_options
         super + %i[user password datacenter server]
       end

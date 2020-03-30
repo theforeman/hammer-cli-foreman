@@ -28,6 +28,15 @@ module HammerCLIForeman
         ]
       end
 
+      def provider_vm_specific_fields
+        [
+          Fields::Field.new(:label => _('Machine Type'), :path => [:machine_type]),
+          Fields::Field.new(:label => _('Status'), :path => [:status]),
+          Fields::Field.new(:label => _('Description'), :path => [:description]),
+          Fields::Field.new(:label => _('Zone'), :path => [:zone])
+        ]
+      end
+
       def mandatory_resource_options
         super + %I{project key_path zone}
       end
