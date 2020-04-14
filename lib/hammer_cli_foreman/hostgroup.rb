@@ -82,7 +82,8 @@ module HammerCLIForeman
         field nil, _("Parent"), Fields::SingleReference, :key => :parent, :hide_blank => true
         field nil, _("Puppet CA Proxy"), Fields::SingleReference, :key => :puppet_ca_proxy
         field nil, _("Puppet Master Proxy"), Fields::SingleReference, :key => :puppet_proxy
-        field nil, _("ComputeProfile"), Fields::SingleReference, :key => :compute_profile
+        field nil, _("Compute Profile"), Fields::SingleReference, :key => :compute_profile
+	field nil, _("Compute Resource"), Fields::SingleReference, :key => :compute_resource
         label _('Network') do
           field nil, _("Subnet ipv4"), Fields::SingleReference, :key => :subnet
           field nil, _("Subnet ipv6"), Fields::SingleReference, :key => :subnet6
