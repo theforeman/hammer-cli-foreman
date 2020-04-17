@@ -11,6 +11,7 @@ module HammerCLIForeman
   require 'hammer_cli_foreman/i18n'
 
   require 'hammer_cli_foreman/version'
+  require 'hammer_cli_foreman/task_helper'
   require 'hammer_cli_foreman/output'
   require 'hammer_cli_foreman/output/fields'
   require 'hammer_cli_foreman/exception_handler'
