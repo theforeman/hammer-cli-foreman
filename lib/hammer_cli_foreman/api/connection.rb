@@ -52,9 +52,8 @@ module HammerCLIForeman
         return AUTH_TYPES[:basic_auth] unless HammerCLIForeman::Sessions.enabled?
 
         url = settings.get(:_params, :host) || settings.get(:foreman, :host)
-        username = settings.get(:_params, :username) || settings.get(:foreman, :username)
         session = HammerCLIForeman::Sessions.get(url)
-        if !session.valid? && session.user_name == username && !session.auth_type.nil?
+        if !session.valid? && !session.auth_type.nil?
           session.auth_type
         else
           # If the caller has not sepcified an 'auth_type'
