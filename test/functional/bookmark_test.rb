@@ -78,7 +78,7 @@ describe 'bookmark' do
         expected_result = CommandExpectation.new
         expected_result.expected_err =
           ['Failed to create  bookmark:',
-           "  Missing arguments for '--name'",
+           "  Missing arguments for '--name'.",
            ''].join("\n")
         expected_result.expected_exit_code = HammerCLI::EX_USAGE
 
@@ -93,7 +93,7 @@ describe 'bookmark' do
         expected_result = CommandExpectation.new
         expected_result.expected_err =
           ['Failed to create  bookmark:',
-           "  Missing arguments for '--controller'",
+           "  Missing arguments for '--controller'.",
            ''].join("\n")
         expected_result.expected_exit_code = HammerCLI::EX_USAGE
         api_expects_no_call
@@ -109,7 +109,7 @@ describe 'bookmark' do
         expected_result = CommandExpectation.new
         expected_result.expected_err =
           ['Failed to create  bookmark:',
-           "  Missing arguments for '--query'",
+           "  Missing arguments for '--query'.",
            ''].join("\n")
         expected_result.expected_exit_code = HammerCLI::EX_USAGE
 
@@ -181,7 +181,7 @@ describe 'bookmark' do
         expected_result = CommandExpectation.new
         expected_result.expected_err =
           ['Failed to delete bookmark:',
-           "  Missing arguments for '--id'",
+           "  Missing arguments for '--id'.",
            ''].join("\n")
         expected_result.expected_exit_code = HammerCLI::EX_USAGE
         api_expects_no_call
