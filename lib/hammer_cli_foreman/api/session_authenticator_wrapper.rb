@@ -70,6 +70,9 @@ module HammerCLIForeman
           session.id = r.cookies['_session_id']
           session.user_name = @authenticator.user
           session.auth_type = @auth_type
+          if auth_type_oauth?
+            session.token_expires_at = @authenticator.token_expires_at
+          end
           session.store
         end
         @authenticator.response(r)
@@ -79,8 +82,7 @@ module HammerCLIForeman
         return unless @authenticator.respond_to?(:user)
         if @auth_type == AUTH_TYPES[:basic_auth]
           @authenticator.user(ask)
-        elsif @auth_type == AUTH_TYPES[:oauth_authentication_code_grant] ||
-              @auth_type = AUTH_TYPES[:oauth_password_grant]
+        elsif auth_type_oauth?
           @authenticator.user
         end
       end
@@ -92,14 +94,18 @@ module HammerCLIForeman
       def set_auth_params(*args)
         if @auth_type == AUTH_TYPES[:basic_auth]
           @authenticator.set_credentials(*args)
-        elsif @auth_type == AUTH_TYPES[:oauth_authentication_code_grant] ||
-              @auth_type == AUTH_TYPES[:oauth_password_grant]
-          @authenticator.set_token(*args)
+        else auth_type_oauth?
+          @authenticator.set_token_details(*args)
         end
       end
 
       def uri
         @uri ||= URI.parse(@url)
+      end
+
+      def auth_type_oauth?
+        @auth_type == AUTH_TYPES[:oauth_authentication_code_grant] ||
+          @auth_type == AUTH_TYPES[:oauth_password_grant]
       end
     end
   end

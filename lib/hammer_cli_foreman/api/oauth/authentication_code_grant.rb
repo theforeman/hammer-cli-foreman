@@ -5,39 +5,44 @@ module HammerCLIForeman
   module Api
     module Oauth
       class AuthenticationCodeGrant < ApipieBindings::Authenticators::TokenAuth
-        attr_accessor :oidc_token_endpoint, :oidc_authorization_endpoint, :oidc_client_id, :token, :oidc_redirect_uri
+        attr_accessor :oidc_token_endpoint, :oidc_authorization_endpoint, :oidc_client_id, :token, :oidc_redirect_uri, :token_expires_at
 
         def initialize(oidc_token_endpoint, oidc_authorization_endpoint, oidc_client_id, oidc_redirect_uri)
           @oidc_token_endpoint = oidc_token_endpoint
           @oidc_authorization_endpoint = oidc_authorization_endpoint
           @oidc_client_id = oidc_client_id
           @oidc_redirect_uri = oidc_redirect_uri
-          super set_token(oidc_token_endpoint, oidc_authorization_endpoint, oidc_client_id, oidc_redirect_uri)
+          set_token_details(oidc_token_endpoint, oidc_authorization_endpoint, oidc_client_id, oidc_redirect_uri)
+          super(@token)
         end
 
         def authenticate(request, token)
           if HammerCLI.interactive?
-            set_token_interactively
+            set_token_details_interactively
           end
           super
         end
 
-        def set_token_interactively
-          @token ||= set_token(get_oidc_token_endpoint, get_oidc_authorization_endpoint, get_oidc_client_id, get_oidc_redirect_uri)
+        def set_token_details_interactively
+          return unless @token.nil?
+          @token ||= set_token_details(get_oidc_token_endpoint, get_oidc_authorization_endpoint, get_oidc_client_id, get_oidc_redirect_uri)
         end
 
-        def set_token(input_oidc_token_endpoint, input_oidc_authorization_endpoint, input_oidc_client_id, input_oidc_redirect_uri)
+        def set_token_details(input_oidc_token_endpoint, input_oidc_authorization_endpoint, input_oidc_client_id, input_oidc_redirect_uri)
           @oidc_token_endpoint = input_oidc_token_endpoint if input_oidc_token_endpoint
           @oidc_authorization_endpoint = input_oidc_authorization_endpoint if input_oidc_authorization_endpoint
           @oidc_client_id = input_oidc_client_id if input_oidc_client_id
           @oidc_redirect_uri = input_oidc_redirect_uri if input_oidc_redirect_uri
 
           if @oidc_client_id.to_s.empty? || @oidc_authorization_endpoint.to_s.empty? || @oidc_redirect_uri.to_s.empty? || @oidc_token_endpoint.to_s.empty?
+            @token_expires_at = nil
             @token = nil
           else
             get_code
-            @token = HammerCLIForeman::OpenidConnect.new(
-              @oidc_token_endpoint, @oidc_client_id).get_token_via_2fa(@code, @oidc_redirect_uri)
+            token_details = HammerCLIForeman::OpenidConnect.new(
+              @oidc_token_endpoint, @oidc_client_id).token_details_via_2fa(@code, @oidc_redirect_uri)
+            @token_expires_at = Time.now.utc + token_details['expires_in']
+            @token = token_details['access_token']
           end
         end
 

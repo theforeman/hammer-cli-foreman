@@ -55,7 +55,7 @@ module HammerCLIForeman
   end
 
   class Session
-    attr_accessor :id, :user_name, :auth_type
+    attr_accessor :id, :user_name, :auth_type, :token_expires_at
 
     def initialize(session_path)
       @session_path = File.expand_path(session_path)
@@ -64,6 +64,9 @@ module HammerCLIForeman
         @id = session_data['id']
         @user_name = session_data['user_name']
         @auth_type = session_data['auth_type']
+        if auth_type_oauth?
+          @token_expires_at = session_data['token_expires_at']
+        end
       end
     rescue JSON::ParserError
       warn _('Invalid session data. Resetting the session.')
@@ -71,11 +74,11 @@ module HammerCLIForeman
 
     def store
       File.open(@session_path,"w") do |f|
-        f.write({
-          id: id,
-          auth_type: auth_type,
-          user_name: user_name
-        }.to_json)
+        details = { id: id, auth_type: auth_type, user_name: user_name }
+        if auth_type_oauth?
+          details[:token_expires_at] = token_expires_at
+        end
+        f.write(details.to_json)
       end
       File.chmod(0600, @session_path)
     end
@@ -87,6 +90,18 @@ module HammerCLIForeman
 
     def valid?
       !id.nil? && !id.empty?
+    end
+
+    def auth_type_oauth?
+      @auth_type == AUTH_TYPES[:oauth_authentication_code_grant] ||
+        @auth_type == AUTH_TYPES[:oauth_password_grant]
+    end
+
+    def expired?
+      return false unless auth_type_oauth?
+      return false unless (Time.parse(token_expires_at) - Time.now.utc).to_i.negative?
+
+      true
     end
   end
 end

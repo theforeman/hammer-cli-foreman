@@ -4,37 +4,42 @@ module HammerCLIForeman
   module Api
     module Oauth
       class PasswordGrant < ApipieBindings::Authenticators::TokenAuth
-        attr_accessor :oidc_token_endpoint, :oidc_client_id, :user, :password, :token
+        attr_accessor :oidc_token_endpoint, :oidc_client_id, :user, :password, :token, :token_expires_at
 
         def initialize(oidc_token_endpoint, oidc_client_id, user, password)
           @oidc_token_endpoint = oidc_token_endpoint
           @oidc_client_id = oidc_client_id
           @user = user
           @password = password
-          super set_token(oidc_token_endpoint, oidc_client_id, user, password)
+          set_token_details(oidc_token_endpoint, oidc_client_id, user, password)
+          super(@token)
         end
 
         def authenticate(request, token)
           if HammerCLI.interactive?
-            set_token_interactively
+            set_token_details_interactively
           end
           super
         end
 
-        def set_token_interactively
-          @token ||= set_token(get_oidc_token_endpoint, get_oidc_client_id, get_user, get_password)
+        def set_token_details_interactively
+          return unless @token.nil?
+          set_token_details(get_oidc_token_endpoint, get_oidc_client_id, get_user, get_password)
         end
 
-        def set_token(input_oidc_token_endpoint, input_oidc_client_id, input_user, input_password)
+        def set_token_details(input_oidc_token_endpoint, input_oidc_client_id, input_user, input_password)
           @oidc_token_endpoint = input_oidc_token_endpoint if input_oidc_token_endpoint
           @user = input_user
           @password = input_password
           @oidc_client_id = input_oidc_client_id if input_oidc_client_id
           if @user.to_s.empty? || @password.to_s.empty? || @oidc_token_endpoint.to_s.empty? || @oidc_client_id.to_s.empty?
+            @token_expires_at = nil
             @token = nil
           else
-            @token = HammerCLIForeman::OpenidConnect.new(
-              @oidc_token_endpoint, @oidc_client_id).get_token(@user, @password)
+            token_details = HammerCLIForeman::OpenidConnect.new(
+              @oidc_token_endpoint, @oidc_client_id).token_details(@user, @password)
+            @token_expires_at = Time.now.utc + token_details['expires_in']
+            @token = token_details['access_token']
           end
         end
 

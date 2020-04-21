@@ -7,7 +7,7 @@ module HammerCLIForeman
       @oidc_client_id = oidc_client_id
     end
 
-    def get_token(username, password)
+    def token_details(username, password)
       uri = URI.parse(@url)
       return nil unless uri.respond_to?(:request_uri)
 
@@ -24,7 +24,7 @@ module HammerCLIForeman
       end
       json_response = JSON.parse(response.body)
       if json_response.is_a?(Hash)
-        json_response['access_token']
+        json_response
       else
         raise _("Invalid access token response.")
         nil
@@ -38,7 +38,7 @@ module HammerCLIForeman
       nil
     end
 
-    def get_token_via_2fa(code, oidc_redirect_uri)
+    def token_details_via_2fa(code, oidc_redirect_uri)
       uri = URI.parse(@url)
       request = Net::HTTP::Post.new(uri)
       request.content_type = 'application/x-www-form-urlencoded'
@@ -53,7 +53,7 @@ module HammerCLIForeman
       end
       json_response = JSON.parse(response.body)
       if json_response.is_a?(Hash)
-        json_response['access_token']
+        json_response
       else
         raise _("Invalid access token response.")
         nil

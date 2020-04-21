@@ -52,9 +52,8 @@ module HammerCLIForeman
         return AUTH_TYPES[:basic_auth] unless HammerCLIForeman::Sessions.enabled?
 
         url = settings.get(:_params, :host) || settings.get(:foreman, :host)
-        username = settings.get(:_params, :username) || settings.get(:foreman, :username)
         session = HammerCLIForeman::Sessions.get(url)
-        if !session.valid? && session.user_name == username && !session.auth_type.nil?
+        if !session.valid? && !session.auth_type.nil?
           session.auth_type
         else
           # If the caller has not sepcified an 'auth_type'
@@ -92,7 +91,21 @@ module HammerCLIForeman
 
   def self.foreman_api_connection
     HammerCLI.context[:api_connection].create(CONNECTION_NAME) do
-      HammerCLIForeman::Api::Connection.new(HammerCLI::Settings, Logging.logger['API'], HammerCLI::I18n.locale)
+      settings = HammerCLI::Settings
+      if settings.get(:foreman, :use_sessions) == true
+        url = settings.get(:_params, :host) || settings.get(:foreman, :host)
+        session = HammerCLIForeman::Sessions.get(url)
+        if session.valid? && session.expired?
+          HammerCLIForeman::Api::Connection.new(settings, Logging.logger['API'],
+            HammerCLI::I18n.locale, session.auth_type)
+        else
+          HammerCLIForeman::Api::Connection.new(settings, Logging.logger['API'],
+            HammerCLI::I18n.locale)
+        end
+      else
+        HammerCLIForeman::Api::Connection.new(settings, Logging.logger['API'],
+        HammerCLI::I18n.locale)
+      end
     end
   end
 
