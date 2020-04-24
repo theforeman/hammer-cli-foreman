@@ -91,20 +91,12 @@ module HammerCLIForeman
 
   def self.foreman_api_connection
     HammerCLI.context[:api_connection].create(CONNECTION_NAME) do
-      settings = HammerCLI::Settings
-      if settings.get(:foreman, :use_sessions) == true
-        url = settings.get(:_params, :host) || settings.get(:foreman, :host)
-        session = HammerCLIForeman::Sessions.get(url)
-        if session.valid? && session.expired?
-          HammerCLIForeman::Api::Connection.new(settings, Logging.logger['API'],
-            HammerCLI::I18n.locale, session.auth_type)
-        else
-          HammerCLIForeman::Api::Connection.new(settings, Logging.logger['API'],
-            HammerCLI::I18n.locale)
-        end
+      if session_auth = previous_session_auth(HammerCLI::Settings)
+        HammerCLIForeman::Api::Connection.new(HammerCLI::Settings, Logging.logger['API'],
+          HammerCLI::I18n.locale, session_auth)
       else
-        HammerCLIForeman::Api::Connection.new(settings, Logging.logger['API'],
-        HammerCLI::I18n.locale)
+        HammerCLIForeman::Api::Connection.new(HammerCLI::Settings, Logging.logger['API'],
+          HammerCLI::I18n.locale)
       end
     end
   end
@@ -118,6 +110,14 @@ module HammerCLIForeman
         HammerCLI::I18n.locale,
         auth_type)
     end
+  end
+
+  def self.previous_session_auth(settings)
+    return nil unless settings.get(:foreman, :use_sessions)
+
+    url = settings.get(:_params, :host) || settings.get(:foreman, :host)
+    session = HammerCLIForeman::Sessions.get(url)
+    session.auth_type if session.valid? && session.expired?
   end
 
   def self.init_api_connection
