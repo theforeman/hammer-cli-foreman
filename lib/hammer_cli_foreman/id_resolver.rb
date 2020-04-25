@@ -1,15 +1,15 @@
 module HammerCLIForeman
 
   class Searchable
+    attr_reader :name, :description, :format
 
     def initialize(name, description, options={})
       @name = name
       @description = description
       @editable = options[:editable].nil? ? true : options[:editable]
       @format = options[:format]
+      @parent = options[:parent]
     end
-
-    attr_reader :name, :description
 
     def plural_name
       ApipieBindings::Inflector.pluralize(@name)
@@ -19,10 +19,9 @@ module HammerCLIForeman
       @editable
     end
 
-    def format
-      @format
+    def parent?
+      @parent
     end
-
   end
 
   class Searchables
@@ -51,15 +50,17 @@ module HammerCLIForeman
       :hostgroup =>        [ s_name(_("Hostgroup name")), s("title", _("Hostgroup title"), :editable => false) ],
       # :image =>            [],
       :interface =>        [],
-      :location =>         [  s("name", _("Location Name, Set the current location context for the request")),
-                              s("title", _("Location title, Set the current location context for the request" ),:editable => false),
-                              s("id", _("Set the current location context for the request"), :editable => false, :format => HammerCLI::Options::Normalizers::Number.new),
+      :location =>         [  s('name', _('Location Name, Set the current location context for the request')),
+                              s('title', _('Location title, Set the current location context for the request' ),
+                                editable: false
+                              )
       ],
       :medium =>           [ s_name(_("Medium name")) ],
       :model =>            [ s_name(_("Model name")) ],
-      :organization =>     [ s("name", _("Set the current organization context for the request")),
-                             s("title", _("Set the current organization context for the request"),:editable => false),
-                             s("id", _("Set the current organization context for the request"), :editable => false, :format => HammerCLI::Options::Normalizers::Number.new),
+      :organization =>     [ s('name', _('Set the current organization context for the request')),
+                             s('title', _('Set the current organization context for the request'),
+                               editable: false
+                             )
       ],
       :operatingsystem =>  [ s("title", _("Operating system title"), :editable => false) ],
       :override_value =>   [],

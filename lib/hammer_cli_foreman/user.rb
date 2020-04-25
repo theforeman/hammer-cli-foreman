@@ -51,26 +51,12 @@ module HammerCLIForeman
       build_options
     end
 
-    module CommonUpdateOptions
-      def self.included(base)
-        base.option '--default-organization', 'DEFAULT_ORGANIZATION_NAME', _("Default organization name")
-        base.option '--default-location', 'DEFAULT_LOCATION_NAME', _("Default location name")
-        base.option "--ask-password", "ASK_PW", " ",
-                    :format => HammerCLI::Options::Normalizers::Bool.new
-      end
-
-      def option_sources
-        sources = super
-        sources << HammerCLIForeman::OptionSources::UserParams.new(self)
-        sources
-      end
-    end
-
     class CreateCommand < HammerCLIForeman::CreateCommand
       success_message _("User [%{login}] created.")
       failure_message _("Could not create the user")
 
-      include CommonUpdateOptions
+      extend_with(HammerCLIForeman::CommandExtensions::User.new)
+
       build_options
     end
 
@@ -79,7 +65,7 @@ module HammerCLIForeman
       success_message _("User [%{login}] updated.")
       failure_message _("Could not update the user")
 
-      include CommonUpdateOptions
+      extend_with(HammerCLIForeman::CommandExtensions::User.new)
 
       build_options
     end
