@@ -275,8 +275,8 @@ module HammerCLIForeman
       record
     end
 
-    def self.command_name(name=nil)
-      super(name) || "list"
+    def self.command_names(*names)
+      super(*names) || %w(list index)
     end
 
     def execute
@@ -502,8 +502,8 @@ module HammerCLIForeman
       end
     end
 
-    def self.command_name(name=nil)
-      super(name) || "info"
+    def self.command_names(*names)
+      super(*names) || %w(info show)
     end
 
     def send_request
@@ -565,8 +565,8 @@ module HammerCLIForeman
 
     action :destroy
 
-    def self.command_name(name=nil)
-      super(name) || "delete"
+    def self.command_names(*names)
+      super(*names) || %w(delete destroy)
     end
 
   end
