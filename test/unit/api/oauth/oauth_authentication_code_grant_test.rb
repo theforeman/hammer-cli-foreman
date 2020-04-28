@@ -10,25 +10,26 @@ describe HammerCLIForeman::Api::Oauth::AuthenticationCodeGrant do
     oidc_client_id: 'hammer-cli-foreman'
   }}
 
-  describe '#set_token' do
+  describe '#set_token_details' do
     let(:auth) { HammerCLIForeman::Api::Oauth::AuthenticationCodeGrant.new(nil, nil, nil, nil) }
+    let(:token) { { 'access_token': 'token', 'expires_in': 30 } }
 
     it 'sets token' do
       auth.stubs(:get_code).returns('code')
-      HammerCLIForeman::OpenidConnect.any_instance.stubs(:get_token_via_2fa).returns('token')
-      auth.set_token(params[:oidc_token_endpoint], params[:oidc_authorization_endpoint], params[:oidc_client_id], params[:oidc_redirect_uri])
-      assert_equal 'token', auth.token
+      HammerCLIForeman::OpenidConnect.any_instance.stubs(:token_details_via_2fa).returns('token')
+      auth.set_token_details(params[:oidc_token_endpoint], params[:oidc_authorization_endpoint], params[:oidc_client_id], params[:oidc_redirect_uri])
+      assert_equal token['acess_token'], auth.token
     end
 
     it 'sets token as nil when all input parameter are missing' do
       auth.stubs(:get_code).returns('code')
-      auth.set_token(nil, nil, nil, nil)
+      auth.set_token_details(nil, nil, nil, nil)
       assert_equal nil, auth.token
     end
 
     it 'sets token as nil when any input parameter is missing' do
       auth.stubs(:get_code).returns('code')
-      auth.set_token(nil, params[:oidc_authorization_endpoint], params[:oidc_client_id], params[:oidc_redirect_uri])
+      auth.set_token_details(nil, params[:oidc_authorization_endpoint], params[:oidc_client_id], params[:oidc_redirect_uri])
       assert_equal nil, auth.token
     end
   end
@@ -36,6 +37,7 @@ describe HammerCLIForeman::Api::Oauth::AuthenticationCodeGrant do
   context "interactive mode" do
     before :each do
       HammerCLI.stubs(:interactive?).returns true
+      @token = { 'access_token' => 'token', 'expires_in' => 30 }
     end
 
     it "asks for url, realm and oidc_client_id when nothing was provided" do
@@ -45,7 +47,7 @@ describe HammerCLIForeman::Api::Oauth::AuthenticationCodeGrant do
       auth.stubs(:ask_user).with('Client ID: ').returns(params[:oidc_client_id])
       auth.stubs(:ask_user).with('Redirect URI: ').returns(params[:oidc_redirect_uri])
       auth.stubs(:get_code).returns('code')
-      HammerCLIForeman::OpenidConnect.any_instance.stubs(:get_token_via_2fa).returns('token')
+      HammerCLIForeman::OpenidConnect.any_instance.stubs(:token_details_via_2fa).returns(@token)
       auth.authenticate(request, args)
 
       assert_equal request.keys, ['Authorization']
@@ -56,7 +58,7 @@ describe HammerCLIForeman::Api::Oauth::AuthenticationCodeGrant do
       auth = HammerCLIForeman::Api::Oauth::AuthenticationCodeGrant.new(nil, params[:oidc_authorization_endpoint], params[:oidc_client_id], params[:oidc_redirect_uri])
       auth.stubs(:ask_user).with('Openidc Provider Token Endpoint: ').returns(params[:oidc_token_endpoint])
       auth.stubs(:get_code).returns('code')
-      HammerCLIForeman::OpenidConnect.any_instance.stubs(:get_token_via_2fa).returns('token')
+      HammerCLIForeman::OpenidConnect.any_instance.stubs(:token_details_via_2fa).returns(@token)
       auth.authenticate(request, args)
 
       assert_equal request.keys, ['Authorization']
@@ -67,7 +69,7 @@ describe HammerCLIForeman::Api::Oauth::AuthenticationCodeGrant do
       auth = HammerCLIForeman::Api::Oauth::AuthenticationCodeGrant.new(params[:oidc_token_endpoint], nil, params[:oidc_client_id], params[:oidc_redirect_uri])
       auth.stubs(:ask_user).with('Openidc Provider Authorization Endpoint: ').returns(params[:oidc_authorization_endpoint])
       auth.stubs(:get_code).returns('code')
-      HammerCLIForeman::OpenidConnect.any_instance.stubs(:get_token_via_2fa).returns('token')
+      HammerCLIForeman::OpenidConnect.any_instance.stubs(:token_details_via_2fa).returns(@token)
       auth.authenticate(request, args)
 
       assert_equal request.keys, ['Authorization']
@@ -78,7 +80,7 @@ describe HammerCLIForeman::Api::Oauth::AuthenticationCodeGrant do
       auth = HammerCLIForeman::Api::Oauth::AuthenticationCodeGrant.new(params[:oidc_token_endpoint], params[:oidc_authorization_endpoint], nil, params[:oidc_redirect_uri])
       auth.stubs(:ask_user).with('Client ID: ').returns(params[:oidc_client_id])
       auth.stubs(:get_code).returns('code')
-      HammerCLIForeman::OpenidConnect.any_instance.stubs(:get_token_via_2fa).returns('token')
+      HammerCLIForeman::OpenidConnect.any_instance.stubs(:token_details_via_2fa).returns(@token)
       auth.authenticate(request, args)
 
       assert_equal request.keys, ['Authorization']

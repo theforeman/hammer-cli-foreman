@@ -343,14 +343,14 @@ describe HammerCLIForeman::Api::SessionAuthenticatorWrapper do
 
     it 'passes credentials to a wrapped authenticator' do
       prepare_session_storage :session_id => 'SOME_SESSION_ID', :auth_type => 'Oauth_Password_Grant' do |auth, dir|
-        wrapped_auth.expects(:set_token).with('admin', 'password')
+        wrapped_auth.expects(:set_token_details).with('admin', 'password')
         auth.set_auth_params('admin', 'password')
       end
     end
 
     it 'passes credentials to a wrapped authenticator' do
       prepare_session_storage :session_id => 'SOME_SESSION_ID', :auth_type => 'Oauth_Authentication_Code_Grant' do |auth, dir|
-        wrapped_auth.expects(:set_token).with('admin', 'password')
+        wrapped_auth.expects(:set_token_details).with('admin', 'password')
         auth.set_auth_params('admin', 'password')
       end
     end

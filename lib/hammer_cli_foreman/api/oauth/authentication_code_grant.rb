@@ -41,7 +41,7 @@ module HammerCLIForeman
             get_code
             token_details = HammerCLIForeman::OpenidConnect.new(
               @oidc_token_endpoint, @oidc_client_id).token_details_via_2fa(@code, @oidc_redirect_uri)
-            @token_expires_at = Time.now.utc + token_details['expires_in']
+            @token_expires_at = Time.now.utc + token_details['expires_in'].to_i
             @token = token_details['access_token']
           end
         end
