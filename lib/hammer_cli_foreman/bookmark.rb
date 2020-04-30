@@ -10,6 +10,7 @@ module HammerCLIForeman
         field :name, _('Name')
         field :controller, _('Controller')
         field :query, _('Search Query')
+        field :public, _('Public')
         field :owner_id, _('Owner Id')
         field :owner_type, _('Owner Type')
       end
@@ -18,9 +19,8 @@ module HammerCLIForeman
     end
 
     class InfoCommand < HammerCLIForeman::InfoCommand
-      output ListCommand.output_definition do
-        HammerCLIForeman::References.taxonomies(self)
-      end
+      output ListCommand.output_definition
+      
       build_options
     end
 
