@@ -185,6 +185,9 @@ module HammerCLIForeman
     HammerCLI::MainCommand.lazy_subcommand('mail-notification', _("Manage mail notifications"),
                                            'HammerCLIForeman::MailNotification', 'hammer_cli_foreman/mail_notification'
     )
+
+    HammerCLI::MainCommand.lazy_subcommand('bookmark', _("Manage bookmarks"),
+                                            'HammerCLIForeman::Bookmark', 'hammer_cli_foreman/bookmark')
   rescue => e
     handler = HammerCLIForeman::ExceptionHandler.new(:context => {}, :adapter => :base)
     handler.handle_exception(e)
