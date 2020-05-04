@@ -2,6 +2,27 @@ require File.join(File.dirname(__FILE__), '../test_helper')
 require 'tmpdir'
 require 'tempfile'
 
+describe HammerCLIForeman::Api do
+  describe '#foreman_api_reconnect' do
+    let(:basic_auth) { HammerCLIForeman::AUTH_TYPES[:basic_auth] }
+    let(:subject) { HammerCLIForeman.foreman_api_reconnect(basic_auth) }
+
+    before do
+      HammerCLI::Settings.load({ :foreman => { :host => "https://foreman.example.com" } })
+    end
+
+    it 'drops any existing connection to foreman' do
+      HammerCLI::Connection.any_instance.expects(:drop).with(HammerCLIForeman::CONNECTION_NAME)
+      subject
+    end
+
+    it 'creates a new connection to foreman' do
+      HammerCLI::Connection.any_instance.expects(:create).with(HammerCLIForeman::CONNECTION_NAME)
+      subject
+    end
+  end
+end
+
 describe HammerCLIForeman::Api::Connection do
   describe '#initialize' do
     let(:oauth) { HammerCLIForeman::AUTH_TYPES[:oauth_password_grant] }
