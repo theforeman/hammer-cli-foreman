@@ -5,19 +5,22 @@ module HammerCLIForeman
   module Api
     module Oauth
       class AuthenticationCodeGrant < ApipieBindings::Authenticators::TokenAuth
-        attr_accessor :oidc_token_endpoint, :oidc_authorization_endpoint, :oidc_client_id, :token, :oidc_redirect_uri
+        attr_accessor :oidc_token_endpoint, :oidc_authorization_endpoint,
+                      :oidc_client_id, :token, :oidc_redirect_uri
 
         def initialize(oidc_token_endpoint, oidc_authorization_endpoint, oidc_client_id, oidc_redirect_uri)
           @oidc_token_endpoint = oidc_token_endpoint
           @oidc_authorization_endpoint = oidc_authorization_endpoint
           @oidc_client_id = oidc_client_id
           @oidc_redirect_uri = oidc_redirect_uri
-          super set_token(oidc_token_endpoint, oidc_authorization_endpoint, oidc_client_id, oidc_redirect_uri)
+          super(nil)
         end
 
         def authenticate(request, token)
           if HammerCLI.interactive?
             set_token_interactively
+          else
+            set_token(oidc_token_endpoint, oidc_authorization_endpoint, oidc_client_id, oidc_redirect_uri)
           end
           super
         end
@@ -35,7 +38,7 @@ module HammerCLIForeman
           if @oidc_client_id.to_s.empty? || @oidc_authorization_endpoint.to_s.empty? || @oidc_redirect_uri.to_s.empty? || @oidc_token_endpoint.to_s.empty?
             @token = nil
           else
-            get_code
+            @code ||= get_code
             @token = HammerCLIForeman::OpenidConnect.new(
               @oidc_token_endpoint, @oidc_client_id).get_token_via_2fa(@code, @oidc_redirect_uri)
           end
@@ -68,7 +71,7 @@ module HammerCLIForeman
                         "&redirect_uri=#{@oidc_redirect_uri}"\
                         '&scope=openid'
           HammerCLI.interactive_output.say("Enter URL in browser: #{@token_url}")
-          @code ||= ask_user(_("Code:%s") % " ")
+          ask_user(_("Code:%s") % " ")
         end
 
         def get_oidc_authorization_endpoint
