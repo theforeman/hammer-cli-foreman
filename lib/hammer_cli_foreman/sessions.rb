@@ -99,7 +99,7 @@ module HammerCLIForeman
 
     def expired?
       return false unless auth_type_oauth?
-      return false unless (Time.parse(token_expires_at) - Time.now.utc).to_i.negative?
+      return false unless (Time.parse(token_expires_at).utc - Time.now.utc).to_i.negative?
 
       true
     end

@@ -91,7 +91,7 @@ module HammerCLIForeman
 
   def self.foreman_api_connection
     HammerCLI.context[:api_connection].create(CONNECTION_NAME) do
-      if session_auth = previous_session_auth(HammerCLI::Settings)
+      if session_auth = previous_session_auth
         HammerCLIForeman::Api::Connection.new(HammerCLI::Settings, Logging.logger['API'],
           HammerCLI::I18n.locale, session_auth)
       else
@@ -112,7 +112,8 @@ module HammerCLIForeman
     end
   end
 
-  def self.previous_session_auth(settings)
+  def self.previous_session_auth
+    settings = HammerCLI::Settings
     return nil unless settings.get(:foreman, :use_sessions)
 
     url = settings.get(:_params, :host) || settings.get(:foreman, :host)
