@@ -5,9 +5,9 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: hammer-cli-foreman 2.0.0.pre.develop\n"
+"Project-Id-Version: hammer-cli-foreman 2.1.0.pre.develop\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-02-12 15:15+0200\n"
+"POT-Creation-Date: 2020-05-11 20:40+0530\n"
 "PO-Revision-Date: 2018-10-24 10:54+0200\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -133,6 +133,12 @@ msgid "Get the complete status of the server and/or it's subcomponents"
 msgstr ""
 
 msgid "Manage trends"
+msgstr ""
+
+msgid "Manage mail notifications"
+msgstr ""
+
+msgid "Manage bookmarks"
 msgstr ""
 
 msgid "Using certificate authentication."
@@ -403,13 +409,18 @@ msgstr ""
 msgid "Could not associate the provisioning templates"
 msgstr ""
 
-msgid "Disassociate a provisioning template"
+msgid "Disassociate provisioning templates"
 msgstr ""
 
-msgid "The provisioning template has been disassociated."
+msgid ""
+"Provisioning template name regex to search, all matching templates will be "
+"disassociated"
 msgstr ""
 
-msgid "Could not disassociate the provisioning template"
+msgid "The provisioning templates were disassociated."
+msgstr ""
+
+msgid "Could not disassociate the provisioning templates"
 msgstr ""
 
 msgid "Associate an organization"
@@ -698,6 +709,39 @@ msgid ""
 "file."
 msgstr ""
 
+msgid "Controller"
+msgstr ""
+
+msgid "Search Query"
+msgstr ""
+
+msgid "Public"
+msgstr ""
+
+msgid "Owner Id"
+msgstr ""
+
+msgid "Owner Type"
+msgstr ""
+
+msgid "Bookmark %<name>s created."
+msgstr ""
+
+msgid "Failed to create %<name>s bookmark"
+msgstr ""
+
+msgid "Bookmark %<name>s updated successfully."
+msgstr ""
+
+msgid "Failed to update %<name>s bookmark"
+msgstr ""
+
+msgid "Bookmark deleted successfully."
+msgstr ""
+
+msgid "Failed to delete bookmark"
+msgstr ""
+
 msgid "Manage template combinations"
 msgstr ""
 
@@ -784,19 +828,22 @@ msgstr ""
 msgid "Duration: %sms"
 msgstr ""
 
-msgid "Use --puppet-environment instead"
+msgid "Puppet environment"
 msgstr ""
 
-msgid "Use --puppet-environment-id instead"
+msgid "Use %s instead"
 msgstr ""
 
-msgid "Use --puppet-environments instead"
+msgid "Puppet environments"
 msgstr ""
 
 msgid "Environment IDs"
 msgstr ""
 
-msgid "Use --puppet-environment-ids instead"
+msgid "Default organization name"
+msgstr ""
+
+msgid "Default location name"
 msgstr ""
 
 msgid "Received data of unknown format."
@@ -1036,6 +1083,18 @@ msgstr ""
 msgid "Region"
 msgstr ""
 
+msgid "DNS"
+msgstr ""
+
+msgid "State"
+msgstr ""
+
+msgid "DNS Name"
+msgstr ""
+
+msgid "Virtualization Type"
+msgstr ""
+
 msgid "Volume size in GB, integer value"
 msgstr ""
 
@@ -1049,6 +1108,12 @@ msgid "Key Path"
 msgstr ""
 
 msgid "Zone"
+msgstr ""
+
+msgid "Machine Type"
+msgstr ""
+
+msgid "Status"
 msgstr ""
 
 msgid "Number of CPUs"
@@ -1078,6 +1143,21 @@ msgstr ""
 msgid "Initial allocation, e.g. 0G"
 msgstr ""
 
+msgid "CPUs"
+msgstr ""
+
+msgid "Memory"
+msgstr ""
+
+msgid "OS Type"
+msgstr ""
+
+msgid "Domain Type"
+msgstr ""
+
+msgid "Persistent"
+msgstr ""
+
 msgid "Tenant"
 msgstr ""
 
@@ -1085,6 +1165,9 @@ msgid "Project domain name"
 msgstr ""
 
 msgid "Project domain ID"
+msgstr ""
+
+msgid "Tenant Id"
 msgstr ""
 
 msgid "ID or name of cluster to use"
@@ -1102,6 +1185,12 @@ msgstr ""
 msgid "Amount of memory, integer value in bytes"
 msgstr ""
 
+msgid "Possible values: %s. Not usable if display type is SPICE."
+msgstr ""
+
+msgid "Boolean, set 1 to start the vm"
+msgstr ""
+
 msgid "Compute name, e.g. eth0"
 msgstr ""
 
@@ -1114,19 +1203,22 @@ msgstr ""
 msgid "ID or name of storage domain"
 msgstr ""
 
-msgid "Boolean, only one volume can be bootable"
+msgid "Boolean, set 1 for bootable, only one volume can be bootable"
 msgstr ""
 
-msgid "Boolean, set %s to preallocate"
+msgid "Boolean, set 1 to preallocate"
 msgstr ""
 
-msgid "Boolean, set %s to wipe disk after delete"
+msgid "Boolean, set 1 to wipe disk after delete"
 msgstr ""
 
 msgid "Disk interface name, must be ide, virto or virto_scsi"
 msgstr ""
 
 msgid "Datacenter"
+msgstr ""
+
+msgid "Cores"
 msgstr ""
 
 msgid "Cluster ID from VMware"
@@ -1153,10 +1245,10 @@ msgstr ""
 msgid "Hardware version ID from VMware"
 msgstr ""
 
-msgid "Must be a 1 or 0, lets you add CPU resources while the machine is on"
+msgid "Must be a 1 or 0, lets you add memory resources while the machine is on"
 msgstr ""
 
-msgid "Must be a 1 or 0, lets you add memory resources while the machine is on"
+msgid "Must be a 1 or 0, lets you add CPU resources while the machine is on"
 msgstr ""
 
 msgid "Must be a 1 or 0, Add a CD-ROM drive to the virtual machine"
@@ -1195,6 +1287,24 @@ msgid ""
 msgstr ""
 
 msgid "Network ID or Network Name from VMware"
+msgstr ""
+
+msgid "Power Status"
+msgstr ""
+
+msgid "Host Name"
+msgstr ""
+
+msgid "Connection Status"
+msgstr ""
+
+msgid "Hardware Version"
+msgstr ""
+
+msgid "Path"
+msgstr ""
+
+msgid "Operating System"
 msgstr ""
 
 msgid "Config group created."
@@ -1467,9 +1577,6 @@ msgstr ""
 msgid "Could not delete the permission filter"
 msgstr ""
 
-msgid "Operating System"
-msgstr ""
-
 msgid "Host Group"
 msgstr ""
 
@@ -1516,9 +1623,6 @@ msgid "Installed at"
 msgstr ""
 
 msgid "Uptime (seconds)"
-msgstr ""
-
-msgid "Status"
 msgstr ""
 
 msgid "Build Status"
@@ -1603,12 +1707,6 @@ msgid "Additional info"
 msgstr ""
 
 msgid "Owner"
-msgstr ""
-
-msgid "Owner Id"
-msgstr ""
-
-msgid "Owner Type"
 msgstr ""
 
 msgid "Enabled"
@@ -1748,6 +1846,12 @@ msgstr ""
 msgid "Root password"
 msgstr ""
 
+msgid "Use --root-password instead"
+msgstr ""
+
+msgid "Use --ask-root-password instead"
+msgstr ""
+
 msgid "Subnet IPv6 name"
 msgstr ""
 
@@ -1758,9 +1862,6 @@ msgid "Title"
 msgstr ""
 
 msgid "Parent"
-msgstr ""
-
-msgid "ComputeProfile"
 msgstr ""
 
 msgid "Realm"
@@ -1877,9 +1978,6 @@ msgid "Location Name, Set the current location context for the request"
 msgstr ""
 
 msgid "Location title, Set the current location context for the request"
-msgstr ""
-
-msgid "Set the current location context for the request"
 msgstr ""
 
 msgid "Medium name"
@@ -2090,7 +2188,7 @@ msgstr ""
 msgid "Could not delete location parameter"
 msgstr ""
 
-msgid "Path"
+msgid "Subscription type"
 msgstr ""
 
 msgid "OS Family"
@@ -2233,6 +2331,12 @@ msgid "Could not delete the default template"
 msgstr ""
 
 msgid "Default template of type %s not found"
+msgstr ""
+
+msgid "%{types} of associated %{resource}"
+msgstr ""
+
+msgid "Use to update"
 msgstr ""
 
 msgid ""
@@ -2834,9 +2938,6 @@ msgstr ""
 msgid "Secondary DNS"
 msgstr ""
 
-msgid "DNS"
-msgstr ""
-
 msgid "TFTP"
 msgstr ""
 
@@ -2978,12 +3079,6 @@ msgstr ""
 msgid "default"
 msgstr ""
 
-msgid "Default organization name"
-msgstr ""
-
-msgid "Default location name"
-msgstr ""
-
 msgid "User [%{login}] created."
 msgstr ""
 
@@ -3024,4 +3119,22 @@ msgid "User group [%<name>s] deleted."
 msgstr ""
 
 msgid "Could not delete the user group"
+msgstr ""
+
+msgid "View and manage compute resource's virtual machines"
+msgstr ""
+
+msgid "Virtual machine id, for gce use virtual machine name"
+msgstr ""
+
+msgid "Virtual machine is powering."
+msgstr ""
+
+msgid "Could not power the virtual machine"
+msgstr ""
+
+msgid "Virtual machine deleted."
+msgstr ""
+
+msgid "Could not delete the virtual machine"
 msgstr ""
