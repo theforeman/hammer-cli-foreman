@@ -46,16 +46,16 @@ module HammerCLIForeman
           if option_two_factor?
             Oauth.execute_with_params(
               AUTH_TYPES[:oauth_authentication_code_grant],
-              option_oidc_token_endpoint,
-              option_oidc_authorization_endpoint,
-              option_oidc_client_id,
-              option_oidc_redirect_uri
+              option_oidc_token_endpoint || HammerCLI::Settings.get(:foreman, :oidc_token_endpoint),
+              option_oidc_authorization_endpoint || HammerCLI::Settings.get(:foreman, :oidc_authorization_endpoint),
+              option_oidc_client_id || HammerCLI::Settings.get(:foreman, :oidc_client_id),
+              option_oidc_redirect_uri || HammerCLI::Settings.get(:foreman, :oidc_redirect_uri)
             )
           else
             Oauth.execute_with_params(
               AUTH_TYPES[:oauth_password_grant],
-              option_oidc_token_endpoint,
-              option_oidc_client_id,
+              option_oidc_token_endpoint || HammerCLI::Settings.get(:foreman, :oidc_token_endpoint),
+              option_oidc_client_id || HammerCLI::Settings.get(:foreman, :oidc_client_id),
               option_username || HammerCLI::Settings.get('_params', 'username'),
               option_password || HammerCLI::Settings.get('_params', 'password')
             )
