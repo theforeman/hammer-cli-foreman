@@ -1,28 +1,28 @@
 module HammerCLIForeman
 
-   module SubnetUpdateCreateCommons
-
-    def self.included(base)
-      base.option "--dns", "DNS_NAME", _("DNS Proxy to use within this subnet"),
-                  aliased_resource: 'dns', referenced_resource: 'dns'
-      base.option "--dhcp", "DHCP_NAME", _("DHCP Proxy to use within this subnet"),
-                  aliased_resource: 'dhcp', referenced_resource: 'dhcp'
-      base.option "--tftp", "TFTP_NAME", _("TFTP Proxy to use within this subnet"),
-                  aliased_resource: 'tftp', referenced_resource: 'tftp'
-    end
-
+  module SubnetUpdateCreateCommons
     def request_params
       params = super
-      params['subnet']["dns_id"] ||= proxy_feature_id(option_dns) if option_dns
-      params['subnet']["dhcp_id"] ||= proxy_feature_id(option_dhcp) if option_dhcp
-      params['subnet']["tftp_id"] ||= proxy_feature_id(option_tftp) if option_tftp
+      if option_prefix || option_mask
+        if params['subnet']['network_type'] == 'IPv6'
+          params['subnet']['cidr'] = (option_prefix || network_prefix).to_s
+        else
+          params['subnet']['mask'] = option_mask || network_mask
+        end
+      end
       params
     end
 
     private
 
-    def proxy_feature_id(name)
-      resolver.smart_proxy_id('option_name' => name) if name
+    def network_mask
+      require 'ipaddr'
+      IPAddr.new('255.255.255.255').mask(option_prefix).to_s
+    end
+
+    def network_prefix
+      require 'ipaddr'
+      IPAddr.new(option_mask).to_i.to_s(2).count('1')
     end
   end
 
@@ -87,7 +87,13 @@ module HammerCLIForeman
       success_message _("Subnet created.")
       failure_message _("Could not create the subnet")
 
-      build_options :without => [:subnet_parameters_attributes]
+      validate_options do
+        any(:option_mask, :option_prefix).required
+      end
+
+      build_options :without => [:subnet_parameters_attributes, :cidr]
+
+      extend_with(HammerCLIForeman::CommandExtensions::Subnet.new)
     end
 
 
@@ -97,7 +103,9 @@ module HammerCLIForeman
       success_message _("Subnet updated.")
       failure_message _("Could not update the subnet")
 
-      build_options :without => [:subnet_parameters_attributes]
+      build_options :without => [:subnet_parameters_attributes, :cidr]
+
+      extend_with(HammerCLIForeman::CommandExtensions::Subnet.new)
     end
 
 
