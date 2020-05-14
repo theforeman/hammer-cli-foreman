@@ -1,5 +1,27 @@
 Release notes
 =============
+### 2.1.0 (2020-05-14)
+* Bump hammer_cli to 2.1.0 ([PR #519](https://github.com/theforeman/hammer-cli-foreman/pull/519))
+* Ask for oauth code only when needed ([PR #517](https://github.com/theforeman/hammer-cli-foreman/pull/517)), [#29635](http://projects.theforeman.org/issues/29635)
+* Possibility to create ipv6 subnet, [#28760](http://projects.theforeman.org/issues/28760)
+* Add the ability to manage bookmarks ([PR #510](https://github.com/theforeman/hammer-cli-foreman/pull/510)), [#12845](http://projects.theforeman.org/issues/12845)
+* Add aliases for info/list/delete commands ([PR #512](https://github.com/theforeman/hammer-cli-foreman/pull/512)), [#29413](http://projects.theforeman.org/issues/29413)
+* Help contains squeezed options ([PR #489](https://github.com/theforeman/hammer-cli-foreman/pull/489)), [#28440](http://projects.theforeman.org/issues/28440)
+* Add cr to hostgroup info, [#29140](http://projects.theforeman.org/issues/29140)
+* Add rake task with plugin template
+* Added virtual machine command for compute resource ([PR #469](https://github.com/theforeman/hammer-cli-foreman/pull/469)), [#20451](http://projects.theforeman.org/issues/20451)
+* Add display options to host creation on ovirt ([PR #507](https://github.com/theforeman/hammer-cli-foreman/pull/507)), [#29254](http://projects.theforeman.org/issues/29254)
+* Add mail notification command ([PR #509](https://github.com/theforeman/hammer-cli-foreman/pull/509)), [#29326](http://projects.theforeman.org/issues/29326)
+* Use right param for os default template ([PR #508](https://github.com/theforeman/hammer-cli-foreman/pull/508)), [#29274](http://projects.theforeman.org/issues/29274)
+* Update api docs to 2.1
+* Correct hot add options ([PR #505](https://github.com/theforeman/hammer-cli-foreman/pull/505)), [#29253](http://projects.theforeman.org/issues/29253)
+* Feature #28836 - allow multiple disassociating of provisioning templates ([PR #502](https://github.com/theforeman/hammer-cli-foreman/pull/502)), [#28836](http://projects.theforeman.org/issues/28836)
+* Fixed updating host owner when ownertype is usergroup ([PR #501](https://github.com/theforeman/hammer-cli-foreman/pull/501)), [#11279](http://projects.theforeman.org/issues/11279)
+* Remove duplicate api requests on addassociatedcommand ([PR #503](https://github.com/theforeman/hammer-cli-foreman/pull/503)), [#29096](http://projects.theforeman.org/issues/29096)
+* Fix help for ovirt boolean values, [#29026](http://projects.theforeman.org/issues/29026)
+* Deprecate --root-pass in host group, [#22573](http://projects.theforeman.org/issues/22573)
+* Bump to 2.1.0-develop
+
 ### 2.0.0 (2020-02-12)
 * Change the description of the scoped loc and org ([PR #494](https://github.com/theforeman/hammer-cli-foreman/pull/494)), [#28869](http://projects.theforeman.org/issues/28869)
 * Fixes tests
