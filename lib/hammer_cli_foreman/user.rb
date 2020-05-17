@@ -12,6 +12,7 @@ module HammerCLIForeman
         field :full_name, _("Name")
         field :mail, _("Email")
         field :admin, _("Admin"), Fields::Boolean
+        field :disabled, _("Disabled"), Fields::Boolean
         field :last_login_on, _("Last login"), Fields::Date
         field nil, _("Authorized by"), Fields::SingleReference, :key => :auth_source
       end
