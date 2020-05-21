@@ -139,7 +139,8 @@ and check which API actions run, therefore there could be two reasons for an end
 ### running the coverage test
 ```bash
 
-rake test TESTOPTS "-c"
+rake test TESTOPTS="-c"
 
 TEST_API_VERSION=2.0 rake test TESTOPTS="-c"
+
 ```
