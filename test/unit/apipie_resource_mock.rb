@@ -308,11 +308,11 @@ module ResourceMocks
     )
   end
 
-  def self.common_parameter_show
-    ResourceMocks.mock_action_call(:common_parameters, :show, {
+  def self.common_parameter_list
+    ResourceMocks.mock_action_call(:common_parameters, :index, [{
       "name" => "my param",
-      "value" => "random value"
-    })
+      "value" => "random value",
+    }])
   end
 
   def self.config_groups_index

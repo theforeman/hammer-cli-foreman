@@ -1,6 +1,11 @@
 module HammerCLIForeman
   module Testing
     module APIExpectations
+
+      def self.api_calls
+        @api_calls ||= []
+      end
+
       class APICallMatcher < Mocha::ParameterMatchers::Base
         attr_accessor :expected_params, :expected_resource, :expected_action, :block
 
@@ -160,7 +165,12 @@ module HammerCLIForeman
         }.merge(options))
       end
 
+      def api_calls
+        HammerCLIForeman::Testing::APIExpectations.api_calls
+      end
+
       def api_expects(resource=nil, action=nil, note=nil, &block)
+        api_calls << [resource,   action]
         APIExpectationsDecorator.new.expects_call(resource, action, note, &block)
       end
 

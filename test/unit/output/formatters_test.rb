@@ -77,7 +77,7 @@ describe HammerCLIForeman::Output::Formatters::ReferenceFormatter do
     end
 
     it 'formats id' do
-      options = {:details => {:key => :id, :label => 'Id'}, :context => {:show_ids => true}}
+      options = {:details => {:key => :id, :label => {:target => 'Id'}}, :context => {:show_ids => true}}
       formatter.format(reference_sym_keys, options)
         .must_equal("Server (Id: #{reference_sym_keys[:id]})")
     end
@@ -97,7 +97,7 @@ describe HammerCLIForeman::Output::Formatters::ReferenceFormatter do
 
     it 'formats details and id' do
       options = {:context => {:show_ids => true},
-                 :details => [{ :label => _('url'), :key => :url },
+                 :details => [{:label => _('url'), :key => :url },
                               {:label => _('desc'), :key => :desc },
                               {:label => _('Id'), :key => :id }]
                 }
@@ -123,7 +123,7 @@ describe HammerCLIForeman::Output::Formatters::ReferenceFormatter do
     end
 
     it 'formats id when show_ids is true' do
-      options = {:details => {:label => 'Id', :key => :id, :id => 1}, :context => {:show_ids => true}}
+      options = {:details => {:label => {:target => 'Id'}, :key => :id, :id => 1}, :context => {:show_ids => true}}
       formatter.format(reference_str_keys, options)
                .must_equal("Server (Id: #{reference_str_keys['id']})")
     end

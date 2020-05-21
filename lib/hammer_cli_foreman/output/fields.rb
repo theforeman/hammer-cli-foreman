@@ -19,7 +19,7 @@ module Fields
 
     def id_detail
       {
-        :label => _('id'),
+        :label => {:target => _('id')},
         :structured_label => _('Id'),
         :key => @options[:id_key] || :id,
         :id => true

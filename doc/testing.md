@@ -131,3 +131,15 @@ connection = api_connection
 api = APIExpectationsDecorator.new(connection.api)
 api.expects_search(:users, 'login=admin')
 ```
+## Checking the coverage against the API
+You can check how many API endpoints are covered by Hammer, this test runs all hammer tests,
+and check which API actions run, therefore there could be two reasons for an endpoint to not be covered:
+1. there is no test for this action
+2. there is no hammer command for the API endpoint.
+### running the coverage test
+```bash
+
+rake test TESTOPTS "-c"
+
+TEST_API_VERSION=2.0 rake test TESTOPTS="-c"
+```

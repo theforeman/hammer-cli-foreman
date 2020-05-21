@@ -1,5 +1,8 @@
 # -*- encoding: utf-8 -*-
 $:.unshift File.expand_path("../lib", __FILE__)
+minitest = File.expand_path("../lib/minitest", __FILE__)
+$LOAD_PATH.unshift(minitest) unless $LOAD_PATH.include?(minitest)
+
 require "hammer_cli_foreman/version"
 
 Gem::Specification.new do |s|
