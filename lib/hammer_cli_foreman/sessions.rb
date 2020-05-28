@@ -55,7 +55,7 @@ module HammerCLIForeman
   end
 
   class Session
-    attr_accessor :id, :user_name, :auth_type
+    attr_accessor :id, :user_name
 
     def initialize(session_path)
       @session_path = File.expand_path(session_path)
@@ -63,7 +63,6 @@ module HammerCLIForeman
         session_data = JSON.parse(File.read(@session_path))
         @id = session_data['id']
         @user_name = session_data['user_name']
-        @auth_type = session_data['auth_type']
       end
     rescue JSON::ParserError
       warn _('Invalid session data. Resetting the session.')
@@ -73,7 +72,6 @@ module HammerCLIForeman
       File.open(@session_path,"w") do |f|
         f.write({
           id: id,
-          auth_type: auth_type,
           user_name: user_name
         }.to_json)
       end

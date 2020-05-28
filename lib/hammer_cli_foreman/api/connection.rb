@@ -42,26 +42,9 @@ module HammerCLIForeman
 
       protected
 
-      # If the settings in foreman.yml has use_sessions as false, use :basic_auth
-      # Else if the settings in foreman.yml has use_sessions as true
-      # and if there exists a session_file with valid contents, we use the auth_type from sessions_file
-      # Thus if the session expires (indicated by nil session_id), we use the
-      # same auth_type for re-authentication as was used by the previous session.
-      # Else we use the passed auth_type.
       def default_auth_type(settings)
         return AUTH_TYPES[:basic_auth] unless HammerCLIForeman::Sessions.enabled?
-
-        url = settings.get(:_params, :host) || settings.get(:foreman, :host)
-        username = settings.get(:_params, :username) || settings.get(:foreman, :username)
-        session = HammerCLIForeman::Sessions.get(url)
-        if !session.valid? && session.user_name == username && !session.auth_type.nil?
-          session.auth_type
-        else
-          # If the caller has not sepcified an 'auth_type'
-          # and the 'default_auth_type' in settings is also undefined
-          # use :basic_auth for authentication.
-          HammerCLI::Settings.get(:foreman, :default_auth_type) || AUTH_TYPES[:basic_auth]
-        end
+        HammerCLI::Settings.get(:foreman, :default_auth_type) || AUTH_TYPES[:basic_auth]
       end
 
       def create_authenticator(uri, settings, auth_type)
