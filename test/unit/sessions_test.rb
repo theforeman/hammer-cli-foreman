@@ -13,7 +13,6 @@ describe HammerCLIForeman do
           HammerCLIForeman::Sessions.stubs(:storage).returns(dir)
           session = HammerCLIForeman::Sessions.get('http://example.com')
           session.id.must_be_nil
-          session.auth_type.must_be_nil
           session.user_name.must_be_nil
         end
       end
@@ -24,8 +23,7 @@ describe HammerCLIForeman do
           HammerCLIForeman::Sessions.stubs(:storage).returns(dir)
           session_content = {
             :id => '3040b0f04c3a35a499e6837278904d48',
-            :user_name => 'admin',
-            :auth_type => 'basic_auth'
+            :user_name => 'admin'
           }
           session_path = "#{dir}/http_example.com"
           File.open(session_path,"w") do |f|
@@ -35,7 +33,6 @@ describe HammerCLIForeman do
 
           session = HammerCLIForeman::Sessions.get('http://example.com')
           session.id.must_equal '3040b0f04c3a35a499e6837278904d48'
-          session.auth_type.must_equal 'basic_auth'
           session.user_name.must_equal 'admin'
         end
       end
@@ -67,8 +64,7 @@ describe HammerCLIForeman do
           HammerCLIForeman::Sessions.stubs(:storage).returns(dir)
           session_content = {
             :id => '3040b0f04c3a35a499e6837278904d48',
-            :user_name => 'admin',
-            :auth_type => 'basic_auth'
+            :user_name => 'admin'
           }
           session_path = "#{dir}/http_example.com"
           File.open(session_path,"w") do |f|
@@ -124,13 +120,11 @@ describe HammerCLIForeman do
       Tempfile.create('session') do |f|
         session = HammerCLIForeman::Session.new(f.path)
         session.id = '3040b0f04c3a35a499e6837278904d48'
-        session.auth_type = 'basic_auth'
         session.user_name = 'admin'
         session.store
 
         session = HammerCLIForeman::Session.new(f.path)
         session.id.must_equal '3040b0f04c3a35a499e6837278904d48'
-        session.auth_type.must_equal 'basic_auth'
         session.user_name.must_equal 'admin'
       end
     end
@@ -150,7 +144,6 @@ describe HammerCLIForeman do
         _, err = capture_io do
           session = HammerCLIForeman::Session.new(f.path)
           session.id = nil
-          session.auth_type = nil
           session.user_name = nil
         end
         err.must_equal("Invalid session data. Resetting the session.\n")
@@ -162,13 +155,11 @@ describe HammerCLIForeman do
         Tempfile.create('session') do |f|
           session = HammerCLIForeman::Session.new(f.path)
           session.id = '3040b0f04c3a35a499e6837278904d48'
-          session.auth_type = 'basic_auth'
           session.user_name = 'admin'
           session.destroy
 
           session = HammerCLIForeman::Session.new(f.path)
           session.id.must_be_nil
-          session.auth_type.must_equal 'basic_auth'
           session.user_name.must_equal 'admin'
         end
       end
@@ -179,7 +170,6 @@ describe HammerCLIForeman do
         Tempfile.create('session') do |f|
           session = HammerCLIForeman::Session.new(f.path)
           session.id = nil
-          session.auth_type = 'basic_auth'
           session.user_name = 'admin'
           session.valid?.must_equal false
         end
@@ -189,7 +179,6 @@ describe HammerCLIForeman do
         Tempfile.create('session') do |f|
           session = HammerCLIForeman::Session.new(f.path)
           session.id = '34252624635723572357234'
-          session.auth_type = 'basic_auth'
           session.user_name = 'admin'
           session.valid?.must_equal true
         end

@@ -69,7 +69,6 @@ module HammerCLIForeman
         if (r.cookies['_session_id'] && r.code != 401)
           session.id = r.cookies['_session_id']
           session.user_name = @authenticator.user
-          session.auth_type = @auth_type
           session.store
         end
         @authenticator.response(r)
