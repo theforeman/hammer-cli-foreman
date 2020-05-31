@@ -45,7 +45,7 @@ describe HammerCLIForeman::Template do
           }
         }
         ResourceMocks.mock_action_call(:provisioning_templates, :show, template_wo_kind)
-        cmd.run([]).must_equal 0
+        _(cmd.run([])).must_equal 0
       end
     end
 

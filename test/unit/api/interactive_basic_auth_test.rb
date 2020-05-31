@@ -47,7 +47,6 @@ describe HammerCLIForeman::Api::InteractiveBasicAuth do
       HammerCLI.stubs(:interactive?).returns false
       auth = HammerCLIForeman::Api::InteractiveBasicAuth.new(nil, nil)
       auth.expects(:ask_user).never
-
       request.expects(:basic_auth).with(nil, nil)
       auth.authenticate(request, args)
       HammerCLI.unstub(:interactive?)

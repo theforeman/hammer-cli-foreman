@@ -20,7 +20,7 @@ describe HammerCLIForeman::DependencyResolver do
 
     it "returns empty array for an independent resource" do
       resource = api.resource(:users)
-      resolver.resource_dependencies(resource).must_equal []
+      _(resolver.resource_dependencies(resource)).must_equal []
     end
 
     it "returns list of dependent resources" do
@@ -28,7 +28,7 @@ describe HammerCLIForeman::DependencyResolver do
 
       resources = resolver.resource_dependencies(resource).map(&:name).sort_by{ |sym| sym.to_s }
       expected = [:posts, :users]
-      resources.must_equal expected.sort_by{ |sym| sym.to_s }
+      _(resources).must_equal expected.sort_by{ |sym| sym.to_s }
     end
   end
 
@@ -36,14 +36,14 @@ describe HammerCLIForeman::DependencyResolver do
 
     it "returns empty array for an independent action" do
       action = HammerCLIForeman.foreman_resource!(:users).action(:index)
-      resolver.action_dependencies(action).must_equal []
+      _(resolver.action_dependencies(action)).must_equal []
     end
 
     it "returns list of dependent resources" do
       action = HammerCLIForeman.foreman_resource!(:comments).action(:create)
       resources = resolver.action_dependencies(action).map(&:name).sort_by{ |sym| sym.to_s }
       expected = [:posts, :users]
-      resources.must_equal expected.sort_by{|sym| sym.to_s}
+      _(resources).must_equal expected.sort_by{|sym| sym.to_s}
     end
   end
 end

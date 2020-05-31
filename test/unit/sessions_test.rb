@@ -12,8 +12,8 @@ describe HammerCLIForeman do
         Dir.mktmpdir do |dir|
           HammerCLIForeman::Sessions.stubs(:storage).returns(dir)
           session = HammerCLIForeman::Sessions.get('http://example.com')
-          session.id.must_be_nil
-          session.user_name.must_be_nil
+          _(session.id).must_be_nil
+          _(session.user_name).must_be_nil
         end
       end
 
@@ -32,8 +32,8 @@ describe HammerCLIForeman do
           File.chmod(0600, session_path)
 
           session = HammerCLIForeman::Sessions.get('http://example.com')
-          session.id.must_equal '3040b0f04c3a35a499e6837278904d48'
-          session.user_name.must_equal 'admin'
+          _(session.id).must_equal '3040b0f04c3a35a499e6837278904d48'
+          _(session.user_name).must_equal 'admin'
         end
       end
 
@@ -43,7 +43,7 @@ describe HammerCLIForeman do
           HammerCLIForeman::Sessions.stubs(:storage).returns(dir)
           FileUtils.rm_rf(dir)
           HammerCLIForeman::Sessions.get('http://example.com')
-          File.exist?(dir).must_equal true
+          _(File.exist?(dir)).must_equal true
         end
       end
 
@@ -53,7 +53,7 @@ describe HammerCLIForeman do
           HammerCLIForeman::Sessions.stubs(:storage).returns(dir)
           FileUtils.chmod(0777, dir)
           _, err = capture_io { HammerCLIForeman::Sessions.get('http://example.com') }
-          err.must_equal("Invalid permissions for #{dir}: 40777, expected 40700.\n" \
+          _(err).must_equal("Invalid permissions for #{dir}: 40777, expected 40700.\n" \
               "Using session auth with invalid permissions on session files is not recommended.\n")
         end
       end
@@ -73,44 +73,44 @@ describe HammerCLIForeman do
           File.chmod(0666, session_path)
 
           _, err = capture_io { HammerCLIForeman::Sessions.get('http://example.com') }
-          err.must_equal("Invalid permissions for #{session_path}: 100666, expected 100600.\n" \
+          _(err).must_equal("Invalid permissions for #{session_path}: 100666, expected 100600.\n" \
               "Using session auth with invalid permissions on session files is not recommended.\n")
         end
       end
 
       it 'should fail if sessions are not enabled' do
         HammerCLI::Settings.expects(:get).with(:foreman, :use_sessions).returns(false)
-        e = proc { HammerCLIForeman::Sessions.get('http://example.com')}.must_raise RuntimeError
-        e.message.must_equal "Sessions are not enabled, please check your Hammer settings."
+        e = _(proc { HammerCLIForeman::Sessions.get('http://example.com')}).must_raise RuntimeError
+        _(e.message).must_equal "Sessions are not enabled, please check your Hammer settings."
       end
     end
 
     describe "#enabled?" do
       it 'tests sessions are enabled' do
         HammerCLI::Settings.expects(:get).with(:foreman, :use_sessions).returns(true)
-        HammerCLIForeman::Sessions.enabled?.must_equal true
+        _(HammerCLIForeman::Sessions.enabled?).must_equal true
       end
 
       it 'tests sessions are disabled' do
         HammerCLI::Settings.expects(:get).with(:foreman, :use_sessions).returns(false)
-        HammerCLIForeman::Sessions.enabled?.must_equal false
+        _(HammerCLIForeman::Sessions.enabled?).must_equal false
       end
     end
 
     describe "#session_file" do
       it 'should return file path for session' do
         file_path = HammerCLIForeman::Sessions.session_file('http://example.com')
-        file_path.must_equal(File.join(HammerCLIForeman::Sessions.storage, 'http_example.com'))
+        _(file_path).must_equal(File.join(HammerCLIForeman::Sessions.storage, 'http_example.com'))
       end
 
       it 'should handle invalid url' do
-        e = proc { HammerCLIForeman::Sessions.session_file('/\/')}.must_raise RuntimeError
-        e.message.must_equal "The url (/\\/) is not a valid URL. Session can not be created."
+        e = _(proc { HammerCLIForeman::Sessions.session_file('/\/')}).must_raise RuntimeError
+        _(e.message).must_equal "The url (/\\/) is not a valid URL. Session can not be created."
       end
 
       it 'should handle empty url' do
-        e = proc { HammerCLIForeman::Sessions.session_file('')}.must_raise RuntimeError
-        e.message.must_equal "The url is empty. Session can not be created."
+        e = _(proc { HammerCLIForeman::Sessions.session_file('')}).must_raise RuntimeError
+        _(e.message).must_equal "The url is empty. Session can not be created."
       end
     end
   end
@@ -124,8 +124,8 @@ describe HammerCLIForeman do
         session.store
 
         session = HammerCLIForeman::Session.new(f.path)
-        session.id.must_equal '3040b0f04c3a35a499e6837278904d48'
-        session.user_name.must_equal 'admin'
+        _(session.id).must_equal '3040b0f04c3a35a499e6837278904d48'
+        _(session.user_name).must_equal 'admin'
       end
     end
 
@@ -133,7 +133,7 @@ describe HammerCLIForeman do
       Tempfile.create('session') do |f|
         session = HammerCLIForeman::Session.new(f.path)
         session.store
-        File.stat(f.path).mode.to_s(8).must_equal '100600'
+        _(File.stat(f.path).mode.to_s(8)).must_equal '100600'
       end
     end
 
@@ -146,7 +146,7 @@ describe HammerCLIForeman do
           session.id = nil
           session.user_name = nil
         end
-        err.must_equal("Invalid session data. Resetting the session.\n")
+        _(err).must_equal("Invalid session data. Resetting the session.\n")
       end
     end
 
@@ -159,8 +159,8 @@ describe HammerCLIForeman do
           session.destroy
 
           session = HammerCLIForeman::Session.new(f.path)
-          session.id.must_be_nil
-          session.user_name.must_equal 'admin'
+          _(session.id).must_be_nil
+          _(session.user_name).must_equal 'admin'
         end
       end
     end
@@ -171,7 +171,7 @@ describe HammerCLIForeman do
           session = HammerCLIForeman::Session.new(f.path)
           session.id = nil
           session.user_name = 'admin'
-          session.valid?.must_equal false
+          _(session.valid?).must_equal false
         end
       end
 
@@ -180,7 +180,7 @@ describe HammerCLIForeman do
           session = HammerCLIForeman::Session.new(f.path)
           session.id = '34252624635723572357234'
           session.user_name = 'admin'
-          session.valid?.must_equal true
+          _(session.valid?).must_equal true
         end
       end
     end

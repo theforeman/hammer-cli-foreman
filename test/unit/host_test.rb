@@ -76,7 +76,7 @@ describe HammerCLIForeman::Host do
 
         it "should output status" do
           cmd.stubs(:context).returns(ctx.update(:adapter => :test))
-          proc { cmd.run(with_params) }.must_output "#Status#Power#\n#No reports#running#\n"
+          _(proc { cmd.run(with_params) }).must_output "#Status#Power#\n#No reports#running#\n"
         end
       end
     end
@@ -148,7 +148,7 @@ describe HammerCLIForeman::Host do
       with_params ["--id=1"] do
         it "should inform that puppet was triggered" do
           cmd.stubs(:context).returns(ctx.update(:adapter => :test))
-          proc { cmd.run(with_params) }.must_output "Puppet run triggered\n"
+          _(proc { cmd.run(with_params) }).must_output "Puppet run triggered\n"
         end
       end
     end

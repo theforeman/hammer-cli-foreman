@@ -15,7 +15,7 @@ describe HammerCLIForeman::OptionSources::IdParams do
       hg_cmd.expects(:get_resource_id).with { |res| res.name == :domains }.never
       option_data = { 'option_domain_id' => 3, 'option_domain_name' => 'test' }
       params = id_params_source.get_options([], option_data)
-      params.must_equal option_data
+      _(params).must_equal option_data
     end
 
     it "resolves param when unset" do
@@ -24,7 +24,7 @@ describe HammerCLIForeman::OptionSources::IdParams do
       option_data = { 'option_domain_id' => nil, 'option_domain_name' => 'test' }
       expected_data = { 'option_domain_id' => 1, 'option_domain_name' => 'test' }
       params = id_params_source.get_options([], option_data)
-      params.must_equal expected_data
+      _(params).must_equal expected_data
     end
   end
 end

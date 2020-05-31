@@ -170,7 +170,7 @@ module HammerCLIForeman
       end
 
       def api_expects(resource=nil, action=nil, note=nil, &block)
-        api_calls << [resource,   action]
+        api_calls << [resource, action]
         APIExpectationsDecorator.new.expects_call(resource, action, note, &block)
       end
 

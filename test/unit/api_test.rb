@@ -9,17 +9,16 @@ describe HammerCLIForeman do
     let(:expected_resource) { HammerCLIForeman.foreman_resource!(:architectures) }
 
     it "finds resource for params with _id" do
-      HammerCLIForeman.param_to_resource("architecture_id").name.must_equal expected_resource.name
+      _(HammerCLIForeman.param_to_resource("architecture_id").name).must_equal expected_resource.name
     end
 
     it "finds resource for params without _id" do
-      HammerCLIForeman.param_to_resource("architecture").name.must_equal expected_resource.name
+      _(HammerCLIForeman.param_to_resource("architecture").name).must_equal expected_resource.name
     end
 
     it "returns nil for unknown resource" do
-      HammerCLIForeman.param_to_resource("unknown").must_equal nil
+      assert_nil HammerCLIForeman.param_to_resource("unknown")
     end
-
   end
 
 end

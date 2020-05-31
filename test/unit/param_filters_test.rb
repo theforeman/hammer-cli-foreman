@@ -24,11 +24,11 @@ describe HammerCLIForeman::ParamsFlattener do
   }
 
   it "flatten params" do
-    flattener.filter([param1, param2, hash_param2]).must_equal [param1, param2, hash_param2, param1, hash_param, param1, param2]
+    _(flattener.filter([param1, param2, hash_param2])).must_equal [param1, param2, hash_param2, param1, hash_param, param1, param2]
   end
 
   it "returns empty array for no params" do
-    flattener.filter([]).must_equal []
+    _(flattener.filter([])).must_equal []
   end
 
 end
@@ -63,15 +63,15 @@ describe HammerCLIForeman::IdParamsFilter do
     }
 
     it "returns only required params ending with _id" do
-      required_filter.for_action(action).must_equal required_params
+      _(required_filter.for_action(action)).must_equal required_params
     end
 
     it "returns only ending with _id when :only_required is set to false" do
-      nonrequired_filter.for_action(action).must_equal (required_params+id_params)
+      _(nonrequired_filter.for_action(action)).must_equal (required_params+id_params)
     end
 
     it "returns required params by default" do
-      filter.for_action(action).must_equal required_params
+      _(filter.for_action(action)).must_equal required_params
     end
 
     context "with hash params" do
@@ -81,15 +81,15 @@ describe HammerCLIForeman::IdParamsFilter do
       }
 
       it "finds params inside a hash" do
-        filter.for_action(action).must_equal required_params
+        _(filter.for_action(action)).must_equal required_params
       end
 
       it "returns only required params ending with _id" do
-        required_filter.for_action(action).must_equal required_params
+        _(required_filter.for_action(action)).must_equal required_params
       end
 
       it "returns only ending with _id when :only_required is set to false" do
-        nonrequired_filter.for_action(action).must_equal (required_params+id_params)
+        _(nonrequired_filter.for_action(action)).must_equal (required_params+id_params)
       end
 
     end
@@ -128,15 +128,15 @@ describe HammerCLIForeman::IdArrayParamsFilter do
     }
 
     it "returns only required params ending with _ids" do
-      required_filter.for_action(action).must_equal required_params
+      _(required_filter.for_action(action)).must_equal required_params
     end
 
     it "returns only ending with _ids when :only_required is set to false" do
-      nonrequired_filter.for_action(action).must_equal (required_params+id_params)
+      _(nonrequired_filter.for_action(action)).must_equal (required_params+id_params)
     end
 
     it "returns required params by default" do
-      filter.for_action(action).must_equal required_params
+      _(filter.for_action(action)).must_equal required_params
     end
 
     context "with hash params" do
@@ -146,15 +146,15 @@ describe HammerCLIForeman::IdArrayParamsFilter do
       }
 
       it "finds params inside a hash" do
-        filter.for_action(action).must_equal required_params
+        _(filter.for_action(action)).must_equal required_params
       end
 
       it "returns only required params ending with _ids" do
-        required_filter.for_action(action).must_equal required_params
+        _(required_filter.for_action(action)).must_equal required_params
       end
 
       it "returns only ending with _ids when :only_required is set to false" do
-        nonrequired_filter.for_action(action).must_equal (required_params+id_params)
+        _(nonrequired_filter.for_action(action)).must_equal (required_params+id_params)
       end
 
     end
@@ -188,19 +188,19 @@ describe HammerCLIForeman::ParamsNameFilter do
     it "finds parameter by name" do
       action = stub(:params => ([the_param]+other_params))
       filter = HammerCLIForeman::ParamsNameFilter.new("xxx")
-      filter.for_action(action).must_equal [the_param]
+      _(filter.for_action(action)).must_equal [the_param]
     end
 
     it "finds parameter by name nested in another hash parameter" do
       action = stub(:params => ([hash_param]+other_params))
       filter = HammerCLIForeman::ParamsNameFilter.new("xxx")
-      filter.for_action(action).must_equal [the_param]
+      _(filter.for_action(action)).must_equal [the_param]
     end
 
     it "returns empty array when the parameter is not found" do
       action = stub(:params => ([the_param]+other_params))
       filter = HammerCLIForeman::ParamsNameFilter.new("???")
-      filter.for_action(action).must_equal []
+      _(filter.for_action(action)).must_equal []
     end
 
   end

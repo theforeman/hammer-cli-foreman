@@ -23,13 +23,13 @@ describe HammerCLIForeman::Api::Oauth::AuthenticationCodeGrant do
     it 'sets token as nil when all input parameter are missing' do
       auth.stubs(:get_code).returns('code')
       auth.set_token(nil, nil, nil, nil)
-      assert_equal nil, auth.token
+      assert_nil auth.token
     end
 
     it 'sets token as nil when any input parameter is missing' do
       auth.stubs(:get_code).returns('code')
       auth.set_token(nil, params[:oidc_authorization_endpoint], params[:oidc_client_id], params[:oidc_redirect_uri])
-      assert_equal nil, auth.token
+      assert_nil auth.token
     end
   end
 

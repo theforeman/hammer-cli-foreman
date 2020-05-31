@@ -6,20 +6,20 @@ describe HammerCLIForeman::BuildParams do
   let(:params) { HammerCLIForeman::BuildParams.new }
 
   it "creates empty hash by default" do
-    params.to_hash.must_equal( {} )
+    _(params.to_hash).must_equal( {} )
   end
 
   it "can be prefonfigured" do
     preconfigured_params = HammerCLIForeman::BuildParams.new(:expand => {:only => [:a, :b]}, :without => [:c, :d])
     preconfigured_params.expand.including(:c, :d)
-    preconfigured_params.to_hash.must_equal( {:expand => {:only => [:a, :b], :including => [:c, :d]}, :without => [:c, :d]} )
+    _(preconfigured_params.to_hash).must_equal( {:expand => {:only => [:a, :b], :including => [:c, :d]}, :without => [:c, :d]} )
   end
 
   describe "without" do
 
     it "sets :without" do
       params.without(:organization_id, :location_id)
-      params.to_hash.must_equal( {:without => [:organization_id, :location_id]} )
+      _(params.to_hash).must_equal( {:without => [:organization_id, :location_id]} )
     end
 
   end
@@ -28,44 +28,44 @@ describe HammerCLIForeman::BuildParams do
 
     it "can set expand all" do
       params.expand(:all)
-      params.to_hash.must_equal( {:expand => {}} )
+      _(params.to_hash).must_equal( {:expand => {}} )
     end
 
     it "expands all by default" do
       params.expand
-      params.to_hash.must_equal( {:expand => {}} )
+      _(params.to_hash).must_equal( {:expand => {}} )
     end
 
     it "can disable expansion" do
       params.expand(:none)
-      params.to_hash.must_equal( {:expand => {:only => []}} )
+      _(params.to_hash).must_equal( {:expand => {:only => []}} )
     end
 
     describe "except" do
       it "sets except field" do
         params.expand.except(:organizations)
-        params.to_hash.must_equal( {:expand => {:except => [:organizations]}} )
+        _(params.to_hash).must_equal( {:expand => {:except => [:organizations]}} )
       end
     end
 
     describe "including" do
       it "sets including field" do
         params.expand.including(:organizations)
-        params.to_hash.must_equal( {:expand => {:including => [:organizations]}} )
+        _(params.to_hash).must_equal( {:expand => {:including => [:organizations]}} )
       end
     end
 
     describe "only" do
       it "sets only field" do
         params.expand.only(:organizations)
-        params.to_hash.must_equal( {:expand => {:only => [:organizations]}} )
+        _(params.to_hash).must_equal( {:expand => {:only => [:organizations]}} )
       end
     end
 
     describe "primary" do
       it "sets primary field" do
         params.expand.primary(:organizations)
-        params.to_hash.must_equal( {:expand => {:primary => :organizations}} )
+        _(params.to_hash).must_equal( {:expand => {:primary => :organizations}} )
       end
     end
 
@@ -103,7 +103,7 @@ describe HammerCLIForeman::BuilderConfigurator do
     let(:action) { resource.action(:index)}
 
     it "adds no option builder" do
-      result_classes.must_equal []
+      _(result_classes).must_equal []
     end
   end
 
@@ -112,7 +112,7 @@ describe HammerCLIForeman::BuilderConfigurator do
     let(:action) { resource.action(:show)}
 
     it "adds searchable options builder" do
-      resource_names(builders_by_class(HammerCLIForeman::SearchablesOptionBuilder)).must_equal [:users]
+      _(resource_names(builders_by_class(HammerCLIForeman::SearchablesOptionBuilder))).must_equal [:users]
     end
   end
 
@@ -122,13 +122,13 @@ describe HammerCLIForeman::BuilderConfigurator do
     let(:action) { resource.action(:show)}
 
     it "adds searchable options builder" do
-      resource_names(builders_by_class(HammerCLIForeman::SearchablesOptionBuilder)).must_equal [:posts]
+      _(resource_names(builders_by_class(HammerCLIForeman::SearchablesOptionBuilder))).must_equal [:posts]
     end
 
     it "adds dependent searchable option builders" do
       resources = resource_names(builders_by_class(HammerCLIForeman::DependentSearchablesOptionBuilder)).sort
       expected = [:users]
-      resources.must_equal expected.sort
+      _(resources).must_equal expected.sort
     end
 
   end
@@ -162,7 +162,7 @@ describe HammerCLIForeman::ForemanOptionBuilder do
     builder.stubs(:build).returns(options)
 
     container.builders = [builder, builder]
-    container.build.must_equal options+options
+    _(container.build).must_equal options+options
   end
 
   it "passes build parameters to contained builders" do
@@ -183,13 +183,13 @@ describe HammerCLIForeman::ForemanOptionBuilder do
         HammerCLIForeman::SearchablesOptionBuilder.new(api.resource(:users), FakeSearchables.new(["aaa", "bbb"]))
       ]
       @build_options = {:expand => {:primary => false}}
-      option_switches.must_equal []
+      _(option_switches).must_equal []
     end
 
     it "can add custom searchable builder" do
       container.builders = []
       @build_options = {:expand => {:primary => :users}}
-      option_switches.must_equal [
+      _(option_switches).must_equal [
         ["--name"],
         ["--label"]
       ]
@@ -200,7 +200,7 @@ describe HammerCLIForeman::ForemanOptionBuilder do
         HammerCLIForeman::SearchablesOptionBuilder.new(api.resource(:posts), FakeSearchables.new(["aaa", "bbb"]))
       ]
       @build_options = {:expand => {:primary => :users}}
-      option_switches.must_equal [
+      _(option_switches).must_equal [
         ["--name"],
         ["--label"]
       ]
@@ -220,7 +220,7 @@ describe HammerCLIForeman::ForemanOptionBuilder do
 
     it "does not filter searchable builders by default" do
       @build_options = {:expand => {}}
-      option_switches.must_equal [
+      _(option_switches).must_equal [
         ["--user"],
         ["--user-label"],
         ["--user-id"],
@@ -232,7 +232,7 @@ describe HammerCLIForeman::ForemanOptionBuilder do
 
     it "adds dependent searchable builders on explicit requirement" do
       @build_options = {:expand => {:including => [:posts, :comments]}}
-      option_switches.must_equal [
+      _(option_switches).must_equal [
         ["--user"],
         ["--user-label"],
         ["--user-id"],
@@ -247,7 +247,7 @@ describe HammerCLIForeman::ForemanOptionBuilder do
 
     it "filters dependent searchable builders on explicit requirement" do
       @build_options = {:expand => {:except => [:users]}}
-      option_switches.must_equal [
+      _(option_switches).must_equal [
         ["--post"],
         ["--post-label"],
         ["--post-id"]
@@ -256,7 +256,7 @@ describe HammerCLIForeman::ForemanOptionBuilder do
 
     it "specifies custom set of dependent searchable builders on explicit requirement" do
       @build_options = {:expand => {:only => [:comments, :users]}}
-      option_switches.must_equal [
+      _(option_switches).must_equal [
         ["--user"],
         ["--user-label"],
         ["--user-id"],
@@ -285,33 +285,33 @@ describe HammerCLIForeman::SearchablesOptionBuilder do
     let(:searchables) { FakeSearchables.new([]) }
 
     it "builds no options for empty searchables" do
-      options.must_equal []
+      _(options).must_equal []
     end
   end
 
   describe "multiple searchables" do
 
     it "builds correct switches" do
-      options.map(&:switches).must_equal [["--name"], ["--label"]]
+      _(options.map(&:switches)).must_equal [["--name"], ["--label"]]
     end
 
     it "builds correct descriptions" do
-      options.map(&:description).must_equal ["Search by name", "Search by label"]
+      _(options.map(&:description)).must_equal ["Search by name", "Search by label"]
     end
 
     it "builds correct types" do
-      options.map(&:type).must_equal ["NAME", "LABEL"]
+      _(options.map(&:type)).must_equal ["NAME", "LABEL"]
     end
 
     it "builds correct attribute readers" do
-      options.map(&:read_method).must_equal [
+      _(options.map(&:read_method)).must_equal [
         "option_name",
         "option_label"
       ]
     end
 
     it "none of the options is required" do
-      options.any?{|opt| opt.required? }.must_equal false
+      _(options.any?{|opt| opt.required? }).must_equal false
     end
   end
 end
@@ -335,14 +335,14 @@ describe HammerCLIForeman::DependentSearchablesOptionBuilder do
     let(:searchables) { FakeSearchables.new([]) }
 
     it "builds only id options" do
-      options.map(&:switches).must_equal [["--user-id"]]
+      _(options.map(&:switches)).must_equal [["--user-id"]]
     end
   end
 
   describe "multiple searchables" do
 
     it "creates correct switches" do
-      options.map(&:switches).must_equal [
+      _(options.map(&:switches)).must_equal [
         ["--user"],       # first option does not have the suffix
         ["--user-label"], # other options with suffixes
         ["--user-uuid"],
@@ -351,7 +351,7 @@ describe HammerCLIForeman::DependentSearchablesOptionBuilder do
     end
 
     it "creates correct option types" do
-      options.map(&:type).must_equal [
+      _(options.map(&:type)).must_equal [
         "USER_NAME",
         "USER_LABEL",
         "USER_UUID",
@@ -360,7 +360,7 @@ describe HammerCLIForeman::DependentSearchablesOptionBuilder do
     end
 
     it "creates correct descriptions" do
-      options.map(&:description).must_equal [
+      _(options.map(&:description)).must_equal [
         "Search by name",
         "Search by label",
         "Search by uuid",
@@ -369,7 +369,7 @@ describe HammerCLIForeman::DependentSearchablesOptionBuilder do
     end
 
     it "creates correct attribute readers" do
-      options.map(&:read_method).must_equal [
+      _(options.map(&:read_method)).must_equal [
         "option_user_name",
         "option_user_label",
         "option_user_uuid",
@@ -378,7 +378,7 @@ describe HammerCLIForeman::DependentSearchablesOptionBuilder do
     end
 
     it "none of the options is required" do
-      options.any?{|opt| opt.required? }.must_equal false
+      _(options.any?{|opt| opt.required? }).must_equal false
     end
   end
 
@@ -388,7 +388,7 @@ describe HammerCLIForeman::DependentSearchablesOptionBuilder do
     let(:builder_params) { {:resource_mapping => {:user => :usr}} }
 
     it "renames options" do
-      options.map(&:switches).must_equal [
+      _(options.map(&:switches)).must_equal [
         ["--usr"],       # first option does not have the suffix
         ["--usr-label"], # other options with suffixes
         ["--usr-uuid"],
@@ -397,7 +397,7 @@ describe HammerCLIForeman::DependentSearchablesOptionBuilder do
     end
 
     it "renames option types" do
-      options.map(&:type).must_equal [
+      _(options.map(&:type)).must_equal [
         "USR_NAME",
         "USR_LABEL",
         "USR_UUID",
@@ -406,7 +406,7 @@ describe HammerCLIForeman::DependentSearchablesOptionBuilder do
     end
 
     it "keeps option accessor the same" do
-      options.map(&:attribute_name).must_equal [
+      _(options.map(&:attribute_name)).must_equal [
         "option_user_name",
         "option_user_label",
         "option_user_uuid",
@@ -418,7 +418,7 @@ describe HammerCLIForeman::DependentSearchablesOptionBuilder do
   describe "resources with id parameter in show action" do
 
     it "uses descriptions from the action" do
-      options.map(&:description).must_equal [
+      _(options.map(&:description)).must_equal [
         "Search by name",
         "Search by label",
         "Search by uuid",
@@ -443,32 +443,32 @@ describe HammerCLIForeman::SearchablesUpdateOptionBuilder do
     let(:searchables) { FakeSearchables.new([]) }
 
     it "builds no options for empty searchables" do
-      options.must_equal []
+      _(options).must_equal []
     end
   end
 
   describe "multiple searchables" do
 
     it "builds correct switches" do
-      options.map(&:switches).must_equal [["--new-label"]]
+      _(options.map(&:switches)).must_equal [["--new-label"]]
     end
 
     it "builds correct descriptions" do
-      options.map(&:description).must_equal [" "]
+      _(options.map(&:description)).must_equal [" "]
     end
 
     it "builds correct types" do
-      options.map(&:type).must_equal ["NEW_LABEL"]
+      _(options.map(&:type)).must_equal ["NEW_LABEL"]
     end
 
     it "builds correct attribute readers" do
-      options.map(&:read_method).must_equal [
+      _(options.map(&:read_method)).must_equal [
         "option_new_label"
       ]
     end
 
     it "none of the options is required" do
-      options.any?{|opt| opt.required? }.must_equal false
+      _(options.any?{|opt| opt.required? }).must_equal false
     end
   end
 
@@ -487,7 +487,7 @@ describe HammerCLIForeman::SearchablesUpdateOptionBuilder do
     end
 
     it "uses descriptions from the action" do
-      options.map(&:description).must_equal ["DESC"]
+      _(options.map(&:description)).must_equal ["DESC"]
     end
   end
 end
@@ -504,11 +504,11 @@ describe HammerCLIForeman::IdOptionBuilder do
 
   describe "resources with parameter :id in show action" do
     it "creates options --id" do
-      options.map(&:switches).must_equal [["--id"]]
+      _(options.map(&:switches)).must_equal [["--id"]]
     end
 
     it "uses description from the :id param" do
-      options.map(&:description).must_equal ["DESC"]
+      _(options.map(&:description)).must_equal ["DESC"]
     end
   end
 
@@ -522,11 +522,11 @@ describe HammerCLIForeman::IdOptionBuilder do
     end
 
     it "creates options --id" do
-      options.map(&:switches).must_equal [["--id"]]
+      _(options.map(&:switches)).must_equal [["--id"]]
     end
 
     it "uses empty description" do
-      options.map(&:description).must_equal [" "]
+      _(options.map(&:description)).must_equal [" "]
     end
   end
 

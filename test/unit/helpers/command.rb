@@ -97,14 +97,14 @@ module CommandTestHelper
 
     def it_should_fail_with(message, arguments=[])
       it "should fail with " + message.to_s do
-        cmd.run(arguments).must_equal HammerCLI::EX_USAGE
+        _(cmd.run(arguments)).must_equal HammerCLI::EX_USAGE
       end
     end
 
     def it_should_accept(message, arguments=[])
       it "should accept " + message.to_s do
         out, err = capture_io do
-          cmd.run(arguments).must_equal HammerCLI::EX_OK
+          _(cmd.run(arguments)).must_equal HammerCLI::EX_OK
         end
       end
     end
@@ -116,7 +116,7 @@ module CommandTestHelper
         out, err = capture_io do
           cmd.run(arguments)
         end
-        out.must_include message
+        _(out).must_include message
       end
     end
 
@@ -129,7 +129,7 @@ module CommandTestHelper
           cmd.run(arguments)
         end
 
-        out.split("\n")[0].must_match /.*##{column_name}#.*/
+        _(out.split("\n")[0]).must_match /.*##{column_name}#.*/
       end
     end
 
@@ -148,7 +148,7 @@ module CommandTestHelper
         out, err = capture_io do
           cmd.run(arguments)
         end
-        out.split(/\n/).length.must_equal count+1 # plus 1 for line with column headers
+        _(out.split(/\n/).length).must_equal count+1 # plus 1 for line with column headers
       end
     end
 
