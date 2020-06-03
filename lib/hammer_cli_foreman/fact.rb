@@ -20,6 +20,7 @@ module HammerCLIForeman
 
       def self.unhash_facts(facts_collection)
         facts = facts_collection.first.inject([]) do |list, (host, facts)|
+          facts.compact!
           list + facts.collect do |(fact, value)|
             { :host => host, :fact => fact, :value => value }
           end
