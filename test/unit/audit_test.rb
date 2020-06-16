@@ -54,6 +54,7 @@ describe HammerCLIForeman::Audit do
         it_should_print_column "Audit type"
         it_should_print_column "Audit record"
         it_should_print_column "Audited changes"
+        it_should_print_column "Request UUID"
       end
     end
   end
