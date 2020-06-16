@@ -28,6 +28,7 @@ module HammerCLIForeman
         field :action, _("Action")
         field :auditable_type, _("Audit type")
         field nil, _("Audit record"), Fields::SingleReference, :key => :auditable
+        field :request_uuid, _("Request UUID"), Fields::Field, sets: ['ALL']
       end
 
       build_options
@@ -60,6 +61,12 @@ module HammerCLIForeman
           field :value, _("Value"), Fields::Field, :hide_blank => true
           field :old, _("Old"), Fields::LongText, :hide_blank => true
           field :new, _("New"), Fields::LongText, :hide_blank => true
+        end
+      end
+
+      extend_output_definition do |definition|
+        definition.insert(:replace, :request_uuid) do
+          field :request_uuid, _("Request UUID"), Fields::Field, sets: ['ALL', 'DEFAULT']
         end
       end
 
