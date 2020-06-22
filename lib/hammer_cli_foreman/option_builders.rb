@@ -209,7 +209,7 @@ module HammerCLIForeman
       family = HammerCLI::Options::OptionFamily.new(
         referenced_resource: resource_name,
         aliased_resource: aliased_name,
-        description: _('%{types} of associated %{resource}') % { types: types, resource: associated_resource }
+        description: _('Set the current %{resource} context for the request. %{types} can be used') % { types: types, resource: associated_resource }
       )
 
       unless searchables.empty?
