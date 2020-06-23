@@ -35,7 +35,7 @@ module HammerCLIForeman::Output
           if detail.is_a?(Hash)
             next if detail[:id] && !show_ids
             if detail[:label]
-              "#{detail[:label]}: #{get_value(data, detail[:key])}"
+              "#{detail[:label][:target]}: #{get_value(data, detail[:key])}"
             else
               get_value(data, detail[:key])
             end

@@ -31,7 +31,7 @@ describe HammerCLIForeman::CommonParameter do
 
   context "SetCommand" do
     before do
-      ResourceMocks.common_parameter_show
+      ResourceMocks.common_parameter_list
     end
 
     let(:cmd) { HammerCLIForeman::CommonParameter::SetCommand.new("", ctx) }
