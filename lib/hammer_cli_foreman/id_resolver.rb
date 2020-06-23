@@ -50,8 +50,8 @@ module HammerCLIForeman
       :hostgroup =>        [ s_name(_("Hostgroup name")), s("title", _("Hostgroup title"), :editable => false) ],
       # :image =>            [],
       :interface =>        [],
-      :location =>         [  s('name', _('Location Name, Set the current location context for the request')),
-                              s('title', _('Location title, Set the current location context for the request' ),
+      :location =>         [  s('name', _('Set the current location context for the request')),
+                              s('title', _('Set the current location context for the request' ),
                                 editable: false
                               )
       ],
