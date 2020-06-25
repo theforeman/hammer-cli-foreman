@@ -22,12 +22,12 @@ describe HammerCLIForeman::Api::Oauth::PasswordGrant do
 
     it 'sets token as nil when all input parameter are missing' do
       auth.set_token(nil, nil, nil, nil)
-      assert_equal nil, auth.token
+      assert_nil auth.token
     end
 
     it 'sets token as nil when any input parameter is missing' do
       auth.set_token(nil, params[:oidc_client_id], params[:username], params[:password])
-      assert_equal nil, auth.token
+      assert_nil auth.token
     end
   end
 

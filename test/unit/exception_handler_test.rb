@@ -15,7 +15,7 @@ describe HammerCLIForeman::ExceptionHandler do
     ex = RestClient::UnprocessableEntity.new(response)
     output.expects(:print_error).with(heading, "Network address can't be blank\nNetwork address is invalid\nName can't be blank")
     err_code = handler.handle_exception(ex, :heading => heading)
-    err_code.must_equal HammerCLI::EX_DATAERR
+    _(err_code).must_equal HammerCLI::EX_DATAERR
   end
 
   it "should print resource errors on unprocessable entity exception" do
@@ -26,21 +26,21 @@ describe HammerCLIForeman::ExceptionHandler do
     ex = RestClient::UnprocessableEntity.new(response)
     output.expects(:print_error).with(heading, "Network address can't be blank\nNetwork address is invalid\nName can't be blank")
     err_code = handler.handle_exception(ex, :heading => heading)
-    err_code.must_equal HammerCLI::EX_DATAERR
+    _(err_code).must_equal HammerCLI::EX_DATAERR
   end
 
   it "should handle argument error" do
     ex = ArgumentError.new
     output.expects(:print_error).with(heading, ex.message)
     err_code = handler.handle_exception(ex, :heading => heading)
-    err_code.must_equal HammerCLI::EX_USAGE
+    _(err_code).must_equal HammerCLI::EX_USAGE
   end
 
   it "should handle forbidden error" do
     ex = RestClient::Forbidden.new
     output.expects(:print_error).with('Forbidden - server refused to process the request.', nil)
     err_code = handler.handle_exception(ex)
-    err_code.must_equal HammerCLI::EX_NOPERM
+    _(err_code).must_equal HammerCLI::EX_NOPERM
   end
 
   it "handles forbidden error with permission details" do
@@ -57,13 +57,13 @@ describe HammerCLIForeman::ExceptionHandler do
     output.expects(:print_error).with(heading, "Error: message")
     MyException = Class.new(Exception)
     err_code = handler.handle_exception(MyException.new('message'), :heading => heading)
-    err_code.must_equal HammerCLI::EX_SOFTWARE
+    _(err_code).must_equal HammerCLI::EX_SOFTWARE
   end
 
   it "should handle unsupported operation error" do
     output.expects(:print_error).with(heading, "message")
     err_code = handler.handle_exception(HammerCLIForeman::OperationNotSupportedError.new('message'), :heading => heading)
-    err_code.must_equal HammerCLI::EX_UNAVAILABLE
+    _(err_code).must_equal HammerCLI::EX_UNAVAILABLE
   end
 
   it "should print resource errors on resource not found exception" do
@@ -75,7 +75,7 @@ describe HammerCLIForeman::ExceptionHandler do
 
     output.expects(:print_error).with(heading, "Resource architecture not found by id '1'")
     err_code = handler.handle_exception(ex, :heading => heading)
-    err_code.must_equal HammerCLI::EX_NOT_FOUND
+    _(err_code).must_equal HammerCLI::EX_NOT_FOUND
   end
 
   it "should print exception message on resource not found exception without explicit message" do
@@ -85,7 +85,7 @@ describe HammerCLIForeman::ExceptionHandler do
 
     output.expects(:print_error).with(heading, "ResourceNotFound message")
     err_code = handler.handle_exception(ex, :heading => heading)
-    err_code.must_equal HammerCLI::EX_NOT_FOUND
+    _(err_code).must_equal HammerCLI::EX_NOT_FOUND
   end
 
   it "should print resource errors on internal error exception" do
@@ -97,7 +97,7 @@ describe HammerCLIForeman::ExceptionHandler do
 
     output.expects(:print_error).with(heading, "Some internal exception")
     err_code = handler.handle_exception(ex, :heading => heading)
-    err_code.must_equal HammerCLI::EX_SOFTWARE
+    _(err_code).must_equal HammerCLI::EX_SOFTWARE
   end
 
   it "should print exception message on internal error exception without formatted message" do
@@ -110,7 +110,7 @@ describe HammerCLIForeman::ExceptionHandler do
 
     output.expects(:print_error).with(heading, "Unformatted\nlines\n")
     err_code = handler.handle_exception(ex, :heading => heading)
-    err_code.must_equal HammerCLI::EX_SOFTWARE
+    _(err_code).must_equal HammerCLI::EX_SOFTWARE
   end
 
   it "should print exception message on internal error exception with message that is not nested" do
@@ -122,7 +122,7 @@ describe HammerCLIForeman::ExceptionHandler do
 
     output.expects(:print_error).with(heading, "Some internal exception")
     err_code = handler.handle_exception(ex, :heading => heading)
-    err_code.must_equal HammerCLI::EX_SOFTWARE
+    _(err_code).must_equal HammerCLI::EX_SOFTWARE
   end
 
   context "redirects" do
@@ -133,7 +133,7 @@ describe HammerCLIForeman::ExceptionHandler do
 
       output.expects(:print_error).with(heading, "Redirection of API call detected.\nIt seems hammer is configured to use HTTP and the server prefers HTTPS.\nUpdate your server url configuration.\nYou can set 'follow_redirects' to one of :default or :always to enable redirects following.")
       err_code = handler.handle_exception(ex, :heading => heading)
-      err_code.must_equal HammerCLI::EX_CONFIG
+      _(err_code).must_equal HammerCLI::EX_CONFIG
     end
 
     it "should detect redirection error" do
@@ -142,7 +142,7 @@ describe HammerCLIForeman::ExceptionHandler do
 
       output.expects(:print_error).with(heading, "Redirection of API call detected.\nUpdate your server url configuration.\nYou can set 'follow_redirects' to one of :default or :always to enable redirects following.")
       err_code = handler.handle_exception(ex, :heading => heading)
-      err_code.must_equal HammerCLI::EX_CONFIG
+      _(err_code).must_equal HammerCLI::EX_CONFIG
     end
   end
 

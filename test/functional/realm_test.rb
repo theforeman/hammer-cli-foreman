@@ -14,7 +14,7 @@ describe 'realm' do
       api_expects(:realms, :index, 'List realms').returns(@realms)
 
       result = run_cmd(@cmd)
-      result.exit_code.must_equal HammerCLI::EX_OK
+      _(result.exit_code).must_equal HammerCLI::EX_OK
     end
   end
 
@@ -32,7 +32,7 @@ describe 'realm' do
       api_expects(:realms, :show, 'Show realm').returns(@realm)
 
       result = run_cmd(@cmd + params)
-      result.exit_code.must_equal HammerCLI::EX_OK
+      _(result.exit_code).must_equal HammerCLI::EX_OK
     end
   end
 

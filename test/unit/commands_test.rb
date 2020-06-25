@@ -19,16 +19,16 @@ describe HammerCLIForeman do
       ]
 
       set = HammerCLIForeman.collection_to_common_format(old_format)
-      set.must_be_kind_of HammerCLI::Output::RecordCollection
-      set.first.must_equal(kind)
+      _(set).must_be_kind_of HammerCLI::Output::RecordCollection
+      _(set.first).must_equal(kind)
     end
 
     it "should convert common API format" do
       common_format = [ kind ]
 
       set = HammerCLIForeman.collection_to_common_format(common_format)
-      set.must_be_kind_of HammerCLI::Output::RecordCollection
-      set.first.must_equal(kind)
+      _(set).must_be_kind_of HammerCLI::Output::RecordCollection
+      _(set.first).must_equal(kind)
     end
 
     it "should convert new API format" do
@@ -46,12 +46,12 @@ describe HammerCLIForeman do
       }
 
       set = HammerCLIForeman.collection_to_common_format(new_format)
-      set.must_be_kind_of HammerCLI::Output::RecordCollection
-      set.first.must_equal(kind)
+      _(set).must_be_kind_of HammerCLI::Output::RecordCollection
+      _(set.first).must_equal(kind)
     end
 
     it "should rise error on unexpected format" do
-      proc { HammerCLIForeman.collection_to_common_format('unexpected') }.must_raise RuntimeError
+      _(proc { HammerCLIForeman.collection_to_common_format('unexpected') }).must_raise RuntimeError
     end
 
   end
@@ -67,14 +67,14 @@ describe HammerCLIForeman do
       }
 
       rec = HammerCLIForeman.record_to_common_format(old_format)
-      rec.must_equal(arch)
+      _(rec).must_equal(arch)
     end
 
     it "should convert common API format" do
       common_format = arch
 
       rec = HammerCLIForeman.record_to_common_format(common_format)
-      rec.must_equal(arch)
+      _(rec).must_equal(arch)
 
     end
   end
@@ -92,7 +92,7 @@ describe HammerCLIForeman do
       })
       arch = HammerCLIForeman::Architecture::CreateCommand.new("", { :adapter => :csv, :interactive => false })
       out, err = capture_io { arch.run(["--name='i386'"]) }
-      out.must_match("Message,Id,Name\nArchitecture created.,3,i386\n")
+      _(out).must_match("Message,Id,Name\nArchitecture created.,3,i386\n")
     end
   end
 
@@ -111,7 +111,7 @@ describe HammerCLIForeman do
       res.stubs(:get_identifier).returns(1)
       res.stubs(:get_associated_identifier).returns(1)
 
-      res.get_new_ids.sort.must_equal ['1', '2']
+      _(res.get_new_ids.sort).must_equal ['1', '2']
     end
 
     it "should associate resource with new format" do
@@ -128,7 +128,7 @@ describe HammerCLIForeman do
       res.stubs(:get_identifier).returns(1)
       res.stubs(:get_associated_identifier).returns(1)
 
-      res.get_new_ids.sort.must_equal ['1', '2']
+      _(res.get_new_ids.sort).must_equal ['1', '2']
     end
   end
 
@@ -152,7 +152,7 @@ describe HammerCLIForeman do
       end
       comm = DomainOuter::HostsCommand.new("", { :adapter => :csv, :interactive => false })
       out, err = capture_io { comm.run(["--id=5"]) }
-      out.must_equal "Id,Name,Operating System,Host Group,IP,MAC\n2,random-host,,,192.168.100.112,6e:4b:3c:2c:8a:0a\n"
+      _(out).must_equal "Id,Name,Operating System,Host Group,IP,MAC\n2,random-host,,,192.168.100.112,6e:4b:3c:2c:8a:0a\n"
     end
   end
 
@@ -163,7 +163,7 @@ describe HammerCLIForeman::Command do
 
   it "uses foreman option builder" do
     builder = HammerCLIForeman::Command.option_builder
-    builder.class.must_equal HammerCLIForeman::ForemanOptionBuilder
+    _(builder.class).must_equal HammerCLIForeman::ForemanOptionBuilder
   end
 
   it "properly raises error on intentional searching of parameters that are not required" do
@@ -183,7 +183,7 @@ describe HammerCLIForeman::Command do
     out, err = capture_io do
       _(com.run(['--location', 'loc'])).wont_equal HammerCLI::EX_OK
     end
-    err.must_equal "Error: Could not find location, please set one of options --location, --location-title, --location-id.\n"
+    _(err).must_equal "Error: Could not find location, please set one of options --location, --location-title, --location-id.\n"
 
   end
 
@@ -205,7 +205,7 @@ describe HammerCLIForeman::Command do
     ResourceMocks.mock_action_call(:domains, :index, [])
 
     out, err = capture_io do
-      com.run([]).must_equal HammerCLI::EX_OK
+      _(com.run([])).must_equal HammerCLI::EX_OK
     end
 
   end
@@ -213,7 +213,7 @@ describe HammerCLIForeman::Command do
   describe "build_options" do
     it "uses build parameters in the block" do
       HammerCLIForeman::Command.build_options do |o|
-        o.class.must_equal HammerCLIForeman::BuildParams
+        _(o.class).must_equal HammerCLIForeman::BuildParams
       end
     end
   end
@@ -228,6 +228,6 @@ describe HammerCLIForeman::ListCommand do
   it 'formats enum values in search fields help' do
     search_field = { name: 'managed', values: [true, false] }
     expected_output = 'Values: true, false'
-    OpenListCommand.new({}).search_field_help_value(search_field).must_equal(expected_output)
+    _(OpenListCommand.new({}).search_field_help_value(search_field)).must_equal(expected_output)
   end
 end

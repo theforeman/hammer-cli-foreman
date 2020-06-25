@@ -428,7 +428,7 @@ describe 'host config reports' do
     end.returns(index_response([report15]))
 
     result = run_cmd(['host', 'config-reports', '--id=1'])
-    result.exit_code.must_equal HammerCLI::EX_OK
+    _(result.exit_code).must_equal HammerCLI::EX_OK
   end
 
   it 'filters reports by --name' do
@@ -437,7 +437,7 @@ describe 'host config reports' do
     end.returns(index_response([report15]))
 
     result = run_cmd(['host', 'config-reports', '--name=host.example.com'])
-    result.exit_code.must_equal HammerCLI::EX_OK
+    _(result.exit_code).must_equal HammerCLI::EX_OK
   end
 
   it 'prints error or missing --id and --name' do
@@ -462,7 +462,7 @@ describe 'host config reports' do
     end.returns(index_response([report15]))
 
     result = run_cmd(['host', 'config-reports', '--name=host.example.com', '--search=reported > "2 hour ago"'])
-    result.exit_code.must_equal HammerCLI::EX_OK
+    _(result.exit_code).must_equal HammerCLI::EX_OK
   end
 end
 describe 'disassociate host from vm' do

@@ -39,12 +39,12 @@ describe HammerCLIForeman::ListCommand do
 
     it 'shows search fields in help' do
       result = run_cmd(cmd + params)
-      result.out.must_match(/.*Search \/ Order fields:\s+(\S+\s+\S+)*\s+name\s+string/)
+      _(result.out).must_match(/.*Search \/ Order fields:\s+(\S+\s+\S+)*\s+name\s+string/)
     end
 
     it 'formats enum values' do
       result = run_cmd(cmd + params)
-      result.out.must_match(/.*Search \/ Order fields:\s+(\S+\s+\S+)*\s+managed\s+Values: true, false/)
+      _(result.out).must_match(/.*Search \/ Order fields:\s+(\S+\s+\S+)*\s+managed\s+Values: true, false/)
     end
   end
 
@@ -53,7 +53,7 @@ describe HammerCLIForeman::ListCommand do
       it "fetches only first page when there's not enough records" do
         expect_paged_call(1, 1000, 10)
         result = run_cmd([], {}, TestList)
-        result.exit_code.must_equal HammerCLI::EX_OK
+        _(result.exit_code).must_equal HammerCLI::EX_OK
       end
 
       it "fetches all records" do
@@ -62,27 +62,27 @@ describe HammerCLIForeman::ListCommand do
         expect_paged_call(3, per_page_all, 10)
 
         result = run_cmd([], {}, TestList)
-        result.exit_code.must_equal HammerCLI::EX_OK
+        _(result.exit_code).must_equal HammerCLI::EX_OK
       end
 
       it "uses --per-page value" do
         per_page = 10
         expect_paged_call(1, per_page, 10)
         result = run_cmd(["--per-page=#{per_page}"], {}, TestList)
-        result.exit_code.must_equal HammerCLI::EX_OK
+        _(result.exit_code).must_equal HammerCLI::EX_OK
       end
 
       it "uses both --per-page and --page value" do
         per_page = 10
         expect_paged_call(2, per_page, 10)
         result = run_cmd(["--per-page=#{per_page}", '--page=2'], {}, TestList)
-        result.exit_code.must_equal HammerCLI::EX_OK
+        _(result.exit_code).must_equal HammerCLI::EX_OK
       end
 
       it "sets per_page to 20 when only --page is used" do
         expect_paged_call(2, 20, 10)
         result = run_cmd(['--page=2'], {}, TestList)
-        result.exit_code.must_equal HammerCLI::EX_OK
+        _(result.exit_code).must_equal HammerCLI::EX_OK
       end
     end
 
@@ -96,20 +96,20 @@ describe HammerCLIForeman::ListCommand do
         per_page = 10
         expect_paged_call(1, per_page, 10)
         result = run_cmd(["--per-page=#{per_page}"], {}, TestList)
-        result.exit_code.must_equal HammerCLI::EX_OK
+        _(result.exit_code).must_equal HammerCLI::EX_OK
       end
 
       it "respects per_page setting when the adapter allows pagination by default" do
         expect_paged_call(1, per_page_in_settings, 30)
         result = run_cmd([], { :adapter => :base, :interactive => false }, TestList)
-        result.exit_code.must_equal HammerCLI::EX_OK
+        _(result.exit_code).must_equal HammerCLI::EX_OK
       end
 
       it "fetches all records when the adapter doesn't allow pagination by default" do
         expect_paged_call(1, per_page_all, 1000)
         expect_paged_call(2, per_page_all, 10)
         result = run_cmd([], { :adapter => :csv, :interactive => false }, TestList)
-        result.exit_code.must_equal HammerCLI::EX_OK
+        _(result.exit_code).must_equal HammerCLI::EX_OK
       end
     end
   end
@@ -128,7 +128,7 @@ describe HammerCLIForeman::ListCommand do
 
       result = run_cmd([], {}, TestListWithOutput)
       assert_cmd(expected_result, result)
-      result.out.wont_match pagination_line_re
+      _(result.out).wont_match pagination_line_re
     end
 
     it 'prints one page when --per-page is used' do
