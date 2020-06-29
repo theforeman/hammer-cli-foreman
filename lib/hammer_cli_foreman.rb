@@ -154,7 +154,7 @@ module HammerCLIForeman
       'HammerCLIForeman::Subnet', 'hammer_cli_foreman/subnet'
     )
 
-    HammerCLI::MainCommand.lazy_subcommand('template', _("Manipulate config templates"),
+    HammerCLI::MainCommand.lazy_subcommand('template', _("Manipulate provisioning templates"),
       'HammerCLIForeman::Template', 'hammer_cli_foreman/template'
     )
 
