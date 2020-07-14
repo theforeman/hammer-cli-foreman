@@ -1,5 +1,10 @@
 Release notes
 =============
+### 2.1.2 (2020-07-14)
+* Change config templates to provisioning templates ([PR #531](https://github.com/theforeman/hammer-cli-foreman/pull/531)), [#29971](http://projects.theforeman.org/issues/29971)
+* Return 'set current context for request' to help ([PR #530](https://github.com/theforeman/hammer-cli-foreman/pull/530)), [#30182](http://projects.theforeman.org/issues/30182)
+* Display request uuid for audit ([PR #528](https://github.com/theforeman/hammer-cli-foreman/pull/528)) ([PR #529](https://github.com/theforeman/hammer-cli-foreman/pull/529)), [#30130](http://projects.theforeman.org/issues/30130)
+
 ### 2.1.1 (2020-05-29)
 * Revert "skip one test on ruby 2.7" ([PR #520](https://github.com/theforeman/hammer-cli-foreman/pull/520)), [#28601](http://projects.theforeman.org/issues/28601)
 * Eliminate auth_type from sessions file ([PR #521](https://github.com/theforeman/hammer-cli-foreman/pull/521)), [#29876](http://projects.theforeman.org/issues/29876)
