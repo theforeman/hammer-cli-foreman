@@ -162,4 +162,43 @@ describe "user" do
       end
     end
   end
+
+  describe 'list' do
+    let(:cmd) { ['user', 'list'] }
+    let(:users) do
+      [{
+           id: 1,
+           login: 'admin',
+           full_name: 'Admin User',
+           mail: 'root@localadmin.net',
+           admin: true,
+           disabled: false
+       }] end
+
+    it "should show index list" do
+      api_expects(:users, :index).returns(users)
+
+      output = IndexMatcher.new([
+                                    ['ID', 'LOGIN', 'NAME', 'EMAIL', 'ADMIN', 'DISABLED', 'AUTHORIZED BY'],
+                                    ['1',  'admin', 'Admin User', 'root@localadmin.net', 'yes', 'no', ''],
+                                ])
+
+      result = run_cmd(cmd)
+      assert_cmd(success_result(output), result)
+    end
+  end
+
+  describe 'delete' do
+    let(:cmd) { ['user', 'delete']  }
+
+    it 'deletes a user' do
+      params = ['--id', user['id']]
+      api_expects(:users, :destroy).returns(user)
+
+      expected_result = success_result("User [#{user['login']}] deleted.\n")
+
+      result = run_cmd(cmd + params)
+      assert_cmd(expected_result, result)
+    end
+  end
 end
