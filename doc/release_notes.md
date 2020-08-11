@@ -1,5 +1,20 @@
 Release notes
 =============
+### 2.2.0 (2020-08-11)
+* Change config templates to provisioning templates ([PR #531](https://github.com/theforeman/hammer-cli-foreman/pull/531)), [#29971](http://projects.theforeman.org/issues/29971)
+* Fix minitest deprecation ([PR #523](https://github.com/theforeman/hammer-cli-foreman/pull/523))
+* Add a coverage test ([PR #522](https://github.com/theforeman/hammer-cli-foreman/pull/522))
+* Return 'set current context for request' to help ([PR #530](https://github.com/theforeman/hammer-cli-foreman/pull/530)), [#30182](http://projects.theforeman.org/issues/30182)
+* Display request uuid for audit ([PR #528](https://github.com/theforeman/hammer-cli-foreman/pull/528)), [#30130](http://projects.theforeman.org/issues/30130)
+* Use parent resource instead of hardcoded one ([PR #527](https://github.com/theforeman/hammer-cli-foreman/pull/527)), [#30125](http://projects.theforeman.org/issues/30125)
+* Added missing tests to realm command ([PR #526](https://github.com/theforeman/hammer-cli-foreman/pull/526)), [#30096](http://projects.theforeman.org/issues/30096)
+* Added missing tests to trend test ([PR #525](https://github.com/theforeman/hammer-cli-foreman/pull/525)), [#30070](http://projects.theforeman.org/issues/30070)
+* Revert "skip one test on ruby 2.7" ([PR #520](https://github.com/theforeman/hammer-cli-foreman/pull/520)), [#28601](http://projects.theforeman.org/issues/28601)
+* Eliminate auth_type from sessions file ([PR #521](https://github.com/theforeman/hammer-cli-foreman/pull/521)), [#29876](http://projects.theforeman.org/issues/29876)
+* Add disable option for user ([PR #497](https://github.com/theforeman/hammer-cli-foreman/pull/497)), [#28973](http://projects.theforeman.org/issues/28973)
+* Added manage command to user mail notifications ([PR #513](https://github.com/theforeman/hammer-cli-foreman/pull/513)), [#7665](http://projects.theforeman.org/issues/7665)
+* Bump to 2.2.0-develop
+
 ### 2.1.0 (2020-05-14)
 * Bump hammer_cli to 2.1.0 ([PR #519](https://github.com/theforeman/hammer-cli-foreman/pull/519))
 * Ask for oauth code only when needed ([PR #517](https://github.com/theforeman/hammer-cli-foreman/pull/517)), [#29635](http://projects.theforeman.org/issues/29635)
