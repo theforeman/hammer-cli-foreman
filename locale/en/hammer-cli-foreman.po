@@ -5,7 +5,7 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: hammer-cli-foreman 2.1.0.pre.develop\n"
+"Project-Id-Version: hammer-cli-foreman 2.2.0\n"
 "Report-Msgid-Bugs-To: \n"
 "PO-Revision-Date: 2014-03-04 16:47+0000\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
@@ -113,7 +113,7 @@ msgstr ""
 msgid "Manipulate subnets"
 msgstr ""
 
-msgid "Manipulate config templates"
+msgid "Manipulate provisioning templates"
 msgstr ""
 
 msgid "Manipulate users"
@@ -556,6 +556,9 @@ msgstr ""
 msgid "Audit record"
 msgstr ""
 
+msgid "Request UUID"
+msgstr ""
+
 msgid "Audited changes"
 msgstr ""
 
@@ -837,6 +840,18 @@ msgid "Puppet environments"
 msgstr ""
 
 msgid "Environment IDs"
+msgstr ""
+
+msgid "DNS Proxy to use within this subnet"
+msgstr ""
+
+msgid "DHCP Proxy to use within this subnet"
+msgstr ""
+
+msgid "TFTP Proxy to use within this subnet"
+msgstr ""
+
+msgid "Network prefix in CIDR notation (e.g. 64) for this subnet"
 msgstr ""
 
 msgid "Default organization name"
@@ -1973,10 +1988,7 @@ msgstr ""
 msgid "Hostgroup title"
 msgstr ""
 
-msgid "Location Name, Set the current location context for the request"
-msgstr ""
-
-msgid "Location title, Set the current location context for the request"
+msgid "Set the current location context for the request"
 msgstr ""
 
 msgid "Medium name"
@@ -2332,10 +2344,14 @@ msgstr ""
 msgid "Default template of type %s not found"
 msgstr ""
 
-msgid "%{types} of associated %{resource}"
+msgid ""
+"Set the current %{resource} context for the request. %{types} can be used"
 msgstr ""
 
 msgid "Use to update"
+msgstr ""
+
+msgid "%{types} of associated %{resource}"
 msgstr ""
 
 msgid ""
@@ -2895,15 +2911,6 @@ msgstr ""
 msgid "Errors"
 msgstr ""
 
-msgid "DNS Proxy to use within this subnet"
-msgstr ""
-
-msgid "DHCP Proxy to use within this subnet"
-msgstr ""
-
-msgid "TFTP Proxy to use within this subnet"
-msgstr ""
-
 msgid "Network Addr"
 msgstr ""
 
@@ -3054,6 +3061,9 @@ msgstr ""
 msgid "Admin"
 msgstr ""
 
+msgid "Disabled"
+msgstr ""
+
 msgid "Last login"
 msgstr ""
 
@@ -3100,6 +3110,33 @@ msgid "Managing User SSH Keys."
 msgstr ""
 
 msgid "Managing personal access tokens"
+msgstr ""
+
+msgid "Managing personal mail notifications"
+msgstr ""
+
+msgid "User mail notifications was added."
+msgstr ""
+
+msgid "Could not add user mail notification"
+msgstr ""
+
+msgid "User mail notifications was updated."
+msgstr ""
+
+msgid "Could not update user mail notification"
+msgstr ""
+
+msgid "User mail notification was removed."
+msgstr ""
+
+msgid "Could not remove user mail notification"
+msgstr ""
+
+msgid "Interval"
+msgstr ""
+
+msgid "Mail query"
 msgstr ""
 
 msgid "User group [%<name>s] created."
