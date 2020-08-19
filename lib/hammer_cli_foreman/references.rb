@@ -88,9 +88,25 @@ module HammerCLIForeman
       end
     end
 
+    def self.partition_tables(dsl)
+      dsl.build do
+        collection :ptables, _("Partition Tables"), :numbered => false do
+          custom_field Fields::Reference
+        end
+      end
+    end
+
     def self.domains(dsl)
       dsl.build do
         collection :domains, _("Domains"), :numbered => false do
+          custom_field Fields::Reference
+        end
+      end
+    end
+
+    def self.realms(dsl)
+      dsl.build do
+        collection :realms, _("Realms"), :numbered => false do
           custom_field Fields::Reference
         end
       end
