@@ -178,10 +178,6 @@ module HammerCLIForeman
       'HammerCLIForeman::StatusCommand', 'hammer_cli_foreman/status'
     )
 
-    HammerCLI::MainCommand.lazy_subcommand('trend', _("Manage trends"),
-                                           'HammerCLIForeman::Trend', 'hammer_cli_foreman/trend'
-    )
-
     HammerCLI::MainCommand.lazy_subcommand('mail-notification', _("Manage mail notifications"),
                                            'HammerCLIForeman::MailNotification', 'hammer_cli_foreman/mail_notification'
     )
