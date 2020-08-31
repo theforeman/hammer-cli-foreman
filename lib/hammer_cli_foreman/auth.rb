@@ -36,11 +36,11 @@ module HammerCLIForeman
 
         option ["-u", "--username"], "USERNAME", _("Username to access the remote system")
         option ["-p", "--password"], "PASSWORD", _("Password to access the remote system")
-        option ["-t", "--oidc-token-endpoint"], "OPENIDC-TOKEN-ENDPOINT", _("Openidc provider URL which issues access token")
-        option ["-a", "--oidc-authorization-endpoint"], "OPENIDC-AUTHORIZATION-ENDPOINT", _("Openidc provider URL which issues authentication code (two factor only)")
-        option ["-c", "--oidc-client-id"], "OPENIDC-CLIENT-ID", _("Client id used in the Openidc provider")
+        option ["-t", "--oidc-token-endpoint"], "OPENIDC_TOKEN_ENDPOINT", _("Openidc provider URL which issues access token")
+        option ["-a", "--oidc-authorization-endpoint"], "OPENIDC_AUTHORIZATION_ENDPOINT", _("Openidc provider URL which issues authentication code (two factor only)")
+        option ["-c", "--oidc-client-id"], "OPENIDC_CLIENT_ID", _("Client id used in the Openidc provider")
         option ["-f", "--two-factor"], :flag, _("Authenticate with two factor")
-        option ["-r", "--oidc-redirect-uri"], "OPENIDC-REDIRECT-URI", _("Redirect URI for the authentication code grant flow")
+        option ["-r", "--oidc-redirect-uri"], "OPENIDC_REDIRECT_URI", _("Redirect URI for the authentication code grant flow")
 
         def execute
           if option_two_factor?
