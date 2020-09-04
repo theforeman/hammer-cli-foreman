@@ -1,5 +1,8 @@
 Release notes
 =============
+### 2.1.3 (2020-09-04)
+* Use underscores in `login oauth` option values ([PR #536](https://github.com/theforeman/hammer-cli-foreman/pull/536)) ([PR #538](https://github.com/theforeman/hammer-cli-foreman/pull/538)), [#30720](http://projects.theforeman.org/issues/30720)
+
 ### 2.1.2 (2020-07-14)
 * Change config templates to provisioning templates ([PR #531](https://github.com/theforeman/hammer-cli-foreman/pull/531)), [#29971](http://projects.theforeman.org/issues/29971)
 * Return 'set current context for request' to help ([PR #530](https://github.com/theforeman/hammer-cli-foreman/pull/530)), [#30182](http://projects.theforeman.org/issues/30182)
