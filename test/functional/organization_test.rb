@@ -210,3 +210,55 @@ describe 'associating commands' do
     end
   end
 end
+
+describe 'create' do
+  before do
+    @cmd = %w(organization create)
+  end
+
+  it 'should print error missing argument name' do
+    expected_result = "Could not create the organization:\n  Missing arguments for '--name'.\n"
+
+    api_expects(:organizations, :index)
+
+    result = run_cmd(@cmd)
+    assert_match(expected_result, result.err)
+  end
+
+  it 'should create an organization' do
+    params = ['--name=test-organization']
+
+    api_expects(:organizations, :index)
+    api_expects(:organizations, :create, 'Create an organization') do |params|
+      (params['organization']['name'] == 'test-organization')
+    end
+
+    result = run_cmd(@cmd + params)
+    assert_cmd(success_result("Organization created.\n"), result)
+  end
+end
+
+describe 'delete' do
+  before do
+    @cmd = %w(organization delete)
+  end
+
+  it 'should print error missing argument id' do
+    expected_result = "Could not delete the organization:\n  Missing arguments for '--id'.\n"
+
+    api_expects(:organizations, :index)
+
+    result = run_cmd(@cmd)
+    assert_match(expected_result, result.err)
+  end
+
+  it 'should delete an organization' do
+    params = ['--id=1']
+
+    api_expects(:organizations, :index)
+    api_expects(:organizations, :destroy, 'Delete an organization').with_params(id: '1')
+
+    result = run_cmd(@cmd + params)
+    assert_cmd(success_result("Organization deleted.\n"), result)
+  end
+end
