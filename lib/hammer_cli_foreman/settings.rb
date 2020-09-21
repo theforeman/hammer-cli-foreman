@@ -32,6 +32,20 @@ module HammerCLIForeman
       build_options
     end
 
+    class InfoCommand < HammerCLIForeman::InfoCommand
+      output do
+        field :id, _("Id")
+        field :name, _("Name")
+        field :description, _("Description")
+        field :category_name, _("Category")
+        field :settings_type, _("Settings type")
+        field :value, _("Value")
+      end
+
+      build_options
+    end
+
+
     autoload_subcommands
   end
 
