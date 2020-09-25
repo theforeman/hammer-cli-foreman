@@ -95,7 +95,7 @@ describe HammerCLIForeman::Medium do
     end
 
     with_params ["--id=1", "--new-name=medium_x", "--path=http://some.path/", "--operatingsystem-ids=1,2"] do
-      it_should_call_action :update, {'id' => '1', 'name' => 'medium_x', 'medium' => {'name' => 'medium_x', 'path' => 'http://some.path/', 'operatingsystem_ids' => ['1','2']}}
+      it_should_call_action :update, {'id' => '1', 'medium' => {'name' => 'medium_x', 'path' => 'http://some.path/', 'operatingsystem_ids' => ['1','2']}}
     end
 
   end

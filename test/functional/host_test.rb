@@ -315,6 +315,26 @@ describe 'host update' do
     }
   end
 
+  it 'updates with passed options only' do
+    params = ['--new-name=new-name']
+    expected_result = success_result("Host updated.\n")
+
+    api_expects(:hosts, :update, 'Update host name only').with_params(
+      'id' => '1', 'organization_id' => 1, 'location_id' => 1,
+      'host' => { 'name' => 'new-name' }
+    ).returns(
+      {
+        'id' => '1',
+        'name' => 'new-name',
+        'organization_id' => '1',
+        'location_id' => '1'
+      }
+    )
+
+    result = run_cmd(cmd + minimal_params + params)
+    assert_cmd(expected_result, result)
+  end
+
   it 'ensures helper methods are invoked' do
     params = ['--image-id=1']
     expected_result = success_result("Host updated.\n")
@@ -350,12 +370,9 @@ describe 'host update' do
     )
     api_expects(:hosts, :update, 'Update host with new org').with_params(
       'id' => '1', 'location_id' => 1, 'organization_id' => 1, 'host' => {
-        'organization_id' => '5', 'compute_attributes' => {}
-      }
+        'organization_id' => '5' }
     ) do |par|
-      par['id'] == '1' &&
-        par['host']['organization_id'] == '5' &&
-        par['host']['compute_attributes'] == {}
+      par['id'] == '1' && par['host']['organization_id'] == '5'
     end.returns(updated_host)
 
     expected_result = success_result("Host updated.\n")
@@ -373,12 +390,9 @@ describe 'host update' do
     )
     api_expects(:hosts, :update, 'Update host with new loc').with_params(
       'id' => '1', 'location_id' => 1, 'organization_id' => 1, 'host' => {
-        'location_id' => '5', 'compute_attributes' => {}
-      }
+        'location_id' => '5' }
     ) do |par|
-      par['id'] == '1' &&
-        par['host']['location_id'] == '5' &&
-        par['host']['compute_attributes'] == {}
+      par['id'] == '1' && par['host']['location_id'] == '5'
     end.returns(updated_host)
 
     expected_result = success_result("Host updated.\n")
@@ -396,12 +410,9 @@ describe 'host update' do
     )
     api_expects(:hosts, :update, 'Update host with new owner').with_params(
         'id' => '1', 'location_id' => 1, 'organization_id' => 1, 'host' => {
-        'owner_id' => '1', 'compute_attributes' => {}
-    }
+        'owner_id' => '1' }
     ) do |par|
-      par['id'] == '1' &&
-          par['host']['owner_id'] == '1' &&
-          par['host']['compute_attributes'] == {}
+      par['id'] == '1' && par['host']['owner_id'] == '1'
     end.returns(updated_host)
 
     expected_result = success_result("Host updated.\n")

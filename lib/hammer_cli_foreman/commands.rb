@@ -548,10 +548,12 @@ module HammerCLIForeman
       builder
     end
 
-    def method_options_for_params(params, include_nil=true)
+    def method_options_for_params(params, options)
       opts = super
       # overwrite searchables with correct values
       searchables.for(resource).each do |s|
+        next unless params.map(&:name).include?(s.name)
+
         new_value = get_option_value("new_#{s.name}")
         opts[s.name] = new_value unless new_value.nil?
       end

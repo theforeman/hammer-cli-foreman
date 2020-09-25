@@ -119,8 +119,8 @@ describe HammerCLIForeman::PartitionTable do
       # TODO: temporarily disabled, parameters are checked in the id resolver
     end
 
-    with_params ["--id=83", "--new-name=ptable","--file=~/table.sh", "--os-family=RedHat"] do
-      it_should_call_action :update, {'id' => '83', 'name' => 'ptable', 'ptable' => {'name' => 'ptable', 'layout' => 'FILE_CONTENT', 'os_family' => 'RedHat'}}
+    with_params ['--id=83', '--new-name=ptable', '--file=~/table.sh', '--os-family=RedHat'] do
+      it_should_call_action :update, { 'id' => '83', 'ptable' => { 'name' => 'ptable', 'layout' => 'FILE_CONTENT', 'os_family' => 'RedHat' } }
     end
 
   end
