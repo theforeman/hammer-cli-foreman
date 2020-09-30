@@ -280,7 +280,7 @@ module HammerCLIForeman
         def request_params
           params = super
 
-          template_ids = params['operatingsystem']['provisioning_template_ids']
+          template_ids = params[resource.singular_name]['provisioning_template_ids']
           if options['option_provisioning_template_search']
             templates = HammerCLIForeman.collection_to_common_format(
               associated_resource.call(
@@ -294,7 +294,7 @@ module HammerCLIForeman
               template_ids.delete(template_id.to_s)
             end
           end
-          params['operatingsystem']['provisioning_template_ids'] = template_ids.uniq
+          params[resource.singular_name]['provisioning_template_ids'] = template_ids.uniq
           params
         end
 
