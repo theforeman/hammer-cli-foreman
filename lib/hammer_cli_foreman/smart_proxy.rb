@@ -30,6 +30,7 @@ module HammerCLIForeman
           custom_field Fields::Reference
         end
         HammerCLIForeman::References.taxonomies(self)
+        field :download_policy, _("Download Policy")
         HammerCLIForeman::References.timestamps(self)
       end
 
