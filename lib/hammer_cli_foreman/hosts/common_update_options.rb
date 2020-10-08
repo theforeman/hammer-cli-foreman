@@ -84,18 +84,16 @@ module HammerCLIForeman
 
         params['host']['host_parameters_attributes'] = parameter_attributes unless option_parameters.nil?
         params['host']['host_parameters_attributes'] ||= option_typed_parameters unless option_typed_parameters.nil?
-        params['host']['compute_attributes'] = option_compute_attributes || {}
 
-        compute_attributes = params['host']['compute_attributes']
-        compute_attributes['display'] = {} unless compute_attributes['display_type'].nil? && compute_attributes['keyboard_layout'].nil?
-        compute_attributes['display']['type'] = compute_attributes['display_type'] unless compute_attributes['display_type'].nil?
-        compute_attributes['display']['keyboard_layout'] = compute_attributes['keyboard_layout'] unless compute_attributes['keyboard_layout'].nil?
-        compute_attributes.delete('display_type')
-        compute_attributes.delete('keyboard_layout')
-        params['host']['compute_attributes'] = compute_attributes
+        if option_compute_attributes && !option_compute_attributes.empty?
+          params['host']['compute_attributes'] = host_compute_attrs(option_compute_attributes)
+        end
 
         if action == :update
-          params['host']['compute_attributes']['volumes_attributes'] = nested_attributes(option_volume_list) unless option_volume_list.empty?
+          unless option_volume_list.empty?
+            params['host']['compute_attributes'] ||= {}
+            params['host']['compute_attributes']['volumes_attributes'] = nested_attributes(option_volume_list)
+          end
           params['host']['interfaces_attributes'] = interfaces_attributes unless option_interface_list.empty?
           if options['option_new_location_id']
             params['host']['location_id'] = options['option_new_location_id']
@@ -108,6 +106,7 @@ module HammerCLIForeman
             params['host'].delete('organization_id')
           end
         else
+          params['host']['compute_attributes'] ||= {}
           params['host']['compute_attributes']['volumes_attributes'] = nested_attributes(option_volume_list)
           params['host']['interfaces_attributes'] = interfaces_attributes
         end
@@ -121,6 +120,7 @@ module HammerCLIForeman
           end
           raise ArgumentError, "Missing argument for 'compute_resource'" if compute_resource_id.nil?
           image_uuid =  ::HammerCLIForeman::ComputeResources.get_image_uuid(compute_resource_id, options["option_image_id"])
+          params['host']['compute_attributes'] ||= {}
           params['host']['compute_attributes']['image_id'] = image_uuid
         end
         params['host']['root_pass'] = option_root_password unless option_root_password.nil?
@@ -162,6 +162,13 @@ module HammerCLIForeman
             {"name"=>key, "value"=>value.inspect}
           end
         end
+      end
+
+      def host_compute_attrs(attrs)
+        attrs['display'] = {} unless attrs['display_type'].nil? && attrs['keyboard_layout'].nil?
+        attrs['display']['type'] = attrs.delete('display_type') unless attrs['display_type'].nil?
+        attrs['display']['keyboard_layout'] = attrs.delete('keyboard_layout') unless attrs['keyboard_layout'].nil?
+        attrs
       end
 
       def nested_attributes(attrs)

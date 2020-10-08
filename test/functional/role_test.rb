@@ -40,9 +40,9 @@ describe 'role' do
     it 'should clone a role by id' do
       params = ['--id=1', '--new-name=zzz']
 
-      api_expects(:roles, :clone, 'Clone role').with_params({
-        'id' => '1', 'role' => {'name' => 'zzz'}, 'name' => 'zzz'
-      })
+      api_expects(:roles, :clone, 'Clone role').with_params(
+        { 'id' => '1', 'role' => { 'name' => 'zzz' } }
+      )
 
       result = run_cmd(@cmd + params)
       assert_cmd(success_result("User role cloned.\n"), result)
@@ -51,16 +51,13 @@ describe 'role' do
     it 'should clone a role by name' do
       params = ['--name=old', '--new-name=zzz']
 
-      api_expects_search(:roles, { :name => 'old' }, 'Attempt find role').returns(
-        index_response(
-          [{
-              'name' => 'old',
-              'id' => 1
-          }]))
+      api_expects_search(:roles, { name: 'old' }, 'Attempt find role').returns(
+        index_response([{ 'name' => 'old', 'id' => 1 }])
+      )
 
-      api_expects(:roles, :clone, 'Clone role').with_params({
-        'id' => 1, 'role' => {'name' => 'zzz'}, 'name' => 'zzz'
-      })
+      api_expects(:roles, :clone, 'Clone role').with_params(
+        { 'id' => 1, 'role' => { 'name' => 'zzz' } }
+      )
 
       result = run_cmd(@cmd + params)
       assert_cmd(success_result("User role cloned.\n"), result)

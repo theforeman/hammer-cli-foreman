@@ -77,8 +77,8 @@ describe HammerCLIForeman::Role do
       it_should_accept "name and new name", ["--name=role", "--new-name=role2"]
     end
 
-    with_params ["--id=1", "--new-name=role2"] do
-      it_should_call_action :update, {'id' => '1', 'name' => 'role2', 'role' => {'name' => 'role2'}}
+    with_params ['--id=1', '--new-name=role2'] do
+      it_should_call_action :update, { 'id' => '1', 'role' => { 'name' => 'role2' } }
     end
 
   end

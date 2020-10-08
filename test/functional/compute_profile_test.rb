@@ -33,8 +33,10 @@ describe "parameters" do
           }
     end
     it 'update compute profile name' do
-      params = ['--id=1' ,'--new-name=profile2']
-      api_expects(:compute_profiles, :update, 'Update the compute profile').with_params({"name" =>"profile2"}).returns(@compute_profile)
+      params = ['--id=1', '--new-name=profile2']
+      api_expects(:compute_profiles, :update, 'Update the compute profile').with_params(
+        { 'compute_profile' => { 'name' => 'profile2' } }
+      ).returns(@compute_profile)
       result = run_cmd(@cmd + params)
       assert_cmd(success_result("Compute profile updated.\n"), result)
     end

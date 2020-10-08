@@ -93,7 +93,7 @@ describe 'realm' do
 
       api_expects(:realms, :update, 'Update a realm') do |params|
         (params['id'] == '1' &&
-         params['name'] == 'test-realm-update')
+         params['realm']['name'] == 'test-realm-update')
       end
 
       result = run_cmd(@cmd + params)
@@ -101,4 +101,3 @@ describe 'realm' do
     end
   end
 end
-
