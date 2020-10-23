@@ -14,6 +14,10 @@ module HammerCLIForeman
         services.each_value.any? { |s| s['status'] == _('FAIL') } ||
           services['foreman']['database']['active'] == 'FAIL'
       end
+
+      request_options do |options|
+        options[:with_authentication] = false
+      end
     end
   end
 end
