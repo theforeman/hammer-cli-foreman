@@ -1,5 +1,23 @@
 Release notes
 =============
+### 2.3.0 (2020-11-03)
+* Hammer ping skip authentication ([PR #550](https://github.com/theforeman/hammer-cli-foreman/pull/550)), [#31140](http://projects.theforeman.org/issues/31140)
+* Return non-zero exit code if services failed, [#30496](http://projects.theforeman.org/issues/30496)
+* Better option assignment for nested params ([PR #544](https://github.com/theforeman/hammer-cli-foreman/pull/544)), [#30910](http://projects.theforeman.org/issues/30910)
+* Use parent resource instead of hardcoded one, [#30938](http://projects.theforeman.org/issues/30938)
+* Added missing tests to setting, [#30886](http://projects.theforeman.org/issues/30886)
+* Added missing tests to installation medium test, [#30805](http://projects.theforeman.org/issues/30805)
+* Added missing tests to location test, [#30829](http://projects.theforeman.org/issues/30829)
+* Added missing tests to organization test, [#30794](http://projects.theforeman.org/issues/30794)
+* Added missing tests to audit test ([PR #537](https://github.com/theforeman/hammer-cli-foreman/pull/537)), [#30740](http://projects.theforeman.org/issues/30740)
+* Use underscores in `login oauth` option values ([PR #536](https://github.com/theforeman/hammer-cli-foreman/pull/536)), [#30720](http://projects.theforeman.org/issues/30720)
+* Drop trends from hammer-cli-foreman ([PR #535](https://github.com/theforeman/hammer-cli-foreman/pull/535)), [#30134](http://projects.theforeman.org/issues/30134)
+* Added highly available option to ovirt ([PR #532](https://github.com/theforeman/hammer-cli-foreman/pull/532)), [#30494](http://projects.theforeman.org/issues/30494)
+* Add ptables and realms to location and organization info ([PR #534](https://github.com/theforeman/hammer-cli-foreman/pull/534)), [#30663](http://projects.theforeman.org/issues/30663)
+* Bump to 2.3.0-develop
+* Bump to 2.2.0
+* Added missing tests to user test, [#30593](http://projects.theforeman.org/issues/30593)
+
 ### 2.2.0 (2020-08-11)
 * Change config templates to provisioning templates ([PR #531](https://github.com/theforeman/hammer-cli-foreman/pull/531)), [#29971](http://projects.theforeman.org/issues/29971)
 * Fix minitest deprecation ([PR #523](https://github.com/theforeman/hammer-cli-foreman/pull/523))
