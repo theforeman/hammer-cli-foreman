@@ -5,9 +5,9 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: hammer-cli-foreman 2.2.0\n"
+"Project-Id-Version: hammer-cli-foreman 2.3.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-08-11 15:48+0300\n"
+"POT-Creation-Date: 2020-11-03 11:05+0200\n"
 "PO-Revision-Date: 2018-10-24 10:54+0200\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -130,9 +130,6 @@ msgid "Get the status of the server and/or it's subcomponents"
 msgstr ""
 
 msgid "Get the complete status of the server and/or it's subcomponents"
-msgstr ""
-
-msgid "Manage trends"
 msgstr ""
 
 msgid "Manage mail notifications"
@@ -831,6 +828,9 @@ msgstr ""
 msgid "Duration: %sms"
 msgstr ""
 
+msgid "FAIL"
+msgstr ""
+
 msgid "Puppet environment"
 msgstr ""
 
@@ -1198,6 +1198,9 @@ msgid "Integer value, number of sockets"
 msgstr ""
 
 msgid "Amount of memory, integer value in bytes"
+msgstr ""
+
+msgid "Boolean, set 1 to high availability"
 msgstr ""
 
 msgid "Possible values: %s. Not usable if display type is SPICE."
@@ -2554,7 +2557,13 @@ msgstr ""
 msgid "Templates"
 msgstr ""
 
+msgid "Partition Tables"
+msgstr ""
+
 msgid "Domains"
+msgstr ""
+
+msgid "Realms"
 msgstr ""
 
 msgid "Environments"
@@ -2724,6 +2733,12 @@ msgid "Setting [%{name}] updated to [%{value}]."
 msgstr ""
 
 msgid "Could not update the setting"
+msgstr ""
+
+msgid "Category"
+msgstr ""
+
+msgid "Settings type"
 msgstr ""
 
 msgid "Parameter"
@@ -3039,21 +3054,6 @@ msgid "Provisioning template cloned."
 msgstr ""
 
 msgid "Could not clone the provisioning template"
-msgstr ""
-
-msgid "Label"
-msgstr ""
-
-msgid "Trend for %<trendable_type>s created."
-msgstr ""
-
-msgid "Could not create the trend"
-msgstr ""
-
-msgid "Trend for %<trendable_type>s deleted."
-msgstr ""
-
-msgid "Could not delete the trend"
 msgstr ""
 
 msgid "Login"
