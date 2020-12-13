@@ -28,7 +28,8 @@ module HammerCLIForeman
         [
           ['compute_name',      _('Compute name, e.g. eth0')],
           ['compute_network',   _('Select one of available networks for a cluster, must be an ID or a name')],
-          ['compute_interface', _('Interface type')]
+          ['compute_interface', _('Interface type')],
+          ['compute_vnic_profile', _('Vnic Profile')]
         ]
       end
 

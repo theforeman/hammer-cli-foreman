@@ -198,6 +198,31 @@ end
     end
   end
 
+  describe 'vnic profiles' do
+    let(:cmd) { base_cmd << 'vnic-profiles' }
+    let(:vnic_profile_1) { { id: 1, name: 'network1', network: 2 } }
+    let(:vnic_profile_2) { { id: 2, name: 'network2', network: 2 } }
+    let(:vnic_profiles) { [vnic_profile_1, vnic_profile_2] }
+
+    it 'lists available vnic profiles for a compute resource' do
+      api_expects(:compute_resources, :available_vnic_profiles, 'vnic-profiles').with_params(
+          'id' => '1'
+      ).returns(index_response(vnic_profiles))
+
+      output = IndexMatcher.new(
+          [
+              ['VNIC PROFILE ID', 'NAME', 'NETWORK ID'],
+              ['1', 'network1','2'],
+              ['2', 'network2','2']
+          ]
+      )
+      expected_result = success_result(output)
+
+      result = run_cmd(cmd + base_params)
+      assert_cmd(expected_result, result)
+    end
+  end
+
   describe 'images' do
     let(:cmd) { base_cmd << 'images' }
     let(:image1) { { uuid: 1, name: 'image1' } }
