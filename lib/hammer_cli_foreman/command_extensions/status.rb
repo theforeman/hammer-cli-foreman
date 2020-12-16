@@ -4,7 +4,7 @@ module HammerCLIForeman
       before_print do |data|
         return if data['results'].nil?
 
-        normalize_plugins(data['results']['foreman']['plugins'])
+        normalize_plugins(data['results']['foreman']['plugins']) if data['results']['foreman']['plugins'].any?(String)
         data['results']['foreman']['smart_proxies'].each do |proxy|
           proxy['features'] = normalize_features(proxy['features'])
           proxy['failed_features'] = normalize_failed_features(proxy['failed_features'])
