@@ -132,29 +132,6 @@ describe HammerCLIForeman::Host do
   end
 
 
-  context "PuppetRunCommand" do
-
-    let(:cmd) { HammerCLIForeman::Host::PuppetRunCommand.new("", ctx) }
-
-    context "parameters" do
-      it_should_accept "name", ["--name=host"]
-      it_should_accept "id", ["--id=1"]
-      # it_should_fail_with "no arguments"
-      # TODO: temporarily disabled, parameters are checked in the id resolver
-
-    end
-
-    context "output" do
-      with_params ["--id=1"] do
-        it "should inform that puppet was triggered" do
-          cmd.stubs(:context).returns(ctx.update(:adapter => :test))
-          _(proc { cmd.run(with_params) }).must_output "Puppet run triggered\n"
-        end
-      end
-    end
-  end
-
-
   context "ConfigReportsCommand" do
     before do
       ResourceMocks.mock_action_call(:config_reports, :index, [])
