@@ -6,7 +6,7 @@ module HammerCLIForeman
         base.option "--owner", "OWNER_LOGIN", _("Login of the owner"),
           :attribute_name => :option_user_login
         base.option "--owner-id", "OWNER_ID", _("ID of the owner"),
-          :attribute_name => :option_user_id
+          :attribute_name => :option_owner_id
 
         base.option "--root-password", "ROOT_PW",
           _("Required if host is managed and value is not inherited from host group or default password in settings")

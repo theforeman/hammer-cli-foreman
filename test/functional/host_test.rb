@@ -297,6 +297,21 @@ describe "host create" do
       assert_cmd(expected_result, result)
   end
 
+  it 'should create a host with an owner' do
+    params = ['--owner-id=1']
+
+    api_expects(:hosts, :create, 'Create a host with an owner').with_params(
+      'location_id' => 1, 'organization_id' => 1, 'host' => {
+        'owner_id' => '1', 'name' => 'test'
+      }
+    ).returns(results: { 'owner_id' => '1', 'name' => 'test' })
+
+    expected_result = success_result("Host created.\n")
+
+    result = run_cmd(cmd + minimal_params_without_hostgroup + params)
+
+    assert_cmd(expected_result, result)
+  end
 end
 
 describe 'host update' do
@@ -411,6 +426,24 @@ describe 'host update' do
     api_expects(:hosts, :update, 'Update host with new owner').with_params(
         'id' => '1', 'location_id' => 1, 'organization_id' => 1, 'host' => {
         'owner_id' => '1' }
+    ) do |par|
+      par['id'] == '1' && par['host']['owner_id'] == '1'
+    end.returns(updated_host)
+
+    expected_result = success_result("Host updated.\n")
+
+    result = run_cmd(cmd + minimal_params + params)
+
+    assert_cmd(expected_result, result)
+  end
+
+  it 'should update the host owner with id' do
+    params = ['--owner-id=1']
+
+    api_expects(:hosts, :update, 'Update host with new owner').with_params(
+      'id' => '1', 'location_id' => 1, 'organization_id' => 1, 'host' => {
+        'owner_id' => '1'
+      }
     ) do |par|
       par['id'] == '1' && par['host']['owner_id'] == '1'
     end.returns(updated_host)
