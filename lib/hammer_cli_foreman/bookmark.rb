@@ -15,34 +15,34 @@ module HammerCLIForeman
         field :owner_type, _('Owner Type')
       end
 
-      build_options
+      build_options expand: { except: %i[organizations locations] }, without: %i[organization_id location_id]
     end
 
     class InfoCommand < HammerCLIForeman::InfoCommand
       output ListCommand.output_definition
-      
-      build_options
+
+      build_options expand: { except: %i[organizations locations] }, without: %i[organization_id location_id]
     end
 
     class CreateCommand < HammerCLIForeman::CreateCommand
       success_message _('Bookmark %<name>s created.')
       failure_message _('Failed to create %<name>s bookmark')
 
-      build_options
+      build_options expand: { except: %i[organizations locations] }, without: %i[organization_id location_id]
     end
 
     class UpdateCommand < HammerCLIForeman::UpdateCommand
       success_message _('Bookmark %<name>s updated successfully.')
       failure_message _('Failed to update %<name>s bookmark')
 
-      build_options
+      build_options expand: { except: %i[organizations locations] }, without: %i[organization_id location_id]
     end
 
     class DeleteCommand < HammerCLIForeman::DeleteCommand
       success_message _('Bookmark deleted successfully.')
       failure_message _('Failed to delete bookmark')
 
-      build_options
+      build_options expand: { except: %i[organizations locations] }, without: %i[organization_id location_id]
     end
 
     autoload_subcommands

@@ -237,6 +237,27 @@ module ResourceMocks
       )
   end
 
+  def self.bookmarks
+    ResourceMocks.mock_action_calls(
+      [:bookmarks, :index, []],
+      [:bookmarks, :show, {}]
+    )
+  end
+
+  def self.mail_notifications
+    ResourceMocks.mock_action_calls(
+      [:mail_notifications, :index, []],
+      [:mail_notifications, :show, {}]
+    )
+  end
+
+  def self.compute_profiles
+    ResourceMocks.mock_action_calls(
+      [:compute_profiles, :index, []],
+      [:compute_profiles, :show, {}]
+    )
+  end
+
   def self.parameters_index
     ResourceMocks.mock_action_call(:parameters, :index, [])
   end

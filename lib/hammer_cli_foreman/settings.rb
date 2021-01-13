@@ -20,7 +20,7 @@ module HammerCLIForeman
         data
       end
 
-      build_options
+      build_options expand: { except: %i[organizations locations] }, without: %i[organization_id location_id]
     end
 
     class UpdateCommand < HammerCLIForeman::UpdateCommand
@@ -29,7 +29,7 @@ module HammerCLIForeman
       success_message _("Setting [%{name}] updated to [%{value}].")
       failure_message _("Could not update the setting")
 
-      build_options
+      build_options expand: { except: %i[organizations locations] }, without: %i[organization_id location_id]
     end
 
     class InfoCommand < HammerCLIForeman::InfoCommand
@@ -42,7 +42,7 @@ module HammerCLIForeman
         field :value, _("Value")
       end
 
-      build_options
+      build_options expand: { except: %i[organizations locations] }, without: %i[organization_id location_id]
     end
 
 

@@ -18,6 +18,8 @@ describe HammerCLIForeman::OperatingSystem do
     context "parameters" do
       it_should_accept "no arguments"
       it_should_accept_search_params
+      it_should_fail_with 'organization param', ['--organization-id=1']
+      it_should_fail_with 'location param', ['--location-id=1']
     end
 
     context "output" do
@@ -40,6 +42,8 @@ describe HammerCLIForeman::OperatingSystem do
     context "parameters" do
       it_should_accept "id", ["--id=1"]
       it_should_accept "title", ["--title=Rhel 6.5"]
+      it_should_fail_with 'organization param', ['--organization-id=1']
+      it_should_fail_with 'location param', ['--location-id=1']
       # it_should_fail_with "no arguments" # TODO: temporarily disabled, parameters are checked in the id resolver
     end
 
@@ -70,6 +74,8 @@ describe HammerCLIForeman::OperatingSystem do
 
     context "parameters" do
       it_should_accept "name, major, minor, family, release name", ["--name=media", "--major=1", "--minor=2", "--family=Red Hat", "--release-name=awesome"]
+      it_should_fail_with 'organization param', ['--organization-id=1']
+      it_should_fail_with 'location param', ['--location-id=1']
       # it_should_fail_with "name missing", ["--major=1", "--minor=2", "--family=Red Hat", "--release-name=awesome"]
       # TODO: temporarily disabled, parameters are checked in the api
     end
@@ -87,6 +93,8 @@ describe HammerCLIForeman::OperatingSystem do
     context "parameters" do
       it_should_accept "id", ["--id=1"]
       it_should_accept "title", ["--title=Rhel 6.5"]
+      it_should_fail_with 'organization param', ['--organization-id=1']
+      it_should_fail_with 'location param', ['--location-id=1']
       # it_should_fail_with "name or id missing", [] # TODO: temporarily disabled, parameters are checked in the id resolver
       # TODO: temporarily disabled, parameters are checked in the id resolver
     end
@@ -102,6 +110,8 @@ describe HammerCLIForeman::OperatingSystem do
       it_should_accept "id", ["--id=1"]
       it_should_accept "title", ["--title=Rhel 6.5"]
       it_should_accept "name, major, minor, family, release name", ["--id=83", "--name=os", "--major=1", "--minor=2", "--family=Red Hat", "--release-name=awesome"]
+      it_should_fail_with 'organization param', ['--organization-id=1']
+      it_should_fail_with 'location param', ['--location-id=1']
       # it_should_fail_with "no params", []
       # it_should_fail_with "label or id missing", ["--name=os", "--major=1", "--minor=2", "--family=Red Hat", "--release-name=awesome"]
       # TODO: temporarily disabled, parameters are checked in the id resolver
@@ -126,6 +136,8 @@ describe HammerCLIForeman::OperatingSystem do
       it_should_accept "name, value and os id", ["--name=domain", "--value=val", "--operatingsystem-id=1"]
       it_should_accept "name, value and os title", ["--name=domain", "--value=val", "--operatingsystem=Rhel 6.5"]
       it_should_accept "name, value, type and os id", ["--name=domain", "--value=val", "--parameter-type=string", "--operatingsystem-id=1"]
+      it_should_fail_with 'organization param', ['--organization-id=1']
+      it_should_fail_with 'location param', ['--location-id=1']
       # it_should_fail_with "name missing", ["--value=val", "--operatingsystem-id=id"]
       # it_should_fail_with "value missing", ["--name=name", "--operatingsystem-id=id"]
       # it_should_fail_with "os id missing", ["--name=name", "--value=val"]
@@ -142,11 +154,12 @@ describe HammerCLIForeman::OperatingSystem do
     context "parameters" do
       it_should_accept "name and os id", ["--name=domain", "--operatingsystem-id=1"]
       it_should_accept "name and os title", ["--name=domain", "--operatingsystem=Rhel 6.5"]
+      it_should_fail_with 'organization param', ['--organization-id=1']
+      it_should_fail_with 'location param', ['--location-id=1']
       # it_should_fail_with "name missing", ["--operatingsystem-id=id"]
       # it_should_fail_with "os id missing", ["--name=name"]
       # TODO: temporarily disabled, parameters are checked in the id resolver
     end
 
   end
-
 end
