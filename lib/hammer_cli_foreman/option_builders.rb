@@ -205,11 +205,11 @@ module HammerCLIForeman
       resource_name = resource.singular_name
       aliased_name = aliased(resource_name, resource_name_map)
       types = searchables.map(&:name).push('id').map(&:capitalize).join('/')
-      associated_resource = resource.singular_name.to_s.tr('_', ' ')
+      associated_resource = aliased_name.to_s.tr('_', ' ')
       family = HammerCLI::Options::OptionFamily.new(
         referenced_resource: resource_name,
         aliased_resource: aliased_name,
-        description: _('Set the current %{resource} context for the request. %{types} can be used') % { types: types, resource: associated_resource }
+        description: _('%{types} of associated %{resource}') % { types: types, resource: associated_resource }
       )
 
       unless searchables.empty?
@@ -237,7 +237,7 @@ module HammerCLIForeman
         end
       end
 
-      unless options.any? { |o| o.handles?("--#{aliased_name}-id") }
+      unless options.any? { |o| o.handles?(optionamize("--#{aliased_name}-id")) }
         options << family.parent(
           optionamize("--#{aliased_name}-id"),
           "#{aliased_name}_id".upcase,
@@ -300,7 +300,7 @@ module HammerCLIForeman
         end
       end
 
-      unless options.any? { |o| o.handles?("--new-#{aliased_name}-id") }
+      unless options.any? { |o| o.handles?(optionamize("--new-#{aliased_name}-id")) }
         options << family.parent(
           optionamize("--new-#{aliased_name}-id"),
           "new_#{aliased_name}_id".upcase,
@@ -328,7 +328,7 @@ module HammerCLIForeman
         first = searchables[0]
         remaining = searchables[1..-1] || []
         types = searchables.map(&:plural_name).map(&:capitalize).join('/')
-        associated_resource = resource.name.to_s.tr('_', ' ')
+        associated_resource = aliased_plural_name.to_s.tr('_', ' ')
         family = HammerCLI::Options::OptionFamily.new(
           format: HammerCLI::Options::Normalizers::List.new,
           referenced_resource: resource_name,
@@ -402,3 +402,4 @@ module HammerCLIForeman
   end
 
 end
+                                                                                                       
