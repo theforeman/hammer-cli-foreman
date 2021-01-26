@@ -9,7 +9,7 @@ module HammerCLIForeman
         field :id, _('Id')
         field :name, _('Name')
       end
-      build_options
+      build_options expand: { except: %i[organizations locations] }, without: %i[organization_id location_id]
     end
 
     class InfoCommand < HammerCLIForeman::InfoCommand
@@ -25,13 +25,13 @@ module HammerCLIForeman
           field :vm_attrs, _('VM attributes')
         end
       end
-      build_options
+      build_options expand: { except: %i[organizations locations] }, without: %i[organization_id location_id]
     end
 
     class CreateCommand < HammerCLIForeman::CreateCommand
       success_message _('Compute profile created.')
       failure_message _('Could not create a compute profile')
-      build_options
+      build_options expand: { except: %i[organizations locations] }, without: %i[organization_id location_id]
     end
 
     class UpdateCommand < HammerCLIForeman::UpdateCommand
@@ -40,7 +40,7 @@ module HammerCLIForeman
       validate_options do
         any(:option_name,:option_id).required
       end
-      build_options
+      build_options expand: { except: %i[organizations locations] }, without: %i[organization_id location_id]
     end
 
     class DeleteCommand < HammerCLIForeman::DeleteCommand
@@ -49,7 +49,7 @@ module HammerCLIForeman
       validate_options do
         any(:option_name,:option_id).required
       end
-      build_options
+      build_options expand: { except: %i[organizations locations] }, without: %i[organization_id location_id]
     end
 
     lazy_subcommand('values', _("Create update and delete Compute profile values"),

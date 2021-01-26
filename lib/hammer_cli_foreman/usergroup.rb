@@ -13,7 +13,7 @@ module HammerCLIForeman
         field :admin, _("Admin"), Fields::Boolean
       end
 
-      build_options
+      build_options expand: { except: %i[organizations locations] }, without: %i[organization_id location_id]
     end
 
     class InfoCommand < HammerCLIForeman::InfoCommand
@@ -25,28 +25,28 @@ module HammerCLIForeman
         HammerCLIForeman::References.timestamps(self)
       end
 
-      build_options
+      build_options expand: { except: %i[organizations locations] }, without: %i[organization_id location_id]
     end
 
     class CreateCommand < HammerCLIForeman::CreateCommand
       success_message _("User group [%<name>s] created.")
       failure_message _("Could not create the user group")
 
-      build_options
+      build_options expand: { except: %i[organizations locations] }, without: %i[organization_id location_id]
     end
 
     class UpdateCommand < HammerCLIForeman::UpdateCommand
       success_message _("User group [%<name>s] updated.")
       failure_message _("Could not update the user group")
 
-      build_options
+      build_options expand: { except: %i[organizations locations] }, without: %i[organization_id location_id]
     end
 
     class DeleteCommand < HammerCLIForeman::DeleteCommand
       success_message _("User group [%<name>s] deleted.")
       failure_message _("Could not delete the user group")
 
-      build_options
+      build_options expand: { except: %i[organizations locations] }, without: %i[organization_id location_id]
     end
 
     HammerCLIForeman::AssociatingCommands::Role.extend_command(self)

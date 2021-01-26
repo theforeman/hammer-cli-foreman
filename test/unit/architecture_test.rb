@@ -17,6 +17,8 @@ describe HammerCLIForeman::Architecture do
     context "parameters" do
       it_should_accept "no arguments"
       it_should_accept_search_params
+      it_should_fail_with 'organization param', ['--organization-id=1']
+      it_should_fail_with 'location param', ['--location-id=1']
     end
 
     context "output" do
@@ -37,6 +39,8 @@ describe HammerCLIForeman::Architecture do
     context "parameters" do
       it_should_accept "id", ["--id=1"]
       it_should_accept "name", ["--name=arch"]
+      it_should_fail_with 'organization param', ['--organization-id=1']
+      it_should_fail_with 'location param', ['--location-id=1']
       # it_should_fail_with "no arguments" # TODO: temporarily disabled, parameters are checked in the id resolver
     end
 
@@ -57,6 +61,8 @@ describe HammerCLIForeman::Architecture do
 
     context "parameters" do
       it_should_accept "name", ["--name=arch"]
+      it_should_fail_with 'organization param', ['--organization-id=1']
+      it_should_fail_with 'location param', ['--location-id=1']
       # it_should_fail_with "name missing", []
       # TODO: temporarily disabled, parameters are checked in the api
     end
@@ -71,6 +77,8 @@ describe HammerCLIForeman::Architecture do
     context "parameters" do
       it_should_accept "name", ["--name=arch"]
       it_should_accept "id", ["--id=1"]
+      it_should_fail_with 'organization param', ['--organization-id=1']
+      it_should_fail_with 'location param', ['--location-id=1']
       # it_should_fail_with "name or id missing", [] # TODO: temporarily disabled, parameters are checked in the id resolver
     end
 
@@ -84,9 +92,10 @@ describe HammerCLIForeman::Architecture do
     context "parameters" do
       it_should_accept "name", ["--name=arch", "--new-name=arch2"]
       it_should_accept "id", ["--id=1", "--new-name=arch2"]
+      it_should_fail_with 'organization param', ['--organization-id=1']
+      it_should_fail_with 'location param', ['--location-id=1']
       # it_should_fail_with "no params", [] # TODO: temporarily disabled, parameters are checked in the id resolver
       # it_should_fail_with "name or id missing", ["--new-name=arch2"] # TODO: temporarily disabled, parameters are checked in the id resolver
     end
-
   end
 end

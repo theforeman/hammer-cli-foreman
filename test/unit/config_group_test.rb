@@ -16,6 +16,8 @@ describe HammerCLIForeman::ConfigGroup do
     context "parameters" do
       it_should_accept "no arguments"
       it_should_accept_search_params
+      it_should_fail_with 'organization param', ['--organization-id=1']
+      it_should_fail_with 'location param', ['--location-id=1']
     end
 
     context "output" do
@@ -31,6 +33,8 @@ describe HammerCLIForeman::ConfigGroup do
     context "parameters" do
       it_should_accept "id", ["--id=1"]
       it_should_accept "name", ["--name=group_x"]
+      it_should_fail_with 'organization param', ['--organization-id=1']
+      it_should_fail_with 'location param', ['--location-id=1']
     end
 
     context "output" do
@@ -48,6 +52,8 @@ describe HammerCLIForeman::ConfigGroup do
 
     context "parameters" do
       it_should_accept "name, puppetclass ids", ["--name=first_group", "--puppet-class-ids=1,2"]
+      it_should_fail_with 'organization param', ['--organization-id=1']
+      it_should_fail_with 'location param', ['--location-id=1']
     end
   end
 
@@ -57,6 +63,8 @@ describe HammerCLIForeman::ConfigGroup do
     context "parameters" do
       it_should_accept "name", ["--name=group_x"]
       it_should_accept "id", ["--id=1"]
+      it_should_fail_with 'organization param', ['--organization-id=1']
+      it_should_fail_with 'location param', ['--location-id=1']
     end
   end
 
@@ -67,6 +75,8 @@ describe HammerCLIForeman::ConfigGroup do
     context "parameters" do
       it_should_accept "name", ["--name=group_x"]
       it_should_accept "id", ["--id=1"]
+      it_should_fail_with 'organization param', ['--organization-id=1']
+      it_should_fail_with 'location param', ['--location-id=1']
     end
   end
 end

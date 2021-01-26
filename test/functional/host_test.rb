@@ -425,7 +425,7 @@ describe 'host update' do
     )
     api_expects(:hosts, :update, 'Update host with new owner').with_params(
         'id' => '1', 'location_id' => 1, 'organization_id' => 1, 'host' => {
-        'owner_id' => '1' }
+          'owner_id' => '1' }
     ) do |par|
       par['id'] == '1' && par['host']['owner_id'] == '1'
     end.returns(updated_host)
@@ -459,7 +459,7 @@ end
 describe 'host config reports' do
   let(:report15) do
     {
-        "id" => 15,
+      "id" => 15,
         "host_id" => 1,
         "host_name" => "host.example.com",
         "reported_at" => "2017-11-13 03:04:53 UTC",
@@ -547,5 +547,33 @@ describe 'run puppetrun for host' do
 
     result = run_cmd(cmd)
     assert_cmd(expected_result, result)
+  end
+end
+
+describe 'list' do
+  before do
+    @cmd = %w[host list]
+  end
+
+  it 'should run list command with defaults' do
+    providers = { 'foreman' => HammerCLIForeman::Defaults.new(api_connection({}, '2.1')) }
+    defaults = HammerCLI::Defaults.new(
+      {
+        organization_id: {
+          provider: 'foreman'
+        },
+        location_id: {
+          provider: 'foreman'
+        }
+      }
+    )
+    defaults.stubs(:write_to_file).returns(true)
+    defaults.stubs(:providers).returns(providers)
+    api_expects(:users, :index, 'Find user').with_params(search: 'login=admin').returns(index_response([{ 'default_organization' => { 'id' => 2 } }]))
+    api_expects(:users, :index, 'Find user').with_params(search: 'login=admin').returns(index_response([{ 'default_location' => { 'id' => 1 } }]))
+    api_expects(:hosts, :index, 'List hosts').returns(index_response([{ 'id' => '42' }]))
+
+    result = run_cmd(@cmd, { use_defaults: true, defaults: defaults })
+    _(result.exit_code).must_equal HammerCLI::EX_OK
   end
 end

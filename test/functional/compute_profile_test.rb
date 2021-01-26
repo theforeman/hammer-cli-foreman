@@ -98,4 +98,47 @@ describe "parameters" do
     end
   end
 
+  describe 'list' do
+    before do
+      @cmd = %w[compute-profile list]
+      @compute_profiles = [{
+                          id: 1,
+                          name: '1-Small',
+                        }]
+    end
+
+    it 'should return a list of compute profiles' do
+      api_expects(:compute_profiles, :index, 'List compute profiles').returns(@compute_profiles)
+
+      output = IndexMatcher.new([
+                                  %w[ID NAME],
+                                  %w[1 1-Small]
+                                ])
+      expected_result = success_result(output)
+
+      result = run_cmd(@cmd)
+      assert_cmd(expected_result, result)
+    end
+
+    it 'should run list command with defaults' do
+      providers = { 'foreman' => HammerCLIForeman::Defaults.new(api_connection({}, '2.1')) }
+      defaults = HammerCLI::Defaults.new(
+        {
+          organization_id: {
+            provider: 'foreman'
+          },
+          location_id: {
+            provider: 'foreman'
+          }
+        }
+      )
+      defaults.stubs(:write_to_file).returns(true)
+      defaults.stubs(:providers).returns(providers)
+      api_expects(:compute_profiles, :index, 'List compute profiles').returns(@compute_profiles)
+
+      result = run_cmd(@cmd, { use_defaults: true, defaults: defaults })
+      _(result.exit_code).must_equal HammerCLI::EX_OK
+    end
+  end
+
 end

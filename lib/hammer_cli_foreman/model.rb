@@ -13,7 +13,7 @@ module HammerCLIForeman
         field :hardware_model, _("HW model")
       end
 
-      build_options
+      build_options expand: { except: %i[organizations locations] }, without: %i[organization_id location_id]
     end
 
 
@@ -23,7 +23,7 @@ module HammerCLIForeman
         HammerCLIForeman::References.timestamps(self)
       end
 
-      build_options
+      build_options expand: { except: %i[organizations locations] }, without: %i[organization_id location_id]
     end
 
 
@@ -31,14 +31,14 @@ module HammerCLIForeman
       success_message _("Hardware model created.")
       failure_message _("Could not create the hardware model")
 
-      build_options
+      build_options expand: { except: %i[organizations locations] }, without: %i[organization_id location_id]
     end
 
     class DeleteCommand < HammerCLIForeman::DeleteCommand
       success_message _("Hardware model deleted.")
       failure_message _("Could not delete the hardware model")
 
-      build_options
+      build_options expand: { except: %i[organizations locations] }, without: %i[organization_id location_id]
     end
 
 
@@ -46,7 +46,7 @@ module HammerCLIForeman
       success_message _("Hardware model updated.")
       failure_message _("Could not update the hardware model")
 
-      build_options
+      build_options expand: { except: %i[organizations locations] }, without: %i[organization_id location_id]
     end
 
 

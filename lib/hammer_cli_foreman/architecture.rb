@@ -11,7 +11,7 @@ module HammerCLIForeman
         field :name, _("Name")
       end
 
-      build_options
+      build_options expand: { except: %i[organizations locations] }, without: %i[organization_id location_id]
     end
 
 
@@ -23,7 +23,7 @@ module HammerCLIForeman
         HammerCLIForeman::References.timestamps(self)
       end
 
-      build_options
+      build_options expand: { except: %i[organizations locations] }, without: %i[organization_id location_id]
     end
 
 
@@ -31,7 +31,7 @@ module HammerCLIForeman
       success_message _("Architecture created.")
       failure_message _("Could not create the architecture")
 
-      build_options
+      build_options expand: { except: %i[organizations locations] }, without: %i[organization_id location_id]
     end
 
 
@@ -39,7 +39,7 @@ module HammerCLIForeman
       success_message _("Architecture deleted.")
       failure_message _("Could not delete the architecture")
 
-      build_options
+      build_options expand: { except: %i[organizations locations] }, without: %i[organization_id location_id]
     end
 
 
@@ -47,7 +47,7 @@ module HammerCLIForeman
       success_message _("Architecture updated.")
       failure_message _("Could not update the architecture")
 
-      build_options
+      build_options expand: { except: %i[organizations locations] }, without: %i[organization_id location_id]
     end
 
     HammerCLIForeman::AssociatingCommands::OperatingSystem.extend_command(self)

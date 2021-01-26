@@ -17,6 +17,8 @@ describe HammerCLIForeman::Model do
     context "parameters" do
       it_should_accept "no arguments"
       it_should_accept_search_params
+      it_should_fail_with 'organization param', ['--organization-id=1']
+      it_should_fail_with 'location param', ['--location-id=1']
     end
 
     context "output" do
@@ -38,6 +40,8 @@ describe HammerCLIForeman::Model do
     context "parameters" do
       it_should_accept "id", ["--id=1"]
       it_should_accept "name", ["--name=model"]
+      it_should_fail_with 'organization param', ['--organization-id=1']
+      it_should_fail_with 'location param', ['--location-id=1']
       # it_should_fail_with "no arguments" # TODO: temporarily disabled, parameters are checked in the id resolver
     end
 
@@ -63,6 +67,8 @@ describe HammerCLIForeman::Model do
 
     context "parameters" do
       it_should_accept "name", ["--name=model", "--info=description", "--vendor-class=class", "--hardware-model=model"]
+      it_should_fail_with 'organization param', ['--organization-id=1']
+      it_should_fail_with 'location param', ['--location-id=1']
       # it_should_fail_with "name missing", ["--info=description", "--vendor-class=class", "--hardware-model=model"]
       # TODO: temporarily disabled, parameters are checked in the api
     end
@@ -77,6 +83,8 @@ describe HammerCLIForeman::Model do
     context "parameters" do
       it_should_accept "name", ["--name=model"]
       it_should_accept "id", ["--id=1"]
+      it_should_fail_with 'organization param', ['--organization-id=1']
+      it_should_fail_with 'location param', ['--location-id=1']
       # it_should_fail_with "name or id missing", [] # TODO: temporarily disabled, parameters are checked in the id resolver
     end
 
@@ -90,6 +98,8 @@ describe HammerCLIForeman::Model do
     context "parameters" do
       it_should_accept "name", ["--name=model", "--new-name=model2", "--info=description", "--vendor-class=class", "--hardware-model=model"]
       it_should_accept "id", ["--id=1", "--new-name=model2", "--info=description", "--vendor-class=class", "--hardware-model=model"]
+      it_should_fail_with 'organization param', ['--organization-id=1']
+      it_should_fail_with 'location param', ['--location-id=1']
       # it_should_fail_with "no params", []
       # it_should_fail_with "name or id missing", ["--new-name=model2", "--info=description", "--vendor-class=class", "--hardware-model=model"]
       # TODO: temporarily disabled, parameters are checked in the id resolver
