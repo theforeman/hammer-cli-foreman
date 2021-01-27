@@ -1,5 +1,8 @@
 Release notes
 =============
+### 2.3.1 (2021-01-27)
+* Deprecating puppetrun command ([PR #554](https://github.com/theforeman/hammer-cli-foreman/pull/554)), [#31536](http://projects.theforeman.org/issues/31536)
+
 ### 2.3.0 (2020-11-03)
 * Hammer ping skip authentication ([PR #550](https://github.com/theforeman/hammer-cli-foreman/pull/550)), [#31140](http://projects.theforeman.org/issues/31140)
 * Return non-zero exit code if services failed, [#30496](http://projects.theforeman.org/issues/30496)
