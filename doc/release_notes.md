@@ -1,5 +1,14 @@
 Release notes
 =============
+
+### 2.4.0 (2021-02-01)
+* Fix hammer list failure when defaults are set ([PR #551](https://github.com/theforeman/hammer-cli-foreman/pull/551)), [#31384](http://projects.theforeman.org/issues/31384)
+* Deprecating puppetrun command ([PR #554](https://github.com/theforeman/hammer-cli-foreman/pull/554)), [#31536](http://projects.theforeman.org/issues/31536)
+* Set new owner with host update ([PR #556](https://github.com/theforeman/hammer-cli-foreman/pull/556)), [#31609](http://projects.theforeman.org/issues/31609)
+* Consume structured statuses api data ([PR #553](https://github.com/theforeman/hammer-cli-foreman/pull/553)), [#31570](http://projects.theforeman.org/issues/31570)
+* Added missing tests to filter ([PR #549](https://github.com/theforeman/hammer-cli-foreman/pull/549)), [#31074](http://projects.theforeman.org/issues/31074')
+* Bump to 2.4.0-develop
+
 ### 2.3.0 (2020-11-03)
 * Hammer ping skip authentication ([PR #550](https://github.com/theforeman/hammer-cli-foreman/pull/550)), [#31140](http://projects.theforeman.org/issues/31140)
 * Return non-zero exit code if services failed, [#30496](http://projects.theforeman.org/issues/30496)

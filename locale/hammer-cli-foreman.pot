@@ -6,10 +6,10 @@
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: hammer-cli-foreman 2.3.0\n"
+"Project-Id-Version: hammer-cli-foreman 2.4.0.pre.develop\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-11-03 11:05+0200\n"
-"PO-Revision-Date: 2020-11-03 11:05+0200\n"
+"POT-Creation-Date: 2021-02-01 17:48+0200\n"
+"PO-Revision-Date: 2021-02-01 17:48+0200\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: \n"
@@ -876,7 +876,7 @@ msgstr ""
 
 #: ../lib/hammer_cli_foreman/audit.rb:61
 #: ../lib/hammer_cli_foreman/common_parameter.rb:13
-#: ../lib/hammer_cli_foreman/fact.rb:14 ../lib/hammer_cli_foreman/host.rb:194
+#: ../lib/hammer_cli_foreman/fact.rb:14 ../lib/hammer_cli_foreman/host.rb:195
 #: ../lib/hammer_cli_foreman/settings.rb:14
 #: ../lib/hammer_cli_foreman/settings.rb:42
 #: ../lib/hammer_cli_foreman/smart_class_parameter.rb:80
@@ -2278,7 +2278,7 @@ msgstr ""
 msgid "Could not delete the external user group"
 msgstr ""
 
-#: ../lib/hammer_cli_foreman/fact.rb:13 ../lib/hammer_cli_foreman/host.rb:193
+#: ../lib/hammer_cli_foreman/fact.rb:13 ../lib/hammer_cli_foreman/host.rb:194
 msgid "Fact"
 msgstr ""
 
@@ -2573,150 +2573,152 @@ msgid "Power"
 msgstr ""
 
 #: ../lib/hammer_cli_foreman/host.rb:180
-msgid "Puppet run triggered"
-msgstr ""
-
-#: ../lib/hammer_cli_foreman/host.rb:225 ../lib/hammer_cli_foreman/host.rb:256
-msgid "Host id"
+msgid ""
+"The puppetrun feature has been removed, however you can use the Remote Executi"
+"on Plugin to run Puppet commands"
 msgstr ""
 
 #: ../lib/hammer_cli_foreman/host.rb:226 ../lib/hammer_cli_foreman/host.rb:257
+msgid "Host id"
+msgstr ""
+
+#: ../lib/hammer_cli_foreman/host.rb:227 ../lib/hammer_cli_foreman/host.rb:258
 #: ../lib/hammer_cli_foreman/id_resolver.rb:49
 msgid "Host name"
 msgstr ""
 
-#: ../lib/hammer_cli_foreman/host.rb:262
+#: ../lib/hammer_cli_foreman/host.rb:263
 msgid ""
 "%{reports} command is deprecated and will be removed in one of the future vers"
 "ions. Please use %{config_reports} command instead."
 msgstr ""
 
-#: ../lib/hammer_cli_foreman/host.rb:291
+#: ../lib/hammer_cli_foreman/host.rb:292
 msgid "Host created."
 msgstr ""
 
-#: ../lib/hammer_cli_foreman/host.rb:292
+#: ../lib/hammer_cli_foreman/host.rb:293
 msgid "Could not create the host"
 msgstr ""
 
-#: ../lib/hammer_cli_foreman/host.rb:312
+#: ../lib/hammer_cli_foreman/host.rb:313
 msgid "Host updated."
 msgstr ""
 
-#: ../lib/hammer_cli_foreman/host.rb:313
+#: ../lib/hammer_cli_foreman/host.rb:314
 msgid "Could not update the host"
 msgstr ""
 
-#: ../lib/hammer_cli_foreman/host.rb:344
+#: ../lib/hammer_cli_foreman/host.rb:345
 msgid "Host deleted."
 msgstr ""
 
-#: ../lib/hammer_cli_foreman/host.rb:345
+#: ../lib/hammer_cli_foreman/host.rb:346
 msgid "Could not delete the host"
 msgstr ""
 
-#: ../lib/hammer_cli_foreman/host.rb:352
+#: ../lib/hammer_cli_foreman/host.rb:353
 msgid "Create or append a parameter for a host"
 msgstr ""
 
-#: ../lib/hammer_cli_foreman/host.rb:354
+#: ../lib/hammer_cli_foreman/host.rb:355
 msgid "Host parameter updated"
 msgstr ""
 
-#: ../lib/hammer_cli_foreman/host.rb:355
+#: ../lib/hammer_cli_foreman/host.rb:356
 msgid "New host parameter created"
 msgstr ""
 
-#: ../lib/hammer_cli_foreman/host.rb:356
+#: ../lib/hammer_cli_foreman/host.rb:357
 msgid "Could not set host parameter"
 msgstr ""
 
-#: ../lib/hammer_cli_foreman/host.rb:368
+#: ../lib/hammer_cli_foreman/host.rb:369
 msgid "Delete parameter for a host"
 msgstr ""
 
-#: ../lib/hammer_cli_foreman/host.rb:370
+#: ../lib/hammer_cli_foreman/host.rb:371
 msgid "Host parameter deleted."
 msgstr ""
 
-#: ../lib/hammer_cli_foreman/host.rb:385
+#: ../lib/hammer_cli_foreman/host.rb:386
 msgid "Power a host on"
 msgstr ""
 
-#: ../lib/hammer_cli_foreman/host.rb:386
+#: ../lib/hammer_cli_foreman/host.rb:387
 msgid "The host is starting."
 msgstr ""
 
-#: ../lib/hammer_cli_foreman/host.rb:403
+#: ../lib/hammer_cli_foreman/host.rb:404
 msgid "Force turning off a host"
 msgstr ""
 
-#: ../lib/hammer_cli_foreman/host.rb:408
+#: ../lib/hammer_cli_foreman/host.rb:409
 msgid "Power a host off"
 msgstr ""
 
-#: ../lib/hammer_cli_foreman/host.rb:420
+#: ../lib/hammer_cli_foreman/host.rb:421
 msgid "Power off forced"
 msgstr ""
 
-#: ../lib/hammer_cli_foreman/host.rb:422
+#: ../lib/hammer_cli_foreman/host.rb:423
 msgid "Powering the host off"
 msgstr ""
 
-#: ../lib/hammer_cli_foreman/host.rb:439
+#: ../lib/hammer_cli_foreman/host.rb:440
 msgid "Reboot a host"
 msgstr ""
 
-#: ../lib/hammer_cli_foreman/host.rb:440
+#: ../lib/hammer_cli_foreman/host.rb:441
 msgid "Host reboot started."
 msgstr ""
 
-#: ../lib/hammer_cli_foreman/host.rb:459
+#: ../lib/hammer_cli_foreman/host.rb:460
 msgid "Reset a host"
 msgstr ""
 
-#: ../lib/hammer_cli_foreman/host.rb:460
+#: ../lib/hammer_cli_foreman/host.rb:461
 msgid "Host reset started."
 msgstr ""
 
-#: ../lib/hammer_cli_foreman/host.rb:461
+#: ../lib/hammer_cli_foreman/host.rb:462
 msgid "Failed to reset the host"
 msgstr ""
 
-#: ../lib/hammer_cli_foreman/host.rb:482
+#: ../lib/hammer_cli_foreman/host.rb:483
 msgid "Rebuild orchestration related configurations for host"
 msgstr ""
 
-#: ../lib/hammer_cli_foreman/host.rb:483
+#: ../lib/hammer_cli_foreman/host.rb:484
 #: ../lib/hammer_cli_foreman/hostgroup.rb:185
 msgid "Configuration successfully rebuilt."
 msgstr ""
 
-#: ../lib/hammer_cli_foreman/host.rb:492
+#: ../lib/hammer_cli_foreman/host.rb:493
 msgid "Dump host's ENC YAML"
 msgstr ""
 
-#: ../lib/hammer_cli_foreman/host.rb:493
+#: ../lib/hammer_cli_foreman/host.rb:494
 msgid "Could not retrieve ENC values of the host"
 msgstr ""
 
-#: ../lib/hammer_cli_foreman/host.rb:506
+#: ../lib/hammer_cli_foreman/host.rb:507
 msgid "Disassociate a host"
 msgstr ""
 
-#: ../lib/hammer_cli_foreman/host.rb:507
+#: ../lib/hammer_cli_foreman/host.rb:508
 msgid "The host has been disassociated from VM."
 msgstr ""
 
-#: ../lib/hammer_cli_foreman/host.rb:508
+#: ../lib/hammer_cli_foreman/host.rb:509
 msgid "Failed to disassociated host from VM"
 msgstr ""
 
-#: ../lib/hammer_cli_foreman/host.rb:517
+#: ../lib/hammer_cli_foreman/host.rb:518
 msgid "The host is booting."
 msgstr ""
 
-#: ../lib/hammer_cli_foreman/host.rb:518
+#: ../lib/hammer_cli_foreman/host.rb:519
 msgid "Failed to boot the host from device"
 msgstr ""
 
@@ -3377,7 +3379,7 @@ msgid "operating system parameter deleted."
 msgstr ""
 
 #: ../lib/hammer_cli_foreman/operating_system.rb:101
-#: ../lib/hammer_cli_foreman/operating_system.rb:167
+#: ../lib/hammer_cli_foreman/operating_system.rb:168
 msgid "Operatingsystem id"
 msgstr ""
 
@@ -3395,19 +3397,19 @@ msgstr ""
 msgid "Could not set the os default template"
 msgstr ""
 
-#: ../lib/hammer_cli_foreman/operating_system.rb:168
+#: ../lib/hammer_cli_foreman/operating_system.rb:169
 msgid "Type of the provisioning template"
 msgstr ""
 
-#: ../lib/hammer_cli_foreman/operating_system.rb:170
+#: ../lib/hammer_cli_foreman/operating_system.rb:171
 msgid "Default template deleted."
 msgstr ""
 
-#: ../lib/hammer_cli_foreman/operating_system.rb:171
+#: ../lib/hammer_cli_foreman/operating_system.rb:172
 msgid "Could not delete the default template"
 msgstr ""
 
-#: ../lib/hammer_cli_foreman/operating_system.rb:178
+#: ../lib/hammer_cli_foreman/operating_system.rb:179
 msgid "Default template of type %s not found"
 msgstr ""
 

@@ -10,11 +10,10 @@ msgid ""
 msgstr ""
 "Project-Id-Version: hammer-cli-foreman 2.3.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-11-03 11:05+0200\n"
 "PO-Revision-Date: 2017-03-29 08:19+0000\n"
 "Last-Translator: Lukáš Zapletal\n"
-"Language-Team: English (United Kingdom) (http://www.transifex.com/foreman/"
-"foreman/language/en_GB/)\n"
+"Language-Team: English (United Kingdom) (http://www.transifex.com/foreman/fore"
+"man/language/en_GB/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -46,8 +45,8 @@ msgid "Manipulate environments"
 msgstr ""
 
 msgid ""
-"%{env} command is deprecated and will be removed in one of the future "
-"versions. Please use %{puppet_env} command instead."
+"%{env} command is deprecated and will be removed in one of the future versions"
+". Please use %{puppet_env} command instead."
 msgstr ""
 
 msgid "Manipulate Puppet environments"
@@ -93,8 +92,8 @@ msgid "Browse and read reports"
 msgstr ""
 
 msgid ""
-"%{report} command is deprecated and will be removed in one of the future "
-"versions. Please use %{config_report} command instead."
+"%{report} command is deprecated and will be removed in one of the future versi"
+"ons. Please use %{config_report} command instead."
 msgstr ""
 
 msgid "Manipulate report templates"
@@ -161,8 +160,7 @@ msgid "[Foreman] Password for %{user}:%{wsp}"
 msgstr ""
 
 msgid ""
-"Invalid oidc-client-id or oidc-token-endpoint or oidc-authorization-"
-"endpoint.\n"
+"Invalid oidc-client-id or oidc-token-endpoint or oidc-authorization-endpoint.\n"
 msgstr ""
 
 msgid "Code:%s"
@@ -180,7 +178,8 @@ msgstr ""
 msgid "Redirect URI:%s"
 msgstr ""
 
-msgid "Invalid credentials or oidc-client-id or oidc-token-endpoint.\n"
+msgid ""
+"Invalid credentials or oidc-client-id or oidc-token-endpoint.\n"
 msgstr ""
 
 msgid "Username:%s"
@@ -397,8 +396,8 @@ msgid "List of provisioning template names"
 msgstr ""
 
 msgid ""
-"Provisioning template name regex to search, all matching templates will be "
-"associated"
+"Provisioning template name regex to search, all matching templates will be ass"
+"ociated"
 msgstr ""
 
 msgid "%s not found."
@@ -414,8 +413,8 @@ msgid "Disassociate provisioning templates"
 msgstr ""
 
 msgid ""
-"Provisioning template name regex to search, all matching templates will be "
-"disassociated"
+"Provisioning template name regex to search, all matching templates will be dis"
+"associated"
 msgstr ""
 
 msgid "The provisioning templates were disassociated."
@@ -536,8 +535,8 @@ msgid "Override audit record pagination"
 msgstr ""
 
 msgid ""
-"Audit records for past one month are returned by default. This behavior can "
-"be changed by passing --search option."
+"Audit records for past one month are returned by default. This behavior can be"
+" changed by passing --search option."
 msgstr ""
 
 msgid "At"
@@ -709,8 +708,8 @@ msgid "Could not update the Auth Source"
 msgstr ""
 
 msgid ""
-"Can't perform login. Make sure sessions are enabled in hammer configuration "
-"file."
+"Can't perform login. Make sure sessions are enabled in hammer configuration fi"
+"le."
 msgstr ""
 
 msgid "Controller"
@@ -816,8 +815,8 @@ msgid "For %{condition}"
 msgstr ""
 
 msgid ""
-"VLAN tag, this attribute has precedence over the subnet VLAN ID. Only for "
-"virtual interfaces."
+"VLAN tag, this attribute has precedence over the subnet VLAN ID. Only for virt"
+"ual interfaces."
 msgstr ""
 
 msgid "Identifier of the interface to which this interface belongs, e.g. eth1."
@@ -1304,8 +1303,8 @@ msgid "Type of the network adapter, for example one of:"
 msgstr ""
 
 msgid ""
-"See documentation center for your version of vSphere to find more details "
-"about available adapter types:"
+"See documentation center for your version of vSphere to find more details abou"
+"t available adapter types:"
 msgstr ""
 
 msgid "Network ID or Network Name from VMware"
@@ -1486,8 +1485,8 @@ msgid "Update your server url configuration."
 msgstr ""
 
 msgid ""
-"You can set 'follow_redirects' to one of :default or :always to enable "
-"redirects following."
+"You can set 'follow_redirects' to one of :default or :always to enable redirec"
+"ts following."
 msgstr ""
 
 msgid "Forbidden - server refused to process the request."
@@ -1496,22 +1495,21 @@ msgstr ""
 msgid "The following configuration option were used for the SSL connection:"
 msgstr ""
 
-msgid ""
-"Make sure the location contains an unexpired and valid CA certificate for %s."
+msgid "Make sure the location contains an unexpired and valid CA certificate for %s."
 msgstr ""
 
 msgid ""
-"You can use hammer to fetch the CA certificate from the server. Be aware "
-"that hammer cannot verify whether the certificate is correct and you should "
-"verify its authenticity after downloading it."
+"You can use hammer to fetch the CA certificate from the server. Be aware that "
+"hammer cannot verify whether the certificate is correct and you should verify "
+"its authenticity after downloading it."
 msgstr ""
 
 msgid "Download the certificate as follows:"
 msgstr ""
 
 msgid ""
-"Make sure you configured the correct URL and have the server's CA "
-"certificate installed on your system."
+"Make sure you configured the correct URL and have the server's CA certificate "
+"installed on your system."
 msgstr ""
 
 msgid "View and manage user group's external user groups"
@@ -1575,10 +1573,9 @@ msgid "Overriding organizations and locations"
 msgstr ""
 
 msgid ""
-"Filters inherit organizations and locations from its role by default. This "
-"behavior can be changed by setting %{condition}.%{wsp}Therefore options "
-"%{org_opts} and %{loc_opts} are applicable only when the override flag is "
-"set."
+"Filters inherit organizations and locations from its role by default. This beh"
+"avior can be changed by setting %{condition}.%{wsp}Therefore options %{org_opt"
+"s} and %{loc_opts} are applicable only when the override flag is set."
 msgstr ""
 
 msgid "Permission filter for [%<resource_type>s] created."
@@ -1743,7 +1740,9 @@ msgstr ""
 msgid "Power"
 msgstr ""
 
-msgid "Puppet run triggered"
+msgid ""
+"The puppetrun feature has been removed, however you can use the Remote Executi"
+"on Plugin to run Puppet commands"
 msgstr ""
 
 msgid "Host id"
@@ -1753,8 +1752,8 @@ msgid "Host name"
 msgstr ""
 
 msgid ""
-"%{reports} command is deprecated and will be removed in one of the future "
-"versions. Please use %{config_reports} command instead."
+"%{reports} command is deprecated and will be removed in one of the future vers"
+"ions. Please use %{config_reports} command instead."
 msgstr ""
 
 msgid "Host created."
@@ -1935,8 +1934,8 @@ msgid "ID of the owner"
 msgstr ""
 
 msgid ""
-"Required if host is managed and value is not inherited from host group or "
-"default password in settings"
+"Required if host is managed and value is not inherited from host group or defa"
+"ult password in settings"
 msgstr ""
 
 msgid "Replaces with new host parameters"
@@ -2132,13 +2131,13 @@ msgid "Bond options"
 msgstr ""
 
 msgid ""
-"Should this interface be used for constructing the FQDN of the host? Each "
-"managed hosts needs to have one primary interface"
+"Should this interface be used for constructing the FQDN of the host? Each mana"
+"ged hosts needs to have one primary interface"
 msgstr ""
 
 msgid ""
-"Should this interface be used for TFTP of PXELinux (or SSH for image-based "
-"hosts)? Each managed hosts needs to have one provision interface"
+"Should this interface be used for TFTP of PXELinux (or SSH for image-based hos"
+"ts)? Each managed hosts needs to have one provision interface"
 msgstr ""
 
 msgid "Interface created."
@@ -2265,8 +2264,8 @@ msgid "Invalid access token"
 msgstr ""
 
 msgid ""
-"Failed to recieve acess token, please check your connectivity with OpenID "
-"provider: %s"
+"Failed to recieve acess token, please check your connectivity with OpenID prov"
+"ider: %s"
 msgstr ""
 
 msgid "Release name"
@@ -2333,8 +2332,8 @@ msgid "Provisioning template id to be set"
 msgstr ""
 
 msgid ""
-"[%{provisioning_template_name}] was set as default %{template_kind_name} "
-"template."
+"[%{provisioning_template_name}] was set as default %{template_kind_name} templ"
+"ate."
 msgstr ""
 
 msgid "Could not set the os default template"
@@ -2352,8 +2351,7 @@ msgstr ""
 msgid "Default template of type %s not found"
 msgstr ""
 
-msgid ""
-"Set the current %{resource} context for the request. %{types} can be used"
+msgid "Set the current %{resource} context for the request. %{types} can be used"
 msgstr ""
 
 msgid "Use to update"
@@ -2363,8 +2361,8 @@ msgid "%{types} of associated %{resource}"
 msgstr ""
 
 msgid ""
-"Could not find %{resource}. Some search options were missing, please see --"
-"help."
+"Could not find %{resource}. Some search options were missing, please see --hel"
+"p."
 msgstr ""
 
 msgid "Could not find %{resource}, please set option %{switches}."
@@ -2615,20 +2613,18 @@ msgstr ""
 msgid "Specify inputs"
 msgstr ""
 
-msgid ""
-"Turns a command to be active, wait for the result and download it right away"
+msgid "Turns a command to be active, wait for the result and download it right away"
 msgstr ""
 
 msgid ""
-"Path to directory where downloaded content will be saved. Only usable if "
-"wait is specified"
+"Path to directory where downloaded content will be saved. Only usable if wait "
+"is specified"
 msgstr ""
 
 msgid "The report has been scheduled. Job ID: %{job_id}"
 msgstr ""
 
-msgid ""
-"Path to a file that contains the report template content including metadata"
+msgid "Path to a file that contains the report template content including metadata"
 msgstr ""
 
 msgid "Import report template successfully."
@@ -2655,8 +2651,7 @@ msgstr ""
 msgid "Could not create the report template"
 msgstr ""
 
-msgid ""
-"Dump existing template and open it in an $EDITOR. Update with the result"
+msgid "Dump existing template and open it in an $EDITOR. Update with the result"
 msgstr ""
 
 msgid "Report template updated."
@@ -2714,8 +2709,8 @@ msgid "Sessions are not enabled, please check your Hammer settings."
 msgstr ""
 
 msgid ""
-"Using session auth with invalid permissions on session files is not "
-"recommended."
+"Using session auth with invalid permissions on session files is not recommende"
+"d."
 msgstr ""
 
 msgid "The url is empty. Session can not be created."
@@ -3181,174 +3176,3 @@ msgstr ""
 
 msgid "Could not delete the virtual machine"
 msgstr ""
-
-#~ msgid "Associate a configuration template"
-#~ msgstr "Associate a configuration template"
-
-#~ msgid "Disassociate a configuration template"
-#~ msgstr "Disassociate a configuration template"
-
-#~ msgid "Organization name"
-#~ msgstr "Organisation name"
-
-#~ msgid "Associate an environment"
-#~ msgstr "Associate an environment"
-
-#~ msgid "Disassociate an environment"
-#~ msgstr "Disassociate an environment"
-
-#~ msgid "Foreman connection login/logout."
-#~ msgstr "Foreman connection login/logout."
-
-#~ msgid "Manipulate architectures."
-#~ msgstr "Manipulate architectures."
-
-#~ msgid "Manipulate auth sources."
-#~ msgstr "Manipulate auth sources."
-
-#~ msgid "Manipulate compute resources."
-#~ msgstr "Manipulate compute resources."
-
-#~ msgid "Manipulate domains."
-#~ msgstr "Manipulate domains."
-
-#~ msgid "Manipulate environments."
-#~ msgstr "Manipulate environments."
-
-#~ msgid "Search facts."
-#~ msgstr "Search facts."
-
-#~ msgid "Manage permission filters."
-#~ msgstr "Manage permission filters."
-
-#~ msgid "Manipulate hosts."
-#~ msgstr "Manipulate hosts."
-
-#~ msgid "Manipulate hostgroups."
-#~ msgstr "Manipulate hostgroups."
-
-#~ msgid "Manipulate locations."
-#~ msgstr "Manipulate locations."
-
-#~ msgid "Manipulate installation media."
-#~ msgstr "Manipulate installation media."
-
-#~ msgid "Manipulate hardware models."
-#~ msgstr "Manipulate hardware models."
-
-#~ msgid "Manipulate operating system."
-#~ msgstr "Manipulate operating system."
-
-#~ msgid "Manipulate organizations."
-#~ msgstr "Manipulate organisations."
-
-#~ msgid "Manipulate partition tables."
-#~ msgstr "Manipulate partition tables."
-
-#~ msgid "Search puppet modules."
-#~ msgstr "Search puppet modules."
-
-#~ msgid "Browse and read reports."
-#~ msgstr "Browse and read reports."
-
-#~ msgid "Manage user roles."
-#~ msgstr "Manage user roles."
-
-#~ msgid "Manipulate smart class parameters."
-#~ msgstr "Manipulate smart class parameters."
-
-#~ msgid "Manipulate smart variables."
-#~ msgstr "Manipulate smart variables."
-
-#~ msgid "Manipulate smart proxies."
-#~ msgstr "Manipulate smart proxies."
-
-#~ msgid "Change server settings."
-#~ msgstr "Change server settings."
-
-#~ msgid "Manipulate subnets."
-#~ msgstr "Manipulate subnets."
-
-#~ msgid "Manipulate config templates."
-#~ msgstr "Manipulate config templates."
-
-#~ msgid "Manipulate users."
-#~ msgstr "Manipulate users."
-
-#~ msgid "Manage user groups."
-#~ msgstr "Manage user groups."
-
-#~ msgid "Architecture created"
-#~ msgstr "Architecture created"
-
-#~ msgid "Architecture deleted"
-#~ msgstr "Architecture deleted"
-
-#~ msgid "Architecture updated"
-#~ msgstr "Architecture updated"
-
-#~ msgid "The user has been associated"
-#~ msgstr "The user has been associated"
-
-#~ msgid "The user has been disassociated"
-#~ msgstr "The user has been disassociated"
-
-#~ msgid "The user group has been associated"
-#~ msgstr "The user group has been associated"
-
-#~ msgid "The user group has been disassociated"
-#~ msgstr "The user group has been disassociated"
-
-#~ msgid "The organization has been associated"
-#~ msgstr "The organisation has been associated"
-
-#~ msgid "The organization has been disassociated"
-#~ msgstr "The organisation has been disassociated"
-
-#~ msgid "Operating system has been associated"
-#~ msgstr "Operating system has been associated"
-
-#~ msgid "Operating system has been disassociated"
-#~ msgstr "Operating system has been disassociated"
-
-#~ msgid "Architecture has been associated"
-#~ msgstr "Architecture has been associated"
-
-#~ msgid "Partition table has been associated"
-#~ msgstr "Partition table has been associated"
-
-#~ msgid "Partition table has been disassociated"
-#~ msgstr "Partition table has been disassociated"
-
-#~ msgid "User role has been removed"
-#~ msgstr "User role has been removed"
-
-#~ msgid "Host created"
-#~ msgstr "Host created"
-
-#~ msgid "Host deleted"
-#~ msgstr "Host deleted"
-
-#~ msgid "Organization created"
-#~ msgstr "Organisation created"
-
-#~ msgid "Organization updated"
-#~ msgstr "Organisation updated"
-
-#~ msgid "Organization deleted"
-#~ msgstr "Organisation deleted"
-
-#~ msgid "Create or update parameter for an organization."
-#~ msgstr "Create or update parameter for an organisation."
-
-#~ msgid "Delete parameter for an organization."
-#~ msgstr "Delete parameter for an organisation."
-
-#~ msgid "Create or update parameter for a subnet."
-#~ msgstr "Create or update parameter for an organisation."
-
-#~ msgid "Delete parameter for a subnet."
-#~ msgstr "Delete parameter for an organisation."
-
-#~ msgid "Subnet parameter deleted"
-#~ msgstr "Subnet"
