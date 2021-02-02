@@ -128,6 +128,19 @@ module HammerCLIForeman
       build_options
     end
 
+    class AvailableVnicProfilesCommand < HammerCLIForeman::ListCommand
+      action :available_vnic_profiles
+      command_name 'vnic-profiles'
+
+      output do
+        field :id, _('VNIC profile ID'), Fields::Field, :max_width => 200, :hide_blank => true
+        field :name, _('Name')
+        field :network, _('Network ID')
+      end
+
+      build_options
+    end
+
     class AvailableImagesCommand < HammerCLIForeman::ListCommand
       action :available_images
       command_name 'images'
