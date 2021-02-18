@@ -184,6 +184,9 @@ module HammerCLIForeman
 
     HammerCLI::MainCommand.lazy_subcommand('bookmark', _("Manage bookmarks"),
                                             'HammerCLIForeman::Bookmark', 'hammer_cli_foreman/bookmark')
+
+    HammerCLI::MainCommand.lazy_subcommand('host-registration', _("Host Registration"),
+                                            'HammerCLIForeman::Registration', 'hammer_cli_foreman/registration')
   rescue => e
     handler = HammerCLIForeman::ExceptionHandler.new(:context => {}, :adapter => :base)
     handler.handle_exception(e)
