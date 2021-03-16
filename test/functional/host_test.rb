@@ -312,6 +312,39 @@ describe "host create" do
 
     assert_cmd(expected_result, result)
   end
+
+  it 'should create a host and set owner-type' do
+    params = ['--owner=admin']
+
+    api_expects_search(:users, {login: 'admin'}).returns(index_response([{ 'id' => 1 }]))
+
+    api_expects(:hosts, :create, 'Create a host with an owner').with_params(
+      'location_id' => 1, 'organization_id' => 1, 'host' => {
+        'owner_id' => 1, 'name' => 'test'
+      }
+    ).returns(results: { 'owner' => 'admin', 'name' => 'test' })
+
+    expected_result = success_result("Host created.\n")
+
+    result = run_cmd(cmd + minimal_params_without_hostgroup + params)
+
+    assert_cmd(expected_result, result)
+  end
+
+  it 'should create a host with default owner-type User' do
+
+    api_expects(:hosts, :create, 'Create a host with an owner').with_params(
+      'location_id' => 1, 'organization_id' => 1, 'host' => {
+         'name' => 'test'
+      }
+    ).returns(results: { 'owner_type' => 'User', 'name' => 'test' })
+
+    expected_result = success_result("Host created.\n")
+
+    result = run_cmd(cmd + minimal_params_without_hostgroup)
+
+    assert_cmd(expected_result, result)
+  end
 end
 
 describe 'host update' do
