@@ -536,19 +536,7 @@ describe 'disassociate host from vm' do
   end
 end
 
-describe 'run puppetrun for host' do
-  let(:cmd) { ['host', 'puppetrun'] }
-  let(:params) { ['--id=1'] }
 
-  it "does nothing for puppetrun" do
-    expected_result = CommandExpectation.new
-    expected_result.expected_err = "The puppetrun feature has been removed, however you can use the Remote Execution Plugin to run Puppet commands\n"
-    expected_result.expected_exit_code = HammerCLI::EX_SOFTWARE
-
-    result = run_cmd(cmd)
-    assert_cmd(expected_result, result)
-  end
-end
 
 describe 'list' do
   before do

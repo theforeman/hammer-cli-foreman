@@ -171,18 +171,7 @@ module HammerCLIForeman
     end
 
 
-    class PuppetRunCommand < HammerCLIForeman::SingleResourceCommand
-      command_name "puppetrun"
-      resource :puppet_hosts
-      action :puppetrun
-
-      def execute
-        warn _('The puppetrun feature has been removed, however you can use the Remote Execution Plugin to run Puppet commands')
-        HammerCLI::EX_SOFTWARE
-      end
-
-      build_options
-    end
+ 
 
 
     class FactsCommand < HammerCLIForeman::AssociatedResourceListCommand
