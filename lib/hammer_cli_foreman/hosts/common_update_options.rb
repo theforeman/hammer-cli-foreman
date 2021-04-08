@@ -134,13 +134,14 @@ module HammerCLIForeman
 
       private
 
-      def owner_id(name, type = 'User')
+     
+      def owner_id(name, type)
         return unless name
-        return resolver.user_id('option_login' => name) if type == 'User'
+        return resolver.usergroup_id('option_name' => name) if type == 'Usergroup'
 
-        resolver.usergroup_id('option_name' => name)
+        resolver.user_id('option_login' => name)
       end
-
+      
       def proxy_id(name)
         resolver.smart_proxy_id('option_name' => name) if name
       end
