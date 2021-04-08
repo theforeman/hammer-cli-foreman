@@ -10,9 +10,28 @@ module HammerCLIForeman
         end
       end
 
+      def self.check_for_unrecognized(plugins, output_definition)
+        failed = plugins.select { |_, data| data['services'] }
+                        .each_with_object([]) { |(_, d), s| s << d['services'] }
+                        .reduce({}, :merge)
+                        .select do |name, data|
+          begin
+            output_definition.find_field(name)
+            false
+          rescue ArgumentError
+            data['status'] == _('FAIL')
+          end
+        end
+        return if failed.empty?
+
+        warn [_('%{count} more service(s) failed, but not shown:') % { count: failed.size },
+              failed.keys.join(', '),
+              ''].join("\n")
+      end
+
       def self.failed?(services)
-        services.each_value.any? { |s| s['status'] == _('FAIL') } ||
-          services['foreman']['database']['active'] == 'FAIL'
+        services['foreman']['database']['active'] == 'FAIL' ||
+          services.each_value.any? { |s| s['status'] == _('FAIL') }
       end
 
       request_options do |options|

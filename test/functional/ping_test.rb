@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require File.join(File.dirname(__FILE__), 'test_helper')
 
 describe 'ping' do
@@ -27,6 +29,37 @@ describe 'ping' do
       )
 
       expected_result = success_result(output)
+      result = run_cmd(cmd)
+      assert_cmd(expected_result, result)
+    end
+
+    it 'returns 1 if one of the services failed and shows unrecognized services' do
+      ping_results['results']['new_plugin'] = {
+        'services' => {
+          'first' => {
+            'status' => 'FAIL'
+          },
+          'second' => {
+            'status' => 'ok'
+          }
+        },
+        'status' => 'FAIL'
+      }
+      api_expects(:ping, :ping, 'Ping').returns(ping_results)
+
+      expected_result = CommandExpectation.new
+      expected_result.expected_out = OutputMatcher.new(
+        [
+          'database:',
+          '    Status:          ok',
+          '    Server Response: Duration: 0ms'
+        ]
+      )
+      expected_result.expected_err =
+        ['1 more service(s) failed, but not shown:',
+         'first',
+         ''].join("\n")
+      expected_result.expected_exit_code = 1
       result = run_cmd(cmd)
       assert_cmd(expected_result, result)
     end

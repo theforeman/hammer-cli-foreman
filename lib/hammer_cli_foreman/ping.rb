@@ -19,7 +19,12 @@ module HammerCLIForeman
         response = send_request
         print_data(response)
 
-        return 1 if HammerCLIForeman::CommandExtensions::Ping.failed?(response)
+        if HammerCLIForeman::CommandExtensions::Ping.failed?(response)
+          HammerCLIForeman::CommandExtensions::Ping.check_for_unrecognized(
+            response, output_definition
+          )
+          return 1
+        end
 
         HammerCLI::EX_OK
       end
