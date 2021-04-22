@@ -104,6 +104,15 @@ module HammerCLIForeman
       build_options
     end
 
+    class AssociateVmsCommand < HammerCLIForeman::Command
+      action :associate
+      command_name 'associate-vms'
+      success_message _("Virtual machines have been associated.")
+      failure_message _("Could not associate the virtual machines")
+
+      build_options
+    end
+
     class AvailableClustersCommand < HammerCLIForeman::ListCommand
       action :available_clusters
       command_name 'clusters'
