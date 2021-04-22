@@ -51,6 +51,18 @@ describe 'compute-resource' do
       assert_cmd(expected_result, result)
     end
 
+    describe 'associate VMs to hosts' do
+      it 'successful associate vms to hosts' do
+        expected_result = success_result("Virtual machines have been associated.\n")
+        api_expects(:compute_resources, :associate, 'Associate VMs') do |p|
+          p['id'] == '1'
+        end
+        result = run_cmd(%w(compute-resource associate-vms --id 1))
+        assert_cmd(expected_result, result)
+      end
+    end
+   
+
     it 'should print error for blank --provider option' do
       params = %w(--provider= --name=new'')
       expected_result = CommandExpectation.new
