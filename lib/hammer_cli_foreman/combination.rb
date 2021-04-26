@@ -12,9 +12,7 @@ module HammerCLIForeman
       end
     end
 
-
     class InfoCombination < HammerCLIForeman::InfoCommand
-
       output ListCommand.output_definition do
         field :id, _('ID')
         field :provisioning_template_id, _('Provisioning template ID')
@@ -26,13 +24,10 @@ module HammerCLIForeman
 
         HammerCLIForeman::References.taxonomies(self)
         HammerCLIForeman::References.timestamps(self)
-
       end
       build_options do |o|
         o.expand(:all)
       end
-
-      extend_with(HammerCLIForeman::CommandExtensions::PuppetEnvironment.new)
     end
 
     class ListCombination < HammerCLIForeman::ListCommand
@@ -58,8 +53,6 @@ module HammerCLIForeman
       build_options do |o|
         o.expand(:all)
       end
-
-      extend_with(HammerCLIForeman::CommandExtensions::PuppetEnvironment.new)
     end
 
     class CreateCombination < HammerCLIForeman::CreateCommand
@@ -71,12 +64,9 @@ module HammerCLIForeman
       build_options do |o|
         o.expand(:all)
       end
-
-      extend_with(HammerCLIForeman::CommandExtensions::PuppetEnvironment.new)
     end
 
     class DeleteCombination < HammerCLIForeman::DeleteCommand
-
       success_message _("Template combination Deleted.")
       failure_message _("Could not delete the template combination")
 

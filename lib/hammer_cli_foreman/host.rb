@@ -9,10 +9,7 @@ require 'hammer_cli_foreman/compute_resource/utils'
 require 'highline/import'
 
 module HammerCLIForeman
-
-
   class Host < HammerCLIForeman::Command
-
     resource :hosts
 
     class ListCommand < HammerCLIForeman::ListCommand
@@ -25,19 +22,16 @@ module HammerCLIForeman
         field :ip, _("IP")
         field :mac, _("MAC")
         field :global_status_label, _("Global Status")
-        field nil, _("Organization"), Fields::SingleReference, :key => :organization, :hide_blank => true, :sets => ['ALL']
+        field nil, _("Organization"), Fields::SingleReference, :key => :organization, :hide_blank => true,
+                                                               :sets => ['ALL']
         field nil, _("Location"), Fields::SingleReference, :key => :location, :hide_blank => true, :sets => ['ALL']
         field :comment, _("Additional Information"), nil, :sets => ['ALL']
       end
 
       build_options :without => [:include]
-
-      extend_with(HammerCLIForeman::CommandExtensions::PuppetEnvironment.new)
     end
 
-
     class InfoCommand < HammerCLIForeman::InfoCommand
-
       def extend_data(host)
         host['compute_resource_name'] ||= _('Bare Metal')
         host['image_file'] = nil if host['image_file'].empty?
@@ -132,7 +126,6 @@ module HammerCLIForeman
       build_options
     end
 
-
     class StatusCommand < HammerCLIForeman::SingleResourceCommand
       command_name "status"
       action :get_status
@@ -170,10 +163,6 @@ module HammerCLIForeman
       build_options
     end
 
-
- 
-
-
     class FactsCommand < HammerCLIForeman::AssociatedResourceListCommand
       command_name "facts"
       resource :fact_values, :index
@@ -190,7 +179,6 @@ module HammerCLIForeman
 
       build_options
     end
-
 
     class PuppetClassesCommand < HammerCLIForeman::ListCommand
       command_name "puppet-classes"
@@ -249,7 +237,9 @@ module HammerCLIForeman
       output HammerCLIForeman::ConfigReport::ListCommand.output_definition
 
       def execute
-        warn _('%{reports} command is deprecated and will be removed in one of the future versions. Please use %{config_reports} command instead.') % {:reports => 'reports', :config_reports => 'config-reports'}
+        warn _('%{reports} command is deprecated and will be removed in one of the future versions. Please use %{config_reports} command instead.') % {
+          :reports => 'reports', :config_reports => 'config-reports'
+        }
         super
       end
 
@@ -293,7 +283,6 @@ module HammerCLIForeman
         end
       end
 
-      extend_with(HammerCLIForeman::CommandExtensions::PuppetEnvironment.new)
       extend_with(HammerCLIForeman::CommandExtensions::Hosts::Help::Interfaces.new)
       extend_with(HammerCLIForeman::CommandExtensions::Hosts::Help::ComputeResources.custom(add_host_specific_attrs: true).new)
     end
@@ -324,11 +313,9 @@ module HammerCLIForeman
         sources
       end
 
-      extend_with(HammerCLIForeman::CommandExtensions::PuppetEnvironment.new)
       extend_with(HammerCLIForeman::CommandExtensions::Hosts::Help::Interfaces.new)
       extend_with(HammerCLIForeman::CommandExtensions::Hosts::Help::ComputeResources.custom(add_host_specific_attrs: true).new)
     end
-
 
     class DeleteCommand < HammerCLIForeman::DeleteCommand
       success_message _("Host deleted.")
@@ -336,7 +323,6 @@ module HammerCLIForeman
 
       build_options
     end
-
 
     class SetParameterCommand < HammerCLIForeman::Parameter::SetCommand
       desc _("Create or append a parameter for a host")
@@ -353,7 +339,6 @@ module HammerCLIForeman
       build_options
     end
 
-
     class DeleteParameterCommand < HammerCLIForeman::Parameter::DeleteCommand
       desc _("Delete parameter for a host")
 
@@ -366,7 +351,6 @@ module HammerCLIForeman
 
       build_options
     end
-
 
     class StartCommand < HammerCLIForeman::SingleResourceCommand
       action :power
@@ -387,7 +371,6 @@ module HammerCLIForeman
 
       build_options :without => :power_action
     end
-
 
     class StopCommand < HammerCLIForeman::SingleResourceCommand
       option '--force', :flag, _("Force turning off a host")

@@ -128,21 +128,7 @@ describe 'template' do
       @cmd = %w(template combination)
     end
 
-    it 'should create new combination with warning' do
-      params = ['create','--provisioning-template-id=10', '--hostgroup-id=1', '--environment-id=1']
-      expected_result = success_result("Template combination created.\n")
-      expected_result.expected_err = "Warning: Option --environment-id is deprecated. Use --puppet-environment[-id] instead\n"
-      api_expects(:template_combinations, :create, 'Create template combination') do |params|
-        params['provisioning_template_id'] == 10 &&
-          params['hostgroup_id'] == 1 &&
-          params['environment_id'] == 1 &&
-          params['template_combination'] == {'environment_id' => 1, 'hostgroup_id' => 1}
-      end
-
-      result = run_cmd(@cmd + params)
-      assert_cmd(expected_result, result)
-    end
-
+  
     it 'should create new combination' do
       params = ['create','--provisioning-template-id=10', '--hostgroup-id=1', '--puppet-environment-id=1']
       expected_result = success_result("Template combination created.\n")
@@ -157,21 +143,6 @@ describe 'template' do
       assert_cmd(expected_result, result)
     end
 
-    it 'should update combination with warning' do
-      params = ['update', '--id=3', '--provisioning-template-id=10', '--hostgroup-id=1', '--environment-id=1']
-      expected_result = success_result("Template combination updated.\n")
-      expected_result.expected_err = "Warning: Option --environment-id is deprecated. Use --puppet-environment[-id] instead\n"
-      api_expects(:template_combinations, :update, 'Update template combination') do |params|
-        params['id'] == '3' &&
-          params['provisioning_template_id'] == 10 &&
-          params['hostgroup_id'] == 1 &&
-          params['environment_id'] == 1 &&
-          params['template_combination'] == { 'environment_id' => 1, 'hostgroup_id' => 1 }
-      end
-
-      result = run_cmd(@cmd + params)
-      assert_cmd(expected_result, result)
-    end
 
     it 'should update combination' do
       params = ['update', '--id=3', '--provisioning-template-id=10', '--hostgroup-id=1', '--puppet-environment-id=1']

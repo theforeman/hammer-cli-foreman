@@ -63,7 +63,6 @@ module HammerCLIForeman
         success_message _("The environment has been associated.")
         failure_message _("Could not associate the environment")
 
-        extend_with(HammerCLIForeman::CommandExtensions::PuppetEnvironment.new)
       end
 
       class RemovePuppetEnvironmentCommand < HammerCLIForeman::RemoveAssociatedCommand
@@ -73,7 +72,6 @@ module HammerCLIForeman
         success_message _("The environment has been disassociated.")
         failure_message _("Could not disassociate the environment")
 
-        extend_with(HammerCLIForeman::CommandExtensions::PuppetEnvironment.new)
       end
     end
 

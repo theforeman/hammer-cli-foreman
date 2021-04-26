@@ -1,13 +1,10 @@
 require 'hammer_cli_foreman/smart_class_parameter'
 
 module HammerCLIForeman
-
   class PuppetClass < HammerCLIForeman::Command
-
     resource :puppetclasses
 
     class ListCommand < HammerCLIForeman::ListCommand
-
       output do
         field :id, _("Id")
         field :name, _("Name")
@@ -21,14 +18,10 @@ module HammerCLIForeman
         clss = classes.first.inject([]) { |list, (pp_module, pp_module_classes)| list + pp_module_classes }
 
         HammerCLI::Output::RecordCollection.new(clss, :meta => classes.meta)
-
       end
 
       build_options
-
-      extend_with(HammerCLIForeman::CommandExtensions::PuppetEnvironment.new)
     end
-
 
     class InfoCommand < HammerCLIForeman::InfoCommand
       output ListCommand.output_definition do
@@ -41,10 +34,7 @@ module HammerCLIForeman
       end
 
       build_options
-
-      extend_with(HammerCLIForeman::CommandExtensions::PuppetEnvironment.new)
     end
-
 
     class SCParamsCommand < HammerCLIForeman::SmartClassParametersBriefList
       build_options_for :puppetclasses
@@ -57,5 +47,4 @@ module HammerCLIForeman
 
     autoload_subcommands
   end
-
 end

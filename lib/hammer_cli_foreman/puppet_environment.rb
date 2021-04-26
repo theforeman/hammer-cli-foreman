@@ -2,13 +2,10 @@ require 'hammer_cli'
 require 'hammer_cli_foreman/smart_class_parameter'
 
 module HammerCLIForeman
-
   class PuppetEnvironment < HammerCLIForeman::Command
-
     resource :environments
 
     class ListCommand < HammerCLIForeman::ListCommand
-
       output do
         field :id, _("Id")
         field :name, _("Name")
@@ -16,7 +13,6 @@ module HammerCLIForeman
 
       build_options
     end
-
 
     class InfoCommand < HammerCLIForeman::InfoCommand
       output ListCommand.output_definition do
@@ -28,7 +24,6 @@ module HammerCLIForeman
       build_options
     end
 
-
     class CreateCommand < HammerCLIForeman::CreateCommand
       success_message _("Environment created.")
       failure_message _("Could not create the environment")
@@ -36,14 +31,12 @@ module HammerCLIForeman
       build_options
     end
 
-
     class UpdateCommand < HammerCLIForeman::UpdateCommand
       success_message _("Environment updated.")
       failure_message _("Could not update the environment")
 
       build_options
     end
-
 
     class DeleteCommand < HammerCLIForeman::DeleteCommand
       success_message _("Environment deleted.")
@@ -54,12 +47,8 @@ module HammerCLIForeman
 
     class SCParamsCommand < HammerCLIForeman::SmartClassParametersList
       build_options_for :environments
-
-      extend_with(HammerCLIForeman::CommandExtensions::PuppetEnvironment.new)
     end
-
 
     autoload_subcommands
   end
-
 end

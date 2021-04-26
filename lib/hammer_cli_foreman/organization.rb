@@ -1,9 +1,7 @@
 require 'hammer_cli_foreman/resource_supported_test'
 
 module HammerCLIForeman
-
   class Organization < HammerCLIForeman::Command
-
     resource :organizations
 
     class ListCommand < HammerCLIForeman::ListCommand
@@ -18,7 +16,6 @@ module HammerCLIForeman
 
       build_options
     end
-
 
     class InfoCommand < HammerCLIForeman::InfoCommand
       include HammerCLIForeman::ResourceSupportedTest
@@ -45,12 +42,10 @@ module HammerCLIForeman
         HammerCLIForeman::References.timestamps(self)
       end
 
-
       build_options do |o|
         o.expand.primary(:organizations)
       end
     end
-
 
     class CreateCommand < HammerCLIForeman::CreateCommand
       include HammerCLIForeman::ResourceSupportedTest
@@ -59,10 +54,7 @@ module HammerCLIForeman
       failure_message _("Could not create the organization")
 
       build_options
-
-      extend_with(HammerCLIForeman::CommandExtensions::PuppetEnvironments.new)
     end
-
 
     class UpdateCommand < HammerCLIForeman::UpdateCommand
       include HammerCLIForeman::ResourceSupportedTest
@@ -73,10 +65,7 @@ module HammerCLIForeman
       failure_message _("Could not update the organization")
 
       build_options
-
-      extend_with(HammerCLIForeman::CommandExtensions::PuppetEnvironments.new)
     end
-
 
     class DeleteCommand < HammerCLIForeman::DeleteCommand
       include HammerCLIForeman::ResourceSupportedTest
@@ -91,7 +80,6 @@ module HammerCLIForeman
       end
     end
 
-
     class SetParameterCommand < HammerCLIForeman::Parameter::SetCommand
       desc _("Create or update parameter for an organization")
 
@@ -102,7 +90,6 @@ module HammerCLIForeman
       build_options
     end
 
-
     class DeleteParameterCommand < HammerCLIForeman::Parameter::DeleteCommand
       desc _("Delete parameter for an organization")
 
@@ -112,9 +99,7 @@ module HammerCLIForeman
       build_options
     end
 
-
     HammerCLIForeman::AssociatingCommands::Hostgroup.extend_command(self)
-    HammerCLIForeman::AssociatingCommands::PuppetEnvironment.extend_command(self)
     HammerCLIForeman::AssociatingCommands::Domain.extend_command(self)
     HammerCLIForeman::AssociatingCommands::Medium.extend_command(self)
     HammerCLIForeman::AssociatingCommands::Subnet.extend_command(self)
@@ -126,5 +111,4 @@ module HammerCLIForeman
 
     autoload_subcommands
   end
-
 end

@@ -1,5 +1,4 @@
 module HammerCLIForeman
-
   class SmartClassParametersBriefList < HammerCLIForeman::ListCommand
     resource :smart_class_parameters, :index
     command_name 'sc-params'
@@ -30,7 +29,6 @@ module HammerCLIForeman
   end
 
   class SmartClassParametersList < SmartClassParametersBriefList
-
     output do
       field :puppetclass_name, _("Puppet class")
       field :puppetclass_id, _("Class Id"), Fields::Id
@@ -38,11 +36,9 @@ module HammerCLIForeman
   end
 
   class SmartClassParameter < HammerCLIForeman::Command
-
     resource :smart_class_parameters
 
     class ListCommand < HammerCLIForeman::ListCommand
-
       output SmartClassParametersList.output_definition
 
       def extend_data(res)
@@ -51,12 +47,9 @@ module HammerCLIForeman
       end
 
       build_options
-
-      extend_with(HammerCLIForeman::CommandExtensions::PuppetEnvironment.new)
     end
 
     class InfoCommand < HammerCLIForeman::InfoCommand
-
       output ListCommand.output_definition do
         field :description, _("Description")
         field :parameter_type, _("Type")
@@ -75,10 +68,10 @@ module HammerCLIForeman
           field :override_value_order, _("Order"), Fields::LongText
 
           collection :override_values, _("Values") do
-              field :id, _('Id')
-              field :match, _('Match')
-              field :value, _('Value')
-              field :omit, _('Omit'), Fields::Boolean
+            field :id, _('Id')
+            field :match, _('Match')
+            field :value, _('Value')
+            field :omit, _('Omit'), Fields::Boolean
           end
         end
         HammerCLIForeman::References.environments(self)
@@ -103,7 +96,6 @@ module HammerCLIForeman
     end
 
     class UpdateCommand < HammerCLIForeman::UpdateCommand
-
       success_message _("Parameter updated.")
       failure_message _("Could not update the parameter")
 
@@ -115,14 +107,15 @@ module HammerCLIForeman
       end
 
       option "--override", "OVERRIDE", _("Override this parameter"),
-        :format => HammerCLI::Options::Normalizers::Bool.new
+             :format => HammerCLI::Options::Normalizers::Bool.new
       option "--required", "REQUIRED", _("This parameter is required"),
-        :format => HammerCLI::Options::Normalizers::Bool.new
+             :format => HammerCLI::Options::Normalizers::Bool.new
       option "--parameter-type", "PARAMETER_TYPE", _("Type of the parameter"),
-        :format => HammerCLI::Options::Normalizers::Enum.new(
-            ['string', 'boolean', 'integer', 'real', 'array', 'hash', 'yaml', 'json'])
+             :format => HammerCLI::Options::Normalizers::Enum.new(
+               ['string', 'boolean', 'integer', 'real', 'array', 'hash', 'yaml', 'json']
+             )
       option "--validator-type", "VALIDATOR_TYPE", _("Type of the validator"),
-        :format => HammerCLI::Options::Normalizers::Enum.new(['regexp', 'list', ''])
+             :format => HammerCLI::Options::Normalizers::Enum.new(['regexp', 'list', ''])
       option "--override-value-order", "OVERRIDE_VALUE_ORDER", _("The order in which values are resolved"),
              :format => HammerCLI::Options::Normalizers::List.new
 
@@ -135,7 +128,8 @@ module HammerCLIForeman
       def request_params
         params = super
         override_order = params['smart_class_parameter']['override_value_order']
-        params['smart_class_parameter']['override_value_order'] = override_order.join("\n") if override_order.is_a?(Array)
+        params['smart_class_parameter']['override_value_order'] =
+          override_order.join("\n") if override_order.is_a?(Array)
         params
       end
     end
@@ -183,7 +177,5 @@ module HammerCLIForeman
     end
 
     autoload_subcommands
-
   end
-
 end

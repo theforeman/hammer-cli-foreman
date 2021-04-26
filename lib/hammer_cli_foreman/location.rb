@@ -1,9 +1,7 @@
 require 'hammer_cli_foreman/resource_supported_test'
 
 module HammerCLIForeman
-
   class Location < HammerCLIForeman::Command
-
     resource :locations
 
     class ListCommand < HammerCLIForeman::ListCommand
@@ -18,7 +16,6 @@ module HammerCLIForeman
 
       build_options
     end
-
 
     class InfoCommand < HammerCLIForeman::InfoCommand
       include HammerCLIForeman::ResourceSupportedTest
@@ -50,7 +47,6 @@ module HammerCLIForeman
       end
     end
 
-
     class CreateCommand < HammerCLIForeman::CreateCommand
       include HammerCLIForeman::ResourceSupportedTest
 
@@ -58,10 +54,7 @@ module HammerCLIForeman
       failure_message _("Could not create the location")
 
       build_options
-
-      extend_with(HammerCLIForeman::CommandExtensions::PuppetEnvironments.new)
     end
-
 
     class UpdateCommand < HammerCLIForeman::UpdateCommand
       include HammerCLIForeman::ResourceSupportedTest
@@ -72,10 +65,7 @@ module HammerCLIForeman
       failure_message _("Could not update the location")
 
       build_options
-
-      extend_with(HammerCLIForeman::CommandExtensions::PuppetEnvironments.new)
     end
-
 
     class DeleteCommand < HammerCLIForeman::DeleteCommand
       include HammerCLIForeman::ResourceSupportedTest
@@ -90,7 +80,6 @@ module HammerCLIForeman
       end
     end
 
-
     class SetParameterCommand < HammerCLIForeman::Parameter::SetCommand
       desc _("Create or update parameter for a location")
 
@@ -100,7 +89,6 @@ module HammerCLIForeman
 
       build_options
     end
-
 
     class DeleteParameterCommand < HammerCLIForeman::Parameter::DeleteCommand
       desc _("Delete parameter for a location")
@@ -112,7 +100,6 @@ module HammerCLIForeman
     end
 
     HammerCLIForeman::AssociatingCommands::Hostgroup.extend_command(self)
-    HammerCLIForeman::AssociatingCommands::PuppetEnvironment.extend_command(self)
     HammerCLIForeman::AssociatingCommands::Domain.extend_command(self)
     HammerCLIForeman::AssociatingCommands::Medium.extend_command(self)
     HammerCLIForeman::AssociatingCommands::Subnet.extend_command(self)
@@ -124,5 +111,4 @@ module HammerCLIForeman
 
     autoload_subcommands
   end
-
 end
