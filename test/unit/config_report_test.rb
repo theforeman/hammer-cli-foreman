@@ -25,6 +25,7 @@ describe HammerCLIForeman::ConfigReport do
       it_should_print_n_records
       it_should_print_column "Id"
       it_should_print_column "Host"
+      it_should_print_column "Origin"
       it_should_print_column "Last report"
       it_should_print_column "Applied"
       it_should_print_column "Restarted"
