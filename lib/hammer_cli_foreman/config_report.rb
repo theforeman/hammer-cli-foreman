@@ -10,6 +10,7 @@ module HammerCLIForeman
         field :id, _("Id")
         field :host_name, _("Host")
         field :reported_at, _("Last report"), Fields::Date
+        field :origin, _("Origin")
         from "status" do
           field :applied, _("Applied")
           field :restarted, _("Restarted")
@@ -30,6 +31,7 @@ module HammerCLIForeman
         field :id, _("Id")
         field :host_name, _("Host")
         field :reported_at, _("Reported at"), Fields::Date
+        field :origin, _("Origin")
         label _("Report status") do
           from "status" do
             field :applied, _("Applied")
