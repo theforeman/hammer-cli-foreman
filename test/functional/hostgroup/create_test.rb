@@ -68,25 +68,6 @@ module HammerCLIForeman
         run_cmd(%w(hostgroup create --name hg1 --domain d1))
       end
 
-      it 'allows environment id' do
-        api_expects(:hostgroups, :create) do |p|
-          p['hostgroup']['environment_id'] == 1 &&
-            p['hostgroup']['name'] == 'hg1'
-        end
-        run_cmd(%w(hostgroup create --name hg1 --environment-id 1))
-      end
-
-      it 'allows environment name' do
-        api_expects(:environments, :index) do |p|
-          p[:search] = "name = \"env1\""
-        end.returns(index_response([{'id' => 1}]))
-        api_expects(:hostgroups, :create) do |p|
-          p['hostgroup']['environment_id'] == 1 &&
-            p['hostgroup']['name'] == 'hg1'
-        end
-        run_cmd(%w(hostgroup create --name hg1 --environment env1))
-      end
-
       it 'allows location ids' do
         api_expects(:hostgroups, :create) do |p|
           p['hostgroup']['location_ids'] == ['1','4'] &&

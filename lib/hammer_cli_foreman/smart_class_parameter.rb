@@ -52,7 +52,6 @@ module HammerCLIForeman
 
       build_options
 
-      extend_with(HammerCLIForeman::CommandExtensions::PuppetEnvironment.new)
     end
 
     class InfoCommand < HammerCLIForeman::InfoCommand

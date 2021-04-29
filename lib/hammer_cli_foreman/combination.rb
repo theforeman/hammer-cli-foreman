@@ -32,7 +32,6 @@ module HammerCLIForeman
         o.expand(:all)
       end
 
-      extend_with(HammerCLIForeman::CommandExtensions::PuppetEnvironment.new)
     end
 
     class ListCombination < HammerCLIForeman::ListCommand
@@ -59,7 +58,6 @@ module HammerCLIForeman
         o.expand(:all)
       end
 
-      extend_with(HammerCLIForeman::CommandExtensions::PuppetEnvironment.new)
     end
 
     class CreateCombination < HammerCLIForeman::CreateCommand
@@ -72,7 +70,6 @@ module HammerCLIForeman
         o.expand(:all)
       end
 
-      extend_with(HammerCLIForeman::CommandExtensions::PuppetEnvironment.new)
     end
 
     class DeleteCombination < HammerCLIForeman::DeleteCommand

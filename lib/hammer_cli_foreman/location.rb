@@ -59,7 +59,6 @@ module HammerCLIForeman
 
       build_options
 
-      extend_with(HammerCLIForeman::CommandExtensions::PuppetEnvironments.new)
     end
 
 
@@ -73,7 +72,6 @@ module HammerCLIForeman
 
       build_options
 
-      extend_with(HammerCLIForeman::CommandExtensions::PuppetEnvironments.new)
     end
 
 
@@ -112,7 +110,6 @@ module HammerCLIForeman
     end
 
     HammerCLIForeman::AssociatingCommands::Hostgroup.extend_command(self)
-    HammerCLIForeman::AssociatingCommands::PuppetEnvironment.extend_command(self)
     HammerCLIForeman::AssociatingCommands::Domain.extend_command(self)
     HammerCLIForeman::AssociatingCommands::Medium.extend_command(self)
     HammerCLIForeman::AssociatingCommands::Subnet.extend_command(self)

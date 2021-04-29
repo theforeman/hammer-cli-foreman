@@ -12,17 +12,7 @@ describe HammerCLIForeman::SmartClassParameter do
     before :each do
       ResourceMocks.smart_class_parameters_index
     end
-
     let(:cmd) { HammerCLIForeman::SmartClassParameter::ListCommand.new("", ctx) }
-
-    context "parameters" do
-      it_should_accept "no arguments"
-      it_should_accept "hostgroup id", ["--hostgroup-id=1"]
-      it_should_accept "host id", ["--host-id=1"]
-      it_should_accept "environment id", ["--environment-id=1"]
-      it_should_accept "puppet-class-id", ["--puppet-class-id=1"]
-      it_should_accept_search_params
-    end
 
     context "output" do
       let(:expected_record_count) { count_records(cmd.resource.call(:index)) }
@@ -47,13 +37,6 @@ describe HammerCLIForeman::SmartClassParameter do
 
     let(:cmd) { HammerCLIForeman::SmartClassParameter::InfoCommand.new("", ctx) }
 
-    context "parameters" do
-      it_should_accept "id", ["--id=1"]
-      it_should_accept "name, puppet-class", ["--name=par", "--puppet-class=ntp"]
-      it_should_fail_with "name", ["--name=par"]
-      # it_should_fail_with "no arguments"
-      # TODO: temporarily disabled, parameters are checked in the id resolver
-    end
 
     context "output" do
       with_params ["--id=1"] do

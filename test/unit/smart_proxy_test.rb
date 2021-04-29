@@ -90,18 +90,6 @@ describe HammerCLIForeman::SmartProxy do
 
   end
 
-  context "ImportPuppetClassesCommand" do
-
-    let(:cmd) { HammerCLIForeman::SmartProxy::ImportPuppetClassesCommand.new("", ctx) }
-
-    context "parameters" do
-      it_should_accept "id, environment-id and dryrun", ["--id=1", "--environment-id=1", "--dryrun"]
-      # it_should_fail_with "id missing", []
-      # TODO: temporarily disabled, parameters are checked in the id resolver
-    end
-
-  end
-
   context "RefreshFeaturesCommand" do
 
     let(:cmd) { HammerCLIForeman::SmartProxy::RefreshFeaturesCommand.new("", ctx) }

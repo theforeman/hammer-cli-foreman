@@ -55,7 +55,6 @@ module HammerCLIForeman
     class SCParamsCommand < HammerCLIForeman::SmartClassParametersList
       build_options_for :environments
 
-      extend_with(HammerCLIForeman::CommandExtensions::PuppetEnvironment.new)
     end
 
 

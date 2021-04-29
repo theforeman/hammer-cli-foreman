@@ -108,7 +108,6 @@ module HammerCLIForeman
         print_record(output_definition, record)
       end
 
-      extend_with(HammerCLIForeman::CommandExtensions::PuppetEnvironment.new)
     end
 
 
