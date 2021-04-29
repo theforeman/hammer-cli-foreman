@@ -45,7 +45,7 @@ describe 'filter' do
       end
 
       result = run_cmd(@cmd + params)
-      assert_cmd(success_result("Permission filter for [%<resource_type>s] created.\n"), result)
+      assert_cmd(success_result("Permission filter for [%<resource_type_label>s] created.\n"), result)
     end
   end
 
@@ -106,6 +106,7 @@ describe 'filter' do
       @cmd = %w[filter update]
       @filter = {
         'search' => nil,
+        'resource_type_label' => 'User',
         'resource_type' => 'User',
         'unlimited?' => false,
         'created_at' => '2017-07-18 14:34:09 UTC',
