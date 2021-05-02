@@ -170,13 +170,32 @@ module HammerCLIForeman
     attr_reader :resource
 
     def build(builder_params={})
+      resource_name_map = builder_params[:resource_mapping] || {}
       @searchables.for(@resource).collect do |s|
-        option(
+        family = HammerCLI::Options::OptionFamily.new
+        family.parent(
           optionamize("--#{s.name}"),
           s.name.upcase,
           s.description,
-          :referenced_resource => @resource.singular_name
+          referenced_resource: @resource.singular_name,
+          aliased_resource: aliased_name(resource_name(s.name), resource_name_map)
         )
+      end
+    end
+
+    def aliased_name(name, resource_name_map)
+      return if name.nil?
+
+      resource_name_map[name.to_s] || resource_name_map[name.to_sym] || name
+    end
+
+    def resource_name(param)
+      if param =~ /^id[s]?$/
+        @resource.singular_name
+      elsif param =~ /_id[s]?$/
+        param.gsub(/_id[s]?$/, '')
+      else
+        nil
       end
     end
   end
