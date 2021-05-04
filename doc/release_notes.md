@@ -1,5 +1,8 @@
 Release notes
 =============
+### 2.3.2 (2021-05-04)
+* Apply option family on searchablesoptionbuilder, [#30996](http://projects.theforeman.org/issues/30996)
+
 ### 2.3.1 (2021-01-27)
 * Deprecating puppetrun command ([PR #554](https://github.com/theforeman/hammer-cli-foreman/pull/554)), [#31536](http://projects.theforeman.org/issues/31536)
 
