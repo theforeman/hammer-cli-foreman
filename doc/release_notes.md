@@ -1,5 +1,20 @@
 Release notes
 =============
+### 2.5.0 (2021-05-04)
+* Update test data to latest foreman
+*  change to resource_type_label, [#11454](http://projects.theforeman.org/issues/11454)
+* Display the report origin, [#32428](http://projects.theforeman.org/issues/32428)
+* Apply option family on searchablesoptionbuilder, [#30996](http://projects.theforeman.org/issues/30996)
+* Add associate vms command for compute resource ([PR #563](https://github.com/theforeman/hammer-cli-foreman/pull/563)), [#32271](http://projects.theforeman.org/issues/32271)
+* Support unrecognized services in ping, [#32265](http://projects.theforeman.org/issues/32265)
+* Change --owner_type's default to user ([PR #562](https://github.com/theforeman/hammer-cli-foreman/pull/562)), [#30814](http://projects.theforeman.org/issues/30814)
+* Drop puppetrun command from hammer ([PR #561](https://github.com/theforeman/hammer-cli-foreman/pull/561)), [#31806](http://projects.theforeman.org/issues/31806)
+* Global registration module ([PR #558](https://github.com/theforeman/hammer-cli-foreman/pull/558)), [#31630](http://projects.theforeman.org/issues/31630)
+* Add support for vnic profile ([PR #552](https://github.com/theforeman/hammer-cli-foreman/pull/552)), [#31493](http://projects.theforeman.org/issues/31493)
+* Bump to 2.5.0-develop
+* Bump to 2.4.0
+* Correct descriptions for resources, [#31668](http://projects.theforeman.org/issues/31668)
+
 
 ### 2.4.0 (2021-02-01)
 * Fix hammer list failure when defaults are set ([PR #551](https://github.com/theforeman/hammer-cli-foreman/pull/551)), [#31384](http://projects.theforeman.org/issues/31384)
