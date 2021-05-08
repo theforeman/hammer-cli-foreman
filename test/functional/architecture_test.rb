@@ -45,5 +45,35 @@ describe 'architecture' do
       _(result.exit_code).must_equal HammerCLI::EX_OK
     end
   end
-end
 
+  describe 'update' do
+    before do
+      @cmd = %w[architecture update]
+      @architecture = {
+        id: 1,
+        name: 'x86_64',
+      }
+    end
+
+    it 'should update an architecture with id' do
+      params = %w[--id=1 --new-name=x86_64]
+      api_expects(:architectures, :update, 'Update architecture').returns(@architecture)
+
+      expected_result = success_result("Architecture updated.\n")
+
+      result = run_cmd(@cmd + params)
+      assert_cmd(expected_result, result)
+    end
+
+    it 'updates nothing without architecture related parameters' do
+      params = %w[--id=1]
+      api_expects(:architectures, :update, 'Update architecture with no params').returns({})
+
+      expected_result = success_result("Nothing to update.\n")
+
+      result = run_cmd(@cmd + params)
+      assert_cmd(expected_result, result)
+    end
+
+  end
+end

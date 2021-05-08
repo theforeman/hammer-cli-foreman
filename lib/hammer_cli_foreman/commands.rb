@@ -548,6 +548,19 @@ module HammerCLIForeman
       builder
     end
 
+    def self.inherited(child)
+      child.success_message_for(:nothing_to_do, _('Nothing to update.'))
+    end
+
+    def clean_up_context
+      super
+      context.delete(:action_message)
+    end
+
+    def success_message
+      success_message_for(context[:action_message] || :default)
+    end
+
     def method_options_for_params(params, options)
       opts = super
       # overwrite searchables with correct values
@@ -560,6 +573,7 @@ module HammerCLIForeman
       opts
     end
 
+    extend_with(HammerCLIForeman::CommandExtensions::UpdateCommon.new)
   end
 
 

@@ -61,9 +61,21 @@ describe 'httpproxy' do
   end
 
   it 'deletes an http proxy' do
+    api_expects(:http_proxies, :destroy, 'Delete proxy').returns(http_proxy)
+
     expected_result = success_result("Http proxy deleted.\n")
 
     result = run_cmd(%w(http-proxy delete --id 1))
     assert_cmd(expected_result, result)
   end
+
+  it 'updates nothing without related parameters' do
+    api_expects(:http_proxies, :update, 'Update proxy with no params').returns({})
+
+    expected_result = success_result("Nothing to update.\n")
+
+    result = run_cmd(%w(http-proxy update --id 1))
+    assert_cmd(expected_result, result)
+  end
+
 end
