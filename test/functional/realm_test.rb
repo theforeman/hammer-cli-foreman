@@ -99,5 +99,16 @@ describe 'realm' do
       result = run_cmd(@cmd + params)
       assert_cmd(success_result("Realm [%{name}] updated.\n"), result)
     end
+
+    it 'updates nothing without realm related parameters' do
+      params = %w[--id=1]
+
+      api_expects(:realms, :update, 'Update realm with no params').returns({})
+
+      expected_result = success_result("Nothing to update.\n")
+
+      result = run_cmd(@cmd + params)
+      assert_cmd(expected_result, result)
+    end
   end
 end

@@ -272,4 +272,17 @@ describe 'update' do
     result = run_cmd(@cmd + params)
     assert_cmd(success_result("Location updated.\n"), result)
   end
+
+  it 'updates nothing without related parameters' do
+    params = %w[--id=1]
+
+    api_expects(:locations, :index)
+    api_expects(:locations, :update, 'Update location with no params').returns({})
+
+    expected_result = success_result("Nothing to update.\n")
+
+    result = run_cmd(@cmd + params)
+    assert_cmd(expected_result, result)
+  end
+
 end

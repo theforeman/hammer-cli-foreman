@@ -126,5 +126,16 @@ describe 'medium' do
       result = run_cmd(@cmd + params)
       assert_cmd(success_result("Installation medium updated.\n"), result)
     end
+
+    it 'updates nothing without medium related parameters' do
+      params = %w[--id=1]
+
+      api_expects(:media, :update, 'Update medium with no params').returns({})
+
+      expected_result = success_result("Nothing to update.\n")
+
+      result = run_cmd(@cmd + params)
+      assert_cmd(expected_result, result)
+    end
   end
 end

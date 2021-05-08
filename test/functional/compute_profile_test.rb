@@ -40,6 +40,17 @@ describe "parameters" do
       result = run_cmd(@cmd + params)
       assert_cmd(success_result("Compute profile updated.\n"), result)
     end
+
+    it 'updates nothing without profile related parameters' do
+      params = %w[--id=1]
+      api_expects(:compute_profiles, :update, 'Update profile with no params').returns({})
+
+      expected_result = success_result("Nothing to update.\n")
+
+      result = run_cmd(@cmd + params)
+      assert_cmd(expected_result, result)
+    end
+
   end
 
   describe "delete compute profile" do
