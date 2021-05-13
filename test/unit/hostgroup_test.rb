@@ -68,7 +68,7 @@ describe HammerCLIForeman::Hostgroup do
 
     context "parameters" do
       it_should_accept "name, parent_id, environment_id, architecture_id, domain_id, puppet_proxy_id, operatingsystem_id and more",
-          ["--name=hostgroup", "--parent-id=1", "--environment-id=1", "--architecture-id=1", "--domain-id=1", "--puppet-proxy-id=1",
+          ["--name=hostgroup", "--parent-id=1", "--puppet-environment-id=1", "--architecture-id=1", "--domain-id=1", "--puppet-proxy-id=1",
             "--operatingsystem-id=1", "--medium-id=1", "--partition-table-id=1", "--subnet-id=1", '--puppet-ca-proxy-id=1', '--puppet-class-ids=1,2', '--root-pass=foreman']
       # it_should_fail_with "name or id missing",
       #    ["--environment-id=1", "--architecture-id=1", "--domain-id=1", "--puppet-proxy-id=1", "--operatingsystem-id=1"]
@@ -82,7 +82,7 @@ describe HammerCLIForeman::Hostgroup do
 
     context "parameters" do
       it_should_accept "name, parent_id, environment_id, architecture_id, domain_id, puppet_proxy_id, operatingsystem_id and more",
-          ["--id=1 --name=hostgroup2 --title=default/hostgroup2", "--parent-id=1", "--environment-id=1", "--architecture-id=1", "--domain-id=1", "--puppet-proxy-id=1",
+          ["--id=1 --name=hostgroup2 --title=default/hostgroup2", "--parent-id=1", "--puppet-environment-id=1", "--architecture-id=1", "--domain-id=1", "--puppet-proxy-id=1",
             "--operatingsystem-id=1", "--medium-id=1", "--partition-table-id=1", "--subnet-id=1", '--puppet-ca-proxy-id=1', '--puppet-class-ids=1,2', '--root-pass=foreman']
       # it_should_fail_with "no params", []
       # it_should_fail_with "id missing", ["--name=host2"]

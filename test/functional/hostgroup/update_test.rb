@@ -73,7 +73,7 @@ module HammerCLIForeman
           p['hostgroup']['environment_id'] == 1 &&
             p['id'] == '1'
         end
-        run_cmd(%w(hostgroup update --id 1 --environment-id 1))
+        run_cmd(%w(hostgroup update --id 1 --puppet-environment-id 1))
       end
 
       it 'allows environment name' do
@@ -84,7 +84,7 @@ module HammerCLIForeman
           p['hostgroup']['environment_id'] == 1 &&
             p['id'] == '1'
         end
-        run_cmd(%w(hostgroup update --id 1 --environment env1))
+        run_cmd(%w(hostgroup update --id 1 --puppet-environment env1))
       end
 
       it 'allows location ids' do

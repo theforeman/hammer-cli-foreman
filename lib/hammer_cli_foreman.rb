@@ -60,11 +60,6 @@ module HammerCLIForeman
       'HammerCLIForeman::Domain', 'hammer_cli_foreman/domain'
     )
 
-    HammerCLI::MainCommand.lazy_subcommand('environment', _("Manipulate environments"),
-      'HammerCLIForeman::PuppetEnvironment', 'hammer_cli_foreman/puppet_environment',
-      :warning => _('%{env} command is deprecated and will be removed in one of the future versions. Please use %{puppet_env} command instead.') % {:env => 'environment', :puppet_env => 'puppet-environment'}
-    )
-
     HammerCLI::MainCommand.lazy_subcommand('puppet-environment', _("Manipulate Puppet environments"),
       'HammerCLIForeman::PuppetEnvironment', 'hammer_cli_foreman/puppet_environment'
     )

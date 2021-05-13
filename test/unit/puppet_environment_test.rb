@@ -102,8 +102,6 @@ describe HammerCLIForeman::PuppetEnvironment do
     let(:cmd) { HammerCLIForeman::PuppetEnvironment::SCParamsCommand.new("", ctx) }
 
     context "parameters" do
-      it_should_accept "environment", ["--environment=env"]
-      it_should_accept "environment-id", ["--environment-id=1"]
       it_should_accept "puppet-environment", ["--puppet-environment=env"]
       it_should_accept "puppet-environment-id", ["--puppet-environment-id=1"]
       # it_should_fail_with "name or id missing", [] # TODO: temporarily disabled, parameters are checked in the id resolver

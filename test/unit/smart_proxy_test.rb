@@ -95,7 +95,7 @@ describe HammerCLIForeman::SmartProxy do
     let(:cmd) { HammerCLIForeman::SmartProxy::ImportPuppetClassesCommand.new("", ctx) }
 
     context "parameters" do
-      it_should_accept "id, environment-id and dryrun", ["--id=1", "--environment-id=1", "--dryrun"]
+      it_should_accept "id, puppet-environment-id and dryrun", ["--id=1", "--puppet-environment-id=1", "--dryrun"]
       # it_should_fail_with "id missing", []
       # TODO: temporarily disabled, parameters are checked in the id resolver
     end
