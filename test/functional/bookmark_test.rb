@@ -158,7 +158,8 @@ describe 'bookmark' do
         api_expects(:bookmarks, :update) do |par|
           par['id'] == '1'
         end
-        run_cmd(%w[bookmark update --id 1])
+        result = run_cmd(%w[bookmark update --id 1])
+        assert_cmd(success_result("Nothing to update.\n"), result)
       end
 
       it 'update bookmark' do

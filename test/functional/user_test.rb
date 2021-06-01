@@ -82,6 +82,17 @@ describe "user" do
       assert_cmd(expected_result, result)
     end
 
+    it 'updates nothing without user related parameters' do
+      params = %w[--id=1]
+
+      api_expects(:users, :update, 'Update user with no params').returns({})
+
+      expected_result = success_result("Nothing to update.\n")
+
+      result = run_cmd(cmd + params)
+      assert_cmd(expected_result, result)
+    end
+
     describe "update password" do
       def replace_foreman_connection(connection)
         HammerCLI.context[:api_connection].drop('foreman')

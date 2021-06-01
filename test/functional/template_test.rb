@@ -95,6 +95,18 @@ describe 'template' do
 
       assert_cmd(success_result("Provisioning template updated.\n"), result)
     end
+
+    it 'updates nothing without template related parameters' do
+      params = %w[--id=1 --organization-id=1 --location-id=1]
+
+      api_expects(:template_kinds, :index, 'Get list of template kinds').returns(index_response([]))
+      api_expects(:provisioning_templates, :update, 'Update template with no params').returns({})
+
+      expected_result = success_result("Nothing to update.\n")
+
+      result = run_cmd(@cmd + params)
+      assert_cmd(expected_result, result)
+    end
   end
 
   describe 'create' do

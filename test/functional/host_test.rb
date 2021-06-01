@@ -404,7 +404,7 @@ describe 'host update' do
   it 'updates nothing without host related parameters' do
     api_expects(:hosts, :update, 'Update host with no host params').returns({})
 
-    expected_result = success_result("Host updated.\n")
+    expected_result = success_result("Nothing to update.\n")
 
     result = run_cmd(cmd + minimal_params)
     assert_cmd(expected_result, result)
