@@ -1,5 +1,8 @@
 Release notes
 =============
+### 2.5.1 (2021-06-08)
+* Show new msg for empty update commands, [#32454](http://projects.theforeman.org/issues/32454)
+
 ### 2.5.0 (2021-05-04)
 * Update test data to latest foreman
 *  change to resource_type_label, [#11454](http://projects.theforeman.org/issues/11454)
