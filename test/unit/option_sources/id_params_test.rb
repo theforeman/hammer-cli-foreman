@@ -26,5 +26,14 @@ describe HammerCLIForeman::OptionSources::IdParams do
       params = id_params_source.get_options([], option_data)
       _(params).must_equal expected_data
     end
+
+    it 'resolves param when set but different name' do
+      hg_cmd.stubs(:get_resource_id).returns(nil)
+      hg_cmd.expects(:get_resource_id).with { |res| res.name == :domains }.returns(3)
+      option_data = { 'option_domain_id' => 1, 'option_domain_name' => 'test3' }
+      expected_data = { 'option_domain_id' => 3, 'option_domain_name' => 'test3' }
+      params = id_params_source.get_options([], option_data)
+      _(params).must_equal expected_data
+    end
   end
 end
