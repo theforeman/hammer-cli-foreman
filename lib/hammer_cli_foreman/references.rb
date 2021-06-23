@@ -153,14 +153,6 @@ module HammerCLIForeman
       end
     end
 
-    def self.puppetclasses(dsl)
-      dsl.build do
-        collection :puppetclasses, _("Puppetclasses"), :numbered => false do
-          custom_field Fields::Reference
-        end
-      end
-    end
-
     def self.operating_systems(dsl)
       dsl.build do
         collection :operatingsystems, _("Operating systems"), :numbered => false do

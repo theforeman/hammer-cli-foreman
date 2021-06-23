@@ -60,10 +60,6 @@ module HammerCLIForeman
       'HammerCLIForeman::Domain', 'hammer_cli_foreman/domain'
     )
 
-    HammerCLI::MainCommand.lazy_subcommand('puppet-environment', _("Manipulate Puppet environments"),
-      'HammerCLIForeman::PuppetEnvironment', 'hammer_cli_foreman/puppet_environment'
-    )
-
     HammerCLI::MainCommand.lazy_subcommand('fact', _("Search facts"),
       'HammerCLIForeman::Fact', 'hammer_cli_foreman/fact'
     )
@@ -108,10 +104,6 @@ module HammerCLIForeman
       'HammerCLIForeman::PartitionTable', 'hammer_cli_foreman/partition_table'
     )
 
-    HammerCLI::MainCommand.lazy_subcommand('puppet-class', _("Search puppet modules"),
-      'HammerCLIForeman::PuppetClass', 'hammer_cli_foreman/puppet_class'
-    )
-
     HammerCLI::MainCommand.lazy_subcommand('report', _("Browse and read reports"),
       'HammerCLIForeman::ConfigReport', 'hammer_cli_foreman/config_report',
       :warning => _('%{report} command is deprecated and will be removed in one of the future versions. Please use %{config_report} command instead.') % {:report => 'report', :config_report => 'config-report'}
@@ -127,10 +119,6 @@ module HammerCLIForeman
 
     HammerCLI::MainCommand.lazy_subcommand('role', _("Manage user roles"),
       'HammerCLIForeman::Role', 'hammer_cli_foreman/role'
-    )
-
-    HammerCLI::MainCommand.lazy_subcommand('sc-param', _("Manipulate smart class parameters"),
-      'HammerCLIForeman::SmartClassParameter', 'hammer_cli_foreman/smart_class_parameter'
     )
 
     HammerCLI::MainCommand.lazy_subcommand('proxy', _("Manipulate smart proxies"),
@@ -159,10 +147,6 @@ module HammerCLIForeman
 
     HammerCLI::MainCommand.lazy_subcommand('user-group', _("Manage user groups"),
       'HammerCLIForeman::Usergroup', 'hammer_cli_foreman/usergroup'
-    )
-
-    HammerCLI::MainCommand.lazy_subcommand('config-group', _("Manipulate config groups"),
-      'HammerCLIForeman::ConfigGroup', 'hammer_cli_foreman/config_group'
     )
 
     HammerCLI::MainCommand.lazy_subcommand('ping', _("Get the status of the server and/or it's subcomponents"),

@@ -11,7 +11,7 @@
   # Basic Auth:
   #:default_auth_type: 'Basic_Auth'
   :username: 'admin'
-  #:password: 'example'
+  :password: 'changeme'
 
   # Oauth using the Password Grant Flow:
   # This authentication method requires sessions to be enabled, uncomment the following

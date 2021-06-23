@@ -14,22 +14,6 @@ module HammerCLIForeman
         base.option "--ask-root-password", "ASK_ROOT_PW", " ",
           :format => HammerCLI::Options::Normalizers::Bool.new
 
-        base.option '--puppet-proxy', 'PUPPET_PROXY_NAME', '',
-                    referenced_resource: 'puppet_proxy',
-                    aliased_resource: 'puppet_proxy'
-        base.option '--puppet-ca-proxy', 'PUPPET_CA_PROXY_NAME', '',
-                    referenced_resource: 'puppet_ca_proxy',
-                    aliased_resource: 'puppet_ca_proxy'
-        base.option_family(
-          format: HammerCLI::Options::Normalizers::List.new,
-          aliased_resource: 'puppet-class',
-          description: 'Names/Ids of associated puppet classes'
-        ) do
-          parent '--puppet-class-ids', 'PUPPET_CLASS_IDS', '',
-                 attribute_name: :option_puppetclass_ids
-          child '--puppet-classes', 'PUPPET_CLASS_NAMES', '',
-                 attribute_name: :option_puppetclass_names
-        end
         bme_options = {}
         bme_options[:default] = 'true' if base.action.to_sym == :create
 
@@ -56,7 +40,7 @@ module HammerCLIForeman
               :capabilities, :flavour_ref, :image_ref, :start,
               :network, :cpus, :memory, :provider, :type, :tenant_id, :image_id,
               # ----------------------------------------------------------------------------------
-              :puppet_class_ids, :host_parameters_attributes, :interfaces_attributes, :root_pass]
+              :host_parameters_attributes, :interfaces_attributes, :root_pass]
       end
 
       def self.ask_password
@@ -68,12 +52,6 @@ module HammerCLIForeman
         params = super
         owner_id = owner_id(option_user_login, params['host']['owner_type'])
         params['host']['owner_id'] ||= owner_id unless owner_id.nil?
-
-        puppet_proxy_id = proxy_id(option_puppet_proxy)
-        params['host']['puppet_proxy_id'] ||= puppet_proxy_id unless puppet_proxy_id.nil?
-
-        puppet_ca_proxy_id = proxy_id(option_puppet_ca_proxy)
-        params['host']['puppet_ca_proxy_id'] ||= puppet_ca_proxy_id unless puppet_ca_proxy_id.nil?
 
         if action == :create
           params['host']['build'] = true if option_build.nil?

@@ -1,7 +1,5 @@
 require 'hammer_cli_foreman/fact'
 require 'hammer_cli_foreman/config_report'
-require 'hammer_cli_foreman/puppet_class'
-require 'hammer_cli_foreman/smart_class_parameter'
 require 'hammer_cli_foreman/interface'
 require 'hammer_cli_foreman/hosts/common_update_options'
 require 'hammer_cli_foreman/compute_resource/register_compute_resources'
@@ -31,8 +29,6 @@ module HammerCLIForeman
       end
 
       build_options :without => [:include]
-
-      extend_with(HammerCLIForeman::CommandExtensions::PuppetEnvironment.new)
     end
 
 
@@ -58,9 +54,6 @@ module HammerCLIForeman
         field nil, _("Host Group"), Fields::SingleReference, :key => :hostgroup, :display_field => 'title'
         field nil, _("Compute Resource"), Fields::SingleReference, :key => :compute_resource
         field nil, _("Compute Profile"), Fields::SingleReference, :key => :compute_profile, :hide_blank => true
-        field nil, _("Puppet Environment"), Fields::SingleReference, :key => :environment
-        field nil, _("Puppet CA Proxy"), Fields::SingleReference, :key => :puppet_ca_proxy
-        field nil, _("Puppet Master Proxy"), Fields::SingleReference, :key => :puppet_proxy
         field :certname, _("Cert name")
         field :managed, _("Managed"), Fields::Boolean
 
@@ -191,23 +184,6 @@ module HammerCLIForeman
       build_options
     end
 
-
-    class PuppetClassesCommand < HammerCLIForeman::ListCommand
-      command_name "puppet-classes"
-      resource :puppetclasses
-
-      output HammerCLIForeman::PuppetClass::ListCommand.output_definition
-
-      def send_request
-        HammerCLIForeman::PuppetClass::ListCommand.unhash_classes(super)
-      end
-
-      build_options do |o|
-        o.without(:hostgroup_id, :environment_id)
-        o.expand.only(:hosts)
-      end
-    end
-
     class ConfigReportsCommand < HammerCLIForeman::ListCommand
       command_name 'config-reports'
       resource :config_reports, :index
@@ -293,7 +269,6 @@ module HammerCLIForeman
         end
       end
 
-      extend_with(HammerCLIForeman::CommandExtensions::PuppetEnvironment.new)
       extend_with(HammerCLIForeman::CommandExtensions::Hosts::Help::Interfaces.new)
       extend_with(HammerCLIForeman::CommandExtensions::Hosts::Help::ComputeResources.custom(add_host_specific_attrs: true).new)
     end
@@ -324,7 +299,6 @@ module HammerCLIForeman
         sources
       end
 
-      extend_with(HammerCLIForeman::CommandExtensions::PuppetEnvironment.new)
       extend_with(HammerCLIForeman::CommandExtensions::Hosts::Help::Interfaces.new)
       extend_with(HammerCLIForeman::CommandExtensions::Hosts::Help::ComputeResources.custom(add_host_specific_attrs: true).new)
     end
@@ -455,15 +429,6 @@ module HammerCLIForeman
       end
 
       build_options without: [:power_action]
-    end
-
-    class SCParamsCommand < HammerCLIForeman::SmartClassParametersList
-      build_options_for :hosts
-
-      def validate_options
-        super
-        validator.any(:option_host_name, :option_host_id).required
-      end
     end
 
     class RebuildConfigCommand < HammerCLIForeman::SingleResourceCommand
