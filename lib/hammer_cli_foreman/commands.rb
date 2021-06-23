@@ -294,7 +294,7 @@ module HammerCLIForeman
     def help
       return super unless resource
 
-      meta = resource.action(action).apidoc[:metadata]
+      meta = resource.action(action).apidoc&.dig(:metadata)
       if meta && meta[:search] && respond_to?(:option_search)
         self.class.extend_help do |h|
           h.section(_('Search / Order fields'), id: :search_fields_section) do |h|
