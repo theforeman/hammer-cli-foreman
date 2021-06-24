@@ -13,7 +13,7 @@ module HammerCLIForeman
         field :family, _("Family")
       end
 
-      build_options expand: { except: %i[organizations locations] }, without: %i[organization_id location_id]
+      build_options
     end
 
 
@@ -36,7 +36,7 @@ module HammerCLIForeman
         HammerCLIForeman::References.parameters(self)
       end
 
-      build_options expand: { except: %i[organizations locations] }, without: %i[organization_id location_id]
+      build_options
     end
 
 
@@ -44,7 +44,7 @@ module HammerCLIForeman
       success_message _("Operating system created.")
       failure_message _("Could not create the operating system")
 
-      build_options expand: { except: %i[organizations locations] }, without: %i[organization_id location_id]
+      build_options
     end
 
 
@@ -52,7 +52,7 @@ module HammerCLIForeman
       success_message _("Operating system updated.")
       failure_message _("Could not update the operating system")
 
-      build_options expand: { except: %i[organizations locations] }, without: %i[organization_id location_id]
+      build_options
     end
 
 
@@ -60,7 +60,7 @@ module HammerCLIForeman
       success_message _("Operating system deleted.")
       failure_message _("Could not delete the operating system")
 
-      build_options expand: { except: %i[organizations locations] }, without: %i[organization_id location_id]
+      build_options
     end
 
 
@@ -76,7 +76,7 @@ module HammerCLIForeman
         validator.any(:option_operatingsystem_id, :option_operatingsystem_title).required
       end
 
-      build_options expand: { except: %i[organizations locations] }, without: %i[organization_id location_id]
+      build_options
     end
 
 
@@ -90,7 +90,7 @@ module HammerCLIForeman
         validator.any(:option_operatingsystem_id, :option_operatingsystem_title).required
       end
 
-      build_options expand: { except: %i[organizations locations] }, without: %i[organization_id location_id]
+      build_options
     end
 
 
@@ -156,8 +156,8 @@ module HammerCLIForeman
         HammerCLI::EX_OK
       end
 
-      build_options expand: { except: %i[organizations locations] },
-                    without: %i[organization_id location_id template_kind_id type]
+      build_options without: [:template_kind_id, :type]
+
     end
 
 
@@ -192,7 +192,7 @@ module HammerCLIForeman
         {"operatingsystem_id" => option_id}
       end
 
-      build_options expand: { except: %i[organizations locations] }, without: %i[organization_id location_id]
+      build_options
     end
 
 

@@ -11,7 +11,7 @@ module HammerCLIForeman
         field :name, _("Name")
       end
 
-      build_options expand: { except: %i[organizations locations] }, without: %i[organization_id location_id]
+      build_options
     end
 
     class InfoCommand < HammerCLIForeman::InfoCommand
@@ -22,7 +22,7 @@ module HammerCLIForeman
         field :subscription_type, _("Subscription type")
       end
 
-      build_options expand: { except: %i[organizations locations] }, without: %i[organization_id location_id]
+      build_options
     end
 
     autoload_subcommands
