@@ -29,7 +29,7 @@ describe 'bookmark' do
     end
 
     it 'should run list command with defaults' do
-      providers = { 'foreman' => HammerCLIForeman::Defaults.new(api_connection({}, '2.1')) }
+      providers = { 'foreman' => HammerCLIForeman::Defaults.new(api_connection({}, '2.5')) }
       defaults = HammerCLI::Defaults.new(
         {
           organization_id: {
@@ -42,6 +42,8 @@ describe 'bookmark' do
       )
       defaults.stubs(:write_to_file).returns(true)
       defaults.stubs(:providers).returns(providers)
+      api_expects(:users, :index, 'Find user').with_params(search: 'login=admin').returns(index_response([{ 'default_organization' => { 'id' => 2 } }]))
+      api_expects(:users, :index, 'Find user').with_params(search: 'login=admin').returns(index_response([{ 'default_location' => { 'id' => 1 } }]))
       api_expects(:bookmarks, :index, 'List bookmarks').returns(@bookmarks)
 
       result = run_cmd(@cmd, { use_defaults: true, defaults: defaults })

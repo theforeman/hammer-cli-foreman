@@ -17,8 +17,8 @@ describe HammerCLIForeman::Bookmark do
 
     context 'parameters' do
       it_should_accept 'no arguments'
-      it_should_fail_with 'organization param', ['--organization-id=1']
-      it_should_fail_with 'location param', ['--location-id=1']
+      it_should_accept 'organization', ['--organization-id=1']
+      it_should_accept 'location', ['--location-id=1']
     end
 
     context 'output' do
@@ -41,8 +41,8 @@ describe HammerCLIForeman::Bookmark do
     context 'parameters' do
       it_should_accept 'id', ['--id=1']
       it_should_accept 'name', ['--name=active']
-      it_should_fail_with 'organization param', ['--organization-id=1']
-      it_should_fail_with 'location param', ['--location-id=1']
+      it_should_accept 'organization', %w[--id=1 --organization-id=1]
+      it_should_accept 'location', %w[--id=1 --location-id=1]
     end
 
     context 'output' do
@@ -63,11 +63,9 @@ describe HammerCLIForeman::Bookmark do
     let(:cmd) { HammerCLIForeman::Bookmark::CreateCommand.new('', ctx) }
 
     context 'parameters' do
-      it_should_accept 'name, public, controller, query',
-                       ['--name=active', '--public=1', '--controller=hosts',
+      it_should_accept 'name, public, controller, query, organization, location',
+                       ['--name=active', '--public=1', '--controller=hosts', '--organization-id=1', '--location-id=1',
                         '--query=last_report > "35 minutes ago" and (status.applied > 0 or status.restarted > 0)']
-      it_should_fail_with 'organization param', ['--organization-id=1']
-      it_should_fail_with 'location param', ['--location-id=1']
     end
 
   end
@@ -78,8 +76,8 @@ describe HammerCLIForeman::Bookmark do
     context 'parameters' do
       it_should_accept 'id', ['--id=1']
       it_should_accept 'name', ['--name=active']
-      it_should_fail_with 'organization param', ['--organization-id=1']
-      it_should_fail_with 'location param', ['--location-id=1']
+      it_should_accept 'organization', %w[--id=1 --organization-id=1]
+      it_should_accept 'location', %w[--id=1 --location-id=1]
     end
   end
 
@@ -89,11 +87,9 @@ describe HammerCLIForeman::Bookmark do
     context 'parameters' do
       it_should_accept 'id', ['--id=1']
       it_should_accept 'name', ['--name=active']
-      it_should_accept 'name, public, controller, query',
-                       ['--name=active', '--public=1', '--controller=hosts',
+      it_should_accept 'name, public, controller, query, organization, location',
+                       ['--name=active', '--public=1', '--controller=hosts', '--organization-id=1', '--location-id=1',
                         '--query=last_report > "35 minutes ago" and (status.applied > 0 or status.restarted > 0)']
-      it_should_fail_with 'organization param', ['--organization-id=1']
-      it_should_fail_with 'location param', ['--location-id=1']
     end
   end
 end

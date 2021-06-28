@@ -17,8 +17,8 @@ describe HammerCLIForeman::ComputeProfile do
 
     context 'parameters' do
       it_should_accept 'no arguments'
-      it_should_fail_with 'organization param', ['--organization-id=1']
-      it_should_fail_with 'location param', ['--location-id=1']
+      it_should_accept 'organization', ['--organization-id=1']
+      it_should_accept 'location', ['--location-id=1']
     end
 
     context 'output' do
@@ -36,8 +36,8 @@ describe HammerCLIForeman::ComputeProfile do
     context 'parameters' do
       it_should_accept 'id', ['--id=1']
       it_should_accept 'name', ['--name=test']
-      it_should_fail_with 'organization param', ['--organization-id=1']
-      it_should_fail_with 'location param', ['--location-id=1']
+      it_should_accept 'organization', %w[--id=1 --organization-id=1]
+      it_should_accept 'location', %w[--id=1 --location-id=1]
     end
 
     context 'output' do
@@ -57,8 +57,8 @@ describe HammerCLIForeman::ComputeProfile do
 
     context 'parameters' do
       it_should_accept 'name', ['--name=test']
-      it_should_fail_with 'organization param', ['--organization-id=1']
-      it_should_fail_with 'location param', ['--location-id=1']
+      it_should_accept 'organization', %w[--name=test --organization-id=1]
+      it_should_accept 'location', %w[--name=test --location-id=1]
     end
 
   end
@@ -69,8 +69,8 @@ describe HammerCLIForeman::ComputeProfile do
     context 'parameters' do
       it_should_accept 'id', ['--id=1']
       it_should_accept 'name', ['--name=test']
-      it_should_fail_with 'organization param', ['--organization-id=1']
-      it_should_fail_with 'location param', ['--location-id=1']
+      it_should_accept 'organization', %w[--id=1 --organization-id=1]
+      it_should_accept 'location', %w[--id=1 --location-id=1]
     end
   end
 
@@ -80,8 +80,8 @@ describe HammerCLIForeman::ComputeProfile do
     context 'parameters' do
       it_should_accept 'id', ['--id=1']
       it_should_accept 'name', ['--name=test']
-      it_should_fail_with 'organization param', ['--organization-id=1']
-      it_should_fail_with 'location param', ['--location-id=1']
+      it_should_accept 'organization', %w[--id=1 --organization-id=1]
+      it_should_accept 'location', %w[--id=1 --location-id=1]
     end
   end
 end
