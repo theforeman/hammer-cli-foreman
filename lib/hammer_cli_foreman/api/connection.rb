@@ -1,6 +1,7 @@
 require 'hammer_cli_foreman/api/session_authenticator_wrapper'
 require 'hammer_cli_foreman/api/authenticator'
 require 'hammer_cli_foreman/api/interactive_basic_auth'
+require 'hammer_cli_foreman/api/negotiate_auth'
 require 'hammer_cli_foreman/api/oauth/authentication_code_grant'
 require 'hammer_cli_foreman/api/oauth/password_grant'
 require 'hammer_cli_foreman/api/void_auth'
@@ -10,6 +11,7 @@ module HammerCLIForeman
   CONNECTION_NAME = 'foreman'
   AUTH_TYPES = {
     basic_auth: 'Basic_Auth',
+    negotiate: 'Negotiate_Auth',
     oauth_authentication_code_grant: 'Oauth_Authentication_Code_Grant',
     oauth_password_grant: 'Oauth_Password_Grant'
   }.freeze

@@ -13,6 +13,8 @@ module HammerCLIForeman
           void_auth
         elsif auth_type == AUTH_TYPES[:basic_auth]
           basic_auth
+        elsif auth_type == AUTH_TYPES[:negotiate]
+          negotiate_auth
         elsif auth_type == AUTH_TYPES[:oauth_password_grant]
           oauth_password_grant
         elsif auth_type == AUTH_TYPES[:oauth_authentication_code_grant]
@@ -41,6 +43,13 @@ module HammerCLIForeman
           end
           InteractiveBasicAuth.new(username, password)
         end
+      end
+
+      def negotiate_auth
+        return unless HammerCLIForeman::Sessions.enabled?
+
+        authenticator = NegotiateAuth.new(uri)
+        SessionAuthenticatorWrapper.new(authenticator, uri, auth_type)
       end
 
       def oauth_password_grant

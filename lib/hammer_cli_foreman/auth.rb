@@ -28,6 +28,19 @@ module HammerCLIForeman
         end
       end
 
+      class Negotiate < HammerCLI::AbstractCommand
+        extend HammerCLIForeman::Authenticate::Login
+
+        command_name('negotiate')
+        desc('negotiate the login credentials from the auth ticket (Kerberos)')
+
+        def execute
+          Negotiate.execute_with_params(AUTH_TYPES[:negotiate])
+          print_message(_("Successfully authenticated using negotiate auth, using the KEYRING principal."))
+          HammerCLI::EX_OK
+        end
+      end
+
       class Oauth < HammerCLI::AbstractCommand
         extend HammerCLIForeman::Authenticate::Login
 
