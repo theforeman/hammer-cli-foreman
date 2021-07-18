@@ -15,11 +15,9 @@ module HammerCLIForeman
       base.option "--puppet-ca-proxy", "PUPPET_CA_PROXY_NAME", _("Name of puppet CA proxy")
       base.option "--puppet-proxy", "PUPPET_PROXY_NAME",  _("Name of puppet proxy")
       base.option "--parent", "PARENT_NAME",  _("Name of parent hostgroup")
-      base.option ["--root-password", "--root-pass"], "ROOT_PASSWORD",  _("Root password"),
-                  deprecated: { '--root-pass' => _("Use --root-password instead") }
+      base.option ["--root-password"], "ROOT_PASSWORD",  _("Root password")
       base.option ["--ask-root-password", "--ask-root-pass"], "ASK_ROOT_PW", "",
-                  format: HammerCLI::Options::Normalizers::Bool.new,
-                  deprecated: { '--ask-root-pass' => _("Use --ask-root-password instead") }
+                  format: HammerCLI::Options::Normalizers::Bool.new
       base.option "--subnet6", "SUBNET6_NAME", _("Subnet IPv6 name")
 
       base.build_options without: %i[root_pass]
