@@ -3,33 +3,18 @@ module HammerCLIForeman
     module CommonUpdateOptions
 
       def self.included(base)
-        base.option "--owner", "OWNER_LOGIN", _("Login of the owner"),
-          :attribute_name => :option_user_login
-        base.option "--owner-id", "OWNER_ID", _("ID of the owner"),
-          :attribute_name => :option_owner_id
-
+        base.option_family do
+          parent '--owner-id', 'OWNER_ID', _('ID of the owner'),
+                 attribute_name: :option_owner_id
+          child '--owner', 'OWNER_LOGIN', _('Login of the owner'),
+                attribute_name: :option_user_login
+        end
         base.option "--root-password", "ROOT_PW",
           _("Required if host is managed and value is not inherited from host group or default password in settings")
 
         base.option "--ask-root-password", "ASK_ROOT_PW", " ",
           :format => HammerCLI::Options::Normalizers::Bool.new
 
-        base.option '--puppet-proxy', 'PUPPET_PROXY_NAME', '',
-                    referenced_resource: 'puppet_proxy',
-                    aliased_resource: 'puppet_proxy'
-        base.option '--puppet-ca-proxy', 'PUPPET_CA_PROXY_NAME', '',
-                    referenced_resource: 'puppet_ca_proxy',
-                    aliased_resource: 'puppet_ca_proxy'
-        base.option_family(
-          format: HammerCLI::Options::Normalizers::List.new,
-          aliased_resource: 'puppet-class',
-          description: 'Names/Ids of associated puppet classes'
-        ) do
-          parent '--puppet-class-ids', 'PUPPET_CLASS_IDS', '',
-                 attribute_name: :option_puppetclass_ids
-          child '--puppet-classes', 'PUPPET_CLASS_NAMES', '',
-                 attribute_name: :option_puppetclass_names
-        end
         bme_options = {}
         bme_options[:default] = 'true' if base.action.to_sym == :create
 
@@ -57,6 +42,18 @@ module HammerCLIForeman
               :network, :cpus, :memory, :provider, :type, :tenant_id, :image_id,
               # ----------------------------------------------------------------------------------
               :puppet_class_ids, :host_parameters_attributes, :interfaces_attributes, :root_pass]
+
+        # Should be moved to hammer-cli-foreman-puppet due to Puppet extraction
+        base.option_family associate: 'puppet_ca_proxy' do
+          child('--puppet-ca-proxy', 'PUPPET_CA_PROXY_NAME', _('Name of Puppet CA proxy'),
+                referenced_resource: 'puppet_ca_proxy',
+                aliased_resource: 'puppet_ca_proxy')
+        end
+        base.option_family associate: 'puppet_proxy' do
+          child('--puppet-proxy', 'PUPPET_PROXY_NAME', _('Name of Puppet proxy'),
+                referenced_resource: 'puppet_proxy',
+                aliased_resource: 'puppet_proxy')
+        end
       end
 
       def self.ask_password
@@ -134,14 +131,13 @@ module HammerCLIForeman
 
       private
 
-     
       def owner_id(name, type)
         return unless name
         return resolver.usergroup_id('option_name' => name) if type == 'Usergroup'
 
         resolver.user_id('option_login' => name)
       end
-      
+
       def proxy_id(name)
         resolver.smart_proxy_id('option_name' => name) if name
       end

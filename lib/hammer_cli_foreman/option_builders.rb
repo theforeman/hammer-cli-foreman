@@ -172,8 +172,7 @@ module HammerCLIForeman
     def build(builder_params={})
       resource_name_map = builder_params[:resource_mapping] || {}
       @searchables.for(@resource).collect do |s|
-        family = HammerCLI::Options::OptionFamily.new
-        family.parent(
+        option(
           optionamize("--#{s.name}"),
           s.name.upcase,
           s.description,
@@ -213,23 +212,43 @@ module HammerCLIForeman
 
     def build(builder_params={})
       resource_name_map = builder_params[:resource_mapping] || {}
-      dependent_options(@resource, resource_name_map)
+      command = builder_params[:command]
+      dependent_options(@resource, resource_name_map, command)
     end
 
     protected
 
-    def dependent_options(resource, resource_name_map)
+    def dependent_options(resource, resource_name_map, command)
       options = []
       searchables = @searchables.for(resource)
       resource_name = resource.singular_name
       aliased_name = aliased(resource_name, resource_name_map)
       types = searchables.map(&:name).push('id').map(&:capitalize).join('/')
       associated_resource = aliased_name.to_s.tr('_', ' ')
-      family = HammerCLI::Options::OptionFamily.new(
-        referenced_resource: resource_name,
-        aliased_resource: aliased_name,
-        description: _('%{types} of associated %{resource}') % { types: types, resource: associated_resource }
-      )
+      family = command.option_families.find do |f|
+        f.head.referenced_resource == resource_name
+      end
+      unless family
+        # If there is no family it probably means that we explicitly want to
+        # expand options via
+        # build_options do |o|
+        #   o.expand.including(:resource)
+        # end
+        # instead of generating it from API docs (it may not be even present there)
+        family = HammerCLI::Options::OptionFamily.new(
+          description: _('%{types} of associated %{resource}') % { types: types, resource: associated_resource },
+          creator: command
+        )
+        options << family.parent(
+          optionamize("--#{aliased_name}-id"),
+          "#{aliased_name}_id".upcase,
+          description("#{aliased_name}_id", @context[:action]),
+          attribute_name: HammerCLI.option_accessor_name("#{resource_name}_id"),
+          referenced_resource: resource_name,
+          aliased_resource: aliased_name,
+          format: HammerCLI::Options::Normalizers::Number.new
+        )
+      end
 
       unless searchables.empty?
         first = searchables[0]
@@ -240,31 +259,25 @@ module HammerCLIForeman
         options << family.child(
           optionamize("--#{aliased_name}"),
           "#{aliased_name}_#{first.name}".upcase,
-          first.description || " ",
-          attribute_name: HammerCLI.option_accessor_name("#{resource_name}_#{first.name}")
+          first.description || ' ',
+          attribute_name: HammerCLI.option_accessor_name("#{resource_name}_#{first.name}"),
+          referenced_resource: resource_name,
+          aliased_resource: aliased_name
         )
         # Other options are named by the resource plus the searchable name
         # Eg. --organization-label with accessor option_organization_label
         remaining.each do |s|
-          options << family.send(s.parent? ? :parent : :child,
+          options << family.child(
             optionamize("--#{aliased_name}-#{s.name}"),
             "#{aliased_name}_#{s.name}".upcase,
-            s.description || " ",
+            s.description || ' ',
             attribute_name: HammerCLI.option_accessor_name("#{resource_name}_#{s.name}"),
-            format: s.format
+            referenced_resource: resource_name,
+            aliased_resource: aliased_name
           )
         end
       end
 
-      unless options.any? { |o| o.handles?(optionamize("--#{aliased_name}-id")) }
-        options << family.parent(
-          optionamize("--#{aliased_name}-id"),
-          "#{aliased_name}_id".upcase,
-          description("#{aliased_name}_id", @context[:action]),
-          attribute_name: HammerCLI.option_accessor_name("#{resource_name}_id"),
-          format: HammerCLI::Options::Normalizers::Number.new
-        )
-      end
       options
     end
 
@@ -285,15 +298,25 @@ module HammerCLIForeman
   class UpdateDependentSearchablesOptionBuilder < DependentSearchablesOptionBuilder
     protected
 
-    def dependent_options(resource, resource_name_map)
+    def dependent_options(resource, resource_name_map, command)
       options = []
       searchables = @searchables.for(resource)
       resource_name = resource.singular_name
       aliased_name = aliased(resource_name, resource_name_map)
+      # Those options are not coming from API docs, thus create a new family only
       family = HammerCLI::Options::OptionFamily.new(
         prefix: 'new-',
         aliased_resource: aliased_name,
-        referenced_resource: resource_name
+        referenced_resource: resource_name,
+        creator: command
+      )
+
+      options << family.parent(
+        optionamize("--new-#{aliased_name}-id"),
+        "new_#{aliased_name}_id".upcase,
+        _('Use to update associated %s') % aliased_name,
+        attribute_name: HammerCLI.option_accessor_name("new_#{resource_name}_id"),
+        format: HammerCLI::Options::Normalizers::Number.new
       )
       unless searchables.empty?
         first = searchables[0]
@@ -304,73 +327,63 @@ module HammerCLIForeman
         options << family.child(
           optionamize("--new-#{aliased_name}"),
           "new_#{aliased_name}_#{first.name}".upcase,
-          _('Use to update'),
+          _('Use to update associated %s') % aliased_name,
           attribute_name: HammerCLI.option_accessor_name("new_#{resource_name}_#{first.name}")
         )
         # Other options are named by the resource plus the searchable name
         # Eg. --new-organization-label with accessor option_new_organization_label
         remaining.each do |s|
-          options << family.send(s.parent? ? :parent : :child,
+          options << family.child(
             optionamize("--new-#{aliased_name}-#{s.name}"),
             "new_#{aliased_name}_#{s.name}".upcase,
-            _('Use to update'),
+            _('Use to update associated %s') % aliased_name,
             attribute_name: HammerCLI.option_accessor_name("new_#{resource_name}_#{s.name}")
           )
         end
       end
 
-      unless options.any? { |o| o.handles?(optionamize("--new-#{aliased_name}-id")) }
-        options << family.parent(
-          optionamize("--new-#{aliased_name}-id"),
-          "new_#{aliased_name}_id".upcase,
-          _('Use to update'),
-          attribute_name: HammerCLI.option_accessor_name("new_#{resource_name}_id"),
-          format: HammerCLI::Options::Normalizers::Number.new
-        )
-      end
       options
     end
   end
 
   class DependentSearchablesArrayOptionBuilder < DependentSearchablesOptionBuilder
-
-
-    def dependent_options(resource, resource_name_map)
+    def dependent_options(resource, resource_name_map, command)
       options = []
       searchables = @searchables.for(resource)
       resource_name = resource.singular_name
 
       aliased_name = aliased(resource_name, resource_name_map)
       aliased_plural_name = aliased(resource.name, resource_name_map)
-
       unless searchables.empty?
         first = searchables[0]
         remaining = searchables[1..-1] || []
-        types = searchables.map(&:plural_name).map(&:capitalize).join('/')
-        associated_resource = aliased_plural_name.to_s.tr('_', ' ')
-        family = HammerCLI::Options::OptionFamily.new(
-          format: HammerCLI::Options::Normalizers::List.new,
-          referenced_resource: resource_name,
-          aliased_resource: aliased_name,
-          description: _('%{types} of associated %{resource}') % { types: types, resource: associated_resource }
-        )
+        # Find family created by HammerCLI::Apipie::OptionBuilder for *_ids options
+        family = command.option_families.find do |f|
+          f.head.referenced_resource == resource_name && f.formats.include?(HammerCLI::Options::Normalizers::List)
+        end
         # First option is named by the resource
         # Eg. --organizations with accessor option_organization_names
         options << family.child(
           optionamize("--#{aliased_plural_name}"),
           "#{aliased_name}_#{first.plural_name}".upcase,
           ' ',
-          attribute_name: HammerCLI.option_accessor_name("#{resource_name}_#{first.plural_name}")
+          attribute_name: HammerCLI.option_accessor_name("#{resource_name}_#{first.plural_name}"),
+          format: HammerCLI::Options::Normalizers::List.new,
+          referenced_resource: resource_name,
+          aliased_resource: aliased_name
         )
 
         # Other options are named by the resource plus the searchable name
         # Eg. --organization-labels with accessor option_organization_labels
         remaining.each do |s|
-          options << family.send(s.parent? ? :parent : :child,
+          options << family.child(
             optionamize("--#{aliased_name}-#{s.plural_name}"),
             "#{aliased_name}_#{s.plural_name}".upcase,
             ' ',
-            attribute_name: HammerCLI.option_accessor_name("#{resource_name}_#{s.plural_name}")
+            attribute_name: HammerCLI.option_accessor_name("#{resource_name}_#{s.plural_name}"),
+            format: HammerCLI::Options::Normalizers::List.new,
+            referenced_resource: resource_name,
+            aliased_resource: aliased_name
           )
         end
       end
@@ -421,4 +434,3 @@ module HammerCLIForeman
   end
 
 end
-                                                                                                       

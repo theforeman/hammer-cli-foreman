@@ -37,7 +37,7 @@ describe 'personal_access_token' do
 
     it 'lists all access tokens for a given user' do
       api_expects(:personal_access_tokens, :index, 'List').with_params(
-        'user_id' => 1, 'page' => 1, 'per_page' => 1000
+        'user_id' => '1', 'page' => 1, 'per_page' => 1000
       ).returns(index_response([access_token, active_access_token]))
 
       output = IndexMatcher.new([
@@ -67,7 +67,7 @@ describe 'personal_access_token' do
 
     it 'creates an access token to a given user' do
       api_expects(:personal_access_tokens, :create).with_params(
-        'user_id' => 1, 'personal_access_token' => {
+        'user_id' => '1', 'personal_access_token' => {
           'expires_at' => '01/01/2048', 'name' => 'test'
         }
       ).returns(access_token)
@@ -85,7 +85,7 @@ describe 'personal_access_token' do
 
     it 'shows the personal access token' do
       api_expects(:personal_access_tokens, :show, 'Show PAT').with_params(
-        'id' => '1', 'user_id' => 1
+        'id' => '1', 'user_id' => '1'
       ).returns(access_token)
 
       output = OutputMatcher.new([
@@ -109,7 +109,7 @@ describe 'personal_access_token' do
     let(:params) { ['--id=1', '--user-id=1'] }
     it 'deletes an access token to a given user' do
       api_expects(:personal_access_tokens, :destroy, 'Revoke PAT').with_params(
-        'id' => '1', 'user_id' => 1
+        'id' => '1', 'user_id' => '1'
       ).returns(access_token)
 
       expected_result = success_result(

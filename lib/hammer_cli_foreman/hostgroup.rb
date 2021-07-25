@@ -6,21 +6,30 @@ module HammerCLIForeman
   module HostgroupUpdateCreateCommons
 
     def self.included(base)
-      base.option "--puppet-class-ids", "PUPPETCLASS_IDS", _("List of puppetclass ids"),
-        :format => HammerCLI::Options::Normalizers::List.new,
-        :attribute_name => :option_puppetclass_ids
-      base.option "--puppet-classes", "PUPPET_CLASS_NAMES", "",
-        :format => HammerCLI::Options::Normalizers::List.new,
-        :attribute_name => :option_puppetclass_names
-      base.option "--puppet-ca-proxy", "PUPPET_CA_PROXY_NAME", _("Name of puppet CA proxy")
-      base.option "--puppet-proxy", "PUPPET_PROXY_NAME",  _("Name of puppet proxy")
-      base.option "--parent", "PARENT_NAME",  _("Name of parent hostgroup")
-      base.option ["--root-password"], "ROOT_PASSWORD",  _("Root password")
-      base.option ["--ask-root-password", "--ask-root-pass"], "ASK_ROOT_PW", "",
+      base.option '--root-password', 'ROOT_PASSWORD', _('Root password')
+      base.option '--ask-root-password', 'ASK_ROOT_PW', '',
                   format: HammerCLI::Options::Normalizers::Bool.new
-      base.option "--subnet6", "SUBNET6_NAME", _("Subnet IPv6 name")
 
       base.build_options without: %i[root_pass]
+
+      base.option_family associate: 'subnet6' do
+        child '--subnet6', 'SUBNET6_NAME', _('Subnet IPv6 name')
+      end
+
+      base.option_family associate: 'parent' do
+        child '--parent', 'PARENT_NAME', _('Name of parent hostgroup')
+      end
+      # Should be moved to hammer-cli-foreman-puppet due to Puppet extraction
+      base.option_family associate: 'puppet_ca_proxy' do
+        child('--puppet-ca-proxy', 'PUPPET_CA_PROXY_NAME', _('Name of Puppet CA proxy'),
+              referenced_resource: 'puppet_ca_proxy',
+              aliased_resource: 'puppet_ca_proxy')
+      end
+      base.option_family associate: 'puppet_proxy' do
+        child('--puppet-proxy', 'PUPPET_PROXY_NAME', _('Name of Puppet proxy'),
+              referenced_resource: 'puppet_proxy',
+              aliased_resource: 'puppet_proxy')
+      end
     end
 
     def self.ask_password

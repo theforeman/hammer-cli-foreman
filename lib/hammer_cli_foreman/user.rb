@@ -56,9 +56,9 @@ module HammerCLIForeman
       success_message _("User [%{login}] created.")
       failure_message _("Could not create the user")
 
-      extend_with(HammerCLIForeman::CommandExtensions::User.new)
-
       build_options
+
+      extend_with(HammerCLIForeman::CommandExtensions::User.new)
     end
 
 
@@ -66,9 +66,9 @@ module HammerCLIForeman
       success_message _("User [%{login}] updated.")
       failure_message _("Could not update the user")
 
-      extend_with(HammerCLIForeman::CommandExtensions::User.new)
-
       build_options
+
+      extend_with(HammerCLIForeman::CommandExtensions::User.new)
     end
 
 

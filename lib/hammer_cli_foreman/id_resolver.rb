@@ -1,14 +1,12 @@
 module HammerCLIForeman
 
   class Searchable
-    attr_reader :name, :description, :format
+    attr_reader :name, :description
 
     def initialize(name, description, options={})
       @name = name
       @description = description
       @editable = options[:editable].nil? ? true : options[:editable]
-      @format = options[:format]
-      @parent = options[:parent]
     end
 
     def plural_name
@@ -17,10 +15,6 @@ module HammerCLIForeman
 
     def editable?
       @editable
-    end
-
-    def parent?
-      @parent
     end
   end
 
@@ -67,6 +61,7 @@ module HammerCLIForeman
       :ptable =>           [ s_name(_("Partition table name")) ],
       :proxy =>            [ s_name(_("Proxy name")) ],
       :puppetclass =>      [ s_name(_("Puppet class name")) ],
+      :puppet_ca_proxy =>  [ s_name(_("Puppet CA proxy name")) ],
       :config_report =>    [],
       :role =>             [ s_name(_("User role name")) ],
       :setting =>          [ s_name(_("Setting name"), :editable => false) ],
