@@ -6,8 +6,7 @@ module HammerCLIForeman
 
     module RequestParams
       def request_params
-        combination_params = { 'hostgroup_id' => params['hostgroup_id'].to_s,
-                               'environment_id' => params['environment_id'].to_s }
+        combination_params = { 'hostgroup_id' => params['hostgroup_id'].to_s }
         super.merge('template_combination' => combination_params)
       end
     end
@@ -21,8 +20,6 @@ module HammerCLIForeman
         field :provisioning_template_name, _('Provisioning template name')
         field :hostgroup_id, _('Hostgroup ID')
         field :hostgroup_name, _('Hostgroup name')
-        field :environment_id, _('Environment ID')
-        field :environment_name, _('Environment name')
 
         HammerCLIForeman::References.taxonomies(self)
         HammerCLIForeman::References.timestamps(self)
@@ -31,8 +28,6 @@ module HammerCLIForeman
       build_options do |o|
         o.expand(:all)
       end
-
-      extend_with(HammerCLIForeman::CommandExtensions::PuppetEnvironment.new)
     end
 
     class ListCombination < HammerCLIForeman::ListCommand
@@ -40,12 +35,11 @@ module HammerCLIForeman
         field :id, _('ID')
         field nil, _('Provisioning Template'), Fields::SingleReference, :key => :provisioning_template
         field nil, _('Hostgroup'), Fields::SingleReference, :key => :hostgroup
-        field nil, _('Environment'), Fields::SingleReference, :key => :environment
       end
 
       build_options do |o|
-        o.expand(:all).except(:hostgroups, :environments)
-        o.without(:hostgroup_id, :environment_id)
+        o.expand(:all).except(:hostgroups)
+        o.without(:hostgroup_id)
       end
     end
 
@@ -58,8 +52,6 @@ module HammerCLIForeman
       build_options do |o|
         o.expand(:all)
       end
-
-      extend_with(HammerCLIForeman::CommandExtensions::PuppetEnvironment.new)
     end
 
     class CreateCombination < HammerCLIForeman::CreateCommand
@@ -71,8 +63,6 @@ module HammerCLIForeman
       build_options do |o|
         o.expand(:all)
       end
-
-      extend_with(HammerCLIForeman::CommandExtensions::PuppetEnvironment.new)
     end
 
     class DeleteCombination < HammerCLIForeman::DeleteCommand

@@ -36,7 +36,6 @@ module HammerCLIForeman
         HammerCLIForeman::References.partition_tables(self)
         HammerCLIForeman::References.domains(self)
         HammerCLIForeman::References.realms(self)
-        HammerCLIForeman::References.environments(self)
         HammerCLIForeman::References.hostgroups(self)
         HammerCLIForeman::References.parameters(self)
         collection :organizations, _("Organizations"), :numbered => false, :hide_blank => true do
@@ -58,8 +57,6 @@ module HammerCLIForeman
       failure_message _("Could not create the location")
 
       build_options
-
-      extend_with(HammerCLIForeman::CommandExtensions::PuppetEnvironments.new)
     end
 
 
@@ -72,8 +69,6 @@ module HammerCLIForeman
       failure_message _("Could not update the location")
 
       build_options
-
-      extend_with(HammerCLIForeman::CommandExtensions::PuppetEnvironments.new)
     end
 
 
@@ -112,7 +107,6 @@ module HammerCLIForeman
     end
 
     HammerCLIForeman::AssociatingCommands::Hostgroup.extend_command(self)
-    HammerCLIForeman::AssociatingCommands::PuppetEnvironment.extend_command(self)
     HammerCLIForeman::AssociatingCommands::Domain.extend_command(self)
     HammerCLIForeman::AssociatingCommands::Medium.extend_command(self)
     HammerCLIForeman::AssociatingCommands::Subnet.extend_command(self)

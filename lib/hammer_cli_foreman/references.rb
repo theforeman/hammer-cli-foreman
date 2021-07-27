@@ -112,14 +112,6 @@ module HammerCLIForeman
       end
     end
 
-    def self.environments(dsl)
-      dsl.build do
-        collection :environments, _("Environments"), :numbered => false do
-          custom_field Fields::Reference
-        end
-      end
-    end
-
     def self.hostgroups(dsl)
       dsl.build do
         collection :hostgroups, _("Hostgroups"), :numbered => false do
@@ -149,14 +141,6 @@ module HammerCLIForeman
       dsl.build do
         collection :all_parameters, _("All parameters"), :numbered => false do
           custom_field Fields::KeyValue
-        end
-      end
-    end
-
-    def self.puppetclasses(dsl)
-      dsl.build do
-        collection :puppetclasses, _("Puppetclasses"), :numbered => false do
-          custom_field Fields::Reference
         end
       end
     end

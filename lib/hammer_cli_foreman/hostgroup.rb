@@ -1,19 +1,8 @@
-require 'hammer_cli_foreman/smart_class_parameter'
-require 'hammer_cli_foreman/puppet_class'
-
 module HammerCLIForeman
 
   module HostgroupUpdateCreateCommons
 
     def self.included(base)
-      base.option "--puppet-class-ids", "PUPPETCLASS_IDS", _("List of puppetclass ids"),
-        :format => HammerCLI::Options::Normalizers::List.new,
-        :attribute_name => :option_puppetclass_ids
-      base.option "--puppet-classes", "PUPPET_CLASS_NAMES", "",
-        :format => HammerCLI::Options::Normalizers::List.new,
-        :attribute_name => :option_puppetclass_names
-      base.option "--puppet-ca-proxy", "PUPPET_CA_PROXY_NAME", _("Name of puppet CA proxy")
-      base.option "--puppet-proxy", "PUPPET_PROXY_NAME",  _("Name of puppet proxy")
       base.option "--parent", "PARENT_NAME",  _("Name of parent hostgroup")
       base.option ["--root-password"], "ROOT_PASSWORD",  _("Root password")
       base.option ["--ask-root-password", "--ask-root-pass"], "ASK_ROOT_PW", "",
@@ -31,8 +20,6 @@ module HammerCLIForeman
     def request_params
       params = super
       params['hostgroup']["parent_id"] ||= resolver.hostgroup_id('option_name' => option_parent) if option_parent
-      params['hostgroup']["puppet_proxy_id"] ||= proxy_id(option_puppet_proxy) if option_puppet_proxy
-      params['hostgroup']["puppet_ca_proxy_id"] ||= proxy_id(option_puppet_ca_proxy) if option_puppet_ca_proxy
 
       params['hostgroup']['root_pass'] = option_root_password if option_root_password
       params['hostgroup']['root_pass'] = HammerCLIForeman::HostgroupUpdateCreateCommons::ask_password if option_ask_root_password
@@ -59,7 +46,6 @@ module HammerCLIForeman
         field :name, _("Name")
         field :title, _("Title")
         field nil, _("Operating System"), Fields::SingleReference, :key => :operatingsystem
-        field nil, _("Puppet Environment"), Fields::SingleReference, :key => :environment
         field nil, _("Model"), Fields::SingleReference, :key => :model
       end
 
@@ -73,13 +59,10 @@ module HammerCLIForeman
         field :id, _("Id")
         field :name, _("Name")
         field :title, _("Title")
-        field nil, _("Puppet Environment"), Fields::SingleReference, :key => :environment
         field nil, _("Model"), Fields::SingleReference, :key => :model
 
         field :description, _("Description"), Fields::LongText, :hide_blank => true
         field nil, _("Parent"), Fields::SingleReference, :key => :parent, :hide_blank => true
-        field nil, _("Puppet CA Proxy"), Fields::SingleReference, :key => :puppet_ca_proxy
-        field nil, _("Puppet Master Proxy"), Fields::SingleReference, :key => :puppet_proxy
         field nil, _("Compute Profile"), Fields::SingleReference, :key => :compute_profile
 	field nil, _("Compute Resource"), Fields::SingleReference, :key => :compute_resource
         label _('Network') do
@@ -95,7 +78,6 @@ module HammerCLIForeman
           field nil, _("Partition Table"), Fields::SingleReference, :key => :ptable
           field :pxe_loader, _("PXE Loader"), Fields::Field, :hide_blank => true
         end
-        HammerCLIForeman::References.puppetclasses(self)
         HammerCLIForeman::References.parameters(self)
         HammerCLIForeman::References.taxonomies(self)
       end
@@ -109,8 +91,6 @@ module HammerCLIForeman
 
       success_message _("Hostgroup created.")
       failure_message _("Could not create the hostgroup")
-
-      extend_with(HammerCLIForeman::CommandExtensions::PuppetEnvironment.new)
     end
 
 
@@ -119,8 +99,6 @@ module HammerCLIForeman
 
       success_message _("Hostgroup updated.")
       failure_message _("Could not update the hostgroup")
-
-      extend_with(HammerCLIForeman::CommandExtensions::PuppetEnvironment.new)
     end
 
 
@@ -130,24 +108,6 @@ module HammerCLIForeman
 
       build_options
     end
-
-
-    class PuppetClassesCommand < HammerCLIForeman::ListCommand
-      command_name "puppet-classes"
-      resource :puppetclasses
-
-      output HammerCLIForeman::PuppetClass::ListCommand.output_definition
-
-      def send_request
-        HammerCLIForeman::PuppetClass::ListCommand.unhash_classes(super)
-      end
-
-      build_options do |o|
-        o.without(:host_id, :environment_id)
-        o.expand.only(:hostgroups)
-      end
-    end
-
 
     class SetParameterCommand < HammerCLIForeman::Parameter::SetCommand
       desc _("Create or update parameter for a hostgroup")
@@ -166,15 +126,6 @@ module HammerCLIForeman
       success_message _("Hostgroup parameter deleted.")
 
       build_options
-    end
-
-    class SCParamsCommand < HammerCLIForeman::SmartClassParametersList
-      build_options_for :hostgroups
-
-      def validate_options
-        super
-        validator.any(:option_hostgroup_name, :option_hostgroup_id).required
-      end
     end
 
     class RebuildConfigCommand < HammerCLIForeman::SingleResourceCommand

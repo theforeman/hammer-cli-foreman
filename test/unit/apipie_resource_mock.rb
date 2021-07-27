@@ -19,15 +19,6 @@ module ResourceMocks
     end
   end
 
-  def self.smart_class_parameters_index
-    ResourceMocks.mock_action_call(:smart_class_parameters, :index,
-      { "results" => [ { 'parameter' => 'config', 'id' => '1'} ] })
-  end
-
-  def self.smart_class_parameters_show
-    ResourceMocks.mock_action_call(:smart_class_parameters, :show, { 'smart_class_parameter' => { 'override_value_order' => '', 'environments' => [] }})
-  end
-
   def self.smart_variables_index
     ResourceMocks.mock_action_call(:smart_variables, :index,
       { "results" => [ { 'variable' => 'var', 'id' => '1'} ] })
@@ -107,8 +98,6 @@ module ResourceMocks
     ResourceMocks.mock_action_call(:hosts, :show, {
       "ip" => "192.168.122.51",
       "ip6" => nil,
-      "environment_id" => 1,
-      "environment_name" => "production",
       "last_report" => "2016-10-24 12:06:31 UTC",
       "mac" => "52:54:00:ce:b2:b9",
       "realm_id" => nil,
@@ -150,26 +139,11 @@ module ResourceMocks
       "organization_name" => nil,
       "location_id" => nil,
       "location_name" => nil,
-      "puppet_status" => 0,
       "model_name" => "KVM",
       "configuration_status" => 0,
       "configuration_status_label" => "No reports",
       "name" => "foreman.example.com",
       "id" => 1,
-      "puppet_proxy_id" => 1,
-      "puppet_proxy_name" => "foreman.example.com",
-      "puppet_ca_proxy_id" => 1,
-      "puppet_ca_proxy_name" => "foreman.example.com",
-      "puppet_proxy" => {
-        "name" => "foreman.example.com",
-        "id" => 1,
-        "url" => "https://foreman.example.com:9090"
-      },
-      "puppet_ca_proxy" => {
-        "name" => "foreman.example.com",
-        "id" => 1,
-        "url" => "https://foreman.example.com:9090"
-      },
       "hostgroup_name" => nil,
       "hostgroup_title" => nil,
       "parameters" => [],
@@ -193,10 +167,7 @@ module ResourceMocks
         "primary" => false,
         "provision" => false,
         "type" => "interface"
-      }],
-      "puppetclasses" => [],
-      "config_groups" => [],
-      "all_puppetclasses" => []
+      }]
     })
   end
 
@@ -335,13 +306,4 @@ module ResourceMocks
       "value" => "random value",
     }])
   end
-
-  def self.config_groups_index
-    ResourceMocks.mock_action_call(:config_groups, :index, [{
-      id: 15,
-      name: "test config group",
-      puppetclasses: [ { name: "My puppetclass" } ]
-    }])
-  end
-
 end

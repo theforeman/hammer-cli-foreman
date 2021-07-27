@@ -356,7 +356,6 @@ describe 'host update' do
       'organization_id' => '5',
       'location_id' => '5',
       'compute_attributes' => {},
-      'puppetclass_ids' => [],
       'owner_id' => '1',
       'owner_name' => 'adminGroup',
       'owner_type' => 'Usergroup'
