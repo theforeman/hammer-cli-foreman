@@ -45,8 +45,7 @@ describe HammerCLIForeman::Host do
       with_params ["--id=1"] do
         it_should_print_n_records 1
         it_should_print_columns ["Id", "Name", "Organization", "Location"]
-        it_should_print_columns ["Host Group", "Compute Resource", "Compute Profile", "Puppet Environment"]
-        it_should_print_columns ["Puppet CA Proxy", "Puppet Master Proxy", "Cert name"]
+        it_should_print_columns ["Host Group", "Compute Resource", "Compute Profile"]
         it_should_print_columns ["Managed", "Status", "Installed at", "Last report"]
         it_should_print_columns ["Network", "Network interfaces", "Operating system", "Parameters", "All parameters", "Additional info"]
       end
@@ -106,32 +105,6 @@ describe HammerCLIForeman::Host do
     end
   end
 
-
-  context "PuppetClassesCommand" do
-    before do
-      ResourceMocks.mock_action_call(:puppetclasses, :index, {})
-    end
-
-    let(:cmd) { HammerCLIForeman::Host::PuppetClassesCommand.new("", ctx) }
-
-    context "parameters" do
-      it_should_accept "host", ["--host=name=my5name.mydomain.net"]
-      it_should_accept "host-id", ["--host-id=1"]
-      # it_should_fail_with "host or host-id missing", []
-      # TODO: temporarily disabled, parameters are checked in the id resolver
-    end
-
-    context "output" do
-
-      with_params ["--host=my5name.mydomain.net"] do
-        it_should_print_column "Id"
-        it_should_print_column "Name"
-      end
-    end
-
-  end
-
-
   context "ConfigReportsCommand" do
     before do
       ResourceMocks.mock_action_call(:config_reports, :index, [])
@@ -186,29 +159,25 @@ describe HammerCLIForeman::Host do
 
     context "parameters" do
       taxonomies = ["--organization-id=1", "--location-id=1"]
-      it_should_accept "name, environment_id, architecture_id, domain_id, puppet_proxy_id, operatingsystem_id and more",
-          ["--name=host", "--puppet-environment-id=1", "--architecture-id=1", "--domain-id=1", "--puppet-proxy-id=1", "--operatingsystem-id=1",
+      it_should_accept "name, architecture_id, domain_id, operatingsystem_id and more",
+          ["--name=host", "--architecture-id=1", "--domain-id=1", "--operatingsystem-id=1",
             "--ip=1.2.3.4", "--mac=11:22:33:44:55:66", "--medium-id=1", "--partition-table-id=1", "--subnet-id=1",
-            "--model-id=1", "--hostgroup-id=1", "--owner-id=1", '--puppet-ca-proxy-id=1', '--puppet-class-ids',
+            "--model-id=1", "--hostgroup-id=1", "--owner-id=1",
             "--root-password=pwd", "--ask-root-password=true", "--provision-method=build", "--interface=primary=true,provision=true"] + taxonomies
       it_should_fail_with "name or id missing",
-          ["--puppet-environment-id=1", "--architecture-id=1", "--domain-id=1", "--puppet-proxy-id=1", "--operatingsystem-id=1", "--interface=primary=true,provision=true"]
-      it_should_fail_with "environment_id missing",
-          ["--name=host", "--architecture-id=1", "--domain-id=1", "--puppet-proxy-id=1", "--operatingsystem-id=1", "--interface=primary=true,provision=true"]
+          ["--architecture-id=1", "--domain-id=1", "--operatingsystem-id=1", "--interface=primary=true,provision=true"]
       it_should_fail_with "architecture_id missing",
-          ["--name=host", "--puppet-environment-id=1", "--domain-id=1", "--puppet-proxy-id=1", "--operatingsystem-id=1", "--interface=primary=true,provision=true"]
+          ["--name=host", "--domain-id=1", "--operatingsystem-id=1", "--interface=primary=true,provision=true"]
       it_should_fail_with "domain_id missing",
-          ["--name=host", "--puppet-environment-id=1", "--architecture-id=1", "--puppet-proxy-id=1", "--operatingsystem-id=1", "--interface=primary=true,provision=true"]
-      it_should_fail_with "puppet_proxy_id missing",
-          ["--name=host", "--puppet-environment-id=1", "--architecture-id=1", "--domain-id=1", "--operatingsystem-id=1", "--interface=primary=true,provision=true"]
+          ["--name=host", "--architecture-id=1", "--operatingsystem-id=1", "--interface=primary=true,provision=true"]
       it_should_fail_with "operatingsystem_id missing",
-          ["--name=host", "--puppet-environment-id=1", "--architecture-id=1", "--domain-id=1", "--puppet-proxy-id=1", "--interface=primary=true,provision=true"]
+          ["--name=host", "--architecture-id=1", "--domain-id=1", "--interface=primary=true,provision=true"]
       it_should_accept "only hostgroup name", ["--hostgroup=example", "--name=host", "--interface=primary=true,provision=true"] + taxonomies
       it_should_accept "only hostgroup ID", ["--hostgroup-id=1", "--name=host", "--interface=primary=true,provision=true"] + taxonomies
 
-      with_params ["--name=host", "--puppet-environment-id=1", "--architecture-id=1", "--domain-id=1", "--puppet-proxy-id=1", "--operatingsystem-id=1",
+      with_params ["--name=host", "--architecture-id=1", "--domain-id=1", "--operatingsystem-id=1",
             "--ip=1.2.3.4", "--mac=11:22:33:44:55:66", "--medium-id=1", "--partition-table-id=1", "--subnet-id=1",
-            "--model-id=1", "--hostgroup-id=1", "--owner-id=1", '--puppet-ca-proxy-id=1', '--puppet-class-ids',
+            "--model-id=1", "--hostgroup-id=1", "--owner-id=1",
             "--root-password=pwd", "--ask-root-password=true", "--provision-method=build", "--interface=primary=true,provision=true"] do
         it_should_call_action_and_test_params(:create) { |par| par["host"]["managed"] == true }
         it_should_call_action_and_test_params(:create) { |par| par["host"]["build"] == true }
@@ -240,16 +209,16 @@ describe HammerCLIForeman::Host do
 
     context "parameters" do
       it_should_accept "name", ["--name=host", "--new-name=host2"]
-      it_should_accept "id and more", ["--id=1", "--new-name=host2", "--puppet-environment-id=1", "--architecture-id=1",
-            "--domain-id=1", "--puppet-proxy-id=1", "--operatingsystem-id=1",
+      it_should_accept "id and more", ["--id=1", "--new-name=host2", "--architecture-id=1",
+            "--domain-id=1", "--operatingsystem-id=1",
             "--ip=1.2.3.4", "--mac=11:22:33:44:55:66", "--medium-id=1", "--partition-table-id=1", "--subnet-id=1",
-            "--model-id=1", "--hostgroup-id=1", "--owner-id=1", '--puppet-ca-proxy-id=1',
+            "--model-id=1", "--hostgroup-id=1", "--owner-id=1",
             "--root-password=pwd", "--ask-root-password=true", "--provision-method=build"]
       # it_should_fail_with "no params", []
       # it_should_fail_with "name or id missing", ["--new-name=host2"]
       # TODO: temporarily disabled, parameters are checked in the id resolver
 
-      with_params ["--id=1", "--puppet-proxy-id=1"] do
+      with_params ["--id=1"] do
         it_should_call_action_and_test_params(:update) { |par| par["host"].key?("managed") != true }
         it_should_call_action_and_test_params(:update) { |par| par["host"].key?("build") != true }
         it_should_call_action_and_test_params(:update) { |par| par["host"].key?("enabled") != true }
@@ -348,22 +317,6 @@ describe HammerCLIForeman::Host do
       # it_should_fail_with "empty params", []
       # TODO: temporarily disabled, parameters are checked in the id resolver
     end
-  end
-
-  context "SCParamsCommand" do
-
-    before :each do
-      ResourceMocks.smart_class_parameters_index
-    end
-
-    let(:cmd) { HammerCLIForeman::Host::SCParamsCommand.new("", ctx) }
-
-    context "parameters" do
-      it_should_accept "host", ["--host=host"]
-      it_should_accept "host-id", ["--host-id=1"]
-      # it_should_fail_with "name or id missing", [] # TODO: temporarily disabled, parameters are checked in the id resolver
-    end
-
   end
 
   context "RebuildConfigCommand" do

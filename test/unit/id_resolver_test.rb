@@ -213,34 +213,6 @@ describe HammerCLIForeman::IdResolver do
       end
     end
 
-    describe 'searching for puppetclasses' do
-      before do
-        ResourceMocks.mock_action_call(:puppetclasses, :index, {
-          'apache' => [
-            { 'id' => 70, 'name' => 'apache::dev', 'created_at' => '2015-01-27T07:24:57.134Z', 'updated_at' => '2015-03-05T17:27:54.282Z' },
-            { 'id' => 27, 'name' => 'apache::mod::authnz_ldap', 'created_at' => '2015-01-27T07:24:56.378Z','updated_at' => '2015-01-27T07:24:56.378Z' }
-          ],
-          'git' => [
-            { 'id' => 85, 'name' => 'git::params', 'created_at' => '2015-01-27T07:24:57.306Z', 'updated_at' => '2015-01-27T07:24:57.306Z' }
-          ]
-        })
-      end
-
-      it "returns ids from options" do
-        result = resolver.user_ids({"option_ids" => [4, 5], "option_names" => ['apache::dev']})
-        assert_equal [4, 5], result
-      end
-
-      it "returns ids of the classes" do
-        class_names = ['apache::mod::authnz_ldap', 'git::params', 'apache::dev']
-        assert_equal [70, 27, 85], resolver.puppetclass_ids('option_names' => class_names)
-      end
-
-      it 'returns empty array for empty class array' do
-        assert_equal [], resolver.puppetclass_ids('option_names' => [])
-      end
-    end
-
     describe "searching for multiple resources" do
       it "returns ids from options" do
         result = resolver.user_ids({"option_ids" => [4, 5], "option_names" => ["some", "names"]})

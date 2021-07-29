@@ -208,7 +208,6 @@ describe 'info' do
         provisioning_templates: [],
         domains: [],
         realms: [],
-        environments: [],
         hostgroups: [],
         organizations: [],
         parameters: []
@@ -241,8 +240,6 @@ describe 'info' do
                                  'Domains:',
                                  '',
                                  'Realms:',
-                                 '',
-                                 'Environments:',
                                  '',
                                  'Hostgroups:',
                                  '',

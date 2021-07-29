@@ -3,7 +3,7 @@ require "json"
 module Minitest
   class CoverageRunner
 
-    RESOURCE_BLACK_LIST = ['tasks','home','config_groups','statistics','table_preferences','autosign','puppet_hosts']
+    RESOURCE_BLACK_LIST = ['tasks','home','statistics','table_preferences','autosign']
     attr_reader :raw_data, :api_endpoints, :covered_resources, :uncovered_resources, :partially_covered_resources
     def initialize(file_path)
       @raw_data = JSON.load(File.open(file_path))

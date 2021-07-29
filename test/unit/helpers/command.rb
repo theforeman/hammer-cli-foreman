@@ -17,14 +17,6 @@ class IdResolverTestProxy
     @original_resolver.searchables(resource)
   end
 
-  def puppet_environment_id(options)
-    environment_id(options)
-  end
-
-  def puppet_environment_ids(options)
-    environment_ids(options)
-  end
-
   protected
 
   def define_id_finders
