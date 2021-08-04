@@ -1,5 +1,17 @@
 Release notes
 =============
+### 3.0.0 (2021-08-04)
+* Puppet extraction ([PR #571](https://github.com/theforeman/hammer-cli-foreman/pull/571)), [#33174](http://projects.theforeman.org/issues/33174)
+* Update rel-eng notebook ([PR #573](https://github.com/theforeman/hammer-cli-foreman/pull/573))
+* Bump version to 3.0-develop
+* Deprecate root-pass and remove deprecation warning, [#22574](http://projects.theforeman.org/issues/22574)
+* Return org and loc options to all hammer commands ([PR #575](https://github.com/theforeman/hammer-cli-foreman/pull/575)), [#32872](http://projects.theforeman.org/issues/32872)
+*  prevent full-help from failure if apidoc not available ([PR #574](https://github.com/theforeman/hammer-cli-foreman/pull/574)), [#32861](http://projects.theforeman.org/issues/32861)
+* Show new msg for empty update commands, [#32454](http://projects.theforeman.org/issues/32454)
+* Remove --environment deprecations ([PR #569](https://github.com/theforeman/hammer-cli-foreman/pull/569)), [#28862](http://projects.theforeman.org/issues/28862)
+* Force name resolving due defaults, [#32392](http://projects.theforeman.org/issues/32392)
+* Bump to 2.6.0-develop
+
 ### 2.5.0 (2021-05-04)
 * Update test data to latest foreman
 *  change to resource_type_label, [#11454](http://projects.theforeman.org/issues/11454)
