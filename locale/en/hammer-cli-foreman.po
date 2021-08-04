@@ -5,7 +5,7 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: hammer-cli-foreman 2.5.0\n"
+"Project-Id-Version: hammer-cli-foreman 3.0.0\n"
 "Report-Msgid-Bugs-To: \n"
 "PO-Revision-Date: 2014-03-04 16:47+0000\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
@@ -35,17 +35,6 @@ msgid "Manipulate compute resources"
 msgstr ""
 
 msgid "Manipulate domains"
-msgstr ""
-
-msgid "Manipulate environments"
-msgstr ""
-
-msgid ""
-"%{env} command is deprecated and will be removed in one of the future "
-"versions. Please use %{puppet_env} command instead."
-msgstr ""
-
-msgid "Manipulate Puppet environments"
 msgstr ""
 
 msgid "Search facts"
@@ -81,9 +70,6 @@ msgstr ""
 msgid "Manipulate partition tables"
 msgstr ""
 
-msgid "Search puppet modules"
-msgstr ""
-
 msgid "Browse and read reports"
 msgstr ""
 
@@ -96,9 +82,6 @@ msgid "Manipulate report templates"
 msgstr ""
 
 msgid "Manage user roles"
-msgstr ""
-
-msgid "Manipulate smart class parameters"
 msgstr ""
 
 msgid "Manipulate smart proxies"
@@ -120,9 +103,6 @@ msgid "Manipulate users"
 msgstr ""
 
 msgid "Manage user groups"
-msgstr ""
-
-msgid "Manipulate config groups"
 msgstr ""
 
 msgid "Get the status of the server and/or it's subcomponents"
@@ -239,24 +219,6 @@ msgid "The hostgroup has been disassociated."
 msgstr ""
 
 msgid "Could not disassociate the hostgroup"
-msgstr ""
-
-msgid "Associate a Puppet environment"
-msgstr ""
-
-msgid "The environment has been associated."
-msgstr ""
-
-msgid "Could not associate the environment"
-msgstr ""
-
-msgid "Disassociate a Puppet environment"
-msgstr ""
-
-msgid "The environment has been disassociated."
-msgstr ""
-
-msgid "Could not disassociate the environment"
 msgstr ""
 
 msgid "Associate a domain"
@@ -762,19 +724,10 @@ msgstr ""
 msgid "Hostgroup name"
 msgstr ""
 
-msgid "Environment ID"
-msgstr ""
-
-msgid "Environment name"
-msgstr ""
-
 msgid "Provisioning Template"
 msgstr ""
 
 msgid "Hostgroup"
-msgstr ""
-
-msgid "Environment"
 msgstr ""
 
 msgid "Template combination updated."
@@ -836,18 +789,6 @@ msgstr ""
 msgid "%{count} more service(s) failed, but not shown:"
 msgstr ""
 
-msgid "Puppet environment"
-msgstr ""
-
-msgid "Use %s instead"
-msgstr ""
-
-msgid "Puppet environments"
-msgstr ""
-
-msgid "Environment IDs"
-msgstr ""
-
 msgid "DNS Proxy to use within this subnet"
 msgstr ""
 
@@ -879,6 +820,9 @@ msgid "%s Id"
 msgstr ""
 
 msgid "%s name"
+msgstr ""
+
+msgid "Nothing to update."
 msgstr ""
 
 msgid "Associate a resource"
@@ -1345,24 +1289,6 @@ msgstr ""
 msgid "Operating System"
 msgstr ""
 
-msgid "Config group created."
-msgstr ""
-
-msgid "Could not create the config group"
-msgstr ""
-
-msgid "Config group updated."
-msgstr ""
-
-msgid "Could not update the config group"
-msgstr ""
-
-msgid "Config group has been deleted."
-msgstr ""
-
-msgid "Could not delete the config group"
-msgstr ""
-
 msgid "Host"
 msgstr ""
 
@@ -1645,15 +1571,6 @@ msgstr ""
 msgid "Compute Profile"
 msgstr ""
 
-msgid "Puppet Environment"
-msgstr ""
-
-msgid "Puppet CA Proxy"
-msgstr ""
-
-msgid "Puppet Master Proxy"
-msgstr ""
-
 msgid "Cert name"
 msgstr ""
 
@@ -1869,25 +1786,10 @@ msgstr ""
 msgid "Failed to boot the host from device"
 msgstr ""
 
-msgid "List of puppetclass ids"
-msgstr ""
-
-msgid "Name of puppet CA proxy"
-msgstr ""
-
-msgid "Name of puppet proxy"
-msgstr ""
-
 msgid "Name of parent hostgroup"
 msgstr ""
 
 msgid "Root password"
-msgstr ""
-
-msgid "Use --root-password instead"
-msgstr ""
-
-msgid "Use --ask-root-password instead"
 msgstr ""
 
 msgid "Subnet IPv6 name"
@@ -2006,9 +1908,6 @@ msgstr ""
 msgid "Domain name"
 msgstr ""
 
-msgid "Puppet environment name"
-msgstr ""
-
 msgid "Hostgroup title"
 msgstr ""
 
@@ -2033,9 +1932,6 @@ msgstr ""
 msgid "Proxy name"
 msgstr ""
 
-msgid "Puppet class name"
-msgstr ""
-
 msgid "User role name"
 msgstr ""
 
@@ -2049,9 +1945,6 @@ msgid "User's login to search by"
 msgstr ""
 
 msgid "Common parameter name"
-msgstr ""
-
-msgid "Smart class parameter name"
 msgstr ""
 
 msgid "Name to search by"
@@ -2495,27 +2388,6 @@ msgstr ""
 msgid "Server Response"
 msgstr ""
 
-msgid "Smart class parameters"
-msgstr ""
-
-msgid "Environment created."
-msgstr ""
-
-msgid "Could not create the environment"
-msgstr ""
-
-msgid "Environment updated."
-msgstr ""
-
-msgid "Could not update the environment"
-msgstr ""
-
-msgid "Environment deleted."
-msgstr ""
-
-msgid "Could not delete the environment"
-msgstr ""
-
 msgid "Realm proxy id"
 msgstr ""
 
@@ -2582,9 +2454,6 @@ msgstr ""
 msgid "Realms"
 msgstr ""
 
-msgid "Environments"
-msgstr ""
-
 msgid "Hostgroups"
 msgstr ""
 
@@ -2595,9 +2464,6 @@ msgid "Parameters"
 msgstr ""
 
 msgid "All parameters"
-msgstr ""
-
-msgid "Puppetclasses"
 msgstr ""
 
 msgid "Operating systems"
@@ -2760,90 +2626,6 @@ msgstr ""
 msgid "Settings type"
 msgstr ""
 
-msgid "Parameter"
-msgstr ""
-
-msgid "Default Value"
-msgstr ""
-
-msgid "Override"
-msgstr ""
-
-msgid "Puppet class"
-msgstr ""
-
-msgid "Class Id"
-msgstr ""
-
-msgid "Hidden Value?"
-msgstr ""
-
-msgid "Omit"
-msgstr ""
-
-msgid "Validator"
-msgstr ""
-
-msgid "Rule"
-msgstr ""
-
-msgid "Override values"
-msgstr ""
-
-msgid "Merge overrides"
-msgstr ""
-
-msgid "Merge default value"
-msgstr ""
-
-msgid "Avoid duplicates"
-msgstr ""
-
-msgid "Order"
-msgstr ""
-
-msgid "Match"
-msgstr ""
-
-msgid "Parameter updated."
-msgstr ""
-
-msgid "Could not update the parameter"
-msgstr ""
-
-msgid "Value to use when there is no match"
-msgstr ""
-
-msgid "Override this parameter"
-msgstr ""
-
-msgid "This parameter is required"
-msgstr ""
-
-msgid "Type of the validator"
-msgstr ""
-
-msgid "The order in which values are resolved"
-msgstr ""
-
-msgid "Override value, required if omit is false"
-msgstr ""
-
-msgid "Override value created."
-msgstr ""
-
-msgid "Could not create the override value"
-msgstr ""
-
-msgid "Cannot use --value when --omit is true."
-msgstr ""
-
-msgid "Override value deleted."
-msgstr ""
-
-msgid "Could not delete the override value"
-msgstr ""
-
 msgid "Features"
 msgstr ""
 
@@ -2863,27 +2645,6 @@ msgid "Smart proxy deleted."
 msgstr ""
 
 msgid "Could not delete the proxy"
-msgstr ""
-
-msgid "Do not run the import"
-msgstr ""
-
-msgid "Result"
-msgstr ""
-
-msgid "Changed environments"
-msgstr ""
-
-msgid "New classes"
-msgstr ""
-
-msgid "Updated classes"
-msgstr ""
-
-msgid "Removed classes"
-msgstr ""
-
-msgid "Ignored classes"
 msgstr ""
 
 msgid "Smart proxy features were refreshed."
@@ -3034,6 +2795,9 @@ msgid "Subnet parameter deleted."
 msgstr ""
 
 msgid "unknown template kind"
+msgstr ""
+
+msgid "Environment name"
 msgstr ""
 
 msgid "List available provisioning template kinds"
