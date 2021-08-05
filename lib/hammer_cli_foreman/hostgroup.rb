@@ -4,6 +4,7 @@ module HammerCLIForeman
 
     def self.included(base)
       base.option "--parent", "PARENT_NAME",  _("Name of parent hostgroup")
+      base.option '--parent-title', 'PARENT_TITLE', _('Title of parent hostgroup')
       base.option ["--root-password"], "ROOT_PASSWORD",  _("Root password")
       base.option ["--ask-root-password", "--ask-root-pass"], "ASK_ROOT_PW", "",
                   format: HammerCLI::Options::Normalizers::Bool.new
@@ -19,8 +20,8 @@ module HammerCLIForeman
 
     def request_params
       params = super
-      params['hostgroup']["parent_id"] ||= resolver.hostgroup_id('option_name' => option_parent) if option_parent
-
+      params['hostgroup']['parent_id'] ||= resolver.hostgroup_id('option_name' => option_parent) if option_parent
+      params['hostgroup']['parent_id'] ||= resolver.hostgroup_id('option_title' => option_parent_title) if option_parent_title
       params['hostgroup']['root_pass'] = option_root_password if option_root_password
       params['hostgroup']['root_pass'] = HammerCLIForeman::HostgroupUpdateCreateCommons::ask_password if option_ask_root_password
 

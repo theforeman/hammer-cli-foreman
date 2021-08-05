@@ -165,6 +165,17 @@ module HammerCLIForeman
         run_cmd(%w(hostgroup create --name hg1 --parent parent_hg))
       end
 
+      it 'allows parent hostgroup title' do
+        api_expects(:hostgroups, :index) do |p|
+          p[:search] = 'title = "parent_hg"'
+        end.returns(index_response([{ 'id' => 1 }]))
+        api_expects(:hostgroups, :create) do |p|
+          p['hostgroup']['parent_id'] == 1 &&
+            p['hostgroup']['name'] == 'hg1'
+        end
+        run_cmd(%w[hostgroup create --name hg1 --parent parent_hg])
+      end
+
       it 'allows partition table id' do
         api_expects(:hostgroups, :create) do |p|
           p['hostgroup']['ptable_id'] == 1 &&
