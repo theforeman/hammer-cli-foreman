@@ -1,14 +1,12 @@
 module HammerCLIForeman
 
   class Searchable
-    attr_reader :name, :description, :format
+    attr_reader :name, :description
 
     def initialize(name, description, options={})
       @name = name
       @description = description
       @editable = options[:editable].nil? ? true : options[:editable]
-      @format = options[:format]
-      @parent = options[:parent]
     end
 
     def plural_name
@@ -17,10 +15,6 @@ module HammerCLIForeman
 
     def editable?
       @editable
-    end
-
-    def parent?
-      @parent
     end
   end
 

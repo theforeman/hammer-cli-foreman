@@ -209,7 +209,9 @@ describe HammerCLIForeman::ForemanOptionBuilder do
   end
 
   context "dependent searchables options expansion" do
-    let(:option_switches) { container.build(@build_options).map(&:switches) }
+    let(:option_switches) do
+      container.build(@build_options.merge(command: Class.new(HammerCLIForeman::Command))).map(&:switches)
+    end
 
     before :each do
       container.builders = [
@@ -218,51 +220,51 @@ describe HammerCLIForeman::ForemanOptionBuilder do
       ]
     end
 
-    it "does not filter searchable builders by default" do
-      @build_options = {:expand => {}}
+    it 'does not filter searchable builders by default' do
+      @build_options = { expand: {} }
       _(option_switches).must_equal [
-        ["--user"],
-        ["--user-label"],
-        ["--user-id"],
-        ["--post"],
-        ["--post-label"],
-        ["--post-id"]
+        ['--user-id'],
+        ['--user'],
+        ['--user-label'],
+        ['--post-id'],
+        ['--post'],
+        ['--post-label']
       ]
     end
 
-    it "adds dependent searchable builders on explicit requirement" do
-      @build_options = {:expand => {:including => [:posts, :comments]}}
+    it 'adds dependent searchable builders on explicit requirement' do
+      @build_options = { expand: { including: %i[posts comments] } }
       _(option_switches).must_equal [
-        ["--user"],
-        ["--user-label"],
-        ["--user-id"],
-        ["--post"],
-        ["--post-label"],
-        ["--post-id"],
-        ["--comment"],
-        ["--comment-label"],
-        ["--comment-id"]
+        ['--user-id'],
+        ['--user'],
+        ['--user-label'],
+        ['--post-id'],
+        ['--post'],
+        ['--post-label'],
+        ['--comment-id'],
+        ['--comment'],
+        ['--comment-label']
       ]
     end
 
-    it "filters dependent searchable builders on explicit requirement" do
-      @build_options = {:expand => {:except => [:users]}}
+    it 'filters dependent searchable builders on explicit requirement' do
+      @build_options = { expand: { except: [:users] } }
       _(option_switches).must_equal [
-        ["--post"],
-        ["--post-label"],
-        ["--post-id"]
+        ['--post-id'],
+        ['--post'],
+        ['--post-label']
       ]
     end
 
-    it "specifies custom set of dependent searchable builders on explicit requirement" do
-      @build_options = {:expand => {:only => [:comments, :users]}}
+    it 'specifies custom set of dependent searchable builders on explicit requirement' do
+      @build_options = { expand: { only: %i[comments users] } }
       _(option_switches).must_equal [
-        ["--user"],
-        ["--user-label"],
-        ["--user-id"],
-        ["--comment"],
-        ["--comment-label"],
-        ["--comment-id"]
+        ['--user-id'],
+        ['--user'],
+        ['--user-label'],
+        ['--comment-id'],
+        ['--comment'],
+        ['--comment-label']
       ]
     end
   end
@@ -327,7 +329,7 @@ describe HammerCLIForeman::DependentSearchablesOptionBuilder do
   let(:resource) { api.resource(:users) }
   let(:searchables) { FakeSearchables.new(["name", "label", "uuid"]) }
   let(:builder) { HammerCLIForeman::DependentSearchablesOptionBuilder.new(resource, searchables) }
-  let(:builder_params) { {} }
+  let(:builder_params) { { command: Class.new(HammerCLIForeman::Command) } }
   let(:options) { builder.build(builder_params) }
 
   describe "empty searchables" do
@@ -339,41 +341,40 @@ describe HammerCLIForeman::DependentSearchablesOptionBuilder do
     end
   end
 
-  describe "multiple searchables" do
-
-    it "creates correct switches" do
+  describe 'multiple searchables' do
+    it 'creates correct switches' do
       _(options.map(&:switches)).must_equal [
-        ["--user"],       # first option does not have the suffix
-        ["--user-label"], # other options with suffixes
-        ["--user-uuid"],
-        ["--user-id"]     # additional id
+        ['--user-id'],    # main option from API docs
+        ['--user'],       # additional option
+        ['--user-label'], # other options with suffixes
+        ['--user-uuid']
       ]
     end
 
-    it "creates correct option types" do
-      _(options.map(&:type)).must_equal [
-        "USER_NAME",
-        "USER_LABEL",
-        "USER_UUID",
-        "USER_ID",
+    it 'creates correct option types' do
+      _(options.map(&:type)).must_equal %w[
+        USER_ID
+        USER_NAME
+        USER_LABEL
+        USER_UUID
       ]
     end
 
-    it "creates correct descriptions" do
+    it 'creates correct descriptions' do
       _(options.map(&:description)).must_equal [
-        "Search by name",
-        "Search by label",
-        "Search by uuid",
-        "DESC"
+        'DESC',
+        'Search by name',
+        'Search by label',
+        'Search by uuid'
       ]
     end
 
-    it "creates correct attribute readers" do
-      _(options.map(&:read_method)).must_equal [
-        "option_user_name",
-        "option_user_label",
-        "option_user_uuid",
-        "option_user_id",
+    it 'creates correct attribute readers' do
+      _(options.map(&:read_method)).must_equal %w[
+        option_user_id
+        option_user_name
+        option_user_label
+        option_user_uuid
       ]
     end
 
@@ -385,44 +386,48 @@ describe HammerCLIForeman::DependentSearchablesOptionBuilder do
 
   describe "aliasing resource names" do
 
-    let(:builder_params) { {:resource_mapping => {:user => :usr}} }
+    let(:builder_params) do
+      {
+        resource_mapping: { user: :usr },
+        command: Class.new(HammerCLIForeman::Command)
+      }
+    end
 
-    it "renames options" do
+    it 'renames options' do
       _(options.map(&:switches)).must_equal [
-        ["--usr"],       # first option does not have the suffix
-        ["--usr-label"], # other options with suffixes
-        ["--usr-uuid"],
-        ["--usr-id"]     # additional id
+        ['--usr-id'],    # parent option id
+        ['--usr'],       # additional option
+        ['--usr-label'], # other options with suffixes
+        ['--usr-uuid']
       ]
     end
 
-    it "renames option types" do
-      _(options.map(&:type)).must_equal [
-        "USR_NAME",
-        "USR_LABEL",
-        "USR_UUID",
-        "USR_ID",
+    it 'renames option types' do
+      _(options.map(&:type)).must_equal %w[
+        USR_ID
+        USR_NAME
+        USR_LABEL
+        USR_UUID
       ]
     end
 
-    it "keeps option accessor the same" do
-      _(options.map(&:attribute_name)).must_equal [
-        "option_user_name",
-        "option_user_label",
-        "option_user_uuid",
-        "option_user_id"
+    it 'keeps option accessor the same' do
+      _(options.map(&:attribute_name)).must_equal %w[
+        option_user_id
+        option_user_name
+        option_user_label
+        option_user_uuid
       ]
     end
   end
 
-  describe "resources with id parameter in show action" do
-
-    it "uses descriptions from the action" do
+  describe 'resources with id parameter in show action' do
+    it 'uses descriptions from the action' do
       _(options.map(&:description)).must_equal [
-        "Search by name",
-        "Search by label",
-        "Search by uuid",
-        "DESC"
+        'DESC',
+        'Search by name',
+        'Search by label',
+        'Search by uuid'
       ]
     end
   end

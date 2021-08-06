@@ -3,11 +3,12 @@ module HammerCLIForeman
     module CommonUpdateOptions
 
       def self.included(base)
-        base.option "--owner", "OWNER_LOGIN", _("Login of the owner"),
-          :attribute_name => :option_user_login
-        base.option "--owner-id", "OWNER_ID", _("ID of the owner"),
-          :attribute_name => :option_owner_id
-
+        base.option_family do
+          parent '--owner-id', 'OWNER_ID', _('ID of the owner'),
+                 attribute_name: :option_owner_id
+          child '--owner', 'OWNER_LOGIN', _('Login of the owner'),
+                attribute_name: :option_user_login
+        end
         base.option "--root-password", "ROOT_PW",
           _("Required if host is managed and value is not inherited from host group or default password in settings")
 
@@ -112,14 +113,13 @@ module HammerCLIForeman
 
       private
 
-     
       def owner_id(name, type)
         return unless name
         return resolver.usergroup_id('option_name' => name) if type == 'Usergroup'
 
         resolver.user_id('option_login' => name)
       end
-      
+
       def proxy_id(name)
         resolver.smart_proxy_id('option_name' => name) if name
       end

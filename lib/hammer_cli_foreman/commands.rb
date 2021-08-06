@@ -97,9 +97,8 @@ module HammerCLIForeman
       configurator = BuilderConfigurator.new(searchables, dependency_resolver)
 
       builder = ForemanOptionBuilder.new(searchables)
-      builder.builders = []
+      builder.builders = super.builders
       builder.builders += configurator.builders_for(resource, resource.action(action)) if resource_defined?
-      builder.builders += super.builders
       builder
     end
 

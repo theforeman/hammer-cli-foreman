@@ -183,8 +183,7 @@ describe HammerCLIForeman::Command do
     out, err = capture_io do
       _(com.run(['--location', 'loc'])).wont_equal HammerCLI::EX_OK
     end
-    _(err).must_equal "Error: Could not find location, please set one of options --location, --location-title, --location-id.\n"
-
+    _(err).must_equal "Error: Could not find location, please set one of options --location-id, --location, --location-title.\n"
   end
 
   it "ignores error on attempt to search of parameters that are not required" do

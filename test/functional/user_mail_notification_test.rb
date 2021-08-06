@@ -55,9 +55,9 @@ describe 'user_mail_notification' do
       params = ['--user-id=2']
 
       expected_result = common_error_result(
-          @cmd,
-          "Could not find mail_notification, please set one of options --mail-notification, --mail-notification-id.",
-          "Could not add user mail notification"
+        @cmd,
+        'Could not find mail_notification, please set one of options --mail-notification-id, --mail-notification.',
+        'Could not add user mail notification'
       )
 
       result = run_cmd(@cmd + params)

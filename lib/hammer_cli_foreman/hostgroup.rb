@@ -3,14 +3,20 @@ module HammerCLIForeman
   module HostgroupUpdateCreateCommons
 
     def self.included(base)
-      base.option "--parent", "PARENT_NAME",  _("Name of parent hostgroup")
-      base.option '--parent-title', 'PARENT_TITLE', _('Title of parent hostgroup')
-      base.option ["--root-password"], "ROOT_PASSWORD",  _("Root password")
-      base.option ["--ask-root-password", "--ask-root-pass"], "ASK_ROOT_PW", "",
+      base.option '--root-password', 'ROOT_PASSWORD', _('Root password')
+      base.option '--ask-root-password', 'ASK_ROOT_PW', '',
                   format: HammerCLI::Options::Normalizers::Bool.new
-      base.option "--subnet6", "SUBNET6_NAME", _("Subnet IPv6 name")
 
       base.build_options without: %i[root_pass]
+
+      base.option_family associate: 'subnet6' do
+        child '--subnet6', 'SUBNET6_NAME', _('Subnet IPv6 name')
+      end
+
+      base.option_family associate: 'parent' do
+        child '--parent', 'PARENT_NAME', _('Name of parent hostgroup')
+        child '--parent-title', 'PARENT_TITLE', _('Title of parent hostgroup')
+      end
     end
 
     def self.ask_password

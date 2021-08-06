@@ -144,9 +144,9 @@ describe 'template' do
       params = ['create','--provisioning-template-id=10', '--hostgroup-id=1']
       expected_result = success_result("Template combination created.\n")
       api_expects(:template_combinations, :create, 'Create template combination') do |params|
-        params['provisioning_template_id'] == 10 &&
-          params['hostgroup_id'] == 1 &&
-          params['template_combination'] == {'hostgroup_id' => 1}
+        params['provisioning_template_id'] == '10' &&
+          params['hostgroup_id'] == '1' &&
+          params['template_combination'] == { 'hostgroup_id' => '1' }
       end
 
       result = run_cmd(@cmd + params)
@@ -158,9 +158,9 @@ describe 'template' do
       expected_result = success_result("Template combination updated.\n")
       api_expects(:template_combinations, :update, 'Update template combination') do |params|
         params['id'] == '3' &&
-          params['provisioning_template_id'] == 10 &&
-          params['hostgroup_id'] == 1 &&
-          params['template_combination'] == { 'hostgroup_id' => 1 }
+          params['provisioning_template_id'] == '10' &&
+          params['hostgroup_id'] == '1' &&
+          params['template_combination'] == { 'hostgroup_id' => '1' }
       end
 
       result = run_cmd(@cmd + params)
