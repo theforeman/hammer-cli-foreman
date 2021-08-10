@@ -10,8 +10,9 @@ module HammerCLIForeman
       output do
         field :id, _("Id")
         field :name, _("Name")
+        field :status, _("Status")
         field :url, _("URL")
-        field :_features, _( "Features"), Fields::List, :width => 25, :hide_blank => true
+        field :_features, _( "Features"), Fields::List, :hide_blank => true
       end
 
       def extend_data(proxy)
@@ -22,12 +23,14 @@ module HammerCLIForeman
       build_options
     end
 
-
     class InfoCommand < HammerCLIForeman::InfoCommand
-
       output ListCommand.output_definition do
-        collection :features,  _("Features"), :numbered => false do
-          custom_field Fields::Reference
+        field :status, _("Status")
+        field :version, _("Version")
+        field :hosts_count, _("Host_count")
+        collection :features, _("Features") do
+          field :name, _('Name')
+          field :version, _('Version')
         end
         HammerCLIForeman::References.taxonomies(self)
         HammerCLIForeman::References.timestamps(self)
