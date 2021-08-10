@@ -107,6 +107,7 @@ module HammerCLIForeman
     class AssociateVmsCommand < HammerCLIForeman::Command
       action :associate
       command_name 'associate-vms'
+      option "--vm-id","VM ID", _("Associate a specific VM")
       success_message _("Virtual machines have been associated.")
       failure_message _("Could not associate the virtual machines")
 
