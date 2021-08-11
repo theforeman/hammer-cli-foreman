@@ -12,7 +12,7 @@ module HammerCLIForeman
       profile = HammerCLIForeman.record_to_common_format(
           HammerCLIForeman.foreman_resource(:compute_profiles).call(:show, 'id' => options['option_compute_profile_id'] )
       )
-      params['compute_attribute'] = profile['compute_attributes'].select { |hash| hash['compute_resource_id'] == options['option_compute_resource_id']}[0] || {}
+      params['compute_attribute'] = profile['compute_attributes'].select { |hash| hash['compute_resource_id'].to_s == options['option_compute_resource_id'].to_s}[0] || {}
       params['compute_attribute'].delete('attributes') if params['compute_attribute']['attributes']
       params
     end

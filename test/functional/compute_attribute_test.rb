@@ -11,11 +11,11 @@ describe "parameters" do
           }
     end
 
-    it "should print error on missing --compute-profile-id or --compute-profile" do
+    it 'should print error on missing --compute-profile-id or --compute-profile' do
       expected_result = common_error_result(
         @cmd,
-        "Could not find compute_profile, please set one of options --compute-profile, --compute-profile-id.",
-        "Could not set the compute profile attributes"
+        'Could not find compute_profile, please set one of options --compute-profile-id, --compute-profile.',
+        'Could not set the compute profile attributes'
       )
 
       api_expects_no_call
@@ -23,12 +23,12 @@ describe "parameters" do
       assert_cmd(expected_result, result)
     end
 
-    it "should print error on missing --compute-resource-id or --compute-resource" do
+    it 'should print error on missing --compute-resource-id or --compute-resource' do
       params = ['--compute-profile-id=1']
       expected_result = common_error_result(
         @cmd,
-        "Could not find compute_resource, please set one of options --compute-resource, --compute-resource-id.",
-        "Could not set the compute profile attributes"
+        'Could not find compute_resource, please set one of options --compute-resource-id, --compute-resource.',
+        'Could not set the compute profile attributes'
       )
 
       api_expects_no_call
@@ -103,11 +103,11 @@ describe "parameters" do
       params = ['--compute-profile-id=1', '--compute-resource-id=1', '--compute-attributes', 'cores=1']
 
       api_expects(:compute_profiles, :show) do |par|
-        par['id'] == 1
+        par['id'] == '1'
       end.returns(@compute_profile)
 
       api_expects(:compute_resources, :show) do |par|
-        par['id'] == 1
+        par['id'] == '1'
       end.returns(@compute_resource)
 
       api_expects(:compute_attributes, :update) do |par|
@@ -177,7 +177,7 @@ describe "parameters" do
       expected_result.expected_exit_code = HammerCLI::EX_USAGE
 
       api_expects(:compute_profiles, :show) do |par|
-        par['id'] == 1
+        par['id'] == '1'
       end.returns(@compute_profile)
 
       result = run_cmd(@cmd + params)
@@ -189,7 +189,7 @@ describe "parameters" do
       params = ['--compute-profile-id=1', '--compute-resource-id=1', '--volume', 'size_gb=1']
 
       api_expects(:compute_profiles, :show) do |par|
-        par['id'] == 1
+        par['id'] == '1'
       end.returns(@compute_profile)
 
       api_expects(:compute_attributes, :update) do |par|
@@ -261,7 +261,7 @@ describe "parameters" do
         params = ['--compute-profile-id=1', '--compute-resource-id=1', '--volume-id=1', '--volume', 'size_gb=1']
 
         api_expects(:compute_profiles, :show) do |par|
-          par['id'] == 1
+          par['id'] == '1'
         end.returns(@compute_profile)
 
         api_expects(:compute_attributes, :update) do |par|
@@ -339,7 +339,7 @@ describe "parameters" do
       params = ['--compute-profile-id=1', '--compute-resource-id=1', '--volume-id=1']
 
       api_expects(:compute_profiles, :show) do |par|
-        par['id'] == 1
+        par['id'] == '1'
       end.returns(@compute_profile)
 
       api_expects(:compute_attributes, :update) do |par|
@@ -438,7 +438,7 @@ describe "parameters" do
       expected_result.expected_exit_code = HammerCLI::EX_USAGE
 
       api_expects(:compute_profiles, :show) do |par|
-        par['id'] == 1
+        par['id'] == '1'
       end.returns(@compute_profile)
       result = run_cmd(@cmd + params)
       assert_cmd(expected_result, result)
@@ -455,7 +455,7 @@ describe "parameters" do
       response = HammerCLIForeman.foreman_api.api.send(:create_fake_response, 404,
                                                        expected_message, "GET", "http://example.com/", {})
       api_expects(:compute_profiles, :show) do |par|
-        par['id'] == 200
+        par['id'] == '200'
       end.raises(RestClient::NotFound, response)
 
       result = run_cmd(@cmd + params)
@@ -465,11 +465,11 @@ describe "parameters" do
     it "should add interface" do
       params = [ '--interface', 'name=eth0', '--compute-profile-id=1', '--compute-resource-id=1']
       api_expects(:compute_profiles, :show) do |par|
-        par['id'] == 1
+        par['id'] == '1'
       end.returns(@compute_profile)
 
       api_expects(:compute_resources, :show) do |par|
-        par['id'] == 1
+        par['id'] == '1'
       end.returns(@compute_resource)
 
       api_expects(:compute_attributes, :update) do |par|
@@ -548,11 +548,11 @@ describe "parameters" do
       params = ['--compute-profile-id=1', '--compute-resource-id=1', '--interface-id=1', '--interface', 'compute_name=eth0']
 
       api_expects(:compute_profiles, :show) do |par|
-        par['id'] == 1
+        par['id'] == '1'
       end.returns(@compute_profile)
 
       api_expects(:compute_resources, :show) do |par|
-        par['id'] == 1
+        par['id'] == '1'
       end.returns(@compute_resource)
 
       api_expects(:compute_attributes, :update) do |par|
@@ -637,11 +637,11 @@ describe "parameters" do
       params = ['--compute-profile-id=1', '--compute-resource-id=1', '--interface-id=1']
 
       api_expects(:compute_profiles, :show) do |par|
-        par['id'] == 1
+        par['id'] == '1'
       end.returns(@compute_profile)
 
       api_expects(:compute_resources, :show) do |par|
-        par['id'] == 1
+        par['id'] == '1'
       end.returns(@compute_resource)
 
       api_expects(:compute_attributes, :update) do |par|
