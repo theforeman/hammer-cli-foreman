@@ -124,6 +124,12 @@ module HammerCLIForeman
       @searchables.for(resource)
     end
 
+    def template_kind_id(options = {})
+      name = options['option_type'] == 'snippet' ? nil : options['option_type']
+      options['option_name'] = name
+      get_id(:template_kinds, options)
+    end
+
     protected
 
     def define_id_finders

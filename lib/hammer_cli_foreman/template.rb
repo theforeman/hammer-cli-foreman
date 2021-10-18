@@ -5,25 +5,13 @@ module HammerCLIForeman
     resource :provisioning_templates
 
     module TemplateCreateUpdateCommons
-
       def option_snippet
         option_type && (option_type == "snippet")
       end
 
-      def option_template_kind_id
-        table = kinds.inject({}){ |result, k| result.update(k["name"] => k["id"]) }
-        if option_snippet == false && table[option_type].nil?
-          signal_usage_error _("unknown template kind")
-        else
-          table[option_type]
-        end
-      end
-
-      def kinds
-        HammerCLIForeman.collection_to_common_format(
-          HammerCLIForeman.foreman_resource!(:template_kinds).call(:index))
-      end
-
+      # This method is for IdParams option source to make resolver work for
+      # --type option
+      def option_template_kind_id; end
     end
 
     class ListCommand < HammerCLIForeman::ListCommand

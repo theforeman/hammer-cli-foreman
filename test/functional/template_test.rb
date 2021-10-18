@@ -85,7 +85,6 @@ describe 'template' do
     it "doesn't send snippet flag when --type is undefined" do
       params = ['--id=1', '--locked=true']
 
-      api_expects(:template_kinds, :index, 'Get list of template kinds').returns(index_response([]))
       api_expects(:provisioning_templates, :update, 'Update the template') do |par|
         par['id'] == '1' &&
         par['provisioning_template']['locked'] == true
@@ -99,10 +98,51 @@ describe 'template' do
     it 'updates nothing without template related parameters' do
       params = %w[--id=1 --organization-id=1 --location-id=1]
 
-      api_expects(:template_kinds, :index, 'Get list of template kinds').returns(index_response([]))
       api_expects(:provisioning_templates, :update, 'Update template with no params').returns({})
 
       expected_result = success_result("Nothing to update.\n")
+
+      result = run_cmd(@cmd + params)
+      assert_cmd(expected_result, result)
+    end
+
+    it 'should update a template' do
+      params = ['--id=1', '--type=snippet']
+
+      expected_result = CommandExpectation.new
+      expected_result.expected_out =
+        ['Provisioning template updated.',
+         ''].join("\n")
+      expected_result.expected_exit_code = HammerCLI::EX_OK
+
+      api_expects(:provisioning_templates, :update, 'Update template with params') do |p|
+        p['id'] == '1' && p['provisioning_template']['snippet'] == true
+      end
+
+      result = run_cmd(@cmd + params)
+      assert_cmd(expected_result, result)
+    end
+
+    it 'should update a template by name' do
+      params = ['--name=tpl', '--type=provision']
+
+      expected_result = CommandExpectation.new
+      expected_result.expected_out =
+        ['Provisioning template updated.',
+         ''].join("\n")
+      expected_result.expected_exit_code = HammerCLI::EX_OK
+
+      api_expects_search(:provisioning_templates, name: 'tpl').returns(
+        index_response([{ 'id' => '1' }])
+      )
+      api_expects_search(:template_kinds, name: 'provision').returns(
+        index_response([{ 'id' => '1' }])
+      )
+      api_expects(:provisioning_templates, :update, 'Update template with params') do |p|
+        p['id'] == '1' &&
+          p['provisioning_template']['snippet'] == false &&
+          p['provisioning_template']['template_kind_id'] == '1'
+      end
 
       result = run_cmd(@cmd + params)
       assert_cmd(expected_result, result)
@@ -120,15 +160,35 @@ describe 'template' do
       expected_result = CommandExpectation.new
       expected_result.expected_err =
         ['Could not create the provisioning template:',
-         "  Error: unknown template kind",
-         '  ',
-         "  See: 'hammer template create --help'.",
+         '  Error: template_kind not found.',
          ''].join("\n")
-      expected_result.expected_exit_code = HammerCLI::EX_USAGE
+      expected_result.expected_exit_code = HammerCLI::EX_SOFTWARE
 
-      HammerCLIForeman::Template::CreateCommand.any_instance.stubs(:kinds).returns(["PXELinux"])
+      api_expects_search(:template_kinds, name: 'unknown').returns(
+        index_response([])
+      )
 
-      api_expects_no_call
+      result = run_cmd(@cmd + params)
+      assert_cmd(expected_result, result)
+    end
+
+    it 'should create a template' do
+      params = ['--name=tpl', '--file=Gemfile', '--type=provision']
+
+      expected_result = CommandExpectation.new
+      expected_result.expected_out =
+        ['Provisioning template created.',
+         ''].join("\n")
+      expected_result.expected_exit_code = HammerCLI::EX_OK
+
+      api_expects_search(:template_kinds, name: 'provision').returns(
+        index_response([{ 'id' => '1' }])
+      )
+      api_expects(:provisioning_templates, :create, 'Create template with params') do |p|
+        p['provisioning_template']['name'] == 'tpl' &&
+          p['provisioning_template']['snippet'] == false &&
+          p['provisioning_template']['template_kind_id'] = '1'
+      end
 
       result = run_cmd(@cmd + params)
       assert_cmd(expected_result, result)
