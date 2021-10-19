@@ -26,14 +26,5 @@ describe HammerCLIForeman::OptionSources::IdsParams do
       params = ids_params_source.get_options([], option_data)
       _(params).must_equal expected_data
     end
-
-    it "resolves param when set but different name" do
-      cmd.stubs(:get_resource_ids).returns(nil)
-      cmd.expects(:get_resource_ids).with { |res| res.name == :locations }.returns([3])
-      option_data = { 'option_location_ids' => [1], 'option_location_names' => 'test3' }
-      expected_data = { 'option_location_ids' => [3], 'option_location_names' => 'test3' }
-      params = ids_params_source.get_options([], option_data)
-      _(params).must_equal expected_data
-    end
   end
 end
