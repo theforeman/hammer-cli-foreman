@@ -6,7 +6,7 @@ module HammerCLIForeman
       end
 
       def param_updatable?(param_resource)
-        param_resource && @command.respond_to?(HammerCLI.option_accessor_name("#{param_resource.singular_name}_id"))
+        param_resource && @command.respond_to?(cli_option_resource_id(param_resource))
       end
 
       def available_id_params
@@ -16,16 +16,23 @@ module HammerCLIForeman
       def needs_resolving?(param_option, param_resource, all_opts)
         return false unless param_updatable?(param_resource)
 
-        searchables_set = @command.searchables.for(param_resource).any? do |s|
+        cli_searchables_set = @command.searchables.for(param_resource).any? do |s|
           option = HammerCLI.option_accessor_name("#{param_resource.singular_name}_#{s.name}")
-          !all_opts[option].nil?
-        end
-        return all_opts[param_option].nil? unless searchables_set
+          next false unless @command.respond_to?(option)
 
-        # Remove set '<resource_name>_id' option to force resolving in case of
-        # '<resource_name>_[name|title]' was set
-        all_opts.delete(param_option)
-        true
+          !@command.send(option).nil?
+        end
+        if cli_searchables_set
+          # Remove set '<resource_name>_id' option to force resolving in case of
+          # '<resource_name>_[name|title]' was set from CLI
+          all_opts.delete(param_option)
+          true
+        else
+          # Don't resolve if resource id was set via CLI
+          return false if @command.send(cli_option_resource_id(param_resource))
+
+          all_opts[param_option].nil?
+        end
       end
 
       def get_options(_defined_options, result)
@@ -62,6 +69,12 @@ module HammerCLIForeman
           },
           e.resource
         )
+      end
+
+      private
+
+      def cli_option_resource_id(resource)
+        HammerCLI.option_accessor_name("#{resource.singular_name}_id")
       end
     end
   end

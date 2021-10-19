@@ -568,7 +568,41 @@ describe 'disassociate host from vm' do
   end
 end
 
+describe 'defaults' do
+  let(:cmd) { %w[host list] }
+  let(:defaults) do
+    HammerCLI::Defaults.new(
+      {
+        organization_id: {
+          value: '1'
+        },
+        organization: {
+          value: 'Default Organization'
+        }
+      }
+    )
+  end
 
+  it 'works with default org name overridden via cli' do
+    params = %w[--organization=Org2]
+
+    api_expects_search(:organizations, name: 'Org2').returns(index_response([{ 'id' => '2' }]))
+    api_expects(:hosts, :index) do |p|
+      p['organization_id'] == '2'
+    end
+
+    run_cmd(cmd + params, { use_defaults: true, defaults: defaults })
+  end
+  it 'works with default org id overridden via cli' do
+    params = %w[--organization-id=2]
+
+    api_expects(:hosts, :index) do |p|
+      p['organization_id'] == '2'
+    end
+
+    run_cmd(cmd + params, { use_defaults: true, defaults: defaults })
+  end
+end
 
 describe 'list' do
   before do
