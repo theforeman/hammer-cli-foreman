@@ -8,7 +8,7 @@
 # Dominic Cleal <dominic@cleal.org>, 2016
 msgid ""
 msgstr ""
-"Project-Id-Version: hammer-cli-foreman 3.0.0\n"
+"Project-Id-Version: hammer-cli-foreman 3.1.0\n"
 "Report-Msgid-Bugs-To: \n"
 "PO-Revision-Date: 2017-03-29 08:19+0000\n"
 "Last-Translator: Lukáš Zapletal\n"
@@ -793,16 +793,19 @@ msgstr ""
 msgid "%{count} more service(s) failed, but not shown:"
 msgstr ""
 
+msgid "Network prefix in CIDR notation (e.g. 64) for this subnet"
+msgstr ""
+
+msgid "TFTP Proxy to use within this subnet"
+msgstr ""
+
 msgid "DNS Proxy to use within this subnet"
 msgstr ""
 
 msgid "DHCP Proxy to use within this subnet"
 msgstr ""
 
-msgid "TFTP Proxy to use within this subnet"
-msgstr ""
-
-msgid "Network prefix in CIDR notation (e.g. 64) for this subnet"
+msgid "BMC Proxy to use within this subnet"
 msgstr ""
 
 msgid "Default organization name"
@@ -1040,6 +1043,9 @@ msgid "Compute resource deleted."
 msgstr ""
 
 msgid "Could not delete the compute resource"
+msgstr ""
+
+msgid "Associate a specific VM"
 msgstr ""
 
 msgid "Virtual machines have been associated."
@@ -1790,13 +1796,16 @@ msgstr ""
 msgid "Failed to boot the host from device"
 msgstr ""
 
-msgid "Name of parent hostgroup"
-msgstr ""
-
 msgid "Root password"
 msgstr ""
 
 msgid "Subnet IPv6 name"
+msgstr ""
+
+msgid "Name of parent hostgroup"
+msgstr ""
+
+msgid "Title of parent hostgroup"
 msgstr ""
 
 msgid "Enter the root password for the host group:"
@@ -1850,10 +1859,10 @@ msgstr ""
 msgid "Could not rebuild configuration"
 msgstr ""
 
-msgid "Login of the owner"
+msgid "ID of the owner"
 msgstr ""
 
-msgid "ID of the owner"
+msgid "Login of the owner"
 msgstr ""
 
 msgid ""
@@ -2268,7 +2277,7 @@ msgstr ""
 msgid "%{types} of associated %{resource}"
 msgstr ""
 
-msgid "Use to update"
+msgid "Use to update associated %s"
 msgstr ""
 
 msgid ""
@@ -2633,6 +2642,12 @@ msgstr ""
 msgid "Features"
 msgstr ""
 
+msgid "Version"
+msgstr ""
+
+msgid "Host_count"
+msgstr ""
+
 msgid "Smart proxy created."
 msgstr ""
 
@@ -2682,9 +2697,6 @@ msgid "SSH Key deleted."
 msgstr ""
 
 msgid "Could not delete the SSH Key"
-msgstr ""
-
-msgid "Version"
 msgstr ""
 
 msgid "API Version"
@@ -2798,9 +2810,6 @@ msgid "Delete parameter for a subnet"
 msgstr ""
 
 msgid "Subnet parameter deleted."
-msgstr ""
-
-msgid "unknown template kind"
 msgstr ""
 
 msgid "Environment name"
