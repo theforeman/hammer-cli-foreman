@@ -1,5 +1,18 @@
 Release notes
 =============
+### 3.1.0 (2021-11-10)
+* Update test data for 3.1
+* Make sure provided options override defaults, [#33711](http://projects.theforeman.org/issues/33711)
+* Make template create/update commands use resolver, [#33721](http://projects.theforeman.org/issues/33721)
+* Revert fix rake version
+* Fix rake version
+* Show status once for proxy info ([PR #581](https://github.com/theforeman/hammer-cli-foreman/pull/581)), [#19510](http://projects.theforeman.org/issues/19510)
+* Add proxy status and version to info command ([PR #572](https://github.com/theforeman/hammer-cli-foreman/pull/572))
+* Associate a vm via hammer to a compute resource, [#33047](http://projects.theforeman.org/issues/33047)
+* Fix option builders and tests, [#33226](http://projects.theforeman.org/issues/33226)
+* Bump to 3.1.0-develop
+* Add parent title option for hostgroup, [#32878](http://projects.theforeman.org/issues/32878)
+
 ### 3.0.0 (2021-08-04)
 * Puppet extraction ([PR #571](https://github.com/theforeman/hammer-cli-foreman/pull/571)), [#33174](http://projects.theforeman.org/issues/33174)
 * Update rel-eng notebook ([PR #573](https://github.com/theforeman/hammer-cli-foreman/pull/573))
