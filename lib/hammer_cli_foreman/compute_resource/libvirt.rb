@@ -9,7 +9,9 @@ module HammerCLIForeman
         [
           ['cpus',   _('Number of CPUs'), { bold: true }],
           ['memory', _('String, amount of memory, value in bytes'), { bold: true }],
-          ['cpu_mode', _('Possible values: %{modes}') % { modes: 'default, host-model, host-passthrough' }]
+          ['cpu_mode', _('Possible values: %{modes}') % { modes: 'default, host-model, host-passthrough' }],
+          ['boot_order', _('Device names to specify the boot order')]
+
         ]
       end
 
@@ -48,7 +50,8 @@ module HammerCLIForeman
             Fields::Field.new(:label => _('Status'), :path => [:state]),
             Fields::Field.new(:label => _('OS Type'), :path => [:os_type]),
             Fields::Field.new(:label => _('Domain Type'), :path => [:domain_type]),
-            Fields::Field.new(:label => _('Persistent'), :path => [:persistent])
+            Fields::Field.new(:label => _('Persistent'), :path => [:persistent]),
+            Fields::Field.new(:label => _('Boot order'), :path => [:boot_order])
         ]
       end
 

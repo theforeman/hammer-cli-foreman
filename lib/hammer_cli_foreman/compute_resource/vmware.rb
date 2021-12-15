@@ -25,7 +25,8 @@ module HammerCLIForeman
           ['scsi_controllers',     [_('List with SCSI controllers definitions'),
                                     '  type - ' + _('ID of the controller from VMware'),
                                     '  key  - ' + _('Key of the controller (e.g. 1000)')
-                                    ].flatten(1).join("\n")]
+                                    ].flatten(1).join("\n")],
+          ['boot_order',            _('Device names to specify the boot order')]
         ]
       end
 
@@ -76,7 +77,8 @@ module HammerCLIForeman
             Fields::Field.new(:label => _('Connection Status'), :path => [:connection_status]),
             Fields::Field.new(:label => _('Hardware Version'), :path => [:hardware_version]),
             Fields::Field.new(:label => _('Path'), :path => [:path]),
-            Fields::Field.new(:label => _('Operating System'), :path => [:operatingsystem])
+            Fields::Field.new(:label => _('Operating System'), :path => [:operatingsystem]),
+            Fields::Field.new(:label => _('Boot Order'), :path => [:boot_order])
         ]
       end
 
