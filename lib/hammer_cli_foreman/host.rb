@@ -55,6 +55,7 @@ module HammerCLIForeman
         field nil, _("Compute Resource"), Fields::SingleReference, :key => :compute_resource
         field nil, _("Compute Profile"), Fields::SingleReference, :key => :compute_profile, :hide_blank => true
         field :certname, _("Cert name")
+        field :token, _("Token")
         field :managed, _("Managed"), Fields::Boolean
 
         field :installed_at, _("Installed at"), Fields::Date
