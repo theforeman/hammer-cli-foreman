@@ -2,6 +2,7 @@ module HammerCLIForeman
   module CommandExtensions
     class User < HammerCLI::CommandExtensions
       option '--ask-password', 'ASK_PW', ' ', format: HammerCLI::Options::Normalizers::Bool.new
+      option '--mail_enabled', '', 'enable mail notification'
 
       option_sources do |sources, command|
         sources << HammerCLIForeman::OptionSources::UserParams.new(command)
