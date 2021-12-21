@@ -29,6 +29,7 @@ module HammerCLIForeman
     class InfoCommand < HammerCLIForeman::InfoCommand
 
       output ListCommand.output_definition do
+        field :mail_enabled, _("Email enabled"), Fields::Boolean
         field :effective_admin, _("Effective admin"), Fields::Boolean
         field :locale, _("Locale")
         field :timezone, _("Timezone")
