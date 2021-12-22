@@ -113,7 +113,7 @@ module HammerCLIForeman
       'HammerCLIForeman::PartitionTable', 'hammer_cli_foreman/partition_table'
     )
 
-    HammerCLI::MainCommand.lazy_subcommand('puppet-class', _("Search puppet modules"),
+    HammerCLI::MainCommand.lazy_subcommand('puppet-class', _("Search puppet classes"),
       'HammerCLIForeman::PuppetClass', 'hammer_cli_foreman/puppet_class'
     )
 
