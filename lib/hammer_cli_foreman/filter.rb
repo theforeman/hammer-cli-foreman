@@ -97,10 +97,10 @@ module HammerCLIForeman
 
       def request_params
         params = super
-        if !override?
+        unless override?
           # Clear taxonomies in case the filter is switching override from true to false
-          params['filter']['location_ids'] = []
-          params['filter']['organization_ids'] = []
+          params['filter']['location_ids'] = [] if !@filter || !@filter['locations'].empty?
+          params['filter']['organization_ids'] = [] if !@filter || !@filter['organizations'].empty?
         end
         params
       end
