@@ -1,28 +1,5 @@
 module HammerCLIForeman
-
-  module DomainUpdateCreateCommons
-
-    def self.included(base)
-      base.option "--dns-id", "DNS_ID",  _("ID of DNS proxy to use within this domain")
-      base.option "--dns", "DNS_NAME", _("Name of DNS proxy to use within this domain")
-    end
-
-    def request_params
-      params = super
-      params['domain']["dns_id"] = option_dns_id || dns_id(option_dns)
-      params
-    end
-
-    private
-
-    def dns_id(name)
-      resolver.smart_proxy_id('option_name' => name) if name
-    end
-
-  end
-
   class Domain < HammerCLIForeman::Command
-
     resource :domains
 
     class ListCommand < HammerCLIForeman::ListCommand
@@ -52,24 +29,24 @@ module HammerCLIForeman
 
 
     class CreateCommand < HammerCLIForeman::CreateCommand
-      include DomainUpdateCreateCommons
-
       success_message _("Domain [%{name}] created.")
       failure_message _("Could not create the domain")
 
       option "--description", "DESC", _("Full name describing the domain"), :attribute_name => :option_fullname
-      build_options :without => [:domain_parameters_attributes, :fullname, :dns_id]
+      build_options :without => [:domain_parameters_attributes, :fullname]
+
+      extend_with(HammerCLIForeman::CommandExtensions::Domain.new)
     end
 
 
     class UpdateCommand < HammerCLIForeman::UpdateCommand
-      include DomainUpdateCreateCommons
-
       success_message _("Domain [%{name}] updated.")
       failure_message _("Could not update the domain")
 
       option "--description", "DESC", _("Full name describing the domain"), :attribute_name => :option_fullname
       build_options :without => [:domain_parameters_attributes, :fullname]
+
+      extend_with(HammerCLIForeman::CommandExtensions::Domain.new)
     end
 
 
