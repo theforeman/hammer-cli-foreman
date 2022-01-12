@@ -73,6 +73,17 @@ module HammerCLIForeman
       build_options
     end
 
+    class ImportSubnetsCommand < HammerCLIForeman::Command
+
+      action :import_subnets
+
+      command_name    "import-subnets"
+      success_message _("Import subnets succeeded.")
+      failure_message _("Could not import subnets")
+
+      build_options
+    end
+
     autoload_subcommands
   end
 
