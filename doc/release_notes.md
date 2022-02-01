@@ -1,5 +1,8 @@
 Release notes
 =============
+### 2.5.2 (2022-02-01)
+* Fix puppet-class command description ([PR #590](https://github.com/theforeman/hammer-cli-foreman/pull/590)), [#33438](http://projects.theforeman.org/issues/33438)
+
 ### 2.5.1 (2021-06-08)
 * Show new msg for empty update commands, [#32454](http://projects.theforeman.org/issues/32454)
 
