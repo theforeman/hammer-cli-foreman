@@ -5,7 +5,7 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: hammer-cli-foreman 3.1.0\n"
+"Project-Id-Version: hammer-cli-foreman 3.2.0\n"
 "Report-Msgid-Bugs-To: \n"
 "PO-Revision-Date: 2014-03-04 16:47+0000\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
@@ -748,6 +748,9 @@ msgstr ""
 msgid "Could not delete the template combination"
 msgstr ""
 
+msgid "Name of DNS proxy to use within this domain"
+msgstr ""
+
 msgid "Provider specific options"
 msgstr ""
 
@@ -1107,6 +1110,9 @@ msgstr ""
 msgid "Possible values: %{modes}"
 msgstr ""
 
+msgid "Device names to specify the boot order"
+msgstr ""
+
 msgid "Boolean (expressed as 0 or 1), whether to start the machine or not"
 msgstr ""
 
@@ -1138,6 +1144,9 @@ msgid "Domain Type"
 msgstr ""
 
 msgid "Persistent"
+msgstr ""
+
+msgid "Boot order"
 msgstr ""
 
 msgid "Tenant"
@@ -1379,12 +1388,6 @@ msgstr ""
 msgid "Use the default organization and/or location from the server"
 msgstr ""
 
-msgid "ID of DNS proxy to use within this domain"
-msgstr ""
-
-msgid "Name of DNS proxy to use within this domain"
-msgstr ""
-
 msgid "DNS Id"
 msgstr ""
 
@@ -1578,6 +1581,9 @@ msgid "Compute Profile"
 msgstr ""
 
 msgid "Cert name"
+msgstr ""
+
+msgid "Token"
 msgstr ""
 
 msgid "Managed"
@@ -2861,6 +2867,9 @@ msgid "Last login"
 msgstr ""
 
 msgid "Authorized by"
+msgstr ""
+
+msgid "Email enabled"
 msgstr ""
 
 msgid "Effective admin"
