@@ -1,5 +1,13 @@
 Release notes
 =============
+### 3.2.0 (2022-02-10)
+* Domain update doesn't reset dns implicitly ([PR #591](https://github.com/theforeman/hammer-cli-foreman/pull/591)), [#34177](http://projects.theforeman.org/issues/34177)
+* Send filter's tax params only when required ([PR #592](https://github.com/theforeman/hammer-cli-foreman/pull/592)), [#34199](http://projects.theforeman.org/issues/34199)
+* Add boot_order to compute-attribute ([PR #588](https://github.com/theforeman/hammer-cli-foreman/pull/588)), [#33910](http://projects.theforeman.org/issues/33910)
+* Add mail_enabled to user list/info command ([PR #589](https://github.com/theforeman/hammer-cli-foreman/pull/589)), [#34180](http://projects.theforeman.org/issues/34180)
+* Add token to host info command ([PR #586](https://github.com/theforeman/hammer-cli-foreman/pull/586)), [#34120](http://projects.theforeman.org/issues/34120)
+* Bump to 3.2.0-develop
+
 ### 3.1.0 (2021-11-10)
 * Update test data for 3.1
 * Make sure provided options override defaults, [#33711](http://projects.theforeman.org/issues/33711)
