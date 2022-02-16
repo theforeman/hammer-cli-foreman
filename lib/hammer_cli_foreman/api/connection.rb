@@ -22,8 +22,9 @@ module HammerCLIForeman
         auth_type ||= default_auth_type(settings)
         default_params = build_default_params(settings, logger, locale, auth_type)
         super(default_params,
-          :logger => logger,
-          :reload_cache => settings.get(:_params, :reload_cache) || settings.get(:reload_cache)
+          logger: logger,
+          reload_cache: settings.get(:_params, :reload_cache) || settings.get(:reload_cache),
+          use_modules_checksum: settings.get(:foreman, :use_modules_checksum) != false
         )
       end
 

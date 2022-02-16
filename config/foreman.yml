@@ -37,6 +37,10 @@
   # Check API documentation cache status on each request
   #:refresh_cache: false
 
+  # Use checksum of installed plugins to automatically detect if the cache
+  # needs to be reloaded
+  :use_modules_checksum: true
+
   # API request timeout. Set to -1 for no timeout
   #:request_timeout: 120 #seconds
 
