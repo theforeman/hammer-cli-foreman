@@ -148,6 +148,21 @@ module HammerCLIForeman
       build_options :without => [:template]
     end
 
+    class ExportCommand < HammerCLIForeman::DownloadCommand
+      command_name "export"
+      action :export
+
+      def default_filename
+        "Report Template-#{Time.new.strftime("%Y-%m-%d")}.txt"
+      end
+
+      def saved_response_message(filepath)
+        _("The report template has been saved to %{path}.") % { path: filepath }
+      end
+
+      build_options
+    end
+
     class ReportDataCommand < HammerCLIForeman::DownloadCommand
       command_name "report-data"
       action :report_data

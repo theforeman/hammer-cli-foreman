@@ -384,6 +384,30 @@ describe 'report-template' do
     end
   end
 
+  describe 'export' do
+    let(:cmd) { %w(report-template export) }
+    let(:tempfile) { Tempfile.new('template', '/tmp') }
+    let(:params) { ['--id=1', '--path=/tmp'] }
+    let(:template_response) do
+      response = mock('TemplateResponse')
+      response.stubs(:code).returns(200)
+      response.stubs(:body).returns('Template content')
+      response.stubs(:headers).returns({:content_disposition => "filename=\"#{File.basename(tempfile.path)}\""})
+      response
+    end
+
+    it 'download template' do
+      api_expects(:report_templates, :export, 'Export report template').with_params(
+        'id' => '1').returns(template_response)
+
+      output = OutputMatcher.new("The report template has been saved to #{tempfile.path}")
+      expected_result = success_result(output)
+      result = run_cmd(cmd + params)
+      assert_cmd(expected_result, result)
+      assert_equal('Template content', tempfile.read)
+    end
+  end
+
   describe 'report-data' do
     let(:cmd) { %w(report-template report-data) }
     let(:tempfile) { Tempfile.new('template', '/tmp') }

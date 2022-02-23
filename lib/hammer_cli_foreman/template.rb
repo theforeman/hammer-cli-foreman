@@ -157,6 +157,21 @@ module HammerCLIForeman
 
       build_options :without => [:template]
     end
+
+    class ExportCommand < HammerCLIForeman::DownloadCommand
+      command_name "export"
+      action :export
+
+      def default_filename
+        "Template-#{Time.new.strftime("%Y-%m-%d")}.txt"
+      end
+
+      def saved_response_message(filepath)
+        _("The provisioning template has been saved to %{path}.") % { path: filepath }
+      end
+
+      build_options
+    end
     
     class BuildPXEDefaultCommand < HammerCLIForeman::Command
 
