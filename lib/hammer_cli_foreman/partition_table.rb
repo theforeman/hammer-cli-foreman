@@ -71,6 +71,21 @@ module HammerCLIForeman
       build_options
     end
 
+    class ImportCommand < HammerCLIForeman::Command
+      command_name "import"
+      action :import
+      option '--file', 'PATH', _('Path to a file that contains the template content including metadata'),
+             :attribute_name => :option_template, :format => HammerCLI::Options::Normalizers::File.new
+
+      validate_options do
+        all(:option_name, :option_template).required
+      end
+
+      success_message _("Import partition table template succeeded.")
+      failure_message _("Could not import partition table template")
+
+      build_options :without => [:template]
+    end
 
     HammerCLIForeman::AssociatingCommands::OperatingSystem.extend_command(self)
 

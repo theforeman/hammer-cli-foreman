@@ -142,7 +142,22 @@ module HammerCLIForeman
       build_options
     end
 
+    class ImportCommand < HammerCLIForeman::Command
+      command_name "import"
+      action :import
+      option '--file', 'PATH', _('Path to a file that contains the template content including metadata'),
+             :attribute_name => :option_template, :format => HammerCLI::Options::Normalizers::File.new
 
+      validate_options do
+        all(:option_name, :option_template).required
+      end
+
+      success_message _("Import provisioning template succeeded.")
+      failure_message _("Could not import provisioning template")
+
+      build_options :without => [:template]
+    end
+    
     class BuildPXEDefaultCommand < HammerCLIForeman::Command
 
       action :build_pxe_default
