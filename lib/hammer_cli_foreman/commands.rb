@@ -519,6 +519,11 @@ module HammerCLIForeman
 
     action :create
 
+    output do
+      field :id, _("Id")
+      field :name, _("Name")
+    end
+
     def self.command_name(name=nil)
       super(name) || "create"
     end
