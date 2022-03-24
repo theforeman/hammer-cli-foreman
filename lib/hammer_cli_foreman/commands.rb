@@ -744,11 +744,15 @@ module HammerCLIForeman
       response = send_request
       if option_path
         filepath = store_response(response)
-        print_message(_('The response has been saved to %{path}s.'), {:path => filepath})
+        print_message(saved_response_message(filepath))
       else
         puts response.body
       end
       return HammerCLI::EX_OK
+    end
+
+    def saved_response_message(filepath)
+      _("The response has been saved to %{path}.") % { path: filepath }
     end
 
     def default_filename
