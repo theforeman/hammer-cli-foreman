@@ -77,6 +77,42 @@ describe 'template' do
     end
   end
 
+  describe 'import' do
+    let(:template) do
+      {
+        'id' => 1,
+        'template' => 'Template content'
+      }
+    end
+    let(:cmd) { %w(template import) }
+    let(:tempfile) { Tempfile.new('template') }
+
+    it 'requires --name and --file' do
+      params = ['--name=test']
+      api_expects_no_call
+      expected_result = usage_error_result(
+        cmd,
+        'Options --name, --file are required.',
+        'Could not import provisioning template')
+      result = run_cmd(cmd + params)
+      assert_cmd(expected_result, result)
+    end
+
+    it 'import template' do
+      params = ['--name=test', "--file=#{tempfile.path}"]
+      tempfile.write('Template content')
+      tempfile.rewind
+      api_expects(:provisioning_templates, :import, 'Import template').with_params(
+        'provisioning_template' => {
+          'name' => 'test',
+          'template' => 'Template content'
+        }).returns(template)
+
+      result = run_cmd(cmd + params)
+      assert_cmd(success_result("Import provisioning template succeeded.\n"), result)
+    end
+  end
+
   describe 'update' do
     before do
       @cmd = %w(template update)
