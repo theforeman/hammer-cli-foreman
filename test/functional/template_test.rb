@@ -113,6 +113,30 @@ describe 'template' do
     end
   end
 
+  describe 'export' do
+    let(:cmd) { %w(template export) }
+    let(:tempfile) { Tempfile.new('template', '/tmp') }
+    let(:params) { ['--id=1', '--path=/tmp'] }
+    let(:template_response) do
+      response = mock('TemplateResponse')
+      response.stubs(:code).returns(200)
+      response.stubs(:body).returns('Template content')
+      response.stubs(:headers).returns({:content_disposition => "filename=\"#{File.basename(tempfile.path)}\""})
+      response
+    end
+
+    it 'download template' do
+      api_expects(:provisioning_templates, :export, 'Export template').with_params(
+        'id' => '1').returns(template_response)
+
+      output = OutputMatcher.new("The provisioning template has been saved to #{tempfile.path}")
+      expected_result = success_result(output)
+      result = run_cmd(cmd + params)
+      assert_cmd(expected_result, result)
+      assert_equal('Template content', tempfile.read)
+    end
+  end
+
   describe 'update' do
     before do
       @cmd = %w(template update)
