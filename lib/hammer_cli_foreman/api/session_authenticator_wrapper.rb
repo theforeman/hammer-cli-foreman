@@ -24,6 +24,8 @@ module HammerCLIForeman
       def status
         if session.valid?
           _("Session exists, currently logged in as '%s'.") % session.user_name
+        elsif @authenticator.respond_to?(:status)
+          @authenticator.status
         else
           _('Using sessions, you are currently not logged in.')
         end

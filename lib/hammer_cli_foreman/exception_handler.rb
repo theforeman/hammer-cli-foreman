@@ -12,6 +12,7 @@ module HammerCLIForeman
         [RestClient::UnprocessableEntity, :handle_unprocessable_entity],
         [RestClient::MovedPermanently, :handle_moved_permanently],
         [RestClient::BadRequest, :handle_bad_request],
+        [ApipieBindings::AuthenticatorError, :handle_authenticator_error],
         [HammerCLIForeman::Api::UnauthorizedError, :handle_foreman_unauthorized],
         [HammerCLIForeman::Api::SessionExpired, :handle_sesion_expired],
         [ArgumentError, :handle_argument_error],
@@ -112,6 +113,12 @@ module HammerCLIForeman
       HammerCLI::EX_DATAERR
     end
 
+    def handle_authenticator_error(e)
+      print_error authenticator_error_message(e)
+      log_full_error e.original_error
+      HammerCLI::EX_USAGE
+    end
+
     def ssl_cert_instructions
       host_url = HammerCLI::Settings.get(:_params, :host) || HammerCLI::Settings.get(:foreman, :host)
       uri = URI.parse(host_url)
@@ -146,6 +153,14 @@ module HammerCLIForeman
     end
 
     private
+
+    def authenticator_error_message(e)
+      case e.type
+      when :negotiate
+        _('Could not authenticate using negotiation protocol') + "\n  - " +
+          _('have you run %s (for Kerberos)?') % 'kinit' + "\n"
+      end
+    end
 
     def response_message(response)
       message = JSON.parse(response)["error"]["message"]
