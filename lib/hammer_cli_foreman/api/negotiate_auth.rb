@@ -9,6 +9,10 @@ module HammerCLIForeman
         _('current Kerberos user')
       end
 
+      def session_id
+        auth_cookie&.delete_prefix('_session_id=')
+      end
+
       def status
         active = `klist` && $?.exitstatus.zero?
         no_kerberos_session_msg = _('There is no active Kerberos session. Have you run %s?') % 'kinit'

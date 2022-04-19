@@ -158,7 +158,8 @@ module HammerCLIForeman
       case e.type
       when :negotiate
         _('Could not authenticate using negotiation protocol') + "\n  - " +
-          _('have you run %s (for Kerberos)?') % 'kinit' + "\n"
+          _('have you run %s (for Kerberos)?') % 'kinit' + "\n  - " +
+          _('is the server down?') + "\n"
       end
     end
 

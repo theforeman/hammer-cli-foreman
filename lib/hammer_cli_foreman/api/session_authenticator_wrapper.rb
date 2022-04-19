@@ -68,8 +68,10 @@ module HammerCLIForeman
       end
 
       def response(r)
-        if (r.cookies['_session_id'] && r.code != 401)
-          session.id = r.cookies['_session_id']
+        session_id = @authenticator.session_id if @authenticator.respond_to?(:session_id)
+        session_id ||= r.cookies['_session_id']
+        if session_id && r.code != 401
+          session.id = session_id
           session.user_name = @authenticator.user
           session.store
         end
