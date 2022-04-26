@@ -23,6 +23,17 @@ module HammerCLIForeman
         Logging.logger['NegotiateAuth'].debug e
         no_kerberos_session_msg
       end
+
+      def error(ex)
+        if ex.is_a?(RestClient::Unauthorized)
+          message = _('Invalid username or password.')
+          begin
+            message = JSON.parse(ex.response.body)['error']['message']
+          rescue
+          end
+          UnauthorizedError.new(message)
+        end
+      end
     end
   end
 end
