@@ -156,8 +156,17 @@ module HammerCLIForeman
 
     def authenticator_error_message(e)
       case e.type
-      when :negotiate
-        _('Could not authenticate using negotiation protocol') + "\n  - " +
+      when :negotiate then negotiation_error_message(e)
+      end
+    end
+
+    def negotiation_error_message(e)
+      case e.code
+      when 302
+        _('Misconfiguration detected') + "\n  - " +
+          _('have you run installer with option %s?') % '--foreman-ipa-authentication=true' + "\n"
+      else
+        _('Could not authenticate using negotiation protocol') +
           _('have you run %s (for Kerberos)?') % 'kinit' + "\n  - " +
           _('is the server down?') + "\n"
       end
