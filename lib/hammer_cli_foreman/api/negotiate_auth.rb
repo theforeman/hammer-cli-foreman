@@ -14,14 +14,11 @@ module HammerCLIForeman
       end
 
       def status
-        active = `klist` && $?.exitstatus.zero?
-        no_kerberos_session_msg = _('There is no active Kerberos session. Have you run %s?') % 'kinit'
-        return no_kerberos_session_msg unless active
-
-        _('No session, but there is an active Kerberos session, that will be used for negotiate login.')
-      rescue => e
-        Logging.logger['NegotiateAuth'].debug e
-        no_kerberos_session_msg
+        if system('klist')
+          _('No session, but there is an active Kerberos session, that will be used for negotiate login.')
+        else
+          _('There is no active Kerberos session. Have you run %s?') % 'kinit'
+        end
       end
 
       def error(ex)
