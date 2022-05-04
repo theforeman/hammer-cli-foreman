@@ -22,14 +22,14 @@ module HammerCLIForeman
       end
 
       def error(ex)
-        if ex.is_a?(RestClient::Unauthorized)
-          message = _('Invalid username or password.')
-          begin
-            message = JSON.parse(ex.response.body)['error']['message']
-          rescue
-          end
-          UnauthorizedError.new(message)
+        super unless ex.is_a?(RestClient::Unauthorized)
+
+        message = _('Invalid username or password.')
+        begin
+          message = JSON.parse(ex.response.body)['error']['message']
+        rescue
         end
+        UnauthorizedError.new(message)
       end
     end
   end
