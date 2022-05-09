@@ -164,7 +164,8 @@ module HammerCLIForeman
       case e.cause
       when :configuration
         _('Server misconfiguration detected') + "\n  - " +
-          _('have you run installer with option %s?') % '--foreman-ipa-authentication=true' + "\n"
+          _('have you run installer with option %s?') % '--foreman-ipa-authentication=true' + "\n  - " +
+          _('the user might come from a different authentication source') + "\n"
       else
         _('Could not authenticate using negotiation protocol') + "\n  - " +
           _('have you run %s (for Kerberos)?') % 'kinit' + "\n  - " +
