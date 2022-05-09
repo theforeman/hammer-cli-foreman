@@ -7,4 +7,5 @@ module HammerCLIForeman
   end
 end
 
-HammerCLIForeman.init_api_connection
+api = HammerCLIForeman.init_api_connection.api
+api.update_cache(api.check_cache)
