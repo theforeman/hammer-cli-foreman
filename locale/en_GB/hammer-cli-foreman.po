@@ -8,7 +8,7 @@
 # Dominic Cleal <dominic@cleal.org>, 2016
 msgid ""
 msgstr ""
-"Project-Id-Version: hammer-cli-foreman 3.2.0\n"
+"Project-Id-Version: hammer-cli-foreman 3.3.0\n"
 "Report-Msgid-Bugs-To: \n"
 "PO-Revision-Date: 2017-03-29 08:19+0000\n"
 "Last-Translator: Lukáš Zapletal\n"
@@ -140,6 +140,17 @@ msgid "[Foreman] Username:%s"
 msgstr ""
 
 msgid "[Foreman] Password for %{user}:%{wsp}"
+msgstr ""
+
+msgid "current Kerberos user"
+msgstr ""
+
+msgid ""
+"No session, but there is an active Kerberos session, that will be used for "
+"negotiate login."
+msgstr ""
+
+msgid "There is no active Kerberos session. Have you run %s?"
 msgstr ""
 
 msgid ""
@@ -552,6 +563,10 @@ msgstr ""
 msgid "Successfully logged in as '%s'."
 msgstr ""
 
+msgid ""
+"Successfully authenticated using negotiate auth, using the KEYRING principal."
+msgstr ""
+
 msgid "Openidc provider URL which issues access token"
 msgstr ""
 
@@ -856,7 +871,7 @@ msgstr ""
 msgid "Path to directory where downloaded content will be saved"
 msgstr ""
 
-msgid "The response has been saved to %{path}s."
+msgid "The response has been saved to %{path}."
 msgstr ""
 
 msgid "Cannot save file: %s does not exist"
@@ -1470,6 +1485,24 @@ msgstr ""
 msgid ""
 "Make sure you configured the correct URL and have the server's CA "
 "certificate installed on your system."
+msgstr ""
+
+msgid "Server misconfiguration detected"
+msgstr ""
+
+msgid "have you run installer with option %s?"
+msgstr ""
+
+msgid "the user might come from a different authentication source"
+msgstr ""
+
+msgid "Could not authenticate using negotiation protocol"
+msgstr ""
+
+msgid "have you run %s (for Kerberos)?"
+msgstr ""
+
+msgid "is the server down?"
 msgstr ""
 
 msgid "View and manage user group's external user groups"
@@ -2372,6 +2405,18 @@ msgstr ""
 msgid "Could not delete the partition table"
 msgstr ""
 
+msgid "Path to a file that contains the template content including metadata"
+msgstr ""
+
+msgid "Import partition table template succeeded."
+msgstr ""
+
+msgid "Could not import partition table template"
+msgstr ""
+
+msgid "The partition table template has been saved to %{path}."
+msgstr ""
+
 msgid "Manage personal access tokens"
 msgstr ""
 
@@ -2537,10 +2582,10 @@ msgstr ""
 msgid "Could not import the report template"
 msgstr ""
 
-msgid "The report is not ready yet."
+msgid "The report template has been saved to %{path}."
 msgstr ""
 
-msgid "The response has been saved to %{path}."
+msgid "The report is not ready yet."
 msgstr ""
 
 msgid "Open empty template in an $EDITOR. Upload the result"
@@ -2676,6 +2721,12 @@ msgid "Smart proxy features were refreshed."
 msgstr ""
 
 msgid "Refresh of smart proxy features failed"
+msgstr ""
+
+msgid "Import subnets succeeded."
+msgstr ""
+
+msgid "Could not import subnets"
 msgstr ""
 
 msgid "Manage SSH Keys sources"
@@ -2849,6 +2900,15 @@ msgid "Provisioning template deleted."
 msgstr ""
 
 msgid "Could not delete the provisioning template"
+msgstr ""
+
+msgid "Import provisioning template succeeded."
+msgstr ""
+
+msgid "Could not import provisioning template"
+msgstr ""
+
+msgid "The provisioning template has been saved to %{path}."
 msgstr ""
 
 msgid "Update the default PXE menu on all configured TFTP servers"

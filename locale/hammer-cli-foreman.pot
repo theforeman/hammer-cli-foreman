@@ -6,10 +6,10 @@
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: hammer-cli-foreman 3.2.0\n"
+"Project-Id-Version: hammer-cli-foreman 3.3.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-02-10 16:44+0000\n"
-"PO-Revision-Date: 2022-02-10 16:44+0000\n"
+"POT-Creation-Date: 2022-05-10 13:14+0000\n"
+"PO-Revision-Date: 2022-05-10 13:14+0000\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: \n"
@@ -156,11 +156,12 @@ msgstr ""
 msgid "Host Registration"
 msgstr ""
 
-#: ../lib/hammer_cli_foreman/api/authenticator.rb:26
+#: ../lib/hammer_cli_foreman/api/authenticator.rb:28
 msgid "Using certificate authentication."
 msgstr ""
 
 #: ../lib/hammer_cli_foreman/api/interactive_basic_auth.rb:15
+#: ../lib/hammer_cli_foreman/api/negotiate_auth.rb:27
 msgid "Invalid username or password."
 msgstr ""
 
@@ -178,6 +179,20 @@ msgstr ""
 
 #: ../lib/hammer_cli_foreman/api/interactive_basic_auth.rb:56
 msgid "[Foreman] Password for %{user}:%{wsp}"
+msgstr ""
+
+#: ../lib/hammer_cli_foreman/api/negotiate_auth.rb:9
+msgid "current Kerberos user"
+msgstr ""
+
+#: ../lib/hammer_cli_foreman/api/negotiate_auth.rb:18
+msgid ""
+"No session, but there is an active Kerberos session, that will be used for neg"
+"otiate login."
+msgstr ""
+
+#: ../lib/hammer_cli_foreman/api/negotiate_auth.rb:20
+msgid "There is no active Kerberos session. Have you run %s?"
 msgstr ""
 
 #: ../lib/hammer_cli_foreman/api/oauth/authentication_code_grant.rb:56
@@ -224,15 +239,15 @@ msgstr ""
 msgid "Session exists, currently logged in as '%s'."
 msgstr ""
 
-#: ../lib/hammer_cli_foreman/api/session_authenticator_wrapper.rb:28
+#: ../lib/hammer_cli_foreman/api/session_authenticator_wrapper.rb:30
 msgid "Using sessions, you are currently not logged in."
 msgstr ""
 
-#: ../lib/hammer_cli_foreman/api/session_authenticator_wrapper.rb:58
+#: ../lib/hammer_cli_foreman/api/session_authenticator_wrapper.rb:60
 msgid "Invalid credentials, continuing with session for '%s'."
 msgstr ""
 
-#: ../lib/hammer_cli_foreman/api/session_authenticator_wrapper.rb:61
+#: ../lib/hammer_cli_foreman/api/session_authenticator_wrapper.rb:63
 msgid "Session has expired."
 msgstr ""
 
@@ -843,47 +858,51 @@ msgstr ""
 msgid "Set credentials"
 msgstr ""
 
-#: ../lib/hammer_cli_foreman/auth.rb:16 ../lib/hammer_cli_foreman/auth.rb:37
+#: ../lib/hammer_cli_foreman/auth.rb:16 ../lib/hammer_cli_foreman/auth.rb:50
 msgid "Username to access the remote system"
 msgstr ""
 
-#: ../lib/hammer_cli_foreman/auth.rb:17 ../lib/hammer_cli_foreman/auth.rb:38
+#: ../lib/hammer_cli_foreman/auth.rb:17 ../lib/hammer_cli_foreman/auth.rb:51
 msgid "Password to access the remote system"
 msgstr ""
 
-#: ../lib/hammer_cli_foreman/auth.rb:26 ../lib/hammer_cli_foreman/auth.rb:64
+#: ../lib/hammer_cli_foreman/auth.rb:26 ../lib/hammer_cli_foreman/auth.rb:77
 msgid "Successfully logged in as '%s'."
 msgstr ""
 
 #: ../lib/hammer_cli_foreman/auth.rb:39
+msgid "Successfully authenticated using negotiate auth, using the KEYRING principal."
+msgstr ""
+
+#: ../lib/hammer_cli_foreman/auth.rb:52
 msgid "Openidc provider URL which issues access token"
 msgstr ""
 
-#: ../lib/hammer_cli_foreman/auth.rb:40
+#: ../lib/hammer_cli_foreman/auth.rb:53
 msgid "Openidc provider URL which issues authentication code (two factor only)"
 msgstr ""
 
-#: ../lib/hammer_cli_foreman/auth.rb:41
+#: ../lib/hammer_cli_foreman/auth.rb:54
 msgid "Client id used in the Openidc provider"
 msgstr ""
 
-#: ../lib/hammer_cli_foreman/auth.rb:42
+#: ../lib/hammer_cli_foreman/auth.rb:55
 msgid "Authenticate with two factor"
 msgstr ""
 
-#: ../lib/hammer_cli_foreman/auth.rb:43
+#: ../lib/hammer_cli_foreman/auth.rb:56
 msgid "Redirect URI for the authentication code grant flow"
 msgstr ""
 
-#: ../lib/hammer_cli_foreman/auth.rb:75
+#: ../lib/hammer_cli_foreman/auth.rb:88
 msgid "Wipe your credentials"
 msgstr ""
 
-#: ../lib/hammer_cli_foreman/auth.rb:79
+#: ../lib/hammer_cli_foreman/auth.rb:92
 msgid "Logged out."
 msgstr ""
 
-#: ../lib/hammer_cli_foreman/auth.rb:86
+#: ../lib/hammer_cli_foreman/auth.rb:99
 msgid "Information about current connections"
 msgstr ""
 
@@ -1073,7 +1092,7 @@ msgid "Failed to delete bookmark"
 msgstr ""
 
 #: ../lib/hammer_cli_foreman/combination.rb:5
-#: ../lib/hammer_cli_foreman/template.rb:190
+#: ../lib/hammer_cli_foreman/template.rb:220
 msgid "Manage template combinations"
 msgstr ""
 
@@ -1280,11 +1299,12 @@ msgstr ""
 msgid "Path to directory where downloaded content will be saved"
 msgstr ""
 
-#: ../lib/hammer_cli_foreman/commands.rb:747
-msgid "The response has been saved to %{path}s."
+#: ../lib/hammer_cli_foreman/commands.rb:755
+#: ../lib/hammer_cli_foreman/report_template.rb:190
+msgid "The response has been saved to %{path}."
 msgstr ""
 
-#: ../lib/hammer_cli_foreman/commands.rb:767
+#: ../lib/hammer_cli_foreman/commands.rb:771
 msgid "Cannot save file: %s does not exist"
 msgstr ""
 
@@ -2127,51 +2147,75 @@ msgstr ""
 msgid "Domain parameter deleted."
 msgstr ""
 
-#: ../lib/hammer_cli_foreman/exception_handler.rb:43
+#: ../lib/hammer_cli_foreman/exception_handler.rb:44
 msgid "Redirection of API call detected."
 msgstr ""
 
-#: ../lib/hammer_cli_foreman/exception_handler.rb:44
+#: ../lib/hammer_cli_foreman/exception_handler.rb:45
 msgid "It seems hammer is configured to use HTTP and the server prefers HTTPS."
 msgstr ""
 
-#: ../lib/hammer_cli_foreman/exception_handler.rb:46
+#: ../lib/hammer_cli_foreman/exception_handler.rb:47
 msgid "Update your server url configuration."
 msgstr ""
 
-#: ../lib/hammer_cli_foreman/exception_handler.rb:47
+#: ../lib/hammer_cli_foreman/exception_handler.rb:48
 msgid ""
 "You can set 'follow_redirects' to one of :default or :always to enable redirec"
 "ts following."
 msgstr ""
 
-#: ../lib/hammer_cli_foreman/exception_handler.rb:75
+#: ../lib/hammer_cli_foreman/exception_handler.rb:76
 msgid "Forbidden - server refused to process the request."
 msgstr ""
 
-#: ../lib/hammer_cli_foreman/exception_handler.rb:130
+#: ../lib/hammer_cli_foreman/exception_handler.rb:137
 msgid "The following configuration option were used for the SSL connection:"
 msgstr ""
 
-#: ../lib/hammer_cli_foreman/exception_handler.rb:133
+#: ../lib/hammer_cli_foreman/exception_handler.rb:140
 msgid "Make sure the location contains an unexpired and valid CA certificate for %s."
 msgstr ""
 
-#: ../lib/hammer_cli_foreman/exception_handler.rb:135
+#: ../lib/hammer_cli_foreman/exception_handler.rb:142
 msgid ""
 "You can use hammer to fetch the CA certificate from the server. Be aware that "
 "hammer cannot verify whether the certificate is correct and you should verify "
 "its authenticity after downloading it."
 msgstr ""
 
-#: ../lib/hammer_cli_foreman/exception_handler.rb:136
+#: ../lib/hammer_cli_foreman/exception_handler.rb:143
 msgid "Download the certificate as follows:"
 msgstr ""
 
-#: ../lib/hammer_cli_foreman/exception_handler.rb:140
+#: ../lib/hammer_cli_foreman/exception_handler.rb:147
 msgid ""
 "Make sure you configured the correct URL and have the server's CA certificate "
 "installed on your system."
+msgstr ""
+
+#: ../lib/hammer_cli_foreman/exception_handler.rb:166
+msgid "Server misconfiguration detected"
+msgstr ""
+
+#: ../lib/hammer_cli_foreman/exception_handler.rb:167
+msgid "have you run installer with option %s?"
+msgstr ""
+
+#: ../lib/hammer_cli_foreman/exception_handler.rb:168
+msgid "the user might come from a different authentication source"
+msgstr ""
+
+#: ../lib/hammer_cli_foreman/exception_handler.rb:170
+msgid "Could not authenticate using negotiation protocol"
+msgstr ""
+
+#: ../lib/hammer_cli_foreman/exception_handler.rb:171
+msgid "have you run %s (for Kerberos)?"
+msgstr ""
+
+#: ../lib/hammer_cli_foreman/exception_handler.rb:172
+msgid "is the server down?"
 msgstr ""
 
 #: ../lib/hammer_cli_foreman/external_usergroup.rb:6
@@ -3428,6 +3472,23 @@ msgstr ""
 msgid "Could not delete the partition table"
 msgstr ""
 
+#: ../lib/hammer_cli_foreman/partition_table.rb:77
+#: ../lib/hammer_cli_foreman/template.rb:148
+msgid "Path to a file that contains the template content including metadata"
+msgstr ""
+
+#: ../lib/hammer_cli_foreman/partition_table.rb:84
+msgid "Import partition table template succeeded."
+msgstr ""
+
+#: ../lib/hammer_cli_foreman/partition_table.rb:85
+msgid "Could not import partition table template"
+msgstr ""
+
+#: ../lib/hammer_cli_foreman/partition_table.rb:99
+msgid "The partition table template has been saved to %{path}."
+msgstr ""
+
 #: ../lib/hammer_cli_foreman/personal_access_token.rb:5
 msgid "Manage personal access tokens"
 msgstr ""
@@ -3650,56 +3711,56 @@ msgstr ""
 msgid "Could not import the report template"
 msgstr ""
 
-#: ../lib/hammer_cli_foreman/report_template.rb:164
+#: ../lib/hammer_cli_foreman/report_template.rb:160
+msgid "The report template has been saved to %{path}."
+msgstr ""
+
+#: ../lib/hammer_cli_foreman/report_template.rb:179
 msgid "The report is not ready yet."
 msgstr ""
 
-#: ../lib/hammer_cli_foreman/report_template.rb:175
-msgid "The response has been saved to %{path}."
-msgstr ""
-
-#: ../lib/hammer_cli_foreman/report_template.rb:183
+#: ../lib/hammer_cli_foreman/report_template.rb:198
 msgid "Open empty template in an $EDITOR. Upload the result"
 msgstr ""
 
-#: ../lib/hammer_cli_foreman/report_template.rb:184
-#: ../lib/hammer_cli_foreman/report_template.rb:209
+#: ../lib/hammer_cli_foreman/report_template.rb:199
+#: ../lib/hammer_cli_foreman/report_template.rb:224
 msgid "Path to a file that contains the report template content"
 msgstr ""
 
-#: ../lib/hammer_cli_foreman/report_template.rb:200
+#: ../lib/hammer_cli_foreman/report_template.rb:215
 msgid "Report template created."
 msgstr ""
 
-#: ../lib/hammer_cli_foreman/report_template.rb:201
+#: ../lib/hammer_cli_foreman/report_template.rb:216
 msgid "Could not create the report template"
 msgstr ""
 
-#: ../lib/hammer_cli_foreman/report_template.rb:208
+#: ../lib/hammer_cli_foreman/report_template.rb:223
 msgid "Dump existing template and open it in an $EDITOR. Update with the result"
 msgstr ""
 
-#: ../lib/hammer_cli_foreman/report_template.rb:222
+#: ../lib/hammer_cli_foreman/report_template.rb:237
 msgid "Report template updated."
 msgstr ""
 
-#: ../lib/hammer_cli_foreman/report_template.rb:223
+#: ../lib/hammer_cli_foreman/report_template.rb:238
 msgid "Could not update the report template"
 msgstr ""
 
-#: ../lib/hammer_cli_foreman/report_template.rb:242
+#: ../lib/hammer_cli_foreman/report_template.rb:257
 msgid "Report template cloned."
 msgstr ""
 
-#: ../lib/hammer_cli_foreman/report_template.rb:243
+#: ../lib/hammer_cli_foreman/report_template.rb:258
 msgid "Could not clone the report template"
 msgstr ""
 
-#: ../lib/hammer_cli_foreman/report_template.rb:253
+#: ../lib/hammer_cli_foreman/report_template.rb:268
 msgid "Report template deleted."
 msgstr ""
 
-#: ../lib/hammer_cli_foreman/report_template.rb:254
+#: ../lib/hammer_cli_foreman/report_template.rb:269
 msgid "Could not delete the report template"
 msgstr ""
 
@@ -3842,6 +3903,14 @@ msgstr ""
 
 #: ../lib/hammer_cli_foreman/smart_proxy.rb:71
 msgid "Refresh of smart proxy features failed"
+msgstr ""
+
+#: ../lib/hammer_cli_foreman/smart_proxy.rb:81
+msgid "Import subnets succeeded."
+msgstr ""
+
+#: ../lib/hammer_cli_foreman/smart_proxy.rb:82
+msgid "Could not import subnets"
 msgstr ""
 
 #: ../lib/hammer_cli_foreman/ssh_keys.rb:5
@@ -4080,15 +4149,27 @@ msgstr ""
 msgid "Could not delete the provisioning template"
 msgstr ""
 
-#: ../lib/hammer_cli_foreman/template.rb:151
+#: ../lib/hammer_cli_foreman/template.rb:155
+msgid "Import provisioning template succeeded."
+msgstr ""
+
+#: ../lib/hammer_cli_foreman/template.rb:156
+msgid "Could not import provisioning template"
+msgstr ""
+
+#: ../lib/hammer_cli_foreman/template.rb:170
+msgid "The provisioning template has been saved to %{path}."
+msgstr ""
+
+#: ../lib/hammer_cli_foreman/template.rb:181
 msgid "Update the default PXE menu on all configured TFTP servers"
 msgstr ""
 
-#: ../lib/hammer_cli_foreman/template.rb:164
+#: ../lib/hammer_cli_foreman/template.rb:194
 msgid "Provisioning template cloned."
 msgstr ""
 
-#: ../lib/hammer_cli_foreman/template.rb:165
+#: ../lib/hammer_cli_foreman/template.rb:195
 msgid "Could not clone the provisioning template"
 msgstr ""
 
