@@ -1,5 +1,15 @@
 Release notes
 =============
+### 3.3.0 (2022-05-10)
+* Add kerberos negotiate auth support ([PR #555](https://github.com/theforeman/hammer-cli-foreman/pull/555)), [#8923](http://projects.theforeman.org/issues/8923)
+* Pin mocha gem to < 1.14.0
+* Force api docs checksum check, [#28283](http://projects.theforeman.org/issues/28283)
+* Add template report-remplate and partition-table export command ([PR #595](https://github.com/theforeman/hammer-cli-foreman/pull/595)), [#34503](http://projects.theforeman.org/issues/34503)
+* Add template import and partition-table import commands ([PR #596](https://github.com/theforeman/hammer-cli-foreman/pull/596)), [#22692](http://projects.theforeman.org/issues/22692)
+* Add resource information to download command ([PR #598](https://github.com/theforeman/hammer-cli-foreman/pull/598)), [#34621](http://projects.theforeman.org/issues/34621)
+* Add command to import ipv4 subnet from smart proxy ([PR #593](https://github.com/theforeman/hammer-cli-foreman/pull/593)), [#33255](http://projects.theforeman.org/issues/33255)
+* Bump to 3.3.0-develop
+
 ### 3.2.0 (2022-02-10)
 * Domain update doesn't reset dns implicitly ([PR #591](https://github.com/theforeman/hammer-cli-foreman/pull/591)), [#34177](http://projects.theforeman.org/issues/34177)
 * Send filter's tax params only when required ([PR #592](https://github.com/theforeman/hammer-cli-foreman/pull/592)), [#34199](http://projects.theforeman.org/issues/34199)
