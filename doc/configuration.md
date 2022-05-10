@@ -49,3 +49,33 @@ Please note that when you turn sessions on, the credentials stored in your confi
 
 The default session timeout is 1 hour. This can be changed in the Foreman: `Settings > Authentication > Idle timeout`
 When the session expires hammer will prompt for username and password again.
+
+### Negotiate (Kerberos) auth
+
+This implements Kerberos authentication, usually implemented in FreeIPA or Microsoft Active Directory.
+For this to work, the host that we are trying to use hammer on, needs to have realm already configured on this host.
+This can be achieved through `realm join`, please refer to that command for more info.
+
+**Sessions needs to be enabled**
+
+`~/.hammer/cli.modules.d/foreman.yml`
+```yaml
+:foreman:
+  :default_auth_type: 'Negotiate_Auth'
+  :use_sessions: true
+```
+
+```bash
+# To initiate the kerberos keyring (this might be already done on login)
+$ kinit <kerb_user>
+# Enter your password
+$ klist
+Ticket cache: KEYRING:persistent:1000:1000
+Default principal: kerb_user@REALM.EXAMPLE.COM
+
+# use hammer as usuall, it will negotiate your auth on the first request
+hammer ...
+
+# or if you do not have negotiate as default auth, initiate the auth manually
+hammer auth login negotiate
+```
