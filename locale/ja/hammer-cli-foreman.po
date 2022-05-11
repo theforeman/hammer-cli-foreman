@@ -1,142 +1,149 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the hammer-cli-foreman package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
+# Translators:
+# Automatically generated, 2014
+# 山田 修司 🍣 Shuji Yamada <uzy.exe@gmail.com>, 2015
+# 山田 修司 🍣 Shuji Yamada <uzy.exe@gmail.com>, 2015
 msgid ""
 msgstr ""
-"Project-Id-Version: hammer-cli-foreman 3.3.0\n"
+"Project-Id-Version: hammer-cli-foreman 3.4.0.pre.develop\n"
 "Report-Msgid-Bugs-To: \n"
-"PO-Revision-Date: 2018-10-24 10:54+0200\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
-"Language: \n"
+"POT-Creation-Date: 2022-05-10 13:14+0000\n"
+"PO-Revision-Date: 2014-03-14 09:55+0000\n"
+"Last-Translator: 山田 修司 🍣 Shuji Yamada <uzy.exe@gmail.com>, 2015\n"
+"Language-Team: Japanese (http://www.transifex.com/foreman/foreman/language/"
+"ja/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
+"Language: ja\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
 
 msgid "Foreman connection login/logout"
-msgstr ""
+msgstr "Foreman 接続をログイン/ログアウトします"
 
 msgid "Manipulate architectures"
-msgstr ""
+msgstr "アーキテクチャーを操作します"
 
 msgid "Manipulate auth sources"
-msgstr ""
+msgstr "認証ソースを操作します"
 
 msgid "Search audit trails."
-msgstr ""
+msgstr "監査証跡を検索します。"
 
 msgid "Manipulate compute profiles"
-msgstr ""
+msgstr "コンピュートプロファイルを操作します"
 
 msgid "Manipulate compute resources"
-msgstr ""
+msgstr "コンピュートリソースを操作します"
 
 msgid "Manipulate domains"
-msgstr ""
+msgstr "ドメインを操作します"
 
 msgid "Search facts"
-msgstr ""
+msgstr "fact を検索します"
 
 msgid "Manage permission filters"
-msgstr ""
+msgstr "パーミッションフィルターの管理"
 
 msgid "Manipulate hosts"
-msgstr ""
+msgstr "ホストの操作"
 
 msgid "Manipulate hostgroups"
-msgstr ""
+msgstr "ホストグループの操作"
 
 msgid "Manipulate http proxies"
-msgstr ""
+msgstr "HTTP プロキシーの操作"
 
 msgid "Manipulate locations"
-msgstr ""
+msgstr "ロケーションの操作"
 
 msgid "Manipulate installation media"
-msgstr ""
+msgstr "インストールメディアの操作"
 
 msgid "Manipulate hardware models"
-msgstr ""
+msgstr "ハードウェアモデルの操作"
 
 msgid "Manipulate operating system"
-msgstr ""
+msgstr "オペレーティングシステムの操作"
 
 msgid "Manipulate organizations"
-msgstr ""
+msgstr "組織の操作"
 
 msgid "Manipulate partition tables"
-msgstr ""
+msgstr "パーティションテーブルを操作します"
 
 msgid "Browse and read reports"
-msgstr ""
+msgstr "レポートを参照および閲覧します"
 
 msgid ""
 "%{report} command is deprecated and will be removed in one of the future "
 "versions. Please use %{config_report} command instead."
 msgstr ""
+"%{report} コマンドは非推奨となり、今後のいずれかのバージョンで削除予定です。"
+"代わりに、%{config_report} コマンドを使用してください。"
 
 msgid "Manipulate report templates"
-msgstr ""
+msgstr "レポートテンプレートを操作します"
 
 msgid "Manage user roles"
-msgstr ""
+msgstr "ユーザーロールを操作します"
 
 msgid "Manipulate smart proxies"
-msgstr ""
+msgstr "Smart Proxy を操作します"
 
 msgid "Manipulate realms"
-msgstr ""
+msgstr "レルムの操作"
 
 msgid "Change server settings"
-msgstr ""
+msgstr "サーバー設定の変更"
 
 msgid "Manipulate subnets"
-msgstr ""
+msgstr "サブネットを操作します"
 
 msgid "Manipulate provisioning templates"
-msgstr ""
+msgstr "プロビジョニングテンプレートを操作します"
 
 msgid "Manipulate users"
-msgstr ""
+msgstr "ユーザーを操作します"
 
 msgid "Manage user groups"
-msgstr ""
+msgstr "ユーザーグループを管理します"
 
 msgid "Get the status of the server and/or it's subcomponents"
-msgstr ""
+msgstr "サーバーやそのサブコンポーネントのステータスを取得します"
 
 msgid "Get the complete status of the server and/or it's subcomponents"
-msgstr ""
+msgstr "サーバーやそのサブコンポーネントの完全なステータスを取得します"
 
 msgid "Manage mail notifications"
-msgstr ""
+msgstr "メール通知を管理します"
 
 msgid "Manage bookmarks"
-msgstr ""
+msgstr "ブックマークを管理します"
 
 msgid "Host Registration"
-msgstr ""
+msgstr "ホストの登録"
 
 msgid "Using certificate authentication."
-msgstr ""
+msgstr "証明書認証を使用します。"
 
 msgid "Invalid username or password."
-msgstr ""
+msgstr "無効なユーザー名またはパスワード。"
 
 msgid "Using configured credentials for user '%s'."
-msgstr ""
+msgstr "ユーザー '%s' の設定済みの認証情報を使用します。"
 
 msgid "Credentials are not configured."
-msgstr ""
+msgstr "認証情報は設定されていません。"
 
 msgid "[Foreman] Username:%s"
-msgstr ""
+msgstr "[Foreman] ユーザー名:%s"
 
 msgid "[Foreman] Password for %{user}:%{wsp}"
-msgstr ""
+msgstr "%{user}:%{wsp} の[Foreman] パスワード"
 
 msgid "current Kerberos user"
 msgstr ""
@@ -153,1335 +160,1375 @@ msgid ""
 "Invalid oidc-client-id or oidc-token-endpoint or oidc-authorization-"
 "endpoint.\n"
 msgstr ""
+"oidc-client-id または oidc-token-endpoint または oidc-authorization-endpoint "
+"が無効です。\n"
 
 msgid "Code:%s"
-msgstr ""
+msgstr "コード:%s"
 
 msgid "Openidc Provider Authorization Endpoint:%s"
-msgstr ""
+msgstr "Openidc プロバイダー認証エンドポイント:%s"
 
 msgid "Openidc Provider Token Endpoint:%s"
-msgstr ""
+msgstr "Openidc プロバイダートークンエンドポイント:%s"
 
 msgid "Client ID:%s"
-msgstr ""
+msgstr "クライアント ID:%s"
 
 msgid "Redirect URI:%s"
-msgstr ""
+msgstr "リダイレクト URI:%s"
 
 msgid "Invalid credentials or oidc-client-id or oidc-token-endpoint.\n"
 msgstr ""
+"認証情報または oidc-client-id あるいは oidc-token-endpoint が無効です。\n"
 
 msgid "Username:%s"
-msgstr ""
+msgstr "ユーザー名:%s"
 
 msgid "Password:%{wsp}"
-msgstr ""
+msgstr "パスワード:%{wsp}"
 
 msgid "Session exists, currently logged in as '%s'."
-msgstr ""
+msgstr "セッションが存在します。現在 '%s' でログインしています。"
 
 msgid "Using sessions, you are currently not logged in."
-msgstr ""
+msgstr "セッションを使用して、現在ログインしていません。"
 
 msgid "Invalid credentials, continuing with session for '%s'."
-msgstr ""
+msgstr "認証情報が無効です。'%s' のセッションを続行します。"
 
 msgid "Session has expired."
-msgstr ""
+msgstr "セッションの有効期限が切れました。"
 
 msgid "Id"
-msgstr ""
+msgstr "ID"
 
 msgid "Name"
-msgstr ""
+msgstr "名前"
 
 msgid "Architecture created."
-msgstr ""
+msgstr "アーキテクチャーが作成されました。"
 
 msgid "Could not create the architecture"
-msgstr ""
+msgstr "アーキテクチャーを作成できませんでした"
 
 msgid "Architecture deleted."
-msgstr ""
+msgstr "アーキテクチャーが削除されました。"
 
 msgid "Could not delete the architecture"
-msgstr ""
+msgstr "アーキテクチャーを削除できませんでした"
 
 msgid "Architecture updated."
-msgstr ""
+msgstr "アーキテクチャーが更新されました。"
 
 msgid "Could not update the architecture"
-msgstr ""
+msgstr "アーキテクチャーを更新できませんでした"
 
 msgid "Associate a hostgroup"
-msgstr ""
+msgstr "ホストグループを関連付けます。"
 
 msgid "The hostgroup has been associated."
-msgstr ""
+msgstr "ホストグループが関連付けられました。"
 
 msgid "Could not associate the hostgroup"
-msgstr ""
+msgstr "ホストグループを関連付けることができませんでした"
 
 msgid "Disassociate a hostgroup"
-msgstr ""
+msgstr "ホストグループの関連付けを解除します。"
 
 msgid "The hostgroup has been disassociated."
-msgstr ""
+msgstr "ホストグループの関連付けが解除されました。"
 
 msgid "Could not disassociate the hostgroup"
-msgstr ""
+msgstr "ホストグループの関連付けを解除できませんでした"
 
 msgid "Associate a domain"
-msgstr ""
+msgstr "ドメインを関連付けます。"
 
 msgid "The domain has been associated."
-msgstr ""
+msgstr "ドメインが関連付けられました。"
 
 msgid "Could not associate the domain"
-msgstr ""
+msgstr "ドメインを関連付けることができませんでした"
 
 msgid "Disassociate a domain"
-msgstr ""
+msgstr "ドメインの関連付けを解除します。"
 
 msgid "The domain has been disassociated."
-msgstr ""
+msgstr "ドメインの関連付けが解除されました。"
 
 msgid "Could not disassociate the domain"
-msgstr ""
+msgstr "ドメインの関連付けを解除できませんでした"
 
 msgid "Associate a medium"
-msgstr ""
+msgstr "メディアを関連付けます。"
 
 msgid "The medium has been associated."
-msgstr ""
+msgstr "メディアが関連付けられました。"
 
 msgid "Could not associate the medium"
-msgstr ""
+msgstr "メディアを関連付けることができませんでした"
 
 msgid "Disassociate a medium"
-msgstr ""
+msgstr "メディアの関連付けを解除します。"
 
 msgid "The medium has been disassociated."
-msgstr ""
+msgstr "メディアの関連付けが解除されました。"
 
 msgid "Could not disassociate the medium"
-msgstr ""
+msgstr "メディアの関連付けを解除できませんでした"
 
 msgid "Associate a subnet"
-msgstr ""
+msgstr "サブネットを関連付けます。"
 
 msgid "The subnet has been associated."
-msgstr ""
+msgstr "サブネットが関連付けられました。"
 
 msgid "Could not associate the subnet"
-msgstr ""
+msgstr "サブネットを関連付けることができませんでした"
 
 msgid "Disassociate a subnet"
-msgstr ""
+msgstr "サブネットの関連付けを解除します。"
 
 msgid "The subnet has been disassociated."
-msgstr ""
+msgstr "サブネットの関連付けが解除されました。"
 
 msgid "Could not disassociate the subnet"
-msgstr ""
+msgstr "サブネットの関連付けを解除できませんでした"
 
 msgid "Associate a compute resource"
-msgstr ""
+msgstr "コンピュートリソースを関連付けます。"
 
 msgid "The compute resource has been associated."
-msgstr ""
+msgstr "コンピュートリソースが関連付けられました。"
 
 msgid "Could not associate the compute resource"
-msgstr ""
+msgstr "コンピュートリソースを関連付けることができませんでした"
 
 msgid "Disassociate a compute resource"
-msgstr ""
+msgstr "コンピュートリソースの関連付けを解除します。"
 
 msgid "The compute resource has been disassociated."
-msgstr ""
+msgstr "コンピュートリソースの関連付けが解除されました。"
 
 msgid "Could not disassociate the compute resource"
-msgstr ""
+msgstr "コンピュートリソースの関連付けを解除できませんでした"
 
 msgid "Associate a smart proxy"
-msgstr ""
+msgstr "スマートプロキシーを関連付けます。"
 
 msgid "The smart proxy has been associated."
-msgstr ""
+msgstr "スマートプロキシーが関連付けられました。"
 
 msgid "Could not associate the smart proxy"
-msgstr ""
+msgstr "スマートプロキシーを関連付けることができませんでした"
 
 msgid "Disassociate a smart proxy"
-msgstr ""
+msgstr "スマートプロキシーの関連付けを解除します。"
 
 msgid "The smart proxy has been disassociated."
-msgstr ""
+msgstr "スマートプロキシーの関連付けが解除されました。"
 
 msgid "Could not disassociate the smart proxy"
-msgstr ""
+msgstr "スマートプロキシーの関連付けを解除できませんでした"
 
 msgid "Associate an user"
-msgstr ""
+msgstr "ユーザーを関連付けます。"
 
 msgid "The user has been associated."
-msgstr ""
+msgstr "ユーザーが関連付けられました。"
 
 msgid "Could not associate the user"
-msgstr ""
+msgstr "ユーザーを関連付けることができませんでした"
 
 msgid "Disassociate an user"
-msgstr ""
+msgstr "ユーザーの関連付けを解除します。"
 
 msgid "The user has been disassociated."
-msgstr ""
+msgstr "ユーザーの関連付けが解除されました。"
 
 msgid "Could not disassociate the user"
-msgstr ""
+msgstr "ユーザーの関連付けを解除できませんでした"
 
 msgid "Associate an user group"
-msgstr ""
+msgstr "ユーザーグループを関連付けます。"
 
 msgid "The user group has been associated."
-msgstr ""
+msgstr "ユーザーグループが関連付けられました。"
 
 msgid "Could not associate the user group"
-msgstr ""
+msgstr "ユーザーグループを関連付けることができませんでした"
 
 msgid "Disassociate an user group"
-msgstr ""
+msgstr "ユーザーグループの関連付けを解除します。"
 
 msgid "The user group has been disassociated."
-msgstr ""
+msgstr "ユーザーグループの関連付けが解除されました。"
 
 msgid "Could not disassociate the user group"
-msgstr ""
+msgstr "ユーザーグループの関連付けを解除できませんでした"
 
 msgid "Associate provisioning templates"
-msgstr ""
+msgstr "プロビジョニングテンプレートの関連付け"
 
 msgid "List of provisioning template ids"
-msgstr ""
+msgstr "プロビジョニングテンプレート ID の一覧"
 
 msgid "List of provisioning template names"
-msgstr ""
+msgstr "プロビジョニングテンプレートの一覧"
 
 msgid ""
 "Provisioning template name regex to search, all matching templates will be "
 "associated"
 msgstr ""
+"検索するプロビジョニングテンプレート名の正規表現。一致するすべてのテンプレー"
+"トが関連付けられます"
 
 msgid "%s not found."
-msgstr ""
+msgstr "%s が見つかりません"
 
 msgid "The provisioning templates were associated."
-msgstr ""
+msgstr "プロビジョニングテンプレートが関連付けられました。"
 
 msgid "Could not associate the provisioning templates"
-msgstr ""
+msgstr "プロビジョニングテンプレートを関連付けられませんでした"
 
 msgid "Disassociate provisioning templates"
-msgstr ""
+msgstr "プロビジョニングテンプレートの関連付け解除"
 
 msgid ""
 "Provisioning template name regex to search, all matching templates will be "
 "disassociated"
 msgstr ""
+"検索するプロビジョニングテンプレート名の正規表現。一致するすべてのテンプレー"
+"トの関連付けが解除されます"
 
 msgid "The provisioning templates were disassociated."
-msgstr ""
+msgstr "プロビジョニングテンプレートの関連付けが解除されました。"
 
 msgid "Could not disassociate the provisioning templates"
-msgstr ""
+msgstr "プロビジョニングテンプレートの関連付けを解除できませんでした"
 
 msgid "Associate an organization"
-msgstr ""
+msgstr "組織を関連付けます。"
 
 msgid "The organization has been associated."
-msgstr ""
+msgstr "組織が関連付けられました。"
 
 msgid "Could not associate the organization"
-msgstr ""
+msgstr "組織を関連付けることができませんでした"
 
 msgid "Disassociate an organization"
-msgstr ""
+msgstr "組織の関連付けを解除します。"
 
 msgid "The organization has been disassociated."
-msgstr ""
+msgstr "組織の関連付けが解除されました。"
 
 msgid "Could not disassociate the organization"
-msgstr ""
+msgstr "組織の関連付けを解除できませんでした"
 
 msgid "Associate an operating system"
-msgstr ""
+msgstr "オペレーティングシステムを関連付けます。"
 
 msgid "Operating system has been associated."
-msgstr ""
+msgstr "オペレーティングシステムが関連付けられました。"
 
 msgid "Could not associate the operating system"
-msgstr ""
+msgstr "オペレーティングシステムを関連付けられませんでした"
 
 msgid "Disassociate an operating system"
-msgstr ""
+msgstr "オペレーティングシステムの関連付けを解除します。"
 
 msgid "Operating system has been disassociated."
-msgstr ""
+msgstr "オペレーティングシステムの関連付けが解除されました。"
 
 msgid "Could not disassociate the operating system"
-msgstr ""
+msgstr "オペレーティングシステムの関連付けを解除できませんでした"
 
 msgid "Associate an architecture"
-msgstr ""
+msgstr "アーキテクチャーを関連付けます。"
 
 msgid "Architecture has been associated."
-msgstr ""
+msgstr "アーキテクチャーが関連付けられました。"
 
 msgid "Could not associate the architecture"
-msgstr ""
+msgstr "アーキテクチャーを関連付けられませんでした"
 
 msgid "Disassociate an architecture"
-msgstr ""
+msgstr "アーキテクチャーの関連付けを解除します。"
 
 msgid "Architecture has been disassociated."
-msgstr ""
+msgstr "アーキテクチャーの関連付けが解除されました。"
 
 msgid "Could not disassociate the architecture"
-msgstr ""
+msgstr "アーキテクチャーの関連付けを解除できませんでした"
 
 msgid "Associate a partition table"
-msgstr ""
+msgstr "パーティションテーブルを関連付けます。"
 
 msgid "Partition table has been associated."
-msgstr ""
+msgstr "パーティションテーブルが関連付けられました。"
 
 msgid "Could not associate the partition table"
-msgstr ""
+msgstr "パーティションテーブルを関連付けられませんでした"
 
 msgid "Disassociate a partition table"
-msgstr ""
+msgstr "パーティションテーブルの関連付けを解除します。"
 
 msgid "Partition table has been disassociated."
-msgstr ""
+msgstr "パーティションテーブルの関連付けが解除されました。"
 
 msgid "Could not disassociate the partition table"
-msgstr ""
+msgstr "パーティションテーブルの関連付けを解除できませんでした"
 
 msgid "Assign a user role"
-msgstr ""
+msgstr "ユーザーロールを割り当てます。"
 
 msgid "User role has been assigned."
-msgstr ""
+msgstr "ユーザーロールが割り当てられました。"
 
 msgid "Could not assign the user role"
-msgstr ""
+msgstr "ユーザーロールを割り当てることができませんでした"
 
 msgid "Remove a user role"
-msgstr ""
+msgstr "ユーザーロールを削除します。"
 
 msgid "User role has been removed."
-msgstr ""
+msgstr "ユーザーロールが削除されました。"
 
 msgid "Could not remove the user role"
-msgstr ""
+msgstr "ユーザーロールを削除できませんでした"
 
 msgid "Associate a location"
-msgstr ""
+msgstr "ロケーションを関連付けます。"
 
 msgid "The location has been associated."
-msgstr ""
+msgstr "ロケーションが関連付けられました。"
 
 msgid "Could not associate the location"
-msgstr ""
+msgstr "ロケーションを関連付けることができませんでした"
 
 msgid "Disassociate a location"
-msgstr ""
+msgstr "ロケーションの関連付けを解除します。"
 
 msgid "The location has been disassociated."
-msgstr ""
+msgstr "ロケーションの関連付けが解除されました。"
 
 msgid "Could not disassociate the location"
-msgstr ""
+msgstr "ロケーションの関連付けを解除できませんでした"
 
 msgid "Override audit record pagination"
-msgstr ""
+msgstr "監査記録のページネーションの上書き"
 
 msgid ""
 "Audit records for past one month are returned by default. This behavior can "
 "be changed by passing --search option."
 msgstr ""
+"デフォルトでは、過去 1 ヶ月の監査記録が返されます。この動作は --search オプ"
+"ションを渡すことで変更できます。"
 
 msgid "At"
-msgstr ""
+msgstr "場所"
 
 msgid "IP"
-msgstr ""
+msgstr "IP"
 
 msgid "User"
-msgstr ""
+msgstr "ユーザー"
 
 msgid "Action"
-msgstr ""
+msgstr "アクション"
 
 msgid "Audit type"
-msgstr ""
+msgstr "監査タイプ"
 
 msgid "Audit record"
-msgstr ""
+msgstr "監査記録"
 
 msgid "Request UUID"
-msgstr ""
+msgstr "UUID の要求"
 
 msgid "Audited changes"
-msgstr ""
+msgstr "監査済みの変更"
 
 msgid "Attribute"
-msgstr ""
+msgstr "属性"
 
 msgid "Value"
-msgstr ""
+msgstr "値"
 
 msgid "Old"
-msgstr ""
+msgstr "旧"
 
 msgid "New"
-msgstr ""
+msgstr "新規"
 
 msgid "Set credentials"
-msgstr ""
+msgstr "資格情報を設定します。"
 
 msgid "Username to access the remote system"
-msgstr ""
+msgstr "リモートシステムにアクセスするためのユーザー名"
 
 msgid "Password to access the remote system"
-msgstr ""
+msgstr "リモートシステムにアクセスするためのパスワード"
 
 msgid "Successfully logged in as '%s'."
-msgstr ""
+msgstr "'%s' として正常にログインしました。"
 
 msgid ""
 "Successfully authenticated using negotiate auth, using the KEYRING principal."
 msgstr ""
 
 msgid "Openidc provider URL which issues access token"
-msgstr ""
+msgstr "アクセストークンを発行する Openidc プロバイダーの URL"
 
 msgid "Openidc provider URL which issues authentication code (two factor only)"
-msgstr ""
+msgstr "認証コードを発行する Openidc プロバイダーの URL (二要素認証のみ)"
 
 msgid "Client id used in the Openidc provider"
-msgstr ""
+msgstr "Openidc プロバイダーで使用されるクライアント ID"
 
 msgid "Authenticate with two factor"
-msgstr ""
+msgstr "二要素認証"
 
 msgid "Redirect URI for the authentication code grant flow"
-msgstr ""
+msgstr "認証コードの付与フローのリダイレクト URI"
 
 msgid "Wipe your credentials"
-msgstr ""
+msgstr "資格情報を消去します。"
 
 msgid "Logged out."
-msgstr ""
+msgstr "ログアウトしています。"
 
 msgid "Information about current connections"
-msgstr ""
+msgstr "現在の接続に関する情報"
 
 msgid "List all auth sources"
-msgstr ""
+msgstr "すべての認証ソースを一覧表示します。"
 
 msgid "Type of auth source"
-msgstr ""
+msgstr "認証ソースのタイプ"
 
 msgid "Manage external auth sources"
-msgstr ""
+msgstr "外部認証ソースの管理"
 
 msgid "Update organization and location for Auth Source"
-msgstr ""
+msgstr "認証ソースの組織とロケーションの更新"
 
 msgid "Successfully updated the %{name} external auth source."
-msgstr ""
+msgstr "%{name} の外部認証ソースが正常に更新されました。"
 
 msgid "Failed to update %{name} external auth source"
-msgstr ""
+msgstr "%{name} の外部認証ソースの更新に失敗しました"
 
 msgid "Manage LDAP auth sources"
-msgstr ""
+msgstr "LDAP 認証ソースを管理します"
 
 msgid "Server"
-msgstr ""
+msgstr "サーバー"
 
 msgid "Port"
-msgstr ""
+msgstr "ポート"
 
 msgid "LDAPS?"
-msgstr ""
+msgstr "LDAPS?"
 
 msgid "LDAPS"
-msgstr ""
+msgstr "LDAPS"
 
 msgid "Server Type"
-msgstr ""
+msgstr "サーバーのタイプ"
 
 msgid "Account"
-msgstr ""
+msgstr "アカウント"
 
 msgid "Account Username"
-msgstr ""
+msgstr "アカウントのユーザー名"
 
 msgid "Base DN"
-msgstr ""
+msgstr "ベース DN"
 
 msgid "Groups base DN"
-msgstr ""
+msgstr "グローバルベース DN"
 
 msgid "Use Netgroups"
-msgstr ""
+msgstr "ネットグループの使用"
 
 msgid "LDAP filter"
-msgstr ""
+msgstr "LDAP フィルター"
 
 msgid "Automatically Create Accounts?"
-msgstr ""
+msgstr "アカウントを自動的に作成しますか?"
 
 msgid "Usergroup sync"
-msgstr ""
+msgstr "ユーザーグループの同期"
 
 msgid "Attribute mappings"
-msgstr ""
+msgstr "マッピング属性"
 
 msgid "Login Name Attribute"
-msgstr ""
+msgstr "ログイン名属性"
 
 msgid "First Name Attribute"
-msgstr ""
+msgstr "名属性"
 
 msgid "Last Name Attribute"
-msgstr ""
+msgstr "姓属性"
 
 msgid "Email Address Attribute"
-msgstr ""
+msgstr "メールアドレス属性"
 
 msgid "Photo Attribute"
-msgstr ""
+msgstr "写真属性"
 
 msgid "Auth source [%{name}] created."
-msgstr ""
+msgstr "認証ソース [%{name}] が作成されました。"
 
 msgid "Could not create the Auth Source"
-msgstr ""
+msgstr "認証ソースを作成できませんでした"
 
 msgid "Auth source [%{name}] deleted."
-msgstr ""
+msgstr "認証ソース [%{name}] が削除されました。"
 
 msgid "Could not delete the Auth Source"
-msgstr ""
+msgstr "認証ソースを削除できませんでした"
 
 msgid "Auth source [%{name}] updated."
-msgstr ""
+msgstr "認証ソース [%{name}] が更新されました。"
 
 msgid "Could not update the Auth Source"
-msgstr ""
+msgstr "認証ソースを更新できませんでした"
 
 msgid ""
 "Can't perform login. Make sure sessions are enabled in hammer configuration "
 "file."
 msgstr ""
+"ログインを実行できません。セッションがファイルの hammer 設定で有効にされてい"
+"ることを確認してください。"
 
 msgid "Controller"
-msgstr ""
+msgstr "コントローラー"
 
 msgid "Search Query"
-msgstr ""
+msgstr "検索クエリー"
 
 msgid "Public"
-msgstr ""
+msgstr "公開"
 
 msgid "Owner Id"
-msgstr ""
+msgstr "所有者 ID"
 
 msgid "Owner Type"
-msgstr ""
+msgstr "所有者タイプ"
 
 msgid "Bookmark %<name>s created."
-msgstr ""
+msgstr "ブックマーク ％<name>s が作成されました。"
 
 msgid "Failed to create %<name>s bookmark"
-msgstr ""
+msgstr "ブックマーク ％<name>s の作成に失敗しました"
 
 msgid "Bookmark %<name>s updated successfully."
-msgstr ""
+msgstr "ブックマーク ％<name>s は正常に更新されました。"
 
 msgid "Failed to update %<name>s bookmark"
-msgstr ""
+msgstr "ブックマーク ％<name>s の更新に失敗しました"
 
 msgid "Bookmark deleted successfully."
-msgstr ""
+msgstr "ブックマークが正常に削除されました。"
 
 msgid "Failed to delete bookmark"
-msgstr ""
+msgstr "ブックマークの削除に失敗しました"
 
 msgid "Manage template combinations"
-msgstr ""
+msgstr "テンプレートの組み合わせを管理します。"
 
 msgid "ID"
-msgstr ""
+msgstr "ID"
 
 msgid "Provisioning template ID"
-msgstr ""
+msgstr "プロビジョニングテンプレート ID"
 
 msgid "Provisioning template name"
-msgstr ""
+msgstr "プロビジョニングテンプレート名"
 
 msgid "Hostgroup ID"
-msgstr ""
+msgstr "ホストグループ ID"
 
 msgid "Hostgroup name"
-msgstr ""
+msgstr "ホストグループ名"
 
 msgid "Provisioning Template"
-msgstr ""
+msgstr "Provisioning Template (プロビジョニングテンプレート)"
 
 msgid "Hostgroup"
-msgstr ""
+msgstr "ホストグループ"
 
 msgid "Template combination updated."
-msgstr ""
+msgstr "テンプレートの組み合わせが更新されました。"
 
 msgid "Could not update the template combination"
-msgstr ""
+msgstr "テンプレートの組み合わせを更新できませんでした"
 
 msgid "Template combination created."
-msgstr ""
+msgstr "テンプレートの組み合わせを作成しました。"
 
 msgid "Could not create the template combination"
-msgstr ""
+msgstr "テンプレートの組み合わせを作成できませんでした"
 
 msgid "Template combination Deleted."
-msgstr ""
+msgstr "テンプレートの組み合わせが削除されました。"
 
 msgid "Could not delete the template combination"
-msgstr ""
+msgstr "テンプレートの組み合わせを削除できませんでした"
 
 msgid "Name of DNS proxy to use within this domain"
-msgstr ""
+msgstr "このドメイン内で使用する DNS プロキシーの名前"
 
 msgid "Provider specific options"
-msgstr ""
+msgstr "プロバイダー固有オプション"
 
 msgid "Bold attributes are required."
-msgstr ""
+msgstr "太字の属性は必須です。"
 
 msgid "Available keys for %{option}"
-msgstr ""
+msgstr "%{option} の利用可能なキー"
 
 msgid "Possible values: %s"
-msgstr ""
+msgstr "設定可能な値: %s"
 
 msgid "%{value}, each managed hosts needs to have one primary interface."
 msgstr ""
+"%{value}、各管理対象ホストにはプライマリーインターフェースが 1 つ必要です。"
 
 msgid "For %{condition}"
-msgstr ""
+msgstr "%{condition} の場合"
 
 msgid ""
 "VLAN tag, this attribute has precedence over the subnet VLAN ID. Only for "
 "virtual interfaces."
 msgstr ""
+"VLAN タグ。この属性はサブネット VLAN ID より優先されます。仮想インターフェー"
+"スの場合のみ使用されます。"
 
 msgid "Identifier of the interface to which this interface belongs, e.g. eth1."
-msgstr ""
+msgstr "このインターフェースが属するインターフェースの ID (例: eth1)"
 
 msgid "Identifiers of slave interfaces, e.g. [eth1,eth2]"
-msgstr ""
+msgstr "スレーブインターフェースの ID (例: [eth1,eth2])"
 
 msgid "always IPMI"
-msgstr ""
+msgstr "常に IPMI"
 
 msgid "Duration: %sms"
-msgstr ""
+msgstr "期間: %sms"
 
 msgid "FAIL"
-msgstr ""
+msgstr "失敗"
 
 msgid "%{count} more service(s) failed, but not shown:"
-msgstr ""
+msgstr "さらに %{count} のサービスが失敗しましたが、表示されません:"
 
 msgid "Network prefix in CIDR notation (e.g. 64) for this subnet"
-msgstr ""
+msgstr "このサブネットの CIDR 表記のネットワークプレフィックス (例: 64)"
 
 msgid "TFTP Proxy to use within this subnet"
-msgstr ""
+msgstr "このサブネット内で使用する TFTP プロキシー"
 
 msgid "DNS Proxy to use within this subnet"
-msgstr ""
+msgstr "このサブネット内で使用する DNS プロキシー"
 
 msgid "DHCP Proxy to use within this subnet"
-msgstr ""
+msgstr "このサブネット内で使用する DHCP プロキシー"
 
 msgid "BMC Proxy to use within this subnet"
-msgstr ""
+msgstr "このサブネット内で使用する BMC プロキシー"
 
 msgid "Default organization name"
-msgstr ""
+msgstr "デフォルト組織名"
 
 msgid "Default location name"
-msgstr ""
+msgstr "デフォルトロケーション名"
 
 msgid "Received data of unknown format."
-msgstr ""
+msgstr "不明な形式のデータが受信されました。"
 
 msgid "Search / Order fields"
-msgstr ""
+msgstr "検索/注文フィールド"
 
 msgid "Values"
-msgstr ""
+msgstr "値"
 
 msgid "%s Id"
-msgstr ""
+msgstr "%s の ID"
 
 msgid "%s name"
-msgstr ""
+msgstr "%s の名前"
 
 msgid "Nothing to update."
-msgstr ""
+msgstr "更新するものがありません。"
 
 msgid "Associate a resource"
-msgstr ""
+msgstr "リソースを関連付けます。"
 
 msgid "Could not associate the %{resource_name}."
-msgstr ""
+msgstr "%{resource_name} を関連付けることができませんでした"
 
 msgid "The %{resource_name} has been associated."
-msgstr ""
+msgstr "%{resource_name} が関連付けられました。"
 
 msgid "Disassociate a resource"
-msgstr ""
+msgstr "リソースの関連付けを解除します。"
 
 msgid "Could not disassociate the %{resource_name}."
-msgstr ""
+msgstr "%{resource_name} の関連付けを解除できませんでした。"
 
 msgid "The %{resource_name} has been disassociated."
-msgstr ""
+msgstr "%{resource_name} の関連付けが解除されました。"
 
 msgid "Path to directory where downloaded content will be saved"
-msgstr ""
+msgstr "ダウンロードされたコンテンツの保存先のディレクトリーへのパス"
 
 msgid "The response has been saved to %{path}."
-msgstr ""
+msgstr "応答は %{path} に保存されました。"
 
 msgid "Cannot save file: %s does not exist"
-msgstr ""
+msgstr "ファイルを保存できません: %s は存在しません"
 
 msgid "Type"
-msgstr ""
+msgstr "タイプ"
 
 msgid "Set a global parameter"
-msgstr ""
+msgstr "グローバルパラメーターを設定します"
 
 msgid "Created parameter [%{name}] with value [%{value}]."
-msgstr ""
+msgstr "値 [%{value}] でパラメーター [%{name}] を作成しました。"
 
 msgid "Parameter [%{name}] updated to [%{value}]."
-msgstr ""
+msgstr "パラメーター [%{name}] が [%{value}] に更新されました。"
 
 msgid "Parameter name"
-msgstr ""
+msgstr "パラメーター名"
 
 msgid "Parameter value"
-msgstr ""
+msgstr "パラメーター値"
 
 msgid "Should the value be hidden"
-msgstr ""
+msgstr "値を非表示にする必要があります"
 
 msgid "Type of the parameter"
-msgstr ""
+msgstr "パラメーターのタイプ"
 
 msgid "Global parameter [%{name}] deleted."
-msgstr ""
+msgstr "グローバルパラメーター [%{name}] が削除されました。"
 
 msgid "Could not delete the global parameter [%{name}]"
-msgstr ""
+msgstr "グローバルパラメーター [%{name}] を削除できませんでした"
 
 msgid "Manipulate global parameters"
-msgstr ""
+msgstr "グローバルパラメーターを操作します"
 
 msgid "Create compute profile set of values"
-msgstr ""
+msgstr "コンピュートプロファイルの値セットを作成します。"
 
 msgid "Compute resource attributes"
-msgstr ""
+msgstr "コンピュートリソース属性"
 
 msgid "Interface parameters, should be comma separated list of values"
 msgstr ""
+"インターフェースパラメーター。値はコンマ区切りの一覧でなければなりません"
 
 msgid "Volume parameters, should be comma separated list of values"
-msgstr ""
+msgstr "ボリュームパラメータ。値はコンマ区切りの一覧でなければなりません"
 
 msgid "Compute profile attributes are set."
-msgstr ""
+msgstr "コンピュートプロファイルの属性が設定されました。"
 
 msgid "Could not set the compute profile attributes"
-msgstr ""
+msgstr "コンピュートプロファイル属性を設定できませんでした"
 
 msgid "Update compute profile values"
-msgstr ""
+msgstr "コンピュートプロファイルの値を更新します。"
 
 msgid "Compute resource attributes, should be comma separated list of values"
-msgstr ""
+msgstr "リソース属性を計算します。値はコンマ区切りの一覧でなければなりません"
 
 msgid "Compute profile attributes updated."
-msgstr ""
+msgstr "コンピュートプロファイル属性が更新されました。"
 
 msgid "Could not update the compute profile attributes"
-msgstr ""
+msgstr "コンピュートプロファイル属性を更新できませんでした"
 
 msgid "Add interface for Compute Profile"
-msgstr ""
+msgstr "コンピュートプロファイルのインターフェースを追加します。"
 
 msgid "Interface was created."
-msgstr ""
+msgstr "インターフェースが作成されました。"
 
 msgid "Could not create interface"
-msgstr ""
+msgstr "インターフェースを作成できませんでした"
 
 msgid "Update compute profile interface"
-msgstr ""
+msgstr "コンピュートプロファイルのインターフェースを更新します。"
 
 msgid "Interface id"
-msgstr ""
+msgstr "インターフェース ID"
 
 msgid "Interface was updated."
-msgstr ""
+msgstr "インターフェースが更新されました。"
 
 msgid "Could not update interface"
-msgstr ""
+msgstr "インターフェースを更新できませんでした"
 
 msgid "Remove compute profile interface"
-msgstr ""
+msgstr "コンピュートプロファイルのインターフェースを削除します。"
 
 msgid "unknown interface id"
-msgstr ""
+msgstr "不明なインターフェース ID"
 
 msgid "Interface was removed."
-msgstr ""
+msgstr "このデバイスは削除されました。"
 
 msgid "Could not remove interface"
-msgstr ""
+msgstr "インターフェースを削除できませんでした"
 
 msgid "Add volume for Compute Profile"
-msgstr ""
+msgstr "コンピュートプロファイルのボリュームを追加します。"
 
 msgid "Volume was created."
-msgstr ""
+msgstr "ボリュームが作成されました。"
 
 msgid "Could not create volume"
-msgstr ""
+msgstr "ボリュームを作成できませんでした"
 
 msgid "Update compute profile volume"
-msgstr ""
+msgstr "コンピュートプロファイルのボリュームを更新します。"
 
 msgid "Volume id"
-msgstr ""
+msgstr "ボリューム ID"
 
 msgid "Volume was updated."
-msgstr ""
+msgstr "ボリュームが更新されました。"
 
 msgid "Could not update volume"
-msgstr ""
+msgstr "ボリュームを更新できませんでした"
 
 msgid "Remove compute profile volume"
-msgstr ""
+msgstr "コンピュートプロファイルのボリュームを削除します。"
 
 msgid "unknown volume id"
-msgstr ""
+msgstr "不明なボリューム ID"
 
 msgid "Volume was removed."
-msgstr ""
+msgstr "ボリュームを削除しました。"
 
 msgid "Could not remove volume"
-msgstr ""
+msgstr "ボリュームを削除できませんでした"
 
 msgid "Compute attributes"
-msgstr ""
+msgstr "コンピュート属性"
 
 msgid "Compute Resource"
-msgstr ""
+msgstr "コンピュートリソース"
 
 msgid "VM attributes"
-msgstr ""
+msgstr "仮想マシン属性"
 
 msgid "Compute profile created."
-msgstr ""
+msgstr "コンピュートプロファイルを作成しました。"
 
 msgid "Could not create a compute profile"
-msgstr ""
+msgstr "コンピュートプロファイルを作成できませんでした"
 
 msgid "Compute profile updated."
-msgstr ""
+msgstr "コンピュートプロファイルを更新しました。"
 
 msgid "Could not update the compute profile"
-msgstr ""
+msgstr "コンピュートプロファイルを更新できませんでした"
 
 msgid "Compute profile deleted."
-msgstr ""
+msgstr "コンピュートプロファイルを削除しました。"
 
 msgid "Could not delete the Compute profile"
-msgstr ""
+msgstr "コンピュートプロファイルを削除できませんでした"
 
 msgid "Create update and delete Compute profile values"
-msgstr ""
+msgstr "コンピュートプロファイルの値を作成、更新、削除します。"
 
 msgid "Provider"
-msgstr ""
+msgstr "プロバイダー"
 
 msgid "Description"
-msgstr ""
+msgstr "説明"
 
 msgid "Path to a file that contains oVirt public key (For oVirt only)"
-msgstr ""
+msgstr "oVirt の公開鍵を含むファイルへのパス (oVirtのみ)"
 
 msgid "Compute resource created."
-msgstr ""
+msgstr "コンピュートリソースが作成されました。"
 
 msgid "Could not create the compute resource"
-msgstr ""
+msgstr "コンピュートリソースを作成できませんでした"
 
 msgid "Compute resource updated."
-msgstr ""
+msgstr "コンピュートリソースが更新されました。"
 
 msgid "Could not update the compute resource"
-msgstr ""
+msgstr "コンピュートリソースを更新できませんでした"
 
 msgid "Compute resource deleted."
-msgstr ""
+msgstr "コンピュートリソースが削除されました。"
 
 msgid "Could not delete the compute resource"
-msgstr ""
+msgstr "コンピュートリソースを削除できませんでした"
 
 msgid "Associate a specific VM"
-msgstr ""
+msgstr "特定の仮想マシンを関連付けます"
 
 msgid "Virtual machines have been associated."
-msgstr ""
+msgstr "仮想マシンが関連付けられています。"
 
 msgid "Could not associate the virtual machines"
-msgstr ""
+msgstr "仮想マシンを関連付けられませんでした"
 
 msgid "VNIC profile ID"
-msgstr ""
+msgstr "VNIC プロファイル ID"
 
 msgid "Network ID"
-msgstr ""
+msgstr "ネットワーク ID"
 
 msgid "Uuid"
-msgstr ""
+msgstr "UUID"
 
 msgid "Url"
-msgstr ""
+msgstr "Url"
 
 msgid "Region"
-msgstr ""
+msgstr "リージョン"
 
 msgid "DNS"
-msgstr ""
+msgstr "DNS"
 
 msgid "State"
-msgstr ""
+msgstr "状態"
 
 msgid "DNS Name"
-msgstr ""
+msgstr "DNS 名"
 
 msgid "Virtualization Type"
-msgstr ""
+msgstr "仮想化タイプ"
 
 msgid "Volume size in GB, integer value"
-msgstr ""
+msgstr "ボリュームサイズ (GB 単位)、整数値"
 
 msgid "Project"
-msgstr ""
+msgstr "プロジェクト"
 
 msgid "Email"
-msgstr ""
+msgstr "電子メール"
 
 msgid "Key Path"
-msgstr ""
+msgstr "キーのパス"
 
 msgid "Zone"
-msgstr ""
+msgstr "ゾーン"
 
 msgid "Machine Type"
-msgstr ""
+msgstr "マシンタイプ"
 
 msgid "Status"
-msgstr ""
+msgstr "状態"
 
 msgid "Number of CPUs"
-msgstr ""
+msgstr "CPU 数"
 
 msgid "String, amount of memory, value in bytes"
-msgstr ""
+msgstr "文字列、メモリー容量、値 (バイト単位)"
 
 msgid "Possible values: %{modes}"
-msgstr ""
+msgstr "設定可能な値: %{modes}"
 
 msgid "Device names to specify the boot order"
-msgstr ""
+msgstr "起動の順序を指定するデバイス名"
 
 msgid "Boolean (expressed as 0 or 1), whether to start the machine or not"
-msgstr ""
+msgstr "ブール値 (0 または 1 で表現)。マシンを開始するかどうか"
 
 msgid "Name of interface according to type"
-msgstr ""
+msgstr "タイプに基づくインターフェースの名前"
 
 msgid "Libvirt instance network, e.g. default"
-msgstr ""
+msgstr "Libvirt インスタンスネットワーク (例: デフォルトなど)"
 
 msgid "One of available storage pools"
-msgstr ""
+msgstr "利用可能なストレージプールの 1 つ"
 
 msgid "String value, e.g. 10G"
-msgstr ""
+msgstr "文字列値 (例: 10G)"
 
 msgid "Initial allocation, e.g. 0G"
-msgstr ""
+msgstr "初回割り当て (例: 0G)"
 
 msgid "CPUs"
-msgstr ""
+msgstr "CPU"
 
 msgid "Memory"
-msgstr ""
+msgstr "メモリー"
 
 msgid "OS Type"
-msgstr ""
+msgstr "OS タイプ"
 
 msgid "Domain Type"
-msgstr ""
+msgstr "ドメインタイプ"
 
 msgid "Persistent"
-msgstr ""
+msgstr "永続"
 
 msgid "Boot order"
-msgstr ""
+msgstr "起動の順番"
 
 msgid "Tenant"
-msgstr ""
+msgstr "テナント"
 
 msgid "Project domain name"
-msgstr ""
+msgstr "プロジェクトドメイン名:"
 
 msgid "Project domain ID"
-msgstr ""
+msgstr "プロジェクトドメイン ID"
 
 msgid "Tenant Id"
-msgstr ""
+msgstr "テナント ID"
 
 msgid "ID or name of cluster to use"
-msgstr ""
+msgstr "使用するクラスターの ID または名前"
 
 msgid "Hardware profile to use"
-msgstr ""
+msgstr "使用するハードウェアプロファイル"
 
 msgid "Integer value, number of cores"
-msgstr ""
+msgstr "整数値、コア数"
 
 msgid "Integer value, number of sockets"
-msgstr ""
+msgstr "整数値、ソケット数"
 
 msgid "Amount of memory, integer value in bytes"
-msgstr ""
+msgstr "メモリー容量、整数値 (バイト単位)"
 
 msgid "Boolean, set 1 to high availability"
-msgstr ""
+msgstr "ブール値。高可用性の場合は 1 に設定"
 
 msgid "Possible values: %s. Not usable if display type is SPICE."
-msgstr ""
+msgstr "設定可能な値: %s。ディスプレイタイプが SPICE の場合は使用できません。"
 
 msgid "Boolean, set 1 to start the vm"
-msgstr ""
+msgstr "ブール値。仮想マシンを起動するには 1 に設定します"
 
 msgid "Compute name, e.g. eth0"
-msgstr ""
+msgstr "コンピュート名 (例: eth0)"
 
 msgid "Select one of available networks for a cluster, must be an ID or a name"
 msgstr ""
+"クラスターに利用可能なネットワークの中から 1 つ選択します。ID または名前を指"
+"定する必要があります。"
 
 msgid "Interface type"
-msgstr ""
+msgstr "インターフェースタイプ"
 
 msgid "Vnic Profile"
-msgstr ""
+msgstr "Vnic プロファイル"
 
 msgid "ID or name of storage domain"
-msgstr ""
+msgstr "ストレージドメインの ID または名前"
 
 msgid "Boolean, set 1 for bootable, only one volume can be bootable"
 msgstr ""
+"ブール値。ブート可能にするには 1 に設定します。ブート可能にできるボリューム"
+"は 1 つだけです"
 
 msgid "Boolean, set 1 to preallocate"
-msgstr ""
+msgstr "ブール値。事前割り当てするには 1 に設定します"
 
 msgid "Boolean, set 1 to wipe disk after delete"
-msgstr ""
+msgstr "ブール値。削除後にディスクを消去するには 1 に設定します。"
 
 msgid "Disk interface name, must be ide, virto or virto_scsi"
 msgstr ""
+"ディスクインターフェース名。ide、virto、または virto_scsi である必要がありま"
+"す"
 
 msgid "Datacenter"
-msgstr ""
+msgstr "データセンター"
 
 msgid "Cores"
-msgstr ""
+msgstr "コア数"
 
 msgid "Cluster ID from VMware"
-msgstr ""
+msgstr "VMware のクラスター ID"
 
 msgid "Number of cores per socket (applicable to hardware versions < 10 only)"
-msgstr ""
+msgstr "ソケットあたりのコア数 (10 未満のハードウェアバージョンにのみ適用)"
 
 msgid "CPU count"
-msgstr ""
+msgstr "CPU 数"
 
 msgid "Integer number, amount of memory in MB"
-msgstr ""
+msgstr "整数値。メモリー容量 (MB 単位)"
 
 msgid "Path to folder"
-msgstr ""
+msgstr "フォルダーへのパス"
 
 msgid "Resource Pool ID from VMware"
-msgstr ""
+msgstr "VMware のリソースプール ID"
 
 msgid "Guest OS ID form VMware"
-msgstr ""
+msgstr "VMware のゲスト OS ID"
 
 msgid "Hardware version ID from VMware"
-msgstr ""
+msgstr "VMware のハードウェアバージョン ID"
 
 msgid "Must be a 1 or 0, lets you add memory resources while the machine is on"
 msgstr ""
+"1 または 0 である必要があります。マシンの電源がオンであれば、メモリーリソース"
+"を追加できます。"
 
 msgid "Must be a 1 or 0, lets you add CPU resources while the machine is on"
 msgstr ""
+"1 または 0 である必要があります。マシンの電源がオンであれば、CPU リソースを追"
+"加できます。"
 
 msgid "Must be a 1 or 0, Add a CD-ROM drive to the virtual machine"
 msgstr ""
+"1 または 0 である必要があります。CD-ROM ドライブを仮想マシンに追加してくださ"
+"い。"
 
 msgid "Annotation Notes"
-msgstr ""
+msgstr "アノテーションノート"
 
 msgid "List with SCSI controllers definitions"
-msgstr ""
+msgstr "SCSI コントローラー定義のリスト"
 
 msgid "ID of the controller from VMware"
-msgstr ""
+msgstr "VMware のコントローラー ID"
 
 msgid "Key of the controller (e.g. 1000)"
-msgstr ""
+msgstr "コントローラーのキー (例: 1000)"
 
 msgid "Must be a 1 or 0, whether to start the machine or not"
-msgstr ""
+msgstr "1 または 0 である必要があります。マシンを開始するかどうか"
 
 msgid "Storage Pod ID from VMware"
-msgstr ""
+msgstr "VMware のストレージ Pod"
 
 msgid "Datastore ID from VMware"
-msgstr ""
+msgstr "VMware のデータソース ID"
 
 msgid "Integer number, volume size in GB"
-msgstr ""
+msgstr "整数値。ボリュームサイズ (GB 単位)"
 
 msgid "Type of the network adapter, for example one of:"
-msgstr ""
+msgstr "ネットワークアダプターのタイプ。たとえば、次のいずれかになります:"
 
 msgid ""
 "See documentation center for your version of vSphere to find more details "
 "about available adapter types:"
 msgstr ""
+"利用可能なアダプタータイプの詳細については、vSphere のバージョンのドキュメン"
+"テーションセンターを参照してください:"
 
 msgid "Network ID or Network Name from VMware"
-msgstr ""
+msgstr "VMware のネットワーク ID またはネットワーク名"
 
 msgid "Power Status"
-msgstr ""
+msgstr "電源状態"
 
 msgid "Host Name"
-msgstr ""
+msgstr "ホスト名"
 
 msgid "Connection Status"
-msgstr ""
+msgstr "接続ステータス"
 
 msgid "Hardware Version"
-msgstr ""
+msgstr "ハードウェアのバージョン"
 
 msgid "Path"
-msgstr ""
+msgstr "パス"
 
 msgid "Operating System"
-msgstr ""
+msgstr "オペレーティングシステム"
 
 msgid "Host"
-msgstr ""
+msgstr "ホスト"
 
 msgid "Last report"
-msgstr ""
+msgstr "最終レポート"
 
 msgid "Origin"
-msgstr ""
+msgstr "生成"
 
 msgid "Applied"
-msgstr ""
+msgstr "適用済み"
 
 msgid "Restarted"
-msgstr ""
+msgstr "再起動"
 
 msgid "Failed"
-msgstr ""
+msgstr "失敗"
 
 msgid "Restart Failures"
-msgstr ""
+msgstr "再起動の失敗"
 
 msgid "Skipped"
-msgstr ""
+msgstr "スキップ"
 
 msgid "Pending"
-msgstr ""
+msgstr "保留"
 
 msgid "Reported at"
-msgstr ""
+msgstr "レポート日時"
 
 msgid "Report status"
-msgstr ""
+msgstr "レポートの状態"
 
 msgid "Report metrics"
-msgstr ""
+msgstr "レポートメトリックス"
 
 msgid "config_retrieval"
-msgstr ""
+msgstr "config_retrieval"
 
 msgid "exec"
-msgstr ""
+msgstr "exec"
 
 msgid "file"
-msgstr ""
+msgstr "file"
 
 msgid "package"
-msgstr ""
+msgstr "package"
 
 msgid "service"
-msgstr ""
+msgstr "サービス"
 
 msgid "user"
-msgstr ""
+msgstr "user"
 
 msgid "yumrepo"
-msgstr ""
+msgstr "yumrepo"
 
 msgid "filebucket"
-msgstr ""
+msgstr "filebucket"
 
 msgid "cron"
-msgstr ""
+msgstr "cron"
 
 msgid "total"
-msgstr ""
+msgstr "合計"
 
 msgid "Logs"
-msgstr ""
+msgstr "ログ"
 
 msgid "Resource"
-msgstr ""
+msgstr "リソース"
 
 msgid "Message"
-msgstr ""
+msgstr "メッセージ"
 
 msgid "Report has been deleted."
-msgstr ""
+msgstr "レポートが削除されました。"
 
 msgid "Could not delete the report"
-msgstr ""
+msgstr "レポートを削除できませんでした"
 
 msgid "Use the default organization and/or location from the server"
-msgstr ""
+msgstr "サーバーからデフォルト組織および/またはロケーションを使用します"
 
 msgid "DNS Id"
-msgstr ""
+msgstr "DNS ID"
 
 msgid "Domain [%{name}] created."
-msgstr ""
+msgstr "ドメイン [%{name}] が作成されました。"
 
 msgid "Could not create the domain"
-msgstr ""
+msgstr "ドメインを作成できませんでした"
 
 msgid "Full name describing the domain"
-msgstr ""
+msgstr "ドメインを表す完全名"
 
 msgid "Domain [%{name}] updated."
-msgstr ""
+msgstr "ドメイン [%{name}] が更新されました。"
 
 msgid "Could not update the domain"
-msgstr ""
+msgstr "ドメインを更新できませんでした"
 
 msgid "Domain [%{name}] deleted."
-msgstr ""
+msgstr "ドメイン [%{name}] が削除されました。"
 
 msgid "Could not delete the domain"
-msgstr ""
+msgstr "ドメインを削除できませんでした"
 
 msgid "Create or update parameter for a domain"
-msgstr ""
+msgstr "ドメインのパラメーターを作成または更新します。"
 
 msgid "Domain parameter updated"
-msgstr ""
+msgstr "ドメインのパラメーターが更新されました"
 
 msgid "New domain parameter created"
-msgstr ""
+msgstr "新規ドメインパラメーターが作成されました"
 
 msgid "Could not set domain parameter"
-msgstr ""
+msgstr "ドメインパラメーターを設定できませんでした"
 
 msgid "Delete parameter for a domain"
-msgstr ""
+msgstr "ドメインのパラメーターを削除します。"
 
 msgid "Domain parameter deleted."
-msgstr ""
+msgstr "ドメインのパラメーターが削除されました。"
 
 msgid "Redirection of API call detected."
-msgstr ""
+msgstr "API 呼び出しのリダイレクトが検出されました。"
 
 msgid "It seems hammer is configured to use HTTP and the server prefers HTTPS."
 msgstr ""
+"hammer が HTTP を使用し、サーバーで HTTPS が優先されるよう設定されているよう"
+"です。"
 
 msgid "Update your server url configuration."
-msgstr ""
+msgstr "サーバー URL 設定の更新。"
 
 msgid ""
 "You can set 'follow_redirects' to one of :default or :always to enable "
 "redirects following."
 msgstr ""
+"'follow_redirects' は、次のいずれかに設定できます: デフォルト値、または: 常に"
+"リダイレクトの実施を有効にする。"
 
 msgid "Forbidden - server refused to process the request."
-msgstr ""
+msgstr "許可されていません - サーバーは要求の処理を拒否しました。"
 
 msgid "The following configuration option were used for the SSL connection:"
-msgstr ""
+msgstr "以下の設定オプションが SSL 接続に使用されました。"
 
 msgid ""
 "Make sure the location contains an unexpired and valid CA certificate for %s."
 msgstr ""
+"期限が切れていない有効な %s のCA 証明書がロケーションに含まれていることを確認"
+"します。"
 
 msgid ""
 "You can use hammer to fetch the CA certificate from the server. Be aware "
 "that hammer cannot verify whether the certificate is correct and you should "
 "verify its authenticity after downloading it."
 msgstr ""
+"Hammer を使用してサーバーから CA 証明書を取得できます。Hammer では証明書が正"
+"しいかどうかを確認できないので、ダウンロード後に証明書の信頼性を検証する必要"
+"がある点に注意してください。"
 
 msgid "Download the certificate as follows:"
-msgstr ""
+msgstr "以下のように証明書をダウンロードします。"
 
 msgid ""
 "Make sure you configured the correct URL and have the server's CA "
 "certificate installed on your system."
 msgstr ""
+"正しい URL を設定しており、サーバーの CA 証明書がインストールされていることを"
+"確認してください。"
 
 msgid "Server misconfiguration detected"
 msgstr ""
@@ -1499,67 +1546,69 @@ msgid "have you run %s (for Kerberos)?"
 msgstr ""
 
 msgid "is the server down?"
-msgstr ""
+msgstr "サーバーは停止していますか?"
 
 msgid "View and manage user group's external user groups"
-msgstr ""
+msgstr "ユーザーグループの外部ユーザーグループの表示および管理"
 
 msgid "Auth source"
-msgstr ""
+msgstr "認証ソース"
 
 msgid "Refresh external user group"
-msgstr ""
+msgstr "外部ユーザーグループの更新"
 
 msgid "External user group created."
-msgstr ""
+msgstr "外部ユーザーグループが作成されました。"
 
 msgid "Could not create external user group"
-msgstr ""
+msgstr "外部ユーザーグループを作成できませんでした"
 
 msgid "External user group updated."
-msgstr ""
+msgstr "外部ユーザーグループが更新されました。"
 
 msgid "Could not update external user group"
-msgstr ""
+msgstr "外部ユーザーグループを更新できませんでした"
 
 msgid "External user group deleted."
-msgstr ""
+msgstr "外部ユーザーグループが削除されました。"
 
 msgid "Could not delete the external user group"
-msgstr ""
+msgstr "外部ユーザーグループを削除できませんでした"
 
 msgid "Fact"
-msgstr ""
+msgstr "ファクト"
 
 msgid "Resource type"
-msgstr ""
+msgstr "リソースタイプ"
 
 msgid "Search"
-msgstr ""
+msgstr "検索"
 
 msgid "Unlimited?"
-msgstr ""
+msgstr "無制限ですか?"
 
 msgid "Override?"
-msgstr ""
+msgstr "オーバーライドしますか?"
 
 msgid "Role"
-msgstr ""
+msgstr "ロール"
 
 msgid "Permissions"
-msgstr ""
+msgstr "パーミッション"
 
 msgid "(Miscellaneous)"
-msgstr ""
+msgstr "(その他)"
 
 msgid "none"
-msgstr ""
+msgstr "なし"
 
 msgid "Organizations and locations can be set only for overriding filters."
 msgstr ""
+"組織およびロケーションは上書きするフィルターについてのみ設定することができま"
+"す。"
 
 msgid "Overriding organizations and locations"
-msgstr ""
+msgstr "組織およびロケーションの上書き"
 
 msgid ""
 "Filters inherit organizations and locations from its role by default. This "
@@ -1567,839 +1616,862 @@ msgid ""
 "%{org_opts} and %{loc_opts} are applicable only when the override flag is "
 "set."
 msgstr ""
+"デフォルトでは、フィルターは対象のロールから組織とロケーションを継承します。"
+"この動作は、%{condition} を設定して変更できます。%{wsp} そのた"
+"め、%{org_opts} と %{loc_opts} のオプションは、上書きフラグが設定されている場"
+"合のみ適用できます。"
 
 msgid "Permission filter for [%<resource_type_label>s] created."
-msgstr ""
+msgstr "[%<resource_type_label>s] のパーミッションフィルターが作成されました。"
 
 msgid "Could not create the permission filter"
-msgstr ""
+msgstr "パーミッションフィルターを作成できませんでした"
 
 msgid "Permission filter for [%<resource_type_label>s] updated."
-msgstr ""
+msgstr "[%<resource_type_label>s] のパーミッションフィルターが更新されました。"
 
 msgid "Could not update the permission filter"
-msgstr ""
+msgstr "パーミッションフィルターを更新できませんでした"
 
 msgid "Permission filter deleted."
-msgstr ""
+msgstr "パーミッションフィルターが削除されました。"
 
 msgid "Could not delete the permission filter"
-msgstr ""
+msgstr "パーミッションフィルターを削除できませんでした"
 
 msgid "Host Group"
-msgstr ""
+msgstr "ホストグループ"
 
 msgid "MAC"
-msgstr ""
+msgstr "MAC"
 
 msgid "Global Status"
-msgstr ""
+msgstr "グローバルステータス"
 
 msgid "Organization"
-msgstr ""
+msgstr "組織"
 
 msgid "Location"
-msgstr ""
+msgstr "ロケーション"
 
 msgid "Additional Information"
-msgstr ""
+msgstr "追加情報"
 
 msgid "Bare Metal"
-msgstr ""
+msgstr "ベアメタル"
 
 msgid "UUID"
-msgstr ""
+msgstr "UUID"
 
 msgid "Compute Profile"
-msgstr ""
+msgstr "コンピュートプロファイル"
 
 msgid "Cert name"
-msgstr ""
+msgstr "証明書名"
 
 msgid "Token"
-msgstr ""
+msgstr "トークン"
 
 msgid "Managed"
-msgstr ""
+msgstr "管理対象"
 
 msgid "Installed at"
-msgstr ""
+msgstr "インストール:"
 
 msgid "Uptime (seconds)"
-msgstr ""
+msgstr "アップタイム (秒)"
 
 msgid "Build Status"
-msgstr ""
+msgstr "ビルドステータス"
 
 msgid "Network"
-msgstr ""
+msgstr "ネットワーク"
 
 msgid "IPv4 address"
-msgstr ""
+msgstr "IPv4 アドレス"
 
 msgid "IPv6 address"
-msgstr ""
+msgstr "IPv6 アドレス"
 
 msgid "Subnet ipv4"
-msgstr ""
+msgstr "サブネット IPv4"
 
 msgid "Subnet ipv6"
-msgstr ""
+msgstr "サブネット IPv6"
 
 msgid "Domain"
-msgstr ""
+msgstr "ドメイン"
 
 msgid "Service provider"
-msgstr ""
+msgstr "サービスプロバイダー"
 
 msgid "SP Name"
-msgstr ""
+msgstr "SP 名"
 
 msgid "SP IP"
-msgstr ""
+msgstr "SP IP"
 
 msgid "SP MAC"
-msgstr ""
+msgstr "SP MAC"
 
 msgid "SP Subnet"
-msgstr ""
+msgstr "SP サブネット"
 
 msgid "Network interfaces"
-msgstr ""
+msgstr "ネットワークインターフェース"
 
 msgid "Identifier"
-msgstr ""
+msgstr "識別子"
 
 msgid "MAC address"
-msgstr ""
+msgstr "MAC アドレス"
 
 msgid "FQDN"
-msgstr ""
+msgstr "FQDN"
 
 msgid "Operating system"
-msgstr ""
+msgstr "オペレーティングシステム"
 
 msgid "Architecture"
-msgstr ""
+msgstr "アーキテクチャー"
 
 msgid "Build"
-msgstr ""
+msgstr "ビルド"
 
 msgid "Medium"
-msgstr ""
+msgstr "メディア"
 
 msgid "Partition Table"
-msgstr ""
+msgstr "パーティションテーブル"
 
 msgid "PXE Loader"
-msgstr ""
+msgstr "PXE ローダー"
 
 msgid "Custom partition table"
-msgstr ""
+msgstr "カスタムパーティションテーブル"
 
 msgid "Image"
-msgstr ""
+msgstr "イメージ"
 
 msgid "Image file"
-msgstr ""
+msgstr "イメージファイル"
 
 msgid "Use image"
-msgstr ""
+msgstr "イメージの使用"
 
 msgid "Additional info"
-msgstr ""
+msgstr "追加情報"
 
 msgid "Owner"
-msgstr ""
+msgstr "所有者"
 
 msgid "Enabled"
-msgstr ""
+msgstr "有効化"
 
 msgid "Model"
-msgstr ""
+msgstr "モデル"
 
 msgid "Comment"
-msgstr ""
+msgstr "コメント"
 
 msgid "Power"
-msgstr ""
+msgstr "電源"
 
 msgid "Host id"
-msgstr ""
+msgstr "ホスト ID"
 
 msgid "Host name"
-msgstr ""
+msgstr "ホスト名"
 
 msgid ""
 "%{reports} command is deprecated and will be removed in one of the future "
 "versions. Please use %{config_reports} command instead."
 msgstr ""
+"%{reports} コマンドは非推奨となり、今後のいずれかのバージョンで削除予定です。"
+"代わりに、%{config_reports} コマンドを使用してください。"
 
 msgid "Host created."
-msgstr ""
+msgstr "ホストが作成されました。"
 
 msgid "Could not create the host"
-msgstr ""
+msgstr "ホストを作成できませんでした"
 
 msgid "Host updated."
-msgstr ""
+msgstr "ホストが更新されました。"
 
 msgid "Could not update the host"
-msgstr ""
+msgstr "ホストを更新できませんでした"
 
 msgid "Host deleted."
-msgstr ""
+msgstr "ホストが削除されました。"
 
 msgid "Could not delete the host"
-msgstr ""
+msgstr "ホストを削除できませんでした"
 
 msgid "Create or append a parameter for a host"
-msgstr ""
+msgstr "ホストのパラメーターを作成または追加します。"
 
 msgid "Host parameter updated"
-msgstr ""
+msgstr "ホストパラメーターが更新されました"
 
 msgid "New host parameter created"
-msgstr ""
+msgstr "新規ホストパラメーターが作成されました"
 
 msgid "Could not set host parameter"
-msgstr ""
+msgstr "ホストパラメーターを設定できませんでした"
 
 msgid "Delete parameter for a host"
-msgstr ""
+msgstr "ホストのパラメーターを削除します。"
 
 msgid "Host parameter deleted."
-msgstr ""
+msgstr "ホストのパラメーターが削除されました。"
 
 msgid "Power a host on"
-msgstr ""
+msgstr "ホストの電源をオンにします。"
 
 msgid "The host is starting."
-msgstr ""
+msgstr "ホストが起動中です。"
 
 msgid "Force turning off a host"
-msgstr ""
+msgstr "ホストを強制的にオフにする"
 
 msgid "Power a host off"
-msgstr ""
+msgstr "ホストの電源をオフにします。"
 
 msgid "Power off forced"
-msgstr ""
+msgstr "強制的に電源オフ"
 
 msgid "Powering the host off"
-msgstr ""
+msgstr "ホストの電源をオフにしています"
 
 msgid "Reboot a host"
-msgstr ""
+msgstr "ホストの再起動"
 
 msgid "Host reboot started."
-msgstr ""
+msgstr "ホストの再起動が開始されました。"
 
 msgid "Reset a host"
-msgstr ""
+msgstr "ホストをリセットします。"
 
 msgid "Host reset started."
-msgstr ""
+msgstr "ホストのリセットが開始されました。"
 
 msgid "Failed to reset the host"
-msgstr ""
+msgstr "ホストのリセットに失敗しました"
 
 msgid "Rebuild orchestration related configurations for host"
-msgstr ""
+msgstr "ホスト向けオーケストレーション関連設定を再ビルドします。"
 
 msgid "Configuration successfully rebuilt."
-msgstr ""
+msgstr "設定が正常に再ビルドされました。"
 
 msgid "Dump host's ENC YAML"
-msgstr ""
+msgstr "ホストの ENC YAML をダンプ"
 
 msgid "Could not retrieve ENC values of the host"
-msgstr ""
+msgstr "ホストの ENC 値を取得できませんでした"
 
 msgid "Disassociate a host"
-msgstr ""
+msgstr "ホストの関連付けを解除します。"
 
 msgid "The host has been disassociated from VM."
-msgstr ""
+msgstr "ホストの VM との関連付けが解除されました。"
 
 msgid "Failed to disassociated host from VM"
-msgstr ""
+msgstr "ホストの VM との関連付けが解除されました"
 
 msgid "The host is booting."
-msgstr ""
+msgstr "ホストが起動中です。"
 
 msgid "Failed to boot the host from device"
-msgstr ""
+msgstr "デバイスからのホストの起動に失敗しました"
 
 msgid "Root password"
-msgstr ""
+msgstr "root パスワード"
 
 msgid "Subnet IPv6 name"
-msgstr ""
+msgstr "サブネット IPv6 名"
 
 msgid "Name of parent hostgroup"
-msgstr ""
+msgstr "親ホストグループの名前"
 
 msgid "Title of parent hostgroup"
-msgstr ""
+msgstr "親ホストグループのタイトル"
 
 msgid "Enter the root password for the host group:"
-msgstr ""
+msgstr "ホストグループの root パスワードを入力:"
 
 msgid "Title"
-msgstr ""
+msgstr "タイトル"
 
 msgid "Parent"
-msgstr ""
+msgstr "親"
 
 msgid "Realm"
-msgstr ""
+msgstr "レルム"
 
 msgid "Hostgroup created."
-msgstr ""
+msgstr "ホストグループが作成されました。"
 
 msgid "Could not create the hostgroup"
-msgstr ""
+msgstr "ホストグループを作成できませんでした"
 
 msgid "Hostgroup updated."
-msgstr ""
+msgstr "ホストグループが更新されました。"
 
 msgid "Could not update the hostgroup"
-msgstr ""
+msgstr "ホストグループを更新できませんでした"
 
 msgid "Hostgroup deleted."
-msgstr ""
+msgstr "ホストグループが削除されました。"
 
 msgid "Could not delete the hostgroup"
-msgstr ""
+msgstr "ホストグループを削除できませんでした"
 
 msgid "Create or update parameter for a hostgroup"
-msgstr ""
+msgstr "ホストグループのパラメーターを作成または更新します。"
 
 msgid "Hostgroup parameter updated"
-msgstr ""
+msgstr "ホストグループのパラメーターが更新されました"
 
 msgid "New hostgroup parameter created"
-msgstr ""
+msgstr "新規ホストグループパラメーターが作成されました"
 
 msgid "Could not set hostgroup parameter"
-msgstr ""
+msgstr "ホストグループのパラメーターを設定できませんでした"
 
 msgid "Delete parameter for a hostgroup"
-msgstr ""
+msgstr "ホストグループのパラメーターを削除します。"
 
 msgid "Hostgroup parameter deleted."
-msgstr ""
+msgstr "ホストグループのパラメーターが削除されました。"
 
 msgid "Could not rebuild configuration"
-msgstr ""
+msgstr "設定を再構築できませんでした"
 
 msgid "ID of the owner"
-msgstr ""
+msgstr "所有者の ID"
 
 msgid "Login of the owner"
-msgstr ""
+msgstr "所有者のログイン"
 
 msgid ""
 "Required if host is managed and value is not inherited from host group or "
 "default password in settings"
 msgstr ""
+"ホストが管理されており、値がホストグループから継承されていないか、または設定"
+"済みのデフォルトパスワードである場合に必須です。"
 
 msgid "Replaces with new host parameters"
-msgstr ""
+msgstr "新しいホストパラメータに置き換えます"
 
 msgid "Replaces with new host parameters (with type support)"
-msgstr ""
+msgstr "新しいホストパラメータに置き換えます (型サポート付き)"
 
 msgid "Volume parameters"
-msgstr ""
+msgstr "ボリュームパラメーター"
 
 msgid "Interface parameters"
-msgstr ""
+msgstr "インターフェースパラメーター"
 
 msgid "Enter the root password for the host:"
-msgstr ""
+msgstr "ホストのrootパスワードを入力します:"
 
 msgid "Username"
-msgstr ""
+msgstr "ユーザー名"
 
 msgid "URL"
-msgstr ""
+msgstr "URL"
 
 msgid "Http proxy created."
-msgstr ""
+msgstr "http プロキシーが作成されました。"
 
 msgid "Could not create the http proxy"
-msgstr ""
+msgstr "http プロキシーを作成できませんでした"
 
 msgid "Http proxy deleted."
-msgstr ""
+msgstr "http プロキシーが削除されました"
 
 msgid "Could not delete the http proxy"
-msgstr ""
+msgstr "http プロキシーを削除できませんでした"
 
 msgid "Http proxy updated."
-msgstr ""
+msgstr "http プロキシーが更新されました。"
 
 msgid "Could not update the http proxy"
-msgstr ""
+msgstr "http プロキシーを更新できませんでした"
 
 msgid "Architecture name"
-msgstr ""
+msgstr "アーキテクチャー名"
 
 msgid "Compute resource name"
-msgstr ""
+msgstr "コンピュートリソース名"
 
 msgid "Compute profile name"
-msgstr ""
+msgstr "コンピュートプロファイル名"
 
 msgid "Domain name"
-msgstr ""
+msgstr "ドメイン名"
 
 msgid "Hostgroup title"
-msgstr ""
+msgstr "ホストグループタイトル"
 
 msgid "Set the current location context for the request"
-msgstr ""
+msgstr "要求に現在のロケーションコンテキストを設定します"
 
 msgid "Medium name"
-msgstr ""
+msgstr "メディア名"
 
 msgid "Model name"
-msgstr ""
+msgstr "モデル名"
 
 msgid "Set the current organization context for the request"
-msgstr ""
+msgstr "要求に現在の組織コンテキストを設定します"
 
 msgid "Operating system title"
-msgstr ""
+msgstr "オペレーティングシステムのタイトル"
 
 msgid "Partition table name"
-msgstr ""
+msgstr "パーティションテーブル名"
 
 msgid "Proxy name"
-msgstr ""
+msgstr "プロキシー名"
 
 msgid "User role name"
-msgstr ""
+msgstr "ユーザーロール名"
 
 msgid "Setting name"
-msgstr ""
+msgstr "設定名"
 
 msgid "Subnet name"
-msgstr ""
+msgstr "サブネット名"
 
 msgid "User's login to search by"
-msgstr ""
+msgstr "検索するユーザーのログイン"
 
 msgid "Common parameter name"
-msgstr ""
+msgstr "共通パラメーター名"
 
 msgid "Name to search by"
-msgstr ""
+msgstr "検索する名前"
 
 msgid "Missing options to search %s"
-msgstr ""
+msgstr "%s の検索オプションがありません"
 
 msgid "one of %s not found."
-msgstr ""
+msgstr "%s の 1 つが見つかりません。"
 
 msgid "Found more than one %s."
-msgstr ""
+msgstr "複数の %s が見つかりました。"
 
 msgid "Missing options to search %s."
-msgstr ""
+msgstr "%s の検索オプションがありません。"
 
 msgid "View and manage compute resource's images"
-msgstr ""
+msgstr "コンピュートリソースのイメージを表示および管理ります"
 
 msgid "User Data"
-msgstr ""
+msgstr "ユーザーデータ"
 
 msgid "IAM role"
-msgstr ""
+msgstr "IAM ロール"
 
 msgid "Show images available for addition"
-msgstr ""
+msgstr "追加できるイメージを表示します。"
 
 msgid "Image created."
-msgstr ""
+msgstr "イメージが作成されました。"
 
 msgid "Could not create the image"
-msgstr ""
+msgstr "イメージを作成できませんでした"
 
 msgid "Image updated."
-msgstr ""
+msgstr "イメージが更新されました。"
 
 msgid "Could not update the image"
-msgstr ""
+msgstr "イメージを更新できませんでした"
 
 msgid "Image deleted."
-msgstr ""
+msgstr "イメージが削除されました。"
 
 msgid "Could not delete the image"
-msgstr ""
+msgstr "イメージを削除できませんでした"
 
 msgid "View and manage host's network interfaces"
-msgstr ""
+msgstr "ホストのネットワークインターフェースを表示および管理"
 
 msgid "primary"
-msgstr ""
+msgstr "primary"
 
 msgid "provision"
-msgstr ""
+msgstr "provision"
 
 msgid "IP address"
-msgstr ""
+msgstr "IP アドレス"
 
 msgid "DNS name"
-msgstr ""
+msgstr "DNS 名"
 
 msgid "Subnet"
-msgstr ""
+msgstr "サブネット"
 
 msgid "Primary"
-msgstr ""
+msgstr "プライマリー"
 
 msgid "Provision"
-msgstr ""
+msgstr "プロビジョニング"
 
 msgid "Virtual"
-msgstr ""
+msgstr "仮想"
 
 msgid "Tag"
-msgstr ""
+msgstr "タグ"
 
 msgid "Attached to"
-msgstr ""
+msgstr "接続先"
 
 msgid "BMC"
-msgstr ""
+msgstr "BMC"
 
 msgid "Bond"
-msgstr ""
+msgstr "ボンド"
 
 msgid "Mode"
-msgstr ""
+msgstr "モード"
 
 msgid "Attached devices"
-msgstr ""
+msgstr "接続されたデバイス"
 
 msgid "Bond options"
-msgstr ""
+msgstr "ボンディングオプション"
 
 msgid ""
 "Should this interface be used for constructing the FQDN of the host? Each "
 "managed hosts needs to have one primary interface"
 msgstr ""
+"このインターフェースをホストの FQDN の構築に使用する必要がありますか? 各管理"
+"対象ホストには 1 つのプライマリーインターフェースがある必要があります"
 
 msgid ""
 "Should this interface be used for TFTP of PXELinux (or SSH for image-based "
 "hosts)? Each managed hosts needs to have one provision interface"
 msgstr ""
+"このインターフェースを PXELinux の TFTP に使用する必要がありますか (イメージ"
+"ベースのホストの場合は SSH)? 各管理対象ホストには 1 つのプロビジョンインター"
+"フェースがある必要があります"
 
 msgid "Interface created."
-msgstr ""
+msgstr "インターフェースが作成されました。"
 
 msgid "Could not create the interface"
-msgstr ""
+msgstr "インターフェースを作成できませんでした"
 
 msgid "Compute resource specific attributes"
-msgstr ""
+msgstr "コンピュートリソース固有の属性"
 
 msgid "Interface updated."
-msgstr ""
+msgstr "インターフェースが更新されました。"
 
 msgid "Could not update the interface"
-msgstr ""
+msgstr "インターフェースを更新できませんでした"
 
 msgid "Interface deleted."
-msgstr ""
+msgstr "インターフェースが削除されました。"
 
 msgid "Could not delete the interface"
-msgstr ""
+msgstr "インターフェースを削除できませんでした"
 
 msgid "Location numeric id to search by"
-msgstr ""
+msgstr "検索対象のロケーション数値 ID"
 
 msgid "Organizations"
-msgstr ""
+msgstr "組織"
 
 msgid "Location created."
-msgstr ""
+msgstr "ロケーションが作成されました。"
 
 msgid "Could not create the location"
-msgstr ""
+msgstr "ロケーションを作成できませんでした"
 
 msgid "Location updated."
-msgstr ""
+msgstr "ロケーションが更新されました。"
 
 msgid "Could not update the location"
-msgstr ""
+msgstr "ロケーションを更新できませんでした"
 
 msgid "Location deleted."
-msgstr ""
+msgstr "ロケーションが削除されました。"
 
 msgid "Could not delete the location"
-msgstr ""
+msgstr "ロケーションを削除できませんでした"
 
 msgid "Create or update parameter for a location"
-msgstr ""
+msgstr "ロケーションのパラメーターを作成または更新します"
 
 msgid "Parameter [%{name}] updated to value [%{value}]"
-msgstr ""
+msgstr "パラメーター [%{name}] が値 [%{value}] に更新されました"
 
 msgid "Parameter [%{name}] created with value [%{value}]"
-msgstr ""
+msgstr "パラメーター [%{name}] が値 [%{value}] で作成されました"
 
 msgid "Could not set location parameter"
-msgstr ""
+msgstr "ロケーションのパラメーターを設定できませんでした"
 
 msgid "Delete parameter for a location"
-msgstr ""
+msgstr "ロケーションのパラメーターを削除します"
 
 msgid "Parameter [%{name}] deleted."
-msgstr ""
+msgstr "パラメーター [%{name}] が削除されました。"
 
 msgid "Could not delete location parameter"
-msgstr ""
+msgstr "ロケーションパラメーターを削除できませんでした"
 
 msgid "Subscription type"
-msgstr ""
+msgstr "サブスクリプションの種類"
 
 msgid "OS Family"
-msgstr ""
+msgstr "OS 種別"
 
 msgid "Installation medium created."
-msgstr ""
+msgstr "インストールメディアが作成されました。"
 
 msgid "Could not create the installation medium"
-msgstr ""
+msgstr "インストールメディアを作成できませんでした"
 
 msgid "Installation medium updated."
-msgstr ""
+msgstr "インストールメディアが更新されました。"
 
 msgid "Could not update the installation media"
-msgstr ""
+msgstr "インストールメディアを更新できませんでした"
 
 msgid "Installation medium deleted."
-msgstr ""
+msgstr "インストールメディアが削除されました。"
 
 msgid "Could not delete the installation media"
-msgstr ""
+msgstr "インストールメディアを削除できませんでした"
 
 msgid "Vendor class"
-msgstr ""
+msgstr "ベンダークラス"
 
 msgid "HW model"
-msgstr ""
+msgstr "HW モデル"
 
 msgid "Info"
-msgstr ""
+msgstr "情報"
 
 msgid "Hardware model created."
-msgstr ""
+msgstr "ハードウェアモデルが作成されました。"
 
 msgid "Could not create the hardware model"
-msgstr ""
+msgstr "ハードウェアモデルを作成できませんでした"
 
 msgid "Hardware model deleted."
-msgstr ""
+msgstr "ハードウェアモデルが削除されました。"
 
 msgid "Could not delete the hardware model"
-msgstr ""
+msgstr "ハードウェアモデルを削除できませんでした"
 
 msgid "Hardware model updated."
-msgstr ""
+msgstr "ハードウェアモデルが更新されました。"
 
 msgid "Could not update the hardware model"
-msgstr ""
+msgstr "ハードウェアモデルを更新できませんでした"
 
 msgid "Invalid access token response."
-msgstr ""
+msgstr "無効なアクセストークンの応答が無効です。"
 
 msgid "Invalid access token"
-msgstr ""
+msgstr "無効なアクセストークン"
 
 msgid ""
 "Failed to recieve acess token, please check your connectivity with OpenID "
 "provider: %s"
 msgstr ""
+"アクセストークンの受信に失敗しました。OpenID プロバイダーとの接続を確認してく"
+"ださい: %s"
 
 msgid "Release name"
-msgstr ""
+msgstr "リリース名"
 
 msgid "Family"
-msgstr ""
+msgstr "家族"
 
 msgid "Major version"
-msgstr ""
+msgstr "メジャーバージョン"
 
 msgid "Minor version"
-msgstr ""
+msgstr "マイナーバージョン"
 
 msgid "Partition tables"
-msgstr ""
+msgstr "パーティションテーブル"
 
 msgid "Default templates"
-msgstr ""
+msgstr "デフォルトテンプレート"
 
 msgid "Architectures"
-msgstr ""
+msgstr "アーキテクチャー"
 
 msgid "Operating system created."
-msgstr ""
+msgstr "オペレーティングシステムが作成されました。"
 
 msgid "Could not create the operating system"
-msgstr ""
+msgstr "オペレーティングシステムを作成できませんでした"
 
 msgid "Operating system updated."
-msgstr ""
+msgstr "オペレーティングシステムが更新されました。"
 
 msgid "Could not update the operating system"
-msgstr ""
+msgstr "オペレーティングシステムを更新できませんでした"
 
 msgid "Operating system deleted."
-msgstr ""
+msgstr "オペレーティングシステムが削除されました。"
 
 msgid "Could not delete the operating system"
-msgstr ""
+msgstr "オペレーティングシステムを削除できませんでした"
 
 msgid "Create or update parameter for an operating system"
-msgstr ""
+msgstr "オペレーティングシステムのパラメーターを作成または更新します。"
 
 msgid "Operating system parameter updated"
-msgstr ""
+msgstr "オペレーティングシステムのパラメーターが更新されました"
 
 msgid "New operating system parameter created"
-msgstr ""
+msgstr "新規オペレーティングシステムパラメーターが作成されました"
 
 msgid "Could not set operating system parameter"
-msgstr ""
+msgstr "オペレーティングシステムのパラメーターを設定できませんでした"
 
 msgid "Delete parameter for an operating system"
-msgstr ""
+msgstr "オペレーティングシステムのパラメーターを削除します。"
 
 msgid "operating system parameter deleted."
-msgstr ""
+msgstr "オペレーティングシステムのパラメーターが削除されました。"
 
 msgid "Operatingsystem id"
-msgstr ""
+msgstr "オペレーティングシステム ID"
 
 msgid "Provisioning template id to be set"
-msgstr ""
+msgstr "設定するプロビジョニングテンプレート ID"
 
 msgid ""
 "[%{provisioning_template_name}] was set as default %{template_kind_name} "
 "template."
 msgstr ""
+"[%{provisioning_template_name}] がデフォルトの %{template_kind_name} テンプ"
+"レートとして設定されました。"
 
 msgid "Could not set the os default template"
-msgstr ""
+msgstr "OS デフォルトテンプレートを設定できませんでした"
 
 msgid "Type of the provisioning template"
-msgstr ""
+msgstr "プロビジョニングテンプレートの種類"
 
 msgid "Default template deleted."
-msgstr ""
+msgstr "デフォルトテンプレートが削除されました。"
 
 msgid "Could not delete the default template"
-msgstr ""
+msgstr "デフォルトテンプレートを削除できませんでした"
 
 msgid "Default template of type %s not found"
-msgstr ""
+msgstr "%s タイプのデフォルトテンプレートが見つかりません"
 
 msgid "%{types} of associated %{resource}"
-msgstr ""
+msgstr "関連付けられている %{resource} の %{types}"
 
 msgid "Use to update associated %s"
-msgstr ""
+msgstr "関連付けられた %s の更新に使用"
 
 msgid ""
 "Could not find %{resource}. Some search options were missing, please see --"
 "help."
 msgstr ""
+"%{resource} が見つかりませんでした。一部の検索オプションがありませんでし"
+"た。--help を参照してください。"
 
 msgid "Could not find %{resource}, please set option %{switches}."
 msgstr ""
+"%{resource} を見つけることができませんでした。%{switches} オプションを設定し"
+"てください。"
 
 msgid "Could not find %{resource}, please set one of options %{switches}."
 msgstr ""
+"%{resource} が見つかりませんでした。オプション %{switches} のいずれかを設定し"
+"てください。"
 
 msgid "Enter user's current password:"
-msgstr ""
+msgstr "ユーザーの現在のパスワードを入力してください:"
 
 msgid "Enter user's new password:"
-msgstr ""
+msgstr "ユーザーの新規パスワードを入力:"
 
 msgid "Locations"
-msgstr ""
+msgstr "ロケーション"
 
 msgid "Organization created."
-msgstr ""
+msgstr "組織が作成されました。"
 
 msgid "Could not create the organization"
-msgstr ""
+msgstr "組織を作成できませんでした"
 
 msgid "Organization updated."
-msgstr ""
+msgstr "組織が更新されました。"
 
 msgid "Could not update the organization"
-msgstr ""
+msgstr "組織を更新できませんでした"
 
 msgid "Organization deleted."
-msgstr ""
+msgstr "組織が削除されました。"
 
 msgid "Could not delete the organization"
-msgstr ""
+msgstr "組織を削除できませんでした"
 
 msgid "Create or update parameter for an organization"
-msgstr ""
+msgstr "組織のパラメーターを作成または更新します。"
 
 msgid "Could not set organization parameter"
-msgstr ""
+msgstr "組織のパラメーターを設定できませんでした"
 
 msgid "Delete parameter for an organization"
-msgstr ""
+msgstr "組織のパラメーターを削除します。"
 
 msgid "Could not delete organization parameter"
-msgstr ""
+msgstr "組織のパラメーターを削除できませんでした"
 
 msgid "id"
-msgstr ""
+msgstr "id"
 
 msgid "Kind"
-msgstr ""
+msgstr "種類"
 
 msgid "parameter name"
-msgstr ""
+msgstr "パラメーター名"
 
 msgid "Locked"
-msgstr ""
+msgstr "ロック"
 
 msgid "View partition table content"
-msgstr ""
+msgstr "パーティションテーブルのコンテンツを表示します。"
 
 msgid "Path to a file that contains the partition layout"
-msgstr ""
+msgstr "パーティションレイアウトを含むファイルのパス"
 
 msgid "Partition table created."
-msgstr ""
+msgstr "パーティションテーブルが作成されました。"
 
 msgid "Could not create the partition table"
-msgstr ""
+msgstr "パーティションテーブルを作成できませんでした"
 
 msgid "Partition table updated."
-msgstr ""
+msgstr "パーティションテーブルが更新されました。"
 
 msgid "Could not update the partition table"
-msgstr ""
+msgstr "パーティションテーブルを更新できませんでした"
 
 msgid "Partition table deleted."
-msgstr ""
+msgstr "パーティションテーブルが削除されました。"
 
 msgid "Could not delete the partition table"
-msgstr ""
+msgstr "パーティションテーブルを削除できませんでした"
 
 msgid "Path to a file that contains the template content including metadata"
 msgstr ""
@@ -2414,310 +2486,317 @@ msgid "The partition table template has been saved to %{path}."
 msgstr ""
 
 msgid "Manage personal access tokens"
-msgstr ""
+msgstr "パーソナルアクセストークンの管理"
 
 msgid "Active"
-msgstr ""
+msgstr "アクティブ"
 
 msgid "Expires at"
-msgstr ""
+msgstr "失効:"
 
 msgid ""
 "Personal access token [%{name}] created:\n"
 "%{token_value}"
 msgstr ""
+"パーソナルアクセストークン [%{name}] が作成されました:\n"
+"%{token_value}"
 
 msgid "Could not create personal access token"
-msgstr ""
+msgstr "パーソナルアクセストークンを作成できませんでした"
 
 msgid "Created at"
-msgstr ""
+msgstr "作成:"
 
 msgid "Last used at"
-msgstr ""
+msgstr "前回の使用:"
 
 msgid "Personal access token [%{name}] revoked."
-msgstr ""
+msgstr "パーソナルアクセストークン [%{name}] を呼び出しました。"
 
 msgid "Could not revoke personal access token"
-msgstr ""
+msgstr "パーソナルアクセストークンを呼び出すことができませんでした"
 
 msgid "database"
-msgstr ""
+msgstr "データベース"
 
 msgid "Server Response"
-msgstr ""
+msgstr "サーバーの応答"
 
 msgid "Realm proxy id"
-msgstr ""
+msgstr "レルムプロキシー ID"
 
 msgid "Realm type"
-msgstr ""
+msgstr "レルムタイプ"
 
 msgid "Realm [%{name}] created."
-msgstr ""
+msgstr "レルム [%{name}] を作成しました。"
 
 msgid "Could not create the realm"
-msgstr ""
+msgstr "レルムを作成できませんでした"
 
 msgid "Realm [%{name}] updated."
-msgstr ""
+msgstr "レルム [%{name}] を更新しました。"
 
 msgid "Could not update the realm"
-msgstr ""
+msgstr "レルムを更新できませんでした"
 
 msgid "Realm [%{name}] deleted."
-msgstr ""
+msgstr "レルム [%{name}] を削除しました。"
 
 msgid "Could not delete the realm"
-msgstr ""
+msgstr "レルムを削除できませんでした"
 
 msgid "Updated at"
-msgstr ""
+msgstr "更新:"
 
 msgid "Users"
-msgstr ""
+msgstr "ユーザー"
 
 msgid "User groups"
-msgstr ""
+msgstr "ユーザーグループ"
 
 msgid "Usergroup"
-msgstr ""
+msgstr "ユーザーグループ"
 
 msgid "Roles"
-msgstr ""
+msgstr "ロール"
 
 msgid "Inherited User groups"
-msgstr ""
+msgstr "継承されたユーザーグループ"
 
 msgid "Smart proxies"
-msgstr ""
+msgstr "スマートプロキシー"
 
 msgid "Compute profiles"
-msgstr ""
+msgstr "コンピュートプロファイル"
 
 msgid "Compute resources"
-msgstr ""
+msgstr "コンピュートリソース"
 
 msgid "Installation media"
-msgstr ""
+msgstr "インストールメディア"
 
 msgid "Templates"
-msgstr ""
+msgstr "テンプレート"
 
 msgid "Partition Tables"
-msgstr ""
+msgstr "パーティションテーブル"
 
 msgid "Domains"
-msgstr ""
+msgstr "ドメイン"
 
 msgid "Realms"
-msgstr ""
+msgstr "レルム"
 
 msgid "Hostgroups"
-msgstr ""
+msgstr "ホストグループ"
 
 msgid "Subnets"
-msgstr ""
+msgstr "サブネット"
 
 msgid "Parameters"
-msgstr ""
+msgstr "パラメーター"
 
 msgid "All parameters"
-msgstr ""
+msgstr "すべてのパラメーター"
 
 msgid "Operating systems"
-msgstr ""
+msgstr "オペレーティングシステム"
 
 msgid "External user groups"
-msgstr ""
+msgstr "外部ユーザーグループ"
 
 msgid "Failed to generate registration command"
-msgstr ""
+msgstr "登録コマンドの生成に失敗しました"
 
 msgid "Default"
-msgstr ""
+msgstr "デフォルト"
 
 msgid "Template inputs"
-msgstr ""
+msgstr "テンプレート入力"
 
 msgid "Required"
-msgstr ""
+msgstr "必須"
 
 msgid "Options"
-msgstr ""
+msgstr "オプション"
 
 msgid "View report content"
-msgstr ""
+msgstr "レポートコンテンツを表示します。"
 
 msgid "Generate report"
-msgstr ""
+msgstr "レポートを生成します。"
 
 msgid "Specify inputs"
-msgstr ""
+msgstr "入力の指定"
 
 msgid ""
 "Turns a command to be active, wait for the result and download it right away"
-msgstr ""
+msgstr "コマンドを有効にして、結果を待ってすぐにダウンロードします"
 
 msgid ""
 "Path to directory where downloaded content will be saved. Only usable if "
 "wait is specified"
 msgstr ""
+"ダウンロードしたコンテンツの保存先ディレクトリーへのパス。待機が指定されてい"
+"る場合にのみ使用できます"
 
 msgid "The report has been scheduled. Job ID: %{job_id}"
-msgstr ""
+msgstr "レポートがスケジュールされました。ジョブID: %{job_id}"
 
 msgid ""
 "Path to a file that contains the report template content including metadata"
-msgstr ""
+msgstr "メタデータなどのレポートテンプレートコンテンツを含むファイルへのパス"
 
 msgid "Import report template successfully."
-msgstr ""
+msgstr "レポートテンプレートを正常にインポートします。"
 
 msgid "Could not import the report template"
-msgstr ""
+msgstr "レポートテンプレートをインポートできませんでした"
 
 msgid "The report template has been saved to %{path}."
 msgstr ""
 
 msgid "The report is not ready yet."
-msgstr ""
+msgstr "レポートの準備ができていません。"
 
 msgid "Open empty template in an $EDITOR. Upload the result"
-msgstr ""
+msgstr "$EDITOR で空のテンプレートを開いて、結果をアップロードします"
 
 msgid "Path to a file that contains the report template content"
-msgstr ""
+msgstr "レポートのテンプレートコンテンツを含むファイルへのパス"
 
 msgid "Report template created."
-msgstr ""
+msgstr "レポートテンプレートが作成されました"
 
 msgid "Could not create the report template"
-msgstr ""
+msgstr "レポートテンプレートを作成できませんでした"
 
 msgid ""
 "Dump existing template and open it in an $EDITOR. Update with the result"
 msgstr ""
+"既存のテンプレートをダンプして $EDITOR で開きます。結果を使用して更新します"
 
 msgid "Report template updated."
-msgstr ""
+msgstr "レポートテンプレートが更新されました。"
 
 msgid "Could not update the report template"
-msgstr ""
+msgstr "レポートテンプレートを更新できませんでした"
 
 msgid "Report template cloned."
-msgstr ""
+msgstr "レポートテンプレートのクローンを作成しました。"
 
 msgid "Could not clone the report template"
-msgstr ""
+msgstr "レポートテンプレートのクローンを作成できませんでした"
 
 msgid "Report template deleted."
-msgstr ""
+msgstr "レポートテンプレートが削除されました。"
 
 msgid "Could not delete the report template"
-msgstr ""
+msgstr "レポートテンプレートを削除できませんでした"
 
 msgid "The server does not support such operation."
-msgstr ""
+msgstr "サーバーはこの操作に対応していません。"
 
 msgid "Builtin"
-msgstr ""
+msgstr "組み込み"
 
 msgid "User role id"
-msgstr ""
+msgstr "ユーザーロール ID"
 
 msgid "User role [%<name>s] created."
-msgstr ""
+msgstr "ユーザーロール [%<name>s] が作成されました。"
 
 msgid "Could not create the user role"
-msgstr ""
+msgstr "ユーザーロールを作成できませんでした"
 
 msgid "User role [%<name>s] updated."
-msgstr ""
+msgstr "ユーザーロール [%<name>s] が更新されました。"
 
 msgid "Could not update the user role"
-msgstr ""
+msgstr "ユーザーロールを更新できませんでした"
 
 msgid "User role cloned."
-msgstr ""
+msgstr "ユーザーロールがクローンされました。"
 
 msgid "Could not clone the user role"
-msgstr ""
+msgstr "ユーザーロールのクローンを作成できませんでした"
 
 msgid "User role [%<name>s] deleted."
-msgstr ""
+msgstr "ユーザーロール [%<name>s] が削除されました。"
 
 msgid "Could not delete the user roles"
-msgstr ""
+msgstr "ユーザーロールを削除できませんでした"
 
 msgid "Sessions are not enabled, please check your Hammer settings."
-msgstr ""
+msgstr "セッションが有効ではありません。Hammer の設定を確認してください。"
 
 msgid ""
 "Using session auth with invalid permissions on session files is not "
 "recommended."
 msgstr ""
+"セッションファイルで無効な権限でセッション認証を使用することは推奨しません。"
 
 msgid "The url is empty. Session can not be created."
-msgstr ""
+msgstr "URL は空です。セッションを作成できません。"
 
 msgid "The url (%s) is not a valid URL. Session can not be created."
-msgstr ""
+msgstr "URL (%s) は有効な URL ではありません。セッションを作成できません。"
 
 msgid "Invalid permissions for %{file}: %{mode}, expected %{expected_mode}."
 msgstr ""
+"%{file} のパーミッションが無効です: %{mode}。%{expected_mode} が必要です。"
 
 msgid "Invalid session data. Resetting the session."
-msgstr ""
+msgstr "無効なセッションデータ。セッションをリセットします。"
 
 msgid "Full name"
-msgstr ""
+msgstr "フルネーム"
 
 msgid "Setting [%{name}] updated to [%{value}]."
-msgstr ""
+msgstr "[%{name}] 設定が [%{value}] に更新されました。"
 
 msgid "Could not update the setting"
-msgstr ""
+msgstr "設定を更新できませんでした"
 
 msgid "Category"
-msgstr ""
+msgstr "カテゴリー"
 
 msgid "Settings type"
-msgstr ""
+msgstr "設定タイプ"
 
 msgid "Features"
-msgstr ""
+msgstr "機能"
 
 msgid "Version"
-msgstr ""
+msgstr "バージョン"
 
 msgid "Host_count"
-msgstr ""
+msgstr "Host_count"
 
 msgid "Smart proxy created."
-msgstr ""
+msgstr "スマートプロキシーが作成されました。"
 
 msgid "Could not create the proxy"
-msgstr ""
+msgstr "プロキシーを作成できませんでした"
 
 msgid "Smart proxy updated."
-msgstr ""
+msgstr "スマートプロキシーが更新されました。"
 
 msgid "Could not update the proxy"
-msgstr ""
+msgstr "プロキシーを更新できませんでした"
 
 msgid "Smart proxy deleted."
-msgstr ""
+msgstr "スマートプロキシーが削除されました。"
 
 msgid "Could not delete the proxy"
-msgstr ""
+msgstr "プロキシーを削除できませんでした"
 
 msgid "Smart proxy features were refreshed."
-msgstr ""
+msgstr "スマートプロキシー機能が更新されました。"
 
 msgid "Refresh of smart proxy features failed"
-msgstr ""
+msgstr "スマートプロキシー機能が更新が失敗しました"
 
 msgid "Import subnets succeeded."
 msgstr ""
@@ -2726,175 +2805,175 @@ msgid "Could not import subnets"
 msgstr ""
 
 msgid "Manage SSH Keys sources"
-msgstr ""
+msgstr "SSH 鍵ソースの管理"
 
 msgid "Fingerprint"
-msgstr ""
+msgstr "フィンガープリント"
 
 msgid "Length"
-msgstr ""
+msgstr "長さ"
 
 msgid "Path to a SSH public key"
-msgstr ""
+msgstr "SSH 公開鍵へのパス"
 
 msgid "SSH Key %{name} added."
-msgstr ""
+msgstr "SSH 鍵 %{name} が追加されました。"
 
 msgid "Could not add SSH Key"
-msgstr ""
+msgstr "SSH 鍵を追加できませんでした。"
 
 msgid "Public Key"
-msgstr ""
+msgstr "公開鍵"
 
 msgid "SSH Key deleted."
-msgstr ""
+msgstr "SSH 鍵が削除されました。"
 
 msgid "Could not delete the SSH Key"
-msgstr ""
+msgstr "SSH 鍵を削除できませんでした"
 
 msgid "API Version"
-msgstr ""
+msgstr "API バージョン"
 
 msgid "Database"
-msgstr ""
+msgstr "データベース"
 
 msgid "Plugins"
-msgstr ""
+msgstr "プラグイン"
 
 msgid "Smart Proxies"
-msgstr ""
+msgstr "スマートプロキシー"
 
 msgid "Failed features"
-msgstr ""
+msgstr "失敗した機能"
 
 msgid "Error"
-msgstr ""
+msgstr "エラー"
 
 msgid "Compute Resources"
-msgstr ""
+msgstr "コンピュートリソース"
 
 msgid "Errors"
-msgstr ""
+msgstr "エラー"
 
 msgid "Network Addr"
-msgstr ""
+msgstr "ネットワークアドレス"
 
 msgid "Network Prefix"
-msgstr ""
+msgstr "ネットワーク プレフィックス"
 
 msgid "Network Mask"
-msgstr ""
+msgstr "ネットワークマスク"
 
 msgid "VLAN ID"
-msgstr ""
+msgstr "VLAN ID"
 
 msgid "Boot Mode"
-msgstr ""
+msgstr "ブートモード"
 
 msgid "Gateway Address"
-msgstr ""
+msgstr "ゲートウェイアドレス"
 
 msgid "Protocol"
-msgstr ""
+msgstr "プロトコル"
 
 msgid "Priority"
-msgstr ""
+msgstr "優先度"
 
 msgid "Gateway Addr"
-msgstr ""
+msgstr "ゲートウェイアドレス"
 
 msgid "Primary DNS"
-msgstr ""
+msgstr "プライマリー DNS"
 
 msgid "Secondary DNS"
-msgstr ""
+msgstr "セカンダリー DNS"
 
 msgid "TFTP"
-msgstr ""
+msgstr "TFTP"
 
 msgid "DHCP"
-msgstr ""
+msgstr "DHCP"
 
 msgid "IPAM"
-msgstr ""
+msgstr "IPAM"
 
 msgid "Start of IP Range"
-msgstr ""
+msgstr "IP 範囲の開始値"
 
 msgid "End of IP Range"
-msgstr ""
+msgstr "IP 範囲の終了値"
 
 msgid "MTU"
-msgstr ""
+msgstr "MTU"
 
 msgid "Subnet created."
-msgstr ""
+msgstr "サブネットが作成されました。"
 
 msgid "Could not create the subnet"
-msgstr ""
+msgstr "サブネットを作成できませんでした"
 
 msgid "Subnet updated."
-msgstr ""
+msgstr "サブネットが更新されました。"
 
 msgid "Could not update the subnet"
-msgstr ""
+msgstr "サブネットを更新できませんでした"
 
 msgid "Subnet deleted."
-msgstr ""
+msgstr "サブネットが削除されました。"
 
 msgid "Could not delete the subnet"
-msgstr ""
+msgstr "サブネットを削除できませんでした"
 
 msgid "Create or update parameter for a subnet"
-msgstr ""
+msgstr "サブネットのパラメーターを作成または更新します。"
 
 msgid "Subnet parameter updated"
-msgstr ""
+msgstr "サブネットのパラメーターが更新されました"
 
 msgid "New subnet parameter created"
-msgstr ""
+msgstr "新規サブネットパラメーターが作成されました"
 
 msgid "Could not set subnet parameter"
-msgstr ""
+msgstr "サブネットパラメーターを設定できませんでした"
 
 msgid "Delete parameter for a subnet"
-msgstr ""
+msgstr "サブネットのパラメーターを削除します。"
 
 msgid "Subnet parameter deleted."
-msgstr ""
+msgstr "サブネットのパラメーターが削除されました"
 
 msgid "Environment name"
-msgstr ""
+msgstr "環境名"
 
 msgid "List available provisioning template kinds"
-msgstr ""
+msgstr "利用可能なプロビジョニングテンプレートの種類を一覧表示します。"
 
 msgid "View provisioning template content"
-msgstr ""
+msgstr "プロビジョニングテンプレートコンテンツを表示します。"
 
 msgid "Path to a file that contains the template"
-msgstr ""
+msgstr "テンプレートを含むファイルのパス"
 
 msgid "Template type. Eg. snippet, script, provision"
-msgstr ""
+msgstr "テンプレートのタイプ。例: スニペット、スクリプト、プロビジョニング"
 
 msgid "Provisioning template created."
-msgstr ""
+msgstr "プロビジョニングテンプレートが作成されました。"
 
 msgid "Could not create the provisioning template"
-msgstr ""
+msgstr "プロビジョニングテンプレートを作成できませんでした"
 
 msgid "Provisioning template updated."
-msgstr ""
+msgstr "プロビジョニングテンプレートが更新されました。"
 
 msgid "Could not update the provisioning template"
-msgstr ""
+msgstr "プロビジョニングテンプレートを更新できませんでした"
 
 msgid "Provisioning template deleted."
-msgstr ""
+msgstr "プロビジョニングテンプレートが削除されました。"
 
 msgid "Could not delete the provisioning template"
-msgstr ""
+msgstr "プロビジョニングテンプレートを削除できませんでした"
 
 msgid "Import provisioning template succeeded."
 msgstr ""
@@ -2906,133 +2985,133 @@ msgid "The provisioning template has been saved to %{path}."
 msgstr ""
 
 msgid "Update the default PXE menu on all configured TFTP servers"
-msgstr ""
+msgstr "すべての設定済み TFTP サーバーでのデフォルト PXE メニューの更新"
 
 msgid "Provisioning template cloned."
-msgstr ""
+msgstr "プロビジョニングテンプレートのクローンが作成されました。"
 
 msgid "Could not clone the provisioning template"
-msgstr ""
+msgstr "プロビジョニングテンプレートのクローンを作成できませんでした"
 
 msgid "Login"
-msgstr ""
+msgstr "ログイン"
 
 msgid "Admin"
-msgstr ""
+msgstr "管理"
 
 msgid "Disabled"
-msgstr ""
+msgstr "無効化"
 
 msgid "Last login"
-msgstr ""
+msgstr "最終ログイン"
 
 msgid "Authorized by"
-msgstr ""
+msgstr "承認者"
 
 msgid "Email enabled"
-msgstr ""
+msgstr "メールが有効にされました"
 
 msgid "Effective admin"
-msgstr ""
+msgstr "実効管理者"
 
 msgid "Locale"
-msgstr ""
+msgstr "ロケール"
 
 msgid "Timezone"
-msgstr ""
+msgstr "タイムゾーン"
 
 msgid "Default organization"
-msgstr ""
+msgstr "デフォルトの組織"
 
 msgid "Default location"
-msgstr ""
+msgstr "デフォルトのロケーション"
 
 msgid "default"
-msgstr ""
+msgstr "デフォルト"
 
 msgid "User [%{login}] created."
-msgstr ""
+msgstr "ユーザー [%{login}] が作成されました。"
 
 msgid "Could not create the user"
-msgstr ""
+msgstr "ユーザーを作成できませんでした"
 
 msgid "User [%{login}] updated."
-msgstr ""
+msgstr "ユーザー [%{login}] が更新されました。"
 
 msgid "Could not update the user"
-msgstr ""
+msgstr "ユーザーを更新できませんでした"
 
 msgid "User [%{login}] deleted."
-msgstr ""
+msgstr "ユーザー [%{login}] が削除されました。"
 
 msgid "Could not delete the user"
-msgstr ""
+msgstr "ユーザーを削除できませんでした"
 
 msgid "Managing User SSH Keys."
-msgstr ""
+msgstr "ユーザーの SSH キーを操作します。"
 
 msgid "Managing personal access tokens"
-msgstr ""
+msgstr "パーソナルアクセストークンを管理します"
 
 msgid "Managing personal mail notifications"
-msgstr ""
+msgstr "パーソナルメールの通知を管理します"
 
 msgid "User mail notifications was added."
-msgstr ""
+msgstr "ユーザーのメール通知が追加されました。"
 
 msgid "Could not add user mail notification"
-msgstr ""
+msgstr "ユーザーのメール通知を追加できませんでした。"
 
 msgid "User mail notifications was updated."
-msgstr ""
+msgstr "ユーザーのメール通知が更新されました。"
 
 msgid "Could not update user mail notification"
-msgstr ""
+msgstr "ユーザーのメール通知を更新できませんでした"
 
 msgid "User mail notification was removed."
-msgstr ""
+msgstr "ユーザーのメール通知が削除されました。"
 
 msgid "Could not remove user mail notification"
-msgstr ""
+msgstr "ユーザーのメール通知を削除できませんでした"
 
 msgid "Interval"
-msgstr ""
+msgstr "間隔"
 
 msgid "Mail query"
-msgstr ""
+msgstr "メールクエリー"
 
 msgid "User group [%<name>s] created."
-msgstr ""
+msgstr "ユーザーグループ [%<name>s] が作成されました。"
 
 msgid "Could not create the user group"
-msgstr ""
+msgstr "ユーザーグループを作成できませんでした"
 
 msgid "User group [%<name>s] updated."
-msgstr ""
+msgstr "ユーザーグループ [%<name>s] が更新されました。"
 
 msgid "Could not update the user group"
-msgstr ""
+msgstr "ユーザーグループを更新できませんでした"
 
 msgid "User group [%<name>s] deleted."
-msgstr ""
+msgstr "ユーザーグループ [%<name>s] が削除されました。"
 
 msgid "Could not delete the user group"
-msgstr ""
+msgstr "ユーザーグループを削除できませんでした"
 
 msgid "View and manage compute resource's virtual machines"
-msgstr ""
+msgstr "コンピュートリソースの仮想マシンの表示および管理"
 
 msgid "Virtual machine id, for gce use virtual machine name"
-msgstr ""
+msgstr "仮想マシン ID、GCE には仮想マシン名を使用"
 
 msgid "Virtual machine is powering."
-msgstr ""
+msgstr "仮想マシンの電源をオンにしています。"
 
 msgid "Could not power the virtual machine"
-msgstr ""
+msgstr "仮想マシンの電源をオンにできませんでした"
 
 msgid "Virtual machine deleted."
-msgstr ""
+msgstr "仮想マシンが削除されました。"
 
 msgid "Could not delete the virtual machine"
-msgstr ""
+msgstr "仮想マシンを削除できませんでした"

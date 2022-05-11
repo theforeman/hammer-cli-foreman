@@ -1,20 +1,26 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the hammer-cli-foreman package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
+# Translators:
+# Vladimir Pavlov <v.pavlov@i-teco.ru>, 2015
+# Yulia <yulia.poyarkova@redhat.com>, 2016
 msgid ""
 msgstr ""
-"Project-Id-Version: hammer-cli-foreman 3.3.0\n"
+"Project-Id-Version: hammer-cli-foreman 3.4.0.pre.develop\n"
 "Report-Msgid-Bugs-To: \n"
-"PO-Revision-Date: 2018-10-24 10:54+0200\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
-"Language: \n"
+"POT-Creation-Date: 2022-05-10 13:14+0000\n"
+"PO-Revision-Date: 2014-03-14 09:55+0000\n"
+"Last-Translator: Vladimir Pavlov <v.pavlov@i-teco.ru>, 2015\n"
+"Language-Team: Russian (http://www.transifex.com/foreman/foreman/language/"
+"ru/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
+"Language: ru\n"
+"Plural-Forms: nplurals=4; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
+"%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || (n%10>=5 && n%10<=9) || (n"
+"%100>=11 && n%100<=14)? 2 : 3);\n"
 
 msgid "Foreman connection login/logout"
 msgstr ""
@@ -65,7 +71,7 @@ msgid "Manipulate operating system"
 msgstr ""
 
 msgid "Manipulate organizations"
-msgstr ""
+msgstr "Управление организациями"
 
 msgid "Manipulate partition tables"
 msgstr ""
@@ -191,31 +197,31 @@ msgid "Session has expired."
 msgstr ""
 
 msgid "Id"
-msgstr ""
+msgstr "Идентификатор"
 
 msgid "Name"
-msgstr ""
+msgstr "Имя"
 
 msgid "Architecture created."
 msgstr ""
 
 msgid "Could not create the architecture"
-msgstr ""
+msgstr "Не удалось создать архитектуру"
 
 msgid "Architecture deleted."
 msgstr ""
 
 msgid "Could not delete the architecture"
-msgstr ""
+msgstr "Не удалось удалить архитектуру"
 
 msgid "Architecture updated."
 msgstr ""
 
 msgid "Could not update the architecture"
-msgstr ""
+msgstr "Не удалось обновить архитектуру"
 
 msgid "Associate a hostgroup"
-msgstr ""
+msgstr "Связать с группой узлов"
 
 msgid "The hostgroup has been associated."
 msgstr ""
@@ -224,7 +230,7 @@ msgid "Could not associate the hostgroup"
 msgstr ""
 
 msgid "Disassociate a hostgroup"
-msgstr ""
+msgstr "Удалить связь с группой узлов"
 
 msgid "The hostgroup has been disassociated."
 msgstr ""
@@ -233,7 +239,7 @@ msgid "Could not disassociate the hostgroup"
 msgstr ""
 
 msgid "Associate a domain"
-msgstr ""
+msgstr "Связать с доменом"
 
 msgid "The domain has been associated."
 msgstr ""
@@ -242,7 +248,7 @@ msgid "Could not associate the domain"
 msgstr ""
 
 msgid "Disassociate a domain"
-msgstr ""
+msgstr "Удалить связь с доменом"
 
 msgid "The domain has been disassociated."
 msgstr ""
@@ -251,7 +257,7 @@ msgid "Could not disassociate the domain"
 msgstr ""
 
 msgid "Associate a medium"
-msgstr ""
+msgstr "Связать с носителем"
 
 msgid "The medium has been associated."
 msgstr ""
@@ -260,7 +266,7 @@ msgid "Could not associate the medium"
 msgstr ""
 
 msgid "Disassociate a medium"
-msgstr ""
+msgstr "Удалить связь с носителем"
 
 msgid "The medium has been disassociated."
 msgstr ""
@@ -269,7 +275,7 @@ msgid "Could not disassociate the medium"
 msgstr ""
 
 msgid "Associate a subnet"
-msgstr ""
+msgstr "Связать с подсетью"
 
 msgid "The subnet has been associated."
 msgstr ""
@@ -278,7 +284,7 @@ msgid "Could not associate the subnet"
 msgstr ""
 
 msgid "Disassociate a subnet"
-msgstr ""
+msgstr "Удалить связь с подсетью"
 
 msgid "The subnet has been disassociated."
 msgstr ""
@@ -287,7 +293,7 @@ msgid "Could not disassociate the subnet"
 msgstr ""
 
 msgid "Associate a compute resource"
-msgstr ""
+msgstr "Связать с вычислительным ресурсом"
 
 msgid "The compute resource has been associated."
 msgstr ""
@@ -296,7 +302,7 @@ msgid "Could not associate the compute resource"
 msgstr ""
 
 msgid "Disassociate a compute resource"
-msgstr ""
+msgstr "Удалить связь с вычислительным ресурсом"
 
 msgid "The compute resource has been disassociated."
 msgstr ""
@@ -305,7 +311,7 @@ msgid "Could not disassociate the compute resource"
 msgstr ""
 
 msgid "Associate a smart proxy"
-msgstr ""
+msgstr "Связать с капсулой"
 
 msgid "The smart proxy has been associated."
 msgstr ""
@@ -314,7 +320,7 @@ msgid "Could not associate the smart proxy"
 msgstr ""
 
 msgid "Disassociate a smart proxy"
-msgstr ""
+msgstr "Удалить связь с капсулой"
 
 msgid "The smart proxy has been disassociated."
 msgstr ""
@@ -323,40 +329,40 @@ msgid "Could not disassociate the smart proxy"
 msgstr ""
 
 msgid "Associate an user"
-msgstr ""
+msgstr "Связать с пользователем"
 
 msgid "The user has been associated."
 msgstr ""
 
 msgid "Could not associate the user"
-msgstr ""
+msgstr "Не удалось установить соответствие с пользователем"
 
 msgid "Disassociate an user"
-msgstr ""
+msgstr "Удалить связь с пользователем"
 
 msgid "The user has been disassociated."
 msgstr ""
 
 msgid "Could not disassociate the user"
-msgstr ""
+msgstr "Не удалось отменить связь с пользователем"
 
 msgid "Associate an user group"
-msgstr ""
+msgstr "Связать с группой пользователей"
 
 msgid "The user group has been associated."
 msgstr ""
 
 msgid "Could not associate the user group"
-msgstr ""
+msgstr "Не удалось установить соответствие с группой пользователей"
 
 msgid "Disassociate an user group"
-msgstr ""
+msgstr "Удалить связь с группой пользователей"
 
 msgid "The user group has been disassociated."
 msgstr ""
 
 msgid "Could not disassociate the user group"
-msgstr ""
+msgstr "Не удалось отменить связь с группой пользователей"
 
 msgid "Associate provisioning templates"
 msgstr ""
@@ -396,7 +402,7 @@ msgid "Could not disassociate the provisioning templates"
 msgstr ""
 
 msgid "Associate an organization"
-msgstr ""
+msgstr "Связать с организацией"
 
 msgid "The organization has been associated."
 msgstr ""
@@ -405,7 +411,7 @@ msgid "Could not associate the organization"
 msgstr ""
 
 msgid "Disassociate an organization"
-msgstr ""
+msgstr "Удалить связь с организацией"
 
 msgid "The organization has been disassociated."
 msgstr ""
@@ -414,76 +420,76 @@ msgid "Could not disassociate the organization"
 msgstr ""
 
 msgid "Associate an operating system"
-msgstr ""
+msgstr "Связать с операционной системой"
 
 msgid "Operating system has been associated."
 msgstr ""
 
 msgid "Could not associate the operating system"
-msgstr ""
+msgstr "Не удалось установить соответствие с операционной системой"
 
 msgid "Disassociate an operating system"
-msgstr ""
+msgstr "Удалить связь с операционной системой"
 
 msgid "Operating system has been disassociated."
 msgstr ""
 
 msgid "Could not disassociate the operating system"
-msgstr ""
+msgstr "Не удалось отменить связь с операционной системой"
 
 msgid "Associate an architecture"
-msgstr ""
+msgstr "Связать с архитектурой"
 
 msgid "Architecture has been associated."
 msgstr ""
 
 msgid "Could not associate the architecture"
-msgstr ""
+msgstr "Не удалось установить соответствие с архитектурой"
 
 msgid "Disassociate an architecture"
-msgstr ""
+msgstr "Удалить связь с архитектурой"
 
 msgid "Architecture has been disassociated."
 msgstr ""
 
 msgid "Could not disassociate the architecture"
-msgstr ""
+msgstr "Не удалось отменить связь с архитектурой"
 
 msgid "Associate a partition table"
-msgstr ""
+msgstr "Связать с таблицей разделов"
 
 msgid "Partition table has been associated."
 msgstr ""
 
 msgid "Could not associate the partition table"
-msgstr ""
+msgstr "Не удалось установить соответствие с таблицей разделов"
 
 msgid "Disassociate a partition table"
-msgstr ""
+msgstr "Удалить связь с таблицей разделов"
 
 msgid "Partition table has been disassociated."
 msgstr ""
 
 msgid "Could not disassociate the partition table"
-msgstr ""
+msgstr "Не удалось отменить связь с таблицей разделов"
 
 msgid "Assign a user role"
-msgstr ""
+msgstr "Назначить роль"
 
 msgid "User role has been assigned."
 msgstr ""
 
 msgid "Could not assign the user role"
-msgstr ""
+msgstr "Не удалось назначить роль"
 
 msgid "Remove a user role"
-msgstr ""
+msgstr "Удалить роль"
 
 msgid "User role has been removed."
 msgstr ""
 
 msgid "Could not remove the user role"
-msgstr ""
+msgstr "Не удалось удалить роль пользователя"
 
 msgid "Associate a location"
 msgstr ""
@@ -512,16 +518,16 @@ msgid ""
 msgstr ""
 
 msgid "At"
-msgstr ""
+msgstr "в"
 
 msgid "IP"
-msgstr ""
+msgstr "IP"
 
 msgid "User"
-msgstr ""
+msgstr "Пользователь"
 
 msgid "Action"
-msgstr ""
+msgstr "Команда"
 
 msgid "Audit type"
 msgstr ""
@@ -539,16 +545,16 @@ msgid "Attribute"
 msgstr ""
 
 msgid "Value"
-msgstr ""
+msgstr "Значение"
 
 msgid "Old"
-msgstr ""
+msgstr "Старое"
 
 msgid "New"
-msgstr ""
+msgstr "Новое"
 
 msgid "Set credentials"
-msgstr ""
+msgstr "Настроить учетные данные"
 
 msgid "Username to access the remote system"
 msgstr ""
@@ -579,13 +585,13 @@ msgid "Redirect URI for the authentication code grant flow"
 msgstr ""
 
 msgid "Wipe your credentials"
-msgstr ""
+msgstr "Очистить учетные данные"
 
 msgid "Logged out."
 msgstr ""
 
 msgid "Information about current connections"
-msgstr ""
+msgstr "Сведения о текущих подключениях"
 
 msgid "List all auth sources"
 msgstr ""
@@ -609,79 +615,79 @@ msgid "Manage LDAP auth sources"
 msgstr ""
 
 msgid "Server"
-msgstr ""
+msgstr "Сервер"
 
 msgid "Port"
-msgstr ""
+msgstr "Порт"
 
 msgid "LDAPS?"
-msgstr ""
+msgstr "LDAPS"
 
 msgid "LDAPS"
 msgstr ""
 
 msgid "Server Type"
-msgstr ""
+msgstr "Тип сервера"
 
 msgid "Account"
-msgstr ""
+msgstr "Учетная запись"
 
 msgid "Account Username"
-msgstr ""
+msgstr "Имя пользователя"
 
 msgid "Base DN"
-msgstr ""
+msgstr "Базовое DN"
 
 msgid "Groups base DN"
-msgstr ""
+msgstr "Базовое DN группы"
 
 msgid "Use Netgroups"
 msgstr ""
 
 msgid "LDAP filter"
-msgstr ""
+msgstr "Фильтр LDAP"
 
 msgid "Automatically Create Accounts?"
-msgstr ""
+msgstr "Автоматическая регистрация"
 
 msgid "Usergroup sync"
 msgstr ""
 
 msgid "Attribute mappings"
-msgstr ""
+msgstr "Атрибуты"
 
 msgid "Login Name Attribute"
-msgstr ""
+msgstr "Имя входа"
 
 msgid "First Name Attribute"
-msgstr ""
+msgstr "Имя"
 
 msgid "Last Name Attribute"
-msgstr ""
+msgstr "Фамилия"
 
 msgid "Email Address Attribute"
-msgstr ""
+msgstr "Электронный адрес"
 
 msgid "Photo Attribute"
-msgstr ""
+msgstr "Фотография"
 
 msgid "Auth source [%{name}] created."
 msgstr ""
 
 msgid "Could not create the Auth Source"
-msgstr ""
+msgstr "Не удалось создать источник идентификации"
 
 msgid "Auth source [%{name}] deleted."
 msgstr ""
 
 msgid "Could not delete the Auth Source"
-msgstr ""
+msgstr "Не удалось удалить источник идентификации"
 
 msgid "Auth source [%{name}] updated."
 msgstr ""
 
 msgid "Could not update the Auth Source"
-msgstr ""
+msgstr "Не удалось обновить источник идентификации"
 
 msgid ""
 "Can't perform login. Make sure sessions are enabled in hammer configuration "
@@ -695,13 +701,13 @@ msgid "Search Query"
 msgstr ""
 
 msgid "Public"
-msgstr ""
+msgstr "Общее"
 
 msgid "Owner Id"
-msgstr ""
+msgstr "ID владельца"
 
 msgid "Owner Type"
-msgstr ""
+msgstr "Тип владельца"
 
 msgid "Bookmark %<name>s created."
 msgstr ""
@@ -725,7 +731,7 @@ msgid "Manage template combinations"
 msgstr ""
 
 msgid "ID"
-msgstr ""
+msgstr "ID"
 
 msgid "Provisioning template ID"
 msgstr ""
@@ -737,13 +743,13 @@ msgid "Hostgroup ID"
 msgstr ""
 
 msgid "Hostgroup name"
-msgstr ""
+msgstr "Имя группы узлов"
 
 msgid "Provisioning Template"
-msgstr ""
+msgstr "Шаблон подготовки"
 
 msgid "Hostgroup"
-msgstr ""
+msgstr "Группа узлов"
 
 msgid "Template combination updated."
 msgstr ""
@@ -764,7 +770,7 @@ msgid "Could not delete the template combination"
 msgstr ""
 
 msgid "Name of DNS proxy to use within this domain"
-msgstr ""
+msgstr "Имя DNS-прокси для этого домена"
 
 msgid "Provider specific options"
 msgstr ""
@@ -788,6 +794,8 @@ msgid ""
 "VLAN tag, this attribute has precedence over the subnet VLAN ID. Only for "
 "virtual interfaces."
 msgstr ""
+"Метка VLAN, этот атрибут имеет приоритет над подсетью VLAN ID. Только для "
+"виртуальных интерфейсов."
 
 msgid "Identifier of the interface to which this interface belongs, e.g. eth1."
 msgstr ""
@@ -802,7 +810,7 @@ msgid "Duration: %sms"
 msgstr ""
 
 msgid "FAIL"
-msgstr ""
+msgstr "ОШИБКА"
 
 msgid "%{count} more service(s) failed, but not shown:"
 msgstr ""
@@ -811,13 +819,13 @@ msgid "Network prefix in CIDR notation (e.g. 64) for this subnet"
 msgstr ""
 
 msgid "TFTP Proxy to use within this subnet"
-msgstr ""
+msgstr "TFTP-прокси для использования с этой подсетью"
 
 msgid "DNS Proxy to use within this subnet"
-msgstr ""
+msgstr "DNS-прокси для использования с этой подсетью"
 
 msgid "DHCP Proxy to use within this subnet"
-msgstr ""
+msgstr "DHCP-прокси для использования с этой подсетью"
 
 msgid "BMC Proxy to use within this subnet"
 msgstr ""
@@ -835,7 +843,7 @@ msgid "Search / Order fields"
 msgstr ""
 
 msgid "Values"
-msgstr ""
+msgstr "Значения"
 
 msgid "%s Id"
 msgstr ""
@@ -847,7 +855,7 @@ msgid "Nothing to update."
 msgstr ""
 
 msgid "Associate a resource"
-msgstr ""
+msgstr "Связать с ресурсом"
 
 msgid "Could not associate the %{resource_name}."
 msgstr ""
@@ -856,7 +864,7 @@ msgid "The %{resource_name} has been associated."
 msgstr ""
 
 msgid "Disassociate a resource"
-msgstr ""
+msgstr "Удалить связь с ресурсом"
 
 msgid "Could not disassociate the %{resource_name}."
 msgstr ""
@@ -874,22 +882,22 @@ msgid "Cannot save file: %s does not exist"
 msgstr ""
 
 msgid "Type"
-msgstr ""
+msgstr "Тип"
 
 msgid "Set a global parameter"
 msgstr ""
 
 msgid "Created parameter [%{name}] with value [%{value}]."
-msgstr ""
+msgstr "Добавлен параметр [%{name}] со значением [%{value}]."
 
 msgid "Parameter [%{name}] updated to [%{value}]."
-msgstr ""
+msgstr "[%{name}] было присвоено значение  [%{value}]."
 
 msgid "Parameter name"
-msgstr ""
+msgstr "Имя параметра"
 
 msgid "Parameter value"
-msgstr ""
+msgstr "Значение параметра"
 
 msgid "Should the value be hidden"
 msgstr ""
@@ -898,10 +906,10 @@ msgid "Type of the parameter"
 msgstr ""
 
 msgid "Global parameter [%{name}] deleted."
-msgstr ""
+msgstr "Глобальный параметр  [%{name}] удален."
 
 msgid "Could not delete the global parameter [%{name}]"
-msgstr ""
+msgstr "Не удалось удалить глобальный параметр [%{name}]"
 
 msgid "Manipulate global parameters"
 msgstr ""
@@ -1006,7 +1014,7 @@ msgid "Compute attributes"
 msgstr ""
 
 msgid "Compute Resource"
-msgstr ""
+msgstr "Вычислительный ресурс"
 
 msgid "VM attributes"
 msgstr ""
@@ -1033,10 +1041,10 @@ msgid "Create update and delete Compute profile values"
 msgstr ""
 
 msgid "Provider"
-msgstr ""
+msgstr "Провайдер"
 
 msgid "Description"
-msgstr ""
+msgstr "Описание"
 
 msgid "Path to a file that contains oVirt public key (For oVirt only)"
 msgstr ""
@@ -1045,19 +1053,19 @@ msgid "Compute resource created."
 msgstr ""
 
 msgid "Could not create the compute resource"
-msgstr ""
+msgstr "Не удалось создать вычислительный ресурс"
 
 msgid "Compute resource updated."
 msgstr ""
 
 msgid "Could not update the compute resource"
-msgstr ""
+msgstr "Не удалось обновить вычислительный ресурс"
 
 msgid "Compute resource deleted."
 msgstr ""
 
 msgid "Could not delete the compute resource"
-msgstr ""
+msgstr "Не удалось удалить вычислительный ресурс"
 
 msgid "Associate a specific VM"
 msgstr ""
@@ -1078,19 +1086,19 @@ msgid "Uuid"
 msgstr ""
 
 msgid "Url"
-msgstr ""
+msgstr "URL"
 
 msgid "Region"
-msgstr ""
+msgstr "Регион"
 
 msgid "DNS"
-msgstr ""
+msgstr "DNS"
 
 msgid "State"
-msgstr ""
+msgstr "Состояние"
 
 msgid "DNS Name"
-msgstr ""
+msgstr "DNS-имя"
 
 msgid "Virtualization Type"
 msgstr ""
@@ -1102,22 +1110,22 @@ msgid "Project"
 msgstr ""
 
 msgid "Email"
-msgstr ""
+msgstr "Email"
 
 msgid "Key Path"
 msgstr ""
 
 msgid "Zone"
-msgstr ""
+msgstr "Зона"
 
 msgid "Machine Type"
-msgstr ""
+msgstr "Тип машины"
 
 msgid "Status"
-msgstr ""
+msgstr "Статус"
 
 msgid "Number of CPUs"
-msgstr ""
+msgstr "Процессоры"
 
 msgid "String, amount of memory, value in bytes"
 msgstr ""
@@ -1147,10 +1155,10 @@ msgid "Initial allocation, e.g. 0G"
 msgstr ""
 
 msgid "CPUs"
-msgstr ""
+msgstr "Процессоры"
 
 msgid "Memory"
-msgstr ""
+msgstr "Память"
 
 msgid "OS Type"
 msgstr ""
@@ -1165,7 +1173,7 @@ msgid "Boot order"
 msgstr ""
 
 msgid "Tenant"
-msgstr ""
+msgstr "Арендатор"
 
 msgid "Project domain name"
 msgstr ""
@@ -1228,10 +1236,10 @@ msgid "Disk interface name, must be ide, virto or virto_scsi"
 msgstr ""
 
 msgid "Datacenter"
-msgstr ""
+msgstr "Центр данных"
 
 msgid "Cores"
-msgstr ""
+msgstr "Ядра"
 
 msgid "Cluster ID from VMware"
 msgstr ""
@@ -1314,130 +1322,130 @@ msgid "Hardware Version"
 msgstr ""
 
 msgid "Path"
-msgstr ""
+msgstr "Путь"
 
 msgid "Operating System"
-msgstr ""
+msgstr "Операционная система"
 
 msgid "Host"
-msgstr ""
+msgstr "Узел"
 
 msgid "Last report"
-msgstr ""
+msgstr "Последний отчет"
 
 msgid "Origin"
-msgstr ""
+msgstr "Источник"
 
 msgid "Applied"
-msgstr ""
+msgstr "Применено"
 
 msgid "Restarted"
-msgstr ""
+msgstr "Перезапущено"
 
 msgid "Failed"
-msgstr ""
+msgstr "Ошибка"
 
 msgid "Restart Failures"
-msgstr ""
+msgstr "Сбои перезагрузки"
 
 msgid "Skipped"
-msgstr ""
+msgstr "Пропущено"
 
 msgid "Pending"
-msgstr ""
+msgstr "Ожидание"
 
 msgid "Reported at"
-msgstr ""
+msgstr "Время"
 
 msgid "Report status"
-msgstr ""
+msgstr "Статус отчета"
 
 msgid "Report metrics"
-msgstr ""
+msgstr "Метрика отчета"
 
 msgid "config_retrieval"
-msgstr ""
+msgstr "config_retrieval"
 
 msgid "exec"
-msgstr ""
+msgstr "exec"
 
 msgid "file"
-msgstr ""
+msgstr "файл"
 
 msgid "package"
-msgstr ""
+msgstr "пакет"
 
 msgid "service"
-msgstr ""
+msgstr "служба"
 
 msgid "user"
-msgstr ""
+msgstr "пользователь"
 
 msgid "yumrepo"
-msgstr ""
+msgstr "yumrepo"
 
 msgid "filebucket"
-msgstr ""
+msgstr "filebucket"
 
 msgid "cron"
-msgstr ""
+msgstr "cron"
 
 msgid "total"
-msgstr ""
+msgstr "всего"
 
 msgid "Logs"
-msgstr ""
+msgstr "Журналы"
 
 msgid "Resource"
-msgstr ""
+msgstr "Ресурс"
 
 msgid "Message"
-msgstr ""
+msgstr "Сообщение"
 
 msgid "Report has been deleted."
 msgstr ""
 
 msgid "Could not delete the report"
-msgstr ""
+msgstr "Не удалось удалить отчет"
 
 msgid "Use the default organization and/or location from the server"
-msgstr ""
+msgstr "Использовать исходную организацию и местоположение с сервера"
 
 msgid "DNS Id"
-msgstr ""
+msgstr "ID DNS"
 
 msgid "Domain [%{name}] created."
 msgstr ""
 
 msgid "Could not create the domain"
-msgstr ""
+msgstr "Не удалось создать домен"
 
 msgid "Full name describing the domain"
-msgstr ""
+msgstr "Описательное имя домена"
 
 msgid "Domain [%{name}] updated."
 msgstr ""
 
 msgid "Could not update the domain"
-msgstr ""
+msgstr "Не удалось обновить домен"
 
 msgid "Domain [%{name}] deleted."
 msgstr ""
 
 msgid "Could not delete the domain"
-msgstr ""
+msgstr "Не удалось удалить домен"
 
 msgid "Create or update parameter for a domain"
 msgstr ""
 
 msgid "Domain parameter updated"
-msgstr ""
+msgstr "Параметр домена обновлен"
 
 msgid "New domain parameter created"
-msgstr ""
+msgstr "Параметр домена создан"
 
 msgid "Could not set domain parameter"
-msgstr ""
+msgstr "Не удалось установить параметр домена"
 
 msgid "Delete parameter for a domain"
 msgstr ""
@@ -1499,61 +1507,61 @@ msgid "have you run %s (for Kerberos)?"
 msgstr ""
 
 msgid "is the server down?"
-msgstr ""
+msgstr "сервер отключен?"
 
 msgid "View and manage user group's external user groups"
-msgstr ""
+msgstr "Управление внешними группами пользователей"
 
 msgid "Auth source"
-msgstr ""
+msgstr "Источник идентификации"
 
 msgid "Refresh external user group"
-msgstr ""
+msgstr "Обновить внешнюю группу пользователей"
 
 msgid "External user group created."
 msgstr ""
 
 msgid "Could not create external user group"
-msgstr ""
+msgstr "Не удалось создать внешнюю группу пользователей"
 
 msgid "External user group updated."
 msgstr ""
 
 msgid "Could not update external user group"
-msgstr ""
+msgstr "Не удалось обновить внешнюю группу пользователей"
 
 msgid "External user group deleted."
 msgstr ""
 
 msgid "Could not delete the external user group"
-msgstr ""
+msgstr "Не удалось удалить внешнюю группу"
 
 msgid "Fact"
-msgstr ""
+msgstr "Факт"
 
 msgid "Resource type"
-msgstr ""
+msgstr "Тип ресурса"
 
 msgid "Search"
-msgstr ""
+msgstr "Поиск"
 
 msgid "Unlimited?"
-msgstr ""
+msgstr "Не ограничено"
 
 msgid "Override?"
 msgstr ""
 
 msgid "Role"
-msgstr ""
+msgstr "Роль"
 
 msgid "Permissions"
-msgstr ""
+msgstr "Разрешения"
 
 msgid "(Miscellaneous)"
-msgstr ""
+msgstr "(другое)"
 
 msgid "none"
-msgstr ""
+msgstr "нет"
 
 msgid "Organizations and locations can be set only for overriding filters."
 msgstr ""
@@ -1572,58 +1580,58 @@ msgid "Permission filter for [%<resource_type_label>s] created."
 msgstr ""
 
 msgid "Could not create the permission filter"
-msgstr ""
+msgstr "Не удалось создать фильтр"
 
 msgid "Permission filter for [%<resource_type_label>s] updated."
 msgstr ""
 
 msgid "Could not update the permission filter"
-msgstr ""
+msgstr "Не удалось обновить фильтр"
 
 msgid "Permission filter deleted."
 msgstr ""
 
 msgid "Could not delete the permission filter"
-msgstr ""
+msgstr "Не удалось удалить фильтр"
 
 msgid "Host Group"
-msgstr ""
+msgstr "Группа узлов"
 
 msgid "MAC"
-msgstr ""
+msgstr "MAC"
 
 msgid "Global Status"
 msgstr ""
 
 msgid "Organization"
-msgstr ""
+msgstr "Организация"
 
 msgid "Location"
-msgstr ""
+msgstr "Расположение"
 
 msgid "Additional Information"
-msgstr ""
+msgstr "Дополнительно"
 
 msgid "Bare Metal"
-msgstr ""
+msgstr "Физический"
 
 msgid "UUID"
-msgstr ""
+msgstr "UUID"
 
 msgid "Compute Profile"
-msgstr ""
+msgstr "Профиль"
 
 msgid "Cert name"
-msgstr ""
+msgstr "Имя сертификата"
 
 msgid "Token"
-msgstr ""
+msgstr "Токен"
 
 msgid "Managed"
-msgstr ""
+msgstr "Под управлением"
 
 msgid "Installed at"
-msgstr ""
+msgstr "Установлено:"
 
 msgid "Uptime (seconds)"
 msgstr ""
@@ -1632,7 +1640,7 @@ msgid "Build Status"
 msgstr ""
 
 msgid "Network"
-msgstr ""
+msgstr "Сеть"
 
 msgid "IPv4 address"
 msgstr ""
@@ -1647,88 +1655,88 @@ msgid "Subnet ipv6"
 msgstr ""
 
 msgid "Domain"
-msgstr ""
+msgstr "Домен"
 
 msgid "Service provider"
-msgstr ""
+msgstr "Сервис-провайдер"
 
 msgid "SP Name"
-msgstr ""
+msgstr "Имя SP"
 
 msgid "SP IP"
-msgstr ""
+msgstr "SP IP"
 
 msgid "SP MAC"
-msgstr ""
+msgstr "SP MAC"
 
 msgid "SP Subnet"
-msgstr ""
+msgstr "Подсеть SP"
 
 msgid "Network interfaces"
-msgstr ""
+msgstr "Сетевые интерфейсы"
 
 msgid "Identifier"
-msgstr ""
+msgstr "Идентификатор"
 
 msgid "MAC address"
-msgstr ""
+msgstr "MAC-адрес"
 
 msgid "FQDN"
-msgstr ""
+msgstr "FQDN"
 
 msgid "Operating system"
-msgstr ""
+msgstr "Операционная система"
 
 msgid "Architecture"
-msgstr ""
+msgstr "Архитектура"
 
 msgid "Build"
-msgstr ""
+msgstr "Сборка"
 
 msgid "Medium"
-msgstr ""
+msgstr "Носитель"
 
 msgid "Partition Table"
-msgstr ""
+msgstr "Таблица разделов"
 
 msgid "PXE Loader"
-msgstr ""
+msgstr "PXE-загрузчик"
 
 msgid "Custom partition table"
-msgstr ""
+msgstr "Нестандартная таблица разделов"
 
 msgid "Image"
-msgstr ""
+msgstr "Образ"
 
 msgid "Image file"
-msgstr ""
+msgstr "Файл образа"
 
 msgid "Use image"
-msgstr ""
+msgstr "Выбрать образ"
 
 msgid "Additional info"
-msgstr ""
+msgstr "Дополнительно"
 
 msgid "Owner"
-msgstr ""
+msgstr "Владелец"
 
 msgid "Enabled"
-msgstr ""
+msgstr "Включен"
 
 msgid "Model"
-msgstr ""
+msgstr "Модель"
 
 msgid "Comment"
-msgstr ""
+msgstr "Комментарий"
 
 msgid "Power"
-msgstr ""
+msgstr "Питание"
 
 msgid "Host id"
 msgstr ""
 
 msgid "Host name"
-msgstr ""
+msgstr "Имя узла"
 
 msgid ""
 "%{reports} command is deprecated and will be removed in one of the future "
@@ -1739,31 +1747,31 @@ msgid "Host created."
 msgstr ""
 
 msgid "Could not create the host"
-msgstr ""
+msgstr "Не удалось создать узел"
 
 msgid "Host updated."
 msgstr ""
 
 msgid "Could not update the host"
-msgstr ""
+msgstr "Не удалось обновить узел"
 
 msgid "Host deleted."
 msgstr ""
 
 msgid "Could not delete the host"
-msgstr ""
+msgstr "Не удалось удалить узел"
 
 msgid "Create or append a parameter for a host"
 msgstr ""
 
 msgid "Host parameter updated"
-msgstr ""
+msgstr "Параметр узла обновлен"
 
 msgid "New host parameter created"
-msgstr ""
+msgstr "Параметр узла создан"
 
 msgid "Could not set host parameter"
-msgstr ""
+msgstr "Не удалось установить параметр узла"
 
 msgid "Delete parameter for a host"
 msgstr ""
@@ -1772,16 +1780,16 @@ msgid "Host parameter deleted."
 msgstr ""
 
 msgid "Power a host on"
-msgstr ""
+msgstr "Включить узел"
 
 msgid "The host is starting."
-msgstr ""
+msgstr "Узел запускается."
 
 msgid "Force turning off a host"
-msgstr ""
+msgstr "Принудительно выключить узел"
 
 msgid "Power a host off"
-msgstr ""
+msgstr "Выключить узел"
 
 msgid "Power off forced"
 msgstr ""
@@ -1790,10 +1798,10 @@ msgid "Powering the host off"
 msgstr ""
 
 msgid "Reboot a host"
-msgstr ""
+msgstr "Перезагрузить узел"
 
 msgid "Host reboot started."
-msgstr ""
+msgstr "Узел будет перезагружен."
 
 msgid "Reset a host"
 msgstr ""
@@ -1808,7 +1816,7 @@ msgid "Rebuild orchestration related configurations for host"
 msgstr ""
 
 msgid "Configuration successfully rebuilt."
-msgstr ""
+msgstr "Конфигурация была собрана успешно."
 
 msgid "Dump host's ENC YAML"
 msgstr ""
@@ -1832,58 +1840,58 @@ msgid "Failed to boot the host from device"
 msgstr ""
 
 msgid "Root password"
-msgstr ""
+msgstr "Пароль root"
 
 msgid "Subnet IPv6 name"
 msgstr ""
 
 msgid "Name of parent hostgroup"
-msgstr ""
+msgstr "Имя родительской группы узлов"
 
 msgid "Title of parent hostgroup"
 msgstr ""
 
 msgid "Enter the root password for the host group:"
-msgstr ""
+msgstr "Введите пароль пользователя root для доступа к группе узлов:"
 
 msgid "Title"
-msgstr ""
+msgstr "Заголовок"
 
 msgid "Parent"
-msgstr ""
+msgstr "Родительский"
 
 msgid "Realm"
-msgstr ""
+msgstr "Область"
 
 msgid "Hostgroup created."
 msgstr ""
 
 msgid "Could not create the hostgroup"
-msgstr ""
+msgstr "Не удалось создать группу узлов"
 
 msgid "Hostgroup updated."
 msgstr ""
 
 msgid "Could not update the hostgroup"
-msgstr ""
+msgstr "Не удалось обновить группу"
 
 msgid "Hostgroup deleted."
 msgstr ""
 
 msgid "Could not delete the hostgroup"
-msgstr ""
+msgstr "Не удалось удалить группу узлов"
 
 msgid "Create or update parameter for a hostgroup"
 msgstr ""
 
 msgid "Hostgroup parameter updated"
-msgstr ""
+msgstr "Параметр группы обновлен"
 
 msgid "New hostgroup parameter created"
-msgstr ""
+msgstr "Параметр группы узлов создан"
 
 msgid "Could not set hostgroup parameter"
-msgstr ""
+msgstr "Не удалось установить параметр группы узлов"
 
 msgid "Delete parameter for a hostgroup"
 msgstr ""
@@ -1895,10 +1903,10 @@ msgid "Could not rebuild configuration"
 msgstr ""
 
 msgid "ID of the owner"
-msgstr ""
+msgstr "Идентификатор владельца"
 
 msgid "Login of the owner"
-msgstr ""
+msgstr "Имя входа владельца"
 
 msgid ""
 "Required if host is managed and value is not inherited from host group or "
@@ -1912,19 +1920,19 @@ msgid "Replaces with new host parameters (with type support)"
 msgstr ""
 
 msgid "Volume parameters"
-msgstr ""
+msgstr "Параметры тома"
 
 msgid "Interface parameters"
-msgstr ""
+msgstr "Параметры интерфейса"
 
 msgid "Enter the root password for the host:"
-msgstr ""
+msgstr "Введите пароль root:"
 
 msgid "Username"
-msgstr ""
+msgstr "Имя"
 
 msgid "URL"
-msgstr ""
+msgstr "URL"
 
 msgid "Http proxy created."
 msgstr ""
@@ -1945,61 +1953,61 @@ msgid "Could not update the http proxy"
 msgstr ""
 
 msgid "Architecture name"
-msgstr ""
+msgstr "Архитектура"
 
 msgid "Compute resource name"
-msgstr ""
+msgstr "Имя вычислительного ресурса"
 
 msgid "Compute profile name"
 msgstr ""
 
 msgid "Domain name"
-msgstr ""
+msgstr "Имя домена"
 
 msgid "Hostgroup title"
-msgstr ""
+msgstr "Название группы узлов"
 
 msgid "Set the current location context for the request"
-msgstr ""
+msgstr "Установите контекст текущего местоположения для запроса"
 
 msgid "Medium name"
-msgstr ""
+msgstr "Имя носителя"
 
 msgid "Model name"
-msgstr ""
+msgstr "Имя модели"
 
 msgid "Set the current organization context for the request"
-msgstr ""
+msgstr "Установите контекст текущей организации для запроса"
 
 msgid "Operating system title"
-msgstr ""
+msgstr "Операционная система"
 
 msgid "Partition table name"
-msgstr ""
+msgstr "Имя таблицы разделов"
 
 msgid "Proxy name"
-msgstr ""
+msgstr "Имя прокси"
 
 msgid "User role name"
-msgstr ""
+msgstr "Имя роли"
 
 msgid "Setting name"
-msgstr ""
+msgstr "Имя параметра"
 
 msgid "Subnet name"
-msgstr ""
+msgstr "Имя подсети"
 
 msgid "User's login to search by"
-msgstr ""
+msgstr "Имя искомого пользователя"
 
 msgid "Common parameter name"
-msgstr ""
+msgstr "Имя обычного параметра"
 
 msgid "Name to search by"
-msgstr ""
+msgstr "Искомое имя"
 
 msgid "Missing options to search %s"
-msgstr ""
+msgstr "Недостаточно параметров для поиска %s"
 
 msgid "one of %s not found."
 msgstr ""
@@ -2011,82 +2019,82 @@ msgid "Missing options to search %s."
 msgstr ""
 
 msgid "View and manage compute resource's images"
-msgstr ""
+msgstr "Просмотр и управление образами вычислительных ресурсов"
 
 msgid "User Data"
 msgstr ""
 
 msgid "IAM role"
-msgstr ""
+msgstr "Роль IAM"
 
 msgid "Show images available for addition"
-msgstr ""
+msgstr "Показать доступные образы"
 
 msgid "Image created."
 msgstr ""
 
 msgid "Could not create the image"
-msgstr ""
+msgstr "Не удалось создать образ"
 
 msgid "Image updated."
 msgstr ""
 
 msgid "Could not update the image"
-msgstr ""
+msgstr "Не удалось обновить образ"
 
 msgid "Image deleted."
 msgstr ""
 
 msgid "Could not delete the image"
-msgstr ""
+msgstr "Не удалось удалить образ"
 
 msgid "View and manage host's network interfaces"
-msgstr ""
+msgstr "Просмотр и управление сетевыми интерфейсами"
 
 msgid "primary"
-msgstr ""
+msgstr "основной"
 
 msgid "provision"
-msgstr ""
+msgstr "подготовительный"
 
 msgid "IP address"
-msgstr ""
+msgstr "IP-адрес"
 
 msgid "DNS name"
-msgstr ""
+msgstr "Имя DNS"
 
 msgid "Subnet"
-msgstr ""
+msgstr "Подсеть"
 
 msgid "Primary"
-msgstr ""
+msgstr "Основной"
 
 msgid "Provision"
-msgstr ""
+msgstr "Подготовительный"
 
 msgid "Virtual"
-msgstr ""
+msgstr "Виртуальный"
 
 msgid "Tag"
-msgstr ""
+msgstr "Тег"
 
 msgid "Attached to"
-msgstr ""
+msgstr "Подключен к"
 
 msgid "BMC"
-msgstr ""
+msgstr "BMC"
 
 msgid "Bond"
-msgstr ""
+msgstr "Агрегированный (Bond)"
 
 msgid "Mode"
-msgstr ""
+msgstr "Режим"
 
 msgid "Attached devices"
-msgstr ""
+msgstr "Подключенные устройства"
 
 msgid "Bond options"
-msgstr ""
+msgstr "Параметры агрегации"
 
 msgid ""
 "Should this interface be used for constructing the FQDN of the host? Each "
@@ -2102,7 +2110,7 @@ msgid "Interface created."
 msgstr ""
 
 msgid "Could not create the interface"
-msgstr ""
+msgstr "Не удалось создать интерфейс"
 
 msgid "Compute resource specific attributes"
 msgstr ""
@@ -2111,49 +2119,49 @@ msgid "Interface updated."
 msgstr ""
 
 msgid "Could not update the interface"
-msgstr ""
+msgstr "Не удалось обновить интерфейс"
 
 msgid "Interface deleted."
 msgstr ""
 
 msgid "Could not delete the interface"
-msgstr ""
+msgstr "Не удалось удалить интерфейс"
 
 msgid "Location numeric id to search by"
-msgstr ""
+msgstr "Числовой код искомого местоположения"
 
 msgid "Organizations"
-msgstr ""
+msgstr "Организации"
 
 msgid "Location created."
 msgstr ""
 
 msgid "Could not create the location"
-msgstr ""
+msgstr "Не удалось настроить местоположение"
 
 msgid "Location updated."
 msgstr ""
 
 msgid "Could not update the location"
-msgstr ""
+msgstr "Не удалось обновить местоположение"
 
 msgid "Location deleted."
 msgstr ""
 
 msgid "Could not delete the location"
-msgstr ""
+msgstr "Не удалось удалить местоположение"
 
 msgid "Create or update parameter for a location"
 msgstr ""
 
 msgid "Parameter [%{name}] updated to value [%{value}]"
-msgstr ""
+msgstr "[%{name}] было присвоено значение [%{value}]"
 
 msgid "Parameter [%{name}] created with value [%{value}]"
-msgstr ""
+msgstr "Добавлен параметр [%{name}] со значением [%{value}]."
 
 msgid "Could not set location parameter"
-msgstr ""
+msgstr "Не удалось установить значение параметра местоположения"
 
 msgid "Delete parameter for a location"
 msgstr ""
@@ -2162,58 +2170,58 @@ msgid "Parameter [%{name}] deleted."
 msgstr ""
 
 msgid "Could not delete location parameter"
-msgstr ""
+msgstr "Не удалось удалить параметр местоположения"
 
 msgid "Subscription type"
 msgstr ""
 
 msgid "OS Family"
-msgstr ""
+msgstr "Тип"
 
 msgid "Installation medium created."
 msgstr ""
 
 msgid "Could not create the installation medium"
-msgstr ""
+msgstr "Не удалось создать установочный носитель"
 
 msgid "Installation medium updated."
 msgstr ""
 
 msgid "Could not update the installation media"
-msgstr ""
+msgstr "Не удалось обновить установочный носитель"
 
 msgid "Installation medium deleted."
 msgstr ""
 
 msgid "Could not delete the installation media"
-msgstr ""
+msgstr "Не удалось удалить установочный носитель"
 
 msgid "Vendor class"
-msgstr ""
+msgstr "Класс производителя"
 
 msgid "HW model"
-msgstr ""
+msgstr "Модель оборудования"
 
 msgid "Info"
-msgstr ""
+msgstr "Инфо"
 
 msgid "Hardware model created."
 msgstr ""
 
 msgid "Could not create the hardware model"
-msgstr ""
+msgstr "Не удалось создать модель оборудования"
 
 msgid "Hardware model deleted."
 msgstr ""
 
 msgid "Could not delete the hardware model"
-msgstr ""
+msgstr "Не удалось удалить модель оборудования"
 
 msgid "Hardware model updated."
 msgstr ""
 
 msgid "Could not update the hardware model"
-msgstr ""
+msgstr "Не удалось обновить модель оборудования"
 
 msgid "Invalid access token response."
 msgstr ""
@@ -2227,55 +2235,55 @@ msgid ""
 msgstr ""
 
 msgid "Release name"
-msgstr ""
+msgstr "Название выпуска"
 
 msgid "Family"
-msgstr ""
+msgstr "Семейство"
 
 msgid "Major version"
-msgstr ""
+msgstr "Выпуск"
 
 msgid "Minor version"
-msgstr ""
+msgstr "Версия"
 
 msgid "Partition tables"
-msgstr ""
+msgstr "Таблицы разделов"
 
 msgid "Default templates"
-msgstr ""
+msgstr "Исходные шаблоны"
 
 msgid "Architectures"
-msgstr ""
+msgstr "Архитектуры"
 
 msgid "Operating system created."
 msgstr ""
 
 msgid "Could not create the operating system"
-msgstr ""
+msgstr "Не удалось создать операционную систему"
 
 msgid "Operating system updated."
 msgstr ""
 
 msgid "Could not update the operating system"
-msgstr ""
+msgstr "Не удалось обновить операционную систему"
 
 msgid "Operating system deleted."
 msgstr ""
 
 msgid "Could not delete the operating system"
-msgstr ""
+msgstr "Не удалось удалить операционную систему"
 
 msgid "Create or update parameter for an operating system"
 msgstr ""
 
 msgid "Operating system parameter updated"
-msgstr ""
+msgstr "Параметр операционной системы обновлен"
 
 msgid "New operating system parameter created"
-msgstr ""
+msgstr "Параметр операционной системы создан"
 
 msgid "Could not set operating system parameter"
-msgstr ""
+msgstr "Не удалось настроить параметр операционной системы"
 
 msgid "Delete parameter for an operating system"
 msgstr ""
@@ -2295,7 +2303,7 @@ msgid ""
 msgstr ""
 
 msgid "Could not set the os default template"
-msgstr ""
+msgstr "Не удалось выбрать исходный шаблон ОС"
 
 msgid "Type of the provisioning template"
 msgstr ""
@@ -2304,10 +2312,10 @@ msgid "Default template deleted."
 msgstr ""
 
 msgid "Could not delete the default template"
-msgstr ""
+msgstr "Не удалось удалить шаблон"
 
 msgid "Default template of type %s not found"
-msgstr ""
+msgstr "Исходный шаблон (тип %s) не найден."
 
 msgid "%{types} of associated %{resource}"
 msgstr ""
@@ -2318,13 +2326,13 @@ msgstr ""
 msgid ""
 "Could not find %{resource}. Some search options were missing, please see --"
 "help."
-msgstr ""
+msgstr "Недостаточно параметров для поиска %{resource} (см. --help)"
 
 msgid "Could not find %{resource}, please set option %{switches}."
-msgstr ""
+msgstr "%{resource} не найден. Установите параметр %{switches}."
 
 msgid "Could not find %{resource}, please set one of options %{switches}."
-msgstr ""
+msgstr "%{resource} не найден. Установите один из параметров %{switches}."
 
 msgid "Enter user's current password:"
 msgstr ""
@@ -2333,73 +2341,73 @@ msgid "Enter user's new password:"
 msgstr ""
 
 msgid "Locations"
-msgstr ""
+msgstr "Местоположения"
 
 msgid "Organization created."
 msgstr ""
 
 msgid "Could not create the organization"
-msgstr ""
+msgstr "Не удалось создать организацию"
 
 msgid "Organization updated."
 msgstr ""
 
 msgid "Could not update the organization"
-msgstr ""
+msgstr "Не удалось обновить организацию"
 
 msgid "Organization deleted."
 msgstr ""
 
 msgid "Could not delete the organization"
-msgstr ""
+msgstr "Не удалось удалить организацию"
 
 msgid "Create or update parameter for an organization"
 msgstr ""
 
 msgid "Could not set organization parameter"
-msgstr ""
+msgstr "Не удалось установить значение параметра организации"
 
 msgid "Delete parameter for an organization"
 msgstr ""
 
 msgid "Could not delete organization parameter"
-msgstr ""
+msgstr "Не удалось удалить параметр организации"
 
 msgid "id"
 msgstr ""
 
 msgid "Kind"
-msgstr ""
+msgstr "Тип"
 
 msgid "parameter name"
-msgstr ""
+msgstr "и"
 
 msgid "Locked"
-msgstr ""
+msgstr "Locked"
 
 msgid "View partition table content"
 msgstr ""
 
 msgid "Path to a file that contains the partition layout"
-msgstr ""
+msgstr "Путь к файлу разделов"
 
 msgid "Partition table created."
 msgstr ""
 
 msgid "Could not create the partition table"
-msgstr ""
+msgstr "Не удалось создать таблицу разделов"
 
 msgid "Partition table updated."
 msgstr ""
 
 msgid "Could not update the partition table"
-msgstr ""
+msgstr "Не удалось обновить таблицу разделов"
 
 msgid "Partition table deleted."
 msgstr ""
 
 msgid "Could not delete the partition table"
-msgstr ""
+msgstr "Не удалось удалить таблицу разделов"
 
 msgid "Path to a file that contains the template content including metadata"
 msgstr ""
@@ -2417,7 +2425,7 @@ msgid "Manage personal access tokens"
 msgstr ""
 
 msgid "Active"
-msgstr ""
+msgstr "Активно"
 
 msgid "Expires at"
 msgstr ""
@@ -2431,7 +2439,7 @@ msgid "Could not create personal access token"
 msgstr ""
 
 msgid "Created at"
-msgstr ""
+msgstr "Создан:"
 
 msgid "Last used at"
 msgstr ""
@@ -2446,13 +2454,13 @@ msgid "database"
 msgstr ""
 
 msgid "Server Response"
-msgstr ""
+msgstr "Ответ сервера"
 
 msgid "Realm proxy id"
 msgstr ""
 
 msgid "Realm type"
-msgstr ""
+msgstr "Тип"
 
 msgid "Realm [%{name}] created."
 msgstr ""
@@ -2473,79 +2481,79 @@ msgid "Could not delete the realm"
 msgstr ""
 
 msgid "Updated at"
-msgstr ""
+msgstr "Обновлен:"
 
 msgid "Users"
-msgstr ""
+msgstr "Пользователи"
 
 msgid "User groups"
-msgstr ""
+msgstr "Группы пользователей"
 
 msgid "Usergroup"
-msgstr ""
+msgstr "Группа пользователей"
 
 msgid "Roles"
-msgstr ""
+msgstr "Роли"
 
 msgid "Inherited User groups"
 msgstr ""
 
 msgid "Smart proxies"
-msgstr ""
+msgstr "Капсулы"
 
 msgid "Compute profiles"
-msgstr ""
+msgstr "Профили"
 
 msgid "Compute resources"
-msgstr ""
+msgstr "Вычислительные ресурсы"
 
 msgid "Installation media"
-msgstr ""
+msgstr "Установочный носитель"
 
 msgid "Templates"
-msgstr ""
+msgstr "Шаблоны"
 
 msgid "Partition Tables"
-msgstr ""
+msgstr "Таблицы разделов"
 
 msgid "Domains"
-msgstr ""
+msgstr "Домены"
 
 msgid "Realms"
-msgstr ""
+msgstr "Области"
 
 msgid "Hostgroups"
-msgstr ""
+msgstr "Группы узлов"
 
 msgid "Subnets"
-msgstr ""
+msgstr "Подсети"
 
 msgid "Parameters"
-msgstr ""
+msgstr "Параметры"
 
 msgid "All parameters"
 msgstr ""
 
 msgid "Operating systems"
-msgstr ""
+msgstr "Операционные системы"
 
 msgid "External user groups"
-msgstr ""
+msgstr "Внешние группы пользователей"
 
 msgid "Failed to generate registration command"
 msgstr ""
 
 msgid "Default"
-msgstr ""
+msgstr "По умолчанию"
 
 msgid "Template inputs"
 msgstr ""
 
 msgid "Required"
-msgstr ""
+msgstr "Обязательно"
 
 msgid "Options"
-msgstr ""
+msgstr "Параметры"
 
 msgid "View report content"
 msgstr ""
@@ -2619,25 +2627,25 @@ msgid "Could not delete the report template"
 msgstr ""
 
 msgid "The server does not support such operation."
-msgstr ""
+msgstr "Сервер не поддерживает эту операцию."
 
 msgid "Builtin"
-msgstr ""
+msgstr "Встроено"
 
 msgid "User role id"
-msgstr ""
+msgstr "Идентификатор роли"
 
 msgid "User role [%<name>s] created."
 msgstr ""
 
 msgid "Could not create the user role"
-msgstr ""
+msgstr "Не удалось создать роль пользователя"
 
 msgid "User role [%<name>s] updated."
 msgstr ""
 
 msgid "Could not update the user role"
-msgstr ""
+msgstr "Не удалось обновить роль пользователя"
 
 msgid "User role cloned."
 msgstr ""
@@ -2649,7 +2657,7 @@ msgid "User role [%<name>s] deleted."
 msgstr ""
 
 msgid "Could not delete the user roles"
-msgstr ""
+msgstr "Не удалось удалить роли пользователя"
 
 msgid "Sessions are not enabled, please check your Hammer settings."
 msgstr ""
@@ -2672,13 +2680,13 @@ msgid "Invalid session data. Resetting the session."
 msgstr ""
 
 msgid "Full name"
-msgstr ""
+msgstr "Полное имя"
 
 msgid "Setting [%{name}] updated to [%{value}]."
 msgstr ""
 
 msgid "Could not update the setting"
-msgstr ""
+msgstr "Не удалось обновить значение"
 
 msgid "Category"
 msgstr ""
@@ -2687,10 +2695,10 @@ msgid "Settings type"
 msgstr ""
 
 msgid "Features"
-msgstr ""
+msgstr "Функции"
 
 msgid "Version"
-msgstr ""
+msgstr "Версия"
 
 msgid "Host_count"
 msgstr ""
@@ -2699,25 +2707,25 @@ msgid "Smart proxy created."
 msgstr ""
 
 msgid "Could not create the proxy"
-msgstr ""
+msgstr "Не удалось создать прокси"
 
 msgid "Smart proxy updated."
 msgstr ""
 
 msgid "Could not update the proxy"
-msgstr ""
+msgstr "Не удалось обновить прокси"
 
 msgid "Smart proxy deleted."
 msgstr ""
 
 msgid "Could not delete the proxy"
-msgstr ""
+msgstr "Не удалось удалить прокси"
 
 msgid "Smart proxy features were refreshed."
 msgstr ""
 
 msgid "Refresh of smart proxy features failed"
-msgstr ""
+msgstr "Не удалось обновить функции капсулы"
 
 msgid "Import subnets succeeded."
 msgstr ""
@@ -2729,7 +2737,7 @@ msgid "Manage SSH Keys sources"
 msgstr ""
 
 msgid "Fingerprint"
-msgstr ""
+msgstr "Отпечаток"
 
 msgid "Length"
 msgstr ""
@@ -2759,64 +2767,64 @@ msgid "Database"
 msgstr ""
 
 msgid "Plugins"
-msgstr ""
+msgstr "Дополнения"
 
 msgid "Smart Proxies"
-msgstr ""
+msgstr "Капсулы"
 
 msgid "Failed features"
-msgstr ""
+msgstr "Нерабочие функции"
 
 msgid "Error"
-msgstr ""
+msgstr "Ошибка"
 
 msgid "Compute Resources"
-msgstr ""
+msgstr "Вычислительные ресурсы"
 
 msgid "Errors"
-msgstr ""
+msgstr "Ошибки"
 
 msgid "Network Addr"
 msgstr ""
 
 msgid "Network Prefix"
-msgstr ""
+msgstr "Префикс сети"
 
 msgid "Network Mask"
-msgstr ""
+msgstr "Маска"
 
 msgid "VLAN ID"
-msgstr ""
+msgstr "VLAN ID"
 
 msgid "Boot Mode"
 msgstr ""
 
 msgid "Gateway Address"
-msgstr ""
+msgstr "Адрес Шлюза"
 
 msgid "Protocol"
-msgstr ""
+msgstr "Протокол"
 
 msgid "Priority"
-msgstr ""
+msgstr "Приоритет"
 
 msgid "Gateway Addr"
 msgstr ""
 
 msgid "Primary DNS"
-msgstr ""
+msgstr "Основной DNS"
 
 msgid "Secondary DNS"
-msgstr ""
+msgstr "Дополнительный DNS"
 
 msgid "TFTP"
-msgstr ""
+msgstr "TFTP"
 
 msgid "DHCP"
-msgstr ""
+msgstr "DHCP"
 
 msgid "IPAM"
-msgstr ""
+msgstr "IPAM"
 
 msgid "Start of IP Range"
 msgstr ""
@@ -2825,25 +2833,25 @@ msgid "End of IP Range"
 msgstr ""
 
 msgid "MTU"
-msgstr ""
+msgstr "MTU"
 
 msgid "Subnet created."
 msgstr ""
 
 msgid "Could not create the subnet"
-msgstr ""
+msgstr "Не удалось создать подсеть"
 
 msgid "Subnet updated."
 msgstr ""
 
 msgid "Could not update the subnet"
-msgstr ""
+msgstr "Не удалось обновить подсеть"
 
 msgid "Subnet deleted."
 msgstr ""
 
 msgid "Could not delete the subnet"
-msgstr ""
+msgstr "Не удалось удалить подсеть"
 
 msgid "Create or update parameter for a subnet"
 msgstr ""
@@ -2864,7 +2872,7 @@ msgid "Subnet parameter deleted."
 msgstr ""
 
 msgid "Environment name"
-msgstr ""
+msgstr "Имя окружения"
 
 msgid "List available provisioning template kinds"
 msgstr ""
@@ -2873,10 +2881,10 @@ msgid "View provisioning template content"
 msgstr ""
 
 msgid "Path to a file that contains the template"
-msgstr ""
+msgstr "Путь к файлу шаблона"
 
 msgid "Template type. Eg. snippet, script, provision"
-msgstr ""
+msgstr "Тип шаблона (фрагмент, сценарий, подготовка)"
 
 msgid "Provisioning template created."
 msgstr ""
@@ -2906,7 +2914,7 @@ msgid "The provisioning template has been saved to %{path}."
 msgstr ""
 
 msgid "Update the default PXE menu on all configured TFTP servers"
-msgstr ""
+msgstr "Обновить стандартное меню PXE на всех TFTP-серверах"
 
 msgid "Provisioning template cloned."
 msgstr ""
@@ -2915,19 +2923,19 @@ msgid "Could not clone the provisioning template"
 msgstr ""
 
 msgid "Login"
-msgstr ""
+msgstr "Вход"
 
 msgid "Admin"
-msgstr ""
+msgstr "Администратор"
 
 msgid "Disabled"
-msgstr ""
+msgstr "Отключено"
 
 msgid "Last login"
-msgstr ""
+msgstr "Последний вход"
 
 msgid "Authorized by"
-msgstr ""
+msgstr "Авторизован"
 
 msgid "Email enabled"
 msgstr ""
@@ -2936,37 +2944,37 @@ msgid "Effective admin"
 msgstr ""
 
 msgid "Locale"
-msgstr ""
+msgstr "Код"
 
 msgid "Timezone"
-msgstr ""
+msgstr "Часовой пояс"
 
 msgid "Default organization"
-msgstr ""
+msgstr "Исходная организация"
 
 msgid "Default location"
-msgstr ""
+msgstr "Расположение по умолчанию"
 
 msgid "default"
-msgstr ""
+msgstr "по умолчанию"
 
 msgid "User [%{login}] created."
 msgstr ""
 
 msgid "Could not create the user"
-msgstr ""
+msgstr "Не удалось создать пользователя"
 
 msgid "User [%{login}] updated."
 msgstr ""
 
 msgid "Could not update the user"
-msgstr ""
+msgstr "Не удалось обновить пользователя"
 
 msgid "User [%{login}] deleted."
 msgstr ""
 
 msgid "Could not delete the user"
-msgstr ""
+msgstr "Не удалось удалить пользователя"
 
 msgid "Managing User SSH Keys."
 msgstr ""
@@ -2996,7 +3004,7 @@ msgid "Could not remove user mail notification"
 msgstr ""
 
 msgid "Interval"
-msgstr ""
+msgstr "Интервал"
 
 msgid "Mail query"
 msgstr ""
@@ -3005,19 +3013,19 @@ msgid "User group [%<name>s] created."
 msgstr ""
 
 msgid "Could not create the user group"
-msgstr ""
+msgstr "Не удалось создать группу пользователей"
 
 msgid "User group [%<name>s] updated."
 msgstr ""
 
 msgid "Could not update the user group"
-msgstr ""
+msgstr "Не удалось обновить группу пользователей"
 
 msgid "User group [%<name>s] deleted."
 msgstr ""
 
 msgid "Could not delete the user group"
-msgstr ""
+msgstr "Не удалось удалить группу"
 
 msgid "View and manage compute resource's virtual machines"
 msgstr ""
