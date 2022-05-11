@@ -1,142 +1,151 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the hammer-cli-foreman package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
+# Translators:
+# Diego de Souza Lopes <djkakaroto@gmail.com>, 2015
+# Junior Alvim <alvin@intechne.com.br>, 2014
+# Fabio Dias <fabioqos@gmail.com>, 2015
+# Junior Alvim <alvin@intechne.com.br>, 2014
+# Valeria S Silva <valeriassilva@live.com>, 2015
 msgid ""
 msgstr ""
-"Project-Id-Version: hammer-cli-foreman 3.3.0\n"
+"Project-Id-Version: hammer-cli-foreman 3.4.0.pre.develop\n"
 "Report-Msgid-Bugs-To: \n"
-"PO-Revision-Date: 2018-10-24 10:54+0200\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
-"Language: \n"
+"POT-Creation-Date: 2022-05-10 13:14+0000\n"
+"PO-Revision-Date: 2014-03-14 09:55+0000\n"
+"Last-Translator: Valeria S Silva <valeriassilva@live.com>, 2015\n"
+"Language-Team: Portuguese (Brazil) (http://www.transifex.com/foreman/foreman/"
+"language/pt_BR/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
+"Language: pt_BR\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
 
 msgid "Foreman connection login/logout"
-msgstr ""
+msgstr "Login/logout da conexão do Foreman"
 
 msgid "Manipulate architectures"
-msgstr ""
+msgstr "Manipular arquiteturas"
 
 msgid "Manipulate auth sources"
-msgstr ""
+msgstr "Manipular fontes do auth."
 
 msgid "Search audit trails."
-msgstr ""
+msgstr "Pesquisar trilhas de auditoria."
 
 msgid "Manipulate compute profiles"
-msgstr ""
+msgstr "Manipular perfis computacionais"
 
 msgid "Manipulate compute resources"
-msgstr ""
+msgstr "Manipular recursos de computação"
 
 msgid "Manipulate domains"
-msgstr ""
+msgstr "Manipular domínios"
 
 msgid "Search facts"
-msgstr ""
+msgstr "Pesquisar fatos"
 
 msgid "Manage permission filters"
-msgstr ""
+msgstr "Gerenciar filtros de permissão"
 
 msgid "Manipulate hosts"
-msgstr ""
+msgstr "Manipular hosts"
 
 msgid "Manipulate hostgroups"
-msgstr ""
+msgstr "Manipular grupos de hosts"
 
 msgid "Manipulate http proxies"
-msgstr ""
+msgstr "Manipular proxies http"
 
 msgid "Manipulate locations"
-msgstr ""
+msgstr "Manipular locais"
 
 msgid "Manipulate installation media"
-msgstr ""
+msgstr "Manipular mídia de instalação"
 
 msgid "Manipulate hardware models"
-msgstr ""
+msgstr "Manipular modelos de hardware"
 
 msgid "Manipulate operating system"
-msgstr ""
+msgstr "Manipular sistema operacional"
 
 msgid "Manipulate organizations"
-msgstr ""
+msgstr "Manipular organizações"
 
 msgid "Manipulate partition tables"
-msgstr ""
+msgstr "Manipular tabelas de partição"
 
 msgid "Browse and read reports"
-msgstr ""
+msgstr "Navegar e ler relatórios"
 
 msgid ""
 "%{report} command is deprecated and will be removed in one of the future "
 "versions. Please use %{config_report} command instead."
 msgstr ""
+"O comando %{report} é preterido e será removido em uma das versões futuras. "
+"Use o comando %{config_report}."
 
 msgid "Manipulate report templates"
-msgstr ""
+msgstr "Manipular modelos de relatório"
 
 msgid "Manage user roles"
-msgstr ""
+msgstr "Gerenciar funções do usuário"
 
 msgid "Manipulate smart proxies"
-msgstr ""
+msgstr "Manipular proxies variáveis"
 
 msgid "Manipulate realms"
-msgstr ""
+msgstr "Manipular realms"
 
 msgid "Change server settings"
-msgstr ""
+msgstr "Alterar configurações de servidor"
 
 msgid "Manipulate subnets"
-msgstr ""
+msgstr "Manipular sub-redes"
 
 msgid "Manipulate provisioning templates"
 msgstr ""
 
 msgid "Manipulate users"
-msgstr ""
+msgstr "Manipular usuários"
 
 msgid "Manage user groups"
-msgstr ""
+msgstr "Gerenciar grupos de usuários"
 
 msgid "Get the status of the server and/or it's subcomponents"
-msgstr ""
+msgstr "Obter o estado do servidor e/ou de seus subcomponentes"
 
 msgid "Get the complete status of the server and/or it's subcomponents"
-msgstr ""
+msgstr "Obter o estado completo do servidor e/ou de seus subcomponentes"
 
 msgid "Manage mail notifications"
-msgstr ""
+msgstr "Gerenciar notificações de e-mail"
 
 msgid "Manage bookmarks"
-msgstr ""
+msgstr "Gerenciar marcadores"
 
 msgid "Host Registration"
 msgstr ""
 
 msgid "Using certificate authentication."
-msgstr ""
+msgstr "Usando autenticação de certificado."
 
 msgid "Invalid username or password."
-msgstr ""
+msgstr "Nome de  usuário ou senha inválidos."
 
 msgid "Using configured credentials for user '%s'."
-msgstr ""
+msgstr "Usando credenciais configuradas para o usuário '%s\"."
 
 msgid "Credentials are not configured."
-msgstr ""
+msgstr "As credenciais não estão configuradas."
 
 msgid "[Foreman] Username:%s"
-msgstr ""
+msgstr "[Foreman] Nome de usuário:%s"
 
 msgid "[Foreman] Password for %{user}:%{wsp}"
-msgstr ""
+msgstr "[Foreman] Senha para %{user}:%{wsp}"
 
 msgid "current Kerberos user"
 msgstr ""
@@ -153,656 +162,671 @@ msgid ""
 "Invalid oidc-client-id or oidc-token-endpoint or oidc-authorization-"
 "endpoint.\n"
 msgstr ""
+"Invalid oidc-client-id ou oidc-token-endpoint ou oidc-authorization-endpoint "
+"inválidos.\n"
 
 msgid "Code:%s"
-msgstr ""
+msgstr "Código:%s"
 
 msgid "Openidc Provider Authorization Endpoint:%s"
-msgstr ""
+msgstr "Ponto de extremidade de autorização de provedor do Openidc:%s"
 
 msgid "Openidc Provider Token Endpoint:%s"
-msgstr ""
+msgstr "Ponto de extremidade de token de provedor do Provedor:%s"
 
 msgid "Client ID:%s"
-msgstr ""
+msgstr "ID de cliente:%s"
 
 msgid "Redirect URI:%s"
-msgstr ""
+msgstr "URI redirecionada:%s"
 
 msgid "Invalid credentials or oidc-client-id or oidc-token-endpoint.\n"
-msgstr ""
+msgstr "Credenciais ou oidc-client-id ou oidc-token-endpoint inválidos.\n"
 
 msgid "Username:%s"
-msgstr ""
+msgstr "Nome de usuário:%s"
 
 msgid "Password:%{wsp}"
-msgstr ""
+msgstr "Senha:%{wsp}"
 
 msgid "Session exists, currently logged in as '%s'."
-msgstr ""
+msgstr "A sessão existe. No momento, conectada como '%s'."
 
 msgid "Using sessions, you are currently not logged in."
-msgstr ""
+msgstr "Usando sessões. No momento, você não está conectado."
 
 msgid "Invalid credentials, continuing with session for '%s'."
-msgstr ""
+msgstr "Credenciais inválidas, continuando com a sessão para '%s'."
 
 msgid "Session has expired."
-msgstr ""
+msgstr "A sessão expirou."
 
 msgid "Id"
-msgstr ""
+msgstr "Id"
 
 msgid "Name"
-msgstr ""
+msgstr "Nome"
 
 msgid "Architecture created."
-msgstr ""
+msgstr "Arquitetura criada."
 
 msgid "Could not create the architecture"
-msgstr ""
+msgstr "Não foi possível criar a arquitetura"
 
 msgid "Architecture deleted."
-msgstr ""
+msgstr "Arquitetura excluída."
 
 msgid "Could not delete the architecture"
-msgstr ""
+msgstr "Não foi possível remover a arquitetura"
 
 msgid "Architecture updated."
-msgstr ""
+msgstr "Arquitetura atualizada."
 
 msgid "Could not update the architecture"
-msgstr ""
+msgstr "Não foi possível atualizar a arquitetura"
 
 msgid "Associate a hostgroup"
-msgstr ""
+msgstr "Associar um hostgroup"
 
 msgid "The hostgroup has been associated."
-msgstr ""
+msgstr "O grupo de hosts foi desassociado."
 
 msgid "Could not associate the hostgroup"
-msgstr ""
+msgstr "Não foi possível associar o grupo de hosts"
 
 msgid "Disassociate a hostgroup"
-msgstr ""
+msgstr "Desassociar um hostgroup"
 
 msgid "The hostgroup has been disassociated."
-msgstr ""
+msgstr "O grupo de hosts foi desassociado."
 
 msgid "Could not disassociate the hostgroup"
-msgstr ""
+msgstr "Não foi possível desassociar o grupo de hosts"
 
 msgid "Associate a domain"
-msgstr ""
+msgstr "Associar um domínio"
 
 msgid "The domain has been associated."
-msgstr ""
+msgstr "O domínio foi associado."
 
 msgid "Could not associate the domain"
-msgstr ""
+msgstr "Não foi possível associar o domínio"
 
 msgid "Disassociate a domain"
-msgstr ""
+msgstr "Desassociar um domínio"
 
 msgid "The domain has been disassociated."
-msgstr ""
+msgstr "O domínio foi desassociado."
 
 msgid "Could not disassociate the domain"
-msgstr ""
+msgstr "Não foi possível desassociar o domínio"
 
 msgid "Associate a medium"
-msgstr ""
+msgstr "Associar um meio"
 
 msgid "The medium has been associated."
-msgstr ""
+msgstr "A mídia foi associada."
 
 msgid "Could not associate the medium"
-msgstr ""
+msgstr "Não foi possível associar a mídia"
 
 msgid "Disassociate a medium"
-msgstr ""
+msgstr "Desassociar um meio"
 
 msgid "The medium has been disassociated."
-msgstr ""
+msgstr "A mídia foi desassociada."
 
 msgid "Could not disassociate the medium"
-msgstr ""
+msgstr "Não foi possível desassociar a mídia"
 
 msgid "Associate a subnet"
-msgstr ""
+msgstr "Associar uma subrede"
 
 msgid "The subnet has been associated."
-msgstr ""
+msgstr "A sub-rede foi associada."
 
 msgid "Could not associate the subnet"
-msgstr ""
+msgstr "Não foi possível associar a sub-rede"
 
 msgid "Disassociate a subnet"
-msgstr ""
+msgstr "Desassociar uma subrede"
 
 msgid "The subnet has been disassociated."
-msgstr ""
+msgstr "A sub-rede foi desassociada."
 
 msgid "Could not disassociate the subnet"
-msgstr ""
+msgstr "Não foi possível desassociar a sub-rede"
 
 msgid "Associate a compute resource"
-msgstr ""
+msgstr "Associar um recurso de computação"
 
 msgid "The compute resource has been associated."
-msgstr ""
+msgstr "O recurso de computação foi associado."
 
 msgid "Could not associate the compute resource"
-msgstr ""
+msgstr "Não foi possível associar o recurso de computação"
 
 msgid "Disassociate a compute resource"
-msgstr ""
+msgstr "Desassociar um recurso de computação"
 
 msgid "The compute resource has been disassociated."
-msgstr ""
+msgstr "O recurso de computação foi desassociado."
 
 msgid "Could not disassociate the compute resource"
-msgstr ""
+msgstr "Não foi possível desassociar o recurso de computação"
 
 msgid "Associate a smart proxy"
-msgstr ""
+msgstr "Associar um proxy inteligente"
 
 msgid "The smart proxy has been associated."
-msgstr ""
+msgstr "O proxy inteligente foi associado."
 
 msgid "Could not associate the smart proxy"
-msgstr ""
+msgstr "Não foi possível associar o proxy inteligente"
 
 msgid "Disassociate a smart proxy"
-msgstr ""
+msgstr "Desassociar um proxy inteligente"
 
 msgid "The smart proxy has been disassociated."
-msgstr ""
+msgstr "O proxy inteligente foi desassociado."
 
 msgid "Could not disassociate the smart proxy"
-msgstr ""
+msgstr "Não foi possível desassociar o proxy inteligente"
 
 msgid "Associate an user"
-msgstr ""
+msgstr "Associar um usuário"
 
 msgid "The user has been associated."
-msgstr ""
+msgstr "O usuário foi associado."
 
 msgid "Could not associate the user"
-msgstr ""
+msgstr "Não pode associar o usuário"
 
 msgid "Disassociate an user"
-msgstr ""
+msgstr "Desassociar um usuário"
 
 msgid "The user has been disassociated."
-msgstr ""
+msgstr "O usuário foi desassociado."
 
 msgid "Could not disassociate the user"
-msgstr ""
+msgstr "Não pode desassociar o usuário"
 
 msgid "Associate an user group"
-msgstr ""
+msgstr "Associar um grupo de usuário"
 
 msgid "The user group has been associated."
-msgstr ""
+msgstr "O grupo de usuários foi associado."
 
 msgid "Could not associate the user group"
-msgstr ""
+msgstr "Não pode associar o grupo de usuário"
 
 msgid "Disassociate an user group"
-msgstr ""
+msgstr "Desassociar um grupo de usuário"
 
 msgid "The user group has been disassociated."
-msgstr ""
+msgstr "O grupo de usuários foi desassociado."
 
 msgid "Could not disassociate the user group"
-msgstr ""
+msgstr "Não pode desassociar o grupo de usuários"
 
 msgid "Associate provisioning templates"
-msgstr ""
+msgstr "Associar modelos de provisionamento"
 
 msgid "List of provisioning template ids"
-msgstr ""
+msgstr "Lista de ids de modelo de provisionamento"
 
 msgid "List of provisioning template names"
-msgstr ""
+msgstr "Lista de nomes de modelo de provisionamento"
 
 msgid ""
 "Provisioning template name regex to search, all matching templates will be "
 "associated"
 msgstr ""
+"Regex de nome de modelo de provisionamento para pesquisa, todos os modelos "
+"correspondentes serão associados"
 
 msgid "%s not found."
-msgstr ""
+msgstr "%s não encontrado."
 
 msgid "The provisioning templates were associated."
-msgstr ""
+msgstr "Os modelos de provisionamento foram associados."
 
 msgid "Could not associate the provisioning templates"
-msgstr ""
+msgstr "Não foi possível associar os modelos de provisionamento"
 
 msgid "Disassociate provisioning templates"
-msgstr ""
+msgstr "Dissociar modelos de provisionamento"
 
 msgid ""
 "Provisioning template name regex to search, all matching templates will be "
 "disassociated"
 msgstr ""
+"Regex de nome de modelo de provisionamento para pesquisa, todos os modelos "
+"correspondentes serão dissociados"
 
 msgid "The provisioning templates were disassociated."
-msgstr ""
+msgstr "Os modelos de provisionamento foram dissociados."
 
 msgid "Could not disassociate the provisioning templates"
-msgstr ""
+msgstr "Não foi possível dissociar os modelos de provisionamento"
 
 msgid "Associate an organization"
-msgstr ""
+msgstr "Associar uma empresa"
 
 msgid "The organization has been associated."
-msgstr ""
+msgstr "A organização foi associada."
 
 msgid "Could not associate the organization"
-msgstr ""
+msgstr "Não foi possível associar a organização"
 
 msgid "Disassociate an organization"
-msgstr ""
+msgstr "Desassociar uma empresa"
 
 msgid "The organization has been disassociated."
-msgstr ""
+msgstr "A organização foi desassociada."
 
 msgid "Could not disassociate the organization"
-msgstr ""
+msgstr "Não foi possível desassociar a organização"
 
 msgid "Associate an operating system"
-msgstr ""
+msgstr "Associar um Sistema Operacional"
 
 msgid "Operating system has been associated."
-msgstr ""
+msgstr "O sistema operacional foi associado."
 
 msgid "Could not associate the operating system"
-msgstr ""
+msgstr "Não foi possível associar o sistema operacional"
 
 msgid "Disassociate an operating system"
-msgstr ""
+msgstr "Desassociar um sistema operacional"
 
 msgid "Operating system has been disassociated."
-msgstr ""
+msgstr "O sistema operacional foi desassociado."
 
 msgid "Could not disassociate the operating system"
-msgstr ""
+msgstr "Não foi possível desassociar o sistema operacional"
 
 msgid "Associate an architecture"
-msgstr ""
+msgstr "Associar uma arquitetura"
 
 msgid "Architecture has been associated."
-msgstr ""
+msgstr "A arquitetura foi associada."
 
 msgid "Could not associate the architecture"
-msgstr ""
+msgstr "Não foi possível associar a arquitetura"
 
 msgid "Disassociate an architecture"
-msgstr ""
+msgstr "Desassociar uma arquitetura"
 
 msgid "Architecture has been disassociated."
-msgstr ""
+msgstr "A arquitetura desassociada."
 
 msgid "Could not disassociate the architecture"
-msgstr ""
+msgstr "Não foi possível desassociar a arquitetura"
 
 msgid "Associate a partition table"
-msgstr ""
+msgstr "Associar uma tabela de partição"
 
 msgid "Partition table has been associated."
-msgstr ""
+msgstr "A tabela de partição foi associada."
 
 msgid "Could not associate the partition table"
-msgstr ""
+msgstr "Não foi possível associar a tabela de partição"
 
 msgid "Disassociate a partition table"
-msgstr ""
+msgstr "Desassociar a tabela de partição"
 
 msgid "Partition table has been disassociated."
-msgstr ""
+msgstr "A tabela de partição foi desassociada."
 
 msgid "Could not disassociate the partition table"
-msgstr ""
+msgstr "Não foi possível desassociar a tabela de partição"
 
 msgid "Assign a user role"
-msgstr ""
+msgstr "Atribuir uma função de usuário"
 
 msgid "User role has been assigned."
-msgstr ""
+msgstr "A função de usuário foi atribuída."
 
 msgid "Could not assign the user role"
-msgstr ""
+msgstr "Não foi possível atribuir a função de usuário"
 
 msgid "Remove a user role"
-msgstr ""
+msgstr "Remover uma função de usuário"
 
 msgid "User role has been removed."
-msgstr ""
+msgstr "A função de usuário foi removida."
 
 msgid "Could not remove the user role"
-msgstr ""
+msgstr "Não foi possível remover a função de usuário"
 
 msgid "Associate a location"
-msgstr ""
+msgstr "Associar um local"
 
 msgid "The location has been associated."
-msgstr ""
+msgstr "O local foi associado."
 
 msgid "Could not associate the location"
-msgstr ""
+msgstr "Não foi possível associar o local"
 
 msgid "Disassociate a location"
-msgstr ""
+msgstr "Desassociar um local"
 
 msgid "The location has been disassociated."
-msgstr ""
+msgstr "O local foi desassociado."
 
 msgid "Could not disassociate the location"
-msgstr ""
+msgstr "Não foi possível desassociar o local"
 
 msgid "Override audit record pagination"
-msgstr ""
+msgstr "Substituir paginação de registro de auditoria"
 
 msgid ""
 "Audit records for past one month are returned by default. This behavior can "
 "be changed by passing --search option."
 msgstr ""
+"Registros de auditoria para mais de um mês são retornados por padrão. Esse "
+"comportamento pode ser alterado transmitindo a opção --search."
 
 msgid "At"
-msgstr ""
+msgstr "No(a)"
 
 msgid "IP"
-msgstr ""
+msgstr "IP"
 
 msgid "User"
-msgstr ""
+msgstr "Usuário"
 
 msgid "Action"
-msgstr ""
+msgstr "Ação"
 
 msgid "Audit type"
-msgstr ""
+msgstr "Tipo de auditoria"
 
 msgid "Audit record"
-msgstr ""
+msgstr "Registro de auditoria"
 
 msgid "Request UUID"
-msgstr ""
+msgstr "Solicitar UUID"
 
 msgid "Audited changes"
-msgstr ""
+msgstr "Alterações auditadas"
 
 msgid "Attribute"
-msgstr ""
+msgstr "Atributo"
 
 msgid "Value"
-msgstr ""
+msgstr "Valor"
 
 msgid "Old"
-msgstr ""
+msgstr "Antigo"
 
 msgid "New"
-msgstr ""
+msgstr "Novo"
 
 msgid "Set credentials"
-msgstr ""
+msgstr "Definir credenciais"
 
 msgid "Username to access the remote system"
-msgstr ""
+msgstr "Nome de usuário para acessar o sistema remoto"
 
 msgid "Password to access the remote system"
-msgstr ""
+msgstr "Senha para acessar sistema remoto"
 
 msgid "Successfully logged in as '%s'."
-msgstr ""
+msgstr "Conectado com êxito como '%s'."
 
 msgid ""
 "Successfully authenticated using negotiate auth, using the KEYRING principal."
 msgstr ""
 
 msgid "Openidc provider URL which issues access token"
-msgstr ""
+msgstr "URL do provedor do Openidc que emite o token de acesso"
 
 msgid "Openidc provider URL which issues authentication code (two factor only)"
 msgstr ""
+"URL do provedor do Openidc que emite o código de autenticação (apenas dois "
+"fatores)"
 
 msgid "Client id used in the Openidc provider"
-msgstr ""
+msgstr "Is do cliente usado no provedor do Openidc"
 
 msgid "Authenticate with two factor"
-msgstr ""
+msgstr "Autenticar com dois fatores"
 
 msgid "Redirect URI for the authentication code grant flow"
-msgstr ""
+msgstr "Redirecionar URI para o fluxo de concessão de código de autenticação"
 
 msgid "Wipe your credentials"
-msgstr ""
+msgstr "Limpar suas credenciais"
 
 msgid "Logged out."
-msgstr ""
+msgstr "Desconectado."
 
 msgid "Information about current connections"
-msgstr ""
+msgstr "Informações sobre as conexões atuais"
 
 msgid "List all auth sources"
-msgstr ""
+msgstr "Listar todas as fontes de autenticação"
 
 msgid "Type of auth source"
-msgstr ""
+msgstr "Tipo de fonte de autenticação"
 
 msgid "Manage external auth sources"
-msgstr ""
+msgstr "Gerenciar fontes de autenticação externas"
 
 msgid "Update organization and location for Auth Source"
-msgstr ""
+msgstr "Atualizar organização e local de Fonte de autenticação"
 
 msgid "Successfully updated the %{name} external auth source."
-msgstr ""
+msgstr "Atualizou com êxito a fonte de autenticação externa %{name}."
 
 msgid "Failed to update %{name} external auth source"
-msgstr ""
+msgstr "Falha ao atualizar a fonte de autenticação externa %{name}"
 
 msgid "Manage LDAP auth sources"
-msgstr ""
+msgstr "Gerenciar fontes de autenticação LDAP"
 
 msgid "Server"
-msgstr ""
+msgstr "Servidor"
 
 msgid "Port"
-msgstr ""
+msgstr "Porta "
 
 msgid "LDAPS?"
-msgstr ""
+msgstr "LDAPS?"
 
 msgid "LDAPS"
-msgstr ""
+msgstr "LDAPS"
 
 msgid "Server Type"
-msgstr ""
+msgstr "Tipo de servidor"
 
 msgid "Account"
-msgstr ""
+msgstr "Conta"
 
 msgid "Account Username"
-msgstr ""
+msgstr "Nome de usuário da Conta"
 
 msgid "Base DN"
-msgstr ""
+msgstr "DN Base"
 
 msgid "Groups base DN"
-msgstr ""
+msgstr "DN base de grupos"
 
 msgid "Use Netgroups"
-msgstr ""
+msgstr "Usar grupos de redes"
 
 msgid "LDAP filter"
-msgstr ""
+msgstr "Filtro LDAP"
 
 msgid "Automatically Create Accounts?"
-msgstr ""
+msgstr "Criar contas automaticamente?"
 
 msgid "Usergroup sync"
-msgstr ""
+msgstr "Sincronização de grupos de usuários"
 
 msgid "Attribute mappings"
-msgstr ""
+msgstr "Mapeamentos dos atributos"
 
 msgid "Login Name Attribute"
-msgstr ""
+msgstr "Atributo de nome de Login"
 
 msgid "First Name Attribute"
-msgstr ""
+msgstr "Atributo de Primeiro Nome"
 
 msgid "Last Name Attribute"
-msgstr ""
+msgstr "Atributo do Sobrenome"
 
 msgid "Email Address Attribute"
-msgstr ""
+msgstr "Atributo de endereço de email"
 
 msgid "Photo Attribute"
-msgstr ""
+msgstr "Atributo de foto"
 
 msgid "Auth source [%{name}] created."
-msgstr ""
+msgstr "Fonte de autenticação [%{name}] criada."
 
 msgid "Could not create the Auth Source"
-msgstr ""
+msgstr "Não foi possível criar a Fonte de Autenticação"
 
 msgid "Auth source [%{name}] deleted."
-msgstr ""
+msgstr "Origem de autenticação [%{name}] excluída."
 
 msgid "Could not delete the Auth Source"
-msgstr ""
+msgstr "Não foi possível remover a Fonte de Autenticação"
 
 msgid "Auth source [%{name}] updated."
-msgstr ""
+msgstr "Origem de autenticação [%{name}] atualizada."
 
 msgid "Could not update the Auth Source"
-msgstr ""
+msgstr "Não foi possível atualizar a Fonte de Autenticação"
 
 msgid ""
 "Can't perform login. Make sure sessions are enabled in hammer configuration "
 "file."
 msgstr ""
+"Não foi possível realizar login. Garanta que as sessões estejam habilitadas "
+"no arquivo de configuração do martelo."
 
 msgid "Controller"
-msgstr ""
+msgstr "Controlador"
 
 msgid "Search Query"
-msgstr ""
+msgstr "Consulta de pesquisa"
 
 msgid "Public"
-msgstr ""
+msgstr "Público"
 
 msgid "Owner Id"
-msgstr ""
+msgstr "ID de Proprietário"
 
 msgid "Owner Type"
-msgstr ""
+msgstr "Tipo de Proprietário"
 
 msgid "Bookmark %<name>s created."
-msgstr ""
+msgstr "Marcador %<name>s criado."
 
 msgid "Failed to create %<name>s bookmark"
-msgstr ""
+msgstr "Falha ao criar o marcador %<name>s"
 
 msgid "Bookmark %<name>s updated successfully."
-msgstr ""
+msgstr "Marcador %<name>s atualizado com êxito."
 
 msgid "Failed to update %<name>s bookmark"
-msgstr ""
+msgstr "Falha ao atualizar o marcador %<name>s"
 
 msgid "Bookmark deleted successfully."
-msgstr ""
+msgstr "Marcador excluído com êxito."
 
 msgid "Failed to delete bookmark"
-msgstr ""
+msgstr "Falha ao excluir marcador"
 
 msgid "Manage template combinations"
-msgstr ""
+msgstr "Gerenciar combinações de modelo"
 
 msgid "ID"
-msgstr ""
+msgstr "ID"
 
 msgid "Provisioning template ID"
-msgstr ""
+msgstr "Provisionamento da ID de modelo"
 
 msgid "Provisioning template name"
-msgstr ""
+msgstr "Provisionamento do nome do modelo"
 
 msgid "Hostgroup ID"
-msgstr ""
+msgstr "ID do grupo de hosts"
 
 msgid "Hostgroup name"
-msgstr ""
+msgstr "Nome do hostgroup"
 
 msgid "Provisioning Template"
-msgstr ""
+msgstr "Provisionamento do modelo"
 
 msgid "Hostgroup"
-msgstr ""
+msgstr "Grupo de hosts"
 
 msgid "Template combination updated."
-msgstr ""
+msgstr "Combinação de modelo atualizada."
 
 msgid "Could not update the template combination"
-msgstr ""
+msgstr "Não foi possível atualizar combinação de modelo"
 
 msgid "Template combination created."
-msgstr ""
+msgstr "Combinação de modelo criada."
 
 msgid "Could not create the template combination"
-msgstr ""
+msgstr "Não foi possível criar uma combinação de modelo"
 
 msgid "Template combination Deleted."
-msgstr ""
+msgstr "Combinação de modelo excluída."
 
 msgid "Could not delete the template combination"
-msgstr ""
+msgstr "Não foi possível excluir a combinação de modelo"
 
 msgid "Name of DNS proxy to use within this domain"
-msgstr ""
+msgstr "Nome do Proxy DNS para usar dentro deste domínio"
 
 msgid "Provider specific options"
-msgstr ""
+msgstr "Opções específicas do provedor"
 
 msgid "Bold attributes are required."
-msgstr ""
+msgstr "O atributos Bold é obrigatório."
 
 msgid "Available keys for %{option}"
-msgstr ""
+msgstr "Chaves disponíveis para %{option}"
 
 msgid "Possible values: %s"
-msgstr ""
+msgstr "Valores possíveis: %s"
 
 msgid "%{value}, each managed hosts needs to have one primary interface."
-msgstr ""
+msgstr "%{value}, cada host gerenciado precisa ter uma interface primária."
 
 msgid "For %{condition}"
-msgstr ""
+msgstr "Para %{condition}"
 
 msgid ""
 "VLAN tag, this attribute has precedence over the subnet VLAN ID. Only for "
 "virtual interfaces."
 msgstr ""
+"VLAN tag, este atributo tem precedência sobre a sub-rede  VLAN ID . Apenas "
+"para interfaces virtuais"
 
 msgid "Identifier of the interface to which this interface belongs, e.g. eth1."
 msgstr ""
+"Identificador da interface à qual esta interface pertence, por exemplo, eth1."
 
 msgid "Identifiers of slave interfaces, e.g. [eth1,eth2]"
-msgstr ""
+msgstr "Identificadores de interfaces slave, por exemplo, [eth1,eth2]"
 
 msgid "always IPMI"
-msgstr ""
+msgstr "sempre IPMI"
 
 msgid "Duration: %sms"
-msgstr ""
+msgstr "Duração: %sms"
 
 msgid "FAIL"
-msgstr ""
+msgstr "FALHA"
 
 msgid "%{count} more service(s) failed, but not shown:"
 msgstr ""
@@ -811,253 +835,260 @@ msgid "Network prefix in CIDR notation (e.g. 64) for this subnet"
 msgstr ""
 
 msgid "TFTP Proxy to use within this subnet"
-msgstr ""
+msgstr "Proxy TFTP a ser utilizado com esta sub-rede"
 
 msgid "DNS Proxy to use within this subnet"
-msgstr ""
+msgstr "Proxy DNS a ser usado nesta sub-rede"
 
 msgid "DHCP Proxy to use within this subnet"
-msgstr ""
+msgstr "Proxy DHCP a ser usado nesta sub-rede"
 
 msgid "BMC Proxy to use within this subnet"
 msgstr ""
 
 msgid "Default organization name"
-msgstr ""
+msgstr "Nome padrão da organização"
 
 msgid "Default location name"
-msgstr ""
+msgstr "Nome padrão do local"
 
 msgid "Received data of unknown format."
-msgstr ""
+msgstr "Dados recebidos de formato desconhecido."
 
 msgid "Search / Order fields"
-msgstr ""
+msgstr "Campos Pesquisar/Ordem"
 
 msgid "Values"
-msgstr ""
+msgstr "Valores"
 
 msgid "%s Id"
-msgstr ""
+msgstr "Id %s"
 
 msgid "%s name"
-msgstr ""
+msgstr "Nome %s"
 
 msgid "Nothing to update."
 msgstr ""
 
 msgid "Associate a resource"
-msgstr ""
+msgstr "Associar um recurso"
 
 msgid "Could not associate the %{resource_name}."
-msgstr ""
+msgstr "Não foi possível associar o %{resource_name}."
 
 msgid "The %{resource_name} has been associated."
-msgstr ""
+msgstr "O %{resource_name} foi associado."
 
 msgid "Disassociate a resource"
-msgstr ""
+msgstr "Desassociar um recurso"
 
 msgid "Could not disassociate the %{resource_name}."
-msgstr ""
+msgstr "Não foi possível desassociar o %{resource_name}."
 
 msgid "The %{resource_name} has been disassociated."
-msgstr ""
+msgstr "O %{resource_name} foi desassociado."
 
 msgid "Path to directory where downloaded content will be saved"
-msgstr ""
+msgstr "Caminho do diretório no qual o conteúdo baixado será salvo"
 
 msgid "The response has been saved to %{path}."
-msgstr ""
+msgstr "A resposta foi salva em %{path}."
 
 msgid "Cannot save file: %s does not exist"
-msgstr ""
+msgstr "Não é possível salvar o arquivo: %s não existe"
 
 msgid "Type"
-msgstr ""
+msgstr "Tipo"
 
 msgid "Set a global parameter"
-msgstr ""
+msgstr "Definir um parâmetro global"
 
 msgid "Created parameter [%{name}] with value [%{value}]."
-msgstr ""
+msgstr "Parâmetro criado [%{name}] com valor [%{value}]."
 
 msgid "Parameter [%{name}] updated to [%{value}]."
-msgstr ""
+msgstr "Parâmetro [%{name}] atualizado para [%{value}]."
 
 msgid "Parameter name"
-msgstr ""
+msgstr "Nome do parâmetro"
 
 msgid "Parameter value"
-msgstr ""
+msgstr "Valor do parâmetro"
 
 msgid "Should the value be hidden"
-msgstr ""
+msgstr "Caso o valor esteja oculto"
 
 msgid "Type of the parameter"
-msgstr ""
+msgstr "Tipo de parâmetro"
 
 msgid "Global parameter [%{name}] deleted."
-msgstr ""
+msgstr "Parâmetro global [%{name}] removido."
 
 msgid "Could not delete the global parameter [%{name}]"
-msgstr ""
+msgstr "Não foi possível remover o parâmetro global  [%{name}]"
 
 msgid "Manipulate global parameters"
-msgstr ""
+msgstr "Manipular parâmetros globais"
 
 msgid "Create compute profile set of values"
-msgstr ""
+msgstr "Criar conjunto de valores do perfil computacional"
 
 msgid "Compute resource attributes"
-msgstr ""
+msgstr "Atributos de recurso de computação"
 
 msgid "Interface parameters, should be comma separated list of values"
 msgstr ""
+"Parâmetros de interface, devem ser uma lista de valores separados por "
+"vírgulas"
 
 msgid "Volume parameters, should be comma separated list of values"
 msgstr ""
+"Parâmetros de volume, devem ser uma lista de valores separados por vírgulas"
 
 msgid "Compute profile attributes are set."
-msgstr ""
+msgstr "Os atributos do perfil computacional estão definidos."
 
 msgid "Could not set the compute profile attributes"
-msgstr ""
+msgstr "Não foi possível definir os atributos do perfil computacional"
 
 msgid "Update compute profile values"
-msgstr ""
+msgstr "Atualizar valores do perfil computacional"
 
 msgid "Compute resource attributes, should be comma separated list of values"
 msgstr ""
+"Atributos de recurso de computação, devem ser uma lista de valores separados "
+"por vírgulas"
 
 msgid "Compute profile attributes updated."
-msgstr ""
+msgstr "Atributos do perfil computacional atualizados."
 
 msgid "Could not update the compute profile attributes"
-msgstr ""
+msgstr "Não foi possível atualizar os atributos do perfil computacional"
 
 msgid "Add interface for Compute Profile"
-msgstr ""
+msgstr "Adicionar interface para o perfil computacional"
 
 msgid "Interface was created."
-msgstr ""
+msgstr "A interface foi criada."
 
 msgid "Could not create interface"
-msgstr ""
+msgstr "Nao foi possível criar a interface"
 
 msgid "Update compute profile interface"
-msgstr ""
+msgstr "Atualizar interface do perfil computacional"
 
 msgid "Interface id"
-msgstr ""
+msgstr "Id da interface"
 
 msgid "Interface was updated."
-msgstr ""
+msgstr "A interface foi atualizada."
 
 msgid "Could not update interface"
-msgstr ""
+msgstr "Não foi possível atualizar a interface"
 
 msgid "Remove compute profile interface"
-msgstr ""
+msgstr "Remover interface do perfil computacional"
 
 msgid "unknown interface id"
-msgstr ""
+msgstr "id de interface desconhecida"
 
 msgid "Interface was removed."
-msgstr ""
+msgstr "A interface foi removida."
 
 msgid "Could not remove interface"
-msgstr ""
+msgstr "Não foi possível remover a interface"
 
 msgid "Add volume for Compute Profile"
-msgstr ""
+msgstr "Adicionar volume para perfil computacional"
 
 msgid "Volume was created."
-msgstr ""
+msgstr "O volume foi criado."
 
 msgid "Could not create volume"
-msgstr ""
+msgstr "Não foi possível criar o volume"
 
 msgid "Update compute profile volume"
-msgstr ""
+msgstr "Atualizar volume do perfil computacional"
 
 msgid "Volume id"
-msgstr ""
+msgstr "Id do volume"
 
 msgid "Volume was updated."
-msgstr ""
+msgstr "O volume foi atualizado."
 
 msgid "Could not update volume"
-msgstr ""
+msgstr "Não foi possível atualizar o volume"
 
 msgid "Remove compute profile volume"
-msgstr ""
+msgstr "Remover o volume do perfil computacional"
 
 msgid "unknown volume id"
-msgstr ""
+msgstr "id de volume desconhecido"
 
 msgid "Volume was removed."
-msgstr ""
+msgstr "O volume foi removido."
 
 msgid "Could not remove volume"
-msgstr ""
+msgstr "Não foi possível remover o volume"
 
 msgid "Compute attributes"
-msgstr ""
+msgstr "Atributos de computação"
 
 msgid "Compute Resource"
-msgstr ""
+msgstr "Recurso de computação"
 
 msgid "VM attributes"
-msgstr ""
+msgstr "Atributos de MV"
 
 msgid "Compute profile created."
-msgstr ""
+msgstr "Perfil computacional criado."
 
 msgid "Could not create a compute profile"
-msgstr ""
+msgstr "Não foi possível criar um perfil computacional"
 
 msgid "Compute profile updated."
-msgstr ""
+msgstr "Perfil computacional atualizado."
 
 msgid "Could not update the compute profile"
-msgstr ""
+msgstr "Não foi possível atualizar o perfil computacional"
 
 msgid "Compute profile deleted."
-msgstr ""
+msgstr "Perfil computacional excluído."
 
 msgid "Could not delete the Compute profile"
-msgstr ""
+msgstr "Não foi possível excluir o perfil computacional"
 
 msgid "Create update and delete Compute profile values"
-msgstr ""
+msgstr "Criar, atualizar e excluir valores de perfil computacional"
 
 msgid "Provider"
-msgstr ""
+msgstr "Fornecedor"
 
 msgid "Description"
-msgstr ""
+msgstr "Descrição"
 
 msgid "Path to a file that contains oVirt public key (For oVirt only)"
 msgstr ""
+"Caminho para um arquivo que contém a chave pública do oVirt (somente para "
+"oVirt)"
 
 msgid "Compute resource created."
-msgstr ""
+msgstr "Recurso de computação criado."
 
 msgid "Could not create the compute resource"
-msgstr ""
+msgstr "Não foi possível criar o recurso de computação"
 
 msgid "Compute resource updated."
-msgstr ""
+msgstr "Recurso de computação atualizado."
 
 msgid "Could not update the compute resource"
-msgstr ""
+msgstr "Não foi possível atualizar o recurso de computação"
 
 msgid "Compute resource deleted."
-msgstr ""
+msgstr "Recurso de computação excluído."
 
 msgid "Could not delete the compute resource"
-msgstr ""
+msgstr "Não foi possível remover o recurso de computação"
 
 msgid "Associate a specific VM"
 msgstr ""
@@ -1075,413 +1106,435 @@ msgid "Network ID"
 msgstr ""
 
 msgid "Uuid"
-msgstr ""
+msgstr "UUID"
 
 msgid "Url"
-msgstr ""
+msgstr "Url"
 
 msgid "Region"
-msgstr ""
+msgstr "Região"
 
 msgid "DNS"
-msgstr ""
+msgstr "DNS"
 
 msgid "State"
-msgstr ""
+msgstr "Estado"
 
 msgid "DNS Name"
-msgstr ""
+msgstr "Nome DNS"
 
 msgid "Virtualization Type"
-msgstr ""
+msgstr "Tipo de virtualização"
 
 msgid "Volume size in GB, integer value"
-msgstr ""
+msgstr "Tamanho do volume em GB, valor inteiro"
 
 msgid "Project"
-msgstr ""
+msgstr "Projeto"
 
 msgid "Email"
-msgstr ""
+msgstr "E-mail"
 
 msgid "Key Path"
-msgstr ""
+msgstr "Caminho da chave"
 
 msgid "Zone"
-msgstr ""
+msgstr "Zona"
 
 msgid "Machine Type"
-msgstr ""
+msgstr "Tipo de máquina"
 
 msgid "Status"
-msgstr ""
+msgstr "Status"
 
 msgid "Number of CPUs"
-msgstr ""
+msgstr "Número de CPUs"
 
 msgid "String, amount of memory, value in bytes"
-msgstr ""
+msgstr "Cadeia de caracteres, quantidade de memória, valor em bytes"
 
 msgid "Possible values: %{modes}"
-msgstr ""
+msgstr "Valores possíveis: %{modes}"
 
 msgid "Device names to specify the boot order"
 msgstr ""
 
 msgid "Boolean (expressed as 0 or 1), whether to start the machine or not"
-msgstr ""
+msgstr "Booleano (expresso como 0 ou 1), para iniciar a máquina ou não"
 
 msgid "Name of interface according to type"
-msgstr ""
+msgstr "Nome da interface de acordo com o tipo"
 
 msgid "Libvirt instance network, e.g. default"
-msgstr ""
+msgstr "Rede de instâncias Libvirt, p. ex., predefinida"
 
 msgid "One of available storage pools"
-msgstr ""
+msgstr "Um dos pools de armazenamento disponíveis"
 
 msgid "String value, e.g. 10G"
-msgstr ""
+msgstr "Valor da cadeia de caracteres, p.ex., 10G"
 
 msgid "Initial allocation, e.g. 0G"
-msgstr ""
+msgstr "Alocação inicial, p. ex., 0G"
 
 msgid "CPUs"
-msgstr ""
+msgstr "CPUs"
 
 msgid "Memory"
-msgstr ""
+msgstr "Memória"
 
 msgid "OS Type"
-msgstr ""
+msgstr "Tipo de SO"
 
 msgid "Domain Type"
-msgstr ""
+msgstr "Tipo de domínio"
 
 msgid "Persistent"
-msgstr ""
+msgstr "Persistente"
 
 msgid "Boot order"
-msgstr ""
+msgstr "Ordem de boot"
 
 msgid "Tenant"
-msgstr ""
+msgstr "Locatário"
 
 msgid "Project domain name"
-msgstr ""
+msgstr "Nome de domínio do projeto"
 
 msgid "Project domain ID"
-msgstr ""
+msgstr "ID do domínio do projeto"
 
 msgid "Tenant Id"
-msgstr ""
+msgstr "Id de locatário"
 
 msgid "ID or name of cluster to use"
-msgstr ""
+msgstr "ID ou nome do cluster a ser utilizado"
 
 msgid "Hardware profile to use"
-msgstr ""
+msgstr "Perfil de hardware a ser usado"
 
 msgid "Integer value, number of cores"
-msgstr ""
+msgstr "Valor inteiro, número de núcleos"
 
 msgid "Integer value, number of sockets"
-msgstr ""
+msgstr "Valor inteiro, número de sockets"
 
 msgid "Amount of memory, integer value in bytes"
-msgstr ""
+msgstr "Quantidade de memória, valor inteiro em bytes"
 
 msgid "Boolean, set 1 to high availability"
 msgstr ""
 
 msgid "Possible values: %s. Not usable if display type is SPICE."
-msgstr ""
+msgstr "Valores possíveis: %s. Não utilizável se o tipo de exibição for SPICE."
 
 msgid "Boolean, set 1 to start the vm"
-msgstr ""
+msgstr "Booleano, definir 1 para iniciar a mv"
 
 msgid "Compute name, e.g. eth0"
-msgstr ""
+msgstr "Nome de computação, p. ex., eth0"
 
 msgid "Select one of available networks for a cluster, must be an ID or a name"
 msgstr ""
+"Selecione uma das redes disponíveis para um cluster, deve ser uma ID ou um "
+"nome"
 
 msgid "Interface type"
-msgstr ""
+msgstr "Tipo de interface"
 
 msgid "Vnic Profile"
 msgstr ""
 
 msgid "ID or name of storage domain"
-msgstr ""
+msgstr "ID ou nome de domínio de armazenamento"
 
 msgid "Boolean, set 1 for bootable, only one volume can be bootable"
 msgstr ""
+"Booleano, definir 1 para inicializável, somente um volume pode ser "
+"inicializável"
 
 msgid "Boolean, set 1 to preallocate"
-msgstr ""
+msgstr "Booleano, definir 1 para pré-alocar"
 
 msgid "Boolean, set 1 to wipe disk after delete"
-msgstr ""
+msgstr "Booleano, definir 1 para limpar o disco após excluir"
 
 msgid "Disk interface name, must be ide, virto or virto_scsi"
-msgstr ""
+msgstr "Nome da interface do disco, deve ser ide, virto ou virto_scsi"
 
 msgid "Datacenter"
-msgstr ""
+msgstr "Datacenter"
 
 msgid "Cores"
-msgstr ""
+msgstr "Núcleos"
 
 msgid "Cluster ID from VMware"
-msgstr ""
+msgstr "ID do cluster do VMware"
 
 msgid "Number of cores per socket (applicable to hardware versions < 10 only)"
 msgstr ""
+"Número de núcleos por soquete (aplicável somente para versões de hardware "
+"inferiores a 10)"
 
 msgid "CPU count"
-msgstr ""
+msgstr "Contagem de CPU"
 
 msgid "Integer number, amount of memory in MB"
-msgstr ""
+msgstr "Número inteiro, quantidade de memória em MB"
 
 msgid "Path to folder"
-msgstr ""
+msgstr "Caminho da pasta"
 
 msgid "Resource Pool ID from VMware"
-msgstr ""
+msgstr "ID de pool de recurso do VMware"
 
 msgid "Guest OS ID form VMware"
-msgstr ""
+msgstr "ID de SO convidado do VMware"
 
 msgid "Hardware version ID from VMware"
-msgstr ""
+msgstr "ID da versão de hardware do VMware"
 
 msgid "Must be a 1 or 0, lets you add memory resources while the machine is on"
 msgstr ""
+"Deve ser um 1 ou 0, permite que você adicione recursos de memória enquanto a "
+"máquina está ativa"
 
 msgid "Must be a 1 or 0, lets you add CPU resources while the machine is on"
 msgstr ""
+"Deve ser um 1 ou 0, permite que você adicione recursos de CPU enquanto a "
+"máquina está atva"
 
 msgid "Must be a 1 or 0, Add a CD-ROM drive to the virtual machine"
-msgstr ""
+msgstr "Deve ser um 1 ou 0, adicione um drive de CD-ROM na máquina virtual"
 
 msgid "Annotation Notes"
-msgstr ""
+msgstr "Anotações de notas"
 
 msgid "List with SCSI controllers definitions"
-msgstr ""
+msgstr "Lista com as definições dos controladores SCSI"
 
 msgid "ID of the controller from VMware"
-msgstr ""
+msgstr "ID do controlador do VMware"
 
 msgid "Key of the controller (e.g. 1000)"
-msgstr ""
+msgstr "Chave do controlador (p. ex., 1000)"
 
 msgid "Must be a 1 or 0, whether to start the machine or not"
-msgstr ""
+msgstr "Deve ser um 1 ou 0, para iniciar a máquina ou não"
 
 msgid "Storage Pod ID from VMware"
-msgstr ""
+msgstr "ID do pod de armazenamento do VMware"
 
 msgid "Datastore ID from VMware"
-msgstr ""
+msgstr "ID do datastore do VMware"
 
 msgid "Integer number, volume size in GB"
-msgstr ""
+msgstr "Número inteiro, tamanho do volume em GB"
 
 msgid "Type of the network adapter, for example one of:"
-msgstr ""
+msgstr "Tipo do adaptador de rede, por exemplo um de:"
 
 msgid ""
 "See documentation center for your version of vSphere to find more details "
 "about available adapter types:"
 msgstr ""
+"Consulte o centro de documentação de sua versão do vSphere para encontrar "
+"mais detalhes sobre os tipos de adaptadores disponíveis:"
 
 msgid "Network ID or Network Name from VMware"
-msgstr ""
+msgstr "ID ou nome de rede do VMware"
 
 msgid "Power Status"
-msgstr ""
+msgstr "Estado de energia"
 
 msgid "Host Name"
-msgstr ""
+msgstr "Nome do host"
 
 msgid "Connection Status"
-msgstr ""
+msgstr "Estado da conexão"
 
 msgid "Hardware Version"
-msgstr ""
+msgstr "Versão do hardware"
 
 msgid "Path"
-msgstr ""
+msgstr "Caminho"
 
 msgid "Operating System"
-msgstr ""
+msgstr "Sistema Operacional"
 
 msgid "Host"
-msgstr ""
+msgstr "Máquina"
 
 msgid "Last report"
-msgstr ""
+msgstr "Último relatório"
 
 msgid "Origin"
-msgstr ""
+msgstr "Origem"
 
 msgid "Applied"
-msgstr ""
+msgstr "Aplicado"
 
 msgid "Restarted"
-msgstr ""
+msgstr "Reiniciado"
 
 msgid "Failed"
-msgstr ""
+msgstr "Falhou"
 
 msgid "Restart Failures"
-msgstr ""
+msgstr "Reiniciar Falhas"
 
 msgid "Skipped"
-msgstr ""
+msgstr "Ignorado"
 
 msgid "Pending"
-msgstr ""
+msgstr "Pendente"
 
 msgid "Reported at"
-msgstr ""
+msgstr "Relatar em"
 
 msgid "Report status"
-msgstr ""
+msgstr "Estado do relatório"
 
 msgid "Report metrics"
-msgstr ""
+msgstr "Medição de Relatório"
 
 msgid "config_retrieval"
-msgstr ""
+msgstr "config_retrieval"
 
 msgid "exec"
-msgstr ""
+msgstr "exec"
 
 msgid "file"
-msgstr ""
+msgstr "arquivo"
 
 msgid "package"
-msgstr ""
+msgstr "pacote"
 
 msgid "service"
-msgstr ""
+msgstr "serviço"
 
 msgid "user"
-msgstr ""
+msgstr "usuário"
 
 msgid "yumrepo"
-msgstr ""
+msgstr "yumrepo"
 
 msgid "filebucket"
-msgstr ""
+msgstr "filebucket"
 
 msgid "cron"
-msgstr ""
+msgstr "cron"
 
 msgid "total"
-msgstr ""
+msgstr "total"
 
 msgid "Logs"
-msgstr ""
+msgstr "Logs"
 
 msgid "Resource"
-msgstr ""
+msgstr "Recurso"
 
 msgid "Message"
-msgstr ""
+msgstr "Mensagem"
 
 msgid "Report has been deleted."
-msgstr ""
+msgstr "O relatório foi excluído."
 
 msgid "Could not delete the report"
-msgstr ""
+msgstr "Não foi possível remover o relatório"
 
 msgid "Use the default organization and/or location from the server"
-msgstr ""
+msgstr "Usar a localização e/ou organização padrão do servidor "
 
 msgid "DNS Id"
-msgstr ""
+msgstr "ID de DNS "
 
 msgid "Domain [%{name}] created."
-msgstr ""
+msgstr "Domínio [%{name}] criado."
 
 msgid "Could not create the domain"
-msgstr ""
+msgstr "Não foi possível criar o domínio"
 
 msgid "Full name describing the domain"
-msgstr ""
+msgstr "Nome completo descrevendo o domínio"
 
 msgid "Domain [%{name}] updated."
-msgstr ""
+msgstr "Domínio [%{name}] atualizado."
 
 msgid "Could not update the domain"
-msgstr ""
+msgstr "Não foi possível atualizar o domínio"
 
 msgid "Domain [%{name}] deleted."
-msgstr ""
+msgstr "Domínio [%{name}] excluído."
 
 msgid "Could not delete the domain"
-msgstr ""
+msgstr "Não foi possível remover o domínio"
 
 msgid "Create or update parameter for a domain"
-msgstr ""
+msgstr "Criar ou atualizar parâmetros para um domínio"
 
 msgid "Domain parameter updated"
-msgstr ""
+msgstr "Parâmetro do domínio atualizado"
 
 msgid "New domain parameter created"
-msgstr ""
+msgstr "Novo parâmetro de domínio criado."
 
 msgid "Could not set domain parameter"
-msgstr ""
+msgstr "Não foi possível definir parâmetro de domínio"
 
 msgid "Delete parameter for a domain"
-msgstr ""
+msgstr "Excluir parâmetro para um domínio"
 
 msgid "Domain parameter deleted."
-msgstr ""
+msgstr "Parâmetro do domínio excluído."
 
 msgid "Redirection of API call detected."
-msgstr ""
+msgstr "Redirecionamento de chamada de API detectado."
 
 msgid "It seems hammer is configured to use HTTP and the server prefers HTTPS."
 msgstr ""
+"Parece que Hammer está configurado para usar HTTP e o servidor prefere HTTPS."
 
 msgid "Update your server url configuration."
-msgstr ""
+msgstr "Atualizar a configuração de URL do servidor."
 
 msgid ""
 "You can set 'follow_redirects' to one of :default or :always to enable "
 "redirects following."
 msgstr ""
+"Você pode definir 'follow_redirects' para um de :default ou :always para "
+"ativar redirecionamentos subsequentes."
 
 msgid "Forbidden - server refused to process the request."
-msgstr ""
+msgstr "Proibido - servidor recusou o processamento da requisição."
 
 msgid "The following configuration option were used for the SSL connection:"
-msgstr ""
+msgstr "A opção de configuração a seguir foi usada para a conexão SSL:"
 
 msgid ""
 "Make sure the location contains an unexpired and valid CA certificate for %s."
 msgstr ""
+"Certifique-se de que o local contenha um certificado CA atual e válido para "
+"%s."
 
 msgid ""
 "You can use hammer to fetch the CA certificate from the server. Be aware "
 "that hammer cannot verify whether the certificate is correct and you should "
 "verify its authenticity after downloading it."
 msgstr ""
+"Você pode usar o martelo para buscar o certificado CA do servidor. O martelo "
+"não pode verificar se o certificado está correto e você deve verificar a "
+"autenticidade após fazer o download dele."
 
 msgid "Download the certificate as follows:"
-msgstr ""
+msgstr "Faça download do certificado da seguinte forma:"
 
 msgid ""
 "Make sure you configured the correct URL and have the server's CA "
 "certificate installed on your system."
 msgstr ""
+"Certifique-se de que você configurou o URL correto e de que o certificado CA "
+"do servidor está instalado no sistema."
 
 msgid "Server misconfiguration detected"
 msgstr ""
@@ -1499,67 +1552,67 @@ msgid "have you run %s (for Kerberos)?"
 msgstr ""
 
 msgid "is the server down?"
-msgstr ""
+msgstr "o servidor está desligado?"
 
 msgid "View and manage user group's external user groups"
-msgstr ""
+msgstr "Visualizar e gerenciar grupos de usuários externos do grupo de usuário"
 
 msgid "Auth source"
-msgstr ""
+msgstr "Fonte de autenticação"
 
 msgid "Refresh external user group"
-msgstr ""
+msgstr "Atualizar grupo de usuário externo"
 
 msgid "External user group created."
-msgstr ""
+msgstr "Grupo de usuário externo criado."
 
 msgid "Could not create external user group"
-msgstr ""
+msgstr "Não foi possível criar grupo de usuário externo"
 
 msgid "External user group updated."
-msgstr ""
+msgstr "Grupo de usuário externo atualizado."
 
 msgid "Could not update external user group"
-msgstr ""
+msgstr "Não foi possível atualizar grupo de usuário externo"
 
 msgid "External user group deleted."
-msgstr ""
+msgstr "Grupo de usuários externo excluído."
 
 msgid "Could not delete the external user group"
-msgstr ""
+msgstr "Não foi possível excluir o grupo de usuário externo"
 
 msgid "Fact"
-msgstr ""
+msgstr "Fato"
 
 msgid "Resource type"
-msgstr ""
+msgstr "Tipo de Recurso"
 
 msgid "Search"
-msgstr ""
+msgstr "Pesquisar"
 
 msgid "Unlimited?"
-msgstr ""
+msgstr "Ilimitado?"
 
 msgid "Override?"
-msgstr ""
+msgstr "Substituir?"
 
 msgid "Role"
-msgstr ""
+msgstr "Função"
 
 msgid "Permissions"
-msgstr ""
+msgstr "Permissões"
 
 msgid "(Miscellaneous)"
-msgstr ""
+msgstr "(Diversos)"
 
 msgid "none"
-msgstr ""
+msgstr "nenhum"
 
 msgid "Organizations and locations can be set only for overriding filters."
-msgstr ""
+msgstr "Organizações e locais só podem ser definidos para substituir filtros."
 
 msgid "Overriding organizations and locations"
-msgstr ""
+msgstr "Substituição de organizações e locais"
 
 msgid ""
 "Filters inherit organizations and locations from its role by default. This "
@@ -1567,750 +1620,767 @@ msgid ""
 "%{org_opts} and %{loc_opts} are applicable only when the override flag is "
 "set."
 msgstr ""
+"Os filtros herdam organizações e locais da sua função por padrão. Esse "
+"comportamento pode ser alterado configurando %{condition}.%{wsp}Portanto, as "
+"opções %{org_opts} e %{loc_opts} são aplicáveis somente quando o sinalizador "
+"de substituição está definido."
 
 msgid "Permission filter for [%<resource_type_label>s] created."
 msgstr ""
 
 msgid "Could not create the permission filter"
-msgstr ""
+msgstr "Não foi possível criar o filtro de permissão"
 
 msgid "Permission filter for [%<resource_type_label>s] updated."
 msgstr ""
 
 msgid "Could not update the permission filter"
-msgstr ""
+msgstr "Não foi possível atualizar o filtro de permissão"
 
 msgid "Permission filter deleted."
-msgstr ""
+msgstr "Filtro de permissão excluído."
 
 msgid "Could not delete the permission filter"
-msgstr ""
+msgstr "Não foi possível remover o filtro de permissão"
 
 msgid "Host Group"
-msgstr ""
+msgstr "Grupo de Host"
 
 msgid "MAC"
-msgstr ""
+msgstr "MAC"
 
 msgid "Global Status"
-msgstr ""
+msgstr "Status global"
 
 msgid "Organization"
-msgstr ""
+msgstr "Organização"
 
 msgid "Location"
-msgstr ""
+msgstr "Local"
 
 msgid "Additional Information"
-msgstr ""
+msgstr "Adicionar informação"
 
 msgid "Bare Metal"
-msgstr ""
+msgstr "Puro metal"
 
 msgid "UUID"
-msgstr ""
+msgstr "UUID"
 
 msgid "Compute Profile"
-msgstr ""
+msgstr "Perfil Computacional"
 
 msgid "Cert name"
-msgstr ""
+msgstr "Nome do Certificado"
 
 msgid "Token"
-msgstr ""
+msgstr "Token"
 
 msgid "Managed"
-msgstr ""
+msgstr "Gerenciou"
 
 msgid "Installed at"
-msgstr ""
+msgstr "Instalado em"
 
 msgid "Uptime (seconds)"
-msgstr ""
+msgstr "Tempo de execução (segundos)"
 
 msgid "Build Status"
-msgstr ""
+msgstr "Status de compilação"
 
 msgid "Network"
-msgstr ""
+msgstr "Rede"
 
 msgid "IPv4 address"
-msgstr ""
+msgstr "Endereço IPv4"
 
 msgid "IPv6 address"
-msgstr ""
+msgstr "Endereço IPv6"
 
 msgid "Subnet ipv4"
-msgstr ""
+msgstr "Sub-rede IPv4"
 
 msgid "Subnet ipv6"
-msgstr ""
+msgstr "Sub-rede IPv6"
 
 msgid "Domain"
-msgstr ""
+msgstr "Domínio"
 
 msgid "Service provider"
-msgstr ""
+msgstr "Provedor de servico  "
 
 msgid "SP Name"
-msgstr ""
+msgstr "Nome do SP"
 
 msgid "SP IP"
-msgstr ""
+msgstr "SP IP"
 
 msgid "SP MAC"
-msgstr ""
+msgstr "SP MAC"
 
 msgid "SP Subnet"
-msgstr ""
+msgstr "SP Subnet"
 
 msgid "Network interfaces"
-msgstr ""
+msgstr "Interfaces da rede"
 
 msgid "Identifier"
-msgstr ""
+msgstr "Identificador"
 
 msgid "MAC address"
-msgstr ""
+msgstr "Endereço MAC"
 
 msgid "FQDN"
-msgstr ""
+msgstr "FQDN"
 
 msgid "Operating system"
-msgstr ""
+msgstr "Sistema operacional"
 
 msgid "Architecture"
-msgstr ""
+msgstr "Arquitetura"
 
 msgid "Build"
-msgstr ""
+msgstr "Construir"
 
 msgid "Medium"
-msgstr ""
+msgstr "Médio"
 
 msgid "Partition Table"
-msgstr ""
+msgstr "Tabela de Partição"
 
 msgid "PXE Loader"
-msgstr ""
+msgstr "Carregador PXE"
 
 msgid "Custom partition table"
-msgstr ""
+msgstr "Tabela de partição personalizada "
 
 msgid "Image"
-msgstr ""
+msgstr "Imagem"
 
 msgid "Image file"
-msgstr ""
+msgstr "Arquivo de Imagem"
 
 msgid "Use image"
-msgstr ""
+msgstr "Usar imagem"
 
 msgid "Additional info"
-msgstr ""
+msgstr "Informação adicional "
 
 msgid "Owner"
-msgstr ""
+msgstr "Proprietário"
 
 msgid "Enabled"
-msgstr ""
+msgstr "Ativado"
 
 msgid "Model"
-msgstr ""
+msgstr "Modelar"
 
 msgid "Comment"
-msgstr ""
+msgstr "Comentário"
 
 msgid "Power"
-msgstr ""
+msgstr "Energia"
 
 msgid "Host id"
-msgstr ""
+msgstr "ID de host"
 
 msgid "Host name"
-msgstr ""
+msgstr "Nome do host"
 
 msgid ""
 "%{reports} command is deprecated and will be removed in one of the future "
 "versions. Please use %{config_reports} command instead."
 msgstr ""
+"%{reports} está preterido e será removido em uma das versões futuras. Use o "
+"comando %{config_reports}."
 
 msgid "Host created."
-msgstr ""
+msgstr "Host criado."
 
 msgid "Could not create the host"
-msgstr ""
+msgstr "Não foi possível criar o host"
 
 msgid "Host updated."
-msgstr ""
+msgstr "Host atualizado."
 
 msgid "Could not update the host"
-msgstr ""
+msgstr "Não foi possível atualizar o host"
 
 msgid "Host deleted."
-msgstr ""
+msgstr "Host excluído."
 
 msgid "Could not delete the host"
-msgstr ""
+msgstr "Não foi possível remover o host"
 
 msgid "Create or append a parameter for a host"
-msgstr ""
+msgstr "Criar ou acrescentar um parâmetro para um host"
 
 msgid "Host parameter updated"
-msgstr ""
+msgstr "Host do parâmetro atualizado"
 
 msgid "New host parameter created"
-msgstr ""
+msgstr "Novo parâmetro do host criado"
 
 msgid "Could not set host parameter"
-msgstr ""
+msgstr "Não foi possível definir parâmetro do host"
 
 msgid "Delete parameter for a host"
-msgstr ""
+msgstr "Excluir parâmetro para um host"
 
 msgid "Host parameter deleted."
-msgstr ""
+msgstr "Parâmetro de host excluído."
 
 msgid "Power a host on"
-msgstr ""
+msgstr "Ligar um host"
 
 msgid "The host is starting."
-msgstr ""
+msgstr "O host está iniciando"
 
 msgid "Force turning off a host"
-msgstr ""
+msgstr "Forçar desligar um host"
 
 msgid "Power a host off"
-msgstr ""
+msgstr "Desligar um host"
 
 msgid "Power off forced"
-msgstr ""
+msgstr "Desligamento forçado"
 
 msgid "Powering the host off"
-msgstr ""
+msgstr "Desligando o host"
 
 msgid "Reboot a host"
-msgstr ""
+msgstr "Reinicializar o host"
 
 msgid "Host reboot started."
-msgstr ""
+msgstr "Reinicialização do host iniciou."
 
 msgid "Reset a host"
-msgstr ""
+msgstr "Redefinir um host"
 
 msgid "Host reset started."
-msgstr ""
+msgstr "Reinicialização do host iniciada."
 
 msgid "Failed to reset the host"
-msgstr ""
+msgstr "Falha ao restabelecer o host"
 
 msgid "Rebuild orchestration related configurations for host"
-msgstr ""
+msgstr "Recompilar configurações relacionadas à orquestração para o host"
 
 msgid "Configuration successfully rebuilt."
-msgstr ""
+msgstr "Configuração reconstruído com êxito."
 
 msgid "Dump host's ENC YAML"
-msgstr ""
+msgstr "YAML ENC do host de despejo"
 
 msgid "Could not retrieve ENC values of the host"
-msgstr ""
+msgstr "Não foi possível recuperar os valores ENC para o host"
 
 msgid "Disassociate a host"
-msgstr ""
+msgstr "Desassociar um host"
 
 msgid "The host has been disassociated from VM."
-msgstr ""
+msgstr "O host foi desassociada da MV"
 
 msgid "Failed to disassociated host from VM"
-msgstr ""
+msgstr "Falha ao desassociar host da VM"
 
 msgid "The host is booting."
-msgstr ""
+msgstr "O host está inicializando."
 
 msgid "Failed to boot the host from device"
-msgstr ""
+msgstr "Falha ao inicializar o host do dispositivo"
 
 msgid "Root password"
-msgstr ""
+msgstr "Senha raiz"
 
 msgid "Subnet IPv6 name"
-msgstr ""
+msgstr "Nome da sub-rede IPv6"
 
 msgid "Name of parent hostgroup"
-msgstr ""
+msgstr "Nome do hostgroup pai"
 
 msgid "Title of parent hostgroup"
 msgstr ""
 
 msgid "Enter the root password for the host group:"
-msgstr ""
+msgstr "Insira a senha do root para o grupo host"
 
 msgid "Title"
-msgstr ""
+msgstr "Título"
 
 msgid "Parent"
-msgstr ""
+msgstr "Pai"
 
 msgid "Realm"
-msgstr ""
+msgstr "Realm"
 
 msgid "Hostgroup created."
-msgstr ""
+msgstr "Grupo de hosts criado."
 
 msgid "Could not create the hostgroup"
-msgstr ""
+msgstr "Não foi possível criar um hostgroup"
 
 msgid "Hostgroup updated."
-msgstr ""
+msgstr "Grupo de hosts atualizado."
 
 msgid "Could not update the hostgroup"
-msgstr ""
+msgstr "Não foi possível atualizar o hostgroup"
 
 msgid "Hostgroup deleted."
-msgstr ""
+msgstr "Grupo de hosts excluído."
 
 msgid "Could not delete the hostgroup"
-msgstr ""
+msgstr "Não foi possível remover o hostgroup"
 
 msgid "Create or update parameter for a hostgroup"
-msgstr ""
+msgstr "Criar ou atualizar parâmetro para um grupo de hosts"
 
 msgid "Hostgroup parameter updated"
-msgstr ""
+msgstr "Parâmetro do hostgroup atualizado"
 
 msgid "New hostgroup parameter created"
-msgstr ""
+msgstr "Novo parâmetro do hostgroup criado"
 
 msgid "Could not set hostgroup parameter"
-msgstr ""
+msgstr "Não foi possível definir parâmetro do hostgroup"
 
 msgid "Delete parameter for a hostgroup"
-msgstr ""
+msgstr "Excluir parâmetro para um grupo de hosts"
 
 msgid "Hostgroup parameter deleted."
-msgstr ""
+msgstr "Parâmetro do grupo de hosts excluído."
 
 msgid "Could not rebuild configuration"
-msgstr ""
+msgstr "Não foi possível recompilar a configuração"
 
 msgid "ID of the owner"
-msgstr ""
+msgstr "ID do Proprietário"
 
 msgid "Login of the owner"
-msgstr ""
+msgstr "Login do Proprietário"
 
 msgid ""
 "Required if host is managed and value is not inherited from host group or "
 "default password in settings"
 msgstr ""
+"Obrigatório se o host for gerenciado e o valor não for herdado do grupo de "
+"hosts ou da senha padrão nas configurações "
 
 msgid "Replaces with new host parameters"
-msgstr ""
+msgstr "Substitui por novos parâmetros de host"
 
 msgid "Replaces with new host parameters (with type support)"
-msgstr ""
+msgstr "Substitui por novos parâmetros de host (com suporte a tipo)"
 
 msgid "Volume parameters"
-msgstr ""
+msgstr "Parâmetros de volume"
 
 msgid "Interface parameters"
-msgstr ""
+msgstr "Parâmetros de interface"
 
 msgid "Enter the root password for the host:"
-msgstr ""
+msgstr "Digite a senha root para o host:"
 
 msgid "Username"
-msgstr ""
+msgstr "Nome do usuário"
 
 msgid "URL"
-msgstr ""
+msgstr "URL"
 
 msgid "Http proxy created."
-msgstr ""
+msgstr "Proxy http criado."
 
 msgid "Could not create the http proxy"
-msgstr ""
+msgstr "Não foi possível criar o proxy http"
 
 msgid "Http proxy deleted."
-msgstr ""
+msgstr "Proxy http excluído."
 
 msgid "Could not delete the http proxy"
-msgstr ""
+msgstr "Não foi possível excluir o proxy http"
 
 msgid "Http proxy updated."
-msgstr ""
+msgstr "Proxy http atualizado."
 
 msgid "Could not update the http proxy"
-msgstr ""
+msgstr "Não foi possível atualizar o proxy http"
 
 msgid "Architecture name"
-msgstr ""
+msgstr "Arquitetura de nome"
 
 msgid "Compute resource name"
-msgstr ""
+msgstr "Nome de recurso de computação"
 
 msgid "Compute profile name"
-msgstr ""
+msgstr "Nome do perfil computacional"
 
 msgid "Domain name"
-msgstr ""
+msgstr "Nome do domínio"
 
 msgid "Hostgroup title"
-msgstr ""
+msgstr "Titulo do grupo host"
 
 msgid "Set the current location context for the request"
-msgstr ""
+msgstr "Definir o contexto do local atual para a solicitação"
 
 msgid "Medium name"
-msgstr ""
+msgstr "Nome do meio"
 
 msgid "Model name"
-msgstr ""
+msgstr "Nome do modelo"
 
 msgid "Set the current organization context for the request"
-msgstr ""
+msgstr "Definir o contexto da organização atual para a solicitação"
 
 msgid "Operating system title"
-msgstr ""
+msgstr "Título do sistema operacional"
 
 msgid "Partition table name"
-msgstr ""
+msgstr "Nome da tabela de partição"
 
 msgid "Proxy name"
-msgstr ""
+msgstr "Nome do Proxy"
 
 msgid "User role name"
-msgstr ""
+msgstr "Nome da função de usuário"
 
 msgid "Setting name"
-msgstr ""
+msgstr "Nome da configuracao "
 
 msgid "Subnet name"
-msgstr ""
+msgstr "Nome da subrede"
 
 msgid "User's login to search by"
-msgstr ""
+msgstr "Login de usuário a pesquisar"
 
 msgid "Common parameter name"
-msgstr ""
+msgstr "Nome do parâmetro comum"
 
 msgid "Name to search by"
-msgstr ""
+msgstr "Nome a ser pesquisado"
 
 msgid "Missing options to search %s"
-msgstr ""
+msgstr "Opções ausentes para pesquisar %s "
 
 msgid "one of %s not found."
-msgstr ""
+msgstr "um dos %s não foi encontrado."
 
 msgid "Found more than one %s."
-msgstr ""
+msgstr "Foi localizado mais de um %s."
 
 msgid "Missing options to search %s."
-msgstr ""
+msgstr "Opções ausentes para pesquisar %s ."
 
 msgid "View and manage compute resource's images"
-msgstr ""
+msgstr "Visualizar e gerenciar as imagens de recurso de computação"
 
 msgid "User Data"
-msgstr ""
+msgstr "Dados do usuário"
 
 msgid "IAM role"
-msgstr ""
+msgstr "Função IAM"
 
 msgid "Show images available for addition"
-msgstr ""
+msgstr "Exibir imagens disponíveis para a adição"
 
 msgid "Image created."
-msgstr ""
+msgstr "Imagem criad."
 
 msgid "Could not create the image"
-msgstr ""
+msgstr "Não foi possível criar imagem"
 
 msgid "Image updated."
-msgstr ""
+msgstr "Imagem atualizada."
 
 msgid "Could not update the image"
-msgstr ""
+msgstr "Não foi possível atualizar a imagem"
 
 msgid "Image deleted."
-msgstr ""
+msgstr "Imagem excluída."
 
 msgid "Could not delete the image"
-msgstr ""
+msgstr "Não foi possível remover a imagem"
 
 msgid "View and manage host's network interfaces"
-msgstr ""
+msgstr "Ver e gerir as interfaces de rede do host's"
 
 msgid "primary"
-msgstr ""
+msgstr "primário"
 
 msgid "provision"
-msgstr ""
+msgstr "provisao "
 
 msgid "IP address"
-msgstr ""
+msgstr "Endereco de IP"
 
 msgid "DNS name"
-msgstr ""
+msgstr "Nome do DNS"
 
 msgid "Subnet"
-msgstr ""
+msgstr "Suberede"
 
 msgid "Primary"
-msgstr ""
+msgstr "Primário"
 
 msgid "Provision"
-msgstr ""
+msgstr "Provisão"
 
 msgid "Virtual"
-msgstr ""
+msgstr "Virtual"
 
 msgid "Tag"
-msgstr ""
+msgstr "Marca"
 
 msgid "Attached to"
-msgstr ""
+msgstr "Anexado para"
 
 msgid "BMC"
-msgstr ""
+msgstr "BMC"
 
 msgid "Bond"
-msgstr ""
+msgstr "Bond"
 
 msgid "Mode"
-msgstr ""
+msgstr "Modo"
 
 msgid "Attached devices"
-msgstr ""
+msgstr "Dispositivos conectados "
 
 msgid "Bond options"
-msgstr ""
+msgstr "Opcoes de Bond"
 
 msgid ""
 "Should this interface be used for constructing the FQDN of the host? Each "
 "managed hosts needs to have one primary interface"
 msgstr ""
+"Esta interface deve ser usada para a construção do FQDN do host? Todo host "
+"gerenciado precisa ter uma interface primária."
 
 msgid ""
 "Should this interface be used for TFTP of PXELinux (or SSH for image-based "
 "hosts)? Each managed hosts needs to have one provision interface"
 msgstr ""
+"Esta interface deve ser usada para TFTP do PXELinux (ou SSH para hosts "
+"baseados em imagem)? Todo host gerenciado precisa ter uma interface de "
+"provisão."
 
 msgid "Interface created."
-msgstr ""
+msgstr "Interface criada."
 
 msgid "Could not create the interface"
-msgstr ""
+msgstr "Nao foi possível criar a interface"
 
 msgid "Compute resource specific attributes"
-msgstr ""
+msgstr "Atributos específicos de recursos de computação"
 
 msgid "Interface updated."
-msgstr ""
+msgstr "Interface atualizada."
 
 msgid "Could not update the interface"
-msgstr ""
+msgstr "Não foi possível atualizar a interface"
 
 msgid "Interface deleted."
-msgstr ""
+msgstr "Interface excluída."
 
 msgid "Could not delete the interface"
-msgstr ""
+msgstr "Não foi possível excluir a interface"
 
 msgid "Location numeric id to search by"
-msgstr ""
+msgstr "ID númerica da localização a pesquisar"
 
 msgid "Organizations"
-msgstr ""
+msgstr "Organizações"
 
 msgid "Location created."
-msgstr ""
+msgstr "Localização criada."
 
 msgid "Could not create the location"
-msgstr ""
+msgstr "Não foi possível criar a localização"
 
 msgid "Location updated."
-msgstr ""
+msgstr "Localização atualizada."
 
 msgid "Could not update the location"
-msgstr ""
+msgstr "Não foi possível atualizar a localização"
 
 msgid "Location deleted."
-msgstr ""
+msgstr "Localização excluída."
 
 msgid "Could not delete the location"
-msgstr ""
+msgstr "Não foi possível remover a localização"
 
 msgid "Create or update parameter for a location"
-msgstr ""
+msgstr "Criar ou atualizar parâmetros para um local"
 
 msgid "Parameter [%{name}] updated to value [%{value}]"
-msgstr ""
+msgstr "Parâmetro [%{name}] atualizado para o valor [%{value}]"
 
 msgid "Parameter [%{name}] created with value [%{value}]"
-msgstr ""
+msgstr "Parâmetro [%{name}] criado com o valor [%{value}]"
 
 msgid "Could not set location parameter"
-msgstr ""
+msgstr "Não foi possível definir parâmetro de localização"
 
 msgid "Delete parameter for a location"
-msgstr ""
+msgstr "Excluir parâmetro para um local"
 
 msgid "Parameter [%{name}] deleted."
-msgstr ""
+msgstr "Parâmetro [%{name}] excluído."
 
 msgid "Could not delete location parameter"
-msgstr ""
+msgstr "Não foi possível remover os parâmetros da localização "
 
 msgid "Subscription type"
-msgstr ""
+msgstr "Tipo de subscrição"
 
 msgid "OS Family"
-msgstr ""
+msgstr "Família SO"
 
 msgid "Installation medium created."
-msgstr ""
+msgstr "Mídia de instalação criada."
 
 msgid "Could not create the installation medium"
-msgstr ""
+msgstr "Não foi possível criar um meio de instalação"
 
 msgid "Installation medium updated."
-msgstr ""
+msgstr "Mídia de instalação atualizada."
 
 msgid "Could not update the installation media"
-msgstr ""
+msgstr "Não foi possível atualizar a mídia de instalação"
 
 msgid "Installation medium deleted."
-msgstr ""
+msgstr "Mídia de instalação excluída."
 
 msgid "Could not delete the installation media"
-msgstr ""
+msgstr "Não foi possível remover a mídia de instalação"
 
 msgid "Vendor class"
-msgstr ""
+msgstr "Classe de fornecedor"
 
 msgid "HW model"
-msgstr ""
+msgstr "Modelo do HW"
 
 msgid "Info"
-msgstr ""
+msgstr "Informação"
 
 msgid "Hardware model created."
-msgstr ""
+msgstr "Modelo de hardware criado."
 
 msgid "Could not create the hardware model"
-msgstr ""
+msgstr "Não foi possível criar o modelo de hardware"
 
 msgid "Hardware model deleted."
-msgstr ""
+msgstr "Modelo de hardware excluído."
 
 msgid "Could not delete the hardware model"
-msgstr ""
+msgstr "Não foi possível remover o modelo de hardware"
 
 msgid "Hardware model updated."
-msgstr ""
+msgstr "Modelo de hardware atualizado."
 
 msgid "Could not update the hardware model"
-msgstr ""
+msgstr "Não foi possível atualizar o modelo de hardware"
 
 msgid "Invalid access token response."
-msgstr ""
+msgstr "Resposta do token de acesso inválida."
 
 msgid "Invalid access token"
-msgstr ""
+msgstr "Token de acesso inválido"
 
 msgid ""
 "Failed to recieve acess token, please check your connectivity with OpenID "
 "provider: %s"
 msgstr ""
+"Falha ao receber token de acesso, verifique sua conectividade com o provedor "
+"do OpenID: %s"
 
 msgid "Release name"
-msgstr ""
+msgstr "Nome de Lançamento"
 
 msgid "Family"
-msgstr ""
+msgstr "Família"
 
 msgid "Major version"
-msgstr ""
+msgstr "Versão principal"
 
 msgid "Minor version"
-msgstr ""
+msgstr "Versão menor"
 
 msgid "Partition tables"
-msgstr ""
+msgstr "Tabela de partição"
 
 msgid "Default templates"
-msgstr ""
+msgstr "Modelos padrão"
 
 msgid "Architectures"
-msgstr ""
+msgstr "Arquiteturas"
 
 msgid "Operating system created."
-msgstr ""
+msgstr "Sistema operacional criado."
 
 msgid "Could not create the operating system"
-msgstr ""
+msgstr "Não foi possível criar o sistema operacional"
 
 msgid "Operating system updated."
-msgstr ""
+msgstr "Sistema operacional atualizado."
 
 msgid "Could not update the operating system"
-msgstr ""
+msgstr "Não foi possível atualizar o sistema operacional"
 
 msgid "Operating system deleted."
-msgstr ""
+msgstr "Sistema operacional excluído."
 
 msgid "Could not delete the operating system"
-msgstr ""
+msgstr "Não foi possível remover o sistema operacional"
 
 msgid "Create or update parameter for an operating system"
-msgstr ""
+msgstr "Criar ou atualizar parâmetro para um sistema operacional"
 
 msgid "Operating system parameter updated"
-msgstr ""
+msgstr "Parâmetro de Sistema Operacional atualizado"
 
 msgid "New operating system parameter created"
-msgstr ""
+msgstr "Novo parâmetro de sistema operacional criado"
 
 msgid "Could not set operating system parameter"
-msgstr ""
+msgstr "Não foi possível definir o sistema operacional"
 
 msgid "Delete parameter for an operating system"
-msgstr ""
+msgstr "Excluir parâmetro para um sistema operacional"
 
 msgid "operating system parameter deleted."
-msgstr ""
+msgstr "parâmetro de sistema operacional excluído."
 
 msgid "Operatingsystem id"
-msgstr ""
+msgstr "ID do sistema operacional"
 
 msgid "Provisioning template id to be set"
-msgstr ""
+msgstr "Id do modelo de provisionamento a ser definida"
 
 msgid ""
 "[%{provisioning_template_name}] was set as default %{template_kind_name} "
 "template."
 msgstr ""
+"[%{provisioning_template_name}] foi definido como o modelo "
+"%{template_kind_name} padrão."
 
 msgid "Could not set the os default template"
-msgstr ""
+msgstr "Não foi possível definir os modelos padrão"
 
 msgid "Type of the provisioning template"
-msgstr ""
+msgstr "Tipo do modelo de provisionamento"
 
 msgid "Default template deleted."
-msgstr ""
+msgstr "Modelo padrão excluído."
 
 msgid "Could not delete the default template"
-msgstr ""
+msgstr "Não foi possível remover o modelo padrão"
 
 msgid "Default template of type %s not found"
-msgstr ""
+msgstr "Modelo padrão do tipo %s não foi encontrado"
 
 msgid "%{types} of associated %{resource}"
-msgstr ""
+msgstr "%{types} de %{resource} associado"
 
 msgid "Use to update associated %s"
 msgstr ""
@@ -2319,87 +2389,92 @@ msgid ""
 "Could not find %{resource}. Some search options were missing, please see --"
 "help."
 msgstr ""
+"Não foi possível encontrar %{resource}. Algumas opções de pesquisa estavam "
+"ausentes, por favor consulte --help."
 
 msgid "Could not find %{resource}, please set option %{switches}."
 msgstr ""
+"Não foi possível encontrar %{resource}, por favor defina a opção %{switches}."
 
 msgid "Could not find %{resource}, please set one of options %{switches}."
 msgstr ""
+"Não foi possível encontrar %{resource}, por favor defina uma das opções "
+"%{switches}."
 
 msgid "Enter user's current password:"
-msgstr ""
+msgstr "Insira a senha atual do usuário:"
 
 msgid "Enter user's new password:"
-msgstr ""
+msgstr "Insira a nova senha do usuário:"
 
 msgid "Locations"
-msgstr ""
+msgstr "Locais"
 
 msgid "Organization created."
-msgstr ""
+msgstr "Organização criada."
 
 msgid "Could not create the organization"
-msgstr ""
+msgstr "Não foi possível criar a organização"
 
 msgid "Organization updated."
-msgstr ""
+msgstr "Organização atualizada."
 
 msgid "Could not update the organization"
-msgstr ""
+msgstr "Não foi possível atualizar a organização"
 
 msgid "Organization deleted."
-msgstr ""
+msgstr "Organização excluída."
 
 msgid "Could not delete the organization"
-msgstr ""
+msgstr "Não foi possível remover a organização"
 
 msgid "Create or update parameter for an organization"
-msgstr ""
+msgstr "Criar ou atualizar parâmetros para uma organização"
 
 msgid "Could not set organization parameter"
-msgstr ""
+msgstr "Não foi possível definir os parâmetros da organização "
 
 msgid "Delete parameter for an organization"
-msgstr ""
+msgstr "Excluir parâmetro para uma organização"
 
 msgid "Could not delete organization parameter"
-msgstr ""
+msgstr "Não foi possível remover os parâmetros da organização "
 
 msgid "id"
-msgstr ""
+msgstr "id"
 
 msgid "Kind"
-msgstr ""
+msgstr "Classe"
 
 msgid "parameter name"
-msgstr ""
+msgstr "nome do parâmetro"
 
 msgid "Locked"
-msgstr ""
+msgstr "Bloqueado"
 
 msgid "View partition table content"
-msgstr ""
+msgstr "Exibir conteúdo de tabela de partição"
 
 msgid "Path to a file that contains the partition layout"
-msgstr ""
+msgstr "Caminho para um arquivo que contenha o layout de partição"
 
 msgid "Partition table created."
-msgstr ""
+msgstr "Tabela de partição criada."
 
 msgid "Could not create the partition table"
-msgstr ""
+msgstr "Não foi possível criar a tabela de partição"
 
 msgid "Partition table updated."
-msgstr ""
+msgstr "Tabela de partição atualizada."
 
 msgid "Could not update the partition table"
-msgstr ""
+msgstr "Não foi possível atualizar tabela de partição"
 
 msgid "Partition table deleted."
-msgstr ""
+msgstr "Tabela de partição excluída."
 
 msgid "Could not delete the partition table"
-msgstr ""
+msgstr "Não foi possível remover tabela de partição"
 
 msgid "Path to a file that contains the template content including metadata"
 msgstr ""
@@ -2414,271 +2489,282 @@ msgid "The partition table template has been saved to %{path}."
 msgstr ""
 
 msgid "Manage personal access tokens"
-msgstr ""
+msgstr "Gerenciar tokens de acesso pessoal"
 
 msgid "Active"
-msgstr ""
+msgstr "Ativo"
 
 msgid "Expires at"
-msgstr ""
+msgstr "Expira em"
 
 msgid ""
 "Personal access token [%{name}] created:\n"
 "%{token_value}"
 msgstr ""
+"Token de acesso pessoal [%{name}] criado:\n"
+"%{token_value}"
 
 msgid "Could not create personal access token"
-msgstr ""
+msgstr "Não foi possível criar o token de acesso pessoal"
 
 msgid "Created at"
-msgstr ""
+msgstr "Criado Em"
 
 msgid "Last used at"
-msgstr ""
+msgstr "Usado pela última vez em"
 
 msgid "Personal access token [%{name}] revoked."
-msgstr ""
+msgstr "Token de acesso pessoal [%{name}] revogado."
 
 msgid "Could not revoke personal access token"
-msgstr ""
+msgstr "Não foi possível revogar token de acesso pessoal"
 
 msgid "database"
-msgstr ""
+msgstr "banco de dados"
 
 msgid "Server Response"
-msgstr ""
+msgstr "Resposta do servidor"
 
 msgid "Realm proxy id"
-msgstr ""
+msgstr "ID de proxy do realm"
 
 msgid "Realm type"
-msgstr ""
+msgstr "Tipo de realm"
 
 msgid "Realm [%{name}] created."
-msgstr ""
+msgstr "Realm [%{name}] criado."
 
 msgid "Could not create the realm"
-msgstr ""
+msgstr "Não foi possível criar o realm"
 
 msgid "Realm [%{name}] updated."
-msgstr ""
+msgstr "Realm [%{name}] atualizado."
 
 msgid "Could not update the realm"
-msgstr ""
+msgstr "Não foi possível atualizar o realm"
 
 msgid "Realm [%{name}] deleted."
-msgstr ""
+msgstr "Realm [%{name}] excluído."
 
 msgid "Could not delete the realm"
-msgstr ""
+msgstr "Não foi possível excluir o realm"
 
 msgid "Updated at"
-msgstr ""
+msgstr "Atualizado Em"
 
 msgid "Users"
-msgstr ""
+msgstr "Usuários"
 
 msgid "User groups"
-msgstr ""
+msgstr "Grupos de usuários"
 
 msgid "Usergroup"
-msgstr ""
+msgstr "Grupo de usuário"
 
 msgid "Roles"
-msgstr ""
+msgstr "Papéis"
 
 msgid "Inherited User groups"
-msgstr ""
+msgstr "Grupos de usuários herdados"
 
 msgid "Smart proxies"
-msgstr ""
+msgstr "Proxies Inteligentes"
 
 msgid "Compute profiles"
-msgstr ""
+msgstr "Perfis computacionais"
 
 msgid "Compute resources"
-msgstr ""
+msgstr "Recursos de computação"
 
 msgid "Installation media"
-msgstr ""
+msgstr "Mídia de instalação"
 
 msgid "Templates"
-msgstr ""
+msgstr "Modelos"
 
 msgid "Partition Tables"
-msgstr ""
+msgstr "Tabelas de partição"
 
 msgid "Domains"
-msgstr ""
+msgstr "Domínios"
 
 msgid "Realms"
-msgstr ""
+msgstr "Realms"
 
 msgid "Hostgroups"
-msgstr ""
+msgstr "Grupos de hosts"
 
 msgid "Subnets"
-msgstr ""
+msgstr "Subredes"
 
 msgid "Parameters"
-msgstr ""
+msgstr "Parâmetros"
 
 msgid "All parameters"
-msgstr ""
+msgstr "Todos os parâmetros"
 
 msgid "Operating systems"
-msgstr ""
+msgstr "Sistema Operacional"
 
 msgid "External user groups"
-msgstr ""
+msgstr "Grupos de usuários externos"
 
 msgid "Failed to generate registration command"
 msgstr ""
 
 msgid "Default"
-msgstr ""
+msgstr "Padrão"
 
 msgid "Template inputs"
-msgstr ""
+msgstr "Entradas de modelo"
 
 msgid "Required"
-msgstr ""
+msgstr "Solicitado"
 
 msgid "Options"
-msgstr ""
+msgstr "Opções"
 
 msgid "View report content"
-msgstr ""
+msgstr "Exibir conteúdo do relatório"
 
 msgid "Generate report"
-msgstr ""
+msgstr "Gerar relatório"
 
 msgid "Specify inputs"
-msgstr ""
+msgstr "Especificar entradas"
 
 msgid ""
 "Turns a command to be active, wait for the result and download it right away"
 msgstr ""
+"Torna um comando ativo, espera pelo resultado e faz download imediatamente"
 
 msgid ""
 "Path to directory where downloaded content will be saved. Only usable if "
 "wait is specified"
 msgstr ""
+"Caminho do diretório no qual o conteúdo baixado será salvo. Utilizável "
+"apenas se a espera for especificada"
 
 msgid "The report has been scheduled. Job ID: %{job_id}"
-msgstr ""
+msgstr "O relatório foi agendado. ID do trabalho: %{job_id}"
 
 msgid ""
 "Path to a file that contains the report template content including metadata"
 msgstr ""
+"Caminho para um arquivo que contém o conteúdo do modelo de relatório, "
+"incluindo metadados"
 
 msgid "Import report template successfully."
-msgstr ""
+msgstr "Modelo de relatório importado com êxito."
 
 msgid "Could not import the report template"
-msgstr ""
+msgstr "Não foi possível importar o modelo de relatório"
 
 msgid "The report template has been saved to %{path}."
 msgstr ""
 
 msgid "The report is not ready yet."
-msgstr ""
+msgstr "O relatório ainda não está pronto."
 
 msgid "Open empty template in an $EDITOR. Upload the result"
-msgstr ""
+msgstr "Abra um modelo vazio em um $EDITOR. Faça upload do resultado"
 
 msgid "Path to a file that contains the report template content"
-msgstr ""
+msgstr "Caminho para um arquivo que contém o modelo"
 
 msgid "Report template created."
-msgstr ""
+msgstr "Modelo de relatório criado."
 
 msgid "Could not create the report template"
-msgstr ""
+msgstr "Não foi possível criar o modelo de relatório."
 
 msgid ""
 "Dump existing template and open it in an $EDITOR. Update with the result"
 msgstr ""
+"Despeje o modelo existente e abra-o em um $EDITOR. Atualize com o resultado"
 
 msgid "Report template updated."
-msgstr ""
+msgstr "Modelo de relatório atualizado."
 
 msgid "Could not update the report template"
-msgstr ""
+msgstr "Não foi possível atualizar o modelo de relatório"
 
 msgid "Report template cloned."
-msgstr ""
+msgstr "Modelo de relatório clonado."
 
 msgid "Could not clone the report template"
-msgstr ""
+msgstr "Não foi possível clonar o modelo de relatório"
 
 msgid "Report template deleted."
-msgstr ""
+msgstr "Modelo de relatório excluído."
 
 msgid "Could not delete the report template"
-msgstr ""
+msgstr "Não foi possível excluir o modelo de relatório"
 
 msgid "The server does not support such operation."
-msgstr ""
+msgstr "O servidor não suporta tal operação"
 
 msgid "Builtin"
-msgstr ""
+msgstr "Embutido"
 
 msgid "User role id"
-msgstr ""
+msgstr "ID da função de usuário"
 
 msgid "User role [%<name>s] created."
-msgstr ""
+msgstr "Função de usuário [%<name>s] criada."
 
 msgid "Could not create the user role"
-msgstr ""
+msgstr "Não foi possível criar função de usuário"
 
 msgid "User role [%<name>s] updated."
-msgstr ""
+msgstr "Função de usuário [%<name>s] atualizada."
 
 msgid "Could not update the user role"
-msgstr ""
+msgstr "Não foi possível atualizar a função de usuário"
 
 msgid "User role cloned."
-msgstr ""
+msgstr "Função do usuário clonada."
 
 msgid "Could not clone the user role"
-msgstr ""
+msgstr "Não foi possível clonar a função do usuário"
 
 msgid "User role [%<name>s] deleted."
-msgstr ""
+msgstr "Função de usuário [%<name>s] excluída."
 
 msgid "Could not delete the user roles"
-msgstr ""
+msgstr "Não foi possível remover funções de usuário"
 
 msgid "Sessions are not enabled, please check your Hammer settings."
 msgstr ""
+"As sessões não estão habilitadas, verifique as configurações do Hammer."
 
 msgid ""
 "Using session auth with invalid permissions on session files is not "
 "recommended."
 msgstr ""
+"Não é recomendado o uso de autorização de sessão com permissões inválidas em "
+"arquivos de sessão."
 
 msgid "The url is empty. Session can not be created."
-msgstr ""
+msgstr "A url está vazia. Não é possível criar a sessão."
 
 msgid "The url (%s) is not a valid URL. Session can not be created."
-msgstr ""
+msgstr "A url (%s) não é uma URL válida. Não é possível criar a sessão."
 
 msgid "Invalid permissions for %{file}: %{mode}, expected %{expected_mode}."
-msgstr ""
+msgstr "Permissões inválidas para %{file}: %{mode}, %{expected_mode} esperado."
 
 msgid "Invalid session data. Resetting the session."
-msgstr ""
+msgstr "Dados de sessão inválidos. Reiniciando a sessão."
 
 msgid "Full name"
-msgstr ""
+msgstr "Nome completo"
 
 msgid "Setting [%{name}] updated to [%{value}]."
-msgstr ""
+msgstr "Configuração [%{name}] atualizada para [%{value}]."
 
 msgid "Could not update the setting"
-msgstr ""
+msgstr "Não foi possível atualizar a configuração"
 
 msgid "Category"
 msgstr ""
@@ -2687,37 +2773,37 @@ msgid "Settings type"
 msgstr ""
 
 msgid "Features"
-msgstr ""
+msgstr "Recursos"
 
 msgid "Version"
-msgstr ""
+msgstr "Versão"
 
 msgid "Host_count"
 msgstr ""
 
 msgid "Smart proxy created."
-msgstr ""
+msgstr "Proxy inteligente criado."
 
 msgid "Could not create the proxy"
-msgstr ""
+msgstr "Não foi possível criar um proxy"
 
 msgid "Smart proxy updated."
-msgstr ""
+msgstr "Proxy inteligente atualizado."
 
 msgid "Could not update the proxy"
-msgstr ""
+msgstr "Não foi possível atualizar o proxy"
 
 msgid "Smart proxy deleted."
-msgstr ""
+msgstr "Proxy inteligente excluído."
 
 msgid "Could not delete the proxy"
-msgstr ""
+msgstr "Não foi possível remover o proxy"
 
 msgid "Smart proxy features were refreshed."
-msgstr ""
+msgstr "Os recursos de proxy inteligente foram atualizados."
 
 msgid "Refresh of smart proxy features failed"
-msgstr ""
+msgstr "Falha ao atualizar os recursos do proxy inteligente "
 
 msgid "Import subnets succeeded."
 msgstr ""
@@ -2726,175 +2812,175 @@ msgid "Could not import subnets"
 msgstr ""
 
 msgid "Manage SSH Keys sources"
-msgstr ""
+msgstr "Gerenciar fontes de chaves SSH"
 
 msgid "Fingerprint"
-msgstr ""
+msgstr "Identidade"
 
 msgid "Length"
-msgstr ""
+msgstr "Comprimento"
 
 msgid "Path to a SSH public key"
-msgstr ""
+msgstr "Caminho para uma chave pública de SSH"
 
 msgid "SSH Key %{name} added."
-msgstr ""
+msgstr "Chave de SSH %{name} adicionada."
 
 msgid "Could not add SSH Key"
-msgstr ""
+msgstr "Não foi possível adicionar uma chave SSH"
 
 msgid "Public Key"
-msgstr ""
+msgstr "Chave Pública"
 
 msgid "SSH Key deleted."
-msgstr ""
+msgstr "Chave SSH excluída."
 
 msgid "Could not delete the SSH Key"
-msgstr ""
+msgstr "Não foi possível excluir a chave SSH"
 
 msgid "API Version"
-msgstr ""
+msgstr "Versão da API"
 
 msgid "Database"
-msgstr ""
+msgstr "Banco de Dados"
 
 msgid "Plugins"
-msgstr ""
+msgstr "Plugins"
 
 msgid "Smart Proxies"
-msgstr ""
+msgstr "Proxies inteligentes"
 
 msgid "Failed features"
-msgstr ""
+msgstr "Recursos com falhas "
 
 msgid "Error"
-msgstr ""
+msgstr "Erro"
 
 msgid "Compute Resources"
-msgstr ""
+msgstr "Recursos de computação"
 
 msgid "Errors"
-msgstr ""
+msgstr "Erros"
 
 msgid "Network Addr"
-msgstr ""
+msgstr "Endereço da rede"
 
 msgid "Network Prefix"
-msgstr ""
+msgstr "Prefixo de rede"
 
 msgid "Network Mask"
-msgstr ""
+msgstr "Máscara de rede"
 
 msgid "VLAN ID"
-msgstr ""
+msgstr "ID DA VLAN"
 
 msgid "Boot Mode"
-msgstr ""
+msgstr "Modo de reinicialização"
 
 msgid "Gateway Address"
-msgstr ""
+msgstr "Endereço do gateway"
 
 msgid "Protocol"
-msgstr ""
+msgstr "Protocolo"
 
 msgid "Priority"
-msgstr ""
+msgstr "Prioridade"
 
 msgid "Gateway Addr"
-msgstr ""
+msgstr "Endereço de gateway"
 
 msgid "Primary DNS"
-msgstr ""
+msgstr "DNS Primário"
 
 msgid "Secondary DNS"
-msgstr ""
+msgstr "DNS Secundário"
 
 msgid "TFTP"
-msgstr ""
+msgstr "TFTP"
 
 msgid "DHCP"
-msgstr ""
+msgstr "DHCP"
 
 msgid "IPAM"
-msgstr ""
+msgstr "IPAM"
 
 msgid "Start of IP Range"
-msgstr ""
+msgstr "Início do intervalo IP"
 
 msgid "End of IP Range"
-msgstr ""
+msgstr "Fim do intervalo IP"
 
 msgid "MTU"
-msgstr ""
+msgstr "MTU"
 
 msgid "Subnet created."
-msgstr ""
+msgstr "Sub-rede criada."
 
 msgid "Could not create the subnet"
-msgstr ""
+msgstr "Não foi possível criar subrede"
 
 msgid "Subnet updated."
-msgstr ""
+msgstr "Sub-rede atualizada."
 
 msgid "Could not update the subnet"
-msgstr ""
+msgstr "Não foi possível atualizar a subrede"
 
 msgid "Subnet deleted."
-msgstr ""
+msgstr "Sub-rede excluída."
 
 msgid "Could not delete the subnet"
-msgstr ""
+msgstr "Não foi possível remover a subrede"
 
 msgid "Create or update parameter for a subnet"
-msgstr ""
+msgstr "Criar ou atualizar parâmetro para uma sub-rede"
 
 msgid "Subnet parameter updated"
-msgstr ""
+msgstr "Parâmetro de sub-rede atualizados"
 
 msgid "New subnet parameter created"
-msgstr ""
+msgstr "Novo parâmetro de sub-rede criado"
 
 msgid "Could not set subnet parameter"
-msgstr ""
+msgstr "Não foi possível definir o parâmetro de sub-rede"
 
 msgid "Delete parameter for a subnet"
-msgstr ""
+msgstr "Excluir parâmetro para uma sub-rede"
 
 msgid "Subnet parameter deleted."
-msgstr ""
+msgstr "Parâmetro de sub-rede excluído."
 
 msgid "Environment name"
-msgstr ""
+msgstr "Nome do ambiente"
 
 msgid "List available provisioning template kinds"
-msgstr ""
+msgstr "Listar tipos de modelos de provisionamento disponíveis"
 
 msgid "View provisioning template content"
-msgstr ""
+msgstr "Exibir conteúdo do modelo de provisionamento"
 
 msgid "Path to a file that contains the template"
-msgstr ""
+msgstr "Caminho para um arquivo que contenha o modelo"
 
 msgid "Template type. Eg. snippet, script, provision"
-msgstr ""
+msgstr "Tipo de modelo. Ex.: snippet, script, provisão"
 
 msgid "Provisioning template created."
-msgstr ""
+msgstr "Modelo de provisionamento criado."
 
 msgid "Could not create the provisioning template"
-msgstr ""
+msgstr "Não foi possível criar o modelo de provisionamento"
 
 msgid "Provisioning template updated."
-msgstr ""
+msgstr "Modelo de provisionamento atualizado."
 
 msgid "Could not update the provisioning template"
-msgstr ""
+msgstr "Não foi possível atualizar o modelo de provisionamento"
 
 msgid "Provisioning template deleted."
-msgstr ""
+msgstr "Modelo de provisionamento excluído."
 
 msgid "Could not delete the provisioning template"
-msgstr ""
+msgstr "Não foi possível excluir o modelo de provisionamento"
 
 msgid "Import provisioning template succeeded."
 msgstr ""
@@ -2907,72 +2993,73 @@ msgstr ""
 
 msgid "Update the default PXE menu on all configured TFTP servers"
 msgstr ""
+"Atualizado o menu padrão PXE  e todas as configurações TFTP dos servidores"
 
 msgid "Provisioning template cloned."
-msgstr ""
+msgstr "Modelo de provisionamento clonado."
 
 msgid "Could not clone the provisioning template"
-msgstr ""
+msgstr "Não foi possível clonar o modelo de provisionamento"
 
 msgid "Login"
-msgstr ""
+msgstr "Login"
 
 msgid "Admin"
-msgstr ""
+msgstr "Admin"
 
 msgid "Disabled"
-msgstr ""
+msgstr "Desativado"
 
 msgid "Last login"
-msgstr ""
+msgstr "Último Login em"
 
 msgid "Authorized by"
-msgstr ""
+msgstr "Autorizado por"
 
 msgid "Email enabled"
 msgstr ""
 
 msgid "Effective admin"
-msgstr ""
+msgstr "Admin efetivo"
 
 msgid "Locale"
-msgstr ""
+msgstr "Localidade"
 
 msgid "Timezone"
-msgstr ""
+msgstr "Fuso horário"
 
 msgid "Default organization"
-msgstr ""
+msgstr "Organização padrão"
 
 msgid "Default location"
-msgstr ""
+msgstr "Localização padrão"
 
 msgid "default"
-msgstr ""
+msgstr "padrão"
 
 msgid "User [%{login}] created."
-msgstr ""
+msgstr "Usuário [%{login}] criado."
 
 msgid "Could not create the user"
-msgstr ""
+msgstr "Não foi possível criar usuário"
 
 msgid "User [%{login}] updated."
-msgstr ""
+msgstr "Usuário [%{login}] atualizado."
 
 msgid "Could not update the user"
-msgstr ""
+msgstr "Não foi possível atualizar usuário"
 
 msgid "User [%{login}] deleted."
-msgstr ""
+msgstr "Usuário [%{login}] excluído."
 
 msgid "Could not delete the user"
-msgstr ""
+msgstr "Não foi possível remover usuário"
 
 msgid "Managing User SSH Keys."
-msgstr ""
+msgstr "Gerenciando chaves SSH de usuário."
 
 msgid "Managing personal access tokens"
-msgstr ""
+msgstr "Gerenciamento de tokens de acesso pessoal"
 
 msgid "Managing personal mail notifications"
 msgstr ""
@@ -2996,43 +3083,43 @@ msgid "Could not remove user mail notification"
 msgstr ""
 
 msgid "Interval"
-msgstr ""
+msgstr "Intervalo"
 
 msgid "Mail query"
-msgstr ""
+msgstr "Consulta de e-mail"
 
 msgid "User group [%<name>s] created."
-msgstr ""
+msgstr "Grupo de usuários [%<name>s] criado."
 
 msgid "Could not create the user group"
-msgstr ""
+msgstr "Não foi possível criar o grupo de usuário"
 
 msgid "User group [%<name>s] updated."
-msgstr ""
+msgstr "Grupo de usuários [%<name>s] atualizado."
 
 msgid "Could not update the user group"
-msgstr ""
+msgstr "Não foi possível atualizar o grupo de usuário"
 
 msgid "User group [%<name>s] deleted."
-msgstr ""
+msgstr "Grupo de usuários [%<name>s] excluído."
 
 msgid "Could not delete the user group"
-msgstr ""
+msgstr "Não foi possível remover o grupo de usuário"
 
 msgid "View and manage compute resource's virtual machines"
-msgstr ""
+msgstr "Visualizar e gerenciar as máquinas virtuais de recurso de computação"
 
 msgid "Virtual machine id, for gce use virtual machine name"
-msgstr ""
+msgstr "Id da máquina virtual, para gce use o nome de máquina virtual"
 
 msgid "Virtual machine is powering."
-msgstr ""
+msgstr "A máquina virtual está sendo ligada."
 
 msgid "Could not power the virtual machine"
-msgstr ""
+msgstr "Não foi possível ligar a máquina virtual"
 
 msgid "Virtual machine deleted."
-msgstr ""
+msgstr "Máquina virtual excluída."
 
 msgid "Could not delete the virtual machine"
-msgstr ""
+msgstr "Não foi possível excluir a máquina virtual"

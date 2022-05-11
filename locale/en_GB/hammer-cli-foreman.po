@@ -4,14 +4,15 @@
 #
 # Translators:
 # Andi Chandler <andi@gowling.com>, 2016
-# Dominic Cleal <dominic@cleal.org>, 2014-2015
-# Dominic Cleal <dominic@cleal.org>, 2016
+# 0868a4d1af5275b3f70b0a6dac4c99a4, 2014-2015
+# 0868a4d1af5275b3f70b0a6dac4c99a4, 2016
 msgid ""
 msgstr ""
-"Project-Id-Version: hammer-cli-foreman 3.3.0\n"
+"Project-Id-Version: hammer-cli-foreman 3.4.0.pre.develop\n"
 "Report-Msgid-Bugs-To: \n"
-"PO-Revision-Date: 2017-03-29 08:19+0000\n"
-"Last-Translator: Lukáš Zapletal\n"
+"POT-Creation-Date: 2022-05-10 13:14+0000\n"
+"PO-Revision-Date: 2014-03-14 09:55+0000\n"
+"Last-Translator: 0868a4d1af5275b3f70b0a6dac4c99a4, 2016\n"
 "Language-Team: English (United Kingdom) (http://www.transifex.com/foreman/"
 "foreman/language/en_GB/)\n"
 "MIME-Version: 1.0\n"
@@ -729,7 +730,7 @@ msgid "Manage template combinations"
 msgstr ""
 
 msgid "ID"
-msgstr ""
+msgstr "ID"
 
 msgid "Provisioning template ID"
 msgstr ""
@@ -747,7 +748,7 @@ msgid "Provisioning Template"
 msgstr ""
 
 msgid "Hostgroup"
-msgstr ""
+msgstr "Host Group"
 
 msgid "Template combination updated."
 msgstr ""
@@ -1091,7 +1092,7 @@ msgid "DNS"
 msgstr ""
 
 msgid "State"
-msgstr ""
+msgstr "State"
 
 msgid "DNS Name"
 msgstr ""
@@ -1151,10 +1152,10 @@ msgid "Initial allocation, e.g. 0G"
 msgstr ""
 
 msgid "CPUs"
-msgstr ""
+msgstr "CPUs"
 
 msgid "Memory"
-msgstr ""
+msgstr "Memory"
 
 msgid "OS Type"
 msgstr ""
@@ -1503,7 +1504,7 @@ msgid "have you run %s (for Kerberos)?"
 msgstr ""
 
 msgid "is the server down?"
-msgstr ""
+msgstr "is the server down?"
 
 msgid "View and manage user group's external user groups"
 msgstr ""
@@ -1603,7 +1604,7 @@ msgid "Organization"
 msgstr "Organisation"
 
 msgid "Location"
-msgstr ""
+msgstr "Location"
 
 msgid "Additional Information"
 msgstr ""
@@ -1681,7 +1682,7 @@ msgid "FQDN"
 msgstr ""
 
 msgid "Operating system"
-msgstr ""
+msgstr "Operating system"
 
 msgid "Architecture"
 msgstr ""
@@ -1714,7 +1715,7 @@ msgid "Additional info"
 msgstr ""
 
 msgid "Owner"
-msgstr ""
+msgstr "Owner"
 
 msgid "Enabled"
 msgstr "Enabled"
@@ -1919,10 +1920,10 @@ msgid "Volume parameters"
 msgstr ""
 
 msgid "Interface parameters"
-msgstr ""
+msgstr "Interface parameters"
 
 msgid "Enter the root password for the host:"
-msgstr ""
+msgstr "Enter the root password for the host:"
 
 msgid "Username"
 msgstr ""
@@ -2066,13 +2067,13 @@ msgid "Primary"
 msgstr "Primary"
 
 msgid "Provision"
-msgstr ""
+msgstr "Provision"
 
 msgid "Virtual"
 msgstr ""
 
 msgid "Tag"
-msgstr ""
+msgstr "Tag"
 
 msgid "Attached to"
 msgstr ""
@@ -2772,10 +2773,10 @@ msgid "Failed features"
 msgstr ""
 
 msgid "Error"
-msgstr ""
+msgstr "Error"
 
 msgid "Compute Resources"
-msgstr ""
+msgstr "Compute Resources"
 
 msgid "Errors"
 msgstr ""
@@ -2852,16 +2853,14 @@ msgstr ""
 msgid "Create or update parameter for a subnet"
 msgstr ""
 
-#, fuzzy
 msgid "Subnet parameter updated"
-msgstr "Subnet"
+msgstr ""
 
 msgid "New subnet parameter created"
 msgstr ""
 
-#, fuzzy
 msgid "Could not set subnet parameter"
-msgstr "Could not set organisation parameter"
+msgstr ""
 
 msgid "Delete parameter for a subnet"
 msgstr ""
@@ -3042,6 +3041,3 @@ msgstr ""
 
 msgid "Could not delete the virtual machine"
 msgstr ""
-
-#~ msgid "Parameter"
-#~ msgstr "Parameter"
