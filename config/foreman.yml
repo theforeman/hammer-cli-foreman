@@ -3,6 +3,7 @@
   :enable_module: true
 
   # Your foreman server address
+  # For development try using http with the fully domain name.
   :host: 'https://localhost/'
 
   # Credentials. You'll be asked for them interactively if you leave them blank here
