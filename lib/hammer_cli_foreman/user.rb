@@ -90,6 +90,9 @@ module HammerCLIForeman
     lazy_subcommand('mail-notification', _("Managing personal mail notifications"),
                     'HammerCLIForeman::UserMailNotification', 'hammer_cli_foreman/user_mail_notification'
     )
+    lazy_subcommand('table-preference', _("Managing table preferences"),
+                    'HammerCLIForeman::TablePreference', 'hammer_cli_foreman/table_preference'
+    )
     autoload_subcommands
   end
 
