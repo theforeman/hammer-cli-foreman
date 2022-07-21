@@ -66,7 +66,8 @@ module HammerCLIForeman
       :user =>             [ s("login", _("User's login to search by")) ],
       :common_parameter =>      [ s_name(_("Common parameter name")) ],
       :template_combination => [],
-      :compute_attribute => []
+      :compute_attribute => [],
+      :table_preference => []
     }
     DEFAULT_SEARCHABLES = [ s_name(_("Name to search by")) ]
 
