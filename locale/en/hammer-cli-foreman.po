@@ -5,7 +5,7 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: hammer-cli-foreman 3.4.0.pre.develop\n"
+"Project-Id-Version: hammer-cli-foreman 3.4.0\n"
 "Report-Msgid-Bugs-To: \n"
 "PO-Revision-Date: 2014-03-04 16:47+0000\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
@@ -2863,6 +2863,27 @@ msgstr ""
 msgid "Subnet parameter deleted."
 msgstr ""
 
+msgid "Columns"
+msgstr ""
+
+msgid "Table preference created."
+msgstr ""
+
+msgid "Could not create table preference"
+msgstr ""
+
+msgid "Table preference updated."
+msgstr ""
+
+msgid "Could not update table preference"
+msgstr ""
+
+msgid "Table preference deleted."
+msgstr ""
+
+msgid "Could not remove table preference"
+msgstr ""
+
 msgid "Environment name"
 msgstr ""
 
@@ -2975,6 +2996,9 @@ msgid "Managing personal access tokens"
 msgstr ""
 
 msgid "Managing personal mail notifications"
+msgstr ""
+
+msgid "Managing table preferences"
 msgstr ""
 
 msgid "User mail notifications was added."

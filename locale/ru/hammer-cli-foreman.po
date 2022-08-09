@@ -7,7 +7,7 @@
 # Yulia <yulia.poyarkova@redhat.com>, 2016
 msgid ""
 msgstr ""
-"Project-Id-Version: hammer-cli-foreman 3.4.0.pre.develop\n"
+"Project-Id-Version: hammer-cli-foreman 3.4.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-05-10 13:14+0000\n"
 "PO-Revision-Date: 2014-03-14 09:55+0000\n"

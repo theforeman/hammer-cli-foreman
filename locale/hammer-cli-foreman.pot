@@ -6,10 +6,10 @@
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: hammer-cli-foreman 3.3.0\n"
+"Project-Id-Version: hammer-cli-foreman 3.4.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-05-10 13:14+0000\n"
-"PO-Revision-Date: 2022-05-10 13:14+0000\n"
+"POT-Creation-Date: 2022-08-09 15:22+0000\n"
+"PO-Revision-Date: 2022-08-09 15:22+0000\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: \n"
@@ -305,6 +305,7 @@ msgstr ""
 #: ../lib/hammer_cli_foreman/ssh_keys.rb:9
 #: ../lib/hammer_cli_foreman/subnet.rb:36
 #: ../lib/hammer_cli_foreman/subnet.rb:53
+#: ../lib/hammer_cli_foreman/table_preference.rb:8
 #: ../lib/hammer_cli_foreman/template.rb:20
 #: ../lib/hammer_cli_foreman/user.rb:10
 #: ../lib/hammer_cli_foreman/user_mail_notification.rb:38
@@ -370,6 +371,7 @@ msgstr ""
 #: ../lib/hammer_cli_foreman/status.rb:37
 #: ../lib/hammer_cli_foreman/subnet.rb:37
 #: ../lib/hammer_cli_foreman/subnet.rb:54
+#: ../lib/hammer_cli_foreman/table_preference.rb:9
 #: ../lib/hammer_cli_foreman/template.rb:21
 #: ../lib/hammer_cli_foreman/template.rb:75
 #: ../lib/hammer_cli_foreman/user.rb:12
@@ -617,7 +619,7 @@ msgstr ""
 
 #: ../lib/hammer_cli_foreman/associating_commands.rb:230
 #: ../lib/hammer_cli_foreman/associating_commands.rb:266
-#: ../lib/hammer_cli_foreman/id_resolver.rb:249
+#: ../lib/hammer_cli_foreman/id_resolver.rb:250
 msgid "%s not found."
 msgstr ""
 
@@ -2911,23 +2913,23 @@ msgstr ""
 msgid "Common parameter name"
 msgstr ""
 
-#: ../lib/hammer_cli_foreman/id_resolver.rb:71
+#: ../lib/hammer_cli_foreman/id_resolver.rb:72
 msgid "Name to search by"
 msgstr ""
 
-#: ../lib/hammer_cli_foreman/id_resolver.rb:163
+#: ../lib/hammer_cli_foreman/id_resolver.rb:164
 msgid "Missing options to search %s"
 msgstr ""
 
-#: ../lib/hammer_cli_foreman/id_resolver.rb:183
+#: ../lib/hammer_cli_foreman/id_resolver.rb:184
 msgid "one of %s not found."
 msgstr ""
 
-#: ../lib/hammer_cli_foreman/id_resolver.rb:250
+#: ../lib/hammer_cli_foreman/id_resolver.rb:251
 msgid "Found more than one %s."
 msgstr ""
 
-#: ../lib/hammer_cli_foreman/id_resolver.rb:274
+#: ../lib/hammer_cli_foreman/id_resolver.rb:275
 msgid "Missing options to search %s."
 msgstr ""
 
@@ -3514,6 +3516,7 @@ msgstr ""
 #: ../lib/hammer_cli_foreman/personal_access_token.rb:27
 #: ../lib/hammer_cli_foreman/references.rb:8
 #: ../lib/hammer_cli_foreman/ssh_keys.rb:13
+#: ../lib/hammer_cli_foreman/table_preference.rb:32
 msgid "Created at"
 msgstr ""
 
@@ -3570,6 +3573,7 @@ msgid "Could not delete the realm"
 msgstr ""
 
 #: ../lib/hammer_cli_foreman/references.rb:9
+#: ../lib/hammer_cli_foreman/table_preference.rb:33
 msgid "Updated at"
 msgstr ""
 
@@ -4103,6 +4107,34 @@ msgstr ""
 msgid "Subnet parameter deleted."
 msgstr ""
 
+#: ../lib/hammer_cli_foreman/table_preference.rb:10
+msgid "Columns"
+msgstr ""
+
+#: ../lib/hammer_cli_foreman/table_preference.rb:17
+msgid "Table preference created."
+msgstr ""
+
+#: ../lib/hammer_cli_foreman/table_preference.rb:18
+msgid "Could not create table preference"
+msgstr ""
+
+#: ../lib/hammer_cli_foreman/table_preference.rb:24
+msgid "Table preference updated."
+msgstr ""
+
+#: ../lib/hammer_cli_foreman/table_preference.rb:25
+msgid "Could not update table preference"
+msgstr ""
+
+#: ../lib/hammer_cli_foreman/table_preference.rb:40
+msgid "Table preference deleted."
+msgstr ""
+
+#: ../lib/hammer_cli_foreman/table_preference.rb:41
+msgid "Could not remove table preference"
+msgstr ""
+
 #: ../lib/hammer_cli_foreman/template.rb:49
 msgid "Environment name"
 msgstr ""
@@ -4256,6 +4288,10 @@ msgstr ""
 
 #: ../lib/hammer_cli_foreman/user.rb:90
 msgid "Managing personal mail notifications"
+msgstr ""
+
+#: ../lib/hammer_cli_foreman/user.rb:93
+msgid "Managing table preferences"
 msgstr ""
 
 #: ../lib/hammer_cli_foreman/user_mail_notification.rb:10

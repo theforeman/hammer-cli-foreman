@@ -13,7 +13,7 @@
 # Sergio Ocón-Cárdenas <sergio.ocon@redhat.com>, 2014
 msgid ""
 msgstr ""
-"Project-Id-Version: hammer-cli-foreman 3.4.0.pre.develop\n"
+"Project-Id-Version: hammer-cli-foreman 3.4.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-05-10 13:14+0000\n"
 "PO-Revision-Date: 2014-03-14 09:55+0000\n"
@@ -24,7 +24,8 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Language: es\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Plural-Forms: nplurals=3; plural=n == 1 ? 0 : n != 0 && n % 1000000 == 0 ? "
+"1 : 2;\n"
 
 msgid "Foreman connection login/logout"
 msgstr "Ingresar/Salir de la conexión de Foreman"
@@ -207,7 +208,7 @@ msgid "Id"
 msgstr "ID"
 
 msgid "Name"
-msgstr "Nombre"
+msgstr "名前"
 
 msgid "Architecture created."
 msgstr "Arquitectura creada."
@@ -904,7 +905,7 @@ msgid "Cannot save file: %s does not exist"
 msgstr "No se puede guardar el archivo: %s no existe"
 
 msgid "Type"
-msgstr "Tipo"
+msgstr "タイプ"
 
 msgid "Set a global parameter"
 msgstr "Definir un parámetro global"
@@ -1250,7 +1251,7 @@ msgid "Interface type"
 msgstr "Tipo de interfaz"
 
 msgid "Vnic Profile"
-msgstr ""
+msgstr "Perfil de Vnic"
 
 msgid "ID or name of storage domain"
 msgstr "ID o nombre del dominio de almacenamiento"
@@ -2870,7 +2871,7 @@ msgid "Compute Resources"
 msgstr "Recursos de cómputo"
 
 msgid "Errors"
-msgstr "Errores"
+msgstr "エラー"
 
 msgid "Network Addr"
 msgstr "Dirección de la red"

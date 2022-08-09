@@ -10,7 +10,7 @@
 # Pierre-Emmanuel Dutang <dutangp@gmail.com>, 2014,2016-2017
 msgid ""
 msgstr ""
-"Project-Id-Version: hammer-cli-foreman 3.4.0.pre.develop\n"
+"Project-Id-Version: hammer-cli-foreman 3.4.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-05-10 13:14+0000\n"
 "PO-Revision-Date: 2014-03-14 09:55+0000\n"
@@ -21,7 +21,8 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Language: fr\n"
-"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"Plural-Forms: nplurals=3; plural=(n == 0 || n == 1) ? 0 : n != 0 && n % "
+"1000000 == 0 ? 1 : 2;\n"
 
 msgid "Foreman connection login/logout"
 msgstr "Connexion/Déconnexion à Foreman"
@@ -136,9 +137,7 @@ msgid "Invalid username or password."
 msgstr "Nom d'utilisateur ou mot de passe incorrect."
 
 msgid "Using configured credentials for user '%s'."
-msgstr ""
-"Utilisation des informations d'identification configurées pour l'utilisateur "
-"'%s'."
+msgstr "Utilisation des identifiants configurées pour l'utilisateur '%s'."
 
 msgid "Credentials are not configured."
 msgstr "Les identifiants ne sont pas configurées."
@@ -150,15 +149,17 @@ msgid "[Foreman] Password for %{user}:%{wsp}"
 msgstr "[Foreman] Mot de passe pour %{user}:%{wsp}"
 
 msgid "current Kerberos user"
-msgstr ""
+msgstr "utilisateur Kerberos actuel"
 
 msgid ""
 "No session, but there is an active Kerberos session, that will be used for "
 "negotiate login."
 msgstr ""
+"Pas de session, mais il existe une session Kerberos active, qui sera "
+"utilisée pour négocier la connexion."
 
 msgid "There is no active Kerberos session. Have you run %s?"
-msgstr ""
+msgstr "Il n'y a pas de session Kerberos active. Avez-vous lancé %s?"
 
 msgid ""
 "Invalid oidc-client-id or oidc-token-endpoint or oidc-authorization-"
@@ -201,7 +202,7 @@ msgstr ""
 "Sessions en cours d'utilisation, vous n'êtes actuellement pas connecté."
 
 msgid "Invalid credentials, continuing with session for '%s'."
-msgstr "ID non valables, poursuite de la session avec ’%s’."
+msgstr "Identifiants non valables, poursuite de la session avec ’%s’."
 
 msgid "Session has expired."
 msgstr "Session expirée."
@@ -375,13 +376,13 @@ msgid "Could not disassociate the user group"
 msgstr "Impossible de dissocier le groupe d'utilisateurs"
 
 msgid "Associate provisioning templates"
-msgstr "Choisir les modèles d’approvisionnement"
+msgstr "Choisir les modèles de provisionnement"
 
 msgid "List of provisioning template ids"
-msgstr "Lister les IDs des modèles d’approvisionnements"
+msgstr "Lister les IDs des modèles de provisionnement"
 
 msgid "List of provisioning template names"
-msgstr "Liste des noms de modèles d’approvisionnement"
+msgstr "Liste des noms de modèles de provisionnement"
 
 msgid ""
 "Provisioning template name regex to search, all matching templates will be "
@@ -397,23 +398,23 @@ msgid "The provisioning templates were associated."
 msgstr "Les modèles de provisionnement ont été associés."
 
 msgid "Could not associate the provisioning templates"
-msgstr "Impossible de mettre à jour les modèles d’approvisionnement"
+msgstr "Impossible de mettre à jour les modèles de provisionnement"
 
 msgid "Disassociate provisioning templates"
-msgstr "Dissocier les modèles d’approvisionnement"
+msgstr "Dissocier les modèles de provisionnement"
 
 msgid ""
 "Provisioning template name regex to search, all matching templates will be "
 "disassociated"
 msgstr ""
-"Regex de nom de modèle d’approvisionnement pour la recherche, tous les "
+"Regex de nom de modèle de provisionnement pour la recherche, tous les "
 "modèles correspondants seront dissociés"
 
 msgid "The provisioning templates were disassociated."
-msgstr "Les modèles d'approvisionnement ont été dissociés."
+msgstr "Les modèles de provisionnement ont été dissociés."
 
 msgid "Could not disassociate the provisioning templates"
-msgstr "Impossible de supprimer le modèle d’approvisionnement"
+msgstr "Impossible de supprimer les modèles de provisionnement"
 
 msgid "Associate an organization"
 msgstr "Associer une organisation"
@@ -570,7 +571,7 @@ msgid "New"
 msgstr "Nouveau"
 
 msgid "Set credentials"
-msgstr "Définir les authentifiants"
+msgstr "Définir les identifiants"
 
 msgid "Username to access the remote system"
 msgstr "Nom d'utilisateur pour accéder au système distant"
@@ -584,6 +585,8 @@ msgstr "Connexion réussie en tant que '%s'."
 msgid ""
 "Successfully authenticated using negotiate auth, using the KEYRING principal."
 msgstr ""
+"Authentification réussie par negotiate auth, en utilisant le principal "
+"KEYRING."
 
 msgid "Openidc provider URL which issues access token"
 msgstr "URL du fournisseur Openidc qui émet le jeton d'accès"
@@ -757,10 +760,10 @@ msgid "ID"
 msgstr "ID"
 
 msgid "Provisioning template ID"
-msgstr "ID de modèle de provisioning."
+msgstr "ID de modèle de provisionnement."
 
 msgid "Provisioning template name"
-msgstr "Nom du modèle de provisioning"
+msgstr "Nom du modèle de provisionnement"
 
 msgid "Hostgroup ID"
 msgstr "ID du groupe d'hôtes."
@@ -1000,7 +1003,7 @@ msgid "Remove compute profile interface"
 msgstr "Supprimer l'interface de profil Compute"
 
 msgid "unknown interface id"
-msgstr "iD d'interface inconnu"
+msgstr "Id d'interface inconnu"
 
 msgid "Interface was removed."
 msgstr "L'interface a été supprimée."
@@ -1045,7 +1048,7 @@ msgid "Compute attributes"
 msgstr "Attributs Compute"
 
 msgid "Compute Resource"
-msgstr "Ressources d'Ordinateur"
+msgstr "Ressource Compute"
 
 msgid "VM attributes"
 msgstr "Attributs de VM"
@@ -1086,19 +1089,19 @@ msgid "Compute resource created."
 msgstr "Ressource Compute créée."
 
 msgid "Could not create the compute resource"
-msgstr "Impossible de créer la ressource Compute"
+msgstr "Impossible de créer la ressource d'ordinateur"
 
 msgid "Compute resource updated."
 msgstr "Ressource Compute mise à jour."
 
 msgid "Could not update the compute resource"
-msgstr "Impossible de mettre à jour la ressource Compute"
+msgstr "Impossible de mettre à jour la ressource d'ordinateur"
 
 msgid "Compute resource deleted."
 msgstr "Ressource Compute supprimée."
 
 msgid "Could not delete the compute resource"
-msgstr "Impossible de supprimer la ressource Compute"
+msgstr "Impossible de supprimer la ressource d'ordinateur"
 
 msgid "Associate a specific VM"
 msgstr "Associer une VM spécifique"
@@ -1116,19 +1119,19 @@ msgid "Network ID"
 msgstr "ID du réseau"
 
 msgid "Uuid"
-msgstr "Uuid"
+msgstr "UUID"
 
 msgid "Url"
 msgstr "Url"
 
 msgid "Region"
-msgstr "Zone"
+msgstr "Région"
 
 msgid "DNS"
 msgstr "DNS"
 
 msgid "State"
-msgstr "État"
+msgstr "État "
 
 msgid "DNS Name"
 msgstr "Nom DNS"
@@ -1398,7 +1401,7 @@ msgid "Skipped"
 msgstr "Omis"
 
 msgid "Pending"
-msgstr "En cours"
+msgstr "En attente"
 
 msgid "Reported at"
 msgstr "Rapporté le"
@@ -1504,7 +1507,7 @@ msgstr "Redirection à l'appel API détecté"
 
 msgid "It seems hammer is configured to use HTTP and the server prefers HTTPS."
 msgstr ""
-"Il semble que hammer est configué pour utiliser HTTP et le serveur préfère "
+"Il semble que hammer soit configuré pour utiliser HTTP et le serveur préfère "
 "HTTPS."
 
 msgid "Update your server url configuration."
@@ -1514,7 +1517,7 @@ msgid ""
 "You can set 'follow_redirects' to one of :default or :always to enable "
 "redirects following."
 msgstr ""
-"Vous pouvez définir 'follow_redirects' avec les valeurs :default ou :always "
+"Vous pouvez définir 'follow_redirects' avec les valeurs :default ou always "
 "pour activer le suivi des redirections."
 
 msgid "Forbidden - server refused to process the request."
@@ -1550,19 +1553,19 @@ msgstr ""
 "serveur sur votre système."
 
 msgid "Server misconfiguration detected"
-msgstr ""
+msgstr "Mauvaise configuration du serveur détectée"
 
 msgid "have you run installer with option %s?"
-msgstr ""
+msgstr "Avez-vous exécuté le programme d'installation avec l'option %s?"
 
 msgid "the user might come from a different authentication source"
-msgstr ""
+msgstr "l'utilisateur peut provenir d'une source d'authentification différente"
 
 msgid "Could not authenticate using negotiation protocol"
-msgstr ""
+msgstr "Impossible d'authentifier en utilisant le protocole de négociation"
 
 msgid "have you run %s (for Kerberos)?"
-msgstr ""
+msgstr "Avez-vous exécuté %s (pour Kerberos) ?"
 
 msgid "is the server down?"
 msgstr "Le serveur est-il éteint ?"
@@ -2165,7 +2168,7 @@ msgid "Attached devices"
 msgstr "Périphériques attachés"
 
 msgid "Bond options"
-msgstr "Options de l'aggrégat"
+msgstr "Options de l’agrégat"
 
 msgid ""
 "Should this interface be used for constructing the FQDN of the host? Each "
@@ -2349,7 +2352,7 @@ msgid "Operating system deleted."
 msgstr "Système d'exploitation supprimé."
 
 msgid "Could not delete the operating system"
-msgstr "Impossible de supprimer le système d'expoitation"
+msgstr "Impossible de supprimer le système d'exploitation"
 
 msgid "Create or update parameter for an operating system"
 msgstr "Créer ou mettre à jour un paramètre de système d'exploitation."
@@ -2380,13 +2383,13 @@ msgid ""
 "template."
 msgstr ""
 "[%{provisioning_template_name}] a été défini comme modèle de "
-"%{template_kind_name}  par défaut."
+"%{template_kind_name} par défaut."
 
 msgid "Could not set the os default template"
 msgstr "Impossible de définir le modèle de système d'exploitation par défaut"
 
 msgid "Type of the provisioning template"
-msgstr "Créer un modèle d’approvionnement"
+msgstr "Créer un modèle de provisionnement"
 
 msgid "Default template deleted."
 msgstr "Modèle par défaut supprimé."
@@ -2495,15 +2498,17 @@ msgstr "Impossible de supprimer la table de partition"
 
 msgid "Path to a file that contains the template content including metadata"
 msgstr ""
+"Chemin d'accès à un fichier qui contient le contenu du modèle, y compris les "
+"métadonnées"
 
 msgid "Import partition table template succeeded."
-msgstr ""
+msgstr "L'importation du modèle de table de partition a réussi."
 
 msgid "Could not import partition table template"
-msgstr ""
+msgstr "Impossible d'importer le modèle de table de partition"
 
 msgid "The partition table template has been saved to %{path}."
-msgstr ""
+msgstr "Le modèle de table de partition a été enregistré sur %{path}."
 
 msgid "Manage personal access tokens"
 msgstr "Gérer les jetons d'accès personnels"
@@ -2543,28 +2548,28 @@ msgid "Server Response"
 msgstr "Réponse du serveur"
 
 msgid "Realm proxy id"
-msgstr "Id du proxy du domaine"
+msgstr "Id du proxy du royaume"
 
 msgid "Realm type"
-msgstr "Type de domaine"
+msgstr "Type de royaume"
 
 msgid "Realm [%{name}] created."
 msgstr "Domaine [{name}] créé."
 
 msgid "Could not create the realm"
-msgstr "Impossible de créer le domaine"
+msgstr "Impossible de créer le royaume"
 
 msgid "Realm [%{name}] updated."
 msgstr "Domaine [{name}] mis à jour."
 
 msgid "Could not update the realm"
-msgstr "Impossible de mettre à jour le domaine"
+msgstr "Impossible de mettre à jour le royaume"
 
 msgid "Realm [%{name}] deleted."
 msgstr "Domaine [{name}] supprimé."
 
 msgid "Could not delete the realm"
-msgstr "Impossible de supprimer le domaine"
+msgstr "Impossible de supprimer le royaume"
 
 msgid "Updated at"
 msgstr "Mis à jour le"
@@ -2588,7 +2593,7 @@ msgid "Smart proxies"
 msgstr "Smart Proxies"
 
 msgid "Compute profiles"
-msgstr "Profils Compute"
+msgstr "Profils compute"
 
 msgid "Compute resources"
 msgstr "Ressources d'Ordinateur"
@@ -2677,13 +2682,13 @@ msgid "Could not import the report template"
 msgstr "Impossible d'importer le modèle de rapport"
 
 msgid "The report template has been saved to %{path}."
-msgstr ""
+msgstr "Le modèle de rapport a été enregistré sur %{path}."
 
 msgid "The report is not ready yet."
 msgstr "Le rapport n'est pas encore prêt."
 
 msgid "Open empty template in an $EDITOR. Upload the result"
-msgstr "Ouvrez un modèle vide dans un %$EDITOR. Téléchargez le résultat"
+msgstr "Ouvrez un modèle vide dans un $EDITOR. Téléchargez le résultat"
 
 msgid "Path to a file that contains the report template content"
 msgstr "Chemin du fichier contenant le contenu de modèle de rapport"
@@ -2725,7 +2730,7 @@ msgid "Builtin"
 msgstr "Intégré"
 
 msgid "User role id"
-msgstr "Id du rôle utilisateur"
+msgstr "Identifiant du rôle utilisateur"
 
 msgid "User role [%<name>s] created."
 msgstr "Rôle utilisateur [%<name>s] créé."
@@ -2825,10 +2830,10 @@ msgid "Refresh of smart proxy features failed"
 msgstr "Rechargement des fonctions smart proxy échoué"
 
 msgid "Import subnets succeeded."
-msgstr ""
+msgstr "Importation de sous-réseaux réussie."
 
 msgid "Could not import subnets"
-msgstr ""
+msgstr "Impossible d'importer des sous-réseaux"
 
 msgid "Manage SSH Keys sources"
 msgstr "Gérer les sources de clés SSH"
@@ -2975,7 +2980,7 @@ msgid "List available provisioning template kinds"
 msgstr "Répertorier les types de modèle de provisionnement disponibles"
 
 msgid "View provisioning template content"
-msgstr "Affiche le contenu du modèle de provisioning"
+msgstr "Affiche le contenu du modèle de provisionnement"
 
 msgid "Path to a file that contains the template"
 msgstr "Chemin du fichier contenant le modèle"
@@ -2984,38 +2989,38 @@ msgid "Template type. Eg. snippet, script, provision"
 msgstr "Type de modèle. Ex: snippet, script, provisioning"
 
 msgid "Provisioning template created."
-msgstr "Modèle de provisioning créé."
+msgstr "Modèle de provisionnement créé."
 
 msgid "Could not create the provisioning template"
-msgstr "Impossible de créer le modèle de provisioning"
+msgstr "Impossible de créer le modèle de provisionnement"
 
 msgid "Provisioning template updated."
-msgstr "Modèle de provisioning mis à jour."
+msgstr "Modèle de provisionnement mis à jour."
 
 msgid "Could not update the provisioning template"
-msgstr "Impossible de mettre à jour le modèle de provisioning"
+msgstr "Impossible de mettre à jour le modèle de provisionnement"
 
 msgid "Provisioning template deleted."
-msgstr "Modèle de provisioning supprimé."
+msgstr "Modèle de provisionnement supprimé."
 
 msgid "Could not delete the provisioning template"
-msgstr "Impossible de supprimer le modèle de provisioning"
+msgstr "Impossible de supprimer le modèle de provisionnement"
 
 msgid "Import provisioning template succeeded."
-msgstr ""
+msgstr "L'importation du modèle de provisionnement a réussi."
 
 msgid "Could not import provisioning template"
-msgstr ""
+msgstr "Impossible d'importer le modèle de provisionnement"
 
 msgid "The provisioning template has been saved to %{path}."
-msgstr ""
+msgstr "Le modèle de provisionnement a été enregistré sur %{path}."
 
 msgid "Update the default PXE menu on all configured TFTP servers"
 msgstr ""
 "Mise à jour du menu PXE par défaut sur tous les serveurs TFTP configurés"
 
 msgid "Provisioning template cloned."
-msgstr "Modèle de provisioning cloné."
+msgstr "Modèle de provisionnement cloné."
 
 msgid "Could not clone the provisioning template"
 msgstr "Impossible de cloner le modèle de provisionnement"

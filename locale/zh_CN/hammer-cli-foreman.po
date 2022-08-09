@@ -5,7 +5,7 @@
 # Translators:
 msgid ""
 msgstr ""
-"Project-Id-Version: hammer-cli-foreman 3.4.0.pre.develop\n"
+"Project-Id-Version: hammer-cli-foreman 3.4.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-05-10 13:14+0000\n"
 "PO-Revision-Date: 2014-03-14 09:55+0000\n"
@@ -200,7 +200,7 @@ msgid "Id"
 msgstr "ID"
 
 msgid "Name"
-msgstr "名稱"
+msgstr "名称"
 
 msgid "Architecture created."
 msgstr "已创建架构。"
@@ -881,7 +881,7 @@ msgid "Cannot save file: %s does not exist"
 msgstr "无法保存文件：%s 不存在"
 
 msgid "Type"
-msgstr "类型"
+msgstr "類型"
 
 msgid "Set a global parameter"
 msgstr "设置全局参数"
@@ -1342,7 +1342,7 @@ msgid "Restarted"
 msgstr "已重新啟動"
 
 msgid "Failed"
-msgstr "失败"
+msgstr "失敗"
 
 msgid "Restart Failures"
 msgstr "重启失败"

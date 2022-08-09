@@ -8,7 +8,7 @@
 # 山田 修司 🍣 Shuji Yamada <uzy.exe@gmail.com>, 2015
 msgid ""
 msgstr ""
-"Project-Id-Version: hammer-cli-foreman 3.4.0.pre.develop\n"
+"Project-Id-Version: hammer-cli-foreman 3.4.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-05-10 13:14+0000\n"
 "PO-Revision-Date: 2014-03-14 09:55+0000\n"
@@ -2059,7 +2059,7 @@ msgid "Missing options to search %s"
 msgstr "%s の検索オプションがありません"
 
 msgid "one of %s not found."
-msgstr "%s の 1 つが見つかりません。"
+msgstr "%s の 1 つが見つかりませんでした。"
 
 msgid "Found more than one %s."
 msgstr "複数の %s が見つかりました。"
