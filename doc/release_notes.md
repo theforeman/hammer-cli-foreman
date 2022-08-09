@@ -1,5 +1,11 @@
 Release notes
 =============
+### 3.4.0 (2022-08-09)
+* Add options for table preferences cli ([PR #603](https://github.com/theforeman/hammer-cli-foreman/pull/603)), [#35219](http://projects.theforeman.org/issues/35219)
+* I18n - extracting new, pulling from tx, [#34629](http://projects.theforeman.org/issues/34629)
+* Fix config for transifex, [#34629](http://projects.theforeman.org/issues/34629)
+* Bump to 3.4.0-develop
+
 ### 3.3.0 (2022-05-10)
 * Add kerberos negotiate auth support ([PR #555](https://github.com/theforeman/hammer-cli-foreman/pull/555)), [#8923](http://projects.theforeman.org/issues/8923)
 * Pin mocha gem to < 1.14.0

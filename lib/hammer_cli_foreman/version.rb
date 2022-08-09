@@ -1,5 +1,5 @@
 module HammerCLIForeman
   def self.version
-    @version ||= Gem::Version.new "3.4.0-develop"
+    @version ||= Gem::Version.new "3.4.0"
   end
 end
