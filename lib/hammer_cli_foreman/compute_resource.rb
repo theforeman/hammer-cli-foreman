@@ -121,6 +121,9 @@ module HammerCLIForeman
       output do
         field :id, _('Id')
         field :name, _('Name')
+        field :datacenter, _('Datacenter')
+        field :num_host, _('Hosts')
+        field :full_path, _('Cluster path')
       end
 
       build_options
@@ -130,12 +133,24 @@ module HammerCLIForeman
       action :available_networks
       command_name 'networks'
 
+      option '--cluster-name', "Name of cluster", _("Cluster name to search by"),
+        attribute_name: :option_cluster_id
+
       output do
         field :id, _('Id'), Fields::Field, :max_width => 200, :hide_blank => true
         field :name, _('Name')
+        field :datacenter, _('Datacenter')
+        field :virtualswitch, _('Virtual switch')
+        field :vlanid, _('VLAN ID')
       end
 
-      build_options
+      def request_params
+        params = super
+        params['cluster_id'] = params['cluster_id'].gsub('/', '%2F')
+        params
+      end
+
+      build_options :without => :cluster_id
     end
 
     class AvailableVnicProfilesCommand < HammerCLIForeman::ListCommand
@@ -158,6 +173,7 @@ module HammerCLIForeman
       output do
         field :uuid, _('Uuid')
         field :name, _('Name')
+        field :path, _('Path'), Fields::Field, :hide_blank => true
       end
 
       build_options
@@ -182,6 +198,10 @@ module HammerCLIForeman
       output do
         field :id, _('Id')
         field :name, _('Name')
+        field :parent, _('Parent')
+        field :datacenter, _('Datacenter')
+        field :path, _('Path'), Fields::Field, :max_width => 50
+        field :type, _('Type')
       end
 
       build_options
@@ -203,36 +223,66 @@ module HammerCLIForeman
       action :available_resource_pools
       command_name 'resource-pools'
 
+      option '--cluster-name', "Name of cluster", _("Cluster name to search by"),
+        attribute_name: :option_cluster_id
+
       output do
         field :id, _('Id')
         field :name, _('Name')
+        field :cluster, _('Cluster')
+        field :datacenter, _('Datacenter')
       end
 
-      build_options
+      def request_params
+        params = super
+        params['cluster_id'] = params['cluster_id'].gsub('/', '%2F')
+        params
+      end
+
+      build_options :without => :cluster_id
     end
 
     class AvailableStorageDomainsCommand < HammerCLIForeman::ListCommand
       action :available_storage_domains
       command_name 'storage-domains'
 
+      option '--cluster-name', "Name of cluster", _("Cluster name to search by"),
+        attribute_name: :option_cluster_id
+
       output do
         field :id, _('Id')
         field :name, _('Name')
       end
 
-      build_options
+      def request_params
+        params = super
+        params['cluster_id'] = params['cluster_id'].gsub('/', '%2F')
+        params
+      end
+
+      build_options :without => :cluster_id
     end
 
     class AvailableStoragePodsCommand < HammerCLIForeman::ListCommand
       action :available_storage_pods
       command_name 'storage-pods'
 
+      option '--cluster-name', "Name of cluster", _("Cluster name to search by"),
+        attribute_name: :option_cluster_id
+
       output do
         field :id, _('Id')
         field :name, _('Name')
+        field :datacenter, _('Datacenter')
       end
 
-      build_options
+      def request_params
+        params = super
+        params['cluster_id'] = params['cluster_id'].gsub('/', '%2F')
+        params
+      end
+
+      build_options :without => :cluster_id
     end
 
     class AvailableSecurityGroupsCommand < HammerCLIForeman::ListCommand
@@ -252,8 +302,10 @@ module HammerCLIForeman
       command_name 'virtual-machines'
 
       output do
-        field :id, _("Id")
-        field :name, _("Name")
+        field :id, _('Id')
+        field :name, _('Name')
+        field :path, _('Path'), Fields::Field, :max_width => 50
+        field :state, _('State')
       end
 
       build_options
