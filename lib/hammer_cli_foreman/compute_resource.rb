@@ -136,6 +136,9 @@ module HammerCLIForeman
       option '--cluster-name', "Name of cluster", _("Cluster name to search by"),
         attribute_name: :option_cluster_id
 
+      option '--cluster-id', "ID of cluster", _("Deprecated, use cluster-name")
+      
+
       output do
         field :id, _('Id'), Fields::Field, :max_width => 200, :hide_blank => true
         field :name, _('Name')
@@ -150,7 +153,7 @@ module HammerCLIForeman
         params
       end
 
-      build_options :without => :cluster_id
+      build_options
     end
 
     class AvailableVnicProfilesCommand < HammerCLIForeman::ListCommand
@@ -226,6 +229,8 @@ module HammerCLIForeman
       option '--cluster-name', "Name of cluster", _("Cluster name to search by"),
         attribute_name: :option_cluster_id
 
+      option '--cluster-id', "ID of cluster", _("Deprecated, use cluster-name")
+
       output do
         field :id, _('Id')
         field :name, _('Name')
@@ -239,7 +244,7 @@ module HammerCLIForeman
         params
       end
 
-      build_options :without => :cluster_id
+      build_options
     end
 
     class AvailableStorageDomainsCommand < HammerCLIForeman::ListCommand
@@ -248,6 +253,8 @@ module HammerCLIForeman
 
       option '--cluster-name', "Name of cluster", _("Cluster name to search by"),
         attribute_name: :option_cluster_id
+
+      option '--cluster-id', "ID of cluster", _("Deprecated, use cluster-name")
 
       output do
         field :id, _('Id')
@@ -260,7 +267,7 @@ module HammerCLIForeman
         params
       end
 
-      build_options :without => :cluster_id
+      build_options
     end
 
     class AvailableStoragePodsCommand < HammerCLIForeman::ListCommand
@@ -269,6 +276,8 @@ module HammerCLIForeman
 
       option '--cluster-name', "Name of cluster", _("Cluster name to search by"),
         attribute_name: :option_cluster_id
+
+      option '--cluster-id', "ID of cluster", _("Deprecated, use cluster-name")
 
       output do
         field :id, _('Id')
@@ -282,7 +291,7 @@ module HammerCLIForeman
         params
       end
 
-      build_options :without => :cluster_id
+      build_options
     end
 
     class AvailableSecurityGroupsCommand < HammerCLIForeman::ListCommand
