@@ -133,12 +133,6 @@ module HammerCLIForeman
       action :available_networks
       command_name 'networks'
 
-      option '--cluster-name', "Name of cluster", _("Cluster name to search by"),
-        attribute_name: :option_cluster_id
-
-      option '--cluster-id', "ID of cluster", _("Deprecated, use cluster-name")
-      
-
       output do
         field :id, _('Id'), Fields::Field, :max_width => 200, :hide_blank => true
         field :name, _('Name')
@@ -153,7 +147,8 @@ module HammerCLIForeman
         params
       end
 
-      build_options
+      build_options without: :cluster_id
+      extend_with(HammerCLIForeman::CommandExtensions::ComputeResourceSubcommand.new(only: %i[option request_params]))
     end
 
     class AvailableVnicProfilesCommand < HammerCLIForeman::ListCommand
@@ -226,11 +221,6 @@ module HammerCLIForeman
       action :available_resource_pools
       command_name 'resource-pools'
 
-      option '--cluster-name', "Name of cluster", _("Cluster name to search by"),
-        attribute_name: :option_cluster_id
-
-      option '--cluster-id', "ID of cluster", _("Deprecated, use cluster-name")
-
       output do
         field :id, _('Id')
         field :name, _('Name')
@@ -244,17 +234,13 @@ module HammerCLIForeman
         params
       end
 
-      build_options
+      build_options without: :cluster_id
+      extend_with(HammerCLIForeman::CommandExtensions::ComputeResourceSubcommand.new(only: %i[option request_params]))
     end
 
     class AvailableStorageDomainsCommand < HammerCLIForeman::ListCommand
       action :available_storage_domains
       command_name 'storage-domains'
-
-      option '--cluster-name', "Name of cluster", _("Cluster name to search by"),
-        attribute_name: :option_cluster_id
-
-      option '--cluster-id', "ID of cluster", _("Deprecated, use cluster-name")
 
       output do
         field :id, _('Id')
@@ -267,17 +253,13 @@ module HammerCLIForeman
         params
       end
 
-      build_options
+      build_options without: :cluster_id
+      extend_with(HammerCLIForeman::CommandExtensions::ComputeResourceSubcommand.new(only: %i[option request_params]))
     end
 
     class AvailableStoragePodsCommand < HammerCLIForeman::ListCommand
       action :available_storage_pods
       command_name 'storage-pods'
-
-      option '--cluster-name', "Name of cluster", _("Cluster name to search by"),
-        attribute_name: :option_cluster_id
-
-      option '--cluster-id', "ID of cluster", _("Deprecated, use cluster-name")
 
       output do
         field :id, _('Id')
@@ -291,7 +273,8 @@ module HammerCLIForeman
         params
       end
 
-      build_options
+      build_options without: :cluster_id
+      extend_with(HammerCLIForeman::CommandExtensions::ComputeResourceSubcommand.new(only: %i[option request_params]))
     end
 
     class AvailableSecurityGroupsCommand < HammerCLIForeman::ListCommand
