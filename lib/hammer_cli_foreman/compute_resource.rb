@@ -141,12 +141,6 @@ module HammerCLIForeman
         field :vlanid, _('VLAN ID')
       end
 
-      def request_params
-        params = super
-        params['cluster_id'] = params['cluster_id'].gsub('/', '%2F')
-        params
-      end
-
       build_options without: :cluster_id
       extend_with(HammerCLIForeman::CommandExtensions::ComputeResourceSubcommand.new(only: %i[option request_params]))
     end
@@ -228,12 +222,6 @@ module HammerCLIForeman
         field :datacenter, _('Datacenter')
       end
 
-      def request_params
-        params = super
-        params['cluster_id'] = params['cluster_id'].gsub('/', '%2F')
-        params
-      end
-
       build_options without: :cluster_id
       extend_with(HammerCLIForeman::CommandExtensions::ComputeResourceSubcommand.new(only: %i[option request_params]))
     end
@@ -245,12 +233,6 @@ module HammerCLIForeman
       output do
         field :id, _('Id')
         field :name, _('Name')
-      end
-
-      def request_params
-        params = super
-        params['cluster_id'] = params['cluster_id'].gsub('/', '%2F')
-        params
       end
 
       build_options without: :cluster_id
@@ -265,12 +247,6 @@ module HammerCLIForeman
         field :id, _('Id')
         field :name, _('Name')
         field :datacenter, _('Datacenter')
-      end
-
-      def request_params
-        params = super
-        params['cluster_id'] = params['cluster_id'].gsub('/', '%2F')
-        params
       end
 
       build_options without: :cluster_id

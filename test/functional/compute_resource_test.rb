@@ -355,8 +355,29 @@ end
         ]
       )
       expected_result = success_result(output)
+      expected_result.expected_err = "Warning: Option --cluster-id is deprecated. Use --cluster-name instead\n"
 
       result = run_cmd(cmd + params)
+      assert_cmd(expected_result, result)
+    end
+
+    it 'lists available resource_pools for a compute resource with updated cluster_name param' do
+      api_expects(:compute_resources, :available_resource_pools, 'resource-pools').with_params(
+        'id' => '1', 'cluster_id' => 'test%2Ftest1'
+      ).returns(index_response(resource_pools))
+
+      cluster_param = base_params + ['--cluster-name=test/test1']
+
+      output = IndexMatcher.new(
+        [
+          %w[ID NAME],
+          %w[1 resource_pool1],
+          %w[2 resource_pool2]
+        ]
+      )
+      expected_result = success_result(output)
+
+      result = run_cmd(cmd + cluster_param)
       assert_cmd(expected_result, result)
     end
   end
