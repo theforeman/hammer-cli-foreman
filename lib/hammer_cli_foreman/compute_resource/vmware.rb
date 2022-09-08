@@ -64,7 +64,9 @@ module HammerCLIForeman
       def provider_specific_fields
         super + [
           Fields::Field.new(:label => _('Datacenter'), :path => [:datacenter]),
-          Fields::Field.new(:label => _('Server'), :path => [:server])
+          Fields::Field.new(:label => _('Server'), :path => [:server]),
+          Fields::Boolean.new(:label => _('Console password set'), :path => [:set_console_password]),
+          Fields::Boolean.new(:label => _('Caching enabled'), :path => [:caching_enabled])
         ]
       end
 

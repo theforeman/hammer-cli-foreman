@@ -121,6 +121,9 @@ module HammerCLIForeman
       output do
         field :id, _('Id')
         field :name, _('Name')
+        field :datacenter, _('Datacenter')
+        field :num_host, _('Hosts')
+        field :full_path, _('Cluster path')
       end
 
       build_options
@@ -133,9 +136,13 @@ module HammerCLIForeman
       output do
         field :id, _('Id'), Fields::Field, :max_width => 200, :hide_blank => true
         field :name, _('Name')
+        field :datacenter, _('Datacenter')
+        field :virtualswitch, _('Virtual switch')
+        field :vlanid, _('VLAN ID')
       end
 
-      build_options
+      build_options without: :cluster_id
+      extend_with(HammerCLIForeman::CommandExtensions::ComputeResourceSubcommand.new(only: %i[option request_params]))
     end
 
     class AvailableVnicProfilesCommand < HammerCLIForeman::ListCommand
@@ -158,6 +165,7 @@ module HammerCLIForeman
       output do
         field :uuid, _('Uuid')
         field :name, _('Name')
+        field :path, _('Path'), Fields::Field, :hide_blank => true
       end
 
       build_options
@@ -182,6 +190,10 @@ module HammerCLIForeman
       output do
         field :id, _('Id')
         field :name, _('Name')
+        field :parent, _('Parent')
+        field :datacenter, _('Datacenter')
+        field :path, _('Path'), Fields::Field, :max_width => 50
+        field :type, _('Type')
       end
 
       build_options
@@ -206,9 +218,12 @@ module HammerCLIForeman
       output do
         field :id, _('Id')
         field :name, _('Name')
+        field :cluster, _('Cluster')
+        field :datacenter, _('Datacenter')
       end
 
-      build_options
+      build_options without: :cluster_id
+      extend_with(HammerCLIForeman::CommandExtensions::ComputeResourceSubcommand.new(only: %i[option request_params]))
     end
 
     class AvailableStorageDomainsCommand < HammerCLIForeman::ListCommand
@@ -220,7 +235,8 @@ module HammerCLIForeman
         field :name, _('Name')
       end
 
-      build_options
+      build_options without: :cluster_id
+      extend_with(HammerCLIForeman::CommandExtensions::ComputeResourceSubcommand.new(only: %i[option request_params]))
     end
 
     class AvailableStoragePodsCommand < HammerCLIForeman::ListCommand
@@ -230,9 +246,11 @@ module HammerCLIForeman
       output do
         field :id, _('Id')
         field :name, _('Name')
+        field :datacenter, _('Datacenter')
       end
 
-      build_options
+      build_options without: :cluster_id
+      extend_with(HammerCLIForeman::CommandExtensions::ComputeResourceSubcommand.new(only: %i[option request_params]))
     end
 
     class AvailableSecurityGroupsCommand < HammerCLIForeman::ListCommand
@@ -252,8 +270,10 @@ module HammerCLIForeman
       command_name 'virtual-machines'
 
       output do
-        field :id, _("Id")
-        field :name, _("Name")
+        field :id, _('Id')
+        field :name, _('Name')
+        field :path, _('Path'), Fields::Field, :max_width => 50
+        field :state, _('State')
       end
 
       build_options
