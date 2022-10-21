@@ -9,7 +9,6 @@ module HammerCLIForeman
     class PowerVmCommand < HammerCLIForeman::Command
       action :power_vm
       command_name 'power'
-      option "--vm-id", "VM-ID", _("Virtual machine id, for gce use virtual machine name")
 
       success_message _("Virtual machine is powering.")
       failure_message _("Could not power the virtual machine")
@@ -19,7 +18,6 @@ module HammerCLIForeman
 
     class InfoCommand < HammerCLIForeman::InfoCommand
       action :show_vm
-      option "--vm-id", "VM-ID", _("Virtual machine id, for gce use virtual machine name")
 
       output do
         field :id, _("Id")
@@ -39,8 +37,6 @@ module HammerCLIForeman
 
     class DeleteCommand < HammerCLIForeman::DeleteCommand
       action :destroy_vm
-      option "--vm-id", "VM-ID", _("Virtual machine id, for gce use virtual machine name")
-
 
       success_message _("Virtual machine deleted.")
       failure_message _("Could not delete the virtual machine")
