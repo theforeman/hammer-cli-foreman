@@ -1,5 +1,11 @@
 Release notes
 =============
+### 3.5.0 (2022-10-31)
+* Extract gce related info ([PR #606](https://github.com/theforeman/hammer-cli-foreman/pull/606)), [#35659](http://projects.theforeman.org/issues/35659)
+* Change auth endpoint for negotiation, [#35473](http://projects.theforeman.org/issues/35473)
+* Enhance vmware listing commands and switch to cluster_name param ([PR #604](https://github.com/theforeman/hammer-cli-foreman/pull/604)), [#35438](http://projects.theforeman.org/issues/35438)
+* Bump to 3.5.0-develop
+
 ### 3.4.0 (2022-08-09)
 * Add options for table preferences cli ([PR #603](https://github.com/theforeman/hammer-cli-foreman/pull/603)), [#35219](http://projects.theforeman.org/issues/35219)
 * I18n - extracting new, pulling from tx, [#34629](http://projects.theforeman.org/issues/34629)
