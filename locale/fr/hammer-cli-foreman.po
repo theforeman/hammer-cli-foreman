@@ -10,9 +10,9 @@
 # Pierre-Emmanuel Dutang <dutangp@gmail.com>, 2014,2016-2017
 msgid ""
 msgstr ""
-"Project-Id-Version: hammer-cli-foreman 3.4.0\n"
+"Project-Id-Version: hammer-cli-foreman 3.5.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-05-10 13:14+0000\n"
+"POT-Creation-Date: 2022-08-09 15:22+0000\n"
 "PO-Revision-Date: 2014-03-14 09:55+0000\n"
 "Last-Translator: 0868a4d1af5275b3f70b0a6dac4c99a4, 2014\n"
 "Language-Team: French (http://www.transifex.com/foreman/foreman/language/"
@@ -2973,6 +2973,27 @@ msgstr "Supprimer un paramètre de sous-réseau"
 msgid "Subnet parameter deleted."
 msgstr "Paramètre de sous-réseau supprimé."
 
+msgid "Columns"
+msgstr ""
+
+msgid "Table preference created."
+msgstr ""
+
+msgid "Could not create table preference"
+msgstr ""
+
+msgid "Table preference updated."
+msgstr ""
+
+msgid "Could not update table preference"
+msgstr ""
+
+msgid "Table preference deleted."
+msgstr ""
+
+msgid "Could not remove table preference"
+msgstr ""
+
 msgid "Environment name"
 msgstr "Nom de l'environnement"
 
@@ -3087,6 +3108,9 @@ msgstr "Gestion des jetons d'accès personnels"
 
 msgid "Managing personal mail notifications"
 msgstr "Gestion des notifications de courrier personnel"
+
+msgid "Managing table preferences"
+msgstr ""
 
 msgid "User mail notifications was added."
 msgstr "Notifications par courrier de l'utilisateur ajoutées."

@@ -5,7 +5,7 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: hammer-cli-foreman 3.4.0\n"
+"Project-Id-Version: hammer-cli-foreman 3.5.0\n"
 "Report-Msgid-Bugs-To: \n"
 "PO-Revision-Date: 2014-03-04 16:47+0000\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
@@ -763,6 +763,15 @@ msgstr ""
 msgid "Could not delete the template combination"
 msgstr ""
 
+msgid "Cluster ID"
+msgstr ""
+
+msgid "Use --cluster-name instead"
+msgstr ""
+
+msgid "Cluster name or path to search by"
+msgstr ""
+
 msgid "Name of DNS proxy to use within this domain"
 msgstr ""
 
@@ -1068,6 +1077,21 @@ msgstr ""
 msgid "Could not associate the virtual machines"
 msgstr ""
 
+msgid "Datacenter"
+msgstr ""
+
+msgid "Hosts"
+msgstr ""
+
+msgid "Cluster path"
+msgstr ""
+
+msgid "Virtual switch"
+msgstr ""
+
+msgid "VLAN ID"
+msgstr ""
+
 msgid "VNIC profile ID"
 msgstr ""
 
@@ -1075,6 +1099,18 @@ msgid "Network ID"
 msgstr ""
 
 msgid "Uuid"
+msgstr ""
+
+msgid "Path"
+msgstr ""
+
+msgid "Parent"
+msgstr ""
+
+msgid "Cluster"
+msgstr ""
+
+msgid "State"
 msgstr ""
 
 msgid "Url"
@@ -1086,34 +1122,10 @@ msgstr ""
 msgid "DNS"
 msgstr ""
 
-msgid "State"
-msgstr ""
-
 msgid "DNS Name"
 msgstr ""
 
 msgid "Virtualization Type"
-msgstr ""
-
-msgid "Volume size in GB, integer value"
-msgstr ""
-
-msgid "Project"
-msgstr ""
-
-msgid "Email"
-msgstr ""
-
-msgid "Key Path"
-msgstr ""
-
-msgid "Zone"
-msgstr ""
-
-msgid "Machine Type"
-msgstr ""
-
-msgid "Status"
 msgstr ""
 
 msgid "Number of CPUs"
@@ -1150,6 +1162,9 @@ msgid "CPUs"
 msgstr ""
 
 msgid "Memory"
+msgstr ""
+
+msgid "Status"
 msgstr ""
 
 msgid "OS Type"
@@ -1212,6 +1227,9 @@ msgstr ""
 msgid "Vnic Profile"
 msgstr ""
 
+msgid "Volume size in GB, integer value"
+msgstr ""
+
 msgid "ID or name of storage domain"
 msgstr ""
 
@@ -1225,9 +1243,6 @@ msgid "Boolean, set 1 to wipe disk after delete"
 msgstr ""
 
 msgid "Disk interface name, must be ide, virto or virto_scsi"
-msgstr ""
-
-msgid "Datacenter"
 msgstr ""
 
 msgid "Cores"
@@ -1301,6 +1316,12 @@ msgstr ""
 msgid "Network ID or Network Name from VMware"
 msgstr ""
 
+msgid "Console password set"
+msgstr ""
+
+msgid "Caching enabled"
+msgstr ""
+
 msgid "Power Status"
 msgstr ""
 
@@ -1311,9 +1332,6 @@ msgid "Connection Status"
 msgstr ""
 
 msgid "Hardware Version"
-msgstr ""
-
-msgid "Path"
 msgstr ""
 
 msgid "Operating System"
@@ -1847,9 +1865,6 @@ msgid "Enter the root password for the host group:"
 msgstr ""
 
 msgid "Title"
-msgstr ""
-
-msgid "Parent"
 msgstr ""
 
 msgid "Realm"
@@ -2785,9 +2800,6 @@ msgstr ""
 msgid "Network Mask"
 msgstr ""
 
-msgid "VLAN ID"
-msgstr ""
-
 msgid "Boot Mode"
 msgstr ""
 
@@ -2938,6 +2950,9 @@ msgstr ""
 msgid "Login"
 msgstr ""
 
+msgid "Email"
+msgstr ""
+
 msgid "Admin"
 msgstr ""
 
@@ -3044,9 +3059,6 @@ msgid "Could not delete the user group"
 msgstr ""
 
 msgid "View and manage compute resource's virtual machines"
-msgstr ""
-
-msgid "Virtual machine id, for gce use virtual machine name"
 msgstr ""
 
 msgid "Virtual machine is powering."

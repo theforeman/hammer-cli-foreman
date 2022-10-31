@@ -13,9 +13,9 @@
 # simon11 <transifex@stieger.co>, 2014
 msgid ""
 msgstr ""
-"Project-Id-Version: hammer-cli-foreman 3.4.0\n"
+"Project-Id-Version: hammer-cli-foreman 3.5.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-05-10 13:14+0000\n"
+"POT-Creation-Date: 2022-08-09 15:22+0000\n"
 "PO-Revision-Date: 2014-03-14 09:55+0000\n"
 "Last-Translator: Patrick Dolinic, 2021\n"
 "Language-Team: German (http://www.transifex.com/foreman/foreman/language/"
@@ -2971,6 +2971,27 @@ msgstr "Parameter für ein Subnetz löschen"
 msgid "Subnet parameter deleted."
 msgstr "Subnetzparameter gelöscht."
 
+msgid "Columns"
+msgstr ""
+
+msgid "Table preference created."
+msgstr ""
+
+msgid "Could not create table preference"
+msgstr ""
+
+msgid "Table preference updated."
+msgstr ""
+
+msgid "Could not update table preference"
+msgstr ""
+
+msgid "Table preference deleted."
+msgstr ""
+
+msgid "Could not remove table preference"
+msgstr ""
+
 msgid "Environment name"
 msgstr "Umgebungsname"
 
@@ -3084,6 +3105,9 @@ msgstr "Persönliche Zugriffstokens verwalten"
 
 msgid "Managing personal mail notifications"
 msgstr "Verwalten von persönlichen E-Mail-Benachrichtigungen"
+
+msgid "Managing table preferences"
+msgstr ""
 
 msgid "User mail notifications was added."
 msgstr "Benutzer-E-Mail-Benachrichtigungen wurden hinzugefügt."

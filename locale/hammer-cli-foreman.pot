@@ -6,10 +6,10 @@
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: hammer-cli-foreman 3.4.0\n"
+"Project-Id-Version: hammer-cli-foreman 3.5.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-08-09 15:22+0000\n"
-"PO-Revision-Date: 2022-08-09 15:22+0000\n"
+"POT-Creation-Date: 2022-10-31 15:16+0000\n"
+"PO-Revision-Date: 2022-10-31 15:16+0000\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: \n"
@@ -262,15 +262,15 @@ msgstr ""
 #: ../lib/hammer_cli_foreman/compute_profile.rb:22
 #: ../lib/hammer_cli_foreman/compute_resource.rb:22
 #: ../lib/hammer_cli_foreman/compute_resource.rb:122
-#: ../lib/hammer_cli_foreman/compute_resource.rb:134
-#: ../lib/hammer_cli_foreman/compute_resource.rb:171
-#: ../lib/hammer_cli_foreman/compute_resource.rb:183
-#: ../lib/hammer_cli_foreman/compute_resource.rb:195
+#: ../lib/hammer_cli_foreman/compute_resource.rb:137
+#: ../lib/hammer_cli_foreman/compute_resource.rb:179
+#: ../lib/hammer_cli_foreman/compute_resource.rb:191
 #: ../lib/hammer_cli_foreman/compute_resource.rb:207
 #: ../lib/hammer_cli_foreman/compute_resource.rb:219
-#: ../lib/hammer_cli_foreman/compute_resource.rb:231
-#: ../lib/hammer_cli_foreman/compute_resource.rb:243
-#: ../lib/hammer_cli_foreman/compute_resource.rb:255
+#: ../lib/hammer_cli_foreman/compute_resource.rb:234
+#: ../lib/hammer_cli_foreman/compute_resource.rb:247
+#: ../lib/hammer_cli_foreman/compute_resource.rb:261
+#: ../lib/hammer_cli_foreman/compute_resource.rb:273
 #: ../lib/hammer_cli_foreman/config_report.rb:10
 #: ../lib/hammer_cli_foreman/config_report.rb:31
 #: ../lib/hammer_cli_foreman/domain.rb:8
@@ -310,7 +310,7 @@ msgstr ""
 #: ../lib/hammer_cli_foreman/user.rb:10
 #: ../lib/hammer_cli_foreman/user_mail_notification.rb:38
 #: ../lib/hammer_cli_foreman/usergroup.rb:11
-#: ../lib/hammer_cli_foreman/virtual_machine.rb:25
+#: ../lib/hammer_cli_foreman/virtual_machine.rb:23
 msgid "Id"
 msgstr ""
 
@@ -325,17 +325,17 @@ msgstr ""
 #: ../lib/hammer_cli_foreman/compute_profile.rb:23
 #: ../lib/hammer_cli_foreman/compute_resource.rb:23
 #: ../lib/hammer_cli_foreman/compute_resource.rb:123
-#: ../lib/hammer_cli_foreman/compute_resource.rb:135
-#: ../lib/hammer_cli_foreman/compute_resource.rb:147
-#: ../lib/hammer_cli_foreman/compute_resource.rb:160
-#: ../lib/hammer_cli_foreman/compute_resource.rb:172
-#: ../lib/hammer_cli_foreman/compute_resource.rb:184
-#: ../lib/hammer_cli_foreman/compute_resource.rb:196
+#: ../lib/hammer_cli_foreman/compute_resource.rb:138
+#: ../lib/hammer_cli_foreman/compute_resource.rb:154
+#: ../lib/hammer_cli_foreman/compute_resource.rb:167
+#: ../lib/hammer_cli_foreman/compute_resource.rb:180
+#: ../lib/hammer_cli_foreman/compute_resource.rb:192
 #: ../lib/hammer_cli_foreman/compute_resource.rb:208
 #: ../lib/hammer_cli_foreman/compute_resource.rb:220
-#: ../lib/hammer_cli_foreman/compute_resource.rb:232
-#: ../lib/hammer_cli_foreman/compute_resource.rb:244
-#: ../lib/hammer_cli_foreman/compute_resource.rb:256
+#: ../lib/hammer_cli_foreman/compute_resource.rb:235
+#: ../lib/hammer_cli_foreman/compute_resource.rb:248
+#: ../lib/hammer_cli_foreman/compute_resource.rb:262
+#: ../lib/hammer_cli_foreman/compute_resource.rb:274
 #: ../lib/hammer_cli_foreman/domain.rb:9
 #: ../lib/hammer_cli_foreman/external_usergroup.rb:11
 #: ../lib/hammer_cli_foreman/external_usergroup.rb:42
@@ -377,7 +377,7 @@ msgstr ""
 #: ../lib/hammer_cli_foreman/user.rb:12
 #: ../lib/hammer_cli_foreman/user_mail_notification.rb:39
 #: ../lib/hammer_cli_foreman/usergroup.rb:12
-#: ../lib/hammer_cli_foreman/virtual_machine.rb:26
+#: ../lib/hammer_cli_foreman/virtual_machine.rb:24
 msgid "Name"
 msgstr ""
 
@@ -1153,6 +1153,21 @@ msgstr ""
 msgid "Could not delete the template combination"
 msgstr ""
 
+#:
+#: ../lib/hammer_cli_foreman/command_extensions/compute_resource_subcommand.rb:4
+msgid "Cluster ID"
+msgstr ""
+
+#:
+#: ../lib/hammer_cli_foreman/command_extensions/compute_resource_subcommand.rb:5
+msgid "Use --cluster-name instead"
+msgstr ""
+
+#:
+#: ../lib/hammer_cli_foreman/command_extensions/compute_resource_subcommand.rb:6
+msgid "Cluster name or path to search by"
+msgstr ""
+
 #: ../lib/hammer_cli_foreman/command_extensions/domain.rb:14
 msgid "Name of DNS proxy to use within this domain"
 msgstr ""
@@ -1311,6 +1326,7 @@ msgid "Cannot save file: %s does not exist"
 msgstr ""
 
 #: ../lib/hammer_cli_foreman/common_parameter.rb:14
+#: ../lib/hammer_cli_foreman/compute_resource.rb:196
 #: ../lib/hammer_cli_foreman/compute_resource/ec2.rb:21
 #: ../lib/hammer_cli_foreman/compute_resource/ovirt.rb:59
 #: ../lib/hammer_cli_foreman/host.rb:88
@@ -1549,7 +1565,6 @@ msgid "Provider"
 msgstr ""
 
 #: ../lib/hammer_cli_foreman/compute_resource.rb:35
-#: ../lib/hammer_cli_foreman/compute_resource/gce.rb:35
 #: ../lib/hammer_cli_foreman/domain.rb:19
 #: ../lib/hammer_cli_foreman/hostgroup.rb:71
 #: ../lib/hammer_cli_foreman/location.rb:16
@@ -1609,16 +1624,69 @@ msgstr ""
 msgid "Could not associate the virtual machines"
 msgstr ""
 
-#: ../lib/hammer_cli_foreman/compute_resource.rb:146
+#: ../lib/hammer_cli_foreman/compute_resource.rb:124
+#: ../lib/hammer_cli_foreman/compute_resource.rb:139
+#: ../lib/hammer_cli_foreman/compute_resource.rb:194
+#: ../lib/hammer_cli_foreman/compute_resource.rb:222
+#: ../lib/hammer_cli_foreman/compute_resource.rb:249
+#: ../lib/hammer_cli_foreman/compute_resource/ovirt.rb:49
+#: ../lib/hammer_cli_foreman/compute_resource/vmware.rb:66
+msgid "Datacenter"
+msgstr ""
+
+#: ../lib/hammer_cli_foreman/compute_resource.rb:125
+msgid "Hosts"
+msgstr ""
+
+#: ../lib/hammer_cli_foreman/compute_resource.rb:126
+msgid "Cluster path"
+msgstr ""
+
+#: ../lib/hammer_cli_foreman/compute_resource.rb:140
+msgid "Virtual switch"
+msgstr ""
+
+#: ../lib/hammer_cli_foreman/compute_resource.rb:141
+#: ../lib/hammer_cli_foreman/subnet.rb:41
+#: ../lib/hammer_cli_foreman/subnet.rb:72
+msgid "VLAN ID"
+msgstr ""
+
+#: ../lib/hammer_cli_foreman/compute_resource.rb:153
 msgid "VNIC profile ID"
 msgstr ""
 
-#: ../lib/hammer_cli_foreman/compute_resource.rb:148
+#: ../lib/hammer_cli_foreman/compute_resource.rb:155
 msgid "Network ID"
 msgstr ""
 
-#: ../lib/hammer_cli_foreman/compute_resource.rb:159
+#: ../lib/hammer_cli_foreman/compute_resource.rb:166
 msgid "Uuid"
+msgstr ""
+
+#: ../lib/hammer_cli_foreman/compute_resource.rb:168
+#: ../lib/hammer_cli_foreman/compute_resource.rb:195
+#: ../lib/hammer_cli_foreman/compute_resource.rb:275
+#: ../lib/hammer_cli_foreman/compute_resource/vmware.rb:81
+#: ../lib/hammer_cli_foreman/media.rb:11
+msgid "Path"
+msgstr ""
+
+#: ../lib/hammer_cli_foreman/compute_resource.rb:193
+#: ../lib/hammer_cli_foreman/hostgroup.rb:72
+#: ../lib/hammer_cli_foreman/location.rb:29
+#: ../lib/hammer_cli_foreman/organization.rb:29
+msgid "Parent"
+msgstr ""
+
+#: ../lib/hammer_cli_foreman/compute_resource.rb:221
+msgid "Cluster"
+msgstr ""
+
+#: ../lib/hammer_cli_foreman/compute_resource.rb:276
+#: ../lib/hammer_cli_foreman/compute_resource/ec2.rb:22
+#: ../lib/hammer_cli_foreman/compute_resource/openstack.rb:26
+msgid "State"
 msgstr ""
 
 #: ../lib/hammer_cli_foreman/compute_resource/base.rb:12
@@ -1635,56 +1703,12 @@ msgstr ""
 msgid "DNS"
 msgstr ""
 
-#: ../lib/hammer_cli_foreman/compute_resource/ec2.rb:22
-#: ../lib/hammer_cli_foreman/compute_resource/openstack.rb:26
-msgid "State"
-msgstr ""
-
 #: ../lib/hammer_cli_foreman/compute_resource/ec2.rb:24
 msgid "DNS Name"
 msgstr ""
 
 #: ../lib/hammer_cli_foreman/compute_resource/ec2.rb:25
 msgid "Virtualization Type"
-msgstr ""
-
-#: ../lib/hammer_cli_foreman/compute_resource/gce.rb:18
-#: ../lib/hammer_cli_foreman/compute_resource/ovirt.rb:38
-msgid "Volume size in GB, integer value"
-msgstr ""
-
-#: ../lib/hammer_cli_foreman/compute_resource/gce.rb:24
-msgid "Project"
-msgstr ""
-
-#: ../lib/hammer_cli_foreman/compute_resource/gce.rb:25
-#: ../lib/hammer_cli_foreman/user.rb:13
-msgid "Email"
-msgstr ""
-
-#: ../lib/hammer_cli_foreman/compute_resource/gce.rb:26
-msgid "Key Path"
-msgstr ""
-
-#: ../lib/hammer_cli_foreman/compute_resource/gce.rb:27
-#: ../lib/hammer_cli_foreman/compute_resource/gce.rb:36
-msgid "Zone"
-msgstr ""
-
-#: ../lib/hammer_cli_foreman/compute_resource/gce.rb:33
-msgid "Machine Type"
-msgstr ""
-
-#: ../lib/hammer_cli_foreman/compute_resource/gce.rb:34
-#: ../lib/hammer_cli_foreman/compute_resource/libvirt.rb:49
-#: ../lib/hammer_cli_foreman/compute_resource/ovirt.rb:57
-#: ../lib/hammer_cli_foreman/host.rb:65 ../lib/hammer_cli_foreman/host.rb:135
-#: ../lib/hammer_cli_foreman/ping.rb:12
-#: ../lib/hammer_cli_foreman/smart_proxy.rb:13
-#: ../lib/hammer_cli_foreman/status.rb:16
-#: ../lib/hammer_cli_foreman/status.rb:26
-#: ../lib/hammer_cli_foreman/status.rb:38
-msgid "Status"
 msgstr ""
 
 #: ../lib/hammer_cli_foreman/compute_resource/libvirt.rb:10
@@ -1730,14 +1754,25 @@ msgstr ""
 
 #: ../lib/hammer_cli_foreman/compute_resource/libvirt.rb:47
 #: ../lib/hammer_cli_foreman/compute_resource/ovirt.rb:55
-#: ../lib/hammer_cli_foreman/compute_resource/vmware.rb:73
+#: ../lib/hammer_cli_foreman/compute_resource/vmware.rb:75
 msgid "CPUs"
 msgstr ""
 
 #: ../lib/hammer_cli_foreman/compute_resource/libvirt.rb:48
 #: ../lib/hammer_cli_foreman/compute_resource/ovirt.rb:56
-#: ../lib/hammer_cli_foreman/compute_resource/vmware.rb:74
+#: ../lib/hammer_cli_foreman/compute_resource/vmware.rb:76
 msgid "Memory"
+msgstr ""
+
+#: ../lib/hammer_cli_foreman/compute_resource/libvirt.rb:49
+#: ../lib/hammer_cli_foreman/compute_resource/ovirt.rb:57
+#: ../lib/hammer_cli_foreman/host.rb:65 ../lib/hammer_cli_foreman/host.rb:135
+#: ../lib/hammer_cli_foreman/ping.rb:12
+#: ../lib/hammer_cli_foreman/smart_proxy.rb:13
+#: ../lib/hammer_cli_foreman/status.rb:16
+#: ../lib/hammer_cli_foreman/status.rb:26
+#: ../lib/hammer_cli_foreman/status.rb:38
+msgid "Status"
 msgstr ""
 
 #: ../lib/hammer_cli_foreman/compute_resource/libvirt.rb:50
@@ -1753,7 +1788,7 @@ msgid "Persistent"
 msgstr ""
 
 #: ../lib/hammer_cli_foreman/compute_resource/libvirt.rb:53
-#: ../lib/hammer_cli_foreman/compute_resource/vmware.rb:81
+#: ../lib/hammer_cli_foreman/compute_resource/vmware.rb:83
 msgid "Boot order"
 msgstr ""
 
@@ -1821,6 +1856,10 @@ msgstr ""
 msgid "Vnic Profile"
 msgstr ""
 
+#: ../lib/hammer_cli_foreman/compute_resource/ovirt.rb:38
+msgid "Volume size in GB, integer value"
+msgstr ""
+
 #: ../lib/hammer_cli_foreman/compute_resource/ovirt.rb:39
 msgid "ID or name of storage domain"
 msgstr ""
@@ -1839,11 +1878,6 @@ msgstr ""
 
 #: ../lib/hammer_cli_foreman/compute_resource/ovirt.rb:43
 msgid "Disk interface name, must be ide, virto or virto_scsi"
-msgstr ""
-
-#: ../lib/hammer_cli_foreman/compute_resource/ovirt.rb:49
-#: ../lib/hammer_cli_foreman/compute_resource/vmware.rb:66
-msgid "Datacenter"
 msgstr ""
 
 #: ../lib/hammer_cli_foreman/compute_resource/ovirt.rb:58
@@ -1940,28 +1974,31 @@ msgstr ""
 msgid "Network ID or Network Name from VMware"
 msgstr ""
 
-#: ../lib/hammer_cli_foreman/compute_resource/vmware.rb:75
-msgid "Power Status"
+#: ../lib/hammer_cli_foreman/compute_resource/vmware.rb:68
+msgid "Console password set"
 msgstr ""
 
-#: ../lib/hammer_cli_foreman/compute_resource/vmware.rb:76
-msgid "Host Name"
+#: ../lib/hammer_cli_foreman/compute_resource/vmware.rb:69
+msgid "Caching enabled"
 msgstr ""
 
 #: ../lib/hammer_cli_foreman/compute_resource/vmware.rb:77
-msgid "Connection Status"
+msgid "Power Status"
 msgstr ""
 
 #: ../lib/hammer_cli_foreman/compute_resource/vmware.rb:78
-msgid "Hardware Version"
+msgid "Host Name"
 msgstr ""
 
 #: ../lib/hammer_cli_foreman/compute_resource/vmware.rb:79
-#: ../lib/hammer_cli_foreman/media.rb:11
-msgid "Path"
+msgid "Connection Status"
 msgstr ""
 
 #: ../lib/hammer_cli_foreman/compute_resource/vmware.rb:80
+msgid "Hardware Version"
+msgstr ""
+
+#: ../lib/hammer_cli_foreman/compute_resource/vmware.rb:82
 #: ../lib/hammer_cli_foreman/host.rb:21 ../lib/hammer_cli_foreman/host.rb:97
 #: ../lib/hammer_cli_foreman/hostgroup.rb:55
 #: ../lib/hammer_cli_foreman/hostgroup.rb:83
@@ -2709,12 +2746,6 @@ msgstr ""
 #: ../lib/hammer_cli_foreman/operating_system.rb:11
 #: ../lib/hammer_cli_foreman/organization.rb:14
 msgid "Title"
-msgstr ""
-
-#: ../lib/hammer_cli_foreman/hostgroup.rb:72
-#: ../lib/hammer_cli_foreman/location.rb:29
-#: ../lib/hammer_cli_foreman/organization.rb:29
-msgid "Parent"
 msgstr ""
 
 #: ../lib/hammer_cli_foreman/hostgroup.rb:78
@@ -4001,11 +4032,6 @@ msgstr ""
 msgid "Network Mask"
 msgstr ""
 
-#: ../lib/hammer_cli_foreman/subnet.rb:41
-#: ../lib/hammer_cli_foreman/subnet.rb:72
-msgid "VLAN ID"
-msgstr ""
-
 #: ../lib/hammer_cli_foreman/subnet.rb:42
 #: ../lib/hammer_cli_foreman/subnet.rb:74
 msgid "Boot Mode"
@@ -4209,6 +4235,10 @@ msgstr ""
 msgid "Login"
 msgstr ""
 
+#: ../lib/hammer_cli_foreman/user.rb:13
+msgid "Email"
+msgstr ""
+
 #: ../lib/hammer_cli_foreman/user.rb:14
 #: ../lib/hammer_cli_foreman/usergroup.rb:13
 msgid "Admin"
@@ -4354,24 +4384,18 @@ msgstr ""
 msgid "View and manage compute resource's virtual machines"
 msgstr ""
 
-#: ../lib/hammer_cli_foreman/virtual_machine.rb:12
-#: ../lib/hammer_cli_foreman/virtual_machine.rb:22
-#: ../lib/hammer_cli_foreman/virtual_machine.rb:42
-msgid "Virtual machine id, for gce use virtual machine name"
-msgstr ""
-
-#: ../lib/hammer_cli_foreman/virtual_machine.rb:14
+#: ../lib/hammer_cli_foreman/virtual_machine.rb:13
 msgid "Virtual machine is powering."
 msgstr ""
 
-#: ../lib/hammer_cli_foreman/virtual_machine.rb:15
+#: ../lib/hammer_cli_foreman/virtual_machine.rb:14
 msgid "Could not power the virtual machine"
 msgstr ""
 
-#: ../lib/hammer_cli_foreman/virtual_machine.rb:45
+#: ../lib/hammer_cli_foreman/virtual_machine.rb:41
 msgid "Virtual machine deleted."
 msgstr ""
 
-#: ../lib/hammer_cli_foreman/virtual_machine.rb:46
+#: ../lib/hammer_cli_foreman/virtual_machine.rb:42
 msgid "Could not delete the virtual machine"
 msgstr ""

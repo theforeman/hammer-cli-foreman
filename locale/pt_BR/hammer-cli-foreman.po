@@ -10,9 +10,9 @@
 # Valeria S Silva <valeriassilva@live.com>, 2015
 msgid ""
 msgstr ""
-"Project-Id-Version: hammer-cli-foreman 3.4.0\n"
+"Project-Id-Version: hammer-cli-foreman 3.5.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-05-10 13:14+0000\n"
+"POT-Creation-Date: 2022-08-09 15:22+0000\n"
 "PO-Revision-Date: 2014-03-14 09:55+0000\n"
 "Last-Translator: Valeria S Silva <valeriassilva@live.com>, 2015\n"
 "Language-Team: Portuguese (Brazil) (http://www.transifex.com/foreman/foreman/"
@@ -2956,6 +2956,27 @@ msgstr "Excluir parâmetro para uma sub-rede"
 msgid "Subnet parameter deleted."
 msgstr "Parâmetro de sub-rede excluído."
 
+msgid "Columns"
+msgstr ""
+
+msgid "Table preference created."
+msgstr ""
+
+msgid "Could not create table preference"
+msgstr ""
+
+msgid "Table preference updated."
+msgstr ""
+
+msgid "Could not update table preference"
+msgstr ""
+
+msgid "Table preference deleted."
+msgstr ""
+
+msgid "Could not remove table preference"
+msgstr ""
+
 msgid "Environment name"
 msgstr "Nome do ambiente"
 
@@ -3070,6 +3091,9 @@ msgstr "Gerenciamento de tokens de acesso pessoal"
 
 msgid "Managing personal mail notifications"
 msgstr "Gerenciamento de notificações pessoais por correio"
+
+msgid "Managing table preferences"
+msgstr ""
 
 msgid "User mail notifications was added."
 msgstr "Foram adicionadas notificações por correio do usuário."
