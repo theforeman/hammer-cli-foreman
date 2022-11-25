@@ -40,7 +40,7 @@ module HammerCLIForeman
           ['bootable',       _('Boolean, set 1 for bootable, only one volume can be bootable')],
           ['preallocate',    _('Boolean, set 1 to preallocate')],
           ['wipe_after_delete', _('Boolean, set 1 to wipe disk after delete')],
-          ['interface', _('Disk interface name, must be ide, virto or virto_scsi')]
+          ['interface', _('Disk interface name, must be ide, virtio or virtio_scsi')]
         ]
       end
 
