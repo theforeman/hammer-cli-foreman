@@ -26,7 +26,7 @@ module HammerCLIForeman
     class InfoCommand < HammerCLIForeman::InfoCommand
       output ListCommand.output_definition do
         field :version, _("Version")
-        field :hosts_count, _("Host_count")
+        field :hosts_count, _("Host count")
         collection :features, _("Features") do
           field :name, _('Name')
           field :version, _('Version')

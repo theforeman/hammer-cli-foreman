@@ -45,7 +45,7 @@ module HammerCLIForeman
         label _("Report metrics") do
           from "metrics" do
             from "time" do
-              field :config_retrieval, _("config_retrieval")
+              field :config_retrieval, _("config retrieval")
               field :exec, _("exec")
               field :file, _("file")
               field :package, _("package")
