@@ -105,8 +105,9 @@ describe HammerCLIForeman::Api::InteractiveBasicAuth do
       response.stubs(:body).returns('{"error": {"message": "Unable to authenticate user admin"}}')
       ex.response = response
       new_ex = auth.error(ex)
+      expected = "Unable to authenticate user admin\nInvalid username or password."
 
-      assert_equal 'Unable to authenticate user admin', new_ex.message
+      assert_equal expected, new_ex.message
     end
   end
 

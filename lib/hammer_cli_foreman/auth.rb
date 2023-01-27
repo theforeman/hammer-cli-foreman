@@ -28,6 +28,27 @@ module HammerCLIForeman
         end
       end
 
+      class BasicExternal < HammerCLI::AbstractCommand
+        extend HammerCLIForeman::Authenticate::Login
+
+        command_name 'basic-external'
+        desc _('Authenticate against external source (IPA/PAM) with credentials')
+
+        option ['-u', '--username'], 'USERNAME', _('Username to access the remote system')
+        option ['-p', '--password'], 'PASSWORD', _('Password to access the remote system')
+
+        def execute
+          Basic.execute_with_params(
+            AUTH_TYPES[:basic_auth_external],
+            option_username || HammerCLI::Settings.get('_params', 'username'),
+            option_password || HammerCLI::Settings.get('_params', 'password')
+          )
+          logged_user = HammerCLIForeman.foreman_api_connection.authenticator.user
+          print_message(_("Successfully logged in as '%s'.") % logged_user)
+          HammerCLI::EX_OK
+        end
+      end
+
       class Negotiate < HammerCLI::AbstractCommand
         extend HammerCLIForeman::Authenticate::Login
 
