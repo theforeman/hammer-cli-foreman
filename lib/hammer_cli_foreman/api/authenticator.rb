@@ -13,6 +13,8 @@ module HammerCLIForeman
           void_auth
         elsif auth_type == AUTH_TYPES[:basic_auth]
           basic_auth
+        elsif auth_type == AUTH_TYPES[:basic_auth_external]
+          basic_auth_external
         elsif auth_type == AUTH_TYPES[:negotiate]
           negotiate_auth
         elsif auth_type == AUTH_TYPES[:oauth_password_grant]
@@ -42,6 +44,24 @@ module HammerCLIForeman
             password = settings.get(:foreman, :password)
           end
           InteractiveBasicAuth.new(username, password)
+        end
+      end
+
+      def basic_auth_external
+        if HammerCLIForeman::Sessions.enabled?
+          authenticator = InteractiveBasicAuthExternal.new(
+            settings.get(:_params, :username) || ENV['FOREMAN_USERNAME'],
+            settings.get(:_params, :password) || ENV['FOREMAN_PASSWORD'],
+            uri
+          )
+          SessionAuthenticatorWrapper.new(authenticator, uri, auth_type)
+        else
+          username = settings.get(:_params, :username) || ENV['FOREMAN_USERNAME'] || settings.get(:foreman, :username)
+          password = settings.get(:_params, :password) || ENV['FOREMAN_PASSWORD']
+          if password.nil? && (username == settings.get(:foreman, :username))
+            password = settings.get(:foreman, :password)
+          end
+          InteractiveBasicAuthExternal.new(username, password, uri)
         end
       end
 

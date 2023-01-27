@@ -1,6 +1,7 @@
 require 'hammer_cli_foreman/api/session_authenticator_wrapper'
 require 'hammer_cli_foreman/api/authenticator'
 require 'hammer_cli_foreman/api/interactive_basic_auth'
+require 'hammer_cli_foreman/api/interactive_basic_auth_external'
 require 'hammer_cli_foreman/api/negotiate_auth'
 require 'hammer_cli_foreman/api/oauth/authentication_code_grant'
 require 'hammer_cli_foreman/api/oauth/password_grant'
@@ -11,6 +12,7 @@ module HammerCLIForeman
   CONNECTION_NAME = 'foreman'
   AUTH_TYPES = {
     basic_auth: 'Basic_Auth',
+    basic_auth_external: 'Basic_Auth_External',
     negotiate: 'Negotiate_Auth',
     oauth_authentication_code_grant: 'Oauth_Authentication_Code_Grant',
     oauth_password_grant: 'Oauth_Password_Grant'
@@ -44,8 +46,7 @@ module HammerCLIForeman
 
       protected
 
-      def default_auth_type(settings)
-        return AUTH_TYPES[:basic_auth] unless HammerCLIForeman::Sessions.enabled?
+      def default_auth_type(_settings)
         HammerCLI::Settings.get(:foreman, :default_auth_type) || AUTH_TYPES[:basic_auth]
       end
 

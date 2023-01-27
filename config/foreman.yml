@@ -14,6 +14,11 @@
   :username: 'admin'
   #:password: 'example'
 
+  # Basic Auth External:
+  #:default_auth_type: 'Basic_Auth_External'
+  #:username: 'admin'
+  #:password: 'example'
+
   # Oauth using the Password Grant Flow:
   # This authentication method requires sessions to be enabled, uncomment the following
   # lines to use this authentication method.
