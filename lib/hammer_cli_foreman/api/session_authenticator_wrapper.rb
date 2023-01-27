@@ -80,7 +80,7 @@ module HammerCLIForeman
 
       def user(ask=nil)
         return unless @authenticator.respond_to?(:user)
-        if @auth_type == AUTH_TYPES[:basic_auth]
+        if [AUTH_TYPES[:basic_auth], AUTH_TYPES[:basic_auth_external]].include?(@auth_type)
           @authenticator.user(ask)
         elsif @auth_type == AUTH_TYPES[:oauth_authentication_code_grant] ||
               @auth_type = AUTH_TYPES[:oauth_password_grant]
@@ -93,7 +93,7 @@ module HammerCLIForeman
       end
 
       def set_auth_params(*args)
-        if @auth_type == AUTH_TYPES[:basic_auth]
+        if [AUTH_TYPES[:basic_auth], AUTH_TYPES[:basic_auth_external]].include?(@auth_type)
           @authenticator.set_credentials(*args)
         elsif @auth_type == AUTH_TYPES[:oauth_authentication_code_grant] ||
               @auth_type == AUTH_TYPES[:oauth_password_grant]
