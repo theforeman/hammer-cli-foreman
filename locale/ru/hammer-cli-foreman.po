@@ -7,9 +7,9 @@
 # Yulia <yulia.poyarkova@redhat.com>, 2016
 msgid ""
 msgstr ""
-"Project-Id-Version: hammer-cli-foreman 3.5.0\n"
+"Project-Id-Version: hammer-cli-foreman 3.6.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-08-09 15:22+0000\n"
+"POT-Creation-Date: 2022-10-31 15:16+0000\n"
 "PO-Revision-Date: 2014-03-14 09:55+0000\n"
 "Last-Translator: Vladimir Pavlov <v.pavlov@i-teco.ru>, 2015\n"
 "Language-Team: Russian (http://www.transifex.com/foreman/foreman/language/"
@@ -769,6 +769,15 @@ msgstr ""
 msgid "Could not delete the template combination"
 msgstr ""
 
+msgid "Cluster ID"
+msgstr ""
+
+msgid "Use --cluster-name instead"
+msgstr ""
+
+msgid "Cluster name or path to search by"
+msgstr ""
+
 msgid "Name of DNS proxy to use within this domain"
 msgstr "Имя DNS-прокси для этого домена"
 
@@ -1076,6 +1085,21 @@ msgstr ""
 msgid "Could not associate the virtual machines"
 msgstr ""
 
+msgid "Datacenter"
+msgstr "Центр данных"
+
+msgid "Hosts"
+msgstr ""
+
+msgid "Cluster path"
+msgstr ""
+
+msgid "Virtual switch"
+msgstr ""
+
+msgid "VLAN ID"
+msgstr "VLAN ID"
+
 msgid "VNIC profile ID"
 msgstr ""
 
@@ -1084,6 +1108,18 @@ msgstr ""
 
 msgid "Uuid"
 msgstr ""
+
+msgid "Path"
+msgstr "Путь"
+
+msgid "Parent"
+msgstr "Родительский"
+
+msgid "Cluster"
+msgstr ""
+
+msgid "State"
+msgstr "Состояние"
 
 msgid "Url"
 msgstr "URL"
@@ -1094,35 +1130,11 @@ msgstr "Регион"
 msgid "DNS"
 msgstr "DNS"
 
-msgid "State"
-msgstr "Состояние"
-
 msgid "DNS Name"
 msgstr "DNS-имя"
 
 msgid "Virtualization Type"
 msgstr ""
-
-msgid "Volume size in GB, integer value"
-msgstr ""
-
-msgid "Project"
-msgstr ""
-
-msgid "Email"
-msgstr "Email"
-
-msgid "Key Path"
-msgstr ""
-
-msgid "Zone"
-msgstr "Зона"
-
-msgid "Machine Type"
-msgstr "Тип машины"
-
-msgid "Status"
-msgstr "Статус"
 
 msgid "Number of CPUs"
 msgstr "Процессоры"
@@ -1159,6 +1171,9 @@ msgstr "Процессоры"
 
 msgid "Memory"
 msgstr "Память"
+
+msgid "Status"
+msgstr "Статус"
 
 msgid "OS Type"
 msgstr ""
@@ -1220,6 +1235,9 @@ msgstr ""
 msgid "Vnic Profile"
 msgstr ""
 
+msgid "Volume size in GB, integer value"
+msgstr ""
+
 msgid "ID or name of storage domain"
 msgstr ""
 
@@ -1234,9 +1252,6 @@ msgstr ""
 
 msgid "Disk interface name, must be ide, virto or virto_scsi"
 msgstr ""
-
-msgid "Datacenter"
-msgstr "Центр данных"
 
 msgid "Cores"
 msgstr "Ядра"
@@ -1309,6 +1324,12 @@ msgstr ""
 msgid "Network ID or Network Name from VMware"
 msgstr ""
 
+msgid "Console password set"
+msgstr ""
+
+msgid "Caching enabled"
+msgstr ""
+
 msgid "Power Status"
 msgstr ""
 
@@ -1320,9 +1341,6 @@ msgstr ""
 
 msgid "Hardware Version"
 msgstr ""
-
-msgid "Path"
-msgstr "Путь"
 
 msgid "Operating System"
 msgstr "Операционная система"
@@ -1856,9 +1874,6 @@ msgstr "Введите пароль пользователя root для дос�
 
 msgid "Title"
 msgstr "Заголовок"
-
-msgid "Parent"
-msgstr "Родительский"
 
 msgid "Realm"
 msgstr "Область"
@@ -2793,9 +2808,6 @@ msgstr "Префикс сети"
 msgid "Network Mask"
 msgstr "Маска"
 
-msgid "VLAN ID"
-msgstr "VLAN ID"
-
 msgid "Boot Mode"
 msgstr ""
 
@@ -2946,6 +2958,9 @@ msgstr ""
 msgid "Login"
 msgstr "Вход"
 
+msgid "Email"
+msgstr "Email"
+
 msgid "Admin"
 msgstr "Администратор"
 
@@ -3054,9 +3069,6 @@ msgstr "Не удалось удалить группу"
 msgid "View and manage compute resource's virtual machines"
 msgstr ""
 
-msgid "Virtual machine id, for gce use virtual machine name"
-msgstr ""
-
 msgid "Virtual machine is powering."
 msgstr ""
 
@@ -3068,3 +3080,9 @@ msgstr ""
 
 msgid "Could not delete the virtual machine"
 msgstr ""
+
+#~ msgid "Zone"
+#~ msgstr "Зона"
+
+#~ msgid "Machine Type"
+#~ msgstr "Тип машины"

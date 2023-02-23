@@ -5,9 +5,9 @@
 # Translators:
 msgid ""
 msgstr ""
-"Project-Id-Version: hammer-cli-foreman 3.5.0\n"
+"Project-Id-Version: hammer-cli-foreman 3.6.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-08-09 15:22+0000\n"
+"POT-Creation-Date: 2022-10-31 15:16+0000\n"
 "PO-Revision-Date: 2014-03-14 09:55+0000\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: Chinese (Taiwan) (http://www.transifex.com/foreman/foreman/"
@@ -765,6 +765,15 @@ msgstr ""
 msgid "Could not delete the template combination"
 msgstr ""
 
+msgid "Cluster ID"
+msgstr ""
+
+msgid "Use --cluster-name instead"
+msgstr ""
+
+msgid "Cluster name or path to search by"
+msgstr ""
+
 msgid "Name of DNS proxy to use within this domain"
 msgstr "在此區域中使用的 DNS 協定的名稱"
 
@@ -1071,6 +1080,21 @@ msgstr ""
 msgid "Could not associate the virtual machines"
 msgstr ""
 
+msgid "Datacenter"
+msgstr "資料中心"
+
+msgid "Hosts"
+msgstr ""
+
+msgid "Cluster path"
+msgstr ""
+
+msgid "Virtual switch"
+msgstr ""
+
+msgid "VLAN ID"
+msgstr "VLAN ID"
+
 msgid "VNIC profile ID"
 msgstr ""
 
@@ -1079,6 +1103,18 @@ msgstr ""
 
 msgid "Uuid"
 msgstr ""
+
+msgid "Path"
+msgstr "路徑"
+
+msgid "Parent"
+msgstr "父"
+
+msgid "Cluster"
+msgstr ""
+
+msgid "State"
+msgstr "狀態"
 
 msgid "Url"
 msgstr "URL"
@@ -1089,35 +1125,11 @@ msgstr "區域"
 msgid "DNS"
 msgstr "DNS"
 
-msgid "State"
-msgstr "狀態"
-
 msgid "DNS Name"
 msgstr ""
 
 msgid "Virtualization Type"
 msgstr ""
-
-msgid "Volume size in GB, integer value"
-msgstr ""
-
-msgid "Project"
-msgstr ""
-
-msgid "Email"
-msgstr "電子郵件"
-
-msgid "Key Path"
-msgstr ""
-
-msgid "Zone"
-msgstr "區域"
-
-msgid "Machine Type"
-msgstr "機器類型"
-
-msgid "Status"
-msgstr "狀態"
 
 msgid "Number of CPUs"
 msgstr "CPU 數量"
@@ -1154,6 +1166,9 @@ msgstr "CPU"
 
 msgid "Memory"
 msgstr "記憶體"
+
+msgid "Status"
+msgstr "狀態"
 
 msgid "OS Type"
 msgstr ""
@@ -1215,6 +1230,9 @@ msgstr ""
 msgid "Vnic Profile"
 msgstr ""
 
+msgid "Volume size in GB, integer value"
+msgstr ""
+
 msgid "ID or name of storage domain"
 msgstr ""
 
@@ -1229,9 +1247,6 @@ msgstr ""
 
 msgid "Disk interface name, must be ide, virto or virto_scsi"
 msgstr ""
-
-msgid "Datacenter"
-msgstr "資料中心"
 
 msgid "Cores"
 msgstr "核心"
@@ -1304,6 +1319,12 @@ msgstr ""
 msgid "Network ID or Network Name from VMware"
 msgstr ""
 
+msgid "Console password set"
+msgstr ""
+
+msgid "Caching enabled"
+msgstr ""
+
 msgid "Power Status"
 msgstr ""
 
@@ -1315,9 +1336,6 @@ msgstr ""
 
 msgid "Hardware Version"
 msgstr ""
-
-msgid "Path"
-msgstr "路徑"
 
 msgid "Operating System"
 msgstr "作業系統"
@@ -1851,9 +1869,6 @@ msgstr "輸入主機群組的 root 密碼："
 
 msgid "Title"
 msgstr "標題"
-
-msgid "Parent"
-msgstr "父"
 
 msgid "Realm"
 msgstr "領域"
@@ -2788,9 +2803,6 @@ msgstr ""
 msgid "Network Mask"
 msgstr ""
 
-msgid "VLAN ID"
-msgstr "VLAN ID"
-
 msgid "Boot Mode"
 msgstr ""
 
@@ -2941,6 +2953,9 @@ msgstr ""
 msgid "Login"
 msgstr "登入"
 
+msgid "Email"
+msgstr "電子郵件"
+
 msgid "Admin"
 msgstr "管理員"
 
@@ -3049,9 +3064,6 @@ msgstr "無法刪除使用者群組"
 msgid "View and manage compute resource's virtual machines"
 msgstr ""
 
-msgid "Virtual machine id, for gce use virtual machine name"
-msgstr ""
-
 msgid "Virtual machine is powering."
 msgstr ""
 
@@ -3063,3 +3075,9 @@ msgstr ""
 
 msgid "Could not delete the virtual machine"
 msgstr ""
+
+#~ msgid "Zone"
+#~ msgstr "區域"
+
+#~ msgid "Machine Type"
+#~ msgstr "機器類型"

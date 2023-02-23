@@ -10,9 +10,9 @@
 # Valeria S Silva <valeriassilva@live.com>, 2015
 msgid ""
 msgstr ""
-"Project-Id-Version: hammer-cli-foreman 3.5.0\n"
+"Project-Id-Version: hammer-cli-foreman 3.6.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-08-09 15:22+0000\n"
+"POT-Creation-Date: 2022-10-31 15:16+0000\n"
 "PO-Revision-Date: 2014-03-14 09:55+0000\n"
 "Last-Translator: Valeria S Silva <valeriassilva@live.com>, 2015\n"
 "Language-Team: Portuguese (Brazil) (http://www.transifex.com/foreman/foreman/"
@@ -789,6 +789,15 @@ msgstr "Combinação de modelo excluída."
 msgid "Could not delete the template combination"
 msgstr "Não foi possível excluir a combinação de modelo"
 
+msgid "Cluster ID"
+msgstr ""
+
+msgid "Use --cluster-name instead"
+msgstr ""
+
+msgid "Cluster name or path to search by"
+msgstr ""
+
 msgid "Name of DNS proxy to use within this domain"
 msgstr "Nome do Proxy DNS para usar dentro deste domínio"
 
@@ -1104,6 +1113,21 @@ msgstr "Máquinas virtuais têm sido associadas."
 msgid "Could not associate the virtual machines"
 msgstr "Não foi possível associar as máquinas virtuais"
 
+msgid "Datacenter"
+msgstr "Datacenter"
+
+msgid "Hosts"
+msgstr ""
+
+msgid "Cluster path"
+msgstr ""
+
+msgid "Virtual switch"
+msgstr ""
+
+msgid "VLAN ID"
+msgstr "ID DA VLAN"
+
 msgid "VNIC profile ID"
 msgstr "Identificação do perfil do VNIC"
 
@@ -1112,6 +1136,18 @@ msgstr "Identificação da rede"
 
 msgid "Uuid"
 msgstr "UUID"
+
+msgid "Path"
+msgstr "Caminho"
+
+msgid "Parent"
+msgstr "Pai"
+
+msgid "Cluster"
+msgstr ""
+
+msgid "State"
+msgstr "Estado"
 
 msgid "Url"
 msgstr "Url"
@@ -1122,35 +1158,11 @@ msgstr "Região"
 msgid "DNS"
 msgstr "DNS"
 
-msgid "State"
-msgstr "Estado"
-
 msgid "DNS Name"
 msgstr "Nome DNS"
 
 msgid "Virtualization Type"
 msgstr "Tipo de virtualização"
-
-msgid "Volume size in GB, integer value"
-msgstr "Tamanho do volume em GB, valor inteiro"
-
-msgid "Project"
-msgstr "Projeto"
-
-msgid "Email"
-msgstr "E-mail"
-
-msgid "Key Path"
-msgstr "Caminho da chave"
-
-msgid "Zone"
-msgstr "Zona"
-
-msgid "Machine Type"
-msgstr "Tipo de máquina"
-
-msgid "Status"
-msgstr "Estado"
 
 msgid "Number of CPUs"
 msgstr "Número de CPUs"
@@ -1187,6 +1199,9 @@ msgstr "CPUs"
 
 msgid "Memory"
 msgstr "Memória"
+
+msgid "Status"
+msgstr "Estado"
 
 msgid "OS Type"
 msgstr "Tipo de SO"
@@ -1250,6 +1265,9 @@ msgstr "Tipo de interface"
 msgid "Vnic Profile"
 msgstr "Perfil Vnic"
 
+msgid "Volume size in GB, integer value"
+msgstr "Tamanho do volume em GB, valor inteiro"
+
 msgid "ID or name of storage domain"
 msgstr "ID ou nome de domínio de storage"
 
@@ -1266,9 +1284,6 @@ msgstr "Booleano, definir 1 para limpar o disco depois de excluir"
 
 msgid "Disk interface name, must be ide, virto or virto_scsi"
 msgstr "Nome da interface do disco, deve ser ide, virto ou virto_scsi"
-
-msgid "Datacenter"
-msgstr "Datacenter"
 
 msgid "Cores"
 msgstr "Núcleos"
@@ -1349,6 +1364,12 @@ msgstr ""
 msgid "Network ID or Network Name from VMware"
 msgstr "ID ou nome de rede do VMware"
 
+msgid "Console password set"
+msgstr ""
+
+msgid "Caching enabled"
+msgstr ""
+
 msgid "Power Status"
 msgstr "Estado de energia"
 
@@ -1360,9 +1381,6 @@ msgstr "Estado da conexão"
 
 msgid "Hardware Version"
 msgstr "Versão do hardware"
-
-msgid "Path"
-msgstr "Caminho"
 
 msgid "Operating System"
 msgstr "Sistema Operacional"
@@ -1912,9 +1930,6 @@ msgstr "Insira a senha do root para o grupo host"
 
 msgid "Title"
 msgstr "Título"
-
-msgid "Parent"
-msgstr "Pai"
 
 msgid "Realm"
 msgstr "Realm"
@@ -2878,9 +2893,6 @@ msgstr "Prefixo de rede"
 msgid "Network Mask"
 msgstr "Máscara de rede"
 
-msgid "VLAN ID"
-msgstr "ID DA VLAN"
-
 msgid "Boot Mode"
 msgstr "Modo de reinicialização"
 
@@ -3032,6 +3044,9 @@ msgstr "Não foi possível clonar o modelo de provisionamento"
 msgid "Login"
 msgstr "Login"
 
+msgid "Email"
+msgstr "E-mail"
+
 msgid "Admin"
 msgstr "Admin"
 
@@ -3140,9 +3155,6 @@ msgstr "Não foi possível remover o grupo de usuário"
 msgid "View and manage compute resource's virtual machines"
 msgstr "Visualizar e gerenciar as máquinas virtuais de recurso de computação"
 
-msgid "Virtual machine id, for gce use virtual machine name"
-msgstr "ID da máquina virtual, para gce use o nome de máquina virtual"
-
 msgid "Virtual machine is powering."
 msgstr "A máquina virtual está sendo ligada."
 
@@ -3154,3 +3166,18 @@ msgstr "Máquina virtual excluída."
 
 msgid "Could not delete the virtual machine"
 msgstr "Não foi possível excluir a máquina virtual"
+
+#~ msgid "Project"
+#~ msgstr "Projeto"
+
+#~ msgid "Key Path"
+#~ msgstr "Caminho da chave"
+
+#~ msgid "Zone"
+#~ msgstr "Zona"
+
+#~ msgid "Machine Type"
+#~ msgstr "Tipo de máquina"
+
+#~ msgid "Virtual machine id, for gce use virtual machine name"
+#~ msgstr "ID da máquina virtual, para gce use o nome de máquina virtual"

@@ -5,9 +5,9 @@
 # Translators:
 msgid ""
 msgstr ""
-"Project-Id-Version: hammer-cli-foreman 3.5.0\n"
+"Project-Id-Version: hammer-cli-foreman 3.6.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-08-09 15:22+0000\n"
+"POT-Creation-Date: 2022-10-31 15:16+0000\n"
 "PO-Revision-Date: 2014-03-14 09:55+0000\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: Chinese (China) (http://www.transifex.com/foreman/foreman/"
@@ -770,6 +770,15 @@ msgstr "已删除模板组合。"
 msgid "Could not delete the template combination"
 msgstr "不能删除模板组合"
 
+msgid "Cluster ID"
+msgstr ""
+
+msgid "Use --cluster-name instead"
+msgstr ""
+
+msgid "Cluster name or path to search by"
+msgstr ""
+
 msgid "Name of DNS proxy to use within this domain"
 msgstr "在此區域中使用的 DNS 協定的名稱"
 
@@ -1075,6 +1084,21 @@ msgstr "虚拟机已关联。"
 msgid "Could not associate the virtual machines"
 msgstr "无法关联虚拟机"
 
+msgid "Datacenter"
+msgstr "数据中心"
+
+msgid "Hosts"
+msgstr ""
+
+msgid "Cluster path"
+msgstr ""
+
+msgid "Virtual switch"
+msgstr ""
+
+msgid "VLAN ID"
+msgstr "VLAN ID"
+
 msgid "VNIC profile ID"
 msgstr "VNIC 配置集 ID"
 
@@ -1083,6 +1107,18 @@ msgstr "网络 ID"
 
 msgid "Uuid"
 msgstr "Uuid"
+
+msgid "Path"
+msgstr "路径"
+
+msgid "Parent"
+msgstr "亲"
+
+msgid "Cluster"
+msgstr ""
+
+msgid "State"
+msgstr "州"
 
 msgid "Url"
 msgstr "Url"
@@ -1093,35 +1129,11 @@ msgstr "区域"
 msgid "DNS"
 msgstr "DNS"
 
-msgid "State"
-msgstr "州"
-
 msgid "DNS Name"
 msgstr "DNS 名称"
 
 msgid "Virtualization Type"
 msgstr "虚拟化类型"
-
-msgid "Volume size in GB, integer value"
-msgstr "卷大小，以 GB 为单位的整数值"
-
-msgid "Project"
-msgstr "项目"
-
-msgid "Email"
-msgstr "电子邮件"
-
-msgid "Key Path"
-msgstr "密钥路径"
-
-msgid "Zone"
-msgstr "区"
-
-msgid "Machine Type"
-msgstr "机器型号"
-
-msgid "Status"
-msgstr "状态"
 
 msgid "Number of CPUs"
 msgstr "CPU 的数量"
@@ -1158,6 +1170,9 @@ msgstr "CPU"
 
 msgid "Memory"
 msgstr "记忆"
+
+msgid "Status"
+msgstr "状态"
 
 msgid "OS Type"
 msgstr "操作系统类型"
@@ -1219,6 +1234,9 @@ msgstr "接口类型"
 msgid "Vnic Profile"
 msgstr "Vnic 配置集"
 
+msgid "Volume size in GB, integer value"
+msgstr "卷大小，以 GB 为单位的整数值"
+
 msgid "ID or name of storage domain"
 msgstr "存储域的 ID 或名称"
 
@@ -1233,9 +1251,6 @@ msgstr "布尔值，1 代表删除后擦除磁盘"
 
 msgid "Disk interface name, must be ide, virto or virto_scsi"
 msgstr "磁盘接口名称，必须为 ide，virto 或 virto_scsi"
-
-msgid "Datacenter"
-msgstr "数据中心"
 
 msgid "Cores"
 msgstr "内核"
@@ -1308,6 +1323,12 @@ msgstr "有关可用适配器类型的更多详细信息，请参见您的 vSphe
 msgid "Network ID or Network Name from VMware"
 msgstr "来自 VMware 的网络 ID 或网络名称"
 
+msgid "Console password set"
+msgstr ""
+
+msgid "Caching enabled"
+msgstr ""
+
 msgid "Power Status"
 msgstr "电源状态"
 
@@ -1319,9 +1340,6 @@ msgstr "连接状态"
 
 msgid "Hardware Version"
 msgstr "硬件版本"
-
-msgid "Path"
-msgstr "路径"
 
 msgid "Operating System"
 msgstr "操作系统"
@@ -1862,9 +1880,6 @@ msgstr "輸入主機群組的 root 密碼："
 
 msgid "Title"
 msgstr "提示"
-
-msgid "Parent"
-msgstr "亲"
 
 msgid "Realm"
 msgstr "区域"
@@ -2805,9 +2820,6 @@ msgstr "网络前缀"
 msgid "Network Mask"
 msgstr "網絡掩碼"
 
-msgid "VLAN ID"
-msgstr "VLAN ID"
-
 msgid "Boot Mode"
 msgstr "引导模式"
 
@@ -2958,6 +2970,9 @@ msgstr "无法克隆配置模板"
 msgid "Login"
 msgstr "登录"
 
+msgid "Email"
+msgstr "电子邮件"
+
 msgid "Admin"
 msgstr "管理员"
 
@@ -3066,9 +3081,6 @@ msgstr "无法删除用户组"
 msgid "View and manage compute resource's virtual machines"
 msgstr "查看并管理计算资源的虚拟机"
 
-msgid "Virtual machine id, for gce use virtual machine name"
-msgstr "虚拟机 ID，对于 gce 使用虚拟机名称"
-
 msgid "Virtual machine is powering."
 msgstr "虚拟机正在启动。"
 
@@ -3080,3 +3092,18 @@ msgstr "删除的虚拟机"
 
 msgid "Could not delete the virtual machine"
 msgstr "无法删除虚拟机"
+
+#~ msgid "Project"
+#~ msgstr "项目"
+
+#~ msgid "Key Path"
+#~ msgstr "密钥路径"
+
+#~ msgid "Zone"
+#~ msgstr "区"
+
+#~ msgid "Machine Type"
+#~ msgstr "机器型号"
+
+#~ msgid "Virtual machine id, for gce use virtual machine name"
+#~ msgstr "虚拟机 ID，对于 gce 使用虚拟机名称"

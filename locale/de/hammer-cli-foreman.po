@@ -13,9 +13,9 @@
 # simon11 <transifex@stieger.co>, 2014
 msgid ""
 msgstr ""
-"Project-Id-Version: hammer-cli-foreman 3.5.0\n"
+"Project-Id-Version: hammer-cli-foreman 3.6.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-08-09 15:22+0000\n"
+"POT-Creation-Date: 2022-10-31 15:16+0000\n"
 "PO-Revision-Date: 2014-03-14 09:55+0000\n"
 "Last-Translator: Patrick Dolinic, 2021\n"
 "Language-Team: German (http://www.transifex.com/foreman/foreman/language/"
@@ -797,6 +797,15 @@ msgstr "Vorlagen-Kombination gelöscht."
 msgid "Could not delete the template combination"
 msgstr "Vorlagen-Kombination konnte nicht gelöscht werden"
 
+msgid "Cluster ID"
+msgstr ""
+
+msgid "Use --cluster-name instead"
+msgstr ""
+
+msgid "Cluster name or path to search by"
+msgstr ""
+
 msgid "Name of DNS proxy to use within this domain"
 msgstr "Name des DNS-Proxys für diese Domain"
 
@@ -1114,6 +1123,21 @@ msgstr "Virtuelle Maschinen wurden zugeordnet."
 msgid "Could not associate the virtual machines"
 msgstr "Die virtuellen Maschinen konnten nicht zugeordnet werden"
 
+msgid "Datacenter"
+msgstr "Rechenzentrum"
+
+msgid "Hosts"
+msgstr ""
+
+msgid "Cluster path"
+msgstr ""
+
+msgid "Virtual switch"
+msgstr ""
+
+msgid "VLAN ID"
+msgstr "VLAN-ID"
+
 msgid "VNIC profile ID"
 msgstr "VNIC-Profil-ID"
 
@@ -1122,6 +1146,18 @@ msgstr "Netzwerk ID"
 
 msgid "Uuid"
 msgstr "UUID"
+
+msgid "Path"
+msgstr "Pfad"
+
+msgid "Parent"
+msgstr "Übergeordnet"
+
+msgid "Cluster"
+msgstr ""
+
+msgid "State"
+msgstr "Status"
 
 msgid "Url"
 msgstr "URL"
@@ -1132,35 +1168,11 @@ msgstr "Region"
 msgid "DNS"
 msgstr "DNS"
 
-msgid "State"
-msgstr "Status"
-
 msgid "DNS Name"
 msgstr "DNS-Name"
 
 msgid "Virtualization Type"
 msgstr "Virtualisierungstyp"
-
-msgid "Volume size in GB, integer value"
-msgstr "Volumengröße in GB, Ganzzahlwert"
-
-msgid "Project"
-msgstr "Projekt"
-
-msgid "Email"
-msgstr "E-Mail-Adresse"
-
-msgid "Key Path"
-msgstr "Schlüsselpfad"
-
-msgid "Zone"
-msgstr "Zone"
-
-msgid "Machine Type"
-msgstr "Systemtyp"
-
-msgid "Status"
-msgstr "Status"
 
 msgid "Number of CPUs"
 msgstr "Anzahl der CPUs"
@@ -1198,6 +1210,9 @@ msgstr "Anzahl der CPUs:"
 
 msgid "Memory"
 msgstr "Speicher"
+
+msgid "Status"
+msgstr "Status"
 
 msgid "OS Type"
 msgstr "Betriebssystemtyp"
@@ -1261,6 +1276,9 @@ msgstr "Schnittstellentyp"
 msgid "Vnic Profile"
 msgstr "Vnic Profile"
 
+msgid "Volume size in GB, integer value"
+msgstr "Volumengröße in GB, Ganzzahlwert"
+
 msgid "ID or name of storage domain"
 msgstr "ID oder Name der Speicherdomäne"
 
@@ -1275,9 +1293,6 @@ msgstr "Boolean, setze 1, um die Festplatte nach dem Löschen zu löschen"
 
 msgid "Disk interface name, must be ide, virto or virto_scsi"
 msgstr "Disk-Interface Name, sollte  ide, virto oder virto_scsi sein"
-
-msgid "Datacenter"
-msgstr "Rechenzentrum"
 
 msgid "Cores"
 msgstr "Kerne"
@@ -1358,6 +1373,12 @@ msgstr ""
 msgid "Network ID or Network Name from VMware"
 msgstr "Netzwerk-ID oder Netzwerkname von VMware"
 
+msgid "Console password set"
+msgstr ""
+
+msgid "Caching enabled"
+msgstr ""
+
 msgid "Power Status"
 msgstr "Energiestatus"
 
@@ -1369,9 +1390,6 @@ msgstr "Verbindungsstatus"
 
 msgid "Hardware Version"
 msgstr "Hardware Version"
-
-msgid "Path"
-msgstr "Pfad"
 
 msgid "Operating System"
 msgstr "Betriebssystem"
@@ -1925,9 +1943,6 @@ msgstr "Geben Sie das Root-Passwort für die Hostgruppe ein:"
 
 msgid "Title"
 msgstr "Titel"
-
-msgid "Parent"
-msgstr "Übergeordnet"
 
 msgid "Realm"
 msgstr "Realm"
@@ -2893,9 +2908,6 @@ msgstr "Netzwerk-Prefix"
 msgid "Network Mask"
 msgstr "Netzwerk-Maske"
 
-msgid "VLAN ID"
-msgstr "VLAN-ID"
-
 msgid "Boot Mode"
 msgstr "Boot Modus"
 
@@ -3046,6 +3058,9 @@ msgstr "Bereitstellungsvorlage konnte nicht geklont werden"
 msgid "Login"
 msgstr "Anmeldung"
 
+msgid "Email"
+msgstr "E-Mail-Adresse"
+
 msgid "Admin"
 msgstr "Administrator"
 
@@ -3154,11 +3169,6 @@ msgstr "Benutzergruppe konnte nicht gelöscht werden"
 msgid "View and manage compute resource's virtual machines"
 msgstr "Anzeigen und Verwalten der virtuellen Maschinen von Rechenressourcen"
 
-msgid "Virtual machine id, for gce use virtual machine name"
-msgstr ""
-"ID der virtuellen Maschine, für gce den Namen der virtuellen Maschine "
-"verwenden"
-
 msgid "Virtual machine is powering."
 msgstr "Virtuelle Maschine wird mit Strom versorgt."
 
@@ -3170,3 +3180,20 @@ msgstr "Virtuelle Maschine gelöscht."
 
 msgid "Could not delete the virtual machine"
 msgstr "Die virtuelle Maschine konnte nicht gelöscht werden"
+
+#~ msgid "Project"
+#~ msgstr "Projekt"
+
+#~ msgid "Key Path"
+#~ msgstr "Schlüsselpfad"
+
+#~ msgid "Zone"
+#~ msgstr "Zone"
+
+#~ msgid "Machine Type"
+#~ msgstr "Systemtyp"
+
+#~ msgid "Virtual machine id, for gce use virtual machine name"
+#~ msgstr ""
+#~ "ID der virtuellen Maschine, für gce den Namen der virtuellen Maschine "
+#~ "verwenden"

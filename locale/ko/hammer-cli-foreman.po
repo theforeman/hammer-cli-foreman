@@ -7,9 +7,9 @@
 # 0868a4d1af5275b3f70b0a6dac4c99a4, 2014
 msgid ""
 msgstr ""
-"Project-Id-Version: hammer-cli-foreman 3.5.0\n"
+"Project-Id-Version: hammer-cli-foreman 3.6.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-08-09 15:22+0000\n"
+"POT-Creation-Date: 2022-10-31 15:16+0000\n"
 "PO-Revision-Date: 2014-03-14 09:55+0000\n"
 "Last-Translator: 0868a4d1af5275b3f70b0a6dac4c99a4, 2014\n"
 "Language-Team: Korean (http://www.transifex.com/foreman/foreman/language/"
@@ -767,6 +767,15 @@ msgstr ""
 msgid "Could not delete the template combination"
 msgstr ""
 
+msgid "Cluster ID"
+msgstr ""
+
+msgid "Use --cluster-name instead"
+msgstr ""
+
+msgid "Cluster name or path to search by"
+msgstr ""
+
 msgid "Name of DNS proxy to use within this domain"
 msgstr "이 도메인에서 사용할 DNS 프록시 이름 "
 
@@ -1074,6 +1083,21 @@ msgstr ""
 msgid "Could not associate the virtual machines"
 msgstr ""
 
+msgid "Datacenter"
+msgstr "Datacenter"
+
+msgid "Hosts"
+msgstr ""
+
+msgid "Cluster path"
+msgstr ""
+
+msgid "Virtual switch"
+msgstr ""
+
+msgid "VLAN ID"
+msgstr "VLAN ID"
+
 msgid "VNIC profile ID"
 msgstr ""
 
@@ -1082,6 +1106,18 @@ msgstr ""
 
 msgid "Uuid"
 msgstr ""
+
+msgid "Path"
+msgstr "경로"
+
+msgid "Parent"
+msgstr "부모 "
+
+msgid "Cluster"
+msgstr ""
+
+msgid "State"
+msgstr "상태 "
 
 msgid "Url"
 msgstr "Url"
@@ -1092,35 +1128,11 @@ msgstr "지역 "
 msgid "DNS"
 msgstr "DNS"
 
-msgid "State"
-msgstr "상태 "
-
 msgid "DNS Name"
 msgstr ""
 
 msgid "Virtualization Type"
 msgstr ""
-
-msgid "Volume size in GB, integer value"
-msgstr ""
-
-msgid "Project"
-msgstr ""
-
-msgid "Email"
-msgstr "이메일 "
-
-msgid "Key Path"
-msgstr ""
-
-msgid "Zone"
-msgstr "영역 "
-
-msgid "Machine Type"
-msgstr "시스템 유형 "
-
-msgid "Status"
-msgstr "상태 "
 
 msgid "Number of CPUs"
 msgstr "CPU 수 "
@@ -1157,6 +1169,9 @@ msgstr "CPU"
 
 msgid "Memory"
 msgstr "메모리"
+
+msgid "Status"
+msgstr "상태 "
 
 msgid "OS Type"
 msgstr ""
@@ -1218,6 +1233,9 @@ msgstr ""
 msgid "Vnic Profile"
 msgstr ""
 
+msgid "Volume size in GB, integer value"
+msgstr ""
+
 msgid "ID or name of storage domain"
 msgstr ""
 
@@ -1232,9 +1250,6 @@ msgstr ""
 
 msgid "Disk interface name, must be ide, virto or virto_scsi"
 msgstr ""
-
-msgid "Datacenter"
-msgstr "Datacenter"
 
 msgid "Cores"
 msgstr "코어 "
@@ -1307,6 +1322,12 @@ msgstr ""
 msgid "Network ID or Network Name from VMware"
 msgstr ""
 
+msgid "Console password set"
+msgstr ""
+
+msgid "Caching enabled"
+msgstr ""
+
 msgid "Power Status"
 msgstr ""
 
@@ -1318,9 +1339,6 @@ msgstr ""
 
 msgid "Hardware Version"
 msgstr ""
-
-msgid "Path"
-msgstr "경로"
 
 msgid "Operating System"
 msgstr "운영체제"
@@ -1854,9 +1872,6 @@ msgstr "호스트 그룹의 root 암호를 입력하십시오:"
 
 msgid "Title"
 msgstr "직위"
-
-msgid "Parent"
-msgstr "부모 "
 
 msgid "Realm"
 msgstr "영역 "
@@ -2794,9 +2809,6 @@ msgstr ""
 msgid "Network Mask"
 msgstr ""
 
-msgid "VLAN ID"
-msgstr "VLAN ID"
-
 msgid "Boot Mode"
 msgstr ""
 
@@ -2947,6 +2959,9 @@ msgstr ""
 msgid "Login"
 msgstr "로그인 "
 
+msgid "Email"
+msgstr "이메일 "
+
 msgid "Admin"
 msgstr "관리자 "
 
@@ -3055,9 +3070,6 @@ msgstr "사용자 그룹을 삭제할 수 없습니다 "
 msgid "View and manage compute resource's virtual machines"
 msgstr ""
 
-msgid "Virtual machine id, for gce use virtual machine name"
-msgstr ""
-
 msgid "Virtual machine is powering."
 msgstr ""
 
@@ -3069,3 +3081,9 @@ msgstr ""
 
 msgid "Could not delete the virtual machine"
 msgstr ""
+
+#~ msgid "Zone"
+#~ msgstr "영역 "
+
+#~ msgid "Machine Type"
+#~ msgstr "시스템 유형 "
