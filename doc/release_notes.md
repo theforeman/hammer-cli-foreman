@@ -1,5 +1,12 @@
 Release notes
 =============
+### 3.6.0 (2023-02-23)
+* Support basic auth for external sources, [#11317](http://projects.theforeman.org/issues/11317)
+* Remove underscore from labels ([PR #608](https://github.com/theforeman/hammer-cli-foreman/pull/608)), [#35904](http://projects.theforeman.org/issues/35904)
+* Update foreman.yml - add a comment on defining the server address in a development environment ([PR #602](https://github.com/theforeman/hammer-cli-foreman/pull/602))
+* Fix typo in ovirt disk interface names
+* Bump to 3.6.0-develop
+
 ### 3.5.0 (2022-10-31)
 * Extract gce related info ([PR #606](https://github.com/theforeman/hammer-cli-foreman/pull/606)), [#35659](http://projects.theforeman.org/issues/35659)
 * Change auth endpoint for negotiation, [#35473](http://projects.theforeman.org/issues/35473)
