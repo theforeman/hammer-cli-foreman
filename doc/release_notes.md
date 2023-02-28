@@ -1,5 +1,8 @@
 Release notes
 =============
+### 3.5.1 (2023-02-28)
+* Support basic auth for external sources, [#11317](http://projects.theforeman.org/issues/11317)
+
 ### 3.5.0 (2022-10-31)
 * Extract gce related info ([PR #606](https://github.com/theforeman/hammer-cli-foreman/pull/606)), [#35659](http://projects.theforeman.org/issues/35659)
 * Change auth endpoint for negotiation, [#35473](http://projects.theforeman.org/issues/35473)
