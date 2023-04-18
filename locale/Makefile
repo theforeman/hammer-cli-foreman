@@ -6,8 +6,5 @@
 # make tx-update - download and merge translations from Transifex
 # make clean - clean everything
 #
-DOMAIN = hammer-cli-foreman
-VERSION = $(shell bundle exec ruby -C ../ -e 'require "rubygems"; spec = Gem::Specification::load("./hammer_cli_foreman.gemspec"); puts spec.version')
-MAIN_MAKEFILE = $(shell bundle exec ruby -C ../ -e 'require "hammer_cli"; puts HammerCLI::I18n.main_makefile')
+include $(shell bundle exec ruby -e 'require "hammer_cli"; puts HammerCLI::I18n.main_makefile')
 
-include $(MAIN_MAKEFILE)
