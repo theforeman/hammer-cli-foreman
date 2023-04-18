@@ -1,0 +1,3145 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the hammer-cli-foreman package.
+#
+# Translators:
+# Temuri Doghonadze <temuri.doghonadze@gmail.com>, 2022
+msgid ""
+msgstr ""
+"Project-Id-Version: hammer-cli-foreman 3.7.0.pre.develop\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-10-31 15:16+0000\n"
+"PO-Revision-Date: 2014-03-14 09:55+0000\n"
+"Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>, 2022\n"
+"Language-Team: Georgian (http://app.transifex.com/foreman/foreman/language/"
+"ka/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: ka\n"
+"Plural-Forms: nplurals=2; plural=(n!=1);\n"
+
+msgid "Foreman connection login/logout"
+msgstr "Foreman-თან შეერთების ჩართ/გამორთ"
+
+msgid "Manipulate architectures"
+msgstr "არქიტექტურების მართვა"
+
+msgid "Manipulate auth sources"
+msgstr "ავთენტიკაციის წყაროების მართვა"
+
+msgid "Search audit trails."
+msgstr "მოძებნეთ აუდიტის ბილიკები."
+
+msgid "Manipulate compute profiles"
+msgstr "გამოთვლითი პროფილების მართვა"
+
+msgid "Manipulate compute resources"
+msgstr "გამოთვლითი რესურსების მართვა"
+
+msgid "Manipulate domains"
+msgstr "დომენების მართვა"
+
+msgid "Search facts"
+msgstr "ფაქტების მოძებნა"
+
+msgid "Manage permission filters"
+msgstr "წვდომების ფილტრების მართვა"
+
+msgid "Manipulate hosts"
+msgstr "ჰოსტების მართვა"
+
+msgid "Manipulate hostgroups"
+msgstr "ჰოსტის ჯგუფების მართვა"
+
+msgid "Manipulate http proxies"
+msgstr "HTTP პროქსების მართვა"
+
+msgid "Manipulate locations"
+msgstr "მდებარეობების მართვა"
+
+msgid "Manipulate installation media"
+msgstr "დასაყენებელი დისკების მართვა"
+
+msgid "Manipulate hardware models"
+msgstr "აპარატურული მოდელების მართვა"
+
+msgid "Manipulate operating system"
+msgstr "ოპერაციული სისტემის მართვა"
+
+msgid "Manipulate organizations"
+msgstr "ორგანიზაციების მართვა"
+
+msgid "Manipulate partition tables"
+msgstr "დანაყოფის ცხრილების მართვა"
+
+msgid "Browse and read reports"
+msgstr "ანგარიშების მოძებნა და წაკითხვა"
+
+msgid ""
+"%{report} command is deprecated and will be removed in one of the future "
+"versions. Please use %{config_report} command instead."
+msgstr ""
+"%{report} ბრძანება მოძველებულია და წაიშლება ერთ-ერთ მომავალ ვერსიაში. ამის "
+"ნაცვლად, გთხოვთ, გამოიყენოთ %{config_report} ბრძანება."
+
+msgid "Manipulate report templates"
+msgstr "ანგარიშის შაბლონების მართვა"
+
+msgid "Manage user roles"
+msgstr "მომხმარებლის როლების მართვა"
+
+msgid "Manipulate smart proxies"
+msgstr "ჭკვიანი როლების მართვა"
+
+msgid "Manipulate realms"
+msgstr "რეალმების მართვა"
+
+msgid "Change server settings"
+msgstr "სერვერის პარამეტრების მართვა"
+
+msgid "Manipulate subnets"
+msgstr "ქვექსელების მართვა"
+
+msgid "Manipulate provisioning templates"
+msgstr "მუშაობისთვის მომზადების შაბლონების შეცვლა"
+
+msgid "Manipulate users"
+msgstr "მომხმარებლების მართვა"
+
+msgid "Manage user groups"
+msgstr "მომხმარებლის ჯგუფების მართვა"
+
+msgid "Get the status of the server and/or it's subcomponents"
+msgstr "სერვერის ან/და მისი ქვეკომპონენტების სტატუსის მიღება"
+
+msgid "Get the complete status of the server and/or it's subcomponents"
+msgstr "სერვერის და/ან მისი ქვეკომპონენტების სრული სტატუსის მიღება"
+
+msgid "Manage mail notifications"
+msgstr "ელ.ფოსტის შეტყობინებების მართვა"
+
+msgid "Manage bookmarks"
+msgstr "სანიშნების მართვა"
+
+msgid "Host Registration"
+msgstr "ჰოსტის რეგისტრაცია"
+
+msgid "Using certificate authentication."
+msgstr "სერტიფიკატის გამოყენებით ავთენტიკაცია."
+
+msgid "Invalid username or password."
+msgstr "მომხმარებელი ან პაროლი არასწორია."
+
+msgid "Using configured credentials for user '%s'."
+msgstr "მორგებულ მომხმ/პაროლის გამოყენება მომხმარებლისთვის: '%s'."
+
+msgid "Credentials are not configured."
+msgstr "მომხმ/პაროლი მორგებული არაა."
+
+msgid "[Foreman] Username:%s"
+msgstr "[Foreman] მომხმარებელი:%s"
+
+msgid "[Foreman] Password for %{user}:%{wsp}"
+msgstr "[Foreman] პაროლი %{user}:%{wsp}"
+
+msgid "current Kerberos user"
+msgstr "kerberos-ის მიმდინარე მომხმარებელი"
+
+msgid ""
+"No session, but there is an active Kerberos session, that will be used for "
+"negotiate login."
+msgstr ""
+"სესია არ არის, მაგრამ არის Kerberos-ის აქტიური სესია, რომელიც გამოყენებული "
+"იქნება მოლაპარაკების შესვლისთვის."
+
+msgid "There is no active Kerberos session. Have you run %s?"
+msgstr "კერბეროსის აქტიური სესია არ არის. გაუშვით %s?"
+
+msgid ""
+"Invalid oidc-client-id or oidc-token-endpoint or oidc-authorization-"
+"endpoint.\n"
+msgstr ""
+"არასწორი oidc-client-id ან oidc-token-endpoint ან oidc-authorization-"
+"endpoint.\n"
+
+msgid "Code:%s"
+msgstr "კოდი:%s"
+
+msgid "Openidc Provider Authorization Endpoint:%s"
+msgstr "Openidc პროვაიდერის ავტორიზაციის საბოლოო წერტილი:%s"
+
+msgid "Openidc Provider Token Endpoint:%s"
+msgstr "Openidc მომწოდებლის კოდის უკანაბოლო:%s"
+
+msgid "Client ID:%s"
+msgstr "კლიენტის ID: %s"
+
+msgid "Redirect URI:%s"
+msgstr "გადასამისამართებელი URI:%s"
+
+msgid "Invalid credentials or oidc-client-id or oidc-token-endpoint.\n"
+msgstr "არასწორი მომხმ/პაროლი, oidc-client-id ან oidc-token-endpoint.\n"
+
+msgid "Username:%s"
+msgstr "მომხმარებელი:%s"
+
+msgid "Password:%{wsp}"
+msgstr "პაროლი:%{wsp}"
+
+msgid "Session exists, currently logged in as '%s'."
+msgstr "სესია არსებობს. შესული ბრძანდებით, როგორც: %s."
+
+msgid "Using sessions, you are currently not logged in."
+msgstr "სესიების გამოყენებით ამჟამად შესული არ ბრძანდებით."
+
+msgid "Invalid credentials, continuing with session for '%s'."
+msgstr "არასწორი მომხმ/პაროლი. სესია '%s'-ით გაგრძელდება."
+
+msgid "Session has expired."
+msgstr "სესიის დრო გავიდა."
+
+msgid "Id"
+msgstr "ID"
+
+msgid "Name"
+msgstr "სახელი"
+
+msgid "Architecture created."
+msgstr "არქიტექტურა შეიქმნა."
+
+msgid "Could not create the architecture"
+msgstr "არქიტექტურის შექმნის შეცდომა"
+
+msgid "Architecture deleted."
+msgstr "არქიტექტურა წაშლილია."
+
+msgid "Could not delete the architecture"
+msgstr "არქიტექტურის წაშლის შეცდომა"
+
+msgid "Architecture updated."
+msgstr "არქიტექტურა განახლდა."
+
+msgid "Could not update the architecture"
+msgstr "არქიტექტურის განახლების შეცდომა"
+
+msgid "Associate a hostgroup"
+msgstr "ჰოსტების ჯგუფის ასოცირება"
+
+msgid "The hostgroup has been associated."
+msgstr "ჰოსტის ჯგუფი ასოცირებულია."
+
+msgid "Could not associate the hostgroup"
+msgstr "ჰოსტის ჯგუფის ასოცრების შეცდომა"
+
+msgid "Disassociate a hostgroup"
+msgstr "ჰოსტების ჯგუფის ასოცირების მოხსნა"
+
+msgid "The hostgroup has been disassociated."
+msgstr "ჰოსტების ჯგუფის ასოცირება მოხსნილია."
+
+msgid "Could not disassociate the hostgroup"
+msgstr "ჰოსტების ჯგუფის ასოცირების მოხსნის შეცდომა"
+
+msgid "Associate a domain"
+msgstr "დომენის ასოცირება"
+
+msgid "The domain has been associated."
+msgstr "დომენი ასოცირებულია."
+
+msgid "Could not associate the domain"
+msgstr "დომენის ასოცირების შეცდომა"
+
+msgid "Disassociate a domain"
+msgstr "დომენის ასოცირების მოხსნა"
+
+msgid "The domain has been disassociated."
+msgstr "დომენის ასოცირება მოხსნილია."
+
+msgid "Could not disassociate the domain"
+msgstr "დომენის ასოცირების მოხსნის შეცდომა"
+
+msgid "Associate a medium"
+msgstr "მედიის ასოცირება"
+
+msgid "The medium has been associated."
+msgstr "მედია ასოცირებულია."
+
+msgid "Could not associate the medium"
+msgstr "მედიის ასოცირების შეცდომა"
+
+msgid "Disassociate a medium"
+msgstr "მედიის ასოცირების მოხსნა"
+
+msgid "The medium has been disassociated."
+msgstr "მედიის ასოცირება მოხსნილია."
+
+msgid "Could not disassociate the medium"
+msgstr "მედიის ასოცირების მოხსნის შეცდომა"
+
+msgid "Associate a subnet"
+msgstr "ქვექსელის ასოცირება"
+
+msgid "The subnet has been associated."
+msgstr "ქვექსელი ასოცირებულია."
+
+msgid "Could not associate the subnet"
+msgstr "ქვექსელის ასოცირების შეცდომა"
+
+msgid "Disassociate a subnet"
+msgstr "ქვექსელის ასოცირების მოხსნა"
+
+msgid "The subnet has been disassociated."
+msgstr "ქვექსელის ასოცირება მოხსნილია."
+
+msgid "Could not disassociate the subnet"
+msgstr "ქვექსელის ასოცირების შეცდომა"
+
+msgid "Associate a compute resource"
+msgstr "გამოთვლითი რესურსის ასოციაცია"
+
+msgid "The compute resource has been associated."
+msgstr "გამოთვლითი რესურსი ასოცირებულია."
+
+msgid "Could not associate the compute resource"
+msgstr "გამოთვლითი რესურსის ასოციაციის შეცდომა"
+
+msgid "Disassociate a compute resource"
+msgstr "გამოთვლითი რესურსის ასოციაციის მოხსნა"
+
+msgid "The compute resource has been disassociated."
+msgstr "გამოთვლითი რესურსის ასოციაცია მოხსნილია."
+
+msgid "Could not disassociate the compute resource"
+msgstr "გამოთვლითი რესურსის ასოცირების მოხსნის შეცდომა"
+
+msgid "Associate a smart proxy"
+msgstr "ჭკვიანი პროქსის ასოცირება"
+
+msgid "The smart proxy has been associated."
+msgstr "ჭკვიანი პროქსი ასოცირებულია."
+
+msgid "Could not associate the smart proxy"
+msgstr "ჭკვიანი პროქსის ასოცირების შეცდომა"
+
+msgid "Disassociate a smart proxy"
+msgstr "ჭკვიანი პროქსის ასოცირების მოხსნა"
+
+msgid "The smart proxy has been disassociated."
+msgstr "ჭკვიანი პროქსის ასოცირება მოხსნილია."
+
+msgid "Could not disassociate the smart proxy"
+msgstr "ჭკვიანი პროქსის ასოცირების მოხსნის შეცდომა"
+
+msgid "Associate an user"
+msgstr "მომხმარებლის ასოცირება"
+
+msgid "The user has been associated."
+msgstr "მომხმარებლის ასოცირებულია."
+
+msgid "Could not associate the user"
+msgstr "მომხმარებლის ასოცირების შეცდომა"
+
+msgid "Disassociate an user"
+msgstr "მომხმარებლის ასოცირების მოხსნა"
+
+msgid "The user has been disassociated."
+msgstr "მომხმარებლის ასოცირება მოხსნილია."
+
+msgid "Could not disassociate the user"
+msgstr "მომხმარებლის ასოცირების მოხსნის შეცდომა"
+
+msgid "Associate an user group"
+msgstr "მომხმარებლის ჯგუფის ასოცირება"
+
+msgid "The user group has been associated."
+msgstr "მომხმარებლის ჯგუფი ასოცირებულია."
+
+msgid "Could not associate the user group"
+msgstr "მომხმარებლის ჯგუფის ასოცირების შეცდომა"
+
+msgid "Disassociate an user group"
+msgstr "მომხმარებლის ჯგუფის ასოცირების მოხსნა"
+
+msgid "The user group has been disassociated."
+msgstr "მომხმარებლის ჯგუფის ასოცირება მოხსნილია."
+
+msgid "Could not disassociate the user group"
+msgstr "მომხმარებლის ჯგუფის ასოცირების მოხსნის შეცდომა"
+
+msgid "Associate provisioning templates"
+msgstr "მუშაობისთვის მომზადების შაბლონების ასოცირება"
+
+msgid "List of provisioning template ids"
+msgstr "სამუშაოდ მომზადების შაბლონების ID-ები"
+
+msgid "List of provisioning template names"
+msgstr "სამუშაოდ მომზადების შაბლონების სახელები"
+
+msgid ""
+"Provisioning template name regex to search, all matching templates will be "
+"associated"
+msgstr ""
+"სამუშაოდ მომზადების შაბლონის მოსაძებნად საჭირო რეგულარული გამოსახულება. "
+"ყველა შესატყვისი შაბლონი ასოცირებული იქნება"
+
+msgid "%s not found."
+msgstr "%s ნაპოვნი არაა."
+
+msgid "The provisioning templates were associated."
+msgstr "სამუშაოდ მომზადების ასოცირებული შაბლონები ასოცირებულია."
+
+msgid "Could not associate the provisioning templates"
+msgstr "სამუშაოდ მომზადების ასოცირებული შაბლონები ასოცირების შეცდომა"
+
+msgid "Disassociate provisioning templates"
+msgstr "მუშაობისთვის მომზადების შაბლონების ასოცირების მოხსნა"
+
+msgid ""
+"Provisioning template name regex to search, all matching templates will be "
+"disassociated"
+msgstr ""
+"სამუშაოდ მომზადების შაბლონის მოსაძებნად საჭირო რეგულარული გამოსახულება. "
+"ყველა შესატყვისი შაბლონის ასოცირება მოიხსნება"
+
+msgid "The provisioning templates were disassociated."
+msgstr "მუშაობისთვის მომზადების შაბლონების ასოცირება მოხსნილია."
+
+msgid "Could not disassociate the provisioning templates"
+msgstr "სამუშაოდ მომზადების ასოცირებული შაბლონების ასოცირების მოხსნის შეცდომა"
+
+msgid "Associate an organization"
+msgstr "ორგანიზაციის ასოცირება"
+
+msgid "The organization has been associated."
+msgstr "ორგანიზაცია ასოცირებულია."
+
+msgid "Could not associate the organization"
+msgstr "ორგანიზაციის ასოცირების შეცდომა"
+
+msgid "Disassociate an organization"
+msgstr "ორგანიზაციის ასოცირების მოხსნა"
+
+msgid "The organization has been disassociated."
+msgstr "ორგანიზაციის ასოცირება მოხსნილია."
+
+msgid "Could not disassociate the organization"
+msgstr "ორგანიზაციის ასოცირების მოხსნის შეცდომა"
+
+msgid "Associate an operating system"
+msgstr "ოპერაციული სისტემის ასოცირება"
+
+msgid "Operating system has been associated."
+msgstr "ოპერაციული სისტემა ასოცირებულია."
+
+msgid "Could not associate the operating system"
+msgstr "ოპერაციული სისტემის ასოცირების შეცდომა"
+
+msgid "Disassociate an operating system"
+msgstr "ოპერაციული სისტემის ასოციაციის მოხსნა"
+
+msgid "Operating system has been disassociated."
+msgstr "ოპერაციული სისტემის ასოციაცია მოხსნილია."
+
+msgid "Could not disassociate the operating system"
+msgstr "ოპერაციული სისტემის ასოციაციის მოხსნის შეცდომა"
+
+msgid "Associate an architecture"
+msgstr "არქიტექტურის ასოციაცია"
+
+msgid "Architecture has been associated."
+msgstr "არქიტექტურის ასოცირებულია."
+
+msgid "Could not associate the architecture"
+msgstr "არქიტექტურის ასოციაციის შეცდომა"
+
+msgid "Disassociate an architecture"
+msgstr "არქიტექტურის ასოციაციის მოხსნა"
+
+msgid "Architecture has been disassociated."
+msgstr "არქიტექტურის ასოციაციია მოხსნილია."
+
+msgid "Could not disassociate the architecture"
+msgstr "არქიტექტურის ასოციაციის მოხსნის შეცდომა"
+
+msgid "Associate a partition table"
+msgstr "დანაყოფების ცხრილის ასოცირება"
+
+msgid "Partition table has been associated."
+msgstr "დანაყოფების ცხრილი ასოცირებულია."
+
+msgid "Could not associate the partition table"
+msgstr "დანაყოფების ცხრილი ასოცირების შეცდომა"
+
+msgid "Disassociate a partition table"
+msgstr "დანაყოფების ცხრილი ასოცირების მოხსნა"
+
+msgid "Partition table has been disassociated."
+msgstr "დანაყოფების ცხრილის ასოცირება მოხსნილია."
+
+msgid "Could not disassociate the partition table"
+msgstr "დანაყოფების ცხრილის ასოცირების მოხსნა შეუძლებელია"
+
+msgid "Assign a user role"
+msgstr "მომხმარებლისთვის როლის მინიჭება"
+
+msgid "User role has been assigned."
+msgstr "მომხმარებლისთვის როლის მინიჭებულია."
+
+msgid "Could not assign the user role"
+msgstr "მომხმარებლისთვის როლის მინიჭების შეცდომა"
+
+msgid "Remove a user role"
+msgstr "მომხმარებლის როლის წაშლა"
+
+msgid "User role has been removed."
+msgstr "მომხმარებლის როლი წაშლილია."
+
+msgid "Could not remove the user role"
+msgstr "მომხმარებლის როლის წაშლის შეცდომა"
+
+msgid "Associate a location"
+msgstr "მდებარეობის ასოცირება"
+
+msgid "The location has been associated."
+msgstr "მდებარეობა ასოცირებულია."
+
+msgid "Could not associate the location"
+msgstr "მდებარეობის ასოცირების შეცდომა"
+
+msgid "Disassociate a location"
+msgstr "მდებარეობის ასოცირების მოხსნა"
+
+msgid "The location has been disassociated."
+msgstr "მდებარეობის ასოცირება მოხსნილია."
+
+msgid "Could not disassociate the location"
+msgstr "მდებარეობის ასოციაციის მოხსნის სეცდომა"
+
+msgid "Override audit record pagination"
+msgstr "აუდიტის ჩანაწერების გვერდების დანომრვის გადაფარვა"
+
+msgid ""
+"Audit records for past one month are returned by default. This behavior can "
+"be changed by passing --search option."
+msgstr ""
+"ნაგულისხმებად აუდიტის ბოლო ერთი თვის ჩანაწერები დაბრუნდება. ამ ქცევის შეცვლა "
+"--search პარამეტრით შეგიძლიათ."
+
+msgid "At"
+msgstr "დრო"
+
+msgid "IP"
+msgstr "IP"
+
+msgid "User"
+msgstr "მომხმარებელი"
+
+msgid "Action"
+msgstr "მოქმედება"
+
+msgid "Audit type"
+msgstr "აუდიტის ტიპი"
+
+msgid "Audit record"
+msgstr "აუდიტის ჩანაწერი"
+
+msgid "Request UUID"
+msgstr "მოთხოვნის UUID"
+
+msgid "Audited changes"
+msgstr "აუდიტირებული ცვლილებები"
+
+msgid "Attribute"
+msgstr "ატრიბუტი"
+
+msgid "Value"
+msgstr "მნიშვნელობა"
+
+msgid "Old"
+msgstr "ძველი"
+
+msgid "New"
+msgstr "ახალი"
+
+msgid "Set credentials"
+msgstr "მომხმარებელი/პაროლის დაყენება"
+
+msgid "Username to access the remote system"
+msgstr "დაშორებულ სისტემაზე წვდომის მომხმარებლის სახელი"
+
+msgid "Password to access the remote system"
+msgstr "დაშორებულ სისტემაზე წვდომის პაროლი"
+
+msgid "Successfully logged in as '%s'."
+msgstr "წარმატებით შეხვედით, როგორც %1."
+
+msgid ""
+"Successfully authenticated using negotiate auth, using the KEYRING principal."
+msgstr "მოლაპარაკების ავთენტიკაციით, ბრელოკით შესვლა წარმატებულია."
+
+msgid "Openidc provider URL which issues access token"
+msgstr "Openic-ის URL, რომელიც წვდომის კოდებს გასცემს"
+
+msgid "Openidc provider URL which issues authentication code (two factor only)"
+msgstr "Openic-ის URL, რომელიც ავთენტიკაციის კოდებს გასცემს (მხოლოდ 2FA)"
+
+msgid "Client id used in the Openidc provider"
+msgstr "Openidc-ის მომწოდებელთან გამოსაყენებელი Client ID"
+
+msgid "Authenticate with two factor"
+msgstr "2FA ავთენტიკაცია"
+
+msgid "Redirect URI for the authentication code grant flow"
+msgstr "ავთენტიკაციის კოდის დინების გადამისამართების URI"
+
+msgid "Wipe your credentials"
+msgstr "წაშალეთ თქვენი მომხმარებელი/პაროლი"
+
+msgid "Logged out."
+msgstr "გამოხვედით."
+
+msgid "Information about current connections"
+msgstr "ინფორმაცია მიმდინარე შეერთებების შესახებ"
+
+msgid "List all auth sources"
+msgstr "ავთენტიკაციის ყელა წყაროს სია"
+
+msgid "Type of auth source"
+msgstr "ავთენტიკაციის წყაროს ტიპი"
+
+msgid "Manage external auth sources"
+msgstr "ავთენტიკაციის გარე წყაროების მართვა"
+
+msgid "Update organization and location for Auth Source"
+msgstr "ავთენტიკაციის წყაროს ორგანიზაციის და მდებარეობის განახლება"
+
+msgid "Successfully updated the %{name} external auth source."
+msgstr "ავთენტიკაციის გარე წყარო წარმატებით განახლდა: %{name}."
+
+msgid "Failed to update %{name} external auth source"
+msgstr "ავთენტიკაციის გარე წყაროს განახლების შეცდომა: %{name}"
+
+msgid "Manage LDAP auth sources"
+msgstr "LDAP ავთენტიკაციის წყაროების მართვა"
+
+msgid "Server"
+msgstr "სერვერი"
+
+msgid "Port"
+msgstr "პორტი"
+
+msgid "LDAPS?"
+msgstr "LDAPS?"
+
+msgid "LDAPS"
+msgstr "LDAPS"
+
+msgid "Server Type"
+msgstr "სერვერის ტიპი"
+
+msgid "Account"
+msgstr "ანგარიში"
+
+msgid "Account Username"
+msgstr "მომხმარებლის სახელი"
+
+msgid "Base DN"
+msgstr "საბაზისო DN"
+
+msgid "Groups base DN"
+msgstr "ჯგუფების საბაზისო DN"
+
+msgid "Use Netgroups"
+msgstr "ქსელური ჯგუფების გამოყენება"
+
+msgid "LDAP filter"
+msgstr "LDAP-ის ფილტრი"
+
+msgid "Automatically Create Accounts?"
+msgstr "ავტომატურად შევქმნა ანგარიშები?"
+
+msgid "Usergroup sync"
+msgstr "მომხმარებლისჯგუფის სინქი"
+
+msgid "Attribute mappings"
+msgstr "ატრიბუტებს ბმები"
+
+msgid "Login Name Attribute"
+msgstr "მომხმარებლის სახელის ატრიბუტი"
+
+msgid "First Name Attribute"
+msgstr "სახელის ატრიბუტი"
+
+msgid "Last Name Attribute"
+msgstr "გვარის ატრიბუტი"
+
+msgid "Email Address Attribute"
+msgstr "ელფოსტის მისამართის ატრიბუტი"
+
+msgid "Photo Attribute"
+msgstr "სურათის ატრიბუტი"
+
+msgid "Auth source [%{name}] created."
+msgstr "ავთ. წყარო [%{name}] შეიქმნა."
+
+msgid "Could not create the Auth Source"
+msgstr "ავთენტიკაციის წყაროს შექმნა შეუძლებელია"
+
+msgid "Auth source [%{name}] deleted."
+msgstr "ავთ. წყარო [%{name}] წაიშალა."
+
+msgid "Could not delete the Auth Source"
+msgstr "ავთენტიკაციის წყაროს წაშლა შეუძლებელია"
+
+msgid "Auth source [%{name}] updated."
+msgstr "ავთ. წყარო [%{name}] განახლდა."
+
+msgid "Could not update the Auth Source"
+msgstr "ავთენტიკაციის წყაროს განახლება შეუძლებელია"
+
+msgid ""
+"Can't perform login. Make sure sessions are enabled in hammer configuration "
+"file."
+msgstr ""
+"შესვლა შეუძლებელია. დარწმუნდით, რომ Hammer-ის კონფიგურაციის ფაილში სესიები "
+"ჩართულია."
+
+msgid "Controller"
+msgstr "კონტროლერი"
+
+msgid "Search Query"
+msgstr "საძებნი სტრიქონი"
+
+msgid "Public"
+msgstr "საჯარო"
+
+msgid "Owner Id"
+msgstr "მფლობელის ID"
+
+msgid "Owner Type"
+msgstr "მფლობელის ტიპი"
+
+msgid "Bookmark %<name>s created."
+msgstr "სანიშნი %<name> შექმნილია."
+
+msgid "Failed to create %<name>s bookmark"
+msgstr "სანიშნის შექმნის შეცდომა: %<name>s"
+
+msgid "Bookmark %<name>s updated successfully."
+msgstr "სანიშნე წარმატებით განახლდა: %<name>s."
+
+msgid "Failed to update %<name>s bookmark"
+msgstr "სანიშნის განახლების შეცდომა: %<name>s"
+
+msgid "Bookmark deleted successfully."
+msgstr "ანგარიში წარმატებით წაიშალა."
+
+msgid "Failed to delete bookmark"
+msgstr "სანიშნის წაშლის შეცდომა"
+
+msgid "Manage template combinations"
+msgstr "შაბლონის კომბინაციების მართვა"
+
+msgid "ID"
+msgstr "ID"
+
+msgid "Provisioning template ID"
+msgstr "მუშაობისთვის მომზადების შაბლონის ID"
+
+msgid "Provisioning template name"
+msgstr "მუშაობისთვის მომზადების შაბლონის სახელი"
+
+msgid "Hostgroup ID"
+msgstr "ჰოსტების ჯგუფის ID"
+
+msgid "Hostgroup name"
+msgstr "ჰოსტების ჯგუფის სახელი"
+
+msgid "Provisioning Template"
+msgstr "მუშაობისთვის მომზადების შაბლონი"
+
+msgid "Hostgroup"
+msgstr "ჰოსტების ჯგუფი"
+
+msgid "Template combination updated."
+msgstr "შაბლონის კომბინაციები განახლდა."
+
+msgid "Could not update the template combination"
+msgstr "შაბლონის კომბინაციის განახლების შეცდომა"
+
+msgid "Template combination created."
+msgstr "შაბლონის კომბინაცია შეიქმნა."
+
+msgid "Could not create the template combination"
+msgstr "შაბლონის კომბინაციის შექმნის შეცდომა"
+
+msgid "Template combination Deleted."
+msgstr "შაბლონის კომბინაცია წაიშალა."
+
+msgid "Could not delete the template combination"
+msgstr "შაბლონის კომბინაციის წაშლის შეცდომა"
+
+msgid "Cluster ID"
+msgstr "კლასტერის ID"
+
+msgid "Use --cluster-name instead"
+msgstr "შემცვლელად გამოიყენეთ --cluster-name"
+
+msgid "Cluster name or path to search by"
+msgstr "კლასტერის სახელი ან მისი საძებნი ბილიკი"
+
+msgid "Name of DNS proxy to use within this domain"
+msgstr "ამ დომენის შიგნით გამოყენებული DNS პროქსის სახელი"
+
+msgid "Provider specific options"
+msgstr "მომწოდებლის სპეციფიკური პარამეტრები"
+
+msgid "Bold attributes are required."
+msgstr "გამუქებული ატრიბუტები საჭიროა."
+
+msgid "Available keys for %{option}"
+msgstr "%{option} -ის ხელმისაწვდომი გასაღებები"
+
+msgid "Possible values: %s"
+msgstr "შესაძლო მნიშვნელობები: %s"
+
+msgid "%{value}, each managed hosts needs to have one primary interface."
+msgstr "%{value}, თითოეულ ჰოსტს ერთი ძირითადი ინტერფეისი უნდა ჰქონდეს."
+
+msgid "For %{condition}"
+msgstr "%{condition} -თვის"
+
+msgid ""
+"VLAN tag, this attribute has precedence over the subnet VLAN ID. Only for "
+"virtual interfaces."
+msgstr ""
+"VLAN ჭდე, ამ ატრიბუტს აქვს უპირატესობა ქვექსელის VLAN ID-ზე. მხოლოდ "
+"ვირტუალური ინტერფეისებისთვის."
+
+msgid "Identifier of the interface to which this interface belongs, e.g. eth1."
+msgstr ""
+"ინტერფეისის იდენტიფიკატორი, რომელსაც ეს ინტერფეისი ეკუთვნის. მაგ: eth1."
+
+msgid "Identifiers of slave interfaces, e.g. [eth1,eth2]"
+msgstr "მეორადი ინტერფეისების იდენტიფიკატორი მაგ [eth1, eth2]"
+
+msgid "always IPMI"
+msgstr "ყოველთვის IPMI"
+
+msgid "Duration: %sms"
+msgstr "ხანგრძლოვობა: %sმწმ"
+
+msgid "FAIL"
+msgstr "შეცდომა"
+
+msgid "%{count} more service(s) failed, but not shown:"
+msgstr "%{count} მეტი სერვისის შეცდომა, მაგრამ ნაჩვენები არაა:"
+
+msgid "Network prefix in CIDR notation (e.g. 64) for this subnet"
+msgstr "ამ ქვექსელის ქსელის პრეფიქსი CIDR ნოტაციით (მაგ: 64)"
+
+msgid "TFTP Proxy to use within this subnet"
+msgstr "ამ დომენში გამოყენებული TFTP პროქსის სახელი"
+
+msgid "DNS Proxy to use within this subnet"
+msgstr "ამ დომენში გამოყენებული DNS პროქსის სახელი"
+
+msgid "DHCP Proxy to use within this subnet"
+msgstr "ამ დომენში გამოყენებული DHCP პროქსის სახელი"
+
+msgid "BMC Proxy to use within this subnet"
+msgstr "ამ დომენში გამოყენებული BMC პროქსის სახელი"
+
+msgid "Default organization name"
+msgstr "ნაგულისხმები ორგანიზაციის სახელი"
+
+msgid "Default location name"
+msgstr "ნაგულისხმები მდებარეობის სახელი"
+
+msgid "Received data of unknown format."
+msgstr "მიღებული მონაცემების ფორმატი უცნობია."
+
+msgid "Search / Order fields"
+msgstr "ველების ძებნა / დალაგება"
+
+msgid "Values"
+msgstr "მნიშვნელობები"
+
+msgid "%s Id"
+msgstr "%s Id"
+
+msgid "%s name"
+msgstr "%s სახელი"
+
+msgid "Nothing to update."
+msgstr "განსაახლებელი არაფერია."
+
+msgid "Associate a resource"
+msgstr "რესურსის ასოცირება"
+
+msgid "Could not associate the %{resource_name}."
+msgstr "%{resource_name}-ის ასოცირების შეცდომა."
+
+msgid "The %{resource_name} has been associated."
+msgstr "%{resource_name} ასოცირებულია."
+
+msgid "Disassociate a resource"
+msgstr "რესურსის ასოციაციის მოხსნა"
+
+msgid "Could not disassociate the %{resource_name}."
+msgstr "%{resource_name}-ის ასოცირების მოხსნის შეცდომა."
+
+msgid "The %{resource_name} has been disassociated."
+msgstr "%{resource_name} ასოცირება მოხსნილია."
+
+msgid "Path to directory where downloaded content will be saved"
+msgstr "ბილიკი საქაღალდემდე, სადაც გადმოწერილი ფაილების შემცველობა ინახება"
+
+msgid "The response has been saved to %{path}."
+msgstr "პასუხი %{path} -ში ჩაიწერა."
+
+msgid "Cannot save file: %s does not exist"
+msgstr "ფაილის შენახვის შეცდომა: %s არ არსებობს"
+
+msgid "Type"
+msgstr "ტიპი"
+
+msgid "Set a global parameter"
+msgstr "გლობალური პარამეტრის დაყენება"
+
+msgid "Created parameter [%{name}] with value [%{value}]."
+msgstr "შექმნილია პარამეტრი [%{name}] მნიშვნელობით [%{value}]."
+
+msgid "Parameter [%{name}] updated to [%{value}]."
+msgstr "პარამეტრი [%{name}] [%{value}] -მდე განახლდა."
+
+msgid "Parameter name"
+msgstr "პარამეტრის სახელი"
+
+msgid "Parameter value"
+msgstr "პარამეტრის მნიშვნელობა"
+
+msgid "Should the value be hidden"
+msgstr "უნდა იყოს თუ არა მნიშვნელობა დამალული"
+
+msgid "Type of the parameter"
+msgstr "პარამეტრის ტიპი"
+
+msgid "Global parameter [%{name}] deleted."
+msgstr "გლობალური პარამეტრი [%{name}] წაიშალა."
+
+msgid "Could not delete the global parameter [%{name}]"
+msgstr "გლობალური პარამეტრის წაშლის შეცდომა: [%{name}]"
+
+msgid "Manipulate global parameters"
+msgstr "გლობალური პარამეტრების მართვა"
+
+msgid "Create compute profile set of values"
+msgstr "გამოთვლითი პროფილის მნიშვნელობების ნაკრების შექმნა"
+
+msgid "Compute resource attributes"
+msgstr "გამოთვლითი რესურსის ატრიბუტები"
+
+msgid "Interface parameters, should be comma separated list of values"
+msgstr ""
+"ინტერფეისის პარამეტრები. წარმოადგენს მძიმით გამოყოფილი მნიშვნელობების სიას"
+
+msgid "Volume parameters, should be comma separated list of values"
+msgstr "ტომის პარამეტრები. წარმოადგენს მძიმით გამოყოფილი მნიშვნელობების სიას"
+
+msgid "Compute profile attributes are set."
+msgstr "გამოთვლითი პროფილის ატრიბუტები დაყენებულია."
+
+msgid "Could not set the compute profile attributes"
+msgstr "გამოთვლითი პროფილის ატრიბუტების დაყენების შეცდომა"
+
+msgid "Update compute profile values"
+msgstr "გამოთვლითი რესურსის პროფილის მნიშვნელობების განახლება"
+
+msgid "Compute resource attributes, should be comma separated list of values"
+msgstr ""
+"გამოთვლითი რესურსის ატრიბუტები. წარმოადგენს მძიმით გამოყოფილი მნიშვნელობების "
+"სიას"
+
+msgid "Compute profile attributes updated."
+msgstr "გამოთვლითი პროფილის გამოთვლითი ატრიბუტები განახლდა."
+
+msgid "Could not update the compute profile attributes"
+msgstr "გამოთვლითი პროფილის გამოთვლითი ატრიბუტები განახლების შეცდომა"
+
+msgid "Add interface for Compute Profile"
+msgstr "გამოთვლითი პროფილისთვის ინტერფეისის დამატება"
+
+msgid "Interface was created."
+msgstr "ინტერფეისი შეიქმნა."
+
+msgid "Could not create interface"
+msgstr "ინტერფეისის შექმნის შეცდომა"
+
+msgid "Update compute profile interface"
+msgstr "გამოთვლითი პროფილისთვის ინტერფეისის განახლება"
+
+msgid "Interface id"
+msgstr "ინტერფეისის ID"
+
+msgid "Interface was updated."
+msgstr "ინტერფეისი განახლდა."
+
+msgid "Could not update interface"
+msgstr "ინტერფეისის განახლების შეცდომა"
+
+msgid "Remove compute profile interface"
+msgstr "გამოთვლითი პროფილისთვის ინტერფეისის წაშლა"
+
+msgid "unknown interface id"
+msgstr "ინტერფეისის უცნობი ID"
+
+msgid "Interface was removed."
+msgstr "ინტერფეისი წაიშალა."
+
+msgid "Could not remove interface"
+msgstr "ინტერფეისის წაშლის შეცდომა"
+
+msgid "Add volume for Compute Profile"
+msgstr "გამოთვლითი პროფილისთვის ტომის დამატება"
+
+msgid "Volume was created."
+msgstr "ტომი შეიქმნა."
+
+msgid "Could not create volume"
+msgstr "ტომის შექმნის შეცდომა"
+
+msgid "Update compute profile volume"
+msgstr "გამოთვლითი პროფილისთვის ტომის განახლება"
+
+msgid "Volume id"
+msgstr "ტომის ID"
+
+msgid "Volume was updated."
+msgstr "ტომი განახლდა."
+
+msgid "Could not update volume"
+msgstr "ტომის განახლების შეცდომა"
+
+msgid "Remove compute profile volume"
+msgstr "გამოთვლითი პროფილისთვის ტომის წაშლა"
+
+msgid "unknown volume id"
+msgstr "ტომის უცნობი id"
+
+msgid "Volume was removed."
+msgstr "ტომი წაიშალა."
+
+msgid "Could not remove volume"
+msgstr "ტომის წაშლის შეცდომა"
+
+msgid "Compute attributes"
+msgstr "გამოთვლითი რესურსის ატრიბუტები"
+
+msgid "Compute Resource"
+msgstr "გამოთვლითი რესურსი"
+
+msgid "VM attributes"
+msgstr "ვმ-ის ატრიბუტები"
+
+msgid "Compute profile created."
+msgstr "გამოთვლითი პროფილის შეიქმნა."
+
+msgid "Could not create a compute profile"
+msgstr "გამოთვლითი რესურსის პროფილის შექმნის შეცდომა"
+
+msgid "Compute profile updated."
+msgstr "გამოთვლითი პროფილი განახლდა."
+
+msgid "Could not update the compute profile"
+msgstr "გამოთვლით პროფილის განახლების შეცდომა"
+
+msgid "Compute profile deleted."
+msgstr "გამოთვლითი რესურსის პროფილის წაშლა."
+
+msgid "Could not delete the Compute profile"
+msgstr "გამოთვლით პროფილის წაშლის შეცდომა"
+
+msgid "Create update and delete Compute profile values"
+msgstr "გამოთვლითი პროფილის მნიშვნელობების შექმნა, განახლება და წაშლა"
+
+msgid "Provider"
+msgstr "სერვისის მომწოდებელი"
+
+msgid "Description"
+msgstr "აღწერილობა"
+
+msgid "Path to a file that contains oVirt public key (For oVirt only)"
+msgstr "ბილიკი oVirt-ის საჯარო გასაღების ფაილამდე (მხოლოდ oVirt-სთვის)"
+
+msgid "Compute resource created."
+msgstr "გამოთვლითი რესურსი შეიქმნა."
+
+msgid "Could not create the compute resource"
+msgstr "გამოთვლითი რესურსის შექმნის შეცდომა"
+
+msgid "Compute resource updated."
+msgstr "გამოთვლითი რესურსი განახლდა."
+
+msgid "Could not update the compute resource"
+msgstr "გამოთვლითი რესურსის განახლების შეცდომა"
+
+msgid "Compute resource deleted."
+msgstr "კომპიუტერული რესურსი წაიშალა."
+
+msgid "Could not delete the compute resource"
+msgstr "გამოთვლითი რესურსის წაშლის შეცდომა"
+
+msgid "Associate a specific VM"
+msgstr "მითითებული ვმ-ის ასოციაცია"
+
+msgid "Virtual machines have been associated."
+msgstr "ვირტუალური მანქანები ასოცირებულია."
+
+msgid "Could not associate the virtual machines"
+msgstr "ვირტუალური მანქანების ასოცირების შეცდომა"
+
+msgid "Datacenter"
+msgstr "მდც"
+
+msgid "Hosts"
+msgstr "ჰოსტები"
+
+msgid "Cluster path"
+msgstr "კლასტერის ბილიკი"
+
+msgid "Virtual switch"
+msgstr "ვირტუალური კომუტატორი"
+
+msgid "VLAN ID"
+msgstr "VLAN ID"
+
+msgid "VNIC profile ID"
+msgstr "VNIC-ის პროფილის ID"
+
+msgid "Network ID"
+msgstr "ქსელის ID"
+
+msgid "Uuid"
+msgstr "Uuid"
+
+msgid "Path"
+msgstr "მისამართი"
+
+msgid "Parent"
+msgstr "მშობელი"
+
+msgid "Cluster"
+msgstr "კლასტერი"
+
+msgid "State"
+msgstr "State"
+
+msgid "Url"
+msgstr "URL"
+
+msgid "Region"
+msgstr "რეგიონი"
+
+msgid "DNS"
+msgstr "DNS"
+
+msgid "DNS Name"
+msgstr "DNS სახელი"
+
+msgid "Virtualization Type"
+msgstr "ვირტუალიზაციის ტიპი"
+
+msgid "Number of CPUs"
+msgstr "CPU-ების რიცხვი"
+
+msgid "String, amount of memory, value in bytes"
+msgstr "სტრიქონი, მეხსიერების რაოდენობა, ბაიტებში"
+
+msgid "Possible values: %{modes}"
+msgstr "შესაძლო მნიშვნელობები: %{modes}"
+
+msgid "Device names to specify the boot order"
+msgstr "დისკის სახელები ჩატვირთვის მიმდევრობის მისათითებლად"
+
+msgid "Boolean (expressed as 0 or 1), whether to start the machine or not"
+msgstr ""
+"ლოგიკური გამოსახულება (0 ან 1), რომელიც აღნიშნავს, გაეშვება მანქანა თუ არა"
+
+msgid "Name of interface according to type"
+msgstr "ინტერფეისის სახელი, ტიპზე დაყრდნობით"
+
+msgid "Libvirt instance network, e.g. default"
+msgstr "Libvirt-ის გაშვებული ასლის ქსელი. მაგ: default"
+
+msgid "One of available storage pools"
+msgstr "ერთ-ერთი ხელმისაწვდომი საცავის პული"
+
+msgid "String value, e.g. 10G"
+msgstr "სტრიქონი. მაგ:10G"
+
+msgid "Initial allocation, e.g. 0G"
+msgstr "საწყისი გამოყოფა. მაგ: 0გ"
+
+msgid "CPUs"
+msgstr "CPU"
+
+msgid "Memory"
+msgstr "მეხსიერება"
+
+msgid "Status"
+msgstr "სტატუსი"
+
+msgid "OS Type"
+msgstr "ოს-ის ტიპი"
+
+msgid "Domain Type"
+msgstr "დომენის ტიპი"
+
+msgid "Persistent"
+msgstr "მუდმივი"
+
+msgid "Boot order"
+msgstr "ჩატვირთვის მიმდევრობა"
+
+msgid "Tenant"
+msgstr "პატრონი"
+
+msgid "Project domain name"
+msgstr "პროექტის დომენის სახელი"
+
+msgid "Project domain ID"
+msgstr "პროექტის დომენის ID"
+
+msgid "Tenant Id"
+msgstr "პატრონის ID"
+
+msgid "ID or name of cluster to use"
+msgstr "კლასტერის სახელი ან ID"
+
+msgid "Hardware profile to use"
+msgstr "აპარატურის პროფილი"
+
+msgid "Integer value, number of cores"
+msgstr "ბირთვების რაოდენობა. მთელი რიცხვი"
+
+msgid "Integer value, number of sockets"
+msgstr "სოკეტების რაოდენობა. მთელი რიცხვი"
+
+msgid "Amount of memory, integer value in bytes"
+msgstr "მეხსიერების რაოდენობა. მთელი რიცხვი, ბაიტებში"
+
+msgid "Boolean, set 1 to high availability"
+msgstr "ლოგიკური. მაღალი წვდომადობისთვის დააყენეთ 1"
+
+msgid "Possible values: %s. Not usable if display type is SPICE."
+msgstr "შესაძლო მნიშვნელობები: %s . არ გამოიყენება, თუ ეკრანის ტიპი SPICE-ა."
+
+msgid "Boolean, set 1 to start the vm"
+msgstr "ლოგიკური. ვმ-ის გასაშვებად დააყენეთ 1"
+
+msgid "Compute name, e.g. eth0"
+msgstr "გამოთვლითი რესურსის სახელი, მაგ eth0"
+
+msgid "Select one of available networks for a cluster, must be an ID or a name"
+msgstr ""
+"აირჩიეთ კლასტერზე ხელმისაწვდომი ერთი ქსელი. უნდა წარმოადგენდეს ID-ის ან "
+"სახელს"
+
+msgid "Interface type"
+msgstr "ინტერფეისის ტიპი"
+
+msgid "Vnic Profile"
+msgstr "VNIC-ის პროფილი"
+
+msgid "Volume size in GB, integer value"
+msgstr "საცავის ზომა, მთელ რიცხვებში, გიგაბაიტებით"
+
+msgid "ID or name of storage domain"
+msgstr "საცავის დომენის ID ან სახელი"
+
+msgid "Boolean, set 1 for bootable, only one volume can be bootable"
+msgstr ""
+"ლოგიკური. ჩატვირთვადობისთვის დააყენეთ 1. ჩატვირთვადი მხოლოდ ერთი ტომი "
+"შეიძლება იყოს"
+
+msgid "Boolean, set 1 to preallocate"
+msgstr "ლოგიკური. წინასწარ გამოსათხოვად დააყენეთ 1"
+
+msgid "Boolean, set 1 to wipe disk after delete"
+msgstr "ლოგიკური. წაშლის შემდეგ დისკის გასანადგურებლად დააყენეთ 1"
+
+msgid "Disk interface name, must be ide, virto or virto_scsi"
+msgstr "დისკის ინტერფეისის სახელი. შეიძლება იყოს ide, virtio ან virtio_scsi"
+
+msgid "Cores"
+msgstr "ბირთვები"
+
+msgid "Cluster ID from VMware"
+msgstr "კლასტერის ID VMware-დან"
+
+msgid "Number of cores per socket (applicable to hardware versions < 10 only)"
+msgstr ""
+"სოკეტზე ბირთვების რიცხვი (შეიძლება მიეთითოს მხოლოდ აპარატურის ვერსიაზე < 10)"
+
+msgid "CPU count"
+msgstr "CPU-ის რაოდენობა"
+
+msgid "Integer number, amount of memory in MB"
+msgstr "მთელი რიცხვი, მეხსიერების რაოდენობა მეგაბაიტებში"
+
+msgid "Path to folder"
+msgstr "საქაღალდის ბილიკი"
+
+msgid "Resource Pool ID from VMware"
+msgstr "რესურსის პულის ID VMWare-დან"
+
+msgid "Guest OS ID form VMware"
+msgstr "სტუმრის ჰოსტის ID VMWare-დან"
+
+msgid "Hardware version ID from VMware"
+msgstr "აპარატურის ვერსიის ID VMWare-დან"
+
+msgid "Must be a 1 or 0, lets you add memory resources while the machine is on"
+msgstr ""
+"უნდა იყოს 1 ან 0. უფლებას გაძლევთ დაამატოთ მეხსიერება, როცა მანქანა "
+"გაშვებულია"
+
+msgid "Must be a 1 or 0, lets you add CPU resources while the machine is on"
+msgstr ""
+"უნდა იყოს 1 ან 0. საშუალებას გაძლევთ დაამატოთ CPU-ის რესურსები დაამატოთ, "
+"როცა მანქანა გაშვებულია"
+
+msgid "Must be a 1 or 0, Add a CD-ROM drive to the virtual machine"
+msgstr "უნდა იყოს 1 ან 0. ვირტუალურ მანქანაში CD-ROM-ს ამატებს"
+
+msgid "Annotation Notes"
+msgstr "ანოტაციის შენიშვნები"
+
+msgid "List with SCSI controllers definitions"
+msgstr "SCSI კონტროლერების აღწერების სია"
+
+msgid "ID of the controller from VMware"
+msgstr "კონტროლერის ID VMware-დან"
+
+msgid "Key of the controller (e.g. 1000)"
+msgstr "კონტროლერის გასაღები (მაგ: 1000)"
+
+msgid "Must be a 1 or 0, whether to start the machine or not"
+msgstr "უნდა იყოს 1 ან 0. გაეშვება ვირტუალური მანქანა თუ არა"
+
+msgid "Storage Pod ID from VMware"
+msgstr "საცავის პოდის ID VMware-დან"
+
+msgid "Datastore ID from VMware"
+msgstr "მონაცემების საცავის ID VMware-დან"
+
+msgid "Integer number, volume size in GB"
+msgstr "მთელი რიცხვი, ტომის ზომა გიგაბაიტებში"
+
+msgid "Type of the network adapter, for example one of:"
+msgstr "ქსელური ადაპტერის ტიპი. მაგალითად:"
+
+msgid ""
+"See documentation center for your version of vSphere to find more details "
+"about available adapter types:"
+msgstr ""
+"ხელმისაწვდომი ადაპტერის ტიპების შესახებ მეტი ინფორმაიციის მისაღებად იხილეთ "
+"vSphere-ის თქვენი ვერსიის დოკუმენტაციის ცენტრი:"
+
+msgid "Network ID or Network Name from VMware"
+msgstr "ქსელის სახელი ან ID VMware-დან"
+
+msgid "Console password set"
+msgstr "კონსოლის პაროლი დაყენებულია"
+
+msgid "Caching enabled"
+msgstr "ქეში ჩართულია"
+
+msgid "Power Status"
+msgstr "კვების სტატუსი"
+
+msgid "Host Name"
+msgstr "ჰოსტი"
+
+msgid "Connection Status"
+msgstr "შეერთების სტატუსი"
+
+msgid "Hardware Version"
+msgstr "აპარატურის ვერსია"
+
+msgid "Operating System"
+msgstr "ოპერაციული სისტემა"
+
+msgid "Host"
+msgstr "ჰოსტი"
+
+msgid "Last report"
+msgstr "ბოლო ანგარიშის დრო"
+
+msgid "Origin"
+msgstr "საწყისი"
+
+msgid "Applied"
+msgstr "გადატარდა"
+
+msgid "Restarted"
+msgstr "გადაიტვირთა"
+
+msgid "Failed"
+msgstr "შეცდომა"
+
+msgid "Restart Failures"
+msgstr "გადატვირთვის შეცდომები"
+
+msgid "Skipped"
+msgstr "გამოტოვებული"
+
+msgid "Pending"
+msgstr "დარჩენილი"
+
+msgid "Reported at"
+msgstr "ანგარიშის დრო"
+
+msgid "Report status"
+msgstr "ანგარიშის სტატუსი"
+
+msgid "Report metrics"
+msgstr "ანგარიშის მეტრიკები"
+
+msgid "config_retrieval"
+msgstr "config_retrieval"
+
+msgid "exec"
+msgstr "exec"
+
+msgid "file"
+msgstr "file"
+
+msgid "package"
+msgstr "package"
+
+msgid "service"
+msgstr "service"
+
+msgid "user"
+msgstr "მომხმარებელი"
+
+msgid "yumrepo"
+msgstr "yumrepo"
+
+msgid "filebucket"
+msgstr "filebucket"
+
+msgid "cron"
+msgstr "cron"
+
+msgid "total"
+msgstr "ჯამში"
+
+msgid "Logs"
+msgstr "ჟურნალი"
+
+msgid "Resource"
+msgstr "რესურსი"
+
+msgid "Message"
+msgstr "შეტყობინება"
+
+msgid "Report has been deleted."
+msgstr "ანგარიში წაიშალა."
+
+msgid "Could not delete the report"
+msgstr "ანგარიშის წაშლის შეცდომა"
+
+msgid "Use the default organization and/or location from the server"
+msgstr "ნაგულისხმები ორგანიზაციისა ან/და მდებარეობის სერვერიდან გამოყენება"
+
+msgid "DNS Id"
+msgstr "DNS Id"
+
+msgid "Domain [%{name}] created."
+msgstr "დომენი [%{name}] შეიქმნა."
+
+msgid "Could not create the domain"
+msgstr "დომენის შექმნის შეცდომა"
+
+msgid "Full name describing the domain"
+msgstr "დომენის სრული სახელის აღწერა"
+
+msgid "Domain [%{name}] updated."
+msgstr "დომენი [%{name}] განახლდა."
+
+msgid "Could not update the domain"
+msgstr "დომენის განახლების შეცდომა"
+
+msgid "Domain [%{name}] deleted."
+msgstr "დომენი [%{name}] წაიშალა."
+
+msgid "Could not delete the domain"
+msgstr "დომენის წაშლის შეცდომა"
+
+msgid "Create or update parameter for a domain"
+msgstr "დომენის პარამეტრის შექმნა ან განახლება"
+
+msgid "Domain parameter updated"
+msgstr "დომენის პარამეტრი განახლდა"
+
+msgid "New domain parameter created"
+msgstr "შექმნილია დომენის ახალი პარამეტრი"
+
+msgid "Could not set domain parameter"
+msgstr "დომენის პარამეტრის დაყენების შეცდომა"
+
+msgid "Delete parameter for a domain"
+msgstr "დომენის პარამეტრი წაშლა"
+
+msgid "Domain parameter deleted."
+msgstr "დომენის პარამეტრი წაიშალა."
+
+msgid "Redirection of API call detected."
+msgstr "აღმოჩენილია API-ის გამოძახების გადამისამართება."
+
+msgid "It seems hammer is configured to use HTTP and the server prefers HTTPS."
+msgstr "როგორც ჩანს, Hammer-ი HTTP-ითაა მორგებული და სერვერს HTTPS ურჩევნია."
+
+msgid "Update your server url configuration."
+msgstr "განაახლეთ თქვენი სერვერის URL-ის კონფიგურაცია."
+
+msgid ""
+"You can set 'follow_redirects' to one of :default or :always to enable "
+"redirects following."
+msgstr ""
+"'follow-redirects', გადამისამართებების ჩასართავად, ან ':default'-ზე "
+"დააყენეთ, ან ':always'-ზე."
+
+msgid "Forbidden - server refused to process the request."
+msgstr "აკრძალულია - სერვერმა მოთხოვნის დამუშავებაზე უარი განაცხადა."
+
+msgid "The following configuration option were used for the SSL connection:"
+msgstr "SSL შეერთებისთვის გამოყენებული კონფიგურაციის პარამეტრები:"
+
+msgid ""
+"Make sure the location contains an unexpired and valid CA certificate for %s."
+msgstr ""
+"დარწმუნდით, რომ მდებარეობა ვადაგაუსვლელ CA სერტიფიკატს შეიცავს %s-სთვის."
+
+msgid ""
+"You can use hammer to fetch the CA certificate from the server. Be aware "
+"that hammer cannot verify whether the certificate is correct and you should "
+"verify its authenticity after downloading it."
+msgstr ""
+"სერვერიდან CA სერტიფიკატის გამოსათხოვად შეგიძლიათ Hammer-იც გამოიყენოთ. "
+"გაითვალისწინეთ, რომ Hammer-ს იმის შემოწმება, სწორია თუ არა სერტიფიკატი, არ "
+"შეუძლია და მისი ავთენტურობა გადმოწერის შემდეგ თქვენ უნდა შეამოწმოთ."
+
+msgid "Download the certificate as follows:"
+msgstr "გადმოწერეთ სერტიფიკატი შემდეგნაირად:"
+
+msgid ""
+"Make sure you configured the correct URL and have the server's CA "
+"certificate installed on your system."
+msgstr ""
+"დარწმუნდით, რომ მოარგეთ სწორი URL და სისტემაში დაყენებულია სერვერის CA "
+"სერტიფიკატი."
+
+msgid "Server misconfiguration detected"
+msgstr "ნაპოვნია სერვერის კონფიგურაციის შეცდომა"
+
+msgid "have you run installer with option %s?"
+msgstr "დაყენების პროგრამა '%s' პარამეტრით გაუშვიტ?"
+
+msgid "the user might come from a different authentication source"
+msgstr "მომხმარებელი შეიძლება ავთენტიკაციის სხვა წყაროდან მოვიდეს"
+
+msgid "Could not authenticate using negotiation protocol"
+msgstr "მოლაპარაკების პროტოკოლის გამოყენებით ავტორიზაცია ვერ მოხერხდა"
+
+msgid "have you run %s (for Kerberos)?"
+msgstr "გაუშვით %s (Kerberos-ისთვის)?"
+
+msgid "is the server down?"
+msgstr "სერვერი გამორთულია?"
+
+msgid "View and manage user group's external user groups"
+msgstr "მომხმარებლის ჯგუფის გარე მომხმარებლის ჯგუფების ნახვა და მართვა"
+
+msgid "Auth source"
+msgstr "ავთ. წყარო"
+
+msgid "Refresh external user group"
+msgstr "გარე მომხმარებლის ჯგუფის თავიდან გამოთხოვა"
+
+msgid "External user group created."
+msgstr "გარე მომხმარებლის ჯგუფი შეიქმნა."
+
+msgid "Could not create external user group"
+msgstr "გარე მომხმარებლის ჯგუფი შეიქმნის შეცდომა"
+
+msgid "External user group updated."
+msgstr "გარე მომხმარებლის ჯგუფი განახლდა."
+
+msgid "Could not update external user group"
+msgstr "გარე მომხმარებლის ჯგუფის განახლების შეცდომა"
+
+msgid "External user group deleted."
+msgstr "გარე მომხმარებლის ჯგუფი წაიშალა."
+
+msgid "Could not delete the external user group"
+msgstr "გარე მომხმარებლის ჯგუფი წაშლის შეცდომა"
+
+msgid "Fact"
+msgstr "ფაქტი"
+
+msgid "Resource type"
+msgstr "რესურსის ტიპი"
+
+msgid "Search"
+msgstr "_ძებნა"
+
+msgid "Unlimited?"
+msgstr "ულიმიტო?"
+
+msgid "Override?"
+msgstr "გადავფარო?"
+
+msgid "Role"
+msgstr "როლი"
+
+msgid "Permissions"
+msgstr "ნებართვები"
+
+msgid "(Miscellaneous)"
+msgstr "(სხვადასხვა)"
+
+msgid "none"
+msgstr "არა"
+
+msgid "Organizations and locations can be set only for overriding filters."
+msgstr ""
+"ორგანიზაციებისა და მდებარეობების დაყენება მხოლოდ გადაფარვად ფილტრებზე "
+"შეიძლება."
+
+msgid "Overriding organizations and locations"
+msgstr "ორგანიზაციებისა და მდებარეობების გადაფარვა"
+
+msgid ""
+"Filters inherit organizations and locations from its role by default. This "
+"behavior can be changed by setting %{condition}.%{wsp}Therefore options "
+"%{org_opts} and %{loc_opts} are applicable only when the override flag is "
+"set."
+msgstr ""
+"ფილტრები ორგანიზაციებს და მდებარეობებს მათი როლიდან ნაგულისხმებად იღებენ. ამ "
+"ქცევის შეცვლა %{condition}.%{wsp}-ის ცვლილებით შეგიცლიათ. ამიტომ პარამეტრები "
+"%{org_opts} და %{loc_opts} მხოლოდ გადაფარვის ალმის დაყენების შემთხვევაშია "
+"გამოსადეგი."
+
+msgid "Permission filter for [%<resource_type_label>s] created."
+msgstr "წვდომების ფილტრი [%<resource_type_label>s]-სთვის შექმნილია."
+
+msgid "Could not create the permission filter"
+msgstr "წვდომის ფილტრის შექმნის შეცდომა"
+
+msgid "Permission filter for [%<resource_type_label>s] updated."
+msgstr "წვდომების ფილტრი [%<resource_type_label>s]-სთვის განახლდა."
+
+msgid "Could not update the permission filter"
+msgstr "წვდომის ფილტრის განახლების შეცდომა"
+
+msgid "Permission filter deleted."
+msgstr "წვდომის ფილტრი წაიშალა."
+
+msgid "Could not delete the permission filter"
+msgstr "წვდომის ფილტრის წაშლის შეცდომა"
+
+msgid "Host Group"
+msgstr "ჰოსტების ჯგუფი"
+
+msgid "MAC"
+msgstr "MAC"
+
+msgid "Global Status"
+msgstr "გლობალური სტატუსი"
+
+msgid "Organization"
+msgstr "ორგანიზაცია"
+
+msgid "Location"
+msgstr "მდებარეობა"
+
+msgid "Additional Information"
+msgstr "დამატებითი ინფორმაცია"
+
+msgid "Bare Metal"
+msgstr "შიშველი მეტალი"
+
+msgid "UUID"
+msgstr "UUID"
+
+msgid "Compute Profile"
+msgstr "გამოთვლითი პროფილი"
+
+msgid "Cert name"
+msgstr "სერტიფიკატის სახელი"
+
+msgid "Token"
+msgstr "ტოკენი"
+
+msgid "Managed"
+msgstr "მართული"
+
+msgid "Installed at"
+msgstr "დაყენების დრო"
+
+msgid "Uptime (seconds)"
+msgstr "ჩართულია (წამებში)"
+
+msgid "Build Status"
+msgstr "აგების სტატუსი"
+
+msgid "Network"
+msgstr "ქსელი"
+
+msgid "IPv4 address"
+msgstr "IPv4 მისამართი"
+
+msgid "IPv6 address"
+msgstr "IPv6 მისამართი"
+
+msgid "Subnet ipv4"
+msgstr "IPv4 ქვექსელი"
+
+msgid "Subnet ipv6"
+msgstr "IPv6 ქვექსელი"
+
+msgid "Domain"
+msgstr "დომენი"
+
+msgid "Service provider"
+msgstr "სერვისის მომწოდებელი"
+
+msgid "SP Name"
+msgstr "SP სახელი"
+
+msgid "SP IP"
+msgstr "SP IP"
+
+msgid "SP MAC"
+msgstr "SP MAC"
+
+msgid "SP Subnet"
+msgstr "SP ქვექსელი"
+
+msgid "Network interfaces"
+msgstr "ქსელის ინტერფეისები"
+
+msgid "Identifier"
+msgstr "იდენტიფიკატორი"
+
+msgid "MAC address"
+msgstr "MAC მისამართი"
+
+msgid "FQDN"
+msgstr "FQDN"
+
+msgid "Operating system"
+msgstr "ოპერაციული სისტემა"
+
+msgid "Architecture"
+msgstr "არქიტექტურა"
+
+msgid "Build"
+msgstr "აგება"
+
+msgid "Medium"
+msgstr "საშუალო"
+
+msgid "Partition Table"
+msgstr "დანაყოფების ცხრილი"
+
+msgid "PXE Loader"
+msgstr "PXE ჩამტვირთავი"
+
+msgid "Custom partition table"
+msgstr "დანაყოფების ცხრილის ხელით მითითება"
+
+msgid "Image"
+msgstr "სურათი"
+
+msgid "Image file"
+msgstr "გამოსახულების ფაილი"
+
+msgid "Use image"
+msgstr "ასლის გამოყენება"
+
+msgid "Additional info"
+msgstr "დამატებითი ინფორმაცია"
+
+msgid "Owner"
+msgstr "მფლობელი"
+
+msgid "Enabled"
+msgstr "ჩართულია"
+
+msgid "Model"
+msgstr "მოდელი"
+
+msgid "Comment"
+msgstr "კომე_ნტარი"
+
+msgid "Power"
+msgstr "კვება"
+
+msgid "Host id"
+msgstr "ჰოსტების ID"
+
+msgid "Host name"
+msgstr "ჰოსტის სახელი"
+
+msgid ""
+"%{reports} command is deprecated and will be removed in one of the future "
+"versions. Please use %{config_reports} command instead."
+msgstr ""
+"%{reports} ბრძანება მოძველებულია და წაიშლება ერთ-ერთ მომავალ ვერსიაში. ამის "
+"ნაცვლად, გთხოვთ, გამოიყენოთ %{config_reports} ბრძანება."
+
+msgid "Host created."
+msgstr "ჰოსტი შეიქმნა."
+
+msgid "Could not create the host"
+msgstr "ჰოსტის შექმნის შეცდომა"
+
+msgid "Host updated."
+msgstr "ჰოსტი განახლდა."
+
+msgid "Could not update the host"
+msgstr "ჰოსტის განახლების შეცდომა"
+
+msgid "Host deleted."
+msgstr "ჰოსტი წაშლილია."
+
+msgid "Could not delete the host"
+msgstr "ჰოსტის წაშლის შეცდომა"
+
+msgid "Create or append a parameter for a host"
+msgstr "ჰოსტისთვის პარამეტრის მიწერა ან შექმნა"
+
+msgid "Host parameter updated"
+msgstr "ჰოსტის პარამეტრი განახლდა"
+
+msgid "New host parameter created"
+msgstr "ჰოსტის ახალი პარამეტრი შექმნილია"
+
+msgid "Could not set host parameter"
+msgstr "ჰოსტის პარამეტრის დაყენების შეცდომა"
+
+msgid "Delete parameter for a host"
+msgstr "ჰოსტის პარამეტრის წაშლა"
+
+msgid "Host parameter deleted."
+msgstr "ჰოსტის პარამეტრი წაშლილია."
+
+msgid "Power a host on"
+msgstr "ჰოსტის ჩართვა"
+
+msgid "The host is starting."
+msgstr "ჰოსტი ირთვება."
+
+msgid "Force turning off a host"
+msgstr "ჰოსტის ძალით გამორთვა"
+
+msgid "Power a host off"
+msgstr "ჰოსტის გამორთვა"
+
+msgid "Power off forced"
+msgstr "ჰოსტის ძალით გამორთვა"
+
+msgid "Powering the host off"
+msgstr "მიმდინარეობს ჰოსტის გამორთვა"
+
+msgid "Reboot a host"
+msgstr "ჰოსტის გადატვირთვა"
+
+msgid "Host reboot started."
+msgstr "ჰოსტის გადატვირთვა დაწყებულია."
+
+msgid "Reset a host"
+msgstr "ჰოსტის ძალით გადატვირთვა"
+
+msgid "Host reset started."
+msgstr "ჰოსტის ძალით გადატვირთვა დაწყებულია."
+
+msgid "Failed to reset the host"
+msgstr "ჰოსტის ძალით გადატვირთვის შეცდომა"
+
+msgid "Rebuild orchestration related configurations for host"
+msgstr "ჰოსტისთვის ორქესტრატორთან დაკავშირებული კონფიგურაციის თავიდან აგება"
+
+msgid "Configuration successfully rebuilt."
+msgstr "კონფიგურაციის თავიდან აგება წარმატებით დასრულდა."
+
+msgid "Dump host's ENC YAML"
+msgstr "ჰოსტის ENC YAML-ის გამოტანა"
+
+msgid "Could not retrieve ENC values of the host"
+msgstr "ჰოსტის ENC მნიშვნელობების მიღების შეცდომა"
+
+msgid "Disassociate a host"
+msgstr "ჰოსტის ასოცირების მოხსნა"
+
+msgid "The host has been disassociated from VM."
+msgstr "ჰოსტის ასოცირება ვმ-სთან მოხსნილია."
+
+msgid "Failed to disassociated host from VM"
+msgstr "ჰოსტის ვმ-დან ასოცირების შეცდომის მოხსნა"
+
+msgid "The host is booting."
+msgstr "ჰოსტი იტვირთება."
+
+msgid "Failed to boot the host from device"
+msgstr "ჰოსტის მითითებული მოწყობილობიდან ჩატვირთვის შეცდომა"
+
+msgid "Root password"
+msgstr "Root-ის პაროლი"
+
+msgid "Subnet IPv6 name"
+msgstr "IPv6 ქვექსელის სახელი"
+
+msgid "Name of parent hostgroup"
+msgstr "მშობელი ჰოსტის ჯგუფის სახელი"
+
+msgid "Title of parent hostgroup"
+msgstr "მშობელი ჰოსტის ჯგუფის სათაური"
+
+msgid "Enter the root password for the host group:"
+msgstr "შეიყვანეთ ჰოსტის ჯგუფის root პაროლი:"
+
+msgid "Title"
+msgstr "სათაური"
+
+msgid "Realm"
+msgstr "რეალმი"
+
+msgid "Hostgroup created."
+msgstr "ჰოსტების ჯგუფი შეიქმნა."
+
+msgid "Could not create the hostgroup"
+msgstr "ჰოსტის ჯგუფის შექმნის შეცდომა"
+
+msgid "Hostgroup updated."
+msgstr "ჰოსტების ჯგუფი განახლდა."
+
+msgid "Could not update the hostgroup"
+msgstr "ჰოსტის ჯგუფის განახლების შეცდომა"
+
+msgid "Hostgroup deleted."
+msgstr "ჰოსტების ჯგუფი წაიშალა."
+
+msgid "Could not delete the hostgroup"
+msgstr "ჰოსტის ჯგუფის წაშლის შეცდომა"
+
+msgid "Create or update parameter for a hostgroup"
+msgstr "ჰოსტის ჯგუფის პარამეტრის განახლების შეცდომა"
+
+msgid "Hostgroup parameter updated"
+msgstr "ჰოსტების ჯგუფის პარამეტრი განახლდა"
+
+msgid "New hostgroup parameter created"
+msgstr "ჰოსტის ჯგუფის ახალი პარამეტრი შექმნილია"
+
+msgid "Could not set hostgroup parameter"
+msgstr "ჰოსტის ჯგუფის პარამეტრის დაყენების შეცდომა"
+
+msgid "Delete parameter for a hostgroup"
+msgstr "ჰოსტის ჯგუფის პარამეტრის წაშლის სეცდომა"
+
+msgid "Hostgroup parameter deleted."
+msgstr "ჰოსტების ჯგუფის პარამეტრი წაიშალა."
+
+msgid "Could not rebuild configuration"
+msgstr "კონფიგურაციის თავიდან აგების შედომა"
+
+msgid "ID of the owner"
+msgstr "მფლობელის ID"
+
+msgid "Login of the owner"
+msgstr "მფლობელის მომხმარებლის სახელი"
+
+msgid ""
+"Required if host is managed and value is not inherited from host group or "
+"default password in settings"
+msgstr ""
+"საჭიროა, თუ ჰოსტი მართულია და მნიშვნელობა ჰოსტის ჯგუფიდან ან პარამეტრებიდან "
+"ნაგულისხმები პაროლიდან არაა მემკვიდრეობით მიღებული"
+
+msgid "Replaces with new host parameters"
+msgstr "ახალი ჰოსტის პარამეტრებით ჩანაცვლება"
+
+msgid "Replaces with new host parameters (with type support)"
+msgstr "ახალი ჰოსტის პარამეტრებით ჩანაცვლება (ტიპის მხარდაჭერით)"
+
+msgid "Volume parameters"
+msgstr "ტომის პარამეტრები"
+
+msgid "Interface parameters"
+msgstr "ინტერფეისის პარამეტრები"
+
+msgid "Enter the root password for the host:"
+msgstr "ჰოსტის root პაროლი:"
+
+msgid "Username"
+msgstr "მომხმარებელი"
+
+msgid "URL"
+msgstr "ბმული"
+
+msgid "Http proxy created."
+msgstr "HTTP პროქსის შეიქმნა."
+
+msgid "Could not create the http proxy"
+msgstr "HTTP პროქსის შექმნის შეცდომა"
+
+msgid "Http proxy deleted."
+msgstr "HTTP პროქსის წაიშალა."
+
+msgid "Could not delete the http proxy"
+msgstr "HTTP პროქსის წაშლის შეცდომა"
+
+msgid "Http proxy updated."
+msgstr "HTTP პროქსის განახლდა."
+
+msgid "Could not update the http proxy"
+msgstr "HTTP პროქსის განახლების შეცდომა"
+
+msgid "Architecture name"
+msgstr "არქიტექტურის სახელი"
+
+msgid "Compute resource name"
+msgstr "გამოთვლითი რესურსის სახელი"
+
+msgid "Compute profile name"
+msgstr "გამოთვლით პროფილის სახელი"
+
+msgid "Domain name"
+msgstr "დომენის სახელი"
+
+msgid "Hostgroup title"
+msgstr "ჰოსტების ჯგუფის სათაური"
+
+msgid "Set the current location context for the request"
+msgstr "მოთხოვნის მიმდინარე მდებარეობის კონტექსტის დაყენება"
+
+msgid "Medium name"
+msgstr "მედიის სახელი"
+
+msgid "Model name"
+msgstr "მოდელს სახელი"
+
+msgid "Set the current organization context for the request"
+msgstr "მოთხოვნის მიმდინარე ორგანიზაციის კონტექსტის დაყენება"
+
+msgid "Operating system title"
+msgstr "ოპერაციული სისტემის სათაური"
+
+msgid "Partition table name"
+msgstr "დანაყოფების ცხრილის სახელი"
+
+msgid "Proxy name"
+msgstr "პროქსის სახელი"
+
+msgid "User role name"
+msgstr "მომხმარებლის როლის სახელი"
+
+msgid "Setting name"
+msgstr "პარამეტრის სახელი"
+
+msgid "Subnet name"
+msgstr "ქვექსელის სახელი"
+
+msgid "User's login to search by"
+msgstr "მომხმარებლის სახელით ძებნა"
+
+msgid "Common parameter name"
+msgstr "საერთო პარამეტრის სახელი"
+
+msgid "Name to search by"
+msgstr "სახელით ძებნა"
+
+msgid "Missing options to search %s"
+msgstr "%s-ის მოსაძებნად მითითებული პარამეტრები საკმარისი არაა"
+
+msgid "one of %s not found."
+msgstr "%s-დან ერთერთი ვერ ვიპოვე."
+
+msgid "Found more than one %s."
+msgstr "ნაპოვნია ერთზე მეტი %s."
+
+msgid "Missing options to search %s."
+msgstr "%s-ის მოსაძებნად შეყვანილი პარამეტრები საკმარისი არაა."
+
+msgid "View and manage compute resource's images"
+msgstr "გამოთვლითი რესურსის ასლების ნახვა და მართვა"
+
+msgid "User Data"
+msgstr "მომხმარებლის მონაცემები"
+
+msgid "IAM role"
+msgstr "IAM-ის როლი"
+
+msgid "Show images available for addition"
+msgstr "დასამატებლად მზა ასლების ჩვენება"
+
+msgid "Image created."
+msgstr "ასლი შეიქმნა."
+
+msgid "Could not create the image"
+msgstr "ასლის შექმნის შეცდომა"
+
+msgid "Image updated."
+msgstr "ასლი განახლდა."
+
+msgid "Could not update the image"
+msgstr "ასლის განახლების შეცდომა"
+
+msgid "Image deleted."
+msgstr "ასლი წაიშალა."
+
+msgid "Could not delete the image"
+msgstr "ასლის წაშლის შეცდომა"
+
+msgid "View and manage host's network interfaces"
+msgstr "ჰოსტის ქსელური ინტერფეისების დათვალიერება და მართვა"
+
+msgid "primary"
+msgstr "ძირითადი"
+
+msgid "provision"
+msgstr "მუშაობისთვის მომზადება"
+
+msgid "IP address"
+msgstr "IP მისამართი"
+
+msgid "DNS name"
+msgstr "DNS სახელი"
+
+msgid "Subnet"
+msgstr "ქვექსელი"
+
+msgid "Primary"
+msgstr "ძირითადი"
+
+msgid "Provision"
+msgstr "მუშაობისთვის მომზადება"
+
+msgid "Virtual"
+msgstr "ვირტუალური"
+
+msgid "Tag"
+msgstr "იარლიყი"
+
+msgid "Attached to"
+msgstr "მიმაგრებულია"
+
+msgid "BMC"
+msgstr "BMC"
+
+msgid "Bond"
+msgstr "ბმა"
+
+msgid "Mode"
+msgstr "რეჟიმი"
+
+msgid "Attached devices"
+msgstr "მიმაგრებული ინტერფეისები"
+
+msgid "Bond options"
+msgstr "დაწყვილებული ინტერფეისის მორგება"
+
+msgid ""
+"Should this interface be used for constructing the FQDN of the host? Each "
+"managed hosts needs to have one primary interface"
+msgstr ""
+"გამოვიყენო ეს ინტერფეისი ჰოსტის FQDN-ის ასაწყობად? თითოეულ მართვად ჰოსტს "
+"ერთი ძირითადი ინტერფეისი უნდა ჰქონდეს"
+
+msgid ""
+"Should this interface be used for TFTP of PXELinux (or SSH for image-based "
+"hosts)? Each managed hosts needs to have one provision interface"
+msgstr ""
+"გამოვიყენო ეს ინტერფეისი TFTP/PXELinux-სთვის (ან SSH ასლზე-ბაზირებული "
+"ჰოსტებისთვის)? თითოეულ მართულ ჰოსტს სამუშაოდ მომზადების ერთი ინტერფეისი "
+"სჭირდება"
+
+msgid "Interface created."
+msgstr "ინტერფეისი შეიქმნა."
+
+msgid "Could not create the interface"
+msgstr "ინტერფეისის შექმნის შეცდომა"
+
+msgid "Compute resource specific attributes"
+msgstr "გამოთვლით რესურსის სპეციფიკური ატრიბუტები"
+
+msgid "Interface updated."
+msgstr "ინტერფეისი განახლდა."
+
+msgid "Could not update the interface"
+msgstr "ინტერფეისის განახლების შეცდომა"
+
+msgid "Interface deleted."
+msgstr "ინტერფეისი წაიშალა."
+
+msgid "Could not delete the interface"
+msgstr "ინტერფეისის წაშლის შეცდომა"
+
+msgid "Location numeric id to search by"
+msgstr "მოსაძებნი მდებარეობის ID"
+
+msgid "Organizations"
+msgstr "ორგანიზაციები"
+
+msgid "Location created."
+msgstr "მდებარეობა შეიქმნა."
+
+msgid "Could not create the location"
+msgstr "მდებარეობის შექმნის შეცდომა"
+
+msgid "Location updated."
+msgstr "მდებარეობა განახლდა."
+
+msgid "Could not update the location"
+msgstr "მდებარეობის განახლების შეცდომა"
+
+msgid "Location deleted."
+msgstr "მდებარეობა წაიშალა."
+
+msgid "Could not delete the location"
+msgstr "მდებარეობის წაშლის შეცდომა"
+
+msgid "Create or update parameter for a location"
+msgstr "მდებარეობის პარამეტრის შექმნა ან განახლება"
+
+msgid "Parameter [%{name}] updated to value [%{value}]"
+msgstr "პარამეტრი [%{name}] განახლდა მნიშვნელობამდე [%{value}]"
+
+msgid "Parameter [%{name}] created with value [%{value}]"
+msgstr "პარამეტრი [%{name}] შეიქმნა მნიშვნელობით [%{value}]"
+
+msgid "Could not set location parameter"
+msgstr "მდებარეობის პარამეტრის დაყენების შეცდომა"
+
+msgid "Delete parameter for a location"
+msgstr "მდებარეობის პარამეტრის წაშლა"
+
+msgid "Parameter [%{name}] deleted."
+msgstr "პარამეტრი წაიშალა: [%{name}] ."
+
+msgid "Could not delete location parameter"
+msgstr "მდებარეობის პარამეტრის წაშლის შეცდომა"
+
+msgid "Subscription type"
+msgstr "გამოწერის ტიპი"
+
+msgid "OS Family"
+msgstr "ოს-ის ოჯახი"
+
+msgid "Installation medium created."
+msgstr "დასაყენებელი დისკის შეიქმნა."
+
+msgid "Could not create the installation medium"
+msgstr "დასაყენებელი დისკის შექმნის შეცდომა"
+
+msgid "Installation medium updated."
+msgstr "დასაყენებელი დისკის განახლდა."
+
+msgid "Could not update the installation media"
+msgstr "დასაყენებელი დისკის განახლების შეცდომა"
+
+msgid "Installation medium deleted."
+msgstr "დასაყენებელი დისკის წაიშალა."
+
+msgid "Could not delete the installation media"
+msgstr "დასაყენებელი დისკის წაშლის შეცდომა"
+
+msgid "Vendor class"
+msgstr "მომწოდებლის კლასი"
+
+msgid "HW model"
+msgstr "აპარატურის მოდელი"
+
+msgid "Info"
+msgstr "ინფორმაცია"
+
+msgid "Hardware model created."
+msgstr "აპარატურის მოდელი შეიქმნა."
+
+msgid "Could not create the hardware model"
+msgstr "აპარატურის მოდელის შექმნის შეცდომა"
+
+msgid "Hardware model deleted."
+msgstr "აპარატურის მოდელი წაიშალა."
+
+msgid "Could not delete the hardware model"
+msgstr "აპარატურის მოდელის წაშლის შეცდომა"
+
+msgid "Hardware model updated."
+msgstr "აპარატურის მოდელი განახლდა."
+
+msgid "Could not update the hardware model"
+msgstr "აპარატურის მოდელის განახლების შეცდომა"
+
+msgid "Invalid access token response."
+msgstr "არასწორი წვდომის კოდის პასუხი."
+
+msgid "Invalid access token"
+msgstr "არასწორი წვდომის კოდი"
+
+msgid ""
+"Failed to recieve acess token, please check your connectivity with OpenID "
+"provider: %s"
+msgstr ""
+"წვდომის კოდის მიღების შეცდომა. გადაამოწმეთ კავშირი OpenID-ის მომწოდებელთან: "
+"%s"
+
+msgid "Release name"
+msgstr "რელიზის სახელი"
+
+msgid "Family"
+msgstr "ოჯახი"
+
+msgid "Major version"
+msgstr "ძირითადი ვერსია"
+
+msgid "Minor version"
+msgstr "მეორადი ვერსია"
+
+msgid "Partition tables"
+msgstr "დანაყოფის ცხრილები"
+
+msgid "Default templates"
+msgstr "ნაგულისხმები შაბლონები"
+
+msgid "Architectures"
+msgstr "არქიტექტურები"
+
+msgid "Operating system created."
+msgstr "ოპერაციული სისტემა შეიქმნა."
+
+msgid "Could not create the operating system"
+msgstr "ოპერაციული სისტემის შექმნის შეცდომა"
+
+msgid "Operating system updated."
+msgstr "ოპერაციული სისტემა განახლდა."
+
+msgid "Could not update the operating system"
+msgstr "ოპერაციული სისტემა განახლების შეცდომა"
+
+msgid "Operating system deleted."
+msgstr "ოპერაციული სისტემა წაიშალა."
+
+msgid "Could not delete the operating system"
+msgstr "ოპერაციული სისტემა წაშლის შეცდომა"
+
+msgid "Create or update parameter for an operating system"
+msgstr "ოპერაციული სისტემის პარამეტრის შექმნა ან განახლება"
+
+msgid "Operating system parameter updated"
+msgstr "ოპერაციული სისტემის პარამეტრი განახლდა"
+
+msgid "New operating system parameter created"
+msgstr "შეიქმნა ოპერაციული სისტემის ახალი პარამეტრი"
+
+msgid "Could not set operating system parameter"
+msgstr "ოპერაციული სისტემის პარამეტრის დაყენება შეუძლებელია"
+
+msgid "Delete parameter for an operating system"
+msgstr "ოპერაციული სისტემის პარამეტრის წაშლა"
+
+msgid "operating system parameter deleted."
+msgstr "ოპერაცული სისტემის პარამეტრი წაიშალა."
+
+msgid "Operatingsystem id"
+msgstr "ოპერაციული სისტემის ID"
+
+msgid "Provisioning template id to be set"
+msgstr "მუშაობისთვის მომზადების შაბლონის ID"
+
+msgid ""
+"[%{provisioning_template_name}] was set as default %{template_kind_name} "
+"template."
+msgstr ""
+"[%{provisioning_template_name}] დაყენებულია, როგორც ნაგულისხმები "
+"%{template_kind_name} შაბლონი."
+
+msgid "Could not set the os default template"
+msgstr "ოს-ის ნაგულისხმები შაბლონის დაყენების შეცდომა"
+
+msgid "Type of the provisioning template"
+msgstr "მუშაობისთვის მომზადების შაბლონის ტიპი"
+
+msgid "Default template deleted."
+msgstr "ნაგულისხმები შაბლონი წაიშალა."
+
+msgid "Could not delete the default template"
+msgstr "ნაგულისხმები შაბლონის წაშლის შეცდომა"
+
+msgid "Default template of type %s not found"
+msgstr "%s ტიპის ნაგულისხმები შაბლონი არ არსებობს"
+
+msgid "%{types} of associated %{resource}"
+msgstr "%{types} ასოცირებული %{resource}"
+
+msgid "Use to update associated %s"
+msgstr "გამოიყენეთ ასოცირებული %s-ის განახლებისთვის"
+
+msgid ""
+"Could not find %{resource}. Some search options were missing, please see --"
+"help."
+msgstr ""
+"%{resource} არ არსებობს. ძებნის ზოგიერთი პარამეტრი არ არსებობს. იხილეთ --"
+"help."
+
+msgid "Could not find %{resource}, please set option %{switches}."
+msgstr "%{resource} არ არსებობს. დააყენეთ პარამეტრი %{switches}."
+
+msgid "Could not find %{resource}, please set one of options %{switches}."
+msgstr "%{resource}-ს არ არსებობს. დააყენეთ ერთერთი: %{switches}."
+
+msgid "Enter user's current password:"
+msgstr "შეიყვანეთ მომხმარებლის მიმდინარე პაროლი:"
+
+msgid "Enter user's new password:"
+msgstr "შეიყვანეთ მომხმარებლის ახალი პაროლი:"
+
+msgid "Locations"
+msgstr "მდებარეობები"
+
+msgid "Organization created."
+msgstr "ორგანიზაცია შეიქმნა."
+
+msgid "Could not create the organization"
+msgstr "ორგანიზაციის შექმნის შეცდომა"
+
+msgid "Organization updated."
+msgstr "ორგანიზაცია განახლდა."
+
+msgid "Could not update the organization"
+msgstr "ორგანიზაციის განახლების შეცდომა"
+
+msgid "Organization deleted."
+msgstr "ორგანიზაცია წაიშალა."
+
+msgid "Could not delete the organization"
+msgstr "ორგანიზაციის წაშლის შეცდომა"
+
+msgid "Create or update parameter for an organization"
+msgstr "ორგანიზაციის პარამეტრის შექმნა ან განახლება"
+
+msgid "Could not set organization parameter"
+msgstr "ორგანიზაციის პარამეტრის დაყენების შეცდომა"
+
+msgid "Delete parameter for an organization"
+msgstr "ორგანიზაციის პარამეტრის წაშლა"
+
+msgid "Could not delete organization parameter"
+msgstr "ორგანიზაციის პარამეტრის წაშლის შეცდომა"
+
+msgid "id"
+msgstr "id"
+
+msgid "Kind"
+msgstr "ტიპი"
+
+msgid "parameter name"
+msgstr "პარამეტრის სახელი"
+
+msgid "Locked"
+msgstr "დაბლოკილი"
+
+msgid "View partition table content"
+msgstr "დანაყოფების ცხრილის შემცველობის ნახვა"
+
+msgid "Path to a file that contains the partition layout"
+msgstr "ბილიკი დანაყოფების ცხრილის შემცველ ფაილამდე"
+
+msgid "Partition table created."
+msgstr "დანაყოფების ცხრილი შეიქმნა."
+
+msgid "Could not create the partition table"
+msgstr "დანაყოფების ცხრილის შექმნის შეცდომა"
+
+msgid "Partition table updated."
+msgstr "დანაყოფების ცხრილი განახლდა."
+
+msgid "Could not update the partition table"
+msgstr "დანაყოფების ცხრილის განახლების შეცდომა"
+
+msgid "Partition table deleted."
+msgstr "დანაყოფების ცხრილი წაიშალა."
+
+msgid "Could not delete the partition table"
+msgstr "დანაყოფების ცხრილის წაშლის შეცდომა"
+
+msgid "Path to a file that contains the template content including metadata"
+msgstr "ბილიკი შაბლონის შემცველ ფაილამდე, რომელიც მეტამონაცემებსაც შეიცავს"
+
+msgid "Import partition table template succeeded."
+msgstr "დანაყოფების ცხრილის შაბლონის შემოტანა წარმატებულია."
+
+msgid "Could not import partition table template"
+msgstr "დანაყოფების ცხრილის შაბლონის შემოტანის შეცდომა"
+
+msgid "The partition table template has been saved to %{path}."
+msgstr "დანაყოფების ცხრილის შაბლონი %{path}-ში შეინახა."
+
+msgid "Manage personal access tokens"
+msgstr "პირადი წვდომის კოდების მართვა"
+
+msgid "Active"
+msgstr "აქტიური"
+
+msgid "Expires at"
+msgstr "ამოწურვის ვადა"
+
+msgid ""
+"Personal access token [%{name}] created:\n"
+"%{token_value}"
+msgstr ""
+"წვდომის პირად კოდი [%{name}] შეიქმნა:\n"
+"%{token_value}"
+
+msgid "Could not create personal access token"
+msgstr "მომხმარებლის წვდომის პირადი კოდის შექმნის შეცდომა"
+
+msgid "Created at"
+msgstr "შექმნის დრო"
+
+msgid "Last used at"
+msgstr "ბოლოს გამოყენების დრო"
+
+msgid "Personal access token [%{name}] revoked."
+msgstr "წვდომის პირადი კოდი გაუქმდა: [%{name}]."
+
+msgid "Could not revoke personal access token"
+msgstr "მომხმარებლის წვდომის პირადი კოდის გაუქმების შეცდომა"
+
+msgid "database"
+msgstr "მონაცემთა ბაზა"
+
+msgid "Server Response"
+msgstr "სერვერის პასუხი"
+
+msgid "Realm proxy id"
+msgstr "რეალმის პროქსის ID"
+
+msgid "Realm type"
+msgstr "რეალმის ტიპი"
+
+msgid "Realm [%{name}] created."
+msgstr "რეალმი შეიქმნა: [%{name}]."
+
+msgid "Could not create the realm"
+msgstr "რეალმის შექმნის შეცდომა"
+
+msgid "Realm [%{name}] updated."
+msgstr "რეალმი განახლდა: [%{name}]."
+
+msgid "Could not update the realm"
+msgstr "რეალმის განახლების შეცდომა"
+
+msgid "Realm [%{name}] deleted."
+msgstr "რეალმი წაიშალა: [%{name}]."
+
+msgid "Could not delete the realm"
+msgstr "რეალმის წაშლის შეცდომა"
+
+msgid "Updated at"
+msgstr "განახლების დრო"
+
+msgid "Users"
+msgstr "მომხმარებლები"
+
+msgid "User groups"
+msgstr "მომხმარებლის ჯგუფები"
+
+msgid "Usergroup"
+msgstr "მომხმარებლისჯგუფი"
+
+msgid "Roles"
+msgstr "როლები"
+
+msgid "Inherited User groups"
+msgstr "მომხმარებლის მემკვიდრეობითი ჯგუფები"
+
+msgid "Smart proxies"
+msgstr "ჭკვიანი პროქსიები"
+
+msgid "Compute profiles"
+msgstr "გამოთვლითი პროფილები"
+
+msgid "Compute resources"
+msgstr "გამოთვლითი რესურსები"
+
+msgid "Installation media"
+msgstr "დასაყენებელი სივრცე"
+
+msgid "Templates"
+msgstr "ნიმუშები"
+
+msgid "Partition Tables"
+msgstr "დანაყოფის ცხრილები"
+
+msgid "Domains"
+msgstr "დომენები"
+
+msgid "Realms"
+msgstr "რეალმები"
+
+msgid "Hostgroups"
+msgstr "ჰოსტის ჯგუფები"
+
+msgid "Subnets"
+msgstr "ქვექსელები"
+
+msgid "Parameters"
+msgstr "პარამეტრები"
+
+msgid "All parameters"
+msgstr "ყველა პარამეტრი"
+
+msgid "Operating systems"
+msgstr "ოპერაციული სისტემები"
+
+msgid "External user groups"
+msgstr "გარე მომხმარებლის ჯგუფები"
+
+msgid "Failed to generate registration command"
+msgstr "რეგისტრაციის ბრძანების გენერაციის შეცდომა"
+
+msgid "Default"
+msgstr "ნაგულისხმევი"
+
+msgid "Template inputs"
+msgstr "შაბლონს შეყვანები"
+
+msgid "Required"
+msgstr "საჭიროა"
+
+msgid "Options"
+msgstr "გამართვა"
+
+msgid "View report content"
+msgstr "ანგარიშის შემცველობის ნახვა"
+
+msgid "Generate report"
+msgstr "ანგარიშის გენერაცია"
+
+msgid "Specify inputs"
+msgstr "შეიყვანეთ შესაყვანი"
+
+msgid ""
+"Turns a command to be active, wait for the result and download it right away"
+msgstr "ჩართავს ბრძანებას, დაელოდება პასუხს და გადმოწერს მას"
+
+msgid ""
+"Path to directory where downloaded content will be saved. Only usable if "
+"wait is specified"
+msgstr ""
+"ბილიკი გადმოწერილი შემცველობის შესანახ საქაღალდემდე.გამოყენებადია, თუ "
+"მითითებულია დალოდება"
+
+msgid "The report has been scheduled. Job ID: %{job_id}"
+msgstr "ანგარიში რიგში ჩაემატა. დავალების ID: %{job_id}"
+
+msgid ""
+"Path to a file that contains the report template content including metadata"
+msgstr ""
+"ბილიკი ანგარიშის შაბლონის შემცველ ფაილამდე, რომელიც მეტამონაცემებსაც შეიცავს"
+
+msgid "Import report template successfully."
+msgstr "ანგარიშის შაბლონის შემოტანა წარმატებულია."
+
+msgid "Could not import the report template"
+msgstr "ანგარიშის შაბლონის შემოტანის შეცდომა"
+
+msgid "The report template has been saved to %{path}."
+msgstr "ანგარიშის შაბლონი %{path}-ში ჩაიწერა."
+
+msgid "The report is not ready yet."
+msgstr "ანგარიში ჯერ მზად არაა."
+
+msgid "Open empty template in an $EDITOR. Upload the result"
+msgstr "გასენით ცარელი შაბლონი $EDITOR-ში. შედეგი ატვირთეთ"
+
+msgid "Path to a file that contains the report template content"
+msgstr "ბილიკი ანგარიშის შაბლონის შემცველ ფაილამდე"
+
+msgid "Report template created."
+msgstr "ანგარიშის შაბლონი შექიმნა."
+
+msgid "Could not create the report template"
+msgstr "ანგარიშის შაბლონის შექმნის შეცდომა"
+
+msgid ""
+"Dump existing template and open it in an $EDITOR. Update with the result"
+msgstr "გამოიტანეთ არსებული შაბლონი და გახსენით ის $EDITOR-ში. შედეგი ატვირთეთ"
+
+msgid "Report template updated."
+msgstr "ანგარიშის შაბლონი განახლდა."
+
+msgid "Could not update the report template"
+msgstr "ანგარიშის შაბლონის განახლების შეცდომა"
+
+msgid "Report template cloned."
+msgstr "ანგარიშის შაბლონი კლონირებულია."
+
+msgid "Could not clone the report template"
+msgstr "ანგარიშის შაბლონის კლონირების შეცდომა"
+
+msgid "Report template deleted."
+msgstr "ანგარიშის შაბლონი წაიშალა."
+
+msgid "Could not delete the report template"
+msgstr "ანგარიშის შაბლონის წაშლის შეცდომა"
+
+msgid "The server does not support such operation."
+msgstr "სერვერს ამ ოპერაციის მხარდაჭერა არ გააჩნია."
+
+msgid "Builtin"
+msgstr "ჩაშენებული"
+
+msgid "User role id"
+msgstr "მომხმარებლის როლის ID"
+
+msgid "User role [%<name>s] created."
+msgstr "მომხმარებლის როლი [%<name>s] შეიქმნა."
+
+msgid "Could not create the user role"
+msgstr "მომხმარებლის როლის შექმნის შეცდომა"
+
+msgid "User role [%<name>s] updated."
+msgstr "მომხმარებლის როლი [%<name>s] განახლდა."
+
+msgid "Could not update the user role"
+msgstr "მომხმარებლის როლის განახლების შეცდომა"
+
+msgid "User role cloned."
+msgstr "მომხმარებლის როლი კლონირებულია."
+
+msgid "Could not clone the user role"
+msgstr "მომხმარებლის როლის კლონირების შეცდომა"
+
+msgid "User role [%<name>s] deleted."
+msgstr "მომხმარებლის როლი [%<name>s] წაიშალა."
+
+msgid "Could not delete the user roles"
+msgstr "მომხმარებლის როლის წაშლის შეცდომა"
+
+msgid "Sessions are not enabled, please check your Hammer settings."
+msgstr "სესიები ჩართული არაა. შეამოწმეთ Hammer-ის პარამეტრები."
+
+msgid ""
+"Using session auth with invalid permissions on session files is not "
+"recommended."
+msgstr ""
+"სესიით ავტორიზაციის გამოყენება სესიების ფაილებზე არასწორი წვდომების ქონის "
+"დროს რეკომენდებული არაა."
+
+msgid "The url is empty. Session can not be created."
+msgstr "URL ცარიელია. სესიის შექმნა შეუძლებელია."
+
+msgid "The url (%s) is not a valid URL. Session can not be created."
+msgstr "URL (%s) ცარიელია. სესიის შექმნა შეუძლებელია."
+
+msgid "Invalid permissions for %{file}: %{mode}, expected %{expected_mode}."
+msgstr "ფაილის არასწორი წვდომები %{file}: %{mode}, მოველოდი %{expected_mode}."
+
+msgid "Invalid session data. Resetting the session."
+msgstr "სესიის არასწორი მონაცემები. სესია გაუქმდება."
+
+msgid "Full name"
+msgstr "სრული სახელი"
+
+msgid "Setting [%{name}] updated to [%{value}]."
+msgstr "პარამეტრი [%{name}] განახლდა [%{value}]-მდე."
+
+msgid "Could not update the setting"
+msgstr "პარამეტრის განახლების შეცდომა"
+
+msgid "Category"
+msgstr "კატეგორია"
+
+msgid "Settings type"
+msgstr "პარამეტრის ტიპი"
+
+msgid "Features"
+msgstr "თვისებები"
+
+msgid "Version"
+msgstr "ვერსია"
+
+msgid "Host_count"
+msgstr "ჰოსტების რაოდენობა"
+
+msgid "Smart proxy created."
+msgstr "ჭკვიანი პროქსი შეიქმნა."
+
+msgid "Could not create the proxy"
+msgstr "ჭკვიანი პროქსის შექმნის შეცდომა"
+
+msgid "Smart proxy updated."
+msgstr "ჭკვიანი პროქსი განახლდა."
+
+msgid "Could not update the proxy"
+msgstr "ჭკვიანი პროქსის განახლების შეცდომა"
+
+msgid "Smart proxy deleted."
+msgstr "ჭკვიანი პროქსი წაიშალა."
+
+msgid "Could not delete the proxy"
+msgstr "ჭკვიანი პროქსის წაშლის შეცდომა"
+
+msgid "Smart proxy features were refreshed."
+msgstr "ჭკვიანი პროქსის თვისებები განახლდა."
+
+msgid "Refresh of smart proxy features failed"
+msgstr "ჭკვიანი პროქსის თვისებების განახლების შეცდომა"
+
+msgid "Import subnets succeeded."
+msgstr "ქვექსელების შემოტანა წარმატებულია."
+
+msgid "Could not import subnets"
+msgstr "ქვექსელების შემოტანის შეცდომა"
+
+msgid "Manage SSH Keys sources"
+msgstr "SSH გასაღებების წყაროების მართვა"
+
+msgid "Fingerprint"
+msgstr "თითის ანაბეჭდი"
+
+msgid "Length"
+msgstr "ხანგრძლივობა"
+
+msgid "Path to a SSH public key"
+msgstr "ბილიკი SSH საჯარო გასაღებამდე"
+
+msgid "SSH Key %{name} added."
+msgstr "SSH გასაღები %{name} დამატებულია."
+
+msgid "Could not add SSH Key"
+msgstr "SSH გასაღების დამატების შეცდომა"
+
+msgid "Public Key"
+msgstr "საჯარო გასაღები"
+
+msgid "SSH Key deleted."
+msgstr "SSH გასაღები წაიშალა."
+
+msgid "Could not delete the SSH Key"
+msgstr "SSH გასაღების წაშლის შეცდომა"
+
+msgid "API Version"
+msgstr "API-ის ვერსია"
+
+msgid "Database"
+msgstr "მონაცემთა ბაზა"
+
+msgid "Plugins"
+msgstr "დამატებები"
+
+msgid "Smart Proxies"
+msgstr "ჭკვიანი პროქსიები"
+
+msgid "Failed features"
+msgstr "ავარიული ფუნქციები"
+
+msgid "Error"
+msgstr "შეცდომა"
+
+msgid "Compute Resources"
+msgstr "გამოთვლითი რესურსები"
+
+msgid "Errors"
+msgstr "შედომები"
+
+msgid "Network Addr"
+msgstr "ქსელის მისამართი"
+
+msgid "Network Prefix"
+msgstr "ქსელის პრეფიქსი"
+
+msgid "Network Mask"
+msgstr "ქსელის ნიღაბი"
+
+msgid "Boot Mode"
+msgstr "ჩატვირთვის რეჟიმი"
+
+msgid "Gateway Address"
+msgstr "ნაგულისხმები რაუტერის მისამართი"
+
+msgid "Protocol"
+msgstr "ოქმი"
+
+msgid "Priority"
+msgstr "პრიორიტეტი"
+
+msgid "Gateway Addr"
+msgstr "ნაგულისხმები რაუტერის მისამართი"
+
+msgid "Primary DNS"
+msgstr "ძირითადი DNS"
+
+msgid "Secondary DNS"
+msgstr "მეორადი DNS"
+
+msgid "TFTP"
+msgstr "TFTP"
+
+msgid "DHCP"
+msgstr "DHCP"
+
+msgid "IPAM"
+msgstr "IPAM"
+
+msgid "Start of IP Range"
+msgstr "IP დიაპაზონის დასაწყისი"
+
+msgid "End of IP Range"
+msgstr "IP დიაპაზონის დასასრული"
+
+msgid "MTU"
+msgstr "MTU"
+
+msgid "Subnet created."
+msgstr "ქვექსელი შეიქმნა."
+
+msgid "Could not create the subnet"
+msgstr "ქვექსელის შექმნის შეცდომა"
+
+msgid "Subnet updated."
+msgstr "ქვექსელი განახლდა."
+
+msgid "Could not update the subnet"
+msgstr "ქვექსელის განახლების შეცდომა"
+
+msgid "Subnet deleted."
+msgstr "ქვექსელი წაიშალა."
+
+msgid "Could not delete the subnet"
+msgstr "ქვექსელის წაშლის პრობლემა"
+
+msgid "Create or update parameter for a subnet"
+msgstr "ქვექსელის პარამეტრის შექმნა ან განახლება"
+
+msgid "Subnet parameter updated"
+msgstr "ქვექსელის პარამეტრი განახლდა"
+
+msgid "New subnet parameter created"
+msgstr "ქვექსელის ახალი პარამეტრი შექმნილია"
+
+msgid "Could not set subnet parameter"
+msgstr "ქვექსელის პარამეტრის დაყენების შეცდომა"
+
+msgid "Delete parameter for a subnet"
+msgstr "ქვექსელის პარამეტრის წაშლა"
+
+msgid "Subnet parameter deleted."
+msgstr "ქვექსელის პარამეტრი წაშლილია."
+
+msgid "Columns"
+msgstr "სვეტები"
+
+msgid "Table preference created."
+msgstr "ცხრილის პარამეტრი შექმნილია."
+
+msgid "Could not create table preference"
+msgstr "ცხრილის პარამეტრის შექმნის შეცდომა"
+
+msgid "Table preference updated."
+msgstr "ცხრილის პარამეტრი განახლდა."
+
+msgid "Could not update table preference"
+msgstr "ცხრილის პარამეტრის განახლების შეცდომა"
+
+msgid "Table preference deleted."
+msgstr "ცხრილის პარამეტრი წაშლილია."
+
+msgid "Could not remove table preference"
+msgstr "ცხრილის პარამეტრის წაშლის შეცდომა"
+
+msgid "Environment name"
+msgstr "გარემოს სახელი"
+
+msgid "List available provisioning template kinds"
+msgstr "სამუშაოდ მომზადების შაბლონების ტიპების სია"
+
+msgid "View provisioning template content"
+msgstr "სამუშაოდ მომზადების შაბლონების შემცველობის ნახვა"
+
+msgid "Path to a file that contains the template"
+msgstr "შაბლონის შემცველი ფაილის ბილიკი"
+
+msgid "Template type. Eg. snippet, script, provision"
+msgstr "შაბლონის ტიპი. მაგ: ნაწყვეტი, სკრიპტი, მომზადება"
+
+msgid "Provisioning template created."
+msgstr "სამუშაოდ მომზადების შაბლონი შეიქმნა."
+
+msgid "Could not create the provisioning template"
+msgstr "სამუშაოდ მომზადების შაბლონის შექმნის შეცდომა"
+
+msgid "Provisioning template updated."
+msgstr "სამუშაოდ მომზადების შაბლონი განახლდა."
+
+msgid "Could not update the provisioning template"
+msgstr "სამუშაოდ მომზადების შაბლონის განახლების შეცდომა"
+
+msgid "Provisioning template deleted."
+msgstr "სამუშაოდ მომზადების შაბლონი წაიშალა."
+
+msgid "Could not delete the provisioning template"
+msgstr "სამუშაოდ მომზადების შაბლონის წაშლის შეცდომა"
+
+msgid "Import provisioning template succeeded."
+msgstr "სამუშაოდ მომზადების შაბლონის შემოტანა წარმატებულია."
+
+msgid "Could not import provisioning template"
+msgstr "სამუშაოდ მომზადების შაბლონის შემოტანის შეცდომა"
+
+msgid "The provisioning template has been saved to %{path}."
+msgstr "სამუშაოდ მომზადების შაბლონი %{path}-ში ჩაიწერა."
+
+msgid "Update the default PXE menu on all configured TFTP servers"
+msgstr "ყველა მორგებულ TFTP სერვერზე ნაგულისხმები PXE მენიუს განახლება"
+
+msgid "Provisioning template cloned."
+msgstr "სამუშაოდ მომზადების შაბლონი კლონირებულია."
+
+msgid "Could not clone the provisioning template"
+msgstr "სამუშაოდ მომზადების შაბლონი კლონირების შეცდომა"
+
+msgid "Login"
+msgstr "შესვლა"
+
+msgid "Email"
+msgstr "ელ-ფოსტა"
+
+msgid "Admin"
+msgstr "ადმინისტრატორი"
+
+msgid "Disabled"
+msgstr "გამორთულია"
+
+msgid "Last login"
+msgstr "ბოლო შესვლა"
+
+msgid "Authorized by"
+msgstr "ავტორიზებულია"
+
+msgid "Email enabled"
+msgstr "ელფოსტა ჩართულია"
+
+msgid "Effective admin"
+msgstr "ეფექტური ადმინი"
+
+msgid "Locale"
+msgstr "ენა"
+
+msgid "Timezone"
+msgstr "დროის ზონა"
+
+msgid "Default organization"
+msgstr "ნაგულისხმები ორგანიზაცია"
+
+msgid "Default location"
+msgstr "ნაგულისხმები მდებარეობა"
+
+msgid "default"
+msgstr "ნაგულისხმები"
+
+msgid "User [%{login}] created."
+msgstr "მომხმარებელი შეიქნა: [%{login}]."
+
+msgid "Could not create the user"
+msgstr "მომხმარებლის შექმნის შეცდომა"
+
+msgid "User [%{login}] updated."
+msgstr "მომხმარებელი განახლდა: [%{login}]."
+
+msgid "Could not update the user"
+msgstr "მომხმარებლის განახლების შეცდომა"
+
+msgid "User [%{login}] deleted."
+msgstr "მომხმარებელი წაიშალა: [%{login}]."
+
+msgid "Could not delete the user"
+msgstr "მომხმარებლის წაშლის შეცდომა"
+
+msgid "Managing User SSH Keys."
+msgstr "მომხმარებლის SSH გასაღებების მართვა."
+
+msgid "Managing personal access tokens"
+msgstr "პირადი წვდომის კოდების მართვა"
+
+msgid "Managing personal mail notifications"
+msgstr "ელ.ფოსტის შეტყობინებების მართვა"
+
+msgid "Managing table preferences"
+msgstr "ცხრილის პარამეტრების მართვა"
+
+msgid "User mail notifications was added."
+msgstr "მომხმარებლის ელფოსტის შეტყობინება დამატებულია."
+
+msgid "Could not add user mail notification"
+msgstr "მომხმარებლის ელფოსტის შეტყობინების შეცდომა"
+
+msgid "User mail notifications was updated."
+msgstr "მომხმარებლის ელფოსტის შეტყობინებები განახლდა."
+
+msgid "Could not update user mail notification"
+msgstr "მომხმარებლის ელფოსტის შეტყობინებების განახლების შეცდომა"
+
+msgid "User mail notification was removed."
+msgstr "მომხმარებლის ელფოსტის შეტყობინებები წაიშალა."
+
+msgid "Could not remove user mail notification"
+msgstr "მომხმარებლის ელფოსტის შეტყობინებების წაშლის შეცდომა"
+
+msgid "Interval"
+msgstr "ინტერვალი"
+
+msgid "Mail query"
+msgstr "ელფოსტის მოთხოვნა"
+
+msgid "User group [%<name>s] created."
+msgstr "მომხმარებლის ჯგუფი შეიქმნა: [%<name>s]."
+
+msgid "Could not create the user group"
+msgstr "მომხმარებლის ჯგუფის შექმნის შეცდომა"
+
+msgid "User group [%<name>s] updated."
+msgstr "მომხმარებლის ჯგუფი განახლდა: [%<name>s]."
+
+msgid "Could not update the user group"
+msgstr "მომხმარებლის ჯგუფის განახლების შეცდომა"
+
+msgid "User group [%<name>s] deleted."
+msgstr "მომხმარებლის ჯგუფი წაიშალა: [%<name>s]."
+
+msgid "Could not delete the user group"
+msgstr "მომხმარებლის ჯგუფის წაშლის შეცდომა"
+
+msgid "View and manage compute resource's virtual machines"
+msgstr "გამოთვლითი რესურსის ვირტუალური მანქანების ნახვა და მართვა"
+
+msgid "Virtual machine is powering."
+msgstr "ვირტუალური მანქანის ჩართვა."
+
+msgid "Could not power the virtual machine"
+msgstr "ვირტუალური მანქანის ჩართვის შეცდომა"
+
+msgid "Virtual machine deleted."
+msgstr "ვირტუალური მანქანის წაშლა."
+
+msgid "Could not delete the virtual machine"
+msgstr "ვირტუალური მანქანის წაშლის შეცდომა"

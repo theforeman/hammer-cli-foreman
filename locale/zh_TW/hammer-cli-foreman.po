@@ -5,12 +5,12 @@
 # Translators:
 msgid ""
 msgstr ""
-"Project-Id-Version: hammer-cli-foreman 3.6.0\n"
+"Project-Id-Version: hammer-cli-foreman 3.7.0.pre.develop\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-10-31 15:16+0000\n"
 "PO-Revision-Date: 2014-03-14 09:55+0000\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: Chinese (Taiwan) (http://www.transifex.com/foreman/foreman/"
+"Language-Team: Chinese (Taiwan) (http://app.transifex.com/foreman/foreman/"
 "language/zh_TW/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -1084,7 +1084,7 @@ msgid "Datacenter"
 msgstr "資料中心"
 
 msgid "Hosts"
-msgstr ""
+msgstr "主機"
 
 msgid "Cluster path"
 msgstr ""
@@ -1111,7 +1111,7 @@ msgid "Parent"
 msgstr "父"
 
 msgid "Cluster"
-msgstr ""
+msgstr "叢集"
 
 msgid "State"
 msgstr "狀態"
@@ -3075,9 +3075,3 @@ msgstr ""
 
 msgid "Could not delete the virtual machine"
 msgstr ""
-
-#~ msgid "Zone"
-#~ msgstr "區域"
-
-#~ msgid "Machine Type"
-#~ msgstr "機器類型"

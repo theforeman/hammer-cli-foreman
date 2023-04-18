@@ -3,22 +3,22 @@
 # This file is distributed under the same license as the hammer-cli-foreman package.
 #
 # Translators:
-# Robert Antoni Buj i Gelonch <rbuj@fedoraproject.org>, 2017
-# Robert Antoni Buj i Gelonch <rbuj@fedoraproject.org>, 2015-2016
+# Pavel Borecki <pavel.borecki@gmail.com>, 2018-2020
 msgid ""
 msgstr ""
 "Project-Id-Version: hammer-cli-foreman 3.7.0.pre.develop\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-10-31 15:16+0000\n"
 "PO-Revision-Date: 2014-03-14 09:55+0000\n"
-"Last-Translator: Robert Antoni Buj i Gelonch <rbuj@fedoraproject.org>, 2017\n"
-"Language-Team: Catalan (http://www.transifex.com/foreman/foreman/language/"
-"ca/)\n"
+"Last-Translator: Pavel Borecki <pavel.borecki@gmail.com>, 2018-2020\n"
+"Language-Team: Czech (Czech Republic) (http://app.transifex.com/foreman/"
+"foreman/language/cs_CZ/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: ca\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Language: cs_CZ\n"
+"Plural-Forms: nplurals=4; plural=(n == 1 && n % 1 == 0) ? 0 : (n >= 2 && n "
+"<= 4 && n % 1 == 0) ? 1: (n % 1 != 0 ) ? 2 : 3;\n"
 
 msgid "Foreman connection login/logout"
 msgstr ""
@@ -42,7 +42,7 @@ msgid "Manipulate domains"
 msgstr ""
 
 msgid "Search facts"
-msgstr ""
+msgstr "Hledat fakta"
 
 msgid "Manage permission filters"
 msgstr ""
@@ -69,13 +69,13 @@ msgid "Manipulate operating system"
 msgstr ""
 
 msgid "Manipulate organizations"
-msgstr ""
+msgstr "Manipulovat s organizacemi"
 
 msgid "Manipulate partition tables"
 msgstr ""
 
 msgid "Browse and read reports"
-msgstr ""
+msgstr "Procházet a číst výkazy"
 
 msgid ""
 "%{report} command is deprecated and will be removed in one of the future "
@@ -86,7 +86,7 @@ msgid "Manipulate report templates"
 msgstr ""
 
 msgid "Manage user roles"
-msgstr ""
+msgstr "Spravovat uživatelské role"
 
 msgid "Manipulate smart proxies"
 msgstr ""
@@ -95,7 +95,7 @@ msgid "Manipulate realms"
 msgstr ""
 
 msgid "Change server settings"
-msgstr ""
+msgstr "Změnit nastavení serveru"
 
 msgid "Manipulate subnets"
 msgstr ""
@@ -113,7 +113,7 @@ msgid "Get the status of the server and/or it's subcomponents"
 msgstr ""
 
 msgid "Get the complete status of the server and/or it's subcomponents"
-msgstr ""
+msgstr "Získat úplný přehled o stavu serveru a/nebo jeho dílčích částech"
 
 msgid "Manage mail notifications"
 msgstr ""
@@ -125,19 +125,19 @@ msgid "Host Registration"
 msgstr ""
 
 msgid "Using certificate authentication."
-msgstr ""
+msgstr "Použít ověřování pomocí certifikátu."
 
 msgid "Invalid username or password."
-msgstr ""
+msgstr "Neplatné uživatelské jméno nebo heslo."
 
 msgid "Using configured credentials for user '%s'."
-msgstr ""
+msgstr "S použitím přihlašovacích údajů zadaných pro uživatele „%s“."
 
 msgid "Credentials are not configured."
-msgstr ""
+msgstr "Přihlašovací údaje nejsou nastavené."
 
 msgid "[Foreman] Username:%s"
-msgstr ""
+msgstr "[Foreman] uživatelské jméno:%s"
 
 msgid "[Foreman] Password for %{user}:%{wsp}"
 msgstr ""
@@ -159,7 +159,7 @@ msgid ""
 msgstr ""
 
 msgid "Code:%s"
-msgstr ""
+msgstr "Kód:%s"
 
 msgid "Openidc Provider Authorization Endpoint:%s"
 msgstr ""
@@ -168,19 +168,19 @@ msgid "Openidc Provider Token Endpoint:%s"
 msgstr ""
 
 msgid "Client ID:%s"
-msgstr ""
+msgstr "Identif. klienta:%s"
 
 msgid "Redirect URI:%s"
-msgstr ""
+msgstr "URI adresa přesměrování:%s"
 
 msgid "Invalid credentials or oidc-client-id or oidc-token-endpoint.\n"
 msgstr ""
 
 msgid "Username:%s"
-msgstr ""
+msgstr "Uživatelské jméno:%s"
 
 msgid "Password:%{wsp}"
-msgstr ""
+msgstr "Heslo:%{wsp}"
 
 msgid "Session exists, currently logged in as '%s'."
 msgstr ""
@@ -192,106 +192,106 @@ msgid "Invalid credentials, continuing with session for '%s'."
 msgstr ""
 
 msgid "Session has expired."
-msgstr ""
+msgstr "Platnost relace skončila."
 
 msgid "Id"
-msgstr "ID"
+msgstr "Identifikátor"
 
 msgid "Name"
-msgstr "Nom"
+msgstr "Název"
 
 msgid "Architecture created."
-msgstr ""
+msgstr "Architektura vytvořena."
 
 msgid "Could not create the architecture"
-msgstr "No s'ha pogut crear l'arquitectura"
+msgstr "Architekturu se nedaří vytvořit"
 
 msgid "Architecture deleted."
-msgstr ""
+msgstr "Architektura smazána."
 
 msgid "Could not delete the architecture"
-msgstr "No s'ha pogut suprimir l'arquitectura"
+msgstr "Architekturu se nedaří smazat"
 
 msgid "Architecture updated."
-msgstr ""
+msgstr "Architektura aktualizována."
 
 msgid "Could not update the architecture"
-msgstr "No s'ha pogut actualitzar l'arquitectura"
+msgstr "Architekturu se nedaří aktualizovat"
 
 msgid "Associate a hostgroup"
-msgstr "Associa un grup d'amfitrions"
+msgstr "Přiřadit skupinu hostitelů"
 
 msgid "The hostgroup has been associated."
 msgstr ""
 
 msgid "Could not associate the hostgroup"
-msgstr "No s'ha pogut associar el grup d'amfitrions"
+msgstr ""
 
 msgid "Disassociate a hostgroup"
-msgstr "Desassocia un grup d'amfitrions"
+msgstr "Zrušit přiřazení skupiny hostitelů"
 
 msgid "The hostgroup has been disassociated."
 msgstr ""
 
 msgid "Could not disassociate the hostgroup"
-msgstr "No s'ha pogut desassociar el grup d'amfitrions"
+msgstr ""
 
 msgid "Associate a domain"
-msgstr "Associa un domini"
+msgstr "Přiřadit doménu"
 
 msgid "The domain has been associated."
 msgstr ""
 
 msgid "Could not associate the domain"
-msgstr "No s'ha pogut associar el domini"
+msgstr ""
 
 msgid "Disassociate a domain"
-msgstr "Desassocia un domini"
+msgstr "Zrušit přiřazení domény"
 
 msgid "The domain has been disassociated."
 msgstr ""
 
 msgid "Could not disassociate the domain"
-msgstr "No s'ha pogut desassociar el domini"
-
-msgid "Associate a medium"
-msgstr "Associa un mitjà"
-
-msgid "The medium has been associated."
 msgstr ""
 
+msgid "Associate a medium"
+msgstr "Přiřadit médium"
+
+msgid "The medium has been associated."
+msgstr "Médium bylo přiřazeno."
+
 msgid "Could not associate the medium"
-msgstr "No s'ha pogut associar el mitjà"
+msgstr ""
 
 msgid "Disassociate a medium"
-msgstr "Desassocia un mitjà"
+msgstr "Zrušit přiřazení domény"
 
 msgid "The medium has been disassociated."
 msgstr ""
 
 msgid "Could not disassociate the medium"
-msgstr "No s'ha pogut desassociar el mitjà"
+msgstr ""
 
 msgid "Associate a subnet"
-msgstr "Associa una subxarxa"
+msgstr "Přiřadit podsíť"
 
 msgid "The subnet has been associated."
 msgstr ""
 
 msgid "Could not associate the subnet"
-msgstr "No s'ha pogut associar la subxarxa"
+msgstr ""
 
 msgid "Disassociate a subnet"
-msgstr "Desassocia una subxarxa"
+msgstr "Zrušit přiřazení podsítě"
 
 msgid "The subnet has been disassociated."
 msgstr ""
 
 msgid "Could not disassociate the subnet"
-msgstr "No s'ha pogut desassociar la subxarxa"
+msgstr ""
 
 msgid "Associate a compute resource"
-msgstr "Associa un recurs computacional"
+msgstr "Přiřadit výpočetní prostředek"
 
 msgid "The compute resource has been associated."
 msgstr ""
@@ -300,7 +300,7 @@ msgid "Could not associate the compute resource"
 msgstr ""
 
 msgid "Disassociate a compute resource"
-msgstr "Desassocia un recurs computacional"
+msgstr "Zrušit přiřazení výpočetního prostředku"
 
 msgid "The compute resource has been disassociated."
 msgstr ""
@@ -309,7 +309,7 @@ msgid "Could not disassociate the compute resource"
 msgstr ""
 
 msgid "Associate a smart proxy"
-msgstr "Associa un servidor intermediari intel·ligent"
+msgstr "Přiřadit smart proxy"
 
 msgid "The smart proxy has been associated."
 msgstr ""
@@ -318,7 +318,7 @@ msgid "Could not associate the smart proxy"
 msgstr ""
 
 msgid "Disassociate a smart proxy"
-msgstr "Desassocia un servidor intermediari intel·ligent"
+msgstr "Zrušit přiřazení smart proxy"
 
 msgid "The smart proxy has been disassociated."
 msgstr ""
@@ -327,40 +327,40 @@ msgid "Could not disassociate the smart proxy"
 msgstr ""
 
 msgid "Associate an user"
-msgstr "Associa un usuari"
+msgstr "Přiřadit uživatele"
 
 msgid "The user has been associated."
 msgstr ""
 
 msgid "Could not associate the user"
-msgstr "No s'ha pogut associar l'usuari"
-
-msgid "Disassociate an user"
-msgstr "Desassocia un usuari"
-
-msgid "The user has been disassociated."
 msgstr ""
 
+msgid "Disassociate an user"
+msgstr "Zrušit přiřazení uživatele"
+
+msgid "The user has been disassociated."
+msgstr "Přiřazení uživatele bylo zrušeno."
+
 msgid "Could not disassociate the user"
-msgstr "No s'ha pogut desassociar l'usuari"
+msgstr ""
 
 msgid "Associate an user group"
-msgstr "Associa un grup d'usuaris"
+msgstr "Přiřadit skupinu uživatelů"
 
 msgid "The user group has been associated."
 msgstr ""
 
 msgid "Could not associate the user group"
-msgstr "No s'ha pogut associar el grup d'usuaris"
+msgstr ""
 
 msgid "Disassociate an user group"
-msgstr "Desassocia un grup d'usuaris"
+msgstr "Zrušit přiřazení skupiny uživatelů"
 
 msgid "The user group has been disassociated."
 msgstr ""
 
 msgid "Could not disassociate the user group"
-msgstr "No s'ha pogut desassociar el grup d'usuaris"
+msgstr ""
 
 msgid "Associate provisioning templates"
 msgstr ""
@@ -377,7 +377,7 @@ msgid ""
 msgstr ""
 
 msgid "%s not found."
-msgstr ""
+msgstr "%s nenalezeno."
 
 msgid "The provisioning templates were associated."
 msgstr ""
@@ -400,7 +400,7 @@ msgid "Could not disassociate the provisioning templates"
 msgstr ""
 
 msgid "Associate an organization"
-msgstr "Associa una organització"
+msgstr "Přiřadit organizaci"
 
 msgid "The organization has been associated."
 msgstr ""
@@ -409,7 +409,7 @@ msgid "Could not associate the organization"
 msgstr ""
 
 msgid "Disassociate an organization"
-msgstr "Desassocia una organització"
+msgstr "Zrušit přiřazení organizace"
 
 msgid "The organization has been disassociated."
 msgstr ""
@@ -418,82 +418,82 @@ msgid "Could not disassociate the organization"
 msgstr ""
 
 msgid "Associate an operating system"
-msgstr "Associa un sistema operatiu"
+msgstr "Přiřadit operační systém"
 
 msgid "Operating system has been associated."
 msgstr ""
 
 msgid "Could not associate the operating system"
-msgstr "No s'ha pogut associar el sistema operatiu"
+msgstr "Operační systém se nedaří přiřadit"
 
 msgid "Disassociate an operating system"
-msgstr "Desassocia un sistema operatiu"
+msgstr "Zrušit přiřazení operačního systému"
 
 msgid "Operating system has been disassociated."
 msgstr ""
 
 msgid "Could not disassociate the operating system"
-msgstr "No s'ha pogut desassociar el sistema operatiu"
+msgstr "Nedaří se zrušit přiřazení operačního systému"
 
 msgid "Associate an architecture"
-msgstr "Associa una arquitectura"
+msgstr "Přiřadit architekturu"
 
 msgid "Architecture has been associated."
-msgstr ""
+msgstr "Architektura byla přiřazena."
 
 msgid "Could not associate the architecture"
-msgstr "No s'ha pogut associar l'arquitectura"
+msgstr "Architekturu se nedaří přiřadit"
 
 msgid "Disassociate an architecture"
-msgstr "Desassocia una arquitectura"
+msgstr "Zrušit přiřazení architektury"
 
 msgid "Architecture has been disassociated."
-msgstr ""
+msgstr "Přiřazení architektury bylo zrušeno."
 
 msgid "Could not disassociate the architecture"
-msgstr "No s'ha pogut desassociar l'arquitectura"
+msgstr "Nedaří se zrušit přiřazení architektury"
 
 msgid "Associate a partition table"
-msgstr "Associa una taula de particions"
+msgstr "Přiřadit tabulku rozdělení úložiště"
 
 msgid "Partition table has been associated."
-msgstr ""
+msgstr "Tabulka rozdělení úložiště byla přiřazena."
 
 msgid "Could not associate the partition table"
-msgstr "No s'ha pogut associar la taula de particions"
+msgstr "Nedaří se přiřadit tabulku rozdělení úložiště"
 
 msgid "Disassociate a partition table"
-msgstr "Desassocia una taula de particions"
+msgstr "Zrušit přiřazení tabulky rozdělení úložiště"
 
 msgid "Partition table has been disassociated."
 msgstr ""
 
 msgid "Could not disassociate the partition table"
-msgstr "No s'ha pogut desassociar la taula de particions"
+msgstr "Nedaří se zrušit přiřazení tabulky rozdělení úložiště"
 
 msgid "Assign a user role"
-msgstr "Assigna un rol d'usuari"
+msgstr "Přiřadit uživatelskou roli"
 
 msgid "User role has been assigned."
-msgstr ""
+msgstr "Uživatelská role byla přiřazena."
 
 msgid "Could not assign the user role"
-msgstr "No s'ha pogut assignar el rol d'usuari"
+msgstr "Nedaří se přiřadit roli uživatele"
 
 msgid "Remove a user role"
-msgstr "Suprimeix un rol d'usuari"
+msgstr "Odebrat uživatelskou roli"
 
 msgid "User role has been removed."
-msgstr ""
+msgstr "Uživatelská role byla odebrána."
 
 msgid "Could not remove the user role"
-msgstr "No s'ha pogut suprimir el rol d'usuari"
+msgstr "Nedaří se odebrat roli uživatele"
 
 msgid "Associate a location"
 msgstr ""
 
 msgid "The location has been associated."
-msgstr ""
+msgstr "Umístění bylo přiřazeno."
 
 msgid "Could not associate the location"
 msgstr ""
@@ -516,16 +516,16 @@ msgid ""
 msgstr ""
 
 msgid "At"
-msgstr "a les"
+msgstr "V"
 
 msgid "IP"
-msgstr "IP"
+msgstr "IP adresa"
 
 msgid "User"
-msgstr "Usuari"
+msgstr "Uživatel"
 
 msgid "Action"
-msgstr "Acció"
+msgstr "Akce"
 
 msgid "Audit type"
 msgstr ""
@@ -543,25 +543,25 @@ msgid "Attribute"
 msgstr ""
 
 msgid "Value"
-msgstr "Valor"
+msgstr "Hodnota"
 
 msgid "Old"
-msgstr "Antic"
+msgstr ""
 
 msgid "New"
-msgstr "Nou"
+msgstr "Nové"
 
 msgid "Set credentials"
-msgstr "Estableix les credencials"
+msgstr "Nastavit přihlašovací údaje"
 
 msgid "Username to access the remote system"
-msgstr ""
+msgstr "Uživatelské jméno pro přístup ke vzdálenému systému"
 
 msgid "Password to access the remote system"
-msgstr ""
+msgstr "Heslo pro přístup ke vzdálenému systému"
 
 msgid "Successfully logged in as '%s'."
-msgstr ""
+msgstr "Úspěšně přihlášeni jako „%s“."
 
 msgid ""
 "Successfully authenticated using negotiate auth, using the KEYRING principal."
@@ -583,16 +583,16 @@ msgid "Redirect URI for the authentication code grant flow"
 msgstr ""
 
 msgid "Wipe your credentials"
-msgstr "Neteja les vostres credencials"
+msgstr "Vymazat vaše přihlašovací údaje"
 
 msgid "Logged out."
-msgstr ""
+msgstr "Odhlášeni."
 
 msgid "Information about current connections"
-msgstr "Informació sobre les connexions actuals"
+msgstr "Informace o stávajících spojeních"
 
 msgid "List all auth sources"
-msgstr ""
+msgstr "Vypsat všechny zdroje ověřování identity"
 
 msgid "Type of auth source"
 msgstr ""
@@ -613,7 +613,7 @@ msgid "Manage LDAP auth sources"
 msgstr ""
 
 msgid "Server"
-msgstr "Servidor"
+msgstr "Server"
 
 msgid "Port"
 msgstr "Port"
@@ -622,70 +622,70 @@ msgid "LDAPS?"
 msgstr "LDAPS?"
 
 msgid "LDAPS"
-msgstr ""
+msgstr "LDAPS"
 
 msgid "Server Type"
-msgstr "Tipus de servidor"
+msgstr "Typ serveru"
 
 msgid "Account"
-msgstr "Compte"
+msgstr "Účet"
 
 msgid "Account Username"
-msgstr "Nom d'usuari del compte"
+msgstr "Uživatelské jméno účtu"
 
 msgid "Base DN"
-msgstr "DN base"
+msgstr ""
 
 msgid "Groups base DN"
-msgstr "DN base dels grups"
+msgstr ""
 
 msgid "Use Netgroups"
-msgstr "Utilitza grups de xarxa"
+msgstr ""
 
 msgid "LDAP filter"
-msgstr "Filtre LDAP"
+msgstr ""
 
 msgid "Automatically Create Accounts?"
-msgstr "Voleu crear automàticament els comptes?"
+msgstr "Automaticky vytvořit účty?"
 
 msgid "Usergroup sync"
-msgstr "Sincronització del grup d'usuaris"
+msgstr ""
 
 msgid "Attribute mappings"
-msgstr "Assignacions dels atributs"
+msgstr "Mapování atributů"
 
 msgid "Login Name Attribute"
-msgstr "Atribut del nom d'usuari"
+msgstr ""
 
 msgid "First Name Attribute"
-msgstr "Atribut del nom"
+msgstr ""
 
 msgid "Last Name Attribute"
-msgstr "Atribut dels cognoms"
+msgstr ""
 
 msgid "Email Address Attribute"
-msgstr "Atribut de l'adreça de correu electrònic"
+msgstr "Atribut e-mailová adresa"
 
 msgid "Photo Attribute"
-msgstr "Atribut de la foto"
+msgstr "Atribut fotografie"
 
 msgid "Auth source [%{name}] created."
 msgstr ""
 
 msgid "Could not create the Auth Source"
-msgstr "No s'ha pogut crear l'origen d'autenticació"
-
-msgid "Auth source [%{name}] deleted."
 msgstr ""
 
+msgid "Auth source [%{name}] deleted."
+msgstr "Zdroj ověřování [%{name}] smazán."
+
 msgid "Could not delete the Auth Source"
-msgstr "No s'ha pogut suprimir l'origen d'autenticació"
+msgstr ""
 
 msgid "Auth source [%{name}] updated."
 msgstr ""
 
 msgid "Could not update the Auth Source"
-msgstr "No s'ha pogut actualitzar l'origen d'autenticació"
+msgstr ""
 
 msgid ""
 "Can't perform login. Make sure sessions are enabled in hammer configuration "
@@ -693,19 +693,19 @@ msgid ""
 msgstr ""
 
 msgid "Controller"
-msgstr ""
+msgstr "Řadič"
 
 msgid "Search Query"
-msgstr ""
+msgstr "Vyhledávací dotaz"
 
 msgid "Public"
-msgstr "Pública"
+msgstr "Veřejné"
 
 msgid "Owner Id"
-msgstr "ID del propietari"
+msgstr "Identifikátor vlastníka"
 
 msgid "Owner Type"
-msgstr "Tipus de propietari"
+msgstr "Typ vlastníka"
 
 msgid "Bookmark %<name>s created."
 msgstr ""
@@ -726,10 +726,10 @@ msgid "Failed to delete bookmark"
 msgstr ""
 
 msgid "Manage template combinations"
-msgstr ""
+msgstr "Spravovat kombinace šablon"
 
 msgid "ID"
-msgstr "ID"
+msgstr "Identifikátor"
 
 msgid "Provisioning template ID"
 msgstr ""
@@ -741,31 +741,31 @@ msgid "Hostgroup ID"
 msgstr ""
 
 msgid "Hostgroup name"
-msgstr "Nom del grup d'amfitrions"
+msgstr "Název skupiny strojů"
 
 msgid "Provisioning Template"
 msgstr ""
 
 msgid "Hostgroup"
-msgstr "Grup d'amfitrions"
+msgstr ""
 
 msgid "Template combination updated."
-msgstr ""
+msgstr "Kombinace šablon aktualizována."
 
 msgid "Could not update the template combination"
 msgstr ""
 
 msgid "Template combination created."
-msgstr ""
+msgstr "Kombinace šablon vytvořena."
 
 msgid "Could not create the template combination"
-msgstr ""
+msgstr "Nedaří se vytvořit kombinaci šablon"
 
 msgid "Template combination Deleted."
-msgstr ""
+msgstr "Kombinace šablon smazána."
 
 msgid "Could not delete the template combination"
-msgstr ""
+msgstr "Nepodařilo se smazat kombinaci šablon"
 
 msgid "Cluster ID"
 msgstr ""
@@ -778,25 +778,24 @@ msgstr ""
 
 msgid "Name of DNS proxy to use within this domain"
 msgstr ""
-"Nom del servidor intermediari de DNS per utilitzar dins d'aquest domini"
 
 msgid "Provider specific options"
-msgstr ""
+msgstr "Předvolby pro konkrétního poskytovatele"
 
 msgid "Bold attributes are required."
 msgstr ""
 
 msgid "Available keys for %{option}"
-msgstr ""
+msgstr "Klíče k dispozici pro %{option}"
 
 msgid "Possible values: %s"
-msgstr ""
+msgstr "Možné hodnoty: %s"
 
 msgid "%{value}, each managed hosts needs to have one primary interface."
 msgstr ""
 
 msgid "For %{condition}"
-msgstr ""
+msgstr "Pro %{condition}"
 
 msgid ""
 "VLAN tag, this attribute has precedence over the subnet VLAN ID. Only for "
@@ -807,13 +806,13 @@ msgid "Identifier of the interface to which this interface belongs, e.g. eth1."
 msgstr ""
 
 msgid "Identifiers of slave interfaces, e.g. [eth1,eth2]"
-msgstr ""
+msgstr "Identifikátory podřízených rozhraní např. [eth1,eth2]"
 
 msgid "always IPMI"
-msgstr ""
+msgstr "vždy IPMI"
 
 msgid "Duration: %sms"
-msgstr ""
+msgstr "Trvání: %s ms"
 
 msgid "FAIL"
 msgstr ""
@@ -825,43 +824,43 @@ msgid "Network prefix in CIDR notation (e.g. 64) for this subnet"
 msgstr ""
 
 msgid "TFTP Proxy to use within this subnet"
-msgstr "Servidor intermediari de TFTP per utilitzar dins d'aquesta subxarxa"
+msgstr "TFTP proxy, kterou použít pro tuto podsíť"
 
 msgid "DNS Proxy to use within this subnet"
-msgstr "Servidor intermediari de DNS per utilitzar dins d'aquesta subxarxa"
+msgstr ""
 
 msgid "DHCP Proxy to use within this subnet"
-msgstr "Servidor intermediari DHCP per utilitzar dins d'aquesta subxarxa"
+msgstr "DHCP Proxy kterou použít s touto podsítí"
 
 msgid "BMC Proxy to use within this subnet"
 msgstr ""
 
 msgid "Default organization name"
-msgstr ""
+msgstr "Název výchozí organizace"
 
 msgid "Default location name"
-msgstr ""
+msgstr "Název výchozího umístění"
 
 msgid "Received data of unknown format."
-msgstr ""
+msgstr "Obdržena data v neznámém formátu."
 
 msgid "Search / Order fields"
 msgstr ""
 
 msgid "Values"
-msgstr "Valors"
+msgstr "Hodnoty"
 
 msgid "%s Id"
 msgstr ""
 
 msgid "%s name"
-msgstr ""
+msgstr "název %s"
 
 msgid "Nothing to update."
 msgstr ""
 
 msgid "Associate a resource"
-msgstr "Associa un recurs"
+msgstr "Přiřadit zdroj"
 
 msgid "Could not associate the %{resource_name}."
 msgstr ""
@@ -870,7 +869,7 @@ msgid "The %{resource_name} has been associated."
 msgstr ""
 
 msgid "Disassociate a resource"
-msgstr "Desassocia un recurs"
+msgstr "Zrušit přiřazení zdroje"
 
 msgid "Could not disassociate the %{resource_name}."
 msgstr ""
@@ -882,40 +881,40 @@ msgid "Path to directory where downloaded content will be saved"
 msgstr ""
 
 msgid "The response has been saved to %{path}."
-msgstr ""
+msgstr "Odpověď byla uložena do %{path}."
 
 msgid "Cannot save file: %s does not exist"
 msgstr ""
 
 msgid "Type"
-msgstr "Tipus"
+msgstr "Typ"
 
 msgid "Set a global parameter"
-msgstr ""
+msgstr "Nastavit globální parametr"
 
 msgid "Created parameter [%{name}] with value [%{value}]."
-msgstr "S'ha creat el paràmetre global [%{name}] amb valor [%{value}]."
+msgstr "Vytvořen parametr [%{name}] s hodnotou [%{value}]."
 
 msgid "Parameter [%{name}] updated to [%{value}]."
-msgstr "El paràmetre [%{name}] s'ha actualitzat a [%{value}]."
+msgstr "Parametr [%{name}] aktualizován na [%{value}]."
 
 msgid "Parameter name"
-msgstr ""
+msgstr "Název parametru"
 
 msgid "Parameter value"
-msgstr "Valor del paràmetre"
+msgstr "Hodnota parametru"
 
 msgid "Should the value be hidden"
 msgstr ""
 
 msgid "Type of the parameter"
-msgstr ""
+msgstr "Typ parametru"
 
 msgid "Global parameter [%{name}] deleted."
-msgstr "S'ha suprimit el paràmetre global [%{name}]."
+msgstr "Globální parametr [%{name}] smazán."
 
 msgid "Could not delete the global parameter [%{name}]"
-msgstr "No s'ha pogut suprimir el paràmetre global [%{name}]"
+msgstr "Nedaří se smazat globální parametr [%{name}]"
 
 msgid "Manipulate global parameters"
 msgstr ""
@@ -927,19 +926,19 @@ msgid "Compute resource attributes"
 msgstr ""
 
 msgid "Interface parameters, should be comma separated list of values"
-msgstr ""
+msgstr "Parametry pro rozhraní – měl by být čárkou oddělovaný seznam hodnot"
 
 msgid "Volume parameters, should be comma separated list of values"
 msgstr ""
 
 msgid "Compute profile attributes are set."
-msgstr ""
+msgstr "Atributy výpočetního profilu jsou nastavené."
 
 msgid "Could not set the compute profile attributes"
-msgstr ""
+msgstr "Nedaří se nastavit atributy výpočetního profilu"
 
 msgid "Update compute profile values"
-msgstr ""
+msgstr "Aktualizovat hodnoty výpočetního profilu"
 
 msgid "Compute resource attributes, should be comma separated list of values"
 msgstr ""
@@ -948,16 +947,16 @@ msgid "Compute profile attributes updated."
 msgstr ""
 
 msgid "Could not update the compute profile attributes"
-msgstr ""
+msgstr "Nedaří se aktualizovat atributy výpočetního profilu"
 
 msgid "Add interface for Compute Profile"
 msgstr ""
 
 msgid "Interface was created."
-msgstr ""
+msgstr "Rozhraní bylo vytvořeno."
 
 msgid "Could not create interface"
-msgstr ""
+msgstr "Rozhraní se nedaří vytvořit"
 
 msgid "Update compute profile interface"
 msgstr ""
@@ -966,22 +965,22 @@ msgid "Interface id"
 msgstr ""
 
 msgid "Interface was updated."
-msgstr ""
+msgstr "Rozhraní bylo aktualizováno."
 
 msgid "Could not update interface"
-msgstr ""
+msgstr "Rozhraní se nepodařilo aktualizovat"
 
 msgid "Remove compute profile interface"
-msgstr ""
+msgstr "Odebrat rozhraní výpočetního profilu"
 
 msgid "unknown interface id"
-msgstr ""
+msgstr "neznámý identifikátor rozhraní"
 
 msgid "Interface was removed."
-msgstr ""
+msgstr "Rozhraní bylo odbráno."
 
 msgid "Could not remove interface"
-msgstr ""
+msgstr "Rozhraní se nedaří odebrat"
 
 msgid "Add volume for Compute Profile"
 msgstr ""
@@ -990,67 +989,67 @@ msgid "Volume was created."
 msgstr ""
 
 msgid "Could not create volume"
-msgstr ""
+msgstr "Svazek se nedaří vytvořit"
 
 msgid "Update compute profile volume"
 msgstr ""
 
 msgid "Volume id"
-msgstr ""
+msgstr "Identif. svazku"
 
 msgid "Volume was updated."
-msgstr ""
+msgstr "Svazek byl aktualizován."
 
 msgid "Could not update volume"
-msgstr ""
+msgstr "Svazek se nedaří aktualizovat"
 
 msgid "Remove compute profile volume"
 msgstr ""
 
 msgid "unknown volume id"
-msgstr ""
+msgstr "neznámý identif. svazku"
 
 msgid "Volume was removed."
-msgstr ""
+msgstr "Svazek byl odebrán."
 
 msgid "Could not remove volume"
-msgstr ""
+msgstr "Svazek se nedaří odebrat"
 
 msgid "Compute attributes"
-msgstr ""
+msgstr "Výpočetní atributy"
 
 msgid "Compute Resource"
-msgstr "Recurs computacional"
+msgstr "Výpočetní prostředek"
 
 msgid "VM attributes"
-msgstr ""
+msgstr "Atributy virt. stroje"
 
 msgid "Compute profile created."
-msgstr ""
+msgstr "Výpočetní profil vytvořen."
 
 msgid "Could not create a compute profile"
-msgstr ""
+msgstr "Výpočetní profil se nedaří vytvořit"
 
 msgid "Compute profile updated."
-msgstr ""
+msgstr "Výpočetní profil aktualizován."
 
 msgid "Could not update the compute profile"
-msgstr ""
+msgstr "Nedaří se aktualizovat výpočetní profil"
 
 msgid "Compute profile deleted."
 msgstr ""
 
 msgid "Could not delete the Compute profile"
-msgstr ""
+msgstr "Výpočetní profil se nedaří smazat"
 
 msgid "Create update and delete Compute profile values"
-msgstr ""
+msgstr "Vytvořit aktualizaci a smazat hodnoty výpočetního profilu"
 
 msgid "Provider"
-msgstr "Proveïdor"
+msgstr "Poskytovatel"
 
 msgid "Description"
-msgstr "Descripció"
+msgstr "Popis"
 
 msgid "Path to a file that contains oVirt public key (For oVirt only)"
 msgstr ""
@@ -1059,19 +1058,19 @@ msgid "Compute resource created."
 msgstr ""
 
 msgid "Could not create the compute resource"
-msgstr "No s'ha pogut crear el recurs computacional"
+msgstr "Výpočetní prostředek se nedaří vytvořit"
 
 msgid "Compute resource updated."
 msgstr ""
 
 msgid "Could not update the compute resource"
-msgstr "No s'ha pogut actualitzar el recurs computacional"
+msgstr "Výpočetní prostředek se nedaří aktualizovat"
 
 msgid "Compute resource deleted."
 msgstr ""
 
 msgid "Could not delete the compute resource"
-msgstr "No s'ha pogut suprimir el recurs computacional"
+msgstr "Výpočetní prostředek se nedaří smazat"
 
 msgid "Associate a specific VM"
 msgstr ""
@@ -1083,10 +1082,10 @@ msgid "Could not associate the virtual machines"
 msgstr ""
 
 msgid "Datacenter"
-msgstr "Centre de dades"
+msgstr "Datacentrum"
 
 msgid "Hosts"
-msgstr "Amfitrions"
+msgstr "Stroje"
 
 msgid "Cluster path"
 msgstr ""
@@ -1095,7 +1094,7 @@ msgid "Virtual switch"
 msgstr ""
 
 msgid "VLAN ID"
-msgstr "ID de VLAN"
+msgstr ""
 
 msgid "VNIC profile ID"
 msgstr ""
@@ -1107,40 +1106,40 @@ msgid "Uuid"
 msgstr ""
 
 msgid "Path"
-msgstr "Camí"
+msgstr "Popis umístění"
 
 msgid "Parent"
-msgstr "Pare"
+msgstr "Nadřazené"
 
 msgid "Cluster"
-msgstr "Clúster"
+msgstr ""
 
 msgid "State"
-msgstr "Estat"
+msgstr "Stav"
 
 msgid "Url"
-msgstr "URL"
+msgstr "Url adresa"
 
 msgid "Region"
-msgstr "Regió"
+msgstr "Oblast"
 
 msgid "DNS"
 msgstr "DNS"
 
 msgid "DNS Name"
-msgstr "Nom DNS"
+msgstr "DNS název"
 
 msgid "Virtualization Type"
 msgstr ""
 
 msgid "Number of CPUs"
-msgstr "Nombre de CPU"
+msgstr "Počet procesorů"
 
 msgid "String, amount of memory, value in bytes"
 msgstr ""
 
 msgid "Possible values: %{modes}"
-msgstr ""
+msgstr "Možné hodnoty: %{modes}"
 
 msgid "Device names to specify the boot order"
 msgstr ""
@@ -1149,28 +1148,28 @@ msgid "Boolean (expressed as 0 or 1), whether to start the machine or not"
 msgstr ""
 
 msgid "Name of interface according to type"
-msgstr ""
+msgstr "Název rozhraní podle typu"
 
 msgid "Libvirt instance network, e.g. default"
-msgstr ""
+msgstr "Síť libvirt instance, např. default (výchozí)"
 
 msgid "One of available storage pools"
-msgstr ""
+msgstr "Jeden z dostupných fondů úložiště"
 
 msgid "String value, e.g. 10G"
 msgstr ""
 
 msgid "Initial allocation, e.g. 0G"
-msgstr ""
+msgstr "Počáteční přidělení, např. 0G"
 
 msgid "CPUs"
-msgstr "Nombre de CPU"
+msgstr "Procesory"
 
 msgid "Memory"
-msgstr "Memòria"
+msgstr "Operační paměť"
 
 msgid "Status"
-msgstr "Estat"
+msgstr "Stav"
 
 msgid "OS Type"
 msgstr ""
@@ -1179,37 +1178,37 @@ msgid "Domain Type"
 msgstr ""
 
 msgid "Persistent"
-msgstr ""
+msgstr "Trvalé"
 
 msgid "Boot order"
-msgstr ""
+msgstr "Pořadí zavádění"
 
 msgid "Tenant"
-msgstr "Inquilí"
+msgstr "Nájemce"
 
 msgid "Project domain name"
 msgstr ""
 
 msgid "Project domain ID"
-msgstr ""
+msgstr "Identifikátor domény projektu"
 
 msgid "Tenant Id"
 msgstr ""
 
 msgid "ID or name of cluster to use"
-msgstr ""
+msgstr "Identif. nebo název klastru, který použít"
 
 msgid "Hardware profile to use"
-msgstr ""
+msgstr "Profil hardware, který použít"
 
 msgid "Integer value, number of cores"
-msgstr ""
+msgstr "Celočíselná hodnota, počet jader"
 
 msgid "Integer value, number of sockets"
 msgstr ""
 
 msgid "Amount of memory, integer value in bytes"
-msgstr ""
+msgstr "Množství operační paměti, celočíselná hodnota v bajtech"
 
 msgid "Boolean, set 1 to high availability"
 msgstr ""
@@ -1227,16 +1226,16 @@ msgid "Select one of available networks for a cluster, must be an ID or a name"
 msgstr ""
 
 msgid "Interface type"
-msgstr ""
+msgstr "Typ rozhraní"
 
 msgid "Vnic Profile"
 msgstr ""
 
 msgid "Volume size in GB, integer value"
-msgstr ""
+msgstr "Velikost svazku v GB, celočíselná hodnota"
 
 msgid "ID or name of storage domain"
-msgstr ""
+msgstr "Identif. nebo název úložné domény"
 
 msgid "Boolean, set 1 for bootable, only one volume can be bootable"
 msgstr ""
@@ -1248,34 +1247,35 @@ msgid "Boolean, set 1 to wipe disk after delete"
 msgstr ""
 
 msgid "Disk interface name, must be ide, virto or virto_scsi"
-msgstr ""
+msgstr "Je třeba, aby název rozhraní disku bylo ide, virtio nebo virtio_scsi"
 
 msgid "Cores"
-msgstr "Nuclis"
+msgstr "Jádra"
 
 msgid "Cluster ID from VMware"
-msgstr ""
+msgstr "Identifikátor clusteru z VMware"
 
 msgid "Number of cores per socket (applicable to hardware versions < 10 only)"
 msgstr ""
+"Počet jader na patici (použitelné pouze na verze hardware starší, než 10)"
 
 msgid "CPU count"
-msgstr ""
+msgstr "Počet procesorů"
 
 msgid "Integer number, amount of memory in MB"
-msgstr ""
+msgstr "Celé číslo, množství operační paměti v MB"
 
 msgid "Path to folder"
-msgstr ""
+msgstr "Popis umístění složky"
 
 msgid "Resource Pool ID from VMware"
-msgstr ""
+msgstr "Identifikátor fondu prostředků z VMware"
 
 msgid "Guest OS ID form VMware"
 msgstr ""
 
 msgid "Hardware version ID from VMware"
-msgstr ""
+msgstr "Identifikátor verze hardware z VMware"
 
 msgid "Must be a 1 or 0, lets you add memory resources while the machine is on"
 msgstr ""
@@ -1293,25 +1293,25 @@ msgid "List with SCSI controllers definitions"
 msgstr ""
 
 msgid "ID of the controller from VMware"
-msgstr ""
+msgstr "Identifikátor řadiče z VMware"
 
 msgid "Key of the controller (e.g. 1000)"
-msgstr ""
+msgstr "Klíč řadiče (např. 1000)"
 
 msgid "Must be a 1 or 0, whether to start the machine or not"
-msgstr ""
+msgstr "Je třeba, aby bylo 1 nebo 0 – zda stroj spouštět nebo ne"
 
 msgid "Storage Pod ID from VMware"
 msgstr ""
 
 msgid "Datastore ID from VMware"
-msgstr ""
+msgstr "Identifikátor datového úložiště z VMware"
 
 msgid "Integer number, volume size in GB"
-msgstr ""
+msgstr "Celé číslo, velikost svazku v GB"
 
 msgid "Type of the network adapter, for example one of:"
-msgstr ""
+msgstr "Typ síťového rozhraní, například jeden z:"
 
 msgid ""
 "See documentation center for your version of vSphere to find more details "
@@ -1340,61 +1340,61 @@ msgid "Hardware Version"
 msgstr ""
 
 msgid "Operating System"
-msgstr "Sistema operatiu"
+msgstr "Operační systém"
 
 msgid "Host"
-msgstr "Amfitrió"
+msgstr "Stroj"
 
 msgid "Last report"
-msgstr "Últim informe"
+msgstr "Poslední hlášení"
 
 msgid "Origin"
-msgstr ""
+msgstr "Původ"
 
 msgid "Applied"
-msgstr "Aplicat"
+msgstr "Uplatněno"
 
 msgid "Restarted"
-msgstr "Reiniciat"
+msgstr "Restartováno"
 
 msgid "Failed"
-msgstr "Fallat"
+msgstr "Nezdařilo se"
 
 msgid "Restart Failures"
-msgstr "Fallides dels reinicis"
+msgstr ""
 
 msgid "Skipped"
-msgstr "Omès"
+msgstr "Přeskočeno"
 
 msgid "Pending"
-msgstr "Pendent"
+msgstr "Čeká"
 
 msgid "Reported at"
-msgstr "Es va informar el"
+msgstr "Hlášeno v"
 
 msgid "Report status"
-msgstr "Estat de l'informe"
+msgstr "Hlásit stav"
 
 msgid "Report metrics"
-msgstr "Mètriques de l'informe"
+msgstr ""
 
 msgid "config_retrieval"
 msgstr ""
 
 msgid "exec"
-msgstr "exec"
+msgstr ""
 
 msgid "file"
-msgstr "fitxer"
+msgstr "soubor"
 
 msgid "package"
-msgstr "paquet"
+msgstr "balíček"
 
 msgid "service"
-msgstr "servei"
+msgstr "služba"
 
 msgid "user"
-msgstr "usuari"
+msgstr "uživatel"
 
 msgid "yumrepo"
 msgstr ""
@@ -1403,79 +1403,81 @@ msgid "filebucket"
 msgstr ""
 
 msgid "cron"
-msgstr "cron"
+msgstr "plánovač"
 
 msgid "total"
-msgstr "total"
+msgstr "celkem"
 
 msgid "Logs"
-msgstr "Registres"
+msgstr "Logy"
 
 msgid "Resource"
-msgstr "Recurs"
+msgstr "Prostředek"
 
 msgid "Message"
-msgstr "Missatge"
+msgstr "Zpráva"
 
 msgid "Report has been deleted."
-msgstr ""
+msgstr "Výkaz byl smazán."
 
 msgid "Could not delete the report"
-msgstr "No s'ha pogut suprimir l'informe"
+msgstr "Výkaz se nedaří smazat"
 
 msgid "Use the default organization and/or location from the server"
 msgstr ""
 
 msgid "DNS Id"
-msgstr "ID del DNS"
+msgstr "DNS identif."
 
 msgid "Domain [%{name}] created."
-msgstr ""
+msgstr "Doména [%{name}] vytvořena."
 
 msgid "Could not create the domain"
-msgstr "No s'ha pogut crear el domini"
+msgstr "Doménu se nedaří vytvořit"
 
 msgid "Full name describing the domain"
-msgstr "Nom complet que descriu el domini"
+msgstr "Úplný název popisující doménu"
 
 msgid "Domain [%{name}] updated."
-msgstr ""
+msgstr "Doména [%{name}] aktualizována."
 
 msgid "Could not update the domain"
-msgstr "No s'ha pogut actualitzar el domini"
+msgstr "Doménu se nedaří aktualizovat"
 
 msgid "Domain [%{name}] deleted."
-msgstr ""
+msgstr "Doména [%{name}] smazána."
 
 msgid "Could not delete the domain"
-msgstr "No s'ha pogut suprimir el domini"
+msgstr "Doménu se nedaří smazat"
 
 msgid "Create or update parameter for a domain"
 msgstr ""
 
 msgid "Domain parameter updated"
-msgstr "S'ha actualitzat el paràmetre del domini"
+msgstr "Parametr doména aktualizován"
 
 msgid "New domain parameter created"
-msgstr "S'ha creat el paràmetre del domini nou"
+msgstr "Vytvořen nový parametr doména"
 
 msgid "Could not set domain parameter"
-msgstr "No s'ha pogut establir el paràmetre del domini"
+msgstr "Nedaří se nastavit parametr doména"
 
 msgid "Delete parameter for a domain"
-msgstr ""
+msgstr "Smazat parametr pro doménu"
 
 msgid "Domain parameter deleted."
-msgstr ""
+msgstr "Parametr doména přidán."
 
 msgid "Redirection of API call detected."
 msgstr ""
 
 msgid "It seems hammer is configured to use HTTP and the server prefers HTTPS."
 msgstr ""
+"Zdá se, že nástroj hammer je nastavený tak, aby používal HTTP, ale server "
+"upřednostňuje HTTPS."
 
 msgid "Update your server url configuration."
-msgstr ""
+msgstr "Aktualizujte nastavení URL adresy svého serveru."
 
 msgid ""
 "You can set 'follow_redirects' to one of :default or :always to enable "
@@ -1483,10 +1485,10 @@ msgid ""
 msgstr ""
 
 msgid "Forbidden - server refused to process the request."
-msgstr ""
+msgstr "Zakázáno – server odmítl zpracovat požadavek."
 
 msgid "The following configuration option were used for the SSL connection:"
-msgstr ""
+msgstr "Pro SSL spojení byly použity následující volby nastavení:"
 
 msgid ""
 "Make sure the location contains an unexpired and valid CA certificate for %s."
@@ -1499,7 +1501,7 @@ msgid ""
 msgstr ""
 
 msgid "Download the certificate as follows:"
-msgstr ""
+msgstr "Certifikát si stáhnete následovně:"
 
 msgid ""
 "Make sure you configured the correct URL and have the server's CA "
@@ -1522,61 +1524,61 @@ msgid "have you run %s (for Kerberos)?"
 msgstr ""
 
 msgid "is the server down?"
-msgstr "Ha caigut el servidor?"
+msgstr "je server vypnutý?"
 
 msgid "View and manage user group's external user groups"
-msgstr "Visualitza i gestiona els grups d'usuaris externs dels grups."
+msgstr ""
 
 msgid "Auth source"
-msgstr "Origen d'autenticació"
+msgstr "Zdroj ověřování"
 
 msgid "Refresh external user group"
-msgstr "Refresca un grup d'usuaris externs"
+msgstr "Znovu načíst externí skupinu uživatelů"
 
 msgid "External user group created."
 msgstr ""
 
 msgid "Could not create external user group"
-msgstr "No s'ha pogut crear el grup d'usuaris externs"
+msgstr ""
 
 msgid "External user group updated."
 msgstr ""
 
 msgid "Could not update external user group"
-msgstr "No s'ha pogut actualitzar el grup d'usuaris externs"
+msgstr ""
 
 msgid "External user group deleted."
 msgstr ""
 
 msgid "Could not delete the external user group"
-msgstr "No s'ha pogut suprimir el grup d'usuaris externs"
-
-msgid "Fact"
-msgstr "Objecte d'interès"
-
-msgid "Resource type"
-msgstr "Tipus de recurs"
-
-msgid "Search"
-msgstr "Cerca"
-
-msgid "Unlimited?"
-msgstr "Il·limitat?"
-
-msgid "Override?"
 msgstr ""
 
+msgid "Fact"
+msgstr "Fakt"
+
+msgid "Resource type"
+msgstr "Typ prostředku"
+
+msgid "Search"
+msgstr "Hledat"
+
+msgid "Unlimited?"
+msgstr "Neomezeno?"
+
+msgid "Override?"
+msgstr "Přepsat?"
+
 msgid "Role"
-msgstr "Rol"
+msgstr "Role"
 
 msgid "Permissions"
-msgstr "Permisos"
+msgstr "Oprávnění"
 
 msgid "(Miscellaneous)"
-msgstr "(Miscel·lani)"
+msgstr "(různé)"
 
 msgid "none"
-msgstr "sense"
+msgstr ""
 
 msgid "Organizations and locations can be set only for overriding filters."
 msgstr ""
@@ -1595,163 +1597,163 @@ msgid "Permission filter for [%<resource_type_label>s] created."
 msgstr ""
 
 msgid "Could not create the permission filter"
-msgstr "No s'ha pogut crear el filtre del permís"
+msgstr "Filtr oprávnění se nedaří vytvořit"
 
 msgid "Permission filter for [%<resource_type_label>s] updated."
 msgstr ""
 
 msgid "Could not update the permission filter"
-msgstr "No s'ha pogut actualitzar el filtre del permís"
+msgstr "Filtr oprávnění se nedaří aktualizovat"
 
 msgid "Permission filter deleted."
-msgstr ""
+msgstr "Filtr oprávnění smazán."
 
 msgid "Could not delete the permission filter"
-msgstr "No s'ha pogut suprimir el filtre del permís"
+msgstr "Filtr oprávnění se nedaří smazat"
 
 msgid "Host Group"
-msgstr "Grup dels amfitrions"
+msgstr "Skupina strojů"
 
 msgid "MAC"
-msgstr "MAC"
+msgstr "MAC adresa"
 
 msgid "Global Status"
-msgstr ""
+msgstr "Globální stav"
 
 msgid "Organization"
-msgstr "Organització"
+msgstr "Organizace"
 
 msgid "Location"
-msgstr "Ubicació"
+msgstr "Umístění"
 
 msgid "Additional Information"
-msgstr "Informació addicional"
+msgstr "Další informace"
 
 msgid "Bare Metal"
-msgstr ""
+msgstr "Holé Železo"
 
 msgid "UUID"
-msgstr "UUID"
+msgstr ""
 
 msgid "Compute Profile"
-msgstr "Perfil computacional"
+msgstr ""
 
 msgid "Cert name"
-msgstr "Nom del certificat"
+msgstr "Název certifikátu"
 
 msgid "Token"
-msgstr "Testimoni"
+msgstr ""
 
 msgid "Managed"
-msgstr "Gestionat"
+msgstr "Spravováno"
 
 msgid "Installed at"
-msgstr "Instal·lat el"
+msgstr "Nainstalováno na"
 
 msgid "Uptime (seconds)"
-msgstr ""
+msgstr "Doba chodu (sekundy)"
 
 msgid "Build Status"
-msgstr ""
+msgstr "Stav sestavení"
 
 msgid "Network"
-msgstr "Xarxa"
+msgstr "Síť"
 
 msgid "IPv4 address"
-msgstr ""
+msgstr "IPv4 adresa"
 
 msgid "IPv6 address"
-msgstr ""
+msgstr "IPv6 adresa"
 
 msgid "Subnet ipv4"
-msgstr ""
+msgstr "IPv4 adresa podsítě"
 
 msgid "Subnet ipv6"
 msgstr ""
 
 msgid "Domain"
-msgstr "Domini"
+msgstr "Doména"
 
 msgid "Service provider"
-msgstr "Proveïdor de serveis (SP)"
+msgstr "Poskytovatel služby"
 
 msgid "SP Name"
-msgstr "Nom del SP"
+msgstr ""
 
 msgid "SP IP"
-msgstr "IP del SP"
+msgstr ""
 
 msgid "SP MAC"
-msgstr "MAC del SP"
+msgstr ""
 
 msgid "SP Subnet"
-msgstr "Subxarxa del SP"
+msgstr ""
 
 msgid "Network interfaces"
-msgstr "Interfícies de xarxa"
+msgstr "Síťová rozhraní"
 
 msgid "Identifier"
-msgstr "Identificador"
+msgstr "Identifikátor"
 
 msgid "MAC address"
-msgstr "Adreça MAC"
+msgstr "MAC adresa"
 
 msgid "FQDN"
-msgstr "FQDN"
+msgstr ""
 
 msgid "Operating system"
-msgstr "Sistema operatiu"
+msgstr "Operační systém"
 
 msgid "Architecture"
-msgstr "Arquitectura"
+msgstr "Architektura"
 
 msgid "Build"
-msgstr "Construeix"
+msgstr "Sestavení"
 
 msgid "Medium"
-msgstr "Mitjà"
+msgstr "Médium"
 
 msgid "Partition Table"
-msgstr "Taula de particions"
+msgstr "Tabulka rozdělení úložiště"
 
 msgid "PXE Loader"
-msgstr "Carregador de PXE"
+msgstr "PXE zavaděč"
 
 msgid "Custom partition table"
-msgstr "Taula de particions personalitzada"
+msgstr ""
 
 msgid "Image"
-msgstr "Imatge"
+msgstr "Obraz"
 
 msgid "Image file"
-msgstr "Fitxer d'imatge"
+msgstr "Soubor s obrazem"
 
 msgid "Use image"
-msgstr "Utilitza la imatge"
+msgstr "Použít obraz"
 
 msgid "Additional info"
-msgstr "Informació addicional"
+msgstr "Další informace"
 
 msgid "Owner"
-msgstr "Propietari"
+msgstr "Vlastník"
 
 msgid "Enabled"
-msgstr "Habilitat"
+msgstr "Zapnuto"
 
 msgid "Model"
 msgstr "Model"
 
 msgid "Comment"
-msgstr "Comentari"
+msgstr "Komentář"
 
 msgid "Power"
-msgstr "Energia"
+msgstr "Napájení"
 
 msgid "Host id"
 msgstr ""
 
 msgid "Host name"
-msgstr "Nom de l'amfitrió"
+msgstr "Název stroje"
 
 msgid ""
 "%{reports} command is deprecated and will be removed in one of the future "
@@ -1759,79 +1761,79 @@ msgid ""
 msgstr ""
 
 msgid "Host created."
-msgstr ""
+msgstr "Stroj vytvořen."
 
 msgid "Could not create the host"
-msgstr "No s'ha pogut crear l'amfitrió"
+msgstr "Stroj se nedaří vytvořit"
 
 msgid "Host updated."
-msgstr ""
+msgstr "Stroj aktualizován."
 
 msgid "Could not update the host"
-msgstr "No s'ha pogut actualitzar l'amfitrió"
+msgstr "Stroj se nedaří aktualizovat"
 
 msgid "Host deleted."
-msgstr ""
+msgstr "Stroj smazán."
 
 msgid "Could not delete the host"
-msgstr "No s'ha pogut suprimir l'amfitrió"
+msgstr "Stroj se nedaří smazat"
 
 msgid "Create or append a parameter for a host"
-msgstr ""
+msgstr "Vytvořit nebo připojit parametr pro stroj"
 
 msgid "Host parameter updated"
-msgstr "S'ha actualitzat el paràmetre de l'amfitrió"
+msgstr "Parametr hostitel aktualizován"
 
 msgid "New host parameter created"
-msgstr "S'ha creat el paràmetre de l'amfitrió nou"
+msgstr "Vytvořen nový parametr hostitel"
 
 msgid "Could not set host parameter"
-msgstr "S'ha pogut establir el paràmetre de l'amfitrió"
+msgstr "Nedaří se nastavit parametr hostitel"
 
 msgid "Delete parameter for a host"
-msgstr ""
+msgstr "Smazat parametr pro stroj"
 
 msgid "Host parameter deleted."
 msgstr ""
 
 msgid "Power a host on"
-msgstr "Engega un amfitrió"
+msgstr "Zapnout stroj"
 
 msgid "The host is starting."
-msgstr "L'amfitrió s'està iniciant."
+msgstr "Stroj se spouští."
 
 msgid "Force turning off a host"
-msgstr ""
+msgstr "Vynutit vypnutí stroje"
 
 msgid "Power a host off"
-msgstr "Apaga un amfitrió"
+msgstr "Vypnout stroj"
 
 msgid "Power off forced"
-msgstr ""
+msgstr "Vypnutí vynuceno"
 
 msgid "Powering the host off"
-msgstr ""
+msgstr "Vypínání stroje"
 
 msgid "Reboot a host"
-msgstr "Reinicia un amfitrió"
+msgstr "Restartovat stroj"
 
 msgid "Host reboot started."
-msgstr ""
+msgstr "Restart hostitele zahájen."
 
 msgid "Reset a host"
-msgstr ""
+msgstr "Resetovat stroj"
 
 msgid "Host reset started."
 msgstr ""
 
 msgid "Failed to reset the host"
-msgstr ""
+msgstr "Hostitele se nepodařilo resetovat"
 
 msgid "Rebuild orchestration related configurations for host"
 msgstr ""
 
 msgid "Configuration successfully rebuilt."
-msgstr ""
+msgstr "Nastavení úspěšně sestaveno znovu."
 
 msgid "Dump host's ENC YAML"
 msgstr ""
@@ -1840,28 +1842,28 @@ msgid "Could not retrieve ENC values of the host"
 msgstr ""
 
 msgid "Disassociate a host"
-msgstr ""
+msgstr "Zrušit přiřazení hostitele"
 
 msgid "The host has been disassociated from VM."
-msgstr ""
+msgstr "Přiřazení virt. stroje a hostitele bylo zrušeno."
 
 msgid "Failed to disassociated host from VM"
-msgstr ""
+msgstr "Nepodařilo ze zrušit přiřazení hostitelů a virt. strojů"
 
 msgid "The host is booting."
-msgstr ""
+msgstr "Hostitel zavádí systém."
 
 msgid "Failed to boot the host from device"
-msgstr ""
+msgstr "Nepodařilo se zavést systém hostitele ze zařízení"
 
 msgid "Root password"
-msgstr "Contrasenya de root"
+msgstr "Heslo správce (root)"
 
 msgid "Subnet IPv6 name"
-msgstr ""
+msgstr "Název IPv6 podsítě"
 
 msgid "Name of parent hostgroup"
-msgstr "Nom del grup d'amfitrions pare"
+msgstr ""
 
 msgid "Title of parent hostgroup"
 msgstr ""
@@ -1870,40 +1872,40 @@ msgid "Enter the root password for the host group:"
 msgstr ""
 
 msgid "Title"
-msgstr "Títol"
+msgstr "Nadpis"
 
 msgid "Realm"
-msgstr "Reialme"
+msgstr ""
 
 msgid "Hostgroup created."
 msgstr ""
 
 msgid "Could not create the hostgroup"
-msgstr "No s'ha pogut crear el grup d'amfitrions"
+msgstr "Skupinu hostitelů se nedaří vytvořit"
 
 msgid "Hostgroup updated."
 msgstr ""
 
 msgid "Could not update the hostgroup"
-msgstr "No s'ha pogut actualitzar el grup d'amfitrions"
+msgstr "Skupinu hostitelů se nedaří aktualizovat"
 
 msgid "Hostgroup deleted."
 msgstr ""
 
 msgid "Could not delete the hostgroup"
-msgstr "No s'ha pogut suprimir el grup d'amfitrions"
+msgstr "Skupinu hostitelů se nedaří smazat"
 
 msgid "Create or update parameter for a hostgroup"
 msgstr ""
 
 msgid "Hostgroup parameter updated"
-msgstr "S'ha actualitzat el paràmetre del grup d'amfitrions"
+msgstr "Parametr skupiny hostitelů aktualizovaná"
 
 msgid "New hostgroup parameter created"
-msgstr "S'ha creat el paràmetre del grup d'amfitrions nou"
+msgstr "Nový parametr skupiny hostitelů vytvořen"
 
 msgid "Could not set hostgroup parameter"
-msgstr "S'ha pogut establir el paràmetre del grup d'amfitrions"
+msgstr "Nedaří se nastavit parametr skupiny hostitelů"
 
 msgid "Delete parameter for a hostgroup"
 msgstr ""
@@ -1912,13 +1914,13 @@ msgid "Hostgroup parameter deleted."
 msgstr ""
 
 msgid "Could not rebuild configuration"
-msgstr ""
+msgstr "Nastavení se nedaří znovu sestavit"
 
 msgid "ID of the owner"
-msgstr "ID del propietari"
+msgstr "Identif. vlastníka"
 
 msgid "Login of the owner"
-msgstr "Nom d'usuari del propietari"
+msgstr ""
 
 msgid ""
 "Required if host is managed and value is not inherited from host group or "
@@ -1926,187 +1928,187 @@ msgid ""
 msgstr ""
 
 msgid "Replaces with new host parameters"
-msgstr ""
+msgstr "Nahrazuje novými parametry stroje"
 
 msgid "Replaces with new host parameters (with type support)"
 msgstr ""
 
 msgid "Volume parameters"
-msgstr "Paràmetres del volum"
+msgstr "Parametry svazku"
 
 msgid "Interface parameters"
-msgstr "Paràmetres de la interfície"
+msgstr "Parametry rozhraní"
 
 msgid "Enter the root password for the host:"
-msgstr "Introduïu la contrasenya de root per a l'amfitrió:"
+msgstr "Zadejte heslo ke správcovskému (root) účtu pro stroj:"
 
 msgid "Username"
-msgstr "Nom d'usuari"
+msgstr "Uživatelské jméno"
 
 msgid "URL"
-msgstr "URL"
+msgstr "URL adresa"
 
 msgid "Http proxy created."
-msgstr ""
+msgstr "Http proxy vytvořena."
 
 msgid "Could not create the http proxy"
-msgstr ""
+msgstr "Nepodařilo se vytvořit http proxy"
 
 msgid "Http proxy deleted."
-msgstr ""
+msgstr "Http proxy smazána."
 
 msgid "Could not delete the http proxy"
-msgstr ""
+msgstr "Http proxy se nedaří vytvořit"
 
 msgid "Http proxy updated."
-msgstr ""
+msgstr "Http proxy aktualizována."
 
 msgid "Could not update the http proxy"
-msgstr ""
+msgstr "Nedaří se aktualizovat http proxy"
 
 msgid "Architecture name"
-msgstr "Nom de l'arquitectura"
+msgstr "Název architektury"
 
 msgid "Compute resource name"
-msgstr "Nom del recurs computacional"
+msgstr "Název výpočetního prostředku"
 
 msgid "Compute profile name"
-msgstr ""
+msgstr "Název výpočetního profilu"
 
 msgid "Domain name"
-msgstr "Nom de domini"
+msgstr "Název domény"
 
 msgid "Hostgroup title"
-msgstr "Títol del grup d'amfitrions"
+msgstr ""
 
 msgid "Set the current location context for the request"
 msgstr ""
 
 msgid "Medium name"
-msgstr "Nom del mitjà"
+msgstr "Název média"
 
 msgid "Model name"
-msgstr "Nom del model"
+msgstr "Název modelu"
 
 msgid "Set the current organization context for the request"
 msgstr ""
 
 msgid "Operating system title"
-msgstr "Títol del sistema operatiu"
+msgstr "Nadpis operačního systému"
 
 msgid "Partition table name"
-msgstr "Nom de la taula de particions"
+msgstr "Název tabulky rozdělení úložiště"
 
 msgid "Proxy name"
-msgstr "Nom del servidor intermediari"
+msgstr "Název proxy"
 
 msgid "User role name"
-msgstr "Nom del rol d'usuari"
+msgstr "Název uživatelské role"
 
 msgid "Setting name"
-msgstr "Nom de l'ajust"
+msgstr "Název nastavení"
 
 msgid "Subnet name"
-msgstr "Nom de la subxarxa"
+msgstr "Název podsítě"
 
 msgid "User's login to search by"
-msgstr ""
+msgstr "Uživatelské jméno podle kterého hledat"
 
 msgid "Common parameter name"
 msgstr ""
 
 msgid "Name to search by"
-msgstr ""
+msgstr "Název podle kterého hledat"
 
 msgid "Missing options to search %s"
-msgstr ""
+msgstr "Chybějící volby pro hledání %s"
 
 msgid "one of %s not found."
-msgstr ""
+msgstr "jedno z %s nenalezeno."
 
 msgid "Found more than one %s."
-msgstr ""
+msgstr "Nalezeno více než jedno%s."
 
 msgid "Missing options to search %s."
-msgstr ""
+msgstr "Chybějící volba pro hledání %s."
 
 msgid "View and manage compute resource's images"
-msgstr "Visualitza i gestiona les imatges dels recursos computacionals."
+msgstr "Zobrazit a spravovat obrazy výpočetních prostředků"
 
 msgid "User Data"
 msgstr ""
 
 msgid "IAM role"
-msgstr "Rol IAM"
+msgstr ""
 
 msgid "Show images available for addition"
-msgstr ""
+msgstr "Zobrazit obrazy které je možné přidat"
 
 msgid "Image created."
-msgstr ""
+msgstr "Obraz vytvořen."
 
 msgid "Could not create the image"
-msgstr "No s'ha pogut crear la imatge"
+msgstr "Obraz se nedaří vytvořit"
 
 msgid "Image updated."
-msgstr ""
+msgstr "Obraz aktualizován."
 
 msgid "Could not update the image"
-msgstr "No s'ha pogut actualitzar la imatge"
+msgstr "Obraz se nedaří aktualizovat"
 
 msgid "Image deleted."
-msgstr ""
+msgstr "Obraz smazán."
 
 msgid "Could not delete the image"
-msgstr "No s'ha pogut suprimir la imatge"
+msgstr "Obraz se nedaří smazat"
 
 msgid "View and manage host's network interfaces"
-msgstr "Visualitza i gestiona les interfícies de xarxa dels amfitrions."
+msgstr ""
 
 msgid "primary"
-msgstr "primària"
+msgstr "hlavní"
 
 msgid "provision"
 msgstr ""
 
 msgid "IP address"
-msgstr "Adreça IP"
+msgstr "IP adresa"
 
 msgid "DNS name"
-msgstr "Nom DNS"
+msgstr "DNS název"
 
 msgid "Subnet"
-msgstr "Subxarxa"
+msgstr "Podsíť"
 
 msgid "Primary"
-msgstr "Primària"
+msgstr "Hlavní"
 
 msgid "Provision"
-msgstr "Aprovisionament"
+msgstr ""
 
 msgid "Virtual"
-msgstr "Virtual"
+msgstr "Virtuální"
 
 msgid "Tag"
-msgstr "Etiqueta"
+msgstr "Štítek"
 
 msgid "Attached to"
-msgstr ""
+msgstr "Připojeno k"
 
 msgid "BMC"
 msgstr "BMC"
 
 msgid "Bond"
-msgstr "Vinculació"
+msgstr ""
 
 msgid "Mode"
-msgstr "Mode"
+msgstr "Režim"
 
 msgid "Attached devices"
-msgstr "Dispositius adjuntats"
+msgstr "Připojená zařízení"
 
 msgid "Bond options"
-msgstr "Opcions de vinculació"
+msgstr ""
 
 msgid ""
 "Should this interface be used for constructing the FQDN of the host? Each "
@@ -2119,49 +2121,49 @@ msgid ""
 msgstr ""
 
 msgid "Interface created."
-msgstr ""
+msgstr "Rozhraní vytvořeno."
 
 msgid "Could not create the interface"
-msgstr "No s'ha pogut crear la interfície"
+msgstr "Rozhraní se nedaří vytvořit"
 
 msgid "Compute resource specific attributes"
 msgstr ""
 
 msgid "Interface updated."
-msgstr ""
+msgstr "Rozhraní aktualizováno."
 
 msgid "Could not update the interface"
-msgstr "No s'ha pogut actualitzar la interfície"
+msgstr ""
 
 msgid "Interface deleted."
-msgstr ""
+msgstr "Rozhraní smazáno."
 
 msgid "Could not delete the interface"
-msgstr "No s'ha pogut suprimir la interfície"
+msgstr "Rozhraní se nedaří smazat"
 
 msgid "Location numeric id to search by"
-msgstr ""
+msgstr "Číselný identifikátor umístění, podle kterého hledat"
 
 msgid "Organizations"
-msgstr "Organitzacions"
+msgstr "Organizace"
 
 msgid "Location created."
-msgstr ""
+msgstr "Umístění vytvořeno."
 
 msgid "Could not create the location"
-msgstr "No s'ha pogut crear la ubicació"
+msgstr "Umístění se nedaří vytvořit"
 
 msgid "Location updated."
-msgstr ""
+msgstr "Umístění aktualizováno."
 
 msgid "Could not update the location"
-msgstr "No s'ha pogut actualitzar la ubicació"
+msgstr "Umístění se nedaří aktualizovat"
 
 msgid "Location deleted."
-msgstr ""
+msgstr "Umístění smazáno."
 
 msgid "Could not delete the location"
-msgstr "No s'ha pogut suprimir la ubicació"
+msgstr "Umístění se nedaří smazat"
 
 msgid "Create or update parameter for a location"
 msgstr ""
@@ -2176,10 +2178,10 @@ msgid "Could not set location parameter"
 msgstr ""
 
 msgid "Delete parameter for a location"
-msgstr ""
+msgstr "Smazat parametr pro umístění"
 
 msgid "Parameter [%{name}] deleted."
-msgstr ""
+msgstr "Parametr [%{name}] smazán."
 
 msgid "Could not delete location parameter"
 msgstr ""
@@ -2188,58 +2190,58 @@ msgid "Subscription type"
 msgstr ""
 
 msgid "OS Family"
-msgstr "Família de SO"
+msgstr ""
 
 msgid "Installation medium created."
-msgstr ""
+msgstr "Instalační médium vytvořeno."
 
 msgid "Could not create the installation medium"
-msgstr "No s'ha pogut crear el mitjà d'instal·lació"
+msgstr "Instalační médium se nedaří vytvořit"
 
 msgid "Installation medium updated."
-msgstr ""
+msgstr "Instalační médium aktualizováno."
 
 msgid "Could not update the installation media"
-msgstr "No s'ha pogut actualitzar el mitjà d'instal·lació"
+msgstr "Instalační médium se nedaří aktualizovat"
 
 msgid "Installation medium deleted."
-msgstr ""
+msgstr "Instalační médium smazáno."
 
 msgid "Could not delete the installation media"
-msgstr "No s'ha pogut suprimir el mitjà d'instal·lació"
+msgstr "Instalační médium se nedaří smazat"
 
 msgid "Vendor class"
-msgstr "Classe del fabricant"
+msgstr "Třída výrobce"
 
 msgid "HW model"
-msgstr "Model de maquinari"
+msgstr "Model hardware"
 
 msgid "Info"
-msgstr "Info"
+msgstr ""
 
 msgid "Hardware model created."
-msgstr ""
+msgstr "Model hardware vytvořen."
 
 msgid "Could not create the hardware model"
-msgstr "No s'ha pogut crear el model de maquinari"
+msgstr ""
 
 msgid "Hardware model deleted."
-msgstr ""
+msgstr "Model hardware smazán."
 
 msgid "Could not delete the hardware model"
-msgstr "No s'ha pogut suprimir el model de maquinari"
+msgstr ""
 
 msgid "Hardware model updated."
-msgstr ""
+msgstr "Model hardware aktualizován."
 
 msgid "Could not update the hardware model"
-msgstr "No s'ha pogut actualitzar el model de maquinari"
+msgstr ""
 
 msgid "Invalid access token response."
-msgstr ""
+msgstr "Neplatná odpověď na přístupový token."
 
 msgid "Invalid access token"
-msgstr ""
+msgstr "Neplatný přístupový token"
 
 msgid ""
 "Failed to recieve acess token, please check your connectivity with OpenID "
@@ -2247,64 +2249,64 @@ msgid ""
 msgstr ""
 
 msgid "Release name"
-msgstr "Nom del llançament"
+msgstr "Název vydání"
 
 msgid "Family"
-msgstr "Família"
+msgstr "Generace"
 
 msgid "Major version"
-msgstr "Versió major"
+msgstr ""
 
 msgid "Minor version"
-msgstr "Versió menor"
+msgstr ""
 
 msgid "Partition tables"
-msgstr "Taules de particions"
+msgstr "Tabulky rozdělení úložiště"
 
 msgid "Default templates"
-msgstr "Plantilles predeterminades"
+msgstr "Výchozí šablony"
 
 msgid "Architectures"
-msgstr "Arquitectures"
+msgstr "Architektury"
 
 msgid "Operating system created."
-msgstr ""
+msgstr "Operační systém vytvořen."
 
 msgid "Could not create the operating system"
-msgstr "No s'ha pogut crear el sistema operatiu"
+msgstr "Operační systém se nedaří vytvořit"
 
 msgid "Operating system updated."
-msgstr ""
+msgstr "Operační systém aktualizován."
 
 msgid "Could not update the operating system"
-msgstr "No s'ha pogut actualitzar el sistema operatiu"
+msgstr "Operační systém se nedaří aktualizovat"
 
 msgid "Operating system deleted."
-msgstr ""
+msgstr "Operační systém smazán."
 
 msgid "Could not delete the operating system"
-msgstr "No s'ha pogut suprimir el sistema operatiu"
+msgstr "Operační systém se nedaří smazat"
 
 msgid "Create or update parameter for an operating system"
 msgstr ""
 
 msgid "Operating system parameter updated"
-msgstr "S'ha actualitzat el paràmetre del sistema operatiu"
+msgstr "Parametr operační systém aktualizován"
 
 msgid "New operating system parameter created"
-msgstr "S'ha creat el paràmetre del sistema operatiu nou"
+msgstr "Vytvořen nový parametr operační systém"
 
 msgid "Could not set operating system parameter"
-msgstr "No s'ha pogut establir el paràmetre del sistema operatiu"
+msgstr "Nedaří se nastavit parametr operační systém"
 
 msgid "Delete parameter for an operating system"
 msgstr ""
 
 msgid "operating system parameter deleted."
-msgstr ""
+msgstr "parametr operační systém smazán."
 
 msgid "Operatingsystem id"
-msgstr ""
+msgstr "Identif. operačního systému"
 
 msgid "Provisioning template id to be set"
 msgstr ""
@@ -2315,16 +2317,16 @@ msgid ""
 msgstr ""
 
 msgid "Could not set the os default template"
-msgstr "No s'ha pogut establir la plantilla per defecte del SO"
+msgstr "Nedaří se nastavit výchozí šablonu operačního systému"
 
 msgid "Type of the provisioning template"
 msgstr ""
 
 msgid "Default template deleted."
-msgstr ""
+msgstr "Výchozí šablona smazána."
 
 msgid "Could not delete the default template"
-msgstr "No s'ha pogut suprimir la plantilla per defecte"
+msgstr "Nedaří se smazat výchozí šablonu"
 
 msgid "Default template of type %s not found"
 msgstr ""
@@ -2342,87 +2344,84 @@ msgstr ""
 
 msgid "Could not find %{resource}, please set option %{switches}."
 msgstr ""
-"No s'ha pogut trobar %{resource}, si us plau, establiu l'opció %{switches}."
 
 msgid "Could not find %{resource}, please set one of options %{switches}."
 msgstr ""
-"No s'ha pogut trobar %{resource}, si us plau, establiu una de les opcions "
-"%{switches}."
 
 msgid "Enter user's current password:"
-msgstr ""
+msgstr "Zadejte stávající heslo uživatele:"
 
 msgid "Enter user's new password:"
-msgstr ""
+msgstr "Zadejte nové heslo pro uživatele:"
 
 msgid "Locations"
-msgstr "Ubicacions"
+msgstr "Umístění"
 
 msgid "Organization created."
-msgstr ""
+msgstr "Organizace vytvořena."
 
 msgid "Could not create the organization"
-msgstr "No s'ha pogut crear l'organització"
+msgstr "Parametr se nedaří vytvořit"
 
 msgid "Organization updated."
-msgstr ""
+msgstr "Organizace aktualizována."
 
 msgid "Could not update the organization"
-msgstr "No s'ha pogut actualitzar l'organització"
+msgstr "Organizaci se nedaří aktualizovat"
 
 msgid "Organization deleted."
-msgstr ""
+msgstr "Organizace smazána."
 
 msgid "Could not delete the organization"
-msgstr "No s'ha pogut suprimir l'organització"
+msgstr "Organizaci se nedaří smazat"
 
 msgid "Create or update parameter for an organization"
 msgstr ""
 
 msgid "Could not set organization parameter"
-msgstr "No s'ha pogut establir el paràmetre de l'organització"
+msgstr ""
 
 msgid "Delete parameter for an organization"
-msgstr ""
+msgstr "Smazat parametr pro organizaci"
 
 msgid "Could not delete organization parameter"
-msgstr "No s'ha pogut suprimir el paràmetre de l'organització"
+msgstr ""
 
 msgid "id"
-msgstr ""
+msgstr "identif."
 
 msgid "Kind"
-msgstr "Tipus"
+msgstr "Druh"
 
 msgid "parameter name"
-msgstr "nom del paràmetre"
+msgstr "název parametru"
 
 msgid "Locked"
-msgstr ""
+msgstr "Uzamčeno"
 
 msgid "View partition table content"
-msgstr ""
+msgstr "Zobrazit obsah tabulky rozdělení úložiště"
 
 msgid "Path to a file that contains the partition layout"
-msgstr "Camí a un fitxer que conté l'esquema del particionatge"
+msgstr "Popis umístění souboru který obsahuje rozvržení úložiště"
 
 msgid "Partition table created."
-msgstr ""
+msgstr "Tabulka rozdělení úložiště vytvořena."
 
 msgid "Could not create the partition table"
-msgstr "No s'ha pogut crear la taula de particions"
+msgstr "Nedaří se vytvořit tabulku rozdělení úložiště"
 
 msgid "Partition table updated."
-msgstr ""
+msgstr "Tabulka rozdělení úložiště aktualizována."
 
 msgid "Could not update the partition table"
-msgstr "No s'ha pogut actualitzar la taula de particions"
+msgstr "Nedaří se aktualizovat tabulku rozdělení úložiště"
 
 msgid "Partition table deleted."
-msgstr ""
+msgstr "Tabulka rozdělení úložiště smazána."
 
 msgid "Could not delete the partition table"
-msgstr "No s'ha pogut suprimir la taula de particions"
+msgstr "Nedaří se smazat tabulku rozdělení úložiště"
 
 msgid "Path to a file that contains the template content including metadata"
 msgstr ""
@@ -2440,7 +2439,7 @@ msgid "Manage personal access tokens"
 msgstr ""
 
 msgid "Active"
-msgstr "Actiu"
+msgstr "Aktivní"
 
 msgid "Expires at"
 msgstr ""
@@ -2454,7 +2453,7 @@ msgid "Could not create personal access token"
 msgstr ""
 
 msgid "Created at"
-msgstr "Es va crear el"
+msgstr "Vytvořeno v"
 
 msgid "Last used at"
 msgstr ""
@@ -2466,16 +2465,16 @@ msgid "Could not revoke personal access token"
 msgstr ""
 
 msgid "database"
-msgstr ""
+msgstr "databáze"
 
 msgid "Server Response"
-msgstr ""
+msgstr "Odpověď ze serveru"
 
 msgid "Realm proxy id"
 msgstr ""
 
 msgid "Realm type"
-msgstr "Tipus de reialme"
+msgstr ""
 
 msgid "Realm [%{name}] created."
 msgstr ""
@@ -2496,88 +2495,88 @@ msgid "Could not delete the realm"
 msgstr ""
 
 msgid "Updated at"
-msgstr "Es va actualitzar el"
+msgstr "Aktualizováno v"
 
 msgid "Users"
-msgstr "Usuaris"
+msgstr "Uživatelé"
 
 msgid "User groups"
-msgstr "Grups dels usuaris"
+msgstr "Skupiny uživatelů"
 
 msgid "Usergroup"
-msgstr "Grup d'usuari"
+msgstr "Skupina uživatelů"
 
 msgid "Roles"
-msgstr "Rols"
+msgstr "Role"
 
 msgid "Inherited User groups"
-msgstr "Grups d'usuaris heretats"
+msgstr "Převzaté skupiny uživatelů"
 
 msgid "Smart proxies"
-msgstr "Servidors intermediaris intel·ligents"
+msgstr "Smart proxy"
 
 msgid "Compute profiles"
-msgstr "Perfils computacionals"
+msgstr "Výpočetní profily"
 
 msgid "Compute resources"
-msgstr "Recursos computacionals"
+msgstr "Výpočetní prostředky"
 
 msgid "Installation media"
-msgstr "Mitjans d'instal·lació"
+msgstr "Instalační médium"
 
 msgid "Templates"
-msgstr "Plantilles"
+msgstr "Šablony"
 
 msgid "Partition Tables"
-msgstr "Taules de particions"
+msgstr "Tabulky rozdělení úložiště"
 
 msgid "Domains"
-msgstr "Dominis"
+msgstr "Domény"
 
 msgid "Realms"
-msgstr "Reialmes"
-
-msgid "Hostgroups"
-msgstr "Grups d'amfitrions"
-
-msgid "Subnets"
-msgstr "Subxarxes"
-
-msgid "Parameters"
-msgstr "Paràmetres"
-
-msgid "All parameters"
 msgstr ""
 
+msgid "Hostgroups"
+msgstr "Skupiny strojů"
+
+msgid "Subnets"
+msgstr "Podsítě"
+
+msgid "Parameters"
+msgstr "Parametry"
+
+msgid "All parameters"
+msgstr "Všechny parametry"
+
 msgid "Operating systems"
-msgstr "Sistemes operatius"
+msgstr "Operační systémy"
 
 msgid "External user groups"
-msgstr "Grups d'usuaris externs"
+msgstr ""
 
 msgid "Failed to generate registration command"
 msgstr ""
 
 msgid "Default"
-msgstr "Per defecte"
+msgstr "Výchozí"
 
 msgid "Template inputs"
-msgstr ""
+msgstr "Vstupy šablony"
 
 msgid "Required"
-msgstr "Obligatori"
+msgstr "Vyžadováno"
 
 msgid "Options"
-msgstr "Opcions"
+msgstr "Volby"
 
 msgid "View report content"
-msgstr ""
+msgstr "Zobrazit obsah výkazu"
 
 msgid "Generate report"
-msgstr ""
+msgstr "Vytvořit výkaz"
 
 msgid "Specify inputs"
-msgstr ""
+msgstr "Zadejte vstupy"
 
 msgid ""
 "Turns a command to be active, wait for the result and download it right away"
@@ -2589,7 +2588,7 @@ msgid ""
 msgstr ""
 
 msgid "The report has been scheduled. Job ID: %{job_id}"
-msgstr ""
+msgstr "Vytvoření výkazu bylo naplánováno. Identif. výkazu: %{job_id}"
 
 msgid ""
 "Path to a file that contains the report template content including metadata"
@@ -2605,74 +2604,74 @@ msgid "The report template has been saved to %{path}."
 msgstr ""
 
 msgid "The report is not ready yet."
-msgstr ""
+msgstr "Výkaz ještě není hotový."
 
 msgid "Open empty template in an $EDITOR. Upload the result"
 msgstr ""
 
 msgid "Path to a file that contains the report template content"
-msgstr ""
+msgstr "Popis umístění souboru, který obsahuje šablonu výkazu"
 
 msgid "Report template created."
-msgstr ""
+msgstr "Šablona výkazu vytvořena."
 
 msgid "Could not create the report template"
-msgstr ""
+msgstr "Šablonu výkazu se nedaří vytvořit"
 
 msgid ""
 "Dump existing template and open it in an $EDITOR. Update with the result"
 msgstr ""
 
 msgid "Report template updated."
-msgstr ""
+msgstr "Šablona výkazu aktualizována."
 
 msgid "Could not update the report template"
-msgstr ""
+msgstr "Šablonu výkazu se nedaří aktualizovat"
 
 msgid "Report template cloned."
-msgstr ""
+msgstr "Šablona výkazu naklonována."
 
 msgid "Could not clone the report template"
-msgstr ""
+msgstr "Šablonu výkazu se nedaří naklonovat"
 
 msgid "Report template deleted."
-msgstr ""
+msgstr "Šablona hlášení smazána."
 
 msgid "Could not delete the report template"
-msgstr ""
+msgstr "Šablonu výkazu se nedaří smazat"
 
 msgid "The server does not support such operation."
-msgstr "El servidor no admet aquest tipus d'operació."
+msgstr "Server nepodporuje takovou operaci."
 
 msgid "Builtin"
-msgstr "Integrat"
+msgstr "Vestavěné"
 
 msgid "User role id"
-msgstr "ID del rol d'usuari"
+msgstr "Identifikátor uživatelské role"
 
 msgid "User role [%<name>s] created."
-msgstr ""
+msgstr "Uživatelská role [%<name>s] vytvořena."
 
 msgid "Could not create the user role"
-msgstr "No s'ha pogut crear el rol d'usuari"
+msgstr "Uživatelskou roli se nedaří vytvořit"
 
 msgid "User role [%<name>s] updated."
-msgstr ""
+msgstr "Uživatelská role [%<name>s] aktualizována."
 
 msgid "Could not update the user role"
-msgstr "No s'ha pogut actualitzar el rol d'usuari"
+msgstr "Uživatelskou roli se nedaří aktualizovat"
 
 msgid "User role cloned."
-msgstr ""
+msgstr "Uživatelská role naklonována."
 
 msgid "Could not clone the user role"
 msgstr ""
 
 msgid "User role [%<name>s] deleted."
-msgstr ""
+msgstr "Uživatelská role [%<name>s] smazána."
 
 msgid "Could not delete the user roles"
-msgstr "No s'han pogut suprimir els rols d'usuari"
+msgstr "Uživatelskou roli se nedaří smazat"
 
 msgid "Sessions are not enabled, please check your Hammer settings."
 msgstr ""
@@ -2692,16 +2691,16 @@ msgid "Invalid permissions for %{file}: %{mode}, expected %{expected_mode}."
 msgstr ""
 
 msgid "Invalid session data. Resetting the session."
-msgstr ""
+msgstr "Neplatná data relace. Relace bude restartována."
 
 msgid "Full name"
-msgstr ""
+msgstr "Celé jméno"
 
 msgid "Setting [%{name}] updated to [%{value}]."
 msgstr ""
 
 msgid "Could not update the setting"
-msgstr "No s'han pogut actualitzar els rols d'usuari"
+msgstr "Rozhraní se nepodařilo aktualizovat"
 
 msgid "Category"
 msgstr ""
@@ -2710,10 +2709,10 @@ msgid "Settings type"
 msgstr ""
 
 msgid "Features"
-msgstr "Característiques"
+msgstr "Funkce"
 
 msgid "Version"
-msgstr "Versió"
+msgstr "Verze"
 
 msgid "Host_count"
 msgstr ""
@@ -2722,27 +2721,25 @@ msgid "Smart proxy created."
 msgstr ""
 
 msgid "Could not create the proxy"
-msgstr "No s'ha pogut crear el servidor intermediari"
+msgstr "Proxy se nedaří vytvořit"
 
 msgid "Smart proxy updated."
 msgstr ""
 
 msgid "Could not update the proxy"
-msgstr "No s'ha pogut actualitzar el servidor intermediari"
+msgstr "Proxy se nedaří aktualizovat"
 
 msgid "Smart proxy deleted."
 msgstr ""
 
 msgid "Could not delete the proxy"
-msgstr "No s'ha pogut suprimir el servidor intermediari"
+msgstr "Proxy se nedaří smazat"
 
 msgid "Smart proxy features were refreshed."
 msgstr ""
 
 msgid "Refresh of smart proxy features failed"
 msgstr ""
-"No s'han pogut refrescar les característiques del servidor intermediari "
-"intel·ligent"
 
 msgid "Import subnets succeeded."
 msgstr ""
@@ -2751,85 +2748,85 @@ msgid "Could not import subnets"
 msgstr ""
 
 msgid "Manage SSH Keys sources"
-msgstr ""
+msgstr "Spravovat zdroje SSH klíčů"
 
 msgid "Fingerprint"
-msgstr "Empremta"
+msgstr "Otisk"
 
 msgid "Length"
-msgstr ""
+msgstr "Délka"
 
 msgid "Path to a SSH public key"
-msgstr ""
+msgstr "Popis umístění veřejné části SSH klíče"
 
 msgid "SSH Key %{name} added."
-msgstr ""
+msgstr "SSH klíč %{name} přidán."
 
 msgid "Could not add SSH Key"
-msgstr ""
+msgstr "Nedaří se přidat SSH klíč"
 
 msgid "Public Key"
-msgstr ""
+msgstr "Veřejný klíč"
 
 msgid "SSH Key deleted."
-msgstr ""
+msgstr "SSH klíč smazán."
 
 msgid "Could not delete the SSH Key"
-msgstr ""
+msgstr "SSH klíč se nepodařilo smazat"
 
 msgid "API Version"
-msgstr ""
+msgstr "Verze API"
 
 msgid "Database"
-msgstr ""
+msgstr "Databáze"
 
 msgid "Plugins"
-msgstr "Connectors"
+msgstr "Zásuvné moduly"
 
 msgid "Smart Proxies"
-msgstr "Servidors intermediaris intel·ligents"
+msgstr ""
 
 msgid "Failed features"
-msgstr ""
+msgstr "Funkce, které zhavarovali"
 
 msgid "Error"
-msgstr "Error"
+msgstr "Chyba"
 
 msgid "Compute Resources"
-msgstr "Recursos computacionals"
+msgstr "Výpočetní prostředky"
 
 msgid "Errors"
-msgstr "Errors"
+msgstr "Chyby"
 
 msgid "Network Addr"
-msgstr ""
+msgstr "Síťová adresa"
 
 msgid "Network Prefix"
-msgstr "Prefix de xarxa"
+msgstr "Předpona sítě"
 
 msgid "Network Mask"
-msgstr "Màscara de xarxa"
+msgstr "Maska sítě"
 
 msgid "Boot Mode"
-msgstr "Mode d'arrencada"
+msgstr "Režim zavádění"
 
 msgid "Gateway Address"
-msgstr "Adreça de la passarel·la"
+msgstr "Adresa brány"
 
 msgid "Protocol"
-msgstr ""
+msgstr "Protokol"
 
 msgid "Priority"
-msgstr "Prioritat"
+msgstr "Priorita"
 
 msgid "Gateway Addr"
-msgstr ""
+msgstr "Adresa brány"
 
 msgid "Primary DNS"
-msgstr "DNS primari"
+msgstr "Hlavní DNS"
 
 msgid "Secondary DNS"
-msgstr "DNS secundari"
+msgstr "Záložní DNS"
 
 msgid "TFTP"
 msgstr "TFTP"
@@ -2838,52 +2835,52 @@ msgid "DHCP"
 msgstr "DHCP"
 
 msgid "IPAM"
-msgstr "IPAM"
+msgstr ""
 
 msgid "Start of IP Range"
-msgstr ""
+msgstr "Začátek rozsahu IP adres"
 
 msgid "End of IP Range"
-msgstr ""
+msgstr "Konec rozsahu IP adres"
 
 msgid "MTU"
 msgstr ""
 
 msgid "Subnet created."
-msgstr ""
+msgstr "Podsíť vytvořena."
 
 msgid "Could not create the subnet"
-msgstr "No s'ha pogut crear la subxarxa"
+msgstr "Podsíť se nedaří vytvořit"
 
 msgid "Subnet updated."
-msgstr ""
+msgstr "Podsíť aktualizována."
 
 msgid "Could not update the subnet"
-msgstr "No s'ha pogut actualitzar la subxarxa"
+msgstr "Podsíť se nedaří aktualizovat"
 
 msgid "Subnet deleted."
-msgstr ""
+msgstr "Podsíť smazána."
 
 msgid "Could not delete the subnet"
-msgstr "No s'ha pogut suprimir la subxarxa"
+msgstr "Podsíť se nedaří smazat"
 
 msgid "Create or update parameter for a subnet"
 msgstr ""
 
 msgid "Subnet parameter updated"
-msgstr ""
+msgstr "Parametr podsíť aktualizován"
 
 msgid "New subnet parameter created"
-msgstr ""
+msgstr "Nový parametr podsíť vytvořen"
 
 msgid "Could not set subnet parameter"
-msgstr ""
+msgstr "Nedaří se získat parametr podsíť"
 
 msgid "Delete parameter for a subnet"
-msgstr ""
+msgstr "Smazat parametr pro podsíť"
 
 msgid "Subnet parameter deleted."
-msgstr ""
+msgstr "Parametr podsíť smazán."
 
 msgid "Columns"
 msgstr ""
@@ -2907,7 +2904,7 @@ msgid "Could not remove table preference"
 msgstr ""
 
 msgid "Environment name"
-msgstr "Nom de l'entorn"
+msgstr "Název prostředí"
 
 msgid "List available provisioning template kinds"
 msgstr ""
@@ -2916,10 +2913,10 @@ msgid "View provisioning template content"
 msgstr ""
 
 msgid "Path to a file that contains the template"
-msgstr "Camí a un fitxer que conté la plantilla"
+msgstr "Popis umístění souboru obsahujícího šablonu"
 
 msgid "Template type. Eg. snippet, script, provision"
-msgstr "Tipus de plantilla. p. ex. snippet, script, provision"
+msgstr ""
 
 msgid "Provisioning template created."
 msgstr ""
@@ -2950,7 +2947,6 @@ msgstr ""
 
 msgid "Update the default PXE menu on all configured TFTP servers"
 msgstr ""
-"Actualitza el menú PXE per defecte en tots els servidors TFTP configurats"
 
 msgid "Provisioning template cloned."
 msgstr ""
@@ -2959,64 +2955,64 @@ msgid "Could not clone the provisioning template"
 msgstr ""
 
 msgid "Login"
-msgstr "Entra"
+msgstr "Přihlášení"
 
 msgid "Email"
-msgstr "Correu electrònic"
+msgstr "E-mail"
 
 msgid "Admin"
-msgstr "Administrador"
+msgstr "Správce"
 
 msgid "Disabled"
-msgstr "Inhabilitada"
+msgstr "Vypnuto"
 
 msgid "Last login"
-msgstr "Últim inici de sessió"
+msgstr "Poslední přihlášení"
 
 msgid "Authorized by"
-msgstr "Autoritzat per"
+msgstr "Kým pověřeno"
 
 msgid "Email enabled"
 msgstr ""
 
 msgid "Effective admin"
-msgstr ""
+msgstr "Skutečný správce"
 
 msgid "Locale"
-msgstr "Configuració regional"
+msgstr "Místní a jazyková nastavení"
 
 msgid "Timezone"
-msgstr "Franja horària"
+msgstr "Časová zóna"
 
 msgid "Default organization"
-msgstr "Organització per defecte"
+msgstr "Výchozí organizace"
 
 msgid "Default location"
-msgstr "Ubicació per defecte"
+msgstr "Výchozí umístění"
 
 msgid "default"
-msgstr "per defecte"
+msgstr "výchozí"
 
 msgid "User [%{login}] created."
-msgstr ""
+msgstr "Uživatel [%{login}] vytvořen."
 
 msgid "Could not create the user"
-msgstr "No s'ha pogut crear l'usuari"
+msgstr "Uživatele se nedaří vytvořit"
 
 msgid "User [%{login}] updated."
-msgstr ""
+msgstr "Uživatel [%{login}] aktualizován."
 
 msgid "Could not update the user"
-msgstr "No s'ha pogut actualitzar l'usuari"
+msgstr "Uživatele se nedaří aktualizovat"
 
 msgid "User [%{login}] deleted."
-msgstr ""
+msgstr "Uživatel [%{login}] smazán."
 
 msgid "Could not delete the user"
-msgstr "No s'ha pogut suprimir l'usuari"
+msgstr "Uživatele se nedaří smazat"
 
 msgid "Managing User SSH Keys."
-msgstr ""
+msgstr "Správa uživatelských SSH klíčů."
 
 msgid "Managing personal access tokens"
 msgstr ""
@@ -3046,28 +3042,28 @@ msgid "Could not remove user mail notification"
 msgstr ""
 
 msgid "Interval"
-msgstr ""
+msgstr "Interval"
 
 msgid "Mail query"
 msgstr ""
 
 msgid "User group [%<name>s] created."
-msgstr ""
+msgstr "Skupina uživatelů [%<name>s] vytvořena."
 
 msgid "Could not create the user group"
-msgstr "No s'ha pogut crear el grup d'usuaris"
+msgstr "Skupinu uživatelů se nedaří vytvořit"
 
 msgid "User group [%<name>s] updated."
 msgstr ""
 
 msgid "Could not update the user group"
-msgstr "No s'ha pogut actualitzar el grup d'usuaris"
+msgstr "Skupinu uživatelů se nedaří aktualizovat"
 
 msgid "User group [%<name>s] deleted."
-msgstr ""
+msgstr "Skupina uživatelů [%<name>s] smazána."
 
 msgid "Could not delete the user group"
-msgstr "No s'ha pogut suprimir el grup d'usuaris"
+msgstr "Skupinu uživatelů se nedaří smazat"
 
 msgid "View and manage compute resource's virtual machines"
 msgstr ""
