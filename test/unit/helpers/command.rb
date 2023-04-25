@@ -6,7 +6,31 @@ class IdResolverTestProxy
 
   def initialize(original_resolver)
     @original_resolver = original_resolver
-    define_id_finders
+  end
+
+  def self.for_resolver(original_resolver)
+    resolver = Class.new(IdResolverTestProxy) do |cls|
+      original_resolver.api.resources.each do |resource|
+        method_name = "#{resource.singular_name}_id"
+        cls.define_method(method_name) do |options|
+          value = options[HammerCLI.option_accessor_name("id")]
+          value ||= HammerCLI::NilValue if searchables(resource).any? do |s|
+            options[HammerCLI.option_accessor_name(s.name)] == HammerCLI::NilValue
+          end
+          value ||= 1 if searchables(resource).any? do |s|
+            !options[HammerCLI.option_accessor_name(s.name)].nil?
+          end
+          value
+        end
+
+        method_name = "#{resource.singular_name}_ids"
+        cls.define_method(method_name) do |options|
+          options["option_#{resource.singular_name}_ids"].nil? ? nil : [1]
+        end
+      end
+    end
+
+    resolver.new(original_resolver)
   end
 
   def scoped_options(scope, options, mode = nil)
@@ -16,30 +40,6 @@ class IdResolverTestProxy
   def searchables(resource)
     @original_resolver.searchables(resource)
   end
-
-  protected
-
-  def define_id_finders
-    @original_resolver.api.resources.each do |resource|
-      method_name = "#{resource.singular_name}_id"
-      self.class.send(:define_method, method_name) do |options|
-        value = options[HammerCLI.option_accessor_name("id")]
-        value ||= HammerCLI::NilValue if searchables(resource).any? do |s|
-          options[HammerCLI.option_accessor_name(s.name)] == HammerCLI::NilValue
-        end
-        value ||= 1 if searchables(resource).any? do |s|
-          !options[HammerCLI.option_accessor_name(s.name)].nil?
-        end
-        value
-      end
-
-      method_name = "#{resource.singular_name}_ids"
-      self.class.send(:define_method, method_name) do |options|
-        options["option_#{resource.singular_name}_ids"].nil? ? nil : [1]
-      end
-    end
-  end
-
 end
 
 
@@ -50,7 +50,7 @@ module CommandTestHelper
 
     base.before :each do
       resolver = cmd.resolver
-      cmd.stubs(:resolver).returns(IdResolverTestProxy.new(resolver))
+      cmd.stubs(:resolver).returns(IdResolverTestProxy.for_resolver(resolver))
     end
   end
 
