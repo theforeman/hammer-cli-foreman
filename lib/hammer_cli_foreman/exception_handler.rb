@@ -99,7 +99,7 @@ module HammerCLIForeman
         response = JSON.parse(e.response)
         response = HammerCLIForeman.record_to_common_format(response) unless response.has_key?('message')
         message = response['message'] || e.message
-      rescue JSON::ParserError => parse_e
+      rescue JSON::ParserError
         message = e.message
       end
 
@@ -123,13 +123,7 @@ module HammerCLIForeman
       host_url = HammerCLI::Settings.get(:_params, :host) || HammerCLI::Settings.get(:foreman, :host)
       uri = URI.parse(host_url)
       ssl_option = HammerCLI::SSLOptions.new.get_options(uri)
-      if uri.host.nil?
-        host = '<FOREMAN_HOST>'
-        cert_name = "#{host}.crt"
-      else
-        host = uri.to_s
-        cert_name = "#{uri.host}.crt"
-      end
+      host = uri.host.nil? ? '<FOREMAN_HOST>' : uri.to_s
 
       cmd = "hammer --fetch-ca-cert #{host}"
 

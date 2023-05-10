@@ -63,7 +63,7 @@ module CommandTestHelper
     def with_params(params, &block)
       context "with params "+params.to_s do
         let(:with_params) { params }
-        self.instance_eval &block
+        self.instance_eval(&block)
       end
     end
 
@@ -95,7 +95,7 @@ module CommandTestHelper
 
     def it_should_accept(message, arguments=[])
       it "should accept " + message.to_s do
-        out, err = capture_io do
+        _out, _err = capture_io do
           _(cmd.run(arguments)).must_equal HammerCLI::EX_OK
         end
       end
@@ -105,7 +105,7 @@ module CommandTestHelper
       it "should output '" + message.to_s + "'" do
         arguments ||= respond_to?(:with_params) ? with_params : []
         cmd.stubs(:context).returns(ctx.update(:adapter => adapter))
-        out, err = capture_io do
+        out, _ = capture_io do
           cmd.run(arguments)
         end
         _(out).must_include message
@@ -117,11 +117,11 @@ module CommandTestHelper
         arguments ||= respond_to?(:with_params) ? with_params : []
 
         cmd.stubs(:context).returns(ctx.update(:adapter => :test))
-        out, err = capture_io do
+        out, _ = capture_io do
           cmd.run(arguments)
         end
 
-        _(out.split("\n")[0]).must_match /.*##{column_name}#.*/
+        _(out.split("\n")[0]).must_match(/.*##{column_name}#.*/)
       end
     end
 
@@ -137,7 +137,7 @@ module CommandTestHelper
 
         cmd.stubs(:context).returns(ctx.update(:adapter => :test))
         count ||= expected_record_count rescue 0
-        out, err = capture_io do
+        out, _ = capture_io do
           cmd.run(arguments)
         end
         _(out.split(/\n/).length).must_equal count+1 # plus 1 for line with column headers

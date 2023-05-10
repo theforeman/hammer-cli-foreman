@@ -262,7 +262,7 @@ describe 'update' do
 
     api_expects(:locations, :index)
     api_expects(:locations, :update, 'Update a location') do |params|
-      (params['location']['id'] == '1')
+      (params['id'] == '1') &&
       (params['location']['name'] == 'Default Location test')
     end
 

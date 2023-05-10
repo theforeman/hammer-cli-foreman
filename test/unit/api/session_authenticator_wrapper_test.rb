@@ -141,7 +141,7 @@ describe HammerCLIForeman::Api::SessionAuthenticatorWrapper do
 
     context "when the session file is corrupted" do
       it 'reports error' do
-        dir, out, err = prepare_session_storage :session_id => 'SOME_SESSION_ID' do |auth, dir|
+        _dir, _out, err = prepare_session_storage :session_id => 'SOME_SESSION_ID' do |auth, dir|
           write_session(dir, '{not a valid: json')
 
           wrapped_auth.expects(:authenticate).with(request, args)

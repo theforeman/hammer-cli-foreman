@@ -101,7 +101,7 @@ describe 'Settings' do
       params = ['--id=1', '--value=true']
 
       api_expects(:settings, :update, 'Update a setting') do |params|
-        (params['setting']['id'] == '1')
+        (params['id'] == '1') &&
         (params['setting']['value'] == 'true')
       end
 
