@@ -1,24 +1,22 @@
-# SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# Czech translations for hammer-cli-foreman package.
+# Copyright (C) 2023 THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the hammer-cli-foreman package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2023.
 #
-# Translators:
-# Robert Antoni Buj i Gelonch <rbuj@fedoraproject.org>, 2017
-# Robert Antoni Buj i Gelonch <rbuj@fedoraproject.org>, 2015-2016
 msgid ""
 msgstr ""
 "Project-Id-Version: hammer-cli-foreman 3.7.0.pre.develop\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-10-31 15:16+0000\n"
-"PO-Revision-Date: 2014-03-14 09:55+0000\n"
-"Last-Translator: Robert Antoni Buj i Gelonch <rbuj@fedoraproject.org>, 2017\n"
-"Language-Team: Catalan (http://www.transifex.com/foreman/foreman/language/"
-"ca/)\n"
+"PO-Revision-Date: 2023-05-11 14:30+0200\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: Czech\n"
+"Language: cs_CZ\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: ca\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Plural-Forms: nplurals=; plural=;\n"
+"\n"
 
 msgid "Foreman connection login/logout"
 msgstr ""
@@ -195,103 +193,103 @@ msgid "Session has expired."
 msgstr ""
 
 msgid "Id"
-msgstr "ID"
+msgstr ""
 
 msgid "Name"
-msgstr "Nom"
+msgstr ""
 
 msgid "Architecture created."
 msgstr ""
 
 msgid "Could not create the architecture"
-msgstr "No s'ha pogut crear l'arquitectura"
+msgstr ""
 
 msgid "Architecture deleted."
 msgstr ""
 
 msgid "Could not delete the architecture"
-msgstr "No s'ha pogut suprimir l'arquitectura"
+msgstr ""
 
 msgid "Architecture updated."
 msgstr ""
 
 msgid "Could not update the architecture"
-msgstr "No s'ha pogut actualitzar l'arquitectura"
+msgstr ""
 
 msgid "Associate a hostgroup"
-msgstr "Associa un grup d'amfitrions"
+msgstr ""
 
 msgid "The hostgroup has been associated."
 msgstr ""
 
 msgid "Could not associate the hostgroup"
-msgstr "No s'ha pogut associar el grup d'amfitrions"
+msgstr ""
 
 msgid "Disassociate a hostgroup"
-msgstr "Desassocia un grup d'amfitrions"
+msgstr ""
 
 msgid "The hostgroup has been disassociated."
 msgstr ""
 
 msgid "Could not disassociate the hostgroup"
-msgstr "No s'ha pogut desassociar el grup d'amfitrions"
+msgstr ""
 
 msgid "Associate a domain"
-msgstr "Associa un domini"
+msgstr ""
 
 msgid "The domain has been associated."
 msgstr ""
 
 msgid "Could not associate the domain"
-msgstr "No s'ha pogut associar el domini"
+msgstr ""
 
 msgid "Disassociate a domain"
-msgstr "Desassocia un domini"
+msgstr ""
 
 msgid "The domain has been disassociated."
 msgstr ""
 
 msgid "Could not disassociate the domain"
-msgstr "No s'ha pogut desassociar el domini"
+msgstr ""
 
 msgid "Associate a medium"
-msgstr "Associa un mitjà"
+msgstr ""
 
 msgid "The medium has been associated."
 msgstr ""
 
 msgid "Could not associate the medium"
-msgstr "No s'ha pogut associar el mitjà"
+msgstr ""
 
 msgid "Disassociate a medium"
-msgstr "Desassocia un mitjà"
+msgstr ""
 
 msgid "The medium has been disassociated."
 msgstr ""
 
 msgid "Could not disassociate the medium"
-msgstr "No s'ha pogut desassociar el mitjà"
+msgstr ""
 
 msgid "Associate a subnet"
-msgstr "Associa una subxarxa"
+msgstr ""
 
 msgid "The subnet has been associated."
 msgstr ""
 
 msgid "Could not associate the subnet"
-msgstr "No s'ha pogut associar la subxarxa"
+msgstr ""
 
 msgid "Disassociate a subnet"
-msgstr "Desassocia una subxarxa"
+msgstr ""
 
 msgid "The subnet has been disassociated."
 msgstr ""
 
 msgid "Could not disassociate the subnet"
-msgstr "No s'ha pogut desassociar la subxarxa"
+msgstr ""
 
 msgid "Associate a compute resource"
-msgstr "Associa un recurs computacional"
+msgstr ""
 
 msgid "The compute resource has been associated."
 msgstr ""
@@ -300,7 +298,7 @@ msgid "Could not associate the compute resource"
 msgstr ""
 
 msgid "Disassociate a compute resource"
-msgstr "Desassocia un recurs computacional"
+msgstr ""
 
 msgid "The compute resource has been disassociated."
 msgstr ""
@@ -309,7 +307,7 @@ msgid "Could not disassociate the compute resource"
 msgstr ""
 
 msgid "Associate a smart proxy"
-msgstr "Associa un servidor intermediari intel·ligent"
+msgstr ""
 
 msgid "The smart proxy has been associated."
 msgstr ""
@@ -318,7 +316,7 @@ msgid "Could not associate the smart proxy"
 msgstr ""
 
 msgid "Disassociate a smart proxy"
-msgstr "Desassocia un servidor intermediari intel·ligent"
+msgstr ""
 
 msgid "The smart proxy has been disassociated."
 msgstr ""
@@ -327,40 +325,40 @@ msgid "Could not disassociate the smart proxy"
 msgstr ""
 
 msgid "Associate an user"
-msgstr "Associa un usuari"
+msgstr ""
 
 msgid "The user has been associated."
 msgstr ""
 
 msgid "Could not associate the user"
-msgstr "No s'ha pogut associar l'usuari"
+msgstr ""
 
 msgid "Disassociate an user"
-msgstr "Desassocia un usuari"
+msgstr ""
 
 msgid "The user has been disassociated."
 msgstr ""
 
 msgid "Could not disassociate the user"
-msgstr "No s'ha pogut desassociar l'usuari"
+msgstr ""
 
 msgid "Associate an user group"
-msgstr "Associa un grup d'usuaris"
+msgstr ""
 
 msgid "The user group has been associated."
 msgstr ""
 
 msgid "Could not associate the user group"
-msgstr "No s'ha pogut associar el grup d'usuaris"
+msgstr ""
 
 msgid "Disassociate an user group"
-msgstr "Desassocia un grup d'usuaris"
+msgstr ""
 
 msgid "The user group has been disassociated."
 msgstr ""
 
 msgid "Could not disassociate the user group"
-msgstr "No s'ha pogut desassociar el grup d'usuaris"
+msgstr ""
 
 msgid "Associate provisioning templates"
 msgstr ""
@@ -400,7 +398,7 @@ msgid "Could not disassociate the provisioning templates"
 msgstr ""
 
 msgid "Associate an organization"
-msgstr "Associa una organització"
+msgstr ""
 
 msgid "The organization has been associated."
 msgstr ""
@@ -409,7 +407,7 @@ msgid "Could not associate the organization"
 msgstr ""
 
 msgid "Disassociate an organization"
-msgstr "Desassocia una organització"
+msgstr ""
 
 msgid "The organization has been disassociated."
 msgstr ""
@@ -418,76 +416,76 @@ msgid "Could not disassociate the organization"
 msgstr ""
 
 msgid "Associate an operating system"
-msgstr "Associa un sistema operatiu"
+msgstr ""
 
 msgid "Operating system has been associated."
 msgstr ""
 
 msgid "Could not associate the operating system"
-msgstr "No s'ha pogut associar el sistema operatiu"
+msgstr ""
 
 msgid "Disassociate an operating system"
-msgstr "Desassocia un sistema operatiu"
+msgstr ""
 
 msgid "Operating system has been disassociated."
 msgstr ""
 
 msgid "Could not disassociate the operating system"
-msgstr "No s'ha pogut desassociar el sistema operatiu"
+msgstr ""
 
 msgid "Associate an architecture"
-msgstr "Associa una arquitectura"
+msgstr ""
 
 msgid "Architecture has been associated."
 msgstr ""
 
 msgid "Could not associate the architecture"
-msgstr "No s'ha pogut associar l'arquitectura"
+msgstr ""
 
 msgid "Disassociate an architecture"
-msgstr "Desassocia una arquitectura"
+msgstr ""
 
 msgid "Architecture has been disassociated."
 msgstr ""
 
 msgid "Could not disassociate the architecture"
-msgstr "No s'ha pogut desassociar l'arquitectura"
+msgstr ""
 
 msgid "Associate a partition table"
-msgstr "Associa una taula de particions"
+msgstr ""
 
 msgid "Partition table has been associated."
 msgstr ""
 
 msgid "Could not associate the partition table"
-msgstr "No s'ha pogut associar la taula de particions"
+msgstr ""
 
 msgid "Disassociate a partition table"
-msgstr "Desassocia una taula de particions"
+msgstr ""
 
 msgid "Partition table has been disassociated."
 msgstr ""
 
 msgid "Could not disassociate the partition table"
-msgstr "No s'ha pogut desassociar la taula de particions"
+msgstr ""
 
 msgid "Assign a user role"
-msgstr "Assigna un rol d'usuari"
+msgstr ""
 
 msgid "User role has been assigned."
 msgstr ""
 
 msgid "Could not assign the user role"
-msgstr "No s'ha pogut assignar el rol d'usuari"
+msgstr ""
 
 msgid "Remove a user role"
-msgstr "Suprimeix un rol d'usuari"
+msgstr ""
 
 msgid "User role has been removed."
 msgstr ""
 
 msgid "Could not remove the user role"
-msgstr "No s'ha pogut suprimir el rol d'usuari"
+msgstr ""
 
 msgid "Associate a location"
 msgstr ""
@@ -516,16 +514,16 @@ msgid ""
 msgstr ""
 
 msgid "At"
-msgstr "a les"
+msgstr ""
 
 msgid "IP"
-msgstr "IP"
+msgstr ""
 
 msgid "User"
-msgstr "Usuari"
+msgstr ""
 
 msgid "Action"
-msgstr "Acció"
+msgstr ""
 
 msgid "Audit type"
 msgstr ""
@@ -543,16 +541,16 @@ msgid "Attribute"
 msgstr ""
 
 msgid "Value"
-msgstr "Valor"
+msgstr ""
 
 msgid "Old"
-msgstr "Antic"
+msgstr ""
 
 msgid "New"
-msgstr "Nou"
+msgstr ""
 
 msgid "Set credentials"
-msgstr "Estableix les credencials"
+msgstr ""
 
 msgid "Username to access the remote system"
 msgstr ""
@@ -583,13 +581,13 @@ msgid "Redirect URI for the authentication code grant flow"
 msgstr ""
 
 msgid "Wipe your credentials"
-msgstr "Neteja les vostres credencials"
+msgstr ""
 
 msgid "Logged out."
 msgstr ""
 
 msgid "Information about current connections"
-msgstr "Informació sobre les connexions actuals"
+msgstr ""
 
 msgid "List all auth sources"
 msgstr ""
@@ -613,79 +611,79 @@ msgid "Manage LDAP auth sources"
 msgstr ""
 
 msgid "Server"
-msgstr "Servidor"
+msgstr ""
 
 msgid "Port"
-msgstr "Port"
+msgstr ""
 
 msgid "LDAPS?"
-msgstr "LDAPS?"
+msgstr ""
 
 msgid "LDAPS"
 msgstr ""
 
 msgid "Server Type"
-msgstr "Tipus de servidor"
+msgstr ""
 
 msgid "Account"
-msgstr "Compte"
+msgstr ""
 
 msgid "Account Username"
-msgstr "Nom d'usuari del compte"
+msgstr ""
 
 msgid "Base DN"
-msgstr "DN base"
+msgstr ""
 
 msgid "Groups base DN"
-msgstr "DN base dels grups"
+msgstr ""
 
 msgid "Use Netgroups"
-msgstr "Utilitza grups de xarxa"
+msgstr ""
 
 msgid "LDAP filter"
-msgstr "Filtre LDAP"
+msgstr ""
 
 msgid "Automatically Create Accounts?"
-msgstr "Voleu crear automàticament els comptes?"
+msgstr ""
 
 msgid "Usergroup sync"
-msgstr "Sincronització del grup d'usuaris"
+msgstr ""
 
 msgid "Attribute mappings"
-msgstr "Assignacions dels atributs"
+msgstr ""
 
 msgid "Login Name Attribute"
-msgstr "Atribut del nom d'usuari"
+msgstr ""
 
 msgid "First Name Attribute"
-msgstr "Atribut del nom"
+msgstr ""
 
 msgid "Last Name Attribute"
-msgstr "Atribut dels cognoms"
+msgstr ""
 
 msgid "Email Address Attribute"
-msgstr "Atribut de l'adreça de correu electrònic"
+msgstr ""
 
 msgid "Photo Attribute"
-msgstr "Atribut de la foto"
+msgstr ""
 
 msgid "Auth source [%{name}] created."
 msgstr ""
 
 msgid "Could not create the Auth Source"
-msgstr "No s'ha pogut crear l'origen d'autenticació"
+msgstr ""
 
 msgid "Auth source [%{name}] deleted."
 msgstr ""
 
 msgid "Could not delete the Auth Source"
-msgstr "No s'ha pogut suprimir l'origen d'autenticació"
+msgstr ""
 
 msgid "Auth source [%{name}] updated."
 msgstr ""
 
 msgid "Could not update the Auth Source"
-msgstr "No s'ha pogut actualitzar l'origen d'autenticació"
+msgstr ""
 
 msgid ""
 "Can't perform login. Make sure sessions are enabled in hammer configuration "
@@ -699,13 +697,13 @@ msgid "Search Query"
 msgstr ""
 
 msgid "Public"
-msgstr "Pública"
+msgstr ""
 
 msgid "Owner Id"
-msgstr "ID del propietari"
+msgstr ""
 
 msgid "Owner Type"
-msgstr "Tipus de propietari"
+msgstr ""
 
 msgid "Bookmark %<name>s created."
 msgstr ""
@@ -729,7 +727,7 @@ msgid "Manage template combinations"
 msgstr ""
 
 msgid "ID"
-msgstr "ID"
+msgstr ""
 
 msgid "Provisioning template ID"
 msgstr ""
@@ -741,13 +739,13 @@ msgid "Hostgroup ID"
 msgstr ""
 
 msgid "Hostgroup name"
-msgstr "Nom del grup d'amfitrions"
+msgstr ""
 
 msgid "Provisioning Template"
 msgstr ""
 
 msgid "Hostgroup"
-msgstr "Grup d'amfitrions"
+msgstr ""
 
 msgid "Template combination updated."
 msgstr ""
@@ -778,7 +776,6 @@ msgstr ""
 
 msgid "Name of DNS proxy to use within this domain"
 msgstr ""
-"Nom del servidor intermediari de DNS per utilitzar dins d'aquest domini"
 
 msgid "Provider specific options"
 msgstr ""
@@ -825,13 +822,13 @@ msgid "Network prefix in CIDR notation (e.g. 64) for this subnet"
 msgstr ""
 
 msgid "TFTP Proxy to use within this subnet"
-msgstr "Servidor intermediari de TFTP per utilitzar dins d'aquesta subxarxa"
+msgstr ""
 
 msgid "DNS Proxy to use within this subnet"
-msgstr "Servidor intermediari de DNS per utilitzar dins d'aquesta subxarxa"
+msgstr ""
 
 msgid "DHCP Proxy to use within this subnet"
-msgstr "Servidor intermediari DHCP per utilitzar dins d'aquesta subxarxa"
+msgstr ""
 
 msgid "BMC Proxy to use within this subnet"
 msgstr ""
@@ -849,7 +846,7 @@ msgid "Search / Order fields"
 msgstr ""
 
 msgid "Values"
-msgstr "Valors"
+msgstr ""
 
 msgid "%s Id"
 msgstr ""
@@ -861,7 +858,7 @@ msgid "Nothing to update."
 msgstr ""
 
 msgid "Associate a resource"
-msgstr "Associa un recurs"
+msgstr ""
 
 msgid "Could not associate the %{resource_name}."
 msgstr ""
@@ -870,7 +867,7 @@ msgid "The %{resource_name} has been associated."
 msgstr ""
 
 msgid "Disassociate a resource"
-msgstr "Desassocia un recurs"
+msgstr ""
 
 msgid "Could not disassociate the %{resource_name}."
 msgstr ""
@@ -888,22 +885,22 @@ msgid "Cannot save file: %s does not exist"
 msgstr ""
 
 msgid "Type"
-msgstr "Tipus"
+msgstr ""
 
 msgid "Set a global parameter"
 msgstr ""
 
 msgid "Created parameter [%{name}] with value [%{value}]."
-msgstr "S'ha creat el paràmetre global [%{name}] amb valor [%{value}]."
+msgstr ""
 
 msgid "Parameter [%{name}] updated to [%{value}]."
-msgstr "El paràmetre [%{name}] s'ha actualitzat a [%{value}]."
+msgstr ""
 
 msgid "Parameter name"
 msgstr ""
 
 msgid "Parameter value"
-msgstr "Valor del paràmetre"
+msgstr ""
 
 msgid "Should the value be hidden"
 msgstr ""
@@ -912,10 +909,10 @@ msgid "Type of the parameter"
 msgstr ""
 
 msgid "Global parameter [%{name}] deleted."
-msgstr "S'ha suprimit el paràmetre global [%{name}]."
+msgstr ""
 
 msgid "Could not delete the global parameter [%{name}]"
-msgstr "No s'ha pogut suprimir el paràmetre global [%{name}]"
+msgstr ""
 
 msgid "Manipulate global parameters"
 msgstr ""
@@ -1020,7 +1017,7 @@ msgid "Compute attributes"
 msgstr ""
 
 msgid "Compute Resource"
-msgstr "Recurs computacional"
+msgstr ""
 
 msgid "VM attributes"
 msgstr ""
@@ -1047,10 +1044,10 @@ msgid "Create update and delete Compute profile values"
 msgstr ""
 
 msgid "Provider"
-msgstr "Proveïdor"
+msgstr ""
 
 msgid "Description"
-msgstr "Descripció"
+msgstr ""
 
 msgid "Path to a file that contains oVirt public key (For oVirt only)"
 msgstr ""
@@ -1059,19 +1056,19 @@ msgid "Compute resource created."
 msgstr ""
 
 msgid "Could not create the compute resource"
-msgstr "No s'ha pogut crear el recurs computacional"
+msgstr ""
 
 msgid "Compute resource updated."
 msgstr ""
 
 msgid "Could not update the compute resource"
-msgstr "No s'ha pogut actualitzar el recurs computacional"
+msgstr ""
 
 msgid "Compute resource deleted."
 msgstr ""
 
 msgid "Could not delete the compute resource"
-msgstr "No s'ha pogut suprimir el recurs computacional"
+msgstr ""
 
 msgid "Associate a specific VM"
 msgstr ""
@@ -1083,7 +1080,7 @@ msgid "Could not associate the virtual machines"
 msgstr ""
 
 msgid "Datacenter"
-msgstr "Centre de dades"
+msgstr ""
 
 msgid "Hosts"
 msgstr ""
@@ -1095,7 +1092,7 @@ msgid "Virtual switch"
 msgstr ""
 
 msgid "VLAN ID"
-msgstr "ID de VLAN"
+msgstr ""
 
 msgid "VNIC profile ID"
 msgstr ""
@@ -1107,34 +1104,34 @@ msgid "Uuid"
 msgstr ""
 
 msgid "Path"
-msgstr "Camí"
+msgstr ""
 
 msgid "Parent"
-msgstr "Pare"
+msgstr ""
 
 msgid "Cluster"
 msgstr ""
 
 msgid "State"
-msgstr "Estat"
+msgstr ""
 
 msgid "Url"
-msgstr "URL"
+msgstr ""
 
 msgid "Region"
-msgstr "Regió"
+msgstr ""
 
 msgid "DNS"
-msgstr "DNS"
+msgstr ""
 
 msgid "DNS Name"
-msgstr "Nom DNS"
+msgstr ""
 
 msgid "Virtualization Type"
 msgstr ""
 
 msgid "Number of CPUs"
-msgstr "Nombre de CPU"
+msgstr ""
 
 msgid "String, amount of memory, value in bytes"
 msgstr ""
@@ -1164,13 +1161,13 @@ msgid "Initial allocation, e.g. 0G"
 msgstr ""
 
 msgid "CPUs"
-msgstr "Nombre de CPU"
+msgstr ""
 
 msgid "Memory"
-msgstr "Memòria"
+msgstr ""
 
 msgid "Status"
-msgstr "Estat"
+msgstr ""
 
 msgid "OS Type"
 msgstr ""
@@ -1185,7 +1182,7 @@ msgid "Boot order"
 msgstr ""
 
 msgid "Tenant"
-msgstr "Inquilí"
+msgstr ""
 
 msgid "Project domain name"
 msgstr ""
@@ -1251,7 +1248,7 @@ msgid "Disk interface name, must be ide, virto or virto_scsi"
 msgstr ""
 
 msgid "Cores"
-msgstr "Nuclis"
+msgstr ""
 
 msgid "Cluster ID from VMware"
 msgstr ""
@@ -1340,61 +1337,61 @@ msgid "Hardware Version"
 msgstr ""
 
 msgid "Operating System"
-msgstr "Sistema operatiu"
+msgstr ""
 
 msgid "Host"
-msgstr "Amfitrió"
+msgstr ""
 
 msgid "Last report"
-msgstr "Últim informe"
+msgstr ""
 
 msgid "Origin"
 msgstr ""
 
 msgid "Applied"
-msgstr "Aplicat"
+msgstr ""
 
 msgid "Restarted"
-msgstr "Reiniciat"
+msgstr ""
 
 msgid "Failed"
-msgstr "Fallat"
+msgstr ""
 
 msgid "Restart Failures"
-msgstr "Fallides dels reinicis"
+msgstr ""
 
 msgid "Skipped"
-msgstr "Omès"
+msgstr ""
 
 msgid "Pending"
-msgstr "Pendent"
+msgstr ""
 
 msgid "Reported at"
-msgstr "Es va informar el"
+msgstr ""
 
 msgid "Report status"
-msgstr "Estat de l'informe"
+msgstr ""
 
 msgid "Report metrics"
-msgstr "Mètriques de l'informe"
+msgstr ""
 
 msgid "config_retrieval"
 msgstr ""
 
 msgid "exec"
-msgstr "exec"
+msgstr ""
 
 msgid "file"
-msgstr "fitxer"
+msgstr ""
 
 msgid "package"
-msgstr "paquet"
+msgstr ""
 
 msgid "service"
-msgstr "servei"
+msgstr ""
 
 msgid "user"
-msgstr "usuari"
+msgstr ""
 
 msgid "yumrepo"
 msgstr ""
@@ -1403,64 +1400,64 @@ msgid "filebucket"
 msgstr ""
 
 msgid "cron"
-msgstr "cron"
+msgstr ""
 
 msgid "total"
-msgstr "total"
+msgstr ""
 
 msgid "Logs"
-msgstr "Registres"
+msgstr ""
 
 msgid "Resource"
-msgstr "Recurs"
+msgstr ""
 
 msgid "Message"
-msgstr "Missatge"
+msgstr ""
 
 msgid "Report has been deleted."
 msgstr ""
 
 msgid "Could not delete the report"
-msgstr "No s'ha pogut suprimir l'informe"
+msgstr ""
 
 msgid "Use the default organization and/or location from the server"
 msgstr ""
 
 msgid "DNS Id"
-msgstr "ID del DNS"
+msgstr ""
 
 msgid "Domain [%{name}] created."
 msgstr ""
 
 msgid "Could not create the domain"
-msgstr "No s'ha pogut crear el domini"
+msgstr ""
 
 msgid "Full name describing the domain"
-msgstr "Nom complet que descriu el domini"
+msgstr ""
 
 msgid "Domain [%{name}] updated."
 msgstr ""
 
 msgid "Could not update the domain"
-msgstr "No s'ha pogut actualitzar el domini"
+msgstr ""
 
 msgid "Domain [%{name}] deleted."
 msgstr ""
 
 msgid "Could not delete the domain"
-msgstr "No s'ha pogut suprimir el domini"
+msgstr ""
 
 msgid "Create or update parameter for a domain"
 msgstr ""
 
 msgid "Domain parameter updated"
-msgstr "S'ha actualitzat el paràmetre del domini"
+msgstr ""
 
 msgid "New domain parameter created"
-msgstr "S'ha creat el paràmetre del domini nou"
+msgstr ""
 
 msgid "Could not set domain parameter"
-msgstr "No s'ha pogut establir el paràmetre del domini"
+msgstr ""
 
 msgid "Delete parameter for a domain"
 msgstr ""
@@ -1522,61 +1519,61 @@ msgid "have you run %s (for Kerberos)?"
 msgstr ""
 
 msgid "is the server down?"
-msgstr "Ha caigut el servidor?"
+msgstr ""
 
 msgid "View and manage user group's external user groups"
-msgstr "Visualitza i gestiona els grups d'usuaris externs dels grups."
+msgstr ""
 
 msgid "Auth source"
-msgstr "Origen d'autenticació"
+msgstr ""
 
 msgid "Refresh external user group"
-msgstr "Refresca un grup d'usuaris externs"
+msgstr ""
 
 msgid "External user group created."
 msgstr ""
 
 msgid "Could not create external user group"
-msgstr "No s'ha pogut crear el grup d'usuaris externs"
+msgstr ""
 
 msgid "External user group updated."
 msgstr ""
 
 msgid "Could not update external user group"
-msgstr "No s'ha pogut actualitzar el grup d'usuaris externs"
+msgstr ""
 
 msgid "External user group deleted."
 msgstr ""
 
 msgid "Could not delete the external user group"
-msgstr "No s'ha pogut suprimir el grup d'usuaris externs"
+msgstr ""
 
 msgid "Fact"
-msgstr "Objecte d'interès"
+msgstr ""
 
 msgid "Resource type"
-msgstr "Tipus de recurs"
+msgstr ""
 
 msgid "Search"
-msgstr "Cerca"
+msgstr ""
 
 msgid "Unlimited?"
-msgstr "Il·limitat?"
+msgstr ""
 
 msgid "Override?"
 msgstr ""
 
 msgid "Role"
-msgstr "Rol"
+msgstr ""
 
 msgid "Permissions"
-msgstr "Permisos"
+msgstr ""
 
 msgid "(Miscellaneous)"
-msgstr "(Miscel·lani)"
+msgstr ""
 
 msgid "none"
-msgstr "sense"
+msgstr ""
 
 msgid "Organizations and locations can be set only for overriding filters."
 msgstr ""
@@ -1595,58 +1592,58 @@ msgid "Permission filter for [%<resource_type_label>s] created."
 msgstr ""
 
 msgid "Could not create the permission filter"
-msgstr "No s'ha pogut crear el filtre del permís"
+msgstr ""
 
 msgid "Permission filter for [%<resource_type_label>s] updated."
 msgstr ""
 
 msgid "Could not update the permission filter"
-msgstr "No s'ha pogut actualitzar el filtre del permís"
+msgstr ""
 
 msgid "Permission filter deleted."
 msgstr ""
 
 msgid "Could not delete the permission filter"
-msgstr "No s'ha pogut suprimir el filtre del permís"
+msgstr ""
 
 msgid "Host Group"
-msgstr "Grup dels amfitrions"
+msgstr ""
 
 msgid "MAC"
-msgstr "MAC"
+msgstr ""
 
 msgid "Global Status"
 msgstr ""
 
 msgid "Organization"
-msgstr "Organització"
+msgstr ""
 
 msgid "Location"
-msgstr "Ubicació"
+msgstr ""
 
 msgid "Additional Information"
-msgstr "Informació addicional"
+msgstr ""
 
 msgid "Bare Metal"
 msgstr ""
 
 msgid "UUID"
-msgstr "UUID"
+msgstr ""
 
 msgid "Compute Profile"
-msgstr "Perfil computacional"
+msgstr ""
 
 msgid "Cert name"
-msgstr "Nom del certificat"
+msgstr ""
 
 msgid "Token"
-msgstr "Testimoni"
+msgstr ""
 
 msgid "Managed"
-msgstr "Gestionat"
+msgstr ""
 
 msgid "Installed at"
-msgstr "Instal·lat el"
+msgstr ""
 
 msgid "Uptime (seconds)"
 msgstr ""
@@ -1655,7 +1652,7 @@ msgid "Build Status"
 msgstr ""
 
 msgid "Network"
-msgstr "Xarxa"
+msgstr ""
 
 msgid "IPv4 address"
 msgstr ""
@@ -1670,88 +1667,88 @@ msgid "Subnet ipv6"
 msgstr ""
 
 msgid "Domain"
-msgstr "Domini"
+msgstr ""
 
 msgid "Service provider"
-msgstr "Proveïdor de serveis (SP)"
+msgstr ""
 
 msgid "SP Name"
-msgstr "Nom del SP"
+msgstr ""
 
 msgid "SP IP"
-msgstr "IP del SP"
+msgstr ""
 
 msgid "SP MAC"
-msgstr "MAC del SP"
+msgstr ""
 
 msgid "SP Subnet"
-msgstr "Subxarxa del SP"
+msgstr ""
 
 msgid "Network interfaces"
-msgstr "Interfícies de xarxa"
+msgstr ""
 
 msgid "Identifier"
-msgstr "Identificador"
+msgstr ""
 
 msgid "MAC address"
-msgstr "Adreça MAC"
+msgstr ""
 
 msgid "FQDN"
-msgstr "FQDN"
+msgstr ""
 
 msgid "Operating system"
-msgstr "Sistema operatiu"
+msgstr ""
 
 msgid "Architecture"
-msgstr "Arquitectura"
+msgstr ""
 
 msgid "Build"
-msgstr "Construeix"
+msgstr ""
 
 msgid "Medium"
-msgstr "Mitjà"
+msgstr ""
 
 msgid "Partition Table"
-msgstr "Taula de particions"
+msgstr ""
 
 msgid "PXE Loader"
-msgstr "Carregador de PXE"
+msgstr ""
 
 msgid "Custom partition table"
-msgstr "Taula de particions personalitzada"
+msgstr ""
 
 msgid "Image"
-msgstr "Imatge"
+msgstr ""
 
 msgid "Image file"
-msgstr "Fitxer d'imatge"
+msgstr ""
 
 msgid "Use image"
-msgstr "Utilitza la imatge"
+msgstr ""
 
 msgid "Additional info"
-msgstr "Informació addicional"
+msgstr ""
 
 msgid "Owner"
-msgstr "Propietari"
+msgstr ""
 
 msgid "Enabled"
-msgstr "Habilitat"
+msgstr ""
 
 msgid "Model"
-msgstr "Model"
+msgstr ""
 
 msgid "Comment"
-msgstr "Comentari"
+msgstr ""
 
 msgid "Power"
-msgstr "Energia"
+msgstr ""
 
 msgid "Host id"
 msgstr ""
 
 msgid "Host name"
-msgstr "Nom de l'amfitrió"
+msgstr ""
 
 msgid ""
 "%{reports} command is deprecated and will be removed in one of the future "
@@ -1762,31 +1759,31 @@ msgid "Host created."
 msgstr ""
 
 msgid "Could not create the host"
-msgstr "No s'ha pogut crear l'amfitrió"
+msgstr ""
 
 msgid "Host updated."
 msgstr ""
 
 msgid "Could not update the host"
-msgstr "No s'ha pogut actualitzar l'amfitrió"
+msgstr ""
 
 msgid "Host deleted."
 msgstr ""
 
 msgid "Could not delete the host"
-msgstr "No s'ha pogut suprimir l'amfitrió"
+msgstr ""
 
 msgid "Create or append a parameter for a host"
 msgstr ""
 
 msgid "Host parameter updated"
-msgstr "S'ha actualitzat el paràmetre de l'amfitrió"
+msgstr ""
 
 msgid "New host parameter created"
-msgstr "S'ha creat el paràmetre de l'amfitrió nou"
+msgstr ""
 
 msgid "Could not set host parameter"
-msgstr "S'ha pogut establir el paràmetre de l'amfitrió"
+msgstr ""
 
 msgid "Delete parameter for a host"
 msgstr ""
@@ -1795,16 +1792,16 @@ msgid "Host parameter deleted."
 msgstr ""
 
 msgid "Power a host on"
-msgstr "Engega un amfitrió"
+msgstr ""
 
 msgid "The host is starting."
-msgstr "L'amfitrió s'està iniciant."
+msgstr ""
 
 msgid "Force turning off a host"
 msgstr ""
 
 msgid "Power a host off"
-msgstr "Apaga un amfitrió"
+msgstr ""
 
 msgid "Power off forced"
 msgstr ""
@@ -1813,7 +1810,7 @@ msgid "Powering the host off"
 msgstr ""
 
 msgid "Reboot a host"
-msgstr "Reinicia un amfitrió"
+msgstr ""
 
 msgid "Host reboot started."
 msgstr ""
@@ -1855,13 +1852,13 @@ msgid "Failed to boot the host from device"
 msgstr ""
 
 msgid "Root password"
-msgstr "Contrasenya de root"
+msgstr ""
 
 msgid "Subnet IPv6 name"
 msgstr ""
 
 msgid "Name of parent hostgroup"
-msgstr "Nom del grup d'amfitrions pare"
+msgstr ""
 
 msgid "Title of parent hostgroup"
 msgstr ""
@@ -1870,40 +1867,40 @@ msgid "Enter the root password for the host group:"
 msgstr ""
 
 msgid "Title"
-msgstr "Títol"
+msgstr ""
 
 msgid "Realm"
-msgstr "Reialme"
+msgstr ""
 
 msgid "Hostgroup created."
 msgstr ""
 
 msgid "Could not create the hostgroup"
-msgstr "No s'ha pogut crear el grup d'amfitrions"
+msgstr ""
 
 msgid "Hostgroup updated."
 msgstr ""
 
 msgid "Could not update the hostgroup"
-msgstr "No s'ha pogut actualitzar el grup d'amfitrions"
+msgstr ""
 
 msgid "Hostgroup deleted."
 msgstr ""
 
 msgid "Could not delete the hostgroup"
-msgstr "No s'ha pogut suprimir el grup d'amfitrions"
+msgstr ""
 
 msgid "Create or update parameter for a hostgroup"
 msgstr ""
 
 msgid "Hostgroup parameter updated"
-msgstr "S'ha actualitzat el paràmetre del grup d'amfitrions"
+msgstr ""
 
 msgid "New hostgroup parameter created"
-msgstr "S'ha creat el paràmetre del grup d'amfitrions nou"
+msgstr ""
 
 msgid "Could not set hostgroup parameter"
-msgstr "S'ha pogut establir el paràmetre del grup d'amfitrions"
+msgstr ""
 
 msgid "Delete parameter for a hostgroup"
 msgstr ""
@@ -1915,10 +1912,10 @@ msgid "Could not rebuild configuration"
 msgstr ""
 
 msgid "ID of the owner"
-msgstr "ID del propietari"
+msgstr ""
 
 msgid "Login of the owner"
-msgstr "Nom d'usuari del propietari"
+msgstr ""
 
 msgid ""
 "Required if host is managed and value is not inherited from host group or "
@@ -1932,19 +1929,19 @@ msgid "Replaces with new host parameters (with type support)"
 msgstr ""
 
 msgid "Volume parameters"
-msgstr "Paràmetres del volum"
+msgstr ""
 
 msgid "Interface parameters"
-msgstr "Paràmetres de la interfície"
+msgstr ""
 
 msgid "Enter the root password for the host:"
-msgstr "Introduïu la contrasenya de root per a l'amfitrió:"
+msgstr ""
 
 msgid "Username"
-msgstr "Nom d'usuari"
+msgstr ""
 
 msgid "URL"
-msgstr "URL"
+msgstr ""
 
 msgid "Http proxy created."
 msgstr ""
@@ -1965,49 +1962,49 @@ msgid "Could not update the http proxy"
 msgstr ""
 
 msgid "Architecture name"
-msgstr "Nom de l'arquitectura"
+msgstr ""
 
 msgid "Compute resource name"
-msgstr "Nom del recurs computacional"
+msgstr ""
 
 msgid "Compute profile name"
 msgstr ""
 
 msgid "Domain name"
-msgstr "Nom de domini"
+msgstr ""
 
 msgid "Hostgroup title"
-msgstr "Títol del grup d'amfitrions"
+msgstr ""
 
 msgid "Set the current location context for the request"
 msgstr ""
 
 msgid "Medium name"
-msgstr "Nom del mitjà"
+msgstr ""
 
 msgid "Model name"
-msgstr "Nom del model"
+msgstr ""
 
 msgid "Set the current organization context for the request"
 msgstr ""
 
 msgid "Operating system title"
-msgstr "Títol del sistema operatiu"
+msgstr ""
 
 msgid "Partition table name"
-msgstr "Nom de la taula de particions"
+msgstr ""
 
 msgid "Proxy name"
-msgstr "Nom del servidor intermediari"
+msgstr ""
 
 msgid "User role name"
-msgstr "Nom del rol d'usuari"
+msgstr ""
 
 msgid "Setting name"
-msgstr "Nom de l'ajust"
+msgstr ""
 
 msgid "Subnet name"
-msgstr "Nom de la subxarxa"
+msgstr ""
 
 msgid "User's login to search by"
 msgstr ""
@@ -2031,13 +2028,13 @@ msgid "Missing options to search %s."
 msgstr ""
 
 msgid "View and manage compute resource's images"
-msgstr "Visualitza i gestiona les imatges dels recursos computacionals."
+msgstr ""
 
 msgid "User Data"
 msgstr ""
 
 msgid "IAM role"
-msgstr "Rol IAM"
+msgstr ""
 
 msgid "Show images available for addition"
 msgstr ""
@@ -2046,67 +2043,67 @@ msgid "Image created."
 msgstr ""
 
 msgid "Could not create the image"
-msgstr "No s'ha pogut crear la imatge"
+msgstr ""
 
 msgid "Image updated."
 msgstr ""
 
 msgid "Could not update the image"
-msgstr "No s'ha pogut actualitzar la imatge"
+msgstr ""
 
 msgid "Image deleted."
 msgstr ""
 
 msgid "Could not delete the image"
-msgstr "No s'ha pogut suprimir la imatge"
+msgstr ""
 
 msgid "View and manage host's network interfaces"
-msgstr "Visualitza i gestiona les interfícies de xarxa dels amfitrions."
+msgstr ""
 
 msgid "primary"
-msgstr "primària"
+msgstr ""
 
 msgid "provision"
 msgstr ""
 
 msgid "IP address"
-msgstr "Adreça IP"
+msgstr ""
 
 msgid "DNS name"
-msgstr "Nom DNS"
+msgstr ""
 
 msgid "Subnet"
-msgstr "Subxarxa"
+msgstr ""
 
 msgid "Primary"
-msgstr "Primària"
+msgstr ""
 
 msgid "Provision"
-msgstr "Aprovisionament"
+msgstr ""
 
 msgid "Virtual"
-msgstr "Virtual"
+msgstr ""
 
 msgid "Tag"
-msgstr "Etiqueta"
+msgstr ""
 
 msgid "Attached to"
 msgstr ""
 
 msgid "BMC"
-msgstr "BMC"
+msgstr ""
 
 msgid "Bond"
-msgstr "Vinculació"
+msgstr ""
 
 msgid "Mode"
-msgstr "Mode"
+msgstr ""
 
 msgid "Attached devices"
-msgstr "Dispositius adjuntats"
+msgstr ""
 
 msgid "Bond options"
-msgstr "Opcions de vinculació"
+msgstr ""
 
 msgid ""
 "Should this interface be used for constructing the FQDN of the host? Each "
@@ -2122,7 +2119,7 @@ msgid "Interface created."
 msgstr ""
 
 msgid "Could not create the interface"
-msgstr "No s'ha pogut crear la interfície"
+msgstr ""
 
 msgid "Compute resource specific attributes"
 msgstr ""
@@ -2131,37 +2128,37 @@ msgid "Interface updated."
 msgstr ""
 
 msgid "Could not update the interface"
-msgstr "No s'ha pogut actualitzar la interfície"
+msgstr ""
 
 msgid "Interface deleted."
 msgstr ""
 
 msgid "Could not delete the interface"
-msgstr "No s'ha pogut suprimir la interfície"
+msgstr ""
 
 msgid "Location numeric id to search by"
 msgstr ""
 
 msgid "Organizations"
-msgstr "Organitzacions"
+msgstr ""
 
 msgid "Location created."
 msgstr ""
 
 msgid "Could not create the location"
-msgstr "No s'ha pogut crear la ubicació"
+msgstr ""
 
 msgid "Location updated."
 msgstr ""
 
 msgid "Could not update the location"
-msgstr "No s'ha pogut actualitzar la ubicació"
+msgstr ""
 
 msgid "Location deleted."
 msgstr ""
 
 msgid "Could not delete the location"
-msgstr "No s'ha pogut suprimir la ubicació"
+msgstr ""
 
 msgid "Create or update parameter for a location"
 msgstr ""
@@ -2188,52 +2185,52 @@ msgid "Subscription type"
 msgstr ""
 
 msgid "OS Family"
-msgstr "Família de SO"
+msgstr ""
 
 msgid "Installation medium created."
 msgstr ""
 
 msgid "Could not create the installation medium"
-msgstr "No s'ha pogut crear el mitjà d'instal·lació"
+msgstr ""
 
 msgid "Installation medium updated."
 msgstr ""
 
 msgid "Could not update the installation media"
-msgstr "No s'ha pogut actualitzar el mitjà d'instal·lació"
+msgstr ""
 
 msgid "Installation medium deleted."
 msgstr ""
 
 msgid "Could not delete the installation media"
-msgstr "No s'ha pogut suprimir el mitjà d'instal·lació"
+msgstr ""
 
 msgid "Vendor class"
-msgstr "Classe del fabricant"
+msgstr ""
 
 msgid "HW model"
-msgstr "Model de maquinari"
+msgstr ""
 
 msgid "Info"
-msgstr "Info"
+msgstr ""
 
 msgid "Hardware model created."
 msgstr ""
 
 msgid "Could not create the hardware model"
-msgstr "No s'ha pogut crear el model de maquinari"
+msgstr ""
 
 msgid "Hardware model deleted."
 msgstr ""
 
 msgid "Could not delete the hardware model"
-msgstr "No s'ha pogut suprimir el model de maquinari"
+msgstr ""
 
 msgid "Hardware model updated."
 msgstr ""
 
 msgid "Could not update the hardware model"
-msgstr "No s'ha pogut actualitzar el model de maquinari"
+msgstr ""
 
 msgid "Invalid access token response."
 msgstr ""
@@ -2247,55 +2244,55 @@ msgid ""
 msgstr ""
 
 msgid "Release name"
-msgstr "Nom del llançament"
+msgstr ""
 
 msgid "Family"
-msgstr "Família"
+msgstr ""
 
 msgid "Major version"
-msgstr "Versió major"
+msgstr ""
 
 msgid "Minor version"
-msgstr "Versió menor"
+msgstr ""
 
 msgid "Partition tables"
-msgstr "Taules de particions"
+msgstr ""
 
 msgid "Default templates"
-msgstr "Plantilles predeterminades"
+msgstr ""
 
 msgid "Architectures"
-msgstr "Arquitectures"
+msgstr ""
 
 msgid "Operating system created."
 msgstr ""
 
 msgid "Could not create the operating system"
-msgstr "No s'ha pogut crear el sistema operatiu"
+msgstr ""
 
 msgid "Operating system updated."
 msgstr ""
 
 msgid "Could not update the operating system"
-msgstr "No s'ha pogut actualitzar el sistema operatiu"
+msgstr ""
 
 msgid "Operating system deleted."
 msgstr ""
 
 msgid "Could not delete the operating system"
-msgstr "No s'ha pogut suprimir el sistema operatiu"
+msgstr ""
 
 msgid "Create or update parameter for an operating system"
 msgstr ""
 
 msgid "Operating system parameter updated"
-msgstr "S'ha actualitzat el paràmetre del sistema operatiu"
+msgstr ""
 
 msgid "New operating system parameter created"
-msgstr "S'ha creat el paràmetre del sistema operatiu nou"
+msgstr ""
 
 msgid "Could not set operating system parameter"
-msgstr "No s'ha pogut establir el paràmetre del sistema operatiu"
+msgstr ""
 
 msgid "Delete parameter for an operating system"
 msgstr ""
@@ -2315,7 +2312,7 @@ msgid ""
 msgstr ""
 
 msgid "Could not set the os default template"
-msgstr "No s'ha pogut establir la plantilla per defecte del SO"
+msgstr ""
 
 msgid "Type of the provisioning template"
 msgstr ""
@@ -2324,7 +2321,7 @@ msgid "Default template deleted."
 msgstr ""
 
 msgid "Could not delete the default template"
-msgstr "No s'ha pogut suprimir la plantilla per defecte"
+msgstr ""
 
 msgid "Default template of type %s not found"
 msgstr ""
@@ -2342,12 +2339,9 @@ msgstr ""
 
 msgid "Could not find %{resource}, please set option %{switches}."
 msgstr ""
-"No s'ha pogut trobar %{resource}, si us plau, establiu l'opció %{switches}."
 
 msgid "Could not find %{resource}, please set one of options %{switches}."
 msgstr ""
-"No s'ha pogut trobar %{resource}, si us plau, establiu una de les opcions "
-"%{switches}."
 
 msgid "Enter user's current password:"
 msgstr ""
@@ -2356,46 +2350,46 @@ msgid "Enter user's new password:"
 msgstr ""
 
 msgid "Locations"
-msgstr "Ubicacions"
+msgstr ""
 
 msgid "Organization created."
 msgstr ""
 
 msgid "Could not create the organization"
-msgstr "No s'ha pogut crear l'organització"
+msgstr ""
 
 msgid "Organization updated."
 msgstr ""
 
 msgid "Could not update the organization"
-msgstr "No s'ha pogut actualitzar l'organització"
+msgstr ""
 
 msgid "Organization deleted."
 msgstr ""
 
 msgid "Could not delete the organization"
-msgstr "No s'ha pogut suprimir l'organització"
+msgstr ""
 
 msgid "Create or update parameter for an organization"
 msgstr ""
 
 msgid "Could not set organization parameter"
-msgstr "No s'ha pogut establir el paràmetre de l'organització"
+msgstr ""
 
 msgid "Delete parameter for an organization"
 msgstr ""
 
 msgid "Could not delete organization parameter"
-msgstr "No s'ha pogut suprimir el paràmetre de l'organització"
+msgstr ""
 
 msgid "id"
 msgstr ""
 
 msgid "Kind"
-msgstr "Tipus"
+msgstr ""
 
 msgid "parameter name"
-msgstr "nom del paràmetre"
+msgstr ""
 
 msgid "Locked"
 msgstr ""
@@ -2404,25 +2398,25 @@ msgid "View partition table content"
 msgstr ""
 
 msgid "Path to a file that contains the partition layout"
-msgstr "Camí a un fitxer que conté l'esquema del particionatge"
+msgstr ""
 
 msgid "Partition table created."
 msgstr ""
 
 msgid "Could not create the partition table"
-msgstr "No s'ha pogut crear la taula de particions"
+msgstr ""
 
 msgid "Partition table updated."
 msgstr ""
 
 msgid "Could not update the partition table"
-msgstr "No s'ha pogut actualitzar la taula de particions"
+msgstr ""
 
 msgid "Partition table deleted."
 msgstr ""
 
 msgid "Could not delete the partition table"
-msgstr "No s'ha pogut suprimir la taula de particions"
+msgstr ""
 
 msgid "Path to a file that contains the template content including metadata"
 msgstr ""
@@ -2440,7 +2434,7 @@ msgid "Manage personal access tokens"
 msgstr ""
 
 msgid "Active"
-msgstr "Actiu"
+msgstr ""
 
 msgid "Expires at"
 msgstr ""
@@ -2454,7 +2448,7 @@ msgid "Could not create personal access token"
 msgstr ""
 
 msgid "Created at"
-msgstr "Es va crear el"
+msgstr ""
 
 msgid "Last used at"
 msgstr ""
@@ -2475,7 +2469,7 @@ msgid "Realm proxy id"
 msgstr ""
 
 msgid "Realm type"
-msgstr "Tipus de reialme"
+msgstr ""
 
 msgid "Realm [%{name}] created."
 msgstr ""
@@ -2496,79 +2490,79 @@ msgid "Could not delete the realm"
 msgstr ""
 
 msgid "Updated at"
-msgstr "Es va actualitzar el"
+msgstr ""
 
 msgid "Users"
-msgstr "Usuaris"
+msgstr ""
 
 msgid "User groups"
-msgstr "Grups dels usuaris"
+msgstr ""
 
 msgid "Usergroup"
-msgstr "Grup d'usuari"
+msgstr ""
 
 msgid "Roles"
-msgstr "Rols"
+msgstr ""
 
 msgid "Inherited User groups"
-msgstr "Grups d'usuaris heretats"
+msgstr ""
 
 msgid "Smart proxies"
-msgstr "Servidors intermediaris intel·ligents"
+msgstr ""
 
 msgid "Compute profiles"
-msgstr "Perfils computacionals"
+msgstr ""
 
 msgid "Compute resources"
-msgstr "Recursos computacionals"
+msgstr ""
 
 msgid "Installation media"
-msgstr "Mitjans d'instal·lació"
+msgstr ""
 
 msgid "Templates"
-msgstr "Plantilles"
+msgstr ""
 
 msgid "Partition Tables"
-msgstr "Taules de particions"
+msgstr ""
 
 msgid "Domains"
-msgstr "Dominis"
+msgstr ""
 
 msgid "Realms"
-msgstr "Reialmes"
+msgstr ""
 
 msgid "Hostgroups"
-msgstr "Grups d'amfitrions"
+msgstr ""
 
 msgid "Subnets"
-msgstr "Subxarxes"
+msgstr ""
 
 msgid "Parameters"
-msgstr "Paràmetres"
+msgstr ""
 
 msgid "All parameters"
 msgstr ""
 
 msgid "Operating systems"
-msgstr "Sistemes operatius"
+msgstr ""
 
 msgid "External user groups"
-msgstr "Grups d'usuaris externs"
+msgstr ""
 
 msgid "Failed to generate registration command"
 msgstr ""
 
 msgid "Default"
-msgstr "Per defecte"
+msgstr ""
 
 msgid "Template inputs"
 msgstr ""
 
 msgid "Required"
-msgstr "Obligatori"
+msgstr ""
 
 msgid "Options"
-msgstr "Opcions"
+msgstr ""
 
 msgid "View report content"
 msgstr ""
@@ -2642,25 +2636,25 @@ msgid "Could not delete the report template"
 msgstr ""
 
 msgid "The server does not support such operation."
-msgstr "El servidor no admet aquest tipus d'operació."
+msgstr ""
 
 msgid "Builtin"
-msgstr "Integrat"
+msgstr ""
 
 msgid "User role id"
-msgstr "ID del rol d'usuari"
+msgstr ""
 
 msgid "User role [%<name>s] created."
 msgstr ""
 
 msgid "Could not create the user role"
-msgstr "No s'ha pogut crear el rol d'usuari"
+msgstr ""
 
 msgid "User role [%<name>s] updated."
 msgstr ""
 
 msgid "Could not update the user role"
-msgstr "No s'ha pogut actualitzar el rol d'usuari"
+msgstr ""
 
 msgid "User role cloned."
 msgstr ""
@@ -2672,7 +2666,7 @@ msgid "User role [%<name>s] deleted."
 msgstr ""
 
 msgid "Could not delete the user roles"
-msgstr "No s'han pogut suprimir els rols d'usuari"
+msgstr ""
 
 msgid "Sessions are not enabled, please check your Hammer settings."
 msgstr ""
@@ -2701,7 +2695,7 @@ msgid "Setting [%{name}] updated to [%{value}]."
 msgstr ""
 
 msgid "Could not update the setting"
-msgstr "No s'han pogut actualitzar els rols d'usuari"
+msgstr ""
 
 msgid "Category"
 msgstr ""
@@ -2710,10 +2704,10 @@ msgid "Settings type"
 msgstr ""
 
 msgid "Features"
-msgstr "Característiques"
+msgstr ""
 
 msgid "Version"
-msgstr "Versió"
+msgstr ""
 
 msgid "Host_count"
 msgstr ""
@@ -2722,27 +2716,25 @@ msgid "Smart proxy created."
 msgstr ""
 
 msgid "Could not create the proxy"
-msgstr "No s'ha pogut crear el servidor intermediari"
+msgstr ""
 
 msgid "Smart proxy updated."
 msgstr ""
 
 msgid "Could not update the proxy"
-msgstr "No s'ha pogut actualitzar el servidor intermediari"
+msgstr ""
 
 msgid "Smart proxy deleted."
 msgstr ""
 
 msgid "Could not delete the proxy"
-msgstr "No s'ha pogut suprimir el servidor intermediari"
+msgstr ""
 
 msgid "Smart proxy features were refreshed."
 msgstr ""
 
 msgid "Refresh of smart proxy features failed"
 msgstr ""
-"No s'han pogut refrescar les característiques del servidor intermediari "
-"intel·ligent"
 
 msgid "Import subnets succeeded."
 msgstr ""
@@ -2754,7 +2746,7 @@ msgid "Manage SSH Keys sources"
 msgstr ""
 
 msgid "Fingerprint"
-msgstr "Empremta"
+msgstr ""
 
 msgid "Length"
 msgstr ""
@@ -2784,61 +2776,61 @@ msgid "Database"
 msgstr ""
 
 msgid "Plugins"
-msgstr "Connectors"
+msgstr ""
 
 msgid "Smart Proxies"
-msgstr "Servidors intermediaris intel·ligents"
+msgstr ""
 
 msgid "Failed features"
 msgstr ""
 
 msgid "Error"
-msgstr "Error"
+msgstr ""
 
 msgid "Compute Resources"
-msgstr "Recursos computacionals"
+msgstr ""
 
 msgid "Errors"
-msgstr "Errors"
+msgstr ""
 
 msgid "Network Addr"
 msgstr ""
 
 msgid "Network Prefix"
-msgstr "Prefix de xarxa"
+msgstr ""
 
 msgid "Network Mask"
-msgstr "Màscara de xarxa"
+msgstr ""
 
 msgid "Boot Mode"
-msgstr "Mode d'arrencada"
+msgstr ""
 
 msgid "Gateway Address"
-msgstr "Adreça de la passarel·la"
+msgstr ""
 
 msgid "Protocol"
 msgstr ""
 
 msgid "Priority"
-msgstr "Prioritat"
+msgstr ""
 
 msgid "Gateway Addr"
 msgstr ""
 
 msgid "Primary DNS"
-msgstr "DNS primari"
+msgstr ""
 
 msgid "Secondary DNS"
-msgstr "DNS secundari"
+msgstr ""
 
 msgid "TFTP"
-msgstr "TFTP"
+msgstr ""
 
 msgid "DHCP"
-msgstr "DHCP"
+msgstr ""
 
 msgid "IPAM"
-msgstr "IPAM"
+msgstr ""
 
 msgid "Start of IP Range"
 msgstr ""
@@ -2853,19 +2845,19 @@ msgid "Subnet created."
 msgstr ""
 
 msgid "Could not create the subnet"
-msgstr "No s'ha pogut crear la subxarxa"
+msgstr ""
 
 msgid "Subnet updated."
 msgstr ""
 
 msgid "Could not update the subnet"
-msgstr "No s'ha pogut actualitzar la subxarxa"
+msgstr ""
 
 msgid "Subnet deleted."
 msgstr ""
 
 msgid "Could not delete the subnet"
-msgstr "No s'ha pogut suprimir la subxarxa"
+msgstr ""
 
 msgid "Create or update parameter for a subnet"
 msgstr ""
@@ -2907,7 +2899,7 @@ msgid "Could not remove table preference"
 msgstr ""
 
 msgid "Environment name"
-msgstr "Nom de l'entorn"
+msgstr ""
 
 msgid "List available provisioning template kinds"
 msgstr ""
@@ -2916,10 +2908,10 @@ msgid "View provisioning template content"
 msgstr ""
 
 msgid "Path to a file that contains the template"
-msgstr "Camí a un fitxer que conté la plantilla"
+msgstr ""
 
 msgid "Template type. Eg. snippet, script, provision"
-msgstr "Tipus de plantilla. p. ex. snippet, script, provision"
+msgstr ""
 
 msgid "Provisioning template created."
 msgstr ""
@@ -2950,7 +2942,6 @@ msgstr ""
 
 msgid "Update the default PXE menu on all configured TFTP servers"
 msgstr ""
-"Actualitza el menú PXE per defecte en tots els servidors TFTP configurats"
 
 msgid "Provisioning template cloned."
 msgstr ""
@@ -2959,22 +2950,22 @@ msgid "Could not clone the provisioning template"
 msgstr ""
 
 msgid "Login"
-msgstr "Entra"
+msgstr ""
 
 msgid "Email"
-msgstr "Correu electrònic"
+msgstr ""
 
 msgid "Admin"
-msgstr "Administrador"
+msgstr ""
 
 msgid "Disabled"
-msgstr "Inhabilitada"
+msgstr ""
 
 msgid "Last login"
-msgstr "Últim inici de sessió"
+msgstr ""
 
 msgid "Authorized by"
-msgstr "Autoritzat per"
+msgstr ""
 
 msgid "Email enabled"
 msgstr ""
@@ -2983,37 +2974,37 @@ msgid "Effective admin"
 msgstr ""
 
 msgid "Locale"
-msgstr "Configuració regional"
+msgstr ""
 
 msgid "Timezone"
-msgstr "Franja horària"
+msgstr ""
 
 msgid "Default organization"
-msgstr "Organització per defecte"
+msgstr ""
 
 msgid "Default location"
-msgstr "Ubicació per defecte"
+msgstr ""
 
 msgid "default"
-msgstr "per defecte"
+msgstr ""
 
 msgid "User [%{login}] created."
 msgstr ""
 
 msgid "Could not create the user"
-msgstr "No s'ha pogut crear l'usuari"
+msgstr ""
 
 msgid "User [%{login}] updated."
 msgstr ""
 
 msgid "Could not update the user"
-msgstr "No s'ha pogut actualitzar l'usuari"
+msgstr ""
 
 msgid "User [%{login}] deleted."
 msgstr ""
 
 msgid "Could not delete the user"
-msgstr "No s'ha pogut suprimir l'usuari"
+msgstr ""
 
 msgid "Managing User SSH Keys."
 msgstr ""
@@ -3055,19 +3046,19 @@ msgid "User group [%<name>s] created."
 msgstr ""
 
 msgid "Could not create the user group"
-msgstr "No s'ha pogut crear el grup d'usuaris"
+msgstr ""
 
 msgid "User group [%<name>s] updated."
 msgstr ""
 
 msgid "Could not update the user group"
-msgstr "No s'ha pogut actualitzar el grup d'usuaris"
+msgstr ""
 
 msgid "User group [%<name>s] deleted."
 msgstr ""
 
 msgid "Could not delete the user group"
-msgstr "No s'ha pogut suprimir el grup d'usuaris"
+msgstr ""
 
 msgid "View and manage compute resource's virtual machines"
 msgstr ""
@@ -3083,9 +3074,3 @@ msgstr ""
 
 msgid "Could not delete the virtual machine"
 msgstr ""
-
-#~ msgid "Zone"
-#~ msgstr "Zona"
-
-#~ msgid "Machine Type"
-#~ msgstr "Tipus de màquina"

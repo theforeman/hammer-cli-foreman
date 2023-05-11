@@ -5,6 +5,12 @@ $LOAD_PATH.unshift(minitest) unless $LOAD_PATH.include?(minitest)
 
 require "hammer_cli_foreman/version"
 
+Dir['locale/**/*.po'].each do |po|
+  mo = po.sub(/foreman_ansible\.po$/, 'LC_MESSAGES/foreman_ansible.mo')
+  warn "WARNING: File #{mo} does not exist, generate with 'make all-mo'!" unless File.exist?(mo)
+  warn "WARNING: File #{mo} outdated, regenerate with 'make all-mo'" if File.mtime(po) > File.mtime(mo)
+end
+
 Gem::Specification.new do |s|
 
   s.name          = "hammer_cli_foreman"
