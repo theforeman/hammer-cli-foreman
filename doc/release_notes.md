@@ -1,5 +1,11 @@
 Release notes
 =============
+### 3.7.0 (2023-05-23)
+* Update rake for hammer-cli-foreman ([PR #613](https://github.com/theforeman/hammer-cli-foreman/pull/613)), [#36337](http://projects.theforeman.org/issues/36337)
+* Update minitest version ([PR #611](https://github.com/theforeman/hammer-cli-foreman/pull/611)), [#36349](http://projects.theforeman.org/issues/36349)
+* Allow to suppress nothing to update message, [#36213](http://projects.theforeman.org/issues/36213)
+* Bump to 3.7.0-develop
+
 ### 3.6.0 (2023-02-23)
 * Support basic auth for external sources, [#11317](http://projects.theforeman.org/issues/11317)
 * Remove underscore from labels ([PR #608](https://github.com/theforeman/hammer-cli-foreman/pull/608)), [#35904](http://projects.theforeman.org/issues/35904)
