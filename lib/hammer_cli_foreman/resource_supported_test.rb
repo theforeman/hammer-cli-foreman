@@ -15,7 +15,7 @@ module HammerCLIForeman
     def resource_supported?
       resource.call(:index)
       true
-    rescue RestClient::ResourceNotFound => e
+    rescue RestClient::ResourceNotFound
       false
     end
 

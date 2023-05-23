@@ -77,7 +77,7 @@ describe 'medium' do
       params = ['--name=CentOS mirror', '--path=http://mirror.centos.org/centos/$major/os/$arch']
 
       api_expects(:media, :create) do |params|
-        (params['medium']['name'] == 'CentOS mirror')
+        (params['medium']['name'] == 'CentOS mirror') &&
         (params['medium']['path'] == 'http://mirror.centos.org/centos/$major/os/$arch')
       end
 
@@ -119,7 +119,7 @@ describe 'medium' do
       params = ['--id=1', '--new-name=CentOS mirror test']
 
       api_expects(:media, :update, 'Update a media') do |params|
-        (params['medium']['id'] == '1')
+        (params['id'] == '1') &&
         (params['medium']['name'] == 'CentOS mirror test')
       end
 

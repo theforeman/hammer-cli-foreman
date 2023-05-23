@@ -87,8 +87,8 @@ describe 'bookmark' do
       it 'should create a bookmark' do
         params = ['--name=newBookmark', '--controller=hosts', '--query=status = failed']
         api_expects(:bookmarks, :create, 'Create bookmark') do |params|
-          (params['bookmark']['name'] == 'newBookmark')
-          (params['bookmark']['controller'] == 'hosts')
+          (params['bookmark']['name'] == 'newBookmark') &&
+          (params['bookmark']['controller'] == 'hosts') &&
           (params['bookmark']['query'] == 'status = failed')
         end
         result = run_cmd(@cmd + params)

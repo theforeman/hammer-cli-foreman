@@ -40,7 +40,7 @@ describe 'filter' do
       params = ['--role-id=1', '--permission-ids=[1]']
 
       api_expects(:filters, :create) do |params|
-        (params['filter']['role_id'] == 1)
+        (params['filter']['role_id'] == '1') &&
         (params['filter']['permission_ids'] == [1])
       end
 

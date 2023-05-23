@@ -91,7 +91,7 @@ describe HammerCLIForeman do
           }
       })
       arch = HammerCLIForeman::Architecture::CreateCommand.new("", { :adapter => :csv, :interactive => false })
-      out, err = capture_io { arch.run(["--name='i386'"]) }
+      out, _ = capture_io { arch.run(["--name='i386'"]) }
       _(out).must_match("Message,Id,Name\nArchitecture created.,3,i386\n")
     end
   end
@@ -151,7 +151,7 @@ describe HammerCLIForeman do
         end
       end
       comm = DomainOuter::HostsCommand.new("", { :adapter => :csv, :interactive => false })
-      out, err = capture_io { comm.run(["--id=5"]) }
+      out, _ = capture_io { comm.run(["--id=5"]) }
       _(out).must_equal "Id,Name,Operating System,Host Group,IP,MAC\n2,random-host,,,192.168.100.112,6e:4b:3c:2c:8a:0a\n"
     end
   end
@@ -180,7 +180,7 @@ describe HammerCLIForeman::Command do
         HammerCLIForeman.foreman_api_connection.api.resource(:locations)
       )
     )
-    out, err = capture_io do
+    _, err = capture_io do
       _(com.run(['--location', 'loc'])).wont_equal HammerCLI::EX_OK
     end
     _(err).must_equal "Error: Could not find location, please set one of options --location-id, --location, --location-title.\n"
@@ -203,7 +203,7 @@ describe HammerCLIForeman::Command do
 
     ResourceMocks.mock_action_call(:domains, :index, [])
 
-    out, err = capture_io do
+    _out, _err = capture_io do
       _(com.run([])).must_equal HammerCLI::EX_OK
     end
 

@@ -1,5 +1,3 @@
-require 'hammer_cli_foreman/usergroup'
-
 module HammerCLIForeman
   class ExternalUsergroup < HammerCLIForeman::Command
     resource :external_usergroups

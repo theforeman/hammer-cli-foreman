@@ -244,7 +244,7 @@ module HammerCLIForeman
       super
       begin
         output_definition.update_field_sets('THIN', (searchables.for(resource).map(&:name) + ['id']).map(&:to_sym))
-      rescue StandardError => e
+      rescue StandardError
         # Some subcommands may not have such fields or defined resource
       end
     end
@@ -489,7 +489,7 @@ module HammerCLIForeman
       super
       begin
         output_definition.update_field_sets('THIN', (searchables.for(resource).map(&:name) + ['id']).map(&:to_sym))
-      rescue StandardError => e
+      rescue StandardError
         # Some subcommands may not have such fields or defined resource
       end
     end
@@ -585,8 +585,6 @@ module HammerCLIForeman
     action :update
 
     def self.create_option_builder
-      configurator = BuilderConfigurator.new(searchables, dependency_resolver)
-
       builder = ForemanOptionBuilder.new(searchables)
       builder.builders = [
         SearchablesOptionBuilder.new(resource, searchables),

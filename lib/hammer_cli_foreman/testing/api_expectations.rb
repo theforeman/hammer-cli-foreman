@@ -12,12 +12,12 @@ module HammerCLIForeman
         def initialize(resource=nil, action=nil, &block)
           @expected_resource = resource
           @expected_action = action
-          @block = block if block_given?
+          @block = block
           @expected_params = {}
         end
 
         def matches?(actual_parameters)
-          action, params, headers, options = actual_parameters.shift(4)
+          action, params, _headers, _options = actual_parameters.shift(4)
           action_name = action.name.to_s
           resource_name = action.resource.to_s
 
