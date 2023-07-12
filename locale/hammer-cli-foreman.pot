@@ -6,10 +6,10 @@
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: hammer-cli-foreman 3.5.0\n"
+"Project-Id-Version: hammer-cli-foreman 3.8.0.pre.develop\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-10-31 15:16+0000\n"
-"PO-Revision-Date: 2022-10-31 15:16+0000\n"
+"POT-Creation-Date: 2023-07-12 17:18+0000\n"
+"PO-Revision-Date: 2023-07-12 17:18+0000\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: \n"
@@ -156,28 +156,28 @@ msgstr ""
 msgid "Host Registration"
 msgstr ""
 
-#: ../lib/hammer_cli_foreman/api/authenticator.rb:28
+#: ../lib/hammer_cli_foreman/api/authenticator.rb:30
 msgid "Using certificate authentication."
 msgstr ""
 
-#: ../lib/hammer_cli_foreman/api/interactive_basic_auth.rb:15
+#: ../lib/hammer_cli_foreman/api/basic_auth.rb:16
 #: ../lib/hammer_cli_foreman/api/negotiate_auth.rb:27
 msgid "Invalid username or password."
 msgstr ""
 
-#: ../lib/hammer_cli_foreman/api/interactive_basic_auth.rb:26
+#: ../lib/hammer_cli_foreman/api/basic_auth.rb:29
 msgid "Using configured credentials for user '%s'."
 msgstr ""
 
-#: ../lib/hammer_cli_foreman/api/interactive_basic_auth.rb:28
+#: ../lib/hammer_cli_foreman/api/basic_auth.rb:31
 msgid "Credentials are not configured."
 msgstr ""
 
-#: ../lib/hammer_cli_foreman/api/interactive_basic_auth.rb:52
+#: ../lib/hammer_cli_foreman/api/basic_auth.rb:55
 msgid "[Foreman] Username:%s"
 msgstr ""
 
-#: ../lib/hammer_cli_foreman/api/interactive_basic_auth.rb:56
+#: ../lib/hammer_cli_foreman/api/basic_auth.rb:59
 msgid "[Foreman] Password for %{user}:%{wsp}"
 msgstr ""
 
@@ -274,7 +274,7 @@ msgstr ""
 #: ../lib/hammer_cli_foreman/config_report.rb:10
 #: ../lib/hammer_cli_foreman/config_report.rb:31
 #: ../lib/hammer_cli_foreman/domain.rb:8
-#: ../lib/hammer_cli_foreman/external_usergroup.rb:10
+#: ../lib/hammer_cli_foreman/external_usergroup.rb:8
 #: ../lib/hammer_cli_foreman/filter.rb:9
 #: ../lib/hammer_cli_foreman/filter.rb:141 ../lib/hammer_cli_foreman/host.rb:19
 #: ../lib/hammer_cli_foreman/host.rb:49 ../lib/hammer_cli_foreman/host.rb:86
@@ -337,8 +337,8 @@ msgstr ""
 #: ../lib/hammer_cli_foreman/compute_resource.rb:262
 #: ../lib/hammer_cli_foreman/compute_resource.rb:274
 #: ../lib/hammer_cli_foreman/domain.rb:9
-#: ../lib/hammer_cli_foreman/external_usergroup.rb:11
-#: ../lib/hammer_cli_foreman/external_usergroup.rb:42
+#: ../lib/hammer_cli_foreman/external_usergroup.rb:9
+#: ../lib/hammer_cli_foreman/external_usergroup.rb:40
 #: ../lib/hammer_cli_foreman/filter.rb:142
 #: ../lib/hammer_cli_foreman/filter.rb:159 ../lib/hammer_cli_foreman/host.rb:20
 #: ../lib/hammer_cli_foreman/host.rb:51
@@ -860,51 +860,58 @@ msgstr ""
 msgid "Set credentials"
 msgstr ""
 
-#: ../lib/hammer_cli_foreman/auth.rb:16 ../lib/hammer_cli_foreman/auth.rb:50
+#: ../lib/hammer_cli_foreman/auth.rb:16 ../lib/hammer_cli_foreman/auth.rb:37
+#: ../lib/hammer_cli_foreman/auth.rb:71
 msgid "Username to access the remote system"
 msgstr ""
 
-#: ../lib/hammer_cli_foreman/auth.rb:17 ../lib/hammer_cli_foreman/auth.rb:51
+#: ../lib/hammer_cli_foreman/auth.rb:17 ../lib/hammer_cli_foreman/auth.rb:38
+#: ../lib/hammer_cli_foreman/auth.rb:72
 msgid "Password to access the remote system"
 msgstr ""
 
-#: ../lib/hammer_cli_foreman/auth.rb:26 ../lib/hammer_cli_foreman/auth.rb:77
+#: ../lib/hammer_cli_foreman/auth.rb:26 ../lib/hammer_cli_foreman/auth.rb:47
+#: ../lib/hammer_cli_foreman/auth.rb:98
 msgid "Successfully logged in as '%s'."
 msgstr ""
 
-#: ../lib/hammer_cli_foreman/auth.rb:39
+#: ../lib/hammer_cli_foreman/auth.rb:35
+msgid "Authenticate against external source (IPA/PAM) with credentials"
+msgstr ""
+
+#: ../lib/hammer_cli_foreman/auth.rb:60
 msgid "Successfully authenticated using negotiate auth, using the KEYRING principal."
 msgstr ""
 
-#: ../lib/hammer_cli_foreman/auth.rb:52
+#: ../lib/hammer_cli_foreman/auth.rb:73
 msgid "Openidc provider URL which issues access token"
 msgstr ""
 
-#: ../lib/hammer_cli_foreman/auth.rb:53
+#: ../lib/hammer_cli_foreman/auth.rb:74
 msgid "Openidc provider URL which issues authentication code (two factor only)"
 msgstr ""
 
-#: ../lib/hammer_cli_foreman/auth.rb:54
+#: ../lib/hammer_cli_foreman/auth.rb:75
 msgid "Client id used in the Openidc provider"
 msgstr ""
 
-#: ../lib/hammer_cli_foreman/auth.rb:55
+#: ../lib/hammer_cli_foreman/auth.rb:76
 msgid "Authenticate with two factor"
 msgstr ""
 
-#: ../lib/hammer_cli_foreman/auth.rb:56
+#: ../lib/hammer_cli_foreman/auth.rb:77
 msgid "Redirect URI for the authentication code grant flow"
 msgstr ""
 
-#: ../lib/hammer_cli_foreman/auth.rb:88
+#: ../lib/hammer_cli_foreman/auth.rb:109
 msgid "Wipe your credentials"
 msgstr ""
 
-#: ../lib/hammer_cli_foreman/auth.rb:92
+#: ../lib/hammer_cli_foreman/auth.rb:113
 msgid "Logged out."
 msgstr ""
 
-#: ../lib/hammer_cli_foreman/auth.rb:99
+#: ../lib/hammer_cli_foreman/auth.rb:120
 msgid "Information about current connections"
 msgstr ""
 
@@ -1288,40 +1295,40 @@ msgstr ""
 msgid "Nothing to update."
 msgstr ""
 
-#: ../lib/hammer_cli_foreman/commands.rb:669
+#: ../lib/hammer_cli_foreman/commands.rb:667
 msgid "Associate a resource"
 msgstr ""
 
-#: ../lib/hammer_cli_foreman/commands.rb:673
+#: ../lib/hammer_cli_foreman/commands.rb:671
 msgid "Could not associate the %{resource_name}."
 msgstr ""
 
-#: ../lib/hammer_cli_foreman/commands.rb:677
+#: ../lib/hammer_cli_foreman/commands.rb:675
 msgid "The %{resource_name} has been associated."
 msgstr ""
 
-#: ../lib/hammer_cli_foreman/commands.rb:704
+#: ../lib/hammer_cli_foreman/commands.rb:702
 msgid "Disassociate a resource"
 msgstr ""
 
-#: ../lib/hammer_cli_foreman/commands.rb:721
+#: ../lib/hammer_cli_foreman/commands.rb:719
 msgid "Could not disassociate the %{resource_name}."
 msgstr ""
 
-#: ../lib/hammer_cli_foreman/commands.rb:725
+#: ../lib/hammer_cli_foreman/commands.rb:723
 msgid "The %{resource_name} has been disassociated."
 msgstr ""
 
-#: ../lib/hammer_cli_foreman/commands.rb:740
+#: ../lib/hammer_cli_foreman/commands.rb:738
 msgid "Path to directory where downloaded content will be saved"
 msgstr ""
 
-#: ../lib/hammer_cli_foreman/commands.rb:755
+#: ../lib/hammer_cli_foreman/commands.rb:753
 #: ../lib/hammer_cli_foreman/report_template.rb:190
 msgid "The response has been saved to %{path}."
 msgstr ""
 
-#: ../lib/hammer_cli_foreman/commands.rb:771
+#: ../lib/hammer_cli_foreman/commands.rb:769
 msgid "Cannot save file: %s does not exist"
 msgstr ""
 
@@ -1877,7 +1884,7 @@ msgid "Boolean, set 1 to wipe disk after delete"
 msgstr ""
 
 #: ../lib/hammer_cli_foreman/compute_resource/ovirt.rb:43
-msgid "Disk interface name, must be ide, virto or virto_scsi"
+msgid "Disk interface name, must be ide, virtio or virtio_scsi"
 msgstr ""
 
 #: ../lib/hammer_cli_foreman/compute_resource/ovirt.rb:58
@@ -2065,7 +2072,7 @@ msgid "Report metrics"
 msgstr ""
 
 #: ../lib/hammer_cli_foreman/config_report.rb:48
-msgid "config_retrieval"
+msgid "config retrieval"
 msgstr ""
 
 #: ../lib/hammer_cli_foreman/config_report.rb:49
@@ -2208,89 +2215,89 @@ msgstr ""
 msgid "Forbidden - server refused to process the request."
 msgstr ""
 
-#: ../lib/hammer_cli_foreman/exception_handler.rb:137
+#: ../lib/hammer_cli_foreman/exception_handler.rb:131
 msgid "The following configuration option were used for the SSL connection:"
 msgstr ""
 
-#: ../lib/hammer_cli_foreman/exception_handler.rb:140
+#: ../lib/hammer_cli_foreman/exception_handler.rb:134
 msgid "Make sure the location contains an unexpired and valid CA certificate for %s."
 msgstr ""
 
-#: ../lib/hammer_cli_foreman/exception_handler.rb:142
+#: ../lib/hammer_cli_foreman/exception_handler.rb:136
 msgid ""
 "You can use hammer to fetch the CA certificate from the server. Be aware that "
 "hammer cannot verify whether the certificate is correct and you should verify "
 "its authenticity after downloading it."
 msgstr ""
 
-#: ../lib/hammer_cli_foreman/exception_handler.rb:143
+#: ../lib/hammer_cli_foreman/exception_handler.rb:137
 msgid "Download the certificate as follows:"
 msgstr ""
 
-#: ../lib/hammer_cli_foreman/exception_handler.rb:147
+#: ../lib/hammer_cli_foreman/exception_handler.rb:141
 msgid ""
 "Make sure you configured the correct URL and have the server's CA certificate "
 "installed on your system."
 msgstr ""
 
-#: ../lib/hammer_cli_foreman/exception_handler.rb:166
+#: ../lib/hammer_cli_foreman/exception_handler.rb:160
 msgid "Server misconfiguration detected"
 msgstr ""
 
-#: ../lib/hammer_cli_foreman/exception_handler.rb:167
+#: ../lib/hammer_cli_foreman/exception_handler.rb:161
 msgid "have you run installer with option %s?"
 msgstr ""
 
-#: ../lib/hammer_cli_foreman/exception_handler.rb:168
+#: ../lib/hammer_cli_foreman/exception_handler.rb:162
 msgid "the user might come from a different authentication source"
 msgstr ""
 
-#: ../lib/hammer_cli_foreman/exception_handler.rb:170
+#: ../lib/hammer_cli_foreman/exception_handler.rb:164
 msgid "Could not authenticate using negotiation protocol"
 msgstr ""
 
-#: ../lib/hammer_cli_foreman/exception_handler.rb:171
+#: ../lib/hammer_cli_foreman/exception_handler.rb:165
 msgid "have you run %s (for Kerberos)?"
 msgstr ""
 
-#: ../lib/hammer_cli_foreman/exception_handler.rb:172
+#: ../lib/hammer_cli_foreman/exception_handler.rb:166
 msgid "is the server down?"
 msgstr ""
 
-#: ../lib/hammer_cli_foreman/external_usergroup.rb:6
+#: ../lib/hammer_cli_foreman/external_usergroup.rb:4
 msgid "View and manage user group's external user groups"
 msgstr ""
 
-#: ../lib/hammer_cli_foreman/external_usergroup.rb:12
-#: ../lib/hammer_cli_foreman/external_usergroup.rb:43
+#: ../lib/hammer_cli_foreman/external_usergroup.rb:10
+#: ../lib/hammer_cli_foreman/external_usergroup.rb:41
 msgid "Auth source"
 msgstr ""
 
-#: ../lib/hammer_cli_foreman/external_usergroup.rb:39
+#: ../lib/hammer_cli_foreman/external_usergroup.rb:37
 msgid "Refresh external user group"
 msgstr ""
 
-#: ../lib/hammer_cli_foreman/external_usergroup.rb:57
+#: ../lib/hammer_cli_foreman/external_usergroup.rb:55
 msgid "External user group created."
 msgstr ""
 
-#: ../lib/hammer_cli_foreman/external_usergroup.rb:58
+#: ../lib/hammer_cli_foreman/external_usergroup.rb:56
 msgid "Could not create external user group"
 msgstr ""
 
-#: ../lib/hammer_cli_foreman/external_usergroup.rb:65
+#: ../lib/hammer_cli_foreman/external_usergroup.rb:63
 msgid "External user group updated."
 msgstr ""
 
-#: ../lib/hammer_cli_foreman/external_usergroup.rb:66
+#: ../lib/hammer_cli_foreman/external_usergroup.rb:64
 msgid "Could not update external user group"
 msgstr ""
 
-#: ../lib/hammer_cli_foreman/external_usergroup.rb:73
+#: ../lib/hammer_cli_foreman/external_usergroup.rb:71
 msgid "External user group deleted."
 msgstr ""
 
-#: ../lib/hammer_cli_foreman/external_usergroup.rb:74
+#: ../lib/hammer_cli_foreman/external_usergroup.rb:72
 msgid "Could not delete the external user group"
 msgstr ""
 
@@ -3905,7 +3912,7 @@ msgid "Version"
 msgstr ""
 
 #: ../lib/hammer_cli_foreman/smart_proxy.rb:29
-msgid "Host_count"
+msgid "Host count"
 msgstr ""
 
 #: ../lib/hammer_cli_foreman/smart_proxy.rb:43

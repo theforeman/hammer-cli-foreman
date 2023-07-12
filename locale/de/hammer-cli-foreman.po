@@ -5,20 +5,21 @@
 # Translators:
 # Crited <Alexander.Stoll@netways.de>, 2019
 # Christina Gurski <Gurski_christina@yahoo.de>, 2015
-# Ettore Atalan <atalanttore@googlemail.com>, 2014-2017
+# Ettore Atalan <atalanttore@googlemail.com>, 2014-2017,2022-2023
 # Marcel Fuhrmann <marcel@mfsystems.me>, 2015
-# Patrick Dolinic, 2021
-# Patrick Dolinic, 2021
+# pdolinic, 2021
+# pdolinic, 2021
 # simon11 <transifex@stieger.co>, 2014
 # simon11 <transifex@stieger.co>, 2014
 msgid ""
 msgstr ""
-"Project-Id-Version: hammer-cli-foreman 3.6.0\n"
+"Project-Id-Version: hammer-cli-foreman 3.8.0.pre.develop\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-10-31 15:16+0000\n"
 "PO-Revision-Date: 2014-03-14 09:55+0000\n"
-"Last-Translator: Patrick Dolinic, 2021\n"
-"Language-Team: German (http://www.transifex.com/foreman/foreman/language/"
+"Last-Translator: Ettore Atalan <atalanttore@googlemail.com>, "
+"2014-2017,2022-2023\n"
+"Language-Team: German (http://app.transifex.com/foreman/foreman/language/"
 "de/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -1127,7 +1128,7 @@ msgid "Datacenter"
 msgstr "Rechenzentrum"
 
 msgid "Hosts"
-msgstr ""
+msgstr "Hosts"
 
 msgid "Cluster path"
 msgstr ""
@@ -1154,7 +1155,7 @@ msgid "Parent"
 msgstr "Übergeordnet"
 
 msgid "Cluster"
-msgstr ""
+msgstr "Cluster"
 
 msgid "State"
 msgstr "Status"
@@ -2680,7 +2681,7 @@ msgstr ""
 "Nur verwendbar, wenn wait angegeben ist"
 
 msgid "The report has been scheduled. Job ID: %{job_id}"
-msgstr "Der Bericht ist geplant. Job-ID: %{job_id}"
+msgstr "Der Bericht ist geplant. Auftragskennung: %{job_id}"
 
 msgid ""
 "Path to a file that contains the report template content including metadata"
@@ -2984,7 +2985,7 @@ msgid "Subnet parameter deleted."
 msgstr "Subnetzparameter gelöscht."
 
 msgid "Columns"
-msgstr ""
+msgstr "Spalten"
 
 msgid "Table preference created."
 msgstr ""
@@ -3181,19 +3182,14 @@ msgstr "Virtuelle Maschine gelöscht."
 msgid "Could not delete the virtual machine"
 msgstr "Die virtuelle Maschine konnte nicht gelöscht werden"
 
-#~ msgid "Project"
-#~ msgstr "Projekt"
+msgid "Authenticate against external source (IPA/PAM) with credentials"
+msgstr ""
 
-#~ msgid "Key Path"
-#~ msgstr "Schlüsselpfad"
+msgid "Disk interface name, must be ide, virtio or virtio_scsi"
+msgstr ""
 
-#~ msgid "Zone"
-#~ msgstr "Zone"
+msgid "config retrieval"
+msgstr ""
 
-#~ msgid "Machine Type"
-#~ msgstr "Systemtyp"
-
-#~ msgid "Virtual machine id, for gce use virtual machine name"
-#~ msgstr ""
-#~ "ID der virtuellen Maschine, für gce den Namen der virtuellen Maschine "
-#~ "verwenden"
+msgid "Host count"
+msgstr ""
