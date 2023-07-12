@@ -10,12 +10,12 @@
 # Pierre-Emmanuel Dutang <dutangp@gmail.com>, 2014,2016-2017
 msgid ""
 msgstr ""
-"Project-Id-Version: hammer-cli-foreman 3.6.0\n"
+"Project-Id-Version: hammer-cli-foreman 3.8.0.pre.develop\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-10-31 15:16+0000\n"
 "PO-Revision-Date: 2014-03-14 09:55+0000\n"
 "Last-Translator: 0868a4d1af5275b3f70b0a6dac4c99a4, 2014\n"
-"Language-Team: French (http://www.transifex.com/foreman/foreman/language/"
+"Language-Team: French (http://app.transifex.com/foreman/foreman/language/"
 "fr/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -942,7 +942,7 @@ msgid "Should the value be hidden"
 msgstr "Si la valeur est masquée"
 
 msgid "Type of the parameter"
-msgstr "Type de paramètre."
+msgstr "Type de paramètre"
 
 msgid "Global parameter [%{name}] deleted."
 msgstr "Paramètre de sous-réseau  [%{name}]  supprimé."
@@ -1125,7 +1125,7 @@ msgid "Datacenter"
 msgstr "Datacenter"
 
 msgid "Hosts"
-msgstr ""
+msgstr "Hôtes"
 
 msgid "Cluster path"
 msgstr ""
@@ -1152,7 +1152,7 @@ msgid "Parent"
 msgstr "Parent"
 
 msgid "Cluster"
-msgstr ""
+msgstr "Cluster"
 
 msgid "State"
 msgstr "État "
@@ -1210,7 +1210,7 @@ msgid "Memory"
 msgstr "Mémoire"
 
 msgid "Status"
-msgstr "État"
+msgstr "Statut"
 
 msgid "OS Type"
 msgstr "Type d'OS"
@@ -3184,19 +3184,14 @@ msgstr "Machine virtuelle supprimée."
 msgid "Could not delete the virtual machine"
 msgstr "Impossible de supprimer la machine virtuelle"
 
-#~ msgid "Project"
-#~ msgstr "Projet"
+msgid "Authenticate against external source (IPA/PAM) with credentials"
+msgstr ""
 
-#~ msgid "Key Path"
-#~ msgstr "Chemin de clé"
+msgid "Disk interface name, must be ide, virtio or virtio_scsi"
+msgstr ""
 
-#~ msgid "Zone"
-#~ msgstr "Zone"
+msgid "config retrieval"
+msgstr ""
 
-#~ msgid "Machine Type"
-#~ msgstr "Type de machine"
-
-#~ msgid "Virtual machine id, for gce use virtual machine name"
-#~ msgstr ""
-#~ "Identifiant de la machine virtuelle, pour gce utiliser le nom de la "
-#~ "machine virtuelle"
+msgid "Host count"
+msgstr ""

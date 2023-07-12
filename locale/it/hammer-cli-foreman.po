@@ -7,12 +7,12 @@
 # Giuseppe Pignataro <anubisteam01@gmail.com>, 2014
 msgid ""
 msgstr ""
-"Project-Id-Version: hammer-cli-foreman 3.6.0\n"
+"Project-Id-Version: hammer-cli-foreman 3.8.0.pre.develop\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-10-31 15:16+0000\n"
 "PO-Revision-Date: 2014-03-14 09:55+0000\n"
 "Last-Translator: Giuseppe Pignataro <anubisteam01@gmail.com>, 2014\n"
-"Language-Team: Italian (http://www.transifex.com/foreman/foreman/language/"
+"Language-Team: Italian (http://app.transifex.com/foreman/foreman/language/"
 "it/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -1088,7 +1088,7 @@ msgid "Datacenter"
 msgstr "Datacenter"
 
 msgid "Hosts"
-msgstr ""
+msgstr "Hosts"
 
 msgid "Cluster path"
 msgstr ""
@@ -1115,7 +1115,7 @@ msgid "Parent"
 msgstr "Genitore"
 
 msgid "Cluster"
-msgstr ""
+msgstr "Cluster"
 
 msgid "State"
 msgstr "Stato"
@@ -3083,8 +3083,14 @@ msgstr ""
 msgid "Could not delete the virtual machine"
 msgstr ""
 
-#~ msgid "Zone"
-#~ msgstr "Zona"
+msgid "Authenticate against external source (IPA/PAM) with credentials"
+msgstr ""
 
-#~ msgid "Machine Type"
-#~ msgstr "Tipo di macchina"
+msgid "Disk interface name, must be ide, virtio or virtio_scsi"
+msgstr ""
+
+msgid "config retrieval"
+msgstr ""
+
+msgid "Host count"
+msgstr ""

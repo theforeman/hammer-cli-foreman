@@ -5,14 +5,15 @@
 # Translators:
 # 0868a4d1af5275b3f70b0a6dac4c99a4, 2014
 # 0868a4d1af5275b3f70b0a6dac4c99a4, 2014
+# 진선재, 2022
 msgid ""
 msgstr ""
-"Project-Id-Version: hammer-cli-foreman 3.6.0\n"
+"Project-Id-Version: hammer-cli-foreman 3.8.0.pre.develop\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-10-31 15:16+0000\n"
 "PO-Revision-Date: 2014-03-14 09:55+0000\n"
-"Last-Translator: 0868a4d1af5275b3f70b0a6dac4c99a4, 2014\n"
-"Language-Team: Korean (http://www.transifex.com/foreman/foreman/language/"
+"Last-Translator: 진선재, 2022\n"
+"Language-Team: Korean (http://app.transifex.com/foreman/foreman/language/"
 "ko/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -1087,7 +1088,7 @@ msgid "Datacenter"
 msgstr "Datacenter"
 
 msgid "Hosts"
-msgstr ""
+msgstr "호스트"
 
 msgid "Cluster path"
 msgstr ""
@@ -1114,7 +1115,7 @@ msgid "Parent"
 msgstr "부모 "
 
 msgid "Cluster"
-msgstr ""
+msgstr "클러스터"
 
 msgid "State"
 msgstr "상태 "
@@ -1180,7 +1181,7 @@ msgid "Domain Type"
 msgstr ""
 
 msgid "Persistent"
-msgstr ""
+msgstr "영구적"
 
 msgid "Boot order"
 msgstr ""
@@ -1716,7 +1717,7 @@ msgid "Partition Table"
 msgstr "파티션 테이블 "
 
 msgid "PXE Loader"
-msgstr ""
+msgstr "PXE 로더"
 
 msgid "Custom partition table"
 msgstr "사용자 정의 파티션 테이블"
@@ -1981,7 +1982,7 @@ msgid "Hostgroup title"
 msgstr "호스트 그룹 제목"
 
 msgid "Set the current location context for the request"
-msgstr ""
+msgstr "요청에 대한 현재 위치 컨텍스트 설정"
 
 msgid "Medium name"
 msgstr "미디어 이름 "
@@ -1990,7 +1991,7 @@ msgid "Model name"
 msgstr "모델 이름 "
 
 msgid "Set the current organization context for the request"
-msgstr ""
+msgstr "요청에 대한 현재 조직 컨텍스트 설정"
 
 msgid "Operating system title"
 msgstr "운영 체제 제목 "
@@ -2005,7 +2006,7 @@ msgid "User role name"
 msgstr "사용자 역할 이름 "
 
 msgid "Setting name"
-msgstr "설정 이름"
+msgstr "이름 설정"
 
 msgid "Subnet name"
 msgstr "서브넷 이름 "
@@ -3082,8 +3083,14 @@ msgstr ""
 msgid "Could not delete the virtual machine"
 msgstr ""
 
-#~ msgid "Zone"
-#~ msgstr "영역 "
+msgid "Authenticate against external source (IPA/PAM) with credentials"
+msgstr ""
 
-#~ msgid "Machine Type"
-#~ msgstr "시스템 유형 "
+msgid "Disk interface name, must be ide, virtio or virtio_scsi"
+msgstr ""
+
+msgid "config retrieval"
+msgstr ""
+
+msgid "Host count"
+msgstr ""

@@ -8,12 +8,12 @@
 # 山田 修司 🍣 Shuji Yamada <uzy.exe@gmail.com>, 2015
 msgid ""
 msgstr ""
-"Project-Id-Version: hammer-cli-foreman 3.6.0\n"
+"Project-Id-Version: hammer-cli-foreman 3.8.0.pre.develop\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-10-31 15:16+0000\n"
 "PO-Revision-Date: 2014-03-14 09:55+0000\n"
 "Last-Translator: 山田 修司 🍣 Shuji Yamada <uzy.exe@gmail.com>, 2015\n"
-"Language-Team: Japanese (http://www.transifex.com/foreman/foreman/language/"
+"Language-Team: Japanese (http://app.transifex.com/foreman/foreman/language/"
 "ja/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -1103,7 +1103,7 @@ msgid "Datacenter"
 msgstr "データセンター"
 
 msgid "Hosts"
-msgstr ""
+msgstr "ホスト"
 
 msgid "Cluster path"
 msgstr ""
@@ -1130,7 +1130,7 @@ msgid "Parent"
 msgstr "親"
 
 msgid "Cluster"
-msgstr ""
+msgstr "クラスター"
 
 msgid "State"
 msgstr "状態"
@@ -1187,7 +1187,7 @@ msgid "Memory"
 msgstr "メモリー"
 
 msgid "Status"
-msgstr "状態"
+msgstr "ステータス"
 
 msgid "OS Type"
 msgstr "OS タイプ"
@@ -3152,17 +3152,14 @@ msgstr "仮想マシンが削除されました。"
 msgid "Could not delete the virtual machine"
 msgstr "仮想マシンを削除できませんでした"
 
-#~ msgid "Project"
-#~ msgstr "プロジェクト"
+msgid "Authenticate against external source (IPA/PAM) with credentials"
+msgstr ""
 
-#~ msgid "Key Path"
-#~ msgstr "キーのパス"
+msgid "Disk interface name, must be ide, virtio or virtio_scsi"
+msgstr ""
 
-#~ msgid "Zone"
-#~ msgstr "ゾーン"
+msgid "config retrieval"
+msgstr ""
 
-#~ msgid "Machine Type"
-#~ msgstr "マシンタイプ"
-
-#~ msgid "Virtual machine id, for gce use virtual machine name"
-#~ msgstr "仮想マシン ID、GCE には仮想マシン名を使用"
+msgid "Host count"
+msgstr ""

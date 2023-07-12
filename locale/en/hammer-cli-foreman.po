@@ -5,9 +5,10 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: hammer-cli-foreman 3.6.0\n"
+"Project-Id-Version: hammer-cli-foreman 3.8.0.pre.develop\n"
 "Report-Msgid-Bugs-To: \n"
-"PO-Revision-Date: 2014-03-04 16:47+0000\n"
+"POT-Creation-Date: 2023-07-12 17:18+0000\n"
+"PO-Revision-Date: 2022-10-31 15:16+0000\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: \n"
@@ -557,6 +558,9 @@ msgid "Password to access the remote system"
 msgstr ""
 
 msgid "Successfully logged in as '%s'."
+msgstr ""
+
+msgid "Authenticate against external source (IPA/PAM) with credentials"
 msgstr ""
 
 msgid ""
@@ -1242,7 +1246,7 @@ msgstr ""
 msgid "Boolean, set 1 to wipe disk after delete"
 msgstr ""
 
-msgid "Disk interface name, must be ide, virto or virto_scsi"
+msgid "Disk interface name, must be ide, virtio or virtio_scsi"
 msgstr ""
 
 msgid "Cores"
@@ -1373,7 +1377,7 @@ msgstr ""
 msgid "Report metrics"
 msgstr ""
 
-msgid "config_retrieval"
+msgid "config retrieval"
 msgstr ""
 
 msgid "exec"
@@ -2707,7 +2711,7 @@ msgstr ""
 msgid "Version"
 msgstr ""
 
-msgid "Host_count"
+msgid "Host count"
 msgstr ""
 
 msgid "Smart proxy created."

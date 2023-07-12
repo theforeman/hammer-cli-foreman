@@ -5,17 +5,17 @@
 # Translators:
 # Diego de Souza Lopes <djkakaroto@gmail.com>, 2015
 # Junior Alvim <alvin@intechne.com.br>, 2014
-# Fabio Dias <fabioqos@gmail.com>, 2015
+# Fabio Dias, 2015
 # Junior Alvim <alvin@intechne.com.br>, 2014
 # Valeria S Silva <valeriassilva@live.com>, 2015
 msgid ""
 msgstr ""
-"Project-Id-Version: hammer-cli-foreman 3.6.0\n"
+"Project-Id-Version: hammer-cli-foreman 3.8.0.pre.develop\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-10-31 15:16+0000\n"
 "PO-Revision-Date: 2014-03-14 09:55+0000\n"
 "Last-Translator: Valeria S Silva <valeriassilva@live.com>, 2015\n"
-"Language-Team: Portuguese (Brazil) (http://www.transifex.com/foreman/foreman/"
+"Language-Team: Portuguese (Brazil) (http://app.transifex.com/foreman/foreman/"
 "language/pt_BR/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -1117,7 +1117,7 @@ msgid "Datacenter"
 msgstr "Datacenter"
 
 msgid "Hosts"
-msgstr ""
+msgstr "Hosts"
 
 msgid "Cluster path"
 msgstr ""
@@ -1144,7 +1144,7 @@ msgid "Parent"
 msgstr "Pai"
 
 msgid "Cluster"
-msgstr ""
+msgstr "Cluster"
 
 msgid "State"
 msgstr "Estado"
@@ -2080,7 +2080,7 @@ msgid "Name to search by"
 msgstr "Nome a ser pesquisado"
 
 msgid "Missing options to search %s"
-msgstr "Opções ausentes para pesquisar %s ."
+msgstr "Opções de pesquisa em falta %s"
 
 msgid "one of %s not found."
 msgstr "um dos %s não encontrado."
@@ -3167,17 +3167,14 @@ msgstr "Máquina virtual excluída."
 msgid "Could not delete the virtual machine"
 msgstr "Não foi possível excluir a máquina virtual"
 
-#~ msgid "Project"
-#~ msgstr "Projeto"
+msgid "Authenticate against external source (IPA/PAM) with credentials"
+msgstr ""
 
-#~ msgid "Key Path"
-#~ msgstr "Caminho da chave"
+msgid "Disk interface name, must be ide, virtio or virtio_scsi"
+msgstr ""
 
-#~ msgid "Zone"
-#~ msgstr "Zona"
+msgid "config retrieval"
+msgstr ""
 
-#~ msgid "Machine Type"
-#~ msgstr "Tipo de máquina"
-
-#~ msgid "Virtual machine id, for gce use virtual machine name"
-#~ msgstr "ID da máquina virtual, para gce use o nome de máquina virtual"
+msgid "Host count"
+msgstr ""
