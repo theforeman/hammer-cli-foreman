@@ -11,7 +11,6 @@ SimpleCov.root Pathname.new(File.dirname(__FILE__) + "../../../")
 
 require 'minitest/autorun'
 require 'minitest/spec'
-require "minitest-spec-context"
 require "mocha/minitest"
 
 require 'hammer_cli'

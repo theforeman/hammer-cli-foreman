@@ -7,7 +7,7 @@ describe HammerCLIForeman::OperatingSystem do
 
   include CommandTestHelper
 
-  context "ListCommand" do
+  describe "ListCommand" do
 
     before :each do
       ResourceMocks.operatingsystems
@@ -15,14 +15,14 @@ describe HammerCLIForeman::OperatingSystem do
 
     let(:cmd) { HammerCLIForeman::OperatingSystem::ListCommand.new("", ctx) }
 
-    context "parameters" do
+    describe "parameters" do
       it_should_accept "no arguments"
       it_should_accept_search_params
       it_should_accept 'organization', ['--organization-id=1']
       it_should_accept 'location', ['--location-id=1']
     end
 
-    context "output" do
+    describe "output" do
       let(:expected_record_count) { count_records(cmd.resource.call(:index)) }
 
       it_should_print_n_records
@@ -35,11 +35,11 @@ describe HammerCLIForeman::OperatingSystem do
   end
 
 
-  context "InfoCommand" do
+  describe "InfoCommand" do
 
     let(:cmd) { HammerCLIForeman::OperatingSystem::InfoCommand.new("", ctx) }
 
-    context "parameters" do
+    describe "parameters" do
       it_should_accept "id", ["--id=1"]
       it_should_accept "title", ["--title=Rhel 6.5"]
       it_should_accept 'organization', %w[--id=1 --organization-id=1]
@@ -47,7 +47,7 @@ describe HammerCLIForeman::OperatingSystem do
       # it_should_fail_with "no arguments" # TODO: temporarily disabled, parameters are checked in the id resolver
     end
 
-    context "output" do
+    describe "output" do
       with_params ["--id=1"] do
         it_should_print_n_records 1
         it_should_print_column "Name"
@@ -68,11 +68,11 @@ describe HammerCLIForeman::OperatingSystem do
   end
 
 
-  context "CreateCommand" do
+  describe "CreateCommand" do
 
     let(:cmd) { HammerCLIForeman::OperatingSystem::CreateCommand.new("", ctx) }
 
-    context "parameters" do
+    describe "parameters" do
       it_should_accept "name, major, minor, family, release name, organization, location",
                        ["--name=media", "--major=1", "--minor=2", "--family=Red Hat", "--release-name=awesome", "--organization-id=1", "--location-id=1"]
       # it_should_fail_with "name missing", ["--major=1", "--minor=2", "--family=Red Hat", "--release-name=awesome"]
@@ -85,11 +85,11 @@ describe HammerCLIForeman::OperatingSystem do
   end
 
 
-  context "DeleteCommand" do
+  describe "DeleteCommand" do
 
     let(:cmd) { HammerCLIForeman::OperatingSystem::DeleteCommand.new("", ctx) }
 
-    context "parameters" do
+    describe "parameters" do
       it_should_accept "id", ["--id=1"]
       it_should_accept "title", ["--title=Rhel 6.5"]
       it_should_accept 'organization', %w[--id=1 --organization-id=1]
@@ -101,11 +101,11 @@ describe HammerCLIForeman::OperatingSystem do
   end
 
 
-  context "UpdateCommand" do
+  describe "UpdateCommand" do
 
     let(:cmd) { HammerCLIForeman::OperatingSystem::UpdateCommand.new("", ctx) }
 
-    context "parameters" do
+    describe "parameters" do
       it_should_accept "id", ["--id=1"]
       it_should_accept "title", ["--title=Rhel 6.5"]
       it_should_accept "name, major, minor, family, release name, organization, location",
@@ -122,7 +122,7 @@ describe HammerCLIForeman::OperatingSystem do
   end
 
 
-  context "SetParameterCommand" do
+  describe "SetParameterCommand" do
 
     before :each do
       ResourceMocks.operatingsystems
@@ -130,7 +130,7 @@ describe HammerCLIForeman::OperatingSystem do
 
     let(:cmd) { HammerCLIForeman::OperatingSystem::SetParameterCommand.new("", ctx) }
 
-    context "parameters" do
+    describe "parameters" do
       it_should_accept "name, value and os id", ["--name=domain", "--value=val", "--operatingsystem-id=1"]
       it_should_accept "name, value and os title", ["--name=domain", "--value=val", "--operatingsystem=Rhel 6.5"]
       it_should_accept "name, value, type and os id", ["--name=domain", "--value=val", "--parameter-type=string", "--operatingsystem-id=1"]
@@ -143,11 +143,11 @@ describe HammerCLIForeman::OperatingSystem do
   end
 
 
-  context "DeleteParameterCommand" do
+  describe "DeleteParameterCommand" do
 
     let(:cmd) { HammerCLIForeman::OperatingSystem::DeleteParameterCommand.new("", ctx) }
 
-    context "parameters" do
+    describe "parameters" do
       it_should_accept "name and os id", ["--name=domain", "--operatingsystem-id=1"]
       it_should_accept "name and os title", ["--name=domain", "--operatingsystem=Rhel 6.5"]
       # it_should_fail_with "name missing", ["--operatingsystem-id=id"]

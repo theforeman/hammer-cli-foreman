@@ -4,7 +4,7 @@ module ResourceDisabled
 
   def it_should_fail_when_disabled
     arguments = @with_params ? @with_params.dup : []
-    context "resource disabled" do
+    describe "resource disabled" do
 
       it "should return error" do
         cmd.class.resource.stubs(:call).raises(RestClient::ResourceNotFound)

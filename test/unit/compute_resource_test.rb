@@ -8,19 +8,19 @@ describe HammerCLIForeman::ComputeResource do
 
   include CommandTestHelper
 
-  context "ListCommand" do
+  describe "ListCommand" do
     before do
       ResourceMocks.mock_action_call(:compute_resources, :index, [])
     end
 
     let(:cmd) { HammerCLIForeman::ComputeResource::ListCommand.new("", ctx) }
 
-    context "parameters" do
+    describe "parameters" do
       it_should_accept "no arguments"
       it_should_accept_search_params
     end
 
-    context "output" do
+    describe "output" do
       let(:expected_record_count) { count_records(cmd.resource.call(:index)) }
 
       it_should_print_n_records
@@ -30,20 +30,20 @@ describe HammerCLIForeman::ComputeResource do
   end
 
 
-  context "InfoCommand" do
+  describe "InfoCommand" do
     before do
       ResourceMocks.compute_resource_show
     end
 
     let(:cmd) { HammerCLIForeman::ComputeResource::InfoCommand.new("", ctx) }
 
-    context "parameters" do
+    describe "parameters" do
       it_should_accept "id", ["--id=1"]
       it_should_accept "name", ["--name=arch"]
       # it_should_fail_with "no arguments" # TODO: temporarily disabled, parameters are checked in the id resolver
     end
 
-    context "output" do
+    describe "output" do
       with_params ["--id=1"] do
         it_should_print_n_records 1
         it_should_print_columns ["Name", "Id", "Provider", "Url"]
@@ -53,11 +53,11 @@ describe HammerCLIForeman::ComputeResource do
   end
 
 
-  context "CreateCommand" do
+  describe "CreateCommand" do
 
     let(:cmd) { HammerCLIForeman::ComputeResource::CreateCommand.new("", ctx) }
 
-    context "parameters" do
+    describe "parameters" do
       it_should_accept "name, url, provider", ["--name=arch", "--url=http://some.org", "--provider=Libvirt"]
       # it_should_fail_with "name missing", ["--url=http://some.org", "--provider=Libvirt"]
       # it_should_fail_with "url missing", ["--name=arch", "--provider=Libvirt"]
@@ -68,11 +68,11 @@ describe HammerCLIForeman::ComputeResource do
   end
 
 
-  context "DeleteCommand" do
+  describe "DeleteCommand" do
 
     let(:cmd) { HammerCLIForeman::ComputeResource::DeleteCommand.new("", ctx) }
 
-    context "parameters" do
+    describe "parameters" do
       it_should_accept "name", ["--name=arch"]
       it_should_accept "id", ["--id=1"]
       # it_should_fail_with "name or id missing", [] # TODO: temporarily disabled, parameters are checked in the id resolver
@@ -81,11 +81,11 @@ describe HammerCLIForeman::ComputeResource do
   end
 
 
-  context "UpdateCommand" do
+  describe "UpdateCommand" do
 
     let(:cmd) { HammerCLIForeman::ComputeResource::UpdateCommand.new("", ctx) }
 
-    context "parameters" do
+    describe "parameters" do
       it_should_accept "name", ["--name=arch", "--new-name=arch2"]
       it_should_accept "id", ["--id=1", "--new-name=arch2"]
       # it_should_fail_with "no params", [] # TODO: temporarily disabled, parameters are checked in the id resolver
@@ -94,19 +94,19 @@ describe HammerCLIForeman::ComputeResource do
 
   end
 
-  context "AvailableClustersCommand" do
+  describe "AvailableClustersCommand" do
     before do
       ResourceMocks.compute_resources_available_clusters
     end
 
     let(:cmd) { HammerCLIForeman::ComputeResource::AvailableClustersCommand.new("", ctx) }
 
-    context "parameters" do
+    describe "parameters" do
       it_should_accept "id", ["--id=1"]
       it_should_accept "name", ["--name=domain-c7"]
     end
 
-    context "output" do
+    describe "output" do
       let(:expected_record_count) { count_records(cmd.resource.call(:available_clusters)) }
 
       with_params ["--name=testcr"] do
@@ -116,21 +116,21 @@ describe HammerCLIForeman::ComputeResource do
     end
   end
 
-  context "AvailableNetworksCommand" do
+  describe "AvailableNetworksCommand" do
     before do
       ResourceMocks.compute_resources_available_networks
     end
 
     let(:cmd) { HammerCLIForeman::ComputeResource::AvailableNetworksCommand.new("", ctx) }
 
-    context "parameters" do
+    describe "parameters" do
       it_should_accept "id", ["--id=1"]
       it_should_accept "name", ["--name=arch"]
       # it_should_fail_with "no params", [] # TODO: temporarily disabled, parameters are checked in the id resolver
       # it_should_fail_with "name or id missing", ["--new-name=arch2"] # TODO: temporarily disabled, parameters are checked in the id resolver
     end
 
-    context "output" do
+    describe "output" do
       let(:expected_record_count) { count_records(cmd.resource.call(:available_networks)) }
 
       with_params ["--name=testcr"] do

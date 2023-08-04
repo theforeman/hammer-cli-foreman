@@ -8,20 +8,20 @@ require 'hammer_cli_foreman/bookmark'
 describe HammerCLIForeman::Bookmark do
   include CommandTestHelper
 
-  context 'ListCommand' do
+  describe 'ListCommand' do
     before :each do
       ResourceMocks.bookmarks
     end
 
     let(:cmd) { HammerCLIForeman::Bookmark::ListCommand.new('', ctx) }
 
-    context 'parameters' do
+    describe 'parameters' do
       it_should_accept 'no arguments'
       it_should_accept 'organization', ['--organization-id=1']
       it_should_accept 'location', ['--location-id=1']
     end
 
-    context 'output' do
+    describe 'output' do
       let(:expected_record_count) { count_records(cmd.resource.call(:index)) }
 
       it_should_print_n_records
@@ -35,17 +35,17 @@ describe HammerCLIForeman::Bookmark do
     end
   end
 
-  context 'InfoCommand' do
+  describe 'InfoCommand' do
     let(:cmd) { HammerCLIForeman::Bookmark::InfoCommand.new('', ctx) }
 
-    context 'parameters' do
+    describe 'parameters' do
       it_should_accept 'id', ['--id=1']
       it_should_accept 'name', ['--name=active']
       it_should_accept 'organization', %w[--id=1 --organization-id=1]
       it_should_accept 'location', %w[--id=1 --location-id=1]
     end
 
-    context 'output' do
+    describe 'output' do
       with_params ['--id=1'] do
         it_should_print_n_records 1
         it_should_print_column 'Id'
@@ -59,10 +59,10 @@ describe HammerCLIForeman::Bookmark do
     end
   end
 
-  context 'CreateCommand' do
+  describe 'CreateCommand' do
     let(:cmd) { HammerCLIForeman::Bookmark::CreateCommand.new('', ctx) }
 
-    context 'parameters' do
+    describe 'parameters' do
       it_should_accept 'name, public, controller, query, organization, location',
                        ['--name=active', '--public=1', '--controller=hosts', '--organization-id=1', '--location-id=1',
                         '--query=last_report > "35 minutes ago" and (status.applied > 0 or status.restarted > 0)']
@@ -70,10 +70,10 @@ describe HammerCLIForeman::Bookmark do
 
   end
 
-  context 'DeleteCommand' do
+  describe 'DeleteCommand' do
     let(:cmd) { HammerCLIForeman::Bookmark::DeleteCommand.new('', ctx) }
 
-    context 'parameters' do
+    describe 'parameters' do
       it_should_accept 'id', ['--id=1']
       it_should_accept 'name', ['--name=active']
       it_should_accept 'organization', %w[--id=1 --organization-id=1]
@@ -81,10 +81,10 @@ describe HammerCLIForeman::Bookmark do
     end
   end
 
-  context 'UpdateCommand' do
+  describe 'UpdateCommand' do
     let(:cmd) { HammerCLIForeman::Bookmark::UpdateCommand.new('', ctx) }
 
-    context 'parameters' do
+    describe 'parameters' do
       it_should_accept 'id', ['--id=1']
       it_should_accept 'name', ['--name=active']
       it_should_accept 'name, public, controller, query, organization, location',

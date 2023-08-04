@@ -20,19 +20,19 @@ describe HammerCLIForeman::Template do
     File.stubs(:read).returns("")
   end
 
-  context "ListCommand" do
+  describe "ListCommand" do
     before do
       ResourceMocks.mock_action_call(:provisioning_templates, :index, [])
     end
 
     let(:cmd) { HammerCLIForeman::Template::ListCommand.new("", ctx) }
 
-    context "parameters" do
+    describe "parameters" do
       it_should_accept "no arguments"
       it_should_accept_search_params
     end
 
-    context "output" do
+    describe "output" do
       let(:expected_record_count) { count_records(cmd.resource.call(:index)) }
 
       it_should_print_n_records
@@ -52,11 +52,11 @@ describe HammerCLIForeman::Template do
   end
 
 
-  context "InfoCommand" do
+  describe "InfoCommand" do
 
     let(:cmd) { HammerCLIForeman::Template::InfoCommand.new("", ctx) }
 
-    context "parameters" do
+    describe "parameters" do
       before(:each) do
         template = {
           'config_template' => {
@@ -71,7 +71,7 @@ describe HammerCLIForeman::Template do
       # it_should_fail_with "no arguments" # TODO: temporarily disabled, parameters are checked in the id resolver
     end
 
-    context "output" do
+    describe "output" do
       with_params ["--id=1"] do
         before(:each) do
           template = {
@@ -91,25 +91,25 @@ describe HammerCLIForeman::Template do
   end
 
 
-  context "ListKindsCommand" do
+  describe "ListKindsCommand" do
     before do
       ResourceMocks.mock_action_call(:template_kinds, :index, [])
     end
 
     let(:cmd) { HammerCLIForeman::Template::ListKindsCommand.new("", ctx) }
 
-    context "parameters" do
+    describe "parameters" do
       it_should_accept "no arguments"
     end
 
   end
 
 
-  context "DumpCommand" do
+  describe "DumpCommand" do
 
     let(:cmd) { HammerCLIForeman::Template::DumpCommand.new("", ctx) }
 
-    context "parameters" do
+    describe "parameters" do
       it_should_accept "id", ["--id=1"]
       # it_should_fail_with "no params", [] # TODO: temporarily disabled, parameters are checked in the id resolver
     end
@@ -117,7 +117,7 @@ describe HammerCLIForeman::Template do
   end
 
 
-  context "CreateCommand" do
+  describe "CreateCommand" do
 
     let(:cmd) { HammerCLIForeman::Template::CreateCommand.new("", ctx) }
 
@@ -125,7 +125,7 @@ describe HammerCLIForeman::Template do
       cmd.stubs(:option_template_kind_id).returns(1)
     end
 
-    context "parameters" do
+    describe "parameters" do
       it_should_accept "name, file, type, audit comment, os ids", ["--name=tpl", "--file=~/tpl.sh", "--type=snippet", "--audit-comment=fix", "--operatingsystem-ids=1,2,3"]
       # it_should_fail_with "name missing", ["--file=~/tpl.sh", "--type=snippet", "--audit-comment=fix", "--operatingsystem-ids=1,2,3"]
       # it_should_fail_with "type missing", ["--name=tpl", "--file=~/tpl.sh", "--audit-comment=fix", "--operatingsystem-ids=1,2,3"]
@@ -136,7 +136,7 @@ describe HammerCLIForeman::Template do
   end
 
 
-  context "UpdateCommand" do
+  describe "UpdateCommand" do
 
     let(:cmd) { HammerCLIForeman::Template::UpdateCommand.new("", ctx) }
 
@@ -144,7 +144,7 @@ describe HammerCLIForeman::Template do
       cmd.stubs(:option_template_kind_id).returns(1)
     end
 
-    context "parameters" do
+    describe "parameters" do
       it_should_accept "id, name, file, type, audit comment, os ids", ["--id=83", "--name=tpl", "--file=~/tpl.sh", "--type=snippet", "--audit-comment=fix", "--operatingsystem-ids=1,2,3"]
       # it_should_fail_with "id missing", ["--name=tpl", "--file=~/tpl.sh", "--type=snippet", "--audit-comment=fix", "--operatingsystem-ids=1,2,3"]
       # TODO: temporarily disabled, parameters are checked in the id resolver
@@ -153,11 +153,11 @@ describe HammerCLIForeman::Template do
   end
 
 
-  context "DeleteCommand" do
+  describe "DeleteCommand" do
 
     let(:cmd) { HammerCLIForeman::Template::DeleteCommand.new("", ctx) }
 
-    context "parameters" do
+    describe "parameters" do
       it_should_accept "id", ["--id=1"]
       # it_should_fail_with "no params", [] # TODO: temporarily disabled, parameters are checked in the id resolver
     end

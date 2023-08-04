@@ -33,7 +33,7 @@ describe HammerCLIForeman::ListCommand do
     HammerCLI::Settings.clear
   end
 
-  context 'help' do
+  describe 'help' do
     let(:cmd) { ['host', 'list'] }
     let(:params) { ['--help'] }
 
@@ -49,7 +49,7 @@ describe HammerCLIForeman::ListCommand do
   end
 
   describe "api interaction" do
-    context "without per_page in settings" do
+    describe "without per_page in settings" do
       it "fetches only first page when there's not enough records" do
         expect_paged_call(1, 1000, 10)
         result = run_cmd([], {}, TestList)
@@ -86,7 +86,7 @@ describe HammerCLIForeman::ListCommand do
       end
     end
 
-    context "with per_page in settings" do
+    describe "with per_page in settings" do
       let(:per_page_in_settings) { 30 }
       before do
         HammerCLI::Settings.load({ :ui => { :per_page => per_page_in_settings } })
@@ -139,7 +139,7 @@ describe HammerCLIForeman::ListCommand do
       assert_cmd(expected_result, result)
     end
 
-    context 'with per_page in settings' do
+    describe 'with per_page in settings' do
       before do
         HammerCLI::Settings.load({ :ui => { :per_page => '1' } })
       end

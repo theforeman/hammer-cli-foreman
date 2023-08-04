@@ -3,7 +3,7 @@ require File.join(File.dirname(__FILE__), 'test_helper')
 require 'hammer_cli_foreman/operating_system'
 
 describe HammerCLIForeman::OperatingSystem do
-  context 'AddProvisioningTemplateCommand' do
+  describe 'AddProvisioningTemplateCommand' do
     before do
       @cmd = ['os', 'add-provisioning-template']
       @os_before_update = {
@@ -106,7 +106,7 @@ describe HammerCLIForeman::OperatingSystem do
 
   end
 
-  context 'RemoveProvisioningTemplateCommand' do
+  describe 'RemoveProvisioningTemplateCommand' do
     before do
       @cmd = ['os', 'remove-provisioning-template']
       @os_before_update = {

@@ -7,19 +7,19 @@ describe HammerCLIForeman::CommonParameter do
 
   include CommandTestHelper
 
-  context "ListCommand" do
+  describe "ListCommand" do
     before do
       ResourceMocks.mock_action_call(:common_parameters, :index, [])
     end
 
     let(:cmd) { HammerCLIForeman::CommonParameter::ListCommand.new("", ctx) }
 
-    context "parameters" do
+    describe "parameters" do
       it_should_accept "no arguments"
       it_should_accept_search_params
     end
 
-    context "output" do
+    describe "output" do
       let(:expected_record_count) { count_records(cmd.resource.call(:index)) }
 
       it_should_print_n_records
@@ -29,21 +29,21 @@ describe HammerCLIForeman::CommonParameter do
   end
 
 
-  context "SetCommand" do
+  describe "SetCommand" do
     before do
       ResourceMocks.common_parameter_list
     end
 
     let(:cmd) { HammerCLIForeman::CommonParameter::SetCommand.new("", ctx) }
 
-    context "parameters" do
+    describe "parameters" do
       it_should_accept "name, value, parameter-type and hidden-value", ["--name=param", "--value=val", "--parameter-type=string", "--hidden-value=true"]
       # it_should_fail_with "name missing", ["--value=val"]
       # it_should_fail_with "value missing", ["--name=param"]
       # TODO: temporarily disabled, parameters are checked by the api
     end
 
-    context "adding params" do
+    describe "adding params" do
       before :each do
         ResourceMocks.mock_action_calls(
           [:common_parameters, :index, []],
@@ -56,7 +56,7 @@ describe HammerCLIForeman::CommonParameter do
       end
     end
 
-    context "updating params" do
+    describe "updating params" do
       before :each do
         ResourceMocks.mock_action_calls(
           [:common_parameters, :index, [{'name' => 'param', 'value' => 'test'}]],
@@ -70,7 +70,7 @@ describe HammerCLIForeman::CommonParameter do
       end
     end
 
-    context "adding params with parameter type" do
+    describe "adding params with parameter type" do
       before :each do
         ResourceMocks.mock_action_calls(
           [:common_parameters, :index, []],
@@ -85,11 +85,11 @@ describe HammerCLIForeman::CommonParameter do
   end
 
 
-  context "DeleteCommand" do
+  describe "DeleteCommand" do
 
     let(:cmd) { HammerCLIForeman::CommonParameter::DeleteCommand.new("", ctx) }
 
-    context "parameters" do
+    describe "parameters" do
       it_should_accept "name", ["--name=arch"]
       # it_should_fail_with "name missing", []
       # TODO: temporarily disabled, parameters are checked in the id resolver

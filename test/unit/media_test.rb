@@ -7,19 +7,19 @@ describe HammerCLIForeman::Medium do
 
   include CommandTestHelper
 
-  context "ListCommand" do
+  describe "ListCommand" do
     before do
       ResourceMocks.mock_action_call(:media, :index, [])
     end
 
     let(:cmd) { HammerCLIForeman::Medium::ListCommand.new("", ctx) }
 
-    context "parameters" do
+    describe "parameters" do
       it_should_accept "no arguments"
       it_should_accept_search_params
     end
 
-    context "output" do
+    describe "output" do
       let(:expected_record_count) { count_records(cmd.resource.call(:index)) }
 
       it_should_print_n_records
@@ -30,17 +30,17 @@ describe HammerCLIForeman::Medium do
 
   end
 
-  context "InfoCommand" do
+  describe "InfoCommand" do
 
     let(:cmd) { HammerCLIForeman::Medium::InfoCommand.new("", ctx) }
 
-    context "parameters" do
+    describe "parameters" do
       it_should_accept "id", ["--id=1"]
       it_should_accept "name", ["--name=medium_x"]
       # it_should_fail_with "no arguments" # TODO: temporarily disabled, parameters are checked in the id resolver
     end
 
-    context "output" do
+    describe "output" do
       with_params ["--id=1"] do
         it_should_print_n_records 1
         it_should_print_column "Name"
@@ -54,11 +54,11 @@ describe HammerCLIForeman::Medium do
     end
   end
 
-  context "CreateCommand" do
+  describe "CreateCommand" do
 
     let(:cmd) { HammerCLIForeman::Medium::CreateCommand.new("", ctx) }
 
-    context "parameters" do
+    describe "parameters" do
       it_should_accept "name, path, os ids", ["--name=media", "--path=http://some.path/abc/$major/Fedora/$arch/", "--operatingsystem-ids=1,2"]
       # it_should_fail_with "name missing", ["--path=http://some.path/abc/$major/Fedora/$arch/"]
       # it_should_fail_with "path missing", ["--name=media"]
@@ -70,22 +70,22 @@ describe HammerCLIForeman::Medium do
     end
   end
 
-  context "DeleteCommand" do
+  describe "DeleteCommand" do
 
     let(:cmd) { HammerCLIForeman::Medium::DeleteCommand.new("", ctx) }
 
-    context "parameters" do
+    describe "parameters" do
       it_should_accept "name", ["--name=media"]
       it_should_accept "id", ["--id=1"]
       # it_should_fail_with "name or id missing", [] # TODO: temporarily disabled, parameters are checked in the id resolver
     end
   end
 
-  context "UpdateCommand" do
+  describe "UpdateCommand" do
 
     let(:cmd) { HammerCLIForeman::Medium::UpdateCommand.new("", ctx) }
 
-    context "parameters" do
+    describe "parameters" do
       it_should_accept "name", ["--name=medium"]
       it_should_accept "id", ["--id=1"]
       it_should_accept "os ids", ["--id=1", "--operatingsystem-ids=1,2"]

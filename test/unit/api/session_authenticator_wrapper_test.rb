@@ -52,7 +52,7 @@ describe HammerCLIForeman::Api::SessionAuthenticatorWrapper do
   end
 
   describe '#authenticate' do
-    context "when there's saved session" do
+    describe "when there's saved session" do
       it 'sets session id in cookies for basic auth' do
         session_params = {
           session_id: 'SOME_SESSION_ID', auth_type: 'Basic_Auth'
@@ -139,7 +139,7 @@ describe HammerCLIForeman::Api::SessionAuthenticatorWrapper do
       end
     end
 
-    context "when the session file is corrupted" do
+    describe "when the session file is corrupted" do
       it 'reports error' do
         _dir, _out, err = prepare_session_storage :session_id => 'SOME_SESSION_ID' do |auth, dir|
           write_session(dir, '{not a valid: json')
@@ -152,7 +152,7 @@ describe HammerCLIForeman::Api::SessionAuthenticatorWrapper do
       end
     end
 
-    context "when no session is saved" do
+    describe "when no session is saved" do
       it 'passes to wrapped authenticator' do
         prepare_session_storage do |auth, dir|
           wrapped_auth.expects(:authenticate).with(request, args)
@@ -164,7 +164,7 @@ describe HammerCLIForeman::Api::SessionAuthenticatorWrapper do
   end
 
   describe '#error' do
-    context 'when there is existing session' do
+    describe 'when there is existing session' do
       it 'sets session id to nil on unauthorized exception' do
         prepare_session_storage :session_id => 'SOME_SESSION_ID' do |auth, dir|
           ex = RestClient::Unauthorized.new
@@ -204,7 +204,7 @@ describe HammerCLIForeman::Api::SessionAuthenticatorWrapper do
         end
       end
 
-      context 'when user has changed' do
+      describe 'when user has changed' do
         it 'sets a special error message' do
           prepare_session_storage :session_id => 'SOME_SESSION_ID' do |auth, dir|
             auth.force_user_change
@@ -227,7 +227,7 @@ describe HammerCLIForeman::Api::SessionAuthenticatorWrapper do
       end
     end
 
-    context 'when there is no existing session' do
+    describe 'when there is no existing session' do
       it 'passes exception to wrapped authenticator on unauthorized exception' do
         prepare_session_storage do |auth, dir|
           ex = RestClient::Unauthorized.new

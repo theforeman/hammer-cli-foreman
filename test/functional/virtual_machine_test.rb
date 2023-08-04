@@ -5,7 +5,7 @@ require 'hammer_cli_foreman/compute_resource'
 
 describe HammerCLIForeman::VirtualMachine do
 
-  context "InfoCommand" do
+  describe "InfoCommand" do
     before do
       @cmd = ["compute-resource", "virtual-machine", "info"]
       @vm = {
@@ -43,7 +43,7 @@ describe HammerCLIForeman::VirtualMachine do
 
   end
 
-  context "ListCommand" do
+  describe "ListCommand" do
     before do
       @cmd = ["compute-resource", "virtual-machines"]
       @available_virtual_machines = [
@@ -68,7 +68,7 @@ describe HammerCLIForeman::VirtualMachine do
     end
   end
 
-  context "PowerCommand" do
+  describe "PowerCommand" do
     before do
       @cmd = ["compute-resource", "virtual-machine", "power"]
     end
@@ -97,7 +97,7 @@ describe HammerCLIForeman::VirtualMachine do
     end
   end
 
-  context "DeleteCommand" do
+  describe "DeleteCommand" do
     before do
       @cmd = ["compute-resource", "virtual-machine", "delete"]
     end

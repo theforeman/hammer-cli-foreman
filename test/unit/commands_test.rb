@@ -7,7 +7,7 @@ describe HammerCLIForeman do
     HammerCLI::Settings.load({:_params => {:interactive => false}})
   end
 
-  context "collection_to_common_format" do
+  describe "collection_to_common_format" do
 
     let(:kind) { { "name" => "PXELinux", "id" => 1 } }
 
@@ -57,7 +57,7 @@ describe HammerCLIForeman do
   end
 
 
-  context "record_to_common_format" do
+  describe "record_to_common_format" do
 
     let(:arch) { { "name" => "x86_64", "id" => 1 } }
 
@@ -79,7 +79,7 @@ describe HammerCLIForeman do
     end
   end
 
-  context "Create command" do
+  describe "Create command" do
     it "should format created entity in csv output" do
       ResourceMocks.mock_action_call(:architectures, :create, {
           "architecture" => {
@@ -96,7 +96,7 @@ describe HammerCLIForeman do
     end
   end
 
-  context "AddAssociatedCommand" do
+  describe "AddAssociatedCommand" do
     it "should associate resource" do
       ResourceMocks.mock_action_calls(
           [:organizations, :show, { "id" => 1, "domain_ids" => [2] }],
@@ -132,7 +132,7 @@ describe HammerCLIForeman do
     end
   end
 
-  context "ListSearchCommand" do
+  describe "ListSearchCommand" do
     it "should find correct results" do
       ResourceMocks.mock_action_calls(
         [:hosts, :index, [{ "id" => 2, "name" => "random-host",  "ip" => "192.168.100.112", "mac" => "6e:4b:3c:2c:8a:0a" }]],

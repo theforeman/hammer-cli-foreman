@@ -8,7 +8,7 @@ describe HammerCLIForeman::Location do
   include CommandTestHelper
   extend ResourceDisabled
 
-  context "ListCommand" do
+  describe "ListCommand" do
 
     let(:cmd) { HammerCLIForeman::Location::ListCommand.new("", ctx) }
 
@@ -16,12 +16,12 @@ describe HammerCLIForeman::Location do
       ResourceMocks.locations_index
     end
 
-    context "parameters" do
+    describe "parameters" do
       it_should_accept "no arguments"
       it_should_accept_search_params
     end
 
-    context "output" do
+    describe "output" do
       let(:expected_record_count) { count_records(cmd.resource.call(:index)) }
 
       it_should_print_n_records
@@ -34,7 +34,7 @@ describe HammerCLIForeman::Location do
   end
 
 
-  context "InfoCommand" do
+  describe "InfoCommand" do
 
     let(:cmd) { HammerCLIForeman::Location::InfoCommand.new("", ctx) }
 
@@ -42,13 +42,13 @@ describe HammerCLIForeman::Location do
       ResourceMocks.locations_show
     end
 
-    context "parameters" do
+    describe "parameters" do
       it_should_accept "id", ["--id=1"]
       it_should_accept "name", ["--name=arch"]
       # it_should_fail_with "no arguments" # TODO: temporarily disabled, parameters are checked in the id resolver
     end
 
-    context "output" do
+    describe "output" do
       with_params ["--id=1"] do
         it_should_print_n_records 1
         it_should_print_column "Name"
@@ -65,11 +65,11 @@ describe HammerCLIForeman::Location do
   end
 
 
-  context "CreateCommand" do
+  describe "CreateCommand" do
 
     let(:cmd) { HammerCLIForeman::Location::CreateCommand.new("", ctx) }
 
-    context "parameters" do
+    describe "parameters" do
       it_should_accept "name", ["--name=org"]
       # it_should_fail_with "name missing", []
       # TODO: temporarily disabled, parameters are checked in the api
@@ -81,11 +81,11 @@ describe HammerCLIForeman::Location do
   end
 
 
-  context "DeleteCommand" do
+  describe "DeleteCommand" do
 
     let(:cmd) { HammerCLIForeman::Location::DeleteCommand.new("", ctx) }
 
-    context "parameters" do
+    describe "parameters" do
       it_should_accept "name", ["--name=org"]
       it_should_accept "id", ["--id=1"]
       # it_should_fail_with "name or id missing", [] # TODO: temporarily disabled, parameters are checked in the id resolver
@@ -97,11 +97,11 @@ describe HammerCLIForeman::Location do
   end
 
 
-  context "UpdateCommand" do
+  describe "UpdateCommand" do
 
     let(:cmd) { HammerCLIForeman::Location::UpdateCommand.new("", ctx) }
 
-    context "parameters" do
+    describe "parameters" do
       it_should_accept "name", ["--name=org", "--new-name=org2"]
       it_should_accept "id", ["--id=1", "--new-name=org2"]
       # it_should_fail_with "no params", []

@@ -14,19 +14,19 @@ describe HammerCLIForeman::PartitionTable do
     ::File.stubs(:read).returns("FILE_CONTENT")
   end
 
-  context "ListCommand" do
+  describe "ListCommand" do
     before do
       ResourceMocks.mock_action_call(:ptables, :index, [])
     end
 
     let(:cmd) { HammerCLIForeman::PartitionTable::ListCommand.new("", ctx) }
 
-    context "parameters" do
+    describe "parameters" do
       it_should_accept "no arguments"
       it_should_accept_search_params
     end
 
-    context "output" do
+    describe "output" do
       let(:expected_record_count) { count_records(cmd.resource.call(:index)) }
 
       it_should_print_n_records
@@ -36,18 +36,18 @@ describe HammerCLIForeman::PartitionTable do
   end
 
 
-  context "InfoCommand" do
+  describe "InfoCommand" do
 
     let(:cmd) { HammerCLIForeman::PartitionTable::InfoCommand.new("", ctx) }
 
-    context "parameters" do
+    describe "parameters" do
       it_should_accept "id", ["--id=1"]
       it_should_accept "name", ["--name=ptable"]
 
       # it_should_fail_with "no arguments" # TODO: temporarily disabled, parameters are checked in the id resolver
     end
 
-    context "output" do
+    describe "output" do
       with_params ["--id=1"] do
         it_should_print_n_records 1
         it_should_print_columns ["Id", "Name", "OS Family", "Created at", "Updated at"]
@@ -65,11 +65,11 @@ describe HammerCLIForeman::PartitionTable do
   end
 
 
-  context "DumpCommand" do
+  describe "DumpCommand" do
 
     let(:cmd) { HammerCLIForeman::PartitionTable::DumpCommand.new("", ctx) }
 
-    context "parameters" do
+    describe "parameters" do
       it_should_accept "id", ["--id=1"]
       it_should_accept "name", ["--name=ptable"]
       # it_should_fail_with "id or name missing", [] # TODO: temporarily disabled, parameters are checked in the id resolver
@@ -86,7 +86,7 @@ describe HammerCLIForeman::PartitionTable do
   end
 
 
-  context "CreateCommand" do
+  describe "CreateCommand" do
 
     let(:cmd) { HammerCLIForeman::PartitionTable::CreateCommand.new("", ctx) }
 
@@ -94,7 +94,7 @@ describe HammerCLIForeman::PartitionTable do
       cmd.stubs(:template_kind_id).returns(1)
     end
 
-    context "parameters" do
+    describe "parameters" do
       it_should_accept "name, file, os family", ["--name=tpl", "--file=~/table.sh", "--os-family=RedHat"]
       # it_should_fail_with "name missing", ["--file=~/table.sh", "--os-family=RedHat"]
       # it_should_fail_with "file missing", ["--name=tpl", "--os-family=RedHat"]
@@ -108,11 +108,11 @@ describe HammerCLIForeman::PartitionTable do
   end
 
 
-  context "UpdateCommand" do
+  describe "UpdateCommand" do
 
     let(:cmd) { HammerCLIForeman::PartitionTable::UpdateCommand.new("", ctx) }
 
-    context "parameters" do
+    describe "parameters" do
       it_should_accept "id, new-name, file, type, audit comment, os ids", ["--id=83", "--new-name=ptable","--file=~/table.sh", "--os-family=RedHat"]
       it_should_accept "name, new-name, file, type, audit comment, os ids", ["--name=ptable", "--new-name=ptable2", "--file=~/table.sh", "--os-family=RedHat"]
       # it_should_fail_with "id and name missing", ["--new-name=ptable","--file=~/table.sh", "--os-family=RedHat"]
@@ -126,11 +126,11 @@ describe HammerCLIForeman::PartitionTable do
   end
 
 
-  context "DeleteCommand" do
+  describe "DeleteCommand" do
 
     let(:cmd) { HammerCLIForeman::PartitionTable::DeleteCommand.new("", ctx) }
 
-    context "parameters" do
+    describe "parameters" do
       it_should_accept "id", ["--id=1"]
       it_should_accept "name", ["--name=ptable"]
       # it_should_fail_with "id or name missing", [] # TODO: temporarily disabled, parameters are checked in the id resolver

@@ -8,21 +8,21 @@ describe HammerCLIForeman::Usergroup do
   include CommandTestHelper
 
 
-  context "ListCommand" do
+  describe "ListCommand" do
     before do
       ResourceMocks.mock_action_call(:usergroups, :index, [])
     end
 
     let(:cmd) { HammerCLIForeman::Usergroup::ListCommand.new("", ctx) }
 
-    context "parameters" do
+    describe "parameters" do
       it_should_accept "no arguments"
       it_should_accept_search_params
       it_should_accept 'organization', ['--organization-id=1']
       it_should_accept 'location', ['--location-id=1']
     end
 
-    context "output" do
+    describe "output" do
       it_should_print_column "Id"
       it_should_print_column "Name"
       it_should_print_column "Admin"
@@ -30,18 +30,18 @@ describe HammerCLIForeman::Usergroup do
 
   end
 
-  context "InfoCommand" do
+  describe "InfoCommand" do
 
     let(:cmd) { HammerCLIForeman::Usergroup::InfoCommand.new("", ctx) }
 
-    context "parameters" do
+    describe "parameters" do
       it_should_accept "id", ["--id=1"]
       it_should_accept "name", ["--name=ug"]
       it_should_accept 'organization', %w[--id=1 --organization-id=1]
       it_should_accept 'location', %w[--id=1 --location-id=1]
     end
 
-    context "output" do
+    describe "output" do
       with_params ["--id=1"] do
         it_should_print_column "Id"
         it_should_print_column "Name"
@@ -55,11 +55,11 @@ describe HammerCLIForeman::Usergroup do
     end
   end
 
-  context "CreateCommand" do
+  describe "CreateCommand" do
 
     let(:cmd) { HammerCLIForeman::Usergroup::CreateCommand.new("", ctx) }
 
-    context "parameters" do
+    describe "parameters" do
       it_should_accept "name", ["--name=ug"]
       it_should_accept "name, role ids, user group ids and user ids", ["--name=ug", "--role-ids=1,2,3", "--user-group-ids=1,2,3", "--user-ids=1,2,3"]
       it_should_accept 'organization', %w[--name=ug --organization-id=1]
@@ -67,11 +67,11 @@ describe HammerCLIForeman::Usergroup do
     end
   end
 
-  context "DeleteCommand" do
+  describe "DeleteCommand" do
 
     let(:cmd) { HammerCLIForeman::Usergroup::DeleteCommand.new("", ctx) }
 
-    context "parameters" do
+    describe "parameters" do
       it_should_accept "name", ["--name=ug"]
       it_should_accept "id", ["--id=1"]
       it_should_accept 'organization', %w[--id=1 --organization-id=1]
@@ -79,11 +79,11 @@ describe HammerCLIForeman::Usergroup do
     end
   end
 
-  context "UpdateCommand" do
+  describe "UpdateCommand" do
 
     let(:cmd) { HammerCLIForeman::Usergroup::UpdateCommand.new("", ctx) }
 
-    context "parameters" do
+    describe "parameters" do
       it_should_accept "name", ["--name=ug"]
       it_should_accept "id", ["--id=1"]
       it_should_accept "name and new name", ["--name=ug", "--new-name=ug2"]

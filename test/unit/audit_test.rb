@@ -6,19 +6,19 @@ require 'hammer_cli_foreman/audit'
 describe HammerCLIForeman::Audit do
   include CommandTestHelper
 
-  context "ListCommand" do
+  describe "ListCommand" do
     before do
       ResourceMocks.mock_action_call(:audits, :index, [])
     end
 
     let(:cmd) { HammerCLIForeman::Audit::ListCommand.new("", ctx) }
 
-    context "parameters" do
+    describe "parameters" do
       it_should_accept "no arguments"
       it_should_accept_search_params
     end
 
-    context "output" do
+    describe "output" do
       let(:expected_record_count) { count_records(cmd.resource.call(:index)) }
 
       it_should_print_n_records
@@ -32,18 +32,18 @@ describe HammerCLIForeman::Audit do
     end
   end
 
-  context "InfoCommand" do
+  describe "InfoCommand" do
     before do
         cmd.stubs(:extend_data)
     end
 
     let(:cmd) { HammerCLIForeman::Audit::InfoCommand.new("", ctx) }
 
-    context "parameters" do
+    describe "parameters" do
       it_should_accept "id", ["--id=1"]
     end
 
-    context "output" do
+    describe "output" do
       with_params ["--id=1"] do
         it_should_print_n_records 1
         it_should_print_column "Id"

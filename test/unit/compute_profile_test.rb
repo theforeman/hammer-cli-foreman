@@ -8,20 +8,20 @@ require 'hammer_cli_foreman/compute_profile'
 describe HammerCLIForeman::ComputeProfile do
   include CommandTestHelper
 
-  context 'ListCommand' do
+  describe 'ListCommand' do
     before :each do
       ResourceMocks.compute_profiles
     end
 
     let(:cmd) { HammerCLIForeman::ComputeProfile::ListCommand.new('', ctx) }
 
-    context 'parameters' do
+    describe 'parameters' do
       it_should_accept 'no arguments'
       it_should_accept 'organization', ['--organization-id=1']
       it_should_accept 'location', ['--location-id=1']
     end
 
-    context 'output' do
+    describe 'output' do
       let(:expected_record_count) { count_records(cmd.resource.call(:index)) }
 
       it_should_print_n_records
@@ -30,17 +30,17 @@ describe HammerCLIForeman::ComputeProfile do
     end
   end
 
-  context 'InfoCommand' do
+  describe 'InfoCommand' do
     let(:cmd) { HammerCLIForeman::ComputeProfile::InfoCommand.new('', ctx) }
 
-    context 'parameters' do
+    describe 'parameters' do
       it_should_accept 'id', ['--id=1']
       it_should_accept 'name', ['--name=test']
       it_should_accept 'organization', %w[--id=1 --organization-id=1]
       it_should_accept 'location', %w[--id=1 --location-id=1]
     end
 
-    context 'output' do
+    describe 'output' do
       with_params ['--id=1'] do
         it_should_print_n_records 1
         it_should_print_column 'Id'
@@ -52,10 +52,10 @@ describe HammerCLIForeman::ComputeProfile do
     end
   end
 
-  context 'CreateCommand' do
+  describe 'CreateCommand' do
     let(:cmd) { HammerCLIForeman::ComputeProfile::CreateCommand.new('', ctx) }
 
-    context 'parameters' do
+    describe 'parameters' do
       it_should_accept 'name', ['--name=test']
       it_should_accept 'organization', %w[--name=test --organization-id=1]
       it_should_accept 'location', %w[--name=test --location-id=1]
@@ -63,10 +63,10 @@ describe HammerCLIForeman::ComputeProfile do
 
   end
 
-  context 'DeleteCommand' do
+  describe 'DeleteCommand' do
     let(:cmd) { HammerCLIForeman::ComputeProfile::DeleteCommand.new('', ctx) }
 
-    context 'parameters' do
+    describe 'parameters' do
       it_should_accept 'id', ['--id=1']
       it_should_accept 'name', ['--name=test']
       it_should_accept 'organization', %w[--id=1 --organization-id=1]
@@ -74,10 +74,10 @@ describe HammerCLIForeman::ComputeProfile do
     end
   end
 
-  context 'UpdateCommand' do
+  describe 'UpdateCommand' do
     let(:cmd) { HammerCLIForeman::ComputeProfile::UpdateCommand.new('', ctx) }
 
-    context 'parameters' do
+    describe 'parameters' do
       it_should_accept 'id', ['--id=1']
       it_should_accept 'name', ['--name=test']
       it_should_accept 'organization', %w[--id=1 --organization-id=1]

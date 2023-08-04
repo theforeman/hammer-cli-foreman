@@ -1,7 +1,7 @@
 require File.join(File.dirname(__FILE__), '../../test_helper')
 
 describe HammerCLIForeman::Api::Oauth::PasswordGrant do
-  let(:request) { mock().stubs({}) }
+  let(:request) { {} }
   let(:args) { {} }
   let(:params) {{
     username: 'user1',
@@ -31,7 +31,7 @@ describe HammerCLIForeman::Api::Oauth::PasswordGrant do
     end
   end
 
-  context "interactive mode" do
+  describe "interactive mode" do
     before :each do
       HammerCLI.stubs(:interactive?).returns true
     end
