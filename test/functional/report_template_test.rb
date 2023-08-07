@@ -114,7 +114,7 @@ describe 'report-template' do
 
     it 'invokes editor in interactive mode' do
       params = ['--name=test', '--default=yes', "--interactive", '--locked=no', '--snippet=no']
-      HammerCLI.expects(:open_in_editor).with("", {:content_type => "report_template", :suffix => ".erb"}).returns('Template content')
+      HammerCLI.expects(:open_in_editor).with("", content_type: "report_template", suffix: ".erb").returns('Template content')
       api_expects(:report_templates, :create, 'Create template').with_params(
         'report_template' => {
           'name' => 'test',
@@ -181,7 +181,7 @@ describe 'report-template' do
     it 'invokes editor in interactive mode' do
       params = ['--id=3', '--new-name=test', '--default=yes', "--interactive", '--locked=no', '--snippet=no']
       HammerCLI.expects(:open_in_editor).with(
-        "Template Content", {:content_type => "report_template", :suffix => ".erb"}).returns('Template content')
+        "Template Content", content_type: "report_template", suffix: ".erb").returns('Template content')
       api_expects(:report_templates, :show, 'Show').with_params('id' => '3').returns(third_report)
       api_expects(:report_templates, :update, 'Update template').with_params(
         'report_template' => {
@@ -307,7 +307,7 @@ describe 'report-template' do
       { 'job_id' => job_id, 'data_url' => "/report_data/#{job_id}" }
     end
 
-    context 'without --wait' do
+    describe 'without --wait' do
       it 'schedule report and prints out data for getting the result' do
         params = ['--id=3', '--inputs=Host filter=filter']
         api_expects(:report_templates, :schedule_report, 'Schedule').with_params(
@@ -320,7 +320,7 @@ describe 'report-template' do
       end
     end
 
-    context 'with --wait' do
+    describe 'with --wait' do
       it 'generates the report to the file' do
         params = ['--id=3', '--inputs=Host filter=filter', '--wait', '--path=/tmp']
         api_expects(:report_templates, :schedule_report, 'Schedule').with_params(

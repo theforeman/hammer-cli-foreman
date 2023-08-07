@@ -7,7 +7,7 @@ describe HammerCLIForeman::Fact do
 
   include CommandTestHelper
 
-  context "ListCommand" do
+  describe "ListCommand" do
 
     let(:cmd) { HammerCLIForeman::Fact::ListCommand.new("", ctx) }
 
@@ -15,12 +15,12 @@ describe HammerCLIForeman::Fact do
       ResourceMocks.facts_index
     end
 
-    context "parameters" do
+    describe "parameters" do
       it_should_accept "no arguments"
       it_should_accept_search_params
     end
 
-    context "output" do
+    describe "output" do
       it_should_print_column "Host"
       it_should_print_column "Fact"
       it_should_print_column "Value"

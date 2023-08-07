@@ -1,7 +1,7 @@
 require File.join(File.dirname(__FILE__), '../../test_helper')
 
 describe HammerCLIForeman::Api::Oauth::AuthenticationCodeGrant do
-  let(:request) { mock().stubs({}) }
+  let(:request) { {} }
   let(:args) { {} }
   let(:params) {{
     oidc_redirect_uri: 'urn:ietf:wg:oauth:2.0:oob',
@@ -33,7 +33,7 @@ describe HammerCLIForeman::Api::Oauth::AuthenticationCodeGrant do
     end
   end
 
-  context "interactive mode" do
+  describe "interactive mode" do
     before :each do
       HammerCLI.stubs(:interactive?).returns true
     end

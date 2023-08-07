@@ -8,21 +8,21 @@ describe HammerCLIForeman::Model do
 
   include CommandTestHelper
 
-  context 'ListCommand' do
+  describe 'ListCommand' do
     before do
       ResourceMocks.mock_action_call(:models, :index, [])
     end
 
     let(:cmd) { HammerCLIForeman::Model::ListCommand.new('', ctx) }
 
-    context 'parameters' do
+    describe 'parameters' do
       it_should_accept 'no arguments'
       it_should_accept_search_params
       it_should_accept 'organization', ['--organization-id=1']
       it_should_accept 'location', ['--location-id=1']
     end
 
-    context 'output' do
+    describe 'output' do
       let(:expected_record_count) { count_records(cmd.resource.call(:index)) }
 
       it_should_print_n_records
@@ -34,11 +34,11 @@ describe HammerCLIForeman::Model do
   end
 
 
-  context 'InfoCommand' do
+  describe 'InfoCommand' do
 
     let(:cmd) { HammerCLIForeman::Model::InfoCommand.new('', ctx) }
 
-    context 'parameters' do
+    describe 'parameters' do
       it_should_accept 'id', ['--id=1']
       it_should_accept 'name', ['--name=model']
       it_should_accept 'organization', %w[--id=1 --organization-id=1]
@@ -46,7 +46,7 @@ describe HammerCLIForeman::Model do
       # it_should_fail_with "no arguments" # TODO: temporarily disabled, parameters are checked in the id resolver
     end
 
-    context 'output' do
+    describe 'output' do
       with_params ['--id=1'] do
         it_should_print_n_records 1
         it_should_print_column 'Name'
@@ -62,11 +62,11 @@ describe HammerCLIForeman::Model do
   end
 
 
-  context 'CreateCommand' do
+  describe 'CreateCommand' do
 
     let(:cmd) { HammerCLIForeman::Model::CreateCommand.new('', ctx) }
 
-    context 'parameters' do
+    describe 'parameters' do
       it_should_accept 'name, info, vendor-class, hardware-model, organization, location',
                        %w[--name=model --info=description --vendor-class=class --hardware-model=model --organization-id=1 --location-id=1]
       # it_should_fail_with "name missing", ["--info=description", "--vendor-class=class", "--hardware-model=model"]
@@ -76,11 +76,11 @@ describe HammerCLIForeman::Model do
   end
 
 
-  context 'DeleteCommand' do
+  describe 'DeleteCommand' do
 
     let(:cmd) { HammerCLIForeman::Model::DeleteCommand.new('', ctx) }
 
-    context 'parameters' do
+    describe 'parameters' do
       it_should_accept 'name', ['--name=model']
       it_should_accept 'id', ['--id=1']
       it_should_accept 'organization', %w[--id=1 --organization-id=1]
@@ -91,11 +91,11 @@ describe HammerCLIForeman::Model do
   end
 
 
-  context 'UpdateCommand' do
+  describe 'UpdateCommand' do
 
     let(:cmd) { HammerCLIForeman::Model::UpdateCommand.new('', ctx) }
 
-    context 'parameters' do
+    describe 'parameters' do
       it_should_accept 'name', ['--name=model', '--new-name=model2', '--info=description', '--vendor-class=class', '--hardware-model=model']
       it_should_accept 'id', ['--id=1', '--new-name=model2', '--info=description', '--vendor-class=class', '--hardware-model=model']
       it_should_accept 'organization', %w[--id=1 --organization-id=1]

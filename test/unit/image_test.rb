@@ -9,20 +9,20 @@ describe HammerCLIForeman::Image do
 
   include CommandTestHelper
 
-  context "ListCommand" do
+  describe "ListCommand" do
     before do
       ResourceMocks.mock_action_call(:images, :index, [])
     end
 
     let(:cmd) { HammerCLIForeman::Image::ListCommand.new("", ctx) }
 
-    context "parameters" do
+    describe "parameters" do
       it_should_accept "compute resource name", ["--compute-resource=cr"]
       it_should_accept "compute resource id", ["--compute-resource-id=1"]
       #it_should_accept_search_params
     end
 
-    context "output" do
+    describe "output" do
       let(:expected_record_count) { count_records(cmd.resource.call(:index, :compute_resource_id=>1)) }
 
       with_params ["--compute-resource-id=1"] do
@@ -37,16 +37,16 @@ describe HammerCLIForeman::Image do
   end
 
 
-  context "InfoCommand" do
+  describe "InfoCommand" do
 
     let(:cmd) { HammerCLIForeman::Image::InfoCommand.new("", ctx) }
 
-    context "parameters" do
+    describe "parameters" do
       it_should_accept "compute resource name and image's uuid", ["--compute-resource=cr", "--id=1"]
       it_should_accept "compute resource id and image's uuid", ["--compute-resource-id=1", "--id=1"]
     end
 
-    context "output" do
+    describe "output" do
       let(:expected_record_count) { cmd.resource.call(:index).length }
 
       with_params ["--compute-resource-id=1", "--id=1"] do
@@ -62,7 +62,7 @@ describe HammerCLIForeman::Image do
     end
   end
 
-  context "AvailableImagesCommand" do
+  describe "AvailableImagesCommand" do
 
     let(:cmd) { HammerCLIForeman::Image::AvailableImagesCommand.new("", ctx) }
 
@@ -71,12 +71,12 @@ describe HammerCLIForeman::Image do
       ResourceMocks.compute_resources_available_images
     end
 
-    context "parameters" do
+    describe "parameters" do
       it_should_accept "compute resource name", ["--compute-resource=cr"]
       it_should_accept "compute resource id", ["--compute-resource-id=1"]
     end
 
-    context "output" do
+    describe "output" do
       with_params ["--compute-resource-id=1"] do
         it_should_print_column "Name"
         it_should_print_column "UUID"
@@ -84,11 +84,11 @@ describe HammerCLIForeman::Image do
     end
   end
 
-  context "CreateCommand" do
+  describe "CreateCommand" do
 
     let(:cmd) { HammerCLIForeman::Image::CreateCommand.new("", ctx) }
 
-    context "parameters" do
+    describe "parameters" do
       it_should_accept "all required params", ["--name=img", "--operatingsystem-id=1", "--architecture-id=1", "--username=root", "--uuid=aabbcc123", "--compute-resource-id=1"]
       it_should_accept "all required params and resource's name", ["--name=img", "--operatingsystem-id=1", "--architecture-id=1", "--username=root", "--uuid=aabbcc123", "--compute-resource=ec2"]
       # it_should_fail_with "name missing", ["--operatingsystem-id=1", "architecture-id=1", "--username=root", "--uuid=aabbcc123", "--compute-resource-id=1"]
@@ -102,11 +102,11 @@ describe HammerCLIForeman::Image do
   end
 
 
-  context "DeleteCommand" do
+  describe "DeleteCommand" do
 
     let(:cmd) { HammerCLIForeman::Image::DeleteCommand.new("", ctx) }
 
-    context "parameters" do
+    describe "parameters" do
       it_should_accept "id and resource's id", ["--id=1", "--compute-resource-id=1"]
       it_should_accept "id and resource's name", ["--id=1", "--compute-resource=ec2"]
       # it_should_fail_with "id missing", ["--compute-resource-id=1"]
@@ -117,11 +117,11 @@ describe HammerCLIForeman::Image do
   end
 
 
-  context "UpdateCommand" do
+  describe "UpdateCommand" do
 
     let(:cmd) { HammerCLIForeman::Image::UpdateCommand.new("", ctx) }
 
-    context "parameters" do
+    describe "parameters" do
       it_should_accept "id and resource's id", ["--id=1", "--compute-resource-id=1"]
       it_should_accept "id and resource's name", ["--id=1", "--compute-resource=ec2"]
       it_should_accept "all available params", ["--id=1", "--name=img", "--operatingsystem-id=1", "--architecture-id=1", "--username=root", "--uuid=aabbcc123", "--compute-resource-id=1"]

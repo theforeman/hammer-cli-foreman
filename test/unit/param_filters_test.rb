@@ -74,7 +74,7 @@ describe HammerCLIForeman::IdParamsFilter do
       _(filter.for_action(action)).must_equal required_params
     end
 
-    context "with hash params" do
+    describe "with hash params" do
 
       let(:action) {
         stub(:params => [hash_param])
@@ -139,7 +139,7 @@ describe HammerCLIForeman::IdArrayParamsFilter do
       _(filter.for_action(action)).must_equal required_params
     end
 
-    context "with hash params" do
+    describe "with hash params" do
 
       let(:action) {
         stub(:params => [hash_param])

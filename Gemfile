@@ -8,9 +8,8 @@ group :test do
   gem 'rake'
   gem 'thor'
   gem 'minitest', '~> 5.18'
-  gem 'minitest-spec-context'
   gem 'simplecov'
-  gem 'mocha', "< 1.14.0"
+  gem 'mocha', "~> 2.1.0"
   gem 'ci_reporter_minitest',  "~> 1.0.0", :require => false
 
 end

@@ -7,19 +7,19 @@ describe HammerCLIForeman::Host do
 
   include CommandTestHelper
 
-  context "ListCommand" do
+  describe "ListCommand" do
     before do
       ResourceMocks.mock_action_call(:hosts, :index, [])
     end
 
     let(:cmd) { HammerCLIForeman::Host::ListCommand.new("", ctx) }
 
-    context "parameters" do
+    describe "parameters" do
       it_should_accept "no arguments"
       it_should_accept_search_params
     end
 
-    context "output" do
+    describe "output" do
       let(:expected_record_count) { count_records(cmd.resource.call(:index)) }
 
       it_should_print_n_records
@@ -28,20 +28,20 @@ describe HammerCLIForeman::Host do
 
   end
 
-  context "InfoCommand" do
+  describe "InfoCommand" do
     before do
       ResourceMocks.hosts_show
     end
 
     let(:cmd) { HammerCLIForeman::Host::InfoCommand.new("", ctx) }
 
-    context "parameters" do
+    describe "parameters" do
       it_should_accept "id", ["--id=1"]
       it_should_accept "name", ["--name=host"]
       # it_should_fail_with "no arguments" # TODO: temporarily disabled, parameters are checked in the id resolver
     end
 
-    context "output" do
+    describe "output" do
       with_params ["--id=1"] do
         it_should_print_n_records 1
         it_should_print_columns ["Id", "Name", "Organization", "Location"]
@@ -53,7 +53,7 @@ describe HammerCLIForeman::Host do
 
   end
 
-  context "StatusCommand" do
+  describe "StatusCommand" do
 
     let(:cmd) { HammerCLIForeman::Host::StatusCommand.new("", ctx) }
 
@@ -62,14 +62,14 @@ describe HammerCLIForeman::Host do
       ResourceMocks.mock_action_call(:hosts, :get_status, { 'status_label' => 'No reports' } )
     end
 
-    context "parameters" do
+    describe "parameters" do
       it_should_accept "name", ["--name=host"]
       it_should_accept "id", ["--id=1"]
       # it_should_fail_with "no arguments"
       # TODO: temporarily disabled, parameters are checked in the id resolver
     end
 
-    context "output" do
+    describe "output" do
       with_params ["--id=1"] do
         it_should_print_columns ["Status", "Power"]
 
@@ -82,7 +82,7 @@ describe HammerCLIForeman::Host do
 
   end
 
-  context "FactsCommand" do
+  describe "FactsCommand" do
 
     let(:cmd) { HammerCLIForeman::Host::FactsCommand.new("", ctx) }
 
@@ -90,14 +90,14 @@ describe HammerCLIForeman::Host do
       ResourceMocks.facts_index
     end
 
-    context "parameters" do
+    describe "parameters" do
       it_should_accept "name", ["--name=host"]
       it_should_accept "id", ["--id=1"]
       # it_should_fail_with "no arguments"
       # TODO: temporarily disabled, parameters are checked in the id resolver
     end
 
-    context "output" do
+    describe "output" do
       with_params ["--name=my5name.mydomain.net"] do
         it_should_print_column "Fact"
         it_should_print_column "Value"
@@ -105,19 +105,19 @@ describe HammerCLIForeman::Host do
     end
   end
 
-  context "ConfigReportsCommand" do
+  describe "ConfigReportsCommand" do
     before do
       ResourceMocks.mock_action_call(:config_reports, :index, [])
     end
 
     let(:cmd) { HammerCLIForeman::Host::ConfigReportsCommand.new("", ctx) }
 
-    context "parameters" do
+    describe "parameters" do
       it_should_accept "id", ["--id=1"]
       it_should_accept "name", ["--name=my.test.host.org"]
     end
 
-    context "output" do
+    describe "output" do
       with_params ["--id=1"] do
         let(:expected_record_count) { count_records(cmd.resource.call(:index)) }
 
@@ -136,11 +136,11 @@ describe HammerCLIForeman::Host do
 
   end
 
-  context "DeleteCommand" do
+  describe "DeleteCommand" do
 
     let(:cmd) { HammerCLIForeman::Host::DeleteCommand.new("", ctx) }
 
-    context "parameters" do
+    describe "parameters" do
       it_should_accept "name", ["--name=host"]
       it_should_accept "id", ["--id=1"]
       # it_should_fail_with "name or id missing", []
@@ -149,7 +149,7 @@ describe HammerCLIForeman::Host do
 
   end
 
-  context "CreateCommand" do
+  describe "CreateCommand" do
 
     let(:cmd) { HammerCLIForeman::Host::CreateCommand.new("", ctx) }
 
@@ -157,7 +157,7 @@ describe HammerCLIForeman::Host do
       HammerCLIForeman::Hosts::CommonUpdateOptions.stubs(:ask_password).returns("password")
     end
 
-    context "parameters" do
+    describe "parameters" do
       taxonomies = ["--organization-id=1", "--location-id=1"]
       it_should_accept "name, architecture_id, domain_id, operatingsystem_id and more",
           ["--name=host", "--architecture-id=1", "--domain-id=1", "--operatingsystem-id=1",
@@ -199,7 +199,7 @@ describe HammerCLIForeman::Host do
     end
   end
 
-  context "UpdateCommand" do
+  describe "UpdateCommand" do
 
     let(:cmd) { HammerCLIForeman::Host::UpdateCommand.new("", ctx) }
 
@@ -207,7 +207,7 @@ describe HammerCLIForeman::Host do
       HammerCLIForeman::Hosts::CommonUpdateOptions.stubs(:ask_password).returns("password")
     end
 
-    context "parameters" do
+    describe "parameters" do
       it_should_accept "name", ["--name=host", "--new-name=host2"]
       it_should_accept "id and more", ["--id=1", "--new-name=host2", "--architecture-id=1",
             "--domain-id=1", "--operatingsystem-id=1",
@@ -253,7 +253,7 @@ describe HammerCLIForeman::Host do
   end
 
 
-  context "SetParameterCommand" do
+  describe "SetParameterCommand" do
 
     before :each do
       ResourceMocks.parameters_index
@@ -261,7 +261,7 @@ describe HammerCLIForeman::Host do
 
     let(:cmd) { HammerCLIForeman::Host::SetParameterCommand.new("", ctx) }
 
-    context "parameters" do
+    describe "parameters" do
       it_should_accept "name, value and host name", ["--name=name", "--value=val", "--host=name"]
       it_should_accept "name, value and host id", ["--name=name", "--value=val", "--host-id=1"]
       it_should_accept "name, value, type and host id", ["--name=name", "--parameter-type=integer", "--value=1", "--host-id=1"]
@@ -274,11 +274,11 @@ describe HammerCLIForeman::Host do
   end
 
 
-  context "DeleteParameterCommand" do
+  describe "DeleteParameterCommand" do
 
     let(:cmd) { HammerCLIForeman::Host::DeleteParameterCommand.new("", ctx) }
 
-    context "parameters" do
+    describe "parameters" do
       it_should_accept "name and host name", ["--name=name", "--host=name"]
       it_should_accept "name and host id", ["--name=name", "--host-id=1"]
       # it_should_fail_with "name missing", ["--host=name"]
@@ -288,9 +288,9 @@ describe HammerCLIForeman::Host do
 
   end
 
-  context "StartCommand" do
+  describe "StartCommand" do
     let(:cmd) { HammerCLIForeman::Host::StartCommand.new("", ctx) }
-    context "parameters" do
+    describe "parameters" do
       it_should_accept "name", ["--name=host"]
       it_should_accept "id", ["--id=1"]
       # it_should_fail_with "empty params", []
@@ -298,9 +298,9 @@ describe HammerCLIForeman::Host do
     end
   end
 
-  context "StopCommand" do
+  describe "StopCommand" do
     let(:cmd) { HammerCLIForeman::Host::StopCommand.new("", ctx) }
-    context "parameters" do
+    describe "parameters" do
       it_should_accept "name", ["--name=host"]
       it_should_accept "id", ["--id=1"]
       it_should_accept "id and force", ["--id=1", "--force"]
@@ -309,9 +309,9 @@ describe HammerCLIForeman::Host do
     end
   end
 
-  context "RebootCommand" do
+  describe "RebootCommand" do
     let(:cmd) { HammerCLIForeman::Host::RebootCommand.new("", ctx) }
-    context "parameters" do
+    describe "parameters" do
       it_should_accept "name", ["--name=host"]
       it_should_accept "id", ["--id=1"]
       # it_should_fail_with "empty params", []
@@ -319,11 +319,11 @@ describe HammerCLIForeman::Host do
     end
   end
 
-  context "RebuildConfigCommand" do
+  describe "RebuildConfigCommand" do
 
     let(:cmd) { HammerCLIForeman::Host::RebuildConfigCommand.new("", ctx) }
 
-    context "parameters" do
+    describe "parameters" do
       it_should_accept "name", ["--name=host"]
       it_should_accept "id", ["--id=1"]
       # it_should_fail_with "no arguments"
@@ -333,9 +333,9 @@ describe HammerCLIForeman::Host do
   end
 
 
-  context "DisassociateCommand" do
+  describe "DisassociateCommand" do
     let(:cmd) { HammerCLIForeman::Host::DisassociateCommand.new("", ctx) }
-    context "parameters" do
+    describe "parameters" do
       it_should_accept "name", ["--name=host"]
       it_should_accept "id", ["--id=1"]
     end

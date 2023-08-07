@@ -61,7 +61,7 @@ module CommandTestHelper
   module ClassMethods
 
     def with_params(params, &block)
-      context "with params "+params.to_s do
+      describe "with params "+params.to_s do
         let(:with_params) { params }
         self.instance_eval(&block)
       end

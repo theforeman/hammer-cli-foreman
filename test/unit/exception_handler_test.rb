@@ -125,7 +125,7 @@ describe HammerCLIForeman::ExceptionHandler do
     _(err_code).must_equal HammerCLI::EX_SOFTWARE
   end
 
-  context "redirects" do
+  describe "redirects" do
     let(:response) { HammerCLIForeman.foreman_api.api.send(:create_fake_response, 301, '', 'GET', 'http://foreman.example.com/api/architectures') }
     it "should detect http to https redirection error" do
       response.headers[:location] = 'https://foreman.example.com/api/architectures'

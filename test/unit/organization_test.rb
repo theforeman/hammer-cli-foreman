@@ -9,7 +9,7 @@ describe HammerCLIForeman::Organization do
   include CommandTestHelper
   extend ResourceDisabled
 
-  context "ListCommand" do
+  describe "ListCommand" do
 
     before :each do
       ResourceMocks.organizations_index
@@ -17,12 +17,12 @@ describe HammerCLIForeman::Organization do
 
     let(:cmd) { HammerCLIForeman::Organization::ListCommand.new("", ctx) }
 
-    context "parameters" do
+    describe "parameters" do
       it_should_accept "no arguments"
       it_should_accept_search_params
     end
 
-    context "output" do
+    describe "output" do
       let(:expected_record_count) { count_records(cmd.resource.call(:index)) }
 
       it_should_print_n_records
@@ -35,7 +35,7 @@ describe HammerCLIForeman::Organization do
   end
 
 
-  context "InfoCommand" do
+  describe "InfoCommand" do
 
     before :each do
       ResourceMocks.organizations_show
@@ -43,13 +43,13 @@ describe HammerCLIForeman::Organization do
 
     let(:cmd) { HammerCLIForeman::Organization::InfoCommand.new("", ctx) }
 
-    context "parameters" do
+    describe "parameters" do
       it_should_accept "id", ["--id=1"]
       it_should_accept "name", ["--name=arch"]
       # it_should_fail_with "no arguments" # TODO: temporarily disabled, parameters are checked in the id resolver
     end
 
-    context "output" do
+    describe "output" do
       with_params ["--id=1"] do
         it_should_print_n_records 1
         it_should_print_column "Name"
@@ -66,11 +66,11 @@ describe HammerCLIForeman::Organization do
   end
 
 
-  context "CreateCommand" do
+  describe "CreateCommand" do
 
     let(:cmd) { HammerCLIForeman::Organization::CreateCommand.new("", ctx) }
 
-    context "parameters" do
+    describe "parameters" do
       it_should_accept "name", ["--name=org"]
       # it_should_fail_with "name missing", []
       # TODO: temporarily disabled, parameters are checked in the api
@@ -82,11 +82,11 @@ describe HammerCLIForeman::Organization do
   end
 
 
-  context "DeleteCommand" do
+  describe "DeleteCommand" do
 
     let(:cmd) { HammerCLIForeman::Organization::DeleteCommand.new("", ctx) }
 
-    context "parameters" do
+    describe "parameters" do
       it_should_accept "name", ["--name=org"]
       it_should_accept "id", ["--id=1"]
 
@@ -100,11 +100,11 @@ describe HammerCLIForeman::Organization do
   end
 
 
-  context "UpdateCommand" do
+  describe "UpdateCommand" do
 
     let(:cmd) { HammerCLIForeman::Organization::UpdateCommand.new("", ctx) }
 
-    context "parameters" do
+    describe "parameters" do
       it_should_accept "name", ["--name=org", "--new-name=org2"]
       it_should_accept "id", ["--id=1", "--new-name=org2"]
       # it_should_fail_with "no params", [] # TODO: temporarily disabled, parameters are checked in the id resolver

@@ -7,7 +7,7 @@ describe HammerCLIForeman::Settings do
 
   include CommandTestHelper
 
-  context "ListCommand" do
+  describe "ListCommand" do
 
     before do
       ResourceMocks.mock_action_call(:settings, :index, [])
@@ -15,14 +15,14 @@ describe HammerCLIForeman::Settings do
 
     let(:cmd) { HammerCLIForeman::Settings::ListCommand.new("", ctx) }
 
-    context "parameters" do
+    describe "parameters" do
       it_should_accept "no arguments"
       it_should_accept_search_params
       it_should_accept 'organization', ['--organization-id=1']
       it_should_accept 'location', ['--location-id=1']
     end
 
-    context "output" do
+    describe "output" do
       let(:expected_record_count) { count_records(cmd.resource.call(:index)) }
 
       it_should_print_n_records
@@ -34,10 +34,10 @@ describe HammerCLIForeman::Settings do
 
   end
 
-  context "UpdateCommand" do
+  describe "UpdateCommand" do
     let(:cmd) { HammerCLIForeman::Settings::UpdateCommand.new("", ctx) }
 
-    context "parameters" do
+    describe "parameters" do
       it_should_accept "name", ["--name=setting1", "--value=setting2"]
       it_should_accept "id", ["--id=1", "--value=setting2"]
       it_should_accept 'organization', %w[--id=1 --organization-id=1]

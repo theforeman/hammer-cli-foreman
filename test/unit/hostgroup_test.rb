@@ -7,19 +7,19 @@ describe HammerCLIForeman::Hostgroup do
 
   include CommandTestHelper
 
-  context "ListCommand" do
+  describe "ListCommand" do
     before do
       ResourceMocks.mock_action_call(:hostgroups, :index, [])
     end
 
     let(:cmd) { HammerCLIForeman::Hostgroup::ListCommand.new("", ctx) }
 
-    context "parameters" do
+    describe "parameters" do
       it_should_accept "no arguments"
       it_should_accept_search_params
     end
 
-    context "output" do
+    describe "output" do
       let(:expected_record_count) { count_records(cmd.resource.call(:index)) }
 
       it_should_print_n_records
@@ -29,16 +29,16 @@ describe HammerCLIForeman::Hostgroup do
 
   end
 
-  context "InfoCommand" do
+  describe "InfoCommand" do
 
     let(:cmd) { HammerCLIForeman::Hostgroup::InfoCommand.new("", ctx) }
 
-    context "parameters" do
+    describe "parameters" do
       it_should_accept "id", ["--id=1"]
       # it_should_fail_with "no arguments" # TODO: temporarily disabled, parameters are checked in the id resolver
     end
 
-    context "output" do
+    describe "output" do
       with_params ["--id=1"] do
         it_should_print_n_records 1
         it_should_print_columns ["Id", "Name", "Title"]
@@ -49,22 +49,22 @@ describe HammerCLIForeman::Hostgroup do
 
   end
 
-  context "DeleteCommand" do
+  describe "DeleteCommand" do
 
     let(:cmd) { HammerCLIForeman::Hostgroup::DeleteCommand.new("", ctx) }
 
-    context "parameters" do
+    describe "parameters" do
       it_should_accept "id", ["--id=1"]
       # it_should_fail_with "no params", [] # TODO: temporarily disabled, parameters are checked in the id resolver
     end
 
   end
 
-  context "CreateCommand" do
+  describe "CreateCommand" do
 
     let(:cmd) { HammerCLIForeman::Hostgroup::CreateCommand.new("", ctx) }
 
-    context "parameters" do
+    describe "parameters" do
       it_should_accept "name, parent_id, architecture_id, domain_id, operatingsystem_id and more",
           ["--name=hostgroup", "--parent-id=1", "--architecture-id=1", "--domain-id=1",
             "--operatingsystem-id=1", "--medium-id=1", "--partition-table-id=1", "--subnet-id=1", '--root-password=foreman']
@@ -74,11 +74,11 @@ describe HammerCLIForeman::Hostgroup do
     end
   end
 
-  context "UpdateCommand" do
+  describe "UpdateCommand" do
 
     let(:cmd) { HammerCLIForeman::Hostgroup::UpdateCommand.new("", ctx) }
 
-    context "parameters" do
+    describe "parameters" do
       it_should_accept "name, parent_id, architecture_id, domain_id, operatingsystem_id and more",
           ["--id=1 --name=hostgroup2 --title=default/hostgroup2", "--parent-id=1", "--architecture-id=1", "--domain-id=1",
             "--operatingsystem-id=1", "--medium-id=1", "--partition-table-id=1", "--subnet-id=1", '--root-password=foreman']
@@ -90,7 +90,7 @@ describe HammerCLIForeman::Hostgroup do
   end
 
 
-  context "SetParameterCommand" do
+  describe "SetParameterCommand" do
 
     before :each do
       ResourceMocks.parameters_index
@@ -98,7 +98,7 @@ describe HammerCLIForeman::Hostgroup do
 
     let(:cmd) { HammerCLIForeman::Hostgroup::SetParameterCommand.new("", ctx) }
 
-    context "parameters" do
+    describe "parameters" do
       it_should_accept "name, value, parameter-type and hostgroup id", ["--name=name", "--parameter-type=string", "--value=val", "--hostgroup-id=1"]
       it_should_fail_with "name missing", ["--value=val", "--hostgroup-id=1"]
       it_should_fail_with "value missing", ["--name=name", "--hostgroup-id=1"]
@@ -108,11 +108,11 @@ describe HammerCLIForeman::Hostgroup do
   end
 
 
-  context "DeleteParameterCommand" do
+  describe "DeleteParameterCommand" do
 
     let(:cmd) { HammerCLIForeman::Hostgroup::DeleteParameterCommand.new("", ctx) }
 
-    context "parameters" do
+    describe "parameters" do
       it_should_accept "name and hostgroup id", ["--name=param", "--hostgroup-id=1"]
       # it_should_fail_with "name missing", ["--hostgroup-id=id"]
       # it_should_fail_with "hostgroup id missing", ["--name=param"]
@@ -121,11 +121,11 @@ describe HammerCLIForeman::Hostgroup do
 
   end
 
-  context "RebuildConfigCommand" do
+  describe "RebuildConfigCommand" do
 
     let(:cmd) { HammerCLIForeman::Hostgroup::RebuildConfigCommand.new("", ctx) }
 
-    context "parameters" do
+    describe "parameters" do
       it_should_accept "name", ["--name=host"]
       it_should_accept "id", ["--id=1"]
       # it_should_fail_with "no arguments"

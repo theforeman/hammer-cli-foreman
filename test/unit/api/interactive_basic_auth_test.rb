@@ -4,7 +4,7 @@ describe HammerCLIForeman::Api::InteractiveBasicAuth do
   let(:request) { mock() }
   let(:args) { {} }
 
-  context "interactive mode" do
+  describe "interactive mode" do
     before :each do
       HammerCLI.stubs(:interactive?).returns true
     end
@@ -42,7 +42,7 @@ describe HammerCLIForeman::Api::InteractiveBasicAuth do
     end
   end
 
-  context "non-interactive mode" do
+  describe "non-interactive mode" do
     it "doesn't ask for credentials when they're not provided" do
       HammerCLI.stubs(:interactive?).returns false
       auth = HammerCLIForeman::Api::InteractiveBasicAuth.new(nil, nil)

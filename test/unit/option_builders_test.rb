@@ -175,7 +175,7 @@ describe HammerCLIForeman::ForemanOptionBuilder do
   end
 
 
-  context "primary searchables options expansion" do
+  describe "primary searchables options expansion" do
     let(:option_switches) { container.build(@build_options).map(&:switches) }
 
     it "can remove original searchable builder" do
@@ -208,7 +208,7 @@ describe HammerCLIForeman::ForemanOptionBuilder do
 
   end
 
-  context "dependent searchables options expansion" do
+  describe "dependent searchables options expansion" do
     let(:option_switches) do
       container.build(@build_options.merge(command: Class.new(HammerCLIForeman::Command))).map(&:switches)
     end

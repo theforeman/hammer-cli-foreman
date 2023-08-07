@@ -16,7 +16,7 @@ describe HammerCLIForeman::Output::Formatters::StructuredReferenceFormatter do
     end
   end
 
-  context 'with symbol keys' do
+  describe 'with symbol keys' do
     it 'formats name' do
       options = {:display_field_key => :server_name}
       _(formatter.format(reference, options)).must_equal('Name' => "#{reference_str_keys['server_name']}")
@@ -30,7 +30,7 @@ describe HammerCLIForeman::Output::Formatters::StructuredReferenceFormatter do
     end
   end
 
-  context 'with string keys' do
+  describe 'with string keys' do
     it 'formats name' do
       options = {:display_field_key => :server_name}
       _(formatter.format(reference_str_keys, options)).must_equal('Name' => "#{reference_str_keys['server_name']}")
@@ -62,7 +62,7 @@ describe HammerCLIForeman::Output::Formatters::ReferenceFormatter do
     _(formatter.format(nil)).must_equal ''
   end
 
-  context 'with symbol keys' do
+  describe 'with symbol keys' do
     let(:reference_sym_keys) do
       reference
     end
@@ -106,7 +106,7 @@ describe HammerCLIForeman::Output::Formatters::ReferenceFormatter do
     end
   end
 
-  context 'with string keys' do
+  describe 'with string keys' do
     let(:reference_str_keys) do
       reference.inject({}) do |new_ref, (key, value)|
         new_ref.update(key.to_s => value)

@@ -8,7 +8,7 @@ describe HammerCLIForeman::Role do
   include CommandTestHelper
 
 
-  context "ListCommand" do
+  describe "ListCommand" do
 
     let(:cmd) { HammerCLIForeman::Role::ListCommand.new("", ctx) }
 
@@ -16,12 +16,12 @@ describe HammerCLIForeman::Role do
       ResourceMocks.mock_action_call(:roles, :index, [])
     end
 
-    context "parameters" do
+    describe "parameters" do
       it_should_accept "no arguments"
       it_should_accept_search_params
     end
 
-    context "output" do
+    describe "output" do
       it_should_print_column "Id"
       it_should_print_column "Name"
     end
@@ -29,11 +29,11 @@ describe HammerCLIForeman::Role do
   end
 
 
-  context "InfoCommand" do
+  describe "InfoCommand" do
 
     let(:cmd) { HammerCLIForeman::Role::InfoCommand.new("", ctx) }
 
-    context "output" do
+    describe "output" do
 
       with_params ["--name=role"] do
         it_should_print_n_records 1
@@ -44,11 +44,11 @@ describe HammerCLIForeman::Role do
   end
 
 
-  context "CreateCommand" do
+  describe "CreateCommand" do
 
     let(:cmd) { HammerCLIForeman::Role::CreateCommand.new("", ctx) }
 
-    context "parameters" do
+    describe "parameters" do
       it_should_accept "name", ["--name=role"]
     end
 
@@ -57,21 +57,21 @@ describe HammerCLIForeman::Role do
     end
   end
 
-  context "DeleteCommand" do
+  describe "DeleteCommand" do
 
     let(:cmd) { HammerCLIForeman::Role::DeleteCommand.new("", ctx) }
 
-    context "parameters" do
+    describe "parameters" do
       it_should_accept "name", ["--name=role"]
       it_should_accept "id", ["--id=1"]
     end
   end
 
-  context "UpdateCommand" do
+  describe "UpdateCommand" do
 
     let(:cmd) { HammerCLIForeman::Role::UpdateCommand.new("", ctx) }
 
-    context "parameters" do
+    describe "parameters" do
       it_should_accept "name", ["--name=role"]
       it_should_accept "id", ["--id=1"]
       it_should_accept "name and new name", ["--name=role", "--new-name=role2"]
@@ -83,7 +83,7 @@ describe HammerCLIForeman::Role do
 
   end
 
-  context "FiltersCommand" do
+  describe "FiltersCommand" do
 
     let(:cmd) { HammerCLIForeman::Role::FiltersCommand.new("", ctx) }
 
@@ -91,13 +91,13 @@ describe HammerCLIForeman::Role do
       ResourceMocks.mock_action_call(:filters, :index, [])
     end
 
-    context "parameters" do
+    describe "parameters" do
       it_should_accept "name", ["--name=role"]
       it_should_accept "id", ["--id=1"]
       it_should_fail_with "no arguments"
     end
 
-    context "output" do
+    describe "output" do
       with_params ["--id=1"] do
         it_should_print_column "Id"
         it_should_print_column "Resource type"
