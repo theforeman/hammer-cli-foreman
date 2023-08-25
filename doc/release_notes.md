@@ -1,5 +1,12 @@
 Release notes
 =============
+### 3.8.0 (2023-08-25)
+* Support mocha 2.1 ([PR #618](https://github.com/theforeman/hammer-cli-foreman/pull/618)), [#34879](http://projects.theforeman.org/issues/34879)
+* Add ga to run tests on ruby 3+ ([PR #617](https://github.com/theforeman/hammer-cli-foreman/pull/617))
+* Update tx for hammer-cli-foreman, [#36315](http://projects.theforeman.org/issues/36315)
+* Add packit config
+* Bump to 3.8.0-develop
+
 ### 3.7.0 (2023-05-23)
 * Update rake for hammer-cli-foreman ([PR #613](https://github.com/theforeman/hammer-cli-foreman/pull/613)), [#36337](http://projects.theforeman.org/issues/36337)
 * Update minitest version ([PR #611](https://github.com/theforeman/hammer-cli-foreman/pull/611)), [#36349](http://projects.theforeman.org/issues/36349)
