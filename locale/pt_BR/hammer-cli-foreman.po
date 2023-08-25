@@ -6,13 +6,14 @@
 # Diego de Souza Lopes <djkakaroto@gmail.com>, 2015
 # Junior Alvim <alvin@intechne.com.br>, 2014
 # Fabio Dias, 2015
+# Fabio Dias, 2015
 # Junior Alvim <alvin@intechne.com.br>, 2014
 # Valeria S Silva <valeriassilva@live.com>, 2015
 msgid ""
 msgstr ""
-"Project-Id-Version: hammer-cli-foreman 3.8.0.pre.develop\n"
+"Project-Id-Version: hammer-cli-foreman 3.8.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-10-31 15:16+0000\n"
+"POT-Creation-Date: 2023-07-12 17:18+0000\n"
 "PO-Revision-Date: 2014-03-14 09:55+0000\n"
 "Last-Translator: Valeria S Silva <valeriassilva@live.com>, 2015\n"
 "Language-Team: Portuguese (Brazil) (http://app.transifex.com/foreman/foreman/"
@@ -578,6 +579,9 @@ msgstr "Senha para acessar sistema remoto"
 
 msgid "Successfully logged in as '%s'."
 msgstr "Conectado com êxito como '%s'."
+
+msgid "Authenticate against external source (IPA/PAM) with credentials"
+msgstr ""
 
 msgid ""
 "Successfully authenticated using negotiate auth, using the KEYRING principal."
@@ -1282,8 +1286,8 @@ msgstr "Booleano, definir 1 para pré-alocar"
 msgid "Boolean, set 1 to wipe disk after delete"
 msgstr "Booleano, definir 1 para limpar o disco depois de excluir"
 
-msgid "Disk interface name, must be ide, virto or virto_scsi"
-msgstr "Nome da interface do disco, deve ser ide, virto ou virto_scsi"
+msgid "Disk interface name, must be ide, virtio or virtio_scsi"
+msgstr ""
 
 msgid "Cores"
 msgstr "Núcleos"
@@ -1421,8 +1425,8 @@ msgstr "Estado do relatório"
 msgid "Report metrics"
 msgstr "Medição de Relatório"
 
-msgid "config_retrieval"
-msgstr "config_retrieval"
+msgid "config retrieval"
+msgstr ""
 
 msgid "exec"
 msgstr "exec"
@@ -2080,7 +2084,7 @@ msgid "Name to search by"
 msgstr "Nome a ser pesquisado"
 
 msgid "Missing options to search %s"
-msgstr "Opções de pesquisa em falta %s"
+msgstr "Opções ausentes para pesquisar %s ."
 
 msgid "one of %s not found."
 msgstr "um dos %s não encontrado."
@@ -2800,8 +2804,8 @@ msgstr "Recursos"
 msgid "Version"
 msgstr "Versão"
 
-msgid "Host_count"
-msgstr "Host_count"
+msgid "Host count"
+msgstr ""
 
 msgid "Smart proxy created."
 msgstr "Proxy inteligente criado."
@@ -3166,15 +3170,3 @@ msgstr "Máquina virtual excluída."
 
 msgid "Could not delete the virtual machine"
 msgstr "Não foi possível excluir a máquina virtual"
-
-msgid "Authenticate against external source (IPA/PAM) with credentials"
-msgstr ""
-
-msgid "Disk interface name, must be ide, virtio or virtio_scsi"
-msgstr ""
-
-msgid "config retrieval"
-msgstr ""
-
-msgid "Host count"
-msgstr ""

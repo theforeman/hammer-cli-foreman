@@ -8,9 +8,9 @@
 # 진선재, 2022
 msgid ""
 msgstr ""
-"Project-Id-Version: hammer-cli-foreman 3.8.0.pre.develop\n"
+"Project-Id-Version: hammer-cli-foreman 3.8.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-10-31 15:16+0000\n"
+"POT-Creation-Date: 2023-07-12 17:18+0000\n"
 "PO-Revision-Date: 2014-03-14 09:55+0000\n"
 "Last-Translator: 진선재, 2022\n"
 "Language-Team: Korean (http://app.transifex.com/foreman/foreman/language/"
@@ -562,6 +562,9 @@ msgid "Password to access the remote system"
 msgstr ""
 
 msgid "Successfully logged in as '%s'."
+msgstr ""
+
+msgid "Authenticate against external source (IPA/PAM) with credentials"
 msgstr ""
 
 msgid ""
@@ -1249,7 +1252,7 @@ msgstr ""
 msgid "Boolean, set 1 to wipe disk after delete"
 msgstr ""
 
-msgid "Disk interface name, must be ide, virto or virto_scsi"
+msgid "Disk interface name, must be ide, virtio or virtio_scsi"
 msgstr ""
 
 msgid "Cores"
@@ -1380,8 +1383,8 @@ msgstr "보고서 상태 "
 msgid "Report metrics"
 msgstr "보고서 메트릭스 "
 
-msgid "config_retrieval"
-msgstr "config_retrieval"
+msgid "config retrieval"
+msgstr ""
 
 msgid "exec"
 msgstr "exec"
@@ -2717,7 +2720,7 @@ msgstr "기능 "
 msgid "Version"
 msgstr "버전 "
 
-msgid "Host_count"
+msgid "Host count"
 msgstr ""
 
 msgid "Smart proxy created."
@@ -3081,16 +3084,4 @@ msgid "Virtual machine deleted."
 msgstr ""
 
 msgid "Could not delete the virtual machine"
-msgstr ""
-
-msgid "Authenticate against external source (IPA/PAM) with credentials"
-msgstr ""
-
-msgid "Disk interface name, must be ide, virtio or virtio_scsi"
-msgstr ""
-
-msgid "config retrieval"
-msgstr ""
-
-msgid "Host count"
 msgstr ""

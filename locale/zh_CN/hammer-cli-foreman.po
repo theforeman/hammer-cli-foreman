@@ -5,9 +5,9 @@
 # Translators:
 msgid ""
 msgstr ""
-"Project-Id-Version: hammer-cli-foreman 3.8.0.pre.develop\n"
+"Project-Id-Version: hammer-cli-foreman 3.8.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-10-31 15:16+0000\n"
+"POT-Creation-Date: 2023-07-12 17:18+0000\n"
 "PO-Revision-Date: 2014-03-14 09:55+0000\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: Chinese (China) (http://app.transifex.com/foreman/foreman/"
@@ -67,7 +67,7 @@ msgid "Manipulate operating system"
 msgstr "操作操作系统"
 
 msgid "Manipulate organizations"
-msgstr "操作组织"
+msgstr "操作机构"
 
 msgid "Manipulate partition tables"
 msgstr "操作分区表"
@@ -79,8 +79,8 @@ msgid ""
 "%{report} command is deprecated and will be removed in one of the future "
 "versions. Please use %{config_report} command instead."
 msgstr ""
-"%{report} 命令已过时，并会在以后的版本中被删除。请使用 %{config_report} 命令"
-"替代它。"
+"%%{report} 命令已过时，并会在以后的版本中被删除。请使用 %%{config_report} 命"
+"令替代它。"
 
 msgid "Manipulate report templates"
 msgstr "操纵报告模块"
@@ -140,18 +140,18 @@ msgid "[Foreman] Username:%s"
 msgstr "[Foreman] 用户名：%s"
 
 msgid "[Foreman] Password for %{user}:%{wsp}"
-msgstr "%{user} 的 [Foreman] 密码：%{wsp}"
+msgstr "[Foreman] %{user} 的密码：%{wsp}"
 
 msgid "current Kerberos user"
-msgstr ""
+msgstr "当前的 Kerberos 用户"
 
 msgid ""
 "No session, but there is an active Kerberos session, that will be used for "
 "negotiate login."
-msgstr ""
+msgstr "没有会话，但有一个活跃的 Kerberos 会话，它将用于协商登录。"
 
 msgid "There is no active Kerberos session. Have you run %s?"
-msgstr ""
+msgstr "没有活跃的 Kerberos 会话。您运行了 %s 吗？"
 
 msgid ""
 "Invalid oidc-client-id or oidc-token-endpoint or oidc-authorization-"
@@ -230,7 +230,7 @@ msgid "Could not associate the hostgroup"
 msgstr "无法关联该主机组"
 
 msgid "Disassociate a hostgroup"
-msgstr "解除主機群組的相聯性"
+msgstr "解除关联一个主机组"
 
 msgid "The hostgroup has been disassociated."
 msgstr "该主机组已经取消关联。"
@@ -248,7 +248,7 @@ msgid "Could not associate the domain"
 msgstr "无法关联该域"
 
 msgid "Disassociate a domain"
-msgstr "解除網域的相聯性"
+msgstr "解除关联一个域"
 
 msgid "The domain has been disassociated."
 msgstr "该域已经取消关联。"
@@ -266,7 +266,7 @@ msgid "Could not associate the medium"
 msgstr "无法取消关联该介质"
 
 msgid "Disassociate a medium"
-msgstr "解除媒介的相聯性"
+msgstr "解除关联一个介质"
 
 msgid "The medium has been disassociated."
 msgstr "该介质已经取消关联。"
@@ -284,7 +284,7 @@ msgid "Could not associate the subnet"
 msgstr "无法关联该子网"
 
 msgid "Disassociate a subnet"
-msgstr "解除子網路的相聯性"
+msgstr "解除关联一个子网"
 
 msgid "The subnet has been disassociated."
 msgstr "该子网已经取消关联。"
@@ -302,7 +302,7 @@ msgid "Could not associate the compute resource"
 msgstr "无法关联该计算资源"
 
 msgid "Disassociate a compute resource"
-msgstr "解除運算資源的相聯性"
+msgstr "解除关联一个计算资源"
 
 msgid "The compute resource has been disassociated."
 msgstr "该计算资源已经取消关联。"
@@ -320,7 +320,7 @@ msgid "Could not associate the smart proxy"
 msgstr "无法关联该智能代理"
 
 msgid "Disassociate a smart proxy"
-msgstr "解除智慧協定的相聯性"
+msgstr "解除关联一个智能代理"
 
 msgid "The smart proxy has been disassociated."
 msgstr "该智能代理服务器已经取消关联。"
@@ -338,13 +338,13 @@ msgid "Could not associate the user"
 msgstr "無法為使用者建立相聯性"
 
 msgid "Disassociate an user"
-msgstr "解除使用者的相聯性"
+msgstr "解除关联一个用户"
 
 msgid "The user has been disassociated."
 msgstr "该用户已经取消关联。"
 
 msgid "Could not disassociate the user"
-msgstr "無法解除使用者的相聯性"
+msgstr "无法解除关联用户"
 
 msgid "Associate an user group"
 msgstr "為使用者群組建立相聯性"
@@ -356,13 +356,13 @@ msgid "Could not associate the user group"
 msgstr "無法建立使用者群組的相聯性"
 
 msgid "Disassociate an user group"
-msgstr "解除使用者群組的相聯性"
+msgstr "解除关联一个用户组"
 
 msgid "The user group has been disassociated."
 msgstr "该用户组已经取消关联。"
 
 msgid "Could not disassociate the user group"
-msgstr "無法解除使用者群組的相聯性"
+msgstr "无法解除关联用户组"
 
 msgid "Associate provisioning templates"
 msgstr "关联置备模板"
@@ -379,10 +379,10 @@ msgid ""
 msgstr "用来进行搜索的置备模板名的正则表达式，所有匹配的模板将被关联"
 
 msgid "%s not found."
-msgstr "未找到 %s"
+msgstr "未找到 %s。"
 
 msgid "The provisioning templates were associated."
-msgstr "关联的置备模板"
+msgstr "关联的置备模板。"
 
 msgid "Could not associate the provisioning templates"
 msgstr "无法关联置备模板"
@@ -411,7 +411,7 @@ msgid "Could not associate the organization"
 msgstr "无法关联该组织"
 
 msgid "Disassociate an organization"
-msgstr "解除組織的相聯性"
+msgstr "解除关联一个机构"
 
 msgid "The organization has been disassociated."
 msgstr "该组织已经取消关联。"
@@ -429,13 +429,13 @@ msgid "Could not associate the operating system"
 msgstr "無法為作業系統建立相聯性"
 
 msgid "Disassociate an operating system"
-msgstr "解除作業系統的相聯性"
+msgstr "解除关联一个操作系统"
 
 msgid "Operating system has been disassociated."
 msgstr "操作系统已经取消关联。"
 
 msgid "Could not disassociate the operating system"
-msgstr "無法解除作業系統的相聯性"
+msgstr "无法解除关联操作系统"
 
 msgid "Associate an architecture"
 msgstr "為架構建立相聯性"
@@ -447,13 +447,13 @@ msgid "Could not associate the architecture"
 msgstr "無法為架構建立相聯性"
 
 msgid "Disassociate an architecture"
-msgstr "解除架構的相聯性"
+msgstr "解除关联一个构架"
 
 msgid "Architecture has been disassociated."
 msgstr "架构已经取消关联。"
 
 msgid "Could not disassociate the architecture"
-msgstr "無法解除架構的相聯性"
+msgstr "无法解除关联架构"
 
 msgid "Associate a partition table"
 msgstr "為分割表建立相聯性"
@@ -465,13 +465,13 @@ msgid "Could not associate the partition table"
 msgstr "無法為分割表建立相聯性"
 
 msgid "Disassociate a partition table"
-msgstr "解除分割表的相聯性"
+msgstr "解除关联一个分区表"
 
 msgid "Partition table has been disassociated."
 msgstr "分区表已经取消关联。"
 
 msgid "Could not disassociate the partition table"
-msgstr "無法解除分割表的相聯性"
+msgstr "无法解除关联分区表"
 
 msgid "Assign a user role"
 msgstr "指定使用者角色"
@@ -528,7 +528,7 @@ msgid "User"
 msgstr "用户"
 
 msgid "Action"
-msgstr "行动"
+msgstr "操作"
 
 msgid "Audit type"
 msgstr "审计类型"
@@ -552,7 +552,7 @@ msgid "Old"
 msgstr "旧的"
 
 msgid "New"
-msgstr "新增"
+msgstr "新"
 
 msgid "Set credentials"
 msgstr "設定認證"
@@ -566,9 +566,12 @@ msgstr "访问远程系统的密码"
 msgid "Successfully logged in as '%s'."
 msgstr "成功以 '%s' 身份登录。"
 
+msgid "Authenticate against external source (IPA/PAM) with credentials"
+msgstr ""
+
 msgid ""
 "Successfully authenticated using negotiate auth, using the KEYRING principal."
-msgstr ""
+msgstr "使用 KEYRING 主体通过协商 auth 成功进行身份验证。"
 
 msgid "Openidc provider URL which issues access token"
 msgstr "发出访问令牌的 Openidc 供应商 URL"
@@ -637,16 +640,16 @@ msgid "Account Username"
 msgstr "帳號使用者名稱"
 
 msgid "Base DN"
-msgstr "基础标识名"
+msgstr "基本 DN"
 
 msgid "Groups base DN"
-msgstr "群組基礎 DN"
+msgstr "组基础 DN"
 
 msgid "Use Netgroups"
-msgstr "使用网络组。"
+msgstr "使用网络组"
 
 msgid "LDAP filter"
-msgstr "LDAP 篩選器"
+msgstr "LDAP 过滤器"
 
 msgid "Automatically Create Accounts?"
 msgstr "自動建立帳號？"
@@ -655,10 +658,10 @@ msgid "Usergroup sync"
 msgstr "用户组同步"
 
 msgid "Attribute mappings"
-msgstr "屬性對映"
+msgstr "属性映射"
 
 msgid "Login Name Attribute"
-msgstr "登錄名稱屬性"
+msgstr "登陆名称属性"
 
 msgid "First Name Attribute"
 msgstr "名字屬性"
@@ -705,7 +708,7 @@ msgid "Public"
 msgstr "公共的"
 
 msgid "Owner Id"
-msgstr "擁有者 ID"
+msgstr "所有者 ID"
 
 msgid "Owner Type"
 msgstr "所有者类型"
@@ -771,13 +774,13 @@ msgid "Could not delete the template combination"
 msgstr "不能删除模板组合"
 
 msgid "Cluster ID"
-msgstr ""
+msgstr "集群 ID"
 
 msgid "Use --cluster-name instead"
-msgstr ""
+msgstr "使用 --cluster-name 替代"
 
 msgid "Cluster name or path to search by"
-msgstr ""
+msgstr "按集群名称或路径搜索"
 
 msgid "Name of DNS proxy to use within this domain"
 msgstr "在此區域中使用的 DNS 協定的名稱"
@@ -821,7 +824,7 @@ msgid "FAIL"
 msgstr "失败"
 
 msgid "%{count} more service(s) failed, but not shown:"
-msgstr "对于 %{count} 个服务失败，但没有显示。"
+msgstr "对于 %%{count} 个服务失败，但没有显示："
 
 msgid "Network prefix in CIDR notation (e.g. 64) for this subnet"
 msgstr "此子网的 CIDR 表示法中的网络前缀（例如 64）"
@@ -866,37 +869,37 @@ msgid "Associate a resource"
 msgstr "关联一个资源"
 
 msgid "Could not associate the %{resource_name}."
-msgstr "无法关联 %{resource_name}。"
+msgstr "无法关联 %%{resource_name}。"
 
 msgid "The %{resource_name} has been associated."
-msgstr "%{resource_name} 已关联。"
+msgstr "%%{resource_name} 已关联。"
 
 msgid "Disassociate a resource"
-msgstr "取消关联一个资源"
+msgstr "解除关联一个资源"
 
 msgid "Could not disassociate the %{resource_name}."
-msgstr "无法取消关联 %{resource_name}。"
+msgstr "无法取消关联 %%{resource_name}。"
 
 msgid "The %{resource_name} has been disassociated."
-msgstr "%{resource_name} 已取消关联。"
+msgstr "%%{resource_name} 已取消关联。"
 
 msgid "Path to directory where downloaded content will be saved"
 msgstr "用于保存下载文件的目录路径"
 
 msgid "The response has been saved to %{path}."
-msgstr "响应已保存到 %{path}。"
+msgstr "响应已保存到%{path}。"
 
 msgid "Cannot save file: %s does not exist"
 msgstr "无法保存文件：%s 不存在"
 
 msgid "Type"
-msgstr "類型"
+msgstr "类型"
 
 msgid "Set a global parameter"
 msgstr "设置全局参数"
 
 msgid "Created parameter [%{name}] with value [%{value}]."
-msgstr "已建立 [%{name}] 参数，其值为 [%{value}]。"
+msgstr "已建立 [%{name}{name}] 参数，其值为 [%{value}]。"
 
 msgid "Parameter [%{name}] updated to [%{value}]."
 msgstr "参数 [%{name}] 已更新为 [%{value}]。"
@@ -1022,13 +1025,13 @@ msgid "Compute attributes"
 msgstr "计算属性"
 
 msgid "Compute Resource"
-msgstr "運算資源"
+msgstr "计算资源"
 
 msgid "VM attributes"
 msgstr "VM 属性"
 
 msgid "Compute profile created."
-msgstr "创建计算配置集"
+msgstr "创建计算配置集。"
 
 msgid "Could not create a compute profile"
 msgstr "无法创建计算配置集"
@@ -1091,10 +1094,10 @@ msgid "Hosts"
 msgstr "主机"
 
 msgid "Cluster path"
-msgstr ""
+msgstr "集群路径"
 
 msgid "Virtual switch"
-msgstr ""
+msgstr "虚拟交换"
 
 msgid "VLAN ID"
 msgstr "VLAN ID"
@@ -1112,13 +1115,13 @@ msgid "Path"
 msgstr "路径"
 
 msgid "Parent"
-msgstr "亲"
+msgstr "父"
 
 msgid "Cluster"
 msgstr "簇"
 
 msgid "State"
-msgstr "州"
+msgstr "状态"
 
 msgid "Url"
 msgstr "Url"
@@ -1169,7 +1172,7 @@ msgid "CPUs"
 msgstr "CPU"
 
 msgid "Memory"
-msgstr "记忆"
+msgstr "内存"
 
 msgid "Status"
 msgstr "状态"
@@ -1249,8 +1252,8 @@ msgstr "布尔值，1 代表可预分配"
 msgid "Boolean, set 1 to wipe disk after delete"
 msgstr "布尔值，1 代表删除后擦除磁盘"
 
-msgid "Disk interface name, must be ide, virto or virto_scsi"
-msgstr "磁盘接口名称，必须为 ide，virto 或 virto_scsi"
+msgid "Disk interface name, must be ide, virtio or virtio_scsi"
+msgstr ""
 
 msgid "Cores"
 msgstr "内核"
@@ -1324,10 +1327,10 @@ msgid "Network ID or Network Name from VMware"
 msgstr "来自 VMware 的网络 ID 或网络名称"
 
 msgid "Console password set"
-msgstr ""
+msgstr "控制台密码集"
 
 msgid "Caching enabled"
-msgstr ""
+msgstr "启用缓存"
 
 msgid "Power Status"
 msgstr "电源状态"
@@ -1354,25 +1357,25 @@ msgid "Origin"
 msgstr "起源"
 
 msgid "Applied"
-msgstr "已应用"
+msgstr "应用的"
 
 msgid "Restarted"
-msgstr "已重新啟動"
+msgstr "重启"
 
 msgid "Failed"
-msgstr "失敗"
+msgstr "失败"
 
 msgid "Restart Failures"
 msgstr "重启失败"
 
 msgid "Skipped"
-msgstr "已跳過"
+msgstr "跳过的"
 
 msgid "Pending"
-msgstr "等待處理中"
+msgstr "待处理"
 
 msgid "Reported at"
-msgstr "回報於"
+msgstr "报告于"
 
 msgid "Report status"
 msgstr "回報狀態"
@@ -1380,8 +1383,8 @@ msgstr "回報狀態"
 msgid "Report metrics"
 msgstr "回報指標"
 
-msgid "config_retrieval"
-msgstr "config_retrieval"
+msgid "config retrieval"
+msgstr ""
 
 msgid "exec"
 msgstr "exec"
@@ -1432,22 +1435,22 @@ msgid "DNS Id"
 msgstr "DNS ID"
 
 msgid "Domain [%{name}] created."
-msgstr "创建了域[%{name}]。"
+msgstr "创建了域[%{name} ]。"
 
 msgid "Could not create the domain"
 msgstr "无法创建域"
 
 msgid "Full name describing the domain"
-msgstr "全面描述域"
+msgstr "用于描述域的全名"
 
 msgid "Domain [%{name}] updated."
-msgstr "更新了域[%{name}]。"
+msgstr "更新了域[%{name} ]。"
 
 msgid "Could not update the domain"
 msgstr "无法更新域"
 
 msgid "Domain [%{name}] deleted."
-msgstr "删除了域[%{name}]。"
+msgstr "删除了域[%{name} ]。"
 
 msgid "Could not delete the domain"
 msgstr "无法删除域"
@@ -1512,19 +1515,19 @@ msgid ""
 msgstr "确保您配置正确的 URL，并在系统上安装服务器的 CA 证书。"
 
 msgid "Server misconfiguration detected"
-msgstr ""
+msgstr "检测到服务器错误配置"
 
 msgid "have you run installer with option %s?"
-msgstr ""
+msgstr "您是否使用选项 %s 运行安装程序？"
 
 msgid "the user might come from a different authentication source"
-msgstr ""
+msgstr "用户可能来自不同的身份验证源"
 
 msgid "Could not authenticate using negotiation protocol"
-msgstr ""
+msgstr "无法使用协商协议进行验证"
 
 msgid "have you run %s (for Kerberos)?"
-msgstr ""
+msgstr "您是否运行 %s （对于 Kerberos）？"
 
 msgid "is the server down?"
 msgstr "服务器是否已下线？"
@@ -1578,7 +1581,7 @@ msgid "Permissions"
 msgstr "权限"
 
 msgid "(Miscellaneous)"
-msgstr "（雜項）"
+msgstr "（杂项）"
 
 msgid "none"
 msgstr "没有"
@@ -1617,16 +1620,16 @@ msgid "Could not delete the permission filter"
 msgstr "無法刪除權限篩選器"
 
 msgid "Host Group"
-msgstr "主機群組"
+msgstr "主机组"
 
 msgid "MAC"
-msgstr "苹果电脑"
+msgstr "MAC"
 
 msgid "Global Status"
 msgstr "全局状态"
 
 msgid "Organization"
-msgstr "组织"
+msgstr "机构"
 
 msgid "Location"
 msgstr "位置"
@@ -1635,7 +1638,7 @@ msgid "Additional Information"
 msgstr "附加信息"
 
 msgid "Bare Metal"
-msgstr "裸機"
+msgstr "裸机"
 
 msgid "UUID"
 msgstr "UUID"
@@ -1695,13 +1698,13 @@ msgid "SP Subnet"
 msgstr "SP 子網路"
 
 msgid "Network interfaces"
-msgstr "網路介面卡"
+msgstr "网络接口"
 
 msgid "Identifier"
 msgstr "鉴定"
 
 msgid "MAC address"
-msgstr "MAC 位址"
+msgstr "MAC 地址"
 
 msgid "FQDN"
 msgstr "FQDN"
@@ -1710,7 +1713,7 @@ msgid "Operating system"
 msgstr "操作系统"
 
 msgid "Architecture"
-msgstr "架構"
+msgstr "架构"
 
 msgid "Build"
 msgstr "构建"
@@ -1728,19 +1731,19 @@ msgid "Custom partition table"
 msgstr "自訂分割表"
 
 msgid "Image"
-msgstr "图片"
+msgstr "镜像"
 
 msgid "Image file"
-msgstr "映像檔"
+msgstr "镜像文件"
 
 msgid "Use image"
-msgstr "使用映像檔"
+msgstr "使用镜像"
 
 msgid "Additional info"
 msgstr "額外資訊"
 
 msgid "Owner"
-msgstr "擁有者"
+msgstr "所有者"
 
 msgid "Enabled"
 msgstr "启用"
@@ -1764,14 +1767,14 @@ msgid ""
 "%{reports} command is deprecated and will be removed in one of the future "
 "versions. Please use %{config_reports} command instead."
 msgstr ""
-"%{reports} 命令已过时，并会在以后的版本中被删除。请使用 %{config_reports} 命"
-"令替代它。"
+"%%{reports} 命令已过时，并会在以后的版本中被删除。请使用 %%{config_reports} "
+"命令替代它。"
 
 msgid "Host created."
 msgstr "已创建主机。"
 
 msgid "Could not create the host"
-msgstr "無法建立主機"
+msgstr "无法创建主机"
 
 msgid "Host updated."
 msgstr "已更新主机。"
@@ -1783,7 +1786,7 @@ msgid "Host deleted."
 msgstr "已删除主机。"
 
 msgid "Could not delete the host"
-msgstr "無法刪除主機"
+msgstr "无法删除主机"
 
 msgid "Create or append a parameter for a host"
 msgstr "为主机创建或添加一个参数"
@@ -1822,7 +1825,7 @@ msgid "Powering the host off"
 msgstr "主机正在关机"
 
 msgid "Reboot a host"
-msgstr "重新啟動主機"
+msgstr "重启主机"
 
 msgid "Host reboot started."
 msgstr "已開始重新啟動主機。"
@@ -1852,7 +1855,7 @@ msgid "Disassociate a host"
 msgstr "取消关联一个主机"
 
 msgid "The host has been disassociated from VM."
-msgstr "主机已与虚拟机取消关联"
+msgstr "主机已与虚拟机取消关联。"
 
 msgid "Failed to disassociated host from VM"
 msgstr "取消主机与虚拟机的关联失败"
@@ -1864,7 +1867,7 @@ msgid "Failed to boot the host from device"
 msgstr "无法从设备引导主机"
 
 msgid "Root password"
-msgstr "Root 密碼"
+msgstr "Root 密码"
 
 msgid "Subnet IPv6 name"
 msgstr "子网 IPv6 名称"
@@ -1876,7 +1879,7 @@ msgid "Title of parent hostgroup"
 msgstr "父主机组的名称"
 
 msgid "Enter the root password for the host group:"
-msgstr "輸入主機群組的 root 密碼："
+msgstr "为主机组输入 root 密码："
 
 msgid "Title"
 msgstr "提示"
@@ -1924,10 +1927,10 @@ msgid "Could not rebuild configuration"
 msgstr "无法重建配置"
 
 msgid "ID of the owner"
-msgstr "擁有者的 ID"
+msgstr "所有者 ID"
 
 msgid "Login of the owner"
-msgstr "擁有者的登錄帳號"
+msgstr "所有者的登陆账号"
 
 msgid ""
 "Required if host is managed and value is not inherited from host group or "
@@ -1947,7 +1950,7 @@ msgid "Interface parameters"
 msgstr "接口参数"
 
 msgid "Enter the root password for the host:"
-msgstr "輸入主機的 root 密碼："
+msgstr "输入主机的 root 密码："
 
 msgid "Username"
 msgstr "用户名"
@@ -1998,10 +2001,10 @@ msgid "Model name"
 msgstr "型號名稱"
 
 msgid "Set the current organization context for the request"
-msgstr "为请求设置当前机构上下文"
+msgstr "设置请求的当前机构上下文"
 
 msgid "Operating system title"
-msgstr "作業系統標題"
+msgstr "操作系统标题"
 
 msgid "Partition table name"
 msgstr "分割表名稱"
@@ -2016,10 +2019,10 @@ msgid "Setting name"
 msgstr "設定名稱"
 
 msgid "Subnet name"
-msgstr "子網路名稱"
+msgstr "子网名称"
 
 msgid "User's login to search by"
-msgstr "欲用來進行搜尋的使用者名稱"
+msgstr "用于搜索的用户登录账号"
 
 msgid "Common parameter name"
 msgstr "常見的參數名稱"
@@ -2028,7 +2031,7 @@ msgid "Name to search by"
 msgstr "用来进行搜索的名称"
 
 msgid "Missing options to search %s"
-msgstr "缺少搜索 %s 的选项。"
+msgstr "缺少搜索 %s 的选项"
 
 msgid "one of %s not found."
 msgstr "一个 %s 未找到。"
@@ -2040,7 +2043,7 @@ msgid "Missing options to search %s."
 msgstr "缺少搜索 %s 的选项。"
 
 msgid "View and manage compute resource's images"
-msgstr "查看和管理计算资源的图像"
+msgstr "查看和管理计算资源的镜像"
 
 msgid "User Data"
 msgstr "用户数据"
@@ -2049,25 +2052,25 @@ msgid "IAM role"
 msgstr "IAM 角色"
 
 msgid "Show images available for addition"
-msgstr "顯示能使用的額外映像檔"
+msgstr "显示可用于添加的镜像"
 
 msgid "Image created."
 msgstr "已创建镜像。"
 
 msgid "Could not create the image"
-msgstr "無法建立映像檔"
+msgstr "无法创建镜像"
 
 msgid "Image updated."
 msgstr "已更新镜像。"
 
 msgid "Could not update the image"
-msgstr "無法更新映像檔"
+msgstr "无法更新镜像"
 
 msgid "Image deleted."
 msgstr "已删除镜像。"
 
 msgid "Could not delete the image"
-msgstr "無法刪除映像檔"
+msgstr "无法删除镜像"
 
 msgid "View and manage host's network interfaces"
 msgstr "檢視並管理主機的網路介面"
@@ -2079,7 +2082,7 @@ msgid "provision"
 msgstr "佈建"
 
 msgid "IP address"
-msgstr "IP 位址"
+msgstr "IP 地址"
 
 msgid "DNS name"
 msgstr "DNS 名稱"
@@ -2094,7 +2097,7 @@ msgid "Provision"
 msgstr "置备"
 
 msgid "Virtual"
-msgstr "虚拟的"
+msgstr "虚拟"
 
 msgid "Tag"
 msgstr "标签"
@@ -2155,7 +2158,7 @@ msgid "Location numeric id to search by"
 msgstr "欲使用來進行搜尋的位置數字 ID"
 
 msgid "Organizations"
-msgstr "組織"
+msgstr "机构"
 
 msgid "Location created."
 msgstr "已创建位置。"
@@ -2221,7 +2224,7 @@ msgid "Could not delete the installation media"
 msgstr "無法刪除安裝媒介"
 
 msgid "Vendor class"
-msgstr "供應商類別"
+msgstr "供应商类别"
 
 msgid "HW model"
 msgstr "HW 型號"
@@ -2262,7 +2265,7 @@ msgid "Release name"
 msgstr "发行名称"
 
 msgid "Family"
-msgstr "家庭"
+msgstr "系列"
 
 msgid "Major version"
 msgstr "重大版本"
@@ -2325,7 +2328,7 @@ msgid ""
 "[%{provisioning_template_name}] was set as default %{template_kind_name} "
 "template."
 msgstr ""
-"[％{provisioning_template_name} ]被设置为默认％{template_kind_name}模板。"
+"[％%{provisioning_template_name} ]被设置为默认％%{template_kind_name}模板。"
 
 msgid "Could not set the os default template"
 msgstr "无法设置操作系统默认模板"
@@ -2343,7 +2346,7 @@ msgid "Default template of type %s not found"
 msgstr "没有找到类型 %s 的默认模板"
 
 msgid "%{types} of associated %{resource}"
-msgstr "关联的 %{resource} 的 %{types}"
+msgstr "关联的%{resource} 的%{types}"
 
 msgid "Use to update associated %s"
 msgstr "使用来更新关联的 %s"
@@ -2351,10 +2354,10 @@ msgstr "使用来更新关联的 %s"
 msgid ""
 "Could not find %{resource}. Some search options were missing, please see --"
 "help."
-msgstr "没有找到 %{resource}。缺少以下搜索选项，请查看 --help。"
+msgstr "没有找到%{resource}。缺少以下搜索选项，请查看 --help。"
 
 msgid "Could not find %{resource}, please set option %{switches}."
-msgstr "找不到 %{resource}，请设置选项 %{switches}。"
+msgstr "找不到%{resource}，请设置选项%{switches}。"
 
 msgid "Could not find %{resource}, please set one of options %{switches}."
 msgstr "找不到 %{resource}，请设置参数 %{switches} 中的一个。"
@@ -2372,19 +2375,19 @@ msgid "Organization created."
 msgstr "已创建组织。"
 
 msgid "Could not create the organization"
-msgstr "無法建立組織"
+msgstr "无法创建机构"
 
 msgid "Organization updated."
 msgstr "已更新组织。"
 
 msgid "Could not update the organization"
-msgstr "無法更新組織"
+msgstr "无法更新机构"
 
 msgid "Organization deleted."
 msgstr "已删除组织。"
 
 msgid "Could not delete the organization"
-msgstr "無法刪除組織"
+msgstr "无法删除机构"
 
 msgid "Create or update parameter for an organization"
 msgstr "创建或更新组织的参数"
@@ -2402,7 +2405,7 @@ msgid "id"
 msgstr "id"
 
 msgid "Kind"
-msgstr "種類"
+msgstr "种类"
 
 msgid "parameter name"
 msgstr "參數名稱"
@@ -2435,22 +2438,22 @@ msgid "Could not delete the partition table"
 msgstr "無法刪除分割表"
 
 msgid "Path to a file that contains the template content including metadata"
-msgstr ""
+msgstr "包含模板内容（包括元数据）的文件的路径"
 
 msgid "Import partition table template succeeded."
-msgstr ""
+msgstr "导入分区表模板成功。"
 
 msgid "Could not import partition table template"
-msgstr ""
+msgstr "无法导入分区表模板"
 
 msgid "The partition table template has been saved to %{path}."
-msgstr ""
+msgstr "分区表模板已保存到 %{path}。"
 
 msgid "Manage personal access tokens"
 msgstr "管理个人访问令牌"
 
 msgid "Active"
-msgstr "活性"
+msgstr "活跃"
 
 msgid "Expires at"
 msgstr "过期于"
@@ -2459,14 +2462,14 @@ msgid ""
 "Personal access token [%{name}] created:\n"
 "%{token_value}"
 msgstr ""
-"创建个人访问令牌 [%{name}]：\n"
-"%{token_value}"
+"创建了个人访问令牌 [%{name}]：\n"
+"%%{token_value}"
 
 msgid "Could not create personal access token"
 msgstr "无法创建个人访问令牌"
 
 msgid "Created at"
-msgstr "建立於"
+msgstr "建立于"
 
 msgid "Last used at"
 msgstr "最后使用于"
@@ -2490,19 +2493,19 @@ msgid "Realm type"
 msgstr "领域类型"
 
 msgid "Realm [%{name}] created."
-msgstr "创建的领域 [%{name}]。"
+msgstr "创建领域[%{name} ]。"
 
 msgid "Could not create the realm"
 msgstr "无法创建领域"
 
 msgid "Realm [%{name}] updated."
-msgstr "领域[%{name}] 已更新。"
+msgstr "更新领域[%{name} ]。"
 
 msgid "Could not update the realm"
 msgstr "无法更新该领域"
 
 msgid "Realm [%{name}] deleted."
-msgstr "删除领域[%{name}]。"
+msgstr "删除领域[%{name} ]。"
 
 msgid "Could not delete the realm"
 msgstr "无法删除该领域"
@@ -2601,7 +2604,7 @@ msgid ""
 msgstr "用于保存下载文件的目录路径。仅在指定了 wait 时才可用"
 
 msgid "The report has been scheduled. Job ID: %{job_id}"
-msgstr "该报告已被调度。作业 ID：％{job_id}"
+msgstr "该报告已被调度。作业 ID：％%{job_id}"
 
 msgid ""
 "Path to a file that contains the report template content including metadata"
@@ -2614,7 +2617,7 @@ msgid "Could not import the report template"
 msgstr "无法导入报告模板"
 
 msgid "The report template has been saved to %{path}."
-msgstr ""
+msgstr "报告模板已保存到 %{path}。"
 
 msgid "The report is not ready yet."
 msgstr "该报告尚未准备好。"
@@ -2629,14 +2632,14 @@ msgid "Report template created."
 msgstr "创建报告模板。"
 
 msgid "Could not create the report template"
-msgstr "无法创建报告模板。"
+msgstr "无法创建报告模板"
 
 msgid ""
 "Dump existing template and open it in an $EDITOR. Update with the result"
 msgstr "转储现有模板并在 $EDITOR 中打开它。更新结果"
 
 msgid "Report template updated."
-msgstr "更新报告模板"
+msgstr "更新报告模板。"
 
 msgid "Could not update the report template"
 msgstr "无法更新报告模板"
@@ -2654,7 +2657,7 @@ msgid "Could not delete the report template"
 msgstr "无法删除报告模板"
 
 msgid "The server does not support such operation."
-msgstr "伺服器不支援此類型的操作。"
+msgstr "服务器不支持这样的操作。"
 
 msgid "Builtin"
 msgstr "內建"
@@ -2701,7 +2704,7 @@ msgid "The url (%s) is not a valid URL. Session can not be created."
 msgstr "URL（%s）是无效的 URL。无法创建会话。"
 
 msgid "Invalid permissions for %{file}: %{mode}, expected %{expected_mode}."
-msgstr "%{file} 的权限无效：%{mode} ，预期为%{expected_mode}。"
+msgstr "%%{file} 的权限无效：%%{mode} ，预期为%%{expected_mode}。"
 
 msgid "Invalid session data. Resetting the session."
 msgstr "无效的会话数据。重置会话。"
@@ -2710,7 +2713,7 @@ msgid "Full name"
 msgstr "全名"
 
 msgid "Setting [%{name}] updated to [%{value}]."
-msgstr "设置 [%{name} ]更新为[%{value}]。"
+msgstr "设置 [%{name} ]更新为[%{value} ]。"
 
 msgid "Could not update the setting"
 msgstr "无法更新设置"
@@ -2727,8 +2730,8 @@ msgstr "功能"
 msgid "Version"
 msgstr "版本"
 
-msgid "Host_count"
-msgstr "Host_count"
+msgid "Host count"
+msgstr ""
 
 msgid "Smart proxy created."
 msgstr "已创建智能代理服务器。"
@@ -2755,10 +2758,10 @@ msgid "Refresh of smart proxy features failed"
 msgstr "更新智慧協定功能失敗"
 
 msgid "Import subnets succeeded."
-msgstr ""
+msgstr "导入子网成功。"
 
 msgid "Could not import subnets"
-msgstr ""
+msgstr "无法导入子网"
 
 msgid "Manage SSH Keys sources"
 msgstr "管理 SSH 密钥源"
@@ -2773,7 +2776,7 @@ msgid "Path to a SSH public key"
 msgstr "SSH 公钥的路径"
 
 msgid "SSH Key %{name} added."
-msgstr "添加 SSH 密钥 %{name}。"
+msgstr "添加 SSH 密钥%{name}。"
 
 msgid "Could not add SSH Key"
 msgstr "无法添加 SSH 密钥"
@@ -2806,7 +2809,7 @@ msgid "Error"
 msgstr "错误"
 
 msgid "Compute Resources"
-msgstr "计算机资源"
+msgstr "计算资源"
 
 msgid "Errors"
 msgstr "错误"
@@ -2818,7 +2821,7 @@ msgid "Network Prefix"
 msgstr "网络前缀"
 
 msgid "Network Mask"
-msgstr "網絡掩碼"
+msgstr "网络掩码"
 
 msgid "Boot Mode"
 msgstr "引导模式"
@@ -2896,25 +2899,25 @@ msgid "Subnet parameter deleted."
 msgstr "已删除子网参数。"
 
 msgid "Columns"
-msgstr ""
+msgstr "列"
 
 msgid "Table preference created."
-msgstr ""
+msgstr "创建了表首选项。"
 
 msgid "Could not create table preference"
-msgstr ""
+msgstr "无法创建表首选项"
 
 msgid "Table preference updated."
-msgstr ""
+msgstr "更新了表首选项。"
 
 msgid "Could not update table preference"
-msgstr ""
+msgstr "无法更新表首选项"
 
 msgid "Table preference deleted."
-msgstr ""
+msgstr "删除了表首选项。"
 
 msgid "Could not remove table preference"
-msgstr ""
+msgstr "无法删除表首选项"
 
 msgid "Environment name"
 msgstr "環境名稱"
@@ -2950,13 +2953,13 @@ msgid "Could not delete the provisioning template"
 msgstr "无法删除配置模板"
 
 msgid "Import provisioning template succeeded."
-msgstr ""
+msgstr "导入调配模板成功。"
 
 msgid "Could not import provisioning template"
-msgstr ""
+msgstr "无法导入置备模板"
 
 msgid "The provisioning template has been saved to %{path}."
-msgstr ""
+msgstr "置备模板已保存到 %{path}。"
 
 msgid "Update the default PXE menu on all configured TFTP servers"
 msgstr "更新所有經過配置的 TFTP 伺服器上的預設 PXE 選單"
@@ -2983,7 +2986,7 @@ msgid "Last login"
 msgstr "最后登录"
 
 msgid "Authorized by"
-msgstr "授權單位"
+msgstr "授权于"
 
 msgid "Email enabled"
 msgstr "启用邮件"
@@ -2998,7 +3001,7 @@ msgid "Timezone"
 msgstr "时区"
 
 msgid "Default organization"
-msgstr "預設組織"
+msgstr "默认机构"
 
 msgid "Default location"
 msgstr "預設位置"
@@ -3034,7 +3037,7 @@ msgid "Managing personal mail notifications"
 msgstr "管理个人邮件通知"
 
 msgid "Managing table preferences"
-msgstr ""
+msgstr "管理表首选项"
 
 msgid "User mail notifications was added."
 msgstr "添加了用户邮件通知。"
@@ -3049,7 +3052,7 @@ msgid "Could not update user mail notification"
 msgstr "无法更新用户邮件通知"
 
 msgid "User mail notification was removed."
-msgstr "删除了用户邮件通知"
+msgstr "删除了用户邮件通知。"
 
 msgid "Could not remove user mail notification"
 msgstr "无法删除用户邮件通知"
@@ -3088,19 +3091,7 @@ msgid "Could not power the virtual machine"
 msgstr "无法启动虚拟机"
 
 msgid "Virtual machine deleted."
-msgstr "删除的虚拟机"
+msgstr "删除的虚拟机。"
 
 msgid "Could not delete the virtual machine"
 msgstr "无法删除虚拟机"
-
-msgid "Authenticate against external source (IPA/PAM) with credentials"
-msgstr ""
-
-msgid "Disk interface name, must be ide, virtio or virtio_scsi"
-msgstr ""
-
-msgid "config retrieval"
-msgstr ""
-
-msgid "Host count"
-msgstr ""

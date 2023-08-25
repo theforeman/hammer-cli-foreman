@@ -6,9 +6,9 @@
 # Pavel Borecki <pavel.borecki@gmail.com>, 2018-2020
 msgid ""
 msgstr ""
-"Project-Id-Version: hammer-cli-foreman 3.8.0.pre.develop\n"
+"Project-Id-Version: hammer-cli-foreman 3.8.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-10-31 15:16+0000\n"
+"POT-Creation-Date: 2023-07-12 17:18+0000\n"
 "PO-Revision-Date: 2014-03-14 09:55+0000\n"
 "Last-Translator: Pavel Borecki <pavel.borecki@gmail.com>, 2018-2020\n"
 "Language-Team: Czech (Czech Republic) (http://app.transifex.com/foreman/"
@@ -562,6 +562,9 @@ msgstr "Heslo pro přístup ke vzdálenému systému"
 
 msgid "Successfully logged in as '%s'."
 msgstr "Úspěšně přihlášeni jako „%s“."
+
+msgid "Authenticate against external source (IPA/PAM) with credentials"
+msgstr ""
 
 msgid ""
 "Successfully authenticated using negotiate auth, using the KEYRING principal."
@@ -1246,8 +1249,8 @@ msgstr ""
 msgid "Boolean, set 1 to wipe disk after delete"
 msgstr ""
 
-msgid "Disk interface name, must be ide, virto or virto_scsi"
-msgstr "Je třeba, aby název rozhraní disku bylo ide, virtio nebo virtio_scsi"
+msgid "Disk interface name, must be ide, virtio or virtio_scsi"
+msgstr ""
 
 msgid "Cores"
 msgstr "Jádra"
@@ -1378,7 +1381,7 @@ msgstr "Hlásit stav"
 msgid "Report metrics"
 msgstr ""
 
-msgid "config_retrieval"
+msgid "config retrieval"
 msgstr ""
 
 msgid "exec"
@@ -2714,7 +2717,7 @@ msgstr "Funkce"
 msgid "Version"
 msgstr "Verze"
 
-msgid "Host_count"
+msgid "Host count"
 msgstr ""
 
 msgid "Smart proxy created."
@@ -3078,16 +3081,4 @@ msgid "Virtual machine deleted."
 msgstr ""
 
 msgid "Could not delete the virtual machine"
-msgstr ""
-
-msgid "Authenticate against external source (IPA/PAM) with credentials"
-msgstr ""
-
-msgid "Disk interface name, must be ide, virtio or virtio_scsi"
-msgstr ""
-
-msgid "config retrieval"
-msgstr ""
-
-msgid "Host count"
 msgstr ""

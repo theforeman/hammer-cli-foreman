@@ -13,9 +13,9 @@
 # simon11 <transifex@stieger.co>, 2014
 msgid ""
 msgstr ""
-"Project-Id-Version: hammer-cli-foreman 3.8.0.pre.develop\n"
+"Project-Id-Version: hammer-cli-foreman 3.8.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-10-31 15:16+0000\n"
+"POT-Creation-Date: 2023-07-12 17:18+0000\n"
 "PO-Revision-Date: 2014-03-14 09:55+0000\n"
 "Last-Translator: Ettore Atalan <atalanttore@googlemail.com>, "
 "2014-2017,2022-2023\n"
@@ -585,6 +585,9 @@ msgstr "Passwort zum Zugriff auf das entfernte System"
 
 msgid "Successfully logged in as '%s'."
 msgstr "Erfolgreich angemeldet als '%s'."
+
+msgid "Authenticate against external source (IPA/PAM) with credentials"
+msgstr ""
 
 msgid ""
 "Successfully authenticated using negotiate auth, using the KEYRING principal."
@@ -1292,8 +1295,8 @@ msgstr "Boolean, setze 1 zum Vorbelegen"
 msgid "Boolean, set 1 to wipe disk after delete"
 msgstr "Boolean, setze 1, um die Festplatte nach dem Löschen zu löschen"
 
-msgid "Disk interface name, must be ide, virto or virto_scsi"
-msgstr "Disk-Interface Name, sollte  ide, virto oder virto_scsi sein"
+msgid "Disk interface name, must be ide, virtio or virtio_scsi"
+msgstr ""
 
 msgid "Cores"
 msgstr "Kerne"
@@ -1431,8 +1434,8 @@ msgstr "Berichtsstatus"
 msgid "Report metrics"
 msgstr "Berichtsmetrik"
 
-msgid "config_retrieval"
-msgstr "config_retrieval"
+msgid "config retrieval"
+msgstr ""
 
 msgid "exec"
 msgstr "exec"
@@ -2816,7 +2819,7 @@ msgstr "Funktionen"
 msgid "Version"
 msgstr "Version"
 
-msgid "Host_count"
+msgid "Host count"
 msgstr ""
 
 msgid "Smart proxy created."
@@ -3181,15 +3184,3 @@ msgstr "Virtuelle Maschine gelöscht."
 
 msgid "Could not delete the virtual machine"
 msgstr "Die virtuelle Maschine konnte nicht gelöscht werden"
-
-msgid "Authenticate against external source (IPA/PAM) with credentials"
-msgstr ""
-
-msgid "Disk interface name, must be ide, virtio or virtio_scsi"
-msgstr ""
-
-msgid "config retrieval"
-msgstr ""
-
-msgid "Host count"
-msgstr ""

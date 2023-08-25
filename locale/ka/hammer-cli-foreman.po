@@ -6,9 +6,9 @@
 # Temuri Doghonadze <temuri.doghonadze@gmail.com>, 2022
 msgid ""
 msgstr ""
-"Project-Id-Version: hammer-cli-foreman 3.8.0.pre.develop\n"
+"Project-Id-Version: hammer-cli-foreman 3.8.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-10-31 15:16+0000\n"
+"POT-Creation-Date: 2023-07-12 17:18+0000\n"
 "PO-Revision-Date: 2014-03-14 09:55+0000\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>, 2022\n"
 "Language-Team: Georgian (http://app.transifex.com/foreman/foreman/language/"
@@ -573,6 +573,9 @@ msgstr "დაშორებულ სისტემაზე წვდომ�
 
 msgid "Successfully logged in as '%s'."
 msgstr "წარმატებით შეხვედით, როგორც %1."
+
+msgid "Authenticate against external source (IPA/PAM) with credentials"
+msgstr ""
 
 msgid ""
 "Successfully authenticated using negotiate auth, using the KEYRING principal."
@@ -1270,8 +1273,8 @@ msgstr "ლოგიკური. წინასწარ გამოსათ
 msgid "Boolean, set 1 to wipe disk after delete"
 msgstr "ლოგიკური. წაშლის შემდეგ დისკის გასანადგურებლად დააყენეთ 1"
 
-msgid "Disk interface name, must be ide, virto or virto_scsi"
-msgstr "დისკის ინტერფეისის სახელი. შეიძლება იყოს ide, virtio ან virtio_scsi"
+msgid "Disk interface name, must be ide, virtio or virtio_scsi"
+msgstr ""
 
 msgid "Cores"
 msgstr "ბირთვები"
@@ -1408,8 +1411,8 @@ msgstr "ანგარიშის სტატუსი"
 msgid "Report metrics"
 msgstr "ანგარიშის მეტრიკები"
 
-msgid "config_retrieval"
-msgstr "config_retrieval"
+msgid "config retrieval"
+msgstr ""
 
 msgid "exec"
 msgstr "exec"
@@ -2778,8 +2781,8 @@ msgstr "თვისებები"
 msgid "Version"
 msgstr "ვერსია"
 
-msgid "Host_count"
-msgstr "ჰოსტების რაოდენობა"
+msgid "Host count"
+msgstr ""
 
 msgid "Smart proxy created."
 msgstr "ჭკვიანი პროქსი შეიქმნა."
@@ -3143,15 +3146,3 @@ msgstr "ვირტუალური მანქანის წაშლა.
 
 msgid "Could not delete the virtual machine"
 msgstr "ვირტუალური მანქანის წაშლის შეცდომა"
-
-msgid "Authenticate against external source (IPA/PAM) with credentials"
-msgstr ""
-
-msgid "Disk interface name, must be ide, virtio or virtio_scsi"
-msgstr ""
-
-msgid "config retrieval"
-msgstr ""
-
-msgid "Host count"
-msgstr ""

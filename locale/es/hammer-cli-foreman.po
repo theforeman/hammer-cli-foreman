@@ -3,21 +3,23 @@
 # This file is distributed under the same license as the hammer-cli-foreman package.
 #
 # Translators:
+# 0868a4d1af5275b3f70b0a6dac4c99a4, 2014
 # Cha'gara Casanova <jlozada2426@gmail.com>, 2016
 # 0868a4d1af5275b3f70b0a6dac4c99a4, 2014
 # 0868a4d1af5275b3f70b0a6dac4c99a4, 2014
 # elobato <elobatocs@gmail.com>, 2014
 # elobato <elobatocs@gmail.com>, 2014
 # francis <hackgo@gmail.com>, 2014-2015
+# Sergio Ocón-Cárdenas <sergio.ocon@redhat.com>, 2014
 # Sergio Ocón-Cárdenas <sergio.ocon@redhat.com>, 2014-2016
 # Sergio Ocón-Cárdenas <sergio.ocon@redhat.com>, 2014
 msgid ""
 msgstr ""
-"Project-Id-Version: hammer-cli-foreman 3.8.0.pre.develop\n"
+"Project-Id-Version: hammer-cli-foreman 3.8.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-10-31 15:16+0000\n"
+"POT-Creation-Date: 2023-07-12 17:18+0000\n"
 "PO-Revision-Date: 2014-03-14 09:55+0000\n"
-"Last-Translator: Sergio Ocón-Cárdenas <sergio.ocon@redhat.com>, 2014-2016\n"
+"Last-Translator: Sergio Ocón-Cárdenas <sergio.ocon@redhat.com>, 2014\n"
 "Language-Team: Spanish (http://app.transifex.com/foreman/foreman/language/"
 "es/)\n"
 "MIME-Version: 1.0\n"
@@ -178,7 +180,7 @@ msgid "Openidc Provider Token Endpoint:%s"
 msgstr "Punto de acceso de proveedor de Openidc:%s"
 
 msgid "Client ID:%s"
-msgstr "ID de cliente:%s"
+msgstr "ID de cliente"
 
 msgid "Redirect URI:%s"
 msgstr "Redireccionar URI:%s"
@@ -187,10 +189,10 @@ msgid "Invalid credentials or oidc-client-id or oidc-token-endpoint.\n"
 msgstr "Credenciales o oidc-client-id o oidc-token-endpoint no válidos.\n"
 
 msgid "Username:%s"
-msgstr "Nombre de usuario:%s"
+msgstr "Nombre del usuario"
 
 msgid "Password:%{wsp}"
-msgstr "Contraseña:%{wsp}"
+msgstr "Contraseña"
 
 msgid "Session exists, currently logged in as '%s'."
 msgstr "La sesión ya existe y se ha iniciado sesión en ella como '%s'."
@@ -205,10 +207,10 @@ msgid "Session has expired."
 msgstr "La sesión ha caducado"
 
 msgid "Id"
-msgstr "Id"
+msgstr "ID"
 
 msgid "Name"
-msgstr "Nom"
+msgstr "Nombre"
 
 msgid "Architecture created."
 msgstr "Arquitectura creada."
@@ -389,7 +391,7 @@ msgstr ""
 "plantillas que coincidan se asociarán"
 
 msgid "%s not found."
-msgstr "No se encuentra(n) %s."
+msgstr "no se encuentra"
 
 msgid "The provisioning templates were associated."
 msgstr "Se asociaron las plantillas de aprovisionamiento."
@@ -560,7 +562,7 @@ msgid "Attribute"
 msgstr "Atributo"
 
 msgid "Value"
-msgstr "Valeur"
+msgstr "Valor"
 
 msgid "Old"
 msgstr "Anterior"
@@ -579,6 +581,9 @@ msgstr "Contraseña para acceder al sistema remoto"
 
 msgid "Successfully logged in as '%s'."
 msgstr "Inició sesión correctamente como '%s'."
+
+msgid "Authenticate against external source (IPA/PAM) with credentials"
+msgstr ""
 
 msgid ""
 "Successfully authenticated using negotiate auth, using the KEYRING principal."
@@ -813,7 +818,7 @@ msgid "Available keys for %{option}"
 msgstr "Claves disponibles para %{option}"
 
 msgid "Possible values: %s"
-msgstr "Posibles valores: %s"
+msgstr "Valores posibles"
 
 msgid "%{value}, each managed hosts needs to have one primary interface."
 msgstr "%{value}, cada host administrado necesita tener una interfaz primaria."
@@ -839,10 +844,10 @@ msgid "always IPMI"
 msgstr "siempre IPMI"
 
 msgid "Duration: %sms"
-msgstr "Duración: %sms"
+msgstr "Duración"
 
 msgid "FAIL"
-msgstr "FALLO"
+msgstr "FALLA"
 
 msgid "%{count} more service(s) failed, but not shown:"
 msgstr ""
@@ -875,13 +880,13 @@ msgid "Search / Order fields"
 msgstr "Buscar / Ordenar campos"
 
 msgid "Values"
-msgstr "Valeurs"
+msgstr "Valores"
 
 msgid "%s Id"
-msgstr "ID %s"
+msgstr "id"
 
 msgid "%s name"
-msgstr "Nombre %s"
+msgstr "Nombre"
 
 msgid "Nothing to update."
 msgstr ""
@@ -914,7 +919,7 @@ msgid "Cannot save file: %s does not exist"
 msgstr "No se puede guardar el archivo: %s no existe"
 
 msgid "Type"
-msgstr "Type"
+msgstr "Tipo"
 
 msgid "Set a global parameter"
 msgstr "Definir un parámetro global"
@@ -923,7 +928,7 @@ msgid "Created parameter [%{name}] with value [%{value}]."
 msgstr "Se creó el parámetro [%{name}] con valor [%{value}]."
 
 msgid "Parameter [%{name}] updated to [%{value}]."
-msgstr "Se actualizó el parámetro [%{name}] a  [%{value}]."
+msgstr "Parámetro actualizado."
 
 msgid "Parameter name"
 msgstr "Nombre del parámetro"
@@ -935,7 +940,7 @@ msgid "Should the value be hidden"
 msgstr "En caso de que el valor esté oculto"
 
 msgid "Type of the parameter"
-msgstr "Type de paramètre"
+msgstr "Tipo de parámetro"
 
 msgid "Global parameter [%{name}] deleted."
 msgstr "Se borró el parámetro global [%{name}]."
@@ -1082,7 +1087,7 @@ msgid "Provider"
 msgstr "Proveedor"
 
 msgid "Description"
-msgstr "Description"
+msgstr "Descripción"
 
 msgid "Path to a file that contains oVirt public key (For oVirt only)"
 msgstr ""
@@ -1173,7 +1178,7 @@ msgid "String, amount of memory, value in bytes"
 msgstr "Cadena, cantidad de memoria, valor en bytes"
 
 msgid "Possible values: %{modes}"
-msgstr "Valores posibles: %{modes}"
+msgstr "Valores posibles"
 
 msgid "Device names to specify the boot order"
 msgstr ""
@@ -1285,8 +1290,8 @@ msgstr "Booleano, establezca 1 para preasignar"
 msgid "Boolean, set 1 to wipe disk after delete"
 msgstr "Booleano, establezca 1 para limpiar el disco después de borrarlo"
 
-msgid "Disk interface name, must be ide, virto or virto_scsi"
-msgstr "El nombre de la interfaz del disco, debe ser ide, virto o virto_scsi"
+msgid "Disk interface name, must be ide, virtio or virtio_scsi"
+msgstr ""
 
 msgid "Cores"
 msgstr "Núcleos"
@@ -1423,8 +1428,8 @@ msgstr "Estado del informe"
 msgid "Report metrics"
 msgstr "Métricas del informe"
 
-msgid "config_retrieval"
-msgstr "config_retrieval"
+msgid "config retrieval"
+msgstr ""
 
 msgid "exec"
 msgstr "ejecución"
@@ -2056,7 +2061,7 @@ msgid "Model name"
 msgstr "Nombre de modelo"
 
 msgid "Set the current organization context for the request"
-msgstr "Establezca el contexto actual de la organización para la solicitud"
+msgstr "Establecer el contexto actual de la organización para la solicitud"
 
 msgid "Operating system title"
 msgstr "Título de sistema operativo"
@@ -2083,10 +2088,10 @@ msgid "Common parameter name"
 msgstr "Nombre de parámetro común"
 
 msgid "Name to search by"
-msgstr "Recherche par nom"
+msgstr "Nombre a buscar"
 
 msgid "Missing options to search %s"
-msgstr "Option manquante pour rechercher %s"
+msgstr "Faltan opciones para buscar %s."
 
 msgid "one of %s not found."
 msgstr "un sur %s introuvable."
@@ -2645,7 +2650,7 @@ msgid "Template inputs"
 msgstr "Entradas de plantilla"
 
 msgid "Required"
-msgstr "Requis"
+msgstr "Requerido"
 
 msgid "Options"
 msgstr "Opciones"
@@ -2804,7 +2809,7 @@ msgstr "Funcionalidades"
 msgid "Version"
 msgstr "Versión"
 
-msgid "Host_count"
+msgid "Host count"
 msgstr ""
 
 msgid "Smart proxy created."
@@ -2886,7 +2891,7 @@ msgid "Compute Resources"
 msgstr "Recursos de cómputo"
 
 msgid "Errors"
-msgstr "Erreurs"
+msgstr "Errores"
 
 msgid "Network Addr"
 msgstr "Dirección de la red"
@@ -3171,15 +3176,3 @@ msgstr "Máquina virtual borrada."
 
 msgid "Could not delete the virtual machine"
 msgstr "No pudo borrar la máquina virtual"
-
-msgid "Authenticate against external source (IPA/PAM) with credentials"
-msgstr ""
-
-msgid "Disk interface name, must be ide, virtio or virtio_scsi"
-msgstr ""
-
-msgid "config retrieval"
-msgstr ""
-
-msgid "Host count"
-msgstr ""

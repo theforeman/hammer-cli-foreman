@@ -10,9 +10,9 @@
 # Pierre-Emmanuel Dutang <dutangp@gmail.com>, 2014,2016-2017
 msgid ""
 msgstr ""
-"Project-Id-Version: hammer-cli-foreman 3.8.0.pre.develop\n"
+"Project-Id-Version: hammer-cli-foreman 3.8.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-10-31 15:16+0000\n"
+"POT-Creation-Date: 2023-07-12 17:18+0000\n"
 "PO-Revision-Date: 2014-03-14 09:55+0000\n"
 "Last-Translator: 0868a4d1af5275b3f70b0a6dac4c99a4, 2014\n"
 "Language-Team: French (http://app.transifex.com/foreman/foreman/language/"
@@ -86,7 +86,7 @@ msgid ""
 "versions. Please use %{config_report} command instead."
 msgstr ""
 "La commande %{report} est obsolète et sera supprimée dans l’une des versions "
-"futures. Utilisez la commande %{config_report} à la place."
+"futures. Utilisez la commande %%{config_report}  à la place."
 
 msgid "Manipulate report templates"
 msgstr "Manipuler les modèles de rapport"
@@ -137,7 +137,9 @@ msgid "Invalid username or password."
 msgstr "Nom d'utilisateur ou mot de passe incorrect."
 
 msgid "Using configured credentials for user '%s'."
-msgstr "Utilisation des identifiants configurées pour l'utilisateur '%s'."
+msgstr ""
+"Utilisation des informations d'identification configurées pour l'utilisateur "
+"'%s'."
 
 msgid "Credentials are not configured."
 msgstr "Les identifiants ne sont pas configurées."
@@ -192,7 +194,7 @@ msgid "Username:%s"
 msgstr "Nom d'utilisateur : %s"
 
 msgid "Password:%{wsp}"
-msgstr "Mot de passe:%{wsp}"
+msgstr "Mot de passe : %{wsp}"
 
 msgid "Session exists, currently logged in as '%s'."
 msgstr "Session existante, connecté actuellement en tant que '%s'."
@@ -202,7 +204,7 @@ msgstr ""
 "Sessions en cours d'utilisation, vous n'êtes actuellement pas connecté."
 
 msgid "Invalid credentials, continuing with session for '%s'."
-msgstr "Identifiants non valables, poursuite de la session avec ’%s’."
+msgstr "ID non valables, poursuite de la session avec ’%s’."
 
 msgid "Session has expired."
 msgstr "Session expirée."
@@ -392,7 +394,7 @@ msgstr ""
 "modèles correspondants seront associés"
 
 msgid "%s not found."
-msgstr "%s non trouvé"
+msgstr "%s non trouvé."
 
 msgid "The provisioning templates were associated."
 msgstr "Les modèles de provisionnement ont été associés."
@@ -525,7 +527,7 @@ msgid "Could not disassociate the location"
 msgstr "Impossible de dissocié la localisation"
 
 msgid "Override audit record pagination"
-msgstr "Remplace la pagination d'enregistrement d'événements d'audit."
+msgstr "Remplace la pagination d'enregistrement d'événements d'audit"
 
 msgid ""
 "Audit records for past one month are returned by default. This behavior can "
@@ -582,6 +584,9 @@ msgstr "Mot de passe pour accéder au système distant"
 msgid "Successfully logged in as '%s'."
 msgstr "Connexion réussie en tant que '%s'."
 
+msgid "Authenticate against external source (IPA/PAM) with credentials"
+msgstr ""
+
 msgid ""
 "Successfully authenticated using negotiate auth, using the KEYRING principal."
 msgstr ""
@@ -632,8 +637,7 @@ msgstr "Mise à jour réussie de la source d'auth externe %{name}."
 
 msgid "Failed to update %{name} external auth source"
 msgstr ""
-"Echec de la mise à jour de la source d'authentification externe Auth "
-"source{name}"
+"Echec de la mise à jour de la source d'authentification externe %{name}"
 
 msgid "Manage LDAP auth sources"
 msgstr "Gérer les sources d'authentification LDAP"
@@ -681,13 +685,13 @@ msgid "Attribute mappings"
 msgstr "Attributs de concordance"
 
 msgid "Login Name Attribute"
-msgstr "Attribut Login"
+msgstr "Attribut login"
 
 msgid "First Name Attribute"
-msgstr "Attribut prénom (First Name)"
+msgstr "Attribut prénom"
 
 msgid "Last Name Attribute"
-msgstr "Attribut nom de famille (Last Name)"
+msgstr "Attribut nom de famille"
 
 msgid "Email Address Attribute"
 msgstr "Attribut adresse mail"
@@ -760,13 +764,13 @@ msgid "ID"
 msgstr "ID"
 
 msgid "Provisioning template ID"
-msgstr "ID de modèle de provisionnement."
+msgstr "ID de modèle de provisionnement"
 
 msgid "Provisioning template name"
 msgstr "Nom du modèle de provisionnement"
 
 msgid "Hostgroup ID"
-msgstr "ID du groupe d'hôtes."
+msgstr "ID du groupe d'hôtes"
 
 msgid "Hostgroup name"
 msgstr "Nom du groupe d'hôtes"
@@ -796,13 +800,13 @@ msgid "Could not delete the template combination"
 msgstr "Impossible de supprimer la combinaison de modèle"
 
 msgid "Cluster ID"
-msgstr ""
+msgstr "ID Cluster"
 
 msgid "Use --cluster-name instead"
-msgstr ""
+msgstr "Utilisez --cluster-name à la place"
 
 msgid "Cluster name or path to search by"
-msgstr ""
+msgstr "Nom ou chemin du cluster à rechercher"
 
 msgid "Name of DNS proxy to use within this domain"
 msgstr "Nom du proxy DNS à utiliser dans ce domaine"
@@ -888,28 +892,28 @@ msgid "%s Id"
 msgstr "%s Id"
 
 msgid "%s name"
-msgstr "%s Nom"
+msgstr "%s nom"
 
 msgid "Nothing to update."
-msgstr "Rien à mettre à jour"
+msgstr "Rien à mettre à jour."
 
 msgid "Associate a resource"
 msgstr "Associer à une ressource"
 
 msgid "Could not associate the %{resource_name}."
-msgstr "Impossible d'associer la localisation %{resource_name}"
+msgstr "Impossible d'associer la localisation %%{resource_name}."
 
 msgid "The %{resource_name} has been associated."
-msgstr "L'utilisateur %{resource_name} a été associé."
+msgstr "L'utilisateur %%{resource_name} a été associé."
 
 msgid "Disassociate a resource"
 msgstr "Dissocier la ressource"
 
 msgid "Could not disassociate the %{resource_name}."
-msgstr "Impossible de dissocier l'utilisateur %{resource_name}."
+msgstr "Impossible de dissocier l'utilisateur %%{resource_name}."
 
 msgid "The %{resource_name} has been disassociated."
-msgstr "L'utilisateur %{resource_name} a été dissocié."
+msgstr "L'utilisateur %%{resource_name} a été dissocié."
 
 msgid "Path to directory where downloaded content will be saved"
 msgstr "Chemin d'accès au répertoire où le fichier téléchargé sera enregistré"
@@ -927,10 +931,10 @@ msgid "Set a global parameter"
 msgstr "Définir un paramètre global"
 
 msgid "Created parameter [%{name}] with value [%{value}]."
-msgstr "Paramètre  [%{name}]  créé avec la valeur [%{value}]."
+msgstr "Paramètre [%{name}] créé avec la valeur [%{value}]."
 
 msgid "Parameter [%{name}] updated to [%{value}]."
-msgstr "Paramètre  [%{name}]  mis à jour à [%{value}]."
+msgstr "Paramètre [%{name}] mis à jour à [%{value}]."
 
 msgid "Parameter name"
 msgstr "Nom du paramètre"
@@ -948,7 +952,7 @@ msgid "Global parameter [%{name}] deleted."
 msgstr "Paramètre de sous-réseau  [%{name}]  supprimé."
 
 msgid "Could not delete the global parameter [%{name}]"
-msgstr "Impossible de supprimer le paramètre global  [%{name}]"
+msgstr "Impossible de supprimer le paramètre global [%{name}] "
 
 msgid "Manipulate global parameters"
 msgstr "Manipuler les paramètres globaux"
@@ -965,7 +969,7 @@ msgstr "Paramètres d'interface, liste de valeurs séparées par des virgules"
 msgid "Volume parameters, should be comma separated list of values"
 msgstr ""
 "Les paramètres de volume, listes de valeurs devant être séparées par des "
-"virgules "
+"virgules"
 
 msgid "Compute profile attributes are set."
 msgstr "Les attributs du profil Compute sont définis."
@@ -982,7 +986,7 @@ msgstr ""
 "virgules"
 
 msgid "Compute profile attributes updated."
-msgstr "Mise à jour des attributs du profil Compute"
+msgstr "Mise à jour des attributs du profil Compute."
 
 msgid "Could not update the compute profile attributes"
 msgstr "Impossible de mettre à jour les attributs de profil Compute"
@@ -1098,19 +1102,19 @@ msgid "Compute resource created."
 msgstr "Ressource Compute créée."
 
 msgid "Could not create the compute resource"
-msgstr "Impossible de créer la ressource d'ordinateur"
+msgstr "Impossible de créer la ressource Compute"
 
 msgid "Compute resource updated."
 msgstr "Ressource Compute mise à jour."
 
 msgid "Could not update the compute resource"
-msgstr "Impossible de mettre à jour la ressource d'ordinateur"
+msgstr "Impossible de mettre à jour la ressource Compute"
 
 msgid "Compute resource deleted."
 msgstr "Ressource Compute supprimée."
 
 msgid "Could not delete the compute resource"
-msgstr "Impossible de supprimer la ressource d'ordinateur"
+msgstr "Impossible de supprimer la ressource Compute"
 
 msgid "Associate a specific VM"
 msgstr "Associer une VM spécifique"
@@ -1128,10 +1132,10 @@ msgid "Hosts"
 msgstr "Hôtes"
 
 msgid "Cluster path"
-msgstr ""
+msgstr "Chemin de cluster"
 
 msgid "Virtual switch"
-msgstr ""
+msgstr "Commutateur virtuel"
 
 msgid "VLAN ID"
 msgstr "VLAN ID"
@@ -1143,7 +1147,7 @@ msgid "Network ID"
 msgstr "ID du réseau"
 
 msgid "Uuid"
-msgstr "UUID"
+msgstr "Uuid"
 
 msgid "Path"
 msgstr "Chemin"
@@ -1155,7 +1159,7 @@ msgid "Cluster"
 msgstr "Cluster"
 
 msgid "State"
-msgstr "État "
+msgstr "État"
 
 msgid "Url"
 msgstr "Url"
@@ -1290,8 +1294,8 @@ msgstr "Booléen, définir sur 1 pour pré-allocation"
 msgid "Boolean, set 1 to wipe disk after delete"
 msgstr "Booléen, définir sur 1 pour effacer le disque après la suppression"
 
-msgid "Disk interface name, must be ide, virto or virto_scsi"
-msgstr "Nom de l'interface du disque, doit être ide, virto ou virto_scsi"
+msgid "Disk interface name, must be ide, virtio or virtio_scsi"
+msgstr ""
 
 msgid "Cores"
 msgstr "Cores"
@@ -1302,7 +1306,7 @@ msgstr "ID de cluster de VMware"
 msgid "Number of cores per socket (applicable to hardware versions < 10 only)"
 msgstr ""
 "Nombre de cores par socket (applicable aux versions de matériel < 10 "
-"uniquement) "
+"uniquement)"
 
 msgid "CPU count"
 msgstr "Nombre de CPU"
@@ -1374,10 +1378,10 @@ msgid "Network ID or Network Name from VMware"
 msgstr "ID de réseau ou nom de réseau de VMware"
 
 msgid "Console password set"
-msgstr ""
+msgstr "Mot de passe de la console"
 
 msgid "Caching enabled"
-msgstr ""
+msgstr "Mise en cache activée"
 
 msgid "Power Status"
 msgstr "État d’alimentation"
@@ -1430,8 +1434,8 @@ msgstr "Statut du rapport"
 msgid "Report metrics"
 msgstr "Métriques du rapport"
 
-msgid "config_retrieval"
-msgstr "config_retrieval"
+msgid "config retrieval"
+msgstr ""
 
 msgid "exec"
 msgstr "exec"
@@ -1440,7 +1444,7 @@ msgid "file"
 msgstr "fichier"
 
 msgid "package"
-msgstr "package"
+msgstr "paquet"
 
 msgid "service"
 msgstr "service"
@@ -1488,7 +1492,7 @@ msgid "Could not create the domain"
 msgstr "Impossible de créer le domaine"
 
 msgid "Full name describing the domain"
-msgstr "Nom  complet décrivant le domaine"
+msgstr "Nom complet décrivant le domaine"
 
 msgid "Domain [%{name}] updated."
 msgstr "Domaine [%{name}] mis à jour."
@@ -1521,7 +1525,7 @@ msgid "Domain parameter deleted."
 msgstr "Paramètre du domaine supprimé."
 
 msgid "Redirection of API call detected."
-msgstr "Redirection à l'appel API détecté"
+msgstr "Redirection à l'appel API détecté."
 
 msgid "It seems hammer is configured to use HTTP and the server prefers HTTPS."
 msgstr ""
@@ -1649,7 +1653,7 @@ msgstr ""
 "les filtres de substitution."
 
 msgid "Overriding organizations and locations"
-msgstr "Substitution des organisations et emplacements "
+msgstr "Substitution des organisations et emplacements"
 
 msgid ""
 "Filters inherit organizations and locations from its role by default. This "
@@ -1658,9 +1662,9 @@ msgid ""
 "set."
 msgstr ""
 "Les filtres héritent des organisations et des emplacements par leur rôle par "
-"défaut. Ce comportement peut être modifié en définissant %{condition}.%{wsp}"
-"Par conséquent, les options %{org_opts} et %{loc_opts} ne sont applicables "
-"que si l'indicateur de substitution est défini."
+"défaut. Ce comportement peut être modifié en définissant %%{condition}.%"
+"%{wsp}Par conséquent, les options %%{org_opts} et %%{loc_opts} ne sont "
+"applicables que si l'indicateur de substitution est défini."
 
 msgid "Permission filter for [%<resource_type_label>s] created."
 msgstr ""
@@ -1831,7 +1835,7 @@ msgid ""
 "versions. Please use %{config_reports} command instead."
 msgstr ""
 "La commande %{reports} est obsolète et sera supprimée dans l’une des "
-"versions futures. Utilisez la commande %{config_reports} à la place."
+"versions futures. Utilisez la commande %%{config_reports}  à la place."
 
 msgid "Host created."
 msgstr "Hôte créé."
@@ -1879,19 +1883,19 @@ msgid "Force turning off a host"
 msgstr "Forcer l'extinction d'un hôte"
 
 msgid "Power a host off"
-msgstr "Éteindre un hôte "
+msgstr "Éteindre un hôte"
 
 msgid "Power off forced"
 msgstr "Mise hors tension forcée"
 
 msgid "Powering the host off"
-msgstr "Mise hors tension de l'hôte."
+msgstr "Mise hors tension de l'hôte"
 
 msgid "Reboot a host"
 msgstr "Redémarrage d'un hôte"
 
 msgid "Host reboot started."
-msgstr "Redémarrage de l'hôte lancé"
+msgstr "Redémarrage de l'hôte lancé."
 
 msgid "Reset a host"
 msgstr "Réinitialiser un hôte"
@@ -1918,7 +1922,7 @@ msgid "Disassociate a host"
 msgstr "Dissocier un hôte"
 
 msgid "The host has been disassociated from VM."
-msgstr "L’hôte a été dissocié de la VM"
+msgstr "L’hôte a été dissocié de la VM."
 
 msgid "Failed to disassociated host from VM"
 msgstr "Impossible de dissocier l'hôte de la VM"
@@ -2370,7 +2374,7 @@ msgid "Could not delete the operating system"
 msgstr "Impossible de supprimer le système d'exploitation"
 
 msgid "Create or update parameter for an operating system"
-msgstr "Créer ou mettre à jour un paramètre de système d'exploitation."
+msgstr "Créer ou mettre à jour un paramètre de système d'exploitation"
 
 msgid "Operating system parameter updated"
 msgstr "Paramètre du système d'exploitation mis à jour"
@@ -2397,7 +2401,7 @@ msgid ""
 "[%{provisioning_template_name}] was set as default %{template_kind_name} "
 "template."
 msgstr ""
-"[%{provisioning_template_name}] a été défini comme modèle de "
+"[%%{provisioning_template_name}] a été défini comme modèle de %"
 "%{template_kind_name} par défaut."
 
 msgid "Could not set the os default template"
@@ -2426,7 +2430,7 @@ msgid ""
 "help."
 msgstr ""
 "%{resource} introuvable. Certaines options de recherche sont manquantes, "
-"veuillez consulter --help"
+"veuillez consulter --help."
 
 msgid "Could not find %{resource}, please set option %{switches}."
 msgstr ""
@@ -2538,8 +2542,8 @@ msgid ""
 "Personal access token [%{name}] created:\n"
 "%{token_value}"
 msgstr ""
-"Jeton d'accès personnel  [%{name}] créé :\n"
-"%{token_value}"
+"Jeton d'accès personnel  [%%{name}] créé :\n"
+"%%{token_value}"
 
 msgid "Could not create personal access token"
 msgstr "N'a pas pu créer de jeton d'accès personnel"
@@ -2563,28 +2567,28 @@ msgid "Server Response"
 msgstr "Réponse du serveur"
 
 msgid "Realm proxy id"
-msgstr "Id du proxy du royaume"
+msgstr "Id du proxy du domaine"
 
 msgid "Realm type"
-msgstr "Type de royaume"
+msgstr "Type de domaine"
 
 msgid "Realm [%{name}] created."
-msgstr "Domaine [{name}] créé."
+msgstr "Royaume [%{name}] créé."
 
 msgid "Could not create the realm"
-msgstr "Impossible de créer le royaume"
+msgstr "Impossible de créer le domaine"
 
 msgid "Realm [%{name}] updated."
-msgstr "Domaine [{name}] mis à jour."
+msgstr "Realm [%{name}] mis à jour."
 
 msgid "Could not update the realm"
-msgstr "Impossible de mettre à jour le royaume"
+msgstr "Impossible de mettre à jour le domaine"
 
 msgid "Realm [%{name}] deleted."
-msgstr "Domaine [{name}] supprimé."
+msgstr "Domaine [%{name}] supprimé."
 
 msgid "Could not delete the realm"
-msgstr "Impossible de supprimer le royaume"
+msgstr "Impossible de supprimer le domaine"
 
 msgid "Updated at"
 msgstr "Mis à jour le"
@@ -2682,7 +2686,7 @@ msgstr ""
 "Utilisable uniquement si l'attente est spécifiée"
 
 msgid "The report has been scheduled. Job ID: %{job_id}"
-msgstr "Le rapport a été programmé. Job ID : %{job_id}"
+msgstr "Le rapport a été programmé. Job ID : %%{job_id}"
 
 msgid ""
 "Path to a file that contains the report template content including metadata"
@@ -2703,13 +2707,13 @@ msgid "The report is not ready yet."
 msgstr "Le rapport n'est pas encore prêt."
 
 msgid "Open empty template in an $EDITOR. Upload the result"
-msgstr "Ouvrez un modèle vide dans un $EDITOR. Téléchargez le résultat"
+msgstr "Ouvrez un modèle vide dans un %$EDITOR. Téléchargez le résultat"
 
 msgid "Path to a file that contains the report template content"
 msgstr "Chemin du fichier contenant le contenu de modèle de rapport"
 
 msgid "Report template created."
-msgstr "Créer un modèle de rapport"
+msgstr "Créer un modèle de rapport."
 
 msgid "Could not create the report template"
 msgstr "Impossible de créer le modèle de rapport"
@@ -2745,7 +2749,7 @@ msgid "Builtin"
 msgstr "Intégré"
 
 msgid "User role id"
-msgstr "Identifiant du rôle utilisateur"
+msgstr "Id du rôle utilisateur"
 
 msgid "User role [%<name>s] created."
 msgstr "Rôle utilisateur [%<name>s] créé."
@@ -2791,7 +2795,7 @@ msgstr ""
 
 msgid "Invalid permissions for %{file}: %{mode}, expected %{expected_mode}."
 msgstr ""
-"Autorisations non valables pour %{file}: %{mode}, %{expected_mode} prévu."
+"Autorisations non valables pour %%{file}: %%{mode}, %%{expected_mode} prévu."
 
 msgid "Invalid session data. Resetting the session."
 msgstr "Données de session non valides. Réinitialisation de la session."
@@ -2817,8 +2821,8 @@ msgstr "Caractéristiques"
 msgid "Version"
 msgstr "Version"
 
-msgid "Host_count"
-msgstr "Host_count"
+msgid "Host count"
+msgstr ""
 
 msgid "Smart proxy created."
 msgstr "Smart proxy créé."
@@ -2986,25 +2990,25 @@ msgid "Subnet parameter deleted."
 msgstr "Paramètre de sous-réseau supprimé."
 
 msgid "Columns"
-msgstr ""
+msgstr "Colonnes"
 
 msgid "Table preference created."
-msgstr ""
+msgstr "Préférence de table créée."
 
 msgid "Could not create table preference"
-msgstr ""
+msgstr "Impossible de créer la préférence de table"
 
 msgid "Table preference updated."
-msgstr ""
+msgstr "Mise à jour de la préférence de table."
 
 msgid "Could not update table preference"
-msgstr ""
+msgstr "Impossible de mettre à jour les préférences de la table"
 
 msgid "Table preference deleted."
-msgstr ""
+msgstr "La préférence de table a été supprimée."
 
 msgid "Could not remove table preference"
-msgstr ""
+msgstr "Impossible de supprimer la préférence de table"
 
 msgid "Environment name"
 msgstr "Nom de l'environnement"
@@ -3062,7 +3066,7 @@ msgid "Login"
 msgstr "Connexion"
 
 msgid "Email"
-msgstr " E-mail"
+msgstr "E-mail"
 
 msgid "Admin"
 msgstr "Admin"
@@ -3098,19 +3102,19 @@ msgid "default"
 msgstr "par défaut"
 
 msgid "User [%{login}] created."
-msgstr "Utilisateur [%{login}] créé."
+msgstr "Utilisateur  [%{login}] créé."
 
 msgid "Could not create the user"
 msgstr "Impossible de créer l'utilisateur"
 
 msgid "User [%{login}] updated."
-msgstr "Filtre [%{login}] mis à jour"
+msgstr "Filtre [%{login}] mis à jour."
 
 msgid "Could not update the user"
 msgstr "Impossible de mettre à jour l'utilisateur"
 
 msgid "User [%{login}] deleted."
-msgstr "Utilisateur [%{login}] supprimé."
+msgstr "Utilisateur  [%{login}] supprimé."
 
 msgid "Could not delete the user"
 msgstr "Impossible de supprimer l'utilisateur"
@@ -3125,7 +3129,7 @@ msgid "Managing personal mail notifications"
 msgstr "Gestion des notifications de courrier personnel"
 
 msgid "Managing table preferences"
-msgstr ""
+msgstr "Préférence de table"
 
 msgid "User mail notifications was added."
 msgstr "Notifications par courrier de l'utilisateur ajoutées."
@@ -3183,15 +3187,3 @@ msgstr "Machine virtuelle supprimée."
 
 msgid "Could not delete the virtual machine"
 msgstr "Impossible de supprimer la machine virtuelle"
-
-msgid "Authenticate against external source (IPA/PAM) with credentials"
-msgstr ""
-
-msgid "Disk interface name, must be ide, virtio or virtio_scsi"
-msgstr ""
-
-msgid "config retrieval"
-msgstr ""
-
-msgid "Host count"
-msgstr ""
