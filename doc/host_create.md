@@ -252,12 +252,6 @@ preallocate        # boolean, set true to preallocate
 wipe_after_delete  # boolean, set true to wipe disk after delete
 ```
 
-## Rackspace
-Available keys for `--compute-attributes`:
-```
-flavor_id
-```
-
 ## VMware
 Available keys for `--compute-attributes`:
 ```
