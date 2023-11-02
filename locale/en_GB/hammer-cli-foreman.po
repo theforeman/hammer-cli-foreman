@@ -8,9 +8,9 @@
 # 0868a4d1af5275b3f70b0a6dac4c99a4, 2016
 msgid ""
 msgstr ""
-"Project-Id-Version: hammer-cli-foreman 3.8.0\n"
+"Project-Id-Version: hammer-cli-foreman 3.9.0.pre.develop\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-07-12 17:18+0000\n"
+"POT-Creation-Date: 2023-08-25 18:01+0000\n"
 "PO-Revision-Date: 2014-03-14 09:55+0000\n"
 "Last-Translator: 0868a4d1af5275b3f70b0a6dac4c99a4, 2016\n"
 "Language-Team: English (United Kingdom) (http://app.transifex.com/foreman/"
