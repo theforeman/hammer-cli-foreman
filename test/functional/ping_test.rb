@@ -49,7 +49,7 @@ describe 'ping' do
           'cache:',
           '    servers:',
           '     1) Status:          ok',
-          '        Server Response: 5'
+          '        Server Response: Duration: 5ms'
         ]
       )
 

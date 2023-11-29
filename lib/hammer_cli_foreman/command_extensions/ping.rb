@@ -7,7 +7,21 @@ module HammerCLIForeman
           data['results']['foreman']['database']['active'] = status ? 'ok' : 'FAIL'
           duration = data['results']['foreman']['database']['duration_ms']
           data['results']['foreman']['database']['duration_ms'] = _('Duration: %sms') % duration
+          cache = data['results']['foreman']['cache']
+          data['results']['foreman']['cache'] = format_cache(cache) if cache
         end
+      end
+
+      def self.format_cache(cache)
+        servers = cache['servers'].map do |server|
+          {
+            status: server['status'],
+            duration_ms: _('Duration: %sms') % server['duration_ms']
+          }
+        end
+        {
+          'servers': servers
+        }
       end
 
       def self.check_for_unrecognized(plugins, output_definition)
