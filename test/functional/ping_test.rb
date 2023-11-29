@@ -33,6 +33,31 @@ describe 'ping' do
       assert_cmd(expected_result, result)
     end
 
+    it 'includes cache status if foreman reports it' do
+      ping_results['results']['foreman']['cache'] = {
+        'servers' => [
+          {
+            'status' => 'ok',
+            'duration_ms' => 5
+          }
+        ]
+      }
+      api_expects(:ping, :ping, 'Ping').returns(ping_results)
+
+      output = OutputMatcher.new(
+        [
+          'cache:',
+          '    servers:',
+          '     1) Status:          ok',
+          '        Server Response: 5'
+        ]
+      )
+
+      expected_result = success_result(output)
+      result = run_cmd(cmd)
+      assert_cmd(expected_result, result)
+    end
+
     it 'returns 1 if one of the services failed and shows unrecognized services' do
       ping_results['results']['new_plugin'] = {
         'services' => {
