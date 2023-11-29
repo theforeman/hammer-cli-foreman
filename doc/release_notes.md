@@ -1,5 +1,13 @@
 Release notes
 =============
+### 3.9.0 (2023-11-29)
+* Add cache status to ping output ([PR #622](https://github.com/theforeman/hammer-cli-foreman/pull/622)), [#36954](http://projects.theforeman.org/issues/36954)
+* Use strings, not floats to denote ruby versions ([PR #623](https://github.com/theforeman/hammer-cli-foreman/pull/623))
+* Update packit
+* Drop rackspace cr support ([PR #619](https://github.com/theforeman/hammer-cli-foreman/pull/619)), [#36813](http://projects.theforeman.org/issues/36813)
+* Update rel-eng
+* Bump to 3.9.0-develop
+
 ### 3.8.0 (2023-08-25)
 * Support mocha 2.1 ([PR #618](https://github.com/theforeman/hammer-cli-foreman/pull/618)), [#34879](http://projects.theforeman.org/issues/34879)
 * Add ga to run tests on ruby 3+ ([PR #617](https://github.com/theforeman/hammer-cli-foreman/pull/617))
