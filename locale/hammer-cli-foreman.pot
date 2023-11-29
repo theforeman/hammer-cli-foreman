@@ -6,10 +6,10 @@
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: hammer-cli-foreman 3.9.0.pre.develop\n"
+"Project-Id-Version: hammer-cli-foreman 3.9.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-11-02 15:51+0000\n"
-"PO-Revision-Date: 2023-11-02 15:51+0000\n"
+"POT-Creation-Date: 2023-11-29 15:59+0000\n"
+"PO-Revision-Date: 2023-11-29 15:59+0000\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: \n"
@@ -1231,15 +1231,16 @@ msgid "always IPMI"
 msgstr ""
 
 #: ../lib/hammer_cli_foreman/command_extensions/ping.rb:9
+#: ../lib/hammer_cli_foreman/command_extensions/ping.rb:19
 msgid "Duration: %sms"
 msgstr ""
 
-#: ../lib/hammer_cli_foreman/command_extensions/ping.rb:22
-#: ../lib/hammer_cli_foreman/command_extensions/ping.rb:34
+#: ../lib/hammer_cli_foreman/command_extensions/ping.rb:36
+#: ../lib/hammer_cli_foreman/command_extensions/ping.rb:48
 msgid "FAIL"
 msgstr ""
 
-#: ../lib/hammer_cli_foreman/command_extensions/ping.rb:27
+#: ../lib/hammer_cli_foreman/command_extensions/ping.rb:41
 msgid "%{count} more service(s) failed, but not shown:"
 msgstr ""
 
@@ -1773,7 +1774,7 @@ msgstr ""
 #: ../lib/hammer_cli_foreman/compute_resource/libvirt.rb:49
 #: ../lib/hammer_cli_foreman/compute_resource/ovirt.rb:57
 #: ../lib/hammer_cli_foreman/host.rb:65 ../lib/hammer_cli_foreman/host.rb:135
-#: ../lib/hammer_cli_foreman/ping.rb:12
+#: ../lib/hammer_cli_foreman/ping.rb:12 ../lib/hammer_cli_foreman/ping.rb:17
 #: ../lib/hammer_cli_foreman/smart_proxy.rb:13
 #: ../lib/hammer_cli_foreman/status.rb:16
 #: ../lib/hammer_cli_foreman/status.rb:26
@@ -3573,8 +3574,17 @@ msgstr ""
 msgid "database"
 msgstr ""
 
-#: ../lib/hammer_cli_foreman/ping.rb:13 ../lib/hammer_cli_foreman/status.rb:17
+#: ../lib/hammer_cli_foreman/ping.rb:13 ../lib/hammer_cli_foreman/ping.rb:18
+#: ../lib/hammer_cli_foreman/status.rb:17
 msgid "Server Response"
+msgstr ""
+
+#: ../lib/hammer_cli_foreman/ping.rb:15
+msgid "cache"
+msgstr ""
+
+#: ../lib/hammer_cli_foreman/ping.rb:16
+msgid "servers"
 msgstr ""
 
 #: ../lib/hammer_cli_foreman/realm.rb:18

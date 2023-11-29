@@ -10,9 +10,9 @@
 # Pierre-Emmanuel Dutang <dutangp@gmail.com>, 2014,2016-2017
 msgid ""
 msgstr ""
-"Project-Id-Version: hammer-cli-foreman 3.9.0.pre.develop\n"
+"Project-Id-Version: hammer-cli-foreman 3.9.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-08-25 18:01+0000\n"
+"POT-Creation-Date: 2023-11-02 15:51+0000\n"
 "PO-Revision-Date: 2014-03-14 09:55+0000\n"
 "Last-Translator: 0868a4d1af5275b3f70b0a6dac4c99a4, 2014\n"
 "Language-Team: French (http://app.transifex.com/foreman/foreman/language/"
@@ -3187,3 +3187,9 @@ msgstr "Machine virtuelle supprimée."
 
 msgid "Could not delete the virtual machine"
 msgstr "Impossible de supprimer la machine virtuelle"
+
+msgid "cache"
+msgstr ""
+
+msgid "servers"
+msgstr ""
