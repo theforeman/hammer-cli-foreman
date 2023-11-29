@@ -12,6 +12,12 @@ module HammerCLIForeman
             field :active, _('Status')
             field :duration_ms, _('Server Response')
           end
+          field :cache, _('cache'), Fields::Label do
+            field :servers, _('servers'), Fields::Collection do
+              field :status, _('Status')
+              field :duration_ms, _('Server Response')
+            end
+          end
         end
       end
 
