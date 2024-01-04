@@ -80,6 +80,7 @@ module HammerCLIForeman
             Fields::Field.new(:label => _('Hardware Version'), :path => [:hardware_version]),
             Fields::Field.new(:label => _('Path'), :path => [:path]),
             Fields::Field.new(:label => _('Operating System'), :path => [:operatingsystem]),
+            Fields::Field.new(:label => _('Mac'), :path => [:mac]),
             Fields::List.new(:label => _('Boot order'), :path => [:boot_order])
         ]
       end
