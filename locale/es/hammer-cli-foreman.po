@@ -15,9 +15,9 @@
 # Sergio Ocón-Cárdenas <sergio.ocon@redhat.com>, 2014
 msgid ""
 msgstr ""
-"Project-Id-Version: hammer-cli-foreman 3.9.0\n"
+"Project-Id-Version: hammer-cli-foreman 3.10.0.pre.develop\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-11-02 15:51+0000\n"
+"POT-Creation-Date: 2023-11-29 15:59+0000\n"
 "PO-Revision-Date: 2014-03-14 09:55+0000\n"
 "Last-Translator: Sergio Ocón-Cárdenas <sergio.ocon@redhat.com>, 2014\n"
 "Language-Team: Spanish (http://app.transifex.com/foreman/foreman/language/"
@@ -2556,6 +2556,12 @@ msgstr "base de datos"
 msgid "Server Response"
 msgstr "Respuesta del servidor"
 
+msgid "cache"
+msgstr ""
+
+msgid "servers"
+msgstr ""
+
 msgid "Realm proxy id"
 msgstr "ID de proxy del dominio"
 
@@ -3177,8 +3183,5 @@ msgstr "Máquina virtual borrada."
 msgid "Could not delete the virtual machine"
 msgstr "No pudo borrar la máquina virtual"
 
-msgid "cache"
-msgstr ""
-
-msgid "servers"
+msgid "Mac"
 msgstr ""

@@ -4,11 +4,12 @@
 #
 # Translators:
 # Temuri Doghonadze <temuri.doghonadze@gmail.com>, 2022
+# Temuri Doghonadze <temuri.doghonadze@gmail.com>, 2022
 msgid ""
 msgstr ""
-"Project-Id-Version: hammer-cli-foreman 3.9.0\n"
+"Project-Id-Version: hammer-cli-foreman 3.10.0.pre.develop\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-11-02 15:51+0000\n"
+"POT-Creation-Date: 2023-11-29 15:59+0000\n"
 "PO-Revision-Date: 2014-03-14 09:55+0000\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>, 2022\n"
 "Language-Team: Georgian (http://app.transifex.com/foreman/foreman/language/"
@@ -575,7 +576,7 @@ msgid "Successfully logged in as '%s'."
 msgstr "წარმატებით შეხვედით, როგორც %1."
 
 msgid "Authenticate against external source (IPA/PAM) with credentials"
-msgstr ""
+msgstr "გაიარეთ ავთენტიკაცია გარე წყაროებზე (IPA/PAM) ავტორიზაციის დეტალებით"
 
 msgid ""
 "Successfully authenticated using negotiate auth, using the KEYRING principal."
@@ -1274,7 +1275,7 @@ msgid "Boolean, set 1 to wipe disk after delete"
 msgstr "ლოგიკური. წაშლის შემდეგ დისკის გასანადგურებლად დააყენეთ 1"
 
 msgid "Disk interface name, must be ide, virtio or virtio_scsi"
-msgstr ""
+msgstr "დისკის ინტერფეისის სახელი. შეიძლება იყოს ide, virtio ან virtio_scsi"
 
 msgid "Cores"
 msgstr "ბირთვები"
@@ -1412,7 +1413,7 @@ msgid "Report metrics"
 msgstr "ანგარიშის მეტრიკები"
 
 msgid "config retrieval"
-msgstr ""
+msgstr "კონფიგურაციის მიღება"
 
 msgid "exec"
 msgstr "exec"
@@ -2532,6 +2533,12 @@ msgstr "მონაცემთა ბაზა"
 msgid "Server Response"
 msgstr "სერვერის პასუხი"
 
+msgid "cache"
+msgstr "კეში"
+
+msgid "servers"
+msgstr "სერვერები"
+
 msgid "Realm proxy id"
 msgstr "რეალმის პროქსის ID"
 
@@ -2782,7 +2789,7 @@ msgid "Version"
 msgstr "ვერსია"
 
 msgid "Host count"
-msgstr ""
+msgstr "ჰოსტების რაოდენობა"
 
 msgid "Smart proxy created."
 msgstr "ჭკვიანი პროქსი შეიქმნა."
@@ -3147,8 +3154,5 @@ msgstr "ვირტუალური მანქანის წაშლა.
 msgid "Could not delete the virtual machine"
 msgstr "ვირტუალური მანქანის წაშლის შეცდომა"
 
-msgid "cache"
-msgstr ""
-
-msgid "servers"
+msgid "Mac"
 msgstr ""

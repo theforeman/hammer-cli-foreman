@@ -7,9 +7,9 @@
 # Robert Antoni Buj i Gelonch <rbuj@fedoraproject.org>, 2015-2016
 msgid ""
 msgstr ""
-"Project-Id-Version: hammer-cli-foreman 3.9.0\n"
+"Project-Id-Version: hammer-cli-foreman 3.10.0.pre.develop\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-11-02 15:51+0000\n"
+"POT-Creation-Date: 2023-11-29 15:59+0000\n"
 "PO-Revision-Date: 2014-03-14 09:55+0000\n"
 "Last-Translator: Robert Antoni Buj i Gelonch <rbuj@fedoraproject.org>, 2017\n"
 "Language-Team: Catalan (http://app.transifex.com/foreman/foreman/language/"
@@ -2474,6 +2474,12 @@ msgstr ""
 msgid "Server Response"
 msgstr ""
 
+msgid "cache"
+msgstr ""
+
+msgid "servers"
+msgstr ""
+
 msgid "Realm proxy id"
 msgstr ""
 
@@ -3087,8 +3093,5 @@ msgstr ""
 msgid "Could not delete the virtual machine"
 msgstr ""
 
-msgid "cache"
-msgstr ""
-
-msgid "servers"
+msgid "Mac"
 msgstr ""

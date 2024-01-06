@@ -13,9 +13,9 @@
 # simon11 <transifex@stieger.co>, 2014
 msgid ""
 msgstr ""
-"Project-Id-Version: hammer-cli-foreman 3.9.0\n"
+"Project-Id-Version: hammer-cli-foreman 3.10.0.pre.develop\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-11-02 15:51+0000\n"
+"POT-Creation-Date: 2023-11-29 15:59+0000\n"
 "PO-Revision-Date: 2014-03-14 09:55+0000\n"
 "Last-Translator: Ettore Atalan <atalanttore@googlemail.com>, "
 "2014-2017,2022-2023\n"
@@ -2563,6 +2563,12 @@ msgstr "Datenbank"
 msgid "Server Response"
 msgstr "Serverantwort"
 
+msgid "cache"
+msgstr ""
+
+msgid "servers"
+msgstr ""
+
 msgid "Realm proxy id"
 msgstr "Realm Proxy-Kennung"
 
@@ -3185,8 +3191,5 @@ msgstr "Virtuelle Maschine gelöscht."
 msgid "Could not delete the virtual machine"
 msgstr "Die virtuelle Maschine konnte nicht gelöscht werden"
 
-msgid "cache"
-msgstr ""
-
-msgid "servers"
+msgid "Mac"
 msgstr ""

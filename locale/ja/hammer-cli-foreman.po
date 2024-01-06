@@ -9,9 +9,9 @@
 # 山田 修司 🍣 Shuji Yamada <uzy.exe@gmail.com>, 2015
 msgid ""
 msgstr ""
-"Project-Id-Version: hammer-cli-foreman 3.9.0\n"
+"Project-Id-Version: hammer-cli-foreman 3.10.0.pre.develop\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-11-02 15:51+0000\n"
+"POT-Creation-Date: 2023-11-29 15:59+0000\n"
 "PO-Revision-Date: 2014-03-14 09:55+0000\n"
 "Last-Translator: 山田 修司 🍣 Shuji Yamada <uzy.exe@gmail.com>, 2015\n"
 "Language-Team: Japanese (http://app.transifex.com/foreman/foreman/language/"
@@ -2543,6 +2543,12 @@ msgstr "データベース"
 msgid "Server Response"
 msgstr "サーバーの応答"
 
+msgid "cache"
+msgstr ""
+
+msgid "servers"
+msgstr ""
+
 msgid "Realm proxy id"
 msgstr "レルムプロキシー ID"
 
@@ -3158,8 +3164,5 @@ msgstr "仮想マシンが削除されました。"
 msgid "Could not delete the virtual machine"
 msgstr "仮想マシンを削除できませんでした"
 
-msgid "cache"
-msgstr ""
-
-msgid "servers"
+msgid "Mac"
 msgstr ""
