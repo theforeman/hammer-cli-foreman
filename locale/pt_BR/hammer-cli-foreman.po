@@ -11,9 +11,9 @@
 # Valeria S Silva <valeriassilva@live.com>, 2015
 msgid ""
 msgstr ""
-"Project-Id-Version: hammer-cli-foreman 3.9.0\n"
+"Project-Id-Version: hammer-cli-foreman 3.10.0.pre.develop\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-11-02 15:51+0000\n"
+"POT-Creation-Date: 2023-11-29 15:59+0000\n"
 "PO-Revision-Date: 2014-03-14 09:55+0000\n"
 "Last-Translator: Valeria S Silva <valeriassilva@live.com>, 2015\n"
 "Language-Team: Portuguese (Brazil) (http://app.transifex.com/foreman/foreman/"
@@ -2551,6 +2551,12 @@ msgstr "banco de dados"
 msgid "Server Response"
 msgstr "Resposta do servidor"
 
+msgid "cache"
+msgstr ""
+
+msgid "servers"
+msgstr ""
+
 msgid "Realm proxy id"
 msgstr "ID de proxy do realm"
 
@@ -3171,8 +3177,5 @@ msgstr "Máquina virtual excluída."
 msgid "Could not delete the virtual machine"
 msgstr "Não foi possível excluir a máquina virtual"
 
-msgid "cache"
-msgstr ""
-
-msgid "servers"
+msgid "Mac"
 msgstr ""
