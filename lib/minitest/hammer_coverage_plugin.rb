@@ -1,4 +1,4 @@
-require 'coverage_reporter'
+require_relative 'coverage_reporter'
 require "json"
 
 module Minitest
