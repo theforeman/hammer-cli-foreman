@@ -1,5 +1,11 @@
 Release notes
 =============
+### 3.10.0 (2024-02-21)
+* Update packit ([PR #627](https://github.com/theforeman/hammer-cli-foreman/pull/627))
+* Use require_relative for 'coverage_reporter' ([PR #626](https://github.com/theforeman/hammer-cli-foreman/pull/626)), [#37163](http://projects.theforeman.org/issues/37163)
+* Show mac address in vmware info ([PR #624](https://github.com/theforeman/hammer-cli-foreman/pull/624)), [#36991](http://projects.theforeman.org/issues/36991)
+* Bump to 3.10.0-develop
+
 ### 3.9.0 (2023-11-29)
 * Add cache status to ping output ([PR #622](https://github.com/theforeman/hammer-cli-foreman/pull/622)), [#36954](http://projects.theforeman.org/issues/36954)
 * Use strings, not floats to denote ruby versions ([PR #623](https://github.com/theforeman/hammer-cli-foreman/pull/623))
