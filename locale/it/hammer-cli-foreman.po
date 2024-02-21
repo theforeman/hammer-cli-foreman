@@ -7,9 +7,9 @@
 # Giuseppe Pignataro <anubisteam01@gmail.com>, 2014
 msgid ""
 msgstr ""
-"Project-Id-Version: hammer-cli-foreman 3.10.0.pre.develop\n"
+"Project-Id-Version: hammer-cli-foreman 3.10.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-11-29 15:59+0000\n"
+"POT-Creation-Date: 2024-01-06 00:12+0000\n"
 "PO-Revision-Date: 2014-03-14 09:55+0000\n"
 "Last-Translator: Giuseppe Pignataro <anubisteam01@gmail.com>, 2014\n"
 "Language-Team: Italian (http://app.transifex.com/foreman/foreman/language/"
@@ -1346,6 +1346,9 @@ msgstr ""
 
 msgid "Operating System"
 msgstr "Sistema Operativo"
+
+msgid "Mac"
+msgstr ""
 
 msgid "Host"
 msgstr "Host"
@@ -3090,7 +3093,4 @@ msgid "Virtual machine deleted."
 msgstr ""
 
 msgid "Could not delete the virtual machine"
-msgstr ""
-
-msgid "Mac"
 msgstr ""
