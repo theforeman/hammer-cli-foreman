@@ -1,5 +1,9 @@
 Release notes
 =============
+### 3.11.0 (2024-05-22)
+* Update test data to 3.11
+* Bump to 3.11.0-develop
+
 ### 3.10.0 (2024-02-21)
 * Update packit ([PR #627](https://github.com/theforeman/hammer-cli-foreman/pull/627))
 * Use require_relative for 'coverage_reporter' ([PR #626](https://github.com/theforeman/hammer-cli-foreman/pull/626)), [#37163](http://projects.theforeman.org/issues/37163)
