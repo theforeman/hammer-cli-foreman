@@ -194,7 +194,6 @@ Available keys for `--compute-attributes`:
 ```
 cpus          # number of CPUs
 memory        # string, amount of memory, value in bytes
-cpu_mode      # possible values: default, host-model, host-passthrough
 start         # Must be a 1 or 0, whether to start the machine or not
 ```
 
