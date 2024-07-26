@@ -10,7 +10,8 @@ module HammerCLIForeman
       def compute_attributes
         [
           ['cluster',              _('Cluster ID from VMware'), { bold: true }],
-          ['corespersocket',       _('Number of cores per socket (applicable to hardware versions < 10 only)'), { bold: true }],
+          ['corespersocket',       _('Number of cores per socket (applicable to hardware versions < 10 only)'),
+           { bold: true }],
           ['cpus',                 _('CPU count'), { bold: true }],
           ['memory_mb',            _('Integer number, amount of memory in MB'), { bold: true }],
           ['path',                 _('Path to folder'), { bold: true }],
@@ -23,10 +24,12 @@ module HammerCLIForeman
           ['add_cdrom',            _('Must be a 1 or 0, Add a CD-ROM drive to the virtual machine')],
           ['annotation',           _('Annotation Notes')],
           ['scsi_controllers',     [_('List with SCSI controllers definitions'),
-                                    '  type - ' + _('ID of the controller from VMware'),
-                                    '  key  - ' + _('Key of the controller (e.g. 1000)')
-                                    ].flatten(1).join("\n")],
-          ['boot_order',            _('Device names to specify the boot order')]
+                                    '  type - ' + _('ID of the controller type from VMware'),
+                                    '  key  - ' + _('Key of the controller (e.g. 1000)')].flatten(1).join("\n")],
+          ['nvme_controllers', [_('List with NVME controllers definitions'),
+                                '  type - ' + _('ID of the controller type from VMware'),
+                                '  key  - ' + _('Key of the controller (e.g. 2000)')].flatten(1).join("\n")],
+          ['boot_order', _('Device names to specify the boot order')]
         ]
       end
 
@@ -45,7 +48,7 @@ module HammerCLIForeman
           ['size_gb',        _('Integer number, volume size in GB')],
           ['thin',           'true/false'],
           ['eager_zero',     'true/false'],
-          ['controller_key', 'Associated SCSI controller key']
+          ['controller_key', 'Associated controller key']
         ]
       end
 
@@ -63,25 +66,25 @@ module HammerCLIForeman
 
       def provider_specific_fields
         super + [
-          Fields::Field.new(:label => _('Datacenter'), :path => [:datacenter]),
-          Fields::Field.new(:label => _('Server'), :path => [:server]),
-          Fields::Boolean.new(:label => _('Console password set'), :path => [:set_console_password]),
-          Fields::Boolean.new(:label => _('Caching enabled'), :path => [:caching_enabled])
+          Fields::Field.new(label: _('Datacenter'), path: [:datacenter]),
+          Fields::Field.new(label: _('Server'), path: [:server]),
+          Fields::Boolean.new(label: _('Console password set'), path: [:set_console_password]),
+          Fields::Boolean.new(label: _('Caching enabled'), path: [:caching_enabled])
         ]
       end
 
       def provider_vm_specific_fields
         [
-            Fields::Field.new(:label => _('CPUs'), :path => [:cpus]),
-            Fields::Field.new(:label => _('Memory'), :path => [:memory_mb]),
-            Fields::Field.new(:label => _('Power Status'), :path => [:power_state]),
-            Fields::Field.new(:label => _('Host Name'), :path => [:hostname]),
-            Fields::Field.new(:label => _('Connection Status'), :path => [:connection_status]),
-            Fields::Field.new(:label => _('Hardware Version'), :path => [:hardware_version]),
-            Fields::Field.new(:label => _('Path'), :path => [:path]),
-            Fields::Field.new(:label => _('Operating System'), :path => [:operatingsystem]),
-            Fields::Field.new(:label => _('Mac'), :path => [:mac]),
-            Fields::List.new(:label => _('Boot order'), :path => [:boot_order])
+          Fields::Field.new(label: _('CPUs'), path: [:cpus]),
+          Fields::Field.new(label: _('Memory'), path: [:memory_mb]),
+          Fields::Field.new(label: _('Power Status'), path: [:power_state]),
+          Fields::Field.new(label: _('Host Name'), path: [:hostname]),
+          Fields::Field.new(label: _('Connection Status'), path: [:connection_status]),
+          Fields::Field.new(label: _('Hardware Version'), path: [:hardware_version]),
+          Fields::Field.new(label: _('Path'), path: [:path]),
+          Fields::Field.new(label: _('Operating System'), path: [:operatingsystem]),
+          Fields::Field.new(label: _('Mac'), path: [:mac]),
+          Fields::List.new(label: _('Boot order'), path: [:boot_order])
         ]
       end
 
