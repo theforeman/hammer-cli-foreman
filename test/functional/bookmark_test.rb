@@ -29,7 +29,7 @@ describe 'bookmark' do
     end
 
     it 'should run list command with defaults' do
-      providers = { 'foreman' => HammerCLIForeman::Defaults.new(api_connection({}, '2.5')) }
+      providers = { 'foreman' => HammerCLIForeman::Defaults.new(api_connection({}, FOREMAN_VERSION)) }
       defaults = HammerCLI::Defaults.new(
         {
           organization_id: {

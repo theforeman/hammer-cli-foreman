@@ -155,7 +155,7 @@ module HammerCLIForeman
         end
       end
 
-      def api_connection(options={}, version = '1.15')
+      def api_connection(options={}, version = FOREMAN_VERSION)
         FakeApiConnection.new({
           :uri => 'https://test.org',
           :apidoc_cache_dir => "test/data/#{version}",
