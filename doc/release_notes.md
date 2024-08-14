@@ -1,5 +1,13 @@
 Release notes
 =============
+### 3.12.0 (2024-08-14)
+* Ensure foreman_version usage in all tests
+* Prune test data prior to 3.0
+* Use 3.12 test data
+* Drop cpu mode option for libvirt, [#36999](http://projects.theforeman.org/issues/36999)
+* Add nvme controllers to hammer help ([PR #628](https://github.com/theforeman/hammer-cli-foreman/pull/628)), [#37689](http://projects.theforeman.org/issues/37689)
+* Bump to 3.12.0-develop
+
 ### 3.11.0 (2024-05-22)
 * Update test data to 3.11
 * Bump to 3.11.0-develop
