@@ -6,10 +6,10 @@
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: hammer-cli-foreman 3.11.0\n"
+"Project-Id-Version: hammer-cli-foreman 3.12.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-05-22 14:52+0000\n"
-"PO-Revision-Date: 2024-05-22 14:52+0000\n"
+"POT-Creation-Date: 2024-08-14 14:40+0000\n"
+"PO-Revision-Date: 2024-08-14 14:40+0000\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: \n"
@@ -946,7 +946,7 @@ msgstr ""
 #: ../lib/hammer_cli_foreman/auth_source_ldap.rb:11
 #: ../lib/hammer_cli_foreman/auth_source_ldap.rb:21
 #: ../lib/hammer_cli_foreman/auth_source_ldap.rb:24
-#: ../lib/hammer_cli_foreman/compute_resource/vmware.rb:67
+#: ../lib/hammer_cli_foreman/compute_resource/vmware.rb:70
 msgid "Server"
 msgstr ""
 
@@ -1195,9 +1195,9 @@ msgstr ""
 
 #: ../lib/hammer_cli_foreman/command_extensions/hosts/help/interfaces.rb:12
 #: ../lib/hammer_cli_foreman/command_extensions/hosts/help/interfaces.rb:34
-#: ../lib/hammer_cli_foreman/compute_resource/libvirt.rb:25
-#: ../lib/hammer_cli_foreman/compute_resource/libvirt.rb:27
-#: ../lib/hammer_cli_foreman/compute_resource/libvirt.rb:37
+#: ../lib/hammer_cli_foreman/compute_resource/libvirt.rb:24
+#: ../lib/hammer_cli_foreman/compute_resource/libvirt.rb:26
+#: ../lib/hammer_cli_foreman/compute_resource/libvirt.rb:36
 #: ../lib/hammer_cli_foreman/compute_resource/ovirt.rb:16
 msgid "Possible values: %s"
 msgstr ""
@@ -1638,7 +1638,7 @@ msgstr ""
 #: ../lib/hammer_cli_foreman/compute_resource.rb:222
 #: ../lib/hammer_cli_foreman/compute_resource.rb:249
 #: ../lib/hammer_cli_foreman/compute_resource/ovirt.rb:49
-#: ../lib/hammer_cli_foreman/compute_resource/vmware.rb:66
+#: ../lib/hammer_cli_foreman/compute_resource/vmware.rb:69
 msgid "Datacenter"
 msgstr ""
 
@@ -1675,7 +1675,7 @@ msgstr ""
 #: ../lib/hammer_cli_foreman/compute_resource.rb:168
 #: ../lib/hammer_cli_foreman/compute_resource.rb:195
 #: ../lib/hammer_cli_foreman/compute_resource.rb:275
-#: ../lib/hammer_cli_foreman/compute_resource/vmware.rb:81
+#: ../lib/hammer_cli_foreman/compute_resource/vmware.rb:84
 #: ../lib/hammer_cli_foreman/media.rb:11
 msgid "Path"
 msgstr ""
@@ -1727,51 +1727,47 @@ msgid "String, amount of memory, value in bytes"
 msgstr ""
 
 #: ../lib/hammer_cli_foreman/compute_resource/libvirt.rb:12
-msgid "Possible values: %{modes}"
-msgstr ""
-
-#: ../lib/hammer_cli_foreman/compute_resource/libvirt.rb:13
-#: ../lib/hammer_cli_foreman/compute_resource/vmware.rb:29
+#: ../lib/hammer_cli_foreman/compute_resource/vmware.rb:32
 msgid "Device names to specify the boot order"
 msgstr ""
 
-#: ../lib/hammer_cli_foreman/compute_resource/libvirt.rb:19
+#: ../lib/hammer_cli_foreman/compute_resource/libvirt.rb:18
 msgid "Boolean (expressed as 0 or 1), whether to start the machine or not"
 msgstr ""
 
-#: ../lib/hammer_cli_foreman/compute_resource/libvirt.rb:26
+#: ../lib/hammer_cli_foreman/compute_resource/libvirt.rb:25
 msgid "Name of interface according to type"
 msgstr ""
 
-#: ../lib/hammer_cli_foreman/compute_resource/libvirt.rb:28
+#: ../lib/hammer_cli_foreman/compute_resource/libvirt.rb:27
 msgid "Libvirt instance network, e.g. default"
 msgstr ""
 
-#: ../lib/hammer_cli_foreman/compute_resource/libvirt.rb:34
+#: ../lib/hammer_cli_foreman/compute_resource/libvirt.rb:33
 msgid "One of available storage pools"
 msgstr ""
 
-#: ../lib/hammer_cli_foreman/compute_resource/libvirt.rb:35
+#: ../lib/hammer_cli_foreman/compute_resource/libvirt.rb:34
 msgid "String value, e.g. 10G"
 msgstr ""
 
-#: ../lib/hammer_cli_foreman/compute_resource/libvirt.rb:36
+#: ../lib/hammer_cli_foreman/compute_resource/libvirt.rb:35
 msgid "Initial allocation, e.g. 0G"
 msgstr ""
 
-#: ../lib/hammer_cli_foreman/compute_resource/libvirt.rb:47
+#: ../lib/hammer_cli_foreman/compute_resource/libvirt.rb:46
 #: ../lib/hammer_cli_foreman/compute_resource/ovirt.rb:55
-#: ../lib/hammer_cli_foreman/compute_resource/vmware.rb:75
+#: ../lib/hammer_cli_foreman/compute_resource/vmware.rb:78
 msgid "CPUs"
 msgstr ""
 
-#: ../lib/hammer_cli_foreman/compute_resource/libvirt.rb:48
+#: ../lib/hammer_cli_foreman/compute_resource/libvirt.rb:47
 #: ../lib/hammer_cli_foreman/compute_resource/ovirt.rb:56
-#: ../lib/hammer_cli_foreman/compute_resource/vmware.rb:76
+#: ../lib/hammer_cli_foreman/compute_resource/vmware.rb:79
 msgid "Memory"
 msgstr ""
 
-#: ../lib/hammer_cli_foreman/compute_resource/libvirt.rb:49
+#: ../lib/hammer_cli_foreman/compute_resource/libvirt.rb:48
 #: ../lib/hammer_cli_foreman/compute_resource/ovirt.rb:57
 #: ../lib/hammer_cli_foreman/host.rb:65 ../lib/hammer_cli_foreman/host.rb:135
 #: ../lib/hammer_cli_foreman/ping.rb:12 ../lib/hammer_cli_foreman/ping.rb:17
@@ -1782,20 +1778,20 @@ msgstr ""
 msgid "Status"
 msgstr ""
 
-#: ../lib/hammer_cli_foreman/compute_resource/libvirt.rb:50
+#: ../lib/hammer_cli_foreman/compute_resource/libvirt.rb:49
 msgid "OS Type"
 msgstr ""
 
-#: ../lib/hammer_cli_foreman/compute_resource/libvirt.rb:51
+#: ../lib/hammer_cli_foreman/compute_resource/libvirt.rb:50
 msgid "Domain Type"
 msgstr ""
 
-#: ../lib/hammer_cli_foreman/compute_resource/libvirt.rb:52
+#: ../lib/hammer_cli_foreman/compute_resource/libvirt.rb:51
 msgid "Persistent"
 msgstr ""
 
-#: ../lib/hammer_cli_foreman/compute_resource/libvirt.rb:53
-#: ../lib/hammer_cli_foreman/compute_resource/vmware.rb:84
+#: ../lib/hammer_cli_foreman/compute_resource/libvirt.rb:52
+#: ../lib/hammer_cli_foreman/compute_resource/vmware.rb:87
 msgid "Boot order"
 msgstr ""
 
@@ -1899,113 +1895,122 @@ msgstr ""
 msgid "Number of cores per socket (applicable to hardware versions < 10 only)"
 msgstr ""
 
-#: ../lib/hammer_cli_foreman/compute_resource/vmware.rb:14
+#: ../lib/hammer_cli_foreman/compute_resource/vmware.rb:15
 msgid "CPU count"
 msgstr ""
 
-#: ../lib/hammer_cli_foreman/compute_resource/vmware.rb:15
+#: ../lib/hammer_cli_foreman/compute_resource/vmware.rb:16
 msgid "Integer number, amount of memory in MB"
 msgstr ""
 
-#: ../lib/hammer_cli_foreman/compute_resource/vmware.rb:16
+#: ../lib/hammer_cli_foreman/compute_resource/vmware.rb:17
 msgid "Path to folder"
 msgstr ""
 
-#: ../lib/hammer_cli_foreman/compute_resource/vmware.rb:17
+#: ../lib/hammer_cli_foreman/compute_resource/vmware.rb:18
 msgid "Resource Pool ID from VMware"
 msgstr ""
 
-#: ../lib/hammer_cli_foreman/compute_resource/vmware.rb:19
+#: ../lib/hammer_cli_foreman/compute_resource/vmware.rb:20
 msgid "Guest OS ID form VMware"
 msgstr ""
 
-#: ../lib/hammer_cli_foreman/compute_resource/vmware.rb:20
+#: ../lib/hammer_cli_foreman/compute_resource/vmware.rb:21
 msgid "Hardware version ID from VMware"
 msgstr ""
 
-#: ../lib/hammer_cli_foreman/compute_resource/vmware.rb:21
+#: ../lib/hammer_cli_foreman/compute_resource/vmware.rb:22
 msgid "Must be a 1 or 0, lets you add memory resources while the machine is on"
 msgstr ""
 
-#: ../lib/hammer_cli_foreman/compute_resource/vmware.rb:22
+#: ../lib/hammer_cli_foreman/compute_resource/vmware.rb:23
 msgid "Must be a 1 or 0, lets you add CPU resources while the machine is on"
 msgstr ""
 
-#: ../lib/hammer_cli_foreman/compute_resource/vmware.rb:23
+#: ../lib/hammer_cli_foreman/compute_resource/vmware.rb:24
 msgid "Must be a 1 or 0, Add a CD-ROM drive to the virtual machine"
 msgstr ""
 
-#: ../lib/hammer_cli_foreman/compute_resource/vmware.rb:24
+#: ../lib/hammer_cli_foreman/compute_resource/vmware.rb:25
 msgid "Annotation Notes"
 msgstr ""
 
-#: ../lib/hammer_cli_foreman/compute_resource/vmware.rb:25
+#: ../lib/hammer_cli_foreman/compute_resource/vmware.rb:26
 msgid "List with SCSI controllers definitions"
 msgstr ""
 
-#: ../lib/hammer_cli_foreman/compute_resource/vmware.rb:26
-msgid "ID of the controller from VMware"
+#: ../lib/hammer_cli_foreman/compute_resource/vmware.rb:27
+#: ../lib/hammer_cli_foreman/compute_resource/vmware.rb:30
+msgid "ID of the controller type from VMware"
 msgstr ""
 
-#: ../lib/hammer_cli_foreman/compute_resource/vmware.rb:27
+#: ../lib/hammer_cli_foreman/compute_resource/vmware.rb:28
 msgid "Key of the controller (e.g. 1000)"
 msgstr ""
 
-#: ../lib/hammer_cli_foreman/compute_resource/vmware.rb:35
+#: ../lib/hammer_cli_foreman/compute_resource/vmware.rb:29
+msgid "List with NVME controllers definitions"
+msgstr ""
+
+#: ../lib/hammer_cli_foreman/compute_resource/vmware.rb:31
+msgid "Key of the controller (e.g. 2000)"
+msgstr ""
+
+#: ../lib/hammer_cli_foreman/compute_resource/vmware.rb:38
 msgid "Must be a 1 or 0, whether to start the machine or not"
 msgstr ""
 
-#: ../lib/hammer_cli_foreman/compute_resource/vmware.rb:42
+#: ../lib/hammer_cli_foreman/compute_resource/vmware.rb:45
 msgid "Storage Pod ID from VMware"
 msgstr ""
 
-#: ../lib/hammer_cli_foreman/compute_resource/vmware.rb:43
+#: ../lib/hammer_cli_foreman/compute_resource/vmware.rb:46
 msgid "Datastore ID from VMware"
 msgstr ""
 
-#: ../lib/hammer_cli_foreman/compute_resource/vmware.rb:45
+#: ../lib/hammer_cli_foreman/compute_resource/vmware.rb:48
 msgid "Integer number, volume size in GB"
 msgstr ""
 
-#: ../lib/hammer_cli_foreman/compute_resource/vmware.rb:55
+#: ../lib/hammer_cli_foreman/compute_resource/vmware.rb:58
 msgid "Type of the network adapter, for example one of:"
 msgstr ""
 
-#: ../lib/hammer_cli_foreman/compute_resource/vmware.rb:57
+#: ../lib/hammer_cli_foreman/compute_resource/vmware.rb:60
 msgid ""
 "See documentation center for your version of vSphere to find more details abou"
 "t available adapter types:"
 msgstr ""
 
-#: ../lib/hammer_cli_foreman/compute_resource/vmware.rb:60
+#: ../lib/hammer_cli_foreman/compute_resource/vmware.rb:63
 msgid "Network ID or Network Name from VMware"
 msgstr ""
 
-#: ../lib/hammer_cli_foreman/compute_resource/vmware.rb:68
+#: ../lib/hammer_cli_foreman/compute_resource/vmware.rb:71
 msgid "Console password set"
 msgstr ""
 
-#: ../lib/hammer_cli_foreman/compute_resource/vmware.rb:69
+#: ../lib/hammer_cli_foreman/compute_resource/vmware.rb:72
 msgid "Caching enabled"
 msgstr ""
 
-#: ../lib/hammer_cli_foreman/compute_resource/vmware.rb:77
+#: ../lib/hammer_cli_foreman/compute_resource/vmware.rb:80
 msgid "Power Status"
 msgstr ""
 
-#: ../lib/hammer_cli_foreman/compute_resource/vmware.rb:78
+#: ../lib/hammer_cli_foreman/compute_resource/vmware.rb:81
 msgid "Host Name"
 msgstr ""
 
-#: ../lib/hammer_cli_foreman/compute_resource/vmware.rb:79
+#: ../lib/hammer_cli_foreman/compute_resource/vmware.rb:82
 msgid "Connection Status"
 msgstr ""
 
-#: ../lib/hammer_cli_foreman/compute_resource/vmware.rb:80
+#: ../lib/hammer_cli_foreman/compute_resource/vmware.rb:83
 msgid "Hardware Version"
 msgstr ""
 
-#: ../lib/hammer_cli_foreman/compute_resource/vmware.rb:82
+#: ../lib/hammer_cli_foreman/compute_resource/vmware.rb:85
 #: ../lib/hammer_cli_foreman/host.rb:21 ../lib/hammer_cli_foreman/host.rb:97
 #: ../lib/hammer_cli_foreman/hostgroup.rb:55
 #: ../lib/hammer_cli_foreman/hostgroup.rb:83
@@ -2013,7 +2018,7 @@ msgstr ""
 msgid "Operating System"
 msgstr ""
 
-#: ../lib/hammer_cli_foreman/compute_resource/vmware.rb:83
+#: ../lib/hammer_cli_foreman/compute_resource/vmware.rb:86
 msgid "Mac"
 msgstr ""
 

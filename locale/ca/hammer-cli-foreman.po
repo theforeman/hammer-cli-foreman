@@ -7,9 +7,9 @@
 # Robert Antoni Buj i Gelonch <rbuj@fedoraproject.org>, 2015-2016
 msgid ""
 msgstr ""
-"Project-Id-Version: hammer-cli-foreman 3.11.0\n"
+"Project-Id-Version: hammer-cli-foreman 3.12.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-02-21 13:22+0000\n"
+"POT-Creation-Date: 2024-05-22 14:52+0000\n"
 "PO-Revision-Date: 2014-03-14 09:55+0000\n"
 "Last-Translator: Robert Antoni Buj i Gelonch <rbuj@fedoraproject.org>, 2017\n"
 "Language-Team: Catalan (http://app.transifex.com/foreman/foreman/language/"
@@ -3094,4 +3094,13 @@ msgid "Virtual machine deleted."
 msgstr ""
 
 msgid "Could not delete the virtual machine"
+msgstr ""
+
+msgid "ID of the controller type from VMware"
+msgstr ""
+
+msgid "List with NVME controllers definitions"
+msgstr ""
+
+msgid "Key of the controller (e.g. 2000)"
 msgstr ""
