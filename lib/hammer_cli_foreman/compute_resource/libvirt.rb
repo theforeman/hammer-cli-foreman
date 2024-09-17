@@ -9,7 +9,8 @@ module HammerCLIForeman
         [
           ['cpus',   _('Number of CPUs'), { bold: true }],
           ['memory', _('String, amount of memory, value in bytes'), { bold: true }],
-          ['boot_order', _('Device names to specify the boot order')]
+          ['boot_order', _('Device names to specify the boot order')],
+          ['firmware', _('automatic/bios/uefi/uefi_secure_boot (UEFI with Secure Boot enabled)')]
         ]
       end
 
@@ -49,7 +50,9 @@ module HammerCLIForeman
             Fields::Field.new(:label => _('OS Type'), :path => [:os_type]),
             Fields::Field.new(:label => _('Domain Type'), :path => [:domain_type]),
             Fields::Field.new(:label => _('Persistent'), :path => [:persistent]),
-            Fields::List.new(:label => _('Boot order'), :path => [:boot_order])
+            Fields::List.new(:label => _('Boot order'), :path => [:boot_order]),
+            Fields::Field.new(:label => _('Firmware'), :path => [:firmware]),
+            Fields::Field.new(:label => _('Secure Boot'), :path => [:secure_boot])
         ]
       end
 

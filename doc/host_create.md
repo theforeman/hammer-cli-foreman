@@ -195,6 +195,7 @@ Available keys for `--compute-attributes`:
 cpus          # number of CPUs
 memory        # string, amount of memory, value in bytes
 start         # Must be a 1 or 0, whether to start the machine or not
+firmware      # automatic/bios/uefi/uefi_secure_boot (UEFI with Secure Boot enabled)
 ```
 
 Available keys for `--interface`:
