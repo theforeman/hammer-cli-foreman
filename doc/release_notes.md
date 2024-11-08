@@ -1,5 +1,8 @@
 Release notes
 =============
+### 3.13.0 (2024-11-08)
+* Bump to 3.13.0-develop
+
 ### 3.12.0 (2024-08-14)
 * Ensure foreman_version usage in all tests
 * Prune test data prior to 3.0
