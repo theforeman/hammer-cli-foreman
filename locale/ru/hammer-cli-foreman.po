@@ -7,9 +7,9 @@
 # Yulia <yulia.poyarkova@redhat.com>, 2016
 msgid ""
 msgstr ""
-"Project-Id-Version: hammer-cli-foreman 3.12.0\n"
+"Project-Id-Version: hammer-cli-foreman 3.13.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-05-22 14:52+0000\n"
+"POT-Creation-Date: 2024-08-14 14:40+0000\n"
 "PO-Revision-Date: 2014-03-14 09:55+0000\n"
 "Last-Translator: Vladimir Pavlov <v.pavlov@i-teco.ru>, 2015\n"
 "Language-Team: Russian (http://app.transifex.com/foreman/foreman/language/"
@@ -1145,9 +1145,6 @@ msgstr "Процессоры"
 msgid "String, amount of memory, value in bytes"
 msgstr ""
 
-msgid "Possible values: %{modes}"
-msgstr ""
-
 msgid "Device names to specify the boot order"
 msgstr ""
 
@@ -1298,10 +1295,16 @@ msgstr ""
 msgid "List with SCSI controllers definitions"
 msgstr ""
 
-msgid "ID of the controller from VMware"
+msgid "ID of the controller type from VMware"
 msgstr ""
 
 msgid "Key of the controller (e.g. 1000)"
+msgstr ""
+
+msgid "List with NVME controllers definitions"
+msgstr ""
+
+msgid "Key of the controller (e.g. 2000)"
 msgstr ""
 
 msgid "Must be a 1 or 0, whether to start the machine or not"
@@ -3091,13 +3094,4 @@ msgid "Virtual machine deleted."
 msgstr ""
 
 msgid "Could not delete the virtual machine"
-msgstr ""
-
-msgid "ID of the controller type from VMware"
-msgstr ""
-
-msgid "List with NVME controllers definitions"
-msgstr ""
-
-msgid "Key of the controller (e.g. 2000)"
 msgstr ""

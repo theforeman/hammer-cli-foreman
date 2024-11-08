@@ -11,9 +11,9 @@
 # Valeria S Silva <valeriassilva@live.com>, 2015
 msgid ""
 msgstr ""
-"Project-Id-Version: hammer-cli-foreman 3.12.0\n"
+"Project-Id-Version: hammer-cli-foreman 3.13.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-05-22 14:52+0000\n"
+"POT-Creation-Date: 2024-08-14 14:40+0000\n"
 "PO-Revision-Date: 2014-03-14 09:55+0000\n"
 "Last-Translator: Valeria S Silva <valeriassilva@live.com>, 2015\n"
 "Language-Team: Portuguese (Brazil) (http://app.transifex.com/foreman/foreman/"
@@ -1174,9 +1174,6 @@ msgstr "Número de CPUs"
 msgid "String, amount of memory, value in bytes"
 msgstr "Cadeia de caracteres, quantidade de memória, valor em bytes"
 
-msgid "Possible values: %{modes}"
-msgstr "Valores possíveis"
-
 msgid "Device names to specify the boot order"
 msgstr "Nomes de dispositivos para especificar a ordem de inicialização"
 
@@ -1337,11 +1334,17 @@ msgstr "Anotações de notas"
 msgid "List with SCSI controllers definitions"
 msgstr "Lista com as definições dos controladores SCSI"
 
-msgid "ID of the controller from VMware"
-msgstr "ID do controlador do VMware"
+msgid "ID of the controller type from VMware"
+msgstr ""
 
 msgid "Key of the controller (e.g. 1000)"
 msgstr "Chave do controlador (p. ex., 1000)"
+
+msgid "List with NVME controllers definitions"
+msgstr ""
+
+msgid "Key of the controller (e.g. 2000)"
+msgstr ""
 
 msgid "Must be a 1 or 0, whether to start the machine or not"
 msgstr "Deve ser um 1 ou 0, para iniciar a máquina ou não"
@@ -3179,12 +3182,3 @@ msgstr "Máquina virtual excluída."
 
 msgid "Could not delete the virtual machine"
 msgstr "Não foi possível excluir a máquina virtual"
-
-msgid "ID of the controller type from VMware"
-msgstr ""
-
-msgid "List with NVME controllers definitions"
-msgstr ""
-
-msgid "Key of the controller (e.g. 2000)"
-msgstr ""

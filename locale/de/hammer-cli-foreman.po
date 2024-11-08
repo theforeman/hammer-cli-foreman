@@ -13,9 +13,9 @@
 # simon11 <transifex@stieger.co>, 2014
 msgid ""
 msgstr ""
-"Project-Id-Version: hammer-cli-foreman 3.12.0\n"
+"Project-Id-Version: hammer-cli-foreman 3.13.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-05-22 14:52+0000\n"
+"POT-Creation-Date: 2024-08-14 14:40+0000\n"
 "PO-Revision-Date: 2014-03-14 09:55+0000\n"
 "Last-Translator: Ettore Atalan <atalanttore@googlemail.com>, "
 "2014-2017,2022-2023\n"
@@ -1184,9 +1184,6 @@ msgstr "Anzahl der CPUs"
 msgid "String, amount of memory, value in bytes"
 msgstr "String, Menge an Speicher, Wert in Bytes"
 
-msgid "Possible values: %{modes}"
-msgstr "Mögliche Werte: %{modes}"
-
 msgid "Device names to specify the boot order"
 msgstr ""
 
@@ -1346,11 +1343,17 @@ msgstr "Hinweise"
 msgid "List with SCSI controllers definitions"
 msgstr "Liste mit SCSI-Controller-Definitionen"
 
-msgid "ID of the controller from VMware"
-msgstr "ID des Controllers von VMware"
+msgid "ID of the controller type from VMware"
+msgstr ""
 
 msgid "Key of the controller (e.g. 1000)"
 msgstr "Schlüssel des Controllers (z.B. 1000)"
+
+msgid "List with NVME controllers definitions"
+msgstr ""
+
+msgid "Key of the controller (e.g. 2000)"
+msgstr ""
 
 msgid "Must be a 1 or 0, whether to start the machine or not"
 msgstr "Muss 0 oder 1 sein. Ob die Maschine gestartet werden soll oder nicht"
@@ -3193,12 +3196,3 @@ msgstr "Virtuelle Maschine gelöscht."
 
 msgid "Could not delete the virtual machine"
 msgstr "Die virtuelle Maschine konnte nicht gelöscht werden"
-
-msgid "ID of the controller type from VMware"
-msgstr ""
-
-msgid "List with NVME controllers definitions"
-msgstr ""
-
-msgid "Key of the controller (e.g. 2000)"
-msgstr ""

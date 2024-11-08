@@ -8,9 +8,9 @@
 # 진선재, 2022
 msgid ""
 msgstr ""
-"Project-Id-Version: hammer-cli-foreman 3.12.0\n"
+"Project-Id-Version: hammer-cli-foreman 3.13.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-05-22 14:52+0000\n"
+"POT-Creation-Date: 2024-08-14 14:40+0000\n"
 "PO-Revision-Date: 2014-03-14 09:55+0000\n"
 "Last-Translator: 진선재, 2022\n"
 "Language-Team: Korean (http://app.transifex.com/foreman/foreman/language/"
@@ -535,7 +535,7 @@ msgid "Audit record"
 msgstr ""
 
 msgid "Request UUID"
-msgstr ""
+msgstr "요청 UUID"
 
 msgid "Audited changes"
 msgstr ""
@@ -556,10 +556,10 @@ msgid "Set credentials"
 msgstr "인증 정보 설정 "
 
 msgid "Username to access the remote system"
-msgstr ""
+msgstr "원격 시스템에 액세스하기 위한 사용자 이름"
 
 msgid "Password to access the remote system"
-msgstr ""
+msgstr "원격 시스템에 액세스하기 위한 암호"
 
 msgid "Successfully logged in as '%s'."
 msgstr ""
@@ -700,7 +700,7 @@ msgid "Controller"
 msgstr ""
 
 msgid "Search Query"
-msgstr ""
+msgstr "검색 쿼리"
 
 msgid "Public"
 msgstr "공개 "
@@ -1133,7 +1133,7 @@ msgid "DNS"
 msgstr "DNS"
 
 msgid "DNS Name"
-msgstr ""
+msgstr "DNS 이름"
 
 msgid "Virtualization Type"
 msgstr ""
@@ -1142,9 +1142,6 @@ msgid "Number of CPUs"
 msgstr "CPU 수 "
 
 msgid "String, amount of memory, value in bytes"
-msgstr ""
-
-msgid "Possible values: %{modes}"
 msgstr ""
 
 msgid "Device names to specify the boot order"
@@ -1187,16 +1184,16 @@ msgid "Persistent"
 msgstr "영구적"
 
 msgid "Boot order"
-msgstr ""
+msgstr "부팅 순서"
 
 msgid "Tenant"
 msgstr "테넌트 "
 
 msgid "Project domain name"
-msgstr ""
+msgstr "프로젝트 도메인 이름"
 
 msgid "Project domain ID"
-msgstr ""
+msgstr "프로젝트 도메인 ID"
 
 msgid "Tenant Id"
 msgstr ""
@@ -1232,10 +1229,10 @@ msgid "Select one of available networks for a cluster, must be an ID or a name"
 msgstr ""
 
 msgid "Interface type"
-msgstr ""
+msgstr "인터페이스 유형"
 
 msgid "Vnic Profile"
-msgstr ""
+msgstr "Vnic 프로필"
 
 msgid "Volume size in GB, integer value"
 msgstr ""
@@ -1292,15 +1289,21 @@ msgid "Must be a 1 or 0, Add a CD-ROM drive to the virtual machine"
 msgstr ""
 
 msgid "Annotation Notes"
-msgstr ""
+msgstr "주석 노트"
 
 msgid "List with SCSI controllers definitions"
 msgstr ""
 
-msgid "ID of the controller from VMware"
+msgid "ID of the controller type from VMware"
 msgstr ""
 
 msgid "Key of the controller (e.g. 1000)"
+msgstr ""
+
+msgid "List with NVME controllers definitions"
+msgstr ""
+
+msgid "Key of the controller (e.g. 2000)"
 msgstr ""
 
 msgid "Must be a 1 or 0, whether to start the machine or not"
@@ -1333,7 +1336,7 @@ msgid "Caching enabled"
 msgstr ""
 
 msgid "Power Status"
-msgstr ""
+msgstr "전원 상태"
 
 msgid "Host Name"
 msgstr ""
@@ -1357,7 +1360,7 @@ msgid "Last report"
 msgstr "마지막 보고 "
 
 msgid "Origin"
-msgstr ""
+msgstr "소스"
 
 msgid "Applied"
 msgstr "적용됨 "
@@ -1572,7 +1575,7 @@ msgid "Unlimited?"
 msgstr "제한 없음?"
 
 msgid "Override?"
-msgstr ""
+msgstr "재정의하시겠습니까?"
 
 msgid "Role"
 msgstr "역할 "
@@ -1666,10 +1669,10 @@ msgid "Network"
 msgstr "네트워크"
 
 msgid "IPv4 address"
-msgstr ""
+msgstr "IPv4 주소"
 
 msgid "IPv6 address"
-msgstr ""
+msgstr "IPv6 주소"
 
 msgid "Subnet ipv4"
 msgstr ""
@@ -2576,7 +2579,7 @@ msgid "Default"
 msgstr "기본값 "
 
 msgid "Template inputs"
-msgstr ""
+msgstr "템플릿 입력"
 
 msgid "Required"
 msgstr "필수 "
@@ -2769,7 +2772,7 @@ msgid "Fingerprint"
 msgstr "지문 "
 
 msgid "Length"
-msgstr ""
+msgstr "길이"
 
 msgid "Path to a SSH public key"
 msgstr ""
@@ -2817,16 +2820,16 @@ msgid "Network Addr"
 msgstr ""
 
 msgid "Network Prefix"
-msgstr ""
+msgstr "네트워크 접두사"
 
 msgid "Network Mask"
-msgstr ""
+msgstr "네트워크 마스크"
 
 msgid "Boot Mode"
-msgstr ""
+msgstr "부팅 모드"
 
 msgid "Gateway Address"
-msgstr ""
+msgstr "게이트웨이 주소"
 
 msgid "Protocol"
 msgstr "프로토콜 "
@@ -2859,7 +2862,7 @@ msgid "End of IP Range"
 msgstr ""
 
 msgid "MTU"
-msgstr ""
+msgstr "MTU"
 
 msgid "Subnet created."
 msgstr ""
@@ -3060,7 +3063,7 @@ msgid "Interval"
 msgstr "간격 "
 
 msgid "Mail query"
-msgstr ""
+msgstr "메일 쿼리"
 
 msgid "User group [%<name>s] created."
 msgstr ""
@@ -3093,13 +3096,4 @@ msgid "Virtual machine deleted."
 msgstr ""
 
 msgid "Could not delete the virtual machine"
-msgstr ""
-
-msgid "ID of the controller type from VMware"
-msgstr ""
-
-msgid "List with NVME controllers definitions"
-msgstr ""
-
-msgid "Key of the controller (e.g. 2000)"
 msgstr ""

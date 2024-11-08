@@ -5,9 +5,9 @@
 # Translators:
 msgid ""
 msgstr ""
-"Project-Id-Version: hammer-cli-foreman 3.12.0\n"
+"Project-Id-Version: hammer-cli-foreman 3.13.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-05-22 14:52+0000\n"
+"POT-Creation-Date: 2024-08-14 14:40+0000\n"
 "PO-Revision-Date: 2014-03-14 09:55+0000\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: Chinese (China) (http://app.transifex.com/foreman/foreman/"
@@ -1144,9 +1144,6 @@ msgstr "CPU 的数量"
 msgid "String, amount of memory, value in bytes"
 msgstr "字符串，内存大小，值（以字节为单位）"
 
-msgid "Possible values: %{modes}"
-msgstr "可能的值：%{modes}"
-
 msgid "Device names to specify the boot order"
 msgstr "指定引导顺序的设备名称"
 
@@ -1297,11 +1294,17 @@ msgstr "注解"
 msgid "List with SCSI controllers definitions"
 msgstr "带有 SCSI 控制器定义的列表"
 
-msgid "ID of the controller from VMware"
-msgstr "来自 VMware 的控制器 ID"
+msgid "ID of the controller type from VMware"
+msgstr ""
 
 msgid "Key of the controller (e.g. 1000)"
 msgstr "控制器键（例如1000）"
+
+msgid "List with NVME controllers definitions"
+msgstr ""
+
+msgid "Key of the controller (e.g. 2000)"
+msgstr ""
 
 msgid "Must be a 1 or 0, whether to start the machine or not"
 msgstr "必须为 1 或 0，指示是否要启动该机器"
@@ -3104,12 +3107,3 @@ msgstr "删除的虚拟机。"
 
 msgid "Could not delete the virtual machine"
 msgstr "无法删除虚拟机"
-
-msgid "ID of the controller type from VMware"
-msgstr ""
-
-msgid "List with NVME controllers definitions"
-msgstr ""
-
-msgid "Key of the controller (e.g. 2000)"
-msgstr ""
