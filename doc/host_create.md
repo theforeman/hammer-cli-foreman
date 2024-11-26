@@ -258,7 +258,7 @@ Available keys for `--compute-attributes`:
 cpus                  CPU count
 corespersocket        Number of cores per socket (applicable to hardware versions < 10 only)
 memory_mb             Integer number, amount of memory in MB
-firmware              automatic/bios/efi
+firmware              automatic/bios/uefi/uefi_secure_boot (UEFI with Secure Boot enabled)
 cluster               Cluster ID from VMware
 resource_pool         Resource Pool ID from VMware
 path                  Path to folder
@@ -271,6 +271,7 @@ annotation            Annotation Notes
 scsi_controllers      List with SCSI controllers definitions
                         type - ID of the controller from VMware
                         key  - Key of the controller (e.g. 1000)
+virtual_tpm           Must be a 1 or 0, Enable virtual TPM. Only compatible with EFI firmware
 start         # Must be a 1 or 0, whether to start the machine or not
 ```
 

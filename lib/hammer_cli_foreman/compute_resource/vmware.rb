@@ -16,7 +16,7 @@ module HammerCLIForeman
           ['memory_mb',            _('Integer number, amount of memory in MB'), { bold: true }],
           ['path',                 _('Path to folder'), { bold: true }],
           ['resource_pool',        _('Resource Pool ID from VMware'), { bold: true }],
-          ['firmware',             'automatic/bios/efi'],
+          ['firmware',             _('automatic/bios/uefi/uefi_secure_boot (UEFI with Secure Boot enabled)')],
           ['guest_id',             _('Guest OS ID form VMware')],
           ['hardware_version',     _('Hardware version ID from VMware')],
           ['memoryHotAddEnabled',  _('Must be a 1 or 0, lets you add memory resources while the machine is on')],
@@ -26,10 +26,11 @@ module HammerCLIForeman
           ['scsi_controllers',     [_('List with SCSI controllers definitions'),
                                     '  type - ' + _('ID of the controller type from VMware'),
                                     '  key  - ' + _('Key of the controller (e.g. 1000)')].flatten(1).join("\n")],
-          ['nvme_controllers', [_('List with NVME controllers definitions'),
-                                '  type - ' + _('ID of the controller type from VMware'),
-                                '  key  - ' + _('Key of the controller (e.g. 2000)')].flatten(1).join("\n")],
-          ['boot_order', _('Device names to specify the boot order')]
+          ['nvme_controllers',     [_('List with NVME controllers definitions'),
+                                    '  type - ' + _('ID of the controller type from VMware'),
+                                    '  key  - ' + _('Key of the controller (e.g. 2000)')].flatten(1).join("\n")],
+          ['boot_order',           _('Device names to specify the boot order')],
+          ['virtual_tpm',          _('Must be a 1 or 0, Enable virtual TPM. Only compatible with EFI firmware.')]
         ]
       end
 
@@ -84,7 +85,9 @@ module HammerCLIForeman
           Fields::Field.new(label: _('Path'), path: [:path]),
           Fields::Field.new(label: _('Operating System'), path: [:operatingsystem]),
           Fields::Field.new(label: _('Mac'), path: [:mac]),
-          Fields::List.new(label: _('Boot order'), path: [:boot_order])
+          Fields::List.new(label: _('Boot order'), path: [:boot_order]),
+          Fields::Field.new(label: _('Virtual TPM'), path: [:virtual_tpm]),
+          Fields::Field.new(label: _('Secure Boot'), path: [:secure_boot])
         ]
       end
 
