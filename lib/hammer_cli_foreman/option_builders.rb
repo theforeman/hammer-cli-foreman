@@ -95,15 +95,17 @@ module HammerCLIForeman
 
   class ForemanOptionBuilder < HammerCLI::OptionBuilderContainer
 
-    def initialize(searchables)
+    def initialize(searchables, action = nil)
       @searchables = searchables
+      @action = action
     end
 
     def build(builder_params={})
       expansion_options = builder_params[:expand] || {}
 
+      except_default = @action&.params&.select { |p| !p.show? }&.map { |p| HammerCLIForeman.param_to_resource(p.name).name } || []
       allowed_resources = expansion_options[:only] || default_dependent_resources
-      allowed_resources -= expansion_options[:except] || []
+      allowed_resources -= expansion_options[:except] || except_default
       allowed_resources += expansion_options[:including] || []
       allowed_resources.uniq!
 
@@ -239,6 +241,8 @@ module HammerCLIForeman
           description: _('%{types} of associated %{resource}') % { types: types, resource: associated_resource },
           creator: command
         )
+        # require 'pry-byebug'; binding.pry if associated_resource.to_s == "location"
+        # parent_show_from_api = ParamsNameFilter.new("#{aliased_name}_id").for_action(@resource.action(@context[:action].to_s)).first&.show?
         options << family.parent(
           optionamize("--#{aliased_name}-id"),
           "#{aliased_name}_id".upcase,
@@ -246,7 +250,8 @@ module HammerCLIForeman
           attribute_name: HammerCLI.option_accessor_name("#{resource_name}_id"),
           referenced_resource: resource_name,
           aliased_resource: aliased_name,
-          format: HammerCLI::Options::Normalizers::Number.new
+          format: HammerCLI::Options::Normalizers::Number.new,
+          # show: parent_show_from_api ? parent_show_from_api : true
         )
       end
 

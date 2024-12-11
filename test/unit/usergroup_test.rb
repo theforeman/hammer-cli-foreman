@@ -18,8 +18,6 @@ describe HammerCLIForeman::Usergroup do
     describe "parameters" do
       it_should_accept "no arguments"
       it_should_accept_search_params
-      it_should_accept 'organization', ['--organization-id=1']
-      it_should_accept 'location', ['--location-id=1']
     end
 
     describe "output" do
@@ -37,8 +35,6 @@ describe HammerCLIForeman::Usergroup do
     describe "parameters" do
       it_should_accept "id", ["--id=1"]
       it_should_accept "name", ["--name=ug"]
-      it_should_accept 'organization', %w[--id=1 --organization-id=1]
-      it_should_accept 'location', %w[--id=1 --location-id=1]
     end
 
     describe "output" do
@@ -62,8 +58,6 @@ describe HammerCLIForeman::Usergroup do
     describe "parameters" do
       it_should_accept "name", ["--name=ug"]
       it_should_accept "name, role ids, user group ids and user ids", ["--name=ug", "--role-ids=1,2,3", "--user-group-ids=1,2,3", "--user-ids=1,2,3"]
-      it_should_accept 'organization', %w[--name=ug --organization-id=1]
-      it_should_accept 'location', %w[--name=ug --location-id=1]
     end
   end
 
@@ -74,8 +68,6 @@ describe HammerCLIForeman::Usergroup do
     describe "parameters" do
       it_should_accept "name", ["--name=ug"]
       it_should_accept "id", ["--id=1"]
-      it_should_accept 'organization', %w[--id=1 --organization-id=1]
-      it_should_accept 'location', %w[--id=1 --location-id=1]
     end
   end
 
@@ -88,8 +80,6 @@ describe HammerCLIForeman::Usergroup do
       it_should_accept "id", ["--id=1"]
       it_should_accept "name and new name", ["--name=ug", "--new-name=ug2"]
       it_should_accept "id, new name, role ids, user group ids and user ids", ["--id=1", "--new-name=ug", "--role-ids=1,2,3", "--user-group-ids=1,2,3", "--user-ids=1,2,3"]
-      it_should_accept 'organization', %w[--id=1 --organization-id=1]
-      it_should_accept 'location', %w[--id=1 --location-id=1]
     end
   end
 end
