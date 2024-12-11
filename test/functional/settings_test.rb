@@ -45,8 +45,6 @@ describe 'Settings' do
       )
       defaults.stubs(:write_to_file).returns(true)
       defaults.stubs(:providers).returns(providers)
-      api_expects(:users, :index, 'Find user').with_params(search: 'login=admin').returns(index_response([{ 'default_organization' => { 'id' => 2 } }]))
-      api_expects(:users, :index, 'Find user').with_params(search: 'login=admin').returns(index_response([{ 'default_location' => { 'id' => 1 } }]))
       api_expects(:settings, :index, 'List settings').returns(setting)
 
       result = run_cmd(@cmd, { use_defaults: true, defaults: defaults })
