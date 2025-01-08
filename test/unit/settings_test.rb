@@ -18,8 +18,6 @@ describe HammerCLIForeman::Settings do
     describe "parameters" do
       it_should_accept "no arguments"
       it_should_accept_search_params
-      it_should_accept 'organization', ['--organization-id=1']
-      it_should_accept 'location', ['--location-id=1']
     end
 
     describe "output" do
@@ -40,8 +38,6 @@ describe HammerCLIForeman::Settings do
     describe "parameters" do
       it_should_accept "name", ["--name=setting1", "--value=setting2"]
       it_should_accept "id", ["--id=1", "--value=setting2"]
-      it_should_accept 'organization', %w[--id=1 --organization-id=1]
-      it_should_accept 'location', %w[--id=1 --location-id=1]
     end
 
   end

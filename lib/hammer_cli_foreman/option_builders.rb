@@ -95,15 +95,17 @@ module HammerCLIForeman
 
   class ForemanOptionBuilder < HammerCLI::OptionBuilderContainer
 
-    def initialize(searchables)
+    def initialize(searchables, action = nil)
       @searchables = searchables
+      @action = action
     end
 
     def build(builder_params={})
       expansion_options = builder_params[:expand] || {}
 
+      except_default = @action&.params&.select { |p| !p.show? }&.map { |p| HammerCLIForeman.param_to_resource(p.name).name } || []
       allowed_resources = expansion_options[:only] || default_dependent_resources
-      allowed_resources -= expansion_options[:except] || []
+      allowed_resources -= expansion_options[:except] || except_default
       allowed_resources += expansion_options[:including] || []
       allowed_resources.uniq!
 
