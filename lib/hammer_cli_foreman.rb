@@ -166,10 +166,13 @@ module HammerCLIForeman
 
     HammerCLI::MainCommand.lazy_subcommand('host-registration', _("Host Registration"),
                                             'HammerCLIForeman::Registration', 'hammer_cli_foreman/registration')
+                                            
+    HammerCLI::MainCommand.lazy_subcommand('registration-tokens', _("Manipulate registration tokens"),
+                                            'HammerCLIForeman::RegistrationTokens', 'hammer_cli_foreman/registration_tokens')
+  
   rescue => e
     handler = HammerCLIForeman::ExceptionHandler.new(:context => {}, :adapter => :base)
     handler.handle_exception(e)
     raise HammerCLI::ModuleLoadingError.new(e)
   end
-
 end
