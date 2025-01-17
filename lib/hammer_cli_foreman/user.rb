@@ -93,7 +93,8 @@ module HammerCLIForeman
     lazy_subcommand('table-preference', _("Managing table preferences"),
                     'HammerCLIForeman::TablePreference', 'hammer_cli_foreman/table_preference'
     )
+    lazy_subcommand('registration-tokens', _("Managing registration tokens"),
+                    'HammerCLIForeman::RegistrationTokens', 'hammer_cli_foreman/registration_tokens')
     autoload_subcommands
   end
-
 end
