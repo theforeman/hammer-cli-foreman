@@ -1,5 +1,15 @@
 Release notes
 =============
+### 3.14.0 (2025-02-20)
+* Invalidate tokens for specific user/users ([PR #636](https://github.com/theforeman/hammer-cli-foreman/pull/636)), [#38124](http://projects.theforeman.org/issues/38124)
+* Don't build hidden params as options ([PR #634](https://github.com/theforeman/hammer-cli-foreman/pull/634)), [#38077](http://projects.theforeman.org/issues/38077)
+* Use master branch of apipie-bindings in ci
+* Drop el 8 from packit config
+* Add secure boot and tpm options to vmware ([PR #630](https://github.com/theforeman/hammer-cli-foreman/pull/630)), [#37685](http://projects.theforeman.org/issues/37685)
+* Add firmware option for libvirt hosts creation ([PR #631](https://github.com/theforeman/hammer-cli-foreman/pull/631)), [#37692](http://projects.theforeman.org/issues/37692)
+* Use non-deprecated gpl-3.0-or-later license tag
+* Bump to 3.14.0-develop
+
 ### 3.13.0 (2024-11-08)
 * Bump to 3.13.0-develop
 
