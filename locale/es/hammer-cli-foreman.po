@@ -10,16 +10,16 @@
 # elobato <elobatocs@gmail.com>, 2014
 # elobato <elobatocs@gmail.com>, 2014
 # francis <hackgo@gmail.com>, 2014-2015
-# Sergio Ocón-Cárdenas <sergio.ocon@redhat.com>, 2014
-# Sergio Ocón-Cárdenas <sergio.ocon@redhat.com>, 2014-2016
-# Sergio Ocón-Cárdenas <sergio.ocon@redhat.com>, 2014
+# Sergio Ocón-Cárdenas, 2014
+# Sergio Ocón-Cárdenas, 2014-2016
+# Sergio Ocón-Cárdenas, 2014
 msgid ""
 msgstr ""
-"Project-Id-Version: hammer-cli-foreman 3.13.0\n"
+"Project-Id-Version: hammer-cli-foreman 3.14.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-08-14 14:40+0000\n"
+"POT-Creation-Date: 2024-11-08 15:55+0000\n"
 "PO-Revision-Date: 2014-03-14 09:55+0000\n"
-"Last-Translator: Sergio Ocón-Cárdenas <sergio.ocon@redhat.com>, 2014\n"
+"Last-Translator: Sergio Ocón-Cárdenas, 2014\n"
 "Language-Team: Spanish (http://app.transifex.com/foreman/foreman/language/"
 "es/)\n"
 "MIME-Version: 1.0\n"
@@ -3188,3 +3188,34 @@ msgstr "Máquina virtual borrada."
 
 msgid "Could not delete the virtual machine"
 msgstr "No pudo borrar la máquina virtual"
+
+msgid "automatic/bios/uefi/uefi_secure_boot (UEFI with Secure Boot enabled)"
+msgstr ""
+
+msgid "Firmware"
+msgstr ""
+
+msgid "Secure Boot"
+msgstr ""
+
+msgid ""
+"Must be a 1 or 0, Enable virtual TPM. Only compatible with EFI firmware."
+msgstr ""
+
+msgid "Virtual TPM"
+msgstr ""
+
+msgid "Manage registration tokens"
+msgstr ""
+
+msgid "Successfully invalidated registration tokens for %{users}."
+msgstr ""
+
+msgid "Could not invalidate registration tokens"
+msgstr ""
+
+msgid "Successfully invalidated registration tokens for %{user}."
+msgstr ""
+
+msgid "Managing registration tokens"
+msgstr ""
