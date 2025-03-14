@@ -98,9 +98,11 @@ module HammerCLIForeman
       begin
         response = JSON.parse(e.response)
         response = HammerCLIForeman.record_to_common_format(response) unless response.has_key?('message')
-        message = response['message'] || e.message
+        message = response["displayMessage"] || response["full_messages"] || response["message"]
       rescue JSON::ParserError
         message = e.message
+      ensure
+        message ||= e.message
       end
 
       print_error message
