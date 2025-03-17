@@ -61,7 +61,7 @@ describe 'compute-resource' do
         assert_cmd(expected_result, result)
       end
     end
-   
+
 
     it 'should print error for blank --provider option' do
       params = %w(--provider= --name=new'')
@@ -105,55 +105,6 @@ describe 'compute-resource' do
           (params['compute_resource']['url'] == 'qemu+ssh://root@test.foreman.com')
       end
 
-      result = run_cmd(@cmd + params)
-
-      assert_cmd(success_result("Compute resource created.\n"), result)
-    end
-
-    it 'should create a compute-resource ovirt' do
-      params = %w(--name=test-ovirt
-                  --provider=ovirt
-                  --url=https://ovirt.example.com/ovirt-engine/api
-                  --user=foreman
-                  --password=changeme
-                  --datacenter=ovirt.example.com)
-
-      api_expects(:compute_resources, :create, 'Create Compute Resource') do |params|
-        (params['compute_resource']['name'] == 'test-ovirt') &&
-          (params['compute_resource']['provider'] == 'ovirt') &&
-          (params['compute_resource']['url'] == 'https://ovirt.example.com/ovirt-engine/api') &&
-          (params['compute_resource']['user'] == 'foreman') &&
-          (params['compute_resource']['password'] == 'changeme') &&
-          (params['compute_resource']['datacenter'] == 'ovirt.example.com')
-      end
-
-      result = run_cmd(@cmd + params)
-
-      assert_cmd(success_result("Compute resource created.\n"), result)
-    end
-
-
-    it 'should create a compute-resource ovirt with custom public key' do
-      tempfile = Tempfile.new('ca.pem')
-      tempfile << 'test data'
-      tempfile.close
-      params = %W(--name=test-ovirt
-                  --provider=ovirt
-                  --url=https://ovirt.example.com/ovirt-engine/api
-                  --user=foreman
-                  --password=changeme
-                  --datacenter=ovirt.example.com
-                  --public-key-path=#{tempfile.path})
-
-      api_expects(:compute_resources, :create, 'Create Compute Resource') do |params|
-        (params['compute_resource']['name'] =='test-ovirt') &&
-            (params['compute_resource']['provider'] == 'ovirt') &&
-            (params['compute_resource']['url'] == 'https://ovirt.example.com/ovirt-engine/api') &&
-            (params['compute_resource']['user'] == 'foreman') &&
-            (params['compute_resource']['password'] == 'changeme') &&
-            (params['compute_resource']['datacenter'] == 'ovirt.example.com' &&
-            (params['compute_resource']['public_key'] == 'test data'))
-      end
       result = run_cmd(@cmd + params)
 
       assert_cmd(success_result("Compute resource created.\n"), result)
