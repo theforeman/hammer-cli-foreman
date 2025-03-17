@@ -225,33 +225,6 @@ security_groups
 network
 ```
 
-## oVirt
-Available keys for `--compute-attributes`:
-```
-cluster
-template   # hardware profile to use
-cores      # int value, number of cores
-sockets    # int value, number of sockets
-memory     # amount of memory, int value in bytes
-start      # Must be a 1 or 0, whether to start the machine or not
-```
-
-Available keys for `--interface`:
-```
-compute_name         # eg. eth0
-compute_network      # select one of available networks for a cluster
-compute_interface    # interface type
-```
-
-Available keys for `--volume`:
-```
-size_gb            # volume size in GB, integer value
-storage_domain     # select one of available storage domains
-bootable           # boolean, only one volume can be bootable
-preallocate        # boolean, set true to preallocate
-wipe_after_delete  # boolean, set true to wipe disk after delete
-```
-
 ## VMware
 Available keys for `--compute-attributes`:
 ```

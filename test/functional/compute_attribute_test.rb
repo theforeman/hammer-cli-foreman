@@ -48,7 +48,7 @@ describe "parameters" do
                                      "id" => 2,
                                      "compute_resource_id" => 1,
                                      "compute_resource_name" => "bla",
-                                     "provider_friendly_name" => "oVirt",
+                                     "provider_friendly_name" => "Libvirt",
                                      "compute_profile_id" => 1,
                                      "compute_profile_name" => "profile2",
                                      "vm_attrs" => {}
@@ -59,16 +59,16 @@ describe "parameters" do
           "compute_attribute" =>
             {
               "id" => 2, "compute_resource_id" => 1, "compute_resource_name" => "bla",
-              "provider_friendly_name" => "oVirt", "compute_profile_id" => 1,
+              "provider_friendly_name" => "Libvirt", "compute_profile_id" => 1,
               "compute_profile_name" => "profile2", "vm_attrs" => {"cores" => "1"}
             }
         }
 
       @compute_resource = {
           "id" => 1,
-          "name" => "ovirt_compute_resource",
-          "provider" => "Ovirt",
-          "provider_friendly_name" => "oVirt",
+          "name" => "libvirt_compute_resource",
+          "provider" => "Libvirt",
+          "provider_friendly_name" => "Libvirt",
       }
     end
 
@@ -129,7 +129,7 @@ describe "parameters" do
                                      "id" => 2,
                                      "compute_resource_id" => 1,
                                      "compute_resource_name" => "bla",
-                                     "provider_friendly_name" => "oVirt",
+                                     "provider_friendly_name" => "Libvirt",
                                      "compute_profile_id" => 1,
                                      "compute_profile_name" => "profile2",
                                      "vm_attrs" => {}
@@ -137,7 +137,7 @@ describe "parameters" do
         }
       @compute_attribute = {
         "id" => 2, "compute_resource_id" => 1, "compute_resource_name" => "bla",
-        "provider_friendly_name" => "oVirt", "compute_profile_id" => 1, "compute_profile_name" => "profile2",
+        "provider_friendly_name" => "Libvirt", "compute_profile_id" => 1, "compute_profile_name" => "profile2",
         "vm_attrs" => {"volumes_attributes" => {"1525004465" => {"size_gb" => "1"}}}
       }
 
@@ -211,7 +211,7 @@ describe "parameters" do
                                        "id" => 2,
                                        "compute_resource_id" => 1,
                                        "compute_resource_name" => "bla",
-                                       "provider_friendly_name" => "oVirt",
+                                       "provider_friendly_name" => "Libvirt",
                                        "compute_profile_id" => 1,
                                        "compute_profile_name" => "profile2",
                                         "vm_attrs" => {}
@@ -283,7 +283,7 @@ describe "parameters" do
                                      "id" => 2,
                                      "compute_resource_id" => 1,
                                      "compute_resource_name" => "bla",
-                                     "provider_friendly_name" => "oVirt",
+                                     "provider_friendly_name" => "Libvirt",
                                      "compute_profile_id" => 1,
                                      "compute_profile_name" => "profile2",
                                      "vm_attrs" => {"volumes_attributes" => { "1" => {"size_gb"=>"1"}}}
@@ -291,7 +291,7 @@ describe "parameters" do
         }
       @compute_attribute =  {
         "id" => 2, "compute_resource_id" => 1, "compute_resource_name" => "bla",
-        "provider_friendly_name" => "oVirt", "compute_profile_id" => 1,
+        "provider_friendly_name" => "Libvirt", "compute_profile_id" => 1,
         "compute_profile_name" => "profile2", "vm_attrs" => {"volumes_attributes" => {}}
       }
     end
@@ -362,7 +362,7 @@ describe "parameters" do
                                    "id" => 2,
                                    "compute_resource_id" => 1,
                                    "compute_resource_name" => "bla",
-                                   "provider_friendly_name" => "oVirt",
+                                   "provider_friendly_name" => "Libvirt",
                                    "compute_profile_id" => 1,
                                    "compute_profile_name" => "profile2",
                                    "vm_attrs" => {}
@@ -376,7 +376,7 @@ describe "parameters" do
                                      "id" => 2,
                                      "compute_resource_id" => 1,
                                      "compute_resource_name" => "bla",
-                                     "provider_friendly_name" => "oVirt",
+                                     "provider_friendly_name" => "Libvirt",
                                      "compute_profile_id" => 1,
                                      "compute_profile_name" => "profile2",
                                      "vm_attrs" => {}
@@ -385,9 +385,9 @@ describe "parameters" do
 
       @compute_resource = {
           "id" => 1,
-          "name" => "ovirt_compute_resource",
-          "provider" => "Ovirt",
-          "provider_friendly_name" => "oVirt",
+          "name" => "libvirt_compute_resource",
+          "provider" => "Libvirt",
+          "provider_friendly_name" => "Libvirt",
       }
 
     end
@@ -491,7 +491,7 @@ describe "parameters" do
                                      "id" => 2,
                                      "compute_resource_id" => 1,
                                      "compute_resource_name" => "bla",
-                                     "provider_friendly_name" => "oVirt",
+                                     "provider_friendly_name" => "Libvirt",
                                      "compute_profile_id" => 1,
                                      "compute_profile_name" => "profile2",
                                      "vm_attrs" => {}
@@ -500,9 +500,9 @@ describe "parameters" do
 
       @compute_resource = {
           "id" => 1,
-          "name" => "ovirt_compute_resource",
-          "provider" => "Ovirt",
-          "provider_friendly_name" => "oVirt",
+          "name" => "libvirt_compute_resource",
+          "provider" => "Libvirt",
+          "provider_friendly_name" => "Libvirt",
       }
     end
 
@@ -574,23 +574,23 @@ describe "parameters" do
                                      "id" => 2,
                                      "compute_resource_id" => 1,
                                      "compute_resource_name" => "bla",
-                                     "provider_friendly_name" => "oVirt",
+                                     "provider_friendly_name" => "Libvirt",
                                      "compute_profile_id" => 1,
                                      "compute_profile_name" => "profile2",
-                                     "vm_attrs" => {"interfaces_attributes" => { "1" => {"compute_name"=>"eth0"}}}
+                                     "vm_attrs" => {"nics_attributes" => { "1" => {"compute_name"=>"eth0"}}}
                                    }]
         }
       @compute_attribute =  {
         "id" => 2, "compute_resource_id" => 1, "compute_resource_name" => "bla",
-        "provider_friendly_name" => "oVirt", "compute_profile_id" => 1,
+        "provider_friendly_name" => "Libvirt", "compute_profile_id" => 1,
         "compute_profile_name" => "profile2", "vm_attrs" => {"interfaces_attributes" => {}}
       }
 
       @compute_resource = {
           "id" => 1,
-          "name" => "ovirt_compute_resource",
-          "provider" => "Ovirt",
-          "provider_friendly_name" => "oVirt",
+          "name" => "libvirt_compute_resource",
+          "provider" => "Libvirt",
+          "provider_friendly_name" => "Libvirt",
       }
 
     end

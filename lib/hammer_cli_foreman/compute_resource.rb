@@ -51,20 +51,10 @@ module HammerCLIForeman
 
 
     class CreateCommand < HammerCLIForeman::CreateCommand
-      option "--public-key-path", "PUBLIC_KEY_PATH", _("Path to a file that contains oVirt public key (For oVirt only)"),
-             :format => HammerCLI::Options::Normalizers::File.new
-
-
       success_message _("Compute resource created.")
       failure_message _("Could not create the compute resource")
 
       build_options
-
-      def request_params
-        params = super
-        params['compute_resource']['public_key'] = option_public_key_path if option_public_key_path
-        params
-      end
 
       validate_options do
         if option(:option_provider).value.nil? || option(:option_name).value.nil?
@@ -82,17 +72,9 @@ module HammerCLIForeman
     end
 
     class UpdateCommand < HammerCLIForeman::UpdateCommand
-      option "--public-key-path", "PUBLIC_KEY_PATH", _("Path to a file that contains oVirt public key (For oVirt only)"),
-             :format => HammerCLI::Options::Normalizers::File.new
-
       success_message _("Compute resource updated.")
       failure_message _("Could not update the compute resource")
 
-      def request_params
-        params = super
-        params['compute_resource']['public_key'] = option_public_key_path if option_public_key_path
-        params
-      end
       build_options :without => :name
     end
 
@@ -143,19 +125,6 @@ module HammerCLIForeman
 
       build_options without: :cluster_id
       extend_with(HammerCLIForeman::CommandExtensions::ComputeResourceSubcommand.new(only: %i[option request_params]))
-    end
-
-    class AvailableVnicProfilesCommand < HammerCLIForeman::ListCommand
-      action :available_vnic_profiles
-      command_name 'vnic-profiles'
-
-      output do
-        field :id, _('VNIC profile ID'), Fields::Field, :max_width => 200, :hide_blank => true
-        field :name, _('Name')
-        field :network, _('Network ID')
-      end
-
-      build_options
     end
 
     class AvailableImagesCommand < HammerCLIForeman::ListCommand

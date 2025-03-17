@@ -11,10 +11,7 @@ describe HammerCLIForeman::VirtualMachine do
       @vm = {
           'id' => 1,
           'name' => 'vm1',
-          'provider' => 'Ovirt',
-          'cpu' => 1,
-          'memory' => 1,
-          'status' => 'down'
+          'provider' => 'Libvirt',
       }
     end
 
@@ -38,7 +35,7 @@ describe HammerCLIForeman::VirtualMachine do
         par['id'] == '1' && par['vm_id'] == '1'
       end.returns(@vm)
       result = run_cmd(@cmd + params)
-      assert_match("Id:     1\nName:   vm1\nCPUs:   1\nMemory: 1\nStatus: down\n\n", result.out)
+      assert_match("Id:   1\nName: vm1\n\n", result.out)
     end
 
   end
