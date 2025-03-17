@@ -11,7 +11,7 @@ describe HammerCLIForeman::VirtualMachine do
       @vm = {
           'id' => 1,
           'name' => 'vm1',
-          'provider' => 'Ovirt',
+          'provider' => 'Libvirt',
           'cpu' => 1,
           'memory' => 1,
           'status' => 'down'
