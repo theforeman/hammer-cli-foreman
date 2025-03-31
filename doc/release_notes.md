@@ -1,5 +1,8 @@
 Release notes
 =============
+### 3.14.1 (2025-03-31)
+* Fix hammer host update error messages, [#38291](http://projects.theforeman.org/issues/38291)
+
 ### 3.14.0 (2025-02-20)
 * Invalidate tokens for specific user/users ([PR #636](https://github.com/theforeman/hammer-cli-foreman/pull/636)), [#38124](http://projects.theforeman.org/issues/38124)
 * Don't build hidden params as options ([PR #634](https://github.com/theforeman/hammer-cli-foreman/pull/634)), [#38077](http://projects.theforeman.org/issues/38077)
