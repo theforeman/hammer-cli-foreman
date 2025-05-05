@@ -170,7 +170,8 @@ module HammerCLIForeman
     end
 
     def response_message(response)
-      message = JSON.parse(response)["error"]["message"]
+      result = JSON.parse(response)
+      message = result.dig("error", "message") || result.dig("message")
       "\n  #{message}"
     rescue JSON::ParserError
       ''
