@@ -16,7 +16,7 @@ require "mocha/minitest"
 require 'hammer_cli'
 require 'hammer_cli_foreman/testing/api_expectations'
 
-FOREMAN_VERSION = ENV['TEST_API_VERSION'] || '3.14'
+FOREMAN_VERSION = ENV['TEST_API_VERSION'] || '3.15'
 unless Dir.entries('test/data').include? FOREMAN_VERSION
   raise StandardError.new "Version is not correct"
 end
