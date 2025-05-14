@@ -7,9 +7,9 @@
 # Yulia <yulia.poyarkova@redhat.com>, 2016
 msgid ""
 msgstr ""
-"Project-Id-Version: hammer-cli-foreman 3.14.0\n"
+"Project-Id-Version: hammer-cli-foreman 3.15.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-11-08 15:55+0000\n"
+"POT-Creation-Date: 2025-02-20 12:14+0000\n"
 "PO-Revision-Date: 2014-03-14 09:55+0000\n"
 "Last-Translator: Vladimir Pavlov <v.pavlov@i-teco.ru>, 2015\n"
 "Language-Team: Russian (http://app.transifex.com/foreman/foreman/language/"
@@ -1148,6 +1148,9 @@ msgstr ""
 msgid "Device names to specify the boot order"
 msgstr ""
 
+msgid "automatic/bios/uefi/uefi_secure_boot (UEFI with Secure Boot enabled)"
+msgstr ""
+
 msgid "Boolean (expressed as 0 or 1), whether to start the machine or not"
 msgstr ""
 
@@ -1185,6 +1188,12 @@ msgid "Persistent"
 msgstr ""
 
 msgid "Boot order"
+msgstr ""
+
+msgid "Firmware"
+msgstr ""
+
+msgid "Secure Boot"
 msgstr ""
 
 msgid "Tenant"
@@ -1307,6 +1316,10 @@ msgstr ""
 msgid "Key of the controller (e.g. 2000)"
 msgstr ""
 
+msgid ""
+"Must be a 1 or 0, Enable virtual TPM. Only compatible with EFI firmware."
+msgstr ""
+
 msgid "Must be a 1 or 0, whether to start the machine or not"
 msgstr ""
 
@@ -1352,6 +1365,9 @@ msgid "Operating System"
 msgstr "Операционная система"
 
 msgid "Mac"
+msgstr ""
+
+msgid "Virtual TPM"
 msgstr ""
 
 msgid "Host"
@@ -2573,6 +2589,18 @@ msgstr "Внешние группы пользователей"
 msgid "Failed to generate registration command"
 msgstr ""
 
+msgid "Manage registration tokens"
+msgstr ""
+
+msgid "Successfully invalidated registration tokens for %{users}."
+msgstr ""
+
+msgid "Could not invalidate registration tokens"
+msgstr ""
+
+msgid "Successfully invalidated registration tokens for %{user}."
+msgstr ""
+
 msgid "Default"
 msgstr "По умолчанию"
 
@@ -3039,6 +3067,9 @@ msgstr ""
 msgid "Managing table preferences"
 msgstr ""
 
+msgid "Managing registration tokens"
+msgstr ""
+
 msgid "User mail notifications was added."
 msgstr ""
 
@@ -3094,35 +3125,4 @@ msgid "Virtual machine deleted."
 msgstr ""
 
 msgid "Could not delete the virtual machine"
-msgstr ""
-
-msgid "automatic/bios/uefi/uefi_secure_boot (UEFI with Secure Boot enabled)"
-msgstr ""
-
-msgid "Firmware"
-msgstr ""
-
-msgid "Secure Boot"
-msgstr ""
-
-msgid ""
-"Must be a 1 or 0, Enable virtual TPM. Only compatible with EFI firmware."
-msgstr ""
-
-msgid "Virtual TPM"
-msgstr ""
-
-msgid "Manage registration tokens"
-msgstr ""
-
-msgid "Successfully invalidated registration tokens for %{users}."
-msgstr ""
-
-msgid "Could not invalidate registration tokens"
-msgstr ""
-
-msgid "Successfully invalidated registration tokens for %{user}."
-msgstr ""
-
-msgid "Managing registration tokens"
 msgstr ""

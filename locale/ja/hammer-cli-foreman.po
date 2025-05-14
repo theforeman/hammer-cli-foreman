@@ -9,9 +9,9 @@
 # 山田 修司 🍣 Shuji Yamada <uzy.exe@gmail.com>, 2015
 msgid ""
 msgstr ""
-"Project-Id-Version: hammer-cli-foreman 3.14.0\n"
+"Project-Id-Version: hammer-cli-foreman 3.15.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-11-08 15:55+0000\n"
+"POT-Creation-Date: 2025-02-20 12:14+0000\n"
 "PO-Revision-Date: 2014-03-14 09:55+0000\n"
 "Last-Translator: 山田 修司 🍣 Shuji Yamada <uzy.exe@gmail.com>, 2015\n"
 "Language-Team: Japanese (http://app.transifex.com/foreman/foreman/language/"
@@ -1167,6 +1167,9 @@ msgstr "文字列、メモリー容量、値 (バイト単位)"
 msgid "Device names to specify the boot order"
 msgstr "起動の順序を指定するデバイス名"
 
+msgid "automatic/bios/uefi/uefi_secure_boot (UEFI with Secure Boot enabled)"
+msgstr ""
+
 msgid "Boolean (expressed as 0 or 1), whether to start the machine or not"
 msgstr "ブール値 (0 または 1 で表現)。マシンを開始するかどうか"
 
@@ -1205,6 +1208,12 @@ msgstr "永続"
 
 msgid "Boot order"
 msgstr "起動の順番"
+
+msgid "Firmware"
+msgstr "ファームウェア"
+
+msgid "Secure Boot"
+msgstr ""
 
 msgid "Tenant"
 msgstr "テナント"
@@ -1336,6 +1345,10 @@ msgstr ""
 msgid "Key of the controller (e.g. 2000)"
 msgstr ""
 
+msgid ""
+"Must be a 1 or 0, Enable virtual TPM. Only compatible with EFI firmware."
+msgstr ""
+
 msgid "Must be a 1 or 0, whether to start the machine or not"
 msgstr "1 または 0 である必要があります。マシンを開始するかどうか"
 
@@ -1384,6 +1397,9 @@ msgstr "オペレーティングシステム"
 
 msgid "Mac"
 msgstr ""
+
+msgid "Virtual TPM"
+msgstr "仮想 TPM"
 
 msgid "Host"
 msgstr "ホスト"
@@ -2642,6 +2658,18 @@ msgstr "外部ユーザーグループ"
 msgid "Failed to generate registration command"
 msgstr "登録コマンドの生成に失敗しました"
 
+msgid "Manage registration tokens"
+msgstr ""
+
+msgid "Successfully invalidated registration tokens for %{users}."
+msgstr ""
+
+msgid "Could not invalidate registration tokens"
+msgstr ""
+
+msgid "Successfully invalidated registration tokens for %{user}."
+msgstr ""
+
 msgid "Default"
 msgstr "デフォルト"
 
@@ -3113,6 +3141,9 @@ msgstr "パーソナルメールの通知を管理します"
 msgid "Managing table preferences"
 msgstr "表の設定の管理"
 
+msgid "Managing registration tokens"
+msgstr ""
+
 msgid "User mail notifications was added."
 msgstr "ユーザーのメール通知が追加されました。"
 
@@ -3169,34 +3200,3 @@ msgstr "仮想マシンが削除されました。"
 
 msgid "Could not delete the virtual machine"
 msgstr "仮想マシンを削除できませんでした"
-
-msgid "automatic/bios/uefi/uefi_secure_boot (UEFI with Secure Boot enabled)"
-msgstr ""
-
-msgid "Firmware"
-msgstr ""
-
-msgid "Secure Boot"
-msgstr ""
-
-msgid ""
-"Must be a 1 or 0, Enable virtual TPM. Only compatible with EFI firmware."
-msgstr ""
-
-msgid "Virtual TPM"
-msgstr ""
-
-msgid "Manage registration tokens"
-msgstr ""
-
-msgid "Successfully invalidated registration tokens for %{users}."
-msgstr ""
-
-msgid "Could not invalidate registration tokens"
-msgstr ""
-
-msgid "Successfully invalidated registration tokens for %{user}."
-msgstr ""
-
-msgid "Managing registration tokens"
-msgstr ""

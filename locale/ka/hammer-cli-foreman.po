@@ -7,9 +7,9 @@
 # Temuri Doghonadze <temuri.doghonadze@gmail.com>, 2022
 msgid ""
 msgstr ""
-"Project-Id-Version: hammer-cli-foreman 3.14.0\n"
+"Project-Id-Version: hammer-cli-foreman 3.15.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-11-08 15:55+0000\n"
+"POT-Creation-Date: 2025-02-20 12:14+0000\n"
 "PO-Revision-Date: 2014-03-14 09:55+0000\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>, 2022\n"
 "Language-Team: Georgian (http://app.transifex.com/foreman/foreman/language/"
@@ -1164,6 +1164,9 @@ msgstr "სტრიქონი, მეხსიერების რაოდ
 msgid "Device names to specify the boot order"
 msgstr "დისკის სახელები ჩატვირთვის მიმდევრობის მისათითებლად"
 
+msgid "automatic/bios/uefi/uefi_secure_boot (UEFI with Secure Boot enabled)"
+msgstr ""
+
 msgid "Boolean (expressed as 0 or 1), whether to start the machine or not"
 msgstr ""
 "ლოგიკური გამოსახულება (0 ან 1), რომელიც აღნიშნავს, გაეშვება მანქანა თუ არა"
@@ -1203,6 +1206,12 @@ msgstr "მუდმივი"
 
 msgid "Boot order"
 msgstr "ჩატვირთვის მიმდევრობა"
+
+msgid "Firmware"
+msgstr "მიკროკოდი"
+
+msgid "Secure Boot"
+msgstr ""
 
 msgid "Tenant"
 msgstr "პატრონი"
@@ -1333,6 +1342,10 @@ msgstr ""
 msgid "Key of the controller (e.g. 2000)"
 msgstr ""
 
+msgid ""
+"Must be a 1 or 0, Enable virtual TPM. Only compatible with EFI firmware."
+msgstr ""
+
 msgid "Must be a 1 or 0, whether to start the machine or not"
 msgstr "უნდა იყოს 1 ან 0. გაეშვება ვირტუალური მანქანა თუ არა"
 
@@ -1381,6 +1394,9 @@ msgstr "ოპერაციული სისტემა"
 
 msgid "Mac"
 msgstr "Mac"
+
+msgid "Virtual TPM"
+msgstr ""
 
 msgid "Host"
 msgstr "ჰოსტი"
@@ -2632,6 +2648,18 @@ msgstr "გარე მომხმარებლის ჯგუფები"
 msgid "Failed to generate registration command"
 msgstr "რეგისტრაციის ბრძანების გენერაციის შეცდომა"
 
+msgid "Manage registration tokens"
+msgstr ""
+
+msgid "Successfully invalidated registration tokens for %{users}."
+msgstr ""
+
+msgid "Could not invalidate registration tokens"
+msgstr ""
+
+msgid "Successfully invalidated registration tokens for %{user}."
+msgstr ""
+
 msgid "Default"
 msgstr "ნაგულისხმევი"
 
@@ -3103,6 +3131,9 @@ msgstr "ელ.ფოსტის შეტყობინებების მ
 msgid "Managing table preferences"
 msgstr "ცხრილის პარამეტრების მართვა"
 
+msgid "Managing registration tokens"
+msgstr ""
+
 msgid "User mail notifications was added."
 msgstr "მომხმარებლის ელფოსტის შეტყობინება დამატებულია."
 
@@ -3159,34 +3190,3 @@ msgstr "ვირტუალური მანქანის წაშლა.
 
 msgid "Could not delete the virtual machine"
 msgstr "ვირტუალური მანქანის წაშლის შეცდომა"
-
-msgid "automatic/bios/uefi/uefi_secure_boot (UEFI with Secure Boot enabled)"
-msgstr ""
-
-msgid "Firmware"
-msgstr ""
-
-msgid "Secure Boot"
-msgstr ""
-
-msgid ""
-"Must be a 1 or 0, Enable virtual TPM. Only compatible with EFI firmware."
-msgstr ""
-
-msgid "Virtual TPM"
-msgstr ""
-
-msgid "Manage registration tokens"
-msgstr ""
-
-msgid "Successfully invalidated registration tokens for %{users}."
-msgstr ""
-
-msgid "Could not invalidate registration tokens"
-msgstr ""
-
-msgid "Successfully invalidated registration tokens for %{user}."
-msgstr ""
-
-msgid "Managing registration tokens"
-msgstr ""

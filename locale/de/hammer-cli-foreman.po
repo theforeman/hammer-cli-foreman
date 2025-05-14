@@ -13,9 +13,9 @@
 # simon11 <transifex@stieger.co>, 2014
 msgid ""
 msgstr ""
-"Project-Id-Version: hammer-cli-foreman 3.14.0\n"
+"Project-Id-Version: hammer-cli-foreman 3.15.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-11-08 15:55+0000\n"
+"POT-Creation-Date: 2025-02-20 12:14+0000\n"
 "PO-Revision-Date: 2014-03-14 09:55+0000\n"
 "Last-Translator: Ettore Atalan <atalanttore@googlemail.com>, "
 "2014-2017,2022-2023\n"
@@ -1187,6 +1187,9 @@ msgstr "String, Menge an Speicher, Wert in Bytes"
 msgid "Device names to specify the boot order"
 msgstr ""
 
+msgid "automatic/bios/uefi/uefi_secure_boot (UEFI with Secure Boot enabled)"
+msgstr ""
+
 msgid "Boolean (expressed as 0 or 1), whether to start the machine or not"
 msgstr ""
 "Boolean (ausgedrückt als 0 oder 1), ob eine Maschine startet oder nicht"
@@ -1226,6 +1229,12 @@ msgstr "Persistent"
 
 msgid "Boot order"
 msgstr "Boot-Reihenfolge"
+
+msgid "Firmware"
+msgstr "Firmware"
+
+msgid "Secure Boot"
+msgstr ""
 
 msgid "Tenant"
 msgstr "Mandant"
@@ -1355,6 +1364,10 @@ msgstr ""
 msgid "Key of the controller (e.g. 2000)"
 msgstr ""
 
+msgid ""
+"Must be a 1 or 0, Enable virtual TPM. Only compatible with EFI firmware."
+msgstr ""
+
 msgid "Must be a 1 or 0, whether to start the machine or not"
 msgstr "Muss 0 oder 1 sein. Ob die Maschine gestartet werden soll oder nicht"
 
@@ -1403,6 +1416,9 @@ msgstr "Betriebssystem"
 
 msgid "Mac"
 msgstr "MAC"
+
+msgid "Virtual TPM"
+msgstr ""
 
 msgid "Host"
 msgstr "Host"
@@ -2662,6 +2678,18 @@ msgstr "Externe Benutzergruppen"
 msgid "Failed to generate registration command"
 msgstr "Fehler beim Generieren des Registrierungsbefehls"
 
+msgid "Manage registration tokens"
+msgstr ""
+
+msgid "Successfully invalidated registration tokens for %{users}."
+msgstr ""
+
+msgid "Could not invalidate registration tokens"
+msgstr ""
+
+msgid "Successfully invalidated registration tokens for %{user}."
+msgstr ""
+
 msgid "Default"
 msgstr "Standard"
 
@@ -3140,6 +3168,9 @@ msgstr "Verwalten von persönlichen E-Mail-Benachrichtigungen"
 msgid "Managing table preferences"
 msgstr ""
 
+msgid "Managing registration tokens"
+msgstr ""
+
 msgid "User mail notifications was added."
 msgstr "Benutzer-E-Mail-Benachrichtigungen wurden hinzugefügt."
 
@@ -3196,34 +3227,3 @@ msgstr "Virtuelle Maschine gelöscht."
 
 msgid "Could not delete the virtual machine"
 msgstr "Die virtuelle Maschine konnte nicht gelöscht werden"
-
-msgid "automatic/bios/uefi/uefi_secure_boot (UEFI with Secure Boot enabled)"
-msgstr ""
-
-msgid "Firmware"
-msgstr ""
-
-msgid "Secure Boot"
-msgstr ""
-
-msgid ""
-"Must be a 1 or 0, Enable virtual TPM. Only compatible with EFI firmware."
-msgstr ""
-
-msgid "Virtual TPM"
-msgstr ""
-
-msgid "Manage registration tokens"
-msgstr ""
-
-msgid "Successfully invalidated registration tokens for %{users}."
-msgstr ""
-
-msgid "Could not invalidate registration tokens"
-msgstr ""
-
-msgid "Successfully invalidated registration tokens for %{user}."
-msgstr ""
-
-msgid "Managing registration tokens"
-msgstr ""

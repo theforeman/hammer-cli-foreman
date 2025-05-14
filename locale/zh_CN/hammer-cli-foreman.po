@@ -5,9 +5,9 @@
 # Translators:
 msgid ""
 msgstr ""
-"Project-Id-Version: hammer-cli-foreman 3.14.0\n"
+"Project-Id-Version: hammer-cli-foreman 3.15.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-11-08 15:55+0000\n"
+"POT-Creation-Date: 2025-02-20 12:14+0000\n"
 "PO-Revision-Date: 2014-03-14 09:55+0000\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: Chinese (China) (http://app.transifex.com/foreman/foreman/"
@@ -1147,6 +1147,9 @@ msgstr "字符串，内存大小，值（以字节为单位）"
 msgid "Device names to specify the boot order"
 msgstr "指定引导顺序的设备名称"
 
+msgid "automatic/bios/uefi/uefi_secure_boot (UEFI with Secure Boot enabled)"
+msgstr ""
+
 msgid "Boolean (expressed as 0 or 1), whether to start the machine or not"
 msgstr "布尔值（表示为 0 或 1），是否启动该机器"
 
@@ -1185,6 +1188,12 @@ msgstr "持久"
 
 msgid "Boot order"
 msgstr "引导顺序"
+
+msgid "Firmware"
+msgstr "固件"
+
+msgid "Secure Boot"
+msgstr ""
 
 msgid "Tenant"
 msgstr "租户"
@@ -1306,6 +1315,10 @@ msgstr ""
 msgid "Key of the controller (e.g. 2000)"
 msgstr ""
 
+msgid ""
+"Must be a 1 or 0, Enable virtual TPM. Only compatible with EFI firmware."
+msgstr ""
+
 msgid "Must be a 1 or 0, whether to start the machine or not"
 msgstr "必须为 1 或 0，指示是否要启动该机器"
 
@@ -1352,6 +1365,9 @@ msgstr "操作系统"
 
 msgid "Mac"
 msgstr ""
+
+msgid "Virtual TPM"
+msgstr "虚拟 TPM"
 
 msgid "Host"
 msgstr "主机"
@@ -2585,6 +2601,18 @@ msgstr "外部用户组"
 msgid "Failed to generate registration command"
 msgstr "生成注册命令失败"
 
+msgid "Manage registration tokens"
+msgstr ""
+
+msgid "Successfully invalidated registration tokens for %{users}."
+msgstr ""
+
+msgid "Could not invalidate registration tokens"
+msgstr ""
+
+msgid "Successfully invalidated registration tokens for %{user}."
+msgstr ""
+
 msgid "Default"
 msgstr "默认"
 
@@ -3051,6 +3079,9 @@ msgstr "管理个人邮件通知"
 msgid "Managing table preferences"
 msgstr "管理表首选项"
 
+msgid "Managing registration tokens"
+msgstr ""
+
 msgid "User mail notifications was added."
 msgstr "添加了用户邮件通知。"
 
@@ -3107,34 +3138,3 @@ msgstr "删除的虚拟机。"
 
 msgid "Could not delete the virtual machine"
 msgstr "无法删除虚拟机"
-
-msgid "automatic/bios/uefi/uefi_secure_boot (UEFI with Secure Boot enabled)"
-msgstr ""
-
-msgid "Firmware"
-msgstr ""
-
-msgid "Secure Boot"
-msgstr ""
-
-msgid ""
-"Must be a 1 or 0, Enable virtual TPM. Only compatible with EFI firmware."
-msgstr ""
-
-msgid "Virtual TPM"
-msgstr ""
-
-msgid "Manage registration tokens"
-msgstr ""
-
-msgid "Successfully invalidated registration tokens for %{users}."
-msgstr ""
-
-msgid "Could not invalidate registration tokens"
-msgstr ""
-
-msgid "Successfully invalidated registration tokens for %{user}."
-msgstr ""
-
-msgid "Managing registration tokens"
-msgstr ""
