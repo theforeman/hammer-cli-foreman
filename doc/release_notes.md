@@ -1,5 +1,11 @@
 Release notes
 =============
+### 3.15.0 (2025-05-14)
+* Use 3.15 test data
+* Fix hammer insights inventory sync error message ([PR #640](https://github.com/theforeman/hammer-cli-foreman/pull/640)), [#38401](http://projects.theforeman.org/issues/38401)
+* Fix hammer host update error messages, [#38291](http://projects.theforeman.org/issues/38291)
+* Bump to 3.15.0-develop
+
 ### 3.14.0 (2025-02-20)
 * Invalidate tokens for specific user/users ([PR #636](https://github.com/theforeman/hammer-cli-foreman/pull/636)), [#38124](http://projects.theforeman.org/issues/38124)
 * Don't build hidden params as options ([PR #634](https://github.com/theforeman/hammer-cli-foreman/pull/634)), [#38077](http://projects.theforeman.org/issues/38077)
