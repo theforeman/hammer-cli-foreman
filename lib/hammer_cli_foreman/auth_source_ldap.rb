@@ -30,7 +30,8 @@ module HammerCLIForeman
           field :account, _('Account Username')
           field :base_dn, _('Base DN')
           field :groups_base, _('Groups base DN')
-          field :use_netgroups, _('Use Netgroups'), Fields::Boolean
+          field :use_netgroups, _('Use Netgroups'), Fields::Boolean, :replaced_by => [_('Account'), _('LDAP group membership')].join('/')
+          field :ldap_group_membership, _('LDAP group membership')
           field :ldap_filter, _('LDAP filter')
           field :onthefly_register, _('Automatically Create Accounts?'), Fields::Boolean
           field :usergroup_sync, _('Usergroup sync'), Fields::Boolean
