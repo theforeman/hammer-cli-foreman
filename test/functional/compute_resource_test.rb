@@ -61,7 +61,7 @@ describe 'compute-resource' do
         assert_cmd(expected_result, result)
       end
     end
-   
+
 
     it 'should print error for blank --provider option' do
       params = %w(--provider= --name=new'')
@@ -105,55 +105,6 @@ describe 'compute-resource' do
           (params['compute_resource']['url'] == 'qemu+ssh://root@test.foreman.com')
       end
 
-      result = run_cmd(@cmd + params)
-
-      assert_cmd(success_result("Compute resource created.\n"), result)
-    end
-
-    it 'should create a compute-resource ovirt' do
-      params = %w(--name=test-ovirt
-                  --provider=ovirt
-                  --url=https://ovirt.example.com/ovirt-engine/api
-                  --user=foreman
-                  --password=changeme
-                  --datacenter=ovirt.example.com)
-
-      api_expects(:compute_resources, :create, 'Create Compute Resource') do |params|
-        (params['compute_resource']['name'] == 'test-ovirt') &&
-          (params['compute_resource']['provider'] == 'ovirt') &&
-          (params['compute_resource']['url'] == 'https://ovirt.example.com/ovirt-engine/api') &&
-          (params['compute_resource']['user'] == 'foreman') &&
-          (params['compute_resource']['password'] == 'changeme') &&
-          (params['compute_resource']['datacenter'] == 'ovirt.example.com')
-      end
-
-      result = run_cmd(@cmd + params)
-
-      assert_cmd(success_result("Compute resource created.\n"), result)
-    end
-
-
-    it 'should create a compute-resource ovirt with custom public key' do
-      tempfile = Tempfile.new('ca.pem')
-      tempfile << 'test data'
-      tempfile.close
-      params = %W(--name=test-ovirt
-                  --provider=ovirt
-                  --url=https://ovirt.example.com/ovirt-engine/api
-                  --user=foreman
-                  --password=changeme
-                  --datacenter=ovirt.example.com
-                  --public-key-path=#{tempfile.path})
-
-      api_expects(:compute_resources, :create, 'Create Compute Resource') do |params|
-        (params['compute_resource']['name'] =='test-ovirt') &&
-            (params['compute_resource']['provider'] == 'ovirt') &&
-            (params['compute_resource']['url'] == 'https://ovirt.example.com/ovirt-engine/api') &&
-            (params['compute_resource']['user'] == 'foreman') &&
-            (params['compute_resource']['password'] == 'changeme') &&
-            (params['compute_resource']['datacenter'] == 'ovirt.example.com' &&
-            (params['compute_resource']['public_key'] == 'test data'))
-      end
       result = run_cmd(@cmd + params)
 
       assert_cmd(success_result("Compute resource created.\n"), result)
@@ -202,31 +153,6 @@ end
           %w[1 network1],
           %w[2 network2]
         ]
-      )
-      expected_result = success_result(output)
-
-      result = run_cmd(cmd + base_params)
-      assert_cmd(expected_result, result)
-    end
-  end
-
-  describe 'vnic profiles' do
-    let(:cmd) { base_cmd << 'vnic-profiles' }
-    let(:vnic_profile_1) { { id: 1, name: 'network1', network: 2 } }
-    let(:vnic_profile_2) { { id: 2, name: 'network2', network: 2 } }
-    let(:vnic_profiles) { [vnic_profile_1, vnic_profile_2] }
-
-    it 'lists available vnic profiles for a compute resource' do
-      api_expects(:compute_resources, :available_vnic_profiles, 'vnic-profiles').with_params(
-          'id' => '1'
-      ).returns(index_response(vnic_profiles))
-
-      output = IndexMatcher.new(
-          [
-              ['VNIC PROFILE ID', 'NAME', 'NETWORK ID'],
-              ['1', 'network1','2'],
-              ['2', 'network2','2']
-          ]
       )
       expected_result = success_result(output)
 

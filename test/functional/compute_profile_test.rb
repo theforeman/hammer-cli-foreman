@@ -26,7 +26,7 @@ describe "parameters" do
                                      "id": 2,
                                      "compute_resource_id": 3,
                                      "compute_resource_name": "bla",
-                                     "provider_friendly_name": "oVirt",
+                                     "provider_friendly_name": "Libvirt",
                                      "compute_profile_id": 1,
                                      "compute_profile_name": "profile2",
                                    }]
@@ -64,7 +64,7 @@ describe "parameters" do
                                    "id": 4,
                                    "compute_resource_id": 3,
                                    "compute_resource_name": "bla",
-                                   "provider_friendly_name": "oVirt",
+                                   "provider_friendly_name": "Libvirt",
                                    "compute_profile_id": 3,
                                    "compute_profile_name": "profile3",
                                  }]

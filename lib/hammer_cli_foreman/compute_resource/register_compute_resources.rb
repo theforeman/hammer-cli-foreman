@@ -12,6 +12,5 @@ module HammerCLIForeman
   require 'hammer_cli_foreman/compute_resource/ec2.rb'
   require 'hammer_cli_foreman/compute_resource/libvirt.rb'
   require 'hammer_cli_foreman/compute_resource/openstack.rb'
-  require 'hammer_cli_foreman/compute_resource/ovirt.rb'
   require 'hammer_cli_foreman/compute_resource/vmware.rb'
 end
