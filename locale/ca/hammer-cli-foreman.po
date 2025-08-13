@@ -7,9 +7,9 @@
 # Robert Antoni Buj i Gelonch <rbuj@fedoraproject.org>, 2015-2016
 msgid ""
 msgstr ""
-"Project-Id-Version: hammer-cli-foreman 3.15.0\n"
+"Project-Id-Version: hammer-cli-foreman 3.16.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-20 12:14+0000\n"
+"POT-Creation-Date: 2025-05-14 15:07+0000\n"
 "PO-Revision-Date: 2014-03-14 09:55+0000\n"
 "Last-Translator: Robert Antoni Buj i Gelonch <rbuj@fedoraproject.org>, 2017\n"
 "Language-Team: Catalan (http://app.transifex.com/foreman/foreman/language/"
@@ -1611,9 +1611,8 @@ msgstr ""
 
 msgid ""
 "Filters inherit organizations and locations from its role by default. This "
-"behavior can be changed by setting %{condition}.%{wsp}Therefore options "
-"%{org_opts} and %{loc_opts} are applicable only when the override flag is "
-"set."
+"behavior can be changed by setting %{condition}.%{wsp}Therefore options %"
+"{org_opts} and %{loc_opts} are applicable only when the override flag is set."
 msgstr ""
 
 msgid "Permission filter for [%<resource_type_label>s] created."
@@ -2371,8 +2370,8 @@ msgstr ""
 
 msgid "Could not find %{resource}, please set one of options %{switches}."
 msgstr ""
-"No s'ha pogut trobar %{resource}, si us plau, establiu una de les opcions "
-"%{switches}."
+"No s'ha pogut trobar %{resource}, si us plau, establiu una de les opcions %"
+"{switches}."
 
 msgid "Enter user's current password:"
 msgstr ""
@@ -3128,4 +3127,7 @@ msgid "Virtual machine deleted."
 msgstr ""
 
 msgid "Could not delete the virtual machine"
+msgstr ""
+
+msgid "LDAP group membership"
 msgstr ""

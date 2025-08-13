@@ -6,10 +6,10 @@
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: hammer-cli-foreman 3.15.0\n"
+"Project-Id-Version: hammer-cli-foreman 3.16.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-05-14 15:07+0000\n"
-"PO-Revision-Date: 2025-05-14 15:07+0000\n"
+"POT-Creation-Date: 2025-08-13 12:18+0200\n"
+"PO-Revision-Date: 2025-08-13 12:18+0200\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: \n"
@@ -261,16 +261,16 @@ msgstr ""
 #: ../lib/hammer_cli_foreman/compute_profile.rb:9
 #: ../lib/hammer_cli_foreman/compute_profile.rb:22
 #: ../lib/hammer_cli_foreman/compute_resource.rb:22
-#: ../lib/hammer_cli_foreman/compute_resource.rb:122
-#: ../lib/hammer_cli_foreman/compute_resource.rb:137
-#: ../lib/hammer_cli_foreman/compute_resource.rb:179
-#: ../lib/hammer_cli_foreman/compute_resource.rb:191
-#: ../lib/hammer_cli_foreman/compute_resource.rb:207
-#: ../lib/hammer_cli_foreman/compute_resource.rb:219
-#: ../lib/hammer_cli_foreman/compute_resource.rb:234
-#: ../lib/hammer_cli_foreman/compute_resource.rb:247
-#: ../lib/hammer_cli_foreman/compute_resource.rb:261
-#: ../lib/hammer_cli_foreman/compute_resource.rb:273
+#: ../lib/hammer_cli_foreman/compute_resource.rb:104
+#: ../lib/hammer_cli_foreman/compute_resource.rb:119
+#: ../lib/hammer_cli_foreman/compute_resource.rb:148
+#: ../lib/hammer_cli_foreman/compute_resource.rb:160
+#: ../lib/hammer_cli_foreman/compute_resource.rb:176
+#: ../lib/hammer_cli_foreman/compute_resource.rb:188
+#: ../lib/hammer_cli_foreman/compute_resource.rb:203
+#: ../lib/hammer_cli_foreman/compute_resource.rb:216
+#: ../lib/hammer_cli_foreman/compute_resource.rb:230
+#: ../lib/hammer_cli_foreman/compute_resource.rb:242
 #: ../lib/hammer_cli_foreman/config_report.rb:10
 #: ../lib/hammer_cli_foreman/config_report.rb:31
 #: ../lib/hammer_cli_foreman/domain.rb:8
@@ -324,18 +324,17 @@ msgstr ""
 #: ../lib/hammer_cli_foreman/compute_profile.rb:10
 #: ../lib/hammer_cli_foreman/compute_profile.rb:23
 #: ../lib/hammer_cli_foreman/compute_resource.rb:23
-#: ../lib/hammer_cli_foreman/compute_resource.rb:123
-#: ../lib/hammer_cli_foreman/compute_resource.rb:138
-#: ../lib/hammer_cli_foreman/compute_resource.rb:154
-#: ../lib/hammer_cli_foreman/compute_resource.rb:167
-#: ../lib/hammer_cli_foreman/compute_resource.rb:180
-#: ../lib/hammer_cli_foreman/compute_resource.rb:192
-#: ../lib/hammer_cli_foreman/compute_resource.rb:208
-#: ../lib/hammer_cli_foreman/compute_resource.rb:220
-#: ../lib/hammer_cli_foreman/compute_resource.rb:235
-#: ../lib/hammer_cli_foreman/compute_resource.rb:248
-#: ../lib/hammer_cli_foreman/compute_resource.rb:262
-#: ../lib/hammer_cli_foreman/compute_resource.rb:274
+#: ../lib/hammer_cli_foreman/compute_resource.rb:105
+#: ../lib/hammer_cli_foreman/compute_resource.rb:120
+#: ../lib/hammer_cli_foreman/compute_resource.rb:136
+#: ../lib/hammer_cli_foreman/compute_resource.rb:149
+#: ../lib/hammer_cli_foreman/compute_resource.rb:161
+#: ../lib/hammer_cli_foreman/compute_resource.rb:177
+#: ../lib/hammer_cli_foreman/compute_resource.rb:189
+#: ../lib/hammer_cli_foreman/compute_resource.rb:204
+#: ../lib/hammer_cli_foreman/compute_resource.rb:217
+#: ../lib/hammer_cli_foreman/compute_resource.rb:231
+#: ../lib/hammer_cli_foreman/compute_resource.rb:243
 #: ../lib/hammer_cli_foreman/domain.rb:9
 #: ../lib/hammer_cli_foreman/external_usergroup.rb:9
 #: ../lib/hammer_cli_foreman/external_usergroup.rb:40
@@ -968,6 +967,7 @@ msgid "Server Type"
 msgstr ""
 
 #: ../lib/hammer_cli_foreman/auth_source_ldap.rb:29
+#: ../lib/hammer_cli_foreman/auth_source_ldap.rb:33
 msgid "Account"
 msgstr ""
 
@@ -987,63 +987,68 @@ msgstr ""
 msgid "Use Netgroups"
 msgstr ""
 
+#: ../lib/hammer_cli_foreman/auth_source_ldap.rb:33
 #: ../lib/hammer_cli_foreman/auth_source_ldap.rb:34
-msgid "LDAP filter"
+msgid "LDAP group membership"
 msgstr ""
 
 #: ../lib/hammer_cli_foreman/auth_source_ldap.rb:35
-msgid "Automatically Create Accounts?"
+msgid "LDAP filter"
 msgstr ""
 
 #: ../lib/hammer_cli_foreman/auth_source_ldap.rb:36
+msgid "Automatically Create Accounts?"
+msgstr ""
+
+#: ../lib/hammer_cli_foreman/auth_source_ldap.rb:37
 msgid "Usergroup sync"
 msgstr ""
 
-#: ../lib/hammer_cli_foreman/auth_source_ldap.rb:38
+#: ../lib/hammer_cli_foreman/auth_source_ldap.rb:39
 msgid "Attribute mappings"
 msgstr ""
 
-#: ../lib/hammer_cli_foreman/auth_source_ldap.rb:39
+#: ../lib/hammer_cli_foreman/auth_source_ldap.rb:40
 msgid "Login Name Attribute"
 msgstr ""
 
-#: ../lib/hammer_cli_foreman/auth_source_ldap.rb:40
+#: ../lib/hammer_cli_foreman/auth_source_ldap.rb:41
 msgid "First Name Attribute"
 msgstr ""
 
-#: ../lib/hammer_cli_foreman/auth_source_ldap.rb:41
+#: ../lib/hammer_cli_foreman/auth_source_ldap.rb:42
 msgid "Last Name Attribute"
 msgstr ""
 
-#: ../lib/hammer_cli_foreman/auth_source_ldap.rb:42
+#: ../lib/hammer_cli_foreman/auth_source_ldap.rb:43
 msgid "Email Address Attribute"
 msgstr ""
 
-#: ../lib/hammer_cli_foreman/auth_source_ldap.rb:43
+#: ../lib/hammer_cli_foreman/auth_source_ldap.rb:44
 msgid "Photo Attribute"
 msgstr ""
 
-#: ../lib/hammer_cli_foreman/auth_source_ldap.rb:52
+#: ../lib/hammer_cli_foreman/auth_source_ldap.rb:53
 msgid "Auth source [%{name}] created."
 msgstr ""
 
-#: ../lib/hammer_cli_foreman/auth_source_ldap.rb:53
+#: ../lib/hammer_cli_foreman/auth_source_ldap.rb:54
 msgid "Could not create the Auth Source"
 msgstr ""
 
-#: ../lib/hammer_cli_foreman/auth_source_ldap.rb:59
+#: ../lib/hammer_cli_foreman/auth_source_ldap.rb:60
 msgid "Auth source [%{name}] deleted."
 msgstr ""
 
-#: ../lib/hammer_cli_foreman/auth_source_ldap.rb:60
+#: ../lib/hammer_cli_foreman/auth_source_ldap.rb:61
 msgid "Could not delete the Auth Source"
 msgstr ""
 
-#: ../lib/hammer_cli_foreman/auth_source_ldap.rb:66
+#: ../lib/hammer_cli_foreman/auth_source_ldap.rb:67
 msgid "Auth source [%{name}] updated."
 msgstr ""
 
-#: ../lib/hammer_cli_foreman/auth_source_ldap.rb:67
+#: ../lib/hammer_cli_foreman/auth_source_ldap.rb:68
 msgid "Could not update the Auth Source"
 msgstr ""
 
@@ -1198,7 +1203,6 @@ msgstr ""
 #: ../lib/hammer_cli_foreman/compute_resource/libvirt.rb:25
 #: ../lib/hammer_cli_foreman/compute_resource/libvirt.rb:27
 #: ../lib/hammer_cli_foreman/compute_resource/libvirt.rb:37
-#: ../lib/hammer_cli_foreman/compute_resource/ovirt.rb:16
 msgid "Possible values: %s"
 msgstr ""
 
@@ -1334,9 +1338,8 @@ msgid "Cannot save file: %s does not exist"
 msgstr ""
 
 #: ../lib/hammer_cli_foreman/common_parameter.rb:14
-#: ../lib/hammer_cli_foreman/compute_resource.rb:196
+#: ../lib/hammer_cli_foreman/compute_resource.rb:165
 #: ../lib/hammer_cli_foreman/compute_resource/ec2.rb:21
-#: ../lib/hammer_cli_foreman/compute_resource/ovirt.rb:59
 #: ../lib/hammer_cli_foreman/host.rb:88
 #: ../lib/hammer_cli_foreman/interface.rb:25
 #: ../lib/hammer_cli_foreman/interface.rb:45
@@ -1592,106 +1595,92 @@ msgid "Description"
 msgstr ""
 
 #: ../lib/hammer_cli_foreman/compute_resource.rb:54
-#: ../lib/hammer_cli_foreman/compute_resource.rb:85
-msgid "Path to a file that contains oVirt public key (For oVirt only)"
-msgstr ""
-
-#: ../lib/hammer_cli_foreman/compute_resource.rb:58
 msgid "Compute resource created."
 msgstr ""
 
-#: ../lib/hammer_cli_foreman/compute_resource.rb:59
+#: ../lib/hammer_cli_foreman/compute_resource.rb:55
 msgid "Could not create the compute resource"
 msgstr ""
 
-#: ../lib/hammer_cli_foreman/compute_resource.rb:88
+#: ../lib/hammer_cli_foreman/compute_resource.rb:75
 msgid "Compute resource updated."
 msgstr ""
 
-#: ../lib/hammer_cli_foreman/compute_resource.rb:89
+#: ../lib/hammer_cli_foreman/compute_resource.rb:76
 msgid "Could not update the compute resource"
 msgstr ""
 
-#: ../lib/hammer_cli_foreman/compute_resource.rb:101
+#: ../lib/hammer_cli_foreman/compute_resource.rb:83
 msgid "Compute resource deleted."
 msgstr ""
 
-#: ../lib/hammer_cli_foreman/compute_resource.rb:102
+#: ../lib/hammer_cli_foreman/compute_resource.rb:84
 msgid "Could not delete the compute resource"
 msgstr ""
 
-#: ../lib/hammer_cli_foreman/compute_resource.rb:110
+#: ../lib/hammer_cli_foreman/compute_resource.rb:92
 msgid "Associate a specific VM"
 msgstr ""
 
-#: ../lib/hammer_cli_foreman/compute_resource.rb:111
+#: ../lib/hammer_cli_foreman/compute_resource.rb:93
 msgid "Virtual machines have been associated."
 msgstr ""
 
-#: ../lib/hammer_cli_foreman/compute_resource.rb:112
+#: ../lib/hammer_cli_foreman/compute_resource.rb:94
 msgid "Could not associate the virtual machines"
 msgstr ""
 
-#: ../lib/hammer_cli_foreman/compute_resource.rb:124
-#: ../lib/hammer_cli_foreman/compute_resource.rb:139
-#: ../lib/hammer_cli_foreman/compute_resource.rb:194
-#: ../lib/hammer_cli_foreman/compute_resource.rb:222
-#: ../lib/hammer_cli_foreman/compute_resource.rb:249
-#: ../lib/hammer_cli_foreman/compute_resource/ovirt.rb:49
+#: ../lib/hammer_cli_foreman/compute_resource.rb:106
+#: ../lib/hammer_cli_foreman/compute_resource.rb:121
+#: ../lib/hammer_cli_foreman/compute_resource.rb:163
+#: ../lib/hammer_cli_foreman/compute_resource.rb:191
+#: ../lib/hammer_cli_foreman/compute_resource.rb:218
 #: ../lib/hammer_cli_foreman/compute_resource/vmware.rb:70
 msgid "Datacenter"
 msgstr ""
 
-#: ../lib/hammer_cli_foreman/compute_resource.rb:125
+#: ../lib/hammer_cli_foreman/compute_resource.rb:107
 msgid "Hosts"
 msgstr ""
 
-#: ../lib/hammer_cli_foreman/compute_resource.rb:126
+#: ../lib/hammer_cli_foreman/compute_resource.rb:108
 msgid "Cluster path"
 msgstr ""
 
-#: ../lib/hammer_cli_foreman/compute_resource.rb:140
+#: ../lib/hammer_cli_foreman/compute_resource.rb:122
 msgid "Virtual switch"
 msgstr ""
 
-#: ../lib/hammer_cli_foreman/compute_resource.rb:141
+#: ../lib/hammer_cli_foreman/compute_resource.rb:123
 #: ../lib/hammer_cli_foreman/subnet.rb:41
 #: ../lib/hammer_cli_foreman/subnet.rb:72
 msgid "VLAN ID"
 msgstr ""
 
-#: ../lib/hammer_cli_foreman/compute_resource.rb:153
-msgid "VNIC profile ID"
-msgstr ""
-
-#: ../lib/hammer_cli_foreman/compute_resource.rb:155
-msgid "Network ID"
-msgstr ""
-
-#: ../lib/hammer_cli_foreman/compute_resource.rb:166
+#: ../lib/hammer_cli_foreman/compute_resource.rb:135
 msgid "Uuid"
 msgstr ""
 
-#: ../lib/hammer_cli_foreman/compute_resource.rb:168
-#: ../lib/hammer_cli_foreman/compute_resource.rb:195
-#: ../lib/hammer_cli_foreman/compute_resource.rb:275
+#: ../lib/hammer_cli_foreman/compute_resource.rb:137
+#: ../lib/hammer_cli_foreman/compute_resource.rb:164
+#: ../lib/hammer_cli_foreman/compute_resource.rb:244
 #: ../lib/hammer_cli_foreman/compute_resource/vmware.rb:85
 #: ../lib/hammer_cli_foreman/media.rb:11
 msgid "Path"
 msgstr ""
 
-#: ../lib/hammer_cli_foreman/compute_resource.rb:193
+#: ../lib/hammer_cli_foreman/compute_resource.rb:162
 #: ../lib/hammer_cli_foreman/hostgroup.rb:72
 #: ../lib/hammer_cli_foreman/location.rb:29
 #: ../lib/hammer_cli_foreman/organization.rb:29
 msgid "Parent"
 msgstr ""
 
-#: ../lib/hammer_cli_foreman/compute_resource.rb:221
+#: ../lib/hammer_cli_foreman/compute_resource.rb:190
 msgid "Cluster"
 msgstr ""
 
-#: ../lib/hammer_cli_foreman/compute_resource.rb:276
+#: ../lib/hammer_cli_foreman/compute_resource.rb:245
 #: ../lib/hammer_cli_foreman/compute_resource/ec2.rb:22
 #: ../lib/hammer_cli_foreman/compute_resource/openstack.rb:26
 msgid "State"
@@ -1761,19 +1750,16 @@ msgid "Initial allocation, e.g. 0G"
 msgstr ""
 
 #: ../lib/hammer_cli_foreman/compute_resource/libvirt.rb:47
-#: ../lib/hammer_cli_foreman/compute_resource/ovirt.rb:55
 #: ../lib/hammer_cli_foreman/compute_resource/vmware.rb:79
 msgid "CPUs"
 msgstr ""
 
 #: ../lib/hammer_cli_foreman/compute_resource/libvirt.rb:48
-#: ../lib/hammer_cli_foreman/compute_resource/ovirt.rb:56
 #: ../lib/hammer_cli_foreman/compute_resource/vmware.rb:80
 msgid "Memory"
 msgstr ""
 
 #: ../lib/hammer_cli_foreman/compute_resource/libvirt.rb:49
-#: ../lib/hammer_cli_foreman/compute_resource/ovirt.rb:57
 #: ../lib/hammer_cli_foreman/host.rb:65 ../lib/hammer_cli_foreman/host.rb:135
 #: ../lib/hammer_cli_foreman/ping.rb:12 ../lib/hammer_cli_foreman/ping.rb:17
 #: ../lib/hammer_cli_foreman/smart_proxy.rb:13
@@ -1823,82 +1809,6 @@ msgstr ""
 
 #: ../lib/hammer_cli_foreman/compute_resource/openstack.rb:27
 msgid "Tenant Id"
-msgstr ""
-
-#: ../lib/hammer_cli_foreman/compute_resource/ovirt.rb:10
-msgid "ID or name of cluster to use"
-msgstr ""
-
-#: ../lib/hammer_cli_foreman/compute_resource/ovirt.rb:11
-msgid "Hardware profile to use"
-msgstr ""
-
-#: ../lib/hammer_cli_foreman/compute_resource/ovirt.rb:12
-msgid "Integer value, number of cores"
-msgstr ""
-
-#: ../lib/hammer_cli_foreman/compute_resource/ovirt.rb:13
-msgid "Integer value, number of sockets"
-msgstr ""
-
-#: ../lib/hammer_cli_foreman/compute_resource/ovirt.rb:14
-msgid "Amount of memory, integer value in bytes"
-msgstr ""
-
-#: ../lib/hammer_cli_foreman/compute_resource/ovirt.rb:15
-msgid "Boolean, set 1 to high availability"
-msgstr ""
-
-#: ../lib/hammer_cli_foreman/compute_resource/ovirt.rb:17
-msgid "Possible values: %s. Not usable if display type is SPICE."
-msgstr ""
-
-#: ../lib/hammer_cli_foreman/compute_resource/ovirt.rb:23
-msgid "Boolean, set 1 to start the vm"
-msgstr ""
-
-#: ../lib/hammer_cli_foreman/compute_resource/ovirt.rb:29
-msgid "Compute name, e.g. eth0"
-msgstr ""
-
-#: ../lib/hammer_cli_foreman/compute_resource/ovirt.rb:30
-msgid "Select one of available networks for a cluster, must be an ID or a name"
-msgstr ""
-
-#: ../lib/hammer_cli_foreman/compute_resource/ovirt.rb:31
-msgid "Interface type"
-msgstr ""
-
-#: ../lib/hammer_cli_foreman/compute_resource/ovirt.rb:32
-msgid "Vnic Profile"
-msgstr ""
-
-#: ../lib/hammer_cli_foreman/compute_resource/ovirt.rb:38
-msgid "Volume size in GB, integer value"
-msgstr ""
-
-#: ../lib/hammer_cli_foreman/compute_resource/ovirt.rb:39
-msgid "ID or name of storage domain"
-msgstr ""
-
-#: ../lib/hammer_cli_foreman/compute_resource/ovirt.rb:40
-msgid "Boolean, set 1 for bootable, only one volume can be bootable"
-msgstr ""
-
-#: ../lib/hammer_cli_foreman/compute_resource/ovirt.rb:41
-msgid "Boolean, set 1 to preallocate"
-msgstr ""
-
-#: ../lib/hammer_cli_foreman/compute_resource/ovirt.rb:42
-msgid "Boolean, set 1 to wipe disk after delete"
-msgstr ""
-
-#: ../lib/hammer_cli_foreman/compute_resource/ovirt.rb:43
-msgid "Disk interface name, must be ide, virtio or virtio_scsi"
-msgstr ""
-
-#: ../lib/hammer_cli_foreman/compute_resource/ovirt.rb:58
-msgid "Cores"
 msgstr ""
 
 #: ../lib/hammer_cli_foreman/compute_resource/vmware.rb:12

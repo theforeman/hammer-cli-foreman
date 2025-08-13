@@ -7,9 +7,9 @@
 # Giuseppe Pignataro <anubisteam01@gmail.com>, 2014
 msgid ""
 msgstr ""
-"Project-Id-Version: hammer-cli-foreman 3.15.0\n"
+"Project-Id-Version: hammer-cli-foreman 3.16.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-20 12:14+0000\n"
+"POT-Creation-Date: 2025-05-14 15:07+0000\n"
 "PO-Revision-Date: 2014-03-14 09:55+0000\n"
 "Last-Translator: Giuseppe Pignataro <anubisteam01@gmail.com>, 2014\n"
 "Language-Team: Italian (http://app.transifex.com/foreman/foreman/language/"
@@ -1613,9 +1613,8 @@ msgstr ""
 
 msgid ""
 "Filters inherit organizations and locations from its role by default. This "
-"behavior can be changed by setting %{condition}.%{wsp}Therefore options "
-"%{org_opts} and %{loc_opts} are applicable only when the override flag is "
-"set."
+"behavior can be changed by setting %{condition}.%{wsp}Therefore options %"
+"{org_opts} and %{loc_opts} are applicable only when the override flag is set."
 msgstr ""
 
 msgid "Permission filter for [%<resource_type_label>s] created."
@@ -3127,4 +3126,7 @@ msgid "Virtual machine deleted."
 msgstr ""
 
 msgid "Could not delete the virtual machine"
+msgstr ""
+
+msgid "LDAP group membership"
 msgstr ""

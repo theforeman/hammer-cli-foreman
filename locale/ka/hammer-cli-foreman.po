@@ -7,9 +7,9 @@
 # Temuri Doghonadze <temuri.doghonadze@gmail.com>, 2022
 msgid ""
 msgstr ""
-"Project-Id-Version: hammer-cli-foreman 3.15.0\n"
+"Project-Id-Version: hammer-cli-foreman 3.16.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-20 12:14+0000\n"
+"POT-Creation-Date: 2025-05-14 15:07+0000\n"
 "PO-Revision-Date: 2014-03-14 09:55+0000\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>, 2022\n"
 "Language-Team: Georgian (http://app.transifex.com/foreman/foreman/language/"
@@ -1652,9 +1652,8 @@ msgstr "ორგანიზაციებისა და მდებარ�
 
 msgid ""
 "Filters inherit organizations and locations from its role by default. This "
-"behavior can be changed by setting %{condition}.%{wsp}Therefore options "
-"%{org_opts} and %{loc_opts} are applicable only when the override flag is "
-"set."
+"behavior can be changed by setting %{condition}.%{wsp}Therefore options %"
+"{org_opts} and %{loc_opts} are applicable only when the override flag is set."
 msgstr ""
 "ფილტრები ორგანიზაციებს და მდებარეობებს მათი როლიდან ნაგულისხმებად იღებენ. ამ "
 "ქცევის შეცვლა %{condition}.%{wsp}-ის ცვლილებით შეგიცლიათ. ამიტომ პარამეტრები "
@@ -2394,8 +2393,8 @@ msgid ""
 "[%{provisioning_template_name}] was set as default %{template_kind_name} "
 "template."
 msgstr ""
-"[%{provisioning_template_name}] დაყენებულია, როგორც ნაგულისხმები "
-"%{template_kind_name} შაბლონი."
+"[%{provisioning_template_name}] დაყენებულია, როგორც ნაგულისხმები %"
+"{template_kind_name} შაბლონი."
 
 msgid "Could not set the os default template"
 msgstr "ოს-ის ნაგულისხმები შაბლონის დაყენების შეცდომა"
@@ -3190,3 +3189,6 @@ msgstr "ვირტუალური მანქანის წაშლა.
 
 msgid "Could not delete the virtual machine"
 msgstr "ვირტუალური მანქანის წაშლის შეცდომა"
+
+msgid "LDAP group membership"
+msgstr ""
