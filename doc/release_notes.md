@@ -1,5 +1,10 @@
 Release notes
 =============
+### 3.16.0 (2025-08-13)
+* Ldap group membership ([PR #641](https://github.com/theforeman/hammer-cli-foreman/pull/641)), [#38611](http://projects.theforeman.org/issues/38611)
+* Remove ovirt ([PR #639](https://github.com/theforeman/hammer-cli-foreman/pull/639)), [#38294](http://projects.theforeman.org/issues/38294)
+* Bump to 3.16.0-develop
+
 ### 3.15.0 (2025-05-14)
 * Use 3.15 test data
 * Fix hammer insights inventory sync error message ([PR #640](https://github.com/theforeman/hammer-cli-foreman/pull/640)), [#38401](http://projects.theforeman.org/issues/38401)
