@@ -16,6 +16,7 @@ module HammerCLIForeman
       output ListCommand.output_definition do
         field :description, _('Description'), Fields::Text
         field :locked, _("Locked"), Fields::Boolean
+        field :cloned_from_id, _("Cloned from id"), nil, :hide_blank => true
         field :default, _("Default"), Fields::Boolean
         HammerCLIForeman::References.timestamps(self)
         HammerCLIForeman::References.taxonomies(self)

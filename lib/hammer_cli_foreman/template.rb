@@ -42,6 +42,7 @@ module HammerCLIForeman
       output ListCommand.output_definition do
         field :description, _('Description'), Fields::Text
         field :locked, _("Locked"), Fields::Boolean
+        field :cloned_from_id, _("Cloned from id"), nil, :hide_blank => true
         HammerCLIForeman::References.operating_systems(self)
         HammerCLIForeman::References.taxonomies(self)
         collection :template_combinations, 'Template Combinations' do
