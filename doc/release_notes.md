@@ -1,5 +1,12 @@
 Release notes
 =============
+### 3.17.0 (2025-11-11)
+* Add packit commit trigger job
+* Remove options related to filter overrides ([PR #645](https://github.com/theforeman/hammer-cli-foreman/pull/645)), [#38805](http://projects.theforeman.org/issues/38805)
+* Add github actions workflow for releases
+* Expose cloned from id in template info command
+* Bump to 3.17.0-develop
+
 ### 3.16.0 (2025-08-13)
 * Ldap group membership ([PR #641](https://github.com/theforeman/hammer-cli-foreman/pull/641)), [#38611](http://projects.theforeman.org/issues/38611)
 * Remove ovirt ([PR #639](https://github.com/theforeman/hammer-cli-foreman/pull/639)), [#38294](http://projects.theforeman.org/issues/38294)
