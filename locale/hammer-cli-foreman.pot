@@ -6,10 +6,10 @@
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: hammer-cli-foreman 3.16.0\n"
+"Project-Id-Version: hammer-cli-foreman 3.17.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-08-13 12:18+0200\n"
-"PO-Revision-Date: 2025-08-13 12:18+0200\n"
+"POT-Creation-Date: 2025-11-11 15:43+0000\n"
+"PO-Revision-Date: 2025-11-11 15:43+0000\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: \n"
@@ -275,9 +275,9 @@ msgstr ""
 #: ../lib/hammer_cli_foreman/config_report.rb:31
 #: ../lib/hammer_cli_foreman/domain.rb:8
 #: ../lib/hammer_cli_foreman/external_usergroup.rb:8
-#: ../lib/hammer_cli_foreman/filter.rb:9
-#: ../lib/hammer_cli_foreman/filter.rb:141 ../lib/hammer_cli_foreman/host.rb:19
-#: ../lib/hammer_cli_foreman/host.rb:49 ../lib/hammer_cli_foreman/host.rb:86
+#: ../lib/hammer_cli_foreman/filter.rb:9 ../lib/hammer_cli_foreman/filter.rb:83
+#: ../lib/hammer_cli_foreman/host.rb:19 ../lib/hammer_cli_foreman/host.rb:49
+#: ../lib/hammer_cli_foreman/host.rb:86
 #: ../lib/hammer_cli_foreman/hostgroup.rb:52
 #: ../lib/hammer_cli_foreman/hostgroup.rb:66
 #: ../lib/hammer_cli_foreman/http_proxy.rb:10
@@ -297,7 +297,7 @@ msgstr ""
 #: ../lib/hammer_cli_foreman/references.rb:36
 #: ../lib/hammer_cli_foreman/references.rb:43
 #: ../lib/hammer_cli_foreman/report_template.rb:8
-#: ../lib/hammer_cli_foreman/report_template.rb:23
+#: ../lib/hammer_cli_foreman/report_template.rb:24
 #: ../lib/hammer_cli_foreman/role.rb:11
 #: ../lib/hammer_cli_foreman/settings.rb:11
 #: ../lib/hammer_cli_foreman/settings.rb:37
@@ -338,8 +338,8 @@ msgstr ""
 #: ../lib/hammer_cli_foreman/domain.rb:9
 #: ../lib/hammer_cli_foreman/external_usergroup.rb:9
 #: ../lib/hammer_cli_foreman/external_usergroup.rb:40
-#: ../lib/hammer_cli_foreman/filter.rb:142
-#: ../lib/hammer_cli_foreman/filter.rb:159 ../lib/hammer_cli_foreman/host.rb:20
+#: ../lib/hammer_cli_foreman/filter.rb:84
+#: ../lib/hammer_cli_foreman/filter.rb:101 ../lib/hammer_cli_foreman/host.rb:20
 #: ../lib/hammer_cli_foreman/host.rb:51
 #: ../lib/hammer_cli_foreman/hostgroup.rb:53
 #: ../lib/hammer_cli_foreman/hostgroup.rb:67
@@ -356,7 +356,7 @@ msgstr ""
 #: ../lib/hammer_cli_foreman/personal_access_token.rb:10
 #: ../lib/hammer_cli_foreman/realm.rb:9
 #: ../lib/hammer_cli_foreman/report_template.rb:9
-#: ../lib/hammer_cli_foreman/report_template.rb:24
+#: ../lib/hammer_cli_foreman/report_template.rb:25
 #: ../lib/hammer_cli_foreman/role.rb:12
 #: ../lib/hammer_cli_foreman/settings.rb:12
 #: ../lib/hammer_cli_foreman/settings.rb:38
@@ -372,7 +372,7 @@ msgstr ""
 #: ../lib/hammer_cli_foreman/subnet.rb:54
 #: ../lib/hammer_cli_foreman/table_preference.rb:9
 #: ../lib/hammer_cli_foreman/template.rb:21
-#: ../lib/hammer_cli_foreman/template.rb:75
+#: ../lib/hammer_cli_foreman/template.rb:76
 #: ../lib/hammer_cli_foreman/user.rb:12
 #: ../lib/hammer_cli_foreman/user_mail_notification.rb:39
 #: ../lib/hammer_cli_foreman/usergroup.rb:12
@@ -1106,7 +1106,7 @@ msgid "Failed to delete bookmark"
 msgstr ""
 
 #: ../lib/hammer_cli_foreman/combination.rb:5
-#: ../lib/hammer_cli_foreman/template.rb:220
+#: ../lib/hammer_cli_foreman/template.rb:221
 msgid "Manage template combinations"
 msgstr ""
 
@@ -1129,7 +1129,7 @@ msgstr ""
 
 #: ../lib/hammer_cli_foreman/combination.rb:22
 #: ../lib/hammer_cli_foreman/id_resolver.rb:42
-#: ../lib/hammer_cli_foreman/template.rb:48
+#: ../lib/hammer_cli_foreman/template.rb:49
 msgid "Hostgroup name"
 msgstr ""
 
@@ -1329,7 +1329,7 @@ msgid "Path to directory where downloaded content will be saved"
 msgstr ""
 
 #: ../lib/hammer_cli_foreman/commands.rb:753
-#: ../lib/hammer_cli_foreman/report_template.rb:190
+#: ../lib/hammer_cli_foreman/report_template.rb:191
 msgid "The response has been saved to %{path}."
 msgstr ""
 
@@ -1583,7 +1583,7 @@ msgstr ""
 #: ../lib/hammer_cli_foreman/organization.rb:16
 #: ../lib/hammer_cli_foreman/partition_table.rb:21
 #: ../lib/hammer_cli_foreman/report_template.rb:17
-#: ../lib/hammer_cli_foreman/report_template.rb:25
+#: ../lib/hammer_cli_foreman/report_template.rb:26
 #: ../lib/hammer_cli_foreman/role.rb:21
 #: ../lib/hammer_cli_foreman/settings.rb:15
 #: ../lib/hammer_cli_foreman/settings.rb:39
@@ -2057,7 +2057,7 @@ msgid "Logs"
 msgstr ""
 
 #: ../lib/hammer_cli_foreman/config_report.rb:63
-#: ../lib/hammer_cli_foreman/filter.rb:143
+#: ../lib/hammer_cli_foreman/filter.rb:85
 msgid "Resource"
 msgstr ""
 
@@ -2255,68 +2255,57 @@ msgid "Search"
 msgstr ""
 
 #: ../lib/hammer_cli_foreman/filter.rb:12
-msgid "Unlimited?"
-msgstr ""
-
-#: ../lib/hammer_cli_foreman/filter.rb:13
-msgid "Override?"
-msgstr ""
-
-#: ../lib/hammer_cli_foreman/filter.rb:14
 msgid "Role"
 msgstr ""
 
-#: ../lib/hammer_cli_foreman/filter.rb:15
+#: ../lib/hammer_cli_foreman/filter.rb:13
 msgid "Permissions"
 msgstr ""
 
-#: ../lib/hammer_cli_foreman/filter.rb:19
-#: ../lib/hammer_cli_foreman/filter.rb:35
-#: ../lib/hammer_cli_foreman/filter.rb:147 ../lib/hammer_cli_foreman/role.rb:42
+#: ../lib/hammer_cli_foreman/filter.rb:17
+#: ../lib/hammer_cli_foreman/filter.rb:40
+#: ../lib/hammer_cli_foreman/filter.rb:89 ../lib/hammer_cli_foreman/role.rb:42
 msgid "(Miscellaneous)"
 msgstr ""
 
-#: ../lib/hammer_cli_foreman/filter.rb:20
-#: ../lib/hammer_cli_foreman/filter.rb:36 ../lib/hammer_cli_foreman/role.rb:43
+#: ../lib/hammer_cli_foreman/filter.rb:18
+#: ../lib/hammer_cli_foreman/filter.rb:41 ../lib/hammer_cli_foreman/role.rb:43
 msgid "none"
 msgstr ""
 
-#: ../lib/hammer_cli_foreman/filter.rb:56
-msgid "Organizations and locations can be set only for overriding filters."
+#: ../lib/hammer_cli_foreman/filter.rb:30
+#: ../lib/hammer_cli_foreman/organization.rb:41
+#: ../lib/hammer_cli_foreman/references.rb:15
+msgid "Locations"
 msgstr ""
 
-#: ../lib/hammer_cli_foreman/filter.rb:60
-msgid "Overriding organizations and locations"
+#: ../lib/hammer_cli_foreman/filter.rb:33
+#: ../lib/hammer_cli_foreman/location.rb:41
+#: ../lib/hammer_cli_foreman/references.rb:18
+msgid "Organizations"
 msgstr ""
 
-#: ../lib/hammer_cli_foreman/filter.rb:65
-msgid ""
-"Filters inherit organizations and locations from its role by default. This beh"
-"avior can be changed by setting %{condition}.%{wsp}Therefore options %{org_opt"
-"s} and %{loc_opts} are applicable only when the override flag is set."
-msgstr ""
-
-#: ../lib/hammer_cli_foreman/filter.rb:81
+#: ../lib/hammer_cli_foreman/filter.rb:51
 msgid "Permission filter for [%<resource_type_label>s] created."
 msgstr ""
 
-#: ../lib/hammer_cli_foreman/filter.rb:82
+#: ../lib/hammer_cli_foreman/filter.rb:52
 msgid "Could not create the permission filter"
 msgstr ""
 
-#: ../lib/hammer_cli_foreman/filter.rb:95
+#: ../lib/hammer_cli_foreman/filter.rb:59
 msgid "Permission filter for [%<resource_type_label>s] updated."
 msgstr ""
 
-#: ../lib/hammer_cli_foreman/filter.rb:96
+#: ../lib/hammer_cli_foreman/filter.rb:60
 msgid "Could not update the permission filter"
 msgstr ""
 
-#: ../lib/hammer_cli_foreman/filter.rb:129
+#: ../lib/hammer_cli_foreman/filter.rb:71
 msgid "Permission filter deleted."
 msgstr ""
 
-#: ../lib/hammer_cli_foreman/filter.rb:130
+#: ../lib/hammer_cli_foreman/filter.rb:72
 msgid "Could not delete the permission filter"
 msgstr ""
 
@@ -3065,11 +3054,6 @@ msgstr ""
 msgid "Location numeric id to search by"
 msgstr ""
 
-#: ../lib/hammer_cli_foreman/location.rb:41
-#: ../lib/hammer_cli_foreman/references.rb:18
-msgid "Organizations"
-msgstr ""
-
 #: ../lib/hammer_cli_foreman/location.rb:56
 msgid "Location created."
 msgstr ""
@@ -3357,11 +3341,6 @@ msgstr ""
 msgid "Enter user's new password:"
 msgstr ""
 
-#: ../lib/hammer_cli_foreman/organization.rb:41
-#: ../lib/hammer_cli_foreman/references.rb:15
-msgid "Locations"
-msgstr ""
-
 #: ../lib/hammer_cli_foreman/organization.rb:57
 msgid "Organization created."
 msgstr ""
@@ -3454,7 +3433,7 @@ msgid "Could not delete the partition table"
 msgstr ""
 
 #: ../lib/hammer_cli_foreman/partition_table.rb:77
-#: ../lib/hammer_cli_foreman/template.rb:148
+#: ../lib/hammer_cli_foreman/template.rb:149
 msgid "Path to a file that contains the template content including metadata"
 msgstr ""
 
@@ -3666,110 +3645,115 @@ msgid "Successfully invalidated registration tokens for %{user}."
 msgstr ""
 
 #: ../lib/hammer_cli_foreman/report_template.rb:19
+#: ../lib/hammer_cli_foreman/template.rb:45
+msgid "Cloned from id"
+msgstr ""
+
+#: ../lib/hammer_cli_foreman/report_template.rb:20
 msgid "Default"
 msgstr ""
 
-#: ../lib/hammer_cli_foreman/report_template.rb:22
+#: ../lib/hammer_cli_foreman/report_template.rb:23
 msgid "Template inputs"
 msgstr ""
 
-#: ../lib/hammer_cli_foreman/report_template.rb:26
+#: ../lib/hammer_cli_foreman/report_template.rb:27
 msgid "Required"
 msgstr ""
 
-#: ../lib/hammer_cli_foreman/report_template.rb:27
+#: ../lib/hammer_cli_foreman/report_template.rb:28
 msgid "Options"
 msgstr ""
 
-#: ../lib/hammer_cli_foreman/report_template.rb:51
+#: ../lib/hammer_cli_foreman/report_template.rb:52
 msgid "View report content"
 msgstr ""
 
-#: ../lib/hammer_cli_foreman/report_template.rb:63
+#: ../lib/hammer_cli_foreman/report_template.rb:64
 msgid "Generate report"
 msgstr ""
 
-#: ../lib/hammer_cli_foreman/report_template.rb:65
-#: ../lib/hammer_cli_foreman/report_template.rb:85
+#: ../lib/hammer_cli_foreman/report_template.rb:66
+#: ../lib/hammer_cli_foreman/report_template.rb:86
 msgid "Specify inputs"
 msgstr ""
 
-#: ../lib/hammer_cli_foreman/report_template.rb:87
+#: ../lib/hammer_cli_foreman/report_template.rb:88
 msgid "Turns a command to be active, wait for the result and download it right away"
 msgstr ""
 
-#: ../lib/hammer_cli_foreman/report_template.rb:88
+#: ../lib/hammer_cli_foreman/report_template.rb:89
 msgid ""
 "Path to directory where downloaded content will be saved. Only usable if wait "
 "is specified"
 msgstr ""
 
-#: ../lib/hammer_cli_foreman/report_template.rb:106
+#: ../lib/hammer_cli_foreman/report_template.rb:107
 msgid "The report has been scheduled. Job ID: %{job_id}"
 msgstr ""
 
-#: ../lib/hammer_cli_foreman/report_template.rb:138
+#: ../lib/hammer_cli_foreman/report_template.rb:139
 msgid "Path to a file that contains the report template content including metadata"
 msgstr ""
 
-#: ../lib/hammer_cli_foreman/report_template.rb:145
+#: ../lib/hammer_cli_foreman/report_template.rb:146
 msgid "Import report template successfully."
 msgstr ""
 
-#: ../lib/hammer_cli_foreman/report_template.rb:146
+#: ../lib/hammer_cli_foreman/report_template.rb:147
 msgid "Could not import the report template"
 msgstr ""
 
-#: ../lib/hammer_cli_foreman/report_template.rb:160
+#: ../lib/hammer_cli_foreman/report_template.rb:161
 msgid "The report template has been saved to %{path}."
 msgstr ""
 
-#: ../lib/hammer_cli_foreman/report_template.rb:179
+#: ../lib/hammer_cli_foreman/report_template.rb:180
 msgid "The report is not ready yet."
 msgstr ""
 
-#: ../lib/hammer_cli_foreman/report_template.rb:198
+#: ../lib/hammer_cli_foreman/report_template.rb:199
 msgid "Open empty template in an $EDITOR. Upload the result"
 msgstr ""
 
-#: ../lib/hammer_cli_foreman/report_template.rb:199
-#: ../lib/hammer_cli_foreman/report_template.rb:224
+#: ../lib/hammer_cli_foreman/report_template.rb:200
+#: ../lib/hammer_cli_foreman/report_template.rb:225
 msgid "Path to a file that contains the report template content"
 msgstr ""
 
-#: ../lib/hammer_cli_foreman/report_template.rb:215
+#: ../lib/hammer_cli_foreman/report_template.rb:216
 msgid "Report template created."
 msgstr ""
 
-#: ../lib/hammer_cli_foreman/report_template.rb:216
+#: ../lib/hammer_cli_foreman/report_template.rb:217
 msgid "Could not create the report template"
 msgstr ""
 
-#: ../lib/hammer_cli_foreman/report_template.rb:223
+#: ../lib/hammer_cli_foreman/report_template.rb:224
 msgid "Dump existing template and open it in an $EDITOR. Update with the result"
 msgstr ""
 
-#: ../lib/hammer_cli_foreman/report_template.rb:237
+#: ../lib/hammer_cli_foreman/report_template.rb:238
 msgid "Report template updated."
 msgstr ""
 
-#: ../lib/hammer_cli_foreman/report_template.rb:238
+#: ../lib/hammer_cli_foreman/report_template.rb:239
 msgid "Could not update the report template"
 msgstr ""
 
-#: ../lib/hammer_cli_foreman/report_template.rb:257
+#: ../lib/hammer_cli_foreman/report_template.rb:258
 msgid "Report template cloned."
 msgstr ""
 
-#: ../lib/hammer_cli_foreman/report_template.rb:258
+#: ../lib/hammer_cli_foreman/report_template.rb:259
 msgid "Could not clone the report template"
 msgstr ""
 
-#: ../lib/hammer_cli_foreman/report_template.rb:268
+#: ../lib/hammer_cli_foreman/report_template.rb:269
 msgid "Report template deleted."
 msgstr ""
 
-#: ../lib/hammer_cli_foreman/report_template.rb:269
+#: ../lib/hammer_cli_foreman/report_template.rb:270
 msgid "Could not delete the report template"
 msgstr ""
 
@@ -4135,73 +4119,73 @@ msgstr ""
 msgid "Could not remove table preference"
 msgstr ""
 
-#: ../lib/hammer_cli_foreman/template.rb:49
+#: ../lib/hammer_cli_foreman/template.rb:50
 msgid "Environment name"
 msgstr ""
 
-#: ../lib/hammer_cli_foreman/template.rb:72
+#: ../lib/hammer_cli_foreman/template.rb:73
 msgid "List available provisioning template kinds"
 msgstr ""
 
-#: ../lib/hammer_cli_foreman/template.rb:91
+#: ../lib/hammer_cli_foreman/template.rb:92
 msgid "View provisioning template content"
 msgstr ""
 
-#: ../lib/hammer_cli_foreman/template.rb:103
-#: ../lib/hammer_cli_foreman/template.rb:121
+#: ../lib/hammer_cli_foreman/template.rb:104
+#: ../lib/hammer_cli_foreman/template.rb:122
 msgid "Path to a file that contains the template"
 msgstr ""
 
-#: ../lib/hammer_cli_foreman/template.rb:105
-#: ../lib/hammer_cli_foreman/template.rb:123
+#: ../lib/hammer_cli_foreman/template.rb:106
+#: ../lib/hammer_cli_foreman/template.rb:124
 msgid "Template type. Eg. snippet, script, provision"
 msgstr ""
 
-#: ../lib/hammer_cli_foreman/template.rb:107
+#: ../lib/hammer_cli_foreman/template.rb:108
 msgid "Provisioning template created."
 msgstr ""
 
-#: ../lib/hammer_cli_foreman/template.rb:108
+#: ../lib/hammer_cli_foreman/template.rb:109
 msgid "Could not create the provisioning template"
 msgstr ""
 
-#: ../lib/hammer_cli_foreman/template.rb:125
+#: ../lib/hammer_cli_foreman/template.rb:126
 msgid "Provisioning template updated."
 msgstr ""
 
-#: ../lib/hammer_cli_foreman/template.rb:126
+#: ../lib/hammer_cli_foreman/template.rb:127
 msgid "Could not update the provisioning template"
 msgstr ""
 
-#: ../lib/hammer_cli_foreman/template.rb:139
+#: ../lib/hammer_cli_foreman/template.rb:140
 msgid "Provisioning template deleted."
 msgstr ""
 
-#: ../lib/hammer_cli_foreman/template.rb:140
+#: ../lib/hammer_cli_foreman/template.rb:141
 msgid "Could not delete the provisioning template"
 msgstr ""
 
-#: ../lib/hammer_cli_foreman/template.rb:155
+#: ../lib/hammer_cli_foreman/template.rb:156
 msgid "Import provisioning template succeeded."
 msgstr ""
 
-#: ../lib/hammer_cli_foreman/template.rb:156
+#: ../lib/hammer_cli_foreman/template.rb:157
 msgid "Could not import provisioning template"
 msgstr ""
 
-#: ../lib/hammer_cli_foreman/template.rb:170
+#: ../lib/hammer_cli_foreman/template.rb:171
 msgid "The provisioning template has been saved to %{path}."
 msgstr ""
 
-#: ../lib/hammer_cli_foreman/template.rb:181
+#: ../lib/hammer_cli_foreman/template.rb:182
 msgid "Update the default PXE menu on all configured TFTP servers"
 msgstr ""
 
-#: ../lib/hammer_cli_foreman/template.rb:194
+#: ../lib/hammer_cli_foreman/template.rb:195
 msgid "Provisioning template cloned."
 msgstr ""
 
-#: ../lib/hammer_cli_foreman/template.rb:195
+#: ../lib/hammer_cli_foreman/template.rb:196
 msgid "Could not clone the provisioning template"
 msgstr ""
 

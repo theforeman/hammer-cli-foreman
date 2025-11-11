@@ -11,9 +11,9 @@
 # Valeria S Silva <valeriassilva@live.com>, 2015
 msgid ""
 msgstr ""
-"Project-Id-Version: hammer-cli-foreman 3.16.0\n"
+"Project-Id-Version: hammer-cli-foreman 3.17.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-05-14 15:07+0000\n"
+"POT-Creation-Date: 2025-08-13 12:18+0200\n"
 "PO-Revision-Date: 2014-03-14 09:55+0000\n"
 "Last-Translator: Valeria S Silva <valeriassilva@live.com>, 2015\n"
 "Language-Team: Portuguese (Brazil) (http://app.transifex.com/foreman/foreman/"
@@ -666,6 +666,9 @@ msgstr "DN base de grupos"
 msgid "Use Netgroups"
 msgstr "Usar grupos de redes"
 
+msgid "LDAP group membership"
+msgstr ""
+
 msgid "LDAP filter"
 msgstr "Filtro LDAP"
 
@@ -1085,11 +1088,6 @@ msgstr "Fornecedor"
 msgid "Description"
 msgstr "Descrição"
 
-msgid "Path to a file that contains oVirt public key (For oVirt only)"
-msgstr ""
-"Caminho para um arquivo que contém a chave pública do oVirt (somente para "
-"oVirt)"
-
 msgid "Compute resource created."
 msgstr "Recurso de computação criado."
 
@@ -1131,12 +1129,6 @@ msgstr ""
 
 msgid "VLAN ID"
 msgstr "ID DA VLAN"
-
-msgid "VNIC profile ID"
-msgstr "Identificação do perfil do VNIC"
-
-msgid "Network ID"
-msgstr "Identificação da rede"
 
 msgid "Uuid"
 msgstr "UUID"
@@ -1236,67 +1228,6 @@ msgstr "ID do domínio do projeto"
 
 msgid "Tenant Id"
 msgstr "ID de locatário"
-
-msgid "ID or name of cluster to use"
-msgstr "ID ou nome do cluster a ser utilizado"
-
-msgid "Hardware profile to use"
-msgstr "Perfil de hardware a ser usado"
-
-msgid "Integer value, number of cores"
-msgstr "Valor inteiro, número de núcleos"
-
-msgid "Integer value, number of sockets"
-msgstr "Valor inteiro, número de sockets"
-
-msgid "Amount of memory, integer value in bytes"
-msgstr "Quantidade de memória, valor inteiro em bytes"
-
-msgid "Boolean, set 1 to high availability"
-msgstr "Booleano, conjunto 1 para alta disponibilidade"
-
-msgid "Possible values: %s. Not usable if display type is SPICE."
-msgstr "Valores possíveis: %s. Não utilizável se o tipo de exibição for SPICE."
-
-msgid "Boolean, set 1 to start the vm"
-msgstr "Booleano, definir 1 para iniciar a mv"
-
-msgid "Compute name, e.g. eth0"
-msgstr "Nome de computação, p. ex., eth0"
-
-msgid "Select one of available networks for a cluster, must be an ID or a name"
-msgstr ""
-"Selecione uma das redes disponíveis para um cluster, deve ser uma ID ou um "
-"nome"
-
-msgid "Interface type"
-msgstr "Tipo de interface"
-
-msgid "Vnic Profile"
-msgstr "Perfil Vnic"
-
-msgid "Volume size in GB, integer value"
-msgstr "Tamanho do volume em GB, valor inteiro"
-
-msgid "ID or name of storage domain"
-msgstr "ID ou nome de domínio de storage"
-
-msgid "Boolean, set 1 for bootable, only one volume can be bootable"
-msgstr ""
-"Booleano, definir 1 para inicializável, somente um volume pode ser "
-"inicializável"
-
-msgid "Boolean, set 1 to preallocate"
-msgstr "Booleano, definir 1 para pré-alocar"
-
-msgid "Boolean, set 1 to wipe disk after delete"
-msgstr "Booleano, definir 1 para limpar o disco depois de excluir"
-
-msgid "Disk interface name, must be ide, virtio or virtio_scsi"
-msgstr ""
-
-msgid "Cores"
-msgstr "Núcleos"
 
 msgid "Cluster ID from VMware"
 msgstr "ID do cluster do VMware"
@@ -1665,8 +1596,9 @@ msgstr "Substituição de organizações e locais"
 
 msgid ""
 "Filters inherit organizations and locations from its role by default. This "
-"behavior can be changed by setting %{condition}.%{wsp}Therefore options %"
-"{org_opts} and %{loc_opts} are applicable only when the override flag is set."
+"behavior can be changed by setting %{condition}.%{wsp}Therefore options "
+"%{org_opts} and %{loc_opts} are applicable only when the override flag is "
+"set."
 msgstr ""
 "Os filtros herdam organizações e localidades de seu papel por padrão. Este "
 "comportamento pode ser alterado definindo %{condition}.%{wsp}Portanto, as "
@@ -2406,8 +2338,8 @@ msgid ""
 "[%{provisioning_template_name}] was set as default %{template_kind_name} "
 "template."
 msgstr ""
-"[%{provisioning_template_name}] foi definido como padrão %"
-"{template_kind_name} modelo."
+"[%{provisioning_template_name}] foi definido como padrão "
+"%{template_kind_name} modelo."
 
 msgid "Could not set the os default template"
 msgstr "Não foi possível definir os modelos padrão"
@@ -2443,8 +2375,8 @@ msgstr ""
 
 msgid "Could not find %{resource}, please set one of options %{switches}."
 msgstr ""
-"Não foi possível encontrar %{resource}, favor definir uma das opções %"
-"{switches}."
+"Não foi possível encontrar %{resource}, favor definir uma das opções "
+"%{switches}."
 
 msgid "Enter user's current password:"
 msgstr "Insira a senha atual do usuário:"
@@ -3213,5 +3145,5 @@ msgstr "Máquina virtual excluída."
 msgid "Could not delete the virtual machine"
 msgstr "Não foi possível excluir a máquina virtual"
 
-msgid "LDAP group membership"
+msgid "Cloned from id"
 msgstr ""

@@ -13,9 +13,9 @@
 # simon11 <transifex@stieger.co>, 2014
 msgid ""
 msgstr ""
-"Project-Id-Version: hammer-cli-foreman 3.16.0\n"
+"Project-Id-Version: hammer-cli-foreman 3.17.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-05-14 15:07+0000\n"
+"POT-Creation-Date: 2025-08-13 12:18+0200\n"
 "PO-Revision-Date: 2014-03-14 09:55+0000\n"
 "Last-Translator: Ettore Atalan <atalanttore@googlemail.com>, "
 "2014-2017,2022-2023\n"
@@ -674,6 +674,9 @@ msgstr "Gruppiert Base DN"
 msgid "Use Netgroups"
 msgstr "Verwenden von Netzgruppen"
 
+msgid "LDAP group membership"
+msgstr ""
+
 msgid "LDAP filter"
 msgstr "LDAP-Filter"
 
@@ -1095,11 +1098,6 @@ msgstr "Anbieter"
 msgid "Description"
 msgstr "Beschreibung"
 
-msgid "Path to a file that contains oVirt public key (For oVirt only)"
-msgstr ""
-"Pfad zu einer Datei, die den öffentlichen oVirt-Schlüssel enthält (nur für "
-"oVirt)"
-
 msgid "Compute resource created."
 msgstr "Rechnerressource erstellt."
 
@@ -1141,12 +1139,6 @@ msgstr ""
 
 msgid "VLAN ID"
 msgstr "VLAN-ID"
-
-msgid "VNIC profile ID"
-msgstr "VNIC-Profil-ID"
-
-msgid "Network ID"
-msgstr "Netzwerk ID"
 
 msgid "Uuid"
 msgstr "UUID"
@@ -1247,65 +1239,6 @@ msgstr "Projektdomänen-ID"
 
 msgid "Tenant Id"
 msgstr "Mandanten-ID"
-
-msgid "ID or name of cluster to use"
-msgstr "ID oder Name des zu verwendenden Clusters"
-
-msgid "Hardware profile to use"
-msgstr "Zu verwendendes Hardwareprofil"
-
-msgid "Integer value, number of cores"
-msgstr "Ganzzahlwert, Anzahl der Kerne"
-
-msgid "Integer value, number of sockets"
-msgstr "Ganzzahliger Wert, Anzahl der Sockets"
-
-msgid "Amount of memory, integer value in bytes"
-msgstr "Menge an Speicher, als Ganzzahl Wert in Bytes"
-
-msgid "Boolean, set 1 to high availability"
-msgstr "Boolean, setze 1 auf hohe Verfügbarkeit"
-
-msgid "Possible values: %s. Not usable if display type is SPICE."
-msgstr "Mögliche Werte: %s . Nicht verwendbar, wenn der Anzeigetyp SPICE ist."
-
-msgid "Boolean, set 1 to start the vm"
-msgstr "Boolean, setze 1, um die VM zu starten"
-
-msgid "Compute name, e.g. eth0"
-msgstr "Rechnername, z.B. eth0"
-
-msgid "Select one of available networks for a cluster, must be an ID or a name"
-msgstr ""
-"Wählen Sie eines der verfügbaren Netzwerke für einen Cluster aus, muss eine "
-"ID oder ein Name sein"
-
-msgid "Interface type"
-msgstr "Schnittstellentyp"
-
-msgid "Vnic Profile"
-msgstr "Vnic Profile"
-
-msgid "Volume size in GB, integer value"
-msgstr "Volumengröße in GB, Ganzzahlwert"
-
-msgid "ID or name of storage domain"
-msgstr "ID oder Name der Speicherdomäne"
-
-msgid "Boolean, set 1 for bootable, only one volume can be bootable"
-msgstr "Boolean, setze 1 für bootfähig, nur ein Volume kann bootfähig sein"
-
-msgid "Boolean, set 1 to preallocate"
-msgstr "Boolean, setze 1 zum Vorbelegen"
-
-msgid "Boolean, set 1 to wipe disk after delete"
-msgstr "Boolean, setze 1, um die Festplatte nach dem Löschen zu löschen"
-
-msgid "Disk interface name, must be ide, virtio or virtio_scsi"
-msgstr ""
-
-msgid "Cores"
-msgstr "Kerne"
 
 msgid "Cluster ID from VMware"
 msgstr "Cluster-ID von VMware"
@@ -1678,8 +1611,9 @@ msgstr "Überschreibe Organisationen und Standorte"
 
 msgid ""
 "Filters inherit organizations and locations from its role by default. This "
-"behavior can be changed by setting %{condition}.%{wsp}Therefore options %"
-"{org_opts} and %{loc_opts} are applicable only when the override flag is set."
+"behavior can be changed by setting %{condition}.%{wsp}Therefore options "
+"%{org_opts} and %{loc_opts} are applicable only when the override flag is "
+"set."
 msgstr ""
 "Filter erben Organisationen und Standorte standardmäßig aus ihrer Rolle. "
 "Dieses Verhalten kann durch Setzen von %{condition} geändert werden.%{wsp}"
@@ -2419,8 +2353,8 @@ msgid ""
 "[%{provisioning_template_name}] was set as default %{template_kind_name} "
 "template."
 msgstr ""
-"[%{provisioning_template_name}] wurde als Standardvorlage %"
-"{template_kind_name} festgelegt."
+"[%{provisioning_template_name}] wurde als Standardvorlage "
+"%{template_kind_name} festgelegt."
 
 msgid "Could not set the os default template"
 msgstr "Betriebssystem-Standardvorlage konnte nicht festgelegt werden"
@@ -2452,13 +2386,13 @@ msgstr ""
 
 msgid "Could not find %{resource}, please set option %{switches}."
 msgstr ""
-"%{resource} konnte nicht gefunden werden, bitte legen Sie die Option %"
-"{switches} fest."
+"%{resource} konnte nicht gefunden werden, bitte legen Sie die Option "
+"%{switches} fest."
 
 msgid "Could not find %{resource}, please set one of options %{switches}."
 msgstr ""
-"%{resource} konnte nicht gefunden werden, bitte legen Sie eine der Optionen %"
-"{switches} fest."
+"%{resource} konnte nicht gefunden werden, bitte legen Sie eine der Optionen "
+"%{switches} fest."
 
 msgid "Enter user's current password:"
 msgstr "Aktuelles Benutzer-Passwort eingeben:"
@@ -3227,5 +3161,5 @@ msgstr "Virtuelle Maschine gelöscht."
 msgid "Could not delete the virtual machine"
 msgstr "Die virtuelle Maschine konnte nicht gelöscht werden"
 
-msgid "LDAP group membership"
+msgid "Cloned from id"
 msgstr ""

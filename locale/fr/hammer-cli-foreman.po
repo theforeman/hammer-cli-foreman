@@ -10,9 +10,9 @@
 # Pierre-Emmanuel Dutang <dutangp@gmail.com>, 2014,2016-2017
 msgid ""
 msgstr ""
-"Project-Id-Version: hammer-cli-foreman 3.16.0\n"
+"Project-Id-Version: hammer-cli-foreman 3.17.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-05-14 15:07+0000\n"
+"POT-Creation-Date: 2025-08-13 12:18+0200\n"
 "PO-Revision-Date: 2014-03-14 09:55+0000\n"
 "Last-Translator: 0868a4d1af5275b3f70b0a6dac4c99a4, 2014\n"
 "Language-Team: French (http://app.transifex.com/foreman/foreman/language/"
@@ -672,6 +672,9 @@ msgstr "Base DN des Groupes"
 msgid "Use Netgroups"
 msgstr "Utiliser les netgroups"
 
+msgid "LDAP group membership"
+msgstr ""
+
 msgid "LDAP filter"
 msgstr "Filtre LDAP"
 
@@ -1093,11 +1096,6 @@ msgstr "Fournisseur"
 msgid "Description"
 msgstr "Description"
 
-msgid "Path to a file that contains oVirt public key (For oVirt only)"
-msgstr ""
-"Chemin d'accès à un fichier contenant la clé publique oVirt (pour oVirt "
-"uniquement)"
-
 msgid "Compute resource created."
 msgstr "Ressource Compute créée."
 
@@ -1139,12 +1137,6 @@ msgstr "Commutateur virtuel"
 
 msgid "VLAN ID"
 msgstr "VLAN ID"
-
-msgid "VNIC profile ID"
-msgstr "ID du profil VNIC"
-
-msgid "Network ID"
-msgstr "ID du réseau"
 
 msgid "Uuid"
 msgstr "Uuid"
@@ -1245,66 +1237,6 @@ msgstr "ID du domaine du projet"
 
 msgid "Tenant Id"
 msgstr "Id Tenant"
-
-msgid "ID or name of cluster to use"
-msgstr "ID ou nom du cluster à utiliser"
-
-msgid "Hardware profile to use"
-msgstr "Profil utilisateur de matériel à utiliser"
-
-msgid "Integer value, number of cores"
-msgstr "Nombre entier, nombre de cores"
-
-msgid "Integer value, number of sockets"
-msgstr "Nombre entier, nombre de sockets"
-
-msgid "Amount of memory, integer value in bytes"
-msgstr "Montant de mémoire, nombre entier en octets"
-
-msgid "Boolean, set 1 to high availability"
-msgstr "Booléen, réglage 1 à haute disponibilité"
-
-msgid "Possible values: %s. Not usable if display type is SPICE."
-msgstr ""
-"Valeurs possibles : %s. Non utilisable si le type d'affichage est SPICE."
-
-msgid "Boolean, set 1 to start the vm"
-msgstr "Booléen, mettre 1 pour démarrer la vm"
-
-msgid "Compute name, e.g. eth0"
-msgstr "Nom Compute, par exemple eth0"
-
-msgid "Select one of available networks for a cluster, must be an ID or a name"
-msgstr ""
-"Sélectionnez l'un des réseaux disponibles pour un cluster, doit être un ID "
-"ou un nom"
-
-msgid "Interface type"
-msgstr "Type d’interface"
-
-msgid "Vnic Profile"
-msgstr "Profil Vnic"
-
-msgid "Volume size in GB, integer value"
-msgstr "Taille du volume en Go, nombre entier"
-
-msgid "ID or name of storage domain"
-msgstr "ID ou nom du domaine de stockage"
-
-msgid "Boolean, set 1 for bootable, only one volume can be bootable"
-msgstr "Booléen, définir sur 1, un volume amorçable uniquement"
-
-msgid "Boolean, set 1 to preallocate"
-msgstr "Booléen, définir sur 1 pour pré-allocation"
-
-msgid "Boolean, set 1 to wipe disk after delete"
-msgstr "Booléen, définir sur 1 pour effacer le disque après la suppression"
-
-msgid "Disk interface name, must be ide, virtio or virtio_scsi"
-msgstr ""
-
-msgid "Cores"
-msgstr "Cores"
 
 msgid "Cluster ID from VMware"
 msgstr "ID de cluster de VMware"
@@ -1679,12 +1611,13 @@ msgstr "Substitution des organisations et emplacements"
 
 msgid ""
 "Filters inherit organizations and locations from its role by default. This "
-"behavior can be changed by setting %{condition}.%{wsp}Therefore options %"
-"{org_opts} and %{loc_opts} are applicable only when the override flag is set."
+"behavior can be changed by setting %{condition}.%{wsp}Therefore options "
+"%{org_opts} and %{loc_opts} are applicable only when the override flag is "
+"set."
 msgstr ""
 "Les filtres héritent des organisations et des emplacements par leur rôle par "
-"défaut. Ce comportement peut être modifié en définissant %%{condition}.%%"
-"{wsp}Par conséquent, les options %%{org_opts} et %%{loc_opts} ne sont "
+"défaut. Ce comportement peut être modifié en définissant %%{condition}.%"
+"%{wsp}Par conséquent, les options %%{org_opts} et %%{loc_opts} ne sont "
 "applicables que si l'indicateur de substitution est défini."
 
 msgid "Permission filter for [%<resource_type_label>s] created."
@@ -2422,8 +2355,8 @@ msgid ""
 "[%{provisioning_template_name}] was set as default %{template_kind_name} "
 "template."
 msgstr ""
-"[%%{provisioning_template_name}] a été défini comme modèle de %%"
-"{template_kind_name} par défaut."
+"[%%{provisioning_template_name}] a été défini comme modèle de %"
+"%{template_kind_name} par défaut."
 
 msgid "Could not set the os default template"
 msgstr "Impossible de définir le modèle de système d'exploitation par défaut"
@@ -3230,5 +3163,5 @@ msgstr "Machine virtuelle supprimée."
 msgid "Could not delete the virtual machine"
 msgstr "Impossible de supprimer la machine virtuelle"
 
-msgid "LDAP group membership"
+msgid "Cloned from id"
 msgstr ""

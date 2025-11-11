@@ -5,10 +5,10 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: hammer-cli-foreman 3.16.0\n"
+"Project-Id-Version: hammer-cli-foreman 3.17.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-08-13 12:18+0200\n"
-"PO-Revision-Date: 2025-05-14 15:07+0000\n"
+"POT-Creation-Date: 2025-11-11 15:43+0000\n"
+"PO-Revision-Date: 2025-08-13 12:18+0200\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: \n"
@@ -1518,12 +1518,6 @@ msgstr ""
 msgid "Search"
 msgstr ""
 
-msgid "Unlimited?"
-msgstr ""
-
-msgid "Override?"
-msgstr ""
-
 msgid "Role"
 msgstr ""
 
@@ -1536,16 +1530,10 @@ msgstr ""
 msgid "none"
 msgstr ""
 
-msgid "Organizations and locations can be set only for overriding filters."
+msgid "Locations"
 msgstr ""
 
-msgid "Overriding organizations and locations"
-msgstr ""
-
-msgid ""
-"Filters inherit organizations and locations from its role by default. This "
-"behavior can be changed by setting %{condition}.%{wsp}Therefore options %"
-"{org_opts} and %{loc_opts} are applicable only when the override flag is set."
+msgid "Organizations"
 msgstr ""
 
 msgid "Permission filter for [%<resource_type_label>s] created."
@@ -2099,9 +2087,6 @@ msgstr ""
 msgid "Location numeric id to search by"
 msgstr ""
 
-msgid "Organizations"
-msgstr ""
-
 msgid "Location created."
 msgstr ""
 
@@ -2307,9 +2292,6 @@ msgid "Enter user's current password:"
 msgstr ""
 
 msgid "Enter user's new password:"
-msgstr ""
-
-msgid "Locations"
 msgstr ""
 
 msgid "Organization created."
@@ -2528,6 +2510,9 @@ msgid "Could not invalidate registration tokens"
 msgstr ""
 
 msgid "Successfully invalidated registration tokens for %{user}."
+msgstr ""
+
+msgid "Cloned from id"
 msgstr ""
 
 msgid "Default"

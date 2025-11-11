@@ -15,9 +15,9 @@
 # Sergio Ocón-Cárdenas, 2014
 msgid ""
 msgstr ""
-"Project-Id-Version: hammer-cli-foreman 3.16.0\n"
+"Project-Id-Version: hammer-cli-foreman 3.17.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-05-14 15:07+0000\n"
+"POT-Creation-Date: 2025-08-13 12:18+0200\n"
 "PO-Revision-Date: 2014-03-14 09:55+0000\n"
 "Last-Translator: Sergio Ocón-Cárdenas, 2014\n"
 "Language-Team: Spanish (http://app.transifex.com/foreman/foreman/language/"
@@ -669,6 +669,9 @@ msgstr "DN base para grupos"
 msgid "Use Netgroups"
 msgstr "Usar grupos de red"
 
+msgid "LDAP group membership"
+msgstr ""
+
 msgid "LDAP filter"
 msgstr "Filtro LDAP"
 
@@ -1089,10 +1092,6 @@ msgstr "Proveedor"
 msgid "Description"
 msgstr "Descripción"
 
-msgid "Path to a file that contains oVirt public key (For oVirt only)"
-msgstr ""
-"Ruta a un archivo que incluye la llave pública de oVirt (solo para oVirt)"
-
 msgid "Compute resource created."
 msgstr "Recurso de cómputo creado."
 
@@ -1134,12 +1133,6 @@ msgstr ""
 
 msgid "VLAN ID"
 msgstr "VLAN ID"
-
-msgid "VNIC profile ID"
-msgstr ""
-
-msgid "Network ID"
-msgstr ""
 
 msgid "Uuid"
 msgstr "Uuid"
@@ -1239,68 +1232,6 @@ msgstr "ID de dominio del proyecto"
 
 msgid "Tenant Id"
 msgstr "ID de inquilino"
-
-msgid "ID or name of cluster to use"
-msgstr "ID o nombre de clúster a usar"
-
-msgid "Hardware profile to use"
-msgstr "Perfil de hardware para usar"
-
-msgid "Integer value, number of cores"
-msgstr "Valor entero, cantidad de núcleos"
-
-msgid "Integer value, number of sockets"
-msgstr "Valor entero, cantidad de sockets"
-
-msgid "Amount of memory, integer value in bytes"
-msgstr "Cantidad de memoria, valor entero en bytes"
-
-msgid "Boolean, set 1 to high availability"
-msgstr ""
-
-msgid "Possible values: %s. Not usable if display type is SPICE."
-msgstr ""
-"Valores posibles: %s. No se puede usar si el tipo de pantalla es SPICE."
-
-msgid "Boolean, set 1 to start the vm"
-msgstr "Booleano, establezca 1 para iniciar la máquina virtual"
-
-msgid "Compute name, e.g. eth0"
-msgstr "Nombre de cómputo, p. ej., eth0"
-
-msgid "Select one of available networks for a cluster, must be an ID or a name"
-msgstr ""
-"Seleccione una de las redes disponibles para un clúster, debe ser un ID o "
-"nombre"
-
-msgid "Interface type"
-msgstr "Tipo de interfaz"
-
-msgid "Vnic Profile"
-msgstr "Perfil de Vnic"
-
-msgid "Volume size in GB, integer value"
-msgstr "Tamaño del volumen en GB, valor entero"
-
-msgid "ID or name of storage domain"
-msgstr "ID o nombre del dominio de almacenamiento"
-
-msgid "Boolean, set 1 for bootable, only one volume can be bootable"
-msgstr ""
-"Booleano, establezca 1 para que sea de arranque, solo un volumen puede ser "
-"el de arranque"
-
-msgid "Boolean, set 1 to preallocate"
-msgstr "Booleano, establezca 1 para preasignar"
-
-msgid "Boolean, set 1 to wipe disk after delete"
-msgstr "Booleano, establezca 1 para limpiar el disco después de borrarlo"
-
-msgid "Disk interface name, must be ide, virtio or virtio_scsi"
-msgstr ""
-
-msgid "Cores"
-msgstr "Núcleos"
 
 msgid "Cluster ID from VMware"
 msgstr "ID de clúster de VMware"
@@ -1672,12 +1603,13 @@ msgstr "Organizaciones y ubicaciones de reemplazo"
 
 msgid ""
 "Filters inherit organizations and locations from its role by default. This "
-"behavior can be changed by setting %{condition}.%{wsp}Therefore options %"
-"{org_opts} and %{loc_opts} are applicable only when the override flag is set."
+"behavior can be changed by setting %{condition}.%{wsp}Therefore options "
+"%{org_opts} and %{loc_opts} are applicable only when the override flag is "
+"set."
 msgstr ""
 "Los filtros heredan las organizaciones y las ubicaciones de su rol de manera "
-"predeterminada. Este comportamiento se puede modificar al configurar %"
-"{condition}.%{wsp}Por lo tanto, las opciones %{org_opts} y %{loc_opts} se "
+"predeterminada. Este comportamiento se puede modificar al configurar "
+"%{condition}.%{wsp}Por lo tanto, las opciones %{org_opts} y %{loc_opts} se "
 "aplican únicamente cuando se establece la etiqueta de reemplazo."
 
 msgid "Permission filter for [%<resource_type_label>s] created."
@@ -2413,8 +2345,8 @@ msgid ""
 "[%{provisioning_template_name}] was set as default %{template_kind_name} "
 "template."
 msgstr ""
-"[%{provisioning_template_name}] se estableció como plantilla %"
-"{template_kind_name} por defecto."
+"[%{provisioning_template_name}] se estableció como plantilla "
+"%{template_kind_name} por defecto."
 
 msgid "Could not set the os default template"
 msgstr "No se pudo establecer la plantilla de SO predeterminada"
@@ -2450,8 +2382,8 @@ msgstr ""
 
 msgid "Could not find %{resource}, please set one of options %{switches}."
 msgstr ""
-"No se pudo encontrar %{resource}, por favor establezca una de las opciones %"
-"{switches}."
+"No se pudo encontrar %{resource}, por favor establezca una de las opciones "
+"%{switches}."
 
 msgid "Enter user's current password:"
 msgstr "Ingresar la contraseña actual del usuario:"
@@ -3219,5 +3151,5 @@ msgstr "Máquina virtual borrada."
 msgid "Could not delete the virtual machine"
 msgstr "No pudo borrar la máquina virtual"
 
-msgid "LDAP group membership"
+msgid "Cloned from id"
 msgstr ""
