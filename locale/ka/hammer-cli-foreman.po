@@ -7,9 +7,9 @@
 # Temuri Doghonadze <temuri.doghonadze@gmail.com>, 2022
 msgid ""
 msgstr ""
-"Project-Id-Version: hammer-cli-foreman 3.17.0\n"
+"Project-Id-Version: hammer-cli-foreman 3.18.0.pre.develop\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-08-13 12:18+0200\n"
+"POT-Creation-Date: 2025-11-11 15:43+0000\n"
 "PO-Revision-Date: 2014-03-14 09:55+0000\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>, 2022\n"
 "Language-Team: Georgian (http://app.transifex.com/foreman/foreman/language/"
@@ -1557,12 +1557,6 @@ msgstr "რესურსის ტიპი"
 msgid "Search"
 msgstr "_ძებნა"
 
-msgid "Unlimited?"
-msgstr "ულიმიტო?"
-
-msgid "Override?"
-msgstr "გადავფარო?"
-
 msgid "Role"
 msgstr "როლი"
 
@@ -1575,24 +1569,11 @@ msgstr "(სხვადასხვა)"
 msgid "none"
 msgstr "არა"
 
-msgid "Organizations and locations can be set only for overriding filters."
-msgstr ""
-"ორგანიზაციებისა და მდებარეობების დაყენება მხოლოდ გადაფარვად ფილტრებზე "
-"შეიძლება."
+msgid "Locations"
+msgstr "მდებარეობები"
 
-msgid "Overriding organizations and locations"
-msgstr "ორგანიზაციებისა და მდებარეობების გადაფარვა"
-
-msgid ""
-"Filters inherit organizations and locations from its role by default. This "
-"behavior can be changed by setting %{condition}.%{wsp}Therefore options "
-"%{org_opts} and %{loc_opts} are applicable only when the override flag is "
-"set."
-msgstr ""
-"ფილტრები ორგანიზაციებს და მდებარეობებს მათი როლიდან ნაგულისხმებად იღებენ. ამ "
-"ქცევის შეცვლა %{condition}.%{wsp}-ის ცვლილებით შეგიცლიათ. ამიტომ პარამეტრები "
-"%{org_opts} და %{loc_opts} მხოლოდ გადაფარვის ალმის დაყენების შემთხვევაშია "
-"გამოსადეგი."
+msgid "Organizations"
+msgstr "ორგანიზაციები"
 
 msgid "Permission filter for [%<resource_type_label>s] created."
 msgstr "წვდომების ფილტრი [%<resource_type_label>s]-სთვის შექმნილია."
@@ -2154,9 +2135,6 @@ msgstr "ინტერფეისის წაშლის შეცდომ�
 msgid "Location numeric id to search by"
 msgstr "მოსაძებნი მდებარეობის ID"
 
-msgid "Organizations"
-msgstr "ორგანიზაციები"
-
 msgid "Location created."
 msgstr "მდებარეობა შეიქმნა."
 
@@ -2369,9 +2347,6 @@ msgstr "შეიყვანეთ მომხმარებლის მი�
 
 msgid "Enter user's new password:"
 msgstr "შეიყვანეთ მომხმარებლის ახალი პაროლი:"
-
-msgid "Locations"
-msgstr "მდებარეობები"
 
 msgid "Organization created."
 msgstr "ორგანიზაცია შეიქმნა."
@@ -2591,6 +2566,9 @@ msgid "Could not invalidate registration tokens"
 msgstr ""
 
 msgid "Successfully invalidated registration tokens for %{user}."
+msgstr ""
+
+msgid "Cloned from id"
 msgstr ""
 
 msgid "Default"
@@ -3123,6 +3101,3 @@ msgstr "ვირტუალური მანქანის წაშლა.
 
 msgid "Could not delete the virtual machine"
 msgstr "ვირტუალური მანქანის წაშლის შეცდომა"
-
-msgid "Cloned from id"
-msgstr ""

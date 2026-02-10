@@ -7,9 +7,9 @@
 # Yulia <yulia.poyarkova@redhat.com>, 2016
 msgid ""
 msgstr ""
-"Project-Id-Version: hammer-cli-foreman 3.17.0\n"
+"Project-Id-Version: hammer-cli-foreman 3.18.0.pre.develop\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-08-13 12:18+0200\n"
+"POT-Creation-Date: 2025-11-11 15:43+0000\n"
 "PO-Revision-Date: 2014-03-14 09:55+0000\n"
 "Last-Translator: Vladimir Pavlov <v.pavlov@i-teco.ru>, 2015\n"
 "Language-Team: Russian (http://app.transifex.com/foreman/foreman/language/"
@@ -1525,12 +1525,6 @@ msgstr "Тип ресурса"
 msgid "Search"
 msgstr "Поиск"
 
-msgid "Unlimited?"
-msgstr "Не ограничено"
-
-msgid "Override?"
-msgstr ""
-
 msgid "Role"
 msgstr "Роль"
 
@@ -1543,18 +1537,11 @@ msgstr "(другое)"
 msgid "none"
 msgstr "нет"
 
-msgid "Organizations and locations can be set only for overriding filters."
-msgstr ""
+msgid "Locations"
+msgstr "Местоположения"
 
-msgid "Overriding organizations and locations"
-msgstr ""
-
-msgid ""
-"Filters inherit organizations and locations from its role by default. This "
-"behavior can be changed by setting %{condition}.%{wsp}Therefore options "
-"%{org_opts} and %{loc_opts} are applicable only when the override flag is "
-"set."
-msgstr ""
+msgid "Organizations"
+msgstr "Организации"
 
 msgid "Permission filter for [%<resource_type_label>s] created."
 msgstr ""
@@ -2107,9 +2094,6 @@ msgstr "Не удалось удалить интерфейс"
 msgid "Location numeric id to search by"
 msgstr "Числовой код искомого местоположения"
 
-msgid "Organizations"
-msgstr "Организации"
-
 msgid "Location created."
 msgstr ""
 
@@ -2316,9 +2300,6 @@ msgstr ""
 
 msgid "Enter user's new password:"
 msgstr ""
-
-msgid "Locations"
-msgstr "Местоположения"
 
 msgid "Organization created."
 msgstr ""
@@ -2536,6 +2517,9 @@ msgid "Could not invalidate registration tokens"
 msgstr ""
 
 msgid "Successfully invalidated registration tokens for %{user}."
+msgstr ""
+
+msgid "Cloned from id"
 msgstr ""
 
 msgid "Default"
@@ -3062,7 +3046,4 @@ msgid "Virtual machine deleted."
 msgstr ""
 
 msgid "Could not delete the virtual machine"
-msgstr ""
-
-msgid "Cloned from id"
 msgstr ""

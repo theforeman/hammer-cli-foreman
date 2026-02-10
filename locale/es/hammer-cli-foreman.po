@@ -15,9 +15,9 @@
 # Sergio Ocón-Cárdenas, 2014
 msgid ""
 msgstr ""
-"Project-Id-Version: hammer-cli-foreman 3.17.0\n"
+"Project-Id-Version: hammer-cli-foreman 3.18.0.pre.develop\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-08-13 12:18+0200\n"
+"POT-Creation-Date: 2025-11-11 15:43+0000\n"
 "PO-Revision-Date: 2014-03-14 09:55+0000\n"
 "Last-Translator: Sergio Ocón-Cárdenas, 2014\n"
 "Language-Team: Spanish (http://app.transifex.com/foreman/foreman/language/"
@@ -1575,12 +1575,6 @@ msgstr "Tipo de recurso"
 msgid "Search"
 msgstr "Buscar"
 
-msgid "Unlimited?"
-msgstr "¿Ilimitado?"
-
-msgid "Override?"
-msgstr "¿Anular?"
-
 msgid "Role"
 msgstr "Rol"
 
@@ -1593,24 +1587,11 @@ msgstr "(Varios)"
 msgid "none"
 msgstr "ninguno"
 
-msgid "Organizations and locations can be set only for overriding filters."
-msgstr ""
-"Las organizaciones y ubicaciones solo pueden configurarse para reemplazar "
-"filtros."
+msgid "Locations"
+msgstr "Ubicaciones"
 
-msgid "Overriding organizations and locations"
-msgstr "Organizaciones y ubicaciones de reemplazo"
-
-msgid ""
-"Filters inherit organizations and locations from its role by default. This "
-"behavior can be changed by setting %{condition}.%{wsp}Therefore options "
-"%{org_opts} and %{loc_opts} are applicable only when the override flag is "
-"set."
-msgstr ""
-"Los filtros heredan las organizaciones y las ubicaciones de su rol de manera "
-"predeterminada. Este comportamiento se puede modificar al configurar "
-"%{condition}.%{wsp}Por lo tanto, las opciones %{org_opts} y %{loc_opts} se "
-"aplican únicamente cuando se establece la etiqueta de reemplazo."
+msgid "Organizations"
+msgstr "Organizaciones"
 
 msgid "Permission filter for [%<resource_type_label>s] created."
 msgstr ""
@@ -2172,9 +2153,6 @@ msgstr "No se pudo borrar la interfaz"
 msgid "Location numeric id to search by"
 msgstr "ID numérico de ubicación para la búsqueda"
 
-msgid "Organizations"
-msgstr "Organizaciones"
-
 msgid "Location created."
 msgstr "Ubicación creada."
 
@@ -2390,9 +2368,6 @@ msgstr "Ingresar la contraseña actual del usuario:"
 
 msgid "Enter user's new password:"
 msgstr "Ingresar la nueva contraseña del usuario:"
-
-msgid "Locations"
-msgstr "Ubicaciones"
 
 msgid "Organization created."
 msgstr "Se creó la organización."
@@ -2612,6 +2587,9 @@ msgid "Could not invalidate registration tokens"
 msgstr ""
 
 msgid "Successfully invalidated registration tokens for %{user}."
+msgstr ""
+
+msgid "Cloned from id"
 msgstr ""
 
 msgid "Default"
@@ -3150,6 +3128,3 @@ msgstr "Máquina virtual borrada."
 
 msgid "Could not delete the virtual machine"
 msgstr "No pudo borrar la máquina virtual"
-
-msgid "Cloned from id"
-msgstr ""

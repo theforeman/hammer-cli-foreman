@@ -10,9 +10,9 @@
 # Pierre-Emmanuel Dutang <dutangp@gmail.com>, 2014,2016-2017
 msgid ""
 msgstr ""
-"Project-Id-Version: hammer-cli-foreman 3.17.0\n"
+"Project-Id-Version: hammer-cli-foreman 3.18.0.pre.develop\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-08-13 12:18+0200\n"
+"POT-Creation-Date: 2025-11-11 15:43+0000\n"
 "PO-Revision-Date: 2014-03-14 09:55+0000\n"
 "Last-Translator: 0868a4d1af5275b3f70b0a6dac4c99a4, 2014\n"
 "Language-Team: French (http://app.transifex.com/foreman/foreman/language/"
@@ -1583,12 +1583,6 @@ msgstr "Type de ressource"
 msgid "Search"
 msgstr "Recherche"
 
-msgid "Unlimited?"
-msgstr "Illimité?"
-
-msgid "Override?"
-msgstr "Remplacer ?"
-
 msgid "Role"
 msgstr "Rôle"
 
@@ -1601,24 +1595,11 @@ msgstr "(Divers)"
 msgid "none"
 msgstr "aucun"
 
-msgid "Organizations and locations can be set only for overriding filters."
-msgstr ""
-"Les organisations et les emplacements peuvent être définis uniquement pour "
-"les filtres de substitution."
+msgid "Locations"
+msgstr "Emplacements"
 
-msgid "Overriding organizations and locations"
-msgstr "Substitution des organisations et emplacements"
-
-msgid ""
-"Filters inherit organizations and locations from its role by default. This "
-"behavior can be changed by setting %{condition}.%{wsp}Therefore options "
-"%{org_opts} and %{loc_opts} are applicable only when the override flag is "
-"set."
-msgstr ""
-"Les filtres héritent des organisations et des emplacements par leur rôle par "
-"défaut. Ce comportement peut être modifié en définissant %%{condition}.%"
-"%{wsp}Par conséquent, les options %%{org_opts} et %%{loc_opts} ne sont "
-"applicables que si l'indicateur de substitution est défini."
+msgid "Organizations"
+msgstr "Organisations"
 
 msgid "Permission filter for [%<resource_type_label>s] created."
 msgstr ""
@@ -2182,9 +2163,6 @@ msgstr "Impossible de supprimer cette interface"
 msgid "Location numeric id to search by"
 msgstr "Recherche par id d'emplacement"
 
-msgid "Organizations"
-msgstr "Organisations"
-
 msgid "Location created."
 msgstr "Emplacement créé."
 
@@ -2399,9 +2377,6 @@ msgstr "Saisir le mot de passe actuel de l'utilisateur :"
 
 msgid "Enter user's new password:"
 msgstr "Saisir le nouveau mot de passe de l'utilisateur :"
-
-msgid "Locations"
-msgstr "Emplacements"
 
 msgid "Organization created."
 msgstr "Organisation créée."
@@ -2623,6 +2598,9 @@ msgid "Could not invalidate registration tokens"
 msgstr ""
 
 msgid "Successfully invalidated registration tokens for %{user}."
+msgstr ""
+
+msgid "Cloned from id"
 msgstr ""
 
 msgid "Default"
@@ -3162,6 +3140,3 @@ msgstr "Machine virtuelle supprimée."
 
 msgid "Could not delete the virtual machine"
 msgstr "Impossible de supprimer la machine virtuelle"
-
-msgid "Cloned from id"
-msgstr ""
