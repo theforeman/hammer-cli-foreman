@@ -7,7 +7,7 @@
 # Robert Antoni Buj i Gelonch <rbuj@fedoraproject.org>, 2015-2016
 msgid ""
 msgstr ""
-"Project-Id-Version: hammer-cli-foreman 3.18.0.pre.develop\n"
+"Project-Id-Version: hammer-cli-foreman 3.18.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-11-11 15:43+0000\n"
 "PO-Revision-Date: 2014-03-14 09:55+0000\n"
@@ -2292,8 +2292,8 @@ msgstr ""
 
 msgid "Could not find %{resource}, please set one of options %{switches}."
 msgstr ""
-"No s'ha pogut trobar %{resource}, si us plau, establiu una de les opcions "
-"%{switches}."
+"No s'ha pogut trobar %{resource}, si us plau, establiu una de les opcions %"
+"{switches}."
 
 msgid "Enter user's current password:"
 msgstr ""
