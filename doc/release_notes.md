@@ -1,5 +1,8 @@
 Release notes
 =============
+### 3.18.0 (2026-02-10)
+* Bump to 3.18.0-develop
+
 ### 3.17.0 (2025-11-11)
 * Add packit commit trigger job
 * Remove options related to filter overrides ([PR #645](https://github.com/theforeman/hammer-cli-foreman/pull/645)), [#38805](http://projects.theforeman.org/issues/38805)
