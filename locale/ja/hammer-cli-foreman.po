@@ -9,9 +9,9 @@
 # 山田 修司 🍣 Shuji Yamada <uzy.exe@gmail.com>, 2015
 msgid ""
 msgstr ""
-"Project-Id-Version: hammer-cli-foreman 3.17.0\n"
+"Project-Id-Version: hammer-cli-foreman 3.18.0.pre.develop\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-08-13 12:18+0200\n"
+"POT-Creation-Date: 2025-11-11 15:43+0000\n"
 "PO-Revision-Date: 2014-03-14 09:55+0000\n"
 "Last-Translator: 山田 修司 🍣 Shuji Yamada <uzy.exe@gmail.com>, 2015\n"
 "Language-Team: Japanese (http://app.transifex.com/foreman/foreman/language/"
@@ -1563,12 +1563,6 @@ msgstr "リソースタイプ"
 msgid "Search"
 msgstr "検索"
 
-msgid "Unlimited?"
-msgstr "無制限ですか?"
-
-msgid "Override?"
-msgstr "上書きしますか?"
-
 msgid "Role"
 msgstr "ロール"
 
@@ -1581,24 +1575,11 @@ msgstr "(その他)"
 msgid "none"
 msgstr "なし"
 
-msgid "Organizations and locations can be set only for overriding filters."
-msgstr ""
-"組織およびロケーションは上書きするフィルターについてのみ設定することができま"
-"す。"
+msgid "Locations"
+msgstr "ロケーション"
 
-msgid "Overriding organizations and locations"
-msgstr "組織およびロケーションの上書き"
-
-msgid ""
-"Filters inherit organizations and locations from its role by default. This "
-"behavior can be changed by setting %{condition}.%{wsp}Therefore options "
-"%{org_opts} and %{loc_opts} are applicable only when the override flag is "
-"set."
-msgstr ""
-"デフォルトでは、フィルターは対象のロールから組織とロケーションを継承します。"
-"この動作は、%%{condition} を設定して変更できます。%%{wsp} そのため、%"
-"%{org_opts} と %%{loc_opts} のオプションは、上書きフラグが設定されている場合"
-"のみ適用できます。"
+msgid "Organizations"
+msgstr "組織"
 
 msgid "Permission filter for [%<resource_type_label>s] created."
 msgstr "[%<resource_type_label>s] のパーミッションフィルターが作成されました。"
@@ -2160,9 +2141,6 @@ msgstr "インターフェイスを削除できませんでした"
 msgid "Location numeric id to search by"
 msgstr "検索対象のロケーション数値 ID"
 
-msgid "Organizations"
-msgstr "組織"
-
 msgid "Location created."
 msgstr "ロケーションが作成されました。"
 
@@ -2379,9 +2357,6 @@ msgstr "ユーザーのパスワードを入力してください:"
 
 msgid "Enter user's new password:"
 msgstr "ユーザーの新規パスワードを入力してください:"
-
-msgid "Locations"
-msgstr "ロケーション"
 
 msgid "Organization created."
 msgstr "組織が作成されました。"
@@ -2601,6 +2576,9 @@ msgid "Could not invalidate registration tokens"
 msgstr ""
 
 msgid "Successfully invalidated registration tokens for %{user}."
+msgstr ""
+
+msgid "Cloned from id"
 msgstr ""
 
 msgid "Default"
@@ -3133,6 +3111,3 @@ msgstr "仮想マシンが削除されました。"
 
 msgid "Could not delete the virtual machine"
 msgstr "仮想マシンを削除できませんでした"
-
-msgid "Cloned from id"
-msgstr ""
