@@ -28,8 +28,8 @@ module HammerCLIForeman
         provider = ::HammerCLIForeman.compute_resources[data['provider'].downcase]
         if provider
           output_definition.fields.concat(provider.provider_vm_specific_fields || [])
-          super(data)
         end
+        super(data)
       end
 
       build_options
