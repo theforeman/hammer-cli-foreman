@@ -12,6 +12,7 @@ module HammerCLIForeman
           Fields::Field.new(label: _('Url'), path: [:url]) 
         ]
       end
+      def provider_vm_specific_fields; []; end
       def mandatory_resource_options; %i[name provider]; end
     end
   end
