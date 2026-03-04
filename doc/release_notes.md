@@ -1,5 +1,9 @@
 Release notes
 =============
+### 3.18.1 (2026-03-04)
+* Provide empty provider_vm_specific_fields in cr::base, [#39126](http://projects.theforeman.org/issues/39126)
+* Always print vm data, even if the provider is absent, [#39125](http://projects.theforeman.org/issues/39125)
+
 ### 3.18.0 (2026-02-10)
 * Bump to 3.18.0-develop
 
