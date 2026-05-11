@@ -1,5 +1,11 @@
 Release notes
 =============
+### 3.19.0 (2026-05-11)
+* Sync ci ruby versions from hammer-cli
+* Provide empty provider_vm_specific_fields in cr::base, [#39126](http://projects.theforeman.org/issues/39126)
+* Always print vm data, even if the provider is absent, [#39125](http://projects.theforeman.org/issues/39125)
+* Bump to 3.19.0-develop
+
 ### 3.18.0 (2026-02-10)
 * Bump to 3.18.0-develop
 
