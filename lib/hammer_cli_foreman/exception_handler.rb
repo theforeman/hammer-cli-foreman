@@ -35,7 +35,7 @@ module HammerCLIForeman
     def handle_unprocessable_entity(e)
       response = JSON.parse(e.response)
       response = HammerCLIForeman.record_to_common_format(response) unless response.has_key?('message')
-      print_error response['message'] || response['full_messages']
+      print_error response['message'] || response['full_messages'] || response['displayMessage']
       HammerCLI::EX_DATAERR
     end
 
