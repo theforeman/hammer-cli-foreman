@@ -9,7 +9,7 @@ group :test do
   gem 'thor'
   gem 'minitest', '~> 5.18'
   gem 'simplecov'
-  gem 'mocha', "~> 2.8"
+  gem 'mocha', '>= 2.8', '< 4'
   gem 'ci_reporter_minitest',  "~> 1.0.0", :require => false
 
 end
