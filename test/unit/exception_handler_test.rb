@@ -29,6 +29,17 @@ describe HammerCLIForeman::ExceptionHandler do
     _(err_code).must_equal HammerCLI::EX_DATAERR
   end
 
+  it "should print displayMessage on unprocessable entity exception" do
+    response = <<-RESPONSE
+    {"displayMessage":"Validation failed: Cannot add content view environment to content facet.","errors":{"base":["Cannot add content view environment to content facet."]}}
+    RESPONSE
+
+    ex = RestClient::UnprocessableEntity.new(response)
+    output.expects(:print_error).with(heading, "Validation failed: Cannot add content view environment to content facet.")
+    err_code = handler.handle_exception(ex, :heading => heading)
+    _(err_code).must_equal HammerCLI::EX_DATAERR
+  end
+
   it "should handle argument error" do
     ex = ArgumentError.new
     output.expects(:print_error).with(heading, ex.message)
