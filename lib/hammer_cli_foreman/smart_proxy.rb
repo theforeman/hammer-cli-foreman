@@ -32,9 +32,16 @@ module HammerCLIForeman
           field :name, _('Name')
           field :version, _('Version')
         end
-        field :unrecognized_features, _("Unrecognized features"), Fields::List, :hide_blank => true
+        collection :_unrecognized_features, _("Unrecognized features"), :hide_blank => true do
+          field :name, _('Name')
+        end
         HammerCLIForeman::References.taxonomies(self)
         HammerCLIForeman::References.timestamps(self)
+      end
+
+      def extend_data(proxy)
+        proxy['_unrecognized_features'] = (proxy['unrecognized_features'] || []).map { |f| { 'name' => f } }
+        proxy
       end
 
       build_options
