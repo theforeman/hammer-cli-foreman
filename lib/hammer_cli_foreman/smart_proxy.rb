@@ -40,7 +40,7 @@ module HammerCLIForeman
       end
 
       def extend_data(proxy)
-        proxy['_unrecognized_features'] = (proxy['unrecognized_features'] || []).map { |f| { 'name' => f } }
+        proxy['_unrecognized_features'] = proxy['unrecognized_features'].map { |f| { 'name' => f } } if proxy['unrecognized_features']
         proxy
       end
 
