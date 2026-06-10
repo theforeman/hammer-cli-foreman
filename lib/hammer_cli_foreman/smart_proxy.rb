@@ -13,6 +13,7 @@ module HammerCLIForeman
         field :status, _("Status")
         field :url, _("URL")
         field :_features, _( "Features"), Fields::List, :hide_blank => true
+        field :unrecognized_features, _("Unrecognized features"), Fields::List, :hide_blank => true
       end
 
       def extend_data(proxy)
@@ -31,6 +32,7 @@ module HammerCLIForeman
           field :name, _('Name')
           field :version, _('Version')
         end
+        field :unrecognized_features, _("Unrecognized features"), Fields::List, :hide_blank => true
         HammerCLIForeman::References.taxonomies(self)
         HammerCLIForeman::References.timestamps(self)
       end
