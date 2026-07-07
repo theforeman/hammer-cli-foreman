@@ -6,10 +6,10 @@
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: hammer-cli-foreman 3.19.0\n"
+"Project-Id-Version: hammer-cli-foreman 5.0.0.pre.develop\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-05-11 20:05+0200\n"
-"PO-Revision-Date: 2026-05-11 20:05+0200\n"
+"POT-Creation-Date: 2026-07-07 12:27+0000\n"
+"PO-Revision-Date: 2026-07-07 12:27+0000\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: \n"
@@ -361,7 +361,8 @@ msgstr ""
 #: ../lib/hammer_cli_foreman/settings.rb:12
 #: ../lib/hammer_cli_foreman/settings.rb:38
 #: ../lib/hammer_cli_foreman/smart_proxy.rb:12
-#: ../lib/hammer_cli_foreman/smart_proxy.rb:31
+#: ../lib/hammer_cli_foreman/smart_proxy.rb:32
+#: ../lib/hammer_cli_foreman/smart_proxy.rb:36
 #: ../lib/hammer_cli_foreman/ssh_keys.rb:10
 #: ../lib/hammer_cli_foreman/status.rb:20
 #: ../lib/hammer_cli_foreman/status.rb:24
@@ -3848,13 +3849,18 @@ msgid "Settings type"
 msgstr ""
 
 #: ../lib/hammer_cli_foreman/smart_proxy.rb:15
-#: ../lib/hammer_cli_foreman/smart_proxy.rb:30
+#: ../lib/hammer_cli_foreman/smart_proxy.rb:31
 #: ../lib/hammer_cli_foreman/status.rb:27
 msgid "Features"
 msgstr ""
 
-#: ../lib/hammer_cli_foreman/smart_proxy.rb:28
-#: ../lib/hammer_cli_foreman/smart_proxy.rb:32
+#: ../lib/hammer_cli_foreman/smart_proxy.rb:16
+#: ../lib/hammer_cli_foreman/smart_proxy.rb:35
+msgid "Unrecognized features"
+msgstr ""
+
+#: ../lib/hammer_cli_foreman/smart_proxy.rb:29
+#: ../lib/hammer_cli_foreman/smart_proxy.rb:33
 #: ../lib/hammer_cli_foreman/status.rb:11
 #: ../lib/hammer_cli_foreman/status.rb:21
 #: ../lib/hammer_cli_foreman/status.rb:25
@@ -3862,47 +3868,47 @@ msgstr ""
 msgid "Version"
 msgstr ""
 
-#: ../lib/hammer_cli_foreman/smart_proxy.rb:29
+#: ../lib/hammer_cli_foreman/smart_proxy.rb:30
 msgid "Host count"
 msgstr ""
 
-#: ../lib/hammer_cli_foreman/smart_proxy.rb:43
+#: ../lib/hammer_cli_foreman/smart_proxy.rb:52
 msgid "Smart proxy created."
 msgstr ""
 
-#: ../lib/hammer_cli_foreman/smart_proxy.rb:44
+#: ../lib/hammer_cli_foreman/smart_proxy.rb:53
 msgid "Could not create the proxy"
 msgstr ""
 
-#: ../lib/hammer_cli_foreman/smart_proxy.rb:51
+#: ../lib/hammer_cli_foreman/smart_proxy.rb:60
 msgid "Smart proxy updated."
 msgstr ""
 
-#: ../lib/hammer_cli_foreman/smart_proxy.rb:52
+#: ../lib/hammer_cli_foreman/smart_proxy.rb:61
 msgid "Could not update the proxy"
 msgstr ""
 
-#: ../lib/hammer_cli_foreman/smart_proxy.rb:59
+#: ../lib/hammer_cli_foreman/smart_proxy.rb:68
 msgid "Smart proxy deleted."
 msgstr ""
 
-#: ../lib/hammer_cli_foreman/smart_proxy.rb:60
+#: ../lib/hammer_cli_foreman/smart_proxy.rb:69
 msgid "Could not delete the proxy"
 msgstr ""
 
-#: ../lib/hammer_cli_foreman/smart_proxy.rb:70
+#: ../lib/hammer_cli_foreman/smart_proxy.rb:79
 msgid "Smart proxy features were refreshed."
 msgstr ""
 
-#: ../lib/hammer_cli_foreman/smart_proxy.rb:71
+#: ../lib/hammer_cli_foreman/smart_proxy.rb:80
 msgid "Refresh of smart proxy features failed"
 msgstr ""
 
-#: ../lib/hammer_cli_foreman/smart_proxy.rb:81
+#: ../lib/hammer_cli_foreman/smart_proxy.rb:90
 msgid "Import subnets succeeded."
 msgstr ""
 
-#: ../lib/hammer_cli_foreman/smart_proxy.rb:82
+#: ../lib/hammer_cli_foreman/smart_proxy.rb:91
 msgid "Could not import subnets"
 msgstr ""
 
