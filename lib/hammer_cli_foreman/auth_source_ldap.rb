@@ -4,6 +4,20 @@ module HammerCLIForeman
     command_name 'ldap'
     desc _('Manage LDAP auth sources')
 
+    module CacertFileOption
+      def self.included(base)
+        base.option '--cacert-file', 'CACERT_FILE',
+                    _('Path to a PEM file containing CA certificate(s) for LDAPS verification. Ignored if --cacert is set'),
+                    :format => HammerCLI::Options::Normalizers::File.new
+      end
+
+      def request_params
+        params = super
+        params['auth_source_ldap']['cacert'] ||= options['option_cacert_file'] if options['option_cacert_file']
+        params
+      end
+    end
+
     class ListCommand < HammerCLIForeman::ListCommand
       output do
         field :id, _('Id')
@@ -23,6 +37,7 @@ module HammerCLIForeman
           field :name, _('Name')
           field :host, _('Server')
           field :tls, _('LDAPS'), Fields::Boolean
+          field :cacert, _('CA certificate'), Fields::LongText, :hide_blank => true
           field :port, _('Port')
           field :server_type, _('Server Type')
         end
@@ -50,6 +65,8 @@ module HammerCLIForeman
     end
 
     class CreateCommand < HammerCLIForeman::CreateCommand
+      include CacertFileOption
+
       success_message _('Auth source [%{name}] created.')
       failure_message _('Could not create the Auth Source')
 
@@ -64,6 +81,8 @@ module HammerCLIForeman
     end
 
     class UpdateCommand < HammerCLIForeman::UpdateCommand
+      include CacertFileOption
+
       success_message _('Auth source [%{name}] updated.')
       failure_message _('Could not update the Auth Source')
 

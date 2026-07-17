@@ -60,6 +60,7 @@ describe HammerCLIForeman::AuthSourceLdap do
 
     describe "parameters" do
       it_should_accept "all required params", ["--name=arch", "--host=my.host"]
+      it_should_accept "cacert file", ["--name=arch", "--host=my.host", "--cacert-file=#{__FILE__}"]
       # it_should_fail_with "name missing", []
       # TODO: temporarily disabled, parameters are checked in the api
     end
@@ -87,6 +88,7 @@ describe HammerCLIForeman::AuthSourceLdap do
     describe "parameters" do
       it_should_accept "name", ["--name=arch", "--new-name=arch2"]
       it_should_accept "id", ["--id=1", "--new-name=arch2"]
+      it_should_accept "cacert file", ["--id=1", "--cacert-file=#{__FILE__}"]
       # it_should_fail_with "no params", [] # TODO: temporarily disabled, parameters are checked in the id resolver
       # it_should_fail_with "name or id missing", ["--new-name=arch2"] # TODO: temporarily disabled, parameters are checked in the id resolver
     end
