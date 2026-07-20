@@ -7,14 +7,9 @@ module HammerCLIForeman
     module CacertFileOption
       def self.included(base)
         base.option '--cacert-file', 'CACERT_FILE',
-                    _('Path to a PEM file containing CA certificate(s) for LDAPS verification. Ignored if --cacert is set'),
+                    _('Path to a PEM file with CA certificate(s) added to the system trust store for LDAPS verification'),
+                    :attribute_name => :option_cacert,
                     :format => HammerCLI::Options::Normalizers::File.new
-      end
-
-      def request_params
-        params = super
-        params['auth_source_ldap']['cacert'] ||= options['option_cacert_file'] if options['option_cacert_file']
-        params
       end
     end
 
@@ -70,7 +65,9 @@ module HammerCLIForeman
       success_message _('Auth source [%{name}] created.')
       failure_message _('Could not create the Auth Source')
 
-      build_options
+      build_options do |o|
+        o.without(:cacert)
+      end
     end
 
     class DeleteCommand < HammerCLIForeman::DeleteCommand
@@ -86,7 +83,9 @@ module HammerCLIForeman
       success_message _('Auth source [%{name}] updated.')
       failure_message _('Could not update the Auth Source')
 
-      build_options
+      build_options do |o|
+        o.without(:cacert)
+      end
     end
 
     autoload_subcommands
