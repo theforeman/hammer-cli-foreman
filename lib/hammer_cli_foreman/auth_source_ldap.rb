@@ -7,7 +7,7 @@ module HammerCLIForeman
     module CacertFileOption
       def self.included(base)
         base.option '--cacert-file', 'CACERT_FILE',
-                    _('Path to a PEM file with CA certificate(s) added to the system trust store for LDAPS verification'),
+                    _('Path to a PEM file with CA certificate(s) used for LDAPS verification (system trust store is not used when set)'),
                     :attribute_name => :option_cacert,
                     :format => HammerCLI::Options::Normalizers::File.new
       end
