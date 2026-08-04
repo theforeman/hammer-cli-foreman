@@ -358,6 +358,51 @@ end
     end
   end
 
+  describe 'storage_pod_info' do
+    let(:cmd) { base_cmd << 'storage-pod-info' }
+    let(:storage_pod) do
+      { id: 'group-1', name: 'storage_pod1', datacenter: 'datacenter1' }
+    end
+
+    it 'shows information about a storage pod' do
+      api_expects(:compute_resources, :storage_pod).with_params(
+        'id' => '1', 'storage_pod_id' => 'group-1'
+      ).returns(storage_pod)
+
+      output = OutputMatcher.new(
+        "Id:         group-1\n" \
+        "Name:       storage_pod1\n" \
+        "Datacenter: datacenter1\n"
+      )
+      expected_result = success_result(output)
+
+      result = run_cmd(cmd + base_params + ['--storage-pod-id=group-1'])
+      assert_cmd(expected_result, result)
+    end
+  end
+
+  describe 'storage_domain_info' do
+    let(:cmd) { base_cmd << 'storage-domain-info' }
+    let(:storage_domain) do
+      { id: 'data-1', name: 'storage_domain1' }
+    end
+
+    it 'shows information about a storage domain' do
+      api_expects(:compute_resources, :storage_domain).with_params(
+        'id' => '1', 'storage_domain_id' => 'storage_domain1'
+      ).returns(storage_domain)
+
+      output = OutputMatcher.new(
+        "Id:   data-1\n" \
+        "Name: storage_domain1\n"
+      )
+      expected_result = success_result(output)
+
+      result = run_cmd(cmd + base_params + ['--storage-domain=storage_domain1'])
+      assert_cmd(expected_result, result)
+    end
+  end
+
   describe 'security_groups' do
     let(:cmd) { base_cmd << 'security-groups' }
     let(:security_group1) { { id: 1, name: 'security_group1' } }

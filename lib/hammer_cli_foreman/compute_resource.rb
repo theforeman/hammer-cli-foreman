@@ -208,6 +208,19 @@ module HammerCLIForeman
       extend_with(HammerCLIForeman::CommandExtensions::ComputeResourceSubcommand.new(only: %i[option request_params]))
     end
 
+    class AvailableStorageDomainInfoCommand < HammerCLIForeman::InfoCommand
+      action :storage_domain
+      command_name 'storage-domain-info'
+
+      option '--storage-domain', 'Storage domain', _('Name of the storage domain'), attribute_name: :option_storage_domain_id
+
+      output HammerCLIForeman::ComputeResource::AvailableStorageDomainsCommand.output_definition
+
+      build_options do |o|
+        o.without('storage_domain_id')
+      end
+    end
+
     class AvailableStoragePodsCommand < HammerCLIForeman::ListCommand
       action :available_storage_pods
       command_name 'storage-pods'
@@ -220,6 +233,15 @@ module HammerCLIForeman
 
       build_options without: :cluster_id
       extend_with(HammerCLIForeman::CommandExtensions::ComputeResourceSubcommand.new(only: %i[option request_params]))
+    end
+
+    class AvailableStoragePodInfoCommand < HammerCLIForeman::InfoCommand
+      action :storage_pod
+      command_name 'storage-pod-info'
+
+      output HammerCLIForeman::ComputeResource::AvailableStoragePodsCommand.output_definition
+
+      build_options
     end
 
     class AvailableSecurityGroupsCommand < HammerCLIForeman::ListCommand
