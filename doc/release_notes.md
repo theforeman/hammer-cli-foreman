@@ -1,5 +1,15 @@
 Release notes
 =============
+### 5.0.0 (2026-08-11)
+* Fix release tag pattern and drop redundant manual gem push
+* Clarify cacert behavior in containerized environment
+* Clarify param description
+* Hide the cacert option, only allow cacert-file
+* Implement ldap ca cert support, [#39537](http://projects.theforeman.org/issues/39537)
+* Show unrecognized smart proxy features in list and info ([PR #656](https://github.com/theforeman/hammer-cli-foreman/pull/656)), [#39414](http://projects.theforeman.org/issues/39414)
+* Bump to 5.0.0-develop
+* Bump to 3.20.0-develop
+
 ### 3.19.0 (2026-05-11)
 * Sync ci ruby versions from hammer-cli
 * Provide empty provider_vm_specific_fields in cr::base, [#39126](http://projects.theforeman.org/issues/39126)
