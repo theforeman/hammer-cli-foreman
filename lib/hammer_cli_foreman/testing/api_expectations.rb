@@ -6,7 +6,9 @@ module HammerCLIForeman
         @api_calls ||= []
       end
 
-      class APICallMatcher < Mocha::ParameterMatchers::Base
+      class APICallMatcher
+        include Mocha::ParameterMatchers::BaseMethods
+
         attr_accessor :expected_params, :expected_resource, :expected_action, :block
 
         def initialize(resource=nil, action=nil, &block)
