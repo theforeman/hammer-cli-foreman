@@ -8,9 +8,9 @@
 # 0868a4d1af5275b3f70b0a6dac4c99a4, 2016
 msgid ""
 msgstr ""
-"Project-Id-Version: hammer-cli-foreman 3.19.0\n"
+"Project-Id-Version: hammer-cli-foreman 5.0.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-02-10 14:07+0100\n"
+"POT-Creation-Date: 2026-05-11 20:05+0200\n"
 "PO-Revision-Date: 2014-03-14 09:55+0000\n"
 "Last-Translator: 0868a4d1af5275b3f70b0a6dac4c99a4, 2016\n"
 "Language-Team: English (United Kingdom) (http://app.transifex.com/foreman/"
@@ -3043,4 +3043,17 @@ msgid "Virtual machine deleted."
 msgstr ""
 
 msgid "Could not delete the virtual machine"
+msgstr ""
+
+msgid ""
+"Path to a PEM file with CA certificate(s) used for LDAPS verification "
+"(system trust store is not used when set). In containerized deployments, the "
+"container's trust store is used, so the CA certificate(s) may need to be "
+"provided here explicitly"
+msgstr ""
+
+msgid "CA certificate"
+msgstr ""
+
+msgid "Unrecognized features"
 msgstr ""

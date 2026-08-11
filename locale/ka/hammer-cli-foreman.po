@@ -7,9 +7,9 @@
 # Temuri Doghonadze <temuri.doghonadze@gmail.com>, 2022
 msgid ""
 msgstr ""
-"Project-Id-Version: hammer-cli-foreman 3.19.0\n"
+"Project-Id-Version: hammer-cli-foreman 5.0.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-02-10 14:07+0100\n"
+"POT-Creation-Date: 2026-05-11 20:05+0200\n"
 "PO-Revision-Date: 2014-03-14 09:55+0000\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>, 2022\n"
 "Language-Team: Georgian (http://app.transifex.com/foreman/foreman/language/"
@@ -658,7 +658,7 @@ msgid "Use Netgroups"
 msgstr "ქსელური ჯგუფების გამოყენება"
 
 msgid "LDAP group membership"
-msgstr ""
+msgstr "LDAP ჯგუფის წევრობა"
 
 msgid "LDAP filter"
 msgstr "LDAP-ის ფილტრი"
@@ -1160,6 +1160,7 @@ msgstr "დისკის სახელები ჩატვირთვი�
 
 msgid "automatic/bios/uefi/uefi_secure_boot (UEFI with Secure Boot enabled)"
 msgstr ""
+"automatic/bios/uefi/uefi_secure_boot (UEFI ჩართული უსაფრთხო ჩატვირთვით)"
 
 msgid "Boolean (expressed as 0 or 1), whether to start the machine or not"
 msgstr ""
@@ -1205,7 +1206,7 @@ msgid "Firmware"
 msgstr "მიკროკოდი"
 
 msgid "Secure Boot"
-msgstr ""
+msgstr "უსაფრთხო ჩატვირთვა"
 
 msgid "Tenant"
 msgstr "პატრონი"
@@ -1264,20 +1265,22 @@ msgid "List with SCSI controllers definitions"
 msgstr "SCSI კონტროლერების აღწერების სია"
 
 msgid "ID of the controller type from VMware"
-msgstr ""
+msgstr "კონტროლერის ტიპის ID VMware-დან"
 
 msgid "Key of the controller (e.g. 1000)"
 msgstr "კონტროლერის გასაღები (მაგ: 1000)"
 
 msgid "List with NVME controllers definitions"
-msgstr ""
+msgstr "NVME კონტროლერის აღწერების სია"
 
 msgid "Key of the controller (e.g. 2000)"
-msgstr ""
+msgstr "კონტროლერის გასაღები (მაგ: 2000)"
 
 msgid ""
 "Must be a 1 or 0, Enable virtual TPM. Only compatible with EFI firmware."
 msgstr ""
+"უნდა იყოს 1, ან 0. ვირტუალური TPM-ს ჩართვა. თავსებადია, მხოლოდ, EFI "
+"მიკროკოდთან."
 
 msgid "Must be a 1 or 0, whether to start the machine or not"
 msgstr "უნდა იყოს 1 ან 0. გაეშვება ვირტუალური მანქანა თუ არა"
@@ -1329,7 +1332,7 @@ msgid "Mac"
 msgstr "Mac"
 
 msgid "Virtual TPM"
-msgstr ""
+msgstr "ვირტუალური TPM"
 
 msgid "Host"
 msgstr "ჰოსტი"
@@ -2557,19 +2560,23 @@ msgid "Failed to generate registration command"
 msgstr "რეგისტრაციის ბრძანების გენერაციის შეცდომა"
 
 msgid "Manage registration tokens"
-msgstr ""
+msgstr "რეგისტრაციის ტოკენების მართვა"
 
 msgid "Successfully invalidated registration tokens for %{users}."
 msgstr ""
+"რეგისტრაციის ტოკენები წარმატებით გამოცხადდა გაუქმებულად მომხმარებლებისთვის %"
+"{users}."
 
 msgid "Could not invalidate registration tokens"
-msgstr ""
+msgstr "რეგისტრაციის ტოკენების არასწორად გამოცხადება შეუძლებელია"
 
 msgid "Successfully invalidated registration tokens for %{user}."
 msgstr ""
+"რეგისტრაციის ტოკენები წარმატებით გამოცხადდა გაუქმებულად მომხმარებლისთვის %"
+"{user}."
 
 msgid "Cloned from id"
-msgstr ""
+msgstr "დაკლონილია id-დან"
 
 msgid "Default"
 msgstr "ნაგულისხმევი"
@@ -3043,7 +3050,7 @@ msgid "Managing table preferences"
 msgstr "ცხრილის პარამეტრების მართვა"
 
 msgid "Managing registration tokens"
-msgstr ""
+msgstr "რეგისტრაციის ტოკენების მართვა"
 
 msgid "User mail notifications was added."
 msgstr "მომხმარებლის ელფოსტის შეტყობინება დამატებულია."
@@ -3101,3 +3108,16 @@ msgstr "ვირტუალური მანქანის წაშლა.
 
 msgid "Could not delete the virtual machine"
 msgstr "ვირტუალური მანქანის წაშლის შეცდომა"
+
+msgid ""
+"Path to a PEM file with CA certificate(s) used for LDAPS verification "
+"(system trust store is not used when set). In containerized deployments, the "
+"container's trust store is used, so the CA certificate(s) may need to be "
+"provided here explicitly"
+msgstr ""
+
+msgid "CA certificate"
+msgstr ""
+
+msgid "Unrecognized features"
+msgstr ""

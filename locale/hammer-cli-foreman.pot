@@ -6,10 +6,10 @@
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: hammer-cli-foreman 3.19.0\n"
+"Project-Id-Version: hammer-cli-foreman 5.0.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-05-11 20:05+0200\n"
-"PO-Revision-Date: 2026-05-11 20:05+0200\n"
+"POT-Creation-Date: 2026-08-11 16:39+0200\n"
+"PO-Revision-Date: 2026-08-11 16:39+0200\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: \n"
@@ -255,8 +255,8 @@ msgstr ""
 #: ../lib/hammer_cli_foreman/audit.rb:24
 #: ../lib/hammer_cli_foreman/auth_source.rb:14
 #: ../lib/hammer_cli_foreman/auth_source_external.rb:9
-#: ../lib/hammer_cli_foreman/auth_source_ldap.rb:9
-#: ../lib/hammer_cli_foreman/auth_source_ldap.rb:22
+#: ../lib/hammer_cli_foreman/auth_source_ldap.rb:18
+#: ../lib/hammer_cli_foreman/auth_source_ldap.rb:31
 #: ../lib/hammer_cli_foreman/bookmark.rb:9
 #: ../lib/hammer_cli_foreman/compute_profile.rb:9
 #: ../lib/hammer_cli_foreman/compute_profile.rb:22
@@ -317,8 +317,8 @@ msgstr ""
 #: ../lib/hammer_cli_foreman/architecture.rb:11
 #: ../lib/hammer_cli_foreman/auth_source.rb:15
 #: ../lib/hammer_cli_foreman/auth_source_external.rb:10
-#: ../lib/hammer_cli_foreman/auth_source_ldap.rb:10
-#: ../lib/hammer_cli_foreman/auth_source_ldap.rb:23
+#: ../lib/hammer_cli_foreman/auth_source_ldap.rb:19
+#: ../lib/hammer_cli_foreman/auth_source_ldap.rb:32
 #: ../lib/hammer_cli_foreman/bookmark.rb:10
 #: ../lib/hammer_cli_foreman/common_parameter.rb:12
 #: ../lib/hammer_cli_foreman/compute_profile.rb:10
@@ -361,7 +361,8 @@ msgstr ""
 #: ../lib/hammer_cli_foreman/settings.rb:12
 #: ../lib/hammer_cli_foreman/settings.rb:38
 #: ../lib/hammer_cli_foreman/smart_proxy.rb:12
-#: ../lib/hammer_cli_foreman/smart_proxy.rb:31
+#: ../lib/hammer_cli_foreman/smart_proxy.rb:32
+#: ../lib/hammer_cli_foreman/smart_proxy.rb:36
 #: ../lib/hammer_cli_foreman/ssh_keys.rb:10
 #: ../lib/hammer_cli_foreman/status.rb:20
 #: ../lib/hammer_cli_foreman/status.rb:24
@@ -942,113 +943,125 @@ msgstr ""
 msgid "Manage LDAP auth sources"
 msgstr ""
 
-#: ../lib/hammer_cli_foreman/auth_source_ldap.rb:11
-#: ../lib/hammer_cli_foreman/auth_source_ldap.rb:21
-#: ../lib/hammer_cli_foreman/auth_source_ldap.rb:24
+#: ../lib/hammer_cli_foreman/auth_source_ldap.rb:10
+msgid ""
+"Path to a PEM file with CA certificate(s) used for LDAPS verification (system "
+"trust store is not used when set). In containerized deployments, the container"
+"'s trust store is used, so the CA certificate(s) may need to be provided here "
+"explicitly"
+msgstr ""
+
+#: ../lib/hammer_cli_foreman/auth_source_ldap.rb:20
+#: ../lib/hammer_cli_foreman/auth_source_ldap.rb:30
+#: ../lib/hammer_cli_foreman/auth_source_ldap.rb:33
 #: ../lib/hammer_cli_foreman/compute_resource/vmware.rb:71
 msgid "Server"
 msgstr ""
 
-#: ../lib/hammer_cli_foreman/auth_source_ldap.rb:12
-#: ../lib/hammer_cli_foreman/auth_source_ldap.rb:26
+#: ../lib/hammer_cli_foreman/auth_source_ldap.rb:21
+#: ../lib/hammer_cli_foreman/auth_source_ldap.rb:36
 msgid "Port"
 msgstr ""
 
-#: ../lib/hammer_cli_foreman/auth_source_ldap.rb:13
+#: ../lib/hammer_cli_foreman/auth_source_ldap.rb:22
 msgid "LDAPS?"
 msgstr ""
 
-#: ../lib/hammer_cli_foreman/auth_source_ldap.rb:25
+#: ../lib/hammer_cli_foreman/auth_source_ldap.rb:34
 msgid "LDAPS"
 msgstr ""
 
-#: ../lib/hammer_cli_foreman/auth_source_ldap.rb:27
-msgid "Server Type"
-msgstr ""
-
-#: ../lib/hammer_cli_foreman/auth_source_ldap.rb:29
-#: ../lib/hammer_cli_foreman/auth_source_ldap.rb:33
-msgid "Account"
-msgstr ""
-
-#: ../lib/hammer_cli_foreman/auth_source_ldap.rb:30
-msgid "Account Username"
-msgstr ""
-
-#: ../lib/hammer_cli_foreman/auth_source_ldap.rb:31
-msgid "Base DN"
-msgstr ""
-
-#: ../lib/hammer_cli_foreman/auth_source_ldap.rb:32
-msgid "Groups base DN"
-msgstr ""
-
-#: ../lib/hammer_cli_foreman/auth_source_ldap.rb:33
-msgid "Use Netgroups"
-msgstr ""
-
-#: ../lib/hammer_cli_foreman/auth_source_ldap.rb:33
-#: ../lib/hammer_cli_foreman/auth_source_ldap.rb:34
-msgid "LDAP group membership"
-msgstr ""
-
 #: ../lib/hammer_cli_foreman/auth_source_ldap.rb:35
-msgid "LDAP filter"
-msgstr ""
-
-#: ../lib/hammer_cli_foreman/auth_source_ldap.rb:36
-msgid "Automatically Create Accounts?"
+msgid "CA certificate"
 msgstr ""
 
 #: ../lib/hammer_cli_foreman/auth_source_ldap.rb:37
-msgid "Usergroup sync"
+msgid "Server Type"
 msgstr ""
 
 #: ../lib/hammer_cli_foreman/auth_source_ldap.rb:39
-msgid "Attribute mappings"
+#: ../lib/hammer_cli_foreman/auth_source_ldap.rb:43
+msgid "Account"
 msgstr ""
 
 #: ../lib/hammer_cli_foreman/auth_source_ldap.rb:40
-msgid "Login Name Attribute"
+msgid "Account Username"
 msgstr ""
 
 #: ../lib/hammer_cli_foreman/auth_source_ldap.rb:41
-msgid "First Name Attribute"
+msgid "Base DN"
 msgstr ""
 
 #: ../lib/hammer_cli_foreman/auth_source_ldap.rb:42
-msgid "Last Name Attribute"
+msgid "Groups base DN"
 msgstr ""
 
 #: ../lib/hammer_cli_foreman/auth_source_ldap.rb:43
-msgid "Email Address Attribute"
+msgid "Use Netgroups"
 msgstr ""
 
+#: ../lib/hammer_cli_foreman/auth_source_ldap.rb:43
 #: ../lib/hammer_cli_foreman/auth_source_ldap.rb:44
-msgid "Photo Attribute"
+msgid "LDAP group membership"
+msgstr ""
+
+#: ../lib/hammer_cli_foreman/auth_source_ldap.rb:45
+msgid "LDAP filter"
+msgstr ""
+
+#: ../lib/hammer_cli_foreman/auth_source_ldap.rb:46
+msgid "Automatically Create Accounts?"
+msgstr ""
+
+#: ../lib/hammer_cli_foreman/auth_source_ldap.rb:47
+msgid "Usergroup sync"
+msgstr ""
+
+#: ../lib/hammer_cli_foreman/auth_source_ldap.rb:49
+msgid "Attribute mappings"
+msgstr ""
+
+#: ../lib/hammer_cli_foreman/auth_source_ldap.rb:50
+msgid "Login Name Attribute"
+msgstr ""
+
+#: ../lib/hammer_cli_foreman/auth_source_ldap.rb:51
+msgid "First Name Attribute"
+msgstr ""
+
+#: ../lib/hammer_cli_foreman/auth_source_ldap.rb:52
+msgid "Last Name Attribute"
 msgstr ""
 
 #: ../lib/hammer_cli_foreman/auth_source_ldap.rb:53
-msgid "Auth source [%{name}] created."
+msgid "Email Address Attribute"
 msgstr ""
 
 #: ../lib/hammer_cli_foreman/auth_source_ldap.rb:54
+msgid "Photo Attribute"
+msgstr ""
+
+#: ../lib/hammer_cli_foreman/auth_source_ldap.rb:65
+msgid "Auth source [%{name}] created."
+msgstr ""
+
+#: ../lib/hammer_cli_foreman/auth_source_ldap.rb:66
 msgid "Could not create the Auth Source"
 msgstr ""
 
-#: ../lib/hammer_cli_foreman/auth_source_ldap.rb:60
+#: ../lib/hammer_cli_foreman/auth_source_ldap.rb:74
 msgid "Auth source [%{name}] deleted."
 msgstr ""
 
-#: ../lib/hammer_cli_foreman/auth_source_ldap.rb:61
+#: ../lib/hammer_cli_foreman/auth_source_ldap.rb:75
 msgid "Could not delete the Auth Source"
 msgstr ""
 
-#: ../lib/hammer_cli_foreman/auth_source_ldap.rb:67
+#: ../lib/hammer_cli_foreman/auth_source_ldap.rb:83
 msgid "Auth source [%{name}] updated."
 msgstr ""
 
-#: ../lib/hammer_cli_foreman/auth_source_ldap.rb:68
+#: ../lib/hammer_cli_foreman/auth_source_ldap.rb:84
 msgid "Could not update the Auth Source"
 msgstr ""
 
@@ -3848,13 +3861,18 @@ msgid "Settings type"
 msgstr ""
 
 #: ../lib/hammer_cli_foreman/smart_proxy.rb:15
-#: ../lib/hammer_cli_foreman/smart_proxy.rb:30
+#: ../lib/hammer_cli_foreman/smart_proxy.rb:31
 #: ../lib/hammer_cli_foreman/status.rb:27
 msgid "Features"
 msgstr ""
 
-#: ../lib/hammer_cli_foreman/smart_proxy.rb:28
-#: ../lib/hammer_cli_foreman/smart_proxy.rb:32
+#: ../lib/hammer_cli_foreman/smart_proxy.rb:16
+#: ../lib/hammer_cli_foreman/smart_proxy.rb:35
+msgid "Unrecognized features"
+msgstr ""
+
+#: ../lib/hammer_cli_foreman/smart_proxy.rb:29
+#: ../lib/hammer_cli_foreman/smart_proxy.rb:33
 #: ../lib/hammer_cli_foreman/status.rb:11
 #: ../lib/hammer_cli_foreman/status.rb:21
 #: ../lib/hammer_cli_foreman/status.rb:25
@@ -3862,47 +3880,47 @@ msgstr ""
 msgid "Version"
 msgstr ""
 
-#: ../lib/hammer_cli_foreman/smart_proxy.rb:29
+#: ../lib/hammer_cli_foreman/smart_proxy.rb:30
 msgid "Host count"
 msgstr ""
 
-#: ../lib/hammer_cli_foreman/smart_proxy.rb:43
+#: ../lib/hammer_cli_foreman/smart_proxy.rb:52
 msgid "Smart proxy created."
 msgstr ""
 
-#: ../lib/hammer_cli_foreman/smart_proxy.rb:44
+#: ../lib/hammer_cli_foreman/smart_proxy.rb:53
 msgid "Could not create the proxy"
 msgstr ""
 
-#: ../lib/hammer_cli_foreman/smart_proxy.rb:51
+#: ../lib/hammer_cli_foreman/smart_proxy.rb:60
 msgid "Smart proxy updated."
 msgstr ""
 
-#: ../lib/hammer_cli_foreman/smart_proxy.rb:52
+#: ../lib/hammer_cli_foreman/smart_proxy.rb:61
 msgid "Could not update the proxy"
 msgstr ""
 
-#: ../lib/hammer_cli_foreman/smart_proxy.rb:59
+#: ../lib/hammer_cli_foreman/smart_proxy.rb:68
 msgid "Smart proxy deleted."
 msgstr ""
 
-#: ../lib/hammer_cli_foreman/smart_proxy.rb:60
+#: ../lib/hammer_cli_foreman/smart_proxy.rb:69
 msgid "Could not delete the proxy"
 msgstr ""
 
-#: ../lib/hammer_cli_foreman/smart_proxy.rb:70
+#: ../lib/hammer_cli_foreman/smart_proxy.rb:79
 msgid "Smart proxy features were refreshed."
 msgstr ""
 
-#: ../lib/hammer_cli_foreman/smart_proxy.rb:71
+#: ../lib/hammer_cli_foreman/smart_proxy.rb:80
 msgid "Refresh of smart proxy features failed"
 msgstr ""
 
-#: ../lib/hammer_cli_foreman/smart_proxy.rb:81
+#: ../lib/hammer_cli_foreman/smart_proxy.rb:90
 msgid "Import subnets succeeded."
 msgstr ""
 
-#: ../lib/hammer_cli_foreman/smart_proxy.rb:82
+#: ../lib/hammer_cli_foreman/smart_proxy.rb:91
 msgid "Could not import subnets"
 msgstr ""
 
