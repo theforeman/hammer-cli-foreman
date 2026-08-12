@@ -31,6 +31,11 @@ module HammerCLIForeman
       success_message _("Hardware model created.")
       failure_message _("Could not create the hardware model")
 
+      option '--name', 'NAME', _('Name of the hardware model'), :required => true
+      option '--info', 'INFO', _('Additional information about the hardware model')
+      option '--vendor-class', 'VENDOR_CLASS', _('Vendor class of the hardware model')
+      option '--hardware-model', 'HARDWARE_MODEL', _('Hardware model identifier')
+
       build_options
     end
 
@@ -45,6 +50,13 @@ module HammerCLIForeman
     class UpdateCommand < HammerCLIForeman::UpdateCommand
       success_message _("Hardware model updated.")
       failure_message _("Could not update the hardware model")
+
+      option '--id', 'ID', _('Hardware model numeric id to search by')
+      option '--name', 'NAME', _('Hardware model name to search by')
+      option '--new-name', 'NEW_NAME', _('New name for the hardware model')
+      option '--info', 'INFO', _('Additional information about the hardware model')
+      option '--vendor-class', 'VENDOR_CLASS', _('Vendor class of the hardware model')
+      option '--hardware-model', 'HARDWARE_MODEL', _('Hardware model identifier')
 
       build_options
     end
