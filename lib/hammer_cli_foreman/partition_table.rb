@@ -10,6 +10,7 @@ module HammerCLIForeman
         field :id, _("Id")
         field :name, _("Name")
         field :os_family, _("OS Family")
+        field :snippet, _("Snippet"), Fields::Boolean
       end
 
       build_options
