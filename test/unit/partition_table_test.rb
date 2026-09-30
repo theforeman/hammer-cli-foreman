@@ -30,7 +30,7 @@ describe HammerCLIForeman::PartitionTable do
       let(:expected_record_count) { count_records(cmd.resource.call(:index)) }
 
       it_should_print_n_records
-      it_should_print_columns ["Id", "Name", "OS Family"]
+      it_should_print_columns ["Id", "Name", "OS Family", "Snippet"]
     end
 
   end
@@ -50,7 +50,7 @@ describe HammerCLIForeman::PartitionTable do
     describe "output" do
       with_params ["--id=1"] do
         it_should_print_n_records 1
-        it_should_print_columns ["Id", "Name", "OS Family", "Created at", "Updated at"]
+        it_should_print_columns ["Id", "Name", "OS Family", "Snippet", "Created at", "Updated at"]
       end
     end
 
