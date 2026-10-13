@@ -75,13 +75,37 @@ module HammerCLIForeman
     class DeleteCommand < HammerCLIForeman::DeleteCommand
       include HammerCLIForeman::ResourceSupportedTest
 
-      option '--id', 'ID', _("Location numeric id to search by")
+      option '--id', 'ID', _('Location numeric id(s) to search by, comma separated')
 
       success_message _("Location deleted.")
       failure_message _("Could not delete the location")
 
       build_options do |o|
         o.expand.primary(:organizations)
+      end
+
+      def execute
+        ids = ids_from_option
+        return super if ids.size <= 1
+
+        unless resource_supported?
+          raise OperationNotSupportedError, _("The server does not support such operation.")
+        end
+
+        ids.each do |id|
+          resource.call(:destroy, { 'id' => id })
+        end
+
+        print_message(_("Locations deleted."))
+        HammerCLI::EX_OK
+      end
+
+      private
+
+      def ids_from_option
+        return [] if option_id.nil?
+
+        option_id.to_s.split(',').map(&:strip).reject(&:empty?)
       end
     end
 

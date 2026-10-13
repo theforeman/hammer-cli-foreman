@@ -190,6 +190,17 @@ describe 'delete' do
     result = run_cmd(@cmd + params)
     assert_cmd(success_result("Location deleted.\n"), result)
   end
+
+  it 'should delete multiple locations from a comma-separated --id list' do
+    params = ['--id=4,5']
+
+    api_expects(:locations, :index)
+    api_expects(:locations, :destroy, 'Delete location 4').with_params(id: '4')
+    api_expects(:locations, :destroy, 'Delete location 5').with_params(id: '5')
+
+    result = run_cmd(@cmd + params)
+    assert_cmd(success_result("Locations deleted.\n"), result)
+  end
 end
 
 describe 'info' do
