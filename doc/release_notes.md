@@ -1,5 +1,8 @@
 Release notes
 =============
+### 3.18.2 (2026-10-23)
+* Extract displayMessage from validation errors ([PR #666](https://github.com/theforeman/hammer-cli-foreman/pull/666)), [#39372](http://projects.theforeman.org/issues/39372)
+
 ### 3.18.1 (2026-03-04)
 * Provide empty provider_vm_specific_fields in cr::base, [#39126](http://projects.theforeman.org/issues/39126)
 * Always print vm data, even if the provider is absent, [#39125](http://projects.theforeman.org/issues/39125)
