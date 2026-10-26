@@ -132,7 +132,15 @@ module HammerCLIForeman
     def self.parameters(dsl)
       dsl.build do
         collection :parameters, _("Parameters"), :numbered => false do
-          custom_field Fields::KeyValue
+          field :id, _("Id")
+          field :name, _("Name")
+          field :value, _("Value")
+          field :parameter_type, _("Type")
+          field :associated_type, _("Associated type")
+          field :priority, _("Priority")
+          field :created_at, _("Created at")
+          field :updated_at, _("Updated at")
+          field :hidden_value?, _("Hidden value")
         end
       end
     end
@@ -140,7 +148,15 @@ module HammerCLIForeman
     def self.all_parameters(dsl)
       dsl.build do
         collection :all_parameters, _("All parameters"), :numbered => false do
-          custom_field Fields::KeyValue
+          field :id, _("Id")
+          field :name, _("Name")
+          field :value, _("Value")
+          field :parameter_type, _("Type")
+          field :associated_type, _("Associated type")
+          field :priority, _("Priority")
+          field :created_at, _("Created at")
+          field :updated_at, _("Updated at")
+          field :hidden_value?, _("Hidden value")
         end
       end
     end
