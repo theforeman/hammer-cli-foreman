@@ -1,5 +1,10 @@
 Release notes
 =============
+### 5.1.0 (2026-11-10)
+* Show whether partition tables are snippets, [#39824](https://projects.theforeman.org/issues/39824).
+* Flatten Parameters and All parameters in CSV output, [#39962](https://projects.theforeman.org/issues/39962).
+* Known issue: the parameter output change also affects human-readable, JSON, and YAML output and can omit fields such as `is_property` ([PR #671](https://github.com/theforeman/hammer-cli-foreman/pull/671)).
+
 ### 5.0.0 (2026-08-11)
 * Fix release tag pattern and drop redundant manual gem push
 * Clarify cacert behavior in containerized environment
