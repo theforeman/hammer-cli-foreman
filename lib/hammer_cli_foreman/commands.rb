@@ -508,11 +508,7 @@ module HammerCLIForeman
     end
 
     def print_data(record)
-      definition = output_definition
-      if output.adapter.is_a?(HammerCLI::Output::Adapter::CSValues)
-        definition = HammerCLIForeman::References.csv_parameter_definition(definition, record)
-      end
-      print_record(definition, record)
+      print_record(output_definition, record)
     end
 
     extend_with(HammerCLIForeman::CommandExtensions::Fields.new)
