@@ -104,6 +104,10 @@ module HammerCLIForeman
       'HammerCLIForeman::PartitionTable', 'hammer_cli_foreman/partition_table'
     )
 
+    HammerCLI::MainCommand.lazy_subcommand('permissions', _("List permissions"),
+      'HammerCLIForeman::Permissions', 'hammer_cli_foreman/permissions'
+    )
+
     HammerCLI::MainCommand.lazy_subcommand('report', _("Browse and read reports"),
       'HammerCLIForeman::ConfigReport', 'hammer_cli_foreman/config_report',
       :warning => _('%{report} command is deprecated and will be removed in one of the future versions. Please use %{config_report} command instead.') % {:report => 'report', :config_report => 'config-report'}
