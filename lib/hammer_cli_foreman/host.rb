@@ -432,6 +432,17 @@ module HammerCLIForeman
       build_options without: [:power_action]
     end
 
+    class WakeCommand < HammerCLIForeman::SingleResourceCommand
+      action :wol
+
+      command_name 'wake'
+      desc _('Send Wake-on-LAN request to a host')
+      success_message _('Wake-on-LAN request sent successfully.')
+      failure_message _('Failed to send Wake-on-LAN request')
+
+      build_options
+    end
+
     class RebuildConfigCommand < HammerCLIForeman::SingleResourceCommand
       action :rebuild_config
       command_name "rebuild-config"
