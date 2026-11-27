@@ -114,6 +114,28 @@ describe HammerCLIForeman::ListCommand do
     end
   end
 
+  describe "validation" do
+    it "rejects --per-page=0 with a usage error" do
+      api_expects_no_call
+      result = run_cmd(['--per-page=0'], {}, TestList)
+      _(result.exit_code).must_equal HammerCLI::EX_USAGE
+      _(result.err).must_match(/Option --per-page must be a positive integer\./)
+    end
+
+    it "rejects a negative --per-page with a usage error" do
+      api_expects_no_call
+      result = run_cmd(['--per-page=-5'], {}, TestList)
+      _(result.exit_code).must_equal HammerCLI::EX_USAGE
+      _(result.err).must_match(/Option --per-page must be a positive integer\./)
+    end
+
+    it "accepts a positive --per-page" do
+      expect_paged_call(1, 10, 10)
+      result = run_cmd(['--per-page=10'], {}, TestList)
+      _(result.exit_code).must_equal HammerCLI::EX_OK
+    end
+  end
+
   describe "pagination output" do
     let(:row_data) { ['1', 'Item 1'] }
     let(:header) { ['ID', 'NAME'] }

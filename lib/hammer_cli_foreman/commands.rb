@@ -271,6 +271,13 @@ module HammerCLIForeman
       super(*names) || %w(list index)
     end
 
+    def validate_options
+      super
+      if respond_to?(:option_per_page) && !option_per_page.nil? && option_per_page.to_i <= 0
+        raise HammerCLI::Options::Validators::ValidationError, _("Option --per-page must be a positive integer.")
+      end
+    end
+
     def execute
       if should_retrieve_all?
         retrieve_all
