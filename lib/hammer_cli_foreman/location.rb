@@ -45,7 +45,7 @@ module HammerCLIForeman
       end
 
       build_options do |o|
-        o.expand.primary(:organizations)
+        o.expand.primary(:locations)
       end
     end
 
@@ -81,7 +81,7 @@ module HammerCLIForeman
       failure_message _("Could not delete the location")
 
       build_options do |o|
-        o.expand.primary(:organizations)
+        o.expand.primary(:locations)
       end
     end
 
